@@ -132,6 +132,7 @@ public:
   bool ask_delete = true;
   QStringList column_width;
   QString language = "";
+  bool first_start = true;
 };
 
 }; // namespace Configs

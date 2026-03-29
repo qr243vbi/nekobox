@@ -141,6 +141,8 @@ public:
 
     void prepare_exit();
 
+    void announcement_message(bool first_launch);
+
     void move_selected_profiles(int profile_id);
 
     bool context_menu_locked();

@@ -439,7 +439,7 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Öryggi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="937" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
         <source>Disable Privilege request</source>
         <translation type="unfinished">Slökktu á forréttindabeiðni</translation>
     </message>
@@ -454,12 +454,12 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Slepptu TLS vottorðsvottun sjálfgefið (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="990" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="996" />
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Sjálfgefið uTLS fingrafar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ekki reyna að byrja sem stjórnandi nema þess sé sérstaklega beðið&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -474,184 +474,184 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Notaðu UDS fyrir IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950" />
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Byrjaðu alltaf sem venjulegur notandi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1046" />
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">Notaðu Json í staðinn tvöfaldur fyrir stillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Biðja um að eyða prófíl</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
         <source>Auto-Testing</source>
         <translation type="unfinished">Sjálfvirk prófun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1076" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Prófaðu umboð sjálfkrafa í bakgrunni og viðhalda hópi virkra umboða</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Virkjaðu sjálfvirka prófun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Prófunarbil (sekúndur)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Hversu oft á að keyra prófunarlotuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Umboð á hverri lotu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Fjöldi umboðsmanna til að prófa í hverri lotu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1132" />
         <source>Working Pool Size</source>
         <translation type="unfinished">Vinnulaug Stærð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Hámarksfjöldi staðfestra vinnuumboða til að viðhalda</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1155" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Biðtími (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Hámarks leynd til að líta á umboð sem virka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1172" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1181" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">Talning bilunar aftur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Fjöldi tilrauna aftur áður en umboðsmaður er talinn hafa mistekist</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1204" />
         <source>Test Target URL</source>
         <translation type="unfinished">Prófa markmiðsslóð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">Slóð til að prófa umboð á móti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1214" />
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Skiptu sjálfkrafa yfir í annan virkan umboðsmann þegar umboð fyrir TUN ham mistekst</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1215" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Virkja TUN failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232" />
         <source>Startup</source>
         <translation type="unfinished">Gangsetning</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1296" />
         <source>Geometry</source>
         <translation type="unfinished">Rúmfræði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1325" />
         <source>Autosave geometry</source>
         <translation type="unfinished">Sjálfvirk vistun rúmfræði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332" />
         <source>Autosave position</source>
         <translation type="unfinished">Sjálfvirk vistunarstaða</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1352" />
         <source>Apply now</source>
         <translation type="unfinished">Sæktu um núna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426" />
         <source>Width</source>
         <translation type="unfinished">Breidd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1469" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1502" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458" />
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526" />
         <source>Height</source>
         <translation type="unfinished">Hæð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1623" />
         <source>Core Executable Path</source>
         <translation type="unfinished">Core Executable Path</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1631" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1805" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1652" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1841" />
         <source>Use default</source>
         <translation type="unfinished">Notaðu sjálfgefið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1638" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659" />
         <source>Remote Control</source>
         <translation type="unfinished">Fjarstýring</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1664" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1838" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1685" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1874" />
         <source>Select</source>
         <translation type="unfinished">Veldu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
         <source>Resources Directory</source>
         <translation type="unfinished">Auðlindaskrá</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848" />
         <source>Resource Manager</source>
         <translation type="unfinished">Auðlindastjóri</translation>
     </message>
@@ -669,79 +669,79 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Algengt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105" />
         <source>Name</source>
         <translation type="unfinished">Nafn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112" />
         <source>Type</source>
         <translation type="unfinished">Tegund</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120" />
         <source>Basic</source>
         <translation type="unfinished">Basic</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293" />
         <source>Subscription</source>
         <translation type="unfinished">Áskrift</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138" />
         <source>Manually column width</source>
         <translation type="unfinished">Dálkabreidd handvirkt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Archive</source>
         <translation type="unfinished">Skjalasafn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158" />
         <source>Proxy</source>
         <translation type="unfinished">Umboð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224" />
         <source>None</source>
         <translation type="unfinished">Engin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204" />
         <source>Front Proxy</source>
         <translation type="unfinished">Umboð að framan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211" />
         <source>Landing Proxy</source>
         <translation type="unfinished">Lendingarumboð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Share</source>
         <translation type="unfinished">Deila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241" />
         <source>Copy profile share links</source>
         <translation type="unfinished">Afritaðu deilingartengla á prófílnum</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248" />
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">Afritaðu deilingartengla á prófíl (sérsniðnir tenglar)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256" />
         <source>Notes</source>
         <translation type="unfinished">Skýringar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320" />
         <source>Skip automatic update</source>
         <translation type="unfinished">Slepptu sjálfvirkri uppfærslu</translation>
     </message>
@@ -891,7 +891,7 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="753" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">Notaðu stillingar á þennan hóp</translation>
     </message>
@@ -927,7 +927,7 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="683" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="684" />
         <source>Certificate</source>
         <translation type="unfinished">Vottorð</translation>
     </message>
@@ -948,7 +948,7 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="694" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="695" />
         <source>ECH Config</source>
         <translation type="unfinished">ECH Config</translation>
     </message>
@@ -1046,25 +1046,25 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Sérsniðin (% 1 stilling)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="641" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="646" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="642" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="665" />
         <source>Not set</source>
         <translation type="unfinished">Ekki stillt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="643" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="648" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="653" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="644" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="667" />
         <source>Already set</source>
         <translation type="unfinished">Þegar stillt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="724" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
         <source>Confirm</source>
         <translation type="unfinished">Staðfesta</translation>
     </message>
@@ -1077,22 +1077,22 @@ mínútur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Lendingarumboð fyrir hóphóp2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
         <translation type="unfinished">Umboð:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
         <translation type="unfinished">Leita:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
         <translation type="unfinished">Hópur 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
         <translation type="unfinished">Hópur 2</translation>
     </message>
@@ -2457,50 +2457,50 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Notkunartölfræði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">Umferðartölfræði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="214" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="443" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Heildarumferð umboðsmanns:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="54" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="77" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="94" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="100" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="127" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="158" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="201" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="224" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="244" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="152" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="252" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="259" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="266" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="312" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="319" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="326" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="372" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="379" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="386" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="435" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="442" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="449" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="477" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="506" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="375" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="382" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="389" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="423" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="430" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="453" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="496" />
         <source>TextLabel</source>
         <translation type="unfinished">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="460" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Heildarbein umferð:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="465" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
         <source>Security Statistics</source>
         <translation type="unfinished">Öryggistölfræði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="270" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
         <source>Profile Statistics</source>
         <translation type="unfinished">Tölfræði prófíls</translation>
     </message>
@@ -2510,75 +2510,75 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Notkunartími:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="84" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
         <source>Last launch time:</source>
         <translation type="unfinished">Síðasti sjósetningartími:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="101" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="107" />
         <source>First launch time:</source>
         <translation type="unfinished">Fyrsta sjósetningartími:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="90" />
         <source>Start count:</source>
         <translation type="unfinished">Byrjunartalning:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="237" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="476" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="489" />
         <source>Download:</source>
         <translation type="unfinished">Sækja:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="257" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="509" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="522" />
         <source>Upload:</source>
         <translation type="unfinished">Hlaða upp:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Proxy snið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="352" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="415" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="355" />
         <source>Deleted</source>
         <translation type="unfinished">Eytt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="362" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="425" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="232" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="365" />
         <source>Exists</source>
         <translation type="unfinished">Er til</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="342" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="242" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="345" />
         <source>Created</source>
         <translation type="unfinished">Búið til</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Hópar og áskriftir</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="396" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
         <source>Route Profiles</source>
         <translation type="unfinished">Leiðarsnið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="490" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">Talning misheppnaðra auðkenninga:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="519" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
         <source>Users count:</source>
         <translation type="unfinished">Notendur telja:</translation>
     </message>
@@ -2596,51 +2596,51 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="35" />
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="57" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="610" />
         <source>Profiles</source>
         <translation type="unfinished">Snið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="79" />
         <source>Settings</source>
         <translation type="unfinished">Stillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="101" />
         <source>Routing</source>
         <translation type="unfinished">Leiðsögn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="123" />
         <source>Update</source>
         <translation type="unfinished">Uppfærsla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="150" />
         <source>Tun Mode</source>
         <translation type="unfinished">Tun Mode</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="157" />
         <source>System DNS</source>
         <translation type="unfinished">DNS kerfi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2568" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="164" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="579" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2605" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2608" />
         <source>System Proxy</source>
         <translation type="unfinished">Kerfis proxy</translation>
     </message>
@@ -2649,103 +2649,103 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">URL próf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
         <translation type="unfinished">Tegund</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
         <translation type="unfinished">Heimilisfang</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
         <translation type="unfinished">Nafn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="292" />
         <source>Test Result</source>
         <translation type="unfinished">Niðurstaða prófs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Traffic</source>
         <translation type="unfinished">Umferð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="373" />
         <source>Logs</source>
         <translation type="unfinished">Logs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="408" />
         <source>Connections</source>
         <translation type="unfinished">Tengingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="436" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Áfangastaður (lén)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="439" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Smelltu á Til að slökkva á flokkun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="444" />
         <source>Process</source>
         <translation type="unfinished">Ferli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="447" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Smelltu til að raða eftir ferli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="452" />
         <source>Protocol</source>
         <translation type="unfinished">Bókun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="455" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Smelltu til að raða eftir samskiptareglu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Outbound</source>
         <translation type="unfinished">Á útleið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="463" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Smelltu til að raða eftir útleið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="471" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Smelltu á Til að skipta um flokkun eftir umferð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="480" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Umferðargraf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="575" />
         <source>Program</source>
         <translation type="unfinished">Dagskrá</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="599" />
         <source>Preferences</source>
         <translation type="unfinished">Óskir</translation>
     </message>
@@ -2754,7 +2754,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Share</source>
         <translation type="unfinished">Deila</translation>
     </message>
@@ -2763,223 +2763,224 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Núverandi hópur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="234" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="686" />
         <source>Test</source>
         <translation type="unfinished">Próf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
         <source>Current Selected</source>
         <translation type="unfinished">Núverandi valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
         <source>Current Group</source>
         <translation type="unfinished">Núverandi hópur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="669" />
         <source>Hidden menu</source>
         <translation type="unfinished">Falinn matseðill</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="681" />
         <source>Routing Menu</source>
         <translation type="unfinished">Leiðarvalmynd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Context</source>
         <translation type="unfinished">Samhengi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="697" />
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
         <source>Exit</source>
         <translation type="unfinished">Hætta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717" />
         <source>Toggle Window</source>
         <translation type="unfinished">Skiptu um glugga</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="722" />
         <source>Basic Settings</source>
         <translation type="unfinished">Grunnstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727" />
         <source>New profile</source>
         <translation type="unfinished">Nýtt snið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
         <source>Groups</source>
         <translation type="unfinished">Hópar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3636" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3646" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Start</source>
         <translation type="unfinished">Byrjaðu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3635" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3646" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="745" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3672" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Stop</source>
         <translation type="unfinished">Hættu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="753" />
         <source>Edit</source>
         <translation type="unfinished">Breyta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="761" />
         <source>Routing Settings</source>
         <translation type="unfinished">Leiðarstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Bættu við prófíl af klemmuspjaldi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774" />
         <source>Delete</source>
         <translation type="unfinished">Eyða</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="782" />
         <source>Debug Info</source>
         <translation type="unfinished">Villuleit upplýsingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="787" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR kóða og hlekkur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795" />
         <source>Copy Link</source>
         <translation type="unfinished">Afritaðu hlekk</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Hreinsa prófunarniðurstöður</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1474" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1506" />
         <source>Export %1 config</source>
         <translation type="unfinished">Flytja út % 1 stillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="832" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Endurstilla umferð</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Skannaðu QR kóða</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="848" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Virkja kerfis proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="856" />
         <source>Disable</source>
         <translation type="unfinished">Óvirkja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="861" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Fjarlægðu afrit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="869" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="946" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="954" />
         <source>fake</source>
         <translation type="unfinished">falsa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="877" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148" />
         <source>Move</source>
         <translation type="unfinished">Færa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="888" />
         <source>Start with system</source>
         <translation type="unfinished">Byrjaðu með kerfi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="896" />
         <source>Remember last profile</source>
         <translation type="unfinished">Mundu síðasta prófíl</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="904" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Leyfðu öðrum tækjum að tengjast</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="909" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Fjarlægja ekki tiltækt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="917" />
         <source>Full Test</source>
         <translation type="unfinished">Fullt próf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="925" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Stillingar flýtilykils</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="930" />
         <source>Select All</source>
         <translation type="unfinished">Veldu Allt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="938" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Afritaðu sérsniðna tengla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="962" />
         <source>Copy links</source>
         <translation type="unfinished">Afritaðu tengla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1046" />
         <source>Url Test</source>
         <translation type="unfinished">Url próf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1079" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Leysa lén</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1161" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1166" />
         <source>Information</source>
         <translation type="unfinished">Upplýsingar</translation>
     </message>
@@ -2992,48 +2993,48 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Afritaðu tengla af völdum</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="973" />
         <source>Enable Tun</source>
         <translation type="unfinished">Virkja Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2992" />
         <source>Clone</source>
         <translation type="unfinished">Klóna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="986" />
         <source>Update subscription</source>
         <translation type="unfinished">Uppfærðu áskrift</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="997" />
         <source>Resolve domain</source>
         <translation type="unfinished">Leysa lén</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1005" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Stillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1010" />
         <source>Restart Program</source>
         <translation type="unfinished">Endurræstu forritið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1015" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Opnaðu Config Folder</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1036" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Endurræstu proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1041" />
         <source>Stop Testing</source>
         <translation type="unfinished">Hættu að prófa</translation>
     </message>
@@ -3042,7 +3043,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1068" />
         <source>Url Test Group</source>
         <translation type="unfinished">Url prófunarhópur</translation>
     </message>
@@ -3055,7 +3056,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Leysa valið lén</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1087" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Fjarlægja ógilt</translation>
     </message>
@@ -3064,58 +3065,58 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Hraðastraumur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
         <source>Full test Selected</source>
         <translation type="unfinished">Fullt próf valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1103" />
         <source>Download test Selected</source>
         <translation type="unfinished">Niðurhalspróf valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1108" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Upphleðslupróf valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113" />
         <source>Country test Selected</source>
         <translation type="unfinished">Landspróf Valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Einfalt niðurhalspróf valið</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Hraðprófahópur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128" />
         <source>Hide window</source>
         <translation type="unfinished">Fela glugga</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
         <source>Add profile from File</source>
         <translation type="unfinished">Bættu við prófíl úr skrá</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3665" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3702" />
         <source>Add new Group</source>
         <translation type="unfinished">Bæta við nýjum hópi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
         <source>Security Settings</source>
         <translation type="unfinished">Öryggisstillingar</translation>
     </message>
@@ -3126,218 +3127,218 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Ekki tiltækt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1129" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1161" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Breyta leiðarsniðum</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1151" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1183" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Uppfærðu leiðarsnið</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1163" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1167" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1188" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1191" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1235" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1195" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1220" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">Uppfærðu svar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1164" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Engir leiðarprófílar eru uppfærðir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1168" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Uppfært % 1 leiðarsnið</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1178" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1210" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Uppfærðu RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1189" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1221" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Mistókst að uppfæra reglusett</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1192" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Reglusett uppfært</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1201" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Uppfærðu RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Skyndiminni reglna er uppfærð</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1250" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Hreinsaðu RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1318" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Virkjaðu AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1688" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1720" />
         <source>Error</source>
         <translation type="unfinished">Villa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1775" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1807" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Stillingum breytt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1776" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1808" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Endurræstu Tun til að taka gildi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1782" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1840" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3009" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3380" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3434" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3713" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3520" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
         <source>Confirmation</source>
         <translation type="unfinished">Staðfesting</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1783" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1841" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1873" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Stillingum breytt, endurræsa proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1844" />
         <source>Settings changed</source>
         <translation type="unfinished">Stillingum breytt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1813" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1845" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Endurræstu forritið til að taka gildi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1856" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Innflutt % 1 prófíl(ar)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Notandi valdi enga réttindakröfu, sumir eiginleikar gætu ekki virka</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2190" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2227" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Vinsamlegast gefðu kjarnarótarréttindi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2544" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2581" />
         <source>Not Running</source>
         <translation type="unfinished">Ekki í gangi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2993" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klóna % 1 atriði</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3027" />
         <source> Confirmation </source>
         <translation type="unfinished">Staðfesting</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2991" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Fjarlægja % 1 atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3060" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3084" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3097" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Afritaði % 1 atriði</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3292" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR kóða fannst ekki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3313" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3350" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Ekki tókst að taka skjáinn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3381" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 ótiltæk atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3435" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Fjarlægja % 1 Ógild atriði ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3521" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Skipta út netföngum lénsþjóns með uppleystum IP-tölum?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3633" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3670" />
         <source>Clear</source>
         <translation type="unfinished">Hreinsa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3704" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3741" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Eyða völdum hópi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3705" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3742" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Breyta völdum hópi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3714" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Remove %1?</source>
         <translation type="unfinished">Fjarlægja % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4455" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
         <source>Cannot start</source>
         <translation type="unfinished">Get ekki byrjað</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4456" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Síðasta niðurhalsbeiðni hefur ekki lokið enn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4490" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Mistókst að hlaða niður uppfærslueignum</translation>
     </message>
@@ -3354,13 +3355,13 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="162" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="488" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Eitthvað er mjög rangt, viðfangsefnið finnst ekki!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="168" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="494" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Gögn prófílstjóra eru skemmd, reyndu aftur.</translation>
     </message>
@@ -3371,7 +3372,7 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="211" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
         <translation type="unfinished">Mistókst að byggja upp prófunarstillingar:</translation>
     </message>
@@ -3391,93 +3392,93 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Prófanir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="307" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="310" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Síðasta hraðaprófið fór ekki alveg út, vinsamlegast bíðið.Ef það er viðvarandi skaltu endurræsa forritið.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="344" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
         <source>Speedtest finished!</source>
         <translation type="unfinished">Hraðaprófi lokið!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="425" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="428" />
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Hætt við prófílhraðapróf</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="513" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="516" />
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] hraðaprófunarvilla: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="522" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="525" />
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Þú þarft að virkja ræna DNS netþjón fyrst</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="536" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="539" />
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Mistókst að stilla kerfisdns:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="588" />
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Tun tækið hegðar sér illa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="586" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ef þú átt í vandræðum með að ræsa VPN geturðu þvingað endurstilla kjarnaferli hér og reyndu síðan að ræsa prófílinn aftur.Villan er % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="590" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
         <source>Reset</source>
         <translation type="unfinished">Endurstilla</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="591" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
         <source>Cancel</source>
         <translation type="unfinished">Hætta við</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="630" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="632" />
         <source>Another profile is starting...</source>
         <translation type="unfinished">Annar prófíll er að byrja...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="639" />
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Annar prófíll er að hætta...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="740" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="660" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ef ekki er svarað í langan tíma er mælt með því að endurræsa hugbúnaðinn.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="672" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
         <source>Starting profile %1</source>
         <translation type="unfinished">Ræsir prófíl % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="676" />
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Mistókst að ræsa prófíl % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="723" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
         <source>Stop return error</source>
         <translation type="unfinished">Stop return villa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="763" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
         <source>Stopping profile %1</source>
         <translation type="unfinished">Stöðvar prófíl % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="767" />
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Ekki tókst að stöðva, vinsamlegast endurræstu forritið.</translation>
     </message>
@@ -3542,37 +3543,37 @@ Fyrir frekari upplýsingar, sjá skjalið "Configuration/DNS".</translation>
         <translation type="unfinished">Ekki er hægt að nota Tun mode með sérsniðnum stillingum</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="859" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Beiðni um áskrift: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="863" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Beiðni um áskrift %1 villa: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="881" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Áskriftarbeiðni lokið: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="888" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="899" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Hreinsar netþjóna...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="893" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Vinnur áskriftargögnum...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="896" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="907" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Ferli lokið, sækir um...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="959" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="970" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3583,17 +3584,17 @@ Eytt % 3 prófílum:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="964" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
         <source>Nothing</source>
         <translation type="unfinished">Ekkert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="967" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="978" />
         <source>Change of %1:</source>
         <translation type="unfinished">Breyting á % 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="225" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="227" />
         <source>Default</source>
         <translation type="unfinished">Sjálfgefið</translation>
     </message>
@@ -3619,14 +3620,13 @@ Eytt % 3 prófílum:
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="336" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="337" />
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <source>Select</source>
         <translation type="unfinished">Veldu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2512" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Umboð: %1
@@ -3690,102 +3690,106 @@ Hvernig á að uppfæra?</translation>
         <translation type="unfinished">Notað: %1 Eftirstöðvar: %2 Rennur út: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="293" />
         <source>Download Profiles</source>
         <translation type="unfinished">Sækja snið</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Beiðni um prófílvillu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="434" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="461" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Eyddi % 1 afritum</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="468" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Eytt % 1 Ógilt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="518" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Eytt % 1 Ekki tiltækt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1567" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Athugaðu reglusett: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1589" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1621" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Villu biðja um reglusett lista: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
         <source>IP address: %1</source>
-        <translation type="unfinished">IP-tala: %1</translation>
+        <translation type="obsolete">IP-tala: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2935" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2586" />
+        <source>Inbound IP: %1</source>
+        <translation type="unfinished">IP á heimleið: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2972" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Færa prófíla í hóp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3078" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
         <source>Config copied</source>
         <translation type="unfinished">Stilling afrituð</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3089" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3126" />
         <source>Copy core config</source>
         <translation type="unfinished">Afritaðu kjarnastillingar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3090" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3127" />
         <source>Copy test config</source>
         <translation type="unfinished">Afritaðu prófunarstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3091" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3128" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="21" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">Allt í lagi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4359" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4437" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4446" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4481" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4518" />
         <source>Update</source>
         <translation type="unfinished">Uppfærsla</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4360" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
         <source>Not official support platform</source>
         <translation type="unfinished">Ekki opinber stuðningsvettvangur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4371" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4408" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Beiðni um uppfærsluvillu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
         <source>No update</source>
         <translation type="unfinished">Engin uppfærsla</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4438" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4475" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3794,17 +3798,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4441" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4478" />
         <source>Close</source>
         <translation type="unfinished">Loka</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4443" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4480" />
         <source>Open in browser</source>
         <translation type="unfinished">Opna í vafra</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4482" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4519" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Uppfærsla er tilbúin, endurræsa til að setja upp?</translation>
     </message>
@@ -3814,7 +3818,7 @@ Release note:
         <translation type="unfinished">Aðgangi hafnað</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="341" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="342" />
         <source>Select a Folder</source>
         <translation type="unfinished">Veldu möppu</translation>
     </message>
@@ -3837,6 +3841,13 @@ Release note:
         <source>Extra Core</source>
         <comment>DialogEditProfile</comment>
         <translation type="obsolete">Auka kjarna</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="151" />
+        <source>Proxy: ⚡%1 📦%3
+Direct: ⚡%2 📦%4</source>
+        <translation type="unfinished">Umboð: ⚡%1 📦%3
+Beint: ⚡%2 📦%4</translation>
     </message>
 </context>
 <context>
@@ -4106,37 +4117,37 @@ Release note:
         <translation type="unfinished">Öryggisstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
         <translation type="unfinished">Læsa aðgerðir</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
         <translation type="unfinished">Læsa stillingar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
         <translation type="unfinished">Læsa ræsingu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
         <translation type="unfinished">Eyða notendum</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
         <translation type="unfinished">Breyta hlutverkum notanda</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
         <translation type="unfinished">Breyta UI lykilorði</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Stilltu proxy-skilríki</translation>
     </message>
@@ -4144,24 +4155,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="214" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="241" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Ógilt JSON fylki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="215" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Ekki er hægt að flokka uppgefið inntak í gilt leiðarreglufylki:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="338" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="365" />
         <source>Fetching information</source>
         <translation type="unfinished">Að sækja upplýsingar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="354" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1310" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
         <source>Download Profiles</source>
         <translation type="unfinished">Sækja snið</translation>
     </message>

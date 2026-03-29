@@ -57,6 +57,7 @@ ADD_LIST(save_position)
 ADD_LIST(save_geometry)
 ADD_LIST(text_under_buttons)
 ADD_LIST(language)
+ADD_LIST(first_start)
 ADD_LIST(manually_column_width)
 ADD_LIST(column_width)
 END_LIST

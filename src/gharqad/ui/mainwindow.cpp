@@ -430,6 +430,14 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
   }
 }
 
+void MainWindow::announcement_message(bool first_start){
+  auto bQueue = createJsUpdaterWindow();
+  QString text = ReadFileText(getResource("announcement_message.js"));
+  if (!text.isEmpty()){
+    jsAnnouncementMessage(bQueue, &text, first_start);
+  }
+};
+
 bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
 
 void MainWindow::set_misc_checkboxes() {
@@ -1543,6 +1551,10 @@ skip_updater_hide:
   }
 #endif
   ui->data_view->setStyleSheet("background: transparent; border: none;");
+
+
+  announcement_message(Configs::windowSettings->first_start);
+  Configs::windowSettings->first_start = false;
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {

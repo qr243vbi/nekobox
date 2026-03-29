@@ -74,7 +74,7 @@ then
 
 if [[ ! -f "libcronet-windows-${NAIVE}.dll" ]]
 then
-wget "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-windows-${NAIVE}.dll"
+curl -L -o "libcronet-windows-${NAIVE}.dll" "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-windows-${NAIVE}.dll"
 fi
 cp "libcronet-windows-${NAIVE}.dll"  "$DEST/libcronet.dll"
 

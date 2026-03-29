@@ -439,7 +439,7 @@
         <translation type="unfinished">सुरक्षा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="937" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
         <source>Disable Privilege request</source>
         <translation type="unfinished">विशेषाधिकार अनुरोध अक्षम करें</translation>
     </message>
@@ -454,12 +454,12 @@
         <translation type="unfinished">डिफ़ॉल्ट रूप से टीएलएस प्रमाणपत्र प्रमाणीकरण छोड़ें (असुरक्षित अनुमति दें)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="990" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="996" />
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">डिफ़ॉल्ट यूटीएलएस फ़िंगरप्रिंट</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;जब तक स्पष्ट रूप से अनुरोध न किया जाए, व्यवस्थापक के रूप में प्रारंभ करने का प्रयास न करें&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -474,184 +474,184 @@
         <translation type="unfinished">आईपीसी के लिए यूडीएस का प्रयोग करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950" />
         <source>Always Start as Standard User</source>
         <translation type="unfinished">हमेशा मानक उपयोगकर्ता के रूप में प्रारंभ करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1037" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1046" />
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">कॉन्फ़िगरेशन के लिए बाइनरी के बजाय Json का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1044" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">प्रोफ़ाइल हटाने के लिए कहें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1061" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
         <source>Auto-Testing</source>
         <translation type="unfinished">ऑटो परीक्षण</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1076" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">पृष्ठभूमि में स्वचालित रूप से प्रॉक्सी का परीक्षण करें और कार्यशील प्रॉक्सी का एक पूल बनाए रखें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">स्वतः-परीक्षण सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">परीक्षण अंतराल (सेकंड)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1084" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">परीक्षण चक्र कितनी बार चलाना है</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">प्रति चक्र प्रॉक्सी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">प्रत्येक चक्र में परीक्षण करने के लिए प्रॉक्सी की संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1132" />
         <source>Working Pool Size</source>
         <translation type="unfinished">कार्यशील पूल का आकार</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">बनाए रखने के लिए सत्यापित कार्यशील प्रॉक्सी की अधिकतम संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1155" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">विलंबता सीमा (एमएस)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">किसी प्रॉक्सी को कार्यशील मानने के लिए अधिकतम विलंबता</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1172" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1181" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">विफलता पुनः प्रयास गणना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">किसी प्रॉक्सी को विफल मानने से पहले पुनः प्रयास करने के प्रयासों की संख्या</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1204" />
         <source>Test Target URL</source>
         <translation type="unfinished">लक्ष्य URL का परीक्षण करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">प्रॉक्सी का परीक्षण करने के लिए यूआरएल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1214" />
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN मोड प्रॉक्सी विफल होने पर स्वचालित रूप से किसी अन्य कार्यशील प्रॉक्सी पर स्विच करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1215" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN फ़ेलओवर सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1223" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232" />
         <source>Startup</source>
         <translation type="unfinished">चालू होना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1296" />
         <source>Geometry</source>
         <translation type="unfinished">ज्यामिति</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1325" />
         <source>Autosave geometry</source>
         <translation type="unfinished">स्वतः सहेजें ज्यामिति</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332" />
         <source>Autosave position</source>
         <translation type="unfinished">स्वतः सहेजें स्थिति</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1352" />
         <source>Apply now</source>
         <translation type="unfinished">अभी अप्लाई करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426" />
         <source>Width</source>
         <translation type="unfinished">चौड़ाई</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1469" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
         <source>X</source>
         <translation type="unfinished">एक्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1502" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458" />
         <source>Y</source>
         <translation type="unfinished">वाई</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526" />
         <source>Height</source>
         <translation type="unfinished">ऊंचाई</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1623" />
         <source>Core Executable Path</source>
         <translation type="unfinished">कोर निष्पादन योग्य पथ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1631" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1805" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1652" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1841" />
         <source>Use default</source>
         <translation type="unfinished">डिफ़ॉल्ट उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1638" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659" />
         <source>Remote Control</source>
         <translation type="unfinished">रिमोट कंट्रोल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1664" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1838" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1685" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1874" />
         <source>Select</source>
         <translation type="unfinished">चुनना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1776" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
         <source>Resources Directory</source>
         <translation type="unfinished">संसाधन निर्देशिका</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848" />
         <source>Resource Manager</source>
         <translation type="unfinished">संसाधन प्रबंधक</translation>
     </message>
@@ -669,79 +669,79 @@
         <translation type="unfinished">सामान्य</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="102" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105" />
         <source>Name</source>
         <translation type="unfinished">नाम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="109" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112" />
         <source>Type</source>
         <translation type="unfinished">प्रकार</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="117" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120" />
         <source>Basic</source>
         <translation type="unfinished">बुनियादी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="122" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="287" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293" />
         <source>Subscription</source>
         <translation type="unfinished">सदस्यता</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="135" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138" />
         <source>Manually column width</source>
         <translation type="unfinished">मैन्युअल रूप से कॉलम की चौड़ाई</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="142" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Archive</source>
         <translation type="unfinished">पुरालेख</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158" />
         <source>Proxy</source>
         <translation type="unfinished">प्रतिनिधि</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="194" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="221" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224" />
         <source>None</source>
         <translation type="unfinished">कोई नहीं</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="201" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204" />
         <source>Front Proxy</source>
         <translation type="unfinished">फ्रंट प्रॉक्सी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211" />
         <source>Landing Proxy</source>
         <translation type="unfinished">लैंडिंग प्रॉक्सी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="232" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Share</source>
         <translation type="unfinished">शेयर करना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="238" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241" />
         <source>Copy profile share links</source>
         <translation type="unfinished">प्रोफ़ाइल शेयर लिंक कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="245" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248" />
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">प्रोफ़ाइल शेयर लिंक कॉपी करें (कस्टम लिंक)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="253" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256" />
         <source>Notes</source>
         <translation type="unfinished">टिप्पणियाँ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="314" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320" />
         <source>Skip automatic update</source>
         <translation type="unfinished">स्वचालित अद्यतन छोड़ें</translation>
     </message>
@@ -891,7 +891,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="753" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">इस समूह में सेटिंग लागू करें</translation>
     </message>
@@ -927,7 +927,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="683" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="684" />
         <source>Certificate</source>
         <translation type="unfinished">प्रमाणपत्र</translation>
     </message>
@@ -948,7 +948,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="694" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="695" />
         <source>ECH Config</source>
         <translation type="unfinished">ईसीएच कॉन्फिग</translation>
     </message>
@@ -1046,25 +1046,25 @@
         <translation type="obsolete">कस्टम (%1 कॉन्फ़िगरेशन)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="641" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="646" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="642" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="665" />
         <source>Not set</source>
         <translation type="unfinished">सेट नहीं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="643" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="648" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="653" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="644" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="667" />
         <source>Already set</source>
         <translation type="unfinished">पहले से ही सेट है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="724" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
         <source>Confirm</source>
         <translation type="unfinished">पुष्टि करना</translation>
     </message>
@@ -1077,22 +1077,22 @@
         <translation type="unfinished">समूह Group2 के लिए लैंडिंग प्रॉक्सी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
         <translation type="unfinished">प्रॉक्सी:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="48" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
         <translation type="unfinished">खोज:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="68" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
         <translation type="unfinished">समूह1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="74" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
         <translation type="unfinished">समूह2</translation>
     </message>
@@ -2457,50 +2457,50 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">उपयोग सांख्यिकी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">यातायात सांख्यिकी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="214" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="443" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">कुल प्रॉक्सी ट्रैफ़िक:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="54" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="77" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="94" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="100" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="127" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="158" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="201" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="224" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="244" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="152" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="252" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="259" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="266" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="312" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="319" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="326" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="372" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="379" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="386" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="435" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="442" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="449" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="477" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="506" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="375" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="382" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="389" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="423" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="430" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="453" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="496" />
         <source>TextLabel</source>
         <translation type="unfinished">पाठलेबल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="460" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">कुल प्रत्यक्ष यातायात:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="465" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
         <source>Security Statistics</source>
         <translation type="unfinished">सुरक्षा सांख्यिकी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="270" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
         <source>Profile Statistics</source>
         <translation type="unfinished">प्रोफ़ाइल सांख्यिकी</translation>
     </message>
@@ -2510,75 +2510,75 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">उपयोग के समय:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="84" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
         <source>Last launch time:</source>
         <translation type="unfinished">अंतिम लॉन्च समय:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="101" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="107" />
         <source>First launch time:</source>
         <translation type="unfinished">प्रथम प्रक्षेपण समय:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="90" />
         <source>Start count:</source>
         <translation type="unfinished">प्रारंभ गिनती:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="237" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="476" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="489" />
         <source>Download:</source>
         <translation type="unfinished">डाउनलोड करना:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="257" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="509" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="522" />
         <source>Upload:</source>
         <translation type="unfinished">अपलोड करें:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">प्रॉक्सी प्रोफाइल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="352" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="415" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="355" />
         <source>Deleted</source>
         <translation type="unfinished">हटाए गए</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="362" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="425" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="232" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="365" />
         <source>Exists</source>
         <translation type="unfinished">मौजूद है</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="342" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="242" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="345" />
         <source>Created</source>
         <translation type="unfinished">बनाया था</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">समूह और सदस्यताएँ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="396" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
         <source>Route Profiles</source>
         <translation type="unfinished">रूट प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="490" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">विफल प्रमाणीकरण गिनती:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="519" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
         <source>Users count:</source>
         <translation type="unfinished">उपयोगकर्ताओं की संख्या:</translation>
     </message>
@@ -2596,51 +2596,51 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="29" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="35" />
         <source>NekoBox</source>
         <translation type="unfinished">नेकोबॉक्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="51" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="54" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="57" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="610" />
         <source>Profiles</source>
         <translation type="unfinished">प्रोफाइल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="73" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="76" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="79" />
         <source>Settings</source>
         <translation type="unfinished">सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="98" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="101" />
         <source>Routing</source>
         <translation type="unfinished">मार्ग</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="117" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="120" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="123" />
         <source>Update</source>
         <translation type="unfinished">अद्यतन</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="150" />
         <source>Tun Mode</source>
         <translation type="unfinished">ट्यून मोड</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="154" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="157" />
         <source>System DNS</source>
         <translation type="unfinished">सिस्टम डीएनएस</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="161" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="594" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2568" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2571" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="164" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="579" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2605" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2608" />
         <source>System Proxy</source>
         <translation type="unfinished">सिस्टम प्रॉक्सी</translation>
     </message>
@@ -2649,103 +2649,103 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">यूआरएल परीक्षण</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="306" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="140" />
         <source>Type</source>
         <translation type="unfinished">प्रकार</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="311" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="143" />
         <source>Address</source>
         <translation type="unfinished">पता</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="316" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="146" />
         <source>Name</source>
         <translation type="unfinished">नाम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="292" />
         <source>Test Result</source>
         <translation type="unfinished">परीक्षा परिणाम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="326" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="486" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468" />
         <source>Traffic</source>
         <translation type="unfinished">ट्रैफ़िक</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="391" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="373" />
         <source>Logs</source>
         <translation type="unfinished">लॉग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="408" />
         <source>Connections</source>
         <translation type="unfinished">कनेक्शन</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="436" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">गंतव्य (डोमेन)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="457" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="439" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">सॉर्टिंग अक्षम करने के लिए क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="462" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="444" />
         <source>Process</source>
         <translation type="unfinished">प्रक्रिया</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="465" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="447" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">प्रक्रिया के अनुसार क्रमबद्ध करने के लिए क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="452" />
         <source>Protocol</source>
         <translation type="unfinished">शिष्टाचार</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="473" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="455" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">प्रोटोकॉल के अनुसार क्रमबद्ध करने के लिए क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="478" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460" />
         <source>Outbound</source>
         <translation type="unfinished">आउटबाउंड</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="481" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="463" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">आउटबाउंड के अनुसार क्रमबद्ध करने के लिए क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="471" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">ट्रैफ़िक के आधार पर क्रमबद्ध करने के लिए टॉगल पर क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="480" />
         <source>Traffic Graph</source>
         <translation type="unfinished">यातायात ग्राफ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="575" />
         <source>Program</source>
         <translation type="unfinished">कार्यक्रम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="613" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="599" />
         <source>Preferences</source>
         <translation type="unfinished">प्राथमिकताएँ</translation>
     </message>
@@ -2754,7 +2754,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">सर्वर</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624" />
         <source>Share</source>
         <translation type="unfinished">शेयर करना</translation>
     </message>
@@ -2763,223 +2763,224 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">वर्तमान समूह</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="700" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="234" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="686" />
         <source>Test</source>
         <translation type="unfinished">परीक्षा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
         <source>Current Selected</source>
         <translation type="unfinished">वर्तमान चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="628" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
         <source>Current Group</source>
         <translation type="unfinished">वर्तमान समूह</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="669" />
         <source>Hidden menu</source>
         <translation type="unfinished">छिपा हुआ मेनू</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="681" />
         <source>Routing Menu</source>
         <translation type="unfinished">रूटिंग मेनू</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
         <source>Context</source>
         <translation type="unfinished">प्रसंग</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="697" />
         <source>ContextProfiles</source>
         <translation type="unfinished">प्रसंग प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
         <source>Exit</source>
         <translation type="unfinished">बाहर निकलना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717" />
         <source>Toggle Window</source>
         <translation type="unfinished">विंडो टॉगल करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="722" />
         <source>Basic Settings</source>
         <translation type="unfinished">बुनियादी सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="741" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727" />
         <source>New profile</source>
         <translation type="unfinished">नई प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="746" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
         <source>Groups</source>
         <translation type="unfinished">समूह</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="751" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3636" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3646" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Start</source>
         <translation type="unfinished">शुरू</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="759" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3635" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3646" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="745" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3672" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Stop</source>
         <translation type="unfinished">रुकना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="767" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="753" />
         <source>Edit</source>
         <translation type="unfinished">संपादन करना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="761" />
         <source>Routing Settings</source>
         <translation type="unfinished">रूटिंग सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">क्लिपबोर्ड से प्रोफ़ाइल जोड़ें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="788" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774" />
         <source>Delete</source>
         <translation type="unfinished">मिटाना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="782" />
         <source>Debug Info</source>
         <translation type="unfinished">डीबग जानकारी</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="787" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR कोड और लिंक</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795" />
         <source>Copy Link</source>
         <translation type="unfinished">लिंक की प्रतिलिपि करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1071" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
         <source>Clear Test Result</source>
         <translation type="unfinished">स्पष्ट परीक्षा परिणाम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="838" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1474" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1506" />
         <source>Export %1 config</source>
         <translation type="unfinished">निर्यात% 1 कॉन्फिग</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="846" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="832" />
         <source>Reset Traffic</source>
         <translation type="unfinished">ट्रैफ़िक रीसेट करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="854" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840" />
         <source>Scan QR Code</source>
         <translation type="unfinished">स्कैन क्यू आर कोड</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="862" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="848" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">सिस्टम प्रॉक्सी सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="870" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="856" />
         <source>Disable</source>
         <translation type="unfinished">अक्षम करना</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="875" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="861" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">डुप्लिकेट हटाएँ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="883" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="960" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="968" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="869" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="946" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="954" />
         <source>fake</source>
         <translation type="unfinished">नकली</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="891" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="877" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148" />
         <source>Move</source>
         <translation type="unfinished">कदम</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="888" />
         <source>Start with system</source>
         <translation type="unfinished">सिस्टम से शुरुआत करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="896" />
         <source>Remember last profile</source>
         <translation type="unfinished">अंतिम प्रोफ़ाइल याद रखें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="904" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">अन्य डिवाइस को कनेक्ट करने की अनुमति दें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="923" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="909" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">अनुपलब्ध को हटा दें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="931" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="917" />
         <source>Full Test</source>
         <translation type="unfinished">पूर्ण परीक्षा</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="925" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">हॉटकी सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="930" />
         <source>Select All</source>
         <translation type="unfinished">सबका चयन करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="938" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">कस्टम लिंक कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="976" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="962" />
         <source>Copy links</source>
         <translation type="unfinished">लिंक कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1060" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1046" />
         <source>Url Test</source>
         <translation type="unfinished">यूआरएल परीक्षण</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1079" />
         <source>Resolve Domain</source>
         <translation type="unfinished">डोमेन का समाधान करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1161" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1166" />
         <source>Information</source>
         <translation type="unfinished">जानकारी</translation>
     </message>
@@ -2992,48 +2993,48 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">चयनित के लिंक कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="973" />
         <source>Enable Tun</source>
         <translation type="unfinished">ट्यून सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="992" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2992" />
         <source>Clone</source>
         <translation type="unfinished">क्लोन</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1000" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="986" />
         <source>Update subscription</source>
         <translation type="unfinished">सदस्यता अद्यतन करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="997" />
         <source>Resolve domain</source>
         <translation type="unfinished">डोमेन का समाधान करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1005" />
         <source>Tun Settings</source>
         <translation type="unfinished">सेटिंग्स ट्यून करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1010" />
         <source>Restart Program</source>
         <translation type="unfinished">प्रोग्राम पुनः आरंभ करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1029" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1015" />
         <source>Open Config Folder</source>
         <translation type="unfinished">कॉन्फ़िग फ़ोल्डर खोलें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1050" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1036" />
         <source>Restart Proxy</source>
         <translation type="unfinished">प्रॉक्सी पुनः प्रारंभ करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1055" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1041" />
         <source>Stop Testing</source>
         <translation type="unfinished">परीक्षण बंद करो</translation>
     </message>
@@ -3050,7 +3051,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">स्पष्ट परीक्षण परिणाम चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1082" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1068" />
         <source>Url Test Group</source>
         <translation type="unfinished">यूआरएल परीक्षण समूह</translation>
     </message>
@@ -3063,7 +3064,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">चयनित डोमेन का समाधान करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1101" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1087" />
         <source>Remove Invalid</source>
         <translation type="unfinished">अमान्य हटाएँ</translation>
     </message>
@@ -3076,58 +3077,58 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">प्रबंधक खोलें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Speedtest Current</source>
         <translation type="unfinished">स्पीडटेस्ट करंट</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
         <source>Full test Selected</source>
         <translation type="unfinished">पूर्ण परीक्षण चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1117" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1103" />
         <source>Download test Selected</source>
         <translation type="unfinished">डाउनलोड परीक्षण चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1122" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1108" />
         <source>Upload test Selected</source>
         <translation type="unfinished">परीक्षण अपलोड करें चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113" />
         <source>Country test Selected</source>
         <translation type="unfinished">देश परीक्षण चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1132" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">सरल डाउनलोड परीक्षण चयनित</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123" />
         <source>Speedtest Group</source>
         <translation type="unfinished">स्पीडटेस्ट ग्रुप</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1142" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128" />
         <source>Hide window</source>
         <translation type="unfinished">विंडो छिपाएँ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
         <source>Add profile from File</source>
         <translation type="unfinished">फ़ाइल से प्रोफ़ाइल जोड़ें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3665" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3702" />
         <source>Add new Group</source>
         <translation type="unfinished">नया समूह जोड़ें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
         <source>Security Settings</source>
         <translation type="unfinished">सुरक्षा सेटिंग्स</translation>
     </message>
@@ -3138,218 +3139,218 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1129" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1161" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">रूटिंग प्रोफ़ाइल संपादित करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1151" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1183" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">रूटिंग प्रोफ़ाइल अपडेट करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1163" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1167" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1188" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1191" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1235" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1195" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1220" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
         <source>Update Response</source>
         <translation type="unfinished">अद्यतन प्रतिक्रिया</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1164" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">कोई रूटिंग प्रोफ़ाइल अपडेट नहीं की गई है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1168" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">अपडेट किया गया %1 रूटिंग प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1178" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1210" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">रूलसेट मैप को अपडेट करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1189" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1221" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">नियम-सेट अद्यतन करने में विफल</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1192" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">नियम-सेट सफलतापूर्वक अपडेट किए गए</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1201" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">रूलसेट कैश अपडेट करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">रूल्ससेट कैश अपडेट किया गया है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1250" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">रूलसेट कैश साफ़ करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1318" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">एडब्लॉक सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1688" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1720" />
         <source>Error</source>
         <translation type="unfinished">गलती</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1775" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1807" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">ट्यून सेटिंग्स बदल गईं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1776" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1808" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">प्रभावी होने के लिए ट्यून को पुनरारंभ करें।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1782" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1840" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3009" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3380" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3434" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3713" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3520" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
         <source>Confirmation</source>
         <translation type="unfinished">पुष्टीकरण</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1783" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1841" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1873" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">सेटिंग्स बदल गईं, प्रॉक्सी पुनः प्रारंभ करें?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1844" />
         <source>Settings changed</source>
         <translation type="unfinished">सेटिंग्स बदल गईं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1813" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1845" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">प्रभावी होने के लिए प्रोग्राम को पुनरारंभ करें।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1856" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">आयातित % 1 प्रोफ़ाइल(एँ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">उपयोगकर्ता ने बिना किसी विशेषाधिकार अनुरोध के विकल्प चुना, हो सकता है कि कुछ सुविधाएं काम न करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2190" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2227" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">कृपया मूल रूट विशेषाधिकार दें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2544" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2581" />
         <source>Not Running</source>
         <translation type="unfinished">नहीं चल रहा है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2993" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 आइटम क्लोन करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3027" />
         <source> Confirmation </source>
         <translation type="unfinished">पुष्टीकरण</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2991" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 आइटम हटाएँ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 आइटम हटाएँ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3060" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3084" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3097" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">कॉपी किया गया % 1 आइटम</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3292" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR कोड नहीं मिला</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3313" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3350" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">स्क्रीन कैप्चर करने में असमर्थ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3381" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 अनुपलब्ध वस्तु(ओं) को हटाएँ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3435" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1अमान्य आइटम हटाएं?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3521" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">डोमेन सर्वर पते को उनके समाधानित आईपी से बदलें?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3633" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3670" />
         <source>Clear</source>
         <translation type="unfinished">स्पष्ट</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3704" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3741" />
         <source>Delete selected Group</source>
         <translation type="unfinished">चयनित समूह हटाएँ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3705" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3742" />
         <source>Edit selected Group</source>
         <translation type="unfinished">चयनित समूह संपादित करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3714" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Remove %1?</source>
         <translation type="unfinished">%1 हटाएँ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4455" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
         <source>Cannot start</source>
         <translation type="unfinished">प्रारंभ नहीं हो सकता</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4456" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">अंतिम डाउनलोड अनुरोध अभी तक समाप्त नहीं हुआ है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4490" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">अद्यतन परिसंपत्तियाँ डाउनलोड करने में विफल</translation>
     </message>
@@ -3366,13 +3367,13 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="162" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="488" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="491" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">कुछ बहुत ग़लत है, विषय नहीं मिल सका!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="168" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="494" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">प्रोफ़ाइल प्रबंधक डेटा दूषित है, पुनः प्रयास करें।</translation>
     </message>
@@ -3383,7 +3384,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="211" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="321" />
         <source>Failed to build test config: </source>
         <translation type="unfinished">परीक्षण कॉन्फ़िगरेशन बनाने में विफल:</translation>
     </message>
@@ -3403,93 +3404,93 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">परीक्षण</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="307" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="310" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">अंतिम गति परीक्षण पूरी तरह से समाप्त नहीं हुआ, कृपया प्रतीक्षा करें।यदि यह बनी रहती है, तो कृपया प्रोग्राम को पुनरारंभ करें।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="344" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
         <source>Speedtest finished!</source>
         <translation type="unfinished">स्पीडटेस्ट समाप्त!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="425" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="428" />
         <source>Profile speed test aborted</source>
         <translation type="unfinished">प्रोफ़ाइल गति परीक्षण निरस्त किया गया</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="513" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="516" />
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] गति परीक्षण त्रुटि: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="522" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="525" />
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">आपको पहले हाईजैक DNS सर्वर को सक्षम करना होगा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="536" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="539" />
         <source>Failed to set system dns: </source>
         <translation type="unfinished">सिस्टम डीएनएस सेट करने में विफल:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="588" />
         <source>Tun device misbehaving</source>
         <translation type="unfinished">तुन डिवाइस दुर्व्यवहार कर रहा है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="586" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">यदि आपको वीपीएन शुरू करने में परेशानी हो रही है, तो आप यहां कोर प्रक्रिया को बलपूर्वक रीसेट कर सकते हैं और फिर प्रोफ़ाइल को फिर से शुरू करने का प्रयास कर सकते हैं।त्रुटि %1 है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="590" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
         <source>Reset</source>
         <translation type="unfinished">रीसेट करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="591" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
         <source>Cancel</source>
         <translation type="unfinished">रद्द करना</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="630" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="632" />
         <source>Another profile is starting...</source>
         <translation type="unfinished">एक और प्रोफ़ाइल शुरू हो रही है...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="639" />
         <source>Another profile is stopping...</source>
         <translation type="unfinished">एक अन्य प्रोफ़ाइल रुक रही है...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="740" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="660" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">यदि लंबे समय तक कोई प्रतिक्रिया नहीं मिलती है, तो सॉफ़्टवेयर को पुनरारंभ करने की अनुशंसा की जाती है।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="672" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
         <source>Starting profile %1</source>
         <translation type="unfinished">प्रारंभ प्रोफ़ाइल %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="676" />
         <source>Failed to start profile %1</source>
         <translation type="unfinished">प्रोफ़ाइल%1 प्रारंभ करने में विफल</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="723" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
         <source>Stop return error</source>
         <translation type="unfinished">वापसी त्रुटि रोकें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="763" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
         <source>Stopping profile %1</source>
         <translation type="unfinished">प्रोफ़ाइल%1 रोक रहा है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="767" />
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">रोकने में विफल, कृपया प्रोग्राम पुनः प्रारंभ करें।</translation>
     </message>
@@ -3554,37 +3555,37 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">कस्टम कॉन्फ़िगरेशन के साथ ट्यून मोड का उपयोग नहीं किया जा सकता है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="859" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">सदस्यता का अनुरोध: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="863" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">सदस्यता का अनुरोध %1 त्रुटि: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="881" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">सदस्यता अनुरोध समाप्त: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="888" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="899" />
         <source>Clearing servers...</source>
         <translation type="unfinished">सर्वर साफ़ किया जा रहा है...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="893" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">सदस्यता डेटा संसाधित किया जा रहा है...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="896" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="907" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">प्रक्रिया पूरी, आवेदन...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="959" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="970" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3595,17 +3596,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="964" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
         <source>Nothing</source>
         <translation type="unfinished">कुछ नहीं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="967" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="978" />
         <source>Change of %1:</source>
         <translation type="unfinished">%1 का परिवर्तन:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="225" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="227" />
         <source>Default</source>
         <translation type="unfinished">गलती करना</translation>
     </message>
@@ -3631,14 +3632,13 @@ Deleted %3 Profiles:
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="336" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="337" />
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
         <source>Select</source>
         <translation type="unfinished">चुनना</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="115" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2512" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">प्रॉक्सी: %1
@@ -3702,102 +3702,106 @@ How to update?</source>
         <translation type="unfinished">प्रयुक्त: %1 शेष: %2 समाप्ति: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="293" />
         <source>Download Profiles</source>
         <translation type="unfinished">प्रोफ़ाइल डाउनलोड करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">प्रोफ़ाइल का अनुरोध करने में त्रुटि: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="434" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="461" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 डुप्लिकेट हटाये गये</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="468" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">हटाया गया%1अमान्य</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="518" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">हटाया गया %1 अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1567" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">नियम सेट जांचें: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1589" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1621" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">नियम-सेट सूची त्रुटि का अनुरोध: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2549" />
         <source>IP address: %1</source>
-        <translation type="unfinished">आईपी ​​पता: %1</translation>
+        <translation type="obsolete">आईपी ​​पता: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2935" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2586" />
+        <source>Inbound IP: %1</source>
+        <translation type="unfinished">इनबाउंड आईपी: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2972" />
         <source>Move profiles to group</source>
         <translation type="unfinished">प्रोफ़ाइल को समूह में ले जाएं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3078" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
         <source>Config copied</source>
         <translation type="unfinished">कॉन्फ़िग कॉपी किया गया</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3089" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3126" />
         <source>Copy core config</source>
         <translation type="unfinished">कोर कॉन्फ़िगरेशन कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3090" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3127" />
         <source>Copy test config</source>
         <translation type="unfinished">परीक्षण कॉन्फ़िगरेशन कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3091" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3128" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="21" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
         <source>OK</source>
         <translation type="unfinished">ठीक है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4359" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4437" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4446" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4481" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4518" />
         <source>Update</source>
         <translation type="unfinished">अद्यतन</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4360" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
         <source>Not official support platform</source>
         <translation type="unfinished">आधिकारिक समर्थन मंच नहीं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4371" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4408" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">अद्यतन अनुरोध त्रुटि: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4451" />
         <source>No update</source>
         <translation type="unfinished">कोई अपडेट नहीं</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4438" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4475" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3806,17 +3810,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4441" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4478" />
         <source>Close</source>
         <translation type="unfinished">बंद करना</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4443" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4480" />
         <source>Open in browser</source>
         <translation type="unfinished">ब्राउज़र में खोलें</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4482" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4519" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">अपडेट तैयार है, इंस्टॉल करने के लिए पुनरारंभ करें?</translation>
     </message>
@@ -3826,7 +3830,7 @@ Release note:
         <translation type="unfinished">पहुंच अस्वीकृत</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="341" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="342" />
         <source>Select a Folder</source>
         <translation type="unfinished">एक फ़ोल्डर चुनें</translation>
     </message>
@@ -3849,6 +3853,13 @@ Release note:
         <source>Extra Core</source>
         <comment>DialogEditProfile</comment>
         <translation type="obsolete">अतिरिक्त कोर</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="151" />
+        <source>Proxy: ⚡%1 📦%3
+Direct: ⚡%2 📦%4</source>
+        <translation type="unfinished">प्रॉक्सी: ⚡%1 📦%3
+प्रत्यक्ष: ⚡%2 📦%4</translation>
     </message>
 </context>
 <context>
@@ -4118,37 +4129,37 @@ Release note:
         <translation type="unfinished">सुरक्षा सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="62" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
         <translation type="unfinished">क्रियाएँ लॉक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="69" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
         <translation type="unfinished">सेटिंग्स लॉक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="76" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
         <translation type="unfinished">स्टार्टअप लॉक करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="113" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
         <translation type="unfinished">उपयोगकर्ताओं को हटाएँ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="120" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
         <translation type="unfinished">उपयोगकर्ता भूमिकाएँ संपादित करें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="163" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
         <translation type="unfinished">यूआई पासवर्ड बदलें</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="170" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">प्रॉक्सी क्रेडेंशियल सेट करें</translation>
     </message>
@@ -4156,24 +4167,24 @@ Release note:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="214" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="241" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">अमान्य JSON सारणी</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="215" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">प्रदत्त इनपुट को वैध रूट नियम सरणी में पार्स नहीं किया जा सकता:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="338" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="365" />
         <source>Fetching information</source>
         <translation type="unfinished">जानकारी प्राप्त की जा रही है</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="354" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1310" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
         <source>Download Profiles</source>
         <translation type="unfinished">प्रोफ़ाइल डाउनलोड करें</translation>
     </message>

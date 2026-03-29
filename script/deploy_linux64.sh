@@ -42,7 +42,10 @@ fi
 pushd "$SRC_ROOT"
 
 #### copy srslist ####
-[[ -f srslist.json ]] || wget -c https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json
+if [[ ! -f srslist.json ]]
+then
+curl -fLso srslist.json "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+fi
 cp srslist.json "$DEST/srslist.json"
 
 #### copy binary ####
@@ -53,7 +56,7 @@ then
 
 if [[ ! -f "libcronet-linux-${ARCH}.so" ]]
 then
-wget "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-linux-${ARCH}.so"
+curl -L -o "libcronet-linux-${ARCH}.so" "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-linux-${ARCH}.so"
 fi
 cp "libcronet-linux-${ARCH}.so"  "$DEST/libcronet.so"
 
@@ -75,14 +78,14 @@ then
 #  APPIMAGE_EXTRA_ARGS=()
 fi
 ## else
-  [[ -f runtime-${ARCH1} ]]  || wget -c https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}  
+  [[ -f runtime-${ARCH1} ]]  || curl -L -o "runtime-${ARCH1}" https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${ARCH1}  
   APPIMAGE_EXTRA_ARGS=(--runtime-file "$CURDIR/runtime-${ARCH1}")
 #fi
 
 
-[[ -x linuxdeploy-$ARCH2.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$ARCH2.AppImage
-[[ -x linuxdeploy-plugin-qt-$ARCH2.AppImage ]] || wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-$ARCH2.AppImage
-[[ -x appimagetool-${ARCH1}.AppImage ]] || wget -c https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage
+[[ -x linuxdeploy-$ARCH2.AppImage ]] || curl -L -o "linuxdeploy-$ARCH2.AppImage" https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$ARCH2.AppImage
+[[ -x linuxdeploy-plugin-qt-$ARCH2.AppImage ]] || curl -L -o "linuxdeploy-plugin-qt-$ARCH2.AppImage" https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-$ARCH2.AppImage
+[[ -x appimagetool-${ARCH1}.AppImage ]] || curl -L -o "appimagetool-$ARCH1.AppImage " https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH1}.AppImage
 chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"

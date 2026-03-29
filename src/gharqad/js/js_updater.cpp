@@ -366,3 +366,18 @@ bool jsUpdater( JsUpdaterWindow* factory,
 
     return true;
 };
+
+
+bool jsAnnouncementMessage(
+    JsUpdaterWindow * factory,
+    QString * updater_js,
+    bool first_start
+){
+    QJSEngine ctx;
+    ctx.globalObject().setProperty("first_start", first_start);
+
+    if (!jsInit(&ctx, updater_js, factory)){
+        return false;
+    };
+    return true;
+};
