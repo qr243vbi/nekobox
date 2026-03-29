@@ -45,4 +45,5 @@ RUN apt-get install -y file
 RUN apt-get install -y mesa-utils libegl1-mesa-dev libgl1-mesa-dev libglu1-mesa-dev
 RUN apt-get install -y --no-install-recommends qmake6
 
-CMD ["bash", "-c", "/app/script/build_docker.sh"]
+WORKDIR "/app"
+CMD ["bash", "-x", "/app/script/build_docker.sh"]
