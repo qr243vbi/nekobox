@@ -26,7 +26,7 @@ if os.path.exists('nekobox.changes'):
  f=open('nekobox.changes', 'r')
  text=f.read()
  f.close()
-msg='${MESSAGE}'
+msg='''${MESSAGE}'''
 import textwrap
 if len(msg) > 0 and 'Update to ${pkgver}' not in text:
  msg = textwrap.fill(msg, 65)
