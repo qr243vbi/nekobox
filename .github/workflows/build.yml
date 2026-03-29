@@ -459,7 +459,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          gh release upload '$INPUT_VERSION' ./deployment/* --clobber
+          gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
