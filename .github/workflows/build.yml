@@ -280,12 +280,12 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.10.2
+            qt_version: 6.11.0
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-latest
             target: x86_64
-            qt_version: 6.10.2
+            qt_version: 6.11.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-latest
