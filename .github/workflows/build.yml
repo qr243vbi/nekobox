@@ -479,13 +479,13 @@ jobs:
           url: https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${{ matrix.target2 }}.AppImage
           destination: linuxdeploy-${{ matrix.target2 }}.AppImage
 
-      - name: Download linuxdeploy
+      - name: Download linuxdeploy-plugin-qt
         uses: ethanjli/cached-download-action@main
         with:
           url: https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${{ matrix.target2 }}.AppImage
           destination: linuxdeploy-plugin-qt-${{ matrix.target2 }}.AppImage
 
-      - name: Download linuxdeploy
+      - name: Download appimagetool
         uses: ethanjli/cached-download-action@main
         with:
           url: https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${{ matrix.target1 }}.AppImage
