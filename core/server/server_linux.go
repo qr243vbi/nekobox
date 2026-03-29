@@ -20,7 +20,7 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	return out, nil
 }
 
-func runAdmin(_port *int, _debug *bool) (int, error) {
+func runAdmin(_port *int, _debug *bool, addr *string, sock *string) (int, error) {
 	return 0, nil
 }
 

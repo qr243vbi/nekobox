@@ -440,7 +440,7 @@ if (MSVC)
     endif()
 endif()
 
-qt_finalize_executable(nekobox)
+#qt_finalize_executable(nekobox)
 
 if (UNIX)
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")

@@ -173,7 +173,7 @@ func main() {
 		if *_admin {
 			elevated, _ := isElevated()
 			if !elevated {
-				code, err := runAdmin(_port, _debug)
+				code, err := runAdmin(_port, _debug, _addr, _sock)
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
 				}
