@@ -16,7 +16,7 @@ namespace Configs {
         explicit HttpBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
              stream = std::make_shared<V2rayStreamSettings>();
         }
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("username", username, string);
             ADD_MAP("password", password, string);
             ADD_MAP("stream", stream, jsonStore);

@@ -209,6 +209,7 @@ set(PROJECT_SOURCES
         ${NYXARIA}/ui/mainwindow.h
         ${NYXARIA}/ui/mainwindow.ui
         ${NYXARIA}/ui/info/main.ui
+        ${NYXARIA}/ui/info/info.h
         ${NYXARIA}/ui/profile/edit_shadowtls.ui
         ${NYXARIA}/ui/profile/dialog_edit_profile.h
         ${GHARQAD}/ui/profile/dialog_edit_profile.cpp

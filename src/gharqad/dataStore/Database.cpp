@@ -24,6 +24,8 @@ namespace Configs {
         return "nekobox.cfg";
         case DefaultRoute:
         return "default_route_profile.cfg";
+        case TrafficLooper:
+        return "traffic_looper.cfg";
     default:
         return "";
     }

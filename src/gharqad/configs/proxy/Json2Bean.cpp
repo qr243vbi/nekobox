@@ -4,7 +4,7 @@
 
 namespace Configs
 {
-    static void initialize_entity(Configs::ProxyEntity * entity, const QJsonObject & obj){
+    static void add_default_fields(Configs::ProxyEntity * entity, const QJsonObject & obj){
         entity->name = obj["tag"].toString();
         entity->serverAddress = obj["server"].toString();
         entity->serverPort = obj["server_port"].toInt();
@@ -125,7 +125,7 @@ namespace Configs
             password = obj["password"].toString();
 
             finalize:
-            initialize_entity(this->entity, obj);
+            add_default_fields(this->entity, obj);
             alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListStr(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
             sni = obj["tls"].toObject()["server_name"].toString();
             disableSni = obj["tls"].toObject()["disable_sni"].toBool();
@@ -171,7 +171,7 @@ namespace Configs
 
     bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
 //        method = obj["method"].toString();
 //        password = obj["password"].toString();
 //        plugin = obj["plugin"].toString();
@@ -195,7 +195,7 @@ namespace Configs
     bool SocksBean::TryParseJson(const QJsonObject& obj)
     {
         
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         this->socks_http_type = obj["version"].toInt(type_Socks5);
         add_username_password(this, obj);
         add_udp_over_tcp(this, obj);
@@ -205,7 +205,7 @@ namespace Configs
 
     bool HttpBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         path = obj["path"].toString();
         headers = obj["headers"].toObject().toVariantMap();
@@ -215,7 +215,7 @@ namespace Configs
 
     bool SSHBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         user = obj["user"].toString();
         password = obj["password"].toString();
         privateKey = obj["private_key"].toString();
@@ -231,7 +231,7 @@ namespace Configs
     bool TrojanVLESSBean::TryParseJson(const QJsonObject& obj)
     {
         proxy_type = obj["type"].toString() == "trojan" ? proxy_Trojan : proxy_VLESS;
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         password = obj["password"].toString();
         if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
         flow = obj["flow"].toString();
@@ -247,7 +247,7 @@ namespace Configs
 
     bool VMessBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         uuid = obj["uuid"].toString();
         security = obj["security"].toString();
         aid = obj["alter_id"].toInt();
@@ -266,7 +266,7 @@ namespace Configs
 
     bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         password = obj["password"].toString();
         idle_session_check_interval = obj["idle_session_check_interval"].toString();
         idle_session_timeout = obj["idle_session_timeout"].toString();
@@ -278,7 +278,7 @@ namespace Configs
 
     bool ShadowTLSBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         password = obj["password"].toString();
         shadowtls_version = obj["version"].toInt();
         add_tls(stream, obj);
@@ -287,7 +287,7 @@ namespace Configs
 
     bool WireguardBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         auto peers = obj["peers"].toArray();
         if (peers.empty()) return false;
         publicKey = peers[0].toObject()["public_key"].toString();
@@ -341,7 +341,7 @@ namespace Configs
 
     bool NaiveBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         insecure_concurrency = obj["insecure_concurrency"].toInt();
         extra_headers = obj["extra_headers"].toObject().toVariantMap();
@@ -354,7 +354,7 @@ namespace Configs
 
     bool TrustTunnelBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         add_quic(this, obj);
         add_tls(stream, obj);
@@ -365,7 +365,7 @@ namespace Configs
 
     bool JuicityBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         this->username = obj["uuid"].toString();
         this->password = obj["password"].toString();
         add_tls(stream, obj);
@@ -383,7 +383,7 @@ namespace Configs
 
     bool MieruBean::TryParseJson(const QJsonObject& obj)
     {
-        initialize_entity(this->entity, obj);
+        add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         *network = obj["transport"].toString().toLower();
         *multiplexing = obj["multiplexing"].toString();

@@ -1,8 +1,10 @@
-#include "nekobox/ui/setting/Icon.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/ui/info/info.h>
 #include <QCoreApplication>
 #include <QDir>
 #include <QPainter>
+#include <nekobox/stats/traffic/TrafficLooper.hpp>
 #include <qicon.h>
 
 #ifndef SYSTRAY_ICON_DIR
@@ -42,4 +44,28 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
   }
   p.end();
   return pixmap;
+}
+
+#define SET_TRAFFIC_STAT(type, way) this->ui->total_##type##_##way##load->setText(QString::number(Stats::trafficLooper->total_##type##_##way##load()));
+
+InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain)  {
+  ui->setupUi(this);
+  Stats::trafficLooper->initialize();
+  SET_TRAFFIC_STAT(direct, down)
+  SET_TRAFFIC_STAT(direct, up)
+  SET_TRAFFIC_STAT(proxy, down)
+  SET_TRAFFIC_STAT(proxy, up)
+  
+//  this->ui->total_direct_download->setText(Stats::trafficLooper->);
+//  this->ui->total_direct_upload->setText();
+//  this->ui->total_proxy_download->setText();
+//  this->ui->total_proxy_upload->setText();
+}
+
+InfoDialog::~InfoDialog(){
+
+}
+
+void InfoDialog::accept(){
+
 }

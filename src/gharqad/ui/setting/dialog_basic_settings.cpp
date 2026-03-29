@@ -269,6 +269,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         themeManager->ApplyTheme(ui_theme_text);
         settings->theme = ui_theme_text;
         settings->Save();
+        CACHE.needRestart = true;
     });
 
     // Subscription

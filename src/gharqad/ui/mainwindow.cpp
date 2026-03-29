@@ -12,6 +12,8 @@
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/utils/MapListModel.hpp>
 #include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/stats/traffic/TrafficLooper.hpp>
+
 
 #ifndef NKR_SOFTWARE_KEYS
 #define ADD_SECURITY_ACTION
@@ -114,6 +116,31 @@ void MainWindow::set_icons() { set_icons_from_settings(); }
 SelectDialog::SelectDialog(QWidget *parent, std::shared_ptr<QAbstractListModel> model)
     : QDialog(parent), model(model) {
     setupUi();
+}
+
+void MainWindow::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::FontChange) {
+      QFont font  = this->font();
+      this->ui->label_inbound->setFont(font);
+      this->ui->label_running->setFont(font);
+      this->ui->label_speed->setFont(font);
+      this->qvLogDocument->setDefaultFont(font);
+      this->ui->toolButton_program->setFont(font);
+      this->ui->toolButton_preferences->setFont(font);
+      this->ui->toolButton_routing->setFont(font);
+      this->ui->toolButton_server->setFont(font);
+      this->ui->toolButton_update->setFont(font);
+      this->ui->tabWidget->setFont(font);
+      this->ui->proxyListTable->setFont(font);
+      this->ui->stats_widget->setFont(font);
+      this->ui->stats_widget->tabBar()->setFont(font);
+      this->ui->tabWidget->tabBar()->setFont(font);
+      this->ui->checkBox_SystemProxy->setFont(font);
+      this->ui->checkBox_VPN->setFont(font);
+      this->ui->system_dns->setFont(font);
+    }
+    QWidget::changeEvent(event);
 }
 
 void SelectDialog::setupUi() {
@@ -544,9 +571,14 @@ MainWindow::MainWindow(QWidget *parent)
   QString font_family = Configs::windowSettings->font_family;
   int font_size = Configs::windowSettings->font_size;
   // Setup misc UI
-  // migrate old themes
-  themeManager->ApplyTheme(theme);
   ui->setupUi(this);
+
+  themeManager->ApplyTheme(theme);
+  #ifndef DEBUG_MODE
+  ui->menu_program->removeAction(
+    ui->menu_information
+  );
+  #endif
   updateEmojiFont();
 
   // restore size and geometry
@@ -1907,6 +1939,10 @@ void MainWindow::on_menu_basic_settings_triggered() {
   USE_DIALOG(DialogBasicSettings)
 }
 
+void MainWindow::on_menu_information_triggered() {
+  USE_DIALOG(InfoDialog)
+}
+
 void MainWindow::on_menu_manage_groups_triggered() {
   USE_DIALOG(DialogManageGroups)
 }
@@ -1935,6 +1971,7 @@ void MainWindow::on_commitDataRequest() {
   #ifdef DEBUG_MODE
   qDebug() << "Start of data save";
   #endif
+  Stats::trafficLooper->Save();
   {
     // save size and geometry
     int x, y, width, height;
@@ -2517,10 +2554,10 @@ void MainWindow::refresh_status(const QString &traffic_update) {
 
   // From TrafficLooper
   if (!traffic_update.isEmpty() && !Configs::dataStore->disable_traffic_stats) {
-    traffic_update_cache = traffic_update;
     if (traffic_update == "STOP") {
       traffic_update_cache = "";
     } else {
+      traffic_update_cache = traffic_update;
       refresh_speed_label();
       return;
     }
@@ -2546,7 +2583,7 @@ void MainWindow::refresh_status(const QString &traffic_update) {
   //
   auto display_socks = DisplayAddress(Configs::dataStore->inbound_address,
                                       Configs::dataStore->inbound_socks_port);
-  auto inbound_txt = QObject::tr("IP address: %1").arg(display_socks);
+  auto inbound_txt = QObject::tr("Inbound IP: %1").arg(display_socks);
   ui->label_inbound->setText(inbound_txt);
   //
   ui->checkBox_VPN->setChecked(Configs::dataStore->spmode_vpn);

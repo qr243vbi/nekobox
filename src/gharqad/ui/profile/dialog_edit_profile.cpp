@@ -515,13 +515,14 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->security->setVisible(security_visible);
     ui->security_l->setVisible(security_visible);
 
-  auto naive_hidden = (type != "naive");
+  auto is_not_naive = (type != "naive");
   if (security_visible){
-    ui->tls_camouflage_box->setVisible(naive_hidden);
-    ui->query_server_name->setVisible(naive_hidden);
-    ui->alpn->setVisible(naive_hidden);
-    ui->label_query_server_name->setVisible(naive_hidden);
-    ui->label_alpn->setVisible(naive_hidden);
+    ui->tls_camouflage_box->setVisible(is_not_naive);
+    ui->query_server_name->setVisible(is_not_naive);
+    ui->insecure->setVisible(is_not_naive);
+    ui->alpn->setVisible(is_not_naive);
+    ui->label_query_server_name->setVisible(is_not_naive);
+    ui->label_alpn->setVisible(is_not_naive);
   }
 
   auto brutal_visible = (type == "vmess" || type == "vless" || type == "trojan" ||

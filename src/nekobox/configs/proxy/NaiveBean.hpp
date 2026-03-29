@@ -29,7 +29,7 @@ namespace Configs {
         };
 
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("username", username, string);
             ADD_MAP("password", password, string);
             ADD_MAP("insecure_concurrency", insecure_concurrency, integer);

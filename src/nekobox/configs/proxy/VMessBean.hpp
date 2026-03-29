@@ -20,7 +20,7 @@ namespace Configs {
              stream = std::make_shared<V2rayStreamSettings>();
         }
 
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("id", uuid, string);
             ADD_MAP("aid", aid, integer);
             ADD_MAP("sec", security, string);

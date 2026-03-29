@@ -292,6 +292,9 @@ void MainWindow::url_test_current() {
                 ui->label_running->setText(tr("Test Result") + ": " + 
                     QString::number(latency) + QString(" ms"));
             }
+            auto profile = Configs::profileManager->GetProfile(running->id);
+            profile->latencyInt = latency;
+            refresh_proxy_list(running->id);
         });
     });
 }
@@ -606,12 +609,11 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
             return false;
         }
         //
-        Stats::trafficLooper->proxy = std::make_shared<Stats::TrafficData>("proxy");
-        Stats::trafficLooper->direct = std::make_shared<Stats::TrafficData>("direct");
         Stats::trafficLooper->items = result->outboundStats;
         Stats::trafficLooper->isChain = ent->type == "chain";
         Stats::trafficLooper->loop_enabled = true;
         Stats::connection_lister->suspend = false;
+        Stats::trafficLooper->initialize();
 
         Configs::dataStore->UpdateStartedId(ent->id);
         running = ent;

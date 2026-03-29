@@ -14,7 +14,7 @@ namespace Configs {
 
         ExtraCoreBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("socks_address", socksAddress, string);
             ADD_MAP("socks_port", socksPort, integer);
             ADD_MAP("extra_core_path", extraCorePath, string);

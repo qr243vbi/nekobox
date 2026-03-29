@@ -7,14 +7,17 @@ export CURDIR="$SRC_ROOT"
 if [[ $1 == "x86_64" || -z $1 ]]; then
   ARCH="windows64"
   CROSS="windows-amd64"
+  NAIVE="amd64"
   INST="$DEPLOYMENT/nekobox_setup"
 else if [[ $1 == "arm64" ]]; then
   ARCH="windows-arm64"
   CROSS=$ARCH
+  NAIVE="arm64"
   INST="$DEPLOYMENT/nekobox_setup_arm64"
 else if [[ $1 == "i686" || $1 == "x86" ]]; then
   ARCH="windows32"
   CROSS="windows-386"
+  NAIVE="false"
   INST="$DEPLOYMENT/nekobox_setup32"
 fi; fi; fi;
 
@@ -65,6 +68,17 @@ cp "$rel/nekobox.exe" "$DEST"
 cp "$rel/"*.dll  "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
+
+if [[ "$NAIVE" != "false" ]]
+then
+
+if [[ ! -f "libcronet-windows-${NAIVE}.dll" ]]
+then
+wget "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-windows-${NAIVE}.dll"
+fi
+cp "libcronet-windows-${NAIVE}.dll"  "$DEST/libcronet.dll"
+
+fi
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"

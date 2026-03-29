@@ -196,10 +196,21 @@ namespace Subscription {
         }
 
         // Naive
-        if (str.startsWith("naive://")) {
-            ent = Configs::ProfileManager::NewProxyEntity("naive");
-            auto ok = ent->unlock(ent->NaiveBean())->TryParseLink(str);
-            if (!ok) return;
+        {
+            bool quic_enabled = false;
+            if (
+                (str.startsWith("naive://") || str.startsWith("naive+https://") || str.startsWith("naive+http://")) ||
+                (quic_enabled = str.startsWith("naive+quic://"))
+            ) {
+                ent = Configs::ProfileManager::NewProxyEntity("naive");
+                auto bean = ent->unlock(ent->NaiveBean());
+                if (quic_enabled){
+                    bean->quic = true;
+                    *bean->quic_congestion_control = 1;
+                }
+                auto ok = bean->TryParseLink(str);
+                if (!ok) return;
+            }
         }
 
         // TrustTunnel

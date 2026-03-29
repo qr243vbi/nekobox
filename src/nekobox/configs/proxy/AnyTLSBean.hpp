@@ -22,7 +22,7 @@ namespace Configs {
             return "anytls";
         };
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("password", password, string);
             ADD_MAP("session_idle_check_interval", idle_session_check_interval, string);
             ADD_MAP("session_idle_timeout", idle_session_timeout, string);

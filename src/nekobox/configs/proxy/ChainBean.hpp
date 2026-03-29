@@ -10,7 +10,7 @@ namespace Configs {
         ChainBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("list", list, integerList);
         STOP_MAP
 

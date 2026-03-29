@@ -20,7 +20,7 @@ namespace Configs {
         explicit SocksBean(Configs::ProxyEntity * entity, int _socks_http_type) : AbstractBean(entity, 0) {
             this->socks_http_type = _socks_http_type;
         }
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("socks_version", socks_http_type, integer);
             ADD_MAP("username", username, string);
             ADD_MAP("password", password, string);

@@ -8,16 +8,20 @@ UNAME="${UNAME:-$(uname -m)}"
 if [[ "${UNAME}" == 'aarch64' || "${UNAME}" == 'arm64' ]]; then
   ARCH="arm64"
   ARCH1="aarch64"
+  NAIVE=true
 else if [[ "${UNAME}" == 'amd64' || "${UNAME}" == 'x86_64' ]]; then
   ARCH="amd64"
   ARCH1="x86_64"
+  NAIVE=true
 else if [[ "${UNAME}" == '386' ]]; then
   ARCH="386"
   ARCH1="i686"
   ARCH2='i386'
+  NAIVE=false
 else if [[ "${UNAME}" == 'arm' ]]; then
   ARCH="arm"
   ARCH1="armhf"
+  NAIVE=false
 fi; fi; fi; fi
 
 ARCH2="${ARCH2:-$ARCH1}"
@@ -43,6 +47,18 @@ cp srslist.json "$DEST/srslist.json"
 
 #### copy binary ####
 cp "$BUILD/nekobox" "$DEST"
+
+if [[ "$NAIVE" == true ]]
+then
+
+if [[ ! -f "libcronet-linux-${ARCH}.so" ]]
+then
+wget "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-linux-${ARCH}.so"
+fi
+cp "libcronet-linux-${ARCH}.so"  "$DEST/libcronet.so"
+
+fi
+
 [[ -f "$BUILD/nekobox_core" ]] && cp "$BUILD/nekobox_core" "$DEST"
 [[ -f "$BUILD/updater" ]] && cp "$BUILD/updater" "$DEST"
 

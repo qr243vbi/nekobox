@@ -126,13 +126,15 @@ template <typename T> auto asListRange(QList<T> &&list) {
   ConfJsMap X::_map() {                                                        \
     MAP_BODY
 
-#define INIT_MAP_1                                                             \
+#define NEW_MAP                                                             \
   virtual ConfJsMap _map() override {                                          \
     MAP_BODY
 
-#define INIT_MAP                                                               \
-  INIT_MAP_1                                                                   \
-  ptr = AbstractBean::_map();
+#define INIT_MAP(X)                                                               \
+  NEW_MAP                                                                   \
+  ptr = X::_map();
+
+#define INIT_BEAN_MAP INIT_MAP(Configs::AbstractBean)
 
 #define STOP_MAP                                                               \
   init = true;                                                                 \

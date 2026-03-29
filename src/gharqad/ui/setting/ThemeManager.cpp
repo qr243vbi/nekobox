@@ -58,9 +58,26 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
             QTextStream ts(&f);
             qApp->setStyleSheet(ts.readAll());
         }
+
+        
     }
     skip_set_style:
+/*
+    {
+    QString style = qApp->styleSheet();
 
+  qApp->setStyleSheet(style + R"(
+    QGroupBox[flat="true"] {
+        border: none;
+        background: transparent;
+    }      
+    QGroupBox[rounded="true"] {
+        border-radius: 10px; border: 3px solid palette(midlight);
+        margin-top: 0px;
+    }
+  )");
+    }
+*/
     current_theme = theme;
 
     emit themeChanged(theme);

@@ -87,7 +87,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
     }
 }
 
-    static void deinitialize_url(QUrl & url, Configs::ProxyEntity * entity){
+    static void add_default_fields(QUrl & url, Configs::ProxyEntity * entity){
         entity->name = url.fragment(QUrl::FullyDecoded);
         entity->serverAddress = url.host();
         entity->serverPort = url.port();
@@ -106,7 +106,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto query = GetQuery(url);
 
         if (link.startsWith("socks4")) socks_http_type = type_Socks4;
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
         if (entity->serverPort == -1) entity->serverPort = 1080;
 
         add_username_password(this, url);
@@ -120,7 +120,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
 
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
         if (entity->serverPort == -1) entity->serverPort = 443;
         add_username_password(this, url);
         path = url.path();
@@ -135,7 +135,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         password = url.userName();
         if (entity->serverPort == -1) entity->serverPort = 443;
@@ -152,7 +152,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         password = url.userName();
         if (entity->serverPort == -1) entity->serverPort = 443;
@@ -168,7 +168,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         password = url.userName();
         if (entity->serverPort == -1) entity->serverPort = 443;
@@ -249,7 +249,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
             // SS
             auto url = QUrl(link);
             if (!url.isValid()) return false;
-            deinitialize_url(url, entity);
+            add_default_fields(url, entity);
 
             if (url.password().isEmpty()) {
                 // traditional format
@@ -322,7 +322,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
             auto url = QUrl(link);
             if (!url.isValid()) return false;
             auto query = GetQuery(url);
-            deinitialize_url(url, entity);
+            add_default_fields(url, entity);
             uuid = url.userName();
             if (entity->serverPort == -1) entity->serverPort = 443;
 
@@ -442,7 +442,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         } else if (url.scheme() == "tuic") {
             // by daeuniverse
             // https://github.com/daeuniverse/dae/discussions/182
-            deinitialize_url(url, entity);
+            add_default_fields(url, entity);
 
             if (entity->serverPort == -1) entity->serverPort = 443;
 
@@ -487,7 +487,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         privateKey = query.queryItemValue("private_key");
         publicKey = query.queryItemValue("peer_public_key");
@@ -546,7 +546,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         user = query.queryItemValue("user");
         password = query.queryItemValue("password");
@@ -591,7 +591,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         QUrlQuery query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         add_username_password(this, url);
         add_quic(this, query);
@@ -608,7 +608,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         QUrlQuery query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         add_username_password(this, url);
         add_quic(this, query);
@@ -624,7 +624,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         QUrlQuery query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
         add_username_password(this, url);
         add_tls(stream, query);
         return true;
@@ -635,7 +635,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         auto url = QUrl(link);
         if (!url.isValid()) return false;
         auto query = GetQuery(url);
-        deinitialize_url(url, entity);
+        add_default_fields(url, entity);
 
         add_username_password(this, url);
 

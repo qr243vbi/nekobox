@@ -52,7 +52,7 @@ STOP_ENUM
                 
         V2rayStreamSettings() : JsonStore() {
         }
-        INIT_MAP_1
+        NEW_MAP
             ADD_MAP("net", network, string);
             ADD_MAP("sec", security, string);
             ADD_MAP("pac_enc", packet_encoding, string);

@@ -26,7 +26,7 @@ namespace Stats {
             this->tag = std::move(tag);
         };
     
-        INIT_MAP_1
+        NEW_MAP
                 ADD_MAP( "dl", downlink, integer64);
                 ADD_MAP( "ul", uplink, integer64);
         STOP_MAP

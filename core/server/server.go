@@ -232,7 +232,6 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 			return out, nil
 		}
 		testInstance = internal.BoxInstance
-		twice = false
 	} else {
 		testInstance, cancel, err = boxmain.Create([]byte(in.Config))
 		if err != nil {

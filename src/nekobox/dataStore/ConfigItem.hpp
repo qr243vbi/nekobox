@@ -56,7 +56,8 @@ namespace Configs {
         ProxyManager = 7,
         NekoBox = 8,
         DefaultRoute = 9,
-        NoSave = 10
+        NoSave = 10,
+        TrafficLooper = 11
     };
 
 }

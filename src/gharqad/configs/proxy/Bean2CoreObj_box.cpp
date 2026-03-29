@@ -214,38 +214,37 @@ namespace Configs {
                 add_non_empty(ech, "query_server_name", query_server_name);
                 tls["ech"] = ech;
             }
-            if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
             add_non_empty(tls, "server_name", sni);
             if (!certificate.trimmed().isEmpty()) {
                 tls["certificate"] = certificate.trimmed();
             }
-            if (is_naive){
-                return;
-            }
-            if (!alpn.trimmed().isEmpty()) {
-                tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
-            }
-            QString fp = utlsFingerprint;
-            if (!reality_pbk.trimmed().isEmpty()) {
-                tls["reality"] = QJsonObject{
-                    {"enabled", true},
-                    {"public_key", reality_pbk},
-                    {"short_id", reality_sid.split(",")[0]},
-                };
-                if (fp.isEmpty()) fp = "random";
-            }
-            if (!fp.isEmpty()) {
-                tls["utls"] = QJsonObject{
+            if (!is_naive){
+                if (allow_insecure || Configs::dataStore->skip_cert) tls["insecure"] = true;
+                if (!alpn.trimmed().isEmpty()) {
+                    tls["alpn"] = QListStr2QJsonArray(alpn.split(","));
+                }
+                QString fp = utlsFingerprint;
+                if (!reality_pbk.trimmed().isEmpty()) {
+                    tls["reality"] = QJsonObject{
                         {"enabled", true},
-                        {"fingerprint", fp},
+                        {"public_key", reality_pbk},
+                        {"short_id", reality_sid.split(",")[0]},
                     };
-            }
-            if (enable_tls_fragment)
-            {
-                tls["fragment"] = enable_tls_fragment;
-                if (!tls_fragment_fallback_delay.isEmpty()) tls["fragment_fallback_delay"] = tls_fragment_fallback_delay;
-            }
-            if (enable_tls_record_fragment) tls["record_fragment"] = enable_tls_record_fragment;
+                    if (fp.isEmpty()) fp = "random";
+                }
+                if (!fp.isEmpty()) {
+                    tls["utls"] = QJsonObject{
+                            {"enabled", true},
+                            {"fingerprint", fp},
+                        };
+                }
+                if (enable_tls_fragment)
+                {
+                    tls["fragment"] = enable_tls_fragment;
+                    if (!tls_fragment_fallback_delay.isEmpty()) tls["fragment_fallback_delay"] = tls_fragment_fallback_delay;
+                }
+                if (enable_tls_record_fragment) tls["record_fragment"] = enable_tls_record_fragment;
+            } 
             outbound->insert("tls", tls);
         }
 

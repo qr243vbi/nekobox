@@ -13,6 +13,40 @@ namespace Stats {
 TrafficLooper *trafficLooper = new TrafficLooper;
 QElapsedTimer elapsedTimer;
 
+
+
+        TrafficLooper::TrafficLooper(){
+            this->save_control_no_save(true);
+            proxy = std::make_shared<Stats::TrafficData>("proxy");
+            direct = std::make_shared<Stats::TrafficData>("direct");
+        }
+
+        void TrafficLooper::initialize(){
+            if (this->save_control_no_save()){
+                this->Load();
+                this->save_control_no_save(false);
+            }
+        }
+
+  
+int TrafficLooper::total_direct_download(){
+    return direct->downlink;
+}
+
+
+int TrafficLooper::total_proxy_download(){
+    return proxy->downlink;
+}
+
+
+int TrafficLooper::total_direct_upload(){
+    return direct->uplink;
+}
+
+int TrafficLooper::total_proxy_upload(){
+    return proxy->uplink;
+}
+
 void TrafficLooper::UpdateAll() {
   if (Configs::dataStore->disable_traffic_stats) {
     return;
@@ -21,6 +55,8 @@ void TrafficLooper::UpdateAll() {
   auto resp = API::defaultClient->QueryStats();
   proxy->uplink_rate = 0;
   proxy->downlink_rate = 0;
+  direct->uplink_rate = 0;
+  direct->downlink_rate = 0;
 
   int proxyUp = 0, proxyDown = 0;
   if (resp.has_value()) {
@@ -50,13 +86,13 @@ void TrafficLooper::UpdateAll() {
           static_cast<double>(down) * 1000.0 / static_cast<double>(interval);
       if (item->ignoreForRate)
         continue;
-      if (item->tag == "direct") {
-        direct->uplink_rate = item->uplink_rate;
-        direct->downlink_rate = item->downlink_rate;
-      } else {
-        proxy->uplink_rate += item->uplink_rate;
-        proxy->downlink_rate += item->downlink_rate;
-      }
+
+      TrafficData * data_edit = (item->tag == "direct") ? direct.get() : proxy.get();
+
+        data_edit->uplink += up;
+        data_edit->downlink += down;
+        data_edit->uplink_rate += item->uplink_rate;
+        data_edit->downlink_rate += item->downlink_rate;
     }
   }
   if (isChain) {
@@ -112,8 +148,8 @@ void TrafficLooper::Loop() {
       auto m = GetMainWindow();
       if (proxy != nullptr) {
         m->refresh_status(
-            QObject::tr("Proxy: %1\nDirect: %2")
-                .arg(proxy->DisplaySpeed(), direct->DisplaySpeed()));
+            QObject::tr("Proxy: ⚡%1 📦%3\nDirect: ⚡%2 📦%4")
+                .arg(proxy->DisplaySpeed(), direct->DisplaySpeed(), proxy->DisplayTraffic(), direct->DisplayTraffic()));
         m->update_traffic_graph(proxy->downlink_rate, proxy->uplink_rate,
                                 direct->downlink_rate, direct->uplink_rate);
       }

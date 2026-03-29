@@ -23,7 +23,7 @@ namespace Configs {
             multiplexing = std::make_shared<MultiplexingEnum>("MULTIPLEXING_LOW");
         }
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("password", password, string);
             ADD_MAP("username", username, string);
             ADD_MAP("multiplexing", multiplexing, string);

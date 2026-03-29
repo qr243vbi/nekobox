@@ -21,8 +21,13 @@ fi; fi; fi; fi; fi; fi; fi;
 fi
 
 echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
+
 TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme"
-#with_acme,with_purego,with_naive_outbound
+if [[ "$GOARCH" == "arm64" || "$GOARCH" == "amd64" ]]
+then 
+  TAGS="$TAGS,with_naive,with_naive_outbound,with_purego"
+fi
+LDFLAGS="-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}' -X 'internal/godebug.defaultGODEBUG=multipathtcp=0' -checklinkname=0"
 
 mkdir -p $DEST ||:
 
@@ -44,5 +49,5 @@ cd gen
 ) || :
 VERSION_SINGBOX="${VERSION_SINGBOX:-$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)}"
 [ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
-$GOCMD build -v -o "$DEST/" -trimpath -ldflags "-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}'" -tags "$TAGS"
+$GOCMD build -v -o "$DEST/" -trimpath -ldflags "$LDFLAGS" -tags "$TAGS"
 popd

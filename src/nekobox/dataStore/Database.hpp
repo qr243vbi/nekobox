@@ -16,7 +16,7 @@ namespace Configs {
     public:
         // JsonStore
         virtual ConfJsMap _map() override;
-        DECLARE_STORE_TYPE(ProxyManager)
+        DECLARE_STORE_TYPE(TrafficLooper)
         // order -> id
         QList<int> groupsTabOrder;
 

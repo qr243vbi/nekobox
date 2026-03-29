@@ -18,7 +18,7 @@
 #endif
 
 #include <nekobox/dataStore/Database.hpp>
-
+#include <nekobox/ui/info/info.h>
 
 #ifdef NKR_SOFTWARE_KEYS
 #include "nekobox/ui/security_addon.h"
@@ -215,6 +215,8 @@ private slots:
 
     void on_menu_basic_settings_triggered();
 
+    void on_menu_information_triggered();
+
     void on_menu_routing_settings_triggered();
 
     void on_menu_vpn_settings_triggered();
@@ -371,6 +373,8 @@ private:
     void closeEvent(QCloseEvent *event) override;
 
     void dragEnterEvent(QDragEnterEvent *event) override;
+
+    void changeEvent(QEvent *event) override;
 
     void dropEvent(QDropEvent* event) override;
 
