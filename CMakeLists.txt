@@ -520,7 +520,7 @@ install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
 install(FILES 
     ${CMAKE_SOURCE_DIR}/srslist.json 
-    ${CMAKE_SOURCE_DIR}/check_routeprofiles.js 
+    ${CMAKE_SOURCE_DIR}/public/check_routeprofiles.js 
     ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 
 endif()
