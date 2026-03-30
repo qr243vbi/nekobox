@@ -81,7 +81,7 @@ cp "libcronet-windows-${NAIVE}.dll"  "$DEST/libcronet.dll"
 fi
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
-cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"
+cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
