@@ -1,9 +1,7 @@
 #pragma once
 
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/configs/proxy/AbstractBean.hpp"
-#include <QString>
-
+#include "Configs.hpp"
+#include "ConfigItem.hpp"
 namespace Stats {
     class TrafficData : public JsonStore {
     public:
@@ -38,13 +36,8 @@ namespace Stats {
             uplink_rate = 0;
         }
 
-        [[nodiscard]] QString DisplaySpeed() const {
-            return UNICODE_LRO + QString("%1↑ %2↓").arg(ReadableSize(uplink_rate), ReadableSize(downlink_rate));
-        }
+        [[nodiscard]] QString DisplaySpeed() const;
 
-        [[nodiscard]] QString DisplayTraffic() const {
-            if (downlink + uplink == 0) return "";
-            return UNICODE_LRO + QString("%1↑ %2↓").arg(ReadableSize(uplink), ReadableSize(downlink));
-        }
+        [[nodiscard]] QString DisplayTraffic() const;
     };
-} // namespace Stats
+}

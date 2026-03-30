@@ -11,20 +11,19 @@
 #include <QFileInfo>
 #include <QApplication>
 #include <memory>
+#include <iostream>
+#include <nekobox/stats/traffic/TrafficLooper.hpp>
+#include <nekobox/sys/Settings.h>
+#include <qfontdatabase.h>
 #include <qnamespace.h>
+
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
-
-#include <iostream>
 #include <nekobox/sys/windows/MiniDump.h>
 #include <nekobox/sys/windows/eventHandler.h>
 #include <nekobox/sys/windows/WinVersion.h>
-#include <qfontdatabase.h>
-#else
-#include <nekobox/sys/Settings.h>
 #endif
-
 
 #ifndef NKR_SOFTWARE_KEYS
 #define CHECK_STARTUP_ACCESS_M
@@ -43,7 +42,6 @@ QWidget *mainwindow;
 
 #ifdef Q_OS_UNIX
 #include <nekobox/sys/linux/LinuxCap.h>
-#include <qfontdatabase.h>
 #endif
 #define disable_run_admin windows_no_admin
 
@@ -257,6 +255,8 @@ int main(int argc, char** argv) {
     CHECK_STARTUP_ACCESS_M
     Stats::databaseLogger->Load();
     Stats::databaseLogger->initialize();
+    Stats::trafficLooper->initialize();
+
 
     Configs::windowSettings->Load();
     Configs::resourceManager->Load();

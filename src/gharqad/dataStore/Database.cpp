@@ -18,6 +18,16 @@
  }
 #endif
 
+
+        [[nodiscard]] QString Stats::TrafficData::DisplaySpeed() const {
+            return UNICODE_LRO + QString("%1↑ %2↓").arg(ReadableSize(uplink_rate), ReadableSize(downlink_rate));
+        }
+
+        [[nodiscard]] QString Stats::TrafficData::DisplayTraffic() const {
+            if (downlink + uplink == 0) return "";
+            return UNICODE_LRO + QString("%1↑ %2↓").arg(ReadableSize(uplink), ReadableSize(downlink));
+        }
+
  long long Stats::DatabaseLogger::get_usage_time(){
     auto ret = this->usage_time;
     ret += GetTime() - this->usage_time_update;

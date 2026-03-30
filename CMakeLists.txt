@@ -188,7 +188,7 @@ set(PROJECT_SOURCES
         ${NYXARIA}/global/HTTPRequestHelper.hpp
         ${NYXARIA}/global/keyvaluerange.h
 
-        ${NYXARIA}/stats/traffic/TrafficData.hpp
+        ${NYXARIA}/dataStore/TrafficData.hpp
         ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
         ${GHARQAD}/configs/sub/GroupUpdater.cpp

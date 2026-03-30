@@ -613,8 +613,6 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         Stats::trafficLooper->isChain = ent->type == "chain";
         Stats::trafficLooper->loop_enabled = true;
         Stats::connection_lister->suspend = false;
-        Stats::trafficLooper->initialize();
-
         Configs::dataStore->UpdateStartedId(ent->id);
         running = ent;
 

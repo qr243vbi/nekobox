@@ -1,9 +1,9 @@
 #pragma once
-
-#include "Configs.hpp"
 #include "ProxyEntity.hpp"
 #include "Group.hpp"
 #include "RouteEntity.h"
+#include "TrafficData.hpp"
+
 
 namespace Stats {
     class DatabaseLoggerItem : public JsonStore {
@@ -17,6 +17,8 @@ namespace Stats {
         STOP_MAP
     };
 
+
+
     class DatabaseLogger: public JsonStore {
         public:
         int start_count = 0;
@@ -27,6 +29,9 @@ namespace Stats {
         std::shared_ptr<DatabaseLoggerItem> groups = std::make_shared<DatabaseLoggerItem>();
         std::shared_ptr<DatabaseLoggerItem> routes = std::make_shared<DatabaseLoggerItem>();
         
+        std::shared_ptr<TrafficData> total_proxy = std::make_shared<TrafficData>("proxy");
+        std::shared_ptr<TrafficData> total_direct = std::make_shared<TrafficData>("direct");
+        
         DECLARE_STORE_TYPE(DatabaseLogger)
         NEW_MAP
             ADD_MAP("profiles", profiles, jsonStore);
@@ -36,6 +41,8 @@ namespace Stats {
             ADD_MAP("usage_time", usage_time, integer);
             ADD_MAP("first_launch_time", first_launch_time, integer);
             ADD_MAP("last_launch_time", last_launch_time, integer);
+            ADD_MAP("total_proxy", total_proxy, jsonStore);
+            ADD_MAP("total_direct", total_direct, jsonStore);
             #ifdef NKR_SOFTWARE_KEYS
             ADD_MAP("failed_auth_count", failed_auth_count, integer);
             #endif
@@ -77,6 +84,7 @@ namespace Configs {
         QList<int> groupsTabOrder;
 
         // Manager
+
         std::map<int, std::shared_ptr<ProxyEntity>> profiles;
         std::map<int, std::shared_ptr<Group>> groups;
         std::map<int, std::shared_ptr<RoutingChain>> routes;

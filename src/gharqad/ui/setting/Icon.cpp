@@ -57,7 +57,7 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
 #define SET_LOGGER_STAT(name, FUNC) SET_CUSTOM_STAT(name, Stats::databaseLogger->name, FUNC);
 #define SET_LOGGER_FUNC(name, FUNC) SET_CUSTOM_STAT(name, Stats::databaseLogger->get_##name(), FUNC);
 #define SET_TRAFFIC_STAT(type, way, FUNC) SET_CUSTOM_STAT(total_##type##_##way##load, \
-  Stats::trafficLooper->total_##type##_##way##load(), FUNC);
+  Stats::trafficLooper->total_##type##_##way##load() + Stats::databaseLogger->total_##type->way##link, FUNC);
 #define SET_DATA_STAT(proxy, profiles, WORD, FUNC) \
     SET_CUSTOM_STAT(proxy##_created, Stats::databaseLogger->profiles->created, FUNC); \
     SET_CUSTOM_STAT(proxy##_deleted, Stats::databaseLogger->profiles->deleted, FUNC); \
@@ -69,7 +69,6 @@ InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain) 
   ui->textBrowser->document()->setDefaultFont(qApp->font());
   ui->textBrowser->setOpenExternalLinks(true);
   this->setWindowTitle(software_name);
-  Stats::trafficLooper->initialize();
   SET_TRAFFIC_STAT(direct, down, ReadableSize)
   SET_TRAFFIC_STAT(direct, up, ReadableSize)
   SET_TRAFFIC_STAT(proxy, down, ReadableSize)
