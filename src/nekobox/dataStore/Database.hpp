@@ -72,12 +72,11 @@ namespace Configs {
     public:
         // JsonStore
         virtual ConfJsMap _map() override;
-        DECLARE_STORE_TYPE(TrafficLooper)
+        DECLARE_STORE_TYPE(ProxyManager)
         // order -> id
         QList<int> groupsTabOrder;
 
         // Manager
-
         std::map<int, std::shared_ptr<ProxyEntity>> profiles;
         std::map<int, std::shared_ptr<Group>> groups;
         std::map<int, std::shared_ptr<RoutingChain>> routes;
