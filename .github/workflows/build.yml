@@ -248,9 +248,9 @@ jobs:
           python3 ./script/trigger_community_projects.py
        #   . ./script/upload_aur.sh
 
-       - name: Publish AUR package
-         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-         with:
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
            pkgname: nekobox
            pkgbuild: ./PKGBUILD
            commit_username: ${{ github.actor }}
@@ -259,9 +259,9 @@ jobs:
            commit_message: Update AUR package
            ssh_keyscan_types: rsa,ecdsa,ed25519
 
-       - name: Publish AUR package
-         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-         with:
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
            pkgname: nekobox-git
            pkgbuild: ./aur_git/PKGBUILD
            commit_username: ${{ github.actor }}
