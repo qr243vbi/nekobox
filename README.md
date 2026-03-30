@@ -35,7 +35,29 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 ## Supported protocols
  
-  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; TrustTunnel ; Juicity ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
+- SOCKS
+- HTTP(S)
+- Shadowsocks
+- Trojan
+- VMess
+- VLESS
+- Hysteria 1
+- Hysteria 2
+- TUIC 
+- AnyTLS
+- ShadowTLS
+- Mieru
+- Juicity
+- TrustTunnel
+- Naive
+- Wireguard
+- Tailscale
+- SSH
+- Tor
+- Custom Outbound
+- Custom Config
+- Extra Core
+- Chaining outbounds
 
 ## Subscription Formats
 
