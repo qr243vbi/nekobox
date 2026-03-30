@@ -14,7 +14,7 @@ TrafficLooper *trafficLooper = new TrafficLooper;
 QElapsedTimer elapsedTimer;
 
 #define MIGRATE_LOG(proxy, uplink) \
-                Stats::databaseLogger->total_##proxy->uplink = proxy->uplink; \
+                Stats::databaseLogger->total_##proxy->uplink += proxy->uplink; \
                 proxy->uplink = 0;
 
         TrafficLooper::TrafficLooper(){
