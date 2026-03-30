@@ -11,15 +11,15 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
+- [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
 ### OBS repository 
-[![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
+- [![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
 
-[NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
+- [NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
 
 ### COPR repository
-[NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
+- [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
 
 ### WinGet Package
 - [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
@@ -29,13 +29,47 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Chocolatey Package
-
-[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
+- [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
+
+## Changelog Channel
+- [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=plastic&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
+- [![Telegram Group](https://img.shields.io/badge/tg-blue?label=Telegram%20Group)](https://t.me/NyameBox)
+  
+## TODO
+- Command line tools
+- [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
+- Terminal UI
+- Remote control
+- Support for all platforms that supported by sing-box and Qt
+- Add more protocols
+- Dynamic UI
 
 ## Supported protocols
  
-  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; TrustTunnel ; Juicity ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
+- SOCKS
+- HTTP(S)
+- Shadowsocks
+- Trojan
+- VMess
+- VLESS
+- Hysteria 1
+- Hysteria 2
+- TUIC 
+- AnyTLS
+- ShadowTLS
+- Mieru
+- Juicity
+- TrustTunnel
+- Naive
+- Wireguard
+- Tailscale
+- SSH
+- Tor
+- Custom Outbound
+- Custom Config
+- Extra Core
+- Chaining outbounds
 
 ## Subscription Formats
 
@@ -99,19 +133,6 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Boost](https://www.boost.org/)
 - [AllySummers/docker-cache](AllySummers/docker-cache)
 
-## TODO
-- Command line tools
-- [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
-- Terminal UI
-- Remote control
-- Support for all platforms that supported by sing-box and Qt
-- Add more protocols
-- Dynamic UI
-
-## Changelog Channel
-- matrix: https://matrix.to/#/#NyameBox:matrix.org
-- telegram: https://t.me/NyameBox
-
 ## FAQ
 **What is AppImage?** <br/>
   AppImage is a reliable and straightforward method for running applications on a Linux computer without the traditional installation process. You download a single, self-contained file which includes everything the program needs to operate. To use it, you simply grant the file permission to run and double-click it. This approach ensures compatibility across various Linux systems and allows for easy removal—simply delete the file when you no longer need the application, with no residual files left behind on your system.
@@ -144,7 +165,7 @@ No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](
 **Why does my internet stop working after I force quit [NekoBox](https://github.com/qr243vbi/nekobox)?** <br/>
 If [NekoBox](https://github.com/qr243vbi/nekobox) is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
 Solution:
-- Always close [NekoBox](https://github.com/qr243vbi/nekobox) normally.
+- Ensure that [NekoBox](https://github.com/qr243vbi/nekobox) closed manually.
 - If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it- this will reset the settings.
 
 **Why [NekoBox](https://github.com/qr243vbi/nekobox) uses Noto emoji instead of Twitter emoji? What differences between them two?** <br/>
