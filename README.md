@@ -165,7 +165,7 @@ No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](
 **Why does my internet stop working after I force quit [NekoBox](https://github.com/qr243vbi/nekobox)?** <br/>
 If [NekoBox](https://github.com/qr243vbi/nekobox) is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
 Solution:
-- Always close [NekoBox](https://github.com/qr243vbi/nekobox) normally.
+- Ensure that [NekoBox](https://github.com/qr243vbi/nekobox) closed manually.
 - If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it- this will reset the settings.
 
 **Why [NekoBox](https://github.com/qr243vbi/nekobox) uses Noto emoji instead of Twitter emoji? What differences between them two?** <br/>
