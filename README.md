@@ -33,6 +33,19 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat-square&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
 
+## Changelog Channel
+- [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=plastic&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
+- [![Telegram Group](https://img.shields.io/badge/tg-blue?label=Telegram%20Group)](https://t.me/NyameBox)
+  
+## TODO
+- Command line tools
+- [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
+- Terminal UI
+- Remote control
+- Support for all platforms that supported by sing-box and Qt
+- Add more protocols
+- Dynamic UI
+
 ## Supported protocols
  
 - SOCKS
@@ -120,19 +133,6 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [Timmifixedit/BidirectionalMap](https://github.com/Timmifixedit/BidirectionalMap)
 - [Boost](https://www.boost.org/)
 - [AllySummers/docker-cache](AllySummers/docker-cache)
-
-## TODO
-- Command line tools
-- [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
-- Terminal UI
-- Remote control
-- Support for all platforms that supported by sing-box and Qt
-- Add more protocols
-- Dynamic UI
-
-## Changelog Channel
-- [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=plastic&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
-- telegram: https://t.me/NyameBox
 
 ## FAQ
 **What is AppImage?** <br/>
