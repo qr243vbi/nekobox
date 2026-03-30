@@ -2,77 +2,139 @@
 
 namespace Configs {
 
-    QString ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent, bool by_address) {
-        by_address &= ent->type != "custom";
-        return (ent->DisplayAddress() + 
-                ent->DisplayType()) + 
-                (by_address ? QJsonObject2QString(
-                            ent->bean()->ToJson({"c_cfg", "c_out"}), 
-                            true) : "");
-    }
-
-    void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,
-                             QList<std::shared_ptr<ProxyEntity>> &out,
-                             bool by_address, bool keep_last) {
-        QMap<QString, std::shared_ptr<ProxyEntity>> hashMap;
-
-        for (const auto &ent: in) {
-            QString key = ProfileFilter_ent_key(ent, by_address);
-            if (hashMap.contains(key)) {
-                if (keep_last) {
-                    out.removeAll(hashMap[key]);
-                    hashMap[key] = ent;
-                    out += ent;
-                }
-            } else {
-                hashMap[key] = ent;
-                out += ent;
+    // --- Equality ---
+    bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
+    {
+        bool ret = this->key->DisplayType() == other.key->DisplayType();
+        if (ret){
+            ret = this->key->DisplayAddress() == other.key->DisplayAddress();
+            if (ret){
+                return this->beanBytes() == other.beanBytes();
             }
         }
+        return false;
     }
 
-    void ProfileFilter::Common(const QList<std::shared_ptr<ProxyEntity>> &src,
-                               const QList<std::shared_ptr<ProxyEntity>> &dst,
-                               QList<std::shared_ptr<ProxyEntity>> &outSrc,
-                               QList<std::shared_ptr<ProxyEntity>> &outDst,
-                               bool by_address) {
-        QMap<QString, std::shared_ptr<ProxyEntity>> hashMap;
-
-        for (const auto &ent: src) {
-            QString key = ProfileFilter_ent_key(ent, by_address);
-            hashMap[key] = ent;
+    QByteArray ProfileFilterKey::beanBytes() const noexcept {
+        if (!unpack_bean) return cache;
+        {
+            auto key = ((ProfileFilterKey*)(this));
+            key->unpack_bean = false;
+            return key->cache = this->key->bean()->ToBytes({"c_cfg", "c_out"});
         }
-        for (const auto &ent: dst) {
-            QString key = ProfileFilter_ent_key(ent, by_address);
-            if (hashMap.contains(key)) {
-                outDst += ent;
-                outSrc += hashMap[key];
+    }
+
+    // --- Ordering (for QMap, optional) ---
+    bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
+    {
+        bool ret = this->key->DisplayType() < other.key->DisplayType();
+        if (ret){
+            ret = this->key->DisplayAddress() < other.key->DisplayAddress();
+            if (ret){
+                return this->beanBytes() < other.beanBytes();
             }
         }
+        return false;
     }
 
-    void ProfileFilter::OnlyInSrc(const QList<std::shared_ptr<ProxyEntity>> &src,
-                                  const QList<std::shared_ptr<ProxyEntity>> &dst,
-                                  QList<std::shared_ptr<ProxyEntity>> &out,
-                                  bool by_address) {
-        QMap<QString, bool> hashMap;
 
-        for (const auto &ent: dst) {
-            QString key = ProfileFilter_ent_key(ent, by_address);
-            hashMap[key] = true;
-        }
-        for (const auto &ent: src) {
-            QString key = ProfileFilter_ent_key(ent, by_address);
-            if (!hashMap.contains(key)) out += ent;
-        }
+    bool  ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
+    {
+        return !(*this == other);
     }
 
-    void ProfileFilter::OnlyInSrc_ByPointer(const QList<std::shared_ptr<ProxyEntity>> &src,
-                                            const QList<std::shared_ptr<ProxyEntity>> &dst,
-                                            QList<std::shared_ptr<ProxyEntity>> &out) {
-        for (const auto &ent: src) {
-            if (!dst.contains(ent)) out += ent;
-        }
+    bool  ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
+    {
+        return other < *this;
     }
+
+    bool  ProfileFilterKey::operator<=(const ProfileFilterKey &other) const noexcept
+    {
+        return !(*this > other);
+    }
+
+    bool  ProfileFilterKey::operator>=(const ProfileFilterKey &other) const noexcept
+    {
+        return !(*this < other);
+    }
+
+    inline uint qHash(const ProfileFilterKey &key, uint seed) noexcept
+    {
+        seed ^= qHash(key.key->DisplayAddress(), seed);
+        seed ^= qHash(key.key->DisplayType(), seed << 1);
+        seed ^= qHash(key.beanBytes(), seed << 2);
+
+        return seed;
+    }
+
+ProfileFilterKey ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent,
+                              bool by_address) {
+    const bool useAddressOnly = by_address && ent->type != "custom";
+    return ProfileFilterKey(ent, !useAddressOnly);
+}
+
+void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,
+                         QList<std::shared_ptr<ProxyEntity>> &out,
+                         bool by_address, bool keep_last) {
+  QMap<ProfileFilterKey, std::shared_ptr<ProxyEntity>> hashMap;
+
+  for (const auto &ent : in) {
+    ProfileFilterKey key = ProfileFilter_ent_key(ent, by_address);
+    if (hashMap.contains(key)) {
+      if (keep_last) {
+        out.removeAll(hashMap[key]);
+        hashMap[key] = ent;
+        out += ent;
+      }
+    } else {
+      hashMap[key] = ent;
+      out += ent;
+    }
+  }
+}
+
+void ProfileFilter::Common(const QList<std::shared_ptr<ProxyEntity>> &src,
+                           const QList<std::shared_ptr<ProxyEntity>> &dst,
+                           QList<std::shared_ptr<ProxyEntity>> &outSrc,
+                           QList<std::shared_ptr<ProxyEntity>> &outDst,
+                           bool by_address) {
+  QHash<ProfileFilterKey, std::shared_ptr<ProxyEntity>> map;
+
+  for (const auto &ent : src) {
+    map.insert(ProfileFilter_ent_key(ent, by_address), ent);
+  }
+
+  for (const auto &ent : dst) {
+    const ProfileFilterKey key = ProfileFilter_ent_key(ent, by_address);
+    if (map.contains(key)) {
+      outDst += ent;
+      outSrc += map.value(key);
+    }
+  }
+}
+
+void ProfileFilter::OnlyInSrc(const QList<std::shared_ptr<ProxyEntity>> &src,
+                              const QList<std::shared_ptr<ProxyEntity>> &dst,
+                              QList<std::shared_ptr<ProxyEntity>> &out,
+                              bool by_address) {
+  QSet<ProfileFilterKey> keys;
+  for (const auto &ent : dst)
+    keys.insert(ProfileFilter_ent_key(ent, by_address));
+
+  for (const auto &ent : src) {
+    if (!keys.contains(ProfileFilter_ent_key(ent, by_address)))
+      out += ent;
+  }
+}
+
+void ProfileFilter::OnlyInSrc_ByPointer(
+    const QList<std::shared_ptr<ProxyEntity>> &src,
+    const QList<std::shared_ptr<ProxyEntity>> &dst,
+    QList<std::shared_ptr<ProxyEntity>> &out) {
+  for (const auto &ent : src) {
+    if (!dst.contains(ent))
+      out += ent;
+  }
+}
 
 } // namespace Configs

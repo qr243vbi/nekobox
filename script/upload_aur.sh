@@ -5,7 +5,7 @@ declare -A specs=(["nekobox"]="PKGBUILD" ["nekobox-git"]="aur_git/PKGBUILD")
 for i in 'nekobox' 'nekobox-git'
 do
 echo "${specs[$i]}"
-git clone ssh://aur@aur.archlinux.org/nekobox.git "aur-$i"
+git clone ssh://aur@aur.archlinux.org/"${i}".git "aur-$i"
 cp "${specs[$i]}" "aur-$i/PKGBUILD"
 pushd "aur-$i"
 

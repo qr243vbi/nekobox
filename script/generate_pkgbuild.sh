@@ -7,5 +7,5 @@ sha_res="$(echo "$asset_res" | jq -r '.digest' | sed 's~sha256:~~g')"
 curl -L -o PKGBUILD https://gitea.com/qr243vbi/nekobox/raw/branch/main/PKGBUILD
 sed -i "s@pkgver=.*@pkgver=${INPUT_VERSION}@g; s@sha256sums=(.*@sha256sums=(\"$sha_res\")@g; s@source=(.*@source=(\"$url_res\")@g;" ./PKGBUILD
 mkdir aur_git ||:
-cp PKGBUILD aur_git/PKGBUILD
+install -Dm644 PKGBUILD aur_git/PKGBUILD
 sed -i "s@sha256sums=(.*@sha256sums=()@g; s@source=(.*@source=()@g;" ./aur_git/PKGBUILD

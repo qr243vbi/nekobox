@@ -2,6 +2,8 @@
 # ----------------------------------------------------------------------------
 !languages.txt
 !CMakeLists.txt
+script/aur-nekobox
+script/aur-nekobox-git
 bash.sh
 *.txt
 *.dmp
