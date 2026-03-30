@@ -201,20 +201,20 @@ jobs:
           AUR_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         run: |
           echo copr > requirements.txt
-          git config --global user.email "${{ secrets.EMAIL }}"
-          git config --global user.name "${{ github.actor }}"
-          mkdir -p ~/.ssh
-          touch ~/.ssh/config           ||:
-          touch ~/.ssh/known_hosts      ||:
-          echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
-          echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
-          echo "  User aur"                     >> ~/.ssh/config
-          chmod -vR 600 ~/.ssh/*
-          ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
-          echo "$AUR_KEY" > ~/.ssh/aur
-          chmod -vR 600 ~/.ssh/*
-          ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
-          chmod -vR 600 ~/.ssh/*
+    #      git config --global user.email "${{ secrets.EMAIL }}"
+    #      git config --global user.name "${{ github.actor }}"
+    #      mkdir -p ~/.ssh
+    #      touch ~/.ssh/config           ||:
+    #      touch ~/.ssh/known_hosts      ||:
+    #      echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
+    #      echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
+    #      echo "  User aur"                     >> ~/.ssh/config
+    #      chmod -vR 600 ~/.ssh/*
+    #      ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
+    #      echo "$AUR_KEY" > ~/.ssh/aur
+    #      chmod -vR 600 ~/.ssh/*
+    #      ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
+    #      chmod -vR 600 ~/.ssh/*
 
       - uses: actions/setup-python@v5
         with:
@@ -246,29 +246,29 @@ jobs:
           . ./script/generate_pkgbuild.sh
           . ./script/trigger_open_build_service.sh
           python3 ./script/trigger_community_projects.py
-          . ./script/upload_aur.sh
+       #   . ./script/upload_aur.sh
 
-      # - name: Publish AUR package
-      #   uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-      #   with:
-      #     pkgname: nekobox
-      #     pkgbuild: ./PKGBUILD
-      #     commit_username: ${{ github.actor }}
-      #     commit_email: email@email.email
-      #     ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-      #     commit_message: Update AUR package
-      #     ssh_keyscan_types: rsa,ecdsa,ed25519
-      #
-      # - name: Publish AUR package
-      #   uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
-      #   with:
-      #     pkgname: nekobox-git
-      #     pkgbuild: ./aur_git/PKGBUILD
-      #     commit_username: ${{ github.actor }}
-      #     commit_email: email@email.email
-      #     ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-      #     commit_message: Update AUR package
-      #     ssh_keyscan_types: rsa,ecdsa,ed25519
+       - name: Publish AUR package
+         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+         with:
+           pkgname: nekobox
+           pkgbuild: ./PKGBUILD
+           commit_username: ${{ github.actor }}
+           commit_email: email@email.email
+           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+           commit_message: Update AUR package
+           ssh_keyscan_types: rsa,ecdsa,ed25519
+
+       - name: Publish AUR package
+         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+         with:
+           pkgname: nekobox-git
+           pkgbuild: ./aur_git/PKGBUILD
+           commit_username: ${{ github.actor }}
+           commit_email: email@email.email
+           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+           commit_message: Update AUR package
+           ssh_keyscan_types: rsa,ecdsa,ed25519
 
   build-cpp:
     name: Build windows binaries
