@@ -131,7 +131,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Dynamic UI
 
 ## Changelog Channel
-- matrix: https://matrix.to/#/#NyameBox:matrix.org
+- [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=plastic&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
 - telegram: https://t.me/NyameBox
 
 ## FAQ
