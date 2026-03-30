@@ -6,10 +6,10 @@ Sing-Box command line mode is available now! Just type for additional informatio
 Qt based Desktop cross-platform GUI proxy utility, empowered by [Sing-box](https://github.com/SagerNet/sing-box)
 Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
-<img width="558" height="641" alt="image" src="https://github.com/user-attachments/assets/577b861a-ed17-4f1f-b3ae-340bb43ec3f1" />
+<img width="558" height="641" alt="image" src="https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png" />
 
 
-### GitHub Releases (Portable ZIPs, Windows installers, [AppImages](https://github.com/qr243vbi/nekobox/discussions/41))
+### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
@@ -25,7 +25,8 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
 
 ### Aur package
-- [source](https://aur.archlinux.org/packages/nekobox)
+- [nekobox](https://aur.archlinux.org/packages/nekobox)
+- [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Chocolatey Package
 
@@ -34,7 +35,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 ## Supported protocols
  
-  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
+  SOCKS ; HTTP(S) ; Shadowsocks ; Trojan ; VMess ; VLESS ; TUIC ; Hysteria ; Hysteria2 ; AnyTLS ; Mieru ; Naive ; Wireguard ; SSH ; ShadowTLS ; TrustTunnel ; Juicity ; Custom Outbound ; Custom Config ; Chaining outbounds ; Extra Core ; Tor
 
 ## Subscription Formats
 
@@ -108,8 +109,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - Dynamic UI
 
 ## Changelog Channel
-- matrix: https://matrix.to/#/#nekobox_ex:opensuse.org
-- telegram: https://t.me/nekobox_ex
+- matrix: https://matrix.to/#/#NyameBox:matrix.org
+- telegram: https://t.me/NyameBox
 
 ## FAQ
 **What is AppImage?** <br/>
@@ -158,10 +159,18 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 
 ## Contact Us
   - Write GitHub issue.
-  - Or use Matrix [@fgvxd:matrix.org](https://matrix.to/#/@fgvxd:matrix.org)
+  - Or use Matrix [@qr243vbi:matrix.org](https://matrix.to/#/@qr243vbi:matrix.org)
 
 ## License
 
 Use of this software is subject to the GPL-3 license.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=qr243vbi/nekobox&type=Date)](https://www.star-history.com/#qr243vbi/nekobox&Date)
+## Star History
+
+<a href="https://www.star-history.com/?repos=qr243vbi%2Fnekobox&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+ </picture>
+</a>

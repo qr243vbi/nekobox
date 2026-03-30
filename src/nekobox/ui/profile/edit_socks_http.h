@@ -13,12 +13,18 @@ class EditSocksHttp : public QWidget, public ProfileEditor {
 
 public:
     explicit EditSocksHttp(QWidget *parent = nullptr);
-
+    bool socks_type = false;
     ~EditSocksHttp() override;
 
     void onStart(std::shared_ptr<Configs::ProxyEntity> _ent) override;
 
     bool onEnd() override;
+
+
+    bool onEndSocks();
+    bool onEndHttp();
+    bool onStartSocks();
+    bool onStartHttp();
 
 private:
     Ui::EditSocksHttp *ui;

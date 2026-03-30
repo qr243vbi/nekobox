@@ -98,4 +98,10 @@ bool jsRouteProfileGetter(
     std::function<QString(QString, QString *, bool*)> * func
 );
 
+bool jsAnnouncementMessage(
+    JsUpdaterWindow * factory,
+    QString * updater_js,
+    bool first_start
+);
+
 #endif

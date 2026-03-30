@@ -148,10 +148,16 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 					Timeout: timeout,
 				}
 				// to properly measure muxed configs, let's do the test twice
-				duration, err := urlTest(ctx, client, url)
-				if err == nil && twice {
-					duration, err = urlTest(ctx, client, url)
+				if twice {
+					req, err := http.NewRequestWithContext(ctx, "HEAD", url, nil)
+					if err == nil {
+						resp, err := client.Do(req)
+						if err == nil {
+							resp.Body.Close()
+						}
+					}
 				}
+				duration, err := urlTest(ctx, client, url)
 				resAccess.Lock()
 				u := &URLTestResult{
 					Duration: duration,

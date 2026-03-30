@@ -14,7 +14,7 @@ namespace Configs {
 
         CustomBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("core", core, string);
             ADD_MAP("cmd", command, stringList);
             ADD_MAP("cs", config_simple, string);
@@ -46,11 +46,11 @@ namespace Configs {
             return AbstractBean::DisplayAddress();
         };
 */
-#ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "custom";
         };
-#endif
+
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
     };
 } // namespace Configs

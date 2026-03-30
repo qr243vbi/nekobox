@@ -9,8 +9,7 @@
 namespace API {
 class Client {
 public:
-  explicit Client(std::function<void(const QString &)> onError,
-                  const QString &host, int port);
+  explicit Client(std::function<void(const QString &)> onError);
 
   // QString returns is error string
 
@@ -50,9 +49,13 @@ public:
   std::optional<libcore::QueryCountryTestResponse>
   QueryCountryTestResults(bool *rpcOK);
 
+  std::optional<libcore::QueryIPTestResponse>
+  IPTest(bool *rpcOK, const libcore::IPTestRequest &request);
+
+  std::optional<libcore::QueryIPTestResponse>
+  QueryIPTest(bool *rpcOK);
+
 private:
-  std::string domain;
-  int port;
   std::function<void(const QString &)> onError;
 };
 

@@ -1,3 +1,6 @@
+#ifndef DATA_STORE_HEADER
+#define DATA_STORE_HEADER
+
 #include "Const.hpp"
 #include "ConfigItem.hpp"
 #include "Utils.hpp"
@@ -12,6 +15,7 @@ namespace Configs {
 
     class Routing : public JsonStore {
     public:
+        DECLARE_STORE_TYPE(DefaultRoute)
         virtual ConfJsMap _map() override;
         int current_route_id = 0;
 
@@ -43,13 +47,14 @@ namespace Configs {
 
     class DataStore : public JsonStore {
     public:
+        DECLARE_STORE_TYPE(NekoBox)
         virtual ConfJsMap _map() override;
         // custom hardware info
         QString sub_custom_hwid_params = ""; 
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
         int core_port = 19810;
-        QString core_domain = "127.0.0.1";
+        std::string core_domain = "127.0.0.1";
         int started_id = -1919;
         bool core_running = false;
         bool prepare_exit = false;
@@ -223,3 +228,21 @@ namespace Configs {
     extern DataStore *dataStore;
 
 } // namespace Configs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

@@ -60,6 +60,11 @@ auto asKeyValueRange(T &&iterable) noexcept {
 #include <QList>
 #include <cstddef>
 
+
+QString ReadableDuration(long long ms);
+
+QString ReadableDateTime(long long ms);
+
 template <typename T> class ListRange {
 private:
   T list;
@@ -126,13 +131,15 @@ template <typename T> auto asListRange(QList<T> &&list) {
   ConfJsMap X::_map() {                                                        \
     MAP_BODY
 
-#define INIT_MAP_1                                                             \
+#define NEW_MAP                                                             \
   virtual ConfJsMap _map() override {                                          \
     MAP_BODY
 
-#define INIT_MAP                                                               \
-  INIT_MAP_1                                                                   \
-  ptr = AbstractBean::_map();
+#define INIT_MAP(X)                                                               \
+  NEW_MAP                                                                   \
+  ptr = X::_map();
+
+#define INIT_BEAN_MAP INIT_MAP(Configs::AbstractBean)
 
 #define STOP_MAP                                                               \
   init = true;                                                                 \
@@ -149,7 +156,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
    bool first = true;                                                   \
    for (auto it = ptr.left.begin(); it != ptr.left.end(); ++it) {       \
        if (!first) oss << ", ";                                         \
-       oss << it->first << ":" << it->second;                           \
+       oss << it->first.get_name().toStdString() << ":" << it->second;  \
        first = false;                                                   \
    }                                                                    \
    qDebug() <<  oss.str().c_str();                                      \
@@ -167,22 +174,22 @@ public:                                                                 \
     template<typename T>                                                \
     explicit Name##Enum(T t){ this->set(t); };                    \
     using JsonEnum::operator=;                                          \
-    virtual const boost::bimap<std::string, int>& _map()               \
+    virtual const boost::bimap<EnumFieldName, int>& _map()               \
         const override{                                                        \
-        static boost::bimap<std::string, int> ptr;                     \
+        static boost::bimap<EnumFieldName, int> ptr;                     \
         static bool init = false;                 DEBUG_INIT_ENUM              \
         if (init) return ptr;
 
 #ifdef DEBUG_MODE
-#define ADD_ENUM(K, V) ptr.insert({K, V}); qDebug() << "ADD ENUM" << K << V ;
+#define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V}); qDebug() << "ADD ENUM" << K << V ;
 #else
-#define ADD_ENUM(K, V) ptr.insert({K, V})
+#define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V})
 #endif
 #define ADD_ENUM_LIST(K, I)                             \
 {                                                       \
     int pref = I;                                       \
     for (int i = 0, n = K.size(); i < n; i ++){         \
-        ADD_ENUM(K.at(i).toStdString(), i + pref);      \
+        ADD_ENUM(K.at(i), i + pref);      \
     }                                                   \
 }
 
@@ -247,7 +254,7 @@ QByteArray DecodeB64IfValid(const QString &input,
 class QUrlQuery;
 
 #define GetQuery(url)                                                          \
-  QUrlQuery((url).query(QUrl::ComponentFormattingOption::FullyDecoded));
+  QUrlQuery(url.query(QUrl::ComponentFormattingOption::FullyDecoded));
 
 QString GetQueryValue(const QUrlQuery &q, const QString &key,
                       const QString &def = "");

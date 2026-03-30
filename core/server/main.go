@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"nekobox_core/gen"
+	main_sing "nekobox_core/gen/main_sing"
 	"nekobox_core/internal"
 	"nekobox_core/internal/boxmain"
 	_ "nekobox_core/internal/distro/all"
@@ -16,27 +17,29 @@ import (
 	"strconv"
 	"time"
 
-	main_sing "nekobox_core/gen/main_sing"
-
 	"github.com/apache/thrift/lib/go/thrift"
 	C "github.com/sagernet/sing-box/constant"
 )
 
-func RunCore(_port *int, _debug *bool) {
+func RunCore(addr net.Addr, _debug *bool) {
 	internal.Debug = *_debug
 
 	log.Printf("Ruleset dir is %s", internal.GetRulesetCachedir())
 
 	boxmain.DisableColor()
-	addr := "127.0.0.1:" + strconv.Itoa(*_port)
 	// RPC
 	go func() {
+		network := addr.Network()
+		address := addr.String()
 		for {
 			time.Sleep(100 * time.Millisecond)
-			conn, err := net.Dial("tcp", addr)
+			conn, err := net.Dial(network, address)
 			if err == nil {
 				conn.Close()
-				fmt.Printf("Core listening at %v\n", addr)
+				fmt.Printf("Core listening at %v\n", address)
+				if network == "unix" {
+					os.Chmod(address, 0770)
+				}
 				return
 			}
 		}
@@ -51,11 +54,11 @@ func RunCore(_port *int, _debug *bool) {
 
 		// 2. Create the TBinaryProtocolFactory using the configuration
 		protocolFactory := thrift.NewTBinaryProtocolFactoryConf(config)
-
-		transport, err := thrift.NewTServerSocket(addr)
-		if err != nil {
-			log.Println("error running thrift server: ", err)
-		}
+		//	addr, err := net.ResolveTCPAddr("tcp", listenAddr)
+		//	if err != nil {
+		//		log.Println("error running thrift server: ", err)
+		//	}
+		transport := thrift.NewTServerSocketFromAddrTimeout(addr, 0)
 		handler := &server{}
 		processor := gen.NewLibcoreServiceProcessor(handler)
 		server := thrift.NewTSimpleServer4(processor, transport, transportFactory, protocolFactory)
@@ -82,6 +85,8 @@ func main() {
 	var _waitpid *int
 
 	_port := flag.Int("port", 19810, "Port")
+	_addr := flag.String("address", "127.0.0.1", "Address")
+	_sock := flag.String("socket", "", "Unix Domain Socket")
 	_debug := flag.Bool("debug", false, "Debug mode")
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
 	_ruleset_cachedir := flag.String("ruleset-cache-directory", "", "Set ruleset cache directory")
@@ -168,7 +173,7 @@ func main() {
 		if *_admin {
 			elevated, _ := isElevated()
 			if !elevated {
-				code, err := runAdmin(_port, _debug)
+				code, err := runAdmin(_port, _debug, _addr, _sock)
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "Failed to run as admin: %v\n", err)
 				}
@@ -181,6 +186,29 @@ func main() {
 	fmt.Println()
 
 	testCtx, cancelTests = context.WithCancel(context.Background())
+	var addr net.Addr
+	var err error
+	socket := *_sock
+	if socket != "" {
+		goto unix_resolve
+	} else {
+		if *_port < 0 {
+			socket = *_addr
+			goto unix_resolve
+		}
+		listenAddr := *_addr + ":" + strconv.Itoa(*_port)
+		addr, err = net.ResolveTCPAddr("tcp", listenAddr)
+	}
 
-	RunCore(_port, _debug)
+	goto unix_unresolve
+unix_resolve:
+	{
+		addr, err = net.ResolveUnixAddr("unix", socket)
+	}
+unix_unresolve:
+
+	if err != nil {
+		log.Println("error running thrift server: ", err)
+	}
+	RunCore(addr, _debug)
 }

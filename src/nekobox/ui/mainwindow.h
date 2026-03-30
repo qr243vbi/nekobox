@@ -4,24 +4,24 @@
 #include <nekobox/global/HTTPRequestHelper.hpp>
 
 #ifndef Q_MOC_RUN
-#include "nekobox/api/RPC.h"
+#include <nekobox/api/RPC.h>
 #endif
 
 #include <QSettings>
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/stats/connections/connectionLister.hpp"
-#include "nekobox/stats/autotester/ProxyAutoTester.hpp"
-#include "3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/stats/connections/connectionLister.hpp>
+#include <nekobox/stats/autotester/ProxyAutoTester.hpp>
+#include <3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp>
 
 #ifdef Q_OS_UNIX
 #include <QtDBus>
 #endif
 
 #include <nekobox/dataStore/Database.hpp>
-
+#include <nekobox/ui/info/info.h>
 
 #ifdef NKR_SOFTWARE_KEYS
-#include "nekobox/ui/security_addon.h"
+#include <nekobox/ui/security_addon.h>
 #else
 #define CHECK_SETTINGS_ACCESS 
 #endif
@@ -50,9 +50,9 @@ extern QWidget *mainwindow;
 
 #include "group/GroupSort.hpp"
 
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/ConfigBuilder.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 #include "ui_mainwindow.h"
 
 
@@ -141,6 +141,8 @@ public:
 
     void prepare_exit();
 
+    void announcement_message(bool first_launch);
+
     void move_selected_profiles(int profile_id);
 
     bool context_menu_locked();
@@ -214,6 +216,8 @@ private slots:
     void on_masterLogBrowser_customContextMenuRequested(const QPoint &pos);
 
     void on_menu_basic_settings_triggered();
+
+    void on_menu_information_triggered();
 
     void on_menu_routing_settings_triggered();
 
@@ -371,6 +375,8 @@ private:
     void closeEvent(QCloseEvent *event) override;
 
     void dragEnterEvent(QDragEnterEvent *event) override;
+
+    void changeEvent(QEvent *event) override;
 
     void dropEvent(QDropEvent* event) override;
 

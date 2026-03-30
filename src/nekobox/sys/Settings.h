@@ -88,7 +88,7 @@ SETTINGS_VALUE(Chr)
 
 class WindowSettings : public SettingsStore {
 public:
-  std::unique_ptr<Shortcuts> shortcuts;
+  std::unique_ptr<class Shortcuts> shortcuts;
   QList<std::shared_ptr<SettingsValue>> &_map() override;
   QSettings settings() override;
   QString theme =
@@ -119,6 +119,7 @@ public:
   int max_log_line = 200;
   int width = 0;
   int height = 0;
+  bool core_use_uds = true;
   int X = 0;
   int Y = 0;
   bool maximized = false;
@@ -131,6 +132,7 @@ public:
   bool ask_delete = true;
   QStringList column_width;
   QString language = "";
+  bool first_start = true;
 };
 
 }; // namespace Configs

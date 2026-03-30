@@ -69,6 +69,7 @@ namespace Configs {
     public:
         RouteRule();
 
+        DECLARE_STORE_TYPE(NoSave)
         RouteRule(const RouteRule& other);
 
         virtual ConfJsMap _map() override;
@@ -129,6 +130,9 @@ namespace Configs {
 
     class RoutingChain : public JsonStore {
     public:
+
+        DECLARE_STORE_TYPE(Routes)
+        DECLARE_ID_RETURN
         int id = -1;
         QString chain_name = "";
         QString update_url = "";

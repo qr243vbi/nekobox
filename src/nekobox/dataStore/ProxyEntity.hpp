@@ -1,16 +1,20 @@
 #pragma once
 
 #include "Utils.hpp"
-#include <nekobox/dataStore/Configs.hpp>
+#include "Configs.hpp"
+#include "ConfigItem.hpp"
 #include <nekobox/global/CountryHelper.hpp>
 #include <nekobox/stats/traffic/TrafficData.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
+#include "DataStore.hpp"
 #include <QColor>
 #include <memory>
 #include <nekobox/configs/proxy/ExtraCore.h>
 
 namespace Configs {
-    class SocksHttpBean;
+    class HttpBean;
+
+    class SocksBean;
 
     class ShadowSocksBean;
 
@@ -25,6 +29,10 @@ namespace Configs {
     class AnyTLSBean;
 
     class MieruBean;
+
+    class TrustTunnelBean;
+    
+    class JuicityBean;
 
     class ShadowTLSBean;
 
@@ -50,8 +58,14 @@ namespace Configs {
         std::shared_ptr<Configs::AbstractBean> strong_bean;
         bool SavePrivate();
     public:
+
+        DECLARE_STORE_TYPE(Proxies)
+        DECLARE_ID_RETURN
         virtual ConfJsMap _map() override;
         virtual bool Save() override;
+
+        DECLARE_FLAG(same_path_for_bean, custom_flag2)
+    //    DECLARE_FLAG(bean_path_not_defined, custom_flag)
 
         bool isValid() const;
 
@@ -65,9 +79,9 @@ namespace Configs {
         int gid = 0;
         int latencyInt = 0;
         int latencyOrder = 0;
-
         bool is_working = false;
-        QString bean_cfg;
+
+//        QString bean_cfg;
         QString dl_speed;
         QString ul_speed;
         QString test_country;
@@ -86,7 +100,7 @@ namespace Configs {
             auto ret = this->weak_bean.lock();
             if ((void*)ret.get() == (void*)bean.get()){
                 if (ret != nullptr){
-                    ret->save_control_no_save = false;
+                    ret->save_control_no_save(false);
                 }
                 return std::static_pointer_cast<A>(ret);
             }
@@ -109,12 +123,12 @@ namespace Configs {
 
    //     [[nodiscard]] QColor DisplayLatencyColor() const;
 
-        #define SocksHTTPBean SocksHttpBean
         #define cast_func(X)         \
         [[nodiscard]] std::shared_ptr<const Configs::X##Bean> X##Bean() const;
 
         cast_func(Chain)
-        cast_func(SocksHttp)
+        cast_func(Socks)
+        cast_func(Http)
         cast_func(ShadowSocks)
         cast_func(VMess)
         cast_func(TrojanVLESS)
@@ -130,6 +144,8 @@ namespace Configs {
         cast_func(Custom)
         cast_func(ExtraCore)
         cast_func(Naive)
+        cast_func(TrustTunnel)
+        cast_func(Juicity)
 
         #undef cast_func
     };

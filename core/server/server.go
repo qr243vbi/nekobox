@@ -154,6 +154,25 @@ func (s *server) CheckConfig(ctx context.Context, in *gen.LoadConfigReq) (*gen.E
 	return out, nil
 }
 
+func (s *server) QueryIPTest(ctx context.Context, in *gen.EmptyReq) (out *gen.QueryIPTestResponse, _ error) {
+	results := IPReporter.Results()
+	out = &gen.QueryIPTestResponse{}
+	for _, r := range results {
+		errStr := ""
+		if r.Error != nil {
+			errStr = r.Error.Error()
+		}
+
+		out.Results = append(out.Results, &gen.IPTestResp{
+			OutboundTag: (r.Tag),
+			IP:          (r.Result.IP),
+			CountryCode: (r.Result.CountryCode),
+			Error:       (errStr),
+		})
+	}
+	return out, nil
+}
+
 func (s *server) IPTest(ctx context.Context, in *gen.IPTestRequest) (*gen.QueryIPTestResponse, error) {
 	out := new(gen.QueryIPTestResponse)
 	var testInstance *boxbox.Box
@@ -213,7 +232,6 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 			return out, nil
 		}
 		testInstance = internal.BoxInstance
-		twice = false
 	} else {
 		testInstance, cancel, err = boxmain.Create([]byte(in.Config))
 		if err != nil {

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "AbstractBean.hpp"
+#include "V2RayStreamSettings.hpp"
+#include "Preset.hpp"
 
 namespace Configs {
     class QUICBean : public AbstractBean {
@@ -60,6 +62,8 @@ namespace Configs {
         QString caText = "";
         bool disableSni = false;
 
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+
         #undef _add
         #define _add(X, Y, B, T) _put(X, Y, &this->B) 
             //, ITEM_TYPE(T));
@@ -82,6 +86,7 @@ namespace Configs {
                 _add(tuic, "alpn", alpn, string);
                 _add(tuic, "caText", caText, string);
                 _add(tuic, "disableSni", disableSni, boolean);
+                _add(tuic, "network", network, string);
 
                 hys1.insert(tuic);
                 _add(hys1, "authPayload", authPayload, string);
@@ -154,7 +159,7 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             if (proxy_type == proxy_TUIC) {
                 return "tuic";
@@ -164,6 +169,5 @@ namespace Configs {
                 return "hysteria2";
             }
         };
-        #endif
     };
 } // namespace Configs

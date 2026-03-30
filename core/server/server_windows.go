@@ -154,7 +154,7 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 	}
 }
 
-func runAdmin(_port *int, _debug *bool) (int, error) {
+func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, error) {
 	executablePath, err := os.Executable()
 	if err != nil {
 		log.Fatalf("Failed to get executable path: %v", err)
@@ -175,7 +175,8 @@ func runAdmin(_port *int, _debug *bool) (int, error) {
 	//	formattedString := fmt.Sprintf("Start-Process \"%s\" -ArgumentList '-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s' -WindowStyle Hidden -Verb RunAs -Wait",
 	//		 os.Args[0], *_port, pid, stdout_pipe, stderr_pipe, flag)
 
-	formattedString := fmt.Sprintf("-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s", *_port, pid, stdout_pipe, stderr_pipe, flag)
+	formattedString := fmt.Sprintf(
+		"-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s -socket \"%s\" -address \"%s\"", *_port, pid, stdout_pipe, stderr_pipe, flag, *_sock, *_addr)
 
 	var wg sync.WaitGroup
 

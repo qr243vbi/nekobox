@@ -14,7 +14,7 @@ namespace Configs {
 
         ExtraCoreBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("socks_address", socksAddress, string);
             ADD_MAP("socks_port", socksPort, integer);
             ADD_MAP("extra_core_path", extraCorePath, string);
@@ -29,11 +29,11 @@ namespace Configs {
         bool TryParseLink(const QString &link) override;
 
         bool TryParseJson(const QJsonObject &obj) override;
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "extra";
         };
-        #endif
+
 
         QString ToShareLink() const override;
     };

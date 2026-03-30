@@ -15,7 +15,7 @@ namespace Configs {
         TorBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("executable_path", executable_path, string);
             ADD_MAP("extra_args", extra_args, stringList);
             ADD_MAP("data_directory", data_directory, string);
@@ -31,10 +31,10 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "tor";
         };
-        #endif
+
     };
 } // namespace Configs

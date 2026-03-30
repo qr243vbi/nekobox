@@ -10,17 +10,17 @@ namespace Configs {
         ChainBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("list", list, integerList);
         STOP_MAP
 
   //      QString DisplayType() override { return QObject::tr("Chain Proxy"); };
 
   //      QString DisplayAddress() override { return ""; };
-  #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "chain";
         };
-  #endif
+
     };
 } // namespace Configs

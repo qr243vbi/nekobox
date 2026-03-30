@@ -217,6 +217,8 @@ namespace Configs {
 class Shortcuts : public JsonStore
 {
 public:
+
+    DECLARE_STORE_TYPE(Shortcuts)
     bool legacy = false;
     virtual ConfJsMap _map() override;
     QVariantMap shortcuts;
@@ -228,6 +230,8 @@ public:
 class ShortcutsOld : public JsonStore
 {
 public:
+
+    DECLARE_STORE_TYPE(Shortcuts)
     virtual ConfJsMap _map() override;
     QStringList shortcuts;
 
@@ -237,6 +241,7 @@ public:
 
 struct ProxyColorRule : public JsonStore {
     virtual ConfJsMap _map() override;
+    DECLARE_STORE_TYPE(NoSave)
     ProxyColorRule(int, int, int, int, bool, QColor);
     int orderMin;
     int orderRange;
@@ -247,6 +252,7 @@ struct ProxyColorRule : public JsonStore {
 };
 
 struct IndicatorRule : public JsonStore {
+    DECLARE_STORE_TYPE(NoSave)
     virtual ConfJsMap _map() override;
     IndicatorRule(double, double, double, QColor);
     IndicatorRule();

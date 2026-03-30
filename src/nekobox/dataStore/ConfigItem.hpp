@@ -1,9 +1,11 @@
 #pragma once
+#ifndef CONFIG_ITEM_H
+#define CONFIG_ITEM_H
 
 #include <QString>
 #include <QJsonObject>
-#include <functional>
 #include <boost/bimap.hpp>
+#include "Configs.hpp"
 
 namespace Configs_ConfigItem{
     struct configItem;
@@ -15,11 +17,58 @@ typedef ConfJsMapStat & ConfJsMap;
 //    return std::make_shared<QMap<QString, std::shared_ptr<Configs_ConfigItem::configItem>>>(); 
 //}
 
+#define GET_FLAG(X, Y) ((X & Y) > 0);
+#define SET_FLAG(X, Y, flag) \
+    if (flag){          \
+        X |= Y ;  \
+    } else {       \
+        X &= ~Y ; \
+    }
+#define DECLARE_FLAG(X, Y) \
+bool X(){                \
+    return GET_FLAG(this->flags, Configs::JsonStoreFlags::Y);        \
+}                                                                                        \
+bool X(bool flag){                                                    \
+    SET_FLAG(this->flags, Configs::JsonStoreFlags::Y, flag);             \
+    return flag;                                                                          \
+}
+
+#define DECLARE_STORE_TYPE(X) virtual char StoreType() const override { return Configs::JsonStoreType::X; };
+#define DECLARE_ID_RETURN virtual int Id() const override { return id; };
+#define DECLARE_FLAG_SAME(X) DECLARE_FLAG(X, X)
+
+namespace Configs {
+    namespace JsonStoreFlags{
+        const unsigned char
+            save_control_no_save  = 0b00000001,
+            storage_exists        = 0b00000010,
+            custom_flag2          = 0b01000000,
+            custom_flag           = 0b10000000;
+
+    };
+
+    enum JsonStoreType {
+        Routes = 1,
+        Proxies = 2,
+        Groups = 3,
+        Beans = 4,
+        Shortcuts = 5,
+        ResourceManager = 6,
+        ProxyManager = 7,
+        NekoBox = 8,
+        DefaultRoute = 9,
+        NoSave = 10,
+        TrafficLooper = 11,
+        DatabaseLogger = 12
+    };
+
+}
+    
 namespace Configs_ConfigItem {
 
 class JsonEnum{
 public:
-    virtual const boost::bimap<std::string, int> & _map() const;
+    virtual const boost::bimap<EnumFieldName, int> & _map() const;
     JsonEnum& set(int) ;
     JsonEnum& set(const QString&);
     JsonEnum& set(const char *);
@@ -123,6 +172,13 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
         std::shared_ptr<configItem> _get_const_job(const QString &name) const;
     public:
+        DECLARE_FLAG_SAME(save_control_no_save)
+        DECLARE_FLAG_SAME(storage_exists)
+        virtual int Id() const ;
+
+        QByteArray content();
+        void content(const QByteArray &array);
+
         virtual ~JsonStore() = default;
    //     QMap<QString, std::shared_ptr<configItem>> _map;
         
@@ -172,21 +228,23 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 */
         virtual ConfJsMap _map() = 0;
 
-        std::function<void()> callback_after_load = nullptr;
-        std::function<void()> callback_before_save = nullptr;
+  //      std::function<void()> callback_after_load = nullptr;
+  //      std::function<void()> callback_before_save = nullptr;
 
-        QString fn;
+ //       QString fn;
  //       bool load_control_must = false; 
-        bool save_control_no_save = false;
+ //       bool save_control_no_save = false;
 
         JsonStore() = default;
 
-        explicit JsonStore(QString fileName) {
-            fn = std::move(fileName);
-        }
+
+ //       explicit JsonStore(QString fileName) {
+ //           fn = std::move(fileName);
+ //       }
 
         void _setValue(const QString &name, const QJsonValue &p);
         void _setValue(const JsonStore * store, const void *p);
+        QJsonValue _getValue(const QString & name) const;
 
         QString _name(void *p);
 
@@ -207,9 +265,19 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         
         virtual bool Save();
 
+        virtual bool SaveToFile(const QString & file);
+
         virtual bool Load();
 
+        virtual bool LoadFromFile(const QString & file);
+
+        virtual char StoreType() const = 0;
+
         virtual bool UnknownKeyHash(const QByteArray &data);
+
+
+    protected:
+        unsigned char flags = 0;
         
     };
 
@@ -218,3 +286,32 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 } // namespace Configs_ConfigItem
 
 using namespace Configs_ConfigItem;
+
+namespace Configs {
+class DatabaseManager {
+public:
+    virtual bool Save(JsonStore* store) = 0;
+    virtual bool Load(JsonStore* store) = 0;
+    virtual bool Drop(char type, int id) = 0;
+    virtual QList<int> Query(char type) = 0;
+};
+
+
+class FileDatabaseManager: public DatabaseManager {
+public:
+    virtual bool Save(JsonStore *) override;
+    virtual bool Load(JsonStore *) override;
+    virtual bool Drop(char, int) override;
+
+    static bool SaveToFile(JsonStore *) ;
+    static bool LoadFromFile(JsonStore *) ;
+    static bool DropFromDirectory(char, int) ;
+    virtual QList<int> Query(char type) override;
+
+};
+
+
+inline std::shared_ptr<DatabaseManager> databaseManager = std::make_shared<FileDatabaseManager>();
+
+}
+#endif

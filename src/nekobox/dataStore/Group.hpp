@@ -1,12 +1,16 @@
 #pragma once
 
 #include "ProxyEntity.hpp"
-#include "nekobox/dataStore/Configs.hpp"
+#include "Configs.hpp"
+#include "ConfigItem.hpp"
 
 namespace Configs
 {
     class Group : public JsonStore {
     public:
+
+        DECLARE_STORE_TYPE(Groups)
+        DECLARE_ID_RETURN
         int id = -1;
         bool archive = false;
         bool skip_auto_update = false;

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>766</width>
-    <height>472</height>
+    <height>533</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -52,7 +52,7 @@
           <string>Basic Settings</string>
          </property>
          <property name="flat">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
           <property name="leftMargin">
@@ -164,7 +164,7 @@
           <string>Network Settings</string>
          </property>
          <property name="flat">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_13">
           <property name="leftMargin">
@@ -216,7 +216,7 @@
           <string>Test Settings</string>
          </property>
          <property name="flat">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,2,0,1">
           <property name="leftMargin">
@@ -711,9 +711,15 @@
                </item>
                <item>
                 <widget class="QCheckBox" name="disable_stats">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
-                   <width>411</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
@@ -727,21 +733,17 @@
                  </property>
                 </widget>
                </item>
+               <item>
+                <widget class="QCheckBox" name="core_use_uds">
+                 <property name="toolTip">
+                  <string>Use Unix Domain Socket for communication between nekobox and nekobox_core</string>
+                 </property>
+                 <property name="text">
+                  <string>Use UDS for IPC</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Multiplex (mux)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>Loglevel</string>
-               </property>
-              </widget>
              </item>
              <item row="1" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout">
@@ -773,6 +775,20 @@
                 </widget>
                </item>
               </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Multiplex (mux)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Loglevel</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -899,6 +915,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="title">
           <string/>
          </property>
@@ -943,6 +962,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="flat">
           <bool>true</bool>
          </property>
@@ -951,7 +973,7 @@
            <number>25</number>
           </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>9</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -998,6 +1020,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
          </property>
          <property name="title">
           <string/>
@@ -1221,6 +1246,9 @@
            <height>50</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="title">
           <string/>
          </property>
@@ -1355,6 +1383,9 @@
            <height>50</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="title">
           <string/>
          </property>
@@ -1377,27 +1408,65 @@
           <property name="verticalSpacing">
            <number>5</number>
           </property>
-          <item row="1" column="5">
-           <widget class="QGroupBox" name="groupBox_11">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_23">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
-              <height>50</height>
+              <width>50</width>
+              <height>0</height>
              </size>
             </property>
-            <property name="title">
-             <string/>
+            <property name="text">
+             <string>Width</string>
             </property>
-            <property name="flat">
-             <bool>true</bool>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLineEdit" name="height">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_12"/>
+            <property name="inputMethodHints">
+             <set>Qt::InputMethodHint::ImhDigitsOnly</set>
+            </property>
+            <property name="inputMask">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string notr="true"/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_28">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Y</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="Y">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -1422,22 +1491,13 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_23">
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="X">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Width</string>
             </property>
            </widget>
           </item>
@@ -1454,39 +1514,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="3">
-           <widget class="QLineEdit" name="Y">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="X">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="label_28">
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Y</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="2">
            <widget class="QLabel" name="label_10">
             <property name="minimumSize">
@@ -1500,23 +1527,30 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="3">
-           <widget class="QLineEdit" name="height">
+          <item row="1" column="5">
+           <widget class="QGroupBox" name="groupBox_11">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="inputMethodHints">
-             <set>Qt::InputMethodHint::ImhDigitsOnly</set>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
             </property>
-            <property name="inputMask">
-             <string notr="true"/>
+            <property name="styleSheet">
+             <string notr="true"> QGroupBox{ border: none;; }   </string>
             </property>
-            <property name="text">
-             <string notr="true"/>
+            <property name="title">
+             <string/>
             </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_12"/>
            </widget>
           </item>
          </layout>
@@ -1535,6 +1569,9 @@
            <width>0</width>
            <height>50</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
          </property>
          <property name="title">
           <string/>
@@ -1679,6 +1716,9 @@
            <height>50</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="title">
           <string/>
          </property>
@@ -1686,6 +1726,9 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <property name="topMargin">
            <number>0</number>
           </property>
@@ -1719,6 +1762,9 @@
            <height>50</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+         </property>
          <property name="title">
           <string/>
          </property>
@@ -1726,6 +1772,12 @@
           <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <spacer name="horizontalSpacer_8">
             <property name="orientation">
@@ -1852,6 +1904,9 @@
            <width>0</width>
            <height>50</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
          </property>
          <property name="title">
           <string/>

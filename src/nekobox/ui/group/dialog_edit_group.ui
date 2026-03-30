@@ -74,6 +74,9 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
+            </property>
             <property name="title">
              <string/>
             </property>
@@ -283,6 +286,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Subscription</string>
      </property>
@@ -322,6 +328,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
         </property>
         <property name="flat">
          <bool>true</bool>

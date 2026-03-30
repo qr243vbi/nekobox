@@ -1,4 +1,9 @@
-set(PLATFORM_SOURCES 3rdparty/WinCommander.cpp src/sys/windows/guihelper.cpp src/sys/windows/MiniDump.cpp src/sys/windows/eventHandler.cpp src/sys/windows/WinVersion.cpp)
+set(PLATFORM_SOURCES 
+    3rdparty/WinCommander.cpp 
+    ${GHARQAD}/sys/windows/guihelper.cpp 
+    ${GHARQAD}/sys/windows/MiniDump.cpp 
+    ${GHARQAD}/sys/windows/eventHandler.cpp 
+    ${GHARQAD}/sys/windows/WinVersion.cpp)
 set(PLATFORM_LIBRARIES wininet wsock32 ws2_32 user32 rasapi32 iphlpapi ntdll wbemuuid)
 
 include(cmake/windows/generate_product_version.cmake)
@@ -21,5 +26,7 @@ elseif (MSVC)
     add_compile_options(/permissive-)
     add_compile_options("/utf-8")
     add_compile_options("/wd4702")
-    add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
 endif ()
+
+add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
+

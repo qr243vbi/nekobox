@@ -4,7 +4,7 @@
 #include <QFile>
 #include <QSettings>
 #include <QAction>
-#include "nekobox/ui/security/security.h"
+#include <nekobox/ui/security/security.h>
 
 
 #ifndef NKR_DEFAULT_PASSWORD
@@ -103,4 +103,8 @@ void delUser(const QString & username);
 
 void init_keys();
 
-#include "nekobox/ui/mainwindow.h"
+qsizetype getUserCount();
+
+int getFailedCount(bool reset = false);
+
+#include <nekobox/ui/mainwindow.h>

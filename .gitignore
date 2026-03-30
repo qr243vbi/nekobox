@@ -4,9 +4,12 @@
 !CMakeLists.txt
 bash.sh
 *.txt
+*.dmp
 run.ps1
 .ENV
 global.ini
+public
+settings
 translate.py
 TEMP
 script/PKGBUILD

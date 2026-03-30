@@ -1,4 +1,5 @@
 #pragma once
+#include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include <QDir>
 
@@ -6,6 +7,7 @@ namespace Configs {
 
 class ResourceManager : public JsonStore {
 public:
+    DECLARE_STORE_TYPE(ResourceManager)
   ResourceManager();
   QString core_path;
   QString resources_path;
@@ -18,5 +20,5 @@ public:
   QString getLatestPath();
 };
 
-extern ResourceManager *resourceManager;
+extern class ResourceManager *resourceManager;
 } // namespace Configs

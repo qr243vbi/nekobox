@@ -20,7 +20,7 @@ namespace Configs {
         explicit TailscaleBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("state_directory", state_directory, string);
             ADD_MAP("auth_key", auth_key, string);
             ADD_MAP("control_url", control_url, string);
@@ -48,10 +48,10 @@ namespace Configs {
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "tailscale";
         };
-        #endif
+
     };
 } // namespace Configs

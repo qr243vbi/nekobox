@@ -5,7 +5,7 @@
 
 namespace Preset::SingBox {
   extern QMap<QString, QString> OutboundTypes;
-  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno"};
+  inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno", "bbr_standard", "bbr_variant"};
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList MieruMultiplexing = {
       "MULTIPLEXING_OFF",
@@ -16,6 +16,11 @@ namespace Preset::SingBox {
   inline QStringList MieruTransport = {
       "TCP",
       "UDP"
+  };
+
+  inline QStringList Network = {
+      "tcp",
+      "udp"
   };
   inline QStringList DomainStrategy = {"", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"};
   inline QStringList UtlsFingerPrint = {"", "chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"};

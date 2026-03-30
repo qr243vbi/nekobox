@@ -17,7 +17,7 @@ namespace Configs {
         SSHBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("user", user, string);
             ADD_MAP("password", password, string);
             ADD_MAP("privateKey", privateKey, string);
@@ -37,10 +37,10 @@ namespace Configs {
         bool TryParseJson(const QJsonObject &obj) override;
 
         QString ToShareLink() const override;
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "ssh";
         };
-        #endif
+
     };
 }

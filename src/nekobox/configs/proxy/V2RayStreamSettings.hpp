@@ -4,8 +4,20 @@
 #include "Preset.hpp"
 
 namespace Configs {
+
+    INIT_ENUM(QUIC)
+        ADD_ENUM_LIST(Preset::SingBox::QUICCongestionControlAlgorithm, 1);
+    STOP_ENUM
+    
+INIT_ENUM(Network)
+    ADD_ENUM_LIST(Preset::SingBox::Network, 1);
+STOP_ENUM
+
     class V2rayStreamSettings : public JsonStore {
     public:
+
+
+        DECLARE_STORE_TYPE(NoSave)
         QString ech_config = "";
         bool enable_ech = false;
         QString query_server_name = "";
@@ -40,7 +52,7 @@ namespace Configs {
                 
         V2rayStreamSettings() : JsonStore() {
         }
-        INIT_MAP_1
+        NEW_MAP
             ADD_MAP("net", network, string);
             ADD_MAP("sec", security, string);
             ADD_MAP("pac_enc", packet_encoding, string);

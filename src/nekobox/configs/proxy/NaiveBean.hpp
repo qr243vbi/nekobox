@@ -7,10 +7,6 @@
 
 namespace Configs {
 
-    INIT_ENUM(QUIC)
-        ADD_ENUM_LIST(Preset::SingBox::QUICCongestionControlAlgorithm, 1);
-    STOP_ENUM
-
     class NaiveBean : public AbstractBean {
     public:
         QString username = "";
@@ -27,13 +23,13 @@ namespace Configs {
             stream = std::make_shared<V2rayStreamSettings>();
         }
 
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "naive";
         };
-        #endif
+
         
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("username", username, string);
             ADD_MAP("password", password, string);
             ADD_MAP("insecure_concurrency", insecure_concurrency, integer);

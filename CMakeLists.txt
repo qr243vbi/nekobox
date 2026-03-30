@@ -26,7 +26,8 @@ endif()
 #	endif ()
 #endif ()
 
-set(NEKOBOX_INCLUDE "src/nekobox")
+set(NYXARIA "src/nekobox")
+set(GHARQAD "src/gharqad")
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools)
 
@@ -94,7 +95,7 @@ add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreSer
 # Include the generated files in your project
 include_directories("${THRIFT_GEN_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(THRIFT_GENERATED_SOURCES
-    "src/libcore.cpp"
+    "${GHARQAD}/libcore.cpp"
 )
 
 
@@ -103,14 +104,14 @@ set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
         ${THRIFT_GENERATED_SOURCES}
         ${SECURITY_SOURCES}
-        src/main.cpp
-        src/dataStore/Configs.cpp
-        src/dataStore/ConfigItem.cpp
-        src/dataStore/Utils.cpp
-        src/global/GuiUtils.cpp
-        src/global/HTTPRequestHelper.cpp
-        src/global/DeviceDetailsHelper.cpp
-        src/global/CountryHelper.cpp
+        ${GHARQAD}/main.cpp
+        ${GHARQAD}/dataStore/Configs.cpp
+        ${GHARQAD}/dataStore/ConfigItem.cpp
+        ${GHARQAD}/dataStore/Utils.cpp
+        ${GHARQAD}/global/GuiUtils.cpp
+        ${GHARQAD}/global/HTTPRequestHelper.cpp
+        ${GHARQAD}/global/DeviceDetailsHelper.cpp
+        ${GHARQAD}/global/CountryHelper.cpp
 
         3rdparty/base64.cpp
         3rdparty/qrcodegen.cpp
@@ -132,187 +133,197 @@ set(PROJECT_SOURCES
         3rdparty/quirc/quirc.c
         3rdparty/quirc/version_db.c
 
-        src/api/RPC.cpp
-        src/dataStore/Database.cpp
-        src/stats/traffic/TrafficLooper.cpp
-        src/dataStore/ProfileFilter.cpp
-        src/configs/ConfigBuilder.cpp
+        ${GHARQAD}/api/RPC.cpp
+        ${GHARQAD}/dataStore/Database.cpp
+        ${GHARQAD}/stats/traffic/TrafficLooper.cpp
+        ${GHARQAD}/dataStore/ProfileFilter.cpp
+        ${GHARQAD}/configs/ConfigBuilder.cpp
 
-        src/configs/proxy/AbstractBean.cpp
-        src/configs/proxy/WireguardBean.cpp
-        src/configs/proxy/Bean2CoreObj_box.cpp
-        src/configs/proxy/Bean2Link.cpp
-        src/configs/proxy/Link2Bean.cpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/AbstractBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/AnyTLSBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/ChainBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/CustomBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/ExtraCore.h
-        ${NEKOBOX_INCLUDE}/configs/proxy/includes.h
-        ${NEKOBOX_INCLUDE}/configs/proxy/MieruBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/NaiveBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/TorBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/Preset.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/QUICBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowSocksBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/ShadowTLSBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/SocksHttpBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/SSHBean.h
-        ${NEKOBOX_INCLUDE}/configs/proxy/Tailscale.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/TrojanVLESSBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/V2RayStreamSettings.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/VMessBean.hpp
-        ${NEKOBOX_INCLUDE}/configs/proxy/WireguardBean.h
-        ${NEKOBOX_INCLUDE}/configs/sub/GroupUpdater.hpp
-        ${NEKOBOX_INCLUDE}/configs/ConfigBuilder.hpp
-        ${NEKOBOX_INCLUDE}/api/RPC.h
-        ${NEKOBOX_INCLUDE}/dataStore/ConfigItem.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/Configs.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/Const.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/Database.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/DataStore.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/Group.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/ProfileFilter.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/ProxyEntity.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/ResourceEntity.hpp
-        ${NEKOBOX_INCLUDE}/dataStore/RouteEntity.h
-        ${NEKOBOX_INCLUDE}/dataStore/Utils.hpp
+        ${GHARQAD}/configs/proxy/AbstractBean.cpp
+        ${GHARQAD}/configs/proxy/WireguardBean.cpp
+        ${GHARQAD}/configs/proxy/Bean2CoreObj_box.cpp
+        ${GHARQAD}/configs/proxy/Bean2Link.cpp
+        ${GHARQAD}/configs/proxy/Link2Bean.cpp
+        ${NYXARIA}/configs/proxy/AbstractBean.hpp
+        ${NYXARIA}/configs/proxy/AnyTLSBean.hpp
+        ${NYXARIA}/configs/proxy/ChainBean.hpp
+        ${NYXARIA}/configs/proxy/CustomBean.hpp
+        ${NYXARIA}/configs/proxy/ExtraCore.h
+        ${NYXARIA}/configs/proxy/includes.h
+        ${NYXARIA}/configs/proxy/TrustTunnelBean.hpp
+        ${NYXARIA}/configs/proxy/JuicityBean.hpp
+        ${NYXARIA}/configs/proxy/MieruBean.hpp
+        ${NYXARIA}/configs/proxy/NaiveBean.hpp
+        ${NYXARIA}/configs/proxy/TorBean.hpp
+        ${NYXARIA}/configs/proxy/Preset.hpp
+        ${NYXARIA}/configs/proxy/QUICBean.hpp
+        ${NYXARIA}/configs/proxy/ShadowSocksBean.hpp
+        ${NYXARIA}/configs/proxy/ShadowTLSBean.hpp
+        ${NYXARIA}/configs/proxy/HttpBean.hpp
+        ${NYXARIA}/configs/proxy/SocksBean.hpp
+        ${NYXARIA}/configs/proxy/SSHBean.h
+        ${NYXARIA}/configs/proxy/Tailscale.hpp
+        ${NYXARIA}/configs/proxy/TrojanVLESSBean.hpp
+        ${NYXARIA}/configs/proxy/V2RayStreamSettings.hpp
+        ${NYXARIA}/configs/proxy/VMessBean.hpp
+        ${NYXARIA}/configs/proxy/WireguardBean.h
+        ${NYXARIA}/configs/sub/GroupUpdater.hpp
+        ${NYXARIA}/configs/ConfigBuilder.hpp
+        ${NYXARIA}/api/RPC.h
+        ${NYXARIA}/dataStore/ConfigItem.hpp
+        ${NYXARIA}/dataStore/Configs.hpp
+        ${NYXARIA}/dataStore/Const.hpp
+        ${NYXARIA}/dataStore/Database.hpp
+        ${NYXARIA}/dataStore/DataStore.hpp
+        ${NYXARIA}/dataStore/Group.hpp
+        ${NYXARIA}/dataStore/ProfileFilter.hpp
+        ${NYXARIA}/dataStore/ProxyEntity.hpp
+        ${NYXARIA}/dataStore/ResourceEntity.hpp
+        ${NYXARIA}/dataStore/RouteEntity.h
+        ${NYXARIA}/dataStore/Utils.hpp
 
-        ${NEKOBOX_INCLUDE}/global/CountryHelper.hpp
-        ${NEKOBOX_INCLUDE}/global/DeviceDetailsHelper.hpp
-        ${NEKOBOX_INCLUDE}/global/GuiUtils.hpp
-        ${NEKOBOX_INCLUDE}/global/HTTPRequestHelper.hpp
-        ${NEKOBOX_INCLUDE}/global/keyvaluerange.h
+        ${NYXARIA}/global/CountryHelper.hpp
+        ${NYXARIA}/global/DeviceDetailsHelper.hpp
+        ${NYXARIA}/global/GuiUtils.hpp
+        ${NYXARIA}/global/HTTPRequestHelper.hpp
+        ${NYXARIA}/global/keyvaluerange.h
 
-        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficData.hpp
-        ${NEKOBOX_INCLUDE}/stats/traffic/TrafficLooper.hpp
+        ${NYXARIA}/stats/traffic/TrafficData.hpp
+        ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
-        src/configs/sub/GroupUpdater.cpp
-        ${NEKOBOX_INCLUDE}/sys/AutoRun.hpp
-        ${NEKOBOX_INCLUDE}/sys/Process.hpp
-        ${NEKOBOX_INCLUDE}/sys/Settings.h
-        ${NEKOBOX_INCLUDE}/ui/utils/MapListModel.hpp
+        ${GHARQAD}/configs/sub/GroupUpdater.cpp
+        ${NYXARIA}/sys/AutoRun.hpp
+        ${NYXARIA}/sys/Process.hpp
+        ${NYXARIA}/sys/Settings.h
+        ${NYXARIA}/ui/utils/MapListModel.hpp
 
-        src/sys/Process.cpp
-        src/sys/AutoRun.cpp
+        ${GHARQAD}/sys/Process.cpp
+        ${GHARQAD}/sys/AutoRun.cpp
 
-        ${NEKOBOX_INCLUDE}/ui/setting/ThemeManager.hpp
-        src/ui/setting/ThemeManager.cpp
-        src/ui/setting/Icon.cpp
+        ${NYXARIA}/ui/setting/ThemeManager.hpp
+        ${GHARQAD}/ui/setting/ThemeManager.cpp
+        ${GHARQAD}/ui/setting/Icon.cpp
 
-        src/ui/mainwindow_rpc.cpp
-        src/ui/mainwindow.cpp
-        ${NEKOBOX_INCLUDE}/ui/mainwindow.h
-        ${NEKOBOX_INCLUDE}/ui/mainwindow.ui
-        ${NEKOBOX_INCLUDE}/ui/info/main.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.h
-        src/ui/profile/dialog_edit_profile.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/dialog_edit_profile.ui
-        ${NEKOBOX_INCLUDE}/ui/group/dialog_edit_group.h
-        src/ui/group/dialog_edit_group.cpp
-        ${NEKOBOX_INCLUDE}/ui/group/dialog_edit_group.ui
-        ${NEKOBOX_INCLUDE}/ui/group/dialog_group_choose_proxy.ui
+        ${GHARQAD}/ui/mainwindow_rpc.cpp
+        ${GHARQAD}/ui/mainwindow.cpp
+        ${NYXARIA}/ui/mainwindow.h
+        ${NYXARIA}/ui/mainwindow.ui
+        ${NYXARIA}/ui/info/main.ui
+        ${NYXARIA}/ui/info/info.h
+        ${NYXARIA}/ui/profile/edit_shadowtls.ui
+        ${NYXARIA}/ui/profile/dialog_edit_profile.h
+        ${GHARQAD}/ui/profile/dialog_edit_profile.cpp
+        ${NYXARIA}/ui/profile/dialog_edit_profile.ui
+        ${NYXARIA}/ui/group/dialog_edit_group.h
+        ${GHARQAD}/ui/group/dialog_edit_group.cpp
+        ${NYXARIA}/ui/group/dialog_edit_group.ui
+        ${NYXARIA}/ui/group/dialog_group_choose_proxy.ui
 
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_chain.h
-        src/ui/profile/edit_chain.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_chain.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_socks_http.h
-        src/ui/profile/edit_socks_http.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_socks_http.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.h
-        src/ui/profile/edit_shadowsocks.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowsocks.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.h
-        src/ui/profile/edit_naive.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_naive.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.h
-        src/ui/profile/edit_vmess.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_vmess.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.h
-        src/ui/profile/edit_mieru.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_mieru.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.h
-        src/ui/profile/edit_tor.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_tor.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.h
-        src/ui/profile/edit_trojan_vless.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_trojan_vless.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_anytls.h
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_shadowtls.h
-        src/ui/profile/edit_anytls.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_anytls.ui
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.h
-        src/ui/profile/edit_tailscale.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_tailscale.ui
+        ${NYXARIA}/ui/profile/edit_chain.h
+        ${GHARQAD}/ui/profile/edit_chain.cpp
+        ${NYXARIA}/ui/profile/edit_chain.ui
+        ${NYXARIA}/ui/profile/edit_socks_http.h
+        ${GHARQAD}/ui/profile/edit_socks_http.cpp
+        ${NYXARIA}/ui/profile/edit_socks_http.ui
+        ${NYXARIA}/ui/profile/edit_shadowsocks.h
+        ${GHARQAD}/ui/profile/edit_shadowsocks.cpp
+        ${NYXARIA}/ui/profile/edit_shadowsocks.ui
+        ${NYXARIA}/ui/profile/edit_naive.h
+        ${GHARQAD}/ui/profile/edit_naive.cpp
+        ${NYXARIA}/ui/profile/edit_naive.ui
+        ${NYXARIA}/ui/profile/edit_juicity.h
+        ${GHARQAD}/ui/profile/edit_juicity.cpp
+        ${NYXARIA}/ui/profile/edit_juicity.ui
+        ${NYXARIA}/ui/profile/edit_trusttunnel.h
+        ${GHARQAD}/ui/profile/edit_trusttunnel.cpp
+        ${NYXARIA}/ui/profile/edit_trusttunnel.ui
+        ${NYXARIA}/ui/profile/edit_vmess.h
+        ${GHARQAD}/ui/profile/edit_vmess.cpp
+        ${NYXARIA}/ui/profile/edit_vmess.ui
+        ${NYXARIA}/ui/profile/edit_mieru.h
+        ${GHARQAD}/ui/profile/edit_mieru.cpp
+        ${NYXARIA}/ui/profile/edit_mieru.ui
+        ${NYXARIA}/ui/profile/edit_tor.h
+        ${GHARQAD}/ui/profile/edit_tor.cpp
+        ${NYXARIA}/ui/profile/edit_tor.ui
+        ${NYXARIA}/ui/profile/edit_trojan_vless.h
+        ${GHARQAD}/ui/profile/edit_trojan_vless.cpp
+        ${NYXARIA}/ui/profile/edit_trojan_vless.ui
+        ${NYXARIA}/ui/profile/edit_anytls.h
+        ${NYXARIA}/ui/profile/edit_shadowtls.h
+        ${GHARQAD}/ui/profile/edit_anytls.cpp
+        ${NYXARIA}/ui/profile/edit_anytls.ui
+        ${NYXARIA}/ui/profile/edit_tailscale.h
+        ${GHARQAD}/ui/profile/edit_tailscale.cpp
+        ${NYXARIA}/ui/profile/edit_tailscale.ui
 
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.h
-        src/ui/profile/edit_quic.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_quic.ui
+        ${NYXARIA}/ui/profile/edit_quic.h
+        ${GHARQAD}/ui/profile/edit_quic.cpp
+        ${NYXARIA}/ui/profile/edit_quic.ui
 
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_custom.h
-        src/ui/profile/edit_custom.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_custom.ui
+        ${NYXARIA}/ui/profile/edit_custom.h
+        ${GHARQAD}/ui/profile/edit_custom.cpp
+        ${NYXARIA}/ui/profile/edit_custom.ui
 
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_extra_core.h
-        src/ui/profile/edit_extra_core.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_extra_core.ui
+        ${NYXARIA}/ui/profile/edit_extra_core.h
+        ${GHARQAD}/ui/profile/edit_extra_core.cpp
+        ${NYXARIA}/ui/profile/edit_extra_core.ui
 
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_wireguard.h
-        src/ui/profile/edit_wireguard.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_wireguard.ui
+        ${NYXARIA}/ui/profile/edit_wireguard.h
+        ${GHARQAD}/ui/profile/edit_wireguard.cpp
+        ${NYXARIA}/ui/profile/edit_wireguard.ui
 
-        src/ui/setting/dialog_basic_settings.cpp
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_basic_settings.h
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_basic_settings.ui
+        ${GHARQAD}/ui/setting/dialog_basic_settings.cpp
+        ${NYXARIA}/ui/setting/dialog_basic_settings.h
+        ${NYXARIA}/ui/setting/dialog_basic_settings.ui
 
-        src/ui/group/dialog_manage_groups.cpp
-        ${NEKOBOX_INCLUDE}/ui/group/dialog_manage_groups.h
-        ${NEKOBOX_INCLUDE}/ui/group/dialog_manage_groups.ui
+        ${GHARQAD}/ui/group/dialog_manage_groups.cpp
+        ${NYXARIA}/ui/group/dialog_manage_groups.h
+        ${NYXARIA}/ui/group/dialog_manage_groups.ui
 
-        src/ui/setting/dialog_manage_routes.cpp
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_manage_routes.h
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_manage_routes.ui
+        ${GHARQAD}/ui/setting/dialog_manage_routes.cpp
+        ${NYXARIA}/ui/setting/dialog_manage_routes.h
+        ${NYXARIA}/ui/setting/dialog_manage_routes.ui
 
-        src/ui/setting/dialog_vpn_settings.cpp
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_vpn_settings.h
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_vpn_settings.ui
+        ${GHARQAD}/ui/setting/dialog_vpn_settings.cpp
+        ${NYXARIA}/ui/setting/dialog_vpn_settings.h
+        ${NYXARIA}/ui/setting/dialog_vpn_settings.ui
 
-        src/ui/setting/dialog_hotkey.cpp
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_hotkey.h
-        ${NEKOBOX_INCLUDE}/ui/setting/dialog_hotkey.ui
+        ${GHARQAD}/ui/setting/dialog_hotkey.cpp
+        ${NYXARIA}/ui/setting/dialog_hotkey.h
+        ${NYXARIA}/ui/setting/dialog_hotkey.ui
 
-        src/ui/profile/ProxyItem.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/ProxyItem.h
-        ${NEKOBOX_INCLUDE}/ui/profile/ProxyItem.ui
-        src/ui/group/GroupItem.cpp
-        ${NEKOBOX_INCLUDE}/ui/group/GroupItem.h
-        ${NEKOBOX_INCLUDE}/ui/group/GroupItem.ui
-        src/ui/setting/RouteItem.cpp
-        ${NEKOBOX_INCLUDE}/ui/setting/RouteItem.h
-        ${NEKOBOX_INCLUDE}/ui/setting/RouteItem.ui
+        ${GHARQAD}/ui/profile/ProxyItem.cpp
+        ${NYXARIA}/ui/profile/ProxyItem.h
+        ${NYXARIA}/ui/profile/ProxyItem.ui
+        ${GHARQAD}/ui/group/GroupItem.cpp
+        ${NYXARIA}/ui/group/GroupItem.h
+        ${NYXARIA}/ui/group/GroupItem.ui
+        ${GHARQAD}/ui/setting/RouteItem.cpp
+        ${NYXARIA}/ui/setting/RouteItem.h
+        ${NYXARIA}/ui/setting/RouteItem.ui
 
         res/nekobox.qrc
         ${QV2RAY_RC}
-        src/dataStore/RouteEntity.cpp
-        src/dataStore/ResourceEntity.cpp
+        ${GHARQAD}/dataStore/RouteEntity.cpp
+        ${GHARQAD}/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
-        src/ui/profile/edit_ssh.cpp
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.h
-        ${NEKOBOX_INCLUDE}/ui/profile/edit_ssh.ui
-        src/sys/Settings.cpp
+        ${GHARQAD}/ui/profile/edit_ssh.cpp
+        ${NYXARIA}/ui/profile/edit_ssh.h
+        ${NYXARIA}/ui/profile/edit_ssh.ui
+        ${GHARQAD}/sys/Settings.cpp
 
-        src/sys/AutoRun.cpp
-        src/sys/Process.cpp
-        ${NEKOBOX_INCLUDE}/ui/mainwindow_interface.h
-        ${NEKOBOX_INCLUDE}/stats/connections/connectionLister.hpp
-        src/stats/connectionLister/connectionLister.cpp
-        src/configs/proxy/Json2Bean.cpp
-        src/dataStore/Group.cpp
-        src/dataStore/ProxyEntity.cpp
+        ${GHARQAD}/sys/AutoRun.cpp
+        ${GHARQAD}/sys/Process.cpp
+        ${NYXARIA}/ui/mainwindow_interface.h
+        ${NYXARIA}/stats/connections/connectionLister.hpp
+        ${GHARQAD}/stats/connectionLister/connectionLister.cpp
+        ${GHARQAD}/configs/proxy/Json2Bean.cpp
+        ${GHARQAD}/dataStore/Group.cpp
+        ${GHARQAD}/dataStore/ProxyEntity.cpp
 
-        src/stats/autotester/ProxyAutoTester.cpp
-        ${NEKOBOX_INCLUDE}/stats/autotester/ProxyAutoTester.hpp
+        ${GHARQAD}/stats/autotester/ProxyAutoTester.cpp
+        ${NYXARIA}/stats/autotester/ProxyAutoTester.hpp
 
 )
 
@@ -338,12 +349,12 @@ else()
     target_link_libraries(nekobox PRIVATE Qt6::Qml)
     target_sources(nekobox
             PRIVATE
-            src/js/js_updater.cpp
-            ${NEKOBOX_INCLUDE}/js/js_updater.h
-            ${NEKOBOX_INCLUDE}/js/blocking_queue.h
-            ${NEKOBOX_INCLUDE}/js/js_updater.h
-            ${NEKOBOX_INCLUDE}/js/message_queue.h
-            ${NEKOBOX_INCLUDE}/js/version.h
+            ${GHARQAD}/js/js_updater.cpp
+            ${NYXARIA}/js/js_updater.h
+            ${NYXARIA}/js/blocking_queue.h
+            ${NYXARIA}/js/js_updater.h
+            ${NYXARIA}/js/message_queue.h
+            ${NYXARIA}/js/version.h
 
             res/nekobox_updater.qrc
     )
@@ -401,7 +412,15 @@ target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE Boost::filesystem)
+if (UNIX)
+find_library(ACL_LIB acl)
 
+if(NOT ACL_LIB)
+    message(FATAL_ERROR "libacl not found. Install libacl-devel.")
+endif()
+
+target_link_libraries(nekobox PRIVATE ${ACL_LIB})
+endif()
 
 # Target Link
 
@@ -421,7 +440,7 @@ if (MSVC)
     endif()
 endif()
 
-qt_finalize_executable(nekobox)
+#qt_finalize_executable(nekobox)
 
 if (UNIX)
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")

@@ -160,10 +160,12 @@ jobs:
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Publish sources
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          MESSAGE: ${{ github.event.inputs.text }}
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+          export MESSAGE="$(echo -e "${MESSAGE}")"
           if ! gh release view "${INPUT_VERSION}" >/dev/null 2>&1
           then
             gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
@@ -192,29 +194,57 @@ jobs:
         with:
           ref: 'main'
           submodules: 'true'
-      - name: Create requirements.txt
+
+      - name: Create requirements.txt, add ssh key
         shell: bash
+        env:
+          AUR_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         run: |
-          echo osc copr > requirements.txt
+          echo copr > requirements.txt
+   #       git config --global user.email "${{ secrets.EMAIL }}"
+   #       git config --global user.name "${{ github.actor }}"
+   #       mkdir -p ~/.ssh
+   #       touch ~/.ssh/config           ||:
+   #       touch ~/.ssh/known_hosts      ||:
+   #       echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
+   #       echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
+   #       echo "  User aur"                     >> ~/.ssh/config
+   #       chmod -vR 600 ~/.ssh/*
+   #       ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
+   #       echo "$AUR_KEY" > ~/.ssh/aur
+   #       chmod -vR 600 ~/.ssh/*
+   #       ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
+   #       chmod -vR 600 ~/.ssh/*
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
           cache: 'pip'
 
+      - name: Linux - Install apt dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: makepkg curl
+          version: 1.0
+
       - name: Trigger Open Build Service and Copr
         shell: bash
+        env:
+          MESSAGE: ${{ github.event.inputs.text }}
+          SUBMIT_FACTORY: ${{ github.event.inputs.publish_suse }}
+          OBS_USER: ${{ secrets.OBS_USER }}
+          EMAIL: ${{ secrets.EMAIL }}
+          USER: ${{ github.actor }}
+          OBS_PASSWORD: ${{ secrets.OBS_PASSWORD }}
+          COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
+          COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
         run: |
-          pip install osc copr
-          export MESSAGE="$(echo -e "${{ github.event.inputs.text }}")"
-          export SUBMIT_FACTORY=${{ github.event.inputs.publish_suse }}
-          export OBS_USERNAME="${{ secrets.OBS_USER }}"
-          export OBS_PASSWORD="${{ secrets.OBS_PASSWORD }}"
-          export OBS_HOOK_TOKEN="${{ secrets.OBS_HOOK_TOKEN }}"
-          export COPR_LOGIN="${{ secrets.COPR_LOGIN }}"
-          export COPR_TOKEN="${{ secrets.COPR_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          bash ./script/generate_pkgbuild.sh
-          bash ./script/trigger_open_build_service.sh
+          export MESSAGE="$(echo -e "${MESSAGE}")"
+          echo "Version is ${INPUT_VERSION}"
+          pip install copr
+          . ./script/generate_pkgbuild.sh
+          . ./script/trigger_open_build_service.sh
           python3 ./script/trigger_community_projects.py
 
       - name: Publish AUR package
@@ -227,6 +257,18 @@ jobs:
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           commit_message: Update AUR package
           ssh_keyscan_types: rsa,ecdsa,ed25519
+
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        with:
+          pkgname: nekobox-git
+          pkgbuild: ./aur_git/PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: email@email.email
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: Update AUR package
+          ssh_keyscan_types: rsa,ecdsa,ed25519
+
   build-cpp:
     name: Build windows binaries
     permissions:
@@ -238,7 +280,7 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.10.2
+            qt_version: 6.11.0
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-latest
@@ -359,15 +401,23 @@ jobs:
         include:
           - platform: ubuntu-24.04
             target: amd64
+            target1: x86_64
+            target2: x86_64
             allow: ${{ github.event.inputs.build_ubuntu }}
           - platform: ubuntu-24.04-arm
             target: arm64
+            target1: aarch64
+            target2: aarch64
             allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - platform: ubuntu-24.04
             target: 386
+            target1: i686
+            target2: i386
             allow: ${{ github.event.inputs.build_ubuntu_32 }}
           - platform: ubuntu-24.04-arm
             target: arm
+            target1: armhf
+            target2: armhf
             allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
@@ -423,21 +473,41 @@ jobs:
         with:
           key: docker-${{ matrix.platform }}-${{ matrix.target }}-${{ hashFiles('script/Dockerfile') }}
 
+      - name: Download linuxdeploy
+        uses: ethanjli/cached-download-action@main
+        with:
+          url: https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${{ matrix.target2 }}.AppImage
+          destination: linuxdeploy-${{ matrix.target2 }}.AppImage
+
+      - name: Download linuxdeploy-plugin-qt
+        uses: ethanjli/cached-download-action@main
+        with:
+          url: https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${{ matrix.target2 }}.AppImage
+          destination: linuxdeploy-plugin-qt-${{ matrix.target2 }}.AppImage
+
+      - name: Download appimagetool
+        uses: ethanjli/cached-download-action@main
+        with:
+          url: https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${{ matrix.target1 }}.AppImage
+          destination: appimagetool-${{ matrix.target1 }}.AppImage
+
       - name: Linux - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
+        env:
+          GUEST_ARCH: ${{ matrix.target }}
         run: |
-          echo 'UNAME=${{ matrix.target }}' >> .ENV
-          echo 'INPUT_VERSION=${{ github.event.inputs.tag }}' >> .ENV
-          export GUEST_ARCH=${{ matrix.target }}
+          echo "UNAME=${GUEST_ARCH}" >> .ENV
+          echo "INPUT_VERSION=${INPUT_VERSION}" >> .ENV
           docker compose up --force-recreate --build
 
       - name: Linux - Publish
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
         shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-          gh release upload '${{ github.event.inputs.tag }}' ./deployment/* --clobber
+          gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
       - name: Tar files
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
@@ -575,14 +645,14 @@ jobs:
           choco: zip curl jq
       - name: Pack
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.WINGET_TOKEN }}
+          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          EMAIL: ${{ secrets.EMAIL }}
+          UPLOAD_WITH_GH: yes
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          export GITHUB_TOKEN="${{ secrets.WINGET_TOKEN }}"
-          export INPUT_VERSION="${{ github.event.inputs.tag }}"
-          export EMAIL="${{ secrets.EMAIL }}"
-          export UPLOAD_WITH_GH=yes
-          export CHOCOLATEY_API_KEY="${{ secrets.CHOCOLATEY_API_KEY }}"
-          export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
-
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##

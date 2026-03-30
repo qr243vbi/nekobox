@@ -30,7 +30,7 @@ namespace Configs {
         WireguardBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
         }
 
-        INIT_MAP
+        INIT_BEAN_MAP
             ADD_MAP("private_key", privateKey, string);
             ADD_MAP("public_key", publicKey, string);
             ADD_MAP("pre_shared_key", preSharedKey, string);
@@ -66,11 +66,11 @@ namespace Configs {
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
-        #ifdef DEBUG_MODE
+
         virtual QString type()const override {
             return "wireguard";
         };
-        #endif
+
 
     private:
         bool parseWgConfig(const QString &config);
