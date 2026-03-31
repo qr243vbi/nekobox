@@ -149,7 +149,16 @@ struct IPTestRequest {
   5: i32 test_timeout_ms;
 }
 
+struct Type {
+  1: string type;
+}
+
+struct Supported {
+  1: bool ok;
+}
+
 service LibcoreService {
+  Supported IsSupported(1: Type req),
   CacheURLResult CacheHTTP(1: CacheURLRequest req),
   QueryIPTestResponse IPTest(1: IPTestRequest req),
   QueryIPTestResponse QueryIPTest(1: EmptyReq req),
