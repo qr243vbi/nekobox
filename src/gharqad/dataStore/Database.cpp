@@ -7,6 +7,9 @@
 #include <QMutex>
 #include <chrono>
 
+#include <leveldb/db.h>
+
+
 #ifdef NKR_SOFTWARE_KEYS
 #include <nekobox/ui/security_addon.h>
  int Stats::DatabaseLogger::get_failed_auth_count(bool pre_save){

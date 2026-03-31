@@ -431,6 +431,9 @@ target_link_libraries(nekobox PRIVATE
         ${PLATFORM_LIBRARIES}
 )
 
+#find_package(leveldb REQUIRED)
+#target_link_libraries(nekobox PRIVATE leveldb::leveldb)
+
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
     if(CMAKE_SIZEOF_VOID_P EQUAL 4)

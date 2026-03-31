@@ -133,6 +133,7 @@ public:
   QStringList column_width;
   QString language = "";
   bool first_start = true;
+  QString program_name = "Iblis";
 };
 
 }; // namespace Configs

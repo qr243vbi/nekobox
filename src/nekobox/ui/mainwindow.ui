@@ -31,6 +31,23 @@
         <property name="toolTip">
          <string>NekoBox</string>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+padding-left: 3px;
+padding-right: 3px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}
+
+QToolButton::menu-indicator {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+right: 2px;
+bottom: 3px;
+}</string>
+        </property>
         <property name="text">
          <string>NekoBox</string>
         </property>
@@ -52,6 +69,23 @@
        <widget class="QToolButton" name="toolButton_server">
         <property name="toolTip">
          <string>Profiles</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+padding-left: 3px;
+padding-right: 3px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}
+
+QToolButton::menu-indicator {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+right: 2px;
+bottom: 3px;
+}</string>
         </property>
         <property name="text">
          <string>Profiles</string>
@@ -75,6 +109,23 @@
         <property name="toolTip">
          <string>Settings</string>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+padding-left: 3px;
+padding-right: 3px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}
+
+QToolButton::menu-indicator {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+right: 2px;
+bottom: 3px;
+}</string>
+        </property>
         <property name="text">
          <string>Settings</string>
         </property>
@@ -97,6 +148,23 @@
         <property name="toolTip">
          <string>Routing</string>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+padding-left: 3px;
+padding-right: 3px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}
+
+QToolButton::menu-indicator {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+right: 2px;
+bottom: 3px;
+}</string>
+        </property>
         <property name="text">
          <string>Routing</string>
         </property>
@@ -118,6 +186,23 @@
        <widget class="QToolButton" name="toolButton_update">
         <property name="toolTip">
          <string>Update</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+padding-left: 3px;
+padding-right: 3px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}
+
+QToolButton::menu-indicator {
+subcontrol-origin: border;
+subcontrol-position: bottom right;
+right: 2px;
+bottom: 3px;
+}</string>
         </property>
         <property name="text">
          <string>Update</string>
@@ -230,6 +315,18 @@
       </item>
       <item>
        <widget class="QPushButton" name="url_test_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+padding-left: 8px;
+padding-right: 8px;
+padding-top: 4px;
+padding-bottom: 4px;
+border-radius: 10px;
+border: 3px solid palette(midlight);
+font: inherit;
+background: palette(base);
+}</string>
+        </property>
         <property name="text">
          <string>Test</string>
         </property>

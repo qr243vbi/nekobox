@@ -233,6 +233,25 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(max_log_line)
     //
 
+    connect(ui->title_edit, &QPushButton::clicked, this, [=, this](){
+        bool ok;
+        QString text = QInputDialog::getText(
+        this,
+        software_name,
+        tr("Name of program"),
+        QLineEdit::Normal,
+        software_name,
+        &ok
+        );
+        if (ok){
+            software_name = text;
+            Configs::windowSettings->program_name = text;
+            this->setWindowTitle(software_name);
+            GetMainWindow()->setWindowTitle(software_name);
+            Configs::windowSettings->Save();
+        }
+    });
+
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);

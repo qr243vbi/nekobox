@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -541,6 +541,13 @@
              <widget class="QPushButton" name="emoji">
               <property name="text">
                <string>Emoji Font</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="title_edit">
+              <property name="text">
+               <string>Name</string>
               </property>
              </widget>
             </item>

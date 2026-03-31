@@ -271,88 +271,93 @@
         <translation type="unfinished">גופן אימוג&apos;י</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="556"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="550"/>
+        <source>Name</source>
+        <translation type="unfinished">שֵׁם</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563"/>
         <source>Subscription</source>
         <translation type="unfinished">מִנוּי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="562"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">נקה שרתים לפני עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="576"/>
         <source>URL Test after update</source>
         <translation type="unfinished">בדיקת כתובת URL לאחר עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="584"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="820"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="827"/>
         <source>Enable</source>
         <translation type="unfinished">לְאַפשֵׁר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="598"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">מרווח (דקה, לא חוקי אם פחות מ-30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="610"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">הסר כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
         <source>User Agent</source>
         <translation type="unfinished">סוכן משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="634"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="641"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="637"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">שלח פרמטרים של מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="650"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>Automatic update</source>
         <translation type="unfinished">עדכון אוטומטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פורמט: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;השאר ריק כדי להשתמש בערכי ברירת מחדל.ציין רק את הפרמטרים שברצונך לעקוף.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="660"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">פרמטרי מערכת מותאמים אישית (אופציונלי)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">הסר לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">הסר לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="682"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="689"/>
         <source>Core</source>
         <translation type="unfinished">ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -360,7 +365,7 @@
 שפר את הפינג והביצועים&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="732"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">השבת את סטטיסטיקת התנועה</translation>
     </message>
@@ -369,37 +374,37 @@
         <translation type="obsolete">השתמש ב-TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="782"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">ריבוי (מקס)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796"/>
         <source>Loglevel</source>
         <translation type="unfinished">רמת יומן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="756"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763"/>
         <source>concurrency</source>
         <translation type="unfinished">במקביל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="766"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773"/>
         <source>Padding</source>
         <translation type="unfinished">ריפוד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="780"/>
         <source>Default On</source>
         <translation type="unfinished">ברירת מחדל פועל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="799"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="806"/>
         <source>Core Options</source>
         <translation type="unfinished">אפשרויות ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -407,27 +412,27 @@
 לקוח NTP המובנה של sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="814"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="821"/>
         <source>NTP Settings</source>
         <translation type="unfinished">הגדרות NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="829"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>server</source>
         <translation type="unfinished">שרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846"/>
         <source>Port</source>
         <translation type="unfinished">נָמָל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="856"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>sync interval</source>
         <translation type="unfinished">מרווח סנכרון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="870"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -435,226 +440,231 @@
 דקות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Security</source>
         <translation type="unfinished">בִּטָחוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">השבת את בקשת הרשאות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="899"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">השתמש בחנות התעודות של Mozilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="913"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
         <translation type="unfinished">דלג על אימות אישור TLS כברירת מחדל (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="996"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">טביעת אצבע של uTLS המוגדרת כברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;אל תנסה להתחיל כמנהל אלא אם כן התבקש מפורשות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="746"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">השתמש ב-Unix Domain Socket לתקשורת בין nekobox ל-nekobox_core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="742"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="749"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">השתמש ב-UDS עבור IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="957"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">התחל תמיד כמשתמש רגיל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1046"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Use Json instead binary for configs</source>
         <translation type="unfinished">השתמש ב-Json במקום בינארי עבור הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">בקשו למחוק את הפרופיל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">בדיקה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1076"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">בדוק אוטומטית פרוקסי ברקע ותחזק מאגר של פרוקסי עובדים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">הפעל בדיקה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">מרווח בדיקה (שניות)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">באיזו תדירות להפעיל את מחזור הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">פרוקסי לכל מחזור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">מספר פרוקסי לבדיקה בכל מחזור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1132"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">גודל בריכת עבודה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">מספר מרבי של פרוקסי עובדים מאומתים לתחזוקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1155"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">סף אחזור (מיליות)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1169"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">זמן אחזור מרבי כדי לראות בפרוקסי כעובד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1181"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ספירת ניסיון חוזר של כישלונות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">מספר ניסיונות הנסיונות החוזרים לפני ההתייחסות לשרת proxy ככשל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1204"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211"/>
         <source>Test Target URL</source>
         <translation type="unfinished">בדוק כתובת אתר יעד</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1218"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">כתובת URL לבדיקת פרוקסי מולם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1214"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">עבור אוטומטית ל-proxy עובד אחר כאשר פרוקסי מצב TUN נכשל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1224"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">אפשר TUN Failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Startup</source>
         <translation type="unfinished">הפעלה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1296"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
         <source>Geometry</source>
         <translation type="unfinished">גֵאוֹמֶטרִיָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1325"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">גיאומטריה לשמירה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1339"/>
         <source>Autosave position</source>
         <translation type="unfinished">עמדת שמירה אוטומטית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1352"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
         <source>Apply now</source>
         <translation type="unfinished">הגש בקשה עכשיו</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1426"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1433"/>
         <source>Width</source>
         <translation type="unfinished">רוֹחַב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1520"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1465"/>
         <source>Y</source>
         <translation type="unfinished">י</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1533"/>
         <source>Height</source>
         <translation type="unfinished">גוֹבַה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1623"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1630"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">נתיב הפעלה ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1652"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1841"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848"/>
         <source>Use default</source>
         <translation type="unfinished">השתמש ברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1666"/>
         <source>Remote Control</source>
         <translation type="unfinished">שְׁלַט רָחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1685"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1881"/>
         <source>Select</source>
         <translation type="unfinished">לִבחוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1812"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1819"/>
         <source>Resources Directory</source>
         <translation type="unfinished">ספריית משאבים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1855"/>
         <source>Resource Manager</source>
         <translation type="unfinished">מנהל משאבים</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="241"/>
+        <source>Name of program</source>
+        <translation type="unfinished">שם התוכנית</translation>
     </message>
 </context>
 <context>
@@ -2613,50 +2623,50 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="32"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="52"/>
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="54"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="57"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="610"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="71"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="91"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707"/>
         <source>Profiles</source>
         <translation type="unfinished">פרופילים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="76"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130"/>
         <source>Settings</source>
         <translation type="unfinished">הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="98"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="169"/>
         <source>Routing</source>
         <translation type="unfinished">ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="123"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="188"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="208"/>
         <source>Update</source>
         <translation type="unfinished">לְעַדְכֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="235"/>
         <source>Tun Mode</source>
         <translation type="unfinished">מצב Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="157"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="242"/>
         <source>System DNS</source>
         <translation type="unfinished">מערכת DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="164"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="579"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2614"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="249"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="676"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2623"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2626"/>
         <source>System Proxy</source>
         <translation type="unfinished">פרוקסי מערכת</translation>
     </message>
@@ -2665,103 +2675,103 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">בדיקת כתובת URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="309"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="406"/>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="140"/>
         <source>Type</source>
         <translation type="unfinished">סוּג</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="411"/>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="143"/>
         <source>Address</source>
         <translation type="unfinished">כְּתוֹבֶת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="416"/>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="146"/>
         <source>Name</source>
         <translation type="unfinished">שֵׁם</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="324"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="421"/>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290"/>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="292"/>
         <source>Test Result</source>
         <translation type="unfinished">תוצאת הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="329"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="468"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565"/>
         <source>Traffic</source>
         <translation type="unfinished">תְנוּעָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="373"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470"/>
         <source>Logs</source>
         <translation type="unfinished">יומנים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="408"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
         <source>Connections</source>
         <translation type="unfinished">חיבורים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="436"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">יעד (דומיין)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="439"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">לחץ כדי להשבית מיון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="444"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541"/>
         <source>Process</source>
         <translation type="unfinished">תַהֲלִיך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="447"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">לחץ כדי למיין לפי תהליך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="452"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Protocol</source>
         <translation type="unfinished">פּרוֹטוֹקוֹל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="455"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">לחץ כדי למיין לפי פרוטוקול</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557"/>
         <source>Outbound</source>
         <translation type="unfinished">יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="463"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="560"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">לחץ כדי למיין לפי יוצא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="568"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">לחץ כדי להחליף מיון לפי תנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="480"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="577"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">גרף תנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="575"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="672"/>
         <source>Program</source>
         <translation type="unfinished">תָכְנִית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="599"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696"/>
         <source>Preferences</source>
         <translation type="unfinished">העדפות</translation>
     </message>
@@ -2770,7 +2780,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">שרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="624"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721"/>
         <source>Share</source>
         <translation type="unfinished">לַחֲלוֹק</translation>
     </message>
@@ -2779,224 +2789,224 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">הקבוצה הנוכחית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="234"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="634"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="686"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="331"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="783"/>
         <source>Test</source>
         <translation type="unfinished">מִבְחָן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717"/>
         <source>Current Selected</source>
         <translation type="unfinished">נבחר נוכחי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711"/>
         <source>Current Group</source>
         <translation type="unfinished">הקבוצה הנוכחית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="669"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766"/>
         <source>Hidden menu</source>
         <translation type="unfinished">תפריט נסתר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="681"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="778"/>
         <source>Routing Menu</source>
         <translation type="unfinished">תפריט ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Context</source>
         <translation type="unfinished">הֶקשֵׁר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="697"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809"/>
         <source>Exit</source>
         <translation type="unfinished">יְצִיאָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814"/>
         <source>Toggle Window</source>
         <translation type="unfinished">החלף חלון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="819"/>
         <source>Basic Settings</source>
         <translation type="unfinished">הגדרות בסיסיות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="727"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824"/>
         <source>New profile</source>
         <translation type="unfinished">פרופיל חדש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="829"/>
         <source>Groups</source>
         <translation type="unfinished">קבוצות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="737"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3691"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701"/>
         <source>Start</source>
         <translation type="unfinished">הַתחָלָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="745"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3692"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3690"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701"/>
         <source>Stop</source>
         <translation type="unfinished">לְהַפְסִיק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="753"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
         <source>Edit</source>
         <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
         <source>Routing Settings</source>
         <translation type="unfinished">הגדרות ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">הוסף פרופיל מהלוח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871"/>
         <source>Delete</source>
         <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="782"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
         <source>Debug Info</source>
         <translation type="unfinished">מידע על ניפוי באגים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="787"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
         <source>QR Code and link</source>
         <translation type="unfinished">קוד QR וקישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
         <source>Copy Link</source>
         <translation type="unfinished">העתק קישור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1154"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">תוצאת בדיקה ברורה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1510"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1519"/>
         <source>Export %1 config</source>
         <translation type="unfinished">ייצא את התצורה של %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="832"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">אפס את התנועה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">סרוק קוד QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="848"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">הפעל פרוקסי מערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="856"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
         <source>Disable</source>
         <translation type="unfinished">השבת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="861"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="958"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">הסר כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="869"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="946"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>fake</source>
         <translation type="unfinished">מְזוּיָף</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="877"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1148"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1245"/>
         <source>Move</source>
         <translation type="unfinished">מַהֲלָך</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="888"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985"/>
         <source>Start with system</source>
         <translation type="unfinished">התחל עם המערכת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="896"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993"/>
         <source>Remember last profile</source>
         <translation type="unfinished">זכור את הפרופיל האחרון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="904"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">אפשר להתקנים אחרים להתחבר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="909"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">הסר לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
         <source>Full Test</source>
         <translation type="unfinished">מבחן מלא</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="925"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">הגדרות מקשי קיצור</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="930"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1027"/>
         <source>Select All</source>
         <translation type="unfinished">בחר הכל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="938"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">העתק קישורים מותאמים אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="962"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
         <source>Copy links</source>
         <translation type="unfinished">העתק קישורים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1046"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143"/>
         <source>Url Test</source>
         <translation type="unfinished">מבחן כתובת אתר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1079"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">פתור את הדומיין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1161"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1166"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1258"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263"/>
         <source>Information</source>
         <translation type="unfinished">מֵידָע</translation>
     </message>
@@ -3009,48 +3019,48 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">העתק קישורים של נבחרים</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="973"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
         <source>Enable Tun</source>
         <translation type="unfinished">אפשר Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="978"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3001"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3010"/>
         <source>Clone</source>
         <translation type="unfinished">שיבוט</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="986"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083"/>
         <source>Update subscription</source>
         <translation type="unfinished">עדכן מנוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="997"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094"/>
         <source>Resolve domain</source>
         <translation type="unfinished">פתור דומיין</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1005"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102"/>
         <source>Tun Settings</source>
         <translation type="unfinished">הגדרות Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1010"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107"/>
         <source>Restart Program</source>
         <translation type="unfinished">הפעל מחדש את התוכנית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1015"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">פתח את תיקיית Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1036"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">הפעל מחדש את ה-Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1041"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138"/>
         <source>Stop Testing</source>
         <translation type="unfinished">תפסיק את הבדיקה</translation>
     </message>
@@ -3067,7 +3077,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">נקה את תוצאת הבדיקה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1068"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Url Test Group</source>
         <translation type="unfinished">קבוצת בדיקת כתובת URL</translation>
     </message>
@@ -3080,7 +3090,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">פתור דומיין נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1087"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1184"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">הסר לא חוקי</translation>
     </message>
@@ -3093,58 +3103,58 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">פתח את מנהל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1253"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">זרם המהירות ביותר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
         <source>Full test Selected</source>
         <translation type="unfinished">מבחן מלא נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1103"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
         <source>Download test Selected</source>
         <translation type="unfinished">בדיקת הורדה נבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1108"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1205"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">בדיקת העלאה נבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1210"/>
         <source>Country test Selected</source>
         <translation type="unfinished">מבחן מדינה נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1215"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">מבחן הורדה פשוט נבחר</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1123"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1220"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">קבוצת בדיקת מהירות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1128"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1225"/>
         <source>Hide window</source>
         <translation type="unfinished">הסתר חלון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1230"/>
         <source>Add profile from File</source>
         <translation type="unfinished">הוסף פרופיל מקובץ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3711"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1235"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3720"/>
         <source>Add new Group</source>
         <translation type="unfinished">הוסף קבוצה חדשה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1240"/>
         <source>Security Settings</source>
         <translation type="unfinished">הגדרות אבטחה</translation>
     </message>
@@ -3155,218 +3165,218 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1165"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1174"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ערוך פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1187"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">עדכון פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1199"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1203"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1224"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1227"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1208"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1212"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1280"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104"/>
         <source>Update Response</source>
         <translation type="unfinished">עדכן תגובה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1200"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1209"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">אין פרופילי ניתוב מעודכנים</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1204"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1213"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">עודכן %1 פרופילי ניתוב</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1214"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">עדכן את מפת סט הכללים</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1225"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">עדכון ערכי הכללים נכשל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ערכות הכללים עודכנו בהצלחה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1246"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">עדכן RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">המטמון של ערכות החוקים מעודכן</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1286"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">נקה מטמון RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1322"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1331"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">הפעל את AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1728"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1737"/>
         <source>Error</source>
         <translation type="unfinished">שְׁגִיאָה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1824"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">הגדרות Tun שונו</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1816"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1825"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">הפעל מחדש את Tun כדי להיכנס לתוקף.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1822"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3426"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3529"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1831"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1889"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3064"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3435"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3489"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3538"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
         <source>Confirmation</source>
         <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1832"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1890"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ההגדרות השתנו, להפעיל מחדש את ה-proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1852"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1861"/>
         <source>Settings changed</source>
         <translation type="unfinished">ההגדרות השתנו</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1853"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1862"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">הפעל מחדש את התוכנית כדי להיכנס לתוקף.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1905"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 פרופיל(ים) מיובאים</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2181"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">המשתמש בחר ללא דרישת הרשאות, ייתכן שחלק מהתכונות לא יפעלו</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2236"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">אנא תן את הרשאות שורש הליבה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2599"/>
         <source>Not Running</source>
         <translation type="unfinished">לא רץ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3002"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3011"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">שיבוט %1 פריט(ים)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3036"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3045"/>
         <source> Confirmation </source>
         <translation type="unfinished">אִשׁוּר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3037"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">להסיר %1 פריטים ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3065"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">להסיר %1 פריטים?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3093"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3106"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3102"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">הועתקו %1 פריט(ים)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3338"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3347"/>
         <source>QR Code not found</source>
         <translation type="unfinished">קוד QR לא נמצא</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3368"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">לא מצליח לצלם מסך</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3436"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">להסיר את %1 פריטים לא זמינים ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3481"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3490"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">להסיר את %1 פריטים לא חוקיים?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3530"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3539"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">להחליף את כתובות שרת הדומיין בכתובות ה-IP שנפתרו?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3679"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3688"/>
         <source>Clear</source>
         <translation type="unfinished">בָּרוּר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">מחק את הקבוצה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">ערוך את הקבוצה שנבחרה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769"/>
         <source>Remove %1?</source>
         <translation type="unfinished">להסיר את% 1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4510"/>
         <source>Cannot start</source>
         <translation type="unfinished">לא ניתן להתחיל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">בקשת ההורדה האחרונה עדיין לא הסתיימה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4545"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">הורדת נכסי העדכון נכשלה</translation>
     </message>
@@ -3470,43 +3480,43 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="632"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="630"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">פרופיל נוסף מתחיל...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="639"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">פרופיל נוסף עוצר...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="660"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="740"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">אם אין תגובה במשך זמן רב, מומלץ להפעיל מחדש את התוכנה.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="672"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">מתחיל את הפרופיל% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="676"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">הפעלת הפרופיל% 1 נכשלה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="723"/>
         <source>Stop return error</source>
         <translation type="unfinished">שגיאת עצור החזרה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="763"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">עצירת פרופיל% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="767"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">עצירה נכשלה, אנא הפעל מחדש את התוכנית.</translation>
     </message>
@@ -3558,7 +3568,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="354"/>
+        <location filename="../../src/gharqad/main.cpp" line="357"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3622,7 +3632,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">שינוי של% 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="307"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="322"/>
         <source>Default</source>
         <translation type="unfinished">בְּרִירַת מֶחדָל</translation>
     </message>
@@ -3632,29 +3642,29 @@ Deleted %3 Profiles:
         <translation type="unfinished">לא ניתן היה לפתוח את הקובץ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="113"/>
+        <location filename="../../src/gharqad/main.cpp" line="114"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">שרשרת פרוקסי</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="129"/>
+        <location filename="../../src/gharqad/main.cpp" line="130"/>
         <source>Custom</source>
         <translation type="unfinished">מִנְהָג</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="130"/>
+        <location filename="../../src/gharqad/main.cpp" line="131"/>
         <source>Extra Core</source>
         <translation type="unfinished">תוספת ליבה</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="28"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="337"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="356"/>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121"/>
         <source>Select</source>
         <translation type="unfinished">לִבחוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2558"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2567"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">פרוקסי: %1
@@ -3676,7 +3686,7 @@ Direct: %2</source>
         <translation type="unfinished">מפעיל מחדש את הליבה...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="350"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="375"/>
         <source>System</source>
         <translation type="unfinished">מַעֲרֶכֶת</translation>
     </message>
@@ -3718,40 +3728,40 @@ How to update?</source>
         <translation type="unfinished">בשימוש: %1 נשאר: %2 תוקף: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="293"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294"/>
         <source>Download Profiles</source>
         <translation type="unfinished">הורד פרופילים</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="295"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">שגיאת פרופיל מבקש: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="469"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="470"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">נמחקו %1 כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="503"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="504"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">נמחק % 1 לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="526"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="527"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">נמחק% 1 לא זמין</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1607"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1616"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">בדוק ערכות כללים: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1629"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1638"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">שגיאת רשימה של קבוצת כללים מבקשת: %1</translation>
     </message>
@@ -3760,64 +3770,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">כתובת IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2595"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2604"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP נכנס: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2981"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2990"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">העבר פרופילים לקבוצה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3124"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3133"/>
         <source>Config copied</source>
         <translation type="unfinished">התצורה הועתקה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3135"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144"/>
         <source>Copy core config</source>
         <translation type="unfinished">העתק את תצורת הליבה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3145"/>
         <source>Copy test config</source>
         <translation type="unfinished">העתק את תצורת הבדיקה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3146"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="31"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53"/>
         <source>OK</source>
         <translation type="unfinished">בְּסֵדֶר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4405"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4416"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4483"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4425"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4527"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536"/>
         <source>Update</source>
         <translation type="unfinished">לְעַדְכֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4415"/>
         <source>Not official support platform</source>
         <translation type="unfinished">לא פלטפורמת תמיכה רשמית</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4417"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4426"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">שגיאת בקשה לעדכון: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4460"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469"/>
         <source>No update</source>
         <translation type="unfinished">אין עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3826,17 +3836,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496"/>
         <source>Close</source>
         <translation type="unfinished">לִסְגוֹר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4489"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4498"/>
         <source>Open in browser</source>
         <translation type="unfinished">פתח בדפדפן</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4528"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">העדכון מוכן, להפעיל מחדש כדי להתקין?</translation>
     </message>
@@ -3846,7 +3856,7 @@ Release note:
         <translation type="unfinished">הגִישָׁה נִדחֲתָה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="342"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="361"/>
         <source>Select a Folder</source>
         <translation type="unfinished">בחר תיקיה</translation>
     </message>
@@ -3876,7 +3886,7 @@ Release note:
         <translation type="obsolete">תוספת ליבה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="151"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">פרוקסי: ⚡%1 📦%3
@@ -3886,92 +3896,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71"/>
+        <location filename="../../src/gharqad/main.cpp" line="70"/>
         <source>Cancel</source>
         <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72"/>
+        <location filename="../../src/gharqad/main.cpp" line="71"/>
         <source>Apply</source>
         <translation type="unfinished">לִפְנוֹת</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73"/>
+        <location filename="../../src/gharqad/main.cpp" line="72"/>
         <source>Yes</source>
         <translation type="unfinished">כֵּן</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="74"/>
+        <location filename="../../src/gharqad/main.cpp" line="73"/>
         <source>No</source>
         <translation type="unfinished">לֹא</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75"/>
+        <location filename="../../src/gharqad/main.cpp" line="74"/>
         <source>OK</source>
         <translation type="unfinished">בְּסֵדֶר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76"/>
+        <location filename="../../src/gharqad/main.cpp" line="75"/>
         <source>Defaults</source>
         <translation type="unfinished">ברירות מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77"/>
+        <location filename="../../src/gharqad/main.cpp" line="76"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">שחזר ברירות מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="78"/>
+        <location filename="../../src/gharqad/main.cpp" line="77"/>
         <source>Discard</source>
         <translation type="unfinished">לְהַשְׁלִיך</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80"/>
+        <location filename="../../src/gharqad/main.cpp" line="79"/>
         <source>Undo</source>
         <translation type="unfinished">לְבַטֵל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81"/>
+        <location filename="../../src/gharqad/main.cpp" line="80"/>
         <source>Redo</source>
         <translation type="unfinished">לַעֲשׂוֹת שׁוּב</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82"/>
+        <location filename="../../src/gharqad/main.cpp" line="81"/>
         <source>Cut</source>
         <translation type="unfinished">גְזִירָה</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83"/>
+        <location filename="../../src/gharqad/main.cpp" line="82"/>
         <source>Copy</source>
         <translation type="unfinished">לְהַעְתִיק</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84"/>
+        <location filename="../../src/gharqad/main.cpp" line="83"/>
         <source>Paste</source>
         <translation type="unfinished">לְהַדבִּיק</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="85"/>
+        <location filename="../../src/gharqad/main.cpp" line="84"/>
         <source>Delete</source>
         <translation type="unfinished">לִמְחוֹק</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="86"/>
+        <location filename="../../src/gharqad/main.cpp" line="85"/>
         <source>Select All</source>
         <translation type="unfinished">בחר הכל</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87"/>
+        <location filename="../../src/gharqad/main.cpp" line="86"/>
         <source>Stop</source>
         <translation type="unfinished">לְהַפְסִיק</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="87"/>
         <source>Clear</source>
         <translation type="unfinished">בָּרוּר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="88"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">העתק את מיקום הקישור</translation>
     </message>
@@ -4188,24 +4198,24 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">מערך JSON לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="243"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">לא ניתן לנתח את הקלט שסופק למערך חוקי מסלול חוקי:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="365"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="366"/>
         <source>Fetching information</source>
         <translation type="unfinished">שואב מידע</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="382"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355"/>
         <source>Download Profiles</source>
         <translation type="unfinished">הורד פרופילים</translation>
     </message>

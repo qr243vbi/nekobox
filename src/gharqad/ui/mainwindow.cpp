@@ -131,6 +131,7 @@ void MainWindow::changeEvent(QEvent *event)
       this->ui->toolButton_routing->setFont(font);
       this->ui->toolButton_server->setFont(font);
       this->ui->toolButton_update->setFont(font);
+      this->ui->url_test_button->setFont(font);
       this->ui->tabWidget->setFont(font);
       this->ui->proxyListTable->setFont(font);
       this->ui->stats_widget->setFont(font);
@@ -534,6 +535,11 @@ MainWindow::MainWindow(QWidget *parent)
 
   mainwindow = this;
   Configs::windowSettings->Load();
+
+  #ifdef DEBUG_MODE
+  qDebug() << "Software Name" << Configs::windowSettings->program_name;
+  #endif
+
   // software_name
   {
     QSettings globalSettings = getGlobal();
@@ -558,7 +564,10 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = globalSettings.value("program_name", "Iblis").toString();
+    software_name = (Configs::windowSettings->program_name);
+    if (software_name.trimmed() == ""){
+      globalSettings.value("program_name", "Iblis").toString();
+    }
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
   }
