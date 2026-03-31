@@ -7,7 +7,7 @@
 #include <QMutex>
 #include <chrono>
 
-#include <leveldb/db.h>
+//#include <leveldb/db.h>
 
 
 #ifdef NKR_SOFTWARE_KEYS
