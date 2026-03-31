@@ -73,6 +73,21 @@ on:
         type: boolean
         default: true
         required: false
+      publish_copr:
+        description: "Publish to COPR"
+        type: boolean
+        default: true
+        required: false
+      publish_obs:
+        description: "Publish to OBS"
+        type: boolean
+        default: true
+        required: false
+      publish_aur:
+        description: "Publish to AUR"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -232,6 +247,8 @@ jobs:
         env:
           MESSAGE: ${{ github.event.inputs.text }}
           SUBMIT_FACTORY: ${{ github.event.inputs.publish_suse }}
+          PUBLISH_OBS: ${{ github.event.inputs.publish_obs }}
+          PUBLISH_COPR: ${{ github.event.inputs.publish_copr }}
           OBS_USER: ${{ secrets.OBS_USER }}
           EMAIL: ${{ secrets.EMAIL }}
           USER: ${{ github.actor }}
@@ -242,14 +259,14 @@ jobs:
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
           echo "Version is ${INPUT_VERSION}"
-          pip install copr
           . ./script/generate_pkgbuild.sh
-          . ./script/trigger_open_build_service.sh
-          python3 ./script/trigger_community_projects.py
+          if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
+          if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi
        #   . ./script/upload_aur.sh
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        if: github.event.inputs.publish_aur == 'true'
         with:
            pkgname: nekobox
            pkgbuild: ./PKGBUILD
@@ -261,6 +278,7 @@ jobs:
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        if: github.event.inputs.publish_aur == 'true'
         with:
            pkgname: nekobox-git
            pkgbuild: ./aur_git/PKGBUILD
