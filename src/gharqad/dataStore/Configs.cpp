@@ -155,9 +155,7 @@ namespace Configs_ConfigItem {
         FromJson(document.object());
     }
 
-    QByteArray JsonStore::content(){
-        bool force_json_configs = Configs::ForceJsonConfigs ;
-
+    QByteArray JsonStore::content(bool force_json_configs){
         return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
     }
 
@@ -179,8 +177,8 @@ namespace Configs_ConfigItem {
         }
     }
 
-    bool JsonStore::SaveToFile(const QString & file){
-        return WriteFile(file, content());
+    bool JsonStore::SaveToFile(const QString & file, bool is_json){
+        return WriteFile(file, content(is_json));
     }
 
     bool JsonStore::LoadFromFile(const QString & fn){

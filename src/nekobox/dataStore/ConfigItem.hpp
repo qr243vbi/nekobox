@@ -176,7 +176,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         DECLARE_FLAG_SAME(storage_exists)
         virtual int Id() const ;
 
-        QByteArray content();
+        QByteArray content(bool is_json);
         void content(const QByteArray &array);
 
         virtual ~JsonStore() = default;
@@ -265,7 +265,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
         
         virtual bool Save();
 
-        virtual bool SaveToFile(const QString & file);
+        virtual bool SaveToFile(const QString & file, bool is_json);
 
         virtual bool Load();
 

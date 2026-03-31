@@ -172,7 +172,9 @@ bool FileDatabaseManager::SaveToFile(JsonStore * store) {
     if (path == ""){
         return false;
     }
-    return store->SaveToFile(path);
+    return store->SaveToFile(path,
+        Configs::ForceJsonConfigs
+    );
 }
 bool FileDatabaseManager::LoadFromFile(JsonStore* store) {
     auto type = store->StoreType();
