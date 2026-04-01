@@ -464,6 +464,11 @@ endif()
 
 #qt_finalize_executable(nekobox)
 if (UNIX)
+
+add_custom_command(TARGET nekobox POST_BUILD
+    COMMAND chrpath -d $<TARGET_FILE:nekobox>
+)
+
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
 
