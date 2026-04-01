@@ -480,6 +480,8 @@ else()
         add_custom_command(TARGET nekobox POST_BUILD
             COMMAND "${PATCHELF_EXECUTABLE}" --remove-rpath $<TARGET_FILE:nekobox>
         )
+    else()
+        message(FATAL_ERROR "neither patchelf nor chrpath found")
     endif()
 endif()
 
