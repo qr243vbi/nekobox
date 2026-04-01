@@ -65,6 +65,7 @@ then
 fi
 
 cp "$rel/nekobox.exe" "$DEST"
+touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
@@ -95,9 +96,14 @@ fi
 cd "$CURDIR"
 pwd
 makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+
+pushd "$DEPLOYMENT"
 mv nekobox_setup.exe "$version_standalone-$ARCH-installer.exe"
 mv "$ARCH" nekobox
 zip -9 -r "$version_standalone-$ARCH.zip" nekobox
+rm -rf nekobox
+popd
+
 )
 
 popd
