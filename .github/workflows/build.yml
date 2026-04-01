@@ -677,34 +677,23 @@ jobs:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
           source script/env_deploy.sh
+          find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
           cd deployment
           ####
-          if [[ -f nekobox_setup.exe ]]; then
-            mv nekobox_setup.exe $version_standalone-windows64-installer.exe
-            mv windows64 nekobox
-            zip -9 -r $version_standalone-windows64.zip nekobox
-            rm -rf nekobox windows64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip --clobber
+          if [[ -f "$version_standalone-windows64-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64.zip" --clobber
           fi
           ####
-          if [[ -f nekobox_setup_arm64.exe ]]; then
-            mv nekobox_setup_arm64.exe $version_standalone-windows-arm64-installer.exe
-            mv windows-arm64 nekobox
-            zip -9 -r $version_standalone-windows-arm64.zip nekobox
-            rm -rf nekobox windows-arm64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip --clobber
+          if [[ -f "$version_standalone-windows-arm64-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64.zip" --clobber
           fi
           ####
-          if [[ -f nekobox_setup32.exe ]]; then
-            mv nekobox_setup32.exe $version_standalone-windows32-installer.exe
-            mv windows32 nekobox
-            zip -9 -r $version_standalone-windows32.zip nekobox
-            rm -rf nekobox windows32
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip --clobber
+          if [[ -f "$version_standalone-windows32-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32.zip" --clobber
           fi
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then
