@@ -56,7 +56,9 @@ set(ENV{GOARCH} ${GOARCH})
 # Options (boolean flags)
 # ----------------------------
 option(SKIP_UPDATER "Skip building updater" OFF)
-option(GO_MOD_TIDY "Run go mod tidy before build" ON)
+option(GO_MOD_TIDY "Run go mod tidy before build" OFF)
+set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/iblis")
+
 
 # ----------------------------
 # Tooling
@@ -76,6 +78,8 @@ endif()
 
 if(GO_MOD_VENDOR)
     set(GO_MOD_FLAG "-mod=vendor")
+else()
+    set(GO_MOD_FLAG "-mod=mod")
 endif()
 
 # optional tidy command
@@ -137,7 +141,7 @@ if(NOT SKIP_UPDATER)
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
     if (UNIX)
-        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/nekobox/")
+        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
     endif()
 endif()
 
@@ -173,5 +177,5 @@ add_custom_command(
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
 
 if (UNIX)
-    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/nekobox/")
+    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
 endif()

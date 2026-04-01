@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(nekobox VERSION 6.0.0)
+# Use this snippet *after* PROJECT(xxx):
+if(UNIX)
+    if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+        set(CMAKE_INSTALL_PREFIX /usr CACHE PATH "default prefix" FORCE)
+    endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -482,9 +488,10 @@ else()
     message(STATUS "File already exists: ${DEST_FILE}")
 endif()
 
-set(START "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
-set(MAIN "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBEXECDIR}/nekobox/nekobox")
-set(ICON "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
+set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/iblis")
+set(START  "${CMAKE_INSTALL_PREFIX}/${PROGRAMPREFIX}")
+set(MAIN   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
+set(ICON   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
 
 # Configure the desktop file
 configure_file(
@@ -532,19 +539,19 @@ install(
 )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/global.ini")
-    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION "${PROGRAMPREFIX}/public")
 endif()
 
 if(NOT SKIP_UPDATER AND NOT SKIP_JS_UPDATER)
-    install(FILES ${CMAKE_SOURCE_DIR}/check_new_release.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+    install(FILES ${CMAKE_SOURCE_DIR}/res/public/check_new_release.js DESTINATION "${PROGRAMPREFIX}/public")
 endif()
 
-install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
-install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
+install(FILES ${QM_FILES} DESTINATION "${PROGRAMPREFIX}/public")
+install(TARGETS nekobox DESTINATION "${PROGRAMPREFIX}")
 install(FILES 
     ${CMAKE_SOURCE_DIR}/srslist.json 
-    ${CMAKE_SOURCE_DIR}/public/announcement_message.js
-    ${CMAKE_SOURCE_DIR}/public/check_routeprofiles.js
-    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+    ${CMAKE_SOURCE_DIR}/res/public/announcement_message.js
+    ${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js
+    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION "${PROGRAMPREFIX}/public")
 
 endif()
