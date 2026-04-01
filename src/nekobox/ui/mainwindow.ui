@@ -32,14 +32,7 @@
          <string>NekoBox</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QToolButton {
-padding-left: 3px;
-padding-right: 3px;
-border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;
-background: palette(label);
-}
+         <string notr="true">
 
 QToolButton::menu-indicator {
 subcontrol-origin: border;
@@ -71,14 +64,7 @@ bottom: 3px;
          <string>Profiles</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QToolButton {
-padding-left: 3px;
-padding-right: 3px;
-border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;
-background: palette(label);
-}
+         <string notr="true">
 
 QToolButton::menu-indicator {
 subcontrol-origin: border;
@@ -110,15 +96,7 @@ bottom: 3px;
          <string>Settings</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QToolButton {
-padding-left: 3px;
-padding-right: 3px;
-border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;
-background: palette(label);
-}
-
+         <string notr="true">
 QToolButton::menu-indicator {
 subcontrol-origin: border;
 subcontrol-position: bottom right;
@@ -149,15 +127,7 @@ bottom: 3px;
          <string>Routing</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QToolButton {
-padding-left: 3px;
-padding-right: 3px;
-border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;
-background: palette(label);
-}
-
+         <string notr="true">
 QToolButton::menu-indicator {
 subcontrol-origin: border;
 subcontrol-position: bottom right;
@@ -188,15 +158,7 @@ bottom: 3px;
          <string>Update</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QToolButton {
-padding-left: 3px;
-padding-right: 3px;
-border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;
-background: palette(label);
-}
-
+         <string notr="true">
 QToolButton::menu-indicator {
 subcontrol-origin: border;
 subcontrol-position: bottom right;
@@ -316,15 +278,7 @@ bottom: 3px;
       <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="styleSheet">
-         <string notr="true">QPushButton {
-padding-left: 8px;
-padding-right: 8px;
-padding-top: 4px;
-padding-bottom: 4px;
-border-radius: 10px;
-border: 3px solid palette(base);
-font: inherit;
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>Test</string>
@@ -605,7 +559,7 @@ font: inherit;
        <widget class="QLabel" name="label_speed">
         <property name="styleSheet">
          <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
+border: 3px solid rgb(30, 0, 255);
 font: inherit;</string>
         </property>
         <property name="text">
@@ -617,7 +571,7 @@ font: inherit;</string>
        <widget class="QLabel" name="label_running">
         <property name="styleSheet">
          <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
+border: 3px solid rgb(30, 0, 255);
 font: inherit;</string>
         </property>
         <property name="text">
@@ -629,7 +583,7 @@ font: inherit;</string>
        <widget class="QLabel" name="label_inbound">
         <property name="styleSheet">
          <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
+border: 3px solid rgb(30, 0, 255);
 font: inherit;</string>
         </property>
         <property name="text">
@@ -663,7 +617,7 @@ font: inherit;</string>
      <x>0</x>
      <y>0</y>
      <width>843</width>
-     <height>23</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">

@@ -4,6 +4,7 @@
 !CMakeLists.txt
 script/aur-nekobox
 script/aur-nekobox-git
+nekoray
 bash.sh
 *.txt
 *.dmp

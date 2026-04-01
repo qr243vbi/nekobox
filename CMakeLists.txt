@@ -308,6 +308,7 @@ set(PROJECT_SOURCES
         ${GHARQAD}/dataStore/RouteEntity.cpp
         ${GHARQAD}/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
+        res/qss/feiyangqingyun/qss.qrc
         ${GHARQAD}/ui/profile/edit_ssh.cpp
         ${NYXARIA}/ui/profile/edit_ssh.h
         ${NYXARIA}/ui/profile/edit_ssh.ui

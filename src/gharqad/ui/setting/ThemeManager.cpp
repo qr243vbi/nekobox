@@ -39,6 +39,9 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
             else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
             else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
             else if (lowerTheme == "kawaii") { path = ":nekobox/qss/Kawaii.qss"; } 
+            else if (lowerTheme == "flatgray") { path = ":nekobox/qss/flatgray.css"; } 
+            else if (lowerTheme == "lightblue") { path = ":nekobox/qss/lightblue.css"; } 
+            else if (lowerTheme == "blacksoft") { path = ":nekobox/qss/blacksoft.css"; } 
     //        else if (lowerTheme == "elegantdark") { path = ":nekobox/qss/ElegantDark.qss"; } 
     //        else if (lowerTheme == "ubuntu") { path = ":nekobox/qss/Ubuntu.qss"; } 
     //        else if (lowerTheme == "flatdark") { path = ":nekobox/qss/FlatDark.qss"; } 
