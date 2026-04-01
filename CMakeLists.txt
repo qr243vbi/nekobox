@@ -488,7 +488,7 @@ else()
     message(STATUS "File already exists: ${DEST_FILE}")
 endif()
 
-set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/iblis")
+set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 set(START  "${CMAKE_INSTALL_PREFIX}/${PROGRAMPREFIX}")
 set(MAIN   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
 set(ICON   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")

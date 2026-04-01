@@ -57,7 +57,7 @@ set(ENV{GOARCH} ${GOARCH})
 # ----------------------------
 option(SKIP_UPDATER "Skip building updater" OFF)
 option(GO_MOD_TIDY "Run go mod tidy before build" OFF)
-set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/iblis")
+set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 
 
 # ----------------------------
