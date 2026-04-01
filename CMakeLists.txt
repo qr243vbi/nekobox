@@ -55,9 +55,10 @@ list(APPEND CMAKE_FIND_ROOT_PATH ${CMAKE_PREFIX_PATH})
 message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 #### NKR ####
-option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
+option(SKIP_UPDATER "Always hide update button" ON)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
-option(USE_HOTKEYS "Skip JS update checker" ON)
+option(USE_HOTKEYS "Skip HotKeys" ON)
+option(BUILD_GO_PARTS "Build go parts" ON)
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
@@ -335,12 +336,11 @@ qt_add_executable(nekobox
 )
 
 # Target
-
 set_property(TARGET nekobox PROPERTY AUTOUIC ON)
 set_property(TARGET nekobox PROPERTY AUTOMOC ON)
 set_property(TARGET nekobox PROPERTY AUTORCC ON)
 
-if(SKIP_UPDATE_BUTTON)
+if(SKIP_UPDATER)
     nkr_add_compile_definitions(SKIP_UPDATE_BUTTON=yes)
 endif()
 if(SKIP_JS_UPDATER)
@@ -444,34 +444,20 @@ if (MSVC)
     endif()
 endif()
 
-#qt_finalize_executable(nekobox)
-if (UNIX)
-find_program(GO_EXECUTABLE go)
+if (BUILD_GO_PARTS)
+    find_program(GO_EXECUTABLE go)
 
-set(GO_SOURCE_DIR ${CMAKE_SOURCE_DIR}/core/server)
+    set(GO_SOURCE_DIR ${CMAKE_SOURCE_DIR}/core)
 
-if(EXISTS ${GO_SOURCE_DIR} AND GO_EXECUTABLE)
-    message(STATUS "Go server found, enabling build")
-
-    set(GO_BINARY ${CMAKE_BINARY_DIR}/)
-
-    add_custom_command(
-        OUTPUT ${GO_BINARY}
-        COMMAND ${GO_EXECUTABLE} build -o ${GO_BINARY}
-        WORKING_DIRECTORY ${GO_SOURCE_DIR}
-        COMMENT "Building Go server binary"
-        VERBATIM
-    )
-
-    add_custom_target(go_server ALL
-        DEPENDS ${GO_BINARY}
-    )
-
-else()
-    message(STATUS "Go server not found, skipping")
+    if(EXISTS ${GO_SOURCE_DIR}/CMakeLists.txt AND GO_EXECUTABLE)
+        add_subdirectory(${GO_SOURCE_DIR})
+    else()
+        message(STATUS "Go server not found, skipping")
+    endif()
 endif()
 
-
+#qt_finalize_executable(nekobox)
+if (UNIX)
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
 
@@ -549,7 +535,7 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/global.ini")
     install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 endif()
 
-if(NOT SKIP_UPDATE_BUTTON AND NOT SKIP_JS_UPDATER)
+if(NOT SKIP_UPDATER AND NOT SKIP_JS_UPDATER)
     install(FILES ${CMAKE_SOURCE_DIR}/check_new_release.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 endif()
 

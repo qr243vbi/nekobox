@@ -144,7 +144,7 @@ jobs:
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/cache@main
         with:
-          path: artifacts.tgz
+          path: ./deployment
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
@@ -165,9 +165,11 @@ jobs:
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
-            export SKIP_UPDATER=y
+            export SKIP_UPDATER=ON
+          else
+            export SKIP_UPDATER=OFF
           fi
-          GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+          GO_MOD_TIDY=ON GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
       - name: Build vendor
         if: matrix.cross_os == 'public'
         shell: bash
@@ -186,15 +188,15 @@ jobs:
             gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
-      - name: Tar files
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
-        run: tar czvf artifacts.tgz ./deployment
+  #    - name: Tar files
+   #     if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+    #    run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
-          path: artifacts.tgz
+          path: ./deployment
   upload_aur:
     name: Upload to Open Build Service and Aur
     permissions:
@@ -392,21 +394,21 @@ jobs:
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+          cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
-      - name: Tar files
-        shell: bash
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-        run: tar czvf artifacts.tgz ./deployment
+   #   - name: Tar files
+   #     shell: bash
+   #     if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+   #     run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-          path: artifacts.tgz
+          path: ./deployment
 
   build-cpp-linux:
     name: Build linux binaries
@@ -530,17 +532,17 @@ jobs:
         run: |
           gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
-      - name: Tar files
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-        shell: bash
-        run: tar czvf artifacts.tgz ./deployment
+ #     - name: Tar files
+  #      if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+   #     shell: bash
+    #    run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
-          path: artifacts.tgz
+          path: ./deployment
   #
   # build-cpp-linux:
   #   name: Build linux binaries
@@ -675,7 +677,6 @@ jobs:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
           source script/env_deploy.sh
-          find . -name artifacts.tgz | xargs -n1 tar xvzf
           ##
           cd deployment
           ####
