@@ -37,7 +37,7 @@ endif()
 message("GOOS is " ${GOOS})
 message("GOARCH is " ${GOARCH})
 
-if (GO_SOURCE_DIR STREQUAL "")
+if (NOT GO_SOURCE_DIR OR GO_SOURCE_DIR STREQUAL "")
     set(GO_SOURCE_DIR "${CMAKE_SOURCE_DIR}")
 endif()
 
