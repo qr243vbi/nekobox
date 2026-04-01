@@ -1,8 +1,17 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+*.log
+*.pem
+*.json
+*.exe
+*.dat
+*.db
+server/gen/*.pb.go
+server/gen/*.pb.*.go
 !languages.txt
 !CMakeLists.txt
-!core/CMakeLists.txt
+/*.txt
+!/core/CMakeLists.txt
 core/build
 core/TEMP
 core/server/build
@@ -10,7 +19,6 @@ script/aur-nekobox
 script/aur-nekobox-git
 nekoray
 bash.sh
-*.txt
 *.dmp
 run.ps1
 .ENV

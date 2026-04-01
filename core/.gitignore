@@ -1,8 +1,1 @@
-*.log
-*.pem
-*.json
-*.exe
-*.dat
-*.db
-server/gen/*.pb.go
-server/gen/*.pb.*.go
+
