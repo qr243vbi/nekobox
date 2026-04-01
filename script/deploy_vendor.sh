@@ -15,6 +15,12 @@ fi
 go mod tidy
 go mod vendor
 go list -m -f '{{.Version}}' github.com/sagernet/sing-box > "$SRC_ROOT/SingBox.Version"
+
+pushd ../updater
+go mod tidy
+go mod vendor
+popd
+
 popd
 
 pushd "$SRC_ROOT"/core/updater
@@ -51,7 +57,7 @@ sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_stand
 
 
 git reset --soft HEAD^1
-for i in  srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
+for i in  srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} core/updater/vendor SingBox.Version
 do
 git rm -rf "$i"
 rm -rf "$i"

@@ -2,6 +2,7 @@
 # ----------------------------------------------------------------------------
 !languages.txt
 !CMakeLists.txt
+core/server/build
 script/aur-nekobox
 script/aur-nekobox-git
 nekoray
@@ -18,8 +19,8 @@ TEMP
 script/PKGBUILD
 script/nekobox_temp
 gen-cpp
-core/updater/vendor/*
-core/server/vendor/*
+core/updater/vendor
+core/server/vendor
 core/server/gen/libcore_service-remote
 core/server/gen/*.go
 script/winget-pkgs
