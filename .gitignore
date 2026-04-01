@@ -8,6 +8,7 @@
 *.db
 server/gen/*.pb.go
 server/gen/*.pb.*.go
+script/nekobox_chocolatey/_TODO.txt
 !languages.txt
 !CMakeLists.txt
 /*.txt
