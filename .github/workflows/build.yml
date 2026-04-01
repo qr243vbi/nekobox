@@ -188,15 +188,15 @@ jobs:
             gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
-  #    - name: Tar files
-   #     if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
-    #    run: tar czvf artifacts.tgz ./deployment
+      - name: Tar files
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+        run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
-          path: ./deployment
+          path: artifacts.tgz
   upload_aur:
     name: Upload to Open Build Service and Aur
     permissions:
@@ -398,17 +398,17 @@ jobs:
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
-   #   - name: Tar files
-   #     shell: bash
-   #     if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
-   #     run: tar czvf artifacts.tgz ./deployment
+      - name: Tar files
+        shell: bash
+        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-          path: ./deployment
+          path: artifacts.tgz
 
   build-cpp-linux:
     name: Build linux binaries
@@ -532,17 +532,17 @@ jobs:
         run: |
           gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
- #     - name: Tar files
-  #      if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-   #     shell: bash
-    #    run: tar czvf artifacts.tgz ./deployment
+      - name: Tar files
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
-          path: ./deployment
+          path: artifacts.tgz
   #
   # build-cpp-linux:
   #   name: Build linux binaries
