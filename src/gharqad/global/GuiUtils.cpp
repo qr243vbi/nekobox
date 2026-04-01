@@ -1,5 +1,6 @@
 #include <nekobox/global/GuiUtils.hpp>
 #include <qnamespace.h>
+#include <nekobox/ui/mainwindow_interface.h>
 
 QWidget *GetMessageBoxParent() {
   auto activeWindow = QApplication::activeWindow();

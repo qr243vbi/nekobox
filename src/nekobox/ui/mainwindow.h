@@ -33,7 +33,6 @@ class JsUpdaterWindow;
 #include <nekobox/js/js_updater.h>
 #endif
 
-extern QWidget *mainwindow;
 
 #ifndef MW_INTERFACE
 
@@ -434,9 +433,10 @@ protected:
 #endif // MW_INTERFACE
 };
 
-inline MainWindow *GetMainWindow() {
-    return (MainWindow *) mainwindow;
-}
+
+extern MainWindow *mainwindow;
+
+MainWindow *GetMainWindow() ;
 
 void UI_InitMainWindow();
 
@@ -456,11 +456,7 @@ public:
     ~OrgFreedesktopPortalRequestInterface();
 
 public Q_SLOTS:
-    inline QDBusPendingReply<> Close()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("Close"), argumentList);
-    }
+    QDBusPendingReply<> Close();
 
 Q_SIGNALS: // SIGNALS
     void Response(uint response, QVariantMap results);

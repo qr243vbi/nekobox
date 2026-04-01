@@ -20,5 +20,7 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm" ]]; then
 fi; fi; fi; fi; fi; fi; fi;
 fi
 
-cmake -S ./core -B "$(realpath ${BUILD})" -D"DESTDIR=$(realpath ${DEST})" "-DSKIP_UPDATER=${SKIP_UPDATER}" "-DGO_MOD_TIDY=${GO_MOD_TIDY}" "-DGOOS=${GOOS}" "-DGOARCH=${GOARCH}"
+mkdir -p "${DEST}"
+
+cmake -S ./core -B "${BUILD}" -D"DESTDIR=$(realpath ${DEST})" "-DSKIP_UPDATER=${SKIP_UPDATER}" "-DGO_MOD_TIDY=${GO_MOD_TIDY}" "-DGOOS=${GOOS}" "-DGOARCH=${GOARCH}"
 

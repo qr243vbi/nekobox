@@ -171,7 +171,6 @@ inline QString joinCommand(const QStringList &arguments) {
 
 
 // UI
-extern QWidget *mainwindow;
 
 QWidget *GetMessageBoxParent();
 

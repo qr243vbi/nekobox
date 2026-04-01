@@ -38,16 +38,28 @@
 #include <nekobox/global/GuiUtils.hpp>
 
 QVariantMap ruleSetMap;
-QWidget *mainwindow;
+MainWindow *mainwindow;
+
+MainWindow *GetMainWindow() {
+    return mainwindow;
+}
 
 #ifdef Q_OS_UNIX
 #include <nekobox/sys/linux/LinuxCap.h>
+
+QDBusPendingReply<> OrgFreedesktopPortalRequestInterface::Close()
+{
+    QList<QVariant> argumentList;
+    return asyncCallWithArgumentList(QStringLiteral("Close"), argumentList);
+}
+
+
 #endif
 #define disable_run_admin windows_no_admin
 
 void signal_handler(int signum) {
-    if (GetMainWindow()) {
-        GetMainWindow()->prepare_exit();
+    if (mainwindow != nullptr) {
+        mainwindow->prepare_exit();
         qApp->quit();
     }
 }
