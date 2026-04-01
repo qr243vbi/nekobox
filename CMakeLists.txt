@@ -570,9 +570,15 @@ endif()
 install(FILES ${QM_FILES} DESTINATION "${PROGRAMPREFIX}/public")
 install(TARGETS nekobox DESTINATION "${PROGRAMPREFIX}")
 install(FILES 
-    ${CMAKE_SOURCE_DIR}/srslist.json 
-    ${CMAKE_SOURCE_DIR}/res/public/announcement_message.js
-    ${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js
-    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION "${PROGRAMPREFIX}/public")
+    "${CMAKE_SOURCE_DIR}/srslist.json"
+    "${CMAKE_SOURCE_DIR}/res/public/announcement_message.js"
+    "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
+    "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public")
+
+set(EMOJI_FONT ${CMAKE_SOURCE_DIR}/res/public/emoji.ttf)
+if(EXISTS "${EMOJI_FONT}")
+install(FILES
+    "${EMOJI_FONT}" DESTINATION "${PROGRAMPREFIX}/public")
+endif()
 
 endif()
