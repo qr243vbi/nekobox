@@ -137,7 +137,7 @@ if(NOT SKIP_UPDATER)
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
     if (UNIX)
-        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/updater${EXE_SUFFIX}")
+        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/nekobox/")
     endif()
 endif()
 
@@ -173,5 +173,5 @@ add_custom_command(
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
 
 if (UNIX)
-    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/nekobox_core")
+    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/nekobox/")
 endif()
