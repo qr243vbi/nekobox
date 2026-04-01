@@ -24,7 +24,7 @@ bash.sh
 run.ps1
 .ENV
 global.ini
-public
+/public
 settings
 translate.py
 TEMP
