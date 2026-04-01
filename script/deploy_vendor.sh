@@ -31,7 +31,7 @@ fi
 
 echo "[General]" > global.ini
 echo "program_version=$INPUT_VERSION" >> global.ini
-echo "program_name=NekoBox" >> global.ini
+echo "program_name=Iblis" >> global.ini
 
 rm -fv **/*.so
 rm -fv **/*.a

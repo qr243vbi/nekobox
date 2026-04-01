@@ -445,8 +445,33 @@ if (MSVC)
 endif()
 
 #qt_finalize_executable(nekobox)
-
 if (UNIX)
+find_program(GO_EXECUTABLE go)
+
+set(GO_SOURCE_DIR ${CMAKE_SOURCE_DIR}/core/server)
+
+if(EXISTS ${GO_SOURCE_DIR} AND GO_EXECUTABLE)
+    message(STATUS "Go server found, enabling build")
+
+    set(GO_BINARY ${CMAKE_BINARY_DIR}/)
+
+    add_custom_command(
+        OUTPUT ${GO_BINARY}
+        COMMAND ${GO_EXECUTABLE} build -o ${GO_BINARY}
+        WORKING_DIRECTORY ${GO_SOURCE_DIR}
+        COMMENT "Building Go server binary"
+        VERBATIM
+    )
+
+    add_custom_target(go_server ALL
+        DEPENDS ${GO_BINARY}
+    )
+
+else()
+    message(STATUS "Go server not found, skipping")
+endif()
+
+
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
 
@@ -520,11 +545,20 @@ install(
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
+if(EXISTS "${CMAKE_SOURCE_DIR}/global.ini")
+    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+endif()
+
+if(NOT SKIP_UPDATE_BUTTON AND NOT SKIP_JS_UPDATER)
+    install(FILES ${CMAKE_SOURCE_DIR}/check_new_release.js DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+endif()
+
 install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
 install(FILES 
     ${CMAKE_SOURCE_DIR}/srslist.json 
-    ${CMAKE_SOURCE_DIR}/public/check_routeprofiles.js 
+    ${CMAKE_SOURCE_DIR}/public/announcement_message.js
+    ${CMAKE_SOURCE_DIR}/public/check_routeprofiles.js
     ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
 
 endif()

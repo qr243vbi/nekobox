@@ -516,8 +516,10 @@ jobs:
         env:
           GUEST_ARCH: ${{ matrix.target }}
         run: |
+          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           echo "UNAME=${GUEST_ARCH}" >> .ENV
           echo "INPUT_VERSION=${INPUT_VERSION}" >> .ENV
+          echo "SKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" >> .ENV
           docker compose up --force-recreate --build
 
       - name: Linux - Publish
