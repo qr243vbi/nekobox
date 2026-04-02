@@ -154,6 +154,13 @@ int main(int argc, char** argv) {
     // Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
+    WSADATA wsaData;
+    int result = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    if (result != 0) {
+        printf("WSAStartup failed: %d\n", result);
+        return 1;
+    }
+
 #endif
 #ifdef Q_OS_LINUX
     Unix_SetCrashHandler();

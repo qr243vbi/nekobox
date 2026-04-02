@@ -617,7 +617,7 @@ font: inherit;</string>
      <x>0</x>
      <y>0</y>
      <width>843</width>
-     <height>30</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -637,6 +637,7 @@ font: inherit;</string>
     <addaction name="actionStart_with_system"/>
     <addaction name="actionRemember_last_proxy"/>
     <addaction name="actionAllow_LAN"/>
+    <addaction name="actionRegister_Windows_Elevated_Task"/>
     <addaction name="menu_spmode"/>
     <addaction name="separator"/>
     <addaction name="actionRestart_Proxy"/>
@@ -1214,6 +1215,14 @@ font: inherit;</string>
   <action name="menu_information">
    <property name="text">
     <string>Information</string>
+   </property>
+  </action>
+  <action name="actionRegister_Windows_Elevated_Task">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Register Windows elevated task</string>
    </property>
   </action>
  </widget>

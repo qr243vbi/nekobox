@@ -22,6 +22,8 @@ import (
 )
 
 func RunCore(addr net.Addr, _debug *bool) {
+	wsainit()
+
 	internal.Debug = *_debug
 
 	log.Printf("Ruleset dir is %s", internal.GetRulesetCachedir())
@@ -29,6 +31,7 @@ func RunCore(addr net.Addr, _debug *bool) {
 	boxmain.DisableColor()
 	// RPC
 	go func() {
+		wsainit()
 		network := addr.Network()
 		address := addr.String()
 		for {
@@ -58,6 +61,8 @@ func RunCore(addr net.Addr, _debug *bool) {
 		//	if err != nil {
 		//		log.Println("error running thrift server: ", err)
 		//	}
+		wsainit()
+
 		transport := thrift.NewTServerSocketFromAddrTimeout(addr, 0)
 		handler := &server{}
 		processor := gen.NewLibcoreServiceProcessor(handler)

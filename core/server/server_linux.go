@@ -46,6 +46,10 @@ func WaitForProcessExit(pid int) error {
 	}
 }
 
+func wsainit() {
+
+}
+
 func isElevated() (bool, error) {
 	if os.Geteuid() == 0 {
 		return true, nil

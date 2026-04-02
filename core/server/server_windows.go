@@ -402,6 +402,16 @@ func fileExists(path string) bool {
 	return !info.IsDir()
 }
 
+func wsainit() {
+	var data windows.WSAData
+
+	err := windows.WSAStartup(uint32(0x202), &data)
+	defer windows.WSACleanup()
+	if err != nil {
+		panic(err)
+	}
+}
+
 func InstallVcRedist() {
 	var download string = getDownloadDir()
 	var VCRedistDownload string = ""

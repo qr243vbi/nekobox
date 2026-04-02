@@ -716,18 +716,29 @@ MainWindow::MainWindow(QWidget *parent)
         Configs::dataStore->core_port = MkPort();
         Configs::dataStore->core_domain = "127.0.0.1";
     } else {
-        QString tempdir = QDir::tempPath() + QDir::separator() + GetRandomString(12);
-        QDir dir;
+        QString tempdir = 
+      #ifdef Q_OS_WIN
+        QDir::tempPath();
+      #else
+      QDir::tempPath() + QDir::separator() + GetRandomString(8);
+       #endif
+          QDir dir;
+        #ifdef Q_OS_UNIX
         if (!dir.exists(tempdir)){
             dir.mkpath(tempdir);
         }
-        #ifdef Q_OS_UNIX
         prepare_directory_for_shared_access(tempdir.toStdString());
         #endif
         Configs::dataStore->core_port = -1;
         Configs::dataStore->core_domain =
-            QString(tempdir + QDir::separator() +
-            GetRandomString(12) + ".sock").toStdString();
+            QString(tempdir 
+              + QDir::separator() + GetRandomString(8
+              #ifdef Q_OS_WIN
+                + 10,
+                ExcludeUppercase | ExcludeDigits
+              #endif
+              )
+              + ".sock").toStdString();
     }
   }
         );
@@ -1070,6 +1081,11 @@ skip_updater_hide:
       ToggleWindow(this);
     } while (this->isHidden());
   });
+
+  #ifdef Q_OS_UNIX
+  ui->actionRegister_Windows_Elevated_Task->setVisible(false);
+  #endif
+
   connect(ui->actionRemember_last_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
             ui->actionRemember_last_proxy->setChecked(!checked);
@@ -2162,10 +2178,14 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(program, arguments);
     }
   }
-  if (this->keep_running) {
-    this->keep_running = false;
-    return;
+  if (exit_reason == 1){
+    if (this->keep_running) {
+      this->keep_running = false;
+      return;
+    }
   }
+  QCoreApplication::quit();
+  QCoreApplication::quit();
   QCoreApplication::quit();
 }
 

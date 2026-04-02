@@ -22,5 +22,5 @@ fi
 
 mkdir -p "${DEST}"
 
-cmake -S ./core -B "${BUILD}" -D"DESTDIR=$(realpath ${DEST})" "-DSKIP_UPDATER=${SKIP_UPDATER}" "-DGO_MOD_TIDY=${GO_MOD_TIDY}" "-DGOOS=${GOOS}" "-DGOARCH=${GOARCH}"
+cmake -S ./core -B "${BUILD}" -D"DESTDIR=$(realpath ${DEST})" "-DSKIP_UPDATER=${SKIP_UPDATER}" "-DGO_MOD_VENDOR=${GO_MOD_VENDOR:-OFF}" "-DGO_MOD_TIDY=${GO_MOD_TIDY:-ON}" "-DGOOS=${GOOS}" "-DGOARCH=${GOARCH}"
 cmake --build "${BUILD}"
