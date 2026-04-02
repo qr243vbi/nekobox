@@ -254,6 +254,7 @@ jobs:
           OBS_USER: ${{ secrets.OBS_USER }}
           EMAIL: ${{ secrets.EMAIL }}
           USER: ${{ github.actor }}
+          PUBLISH_AUR: ${{ github.event.inputs.publish_aur }}
           OBS_PASSWORD: ${{ secrets.OBS_PASSWORD }}
           COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
           COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
@@ -261,7 +262,7 @@ jobs:
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
           echo "Version is ${INPUT_VERSION}"
-          . ./script/generate_pkgbuild.sh
+          if [[ "$PUBLISH_AUR" == "true" ]]; then . ./script/generate_pkgbuild.sh; fi
           if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
           if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi
        #   . ./script/upload_aur.sh

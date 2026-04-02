@@ -7,14 +7,11 @@ curl -u "${OBS_USER}:${OBS_PASSWORD}" \
   "https://api.opensuse.org/source/network:vpn/nekobox/nekobox.changes" \
   -o nekobox.changes
 
-. PKGBUILD
-
-pkgurl="$(echo ${source[0]} | sed "s@$pkgver@%{version}@g;" )"
+export pkgver="$INPUT_VERSION"
+export source_0="https://github.com/qr243vbi/nekobox/releases/download/$pkgver/nekobox-unified-source-$pkgver.tar.xz"
 
 curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec -o nekobox.spec
-sed -i "s@Source0:.*@Source0: $pkgurl@g; s@Version:.*@Version: $pkgver@g;" nekobox.spec
 
-source_0="${source[0]}"
 file_0="$(basename "${source_0}")"
 
 curl -L "${source_0}" -o "${file_0}"

@@ -510,8 +510,8 @@ else()
 endif()
 
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
-set(START  "${CMAKE_INSTALL_PREFIX}/${PROGRAMPREFIX}")
-set(MAIN   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
+set(START  "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
+set(MAIN   "${CMAKE_INSTALL_PREFIX}/${PROGRAMPREFIX}/nekobox")
 set(ICON   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
 
 # Configure the desktop file
