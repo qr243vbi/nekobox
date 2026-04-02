@@ -1,5 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+pypy.py
+run.sh
 *.log
 *.pem
 *.json

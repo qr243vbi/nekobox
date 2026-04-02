@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef DATA_STORE_HEADER
 #define DATA_STORE_HEADER
 

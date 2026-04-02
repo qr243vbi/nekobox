@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <QThread>
 #include <nekobox/api/RPC.h>
 #include <nekobox/ui/mainwindow_interface.h>

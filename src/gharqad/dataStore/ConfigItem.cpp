@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/dataStore/ConfigItem.hpp"
 #include "libcore_types.h"
 #include "nekobox/dataStore/Configs.hpp"

@@ -1,4 +1,9 @@
-#include "nekobox/global/HTTPRequestHelper.hpp"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
+#include <nekobox/global/HTTPRequestHelper.hpp>
 
 #include <QNetworkProxy>
 #include <QNetworkAccessManager>
@@ -11,9 +16,9 @@
 #include <QMap>
 #include <QDir>
 #include <QStringList>
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/ui/mainwindow.h"
-#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/ui/mainwindow.h>
+#include <nekobox/global/DeviceDetailsHelper.hpp>
 
 static inline void InitializeRequest(
     QNetworkRequest & request, 

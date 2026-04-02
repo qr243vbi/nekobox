@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/profile/edit_vmess.h"
 
 #include "nekobox/configs/proxy/VMessBean.hpp"

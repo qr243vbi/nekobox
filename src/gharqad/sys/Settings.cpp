@@ -1,7 +1,11 @@
-#include "nekobox/sys/Settings.h"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
 
-#include "nekobox/dataStore/ResourceEntity.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/ResourceEntity.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 #include <QApplication>
 #include <QDir>
 #include <QFontDatabase>

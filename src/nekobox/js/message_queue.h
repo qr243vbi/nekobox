@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef MESSAGE_QUEUE
 #define MESSAGE_QUEUE
 #include "blocking_queue.h"

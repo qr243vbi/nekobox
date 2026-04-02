@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <QTextEdit>
 #include "nekobox/ui/setting/dialog_vpn_settings.h"
 

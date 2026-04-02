@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/ui/info/info.h>

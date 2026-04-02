@@ -26,8 +26,7 @@ elseif (MSVC)
     add_compile_options(/permissive-)
     add_compile_options("/utf-8")
     add_compile_options("/wd4702")
-    add_definitions(-D_WIN32_WINNT=0x600)
 endif ()
 
-add_definitions(-D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
+add_definitions(-D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
 

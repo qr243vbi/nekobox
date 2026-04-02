@@ -71,10 +71,12 @@ set(GOCMD "go" CACHE STRING "Go executable command")
 set(GO_MOD_FLAG "")
 
 if (GO_MOD_TIDY)
-option(GO_MOD_VENDOR "Build Go with -mod=vendor" OFF)
+set(GO_MOD_TIDY_FLAG "OFF")
 else()
-option(GO_MOD_VENDOR "Build Go with -mod=vendor" ON)
+set(GO_MOD_TIDY_FLAG "ON")
 endif()
+
+option(GO_MOD_VENDOR "Build Go with -mod=vendor" ${GO_MOD_TIDY_FLAG})
 
 if(GO_MOD_VENDOR)
     set(GO_MOD_FLAG "-mod=vendor")

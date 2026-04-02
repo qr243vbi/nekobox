@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/ui/mainwindow.h>
 #include <3rdparty/qv2ray/wrapper.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -2094,6 +2099,14 @@ void MainWindow::point_changed(int width, int height) {
 void MainWindow::on_menu_exit_triggered() {
   CHECK_ACTION_ACCESS_R
   prepare_exit();
+  bool keep_running = this->keep_running;
+  int exit_reason = this->exit_reason;
+  
+  if (exit_reason != 1){
+    keep_running = false;
+  }
+  this->keep_running = false;
+  this->exit_reason = 0;
   //
   if (exit_reason == 1) {
 #ifndef SKIP_UPDATE_BUTTON
@@ -2178,14 +2191,9 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(program, arguments);
     }
   }
-  if (exit_reason == 1){
-    if (this->keep_running) {
-      this->keep_running = false;
-      return;
-    }
+  if (keep_running){
+    return;
   }
-  QCoreApplication::quit();
-  QCoreApplication::quit();
   QCoreApplication::quit();
 }
 

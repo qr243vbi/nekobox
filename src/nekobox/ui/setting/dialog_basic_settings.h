@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef DIALOG_BASIC_SETTINGS_H
 #define DIALOG_BASIC_SETTINGS_H
 

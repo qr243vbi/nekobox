@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <QCoreApplication>
 #include <QLocalServer>
 #include <QLocalSocket>
@@ -19,6 +24,7 @@ QString handleCommand(const QString& cmd, const QString &program) {
     QProcess process;
     QStringList args;
     QString ret = "";
+
 
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QStringList envs = env.toStringList();
@@ -79,7 +85,7 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
     QLocalServer server;
 
-    QSettings settings("qr243vbi", "iblis_elevated_launcher");
+    QSettings settings(QString(QCoreApplication::applicationDirPath() + QDir::separator() + "elevated_launcher.ini"), QSettings::IniFormat);
 
     if (argc > 2){
         QString command = argv[1];
@@ -93,6 +99,7 @@ int main(int argc, char *argv[]) {
             settings.setValue("socket", generateRandomString(28));
             settings.setValue("program", QString(argv[2]));
             settings.setValue("task_name", task);
+            settings.sync();
         }
         
         return 1;

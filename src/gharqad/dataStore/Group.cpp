@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/dataStore/Group.hpp>
 #include <QFile>
 #include "nekobox/dataStore/ProxyEntity.hpp"

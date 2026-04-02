@@ -65,6 +65,7 @@ then
 fi
 
 cp "$rel/nekobox.exe" "$DEST"
+cp "$rel/elevated_launcher.exe" "$DEST"
 touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
@@ -99,9 +100,16 @@ makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDI
 
 pushd "$DEPLOYMENT"
 mv nekobox_setup.exe "$version_standalone-$ARCH-installer.exe"
+
+if [[ "$SKIP_ZIP" == 'true' ]]
+then
+mv "$ARCH" "$version_standalone-$ARCH"
+else
 mv "$ARCH" nekobox
 zip -9 -r "$version_standalone-$ARCH.zip" nekobox
 rm -rf nekobox
+fi
+
 popd
 
 )

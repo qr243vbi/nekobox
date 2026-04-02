@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef NEKOBOX_SETTINGS
 #define NEKOBOX_SETTINGS
 #include <QList>
