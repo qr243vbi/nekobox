@@ -73,6 +73,10 @@ func getExitCode(hProcess syscall.Handle) (uint32, error) {
 	return exitCode, nil
 }
 
+func checkTaskScheduler() {
+
+}
+
 func runShellExec(command string, arguments string) (int, error) {
 	verbPtr, _ := syscall.UTF16PtrFromString("runas") // Elevate
 	filePtr, _ := syscall.UTF16PtrFromString(command)

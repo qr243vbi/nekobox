@@ -24,6 +24,10 @@ func runAdmin(_port *int, _debug *bool, addr *string, sock *string) (int, error)
 	return 0, nil
 }
 
+func checkTaskScheduler() {
+
+}
+
 func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
 	out := new(gen.IsPrivilegedResponse)
 	priv, err := isElevated()
