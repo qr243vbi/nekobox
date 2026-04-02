@@ -583,3 +583,11 @@ endif()
 
 endif()
 
+
+
+
+
+
+
+add_executable(elevated_launcher "${GHARQAD}/elevated_launcher.cpp")
+target_link_libraries(elevated_launcher PRIVATE Qt6::Core Qt6::Network)
