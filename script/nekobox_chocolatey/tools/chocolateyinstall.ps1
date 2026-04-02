@@ -1,4 +1,65 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿function Get-IniContent ($filePath)
+{
+    $ini = @{}
+    $ini["General"] = @{}
+
+    if (-not (Test-Path $filePath)) {
+        return $ini
+    }
+
+    switch -regex -file $FilePath
+    {
+        “^\[(.+)\]” # Section
+        {
+            $section = $matches[1]
+            $ini[$section] = @{}
+            $CommentCount = 0
+        }
+        “^(;.*)$” # Comment
+        {
+            $value = $matches[1]
+            $CommentCount = $CommentCount + 1
+            $name = “Comment” + $CommentCount
+            $ini[$section][$name] = $value
+        }
+        “(.+?)\s*=(.*)” # Key
+        {
+            $name,$value = $matches[1..2]
+            $ini[$section][$name] = $value
+        }
+    }
+    return $ini
+}
+
+function Out-IniFile($InputObject, $FilePath)
+{
+    $outFile = New-Item -ItemType file -Path $Filepath -Force
+    foreach ($i in $InputObject.keys)
+    {
+        if (!($($InputObject[$i].GetType().Name) -eq “Hashtable”))
+        {
+            #No Sections
+            Add-Content -Path $outFile -Value “$i=$($InputObject[$i])”
+        } else {
+            #Sections
+            Add-Content -Path $outFile -Value “[$i]”
+            Foreach ($j in ($InputObject[$i].keys | Sort-Object))
+            {
+                if ($j -match “^Comment[\d]+”) {
+                    Add-Content -Path $outFile -Value “$($InputObject[$i][$j])”
+                } else {
+                    Add-Content -Path $outFile -Value “$j=$($InputObject[$i][$j])”
+                }
+
+            }
+            Add-Content -Path $outFile -Value “”
+        }
+    }
+}
+
+
+
+$ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $process = Get-Process "nekobox*" -ea 0
@@ -29,6 +90,7 @@ Install-ChocolateyPackage @packageArgs
 
 $nekobox_path = Get-AppInstallLocation $packageArgs.softwareName
 
+
 if ([string]::IsNullOrEmpty($appPath)) {
 
 } else {
@@ -36,15 +98,17 @@ if ([string]::IsNullOrEmpty($appPath)) {
 if (Test-Path "$nekobox_path" -PathType Container) {
     $global_ini_path = Join-Path $nekobox_path "global.ini"
 
-@"
-[General]
-chocolatey_package=true
-"@ | Set-Content "$global_ini_path"
+    $data = Get-IniContent "$global_ini_path"
+    $data["General"]["chocolatey_package"] = "true";
+    Out-IniFile $data "$global_ini_path"
 
 }
+
+}
+
+
+
 
 if ($programRunning -and (Test-Path $programRunning)) {
   Write-Host "Please reopen NekoBox to continue using."
-}
-
 }
