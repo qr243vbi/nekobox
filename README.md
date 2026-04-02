@@ -41,9 +41,9 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [OpenRC](https://openrc.run/)/[runit](https://smarden.org/runit/)/[systemd](https://systemd.io/) integration of nekobox_core
 - Terminal UI
 - Remote control
-- Support for all platforms that supported by sing-box and Qt
-- Add more protocols
-- Dynamic UI
+- Support for all platforms that supported by sing-box and Qt (except macos)
+- Add more protocols that does not supported by upstream sing-box
+- Declarative UI for editing proxies
 
 ## Supported protocols
  
