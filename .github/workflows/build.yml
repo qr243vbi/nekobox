@@ -390,6 +390,11 @@ jobs:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
+      - name: Install Zip, Curl, Jq
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: zip curl jq
+
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash

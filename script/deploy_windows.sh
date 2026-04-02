@@ -106,7 +106,7 @@ pushd "$DEPLOYMENT"
 
 if [[ "$SKIP_NSIS" != "true" ]]
 then
-mv nekobox_setup.exe "$version_standalone-$ARCH-installer.exe"
+mv "$INST" "$version_standalone-$ARCH-installer.exe"
 fi
 
 
