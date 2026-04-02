@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"crypto/rand"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -73,8 +74,84 @@ func getExitCode(hProcess syscall.Handle) (uint32, error) {
 	return exitCode, nil
 }
 
-func checkTaskScheduler() {
+type taskScheduleConfig struct {
+	exec   string `json:"exec"`
+	stdout string `json:"stdout"`
+	stder  string `json:"stderr"`
+	task   string `json:"task"`
+	stdin  string `json:"stdin"`
+}
 
+func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	ln, err := npipe.Listen(pipeName)
+	if err != nil {
+		log.Fatalf("Error listening on pipe %s: %v\n", pipeName, err)
+	}
+	defer ln.Close()
+
+	//log.Printf("Waiting for client on pipe: %s\n", pipeName)
+	conn, err := ln.Accept()
+	if err != nil {
+		log.Fatalf("Accept error on %s: %v\n", pipeName, err)
+		return
+	}
+	defer conn.Close()
+
+	//	fmt.Printf("Client connected to %s\n", pipeName)
+
+	_, err = io.Copy(output, conn)
+	if err != nil {
+		log.Fatalf("Error copying from %s: %v\n", pipeName, err)
+	}
+}
+
+func checkTaskScheduler(port int, domain string, addr string) error {
+	path, _ := os.Executable()
+	path = filepath.Clean(path)
+	execpath := path
+	path = path + ".elevated_launcher"
+	var err error
+	if _, err := os.Stat(path); err == nil {
+		var cfg taskScheduleConfig
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		if err := json.Unmarshal(data, &cfg); err != nil {
+			return err
+		}
+		if execpath != cfg.exec {
+			return fmt.Errorf("file paths are not same %s: %v", execpath, cfg.exec)
+		}
+		var wg sync.WaitGroup
+
+		// Pipe for stdout
+		wg.Add(1)
+		go handlePipe(cfg.stdout, os.Stdout, &wg)
+
+		// Pipe for stderr
+		wg.Add(1)
+		go handlePipe(cfg.stder, os.Stderr, &wg)
+
+		ln, err := npipe.Listen(cfg.stdin)
+		if err != nil {
+			return err
+		}
+		defer ln.Close()
+
+		conn, err := ln.Accept()
+		if err != nil {
+			return err
+		}
+		conn.Write([]byte(fmt.Sprintf("-port %d -domain '%s' -addr '%s'", port, domain, addr)))
+		conn.Close()
+
+		wg.Wait()
+		os.Exit(0)
+	}
+	return err
 }
 
 func runShellExec(command string, arguments string) (int, error) {
@@ -131,31 +208,6 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	}
 
 	return out, nil
-}
-
-func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	ln, err := npipe.Listen(pipeName)
-	if err != nil {
-		log.Fatalf("Error listening on pipe %s: %v\n", pipeName, err)
-	}
-	defer ln.Close()
-
-	//log.Printf("Waiting for client on pipe: %s\n", pipeName)
-	conn, err := ln.Accept()
-	if err != nil {
-		log.Fatalf("Accept error on %s: %v\n", pipeName, err)
-		return
-	}
-	defer conn.Close()
-
-	//	fmt.Printf("Client connected to %s\n", pipeName)
-
-	_, err = io.Copy(output, conn)
-	if err != nil {
-		log.Fatalf("Error copying from %s: %v\n", pipeName, err)
-	}
 }
 
 func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, error) {

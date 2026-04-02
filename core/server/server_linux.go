@@ -24,7 +24,7 @@ func runAdmin(_port *int, _debug *bool, addr *string, sock *string) (int, error)
 	return 0, nil
 }
 
-func checkTaskScheduler() {
+func checkTaskScheduler(port int, domain string, addr string) {
 
 }
 
