@@ -365,7 +365,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap
           triplet: ${{ matrix.triplet }}
           token: ${{ secrets.UPLOAD_TOKEN }}
           
