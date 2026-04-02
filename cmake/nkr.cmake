@@ -18,6 +18,29 @@ function(nkr_add_compile_definitions arg)
     add_compile_definitions(${ARGV})
 endfunction()
 
+function(remove_rpath target_name)
+    find_program(CHRPATH_EXECUTABLE chrpath)
+
+    if (CHRPATH_EXECUTABLE)
+        message(STATUS "chrpath found: ${CHRPATH_EXECUTABLE}")
+        add_custom_command(TARGET ${target_name} POST_BUILD
+            COMMAND "${CHRPATH_EXECUTABLE}" -d $<TARGET_FILE:${target_name}>
+        )
+    else()
+        message(STATUS "chrpath not found")
+
+        find_program(PATCHELF_EXECUTABLE patchelf)
+        if (PATCHELF_EXECUTABLE)
+            message(STATUS "patchelf found: ${PATCHELF_EXECUTABLE}")
+            add_custom_command(TARGET ${target_name} POST_BUILD
+                COMMAND "${PATCHELF_EXECUTABLE}" --remove-rpath $<TARGET_FILE:${target_name}>
+            )
+        else()
+            message(FATAL_ERROR "neither patchelf nor chrpath found")
+        endif()
+    endif()
+endfunction()
+
 nkr_add_compile_definitions(NKR_TIMESTAMP=\"${CURRENT_DATE_TIME}\")
 
 # Check if the build type is Debug

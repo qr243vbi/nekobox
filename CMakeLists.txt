@@ -465,25 +465,7 @@ endif()
 #qt_finalize_executable(nekobox)
 if (UNIX)
 
-find_program(CHRPATH_EXECUTABLE chrpath)
-
-if (CHRPATH_EXECUTABLE)
-    message(STATUS "chrpath found: ${CHRPATH_EXECUTABLE}")
-    add_custom_command(TARGET nekobox POST_BUILD
-        COMMAND "${CHRPATH_EXECUTABLE}" -d $<TARGET_FILE:nekobox>
-    )
-else()
-    message(STATUS "chrpath not found")
-    find_program(PATCHELF_EXECUTABLE patchelf)
-    if (PATCHELF_EXECUTABLE)
-        message(STATUS "patchelf found: ${PATCHELF_EXECUTABLE}")
-        add_custom_command(TARGET nekobox POST_BUILD
-            COMMAND "${PATCHELF_EXECUTABLE}" --remove-rpath $<TARGET_FILE:nekobox>
-        )
-    else()
-        message(FATAL_ERROR "neither patchelf nor chrpath found")
-    endif()
-endif()
+remove_rpath(nekobox)
 
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
@@ -587,7 +569,7 @@ endif()
 
 
 
-
-
-add_executable(elevated_launcher "${GHARQAD}/elevated_launcher.cpp")
-target_link_libraries(elevated_launcher PRIVATE Qt6::Core Qt6::Network)
+if(WIN32)
+    add_executable(elevated_launcher "${GHARQAD}/elevated_launcher.cpp")
+    target_link_libraries(elevated_launcher PRIVATE Qt6::Core Qt6::Network)
+endif()
