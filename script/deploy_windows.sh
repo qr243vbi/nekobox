@@ -65,7 +65,7 @@ then
 fi
 
 cp "$rel/nekobox.exe" "$DEST"
-cp "$rel/elevated_launcher.exe" "$DEST"
+#cp "$rel/elevated_launcher.exe" "$DEST"
 touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 

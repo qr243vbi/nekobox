@@ -1087,9 +1087,9 @@ skip_updater_hide:
     } while (this->isHidden());
   });
 
-  #ifdef Q_OS_UNIX
+//  #ifdef Q_OS_UNIX
   ui->actionRegister_Windows_Elevated_Task->setVisible(false);
-  #endif
+//  #endif
 
   connect(ui->actionRemember_last_proxy, &QAction::triggered, this,
           [=, this](bool checked) {
