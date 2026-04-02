@@ -43,7 +43,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - Remote control
 - Support for all platforms that supported by sing-box and Qt (except macos)
 - Add more protocols that does not supported by upstream sing-box
-- Declarative UI for editing proxies
+- Replace static UI with declarative UI for editing proxies
 
 ## Supported protocols
  
