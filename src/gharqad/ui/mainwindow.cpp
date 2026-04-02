@@ -2098,15 +2098,18 @@ void MainWindow::point_changed(int width, int height) {
 
 void MainWindow::on_menu_exit_triggered() {
   CHECK_ACTION_ACCESS_R
-  prepare_exit();
+
   bool keep_running = this->keep_running;
   int exit_reason = this->exit_reason;
-  
   if (exit_reason != 1){
     keep_running = false;
   }
   this->keep_running = false;
   this->exit_reason = 0;
+
+  if (!keep_running){
+    prepare_exit();
+  }
   //
   if (exit_reason == 1) {
 #ifndef SKIP_UPDATE_BUTTON

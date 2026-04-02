@@ -29,15 +29,22 @@ Install-ChocolateyPackage @packageArgs
 
 $nekobox_path = Get-AppInstallLocation $packageArgs.softwareName
 
+if ([string]::IsNullOrEmpty($appPath)) {
+
+} else {
+
 if (Test-Path "$nekobox_path" -PathType Container) {
     $global_ini_path = Join-Path $nekobox_path "global.ini"
+
 @"
 [General]
 chocolatey_package=true
 "@ | Set-Content "$global_ini_path"
 
-} 
+}
 
 if ($programRunning -and (Test-Path $programRunning)) {
   Write-Host "Please reopen NekoBox to continue using."
+}
+
 }
