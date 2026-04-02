@@ -638,7 +638,7 @@ bool EnumFieldName::operator!=(const QString& s) const noexcept {
 std::size_t EnumFieldNameHasher::operator()(EnumFieldName const& w) const noexcept {
   QString key = w.name;  // best option
   key = key.toCaseFolded();
-  uint hash = qHash(key);
+  size_t hash = qHash(key);
   return hash;
 }
 

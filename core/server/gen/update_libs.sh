@@ -8,7 +8,9 @@ rm -rf */*.go
 rm -rf main_sing
 rm -rf libcore_service-remote
 
-thrift --gen go -out .. libcore.thrift
+THRIFT_COMPILER="${THRIFT_COMPILER:-thrift}"
+
+"${THRIFT_COMPILER}" --gen go -out .. libcore.thrift
 
 
 mkdir main_sing

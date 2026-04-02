@@ -28,7 +28,7 @@ endif()
 
 #if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 #	if (NOT MSVC)
-#		set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 #	endif ()
 #endif ()
 
@@ -86,14 +86,22 @@ if (USE_HOTKEYS)
 endif()
 
 find_program(THRIFT_COMPILER thrift REQUIRED)
+
+if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(THRIFT_COMPILER "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(ENV{THRIFT_COMPILER} "${THRIFT_COMPILER}")
+endif()
+
+message(STATUS "Found Thrift " ${THRIFT_COMPILER})
+
 set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
 set(THRIFT_GEN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen-cpp")
 file(MAKE_DIRECTORY "${THRIFT_GEN_DIR}")
-add_custom_command(
-    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
+
+execute_process(
+#    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
     COMMAND ${THRIFT_COMPILER} --gen cpp --out "${THRIFT_GEN_DIR}" "${THRIFT_FILE}"
-    DEPENDS "${THRIFT_FILE}"
-    COMMENT "Generating Thrift C++ code for Libcore"
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )
 
 # Add a custom target to ensure the code generation runs

@@ -96,10 +96,19 @@ fi
 (
 cd "$CURDIR"
 pwd
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
 makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+fi
 
 pushd "$DEPLOYMENT"
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
 mv nekobox_setup.exe "$version_standalone-$ARCH-installer.exe"
+fi
+
 
 if [[ "$SKIP_ZIP" == 'true' ]]
 then

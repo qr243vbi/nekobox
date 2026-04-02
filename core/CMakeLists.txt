@@ -16,6 +16,15 @@ if (GOOS STREQUAL "")
     endif()
 endif()
 
+
+find_program(THRIFT_COMPILER thrift REQUIRED)
+
+if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(THRIFT_COMPILER "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(ENV{THRIFT_COMPILER} "${THRIFT_COMPILER}")
+endif()
+
+
 string(TOLOWER "${CMAKE_SYSTEM_PROCESSOR}" CMAKE_SYSTEM_PROCESSOR_LOWERCASE)
 message("Processor is " ${CMAKE_SYSTEM_PROCESSOR_LOWERCASE})
 
@@ -152,7 +161,7 @@ endif()
 # ----------------------------
 
 # run gen/update_libs.sh
-run_go_command("${GO_SOURCE_DIR}/server/gen" env bash update_libs.sh)
+run_go_command("${GO_SOURCE_DIR}/server/gen" env "THRIFT_COMPILER=${THRIFT_COMPILER}" bash update_libs.sh)
 
 # get VERSION_SINGBOX
 execute_process(
