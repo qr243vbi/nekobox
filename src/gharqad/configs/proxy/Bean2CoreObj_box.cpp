@@ -48,7 +48,9 @@ namespace Configs {
 
     template<typename T, typename B>
     static void add_network(T & obj, B * bean){
-        add_non_empty(obj, "network", *bean->network);
+        if (bean->network->value > 0){
+            add_non_empty(obj, "network", *bean->network);
+        }
     }
 
     template<typename T, typename B>
@@ -262,7 +264,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     CoreObjOutboundBuildResult result;
 
     QJsonObject outbound;
-    outbound["version"] = socks_http_type;
+    outbound["version"] = QString::number(socks_http_type);
     add_default_fields(outbound, this);
     add_username_password(outbound, this);
     add_udp_over_tcp(outbound, this);

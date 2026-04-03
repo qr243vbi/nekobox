@@ -73,7 +73,9 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   ui->setupUi(this);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
+  ui->network_2->addItem(tr("both"));
     ui->network_2->addItems(Preset::SingBox::Network);
+
   // network changed
   network_title_base = ui->network_box->title();
   connect(ui->network, &QComboBox::currentTextChanged, this,

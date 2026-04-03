@@ -20,7 +20,9 @@ namespace Configs {
     
     template<typename T>
     static void add_network(QUrlQuery & query, T * obj){
-        add_query_nonempty("network", query, *obj->network);
+        if (obj->network->value > 0){
+            add_query_nonempty("network", query, *obj->network);
+        }
     }
 
     static void add_default_fields(QUrl & url, const AbstractBean * bean){

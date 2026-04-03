@@ -16,7 +16,7 @@ namespace Configs {
         QString password = "";
         QString plugin = "";
         QString plugin_opts = "";
-        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>(0);
         int uot = 0;
 
    //     std::shared_ptr<V2rayStreamSettings> stream;
