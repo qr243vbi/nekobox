@@ -20,7 +20,6 @@ require (
 )
 
 require (
-	al.essio.dev/pkg/shellescape v1.6.0
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/Microsoft/go-winio v0.6.2
 	github.com/ajg/form v1.5.1 // indirect

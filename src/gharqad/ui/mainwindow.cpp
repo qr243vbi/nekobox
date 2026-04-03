@@ -850,6 +850,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
   ui->url_test_button->setMenu(ui->menuTest);
+  ui->toolButton_update->setMenu(ui->menu_information);
 
   {
   auto menu_profiles = ui->menu_profiles;
@@ -899,7 +900,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   goto skip_updater_hide;
 updater_hide:
-  ui->toolButton_update->hide();
+  //ui->toolButton_update->hide();
   Configs::windowSettings->startup_update = 4;
 
 skip_updater_hide:
