@@ -24,9 +24,74 @@ import (
 	"syscall"
 	"unsafe"
 
+	"time"
+
 	"github.com/NullYing/npipe"
 	"golang.org/x/sys/windows"
+
+	"github.com/Microsoft/go-winio"
+	"github.com/qr243vbi/cmdescape"
 )
+
+func runServerHandler(pipeName string) {
+	cfg := &winio.PipeConfig{
+		SecurityDescriptor: "D:P(A;;GA;;;WD)", // allow everyone
+		MessageMode:        false,             // byte mode
+		InputBufferSize:    4096,
+		OutputBufferSize:   4096,
+	}
+
+	fmt.Println("Starting named pipe server...")
+
+	listener, err := winio.ListenPipe(pipeName, cfg)
+	if err != nil {
+		log.Fatalf("ListenPipe failed: %v", err)
+	}
+	defer listener.Close()
+
+	fmt.Println("Server is running and waiting for clients...")
+
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			log.Printf("Accept error: %v", err)
+			time.Sleep(time.Second)
+			continue
+		}
+
+		fmt.Println("Client connected")
+
+		// Handle each client in a goroutine
+		go handleClient(conn)
+	}
+}
+
+func handleClient(conn io.ReadWriteCloser) {
+	defer conn.Close()
+
+	buf := make([]byte, 1024)
+
+	for {
+		n, err := conn.Read(buf)
+		if err != nil {
+			if err != io.EOF {
+				log.Printf("Read error: %v", err)
+			}
+			return
+		}
+
+		msg := string(buf[:n])
+		fmt.Println("Received:", msg)
+
+		// Echo back or process message
+		reply := "Server received: " + msg
+		_, err = conn.Write([]byte(reply))
+		if err != nil {
+			log.Printf("Write error: %v", err)
+			return
+		}
+	}
+}
 
 const (
 	SEE_MASK_NOCLOSEPROCESS = 0x00000040
@@ -75,11 +140,9 @@ func getExitCode(hProcess syscall.Handle) (uint32, error) {
 }
 
 type taskScheduleConfig struct {
-	exec   string `json:"exec"`
-	stdout string `json:"stdout"`
-	stder  string `json:"stderr"`
-	task   string `json:"task"`
-	stdin  string `json:"stdin"`
+	exec  string `json:"exec"`
+	task  string `json:"task"`
+	stdin string `json:"stdin"`
 }
 
 func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
@@ -107,7 +170,7 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
 	}
 }
 
-func checkTaskScheduler(port int, domain string, addr string) error {
+func checkTaskScheduler() error {
 	path, _ := os.Executable()
 	path = filepath.Clean(path)
 	execpath := path
@@ -126,32 +189,39 @@ func checkTaskScheduler(port int, domain string, addr string) error {
 			return fmt.Errorf("file paths are not same %s: %v", execpath, cfg.exec)
 		}
 		var wg sync.WaitGroup
+		randstr, _ := RandString(6)
+
+		stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
+		stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
 
 		// Pipe for stdout
 		wg.Add(1)
-		go handlePipe(cfg.stdout, os.Stdout, &wg)
+		go handlePipe(stdout_pipe, os.Stdout, &wg)
 
 		// Pipe for stderr
 		wg.Add(1)
-		go handlePipe(cfg.stder, os.Stderr, &wg)
+		go handlePipe(stderr_pipe, os.Stderr, &wg)
 
-		ln, err := npipe.Listen(cfg.stdin)
-		if err != nil {
-			return err
+		var pid int
+		pid = os.Getpid()
+
+		other_args := os.Args[1:]
+		other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid))
+		formattedString := cmdescape.QuoteCommand(other_args)
+
+		if askRun(formattedString, cfg.stdin, cfg.task) {
+			wg.Wait()
+			os.Exit(0)
+		} else {
+			os.Exit(1)
 		}
-		defer ln.Close()
 
-		conn, err := ln.Accept()
-		if err != nil {
-			return err
-		}
-		conn.Write([]byte(fmt.Sprintf("-port %d -domain '%s' -addr '%s'", port, domain, addr)))
-		conn.Close()
-
-		wg.Wait()
-		os.Exit(0)
 	}
 	return err
+}
+
+func askRun(args, stdin, task string) bool {
+	return false
 }
 
 func runShellExec(command string, arguments string) (int, error) {
@@ -210,7 +280,7 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	return out, nil
 }
 
-func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, error) {
+func runAdmin() (int, error) {
 	executablePath, err := os.Executable()
 	if err != nil {
 		log.Fatalf("Failed to get executable path: %v", err)
@@ -220,19 +290,13 @@ func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, erro
 
 	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
 	stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
-	flag := " -ruleset-cache-directory " + internal.GetRulesetCachedir()
-	if *_debug {
-		flag += " -debug"
-	}
 
 	var pid int
 	pid = os.Getpid()
 
-	//	formattedString := fmt.Sprintf("Start-Process \"%s\" -ArgumentList '-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s' -WindowStyle Hidden -Verb RunAs -Wait",
-	//		 os.Args[0], *_port, pid, stdout_pipe, stderr_pipe, flag)
-
-	formattedString := fmt.Sprintf(
-		"-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s -socket \"%s\" -address \"%s\"", *_port, pid, stdout_pipe, stderr_pipe, flag, *_sock, *_addr)
+	other_args := os.Args[1:]
+	other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid), "-ruleset-cache-directory", internal.GetRulesetCachedir())
+	formattedString := cmdescape.QuoteCommand(other_args)
 
 	var wg sync.WaitGroup
 
@@ -244,27 +308,10 @@ func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, erro
 	wg.Add(1)
 	go handlePipe(stderr_pipe, os.Stderr, &wg)
 
-	return runShellExec(executablePath, formattedString)
-	/*
-			cmd := exec.Command("powershell", "-Command", formattedString)
-			err := cmd.Run()
+	ret, err := runShellExec(executablePath, formattedString)
+	wg.Wait()
 
-			var code int
-
-			if err != nil {
-		        // Process exited with error
-		        if exitErr, ok := err.(*exec.ExitError); ok {
-		            code = exitErr.ExitCode()
-		        } else {
-					code = -1
-				}
-		    } else {
-		        // Process exited successfully
-		        code = 0
-		    }
-
-			return code, nil
-	*/
+	return ret, err
 }
 
 func isElevated() (bool, error) {

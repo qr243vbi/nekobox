@@ -20,11 +20,11 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	return out, nil
 }
 
-func runAdmin(_port *int, _debug *bool, addr *string, sock *string) (int, error) {
+func runAdmin() (int, error) {
 	return 0, nil
 }
 
-func checkTaskScheduler(port int, domain string, addr string) {
+func checkTaskScheduler() {
 
 }
 

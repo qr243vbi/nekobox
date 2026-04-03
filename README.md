@@ -131,7 +131,9 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [qss_themes](https://github.com/Ktiseos-Nyx/qss_themes.git)
 - [Timmifixedit/BidirectionalMap](https://github.com/Timmifixedit/BidirectionalMap)
 - [Boost](https://www.boost.org/)
-- [AllySummers/docker-cache](AllySummers/docker-cache)
+- [AllySummers/docker-cache](https://github.com/AllySummers/docker-cache)
+- [shellescape](https://al.essio.dev/pkg/shellescape)
+- [go-winio](https://github.com/Microsoft/go-winio)
 
 ## FAQ
 **What is AppImage?** <br/>
