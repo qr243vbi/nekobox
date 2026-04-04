@@ -11,6 +11,8 @@ export pkgver="$INPUT_VERSION"
 export source_0="https://github.com/qr243vbi/nekobox/releases/download/$pkgver/nekobox-unified-source-$pkgver.tar.xz"
 
 curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec -o nekobox.spec
+curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-core.spec.in -o nekobox-core.spec.in
+curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-qt.spec.in -o nekobox-qt.spec.in
 
 file_0="$(basename "${source_0}")"
 
@@ -26,8 +28,7 @@ if os.path.exists('nekobox.changes'):
 msg='''${MESSAGE}'''
 import textwrap
 def wrap_preserve_newlines(text, width):
- return "\n".join(textwrap.fill(line, width
-   ) if line.strip() else "" for line in text.splitlines())
+ return "\n".join([textwrap.fill(line, width) if line.strip() else "" for line in text.splitlines()])
 if len(msg) > 0 and 'Update to ${pkgver}' not in text:
  msg = wrap_preserve_newlines(msg, 65)
  if msg[-1] != '\n':
@@ -47,7 +48,7 @@ do
 curl -u "${OBS_USER}:${OBS_PASSWORD}" -X DELETE "https://api.opensuse.org/source/network:vpn/nekobox/${name}"
 done
 
-for i in nekobox.changes nekobox.spec "${file_0}"
+for i in nekobox.changes nekobox.spec nekobox-core.spec.in nekobox-qt.spec.in "${file_0}"
 do
 curl -u "${OBS_USER}:${OBS_PASSWORD}" \
   -X PUT \
