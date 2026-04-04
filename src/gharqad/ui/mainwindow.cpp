@@ -156,6 +156,7 @@ void MainWindow::changeEvent(QEvent *event) {
     ui->label_inbound->setStyleSheet(stylesheet);
     ui->label_speed->setStyleSheet(stylesheet);
     ui->label_running->setStyleSheet(stylesheet);
+    ui->toolbox_group->setStyleSheet("QGroupBox { background: transparent; border: none; }");
     break;
   }
   default:

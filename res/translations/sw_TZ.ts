@@ -1,6 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <TS version="2.1" language="sw_TZ">
 <context>
+    <name>AboutMain</name>
+    <message>
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <source>Form</source>
+        <translation type="unfinished">Fomu</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmForm</name>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
@@ -661,7 +669,7 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Meneja Rasilimali</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="246" />
         <source>Name of program</source>
         <translation type="unfinished">Jina la programu</translation>
     </message>
@@ -756,17 +764,17 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Ruka sasisho otomatiki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="64" />
         <source>Copied</source>
         <translation type="unfinished">Imenakiliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363" />
         <source>Warning</source>
         <translation type="unfinished">Onyo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363" />
         <source>Please input URL</source>
         <translation type="unfinished">Tafadhali ingiza URL</translation>
     </message>
@@ -901,7 +909,7 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="753" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="760" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">Tumia mipangilio kwenye kikundi hiki</translation>
     </message>
@@ -937,7 +945,7 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="684" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="691" />
         <source>Certificate</source>
         <translation type="unfinished">Cheti</translation>
     </message>
@@ -958,7 +966,7 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="695" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702" />
         <source>ECH Config</source>
         <translation type="unfinished">Usanidi wa ECH</translation>
     </message>
@@ -1028,12 +1036,12 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">SID ya ukweli</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="235" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="242" />
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Maalum (%1 ya nje)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="244" />
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Maalum (%1 usanidi)</translation>
     </message>
@@ -1056,25 +1064,30 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Maalum (%1 usanidi)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="642" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="665" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
+        <source>both</source>
+        <translation type="unfinished">zote mbili</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="672" />
         <source>Not set</source>
         <translation type="unfinished">Haijawekwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="644" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="667" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="661" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="674" />
         <source>Already set</source>
         <translation type="unfinished">Tayari imewekwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="732" />
         <source>Confirm</source>
         <translation type="unfinished">Thibitisha</translation>
     </message>
@@ -1107,64 +1120,64 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Kikundi2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="415" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="420" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Wakala wa mbele wa kikundi %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="417" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="422" />
         <source>Front proxy: </source>
         <translation type="unfinished">Wakala wa mbele:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="428" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="433" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Wakala wa kutua wa kikundi %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="430" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="435" />
         <source>Landing proxy: </source>
         <translation type="unfinished">Wakala wa kutua:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="443" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="448" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Proxy</source>
         <translation type="unfinished">Wakala</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="446" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="451" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Direct</source>
         <translation type="unfinished">Moja kwa moja</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455" />
         <source>None</source>
         <translation type="unfinished">Hakuna</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="46" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="51" />
         <source>Add proxy</source>
         <translation type="unfinished">Ongeza proksi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="66" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="71" />
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Badilisha seva mbadala %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="135" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
         <source>Select outbound</source>
         <translation type="unfinished">Chagua zinazotoka</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
         <source>Outbound: </source>
         <translation type="unfinished">Nje:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="144" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149" />
         <source>Outbound</source>
         <translation type="unfinished">Nje</translation>
     </message>
@@ -1230,12 +1243,12 @@ dakika&lt;/p&gt;&lt;/mwili&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Sasisha usajili wote</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61" />
         <source>Confirmation</source>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61" />
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Ungependa kusasisha usajili wote?</translation>
     </message>
@@ -1510,38 +1523,38 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished">Futa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34" />
         <source>Invalid state</source>
         <translation type="unfinished">Jimbo batili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Orodha ya wasifu wa uelekezaji ni tupu, hii inapaswa kuwa hali isiyoweza kufikiwa, hitilafu zinaweza kutokea sasa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="202" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211" />
         <source>Invalid settings</source>
         <translation type="unfinished">Mipangilio batili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="202" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Wasifu wa uelekezaji hauwezi kuwa tupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211" />
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">Sheria za DNS si halali</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="314" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319" />
         <source>Invalid operation</source>
         <translation type="unfinished">Uendeshaji batili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="314" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Wasifu wa Njia hauwezi kuwa tupu, jaribu kuongeza wasifu mwingine au kuhariri huu</translation>
     </message>
@@ -1630,7 +1643,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished">Chagua Wasifu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="28" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="33" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Jina haliwezi kuwa tupu.</translation>
     </message>
@@ -1648,17 +1661,17 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished">Mhariri wa Json</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">JSON inayotoka, tafadhali soma hati.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="55" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="60" />
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Tafadhali jaza usanidi kamili.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="64" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="69" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Jina haliwezi kuwa tupu.</translation>
     </message>
@@ -1794,7 +1807,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="9" />
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="14" />
         <source>Off</source>
         <translation type="unfinished">Imezimwa</translation>
     </message>
@@ -1914,7 +1927,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="149" />
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="154" />
         <source>Certificate</source>
         <translation type="unfinished">Cheti</translation>
     </message>
@@ -2245,7 +2258,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished">Uchunguzi wa Afya</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="8" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="13" />
         <source>Off</source>
         <translation type="unfinished">Imezimwa</translation>
     </message>
@@ -2419,32 +2432,32 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished">Ondoa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="134" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139" />
         <source>Basic</source>
         <translation type="unfinished">Msingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="134" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139" />
         <source>Subscription</source>
         <translation type="unfinished">Usajili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="135" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="140" />
         <source>Archive</source>
         <translation type="unfinished">Hifadhi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="152" />
         <source>Last update: %1</source>
         <translation type="unfinished">Sasisho la mwisho: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="191" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196" />
         <source>Confirmation</source>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="191" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196" />
         <source>Remove %1?</source>
         <translation type="unfinished">Ungependa kuondoa %1?</translation>
     </message>
@@ -2457,55 +2470,54 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="39" />
         <source>Statistics</source>
-        <translation type="unfinished">Takwimu</translation>
+        <translation type="obsolete">Takwimu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="48" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
         <translation type="unfinished">Takwimu za Matumizi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="394" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">Takwimu za Trafiki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="443" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="432" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Jumla ya Trafiki ya Wakala:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="54" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="77" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="100" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="127" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="152" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="252" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="259" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="266" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="312" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="319" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="326" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="375" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="382" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="389" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="423" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="430" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="453" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="496" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="43" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="66" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="89" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="116" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="141" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="170" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="241" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="248" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="255" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="301" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="308" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="364" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="371" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="378" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="412" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="419" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="442" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="485" />
         <source>TextLabel</source>
         <translation type="unfinished">NakalaLebo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="460" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="449" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Jumla ya Trafiki ya Moja kwa Moja:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="129" />
         <source>Security Statistics</source>
         <translation type="unfinished">Takwimu za Usalama</translation>
     </message>
@@ -2514,92 +2526,91 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Takwimu za Wasifu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="67" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="56" />
         <source>Usage time:</source>
         <translation type="unfinished">Muda wa matumizi:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="106" />
         <source>Last launch time:</source>
         <translation type="unfinished">Wakati wa mwisho wa uzinduzi:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="107" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="96" />
         <source>First launch time:</source>
         <translation type="unfinished">Wakati wa uzinduzi wa kwanza:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="90" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="79" />
         <source>Start count:</source>
         <translation type="unfinished">Idadi ya kuanza:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="476" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="489" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="465" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="478" />
         <source>Download:</source>
         <translation type="unfinished">Pakua:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="509" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="522" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="498" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="511" />
         <source>Upload:</source>
         <translation type="unfinished">Pakia:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="205" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Wasifu wa Wakala</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="199" />
         <source>Database Statistics</source>
         <translation type="unfinished">Takwimu za Hifadhidata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="355" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="281" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="344" />
         <source>Deleted</source>
         <translation type="unfinished">Imefutwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="232" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="365" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="221" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="291" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="354" />
         <source>Exists</source>
         <translation type="unfinished">Ipo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="242" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="345" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="231" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="271" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="334" />
         <source>Created</source>
         <translation type="unfinished">Imeundwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Vikundi na Usajili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="325" />
         <source>Route Profiles</source>
         <translation type="unfinished">Profaili za Njia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">Idadi ya uthibitishaji ulioshindwa:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="183" />
         <source>Users count:</source>
         <translation type="unfinished">Idadi ya watumiaji:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="533" />
         <source>About</source>
-        <translation type="unfinished">Kuhusu</translation>
+        <translation type="obsolete">Kuhusu</translation>
     </message>
     <message>
         <source>NyameBox / NekoBox for PC</source>
@@ -2609,51 +2620,50 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="52" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="62" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="68" />
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="71" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="91" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="87" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="93" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="649" />
         <source>Profiles</source>
         <translation type="unfinished">Wasifu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="110" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="118" />
         <source>Settings</source>
         <translation type="unfinished">Mipangilio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="149" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="169" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
         <source>Routing</source>
         <translation type="unfinished">Kuelekeza</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="188" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="208" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="162" />
         <source>Update</source>
         <translation type="unfinished">Sasisha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="235" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="198" />
         <source>Tun Mode</source>
         <translation type="unfinished">Njia ya Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="242" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="205" />
         <source>System DNS</source>
         <translation type="unfinished">Mfumo wa DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="249" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="676" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2623" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2626" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="618" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2685" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2688" />
         <source>System Proxy</source>
         <translation type="unfinished">Wakala wa Mfumo</translation>
     </message>
@@ -2662,103 +2672,103 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Mtihani wa URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="406" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="140" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="360" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Type</source>
         <translation type="unfinished">Aina</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="411" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="365" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="148" />
         <source>Address</source>
         <translation type="unfinished">Anwani</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="416" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="146" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="370" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151" />
         <source>Name</source>
         <translation type="unfinished">Jina</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="421" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="292" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="375" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="300" />
         <source>Test Result</source>
         <translation type="unfinished">Matokeo ya Mtihani</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="380" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="519" />
         <source>Traffic</source>
         <translation type="unfinished">Trafiki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="424" />
         <source>Logs</source>
         <translation type="unfinished">Kumbukumbu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="459" />
         <source>Connections</source>
         <translation type="unfinished">Viunganishi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="487" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Lengwa (Kikoa)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="490" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Bofya Ili Kuzima Upangaji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="495" />
         <source>Process</source>
         <translation type="unfinished">Mchakato</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Bofya Ili Kupanga Kwa Mchakato</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="503" />
         <source>Protocol</source>
         <translation type="unfinished">Itifaki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="506" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Bofya Ili Kupanga Kwa Itifaki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="511" />
         <source>Outbound</source>
         <translation type="unfinished">Nje</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="560" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="514" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Bofya Ili Kupanga Kwa Kutoka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="568" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="522" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Bofya Ili Kugeuza kupanga kulingana na Trafiki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="577" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="531" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Grafu ya Trafiki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="672" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
         <source>Program</source>
         <translation type="unfinished">Mpango</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Preferences</source>
         <translation type="unfinished">Mapendeleo</translation>
     </message>
@@ -2767,7 +2777,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Seva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="663" />
         <source>Share</source>
         <translation type="unfinished">Shiriki</translation>
     </message>
@@ -2776,224 +2786,250 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Kikundi cha sasa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="331" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="783" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="285" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="673" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="725" />
         <source>Test</source>
         <translation type="unfinished">Mtihani</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="659" />
         <source>Current Selected</source>
         <translation type="unfinished">Iliyochaguliwa Sasa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="653" />
         <source>Current Group</source>
         <translation type="unfinished">Kikundi cha Sasa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="168" />
+        <source>Info</source>
+        <translation type="unfinished">Habari</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="708" />
         <source>Hidden menu</source>
         <translation type="unfinished">Menyu iliyofichwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="778" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720" />
         <source>Routing Menu</source>
         <translation type="unfinished">Menyu ya Uelekezaji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
         <source>Context</source>
         <translation type="unfinished">Muktadha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Exit</source>
         <translation type="unfinished">Utgång</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Toggle Window</source>
         <translation type="unfinished">Geuza Dirisha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="819" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="770" />
         <source>Basic Settings</source>
         <translation type="unfinished">Mipangilio ya Msingi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>New profile</source>
         <translation type="unfinished">Wasifu mpya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="829" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Groups</source>
         <translation type="unfinished">Vikundi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3691" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3764" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3774" />
         <source>Start</source>
         <translation type="unfinished">Anza</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3690" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="793" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3763" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3774" />
         <source>Stop</source>
         <translation type="unfinished">Acha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>Edit</source>
         <translation type="unfinished">Hariri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Routing Settings</source>
         <translation type="unfinished">Mipangilio ya Njia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Ongeza wasifu kutoka kwenye ubao wa kunakili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="822" />
         <source>Delete</source>
         <translation type="unfinished">Futa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <source>Debug Info</source>
         <translation type="unfinished">Maelezo ya Utatuzi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835" />
         <source>QR Code and link</source>
         <translation type="unfinished">Msimbo wa QR na kiungo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="843" />
         <source>Copy Link</source>
         <translation type="unfinished">Nakili Kiungo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1154" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="864" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Tokeo la Mtihani wazi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1519" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
         <source>Export %1 config</source>
         <translation type="unfinished">Hamisha usanidi wa %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="880" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Weka Upya Trafiki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="888" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Changanua Msimbo wa QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="896" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Washa Wakala wa Mfumo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="904" />
         <source>Disable</source>
         <translation type="unfinished">Zima</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="958" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="909" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Ondoa Nakala</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="917" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="994" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1002" />
         <source>fake</source>
         <translation type="unfinished">bandia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1245" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="925" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196" />
         <source>Move</source>
         <translation type="unfinished">Sogeza</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="936" />
         <source>Start with system</source>
         <translation type="unfinished">Anza na mfumo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Remember last profile</source>
         <translation type="unfinished">Kumbuka wasifu wa mwisho</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Ruhusu vifaa vingine kuunganishwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="957" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Ondoa Haipatikani</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="965" />
         <source>Full Test</source>
         <translation type="unfinished">Mtihani Kamili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="973" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Mipangilio ya Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1027" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
         <source>Select All</source>
         <translation type="unfinished">Chagua Zote</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="986" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Nakili Viungo Maalum</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1010" />
         <source>Copy links</source>
         <translation type="unfinished">Nakili viungo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
         <source>Url Test</source>
         <translation type="unfinished">Jaribio la Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Tatua Kikoa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1258" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217" />
+        <source>Register Windows elevated task</source>
+        <translation type="unfinished">Sajili kazi iliyoinuliwa ya Windows</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1237" />
+        <source>About</source>
+        <translation type="unfinished">Kuhusu</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227" />
+        <source>Statistics</source>
+        <translation type="unfinished">Takwimu</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232" />
+        <source>Check for updates</source>
+        <translation type="unfinished">Angalia masasisho</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="743" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1209" />
         <source>Information</source>
         <translation type="unfinished">Habari</translation>
     </message>
@@ -3006,48 +3042,48 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Nakili viungo vya kuchaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1021" />
         <source>Enable Tun</source>
         <translation type="unfinished">Washa Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1026" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3075" />
         <source>Clone</source>
         <translation type="unfinished">Clone</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1034" />
         <source>Update subscription</source>
         <translation type="unfinished">Sasisha usajili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Resolve domain</source>
         <translation type="unfinished">Tatua kikoa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1053" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tengeneza Mipangilio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1058" />
         <source>Restart Program</source>
         <translation type="unfinished">Anzisha tena Programu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1063" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Fungua Folda ya Usanidi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1084" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Anzisha tena Wakala</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Stop Testing</source>
         <translation type="unfinished">Acha Kujaribu</translation>
     </message>
@@ -3064,7 +3100,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Futa Tokeo la Mtihani Limechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1116" />
         <source>Url Test Group</source>
         <translation type="unfinished">Kikundi cha Jaribio la Url</translation>
     </message>
@@ -3077,7 +3113,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Tatua Kikoa Kilichochaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1184" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Ondoa Batili</translation>
     </message>
@@ -3090,420 +3126,420 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
         <translation type="obsolete">Fungua Meneja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1253" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1204" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest ya Sasa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146" />
         <source>Full test Selected</source>
         <translation type="unfinished">Jaribio kamili limechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
         <source>Download test Selected</source>
         <translation type="unfinished">Upakuaji wa jaribio Umechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1205" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Upakiaji wa jaribio Umechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1210" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1161" />
         <source>Country test Selected</source>
         <translation type="unfinished">Jaribio la nchi Limechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1215" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1166" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Jaribio rahisi la upakuaji Umechaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1220" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Kikundi cha Speedtest</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1225" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
         <source>Hide window</source>
         <translation type="unfinished">Ficha dirisha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1230" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181" />
         <source>Add profile from File</source>
         <translation type="unfinished">Ongeza wasifu kutoka kwa Faili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1235" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3720" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3793" />
         <source>Add new Group</source>
         <translation type="unfinished">Ongeza Kikundi kipya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1240" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191" />
         <source>Security Settings</source>
         <translation type="unfinished">Mipangilio ya Usalama</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="226" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="231" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297" />
         <source>Unavailable</source>
         <translation type="unfinished">Haipatikani</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1174" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Hariri Wasifu wa Uelekezaji</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1251" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Sasisha Wasifu wa Uelekezaji</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1208" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1212" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1280" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1263" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1288" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1291" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1335" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
         <source>Update Response</source>
         <translation type="unfinished">Sasisha Majibu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1209" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Hakuna wasifu wa uelekezaji unaosasishwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1213" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Ilisasisha wasifu %1 wa uelekezaji</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Sasisha Ramani ya RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Imeshindwa kusasisha kanuni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Kanuni zimesasishwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1246" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1301" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Sasisha Akiba ya RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1336" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Akiba ya kanuni za sheria imesasishwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Futa Akiba ya RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1331" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1386" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Washa AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1737" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1792" />
         <source>Error</source>
         <translation type="unfinished">Hitilafu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1824" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1879" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Mipangilio ya Tun imebadilishwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1825" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Anzisha tena Tun ili kufanya kazi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1831" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1889" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3064" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3435" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3489" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3538" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1944" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3131" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3507" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3611" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3842" />
         <source>Confirmation</source>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1832" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1890" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1945" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Mipangilio imebadilishwa, uwashe tena seva mbadala?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1861" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1916" />
         <source>Settings changed</source>
         <translation type="unfinished">Mipangilio imebadilishwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1862" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1917" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Anzisha tena programu ili uanze kutumika.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1905" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1960" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Imeingiza wasifu %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2181" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2247" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Mtumiaji amechagua kutokuwepo kwa marupurupu req, baadhi ya vipengele huenda visifanye kazi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2312" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Tafadhali toa mapendeleo ya msingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2599" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2661" />
         <source>Not Running</source>
         <translation type="unfinished">Sio Kukimbia</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3011" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3076" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Sambaza bidhaa %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3045" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3111" />
         <source> Confirmation </source>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3112" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Ungependa kuondoa kipengee %1 ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3065" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3132" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Ungependa kuondoa kipengee %1 ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3102" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3169" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3182" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Imenakili kipengee %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
         <source>QR Code not found</source>
         <translation type="unfinished">Msimbo wa QR haujapatikana</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3368" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3439" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Imeshindwa kunasa skrini</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3436" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3508" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Ungependa kuondoa bidhaa %1 ambazo hazipatikani?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3490" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3563" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Ungependa kuondoa kipengee %1 kisicho sahihi ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3539" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3612" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Je, ungependa kubadilisha anwani za seva za kikoa na IP zilizosuluhishwa?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3688" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3761" />
         <source>Clear</source>
         <translation type="unfinished">Wazi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3832" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Futa Kikundi kilichochaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Badilisha Kikundi kilichochaguliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3843" />
         <source>Remove %1?</source>
         <translation type="unfinished">Ungependa kuondoa %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4510" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4580" />
         <source>Cannot start</source>
         <translation type="unfinished">Haiwezi kuanza</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Ombi la mwisho la upakuaji bado halijakamilika</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4545" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4615" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Imeshindwa kupakua vipengee vya sasisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="82" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="87" />
         <source>Profile test aborted</source>
         <translation type="unfinished">Jaribio la wasifu limeghairiwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="133" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="179" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="138" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="184" />
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] hitilafu ya jaribio: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="162" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="167" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="499" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Kuna kitu kibaya sana, mada haiwezi kupatikana!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="168" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="173" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="505" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Data ya kidhibiti wasifu imeharibika, jaribu tena.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="202" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Jaribio la mwisho la url halikutoka kabisa, tafadhali subiri.Ikiendelea, tafadhali anzisha upya programu.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="211" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="321" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="216" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="329" />
         <source>Failed to build test config: </source>
         <translation type="unfinished">Imeshindwa kuunda usanidi wa jaribio:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="257" />
         <source>URL test finished!</source>
         <translation type="unfinished">Jaribio la URL limekamilika!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="263" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="268" />
         <source>Failed to stop tests</source>
         <translation type="unfinished">Imeshindwa kusimamisha majaribio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="269" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="274" />
         <source>Testing</source>
         <translation type="unfinished">Kupima</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="310" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Jaribio la kasi la mwisho halikutoka kabisa, tafadhali subiri.Ikiendelea, tafadhali anzisha upya programu.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="355" />
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest imekamilika!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="428" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="436" />
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Jaribio la kasi ya wasifu limeghairiwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="516" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="524" />
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] hitilafu ya jaribio la kasi: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="525" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="533" />
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Unahitaji kuwezesha utekaji nyara seva ya DNS kwanza</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="539" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="547" />
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Imeshindwa kuweka mfumo wa dns:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596" />
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Tun utovu wa nidhamu wa kifaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="597" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ikiwa unatatizika kuanzisha VPN, unaweza kulazimisha kuweka upya mchakato wa Msingi hapa kisha ujaribu kuanzisha wasifu tena.Hitilafu ni %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601" />
         <source>Reset</source>
         <translation type="unfinished">Weka upya</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="602" />
         <source>Cancel</source>
         <translation type="unfinished">Ghairi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="630" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="638" />
         <source>Another profile is starting...</source>
         <translation type="unfinished">Wasifu mwingine unaanza...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="645" />
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Wasifu mwingine unasimama...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="740" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="748" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ikiwa hakuna majibu kwa muda mrefu, inashauriwa kuanzisha upya programu.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="672" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="680" />
         <source>Starting profile %1</source>
         <translation type="unfinished">Inaanzisha wasifu %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="682" />
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Imeshindwa kuanzisha wasifu %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="723" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="731" />
         <source>Stop return error</source>
         <translation type="unfinished">Komesha kosa la kurudi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="763" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="771" />
         <source>Stopping profile %1</source>
         <translation type="unfinished">Inasimamisha wasifu %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="773" />
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Imeshindwa kusimamisha, tafadhali anzisha upya programu.</translation>
     </message>
@@ -3534,12 +3570,12 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44" />
         <source>Confirmation</source>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44" />
         <source>Remove %1?</source>
         <translation type="unfinished">Ungependa kuondoa %1?</translation>
     </message>
@@ -3547,7 +3583,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="366" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
         <translation type="unfinished">Mipangilio ya Usalama</translation>
     </message>
@@ -3555,7 +3591,7 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="357" />
+        <location filename="../../src/gharqad/main.cpp" line="382" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3563,42 +3599,42 @@ Kwa habari zaidi, angalia hati "Usanidi/DNS".</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="160" />
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="165" />
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">Hali ya tun haiwezi kutumika na usanidi Maalum</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="875" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Inaomba usajili: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="879" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Hitilafu %1 ya kuomba usajili: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="881" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="886" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Ombi la usajili limekamilishwa: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="899" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Inafuta seva...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="909" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Inachakata data ya usajili...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="907" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="912" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Mchakato umekamilika, inatumika...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="970" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3609,146 +3645,146 @@ Umefuta Wasifu %3:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="980" />
         <source>Nothing</source>
         <translation type="unfinished">Hakuna kitu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="978" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="983" />
         <source>Change of %1:</source>
         <translation type="unfinished">Mabadiliko ya %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="322" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="327" />
         <source>Default</source>
         <translation type="unfinished">Chaguomsingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="189" />
+        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="194" />
         <source>Could not open file.</source>
         <translation type="unfinished">Haikuweza kufungua faili.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="114" />
+        <location filename="../../src/gharqad/main.cpp" line="132" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Wakala wa mnyororo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="130" />
+        <location filename="../../src/gharqad/main.cpp" line="148" />
         <source>Custom</source>
         <translation type="unfinished">Desturi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131" />
+        <location filename="../../src/gharqad/main.cpp" line="149" />
         <source>Extra Core</source>
         <translation type="unfinished">Msingi wa Ziada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="356" />
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
+        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="364" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="126" />
         <source>Select</source>
         <translation type="unfinished">Chagua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2567" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2629" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Seva mbadala: %1
 Moja kwa moja: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="117" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="123" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Msingi umetoka, kusafisha ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="124" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="130" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Msingi hutoka mara kwa mara, acha kuwasha upya kiotomatiki.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="133" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="139" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">Inaanzisha upya msingi ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="375" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="379" />
         <source>System</source>
         <translation type="unfinished">Mfumo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="23" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28" />
         <source>URL detected</source>
         <translation type="unfinished">URL imegunduliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33" />
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 Jinsi ya kusasisha?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
         <source>Create new subscription group</source>
         <translation type="unfinished">Unda kikundi kipya cha usajili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="38" />
         <source>Add profiles to this group</source>
         <translation type="unfinished">Ongeza wasifu kwenye kikundi hiki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39" />
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Ongeza kama seva mbadala ya http/https</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="44" />
         <source>Group name</source>
         <translation type="unfinished">Jina la kikundi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="106" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="111" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Imetumika: %1 Imesalia: %2 Muda wake Umekwisha: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="314" />
         <source>Download Profiles</source>
         <translation type="unfinished">Pakua Wasifu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="295" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="315" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Inaomba hitilafu ya wasifu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="470" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="494" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Imefuta Nakala %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="504" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="528" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Imefutwa %1 Si Sahihi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="527" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="554" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Imefutwa %1 Haipatikani</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1671" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Angalia Seti za Kanuni: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1638" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1693" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Inaomba hitilafu ya orodha ya kuweka kanuni: %1</translation>
     </message>
@@ -3757,64 +3793,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Anwani ya IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2604" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2666" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP Inayoingia: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3051" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Hamisha wasifu kwenye kikundi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3133" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3200" />
         <source>Config copied</source>
         <translation type="unfinished">Usanidi umenakiliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3212" />
         <source>Copy core config</source>
         <translation type="unfinished">Nakili usanidi wa msingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3145" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3214" />
         <source>Copy test config</source>
         <translation type="unfinished">Nakili usanidi wa jaribio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3146" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="31" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="36" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="58" />
         <source>OK</source>
         <translation type="unfinished">Sawa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4425" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4539" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4571" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4606" />
         <source>Update</source>
         <translation type="unfinished">Sasisha</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4415" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4485" />
         <source>Not official support platform</source>
         <translation type="unfinished">Sio jukwaa rasmi la usaidizi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4426" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Hitilafu ya kuomba sasisho: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4539" />
         <source>No update</source>
         <translation type="unfinished">Hakuna sasisho</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4563" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3823,37 +3859,37 @@ Kumbuka kutolewa:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4566" />
         <source>Close</source>
         <translation type="unfinished">Funga</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4498" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4568" />
         <source>Open in browser</source>
         <translation type="unfinished">Fungua katika kivinjari</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4607" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Usasishaji uko tayari, ungependa kuwasha upya ili usakinishe?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <source>Access denied</source>
         <translation type="unfinished">Ufikiaji umekataliwa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="361" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="369" />
         <source>Select a Folder</source>
         <translation type="unfinished">Chagua Folda</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="45" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="50" />
         <source>Exclude CIDR's</source>
         <translation type="unfinished">Usijumuishe CIDR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="54" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="59" />
         <source>Cancel</source>
         <translation type="unfinished">Ghairi</translation>
     </message>
@@ -3868,7 +3904,7 @@ Kumbuka kutolewa:
         <translation type="obsolete">Msingi wa Ziada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="162" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Wakala: ⚡%1 📦%3
@@ -3878,92 +3914,92 @@ Moja kwa moja: ⚡%2 📦%4</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="70" />
+        <location filename="../../src/gharqad/main.cpp" line="88" />
         <source>Cancel</source>
         <translation type="unfinished">Ghairi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71" />
+        <location filename="../../src/gharqad/main.cpp" line="89" />
         <source>Apply</source>
         <translation type="unfinished">Omba</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72" />
+        <location filename="../../src/gharqad/main.cpp" line="90" />
         <source>Yes</source>
         <translation type="unfinished">Ndiyo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73" />
+        <location filename="../../src/gharqad/main.cpp" line="91" />
         <source>No</source>
         <translation type="unfinished">Hapana</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="74" />
+        <location filename="../../src/gharqad/main.cpp" line="92" />
         <source>OK</source>
         <translation type="unfinished">Sawa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75" />
+        <location filename="../../src/gharqad/main.cpp" line="93" />
         <source>Defaults</source>
         <translation type="unfinished">Chaguomsingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76" />
+        <location filename="../../src/gharqad/main.cpp" line="94" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Rejesha Chaguomsingi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77" />
+        <location filename="../../src/gharqad/main.cpp" line="95" />
         <source>Discard</source>
         <translation type="unfinished">Tupa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="79" />
+        <location filename="../../src/gharqad/main.cpp" line="97" />
         <source>Undo</source>
         <translation type="unfinished">Tendua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80" />
+        <location filename="../../src/gharqad/main.cpp" line="98" />
         <source>Redo</source>
         <translation type="unfinished">Rudia</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81" />
+        <location filename="../../src/gharqad/main.cpp" line="99" />
         <source>Cut</source>
         <translation type="unfinished">Kata</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82" />
+        <location filename="../../src/gharqad/main.cpp" line="100" />
         <source>Copy</source>
         <translation type="unfinished">Nakili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83" />
+        <location filename="../../src/gharqad/main.cpp" line="101" />
         <source>Paste</source>
         <translation type="unfinished">Bandika</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84" />
+        <location filename="../../src/gharqad/main.cpp" line="102" />
         <source>Delete</source>
         <translation type="unfinished">Futa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="85" />
+        <location filename="../../src/gharqad/main.cpp" line="103" />
         <source>Select All</source>
         <translation type="unfinished">Chagua Zote</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="86" />
+        <location filename="../../src/gharqad/main.cpp" line="104" />
         <source>Stop</source>
         <translation type="unfinished">Acha</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87" />
+        <location filename="../../src/gharqad/main.cpp" line="105" />
         <source>Clear</source>
         <translation type="unfinished">Wazi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88" />
+        <location filename="../../src/gharqad/main.cpp" line="106" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Nakili Mahali pa Kiungo</translation>
     </message>
@@ -4085,50 +4121,50 @@ Moja kwa moja: ⚡%2 📦%4</translation>
         <translation type="unfinished">Vidokezo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="302" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="469" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474" />
         <source>Invalid rules</source>
         <translation type="unfinished">Sheria batili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="302" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307" />
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Baadhi ya sheria hazikuweza kuongezwa:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Safu batili ya JSON</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Ingizo lililotolewa haliwezi kuchanganuliwa hadi safu halali ya kanuni ya njia:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="441" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446" />
         <source>Invalid operation</source>
         <translation type="unfinished">Uendeshaji batili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="441" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446" />
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Haiwezi kuunda Wasifu wa Njia kwa jina tupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462" />
         <source>Empty Route Profile</source>
         <translation type="unfinished">Wasifu wa Njia tupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462" />
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Hakuna sheria halali kwenye wasifu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="469" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474" />
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Baadhi ya sheria hazikuweza kuongezwa, zirekebishe kabla ya kuhifadhi:</translation>
@@ -4180,24 +4216,24 @@ Moja kwa moja: ⚡%2 📦%4</translation>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="262" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Safu batili ya JSON</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="243" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="263" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Ingizo lililotolewa haliwezi kuchanganuliwa hadi safu halali ya kanuni ya njia:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="366" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="387" />
         <source>Fetching information</source>
         <translation type="unfinished">Inaleta habari</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="382" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="403" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1410" />
         <source>Download Profiles</source>
         <translation type="unfinished">Pakua Wasifu</translation>
     </message>

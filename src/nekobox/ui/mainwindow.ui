@@ -62,7 +62,11 @@
             <string>NekoBox</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
            </property>
            <property name="text">
             <string>NekoBox</string>
@@ -87,7 +91,11 @@
             <string>Profiles</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
            </property>
            <property name="text">
             <string>Profiles</string>
@@ -112,7 +120,11 @@
             <string>Settings</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
            </property>
            <property name="text">
             <string>Settings</string>
@@ -137,7 +149,11 @@
             <string>Routing</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
            </property>
            <property name="text">
             <string>Routing</string>
@@ -162,7 +178,11 @@
             <string>Update</string>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
            </property>
            <property name="text">
             <string>Info</string>
@@ -189,7 +209,7 @@
         <item>
          <widget class="QCheckBox" name="checkBox_VPN">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -201,6 +221,12 @@
         </item>
         <item>
          <widget class="QCheckBox" name="system_dns">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>System DNS</string>
           </property>
@@ -208,6 +234,12 @@
         </item>
         <item>
          <widget class="QCheckBox" name="checkBox_SystemProxy">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>System Proxy</string>
           </property>
@@ -279,7 +311,11 @@
       <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
         </property>
         <property name="text">
          <string>Test</string>

@@ -1,6 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <TS version="2.1" language="bg_BG">
 <context>
+    <name>AboutMain</name>
+    <message>
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmForm</name>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
@@ -661,7 +669,7 @@
         <translation type="unfinished">Мениджър на ресурси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="246" />
         <source>Name of program</source>
         <translation type="unfinished">Име на програмата</translation>
     </message>
@@ -756,17 +764,17 @@
         <translation type="unfinished">Пропуснете автоматичната актуализация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="64" />
         <source>Copied</source>
         <translation type="unfinished">Копирано</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363" />
         <source>Warning</source>
         <translation type="unfinished">Предупреждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363" />
         <source>Please input URL</source>
         <translation type="unfinished">Моля, въведете URL</translation>
     </message>
@@ -901,7 +909,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="753" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="760" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">Прилагане на настройките към тази група</translation>
     </message>
@@ -937,7 +945,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="684" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="691" />
         <source>Certificate</source>
         <translation type="unfinished">Сертификат</translation>
     </message>
@@ -958,7 +966,7 @@
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="695" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702" />
         <source>ECH Config</source>
         <translation type="unfinished">ECH Config</translation>
     </message>
@@ -1028,12 +1036,12 @@
         <translation type="unfinished">Реалност SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="235" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="242" />
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">По избор (%1 изходящ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="244" />
         <source>Custom (%1 config)</source>
         <translation type="unfinished">По избор (%1 конфигурация)</translation>
     </message>
@@ -1056,25 +1064,30 @@
         <translation type="obsolete">По избор (%1 конфигурация)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="642" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="665" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
+        <source>both</source>
+        <translation type="unfinished">и двете</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="672" />
         <source>Not set</source>
         <translation type="unfinished">Не е зададено</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="644" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="667" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="661" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="674" />
         <source>Already set</source>
         <translation type="unfinished">Вече е зададено</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="732" />
         <source>Confirm</source>
         <translation type="unfinished">Потвърдете</translation>
     </message>
@@ -1107,64 +1120,64 @@
         <translation type="unfinished">Група2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="415" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="420" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Преден прокси за група %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="417" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="422" />
         <source>Front proxy: </source>
         <translation type="unfinished">Преден прокси:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="428" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="433" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Целеви прокси за група %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="430" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="435" />
         <source>Landing proxy: </source>
         <translation type="unfinished">Прокси за кацане:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="443" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="448" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Proxy</source>
         <translation type="unfinished">Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="446" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="451" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Direct</source>
         <translation type="unfinished">Директен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455" />
         <source>None</source>
         <translation type="unfinished">Няма</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="46" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="51" />
         <source>Add proxy</source>
         <translation type="unfinished">Добавяне на прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="66" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="71" />
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Замяна на %1 прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="135" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
         <source>Select outbound</source>
         <translation type="unfinished">Изберете изходящ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
         <source>Outbound: </source>
         <translation type="unfinished">Изходящ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="144" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149" />
         <source>Outbound</source>
         <translation type="unfinished">Изходящ</translation>
     </message>
@@ -1230,12 +1243,12 @@
         <translation type="unfinished">Актуализирайте всички абонаменти</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61" />
         <source>Confirmation</source>
         <translation type="unfinished">Потвърждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61" />
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Актуализиране на всички абонаменти?</translation>
     </message>
@@ -1510,38 +1523,38 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Изтриване</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34" />
         <source>Invalid state</source>
         <translation type="unfinished">Невалидно състояние</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Списъкът с профили за маршрутизиране е празен, това трябва да е недостъпно състояние, може да възникнат сривове сега</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="202" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211" />
         <source>Invalid settings</source>
         <translation type="unfinished">Невалидни настройки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="202" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207" />
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Профилът за маршрутизиране не може да бъде празен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211" />
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS правилата не са валидни</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="314" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319" />
         <source>Invalid operation</source>
         <translation type="unfinished">Невалидна операция</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="314" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Профилите за маршрутизиране не могат да бъдат празни, опитайте да добавите друг профил или да редактирате този</translation>
     </message>
@@ -1630,7 +1643,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Изберете Профил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="28" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="33" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Името не може да бъде празно.</translation>
     </message>
@@ -1648,17 +1661,17 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Редактор на Json</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">Изходящ JSON, моля, прочетете документацията.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="55" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="60" />
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Моля, попълнете пълната конфигурация.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="64" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="69" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Името не може да бъде празно.</translation>
     </message>
@@ -1794,7 +1807,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="9" />
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="14" />
         <source>Off</source>
         <translation type="unfinished">Изкл</translation>
     </message>
@@ -1914,7 +1927,7 @@ For more information, see the document "Configuration/DNS".</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="149" />
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="154" />
         <source>Certificate</source>
         <translation type="unfinished">Сертификат</translation>
     </message>
@@ -2249,7 +2262,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Здравна проверка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="8" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="13" />
         <source>Off</source>
         <translation type="unfinished">Изкл</translation>
     </message>
@@ -2423,32 +2436,32 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished">Премахнете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="134" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139" />
         <source>Basic</source>
         <translation type="unfinished">Основен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="134" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139" />
         <source>Subscription</source>
         <translation type="unfinished">Абонамент</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="135" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="140" />
         <source>Archive</source>
         <translation type="unfinished">Архив</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="152" />
         <source>Last update: %1</source>
         <translation type="unfinished">Последна актуализация: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="191" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196" />
         <source>Confirmation</source>
         <translation type="unfinished">Потвърждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="191" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196" />
         <source>Remove %1?</source>
         <translation type="unfinished">Премахване на %1?</translation>
     </message>
@@ -2461,55 +2474,54 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="39" />
         <source>Statistics</source>
-        <translation type="unfinished">Статистика</translation>
+        <translation type="obsolete">Статистика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="48" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
         <translation type="unfinished">Статистика на използването</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="405" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="394" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">Статистика на трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="443" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="432" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Общ прокси трафик:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="54" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="77" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="100" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="127" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="152" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="181" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="252" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="259" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="266" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="312" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="319" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="326" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="375" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="382" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="389" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="423" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="430" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="453" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="496" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="43" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="66" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="89" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="116" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="141" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="170" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="241" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="248" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="255" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="301" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="308" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="364" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="371" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="378" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="412" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="419" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="442" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="485" />
         <source>TextLabel</source>
         <translation type="unfinished">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="460" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="449" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Общ директен трафик:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="140" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="129" />
         <source>Security Statistics</source>
         <translation type="unfinished">Статистика за сигурността</translation>
     </message>
@@ -2518,92 +2530,91 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Статистика на профила</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="67" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="56" />
         <source>Usage time:</source>
         <translation type="unfinished">Време на използване:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="117" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="106" />
         <source>Last launch time:</source>
         <translation type="unfinished">Последно стартиране:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="107" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="96" />
         <source>First launch time:</source>
         <translation type="unfinished">Първо време на стартиране:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="90" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="79" />
         <source>Start count:</source>
         <translation type="unfinished">Начален брой:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="476" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="489" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="465" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="478" />
         <source>Download:</source>
         <translation type="unfinished">Изтегляне:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="509" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="522" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="498" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="511" />
         <source>Upload:</source>
         <translation type="unfinished">Качи:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="216" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="205" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Прокси профили</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="210" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="199" />
         <source>Database Statistics</source>
         <translation type="unfinished">Статистика на база данни</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="222" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="292" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="355" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="281" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="344" />
         <source>Deleted</source>
         <translation type="unfinished">Изтрито</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="232" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="302" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="365" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="221" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="291" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="354" />
         <source>Exists</source>
         <translation type="unfinished">Съществува</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="242" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="282" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="345" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="231" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="271" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="334" />
         <source>Created</source>
         <translation type="unfinished">Създаден</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="276" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Групи и абонаменти</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="336" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="325" />
         <source>Route Profiles</source>
         <translation type="unfinished">Профили на маршрути</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="165" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">Брой неуспешни удостоверявания:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="194" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="183" />
         <source>Users count:</source>
         <translation type="unfinished">Брой потребители:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="533" />
         <source>About</source>
-        <translation type="unfinished">За</translation>
+        <translation type="obsolete">За</translation>
     </message>
     <message>
         <source>NyameBox / NekoBox for PC</source>
@@ -2613,51 +2624,50 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="32" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="52" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="62" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="68" />
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="71" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="91" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="707" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="87" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="93" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="649" />
         <source>Profiles</source>
         <translation type="unfinished">Профили</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="110" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="118" />
         <source>Settings</source>
         <translation type="unfinished">Настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="149" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="169" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="137" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
         <source>Routing</source>
         <translation type="unfinished">Маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="188" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="208" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="162" />
         <source>Update</source>
         <translation type="unfinished">Актуализация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="235" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="198" />
         <source>Tun Mode</source>
         <translation type="unfinished">Режим на настройка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="242" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="205" />
         <source>System DNS</source>
         <translation type="unfinished">Системен DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="249" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="676" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2623" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2626" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="618" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2685" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2688" />
         <source>System Proxy</source>
         <translation type="unfinished">Системен прокси</translation>
     </message>
@@ -2666,103 +2676,103 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">URL тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="406" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="140" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="360" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="145" />
         <source>Type</source>
         <translation type="unfinished">Тип</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="411" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="365" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="148" />
         <source>Address</source>
         <translation type="unfinished">Адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="416" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="146" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="370" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151" />
         <source>Name</source>
         <translation type="unfinished">Име</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="421" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="292" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="375" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="300" />
         <source>Test Result</source>
         <translation type="unfinished">Резултат от теста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="380" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="519" />
         <source>Traffic</source>
         <translation type="unfinished">Трафик</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="470" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="424" />
         <source>Logs</source>
         <translation type="unfinished">трупи</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="459" />
         <source>Connections</source>
         <translation type="unfinished">Връзки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="487" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Дестинация (домейн)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="490" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Щракнете, за да деактивирате сортирането</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="495" />
         <source>Process</source>
         <translation type="unfinished">Процес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="498" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Кликнете, за да сортирате по процес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="503" />
         <source>Protocol</source>
         <translation type="unfinished">протокол</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="506" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Щракнете, за да сортирате по протокол</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="511" />
         <source>Outbound</source>
         <translation type="unfinished">Изходящ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="560" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="514" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Щракнете, за да сортирате по изходящи</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="568" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="522" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Кликнете, за да превключите сортирането по трафик</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="577" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="531" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Графика на трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="672" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="614" />
         <source>Program</source>
         <translation type="unfinished">програма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="638" />
         <source>Preferences</source>
         <translation type="unfinished">Предпочитания</translation>
     </message>
@@ -2771,7 +2781,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">сървър</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="721" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="663" />
         <source>Share</source>
         <translation type="unfinished">Споделете</translation>
     </message>
@@ -2780,270 +2790,296 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Текуща група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="331" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="731" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="783" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="285" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="673" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="725" />
         <source>Test</source>
         <translation type="unfinished">Тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="717" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="659" />
         <source>Current Selected</source>
         <translation type="unfinished">Текущо избрано</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="711" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="653" />
         <source>Current Group</source>
         <translation type="unfinished">Текуща група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="168" />
+        <source>Info</source>
+        <translation type="unfinished">Информация</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="708" />
         <source>Hidden menu</source>
         <translation type="unfinished">Скрито меню</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="778" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720" />
         <source>Routing Menu</source>
         <translation type="unfinished">Меню за маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="732" />
         <source>Context</source>
         <translation type="unfinished">Контекст</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="794" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>ContextProfiles</source>
         <translation type="unfinished">Контекстни профили</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="760" />
         <source>Exit</source>
         <translation type="unfinished">Изход</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="765" />
         <source>Toggle Window</source>
         <translation type="unfinished">Превключване на прозореца</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="819" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="770" />
         <source>Basic Settings</source>
         <translation type="unfinished">Основни настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="824" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775" />
         <source>New profile</source>
         <translation type="unfinished">Нов профил</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="829" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780" />
         <source>Groups</source>
         <translation type="unfinished">Групи</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3691" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3764" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3774" />
         <source>Start</source>
         <translation type="unfinished">Започнете</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="842" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3690" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3701" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="793" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3763" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3774" />
         <source>Stop</source>
         <translation type="unfinished">Спрете</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>Edit</source>
         <translation type="unfinished">Редактиране</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="809" />
         <source>Routing Settings</source>
         <translation type="unfinished">Настройки за маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="863" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="814" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Добавете профил от клипборда</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="822" />
         <source>Delete</source>
         <translation type="unfinished">Изтриване</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <source>Debug Info</source>
         <translation type="unfinished">Информация за отстраняване на грешки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR код и връзка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="843" />
         <source>Copy Link</source>
         <translation type="unfinished">Копиране на връзката</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1154" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="864" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1105" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Изчистване на резултата от теста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1519" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
         <source>Export %1 config</source>
         <translation type="unfinished">Експортиране на %1 конфигурация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="880" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Нулиране на трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="888" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Сканирайте QR код</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="896" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Активирайте системния прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="904" />
         <source>Disable</source>
         <translation type="unfinished">Деактивиране</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="958" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="909" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Премахване на дубликати</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="917" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="994" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1002" />
         <source>fake</source>
         <translation type="unfinished">фалшив</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1245" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="925" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196" />
         <source>Move</source>
         <translation type="unfinished">Движи се</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="985" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="936" />
         <source>Start with system</source>
         <translation type="unfinished">Започнете със системата</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="944" />
         <source>Remember last profile</source>
         <translation type="unfinished">Запомни последния профил</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="952" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Разрешете на други устройства да се свързват</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="957" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Премахване Недостъпно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="965" />
         <source>Full Test</source>
         <translation type="unfinished">Пълен тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="973" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Настройки на бързи клавиши</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1027" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="978" />
         <source>Select All</source>
         <translation type="unfinished">Изберете Всички</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1035" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="986" />
         <source>Copy Custom Links</source>
         <translation type="unfinished">Копиране на персонализирани връзки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1010" />
         <source>Copy links</source>
         <translation type="unfinished">Копиране на връзки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
         <source>Url Test</source>
         <translation type="unfinished">Url тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1127" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Разрешаване на домейн</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1258" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217" />
+        <source>Register Windows elevated task</source>
+        <translation type="unfinished">Регистрирайте задача с повишени права на Windows</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1237" />
+        <source>About</source>
+        <translation type="unfinished">За</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227" />
+        <source>Statistics</source>
+        <translation type="unfinished">Статистика</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232" />
+        <source>Check for updates</source>
+        <translation type="unfinished">Проверете за актуализации</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="743" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1209" />
         <source>Information</source>
         <translation type="unfinished">Информация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1021" />
         <source>Enable Tun</source>
         <translation type="unfinished">Активирайте Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3010" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1026" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3075" />
         <source>Clone</source>
         <translation type="unfinished">Клонинг</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1034" />
         <source>Update subscription</source>
         <translation type="unfinished">Актуализиране на абонамента</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1045" />
         <source>Resolve domain</source>
         <translation type="unfinished">Разрешете домейн</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1102" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1053" />
         <source>Tun Settings</source>
         <translation type="unfinished">Настройки за настройка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1107" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1058" />
         <source>Restart Program</source>
         <translation type="unfinished">Рестартирайте програмата</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1112" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1063" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Отворете папката Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1133" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1084" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Рестартирайте проксито</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1138" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089" />
         <source>Stop Testing</source>
         <translation type="unfinished">Спрете тестването</translation>
     </message>
@@ -3052,7 +3088,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1116" />
         <source>Url Test Group</source>
         <translation type="unfinished">URL тестова група</translation>
     </message>
@@ -3061,7 +3097,7 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1184" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Премахване Невалидно</translation>
     </message>
@@ -3070,420 +3106,420 @@ For more information, see the document "Configuration/DNS".</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1253" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1204" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Current</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146" />
         <source>Full test Selected</source>
         <translation type="unfinished">Избран пълен тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
         <source>Download test Selected</source>
         <translation type="unfinished">Изтеглете тест Избрано</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1205" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Upload test Selected</source>
         <translation type="unfinished">Избран тест за качване</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1210" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1161" />
         <source>Country test Selected</source>
         <translation type="unfinished">Избран тест за държава</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1215" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1166" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">Избран прост тест за изтегляне</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1220" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Група Speedtest</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1225" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
         <source>Hide window</source>
         <translation type="unfinished">Скриване на прозореца</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1230" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181" />
         <source>Add profile from File</source>
         <translation type="unfinished">Добавяне на профил от файл</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1235" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3720" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3793" />
         <source>Add new Group</source>
         <translation type="unfinished">Добавете нова група</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1240" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191" />
         <source>Security Settings</source>
         <translation type="unfinished">Настройки за сигурност</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="226" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="290" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="231" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297" />
         <source>Unavailable</source>
         <translation type="unfinished">Недостъпен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1174" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Редактиране на профили за маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1196" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1251" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Актуализиране на профили за маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1208" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1212" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1233" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1280" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="95" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="104" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1263" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1267" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1288" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1291" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1335" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
         <source>Update Response</source>
         <translation type="unfinished">Актуализиране на отговора</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1209" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Не се актуализират профили за маршрутизиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1213" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Актуализиран %1 маршрутизиращ профил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1223" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Актуализирайте картата на набор от правила</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Неуспешно актуализиране на набори от правила</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1237" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Наборите от правила са актуализирани успешно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1246" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1301" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Актуализирайте кеша на RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1336" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Кешът на набори от правила е актуализиран</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Изчистване на кеша на RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1331" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1386" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Активирайте AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1737" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1792" />
         <source>Error</source>
         <translation type="unfinished">Грешка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1824" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1879" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Настройките на Tun са променени</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1825" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Рестартирайте Tun, за да влезе в сила.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1831" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1889" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3064" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3435" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3489" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3538" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1944" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3131" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3507" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3611" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3842" />
         <source>Confirmation</source>
         <translation type="unfinished">Потвърждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1832" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1890" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1945" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Настройките са променени, рестартирайте прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1861" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1916" />
         <source>Settings changed</source>
         <translation type="unfinished">Настройките са променени</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1862" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1917" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Рестартирайте програмата, за да влезе в сила.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1905" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1960" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Импортирани %1 профил(а)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2181" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2247" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Потребителят е избрал без изискване за привилегия, някои функции може да не работят</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2312" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Моля, дайте на ядрото root права</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2599" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2661" />
         <source>Not Running</source>
         <translation type="unfinished">Не работи</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3011" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3076" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Клониране на %1 елемент(а)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3045" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3111" />
         <source> Confirmation </source>
         <translation type="unfinished">Потвърждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3112" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Премахване на %1 елемент(а)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3065" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3132" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Премахване на %1 елемент(а)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3102" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3115" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3169" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3182" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Копиран %1 елемент(а)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3417" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR кодът не е намерен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3368" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3439" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Не може да се заснеме екран</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3436" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3508" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Премахване на %1 неналични артикули?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3490" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3563" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Премахване на %1 невалиден елемент(а)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3539" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3612" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Да се ​​заменят ли адресите на сървърите на домейни с разрешените им IP адреси?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3688" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3761" />
         <source>Clear</source>
         <translation type="unfinished">ясно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3759" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3832" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Изтриване на избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3760" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Редактиране на избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3843" />
         <source>Remove %1?</source>
         <translation type="unfinished">Премахване на %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4510" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4580" />
         <source>Cannot start</source>
         <translation type="unfinished">Не може да започне</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Последната заявка за изтегляне все още не е приключила</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4545" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4615" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Неуспешно изтегляне на активи за актуализиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="82" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="87" />
         <source>Profile test aborted</source>
         <translation type="unfinished">Тестът на профила е прекратен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="133" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="179" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="138" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="184" />
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] грешка при тестване: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="162" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="167" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="499" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Нещо не е наред, темата ent не може да бъде намерена!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="168" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="173" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="505" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Данните на мениджъра на профили са повредени, опитайте отново.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="202" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Последният тест за url не излезе напълно, моля, изчакайте.Ако продължава, рестартирайте програмата.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="211" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="321" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="216" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="329" />
         <source>Failed to build test config: </source>
         <translation type="unfinished">Неуспешно изграждане на тестова конфигурация:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="257" />
         <source>URL test finished!</source>
         <translation type="unfinished">URL тестът приключи!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="263" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="268" />
         <source>Failed to stop tests</source>
         <translation type="unfinished">Неуспешно спиране на тестовете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="269" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="274" />
         <source>Testing</source>
         <translation type="unfinished">Тестване</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="310" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Последният тест за скорост не излезе напълно, моля, изчакайте.Ако продължава, рестартирайте програмата.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="355" />
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest приключи!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="428" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="436" />
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Тестът за скорост на профила е прекратен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="516" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="524" />
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] грешка при тестване на скоростта: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="525" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="533" />
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Първо трябва да активирате hijack DNS сървър</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="539" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="547" />
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Неуспешно задаване на DNS на системата:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596" />
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Устройството за настройка не работи правилно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="597" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ако имате проблеми със стартирането на VPN, можете да нулирате основния процес тук и след това да опитате да стартирате профила отново.Грешката е %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601" />
         <source>Reset</source>
         <translation type="unfinished">Нулиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="602" />
         <source>Cancel</source>
         <translation type="unfinished">Отказ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="630" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="638" />
         <source>Another profile is starting...</source>
         <translation type="unfinished">Започва друг профил...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="645" />
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Друг профил спира...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="740" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="666" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="748" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ако няма отговор за дълго време, се препоръчва да рестартирате софтуера.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="672" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="680" />
         <source>Starting profile %1</source>
         <translation type="unfinished">Стартиране на профил %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="674" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="682" />
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Неуспешно стартиране на профил %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="723" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="731" />
         <source>Stop return error</source>
         <translation type="unfinished">Грешка при връщане на стоп</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="763" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="771" />
         <source>Stopping profile %1</source>
         <translation type="unfinished">Спиране на профил %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="765" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="773" />
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Неуспешно спиране, моля, рестартирайте програмата.</translation>
     </message>
@@ -3514,12 +3550,12 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44" />
         <source>Confirmation</source>
         <translation type="unfinished">Потвърждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44" />
         <source>Remove %1?</source>
         <translation type="unfinished">Премахване на %1?</translation>
     </message>
@@ -3527,7 +3563,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="366" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
         <translation type="unfinished">Настройки за сигурност</translation>
     </message>
@@ -3535,7 +3571,7 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="357" />
+        <location filename="../../src/gharqad/main.cpp" line="382" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3543,42 +3579,42 @@ For more information, see the document "Configuration/DNS".</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="160" />
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="165" />
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">Режимът на настройка не може да се използва с персонализирани конфигурации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="870" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="875" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Заявка за абонамент: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="879" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Грешка при искане на абонамент %1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="881" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="886" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Заявката за абонамент приключи: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="899" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Сървърите се изчистват...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="909" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Данните за абонамента се обработват...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="907" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="912" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Процесът е завършен, прилага се...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="970" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3589,146 +3625,146 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="980" />
         <source>Nothing</source>
         <translation type="unfinished">нищо</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="978" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="983" />
         <source>Change of %1:</source>
         <translation type="unfinished">Промяна на %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="322" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="327" />
         <source>Default</source>
         <translation type="unfinished">По подразбиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="189" />
+        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="194" />
         <source>Could not open file.</source>
         <translation type="unfinished">Файлът не може да се отвори.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="114" />
+        <location filename="../../src/gharqad/main.cpp" line="132" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Верижен прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="130" />
+        <location filename="../../src/gharqad/main.cpp" line="148" />
         <source>Custom</source>
         <translation type="unfinished">По поръчка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131" />
+        <location filename="../../src/gharqad/main.cpp" line="149" />
         <source>Extra Core</source>
         <translation type="unfinished">Допълнително ядро</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="28" />
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="356" />
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="121" />
+        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="364" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="126" />
         <source>Select</source>
         <translation type="unfinished">Изберете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2567" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2629" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Прокси: %1
 Директно: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="117" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="123" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Ядрото излезе, почиства се...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="124" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="130" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Core излиза твърде често, спрете автоматичното рестартиране на този профил.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="133" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="139" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">Рестартиране на ядрото...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="375" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="379" />
         <source>System</source>
         <translation type="unfinished">система</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="23" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28" />
         <source>URL detected</source>
         <translation type="unfinished">URL адресът е открит</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33" />
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 Как да актуализирам?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
         <source>Create new subscription group</source>
         <translation type="unfinished">Създайте нова абонаментна група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="38" />
         <source>Add profiles to this group</source>
         <translation type="unfinished">Добавете профили към тази група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39" />
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Добавете като http/https прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="44" />
         <source>Group name</source>
         <translation type="unfinished">Име на групата</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="106" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="111" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Използвано: %1 Остатък: %2 Изтичане: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="294" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="314" />
         <source>Download Profiles</source>
         <translation type="unfinished">Изтегляне на профили</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="295" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="315" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Грешка при заявка на профил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="470" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="494" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Изтрити %1 дубликати</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="504" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="528" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Изтрито %1 Невалидно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="527" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="554" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Изтрит %1 Недостъпен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1671" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Проверка на набори от правила: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1638" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1693" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Грешка при искане на списък с набор от правила: %1</translation>
     </message>
@@ -3737,64 +3773,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP адрес: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2604" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2666" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Входящ IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2990" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3051" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Преместване на профили в група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3133" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3200" />
         <source>Config copied</source>
         <translation type="unfinished">Конфигурацията е копирана</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3212" />
         <source>Copy core config</source>
         <translation type="unfinished">Копирайте основната конфигурация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3145" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3214" />
         <source>Copy test config</source>
         <translation type="unfinished">Копиране на тестовата конфигурация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3146" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="31" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="36" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="58" />
         <source>OK</source>
         <translation type="unfinished">добре</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4414" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4425" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4492" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4539" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4571" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4606" />
         <source>Update</source>
         <translation type="unfinished">Актуализация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4415" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4485" />
         <source>Not official support platform</source>
         <translation type="unfinished">Не е официална платформа за поддръжка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4426" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Грешка при искане на актуализация: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4469" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4539" />
         <source>No update</source>
         <translation type="unfinished">Няма актуализация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4563" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3803,37 +3839,37 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4566" />
         <source>Close</source>
         <translation type="unfinished">затвори</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4498" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4568" />
         <source>Open in browser</source>
         <translation type="unfinished">Отворете в браузъра</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4607" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Актуализацията е готова, рестартирайте, за да инсталирате?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <source>Access denied</source>
         <translation type="unfinished">Достъпът е отказан</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="361" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="369" />
         <source>Select a Folder</source>
         <translation type="unfinished">Изберете папка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="45" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="50" />
         <source>Exclude CIDR's</source>
         <translation type="unfinished">Изключете CIDR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="54" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="59" />
         <source>Cancel</source>
         <translation type="unfinished">Отказ</translation>
     </message>
@@ -3848,7 +3884,7 @@ Release note:
         <translation type="obsolete">Допълнително ядро</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="162" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Прокси: ⚡%1 📦%3
@@ -3858,92 +3894,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="70" />
+        <location filename="../../src/gharqad/main.cpp" line="88" />
         <source>Cancel</source>
         <translation type="unfinished">Отказ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="71" />
+        <location filename="../../src/gharqad/main.cpp" line="89" />
         <source>Apply</source>
         <translation type="unfinished">Кандидатствайте</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="72" />
+        <location filename="../../src/gharqad/main.cpp" line="90" />
         <source>Yes</source>
         <translation type="unfinished">да</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="73" />
+        <location filename="../../src/gharqad/main.cpp" line="91" />
         <source>No</source>
         <translation type="unfinished">не</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="74" />
+        <location filename="../../src/gharqad/main.cpp" line="92" />
         <source>OK</source>
         <translation type="unfinished">добре</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="75" />
+        <location filename="../../src/gharqad/main.cpp" line="93" />
         <source>Defaults</source>
         <translation type="unfinished">По подразбиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="76" />
+        <location filename="../../src/gharqad/main.cpp" line="94" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Възстановяване на настройките по подразбиране</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="77" />
+        <location filename="../../src/gharqad/main.cpp" line="95" />
         <source>Discard</source>
         <translation type="unfinished">Изхвърлете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="79" />
+        <location filename="../../src/gharqad/main.cpp" line="97" />
         <source>Undo</source>
         <translation type="unfinished">Отмяна</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="80" />
+        <location filename="../../src/gharqad/main.cpp" line="98" />
         <source>Redo</source>
         <translation type="unfinished">Повторете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="81" />
+        <location filename="../../src/gharqad/main.cpp" line="99" />
         <source>Cut</source>
         <translation type="unfinished">Изрежете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="82" />
+        <location filename="../../src/gharqad/main.cpp" line="100" />
         <source>Copy</source>
         <translation type="unfinished">копие</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="83" />
+        <location filename="../../src/gharqad/main.cpp" line="101" />
         <source>Paste</source>
         <translation type="unfinished">Залепете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="84" />
+        <location filename="../../src/gharqad/main.cpp" line="102" />
         <source>Delete</source>
         <translation type="unfinished">Изтриване</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="85" />
+        <location filename="../../src/gharqad/main.cpp" line="103" />
         <source>Select All</source>
         <translation type="unfinished">Изберете Всички</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="86" />
+        <location filename="../../src/gharqad/main.cpp" line="104" />
         <source>Stop</source>
         <translation type="unfinished">Спрете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87" />
+        <location filename="../../src/gharqad/main.cpp" line="105" />
         <source>Clear</source>
         <translation type="unfinished">ясно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88" />
+        <location filename="../../src/gharqad/main.cpp" line="106" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Копиране на местоположението на връзката</translation>
     </message>
@@ -4065,50 +4101,50 @@ Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Бележки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="302" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="469" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474" />
         <source>Invalid rules</source>
         <translation type="unfinished">Невалидни правила</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="302" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307" />
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Някои правила не можаха да бъдат добавени:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Невалиден JSON масив</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="358" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Предоставеният вход не може да бъде анализиран до валиден масив от правила за маршрут:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="441" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446" />
         <source>Invalid operation</source>
         <translation type="unfinished">Невалидна операция</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="441" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446" />
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Не може да се създаде профил на маршрут с празно име</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462" />
         <source>Empty Route Profile</source>
         <translation type="unfinished">Празен профил на маршрута</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462" />
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Няма валидни правила в профила</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="469" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474" />
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Някои правила не можаха да бъдат добавени, поправете ги, преди да запазите:</translation>
@@ -4160,24 +4196,24 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="242" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="262" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Невалиден JSON масив</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="243" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="263" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Предоставеният вход не може да бъде анализиран до валиден масив от правила за маршрут:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="366" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="387" />
         <source>Fetching information</source>
         <translation type="unfinished">Извличане на информация</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="382" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="403" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1410" />
         <source>Download Profiles</source>
         <translation type="unfinished">Изтегляне на профили</translation>
     </message>
