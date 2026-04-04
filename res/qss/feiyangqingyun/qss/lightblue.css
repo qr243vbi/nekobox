@@ -1,3 +1,235 @@
+/* Breeze Light - QSS approximation */
+
+QWidget {
+    background-color: rgb(239,240,241);
+    color: rgb(35,38,41);
+    selection-background-color: rgb(61,174,233);
+    selection-color: rgb(255,255,255);
+}
+
+/* Buttons */
+QPushButton {
+    background-color: rgb(252,252,252);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+    padding: 5px;
+}
+
+QPushButton:hover {
+    border: 1px solid rgb(61,174,233);
+}
+
+QPushButton:pressed {
+    background-color: rgb(227,229,231);
+}
+
+QPushButton:disabled {
+    color: rgb(112,125,138);
+    background-color: rgb(239,240,241);
+}
+
+/* Line edits, text edits */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: rgb(255,255,255);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+    selection-background-color: rgb(61,174,233);
+    selection-color: rgb(255,255,255);
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: rgb(247,247,247);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+}
+
+/* Menu */
+QMenu {
+    background-color: rgb(255,255,255);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+}
+
+QMenu::item:selected {
+    background-color: rgb(61,174,233);
+    color: rgb(255,255,255);
+}
+
+/* Header (e.g., QTableView) */
+QHeaderView::section {
+    background-color: rgb(222,224,226);
+    color: rgb(35,38,41);
+    padding: 4px;
+    border: 1px solid rgb(227,229,231);
+}
+
+/* Tables / lists */
+QTableView, QListView, QTreeView {
+    background-color: rgb(255,255,255);
+    alternate-background-color: rgb(247,247,247);
+    color: rgb(35,38,41);
+    gridline-color: rgb(227,229,231);
+}
+
+QTableView::item:selected,
+QListView::item:selected,
+QTreeView::item:selected {
+    background-color: rgb(61,174,233);
+    color: rgb(255,255,255);
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    background: rgb(239,240,241);
+    width: 12px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgb(227,229,231);
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgb(61,174,233);
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 1px solid rgb(227,229,231);
+}
+
+QTabBar::tab {
+    background: rgb(239,240,241);
+    color: rgb(35,38,41);
+    padding: 6px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(255,255,255);
+    border-bottom: 2px solid rgb(61,174,233);
+}
+
+/* Disabled state */
+QWidget:disabled {
+    color: rgb(112,125,138);
+}/* Breeze Light - QSS approximation */
+
+QWidget {
+    background-color: rgb(239,240,241);
+    color: rgb(35,38,41);
+    selection-background-color: rgb(61,174,233);
+    selection-color: rgb(255,255,255);
+}
+
+/* Buttons */
+QPushButton {
+    background-color: rgb(252,252,252);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+    padding: 5px;
+}
+
+QPushButton:hover {
+    border: 1px solid rgb(61,174,233);
+}
+
+QPushButton:pressed {
+    background-color: rgb(227,229,231);
+}
+
+QPushButton:disabled {
+    color: rgb(112,125,138);
+    background-color: rgb(239,240,241);
+}
+
+/* Line edits, text edits */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: rgb(255,255,255);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+    selection-background-color: rgb(61,174,233);
+    selection-color: rgb(255,255,255);
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: rgb(247,247,247);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+}
+
+/* Menu */
+QMenu {
+    background-color: rgb(255,255,255);
+    color: rgb(35,38,41);
+    border: 1px solid rgb(227,229,231);
+}
+
+QMenu::item:selected {
+    background-color: rgb(61,174,233);
+    color: rgb(255,255,255);
+}
+
+/* Header (e.g., QTableView) */
+QHeaderView::section {
+    background-color: rgb(222,224,226);
+    color: rgb(35,38,41);
+    padding: 4px;
+    border: 1px solid rgb(227,229,231);
+}
+
+/* Tables / lists */
+QTableView, QListView, QTreeView {
+    background-color: rgb(255,255,255);
+    alternate-background-color: rgb(247,247,247);
+    color: rgb(35,38,41);
+    gridline-color: rgb(227,229,231);
+}
+
+QTableView::item:selected,
+QListView::item:selected,
+QTreeView::item:selected {
+    background-color: rgb(61,174,233);
+    color: rgb(255,255,255);
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    background: rgb(239,240,241);
+    width: 12px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgb(227,229,231);
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgb(61,174,233);
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 1px solid rgb(227,229,231);
+}
+
+QTabBar::tab {
+    background: rgb(239,240,241);
+    color: rgb(35,38,41);
+    padding: 6px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(255,255,255);
+    border-bottom: 2px solid rgb(61,174,233);
+}
+
+/* Disabled state */
+QWidget:disabled {
+    color: rgb(112,125,138);
+}
+
 QPalette{background:#EAF7FF;}*{outline:0px;color:#386487;}
 
 QGraphicsView{
@@ -631,7 +863,7 @@ border-width:0px;
 border-radius:0px;
 }
 
-QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit{
+QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit,QCheckBox{
 background:#EAF7FF;
 }
 
@@ -671,3 +903,122 @@ color:#C0DCF2;
 /*DarkColorStart:#F2F9FF*/
 /*DarkColorEnd:#DAEFFF*/
 /*HighColor:#386488*/
+
+/* Color tokens (from your input)
+ *  TextColor:        #57595B
+ *  PanelColor:       #FFFFFF
+ *  BorderColor:      #B6B6B6
+ *  NormalColorStart: #E4E4E4
+ *  NormalColorEnd:   #E4E4E4
+ *  DarkColorStart:   #F6F6F6
+ *  DarkColorEnd:     #F6F6F6
+ *  HighColor:        #575959
+ */
+
+/* Base checkbox text and spacing */
+QCheckBox {
+    color: #57595B;               /* TextColor */
+    spacing: 6px;
+    padding: 2px 4px;
+    background: transparent;
+}
+
+/* Indicator size */
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    margin: 0 4px 0 0;
+}
+
+/* Unchecked (normal) - subtle flat/light background matching NormalColorStart/End */
+QCheckBox::indicator:unchecked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #E4E4E4, stop:1 #E4E4E4); /* NormalColorStart/End */
+    border: 1px solid #B6B6B6;   /* BorderColor */
+}
+
+/* Hover over the indicator - slightly lighter using DarkColorStart/End */
+QCheckBox::indicator:unchecked:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #F6F6F6, stop:1 #F6F6F6); /* DarkColorStart/End as hover highlight */
+    border: 1px solid #AFAFAF;
+}
+
+/* Pressed state - subtle inset look */
+QCheckBox::indicator:unchecked:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #E4E4E4, stop:1 #DDDDDD);
+    border: 1px solid #9f9f9f;
+    padding: 1px;
+}
+
+/* Checked - fill with high color (HighColor) and keep subtle border */
+QCheckBox::indicator:checked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #575959, stop:1 #454546); /* HighColor and a slightly darker stop */
+    border: 1px solid #B6B6B6;
+}
+
+/* Ensure no external image overrides our styling */
+QCheckBox::indicator:checked {
+    image: none;
+}
+
+/* Checkmark (SVG) centered on the filled background; stroke uses PanelColor for contrast */
+QCheckBox::indicator:checked {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Indeterminate (Partially checked) - show a horizontal line */
+QCheckBox::indicator:indeterminate {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #575959, stop:1 #454546);
+    border: 1px solid #B6B6B6;
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<rect x='2' y='6' width='9' height='2' fill='%23FFFFFF' />\
+</svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Disabled state - muted colors */
+QCheckBox:disabled {
+    color: #A0A0A0; /* dimmed text */
+}
+
+QCheckBox::indicator:disabled {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #F0F0F0, stop:1 #E8E8E8);
+    border: 1px solid #D0D0D0;
+    opacity: 0.65;
+}
+
+QCheckBox::indicator:disabled:checked {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+    opacity: 0.65;
+}
+
+/* Focus ring around the whole checkbox when focused (subtle) */
+QCheckBox:focus {
+    outline: none;
+}
+
+QCheckBox:focus::indicator {
+    /* faint outer glow using a semi-transparent version of HighColor */
+    box-shadow: 0 0 0 3px rgba(87,89,89,0.08);
+}
+
+/* Larger hit area when using the check text label */
+QCheckBox::indicator, QCheckBox {
+    min-height: 18px;
+}

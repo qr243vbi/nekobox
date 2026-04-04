@@ -558,11 +558,6 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label_speed">
-        <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid rgb(30, 0, 255);
-font: inherit;</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -570,11 +565,6 @@ font: inherit;</string>
       </item>
       <item>
        <widget class="QLabel" name="label_running">
-        <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid rgb(30, 0, 255);
-font: inherit;</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -583,9 +573,7 @@ font: inherit;</string>
       <item>
        <widget class="QLabel" name="label_inbound">
         <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid rgb(30, 0, 255);
-font: inherit;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
@@ -754,8 +742,8 @@ font: inherit;</string>
     <property name="title">
      <string>Information</string>
     </property>
-    <addaction name="menu_information"/>
     <addaction name="menu_update"/>
+    <addaction name="menu_information"/>
     <addaction name="menu_about"/>
    </widget>
    <addaction name="menu_program"/>

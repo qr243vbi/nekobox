@@ -743,7 +743,7 @@ border-width:0px;
 border-radius:0px;
 }
 
-QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit{
+QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit,QCheckBox{
 background:#444444;
 }
 
@@ -783,3 +783,117 @@ color:#242424;
 /*DarkColorStart:#646464*/
 /*DarkColorEnd:#525252*/
 /*HighColor:#AAAAAA*/
+/* Indicator (the box itself) */
+
+/* Base checkbox text and spacing */
+QCheckBox {
+    color: #DCDCDC;               /* TextColor */
+    spacing: 6px;
+    padding: 2px 4px;
+    background: transparent;
+}
+
+/* Indicator size (you already provided) */
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    margin: 0 4px 0 0;
+}
+
+/* Unchecked (normal) - subtle gradient to match NormalColorStart -> NormalColorEnd */
+QCheckBox::indicator:unchecked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #484848, stop:1 #383838); /* NormalColorStart/End */
+    border: 1px solid #242424;   /* BorderColor */
+    box-shadow: none;
+}
+
+/* Hover over the indicator - slightly lighter */
+QCheckBox::indicator:unchecked:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #646464, stop:1 #525252); /* DarkColorStart/End as hover highlight */
+    border: 1px solid #2e2e2e;
+}
+
+/* Pressed state - darker inset look */
+QCheckBox::indicator:unchecked:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #383838, stop:1 #2e2e2e);
+    border: 1px solid #1e1e1e;
+    padding: 1px;
+}
+
+/* Checked - fill with high color, keep subtle border */
+QCheckBox::indicator:checked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #AAAAAA, stop:1 #909090); /* HighColor and a slightly darker stop */
+    border: 1px solid #242424;
+}
+
+/* Draw the checkmark for checked state */
+QCheckBox::indicator:checked {
+    image: none; /* ensure no external image overrides our styling */
+}
+
+/* Use an SVG-ish checkmark drawn via a miniature background image encoded as data URI.
+ *  This keeps the style purely QSS-compatible. The checkmark color is the PanelColor's light contrast (use TextColor).
+ */
+QCheckBox::indicator:checked {
+    /* Inline SVG with stroke matching PanelColor contrast (using #444444 as a subtle border around the mark is not necessary),
+     *      stroke is #444444 for slight depth, fill is transparent so lines show up on the filled background. */
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23DCDCDC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Indeterminate (Partially checked) - show a horizontal line */
+QCheckBox::indicator:indeterminate {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #AAAAAA, stop:1 #909090);
+    border: 1px solid #242424;
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<rect x='2' y='6' width='9' height='2' fill='%23DCDCDC' />\
+</svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Disabled state - fade to darker / muted colors */
+QCheckBox:disabled {
+    color: #A0A0A0; /* dimmed text */
+}
+
+QCheckBox::indicator:disabled {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #525252, stop:1 #3c3c3c); /* muted dark */
+    border: 1px solid #242424;
+    opacity: 0.6;
+}
+
+QCheckBox::indicator:disabled:checked {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+    opacity: 0.6;
+}
+
+/* Focus ring around the whole checkbox when focused (subtle) */
+QCheckBox:focus {
+    outline: none;
+}
+
+QCheckBox:focus::indicator {
+    /* a faint outer glow using a semi-transparent version of HighColor */
+    box-shadow: 0 0 0 3px rgba(170,170,170,0.08);
+}
+
+/* Larger hit area when using the check text label (keeps clickable area comfortable) */
+QCheckBox::indicator, QCheckBox {
+    min-height: 18px;
+}

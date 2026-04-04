@@ -14,6 +14,7 @@
 #include <nekobox/sys/Settings.h>
 #include <nekobox/ui/mainwindow.h>
 
+
 #undef ELEVATE_METHOD
 #ifdef Q_OS_UNIX
 #define ELEVATE_METHOD
