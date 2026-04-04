@@ -2293,8 +2293,8 @@ skip_start_elevate_process:
 #undef ELEVATE_CORE_PROGRAM
 #endif
 
-#ifdef Q_OS_UNIX
   auto save_button = QMessageBox::Save;
+#ifdef Q_OS_UNIX
   if (isAppImage()) {
     save_button = QMessageBox::NoButton;
   }
@@ -2302,19 +2302,15 @@ skip_start_elevate_process:
 
   auto n = QMessageBox::warning(GetMessageBoxParent(), software_name,
                                 tr("Please give the core root privileges"),
-#ifdef Q_OS_UNIX
                                 save_button |
-#endif
                                     QMessageBox::Yes | QMessageBox::No);
   if (n == QMessageBox::Yes) {
     goto start_elevate_process;
   } else {
-#ifdef Q_OS_UNIX
     if (n == QMessageBox::Save) {
       core_process->save_elevated = true;
       goto start_elevate_process;
     }
-#endif
     if (reason == 3) {
       Configs::dataStore->remember_spmode.removeAll("vpn");
     }
