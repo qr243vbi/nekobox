@@ -514,7 +514,7 @@ namespace Configs {
 
     QString MieruBean::ToShareLink() const {
         QUrl url;
-        url.setScheme("mieru");
+        url.setScheme("mierus");
         add_default_fields(url, this);
         QUrlQuery q;
         add_username_password(url, this);

@@ -193,8 +193,8 @@ namespace Subscription {
             if (!ok) return;
         }
 
-        // Mieru simple 
-        if (str.startsWith("mierus://")) {
+        // Mieru
+        if (str.startsWith("mierus://") || str.startsWith("mieru://")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
             auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
             if (!ok) return;
