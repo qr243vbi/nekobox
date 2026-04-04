@@ -35,8 +35,8 @@ func To[T any](v T) *T {
 func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported, error) {
 	out := new(gen.Supported)
 	ok := true
-	if (in.Type == "naive"){
-		ok = CheckNaive();
+	if in.Type == "naive" {
+		ok = CheckNaive()
 	}
 	out.Ok = ok
 	return out, nil

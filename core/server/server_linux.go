@@ -24,8 +24,12 @@ func runAdmin() (int, error) {
 	return 0, nil
 }
 
-func checkTaskScheduler() {
+func checkTaskScheduler(save bool) error {
+	return nil
+}
 
+func doRun(_ string) error {
+	return nil
 }
 
 func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {

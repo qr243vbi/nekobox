@@ -187,6 +187,7 @@ add_custom_command(
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
 
+
 if (UNIX)
     install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
 endif()

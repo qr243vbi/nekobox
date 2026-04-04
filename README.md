@@ -134,6 +134,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [AllySummers/docker-cache](https://github.com/AllySummers/docker-cache)
 - [shellescape](https://al.essio.dev/pkg/shellescape)
 - [go-winio](https://github.com/Microsoft/go-winio)
+- [taskmaster](https://github.com/giert/taskmaster)
 
 ## FAQ
 **What is AppImage?** <br/>

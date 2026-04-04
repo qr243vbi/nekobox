@@ -72,16 +72,29 @@ func RunCore(addr net.Addr, _debug *bool) {
 }
 
 func main() {
-	if len(os.Args) > 1 {
-		if os.Args[1] == "-installer-mode" {
-			fmt.Println("nekobox_core installer mode")
-			InstallerMode()
-			return
-		}
-		if os.Args[1] == "sing-box" {
-			os.Args = os.Args[1:]
-			main_sing.MainFunc()
-			return
+	{
+		len_os_args := len(os.Args)
+		if len_os_args > 1 {
+			first_arg := os.Args[1]
+			if first_arg == "sing-box" {
+				os.Args = os.Args[1:]
+				main_sing.MainFunc()
+				return
+			}
+			if runtime.GOOS == "windows" {
+				switch first_arg {
+				case "launch-server-mode":
+					if len_os_args > 2 {
+						fmt.Printf("nekobox_core launcher mode")
+						doRun(os.Args[2])
+						return
+					}
+				case "-installer-mode":
+					fmt.Println("nekobox_core installer mode")
+					InstallerMode()
+					return
+				}
+			}
 		}
 	}
 
@@ -96,9 +109,14 @@ func main() {
 	_arg0 := flag.String("argv0", os.Args[0], "Replace first argument")
 	_ruleset_cachedir := flag.String("ruleset-cache-directory", "", "Set ruleset cache directory")
 
-	if runtime.GOOS == "linux" {
-		_save = flag.Bool("save", false, "Set admin capabilities to executable")
+	var comment string
+	if runtime.GOOS == "windows" {
+		comment = "Register windows elevated task for executable"
+	} else {
+		comment = "Set admin capabilities to executable"
 	}
+	_save = flag.Bool("save", false, comment)
+
 	_admin = flag.Bool("admin", false, "Run in admin mode")
 
 	_waitpid = flag.Int("waitpid", 0, "After pid finished, force quit")
@@ -107,6 +125,16 @@ func main() {
 	redirectError := flag.String("redirect-error", "", "Path to redirect stderr (e.g. named pipe or file)")
 
 	flag.CommandLine.Parse(os.Args[1:])
+
+	{
+		// works on windows only
+		err := checkTaskScheduler(*_save)
+		if err != nil {
+			if *_debug {
+				log.Printf("%v", err)
+			}
+		}
+	}
 
 	os.Args[0] = *_arg0
 
@@ -119,10 +147,9 @@ func main() {
 
 	internal.SetRulesetCachedir(cachedir)
 
-	if runtime.GOOS == "linux" {
-		if *_admin {
-			restartAsAdmin(*_save)
-		}
+	if *_admin {
+		// works on linux only
+		restartAsAdmin(*_save)
 	}
 
 	// Redirect stderr and logs if flag is provided

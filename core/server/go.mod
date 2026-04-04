@@ -3,7 +3,6 @@ module nekobox_core
 go 1.25.0
 
 require (
-	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
 	github.com/apache/thrift v0.22.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofrs/uuid/v5 v5.4.0
@@ -17,6 +16,11 @@ require (
 	golang.org/x/sys v0.42.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
+)
+
+require (
+	github.com/rickb777/date v1.21.1 // indirect
+	github.com/rickb777/plural v1.4.2 // indirect
 )
 
 require (
@@ -43,6 +47,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/gaissmai/bart v0.18.0 // indirect
+	github.com/giert/taskmaster v0.0.0-20251117163809-2ec4a61354ef
 	github.com/go-chi/chi/v5 v5.2.5 // indirect
 	github.com/go-chi/render v1.0.3 // indirect
 	github.com/go-json-experiment/json v0.0.0-20250813024750-ebf49471dced // indirect
@@ -165,7 +170,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/grpc v1.79.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
-	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.77 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
