@@ -18,6 +18,12 @@ function(nkr_add_compile_definitions arg)
     add_compile_definitions(${ARGV})
 endfunction()
 
+function(install_if_exists arg dest)
+    if(EXISTS "${arg}")
+        install(FILES "${arg}" DESTINATION "${dest}")
+    endif()
+endfunction()
+
 function(remove_rpath target_name)
     find_program(CHRPATH_EXECUTABLE chrpath)
 

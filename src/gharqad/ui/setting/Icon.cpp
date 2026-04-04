@@ -71,8 +71,8 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
 InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain)  {
   CHECK_SETTINGS_ACCESS
   ui->setupUi(this);
-  ui->textBrowser->document()->setDefaultFont(qApp->font());
-  ui->textBrowser->setOpenExternalLinks(true);
+ // ui->textBrowser->document()->setDefaultFont(qApp->font());
+ // ui->textBrowser->setOpenExternalLinks(true);
   this->setWindowTitle(software_name);
   SET_TRAFFIC_STAT(direct, down, ReadableSize)
   SET_TRAFFIC_STAT(direct, up, ReadableSize)
@@ -104,5 +104,22 @@ InfoDialog::~InfoDialog(){
 }
 
 void InfoDialog::accept(){
+
+}
+
+
+AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent), ui(new Ui::AboutMain)  {
+  ui->setupUi(this);
+  ui->textBrowser->setText(ReadFileText(getResource("about.html")));
+  ui->textBrowser->document()->setDefaultFont(qApp->font());
+  ui->textBrowser->setOpenExternalLinks(true);
+  this->setWindowTitle(software_name);
+}
+
+AboutDialog::~AboutDialog(){
+
+}
+
+void AboutDialog::accept(){
 
 }

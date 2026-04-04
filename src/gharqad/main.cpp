@@ -43,10 +43,10 @@
 #include <nekobox/global/GuiUtils.hpp>
 
 QVariantMap ruleSetMap;
-MainWindow *mainwindow;
+QWidget *mainwindow;
 
 MainWindow *GetMainWindow() {
-    return mainwindow;
+    return (MainWindow*)mainwindow;
 }
 
 #ifdef Q_OS_UNIX
@@ -63,6 +63,7 @@ QDBusPendingReply<> OrgFreedesktopPortalRequestInterface::Close()
 #define disable_run_admin windows_no_admin
 
 void signal_handler(int signum) {
+    auto mainwindow = GetMainWindow();
     if (mainwindow != nullptr) {
         mainwindow->prepare_exit();
         qApp->quit();

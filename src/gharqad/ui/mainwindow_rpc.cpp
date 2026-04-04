@@ -291,15 +291,18 @@ void MainWindow::url_test_current() {
                 MW_show_log(QString("UrlTest error: %1").arg(
                     QString::fromStdString(results_0.error)));
             }
-            if (latency <= 0) {
-                ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
-            } else if (latency > 0) {
-                ui->label_running->setText(tr("Test Result") + ": " + 
-                    QString::number(latency) + QString(" ms"));
-            }
             auto profile = Configs::profileManager->GetProfile(running->id);
-            profile->latencyInt = latency;
-            refresh_proxy_list(running->id);
+            if (profile != nullptr){
+                if (latency <= 0) {
+                    ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
+                    profile->latencyInt = -1;
+                } else if (latency > 0) {
+                    ui->label_running->setText(tr("Test Result") + ": " + 
+                        QString::number(latency) + QString(" ms"));
+                    profile->latencyInt = latency;
+                }
+                refresh_proxy_list(running->id);
+            }
         });
     });
 }

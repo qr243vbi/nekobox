@@ -500,9 +500,10 @@ else()
 endif()
 
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
-set(START  "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
-set(MAIN   "${CMAKE_INSTALL_PREFIX}/${PROGRAMPREFIX}/nekobox")
-set(ICON   "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
+
+get_filename_component(START "${CMAKE_INSTALL_BINDIR}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(MAIN "${PROGRAMPREFIX}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(ICON "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 
 # Configure the desktop file
 configure_file(
@@ -565,11 +566,8 @@ install(FILES
     "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
     "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public")
 
-set(EMOJI_FONT ${CMAKE_SOURCE_DIR}/res/public/emoji.ttf)
-if(EXISTS "${EMOJI_FONT}")
-install(FILES
-    "${EMOJI_FONT}" DESTINATION "${PROGRAMPREFIX}/public")
-endif()
+install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
+install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")
 
 endif()
 

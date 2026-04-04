@@ -27,175 +27,161 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QToolButton" name="toolButton_program">
-        <property name="toolTip">
-         <string>NekoBox</string>
+       <widget class="QGroupBox" name="toolbox_group">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-QToolButton::menu-indicator {
-subcontrol-origin: border;
-subcontrol-position: bottom right;
-right: 2px;
-bottom: 3px;
-}</string>
+        <property name="title">
+         <string/>
         </property>
-        <property name="text">
-         <string>NekoBox</string>
+        <property name="flat">
+         <bool>true</bool>
         </property>
-        <property name="icon">
-         <iconset theme="b-system-run"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_server">
-        <property name="toolTip">
-         <string>Profiles</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-QToolButton::menu-indicator {
-subcontrol-origin: border;
-subcontrol-position: bottom right;
-right: 2px;
-bottom: 3px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Profiles</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-network-server"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_preferences">
-        <property name="toolTip">
-         <string>Settings</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-QToolButton::menu-indicator {
-subcontrol-origin: border;
-subcontrol-position: bottom right;
-right: 2px;
-bottom: 3px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Settings</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-preferences"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_routing">
-        <property name="toolTip">
-         <string>Routing</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-QToolButton::menu-indicator {
-subcontrol-origin: border;
-subcontrol-position: bottom right;
-right: 2px;
-bottom: 3px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Routing</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-network-routing"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_update">
-        <property name="toolTip">
-         <string>Update</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-QToolButton::menu-indicator {
-subcontrol-origin: border;
-subcontrol-position: bottom right;
-right: 2px;
-bottom: 3px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Update</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-system-software-update"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="toolButton_program">
+           <property name="toolTip">
+            <string>NekoBox</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>NekoBox</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-system-run"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_server">
+           <property name="toolTip">
+            <string>Profiles</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Profiles</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-network-server"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_preferences">
+           <property name="toolTip">
+            <string>Settings</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Settings</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-preferences"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_routing">
+           <property name="toolTip">
+            <string>Routing</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Routing</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-network-routing"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_update">
+           <property name="toolTip">
+            <string>Update</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Info</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-system-software-update"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -632,7 +618,7 @@ font: inherit;</string>
      <x>0</x>
      <y>0</y>
      <width>843</width>
-     <height>33</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -764,11 +750,13 @@ font: inherit;</string>
     </widget>
     <addaction name="menuContextProfiles"/>
    </widget>
-   <widget class="QMenu" name="menuInformation">
+   <widget class="QMenu" name="fetch_tool">
     <property name="title">
      <string>Information</string>
     </property>
     <addaction name="menu_information"/>
+    <addaction name="menu_update"/>
+    <addaction name="menu_about"/>
    </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
@@ -777,7 +765,7 @@ font: inherit;</string>
    <addaction name="menuRouting_Menu"/>
    <addaction name="menuTest"/>
    <addaction name="menuContext"/>
-   <addaction name="menuInformation"/>
+   <addaction name="fetch_tool"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -1242,6 +1230,21 @@ font: inherit;</string>
    </property>
   </action>
   <action name="menu_information_2">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="menu_information">
+   <property name="text">
+    <string>Statistics</string>
+   </property>
+  </action>
+  <action name="menu_update">
+   <property name="text">
+    <string>Check for updates</string>
+   </property>
+  </action>
+  <action name="menu_about">
    <property name="text">
     <string>About</string>
    </property>

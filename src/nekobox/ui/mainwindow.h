@@ -1,3 +1,6 @@
+#ifndef MAIN_WINDOW_HEADER
+#define MAIN_WINDOW_HEADER
+
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -223,6 +226,8 @@ private slots:
 
     void on_menu_information_triggered();
 
+    void on_menu_about_triggered();
+
     void on_menu_routing_settings_triggered();
 
     void on_menu_vpn_settings_triggered();
@@ -298,6 +303,7 @@ private:
     QMutex speedtestRunning;
     QMutex logLock;
     bool logClear = false;
+    bool force_hide_text_under_buttons = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
@@ -439,7 +445,7 @@ protected:
 };
 
 
-extern MainWindow *mainwindow;
+extern QWidget *mainwindow;
 
 MainWindow *GetMainWindow() ;
 
@@ -475,3 +481,7 @@ typedef ::OrgFreedesktopPortalRequestInterface Request;
 }
 }
 #endif
+
+
+
+#endif // MAIN_WINDOW_HEADER

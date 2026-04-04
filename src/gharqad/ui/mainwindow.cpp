@@ -417,6 +417,9 @@ void MainWindow::set_icons_from_settings() {
 void MainWindow::set_icons_from_flag(bool text_under_buttons) {
   QSize button_size;
   Qt::ToolButtonStyle button_style;
+  if (force_hide_text_under_buttons){
+    text_under_buttons = false;
+  }
   if (text_under_buttons) {
     button_size.setHeight(24);
     button_size.setWidth(24);
@@ -663,9 +666,25 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
   connect(ui->data_view, &QTextBrowser::textChanged, [this]() {
     QTextDocument *document = ui->data_view->document();
-    ui->data_view->setMaximumHeight(document->size().height());
+    int height, toolbox_height;
+    toolbox_height = ui->toolbox_group->height();
+    ui->data_view->setMaximumHeight(height = document->size().height());
+    bool document_isempty = document->isEmpty();
+    if (force_hide_text_under_buttons){
+      if (document_isempty || (toolbox_height > height)){
+        force_hide_text_under_buttons = false;
+        set_icons();
+      }
+    } else {
+      if (!document_isempty){
+        if (toolbox_height < height){
+          force_hide_text_under_buttons = true;
+          set_icons();
+        }
+      }
+    }
     if (!searchEnabled) {
-      if (document->isEmpty()) {
+      if (document_isempty) {
         ui->url_test_button->show();
       } else {
         ui->url_test_button->hide();
@@ -850,7 +869,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->toolButton_server->setMenu(ui->menu_profiles);
   ui->toolButton_routing->setMenu(ui->menuRouting_Menu);
   ui->url_test_button->setMenu(ui->menuTest);
-  ui->toolButton_update->setMenu(ui->menu_information);
+  ui->toolButton_update->setMenu(ui->fetch_tool);
 
   {
   auto menu_profiles = ui->menu_profiles;
@@ -887,7 +906,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
-  connect(ui->toolButton_update, &QToolButton::clicked, this,
+  connect(ui->menu_update, &QToolButton::clicked, this,
           [=, this] { runOnNewThread([=, this] { CheckUpdate(true); }); });
 #ifndef SKIP_JS_UPDATER
   if (!QFile::exists(getResource("check_new_release.js"))) {
@@ -900,7 +919,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   goto skip_updater_hide;
 updater_hide:
-  //ui->toolButton_update->hide();
+  ui->fetch_tool->removeAction(ui->menu_update);
   Configs::windowSettings->startup_update = 4;
 
 skip_updater_hide:
@@ -1985,6 +2004,11 @@ void MainWindow::on_menu_information_triggered() {
   USE_DIALOG(InfoDialog)
 }
 
+
+void MainWindow::on_menu_about_triggered() {
+  USE_DIALOG(AboutDialog)
+}
+
 void MainWindow::on_menu_manage_groups_triggered() {
   USE_DIALOG(DialogManageGroups)
 }
@@ -2431,8 +2455,8 @@ void MainWindow::setupConnectionList() {
 }
 
 void MainWindow::UpdateConnectionList(
-    const QMap<QString, Stats::ConnectionMetadata> &toUpdate,
-    const QMap<QString, Stats::ConnectionMetadata> &toAdd) {
+  const QMap<QString, Stats::ConnectionMetadata>& toUpdate, const QMap<QString, Stats::ConnectionMetadata>& toAdd){
+
   ui->connections->setUpdatesEnabled(false);
   for (int row = 0; row < ui->connections->rowCount(); row++) {
     auto key = ui->connections->item(row, 0)->data(Stats::IDKEY).toString();
