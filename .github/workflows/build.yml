@@ -268,7 +268,7 @@ jobs:
        #   . ./script/upload_aur.sh
 
       - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        uses: KSXGitHub/github-actions-deploy-aur@master
         if: github.event.inputs.publish_aur == 'true'
         with:
            pkgname: nekobox
@@ -280,7 +280,7 @@ jobs:
            ssh_keyscan_types: rsa,ecdsa,ed25519
 
       - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        uses: KSXGitHub/github-actions-deploy-aur@master
         if: github.event.inputs.publish_aur == 'true'
         with:
            pkgname: nekobox-git
