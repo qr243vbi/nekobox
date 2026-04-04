@@ -920,7 +920,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   ui->menubar->setVisible(false);
 #ifndef SKIP_UPDATE_BUTTON
-  connect(ui->menu_update, &QToolButton::clicked, this,
+  connect(ui->menu_update, &QAction::triggered, this,
           [=, this] { runOnNewThread([=, this] { CheckUpdate(true); }); });
 #ifndef SKIP_JS_UPDATER
   if (!QFile::exists(getResource("check_new_release.js"))) {

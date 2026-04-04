@@ -97,6 +97,13 @@ fi
 cd "$CURDIR"
 pwd
 
+if [[ command -v upx ]]
+then
+upx -9 "$DEST/nekobox.exe"         ||:
+upx -9 "$DEST/nekobox_core.exe"    ||:
+upx -9 "$DEST/updater.exe"         ||:
+fi
+
 if [[ "$SKIP_NSIS" != "true" ]]
 then
 makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
