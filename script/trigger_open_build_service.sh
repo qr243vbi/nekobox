@@ -25,8 +25,11 @@ if os.path.exists('nekobox.changes'):
  f.close()
 msg='''${MESSAGE}'''
 import textwrap
+def wrap_preserve_newlines(text, width):
+ return "\n".join(textwrap.fill(line, width
+   ) if line.strip() else "" for line in text.splitlines())
 if len(msg) > 0 and 'Update to ${pkgver}' not in text:
- msg = textwrap.fill(msg, 65)
+ msg = wrap_preserve_newlines(msg, 65)
  if msg[-1] != '\n':
   msg = msg + '\n'
  k='-------------------------------------------------------------------'
