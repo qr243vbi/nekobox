@@ -14,6 +14,8 @@ curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec -o nekob
 curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-core.spec.in -o nekobox-core.spec.in
 curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-qt.spec.in -o nekobox-qt.spec.in
 
+sed -i "s@Version:.*@Version:        $pkgver@g;" nekobox.spec
+
 file_0="$(basename "${source_0}")"
 
 curl -L "${source_0}" -o "${file_0}"
