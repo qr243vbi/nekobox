@@ -97,7 +97,7 @@ fi
 cd "$CURDIR"
 pwd
 
-if [[ command -v upx ]]
+if command -v upx
 then
 upx -9 "$DEST/nekobox.exe"         ||:
 upx -9 "$DEST/nekobox_core.exe"    ||:
