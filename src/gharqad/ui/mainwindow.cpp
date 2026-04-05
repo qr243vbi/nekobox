@@ -619,16 +619,16 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(themeManager, &ThemeManager::themeChanged, this,
           [=, this](const QString &theme) {
-            if (theme.toLower().contains("vista")) {
+            /*if (theme.toLower().contains("vista")) {
               // light themes
               new SyntaxHighlighter(false, qvLogDocument);
             } else if (theme.toLower().contains("qdarkstyle")) {
               // dark themes
               new SyntaxHighlighter(true, qvLogDocument);
-            } else {
+            } else { */
               // bi-mode themes, follow system preference
               new SyntaxHighlighter(isDarkMode(), qvLogDocument);
-            }
+            //}
           });
 
 
