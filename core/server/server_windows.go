@@ -476,12 +476,23 @@ func runAdmin() (int, error) {
 
 	var ret int
 
-	func() {
-		ret, err = runShellExec(executablePath, formattedString, true)
-		wg.Done()
-		wg.Done()
-	}()
-	wg.Wait()
+	pipesDone := make(chan struct{})
+    go func() {
+        wg.Wait()
+        close(pipesDone)
+    }()
+
+    cmdDone := make(chan struct{})
+    go func() {
+        ret, err = runShellExec(executablePath, formattedString, true)
+        close(cmdDone)
+    }()
+
+    select {
+        case <-cmdDone:
+        case <-pipesDone:
+    }
+
 	return ret, err
 }
 
