@@ -1,6 +1,6 @@
 #ifdef _WIN32
-#include <winsock2.h>
 #include <windows.h>
+#include <winsock2.h>
 #endif
 
 #include <3rdparty/qv2ray/wrapper.hpp>
@@ -152,11 +152,13 @@ void MainWindow::changeEvent(QEvent *event) {
     this->ui->system_dns->setFont(font);
 
     QColor c = ui->label_inbound->palette().color(QPalette::WindowText);
-    QString stylesheet = QString("border: 3px solid %1; border-radius: 7px;").arg(c.name());
+    QString stylesheet =
+        QString("border: 3px solid %1; border-radius: 7px;").arg(c.name());
     ui->label_inbound->setStyleSheet(stylesheet);
     ui->label_speed->setStyleSheet(stylesheet);
     ui->label_running->setStyleSheet(stylesheet);
-    ui->toolbox_group->setStyleSheet("QGroupBox { background: transparent; border: none; }");
+    ui->toolbox_group->setStyleSheet(
+        "QGroupBox { background: transparent; border: none; }");
     break;
   }
   default:
@@ -594,7 +596,7 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
     software_name = (Configs::windowSettings->program_name);
     if (software_name.trimmed() == "") {
-      globalSettings.value("program_name", "NekoBox").toString();
+      globalSettings.value("program_name", "Iblis").toString();
     }
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
@@ -619,18 +621,20 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(themeManager, &ThemeManager::themeChanged, this,
           [=, this](const QString &theme) {
-            /*if (theme.toLower().contains("vista")) {
+            int mode = ThemeManager::getMode(theme);
+            bool darkMode = false;
+            if (mode == 2) {
               // light themes
-              new SyntaxHighlighter(false, qvLogDocument);
-            } else if (theme.toLower().contains("qdarkstyle")) {
+              darkMode = false;
+            } else if (mode == 1) {
               // dark themes
-              new SyntaxHighlighter(true, qvLogDocument);
-            } else { */
+              darkMode = true;
+            } else {
+              darkMode = isDarkMode();
               // bi-mode themes, follow system preference
-              new SyntaxHighlighter(isDarkMode(), qvLogDocument);
-            //}
+            }
+            new SyntaxHighlighter(darkMode, qvLogDocument);
           });
-
 
   updateEmojiFont();
 
@@ -808,17 +812,16 @@ MainWindow::MainWindow(QWidget *parent)
     qWarning() << "[Warn] Core is taking too much time to start";
 #endif
 
-
   themeManager->ApplyTheme(theme);
-    auto font = qApp->font();
-  
+  auto font = qApp->font();
+
   if (!font_family.isEmpty()) {
     font.setFamily(font_family);
   }
   if (font_size != 0) {
     font.setPointSize(font_size);
   }
-    qApp->setFont(font);
+  qApp->setFont(font);
 
   parallelCoreCallPool->setMaxThreadCount(10); // constant value
   //
