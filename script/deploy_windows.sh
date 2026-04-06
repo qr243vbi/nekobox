@@ -100,8 +100,9 @@ pwd
 if command -v upx
 then
 #upx -9 "$DEST/nekobox.exe"         ||:
-upx -9 "$DEST/nekobox_core.exe"    ||:
-upx -9 "$DEST/updater.exe"         ||:
+pushd "$DEST"
+upx *.dll *.exe ||:
+popd
 fi
 
 if [[ "$SKIP_NSIS" != "true" ]]
