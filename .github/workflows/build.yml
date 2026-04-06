@@ -18,6 +18,11 @@ on:
         type: boolean
         default: false
         required: false
+      binary_only:
+        description: "Skip building sources, distribute only binary package"
+        type: boolean
+        default: false
+        required: false
       skip_updater:
         description: "Ship binaries without updater"
         type: boolean
@@ -176,7 +181,7 @@ jobs:
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Publish sources
-        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
         env:
           INPUT_VERSION: ${{ github.event.inputs.tag }}
           MESSAGE: ${{ github.event.inputs.text }}
@@ -204,7 +209,7 @@ jobs:
     needs:
       - build-go
     runs-on: ubuntu-latest
-    if: github.event.inputs.publish == 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
@@ -390,10 +395,10 @@ jobs:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
-      - name: Install Zip, Curl, Jq
+      - name: Install Zip, Curl, Jq, UPX
         uses: ConorMacBride/install-package@v1
         with:
-          choco: zip curl jq
+          choco: zip curl jq upx
 
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
