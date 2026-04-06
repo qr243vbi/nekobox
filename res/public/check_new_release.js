@@ -192,9 +192,12 @@ if (!resp.error){
 }
 
 if (resp_error){
-    warning(
-        translate('Requesting update error: %1').replace('%1', resp_error),
-        translate('Update'));
+    if (ButtonClicked){
+        warning(
+            translate('Requesting update error: %1').replace('%1', resp_error),
+            NKR_SOFTWARE_NAME
+        );
+    }
 } else {
     var array = JSON.parse(resp.text);
 	var bound = '';
@@ -262,7 +265,7 @@ log(translate("assets version is" + (is_newer ? "": " not") + " newer" + ((is_ne
 
 if (release_download_url_flag || !is_newer){
     if (ButtonClicked){
-        warning(translate("No update"), translate("Update"));
+        warning(translate("No update"), NKR_SOFTWARE_NAME);
     }
 	is_newer = false;
 } else {
@@ -274,7 +277,7 @@ if (release_download_url_flag || !is_newer){
     let index = ask(
         translate("Update found: %1\nRelease note:\n%2").
             replace('%1', assets_name).replace('%2', release_note),
-        translate("Update"),
+        NKR_SOFTWARE_NAME,
             array
     );
     if (index == 1){
@@ -303,7 +306,7 @@ if (release_download_url_flag || !is_newer){
         if (errors == ''){
             let index2 = ask(
                 translate("Update is ready, restart to install?"),
-                translate("Update"),
+                NKR_SOFTWARE_NAME,
                 [translate("No"), translate("Yes")]
             );
 			if (index2 == 1){
