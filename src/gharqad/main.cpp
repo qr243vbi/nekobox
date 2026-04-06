@@ -414,7 +414,12 @@ int main(int argc, char** argv) {
         #endif
         s->close();
         // raise main window
-        MW_dialog_message("", "Raise");
+        MainWindow * window = GetMainWindow();
+        if (window != nullptr){
+            do {
+                ToggleWindow(window);
+            } while (window->isHidden());
+        }
     });
     QObject::connect(qApp, &QApplication::aboutToQuit, [&]
     {

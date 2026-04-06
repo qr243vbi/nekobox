@@ -1930,9 +1930,6 @@ void MainWindow::dialog_message_impl(const QString &sender,
     this->exit_reason = 2;
     on_menu_exit_triggered();
   }
-  if (info == "Raise") {
-    ToggleWindow(this);
-  }
   if (info == "NeedAdmin") {
     get_elevated_permissions();
   }
