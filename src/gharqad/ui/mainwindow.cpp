@@ -1,5 +1,4 @@
 #ifdef _WIN32
-#include <windows.h>
 #include <winsock2.h>
 #endif
 
@@ -38,26 +37,27 @@
 #include <qnamespace.h>
 #include <set>
 
-#include "nekobox/ui/group/dialog_manage_groups.h"
-#include "nekobox/ui/profile/dialog_edit_profile.h"
-#include "nekobox/ui/setting/Icon.hpp"
-#include "nekobox/ui/setting/ThemeManager.hpp"
-#include "nekobox/ui/setting/dialog_basic_settings.h"
-#include "nekobox/ui/setting/dialog_hotkey.h"
-#include "nekobox/ui/setting/dialog_manage_routes.h"
-#include "nekobox/ui/setting/dialog_vpn_settings.h"
+#include <nekobox/ui/group/dialog_manage_groups.h>
+#include <nekobox/ui/profile/dialog_edit_profile.h>
+#include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/ui/setting/ThemeManager.hpp>
+#include <nekobox/ui/setting/dialog_basic_settings.h>
+#include <nekobox/ui/setting/dialog_hotkey.h>
+#include <nekobox/ui/setting/dialog_manage_routes.h>
+#include <nekobox/ui/setting/dialog_vpn_settings.h>
 
-#include "3rdparty/QrDecoder.h"
-#include "3rdparty/qrcodegen.hpp"
-#include "3rdparty/qv2ray/v2/ui/LogHighlighter.hpp"
-#include "nekobox/ui/group/dialog_edit_group.h"
+#include <3rdparty/QrDecoder.h>
+#include <3rdparty/qrcodegen.hpp>
+#include <3rdparty/qv2ray/v2/ui/LogHighlighter.hpp>
+#include <nekobox/ui/group/dialog_edit_group.h>
 
 #ifdef Q_OS_WIN
-#include "3rdparty/WinCommander.hpp"
-#include "nekobox/sys/windows/WinVersion.h"
+#include <windows.h>
+#include <3rdparty/WinCommander.hpp>
+#include <nekobox/sys/windows/WinVersion.h>
 #else
 #ifdef Q_OS_UNIX
-#include "nekobox/sys/linux/LinuxCap.h"
+#include <nekobox/sys/linux/LinuxCap.h>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
@@ -81,8 +81,8 @@
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
-#include "nekobox/global/DeviceDetailsHelper.hpp"
-#include "nekobox/sys/Settings.h"
+#include <nekobox/global/DeviceDetailsHelper.hpp>
+#include <nekobox/sys/Settings.h>
 
 #ifdef USE_HOTKEYS
 #include <3rdparty/QHotkey/QHotkey/qhotkey.h>
