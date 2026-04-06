@@ -20,8 +20,8 @@ class ResourceManager : public JsonStore {
 public:
     DECLARE_STORE_TYPE(ResourceManager)
   ResourceManager();
-//  QString core_path;
-  QString resources_path;
+  QString core_path = "";
+  QString resources_path = "";
   QString latest_path = "";
   QString getLink(QString str);
   bool saveLink(QString str, QString path);
