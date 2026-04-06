@@ -22,7 +22,7 @@ static inline QString _ent(QString name) {
 namespace Configs {
 
 DECL_MAP(ResourceManager)
-    ADD_MAP("core_path", core_path, string);
+ //   ADD_MAP("core_path", core_path, string);
     ADD_MAP("resources_path", resources_path, string);
     ADD_MAP("latest_path", latest_path, string);
 STOP_MAP
@@ -61,9 +61,14 @@ bool ResourceManager::saveLink(QString str, QString path){
   if (symlinks_supported) {
     QString file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.lnk"));
     QFile::remove(file);
+    if (path == "") return true;
     return createSymlink(latest_path, file);
   } else {
     QFile file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.txt"));
+    if (path == "") {
+      file.remove();
+      return true;
+    }
     return WriteFileText(file, latest_path);
   }
 }

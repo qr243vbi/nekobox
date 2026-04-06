@@ -393,7 +393,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(Y)
     
 
-    QString core_path = Configs::resourceManager->core_path;
+    QString core_path = Configs::resourceManager->getLink(NKR_CORE_NAME);
+    CACHE.core_path_old = core_path;
     QString icons_path = Configs::resourceManager->resources_path;
     ui->core_path->setText(core_path);
     ui->icons_path->setText(icons_path);
@@ -526,10 +527,11 @@ void DialogBasicSettings::accept() {
     } else {
         core_path_text = ui->core_path->text();
     }
-    if (Configs::resourceManager->core_path != core_path_text){
+    Configs::resourceManager->saveLink(NKR_CORE_NAME, core_path_text);
+    core_path_text = Configs::resourceManager->getLink(NKR_CORE_NAME);
+    if (core_path_text != CACHE.core_path_old){
         need_save_manager = true;
         need_core_restart = true;
-        Configs::resourceManager->core_path = core_path_text;
     }
     if (ui->default_icons_path->isChecked()){
         resources_path = "";

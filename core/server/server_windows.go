@@ -68,10 +68,10 @@ func shellExecuteEx(sei *ShellExecuteInfo) error {
 	return nil
 }
 
-func registerTask(taskName, path, pipe string) {
+func registerTask(taskName, path, pipe string) error {
 	svc, err := taskmaster.Connect()
 	if err != nil {
-		log.Fatal(err)
+		return (err)
 	}
 
 	def := svc.NewTaskDefinition()
@@ -99,10 +99,11 @@ func registerTask(taskName, path, pipe string) {
 
 	_, _, err = svc.CreateTask(taskName, def, true)
 	if err != nil {
-		log.Fatal(err)
+		return (err)
 	}
 
 	fmt.Printf("Windows task %s created successfully!", taskName)
+	return nil
 }
 
 func getExitCode(hProcess syscall.Handle) (uint32, error) {
@@ -180,33 +181,34 @@ func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup, defaultTi
 	return nil
 }
 
-func unregisterTask(TaskName string) {
+func unregisterTask(TaskName string) error {
 	if strings.HasPrefix(TaskName, "\\Iblis_") {
 		if strings.HasSuffix(TaskName, "_UAC") {
 			svc, err := taskmaster.Connect()
 			if err != nil {
-				log.Fatal(err)
+				return err
 			}
 			err = svc.DeleteTask(TaskName)
 			if err != nil {
-				log.Fatal(err)
+				return err
 			}
 		}
 	}
+	return nil
 }
 
-func taskExists(taskName string) bool {
+func taskExists(taskName string) (bool, error) {
 	svc, err := taskmaster.Connect()
 	if err != nil {
-		log.Fatal(err)
+		return false, err
 	}
 
 	_, err = svc.GetRegisteredTask(taskName)
 	if err != nil {
 		// Task does not exist
-		return false
+		return false, nil
 	}
-	return true
+	return true, nil
 }
 
 func checkTaskScheduler(save bool) error {
@@ -233,11 +235,12 @@ func checkTaskScheduler(save bool) error {
 		}
 
 		if elevated {
-			if taskExists(TaskName) {
+			exists, _ := taskExists(TaskName)
+			if exists {
 				TaskName = ""
-				goto elevated_pointer
 			}
-			return nil
+			err = nil
+			goto elevated_pointer
 		}
 
 		var wg sync.WaitGroup
@@ -274,9 +277,9 @@ elevated_pointer:
 	if elevated {
 		log.Printf("Defer Task Scheduler")
 		if TaskName != "" {
-			unregisterTask(TaskName)
+			err = unregisterTask(TaskName)
+			os.Remove(path)
 		}
-
 		if save {
 			randstr, _ := RandString(12)
 			input_pipe := `\\.\pipe\iblis_task_input_` + randstr
@@ -284,18 +287,17 @@ elevated_pointer:
 			executable, _ := os.Executable()
 
 			var cfg taskScheduleConfig
-			path := executable + ".elevated_launcher"
 			cfg.Exec = executable
 			cfg.Stdin = input_pipe
 			cfg.Task = TaskName
 			data, err := json.MarshalIndent(cfg, "", "  ")
 			if err != nil {
-				log.Fatal(err)
+				return (err)
 			}
 			if err := os.WriteFile(path, data, 0644); err != nil {
-				log.Fatal(err)
+				return (err)
 			}
-			registerTask(TaskName, executable, input_pipe)
+			err = registerTask(TaskName, executable, input_pipe)
 		}
 	}
 	return err

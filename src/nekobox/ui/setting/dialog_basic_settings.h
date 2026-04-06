@@ -90,6 +90,7 @@ private:
     struct {
         QString language_code;
         QString custom_inbound;
+        QString core_path_old;
         bool needRestart = false;
         bool updateDisableTray = false;
         bool updateSystemDns = false;

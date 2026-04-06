@@ -218,19 +218,8 @@ QString getApplicationPath() { return software_path; }
 #endif
 
 QString getCorePath() {
-  QString core_path = Configs::resourceManager->core_path;
-  //   qDebug() << "Got Core Path From Settings: " << core_path;
-  if (core_path == "") {
-    core_path = getRootResource(
-#ifdef Q_OS_WIN
-        "nekobox_core.exe"
-#else
-        "nekobox_core"
-#endif
-    );
+  return getResource(  NKR_CORE_NAME );
     //       qDebug() << "Default Instead: " << core_path;
-  }
-  return core_path;
 }
 
 bool isFileAppendable(QString filePath) {
