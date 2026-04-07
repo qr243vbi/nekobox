@@ -97,12 +97,15 @@ fi
 cd "$CURDIR"
 pwd
 
+if [[ "$SKIP_UPX" != "true" ]]
+then
 if command -v upx
 then
 #upx -9 "$DEST/nekobox.exe"         ||:
 pushd "$DEST"
 upx *.dll *.exe ||:
 popd
+fi
 fi
 
 if [[ "$SKIP_NSIS" != "true" ]]

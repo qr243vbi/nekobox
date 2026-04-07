@@ -155,9 +155,6 @@ void loadTranslate(QString locale) {
 
 int main(int argc, char** argv) {
     auto unicodepath = boost::dll::program_location();
-
-    root_directory = QString::fromUtf8(unicodepath.parent_path().c_str());
-    software_path  = QString::fromUtf8(unicodepath.c_str());
 	// Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
@@ -167,10 +164,12 @@ int main(int argc, char** argv) {
         printf("WSAStartup failed: %d\n", result);
         return 1;
     }
-
-#endif
-#ifdef Q_OS_LINUX
+    root_directory = QString::fromWCharArray(unicodepath.parent_path().c_str());
+    software_path  = QString::fromWCharArray(unicodepath.c_str());
+#else
     Unix_SetCrashHandler();
+    root_directory = QString::fromUtf8(unicodepath.parent_path().c_str());
+    software_path  = QString::fromUtf8(unicodepath.c_str());
 #endif
 
 

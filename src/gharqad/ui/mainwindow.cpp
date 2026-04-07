@@ -763,7 +763,7 @@ MainWindow::MainWindow(QWidget *parent)
               } else {
                 QString tempdir =
 #ifdef Q_OS_WIN
-                    "\\\\.\\pipe";
+                    QDir::tempPath();
 #else
                     QDir::tempPath() + QDir::separator() + GetRandomString(8);
 #endif
