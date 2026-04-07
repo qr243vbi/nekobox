@@ -126,16 +126,6 @@ func main() {
 
 	flag.CommandLine.Parse(os.Args[1:])
 
-	{
-		// works on windows only
-		err := checkTaskScheduler(*_save)
-		if err != nil {
-			if *_debug {
-				log.Printf("%v", err)
-			}
-		}
-	}
-
 	os.Args[0] = *_arg0
 
 	var cachedir string
@@ -202,6 +192,13 @@ func main() {
 	}()
 
 	if runtime.GOOS == "windows" {
+		err := checkTaskScheduler(*_save)
+		if err != nil {
+			if *_debug {
+				log.Printf("%v", err)
+			}
+		}
+
 		if *_admin {
 			elevated, _ := isElevated()
 			if !elevated {
