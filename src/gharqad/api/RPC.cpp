@@ -28,7 +28,7 @@ struct Status{
     bool ok = false;
     std::string what = "";
     bool isOk(){ return ok; }
-    QString message() { return QString::fromStdString(what); }
+    QString message() { return QString::fromUtf8(what.c_str()); }
 };
 
 namespace API {
@@ -72,7 +72,7 @@ try{                                                                            
     status.ok = false;                                                                  \
     qDebug() << "HI CRUEL WORLD";                                                       \
     status.what = e.what();                                                             \
-    qDebug() << QString::fromStdString(status.what);                                    \
+    qDebug() << QString::fromUtf8(status.what.c_str());                                    \
 }
 
 #define NOT_OK                                                      \
@@ -92,7 +92,7 @@ try{                                                                            
 
         if(status.isOk()) {
             *rpcOK = true;
-            return QString::fromStdString(reply->error);
+            return QString::fromUtf8(reply->error.c_str());
         } else {
             NOT_OK
             return  status.message();
@@ -110,7 +110,7 @@ try{                                                                            
         
         if(status.isOk()) {
             *rpcOK = true;
-            return QString::fromStdString(reply->error);
+            return QString::fromUtf8(reply->error.c_str());
         } else {
             NOT_OK
             return status.message();
@@ -278,7 +278,7 @@ try{                                                                            
         if(status.isOk())
         {
             *rpcOK = true;
-            return QString::fromStdString(reply->error);
+            return QString::fromUtf8(reply->error.c_str());
         } else
         {
             NOT_OK

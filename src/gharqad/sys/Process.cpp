@@ -178,7 +178,7 @@ namespace Configs_sys {
         args << "-waitpid";
         args << QString::number(QCoreApplication::applicationPid());
         args << "-address";
-        args << QString::fromStdString(*this->domain);
+        args << QString::fromUtf8(this->domain->c_str());
         args << "-port";
         args << QString::number(*this->port);
         #ifdef DEBUG_MODE

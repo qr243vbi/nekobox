@@ -2396,12 +2396,12 @@ void MainWindow::UpdateDataView(bool force) {
             "</div>"
             "<p style='text-align:center;margin:0;'>Server: %4%5, %6</p>")
             .arg(currentSptProfileName,
-                 QString::fromStdString(currentTestResult.dl_speed),
-                 QString::fromStdString(currentTestResult.ul_speed),
+                 QString::fromUtf8(currentTestResult.dl_speed.c_str()),
+                 QString::fromUtf8(currentTestResult.ul_speed.c_str()),
                  CountryCodeToFlag(
                      CountryNameToCode((currentTestResult.server_country))),
-                 QString::fromStdString(currentTestResult.server_country),
-                 QString::fromStdString(currentTestResult.server_name));
+                 QString::fromUtf8(currentTestResult.server_country.c_str()),
+                 QString::fromUtf8(currentTestResult.server_name.c_str()));
   }
   if (!html.isEmpty()) {
     QFont f = QApplication::font();

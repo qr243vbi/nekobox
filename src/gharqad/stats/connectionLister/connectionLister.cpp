@@ -58,16 +58,16 @@ namespace Stats
         for (auto conn : conns)
         {
             auto c = ConnectionMetadata();
-            c.id = QString::fromStdString(conn.id);
+            c.id = QString::fromUtf8(conn.id.c_str());
             c.createdAtMs = conn.created_at;
-            c.dest = QString::fromStdString(conn.dest);
+            c.dest = QString::fromUtf8(conn.dest.c_str());
             c.upload = conn.upload;
             c.download = conn.download;
-            c.domain = QString::fromStdString(conn.domain);
-            c.network = QString::fromStdString(conn.network);
-            c.outbound = QString::fromStdString(conn.outbound);
-            c.process = QString::fromStdString(conn.process);
-            c.protocol = QString::fromStdString(conn.protocol);
+            c.domain = QString::fromUtf8(conn.domain.c_str());
+            c.network = QString::fromUtf8(conn.network.c_str());
+            c.outbound = QString::fromUtf8(conn.outbound.c_str());
+            c.process = QString::fromUtf8(conn.process.c_str());
+            c.protocol = QString::fromUtf8(conn.protocol.c_str());
             if (sort == Default)
             {
                 if (state->contains(c.id))

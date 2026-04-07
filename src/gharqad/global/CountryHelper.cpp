@@ -19,10 +19,10 @@ QString CountryCodeToFlag(const QString& countryCode) {
 
 
 QString CountryNameToCode(const std::string& countryName) {
-    return CountryNameToCode(QString::fromStdString(countryName));
+    return CountryNameToCode(QString::fromUtf8(countryName.c_str()));
 }
 
 
 QString CountryCodeToFlag(const std::string& countryName) {
-    return CountryNameToCode(QString::fromStdString(countryName));
+    return CountryNameToCode(QString::fromUtf8(countryName.c_str()));
 }

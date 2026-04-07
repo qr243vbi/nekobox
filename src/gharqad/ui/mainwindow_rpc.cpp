@@ -117,7 +117,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             {
                 int entid = -1;
                 if (!tag2entID.isEmpty()) {
-                    auto tag = QString::fromStdString(res.outbound_tag);
+                    auto tag = QString::fromUtf8(res.outbound_tag.c_str());
                     entid = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
                 }
                 if (entid == -1) {
@@ -127,7 +127,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
                 if (ent == nullptr) {
                     continue;
                 }
-                auto error = QString::fromStdString(res.error);
+                auto error = QString::fromUtf8(res.error.c_str());
                 if (error.isEmpty()) {
                     ent->latencyInt = res.latency_ms;
                 } else {
@@ -160,7 +160,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
 
     for (const auto &res: result->results) {
         if (!tag2entID.isEmpty()) {
-            auto tag = QString::fromStdString(res.outbound_tag);
+            auto tag = QString::fromUtf8(res.outbound_tag.c_str());
             entID = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
         }
         if (entID == -1) {
@@ -173,7 +173,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
             MW_show_log(tr("Profile manager data is corrupted, try again."));
             continue;
         }
-        auto error = QString::fromStdString(res.error);
+        auto error = QString::fromUtf8(res.error.c_str());
         if (error.isEmpty()) {
             ent->latencyInt = res.latency_ms;
         } else {
@@ -289,7 +289,7 @@ void MainWindow::url_test_current() {
         runOnUiThread([=,this] {
             if (!results_0.error.empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(
-                    QString::fromStdString(results_0.error)));
+                    QString::fromUtf8(results_0.error.c_str())));
             }
             auto profile = Configs::profileManager->GetProfile(running->id);
             if (profile != nullptr){
@@ -367,7 +367,7 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
     }
     auto profile = testCurrent ? running : 
         Configs::profileManager->GetProfile(
-            tag2entID[QString::fromStdString(res->result.outbound_tag)]);
+            tag2entID[QString::fromUtf8(res->result.outbound_tag.c_str())]);
     if (profile == nullptr)
     {
         return;
@@ -382,10 +382,10 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
         if (result.error.empty() && !result.cancelled && 
             lastProxyListUpdate.msecsTo(QDateTime::currentDateTime()) >= 500)
         {
-            auto dl_speed = QString::fromStdString(result.dl_speed);
-            auto ul_speed = QString::fromStdString(result.ul_speed);
+            auto dl_speed = QString::fromUtf8(result.dl_speed.c_str());
+            auto ul_speed = QString::fromUtf8(result.ul_speed.c_str());
             auto latency = result.latency;
-            auto country = QString::fromStdString(result.server_country);
+            auto country = QString::fromUtf8(result.server_country.c_str());
             if (!dl_speed.isEmpty()) profile->dl_speed = (dl_speed);
             if (!ul_speed.isEmpty()) profile->ul_speed = (ul_speed);
             if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
@@ -408,7 +408,7 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
     {
         auto profile = testCurrent ? running : 
         Configs::profileManager->GetProfile(tag2entID[
-            (QString::fromStdString(result.outbound_tag))]);
+            (QString::fromUtf8(result.outbound_tag.c_str()))]);
         if (profile == nullptr)
         {
             return;
@@ -418,7 +418,7 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
             if (result.error.empty() && !result.cancelled)
             {
                 auto latency = result.latency;
-                auto country = QString::fromStdString(result.server_country);
+                auto country = QString::fromUtf8(result.server_country.c_str());
                 if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
                 if (!country.isEmpty()) profile->test_country = CountryNameToCode(
                     (country));
@@ -492,7 +492,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     for (const auto &res: result->results) {
         if (testCurrent) entID = running ? running->id : -1;
         else {
-            auto tag = QString::fromStdString(res.outbound_tag);
+            auto tag = QString::fromUtf8(res.outbound_tag.c_str());
             entID = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
         }
         if (entID == -1) {
@@ -509,8 +509,8 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
         if (res.cancelled) continue;
 
         if (res.error.empty()) {
-            ent->dl_speed = QString::fromStdString(res.dl_speed);
-            ent->ul_speed = QString::fromStdString(res.ul_speed);
+            ent->dl_speed = QString::fromUtf8(res.dl_speed.c_str());
+            ent->ul_speed = QString::fromUtf8(res.ul_speed.c_str());
             auto latency = res.latency;
             if (ent->latencyInt <= 0 && latency > 0) ent->latencyInt = latency;
             auto country = res.server_country;
@@ -522,7 +522,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
             ent->latencyInt = -1;
             ent->test_country = "";
             MW_show_log(tr("[%1] speed test error: %2").arg(
-                ent->DisplayTypeAndName(), QString::fromStdString(res.error)));
+                ent->DisplayTypeAndName(), QString::fromUtf8(res.error.c_str())));
         }
         ent->Save();
     }

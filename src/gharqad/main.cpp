@@ -156,8 +156,8 @@ void loadTranslate(QString locale) {
 int main(int argc, char** argv) {
     auto unicodepath = boost::dll::program_location();
 
-    root_directory = QString::fromUtf8(unicodepath.parent_path().u8string().c_str());
-    software_path  = QString::fromUtf8(unicodepath.u8string().c_str());
+    root_directory = QString::fromUtf8(unicodepath.parent_path().c_str());
+    software_path  = QString::fromUtf8(unicodepath.c_str());
 	// Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();

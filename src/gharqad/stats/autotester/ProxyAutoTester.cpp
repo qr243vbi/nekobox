@@ -172,7 +172,7 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
         } else {
             activeProxyFailureCount++;
             logStatus(QString("Active proxy unhealthy: %1 (attempt %2/%3)")
-                .arg(QString::fromStdString(res.error))
+                .arg(QString::fromUtf8(res.error.c_str()))
                 .arg(activeProxyFailureCount).arg(getRetryCount()));
 
             if (activeProxyFailureCount >= getRetryCount()) {
@@ -413,7 +413,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
 
             // Process results
             for (const auto &res : result->results) {
-                QString tag = QString::fromStdString(res.outbound_tag);
+                QString tag = QString::fromUtf8(res.outbound_tag.c_str());
                 if (!tag2entID.contains(tag)) {
                     continue;
                 }

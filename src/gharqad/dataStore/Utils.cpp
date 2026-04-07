@@ -307,7 +307,7 @@ std::vector<std::string> QListStr2VectorStr(const QStringList &list) {
 QStringList VectorStr2QListStr(const std::vector<std::string> &list) {
   QStringList vec;
   for (std::string str : list) {
-    vec.append(QString::fromStdString(str));
+    vec.append(QString::fromUtf8(str.c_str()));
   }
   return vec;
 }
