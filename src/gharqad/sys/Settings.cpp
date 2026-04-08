@@ -18,18 +18,18 @@ QSettings Configs::WindowSettings::settings() {
   return QSettings(CONFIG_INI_PATH, QSettings::IniFormat);
 }
 
-void Configs::SettingsStore::Save() {
+void Configs::SettingsStore::Save(const QString & parent) {
   QSettings store = settings();
   for (auto val : _map()) {
-    val->Save(store, this);
+    val->Save(store, this, parent);
   }
   store.sync();
 }
 
-void Configs::SettingsStore::Load() {
+void Configs::SettingsStore::Load(const QString & parent) {
   QSettings store = settings();
   for (auto val : _map()) {
-    val->Load(store, this);
+    val->Load(store, this, parent);
   }
 }
 
@@ -67,50 +67,52 @@ ADD_LIST(manually_column_width)
 ADD_LIST(column_width)
 END_LIST
 
+#define KEY parent + name
+
 SETTINGS_VALUE_LOAD(Bool) {
   *(bool *)(void *)(ptr + (size_t)(void *)store) =
-      settings.value(name, *(bool *)(void *)(ptr + (size_t)(void *)store))
+      settings.value(KEY, *(bool *)(void *)(ptr + (size_t)(void *)store))
           .toBool();
 }
 SETTINGS_VALUE_LOAD(Str) {
   *(QString *)(void *)(ptr + (size_t)(void *)store) =
-      settings.value(name, *(QString *)(void *)(ptr + (size_t)(void *)store))
+      settings.value(KEY, *(QString *)(void *)(ptr + (size_t)(void *)store))
           .toString();
 }
 SETTINGS_VALUE_LOAD(StrList) {
   *(QStringList *)(void *)(ptr + (size_t)(void *)store) =
       settings
-          .value(name, *(QStringList *)(void *)(ptr + (size_t)(void *)store))
+          .value(KEY, *(QStringList *)(void *)(ptr + (size_t)(void *)store))
           .toStringList();
 }
 SETTINGS_VALUE_LOAD(Int) {
   *(int *)(void *)(ptr + (size_t)(void *)store) =
-      settings.value(name, *(int *)(void *)(ptr + (size_t)(void *)store))
+      settings.value(KEY, *(int *)(void *)(ptr + (size_t)(void *)store))
           .toInt();
 }
 SETTINGS_VALUE_LOAD(Chr) {
   *(char *)(void *)(ptr + (size_t)(void *)store) =
-      settings.value(name, (bool)*(char *)(void *)(ptr + (size_t)(void *)store))
+      settings.value(KEY, (bool)*(char *)(void *)(ptr + (size_t)(void *)store))
           .toBool();
 }
 
 SETTINGS_VALUE_SAVE(Bool) {
-  settings.setValue(name, *(bool *)(void *)(ptr + (size_t)(void *)store));
+  settings.setValue(KEY, *(bool *)(void *)(ptr + (size_t)(void *)store));
 }
 SETTINGS_VALUE_SAVE(Str) {
-  settings.setValue(name, *(QString *)(void *)(ptr + (size_t)(void *)store));
+  settings.setValue(KEY, *(QString *)(void *)(ptr + (size_t)(void *)store));
 }
 SETTINGS_VALUE_SAVE(StrList) {
-  settings.setValue(name,
+  settings.setValue(KEY,
                     *(QStringList *)(void *)(ptr + (size_t)(void *)store));
 }
 SETTINGS_VALUE_SAVE(Int) {
-  settings.setValue(name, *(int *)(void *)(ptr + (size_t)(void *)store));
+  settings.setValue(KEY, *(int *)(void *)(ptr + (size_t)(void *)store));
 }
 SETTINGS_VALUE_SAVE(Chr) {
   char ch = *(char *)(void *)(ptr + (size_t)(void *)store);
   if (static_cast<bool>(ch) == true || static_cast<bool>(ch) == false) {
-    settings.setValue(name, (bool)ch);
+    settings.setValue(KEY, (bool)ch);
   }
 }
 

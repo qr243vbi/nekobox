@@ -16,6 +16,8 @@
 #include <QUrlQuery>
 #include <QVariantMap>
 #include <functional>
+#include <QSettings>
+#include <QFileInfo>
 #include <memory>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
@@ -285,6 +287,12 @@ QJsonArray QListInt2QJsonArray(const QList<int> &list);
 QJsonArray QListStr2QJsonArray(const QList<QString> &list);
 
 QList<int> QJsonArray2QListInt(const QJsonArray &arr);
+
+QList<int> QListStr2QListInt(const QList<QString> &arr);
+
+QList<QString> QListInt2QListStr(const QList<int> &arr);
+
+QSettings QSettingsFromFileInfo(const QFileInfo& settings);
 
 QJsonObject QMapString2QJsonObject(const QMap<QString, QString> &mp);
 

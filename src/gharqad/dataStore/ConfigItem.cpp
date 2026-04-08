@@ -157,13 +157,218 @@ SET_NODE(jsonStoreList) {
   }
 }
 
+
+#define LOAD_CONF(X) void X##Item::LoadSettings(JsonStore * store, const QFileInfo& settings, const QString &path)
+
+LOAD_CONF(int) {
+  auto val =  QSettingsFromFileInfo(settings);
+  int * ptr = (int *)getPtr(store);
+  *ptr = val.value(path + this->name, 0).toInt();
+}
+
+LOAD_CONF(double) {
+  auto val =  QSettingsFromFileInfo(settings);
+  double * ptr = (double *)getPtr(store);
+  *ptr = val.value( path + this->name, 0).toDouble();
+}
+
+LOAD_CONF(long) {
+  auto val =  QSettingsFromFileInfo(settings);
+  long long * ptr = (long long *)getPtr(store);
+  *ptr = val.value( path + this->name, 0).toLongLong();
+}
+
+LOAD_CONF(bool) {
+  auto val =  QSettingsFromFileInfo(settings);
+  bool * ptr = (bool *)getPtr(store);
+  *ptr = val.value( path + this->name, false).toBool();
+}
+
+LOAD_CONF(boolPtr) {
+  auto val =  QSettingsFromFileInfo(settings);
+  bool ** ptr = (bool **)getPtr(store);
+  **ptr = val.value( path + this->name, false).toBool();
+}
+
+LOAD_CONF(str) {
+  auto val =  QSettingsFromFileInfo(settings);
+  QString * ptr = (QString *)getPtr(store);
+  *ptr = val.value( path + this->name, "").toString();
+}
+
+LOAD_CONF(strList) {
+  auto val =  QSettingsFromFileInfo(settings);
+  QList<QString> * ptr = (QList<QString> *)getPtr(store);
+  *ptr = val.value( path + this->name, {}).toStringList();
+}
+
+LOAD_CONF(intList) {
+  auto val =  QSettingsFromFileInfo(settings);
+  QList<int> * ptr = (QList<int> *)getPtr(store);
+  *ptr = QListStr2QListInt(val.value(path + this->name, {}).toStringList());
+}
+
+LOAD_CONF(strMap) {
+  QVariantMap * ptr = (QVariantMap *)getPtr(store);
+  QSettings ini = QSettingsFromFileInfo(settings);
+  ptr->clear();
+  ini.beginGroup(path + this->name);
+  for (auto & key : ini.childKeys()){
+    ptr->insert(key, ini.value(key, ""));
+  }
+  ini.endGroup();
+}
+
+LOAD_CONF(enum) {
+  auto val =  QSettingsFromFileInfo(settings);
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  if (st != nullptr) {
+    st->set(val.value(path + this->name, "").toString());
+  }
+}
+
+LOAD_CONF(jsonShared) {
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  if (st != nullptr) {
+    st->LoadSettings(settings, path + this->name + "/");
+  }
+}
+LOAD_CONF(jsonStore) {
+  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  if (st != nullptr) {
+    st->LoadSettings(settings, path + this->name + "/");
+  }
+}
+LOAD_CONF(jsonStoreList) {
+  auto list = (QJsonStoreListBase *)this->getPtr(store);
+  int index = 0; if (list == nullptr) return;
+  QStringList keys;
+  {
+    auto val = QSettingsFromFileInfo(settings);
+    val.beginGroup(path + this->name);
+    keys = val.childGroups();
+    val.endGroup();
+  }
+  index = keys.count();
+  for (int i = 0; i < index; i ++){
+    list->append(list->createJsonStore());
+  }
+
+  for (auto st : keys) {
+    {
+      bool ok;
+      int key = st.toInt(&ok);
+      if (ok){
+        auto stt = list->value(key, nullptr) ;
+        if (stt != nullptr) {
+          stt->LoadSettings(settings, path + this->name + "/" + st + "/");
+        }
+      } 
+    }
+  }
+}
+
+#define SAVE_CONF(X) void X##Item::SaveSettings(JsonStore * store, const QFileInfo& settings, const QString &path)
+
+SAVE_CONF(int) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (int *)getPtr(store);
+  val.setValue(path + this->name, *ptr);
+}
+
+SAVE_CONF(double) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (double *)getPtr(store);
+  val.setValue(path + this->name, *ptr);
+}
+
+SAVE_CONF(long) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (long long *)getPtr(store);
+  val.setValue(path + this->name, *ptr);
+}
+
+SAVE_CONF(bool) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (bool *)getPtr(store);
+  val.setValue(path + this->name, *ptr);
+}
+
+SAVE_CONF(boolPtr) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (bool * *)getPtr(store);
+  val.setValue(path + this->name, **ptr);
+}
+
+SAVE_CONF(str) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto ptr = *(QString *)getPtr(store);
+  val.setValue(path + this->name, ptr);
+}
+
+SAVE_CONF(strList) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto ptr = *(QStringList *)getPtr(store);
+  val.setValue(path + this->name, ptr);
+}
+
+SAVE_CONF(intList) {
+  auto val = QSettingsFromFileInfo(settings);
+  auto * ptr = (QList<int> *)getPtr(store);
+  val.setValue(path + this->name, QListInt2QListStr(*ptr));
+}
+
+SAVE_CONF(strMap) {
+  QVariantMap * ptr = (QVariantMap *)getPtr(store);
+  QSettings ini = QSettingsFromFileInfo(settings);
+  ini.beginGroup(path + this->name);
+  ini.remove("");
+  for (auto [key, value] : asKeyValueRange(*ptr)){
+    ini.setValue(key, value);
+  }
+  ini.endGroup();
+}
+
+SAVE_CONF(enum) {
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  if (st != nullptr) {
+    auto ini = QSettingsFromFileInfo(settings);
+    ini.setValue(path + this->name, (QString)*st);
+  }
+}
+
+SAVE_CONF(jsonShared) {
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  if (st != nullptr) {
+    st->SaveSettings(settings, path + this->name + "/");
+  }
+}
+SAVE_CONF(jsonStore) {
+  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  if (st != nullptr) {
+    st->SaveSettings(settings, path + this->name + "/");
+  }
+}
+SAVE_CONF(jsonStoreList) {
+  auto list = (QJsonStoreListBase *)this->getPtr(store);
+  int index = 0; if (list == nullptr) return;
+  for (auto st : *list) {
+    if (st != nullptr) { 
+      st->SaveSettings(settings, path + this->name + "/" + QString::number(index) + "/");
+      index ++;
+    }
+  }
+}
+
 #define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore *store)
 
 GET_NODE(jsonStoreList) {
   auto list = (QJsonStoreListBase *)this->getPtr(store);
-  QJsonArray array;
+  QJsonArray array; if (list == nullptr) return array;
   for (auto st : *list) {
-    array.append(st->ToJson());
+    if (st == nullptr) {
+      array.append(st->ToJson());
+    }
   }
   return array;
 }

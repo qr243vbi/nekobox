@@ -181,6 +181,10 @@ bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   if (path == "") {
     return false;
   }
+  if (Configs::config_type == Configs::DatabaseType::ini_type){
+    store->SaveSettings(QFileInfo(path), "");
+    return true;
+  }
   return store->SaveToFile(path, Configs::config_type == Configs::DatabaseType::json_type);
 }
 bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
@@ -190,7 +194,8 @@ bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
   if (path == "") {
     return false;
   }
-  return store->LoadFromFile(path);
+  auto ret = store->LoadFromFile(path);
+  return true;
 }
 
 bool FileDatabaseManager::DropFromDirectory(char chr, int id) {

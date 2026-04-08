@@ -304,6 +304,27 @@ std::vector<std::string> QListStr2VectorStr(const QStringList &list) {
   return vec;
 }
 
+QSettings QSettingsFromFileInfo(const QFileInfo& settings){
+  return QSettings(settings.absoluteFilePath(), QSettings::Format::IniFormat);
+};
+
+
+QList<int> QListStr2QListInt(const QList<QString> &list) {
+  QList<int> vec;
+  for (QString str : list) {
+    vec << str.toInt();
+  }
+  return vec;
+}
+
+QList<QString> QListInt2QListStr(const QList<int> &list) {
+  QList<QString> vec;
+  for (int str : list) {
+    vec << QString::number(str);
+  }
+  return vec;
+}
+
 QStringList VectorStr2QListStr(const std::vector<std::string> &list) {
   QStringList vec;
   for (std::string str : list) {

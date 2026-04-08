@@ -1,3 +1,4 @@
+#include <qsettings.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -99,12 +100,58 @@ namespace Configs_ConfigItem {
         return (void*)((size_t)p + ptr);
     }
 
+    void JsonStore::SaveSettings(const QFileInfo& info, const QString &path){
+        auto  _map = this->_map();
+        QSettings settings = QSettingsFromFileInfo(info);
+        for (auto value : _map.values()){
+            value->SaveSettings(this, info, path);
+        }
+    }
+
+    void JsonStore::LoadSettings(const QFileInfo& info, const QString &path){
+        auto _map = this->_map();
+        QSettings settings = QSettingsFromFileInfo(info);
+        settings.beginGroup(path);
+            #ifdef DEBUG_MODE
+                qDebug() << "Settings loading" << info.absoluteFilePath();
+            #endif
+        for (auto key : settings.childKeys()){
+            #ifdef DEBUG_MODE
+                qDebug() << "INI KEY" << key;
+            #endif
+            auto h = Configs::hash(key);
+            auto value = _map.value(h, nullptr);
+            if (value == nullptr){
+                UnknownKeyHash(h);
+            } else {
+            #ifdef DEBUG_MODE
+                qDebug() << "Loading" << key;
+            #endif
+                value->LoadSettings(this, info, path);
+            }
+        }
+        for (auto key : settings.childGroups()){
+            auto h = Configs::hash(key);
+            auto value = _map.value(h, nullptr);
+            if (value == nullptr){
+                if (UnknownKeyHash(h)){
+                    LoadSettings(info, path + key + "/");
+                };
+            } else {
+                value->LoadSettings(this, info, path);
+            }
+        }
+        settings.endGroup();
+    }
+
     void JsonStore::FromJson(QJsonObject object) {
         auto  _map = this->_map();
         for (const auto &key: object.keys()) {
             auto h = Configs::hash(key);
             QJsonValue value;
-            if (_map.count(h) == 0) {
+            auto item = _map.value(h, nullptr);
+
+            if (item == nullptr) {
                 if (UnknownKeyHash(h) && ((value = object[key]).isObject())){
                     this->FromJson(value.toObject());
                 }
@@ -112,7 +159,6 @@ namespace Configs_ConfigItem {
             } else {
                 value = object[key];
             }
-            auto item = _map.value(h).get();
 
             if ((item == nullptr) || (item->name != key)){
                 continue;
@@ -146,7 +192,7 @@ namespace Configs_ConfigItem {
         item->setNode(this, node);
     }
 
-    void JsonStore::FromJsonBytes(const QByteArray &data) {
+    bool JsonStore::FromJsonBytes(const QByteArray &data) {
         QJsonParseError error{};
         auto document = QJsonDocument::fromJson(data, &error);
 
@@ -154,10 +200,11 @@ namespace Configs_ConfigItem {
             #ifdef DEBUG_MODE
             qDebug() << "QJsonParseError" << error.errorString();
             #endif
-            return;
+            return false;
         }
 
         FromJson(document.object());
+        return true;
     }
 
     QByteArray JsonStore::content(bool force_json_configs){
@@ -165,7 +212,7 @@ namespace Configs_ConfigItem {
     }
 
 
-    void JsonStore::content(const QByteArray & byteArray){
+    bool JsonStore::content(const QByteArray & byteArray){
         if (byteArray.size() > 7) {
             QByteArray magic = byteArray.first(7);
 #ifdef DEBUG_MODE
@@ -173,12 +220,13 @@ namespace Configs_ConfigItem {
 #endif
             if (magic == "NekoBox"){
                 FromBytes(byteArray.mid(7));
+                return true;
             } else {
                 goto is_json;
             };
         } else {
             is_json:
-            FromJsonBytes(byteArray);
+            return FromJsonBytes(byteArray);
         }
     }
 
@@ -199,7 +247,9 @@ namespace Configs_ConfigItem {
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             #endif
         } else {
-            content(file.readAll());
+            if (!content(file.readAll())){
+                this->LoadSettings(QFileInfo(fn), "");
+            };
         }
   //      l2:
         file.close();

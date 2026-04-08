@@ -1126,6 +1126,11 @@
                  <string notr="true">binary</string>
                 </property>
                </item>
+               <item>
+                <property name="text">
+                 <string notr="true">ini</string>
+                </property>
+               </item>
               </widget>
              </item>
              <item>
