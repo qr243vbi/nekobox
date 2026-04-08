@@ -770,8 +770,8 @@ namespace Configs {
             inboundObj["type"] = "mixed";
             inboundObj["listen"] = dataStore->inbound_address;
             inboundObj["listen_port"] = dataStore->inbound_socks_port;
-            auto inbound_username = dataStore->inbound_username;
-            auto inbound_password = dataStore->inbound_password;
+            QString& inbound_username = dataStore->inbound_username;
+            QString& inbound_password = dataStore->inbound_password;
             if (inbound_username != "" && inbound_password != ""){
                 QJsonArray users;
                 QJsonObject user;

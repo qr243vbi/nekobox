@@ -69,6 +69,8 @@ func main() {
 }
 
 func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) {
+	fmt.Printf("package %s install %s version %s name %s", updatePackagePath, installPath, version, name)
+
 	if winget_install {
 		winget_install = version != "" && updatePackagePath != "" && installPath != ""
 	}
@@ -80,11 +82,15 @@ func LaunchInstaller(updatePackagePath string, installPath string, version strin
 	if winget_install {
 		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1 /D="+filepath.Clean(installPath))
 	} else {
+		var chocolatey_flag string
 		if chocolatey_source != "" {
 			run_chocolatey(version, chocolatey_source, name)
+			chocolatey_flag = "/CHOCOLATEY=1"
+		} else {
+			chocolatey_flag = "/CHOCOLATEY=0"
 		}
 		if updatePackagePath != "" && installPath != "" {
-			Launch(updatePackagePath, "/S", "/UNPACK=1", "/D="+filepath.Clean(installPath))
+			Launch(updatePackagePath, "/S", "/UNPACK=1", chocolatey_flag, "/D="+filepath.Clean(installPath))
 		}
 	}
 }

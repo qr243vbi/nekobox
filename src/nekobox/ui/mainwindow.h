@@ -146,6 +146,8 @@ public:
 
     ~MainWindow() override;
 
+    void call_updater();
+
     void prepare_exit();
 
     void announcement_message(bool first_launch);

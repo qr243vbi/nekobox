@@ -26,7 +26,7 @@
 #define CHECK_ACTION_ACCESS_W
 #define CHECK_ACTION_ACCESS
 #else
-#include "nekobox/ui/security_addon.h"
+#include <nekobox/ui/security_addon.h>
 #endif
 
 #include <QJsonDocument>
@@ -2129,22 +2129,7 @@ void MainWindow::point_changed(int width, int height) {
   runOnUiThread([=, this] { this->move(width, height); });
 }
 
-void MainWindow::on_menu_exit_triggered() {
-  CHECK_ACTION_ACCESS_R
-
-  bool keep_running = this->keep_running;
-  int exit_reason = this->exit_reason;
-  if (exit_reason != 1) {
-    keep_running = false;
-  }
-  this->keep_running = false;
-  this->exit_reason = 0;
-
-  if (!keep_running) {
-    prepare_exit();
-  }
-  //
-  if (exit_reason == 1) {
+void MainWindow::call_updater(){
 #ifndef SKIP_UPDATE_BUTTON
     QStringList list;
     QString updateDir;
@@ -2196,6 +2181,18 @@ void MainWindow::on_menu_exit_triggered() {
 #endif
     }
 #endif
+}
+
+void MainWindow::on_menu_exit_triggered() {
+  CHECK_ACTION_ACCESS_R
+
+  int exit_reason = this->exit_reason;
+  this->exit_reason = 0;
+
+  prepare_exit();
+  //
+  if (exit_reason == 1) {
+    call_updater();
   } else if (exit_reason == 2 || exit_reason == 3 || exit_reason == 4) {
     QDir::setCurrent(softwarePath);
 
@@ -2226,9 +2223,6 @@ void MainWindow::on_menu_exit_triggered() {
     } else {
       QProcess::startDetached(program, arguments);
     }
-  }
-  if (keep_running) {
-    return;
   }
   QCoreApplication::quit();
 }
@@ -4480,6 +4474,7 @@ end_search_define:
 #endif
 skip1:
 
+#ifdef SKIP_JS_UPDATER
   if (search.isEmpty()) {
     runOnUiThread([=, this] {
       QMessageBox::warning(this, QObject::tr("Update"),
@@ -4487,7 +4482,6 @@ skip1:
     });
     return;
   }
-#ifdef SKIP_JS_UPDATER
   {
     auto resp = NetworkRequestHelper::HttpGet(
         "https://api.github.com/repos/qr243vbi/nekobox/releases");
@@ -4546,13 +4540,18 @@ skip1:
   if (!is_newer) {
     return;
   } else {
-    this->exit_reason = 1;
-    this->archive_name = archive_name;
 
 #ifdef DEBUG_MODE
     qDebug() << "ARCHIVE PATH" << archive_name;
 #endif
-    runOnNewThread([=, this] { on_menu_exit_triggered(); });
+    this->archive_name = archive_name;
+    if (!this->keep_running){
+      this->exit_reason = 1;
+      runOnNewThread([=, this] { on_menu_exit_triggered(); });
+    } else {
+      this->keep_running = false;
+      call_updater();
+    }
   }
 
 #endif
