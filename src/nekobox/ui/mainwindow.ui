@@ -27,113 +27,175 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QToolButton" name="toolButton_program">
-        <property name="toolTip">
-         <string>NekoBox</string>
+       <widget class="QFrame" name="toolbox_group">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="text">
-         <string>NekoBox</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-system-run"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_server">
-        <property name="toolTip">
-         <string>Profiles</string>
-        </property>
-        <property name="text">
-         <string>Profiles</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-network-server"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_preferences">
-        <property name="toolTip">
-         <string>Settings</string>
-        </property>
-        <property name="text">
-         <string>Settings</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-preferences"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_routing">
-        <property name="toolTip">
-         <string>Routing</string>
-        </property>
-        <property name="text">
-         <string>Routing</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-network-routing"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="toolButton_update">
-        <property name="toolTip">
-         <string>Update</string>
-        </property>
-        <property name="text">
-         <string>Update</string>
-        </property>
-        <property name="icon">
-         <iconset theme="b-system-software-update"/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>32</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="popupMode">
-         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
-        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="toolButton_program">
+           <property name="toolTip">
+            <string>NekoBox</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>NekoBox</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-system-run"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_server">
+           <property name="toolTip">
+            <string>Profiles</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Profiles</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-network-server"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_preferences">
+           <property name="toolTip">
+            <string>Settings</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Settings</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-preferences"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_routing">
+           <property name="toolTip">
+            <string>Routing</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Routing</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-network-routing"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_update">
+           <property name="toolTip">
+            <string>Update</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Info</string>
+           </property>
+           <property name="icon">
+            <iconset theme="b-system-software-update"/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>37</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -141,7 +203,7 @@
         <item>
          <widget class="QCheckBox" name="checkBox_VPN">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -153,6 +215,12 @@
         </item>
         <item>
          <widget class="QCheckBox" name="system_dns">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>System DNS</string>
           </property>
@@ -160,6 +228,12 @@
         </item>
         <item>
          <widget class="QCheckBox" name="checkBox_SystemProxy">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>System Proxy</string>
           </property>
@@ -230,6 +304,13 @@
       </item>
       <item>
        <widget class="QPushButton" name="url_test_button">
+        <property name="styleSheet">
+         <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+        </property>
         <property name="text">
          <string>Test</string>
         </property>
@@ -507,11 +588,6 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label_speed">
-        <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -519,11 +595,6 @@ font: inherit;</string>
       </item>
       <item>
        <widget class="QLabel" name="label_running">
-        <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;</string>
-        </property>
         <property name="text">
          <string/>
         </property>
@@ -532,9 +603,7 @@ font: inherit;</string>
       <item>
        <widget class="QLabel" name="label_inbound">
         <property name="styleSheet">
-         <string notr="true">border-radius: 10px;
-border: 3px solid palette(midlight);
-font: inherit;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
@@ -567,7 +636,7 @@ font: inherit;</string>
      <x>0</x>
      <y>0</y>
      <width>843</width>
-     <height>23</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -587,12 +656,12 @@ font: inherit;</string>
     <addaction name="actionStart_with_system"/>
     <addaction name="actionRemember_last_proxy"/>
     <addaction name="actionAllow_LAN"/>
+    <addaction name="actionRegister_Windows_Elevated_Task"/>
     <addaction name="menu_spmode"/>
     <addaction name="separator"/>
     <addaction name="actionRestart_Proxy"/>
     <addaction name="actionRestart_Program"/>
     <addaction name="menu_exit"/>
-    <addaction name="menu_information"/>
    </widget>
    <widget class="QMenu" name="menu_preferences">
     <property name="title">
@@ -699,6 +768,14 @@ font: inherit;</string>
     </widget>
     <addaction name="menuContextProfiles"/>
    </widget>
+   <widget class="QMenu" name="fetch_tool">
+    <property name="title">
+     <string>Information</string>
+    </property>
+    <addaction name="menu_update"/>
+    <addaction name="menu_information"/>
+    <addaction name="menu_about"/>
+   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_preferences"/>
    <addaction name="menu_profiles"/>
@@ -706,6 +783,7 @@ font: inherit;</string>
    <addaction name="menuRouting_Menu"/>
    <addaction name="menuTest"/>
    <addaction name="menuContext"/>
+   <addaction name="fetch_tool"/>
   </widget>
   <action name="menu_exit">
    <property name="text">
@@ -1161,9 +1239,32 @@ font: inherit;</string>
     <string>Information</string>
    </property>
   </action>
+  <action name="actionRegister_Windows_Elevated_Task">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Register Windows elevated task</string>
+   </property>
+  </action>
+  <action name="menu_information_2">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
   <action name="menu_information">
    <property name="text">
-    <string>Information</string>
+    <string>Statistics</string>
+   </property>
+  </action>
+  <action name="menu_update">
+   <property name="text">
+    <string>Check for updates</string>
+   </property>
+  </action>
+  <action name="menu_about">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>

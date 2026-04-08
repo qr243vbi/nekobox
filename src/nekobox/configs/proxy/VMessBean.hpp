@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "AbstractBean.hpp"
@@ -14,7 +19,7 @@ namespace Configs {
         bool global_padding = true;
 
         std::shared_ptr<V2rayStreamSettings> stream ;
-        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>(0);
 
         VMessBean(Configs::ProxyEntity * entity) : AbstractBean(entity, 0) {
              stream = std::make_shared<V2rayStreamSettings>();

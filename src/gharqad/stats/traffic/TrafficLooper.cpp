@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/stats/traffic/TrafficLooper.hpp"
 
 #include "nekobox/api/RPC.h"
@@ -13,7 +18,9 @@ namespace Stats {
 TrafficLooper *trafficLooper = new TrafficLooper;
 QElapsedTimer elapsedTimer;
 
-
+#define MIGRATE_LOG(proxy, uplink) \
+                Stats::databaseLogger->total_##proxy->uplink += proxy->uplink; \
+                proxy->uplink = 0;
 
         TrafficLooper::TrafficLooper(){
             this->save_control_no_save(true);
@@ -25,6 +32,10 @@ QElapsedTimer elapsedTimer;
             if (this->save_control_no_save()){
                 this->Load();
                 this->save_control_no_save(false);
+                MIGRATE_LOG(proxy, uplink)
+                MIGRATE_LOG(proxy, downlink)
+                MIGRATE_LOG(direct, uplink)
+                MIGRATE_LOG(direct, downlink)
             }
         }
 

@@ -1,3 +1,9 @@
+#include <qsettings.h>
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/dataStore/DataStore.hpp>
@@ -94,12 +100,58 @@ namespace Configs_ConfigItem {
         return (void*)((size_t)p + ptr);
     }
 
+    void JsonStore::SaveINI(const QFileInfo& info, const QString &path){
+        auto  _map = this->_map();
+        QSettings settings = QSettingsFromFileInfo(info);
+        for (auto value : _map.values()){
+            value->SaveINI(this, info, path);
+        }
+    }
+
+    void JsonStore::LoadINI(const QFileInfo& info, const QString &path){
+        auto _map = this->_map();
+        QSettings settings = QSettingsFromFileInfo(info);
+        settings.beginGroup(path);
+            #ifdef DEBUG_MODE
+                qDebug() << "Settings loading" << info.absoluteFilePath();
+            #endif
+        for (auto key : settings.childKeys()){
+            #ifdef DEBUG_MODE
+                qDebug() << "INI KEY" << key;
+            #endif
+            auto h = Configs::hash(key);
+            auto value = _map.value(h, nullptr);
+            if (value == nullptr){
+                UnknownKeyHash(h);
+            } else {
+            #ifdef DEBUG_MODE
+                qDebug() << "Loading" << key;
+            #endif
+                value->LoadINI(this, info, path);
+            }
+        }
+        for (auto key : settings.childGroups()){
+            auto h = Configs::hash(key);
+            auto value = _map.value(h, nullptr);
+            if (value == nullptr){
+                if (UnknownKeyHash(h)){
+                    LoadINI(info, path + key + "/");
+                };
+            } else {
+                value->LoadINI(this, info, path);
+            }
+        }
+        settings.endGroup();
+    }
+
     void JsonStore::FromJson(QJsonObject object) {
         auto  _map = this->_map();
         for (const auto &key: object.keys()) {
             auto h = Configs::hash(key);
             QJsonValue value;
-            if (_map.count(h) == 0) {
+            auto item = _map.value(h, nullptr);
+
+            if (item == nullptr) {
                 if (UnknownKeyHash(h) && ((value = object[key]).isObject())){
                     this->FromJson(value.toObject());
                 }
@@ -107,7 +159,6 @@ namespace Configs_ConfigItem {
             } else {
                 value = object[key];
             }
-            auto item = _map.value(h).get();
 
             if ((item == nullptr) || (item->name != key)){
                 continue;
@@ -141,7 +192,7 @@ namespace Configs_ConfigItem {
         item->setNode(this, node);
     }
 
-    void JsonStore::FromJsonBytes(const QByteArray &data) {
+    bool JsonStore::FromJsonBytes(const QByteArray &data) {
         QJsonParseError error{};
         auto document = QJsonDocument::fromJson(data, &error);
 
@@ -149,20 +200,19 @@ namespace Configs_ConfigItem {
             #ifdef DEBUG_MODE
             qDebug() << "QJsonParseError" << error.errorString();
             #endif
-            return;
+            return false;
         }
 
         FromJson(document.object());
+        return true;
     }
 
-    QByteArray JsonStore::content(){
-        bool force_json_configs = Configs::ForceJsonConfigs ;
-
+    QByteArray JsonStore::content(bool force_json_configs){
         return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
     }
 
 
-    void JsonStore::content(const QByteArray & byteArray){
+    bool JsonStore::content(const QByteArray & byteArray){
         if (byteArray.size() > 7) {
             QByteArray magic = byteArray.first(7);
 #ifdef DEBUG_MODE
@@ -170,17 +220,18 @@ namespace Configs_ConfigItem {
 #endif
             if (magic == "NekoBox"){
                 FromBytes(byteArray.mid(7));
+                return true;
             } else {
                 goto is_json;
             };
         } else {
             is_json:
-            FromJsonBytes(byteArray);
+            return FromJsonBytes(byteArray);
         }
     }
 
-    bool JsonStore::SaveToFile(const QString & file){
-        return WriteFile(file, content());
+    bool JsonStore::SaveToFile(const QString & file, bool is_json){
+        return WriteFile(file, content(is_json));
     }
 
     bool JsonStore::LoadFromFile(const QString & fn){
@@ -196,7 +247,9 @@ namespace Configs_ConfigItem {
                 qDebug() << ("can not open config " + fn + "\n" + file.errorString());
             #endif
         } else {
-            content(file.readAll());
+            if (!content(file.readAll())){
+                this->LoadINI(QFileInfo(fn), "");
+            };
         }
   //      l2:
         file.close();
@@ -232,11 +285,15 @@ namespace Configs_ConfigItem {
         return ret;
     }
 
+    void JsonEnum::trigger(int old_value, int new_value) {  } ; 
+
     JsonEnum& JsonEnum::set(int value){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM IS SETTING" << value;
 #endif
+        auto old = this->value;
         this->value = value;
+        trigger(old, value);
         return *this;
     }
     JsonEnum& JsonEnum::set(const QString& value){
@@ -250,12 +307,12 @@ namespace Configs_ConfigItem {
             qDebug() << "ENUM IS SETTING" << value;
 #endif
         try{
-            this->value = map.left.at(value.toStdString());
+            this->set(map.left.at(value.toStdString()));
         } catch (std::out_of_range){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM NOT FOUND" << value;
 #endif
-            this->value = 0;
+            this->set(0);
         }
 
 #ifdef DEBUG_MODE
@@ -271,7 +328,7 @@ namespace Configs_ConfigItem {
         int val;
         if (value[0] == '\0'){
             memcpy(&val, value.constData() + 1, sizeof(val));
-            this->value = val;
+            this->set(val);
         } else {
             this->set(QString::fromUtf8(value));
         }
@@ -331,13 +388,23 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
-    bool ForceJsonConfigs = 
+    int config_type = 
     #ifdef DEBUG_MODE
-    true
+    DatabaseType::json_type
     #else
-    false
+    DatabaseType::binary_type
     #endif
     ;
+
+    void SetConfigType(StoreTypeEnum * th, int old_value, int new_value){
+        if (new_value == 0){
+            if (old_value == 0){
+                *th = config_type;
+            }
+        } else {
+            config_type = new_value;
+        }
+    };
 
     DataStore *dataStore = new DataStore();
 
@@ -365,7 +432,7 @@ QByteArray hash = QCryptographicHash::hash(
    //     _add(new configItem("theme", &theme, itemType::string));
         ADD_MAP("inbound_username", inbound_username, string);
         ADD_MAP("inbound_password", inbound_password, string);
-
+        ADD_MAP("core_use_uds", core_use_uds, boolean);
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
         ADD_MAP("network_use_proxy", net_use_proxy, boolean);
@@ -383,6 +450,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("hk_toggle", hotkey_toggle_system_proxy, string);
         ADD_MAP("fakedns", fake_dns, boolean);
         ADD_MAP("active_routing", active_routing, string);
+        ADD_MAP("store_type", store_type, string);
    //     _add(new configItem("mw_size", &mw_size, itemType::string));
         ADD_MAP("disable_traffic_stats", disable_traffic_stats, boolean);
         ADD_MAP("vpn_stack", vpn_implementation, string);
@@ -436,7 +504,6 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("show_system_dns", show_system_dns, boolean);
   //      ADD_MAP("cache_database_name", cache_database, string);
         ADD_MAP("simple_dl_url", simple_dl_url, string);
-        ADD_MAP("use_json_configs", force_json_configs, booleanPtr);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
         ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
         ADD_MAP("auto_test_proxy_count", auto_test_proxy_count, integer);

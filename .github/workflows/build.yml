@@ -18,6 +18,11 @@ on:
         type: boolean
         default: false
         required: false
+      binary_only:
+        description: "Skip building sources, distribute only binary package"
+        type: boolean
+        default: false
+        required: false
       skip_updater:
         description: "Ship binaries without updater"
         type: boolean
@@ -70,6 +75,21 @@ on:
         required: false
       publish_suse:
         description: "Publish to openSUSE Factory"
+        type: boolean
+        default: true
+        required: false
+      publish_copr:
+        description: "Publish to COPR"
+        type: boolean
+        default: true
+        required: false
+      publish_obs:
+        description: "Publish to OBS"
+        type: boolean
+        default: true
+        required: false
+      publish_aur:
+        description: "Publish to AUR"
         type: boolean
         default: true
         required: false
@@ -129,7 +149,7 @@ jobs:
         if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/cache@main
         with:
-          path: artifacts.tgz
+          path: ./deployment
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
@@ -150,16 +170,18 @@ jobs:
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
-            export SKIP_UPDATER=y
+            export SKIP_UPDATER=ON
+          else
+            export SKIP_UPDATER=OFF
           fi
-          GO_MOD_TIDY=yes GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+          GO_MOD_TIDY=ON GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
       - name: Build vendor
         if: matrix.cross_os == 'public'
         shell: bash
         run: |
           env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Publish sources
-        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true'
+        if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
         env:
           INPUT_VERSION: ${{ github.event.inputs.tag }}
           MESSAGE: ${{ github.event.inputs.text }}
@@ -172,7 +194,7 @@ jobs:
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
       - name: Tar files
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' && steps.cache-common.outputs.cache-hit != 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
@@ -187,7 +209,7 @@ jobs:
     needs:
       - build-go
     runs-on: ubuntu-latest
-    if: github.event.inputs.publish == 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
@@ -201,20 +223,20 @@ jobs:
           AUR_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         run: |
           echo copr > requirements.txt
-   #       git config --global user.email "${{ secrets.EMAIL }}"
-   #       git config --global user.name "${{ github.actor }}"
-   #       mkdir -p ~/.ssh
-   #       touch ~/.ssh/config           ||:
-   #       touch ~/.ssh/known_hosts      ||:
-   #       echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
-   #       echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
-   #       echo "  User aur"                     >> ~/.ssh/config
-   #       chmod -vR 600 ~/.ssh/*
-   #       ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
-   #       echo "$AUR_KEY" > ~/.ssh/aur
-   #       chmod -vR 600 ~/.ssh/*
-   #       ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
-   #       chmod -vR 600 ~/.ssh/*
+    #      git config --global user.email "${{ secrets.EMAIL }}"
+    #      git config --global user.name "${{ github.actor }}"
+    #      mkdir -p ~/.ssh
+    #      touch ~/.ssh/config           ||:
+    #      touch ~/.ssh/known_hosts      ||:
+    #      echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
+    #      echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
+    #      echo "  User aur"                     >> ~/.ssh/config
+    #      chmod -vR 600 ~/.ssh/*
+    #      ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
+    #      echo "$AUR_KEY" > ~/.ssh/aur
+    #      chmod -vR 600 ~/.ssh/*
+    #      ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
+    #      chmod -vR 600 ~/.ssh/*
 
       - uses: actions/setup-python@v5
         with:
@@ -232,9 +254,12 @@ jobs:
         env:
           MESSAGE: ${{ github.event.inputs.text }}
           SUBMIT_FACTORY: ${{ github.event.inputs.publish_suse }}
+          PUBLISH_OBS: ${{ github.event.inputs.publish_obs }}
+          PUBLISH_COPR: ${{ github.event.inputs.publish_copr }}
           OBS_USER: ${{ secrets.OBS_USER }}
           EMAIL: ${{ secrets.EMAIL }}
           USER: ${{ github.actor }}
+          PUBLISH_AUR: ${{ github.event.inputs.publish_aur }}
           OBS_PASSWORD: ${{ secrets.OBS_PASSWORD }}
           COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
           COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
@@ -242,32 +267,34 @@ jobs:
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
           echo "Version is ${INPUT_VERSION}"
-          pip install copr
-          . ./script/generate_pkgbuild.sh
-          . ./script/trigger_open_build_service.sh
-          python3 ./script/trigger_community_projects.py
+          if [[ "$PUBLISH_AUR" == "true" ]]; then . ./script/generate_pkgbuild.sh; fi
+          if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
+          if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi
+       #   . ./script/upload_aur.sh
 
       - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        uses: KSXGitHub/github-actions-deploy-aur@master
+        if: github.event.inputs.publish_aur == 'true'
         with:
-          pkgname: nekobox
-          pkgbuild: ./PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
+           pkgname: nekobox
+           pkgbuild: ./PKGBUILD
+           commit_username: ${{ github.actor }}
+           commit_email: email@email.email
+           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+           commit_message: Update AUR package
+           ssh_keyscan_types: rsa,ecdsa,ed25519
 
       - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@v4.1.1
+        uses: KSXGitHub/github-actions-deploy-aur@master
+        if: github.event.inputs.publish_aur == 'true'
         with:
-          pkgname: nekobox-git
-          pkgbuild: ./aur_git/PKGBUILD
-          commit_username: ${{ github.actor }}
-          commit_email: email@email.email
-          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
-          ssh_keyscan_types: rsa,ecdsa,ed25519
+           pkgname: nekobox-git
+           pkgbuild: ./aur_git/PKGBUILD
+           commit_username: ${{ github.actor }}
+           commit_email: email@email.email
+           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+           commit_message: Update AUR package
+           ssh_keyscan_types: rsa,ecdsa,ed25519
 
   build-cpp:
     name: Build windows binaries
@@ -343,7 +370,7 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap
           triplet: ${{ matrix.triplet }}
           token: ${{ secrets.UPLOAD_TOKEN }}
           
@@ -368,12 +395,17 @@ jobs:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
+      - name: Install Zip, Curl, Jq, UPX
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: zip curl jq upx
+
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" -S . -B build
+          cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE='${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
@@ -497,8 +529,10 @@ jobs:
         env:
           GUEST_ARCH: ${{ matrix.target }}
         run: |
+          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           echo "UNAME=${GUEST_ARCH}" >> .ENV
           echo "INPUT_VERSION=${INPUT_VERSION}" >> .ENV
+          echo "SKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" >> .ENV
           docker compose up --force-recreate --build
 
       - name: Linux - Publish
@@ -658,31 +692,19 @@ jobs:
           ##
           cd deployment
           ####
-          if [[ -f nekobox_setup.exe ]]; then
-            mv nekobox_setup.exe $version_standalone-windows64-installer.exe
-            mv windows64 nekobox
-            zip -9 -r $version_standalone-windows64.zip nekobox
-            rm -rf nekobox windows64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows64.zip --clobber
+          if [[ -f "$version_standalone-windows64-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64.zip" --clobber
           fi
           ####
-          if [[ -f nekobox_setup_arm64.exe ]]; then
-            mv nekobox_setup_arm64.exe $version_standalone-windows-arm64-installer.exe
-            mv windows-arm64 nekobox
-            zip -9 -r $version_standalone-windows-arm64.zip nekobox
-            rm -rf nekobox windows-arm64
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows-arm64.zip --clobber
+          if [[ -f "$version_standalone-windows-arm64-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64.zip" --clobber
           fi
           ####
-          if [[ -f nekobox_setup32.exe ]]; then
-            mv nekobox_setup32.exe $version_standalone-windows32-installer.exe
-            mv windows32 nekobox
-            zip -9 -r $version_standalone-windows32.zip nekobox
-            rm -rf nekobox windows32
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32-installer.exe --clobber
-            gh release upload "${INPUT_VERSION}" $version_standalone-windows32.zip --clobber
+          if [[ -f "$version_standalone-windows32-installer.exe" ]]; then
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32-installer.exe" --clobber
+            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32.zip" --clobber
           fi
           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then

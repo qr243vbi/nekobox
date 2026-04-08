@@ -1,4 +1,8 @@
-#include "nekobox/sys/windows/eventHandler.h"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+#include <nekobox/sys/windows/eventHandler.h>
 
 #include <QDebug>
 #include <windows.h>

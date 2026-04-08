@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/profile/edit_custom.h"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"

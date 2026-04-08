@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/setting/RouteItem.h"
 #include "nekobox/ui/setting/dialog_manage_routes.h"
 #include "nekobox/ui/group/dialog_edit_group.h"

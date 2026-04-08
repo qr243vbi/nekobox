@@ -1,13 +1,19 @@
-#include "nekobox/sys/Process.hpp"
-#include "nekobox/dataStore/Configs.hpp"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
+#include <nekobox/sys/Process.hpp>
+#include <nekobox/dataStore/Configs.hpp>
 
 #include <QTimer>
 #include <QDir>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QCoreApplication>
-#include "nekobox/sys/Settings.h"
-#include "nekobox/ui/mainwindow.h"
+#include <nekobox/sys/Settings.h>
+#include <nekobox/ui/mainwindow.h>
+
 
 #undef ELEVATE_METHOD
 #ifdef Q_OS_UNIX
@@ -172,7 +178,7 @@ namespace Configs_sys {
         args << "-waitpid";
         args << QString::number(QCoreApplication::applicationPid());
         args << "-address";
-        args << QString::fromStdString(*this->domain);
+        args << QString::fromUtf8(this->domain->c_str());
         args << "-port";
         args << QString::number(*this->port);
         #ifdef DEBUG_MODE
@@ -196,11 +202,9 @@ namespace Configs_sys {
     void CoreProcess::elevateCoreProcessProgram(){
         if (!coreProcessProgramElevated){
             arguments.prepend("-admin");
-#ifdef Q_OS_UNIX
             if (this->save_elevated){
                 arguments.prepend("-save");
             }
-#endif
             coreProcessProgramElevated = true;
         }
     }

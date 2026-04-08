@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 // The MIT License (MIT)
 // Windows Version Detection 1.2.0
 // Copyright (C) 2022 - 2023 by Shao Voon Wong (shaovoon@yahoo.com)
@@ -9,13 +14,12 @@
 // 1.1.0: Added IsBuildNumGreaterOrEqual()
 // 1.2.0: Removed the Windows 11 build number check to set major version to 11.
 
-
 #ifdef WIN32_LEAN_AND_MEAN
 #undef WIN32_LEAN_AND_MEAN
 #endif
 
 #include <winsock2.h>
-#include "nekobox/sys/windows/WinVersion.h"
+#include <nekobox/sys/windows/WinVersion.h>
 #include <windows.h>
 
 

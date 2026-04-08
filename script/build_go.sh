@@ -20,35 +20,7 @@ else if [[ "$GOOS" == "linux" && "$GOARCH" == "arm" ]]; then
 fi; fi; fi; fi; fi; fi; fi;
 fi
 
-echo "DESTINATION IS $DEST FOR MACHINE $GOARCH with platform $GOOS"
+mkdir -p "${DEST}"
 
-TAGS="with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme"
-if [[ "$GOARCH" == "arm64" || "$GOARCH" == "amd64" ]]
-then 
-  TAGS="$TAGS,with_naive,with_naive_outbound,with_purego"
-fi
-
-mkdir -p $DEST ||:
-
-export CGO_ENABLED=0
-export GOTOOLCHAIN=local
-
-#### Go: updater ####
-[ "$SKIP_UPDATER" == y ] || (
-cd core/updater
-[ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
-$GOCMD build -o "$DEST/" -trimpath -ldflags "-w -s"
-) ||:
-
-#### Go: core ####
-pushd core/server
-(
-cd gen
-./update_libs.sh
-) || :
-VERSION_SINGBOX="${VERSION_SINGBOX:-$(go list -m -f '{{.Version}}' github.com/sagernet/sing-box)}"
-LDFLAGS="-w -s -X 'github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX}' -X 'internal/godebug.defaultGODEBUG=multipathtcp=0' -checklinkname=0"
-
-[ "$GO_MOD_TIDY" == yes ] && $GOCMD mod tidy
-$GOCMD build -v -o "$DEST/" -trimpath -ldflags "$LDFLAGS" -tags "$TAGS"
-popd
+cmake -S ./core -B "${BUILD}" -D"DESTDIR=$(realpath ${DEST})" "-DSKIP_UPDATER=${SKIP_UPDATER}" "-DGO_MOD_VENDOR=${GO_MOD_VENDOR:-OFF}" "-DGO_MOD_TIDY=${GO_MOD_TIDY:-ON}" "-DGOOS=${GOOS}" "-DGOARCH=${GOARCH}"
+cmake --build "${BUILD}"

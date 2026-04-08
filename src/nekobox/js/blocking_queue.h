@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef BLOCKINGQUEUE_H
 #define BLOCKINGQUEUE_H
 

@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 #include "Const.hpp"
 #include "Utils.hpp"
@@ -28,6 +33,7 @@ struct EnumFieldName {
     EnumFieldName();
     EnumFieldName(QString n);
     EnumFieldName(std::string n);
+    EnumFieldName(const char* n);
 
     // copy / move
     EnumFieldName(EnumFieldName const& other);
@@ -44,6 +50,7 @@ struct EnumFieldName {
     // assign from std string
     EnumFieldName& operator=(std::string const& s);
     EnumFieldName& operator=(std::string&& s);
+    EnumFieldName& operator=(const char * s);
 
     // set operator: replace stored name (updates lower_name)
     void set_name(QString n);

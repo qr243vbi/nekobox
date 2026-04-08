@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/setting/dialog_basic_settings.h"
 
 #include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
@@ -180,7 +185,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
     S_LOAD_BOOL(auto_hide)
-    S_LOAD_BOOL(core_use_uds)
+    D_LOAD_BOOL(core_use_uds)
     S_LOAD_BOOL(ask_delete)
     ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
@@ -191,7 +196,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     D_LOAD_INT(speed_test_timeout_ms);
     D_LOAD_STRING(simple_dl_url)
-    ui->force_json_configs->setChecked(Configs::ForceJsonConfigs);
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -233,6 +237,25 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(max_log_line)
     //
 
+    connect(ui->title_edit, &QPushButton::clicked, this, [=, this](){
+        bool ok;
+        QString text = QInputDialog::getText(
+        this,
+        software_name,
+        tr("Name of program"),
+        QLineEdit::Normal,
+        software_name,
+        &ok
+        );
+        if (ok){
+            software_name = text;
+            Configs::windowSettings->program_name = text;
+            this->setWindowTitle(software_name);
+            GetMainWindow()->setWindowTitle(software_name);
+            Configs::windowSettings->Save();
+        }
+    });
+
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
         auto font = qApp->font();
         font.setFamily(fontName);
@@ -257,9 +280,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     //
     ui->theme->addItems(QStyleFactory::keys());
     ui->theme->addItem("Dark");
-    ui->theme->addItem("AMOLED");
     ui->theme->addItem("Kawaii");
+    ui->theme->addItem("BlackSoft");
+    ui->theme->addItem("AMOLED");
     ui->theme->addItem("Aqua");
+    ui->theme->addItem("LightBlue");
+    ui->theme->addItem("FlatGray");
     //
 //    bool ok;
     ui->theme->setCurrentText(settings->theme);
@@ -302,6 +328,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     // Mux
     D_LOAD_INT(mux_concurrency)
     D_LOAD_COMBO_STRING(mux_protocol)
+    D_LOAD_COMBO_STRING_PTR(store_type)
     D_LOAD_BOOL(mux_padding)
     D_LOAD_BOOL(mux_default_on)
 
@@ -366,7 +393,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_INT(Y)
     
 
-    QString core_path = Configs::resourceManager->core_path;
+    QString core_path = Configs::resourceManager->getLink(NKR_CORE_NAME);
+    CACHE.core_path_old = core_path;
     QString icons_path = Configs::resourceManager->resources_path;
     ui->core_path->setText(core_path);
     ui->icons_path->setText(icons_path);
@@ -417,7 +445,6 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
     D_SAVE_STRING(simple_dl_url)
-    Configs::ForceJsonConfigs = ui->force_json_configs->isChecked();
     D_SAVE_INT(url_test_timeout_ms)
     D_SAVE_INT(speed_test_timeout_ms)
 
@@ -453,7 +480,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)
-    S_SAVE_BOOL(core_use_uds)
+    D_SAVE_BOOL(core_use_uds)
     S_SAVE_BOOL(ask_delete)
     D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
@@ -470,6 +497,7 @@ void DialogBasicSettings::accept() {
     // Mux
     D_SAVE_INT(mux_concurrency)
     D_SAVE_COMBO_STRING(mux_protocol)
+    D_SAVE_COMBO_STRING_PTR(store_type)
     D_SAVE_BOOL(mux_padding)
     D_SAVE_BOOL(mux_default_on)
 
@@ -499,10 +527,11 @@ void DialogBasicSettings::accept() {
     } else {
         core_path_text = ui->core_path->text();
     }
-    if (Configs::resourceManager->core_path != core_path_text){
+    Configs::resourceManager->saveLink(NKR_CORE_NAME, core_path_text);
+    core_path_text = Configs::resourceManager->getLink(NKR_CORE_NAME);
+    if (core_path_text != CACHE.core_path_old){
         need_save_manager = true;
         need_core_restart = true;
-        Configs::resourceManager->core_path = core_path_text;
     }
     if (ui->default_icons_path->isChecked()){
         resources_path = "";

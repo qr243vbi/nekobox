@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef DATA_STORE_HEADER
 #define DATA_STORE_HEADER
 
@@ -5,13 +10,33 @@
 #include "ConfigItem.hpp"
 #include "Utils.hpp"
 #include <nekobox/configs/proxy/Preset.hpp>
+#include "Utils.hpp"
 #ifdef Q_OS_WIN
-#include "nekobox/sys/windows/WinVersion.h"
+#include <nekobox/sys/windows/WinVersion.h>
 #endif
 
 namespace Configs {
 
-    extern bool ForceJsonConfigs;
+    enum DatabaseType {
+        json_type = 1,
+        binary_type = 2,
+        ini_type = 3,
+        leveldb_type = 4
+    };
+
+    class StoreTypeEnum;
+
+    void SetConfigType(Configs::StoreTypeEnum * th, int old_value, int new_value);
+
+    INIT_ENUM(StoreType)
+        ADD_ENUM("json", DatabaseType::json_type);
+        ADD_ENUM("binary", DatabaseType::binary_type);
+        ADD_ENUM("ini", DatabaseType::ini_type);
+        ADD_ENUM("leveldb", DatabaseType::leveldb_type);
+    STOP_ENUM_TRIGGER(SetConfigType)
+
+
+    extern int config_type;
 
     class Routing : public JsonStore {
     public:
@@ -33,8 +58,8 @@ namespace Configs {
         // Misc
         QString domain_strategy = "AsIs";
         QString outbound_domain_strategy = "AsIs";
-        int sniffing_mode = SniffingMode::FOR_ROUTING;
-        int ruleset_mirror = Mirrors::CLOUDFLARE;
+        int sniffing_mode = Configs::SniffingMode::FOR_ROUTING;
+        int ruleset_mirror = Configs::Mirrors::CLOUDFLARE;
 
         explicit Routing(int preset = 0);
 
@@ -52,7 +77,16 @@ namespace Configs {
         // custom hardware info
         QString sub_custom_hwid_params = ""; 
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
-        // Running
+        // 
+
+
+        bool core_use_uds = 
+        // Strange errors on windows
+        #ifdef Q_OS_WIN
+        false;
+        #else
+        true;
+        #endif
         int core_port = 19810;
         std::string core_domain = "127.0.0.1";
         int started_id = -1919;
@@ -82,6 +116,7 @@ namespace Configs {
         bool refreshing_group_list = false;
         bool refreshing_group = false;
         std::atomic<int> resolve_count = 0;
+        std::shared_ptr<StoreTypeEnum> store_type = std::make_shared<StoreTypeEnum>(0);
 
         // Flags
         QStringList argv = {};
@@ -109,7 +144,6 @@ namespace Configs {
         bool mux_default_on = false;
  //       QString theme = "0";
  //       int language = 0;
-        bool * force_json_configs = &Configs::ForceJsonConfigs;
  //       QString font = "";
   //      int font_size = 0;
  //       QString mw_size = "";

@@ -65,7 +65,10 @@ then
 fi
 
 cp "$rel/nekobox.exe" "$DEST"
+#cp "$rel/elevated_launcher.exe" "$DEST"
+touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
+
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
@@ -81,7 +84,7 @@ cp "libcronet-windows-${NAIVE}.dll"  "$DEST/libcronet.dll"
 fi
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
-cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"
+cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
@@ -94,7 +97,44 @@ fi
 (
 cd "$CURDIR"
 pwd
+
+rm "$DEST/icu"*.dll
+
+if [[ "$SKIP_UPX" != "true" ]]
+then
+if command -v upx
+then
+#upx -9 "$DEST/nekobox.exe"         ||:
+pushd "$DEST"
+upx *.dll *.exe ||:
+popd
+fi
+fi
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
 makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+fi
+
+pushd "$DEPLOYMENT"
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
+mv "$INST" "$version_standalone-$ARCH-installer.exe"
+fi
+
+
+if [[ "$SKIP_ZIP" == 'true' ]]
+then
+mv "$ARCH" "$version_standalone-$ARCH"
+else
+mv "$ARCH" nekobox
+zip -9 -r "$version_standalone-$ARCH.zip" nekobox
+rm -rf nekobox
+fi
+
+popd
+
 )
 
 popd

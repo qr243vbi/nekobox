@@ -32,6 +32,16 @@ func To[T any](v T) *T {
 	return &v
 }
 
+func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported, error) {
+	out := new(gen.Supported)
+	ok := true
+	if in.Type == "naive" {
+		ok = CheckNaive()
+	}
+	out.Ok = ok
+	return out, nil
+}
+
 func (s *server) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
 	out := new(gen.CacheURLResult_)
 	var exists bool

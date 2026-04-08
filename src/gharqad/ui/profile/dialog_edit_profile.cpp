@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/profile/dialog_edit_profile.h"
 
 #include "nekobox/ui/profile/edit_anytls.h"
@@ -68,7 +73,9 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
   ui->setupUi(this);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
+  ui->network_2->addItem(tr("both"));
     ui->network_2->addItems(Preset::SingBox::Network);
+
   // network changed
   network_title_base = ui->network_box->title();
   connect(ui->network, &QComboBox::currentTextChanged, this,

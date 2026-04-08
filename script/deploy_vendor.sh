@@ -12,15 +12,17 @@ then
 curl -fLso "$SRC_ROOT/srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
 fi
 
-go mod tidy
-go mod vendor
 go list -m -f '{{.Version}}' github.com/sagernet/sing-box > "$SRC_ROOT/SingBox.Version"
+
 popd
 
-pushd "$SRC_ROOT"/core/updater
+for i in server updater
+do
+pushd "core/$i"
 go mod tidy
 go mod vendor
 popd
+done
 
 if [[ ! -d "$SRC_ROOT"/.git ]]
 then
@@ -31,13 +33,13 @@ fi
 
 echo "[General]" > global.ini
 echo "program_version=$INPUT_VERSION" >> global.ini
-echo "program_name=NekoBox" >> global.ini
+echo "program_name=Iblis" >> global.ini
 
 rm -fv **/*.so
 rm -fv **/*.a
 rm -fv **/*.dll
 
-git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
+git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} core/updater/vendor SingBox.Version
 git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
 
@@ -51,7 +53,7 @@ sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_stand
 
 
 git reset --soft HEAD^1
-for i in  srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} SingBox.Version
+for i in  srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} core/updater/vendor SingBox.Version
 do
 git rm -rf "$i"
 rm -rf "$i"

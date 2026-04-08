@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/ui/info/info.h>
@@ -57,7 +62,7 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
 #define SET_LOGGER_STAT(name, FUNC) SET_CUSTOM_STAT(name, Stats::databaseLogger->name, FUNC);
 #define SET_LOGGER_FUNC(name, FUNC) SET_CUSTOM_STAT(name, Stats::databaseLogger->get_##name(), FUNC);
 #define SET_TRAFFIC_STAT(type, way, FUNC) SET_CUSTOM_STAT(total_##type##_##way##load, \
-  Stats::trafficLooper->total_##type##_##way##load(), FUNC);
+  Stats::trafficLooper->total_##type##_##way##load() + Stats::databaseLogger->total_##type->way##link, FUNC);
 #define SET_DATA_STAT(proxy, profiles, WORD, FUNC) \
     SET_CUSTOM_STAT(proxy##_created, Stats::databaseLogger->profiles->created, FUNC); \
     SET_CUSTOM_STAT(proxy##_deleted, Stats::databaseLogger->profiles->deleted, FUNC); \
@@ -66,10 +71,9 @@ QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
 InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain)  {
   CHECK_SETTINGS_ACCESS
   ui->setupUi(this);
-  ui->textBrowser->document()->setDefaultFont(qApp->font());
-  ui->textBrowser->setOpenExternalLinks(true);
+ // ui->textBrowser->document()->setDefaultFont(qApp->font());
+ // ui->textBrowser->setOpenExternalLinks(true);
   this->setWindowTitle(software_name);
-  Stats::trafficLooper->initialize();
   SET_TRAFFIC_STAT(direct, down, ReadableSize)
   SET_TRAFFIC_STAT(direct, up, ReadableSize)
   SET_TRAFFIC_STAT(proxy, down, ReadableSize)
@@ -100,5 +104,22 @@ InfoDialog::~InfoDialog(){
 }
 
 void InfoDialog::accept(){
+
+}
+
+
+AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent), ui(new Ui::AboutMain)  {
+  ui->setupUi(this);
+  ui->textBrowser->setText(ReadFileText(getResource("about.html")));
+  ui->textBrowser->document()->setDefaultFont(qApp->font());
+  ui->textBrowser->setOpenExternalLinks(true);
+  this->setWindowTitle(software_name);
+}
+
+AboutDialog::~AboutDialog(){
+
+}
+
+void AboutDialog::accept(){
 
 }

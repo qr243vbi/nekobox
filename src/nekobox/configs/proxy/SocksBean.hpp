@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "AbstractBean.hpp"
@@ -13,7 +18,7 @@ namespace Configs {
         int socks_http_type = type_Socks5;
         QString username = "";
         QString password = "";
-        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>(0);
         int uot = 0;
 
 

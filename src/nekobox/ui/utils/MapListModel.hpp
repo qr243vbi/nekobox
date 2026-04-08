@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef MAPLISTMODEL_H
 #define MAPLISTMODEL_H
 

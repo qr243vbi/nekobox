@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef NEKOBOX_SETTINGS
 #define NEKOBOX_SETTINGS
 #include <QList>
@@ -12,11 +17,11 @@
 
 #define SETTINGS_VALUE_LOAD(Bin)                                               \
   void Configs::Settings##Bin##Value::Load(QSettings &settings,                \
-                                           SettingsStore *store)
+                                           SettingsStore *store, const QString & parent)
 
 #define SETTINGS_VALUE_SAVE(Bin)                                               \
   void Configs::Settings##Bin##Value::Save(QSettings &settings,                \
-                                           SettingsStore *store)
+                                           SettingsStore *store, const QString & parent)
 
 #define SETTINGS_PUT(X, T)                                                     \
   void Configs::SettingsStore::_put(                                           \
@@ -45,8 +50,8 @@
 #define SETTINGS_VALUE(Bin)                                                    \
   class Settings##Bin##Value : public SettingsValue {                          \
   public:                                                                      \
-    void Load(QSettings &settings, SettingsStore *store) override;             \
-    void Save(QSettings &settings, SettingsStore *store) override;             \
+    void Load(QSettings &settings, SettingsStore *store, const QString & parent) override;             \
+    void Save(QSettings &settings, SettingsStore *store, const QString & parent) override;             \
   };
 
 namespace Configs {
@@ -56,8 +61,8 @@ class SettingsStore {
 public:
   virtual QList<std::shared_ptr<SettingsValue>> &_map() = 0;
   virtual QSettings settings() = 0;
-  virtual void Load();
-  virtual void Save();
+  virtual void Load(const QString & name = "");
+  virtual void Save(const QString & name = "");
   void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
             int *ptr);
   void _put(QList<std::shared_ptr<SettingsValue>> &list, const QString &str,
@@ -74,8 +79,8 @@ class SettingsValue {
 public:
   size_t ptr;
   QString name;
-  virtual void Load(QSettings &settings, SettingsStore *store) = 0;
-  virtual void Save(QSettings &settings, SettingsStore *store) = 0;
+  virtual void Load(QSettings &settings, SettingsStore *store, const QString & parent) = 0;
+  virtual void Save(QSettings &settings, SettingsStore *store, const QString & parent) = 0;
 };
 
 SETTINGS_VALUE(Bool)
@@ -119,7 +124,6 @@ public:
   int max_log_line = 200;
   int width = 0;
   int height = 0;
-  bool core_use_uds = true;
   int X = 0;
   int Y = 0;
   bool maximized = false;
@@ -133,6 +137,7 @@ public:
   QStringList column_width;
   QString language = "";
   bool first_start = true;
+  QString program_name = "Iblis";
 };
 
 }; // namespace Configs

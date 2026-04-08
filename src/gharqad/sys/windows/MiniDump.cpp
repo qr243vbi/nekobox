@@ -1,4 +1,9 @@
-#include "nekobox/sys/windows/MiniDump.h"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
+#include <nekobox/sys/windows/MiniDump.h>
 
 #include <windows.h>
 #include <tchar.h>

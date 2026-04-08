@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef JS_UPDATER
 #define JS_UPDATER
 #include "message_queue.h"

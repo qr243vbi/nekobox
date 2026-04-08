@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 /*
  * Bittorrent Client using Qt and libtorrent.
  * Copyright (C) 2015 Anton Lashkov <lenton_91@mail.ru>

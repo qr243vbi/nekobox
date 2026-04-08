@@ -1,9 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(nekobox VERSION 6.0.0)
+# Use this snippet *after* PROJECT(xxx):
+if(UNIX)
+    if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+        set(CMAKE_INSTALL_PREFIX /usr CACHE PATH "default prefix" FORCE)
+    endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_SUPPRESS_REGENERATION ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,16 +20,15 @@ if(POLICY CMP0167)
 endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-if (UNIX)
 find_program(CCACHE_FOUND ccache)
 if(CCACHE_FOUND)
    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
 endif()
-endif()
+
 
 #if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 #	if (NOT MSVC)
-#		set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 #	endif ()
 #endif ()
 
@@ -55,9 +61,10 @@ list(APPEND CMAKE_FIND_ROOT_PATH ${CMAKE_PREFIX_PATH})
 message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 #### NKR ####
-option(SKIP_UPDATE_BUTTON "Always hide update button" OFF)
+option(SKIP_UPDATER "Always hide update button" ON)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
-option(USE_HOTKEYS "Skip JS update checker" ON)
+option(USE_HOTKEYS "Skip HotKeys" ON)
+option(BUILD_GO_PARTS "Build go parts" ON)
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
@@ -79,14 +86,22 @@ if (USE_HOTKEYS)
 endif()
 
 find_program(THRIFT_COMPILER thrift REQUIRED)
+
+if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(THRIFT_COMPILER "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
+     set(ENV{THRIFT_COMPILER} "${THRIFT_COMPILER}")
+endif()
+
+message(STATUS "Found Thrift " ${THRIFT_COMPILER})
+
 set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
 set(THRIFT_GEN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen-cpp")
 file(MAKE_DIRECTORY "${THRIFT_GEN_DIR}")
-add_custom_command(
-    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
+
+execute_process(
+#    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
     COMMAND ${THRIFT_COMPILER} --gen cpp --out "${THRIFT_GEN_DIR}" "${THRIFT_FILE}"
-    DEPENDS "${THRIFT_FILE}"
-    COMMENT "Generating Thrift C++ code for Libcore"
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )
 
 # Add a custom target to ensure the code generation runs
@@ -188,7 +203,7 @@ set(PROJECT_SOURCES
         ${NYXARIA}/global/HTTPRequestHelper.hpp
         ${NYXARIA}/global/keyvaluerange.h
 
-        ${NYXARIA}/stats/traffic/TrafficData.hpp
+        ${NYXARIA}/dataStore/TrafficData.hpp
         ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
         ${GHARQAD}/configs/sub/GroupUpdater.cpp
@@ -209,6 +224,7 @@ set(PROJECT_SOURCES
         ${NYXARIA}/ui/mainwindow.h
         ${NYXARIA}/ui/mainwindow.ui
         ${NYXARIA}/ui/info/main.ui
+        ${NYXARIA}/ui/info/about.ui
         ${NYXARIA}/ui/info/info.h
         ${NYXARIA}/ui/profile/edit_shadowtls.ui
         ${NYXARIA}/ui/profile/dialog_edit_profile.h
@@ -308,6 +324,7 @@ set(PROJECT_SOURCES
         ${GHARQAD}/dataStore/RouteEntity.cpp
         ${GHARQAD}/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
+        res/qss/feiyangqingyun/qss.qrc
         ${GHARQAD}/ui/profile/edit_ssh.cpp
         ${NYXARIA}/ui/profile/edit_ssh.h
         ${NYXARIA}/ui/profile/edit_ssh.ui
@@ -334,12 +351,11 @@ qt_add_executable(nekobox
 )
 
 # Target
-
 set_property(TARGET nekobox PROPERTY AUTOUIC ON)
 set_property(TARGET nekobox PROPERTY AUTOMOC ON)
 set_property(TARGET nekobox PROPERTY AUTORCC ON)
 
-if(SKIP_UPDATE_BUTTON)
+if(SKIP_UPDATER)
     nkr_add_compile_definitions(SKIP_UPDATE_BUTTON=yes)
 endif()
 if(SKIP_JS_UPDATER)
@@ -431,6 +447,9 @@ target_link_libraries(nekobox PRIVATE
         ${PLATFORM_LIBRARIES}
 )
 
+#find_package(leveldb REQUIRED)
+#target_link_libraries(nekobox PRIVATE leveldb::leveldb)
+
 if (MSVC)
     target_compile_options(nekobox PRIVATE "/std:c++20")       # add c++20 feature
     if(CMAKE_SIZEOF_VOID_P EQUAL 4)
@@ -440,9 +459,23 @@ if (MSVC)
     endif()
 endif()
 
-#qt_finalize_executable(nekobox)
+if (BUILD_GO_PARTS)
+    find_program(GO_EXECUTABLE go)
 
+    set(GO_SOURCE_DIR ${CMAKE_SOURCE_DIR}/core)
+
+    if(EXISTS ${GO_SOURCE_DIR}/CMakeLists.txt AND GO_EXECUTABLE)
+        add_subdirectory(${GO_SOURCE_DIR})
+    else()
+        message(STATUS "Go server not found, skipping")
+    endif()
+endif()
+
+#qt_finalize_executable(nekobox)
 if (UNIX)
+
+remove_rpath(nekobox)
+
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
 
@@ -467,9 +500,11 @@ else()
     message(STATUS "File already exists: ${DEST_FILE}")
 endif()
 
-set(START "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/nekobox")
-set(MAIN "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBEXECDIR}/nekobox/nekobox")
-set(ICON "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png")
+set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
+
+get_filename_component(START "${CMAKE_INSTALL_BINDIR}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(MAIN "${PROGRAMPREFIX}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(ICON "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 
 # Configure the desktop file
 configure_file(
@@ -516,11 +551,24 @@ install(
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
-install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
-install(TARGETS nekobox DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox)
+if(EXISTS "${CMAKE_SOURCE_DIR}/global.ini")
+    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION "${PROGRAMPREFIX}/public")
+endif()
+
+if(NOT SKIP_UPDATER AND NOT SKIP_JS_UPDATER)
+    install(FILES ${CMAKE_SOURCE_DIR}/res/public/check_new_release.js DESTINATION "${PROGRAMPREFIX}/public")
+endif()
+
+install(FILES ${QM_FILES} DESTINATION "${PROGRAMPREFIX}/public")
+install(TARGETS nekobox DESTINATION "${PROGRAMPREFIX}")
 install(FILES 
-    ${CMAKE_SOURCE_DIR}/srslist.json 
-    ${CMAKE_SOURCE_DIR}/check_routeprofiles.js 
-    ${CMAKE_SOURCE_DIR}/res/languages.txt DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nekobox/public)
+    "${CMAKE_SOURCE_DIR}/srslist.json"
+    "${CMAKE_SOURCE_DIR}/res/public/announcement_message.js"
+    "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
+    "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public")
+
+install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
+install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")
 
 endif()
+

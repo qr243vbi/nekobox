@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "AbstractBean.hpp"
@@ -10,7 +15,7 @@ namespace Configs {
         static constexpr int proxy_Trojan = 0;
         static constexpr int proxy_VLESS = 1;
         int proxy_type = proxy_Trojan;
-        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>(0);
 
         QString password = "";
         QString flow = "";

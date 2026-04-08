@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef NEKORAY_DIALOG_VPN_SETTINGS_H
 #define NEKORAY_DIALOG_VPN_SETTINGS_H
 

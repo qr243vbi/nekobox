@@ -1,8 +1,52 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "ProxyEntity.hpp"
 
 namespace Configs {
+    struct ProfileFilterKey
+    {
+        std::shared_ptr<Configs::ProxyEntity> key;
+
+        ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity> key, bool unpack_bean){
+            this->key = key;
+            this->unpack_bean = unpack_bean;
+        }
+    // --- Bean Bytes ---
+        QByteArray beanBytes() const noexcept;
+
+    // --- Equality ---
+        bool operator==(const ProfileFilterKey &other) const noexcept;
+
+    // --- Ordering (for QMap, optional) ---
+        bool operator<(const ProfileFilterKey &other) const noexcept;
+
+    // --- Ordering (for QMap, optional) ---
+        bool operator>(const ProfileFilterKey &other) const noexcept;
+
+    // --- Ordering (for QMap, optional) ---
+        bool operator<=(const ProfileFilterKey &other) const noexcept;
+
+    // --- Ordering (for QMap, optional) ---
+        bool operator>=(const ProfileFilterKey &other) const noexcept;
+
+    // --- Ordering (for QMap, optional) ---
+        bool operator!=(const ProfileFilterKey &other) const noexcept;
+
+        private:
+        bool unpack_bean;
+        QByteArray cache = {};
+    };
+
+    inline uint qHash(const ProfileFilterKey &key, uint seed = 0) noexcept;
+
+    ProfileFilterKey ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent,
+                              bool by_address);
+
     class ProfileFilter {
     public:
         static void Uniq(

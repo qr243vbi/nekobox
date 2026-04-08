@@ -5,6 +5,124 @@ Company: GTRONICK
 Last updated: 01/10/2021, 15:49.
 Available at: https://github.com/GTRONICK/QSS/blob/master/AMOLED.qss
 */
+/* ===== GLOBAL (AMOLED) ===== */
+QWidget {
+	background-color: rgb(0,0,0);              /* pure black */
+	color: rgb(240,240,240);                  /* slightly softer than pure white */
+	selection-background-color: rgb(45,140,200); /* toned-down blue */
+	selection-color: rgb(255,255,255);
+}
+
+/* ===== WINDOWS ===== */
+QMainWindow, QDialog {
+	background-color: rgb(0,0,0);
+}
+
+/* ===== TOOLTIP ===== */
+QToolTip {
+	background-color: rgb(10,10,10);
+	color: rgb(240,240,240);
+	border: 1px solid rgb(45,140,200);
+}
+
+/* ===== BUTTONS ===== */
+QPushButton {
+	background-color: rgb(10,10,10);
+	color: rgb(240,240,240);
+	border: 1px solid rgb(45,140,200);
+	padding: 5px;
+	border-radius: 6px;
+}
+
+QPushButton:hover {
+	background-color: rgb(20,20,20);
+}
+
+QPushButton:pressed {
+	background-color: rgb(45,140,200);
+}
+
+/* ===== INPUTS ===== */
+QLineEdit, QTextEdit, QPlainTextEdit {
+	background-color: rgb(0,0,0);
+	color: rgb(240,240,240);
+	border: 1px solid rgb(45,140,200);
+	selection-background-color: rgb(45,140,200);
+}
+
+/* ===== LISTS / VIEWS ===== */
+QListView, QTreeView, QTableView {
+	background-color: rgb(0,0,0);
+	alternate-background-color: rgb(10,10,10);
+	color: rgb(240,240,240);
+	gridline-color: rgb(20,20,20);
+}
+
+QListView::item:selected,
+QTreeView::item:selected,
+QTableView::item:selected {
+	background-color: rgb(45,140,200);
+	color: rgb(255,255,255);
+}
+
+/* ===== HEADERS ===== */
+QHeaderView::section {
+	background-color: rgb(10,10,10);
+	color: rgb(240,240,240);
+	border: 1px solid rgb(0,0,0);
+}
+
+/* ===== MENUS ===== */
+QMenuBar {
+	background-color: rgb(0,0,0);
+	color: rgb(240,240,240);
+}
+
+QMenuBar::item:selected {
+	background-color: rgb(45,140,200);
+}
+
+QMenu {
+	background-color: rgb(0,0,0);
+	color: rgb(240,240,240);
+	border: 1px solid rgb(20,20,20);
+}
+
+QMenu::item:selected {
+	background-color: rgb(45,140,200);
+}
+
+/* ===== SCROLLBAR ===== */
+QScrollBar:vertical, QScrollBar:horizontal {
+	background: rgb(0,0,0);
+	width: 10px;
+	height: 10px;
+}
+
+QScrollBar::handle {
+	background: rgb(20,20,20);
+	border-radius: 5px;
+}
+
+QScrollBar::handle:hover {
+	background: rgb(45,140,200);
+}
+
+/* ===== LINKS ===== */
+QLabel {
+	color: rgb(240,240,240);
+}
+
+QLabel[link="true"] {
+	color: rgb(60,160,255); /* softer link blue */
+}
+
+/* ===== DISABLED ===== */
+QWidget:disabled {
+	color: rgb(80,80,80);
+}
+
+
 QMainWindow {
 	background-color:#000000;
 }

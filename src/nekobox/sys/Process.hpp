@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include <memory>
@@ -19,9 +24,7 @@ namespace Configs_sys {
     class CoreProcess: public QObject
     {
     public:
-#ifdef Q_OS_UNIX
         bool save_elevated = false;
-#endif
         QProcess process;
         QString tag;
         QString program;

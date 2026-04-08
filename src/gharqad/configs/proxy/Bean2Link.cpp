@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
 #include "nekobox/dataStore/ProxyEntity.hpp"
 #include "nekobox/configs/proxy/includes.h"
@@ -15,7 +20,9 @@ namespace Configs {
     
     template<typename T>
     static void add_network(QUrlQuery & query, T * obj){
-        add_query_nonempty("network", query, *obj->network);
+        if (obj->network->value > 0){
+            add_query_nonempty("network", query, *obj->network);
+        }
     }
 
     static void add_default_fields(QUrl & url, const AbstractBean * bean){
@@ -507,7 +514,7 @@ namespace Configs {
 
     QString MieruBean::ToShareLink() const {
         QUrl url;
-        url.setScheme("mieru");
+        url.setScheme("mierus");
         add_default_fields(url, this);
         QUrlQuery q;
         add_username_password(url, this);

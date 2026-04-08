@@ -3,20 +3,22 @@ module nekobox_core
 go 1.25.0
 
 require (
-	github.com/NullYing/npipe v0.0.0-20250430055250-2d2a4d962cf7
+	github.com/Microsoft/go-winio v0.6.2
 	github.com/apache/thrift v0.22.0
 	github.com/dustin/go-humanize v1.0.1
+	github.com/giert/taskmaster v0.0.0-20251117163809-2ec4a61354ef
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/oschwald/maxminddb-golang v1.13.1
+	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
-	github.com/sagernet/sing v0.8.3-0.20260315153529-ed51f65fbfde
-	github.com/sagernet/sing-box v1.13.4
+	github.com/sagernet/sing v0.8.4
+	github.com/sagernet/sing-box v1.13.6
 	github.com/sagernet/sing-tun v0.8.6
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/sys v0.42.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
-	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
+	kernel.org/pub/linux/libs/security/libcap/cap v1.2.78
 )
 
 require (
@@ -78,6 +80,8 @@ require (
 	github.com/pires/go-proxyproto v0.8.1 // indirect
 	github.com/prometheus-community/pro-bing v0.4.0 // indirect
 	github.com/quic-go/qpack v0.6.0 // indirect
+	github.com/rickb777/date v1.21.1 // indirect
+	github.com/rickb777/plural v1.4.2 // indirect
 	github.com/safchain/ethtool v0.3.0 // indirect
 	github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a // indirect
 	github.com/sagernet/cors v1.2.1 // indirect
@@ -117,7 +121,7 @@ require (
 	github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a // indirect
 	github.com/sagernet/nftables v0.3.0-beta.4 // indirect
 	github.com/sagernet/sing-mux v0.3.4 // indirect
-	github.com/sagernet/sing-quic v0.6.0 // indirect
+	github.com/sagernet/sing-quic v0.6.1 // indirect
 	github.com/sagernet/sing-shadowsocks v0.2.8 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.1 // indirect
 	github.com/sagernet/sing-shadowtls v0.2.1-0.20250503051639-fcd445d33c11 // indirect
@@ -163,8 +167,7 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/grpc v1.79.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
-	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
-	kernel.org/pub/linux/libs/security/libcap/psx v1.2.77 // indirect
+	kernel.org/pub/linux/libs/security/libcap/psx v1.2.78 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 

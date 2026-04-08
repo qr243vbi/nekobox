@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "3rdparty/qv2ray/wrapper.hpp"
@@ -96,12 +101,14 @@ inline QString joinCommand(const QStringList &arguments) {
 #define P_LOAD_COMBO_STRING(a) ui->a->setCurrentText(bean->a);
 #define P_SAVE_COMBO_STRING(a) bean->a = ui->a->currentText();
 
-
 #define P_LOAD_COMBO_STRING_PTR(a) ui->a->setCurrentText(*bean->a);
 #define P_SAVE_COMBO_STRING_PTR(a) *bean->a = ui->a->currentText();
 
 #define D_LOAD_COMBO_STRING(a) ui->a->setCurrentText(Configs::dataStore->a);
 #define D_SAVE_COMBO_STRING(a) Configs::dataStore->a = ui->a->currentText();
+
+#define D_LOAD_COMBO_STRING_PTR(a) ui->a->setCurrentText(*Configs::dataStore->a);
+#define D_SAVE_COMBO_STRING_PTR(a) *Configs::dataStore->a = ui->a->currentText();
 
 #define P_LOAD_COMBO_INT(a) ui->a->setCurrentIndex(bean->a);
 #define P_SAVE_COMBO_INT(a) bean->a = ui->a->currentIndex();
@@ -171,7 +178,6 @@ inline QString joinCommand(const QStringList &arguments) {
 
 
 // UI
-extern QWidget *mainwindow;
 
 QWidget *GetMessageBoxParent();
 

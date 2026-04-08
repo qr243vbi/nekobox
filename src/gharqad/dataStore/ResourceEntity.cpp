@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/sys/Settings.h>
@@ -53,19 +58,32 @@ bool ResourceManager::saveLink(QString str, QString path){
       latest_path = QString("..") + QDir::separator() + latest_path;
     }
   }  
-  if (symlinks_supported) {
-    QString file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.lnk"));
-    QFile::remove(file);
-    return createSymlink(latest_path, file);
+  if (str == NKR_CORE_NAME){
+    this->core_path = latest_path;
+    return this->Save();
   } else {
-    QFile file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.txt"));
-    return WriteFileText(file, latest_path);
+    if (symlinks_supported) {
+      QString file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.lnk"));
+      QFile::remove(file);
+      if (path == "") return true;
+      return createSymlink(latest_path, file);
+    } else {
+      QFile file(this_path.absoluteFilePath(QString("resources") + QDir::separator() + str + ".ent.txt"));
+      if (path == "") {
+        file.remove();
+        return true;
+      }
+      return WriteFileText(file, latest_path);
+    }
   }
 }
 
 QString ResourceManager::getLink(QString str) {
   QString filepath = "";
   str = _ent(str);
+  if (str == NKR_CORE_NAME){
+    filepath = this->core_path;
+  } else {
   if (symlinks_supported) {
     QFile file("resources/" + str + ".ent.lnk");
     if (file.exists()) {
@@ -76,6 +94,7 @@ QString ResourceManager::getLink(QString str) {
     if (file.exists()) {
       filepath = ReadFileText(file);
     }
+  }
   }
   QFileInfo info(filepath);
   if (info.exists()) {

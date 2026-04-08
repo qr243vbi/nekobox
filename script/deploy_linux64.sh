@@ -1,7 +1,8 @@
 #!/bin/bash
-set -e
 source script/env_deploy.sh
 export CURDIR="$SRC_ROOT"
+
+set -e
 
 UNAME="${UNAME:-$(uname -m)}"
 
@@ -137,7 +138,7 @@ patchelf --set-rpath '$ORIGIN/../../lib' ./usr/plugins/platformthemes/*.so ||:
 
 # fix lib rpath
 cp -RT "$CURDIR/res/public" "$DEST/public"
-cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$CURDIR/"*.js "$DEST/public/"
+cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 cd "$DEST"
 patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox

@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include <boost/dll/runtime_symbol_info.hpp>
@@ -11,6 +16,8 @@
 #include <QUrlQuery>
 #include <QVariantMap>
 #include <functional>
+#include <QSettings>
+#include <QFileInfo>
 #include <memory>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
@@ -166,7 +173,9 @@ template <typename T> auto asListRange(QList<T> &&list) {
 #define DEBUG_INIT_ENUM
 #endif
 
-#define STOP_ENUM STOP_MAP ; };
+#define STOP_ENUM STOP_MAP };
+
+#define STOP_ENUM_TRIGGER(func) STOP_MAP protected: virtual void trigger(int old_value, int new_value) override { func(this, old_value, new_value); } ; };
 
 #define INIT_ENUM(Name)                                                  \
 class Name##Enum: public JsonEnum {                               \
@@ -278,6 +287,12 @@ QJsonArray QListInt2QJsonArray(const QList<int> &list);
 QJsonArray QListStr2QJsonArray(const QList<QString> &list);
 
 QList<int> QJsonArray2QListInt(const QJsonArray &arr);
+
+QList<int> QListStr2QListInt(const QList<QString> &arr);
+
+QList<QString> QListInt2QListStr(const QList<int> &arr);
+
+QSettings QSettingsFromFileInfo(const QFileInfo& settings);
 
 QJsonObject QMapString2QJsonObject(const QMap<QString, QString> &mp);
 

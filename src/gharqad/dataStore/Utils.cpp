@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/dataStore/Utils.hpp"
 #include "nekobox/dataStore/Configs.hpp"
 #include "3rdparty/QThreadCreateThread.hpp"
@@ -299,10 +304,31 @@ std::vector<std::string> QListStr2VectorStr(const QStringList &list) {
   return vec;
 }
 
+QSettings QSettingsFromFileInfo(const QFileInfo& settings){
+  return QSettings(settings.absoluteFilePath(), QSettings::Format::IniFormat);
+};
+
+
+QList<int> QListStr2QListInt(const QList<QString> &list) {
+  QList<int> vec;
+  for (QString str : list) {
+    vec << str.toInt();
+  }
+  return vec;
+}
+
+QList<QString> QListInt2QListStr(const QList<int> &list) {
+  QList<QString> vec;
+  for (int str : list) {
+    vec << QString::number(str);
+  }
+  return vec;
+}
+
 QStringList VectorStr2QListStr(const std::vector<std::string> &list) {
   QStringList vec;
   for (std::string str : list) {
-    vec.append(QString::fromStdString(str));
+    vec.append(QString::fromUtf8(str.c_str()));
   }
   return vec;
 }

@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
 #include <nekobox/dataStore/ProfileFilter.hpp>
 #include <nekobox/dataStore/Utils.hpp>
@@ -188,8 +193,8 @@ namespace Subscription {
             if (!ok) return;
         }
 
-        // Mieru simple 
-        if (str.startsWith("mierus://")) {
+        // Mieru
+        if (str.startsWith("mierus://") || str.startsWith("mieru://")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
             auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
             if (!ok) return;

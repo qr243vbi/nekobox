@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/global/CountryHelper.hpp"
 
 QString CountryNameToCode(const QString& countryName) {
@@ -14,10 +19,10 @@ QString CountryCodeToFlag(const QString& countryCode) {
 
 
 QString CountryNameToCode(const std::string& countryName) {
-    return CountryNameToCode(QString::fromStdString(countryName));
+    return CountryNameToCode(QString::fromUtf8(countryName.c_str()));
 }
 
 
 QString CountryCodeToFlag(const std::string& countryName) {
-    return CountryNameToCode(QString::fromStdString(countryName));
+    return CountryNameToCode(QString::fromUtf8(countryName.c_str()));
 }

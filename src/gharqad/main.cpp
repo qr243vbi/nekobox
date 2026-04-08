@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <csignal>
 
 #include <QCryptographicHash>
@@ -11,20 +16,19 @@
 #include <QFileInfo>
 #include <QApplication>
 #include <memory>
+#include <iostream>
+#include <nekobox/stats/traffic/TrafficLooper.hpp>
+#include <nekobox/sys/Settings.h>
+#include <qfontdatabase.h>
 #include <qnamespace.h>
+
 #ifdef Q_OS_WIN
 #include <3rdparty/WinCommander.hpp>
 #include <windows.h>
-
-#include <iostream>
 #include <nekobox/sys/windows/MiniDump.h>
 #include <nekobox/sys/windows/eventHandler.h>
 #include <nekobox/sys/windows/WinVersion.h>
-#include <qfontdatabase.h>
-#else
-#include <nekobox/sys/Settings.h>
 #endif
-
 
 #ifndef NKR_SOFTWARE_KEYS
 #define CHECK_STARTUP_ACCESS_M
@@ -41,15 +45,27 @@
 QVariantMap ruleSetMap;
 QWidget *mainwindow;
 
+MainWindow *GetMainWindow() {
+    return (MainWindow*)mainwindow;
+}
+
 #ifdef Q_OS_UNIX
 #include <nekobox/sys/linux/LinuxCap.h>
-#include <qfontdatabase.h>
+
+QDBusPendingReply<> OrgFreedesktopPortalRequestInterface::Close()
+{
+    QList<QVariant> argumentList;
+    return asyncCallWithArgumentList(QStringLiteral("Close"), argumentList);
+}
+
+
 #endif
 #define disable_run_admin windows_no_admin
 
 void signal_handler(int signum) {
-    if (GetMainWindow()) {
-        GetMainWindow()->prepare_exit();
+    auto mainwindow = GetMainWindow();
+    if (mainwindow != nullptr) {
+        mainwindow->prepare_exit();
         qApp->quit();
     }
 }
@@ -138,15 +154,22 @@ void loadTranslate(QString locale) {
 
 
 int main(int argc, char** argv) {
-
-    root_directory = QString(boost::dll::program_location().parent_path().string().c_str());
-    software_path  = QString(boost::dll::program_location().string().c_str());
-    // Core dump
+    auto unicodepath = boost::dll::program_location();
+	// Core dump
 #ifdef Q_OS_WIN
     Windows_SetCrashHandler();
-#endif
-#ifdef Q_OS_LINUX
+    WSADATA wsaData;
+    int result = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    if (result != 0) {
+        printf("WSAStartup failed: %d\n", result);
+        return 1;
+    }
+    root_directory = QString::fromWCharArray(unicodepath.parent_path().c_str());
+    software_path  = QString::fromWCharArray(unicodepath.c_str());
+#else
     Unix_SetCrashHandler();
+    root_directory = QString::fromUtf8(unicodepath.parent_path().c_str());
+    software_path  = QString::fromUtf8(unicodepath.c_str());
 #endif
 
 
@@ -257,6 +280,8 @@ int main(int argc, char** argv) {
     CHECK_STARTUP_ACCESS_M
     Stats::databaseLogger->Load();
     Stats::databaseLogger->initialize();
+    Stats::trafficLooper->initialize();
+
 
     Configs::windowSettings->Load();
     Configs::resourceManager->Load();
@@ -389,7 +414,12 @@ int main(int argc, char** argv) {
         #endif
         s->close();
         // raise main window
-        MW_dialog_message("", "Raise");
+        MainWindow * window = GetMainWindow();
+        if (window != nullptr){
+            do {
+                ToggleWindow(window);
+            } while (window->isHidden());
+        }
     });
     QObject::connect(qApp, &QApplication::aboutToQuit, [&]
     {

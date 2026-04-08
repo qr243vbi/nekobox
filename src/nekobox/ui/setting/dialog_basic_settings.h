@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #ifndef DIALOG_BASIC_SETTINGS_H
 #define DIALOG_BASIC_SETTINGS_H
 
@@ -85,6 +90,7 @@ private:
     struct {
         QString language_code;
         QString custom_inbound;
+        QString core_path_old;
         bool needRestart = false;
         bool updateDisableTray = false;
         bool updateSystemDns = false;

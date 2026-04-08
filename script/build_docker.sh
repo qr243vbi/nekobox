@@ -38,23 +38,22 @@ then
    export VERSION_SINGBOX="$(cat $SRC_ROOT/SingBox.Version)"
    export LAST_ACTION='rm -rf "$SRC_ROOT"'
    popd
-   
 else
   LAST_ACTION="echo fine"
 fi 
+
+if [[ "$SKIP_BUILD_GO" != yes ]]
+then
+  export BUILD_GO_PARTS=ON
+else
+  export BUILD_GO_PARTS=OFF
+fi
 
 (
 echo "$SRC_ROOT"
 cd "$SRC_ROOT"
 
-if [[ "$SKIP_BUILD_GO" != yes ]]
-then
-(
-. script/build_go.sh; 
-)
-fi
-
-cmake -S $SRC_ROOT -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}"
+cmake -S $SRC_ROOT -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}" -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON:-OFF}" -DBUILD_GO_PARTS=ON -DBUILD_GO_PARTS="${BUILD_GO_PARTS}" "-DGO_MOD_TIDY=ON"
 cmake --build "$BUILD" -v -j $(nproc)
 (
 . script/deploy_linux64.sh; 

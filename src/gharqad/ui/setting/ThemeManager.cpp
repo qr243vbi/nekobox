@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include <QStyle>
 #include <QApplication>
 #include <QFile>
@@ -18,50 +23,55 @@ QMap<QString, QString> & ThemeManager::getThemes(){
     return map;
 }
 
-void ThemeManager::ApplyTheme(const QString &theme, bool force) {
-    if (this->system_style_name.isEmpty()) {
-        this->system_style_name = qApp->style()->name();
-    }
 
-    if (this->current_theme == theme && !force) {
-        return;
-    }
-
+std::tuple<QString, bool> ThemeManager::getPath(const QString & theme){
     auto lowerTheme = theme.toLower();
-    if (lowerTheme == "system") {
-        qApp->setStyleSheet("");
-        qApp->setStyle(system_style_name);
-    } else {
-        QString path;
-        {
-            if (lowerTheme == "dark"){ path = ":nekobox/qss/MaterialDark.qss"; } 
-            else if (lowerTheme == "amoled"){ path = ":nekobox/qss/AMOLED.qss"; } 
-            else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
-            else if (lowerTheme == "aqua") { path = ":nekobox/qss/Aqua.qss"; } 
-            else if (lowerTheme == "kawaii") { path = ":nekobox/qss/Kawaii.qss"; } 
-    //        else if (lowerTheme == "elegantdark") { path = ":nekobox/qss/ElegantDark.qss"; } 
-    //        else if (lowerTheme == "ubuntu") { path = ":nekobox/qss/Ubuntu.qss"; } 
-    //        else if (lowerTheme == "flatdark") { path = ":nekobox/qss/FlatDark.qss"; } 
-    //        else if (lowerTheme == "flatlight") { path = ":nekobox/qss/FlatLight.qss"; } 
-    //        else if (lowerTheme == "materialdark") { path = ":nekobox/qss/MaterialDark.qss"; } 
-    //        else if (lowerTheme == "manjaromix") { path = ":nekobox/qss/ManjaroMix.qss"; } 
-     //       else if (lowerTheme == "consolestyles") { path = ":nekobox/qss/ConsoleStyles.qss"; } 
-      //      else if (lowerTheme == "neonbuttons") { path = ":nekobox/qss/NeonButtons.qss"; } 
-            else {
-                qApp->setStyleSheet("");
-                qApp->setStyle(theme);
-                goto skip_set_style;
-            }
+    if (lowerTheme == "system"){ return std::make_tuple(qApp->style()->name(), false); } 
+    else if (lowerTheme == "dark"){ return std::make_tuple(":nekobox/qss/MaterialDark.qss", true); } 
+    else if (lowerTheme == "amoled"){ return std::make_tuple(":nekobox/qss/AMOLED.qss", true); } 
+    else if (lowerTheme == "aqua") { return std::make_tuple(":nekobox/qss/Aqua.qss", true); } 
+    else if (lowerTheme == "kawaii") { return std::make_tuple(":nekobox/qss/Kawaii.qss", true); } 
+    else if (lowerTheme == "flatgray") { return std::make_tuple(":nekobox/qss/flatgray.css", true); } 
+    else if (lowerTheme == "lightblue") { return std::make_tuple(":nekobox/qss/lightblue.css", true); } 
+    else if (lowerTheme == "blacksoft") { return std::make_tuple(":nekobox/qss/blacksoft.css", true); } 
+    else { return std::make_tuple(theme, false); }
+}
+
+int ThemeManager::getMode(const QString & theme){
+    auto lowerTheme = theme.toLower();
+    if (lowerTheme == "system"){ return 0; } 
+    else if (lowerTheme == "dark"){ return 1; } 
+    else if (lowerTheme == "amoled"){ return 1; } 
+    else if (lowerTheme == "aqua") { return 1; } 
+    else if (lowerTheme == "kawaii") { return 2; } 
+    else if (lowerTheme == "flatgray") { return 2; } 
+    else if (lowerTheme == "lightblue") { return 2; } 
+    else if (lowerTheme == "blacksoft") { return 1; } 
+    else if (lowerTheme == "windowsvista") { return 2; } 
+    else { return 0; }
+}
+
+void ThemeManager::ApplyTheme(const QString &theme, bool force) {
+    if (!force){
+        if (theme == current_theme){
+            return;
         }
-        QFile f(path);
+    }
+    
+    QString lower_theme;
+    bool isFile;
+    std::tie(lower_theme, isFile) = getPath(theme);
+
+    if (!isFile) {
+        qApp->setStyleSheet("");
+        qApp->setStyle(lower_theme);
+    } else {
+        QFile f(lower_theme);
         if (f.open(QFile::ReadOnly | QFile::Text)){
             QTextStream ts(&f);
             qApp->setStyleSheet(ts.readAll());
         }
-
-        
     }
-    skip_set_style:
 /*
     {
     QString style = qApp->styleSheet();

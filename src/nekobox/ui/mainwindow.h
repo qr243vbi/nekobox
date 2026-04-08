@@ -1,3 +1,11 @@
+#ifndef MAIN_WINDOW_HEADER
+#define MAIN_WINDOW_HEADER
+
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include <QMainWindow>
@@ -33,7 +41,6 @@ class JsUpdaterWindow;
 #include <nekobox/js/js_updater.h>
 #endif
 
-extern QWidget *mainwindow;
 
 #ifndef MW_INTERFACE
 
@@ -139,6 +146,8 @@ public:
 
     ~MainWindow() override;
 
+    void call_updater();
+
     void prepare_exit();
 
     void announcement_message(bool first_launch);
@@ -219,6 +228,8 @@ private slots:
 
     void on_menu_information_triggered();
 
+    void on_menu_about_triggered();
+
     void on_menu_routing_settings_triggered();
 
     void on_menu_vpn_settings_triggered();
@@ -294,6 +305,7 @@ private:
     QMutex speedtestRunning;
     QMutex logLock;
     bool logClear = false;
+    bool force_hide_text_under_buttons = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
@@ -434,9 +446,10 @@ protected:
 #endif // MW_INTERFACE
 };
 
-inline MainWindow *GetMainWindow() {
-    return (MainWindow *) mainwindow;
-}
+
+extern QWidget *mainwindow;
+
+MainWindow *GetMainWindow() ;
 
 void UI_InitMainWindow();
 
@@ -456,11 +469,7 @@ public:
     ~OrgFreedesktopPortalRequestInterface();
 
 public Q_SLOTS:
-    inline QDBusPendingReply<> Close()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("Close"), argumentList);
-    }
+    QDBusPendingReply<> Close();
 
 Q_SIGNALS: // SIGNALS
     void Response(uint response, QVariantMap results);
@@ -474,3 +483,7 @@ typedef ::OrgFreedesktopPortalRequestInterface Request;
 }
 }
 #endif
+
+
+
+#endif // MAIN_WINDOW_HEADER

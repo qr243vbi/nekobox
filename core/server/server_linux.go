@@ -20,8 +20,16 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	return out, nil
 }
 
-func runAdmin(_port *int, _debug *bool, addr *string, sock *string) (int, error) {
+func runAdmin() (int, error) {
 	return 0, nil
+}
+
+func checkTaskScheduler(save bool) error {
+	return nil
+}
+
+func doRun(_ string) error {
+	return nil
 }
 
 func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
@@ -44,6 +52,10 @@ func WaitForProcessExit(pid int) error {
 		}
 		time.Sleep(442 * time.Millisecond)
 	}
+}
+
+func wsainit() {
+
 }
 
 func isElevated() (bool, error) {

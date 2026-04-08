@@ -1,4 +1,9 @@
-#include "nekobox/global/HTTPRequestHelper.hpp"
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
+#include <nekobox/global/HTTPRequestHelper.hpp>
 
 #include <QNetworkProxy>
 #include <QNetworkAccessManager>
@@ -11,9 +16,9 @@
 #include <QMap>
 #include <QDir>
 #include <QStringList>
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/ui/mainwindow.h"
-#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/ui/mainwindow.h>
+#include <nekobox/global/DeviceDetailsHelper.hpp>
 
 static inline void InitializeRequest(
     QNetworkRequest & request, 
@@ -31,9 +36,15 @@ static inline void InitializeRequest(
         if (net_use_proxy) {
             QNetworkProxy p;
             if (proxy_started) {
-                p.setType(QNetworkProxy::HttpProxy);
+                p.setType(QNetworkProxy::Socks5Proxy);
                 p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
                 p.setPort(Configs::dataStore->inbound_socks_port);
+                QString &inbound_username = Configs::dataStore->inbound_username;
+                QString &inbound_password = Configs::dataStore->inbound_password;
+                if (inbound_username != "" && inbound_password != ""){
+                    p.setUser(inbound_username);
+                    p.setPassword(inbound_password);
+                }
             } else {
                 p.setType(QNetworkProxy::NoProxy);
             }

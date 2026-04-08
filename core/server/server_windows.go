@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"crypto/rand"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -12,6 +14,7 @@ import (
 	"nekobox_core/gen"
 	"nekobox_core/internal"
 	"nekobox_core/internal/boxdns"
+	"net"
 	"net/http"
 	"os"
 	"os/exec"
@@ -21,10 +24,14 @@ import (
 	"strings"
 	"sync"
 	"syscall"
+	"time"
 	"unsafe"
 
-	"github.com/NullYing/npipe"
+	"github.com/Microsoft/go-winio"
+	"github.com/giert/taskmaster"
 	"golang.org/x/sys/windows"
+
+	"github.com/qr243vbi/cmdescape"
 )
 
 const (
@@ -61,6 +68,44 @@ func shellExecuteEx(sei *ShellExecuteInfo) error {
 	return nil
 }
 
+func registerTask(taskName, path, pipe string) error {
+	svc, err := taskmaster.Connect()
+	if err != nil {
+		return (err)
+	}
+
+	def := svc.NewTaskDefinition()
+
+	def.Principal.UserID = ""
+	def.Principal.LogonType = taskmaster.TASK_LOGON_INTERACTIVE_TOKEN
+	def.Principal.RunLevel = taskmaster.TASK_RUNLEVEL_HIGHEST
+	def.Settings.MultipleInstances = taskmaster.TASK_INSTANCES_IGNORE_NEW
+	def.Settings.AllowDemandStart = true
+	def.Settings.Enabled = true
+	def.Settings.Hidden = false
+	def.Settings.RunOnlyIfIdle = false
+	def.Settings.StartWhenAvailable = false
+	def.Settings.StopIfGoingOnBatteries = false
+	def.Settings.DontStartOnBatteries = false
+	def.Settings.RunOnlyIfNetworkAvailable = false
+	def.Settings.WakeToRun = false
+	def.Settings.Priority = 7
+
+	execAction := taskmaster.ExecAction{
+		Path: path,
+		Args: cmdescape.QuoteCommand([]string{"launch-server-mode", pipe}),
+	}
+	def.Actions = append(def.Actions, execAction)
+
+	_, _, err = svc.CreateTask(taskName, def, true)
+	if err != nil {
+		return (err)
+	}
+
+	fmt.Printf("Windows task %s created successfully!", taskName)
+	return nil
+}
+
 func getExitCode(hProcess syscall.Handle) (uint32, error) {
 	var exitCode uint32
 	kernel32 := syscall.NewLazyDLL("kernel32.dll")
@@ -73,7 +118,251 @@ func getExitCode(hProcess syscall.Handle) (uint32, error) {
 	return exitCode, nil
 }
 
-func runShellExec(command string, arguments string) (int, error) {
+type taskScheduleConfig struct {
+	Exec  string `json:"exec"`
+	Task  string `json:"task"`
+	Stdin string `json:"stdin"`
+}
+
+func AcceptWithContext(ctx context.Context, l net.Listener) (net.Conn, error) {
+	ch := make(chan struct {
+		c   net.Conn
+		err error
+	}, 1)
+
+	go func() {
+		c, err := l.Accept()
+		ch <- struct {
+			c   net.Conn
+			err error
+		}{c, err}
+	}()
+
+	select {
+	case res := <-ch:
+		return res.c, res.err
+	case <-ctx.Done():
+		return nil, ctx.Err()
+	}
+}
+
+var defaultTimeout time.Duration = 3 * time.Second
+var durableTimeout time.Duration = 15 * time.Minute
+
+func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup, defaultTimeout time.Duration) error {
+	if wg != nil {
+		defer wg.Done()
+	}
+
+	// Listen on the named pipe using go-winio
+	ln, err := winio.ListenPipe(pipeName, nil)
+	if err != nil {
+		return fmt.Errorf("Error listening on pipe %s: %v\n", pipeName, err)
+	}
+	defer ln.Close()
+
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+	defer cancel()
+
+	var conn net.Conn
+	// Accept a client connection
+	conn, err = AcceptWithContext(ctx, ln) // local temps
+
+	if err != nil || conn == nil {
+		return fmt.Errorf("Accept error on %s: %v\n", pipeName, err)
+	}
+	defer conn.Close()
+
+	// Copy data from the pipe to the output writer
+	_, err = io.Copy(output, conn)
+	if err != nil {
+		return fmt.Errorf("Error copying from %s: %v\n", pipeName, err)
+	}
+	return nil
+}
+
+func unregisterTask(TaskName string) error {
+	if strings.HasPrefix(TaskName, "\\Iblis_") {
+		if strings.HasSuffix(TaskName, "_UAC") {
+			svc, err := taskmaster.Connect()
+			if err != nil {
+				return err
+			}
+			err = svc.DeleteTask(TaskName)
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func taskExists(taskName string) (bool, error) {
+	svc, err := taskmaster.Connect()
+	if err != nil {
+		return false, err
+	}
+
+	_, err = svc.GetRegisteredTask(taskName)
+	if err != nil {
+		// Task does not exist
+		return false, nil
+	}
+	return true, nil
+}
+
+func checkTaskScheduler(save bool) error {
+	elevated, err := isElevated()
+	var TaskName string = ""
+	path, _ := os.Executable()
+	path = filepath.Clean(path)
+	execpath := path
+	path = path + ".elevated_launcher"
+
+	if _, err := os.Stat(path); err == nil {
+		var cfg taskScheduleConfig
+		data, err := os.ReadFile(path)
+		if err != nil {
+			goto elevated_pointer
+		}
+		if err := json.Unmarshal(data, &cfg); err != nil {
+			goto elevated_pointer
+		}
+		TaskName = cfg.Task
+		if execpath != filepath.Clean(cfg.Exec) {
+			err = fmt.Errorf("file paths are not same %s: %v", execpath, cfg.Exec)
+			goto elevated_pointer
+		}
+
+		if elevated {
+			exists, _ := taskExists(TaskName)
+			if exists {
+				TaskName = ""
+			}
+			err = nil
+			goto elevated_pointer
+		}
+
+		var wg sync.WaitGroup
+		randstr, _ := RandString(12)
+
+		stdout_pipe := `\\.\pipe\iblis_task_stdout_` + randstr
+		stderr_pipe := `\\.\pipe\iblis_task_stderr_` + randstr
+
+		// Pipe for stdout
+		wg.Add(1)
+		go handlePipe(stdout_pipe, os.Stdout, &wg, defaultTimeout)
+
+		// Pipe for stderr
+		wg.Add(1)
+		go handlePipe(stderr_pipe, os.Stderr, &wg, defaultTimeout)
+
+		var pid int
+		pid = os.Getpid()
+
+		other_args := os.Args[1:]
+		other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid))
+		formattedString := cmdescape.QuoteCommand(other_args)
+		err = askRun(formattedString, cfg.Stdin, TaskName)
+		if err == nil {
+			wg.Wait()
+			os.Exit(0)
+		} else {
+			return err
+		}
+
+	}
+
+elevated_pointer:
+	if elevated {
+		log.Printf("Defer Task Scheduler")
+		if TaskName != "" {
+			err = unregisterTask(TaskName)
+			os.Remove(path)
+		}
+		if save {
+			randstr, _ := RandString(12)
+			input_pipe := `\\.\pipe\iblis_task_input_` + randstr
+			TaskName = "\\Iblis_" + randstr + "_UAC"
+			executable, _ := os.Executable()
+
+			var cfg taskScheduleConfig
+			cfg.Exec = executable
+			cfg.Stdin = input_pipe
+			cfg.Task = TaskName
+			data, err := json.MarshalIndent(cfg, "", "  ")
+			if err != nil {
+				return (err)
+			}
+			if err := os.WriteFile(path, data, 0644); err != nil {
+				return (err)
+			}
+			err = registerTask(TaskName, executable, input_pipe)
+		}
+	}
+	return err
+}
+
+func dialPipeWithRetry(ctx context.Context, pipe string) (net.Conn, error) {
+	for {
+		conn, err := winio.DialPipeContext(ctx, pipe)
+		if err == nil {
+			return conn, nil
+		}
+
+		log.Printf("%v", err)
+
+		// Stop if context expired
+		if ctx.Err() != nil {
+			return nil, ctx.Err()
+		}
+
+		time.Sleep(200 * time.Millisecond)
+	}
+}
+
+func askRun(args, pipePath, taskname string) error {
+	service, err := taskmaster.Connect()
+	if err != nil {
+		return err
+	}
+	defer service.Disconnect()
+	task, err := service.GetRegisteredTask(taskname)
+	if err != nil {
+		return err
+	}
+	_, err = task.Run()
+	if err != nil {
+		return err
+	}
+
+	// Listen on the named pipe using go-winio
+	ln, err := winio.ListenPipe(pipePath, nil)
+	if err != nil {
+		return fmt.Errorf("Error listening on pipe %s: %v\n", pipePath, err)
+	}
+	defer ln.Close()
+
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+	defer cancel()
+
+	var conn net.Conn
+	// Accept a client connection
+	conn, err = AcceptWithContext(ctx, ln) // local temps
+
+	if err != nil || conn == nil {
+		return fmt.Errorf("Accept error on %s: %v\n", pipePath, err)
+	}
+	defer conn.Close()
+
+	_, err = conn.Write([]byte(args))
+
+	fmt.Println("Windows Task " + taskname + " started")
+
+	return err
+}
+
+func runShellExec(command, arguments string, wait bool) (int, error) {
 	verbPtr, _ := syscall.UTF16PtrFromString("runas") // Elevate
 	filePtr, _ := syscall.UTF16PtrFromString(command)
 	paramsPtr, _ := syscall.UTF16PtrFromString(arguments)
@@ -93,8 +382,10 @@ func runShellExec(command string, arguments string) (int, error) {
 		return 1, fmt.Errorf("Failed to start elevated process: %s", err.Error())
 	}
 
-	// Wait for the process to finish
-	syscall.WaitForSingleObject(sei.hProcess, syscall.INFINITE)
+	if wait {
+		// Wait for the process to finish
+		syscall.WaitForSingleObject(sei.hProcess, syscall.INFINITE)
+	}
 
 	// Get exit code
 	exitCode, err := getExitCode(sei.hProcess)
@@ -103,6 +394,32 @@ func runShellExec(command string, arguments string) (int, error) {
 	}
 
 	return int(exitCode), nil
+}
+
+func doRun(pipePath string) error {
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+	defer cancel()
+	conn, err := dialPipeWithRetry(ctx, pipePath)
+
+	var buf bytes.Buffer
+
+	_, err = io.Copy(&buf, conn)
+	if err != nil {
+		panic(fmt.Errorf("Error copying from %s: %v\n", pipePath, err))
+	}
+
+	str := buf.String()
+	executablePath, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("\nProcess Started with Elevated Rights\n")
+	fmt.Printf("%s %s\n", executablePath, str)
+	_, err = runShellExec(executablePath, str, false)
+	if err != nil {
+		panic(err)
+	}
+	return err
 }
 
 const letters = "abcdefghijklmnopqrstuvwxyz"
@@ -129,86 +446,54 @@ func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) 
 	return out, nil
 }
 
-func handlePipe(pipeName string, output io.Writer, wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	ln, err := npipe.Listen(pipeName)
-	if err != nil {
-		log.Fatalf("Error listening on pipe %s: %v\n", pipeName, err)
-	}
-	defer ln.Close()
-
-	//log.Printf("Waiting for client on pipe: %s\n", pipeName)
-	conn, err := ln.Accept()
-	if err != nil {
-		log.Fatalf("Accept error on %s: %v\n", pipeName, err)
-		return
-	}
-	defer conn.Close()
-
-	//	fmt.Printf("Client connected to %s\n", pipeName)
-
-	_, err = io.Copy(output, conn)
-	if err != nil {
-		log.Fatalf("Error copying from %s: %v\n", pipeName, err)
-	}
-}
-
-func runAdmin(_port *int, _debug *bool, _addr *string, _sock *string) (int, error) {
+func runAdmin() (int, error) {
 	executablePath, err := os.Executable()
 	if err != nil {
 		log.Fatalf("Failed to get executable path: %v", err)
 	}
 
-	randstr, _ := RandString(6)
+	randstr, _ := RandString(12)
 
-	stdout_pipe := `\\.\pipe\nekobox_core_stdout_` + randstr
-	stderr_pipe := `\\.\pipe\nekobox_core_stderr_` + randstr
-	flag := " -ruleset-cache-directory " + internal.GetRulesetCachedir()
-	if *_debug {
-		flag += " -debug"
-	}
+	stdout_pipe := `\\.\pipe\iblis_core_stdout_` + randstr
+	stderr_pipe := `\\.\pipe\iblis_core_stderr_` + randstr
 
 	var pid int
 	pid = os.Getpid()
 
-	//	formattedString := fmt.Sprintf("Start-Process \"%s\" -ArgumentList '-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s' -WindowStyle Hidden -Verb RunAs -Wait",
-	//		 os.Args[0], *_port, pid, stdout_pipe, stderr_pipe, flag)
-
-	formattedString := fmt.Sprintf(
-		"-port %d -waitpid %d -redirect-output \"%s\" -redirect-error \"%s\"%s -socket \"%s\" -address \"%s\"", *_port, pid, stdout_pipe, stderr_pipe, flag, *_sock, *_addr)
+	other_args := os.Args[1:]
+	other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid), "-ruleset-cache-directory", internal.GetRulesetCachedir())
+	formattedString := cmdescape.QuoteCommand(other_args)
 
 	var wg sync.WaitGroup
 
 	// Pipe for stdout
 	wg.Add(1)
-	go handlePipe(stdout_pipe, os.Stdout, &wg)
+	go handlePipe(stdout_pipe, os.Stdout, &wg, durableTimeout)
 
 	// Pipe for stderr
 	wg.Add(1)
-	go handlePipe(stderr_pipe, os.Stderr, &wg)
+	go handlePipe(stderr_pipe, os.Stderr, &wg, durableTimeout)
 
-	return runShellExec(executablePath, formattedString)
-	/*
-			cmd := exec.Command("powershell", "-Command", formattedString)
-			err := cmd.Run()
+	var ret int
 
-			var code int
+	pipesDone := make(chan struct{})
+    go func() {
+        wg.Wait()
+        close(pipesDone)
+    }()
 
-			if err != nil {
-		        // Process exited with error
-		        if exitErr, ok := err.(*exec.ExitError); ok {
-		            code = exitErr.ExitCode()
-		        } else {
-					code = -1
-				}
-		    } else {
-		        // Process exited successfully
-		        code = 0
-		    }
+    cmdDone := make(chan struct{})
+    go func() {
+        ret, err = runShellExec(executablePath, formattedString, true)
+        close(cmdDone)
+    }()
 
-			return code, nil
-	*/
+    select {
+        case <-cmdDone:
+        case <-pipesDone:
+    }
+
+	return ret, err
 }
 
 func isElevated() (bool, error) {
@@ -400,6 +685,16 @@ func fileExists(path string) bool {
 		return false
 	}
 	return !info.IsDir()
+}
+
+func wsainit() {
+	var data windows.WSAData
+
+	err := windows.WSAStartup(uint32(0x202), &data)
+	defer windows.WSACleanup()
+	if err != nil {
+		panic(err)
+	}
 }
 
 func InstallVcRedist() {

@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #include "nekobox/ui/profile/edit_tailscale.h"
 
 #include "nekobox/configs/proxy/Tailscale.hpp"

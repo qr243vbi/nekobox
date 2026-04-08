@@ -1,3 +1,8 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#include <windows.h>
+#endif
+
 #pragma once
 
 #include "AbstractBean.hpp"
@@ -62,7 +67,7 @@ namespace Configs {
         QString caText = "";
         bool disableSni = false;
 
-        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>("tcp");
+        std::shared_ptr<NetworkEnum> network = std::make_shared<NetworkEnum>(0);
 
         #undef _add
         #define _add(X, Y, B, T) _put(X, Y, &this->B) 

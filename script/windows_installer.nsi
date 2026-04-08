@@ -591,11 +591,11 @@ FunctionEnd
 	FunctionEnd
 
 ; Optional: version info for Windows file properties 
-VIProductVersion "${SOFTWARE_VERSION}.0" 
-VIAddVersionKey "ProductName" "${SOFTWARE_NAME}" 
-VIAddVersionKey "ProductVersion" "${SOFTWARE_VERSION}" 
-VIAddVersionKey "CompanyName" "qr243vbi" 
-VIAddVersionKey "FileDescription" "Installer for ${SOFTWARE_NAME}" 
+VIProductVersion "${SOFTWARE_VERSION}.0"
+VIAddVersionKey "ProductName" "${SOFTWARE_NAME}"
+VIAddVersionKey "ProductVersion" "${SOFTWARE_VERSION}"
+VIAddVersionKey "CompanyName" "qr243vbi"
+VIAddVersionKey "FileDescription" "Installer for ${SOFTWARE_NAME}"
 VIAddVersionKey "LegalCopyright" "© 2026 qr243vbi"
 
 
@@ -606,6 +606,7 @@ Var VCRedistNeeded
 Var isInstalled
 Var isAdmin
 Var Winget
+Var Chocolatey
 Var UnpackOnly
 Var NoScript
 
@@ -766,6 +767,7 @@ Function .onInit
 	StrCpy $PPPID "$1"
 
     !insertmacro HasFlag "/WINGET=" $Winget
+    !insertmacro HasFlag "/CHOCOLATEY=" $Chocolatey
 	!insertmacro HasFlag "/UNPACK=" $UnpackOnly
 	!insertmacro HasFlag "/NOSCRIPT=" $NoScript
 	UserInfo::GetAccountType 
@@ -923,14 +925,16 @@ Section "Install"
   ${EndIf}
 
   ${If} "$Winget" == "1"
-    ${If} ${FileExists} "$INSTDIR\global.ini"
-    ${Else}
-        FileOpen $0 "$INSTDIR\global.ini" w
-        FileWrite $0 "[General]$\n"
-		FileClose $0
-    ${EndIf}
-    ${WriteLineToFile} "$INSTDIR\global.ini" "winget_package=true$\n"
+    WriteINIStr "$INSTDIR\global.ini" "General" "winget_package" "true"
+  ${Else}
+    WriteINIStr "$INSTDIR\global.ini" "General" "winget_package" "false"
+  ${EndIf}  
+  ${If} "$Chocolatey" == "1"
+    WriteINIStr "$INSTDIR\global.ini" "General" "chocolatey_package" "true"
+  ${Else}
+    WriteINIStr "$INSTDIR\global.ini" "General" "chocolatey_package" "false"
   ${EndIf}
+  WriteINIStr "$INSTDIR\global.ini" "General" "program_version" "${SOFTWARE_VERSION}"
 
   ${If} "$UnpackOnly" != "1"
     FileOpen $0 "$INSTDIR\settings" w
