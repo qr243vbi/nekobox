@@ -757,7 +757,7 @@ MainWindow::MainWindow(QWidget *parent)
             &Configs::dataStore->core_port,
 
             []() {
-              if (!Configs::windowSettings->core_use_uds) {
+              if (!Configs::dataStore->core_use_uds) {
                 Configs::dataStore->core_port = MkPort();
                 Configs::dataStore->core_domain = "127.0.0.1";
               } else {
