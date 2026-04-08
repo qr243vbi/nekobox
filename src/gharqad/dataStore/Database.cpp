@@ -182,7 +182,7 @@ bool FileDatabaseManager::SaveToFile(JsonStore *store) {
     return false;
   }
   if (Configs::config_type == Configs::DatabaseType::ini_type){
-    store->SaveSettings(QFileInfo(path), "");
+    store->SaveINI(QFileInfo(path), "");
     return true;
   }
   return store->SaveToFile(path, Configs::config_type == Configs::DatabaseType::json_type);

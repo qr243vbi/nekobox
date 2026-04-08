@@ -78,6 +78,7 @@ namespace Configs {
         QString sub_custom_hwid_params = ""; 
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // Running
+        bool core_use_uds = false;
         int core_port = 19810;
         std::string core_domain = "127.0.0.1";
         int started_id = -1919;

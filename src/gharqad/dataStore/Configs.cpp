@@ -100,15 +100,15 @@ namespace Configs_ConfigItem {
         return (void*)((size_t)p + ptr);
     }
 
-    void JsonStore::SaveSettings(const QFileInfo& info, const QString &path){
+    void JsonStore::SaveINI(const QFileInfo& info, const QString &path){
         auto  _map = this->_map();
         QSettings settings = QSettingsFromFileInfo(info);
         for (auto value : _map.values()){
-            value->SaveSettings(this, info, path);
+            value->SaveINI(this, info, path);
         }
     }
 
-    void JsonStore::LoadSettings(const QFileInfo& info, const QString &path){
+    void JsonStore::LoadINI(const QFileInfo& info, const QString &path){
         auto _map = this->_map();
         QSettings settings = QSettingsFromFileInfo(info);
         settings.beginGroup(path);
@@ -127,7 +127,7 @@ namespace Configs_ConfigItem {
             #ifdef DEBUG_MODE
                 qDebug() << "Loading" << key;
             #endif
-                value->LoadSettings(this, info, path);
+                value->LoadINI(this, info, path);
             }
         }
         for (auto key : settings.childGroups()){
@@ -135,10 +135,10 @@ namespace Configs_ConfigItem {
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
                 if (UnknownKeyHash(h)){
-                    LoadSettings(info, path + key + "/");
+                    LoadINI(info, path + key + "/");
                 };
             } else {
-                value->LoadSettings(this, info, path);
+                value->LoadINI(this, info, path);
             }
         }
         settings.endGroup();
@@ -248,7 +248,7 @@ namespace Configs_ConfigItem {
             #endif
         } else {
             if (!content(file.readAll())){
-                this->LoadSettings(QFileInfo(fn), "");
+                this->LoadINI(QFileInfo(fn), "");
             };
         }
   //      l2:
@@ -432,7 +432,7 @@ QByteArray hash = QCryptographicHash::hash(
    //     _add(new configItem("theme", &theme, itemType::string));
         ADD_MAP("inbound_username", inbound_username, string);
         ADD_MAP("inbound_password", inbound_password, string);
-
+        ADD_MAP("core_use_uds", core_use_uds, boolean);
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
         ADD_MAP("network_use_proxy", net_use_proxy, boolean);

@@ -124,7 +124,6 @@ public:
   int max_log_line = 200;
   int width = 0;
   int height = 0;
-  bool core_use_uds = true;
   int X = 0;
   int Y = 0;
   bool maximized = false;

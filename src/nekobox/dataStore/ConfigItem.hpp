@@ -112,8 +112,8 @@ struct configItem {
   virtual void setNode(JsonStore *store, const QJsonValue &value) = 0;
   virtual void serialize(QDataStream &data, JsonStore *store) const = 0;
   virtual void deserialize(QDataStream &data, JsonStore *store) = 0;
-  virtual void SaveSettings(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
-  virtual void LoadSettings(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
+  virtual void SaveINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
+  virtual void LoadINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
   virtual unsigned short type() = 0;
   size_t ptr;
   QString name;
@@ -143,8 +143,8 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
     void setNode(JsonStore *store, const QJsonValue &value) override;          \
     void serialize(QDataStream &data, JsonStore *store) const override;        \
     void deserialize(QDataStream &data, JsonStore *store) override;            \
-    void SaveSettings(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
-    void LoadSettings(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
+    void SaveINI(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
+    void LoadINI(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
     unsigned short type() override { return ConfigItemType::type_##X; };       \
   };
 
@@ -266,9 +266,9 @@ public:
 
   void FromJson(QJsonObject object);
 
-  void LoadSettings(const QFileInfo&  settings, const QString &path);
+  void LoadINI(const QFileInfo&  settings, const QString &path);
 
-  void SaveSettings(const QFileInfo&  settings, const QString &path);
+  void SaveINI(const QFileInfo&  settings, const QString &path);
 
   bool FromJsonBytes(const QByteArray &data);
 

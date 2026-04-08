@@ -158,7 +158,7 @@ SET_NODE(jsonStoreList) {
 }
 
 
-#define LOAD_CONF(X) void X##Item::LoadSettings(JsonStore * store, const QFileInfo& settings, const QString &path)
+#define LOAD_CONF(X) void X##Item::LoadINI(JsonStore * store, const QFileInfo& settings, const QString &path)
 
 LOAD_CONF(int) {
   auto val =  QSettingsFromFileInfo(settings);
@@ -230,13 +230,13 @@ LOAD_CONF(enum) {
 LOAD_CONF(jsonShared) {
   std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
   if (st != nullptr) {
-    st->LoadSettings(settings, path + this->name + "/");
+    st->LoadINI(settings, path + this->name + "/");
   }
 }
 LOAD_CONF(jsonStore) {
   JsonStore *st = *(JsonStore **)(this->getPtr(store));
   if (st != nullptr) {
-    st->LoadSettings(settings, path + this->name + "/");
+    st->LoadINI(settings, path + this->name + "/");
   }
 }
 LOAD_CONF(jsonStoreList) {
@@ -261,14 +261,14 @@ LOAD_CONF(jsonStoreList) {
       if (ok){
         auto stt = list->value(key, nullptr) ;
         if (stt != nullptr) {
-          stt->LoadSettings(settings, path + this->name + "/" + st + "/");
+          stt->LoadINI(settings, path + this->name + "/" + st + "/");
         }
       } 
     }
   }
 }
 
-#define SAVE_CONF(X) void X##Item::SaveSettings(JsonStore * store, const QFileInfo& settings, const QString &path)
+#define SAVE_CONF(X) void X##Item::SaveINI(JsonStore * store, const QFileInfo& settings, const QString &path)
 
 SAVE_CONF(int) {
   auto val = QSettingsFromFileInfo(settings);
@@ -340,13 +340,13 @@ SAVE_CONF(enum) {
 SAVE_CONF(jsonShared) {
   std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
   if (st != nullptr) {
-    st->SaveSettings(settings, path + this->name + "/");
+    st->SaveINI(settings, path + this->name + "/");
   }
 }
 SAVE_CONF(jsonStore) {
   JsonStore *st = *(JsonStore **)(this->getPtr(store));
   if (st != nullptr) {
-    st->SaveSettings(settings, path + this->name + "/");
+    st->SaveINI(settings, path + this->name + "/");
   }
 }
 SAVE_CONF(jsonStoreList) {
@@ -354,7 +354,7 @@ SAVE_CONF(jsonStoreList) {
   int index = 0; if (list == nullptr) return;
   for (auto st : *list) {
     if (st != nullptr) { 
-      st->SaveSettings(settings, path + this->name + "/" + QString::number(index) + "/");
+      st->SaveINI(settings, path + this->name + "/" + QString::number(index) + "/");
       index ++;
     }
   }
