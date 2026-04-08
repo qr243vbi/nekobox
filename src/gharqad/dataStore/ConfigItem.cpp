@@ -539,6 +539,11 @@ EnumFieldName::EnumFieldName(std::string n)
     : name(QString::fromUtf8(n.c_str()))
 {}
 
+
+EnumFieldName::EnumFieldName(const char* n)
+    : name(QString::fromUtf8(n))
+{}
+
 // copy constructor
 EnumFieldName::EnumFieldName(EnumFieldName const& other)
     : name(other.name)
@@ -580,6 +585,12 @@ EnumFieldName& EnumFieldName::operator=(QString&& s) {
 // assign from lvalue string
 EnumFieldName& EnumFieldName::operator=(const std::string & s) {
     name = QString::fromUtf8(s.c_str());
+    return *this;
+}
+
+// assign from lvalue string
+EnumFieldName& EnumFieldName::operator=(const char* s) {
+    name = QString::fromUtf8(s);
     return *this;
 }
 

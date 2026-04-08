@@ -235,11 +235,15 @@ namespace Configs_ConfigItem {
         return ret;
     }
 
+    void JsonEnum::trigger(int old_value, int new_value) {  } ; 
+
     JsonEnum& JsonEnum::set(int value){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM IS SETTING" << value;
 #endif
+        auto old = this->value;
         this->value = value;
+        trigger(old, value);
         return *this;
     }
     JsonEnum& JsonEnum::set(const QString& value){
@@ -253,12 +257,12 @@ namespace Configs_ConfigItem {
             qDebug() << "ENUM IS SETTING" << value;
 #endif
         try{
-            this->value = map.left.at(value.toStdString());
+            this->set(map.left.at(value.toStdString()));
         } catch (std::out_of_range){
 #ifdef DEBUG_MODE
             qDebug() << "ENUM NOT FOUND" << value;
 #endif
-            this->value = 0;
+            this->set(0);
         }
 
 #ifdef DEBUG_MODE
@@ -274,7 +278,7 @@ namespace Configs_ConfigItem {
         int val;
         if (value[0] == '\0'){
             memcpy(&val, value.constData() + 1, sizeof(val));
-            this->value = val;
+            this->set(val);
         } else {
             this->set(QString::fromUtf8(value));
         }
@@ -334,13 +338,23 @@ QByteArray hash = QCryptographicHash::hash(
   return hash;
 }
 
-    bool ForceJsonConfigs = 
+    int config_type = 
     #ifdef DEBUG_MODE
-    true
+    DatabaseType::json_type
     #else
-    false
+    DatabaseType::binary_type
     #endif
     ;
+
+    void SetConfigType(StoreTypeEnum * th, int old_value, int new_value){
+        if (new_value == 0){
+            if (old_value == 0){
+                *th = config_type;
+            }
+        } else {
+            config_type = new_value;
+        }
+    };
 
     DataStore *dataStore = new DataStore();
 
@@ -386,6 +400,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("hk_toggle", hotkey_toggle_system_proxy, string);
         ADD_MAP("fakedns", fake_dns, boolean);
         ADD_MAP("active_routing", active_routing, string);
+        ADD_MAP("store_type", store_type, string);
    //     _add(new configItem("mw_size", &mw_size, itemType::string));
         ADD_MAP("disable_traffic_stats", disable_traffic_stats, boolean);
         ADD_MAP("vpn_stack", vpn_implementation, string);
@@ -439,7 +454,6 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("show_system_dns", show_system_dns, boolean);
   //      ADD_MAP("cache_database_name", cache_database, string);
         ADD_MAP("simple_dl_url", simple_dl_url, string);
-        ADD_MAP("use_json_configs", force_json_configs, booleanPtr);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
         ADD_MAP("auto_test_interval_seconds", auto_test_interval_seconds, integer);
         ADD_MAP("auto_test_proxy_count", auto_test_proxy_count, integer);

@@ -171,7 +171,9 @@ template <typename T> auto asListRange(QList<T> &&list) {
 #define DEBUG_INIT_ENUM
 #endif
 
-#define STOP_ENUM STOP_MAP ; };
+#define STOP_ENUM STOP_MAP };
+
+#define STOP_ENUM_TRIGGER(func) STOP_MAP protected: virtual void trigger(int old_value, int new_value) override { func(this, old_value, new_value); } ; };
 
 #define INIT_ENUM(Name)                                                  \
 class Name##Enum: public JsonEnum {                               \

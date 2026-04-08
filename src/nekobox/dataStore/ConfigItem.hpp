@@ -89,6 +89,8 @@ public:
         return this->set(val);
     }
     int value;
+protected:
+    virtual void trigger(int old_value, int new_value);
 };
 
     class JsonStore;

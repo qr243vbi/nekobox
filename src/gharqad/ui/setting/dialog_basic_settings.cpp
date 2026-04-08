@@ -196,7 +196,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->speedtest_mode->setCurrentIndex(Configs::dataStore->speed_test_mode);
     D_LOAD_INT(speed_test_timeout_ms);
     D_LOAD_STRING(simple_dl_url)
-    ui->force_json_configs->setChecked(Configs::ForceJsonConfigs);
 
     connect(ui->custom_inbound_edit, &QPushButton::clicked, this, [=,this] {
         C_EDIT_JSON_ALLOW_EMPTY(custom_inbound)
@@ -329,6 +328,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     // Mux
     D_LOAD_INT(mux_concurrency)
     D_LOAD_COMBO_STRING(mux_protocol)
+    D_LOAD_COMBO_STRING_PTR(store_type)
     D_LOAD_BOOL(mux_padding)
     D_LOAD_BOOL(mux_default_on)
 
@@ -445,7 +445,6 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
     D_SAVE_STRING(simple_dl_url)
-    Configs::ForceJsonConfigs = ui->force_json_configs->isChecked();
     D_SAVE_INT(url_test_timeout_ms)
     D_SAVE_INT(speed_test_timeout_ms)
 
@@ -498,6 +497,7 @@ void DialogBasicSettings::accept() {
     // Mux
     D_SAVE_INT(mux_concurrency)
     D_SAVE_COMBO_STRING(mux_protocol)
+    D_SAVE_COMBO_STRING_PTR(store_type)
     D_SAVE_BOOL(mux_padding)
     D_SAVE_BOOL(mux_default_on)
 
