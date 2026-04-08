@@ -1,9 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/dataStore/ProfileFilter.hpp"
+#include <nekobox/dataStore/ProfileFilter.hpp>
 
 namespace Configs {
 

@@ -1,16 +1,15 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/setting/RouteItem.h"
-#include "nekobox/ui/setting/dialog_manage_routes.h"
-#include "nekobox/ui/group/dialog_edit_group.h"
-#include "nekobox/dataStore/RouteEntity.h"
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/api/RPC.h"
-#include "nekobox/global/GuiUtils.hpp"
-#include "nekobox/configs/ConfigBuilder.hpp"
+#include <nekobox/ui/setting/RouteItem.h>
+#include <nekobox/ui/setting/dialog_manage_routes.h>
+#include <nekobox/ui/group/dialog_edit_group.h>
+#include <nekobox/dataStore/RouteEntity.h>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/api/RPC.h>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/configs/ConfigBuilder.hpp>
 #include <qnamespace.h>
 #include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QRadioButton>

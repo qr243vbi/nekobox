@@ -1,9 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/global/DeviceDetailsHelper.hpp"
+#include <nekobox/global/DeviceDetailsHelper.hpp>
 
 #include <QString>
 #include <QSysInfo>
@@ -13,7 +12,7 @@
 
 #ifdef Q_OS_WIN
 #include <windows.h>
-#include "nekobox/sys/windows/WinVersion.h"
+#include <nekobox/sys/windows/WinVersion.h>
 #include <nekobox/sys/Process.hpp>
 #include <Wbemidl.h>
 #pragma comment(lib, "wbemuuid.lib")

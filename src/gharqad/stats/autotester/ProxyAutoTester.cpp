@@ -1,15 +1,14 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/stats/autotester/ProxyAutoTester.hpp"
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/global/GuiUtils.hpp"
-#include "nekobox/ui/mainwindow.h"
-#include "nekobox/api/RPC.h"
+#include <nekobox/stats/autotester/ProxyAutoTester.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/ui/mainwindow.h>
+#include <nekobox/api/RPC.h>
 
 #include <QDebug>
 #include <algorithm>

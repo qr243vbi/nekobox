@@ -1,10 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #include <nekobox/ui/profile/edit_chain.h>
-
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/ui/profile/ProxyItem.h>
 #include <nekobox/ui/group/dialog_edit_group.h>

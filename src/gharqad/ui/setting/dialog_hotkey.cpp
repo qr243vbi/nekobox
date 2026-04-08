@@ -1,8 +1,6 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
-
 #include <nekobox/ui/setting/dialog_hotkey.h>
 
 #include <nekobox/global/GuiUtils.hpp>

@@ -1,13 +1,12 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_tor.h"
+#include <nekobox/ui/profile/edit_tor.h>
 #include <QFileDialog>
 
-#include "nekobox/configs/proxy/TorBean.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/configs/proxy/TorBean.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 
 EditTor::EditTor(QWidget *parent) : QWidget(parent), ui(new Ui::EditTor) {
     ui->setupUi(this);

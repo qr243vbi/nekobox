@@ -1,11 +1,9 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_quic.h"
-
-#include "nekobox/configs/proxy/QUICBean.hpp"
+#include <nekobox/ui/profile/edit_quic.h>
+#include <nekobox/configs/proxy/QUICBean.hpp>
 
 #include <QInputDialog>
 #include <QUuid>

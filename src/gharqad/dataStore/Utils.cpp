@@ -1,12 +1,11 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/dataStore/Utils.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "3rdparty/QThreadCreateThread.hpp"
-#include "3rdparty/base64.h"
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/dataStore/Configs.hpp>
+#include <3rdparty/QThreadCreateThread.hpp>
+#include <3rdparty/base64.h>
 #include <QDir>
 #include <QFileInfo>
 #include <QRandomGenerator>

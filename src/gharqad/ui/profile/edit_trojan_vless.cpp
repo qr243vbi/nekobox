@@ -1,12 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_trojan_vless.h"
-
-#include "nekobox/configs/proxy/TrojanVLESSBean.hpp"
-#include "nekobox/configs/proxy/Preset.hpp"
+#include <nekobox/ui/profile/edit_trojan_vless.h>
+#include <nekobox/configs/proxy/TrojanVLESSBean.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
 
 EditTrojanVLESS::EditTrojanVLESS(QWidget *parent) : QWidget(parent), ui(new Ui::EditTrojanVLESS) {
     ui->setupUi(this);

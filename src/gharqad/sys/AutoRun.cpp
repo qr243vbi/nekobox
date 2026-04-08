@@ -1,15 +1,14 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/sys/AutoRun.hpp"
+#include <nekobox/sys/AutoRun.hpp>
 
 #include <QApplication>
 #include <QDir>
 
-#include "nekobox/sys/Settings.h"
-#include "nekobox/dataStore/Configs.hpp"
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/Configs.hpp>
 
 
 #ifdef Q_OS_WIN

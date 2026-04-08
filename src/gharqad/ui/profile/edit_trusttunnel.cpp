@@ -1,11 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/ui/profile/edit_trusttunnel.h"
-#include "nekobox/configs/proxy/TrustTunnelBean.hpp"
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/ui/profile/edit_trusttunnel.h>
+#include <nekobox/configs/proxy/TrustTunnelBean.hpp>
 
 EditTrustTunnel::EditTrustTunnel(QWidget *parent) : QWidget(parent),
 ui(new Ui::EditTrustTunnel) {

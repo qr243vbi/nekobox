@@ -1,35 +1,31 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/dialog_edit_profile.h"
-
-#include "nekobox/ui/profile/edit_anytls.h"
-#include "nekobox/ui/profile/edit_shadowtls.h"
-#include "nekobox/ui/profile/edit_chain.h"
-#include "nekobox/ui/profile/edit_custom.h"
-#include "nekobox/ui/profile/edit_extra_core.h"
-#include "nekobox/ui/profile/edit_mieru.h"
-#include "nekobox/ui/profile/edit_naive.h"
-#include "nekobox/ui/profile/edit_juicity.h"
-#include "nekobox/ui/profile/edit_trusttunnel.h"
-#include "nekobox/ui/profile/edit_tor.h"
-#include "nekobox/ui/profile/edit_quic.h"
-#include "nekobox/ui/profile/edit_shadowsocks.h"
-#include "nekobox/ui/profile/edit_socks_http.h"
-#include "nekobox/ui/profile/edit_ssh.h"
-#include "nekobox/ui/profile/edit_tailscale.h"
-#include "nekobox/ui/profile/edit_trojan_vless.h"
-#include "nekobox/ui/profile/edit_vmess.h"
-#include "nekobox/ui/profile/edit_wireguard.h"
-#include "nekobox/ui/mainwindow_interface.h"
-
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/configs/proxy/includes.h"
-
-#include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/ui/profile/dialog_edit_profile.h>
+#include <nekobox/ui/profile/edit_anytls.h>
+#include <nekobox/ui/profile/edit_shadowtls.h>
+#include <nekobox/ui/profile/edit_chain.h>
+#include <nekobox/ui/profile/edit_custom.h>
+#include <nekobox/ui/profile/edit_extra_core.h>
+#include <nekobox/ui/profile/edit_mieru.h>
+#include <nekobox/ui/profile/edit_naive.h>
+#include <nekobox/ui/profile/edit_juicity.h>
+#include <nekobox/ui/profile/edit_trusttunnel.h>
+#include <nekobox/ui/profile/edit_tor.h>
+#include <nekobox/ui/profile/edit_quic.h>
+#include <nekobox/ui/profile/edit_shadowsocks.h>
+#include <nekobox/ui/profile/edit_socks_http.h>
+#include <nekobox/ui/profile/edit_ssh.h>
+#include <nekobox/ui/profile/edit_tailscale.h>
+#include <nekobox/ui/profile/edit_trojan_vless.h>
+#include <nekobox/ui/profile/edit_vmess.h>
+#include <nekobox/ui/profile/edit_wireguard.h>
+#include <nekobox/ui/mainwindow_interface.h>
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/configs/proxy/includes.h>
+#include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
 
 #include <QApplication>
 #include <QDebug>

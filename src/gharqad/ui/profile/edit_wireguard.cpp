@@ -1,11 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_wireguard.h"
+#include <nekobox/ui/profile/edit_wireguard.h>
 
-#include "nekobox/configs/proxy/WireguardBean.h"
+#include <nekobox/configs/proxy/WireguardBean.h>
 
 EditWireguard::EditWireguard(QWidget *parent) : QWidget(parent), ui(new Ui::EditWireguard) {
     ui->setupUi(this);

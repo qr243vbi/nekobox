@@ -1,6 +1,5 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #include <nekobox/js/js_updater.h>
@@ -9,8 +8,8 @@
 #include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QFile>
 #include <iostream>
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/configs/ConfigBuilder.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/js/version.h>
 #include <nekobox/sys/Settings.h>
 #include <iostream>

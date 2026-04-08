@@ -1,11 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/ui/profile/edit_juicity.h"
-#include "nekobox/configs/proxy/JuicityBean.hpp"
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/ui/profile/edit_juicity.h>
+#include <nekobox/configs/proxy/JuicityBean.hpp>
 
 EditJuicity::EditJuicity(QWidget *parent) : QWidget(parent),
 ui(new Ui::EditJuicity) {

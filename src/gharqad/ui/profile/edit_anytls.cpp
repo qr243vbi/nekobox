@@ -1,18 +1,14 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_anytls.h"
-
-#include "nekobox/configs/proxy/AnyTLSBean.hpp"
-#include "nekobox/ui/profile/edit_shadowtls.h"
-
-#include "nekobox/configs/proxy/ShadowTLSBean.hpp"
-
+#include <nekobox/ui/profile/edit_anytls.h>
+#include <nekobox/configs/proxy/AnyTLSBean.hpp>
+#include <nekobox/ui/profile/edit_shadowtls.h>
+#include <nekobox/configs/proxy/ShadowTLSBean.hpp>
 #include <QUuid>
 #include <QRegularExpressionValidator>
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/global/GuiUtils.hpp>
 
 EditAnyTLS::EditAnyTLS(QWidget *parent) : QWidget(parent), ui(new Ui::EditAnyTLS) {
     ui->setupUi(this);

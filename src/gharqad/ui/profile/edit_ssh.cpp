@@ -1,12 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_ssh.h"
+#include <nekobox/ui/profile/edit_ssh.h>
 #include <QFileDialog>
-
-#include "nekobox/configs/proxy/SSHBean.h"
+#include <nekobox/configs/proxy/SSHBean.h>
 
 EditSSH::EditSSH(QWidget *parent) : QWidget(parent), ui(new Ui::EditSSH) {
     ui->setupUi(this);

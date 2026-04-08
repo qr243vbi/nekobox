@@ -4,17 +4,16 @@
 #endif
 
 #include "libcore_types.h"
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/ui/mainwindow.h"
-
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/configs/ConfigBuilder.hpp"
-#include "nekobox/sys/Settings.h"
-#include "nekobox/dataStore/Utils.hpp"
-#include "nekobox/stats/traffic/TrafficLooper.hpp"
-#include "nekobox/api/RPC.h"
-#include "nekobox/ui/utils//MessageBoxTimer.h"
-#include "3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp"
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/ui/mainwindow.h>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/configs/ConfigBuilder.hpp>
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/stats/traffic/TrafficLooper.hpp>
+#include <nekobox/api/RPC.h>
+#include <nekobox/ui/utils/MessageBoxTimer.h>
+#include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <QInputDialog>
 #include <QPushButton>
@@ -30,7 +29,7 @@
 #define CHECK_ACTION_ACCESS_W
 #define CHECK_ACTION_ACCESS
 #else
-#include "nekobox/ui/security_addon.h"
+#include <nekobox/ui/security_addon.h>
 #endif
 
 

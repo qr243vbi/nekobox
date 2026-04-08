@@ -1,8 +1,8 @@
-#include <qsettings.h>
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
+
+#include <qsettings.h>
 
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
@@ -31,7 +31,7 @@
 #include <QCryptographicHash>
 
 #ifdef Q_OS_WIN
-#include "nekobox/sys/windows/guihelper.h"
+#include <nekobox/sys/windows/guihelper.h>
 #else
 #ifdef Q_OS_UNIX
 #include <nekobox/sys/linux/LinuxCap.h>

@@ -1,11 +1,9 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/edit_tailscale.h"
-
-#include "nekobox/configs/proxy/Tailscale.hpp"
+#include <nekobox/ui/profile/edit_tailscale.h>
+#include <nekobox/configs/proxy/Tailscale.hpp>
 
 EditTailScale::EditTailScale(QWidget *parent) : QWidget(parent), ui(new Ui::EditTailScale) {
     ui->setupUi(this);

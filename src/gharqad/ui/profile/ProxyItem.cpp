@@ -1,10 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/profile/ProxyItem.h"
-
+#include <nekobox/ui/profile/ProxyItem.h>
 #include <QMessageBox>
 
 ProxyItem::ProxyItem(QWidget *parent, const std::shared_ptr<Configs::ProxyEntity> &ent, QListWidgetItem *item)

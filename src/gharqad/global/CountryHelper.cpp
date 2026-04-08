@@ -1,9 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/global/CountryHelper.hpp"
+#include <nekobox/global/CountryHelper.hpp>
 
 QString CountryNameToCode(const QString& countryName) {
     return CountryMap.value(countryName, "");

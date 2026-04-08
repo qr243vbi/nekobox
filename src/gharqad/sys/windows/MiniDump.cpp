@@ -1,6 +1,5 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #include <nekobox/sys/windows/MiniDump.h>
@@ -15,7 +14,7 @@
 #include <QMessageBox>
 
 #include <nekobox/js/version.h>
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/global/GuiUtils.hpp>
 
 
 typedef BOOL(WINAPI *MINIDUMPWRITEDUMP)(

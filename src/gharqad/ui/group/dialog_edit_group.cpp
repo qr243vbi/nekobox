@@ -1,13 +1,12 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/group/dialog_edit_group.h"
+#include <nekobox/ui/group/dialog_edit_group.h>
 
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/ui/mainwindow_interface.h"
-#include "nekobox/sys/Settings.h"
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/ui/mainwindow_interface.h>
+#include <nekobox/sys/Settings.h>
 #include <QHeaderView>
 #include <nekobox/global/GuiUtils.hpp>
 #include <QClipboard>

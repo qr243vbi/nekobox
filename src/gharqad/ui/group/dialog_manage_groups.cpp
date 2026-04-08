@@ -1,16 +1,14 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/ui/group/dialog_manage_groups.h"
-
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/configs/sub/GroupUpdater.hpp"
-#include "nekobox/global/GuiUtils.hpp"
-#include "nekobox/ui/group/GroupItem.h"
-#include "nekobox/ui/group/dialog_edit_group.h"
-#include "nekobox/ui/mainwindow_interface.h"
+#include <nekobox/ui/group/dialog_manage_groups.h>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/configs/sub/GroupUpdater.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/ui/group/GroupItem.h>
+#include <nekobox/ui/group/dialog_edit_group.h>
+#include <nekobox/ui/mainwindow_interface.h>
 
 #include <QInputDialog>
 #include <QListWidgetItem>
