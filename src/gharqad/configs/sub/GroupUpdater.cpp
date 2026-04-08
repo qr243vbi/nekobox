@@ -1,6 +1,5 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
@@ -10,7 +9,7 @@
 #include <nekobox/global/HTTPRequestHelper.hpp>
 #include <nekobox/configs/sub/GroupUpdater.hpp>
 #include <QMutex>
-#include "3rdparty/fkYAML/node.hpp"
+#include <3rdparty/fkYAML/node.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <QThreadPool>
 

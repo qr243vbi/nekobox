@@ -1,11 +1,10 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "nekobox/configs/proxy/V2RayStreamSettings.hpp"
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/configs/proxy/includes.h"
+#include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/includes.h>
 
 #include <QUrlQuery>
 #include <QProcess>
