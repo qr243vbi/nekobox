@@ -98,7 +98,7 @@ fi
 cd "$CURDIR"
 pwd
 
-rm "$DEST/icu"*.dll
+rm "$DEST/icu"*.dll ||:
 
 if [[ "$SKIP_UPX" != "true" ]]
 then
