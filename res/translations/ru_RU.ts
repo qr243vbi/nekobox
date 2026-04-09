@@ -2905,7 +2905,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="62"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="72"/>
         <source>NekoBox</source>
-        <translation type="unfinished">НекоБокс</translation>
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <source>URL Test</source>
