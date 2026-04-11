@@ -8,44 +8,42 @@
 #include "ProxyEntity.hpp"
 
 namespace Configs {
-    struct ProfileFilterKey
-    {
-        std::shared_ptr<Configs::ProxyEntity> key;
+struct ProfileFilterKey
+{
+    std::shared_ptr<Configs::ProxyEntity> key;
 
-        ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity> key, bool unpack_bean){
-            this->key = key;
-            this->unpack_bean = unpack_bean;
-        }
+    ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
+                     bool unpack_bean) noexcept
+        : key(key),
+          unpack_bean(unpack_bean)
+    {}
+
     // --- Bean Bytes ---
-        QByteArray beanBytes() const noexcept;
+    QByteArray beanBytes() const noexcept;
 
     // --- Equality ---
-        bool operator==(const ProfileFilterKey &other) const noexcept;
+    bool operator==(const ProfileFilterKey &other) const noexcept;
+    bool operator!=(const ProfileFilterKey &other) const noexcept;
 
-    // --- Ordering (for QMap, optional) ---
-        bool operator<(const ProfileFilterKey &other) const noexcept;
+    // --- Ordering (for QMap / std::map) ---
+    bool operator<(const ProfileFilterKey &other) const noexcept;
+    bool operator>(const ProfileFilterKey &other) const noexcept;
+    bool operator<=(const ProfileFilterKey &other) const noexcept;
+    bool operator>=(const ProfileFilterKey &other) const noexcept;
 
-    // --- Ordering (for QMap, optional) ---
-        bool operator>(const ProfileFilterKey &other) const noexcept;
+private:
+    mutable bool unpack_bean;
+    mutable QByteArray cache{};
+};
 
-    // --- Ordering (for QMap, optional) ---
-        bool operator<=(const ProfileFilterKey &other) const noexcept;
+// --- Hash ---
+inline uint qHash(const ProfileFilterKey &key, uint seed = 0) noexcept;
 
-    // --- Ordering (for QMap, optional) ---
-        bool operator>=(const ProfileFilterKey &other) const noexcept;
-
-    // --- Ordering (for QMap, optional) ---
-        bool operator!=(const ProfileFilterKey &other) const noexcept;
-
-        private:
-        bool unpack_bean;
-        QByteArray cache = {};
-    };
-
-    inline uint qHash(const ProfileFilterKey &key, uint seed = 0) noexcept;
-
-    ProfileFilterKey ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent,
-                              bool by_address);
+// --- Helper factory ---
+ProfileFilterKey ProfileFilter_ent_key(
+    const std::shared_ptr<Configs::ProxyEntity> &ent,
+    bool by_address
+);
 
     class ProfileFilter {
     public:

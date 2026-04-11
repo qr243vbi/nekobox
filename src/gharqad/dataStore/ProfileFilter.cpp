@@ -6,76 +6,75 @@
 
 namespace Configs {
 
-    // --- Equality ---
-    bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
-    {
-        bool ret = this->key->DisplayType() == other.key->DisplayType();
-        if (ret){
-            ret = this->key->DisplayAddress() == other.key->DisplayAddress();
-            if (ret){
-                return this->beanBytes() == other.beanBytes();
-            }
-        }
-        return false;
-    }
+// --- Bean Bytes (lazy + cached) ---
+QByteArray ProfileFilterKey::beanBytes() const noexcept
+{
+    if (!unpack_bean)
+        return cache;
 
-    QByteArray ProfileFilterKey::beanBytes() const noexcept {
-        if (!unpack_bean) return cache;
-        {
-            auto key = ((ProfileFilterKey*)(this));
-            key->unpack_bean = false;
-            return key->cache = this->key->bean()->ToBytes({"c_cfg", "c_out"});
-        }
-    }
+    unpack_bean = false;
+    cache = key->bean()->ToBytes({"c_cfg", "c_out"});
+    return cache;
+}
 
-    // --- Ordering (for QMap, optional) ---
-    bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
-    {
-        bool ret = this->key->DisplayType() < other.key->DisplayType();
-        if (ret){
-            ret = this->key->DisplayAddress() < other.key->DisplayAddress();
-            if (ret){
-                return this->beanBytes() < other.beanBytes();
-            }
-        }
-        return false;
-    }
+// --- Equality ---
+bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
+{
+    return key->DisplayType() == other.key->DisplayType()
+        && key->DisplayAddress() == other.key->DisplayAddress()
+        && beanBytes() == other.beanBytes();
+}
 
+bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
+{
+    return !(*this == other);
+}
 
-    bool  ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
-    {
-        return !(*this == other);
-    }
+// --- Ordering (STRICT WEAK ORDERING) ---
+bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
+{
+    if (key->DisplayType() < other.key->DisplayType())
+        return true;
 
-    bool  ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
-    {
-        return other < *this;
-    }
+    if (key->DisplayAddress() < other.key->DisplayAddress())
+        return true;
 
-    bool  ProfileFilterKey::operator<=(const ProfileFilterKey &other) const noexcept
-    {
-        return !(*this > other);
-    }
+    return beanBytes() < other.beanBytes();
+}
 
-    bool  ProfileFilterKey::operator>=(const ProfileFilterKey &other) const noexcept
-    {
-        return !(*this < other);
-    }
+bool ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
+{
+    return other < *this;
+}
 
-    inline uint qHash(const ProfileFilterKey &key, uint seed) noexcept
-    {
-        seed ^= qHash(key.key->DisplayAddress(), seed);
-        seed ^= qHash(key.key->DisplayType(), seed << 1);
-        seed ^= qHash(key.beanBytes(), seed << 2);
+bool ProfileFilterKey::operator<=(const ProfileFilterKey &other) const noexcept
+{
+    return !(other < *this);
+}
 
-        return seed;
-    }
+bool ProfileFilterKey::operator>=(const ProfileFilterKey &other) const noexcept
+{
+    return !(*this < other);
+}
 
-ProfileFilterKey ProfileFilter_ent_key(const std::shared_ptr<Configs::ProxyEntity> &ent,
-                              bool by_address) {
+// --- Hash ---
+inline uint qHash(const ProfileFilterKey &key, uint seed) noexcept
+{
+    seed = qHash(key.key->DisplayType(), seed);
+    seed = qHash(key.key->DisplayAddress(), seed);
+    seed = qHash(key.beanBytes(), seed);
+    return seed;
+}
+
+// --- Helper factory ---
+ProfileFilterKey ProfileFilter_ent_key(
+    const std::shared_ptr<Configs::ProxyEntity> &ent,
+    bool by_address)
+{
     const bool useAddressOnly = by_address && ent->type != "custom";
     return ProfileFilterKey(ent, !useAddressOnly);
 }
+
 
 void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,
                          QList<std::shared_ptr<ProxyEntity>> &out,

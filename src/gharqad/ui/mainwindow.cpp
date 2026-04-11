@@ -3081,7 +3081,7 @@ void MainWindow::on_menu_clone_triggered() {
                                           &chooseUpdateGroup);
 }
 
-void MainWindow::on_menu_delete_repeat_triggered() {
+void MainWindow::on_menu_remove_duplicates_triggered() {
   CHECK_SETTINGS_ACCESS_W
   QList<std::shared_ptr<Configs::ProxyEntity>> out;
   QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
@@ -3089,8 +3089,17 @@ void MainWindow::on_menu_delete_repeat_triggered() {
   Configs::ProfileFilter::Uniq(
       Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, true,
       false);
+
+  #ifdef DEBUG_MODE
+    qDebug() << "UNIQUE " << out.count();
+  #endif
+
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
       Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, out_del);
+
+  #ifdef DEBUG_MODE
+    qDebug() << "DUPLICATES" << out_del.count();
+  #endif
 
   int remove_display_count = 0;
   QString remove_display;
@@ -3633,7 +3642,10 @@ void MainWindow::on_menu_resolve_domain_triggered() {
   if (lastx > -1 || lasty > -1) {                                              \
     this->lastx = -1;                                                          \
     this->lasty = -1;                                                          \
-    if (pos1.x() == lastx && pos1.y() == lasty) {                              \
+    auto pos1_x = pos1.x();                                                    \
+    auto pos1_y = pos1.y();                                                    \
+    if (pos1_x+24 > lastx && pos1_x-24 < lastx &&                                \
+        pos1_y+24 > lasty && pos1_y-24 < lasty) {                                \
       return;                                                                  \
     }                                                                          \
   }
@@ -3879,7 +3891,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       menu->addAction(ui->actionSpeedtest_Group);
       menu->addAction(ui->menu_resolve_domain);
       menu->addAction(ui->menu_clear_test_result);
-      menu->addAction(ui->menu_delete_repeat);
+      menu->addAction(ui->menu_remove_duplicates);
       menu->addAction(ui->menu_remove_unavailable);
       menu->addAction(ui->menu_remove_invalid);
     }
@@ -4010,7 +4022,7 @@ void MainWindow::setActionsData() {
   ui->menu_add_from_input->setData(QString("m2"));
   ui->menu_clear_test_result->setData(QString("m3"));
   ui->menu_clone->setData(QString("m4"));
-  ui->menu_delete_repeat->setData(QString("m6"));
+  ui->menu_remove_duplicates->setData(QString("m6"));
   ui->menu_export_config->setData(QString("m7"));
   ui->menu_qr->setData(QString("m8"));
   ui->menu_remove_invalid->setData(QString("m9"));

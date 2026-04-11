@@ -248,7 +248,7 @@ private slots:
 
     void on_menu_clone_triggered();
 
-    void on_menu_delete_repeat_triggered();
+    void on_menu_remove_duplicates_triggered();
 
     void on_menu_delete_triggered();
 

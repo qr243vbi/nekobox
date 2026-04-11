@@ -636,7 +636,7 @@ QToolButton::menu-indicator {
      <x>0</x>
      <y>0</y>
      <width>843</width>
-     <height>33</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_program">
@@ -742,7 +742,7 @@ QToolButton::menu-indicator {
     <addaction name="menu_remove_invalid"/>
     <addaction name="menu_remove_unavailable"/>
     <addaction name="menu_clear_test_result"/>
-    <addaction name="menu_delete_repeat"/>
+    <addaction name="menu_remove_duplicates"/>
     <addaction name="actionSpeedtest_Group"/>
    </widget>
    <widget class="QMenu" name="menuRouting_Menu">
@@ -934,7 +934,7 @@ QToolButton::menu-indicator {
     <string>Disable</string>
    </property>
   </action>
-  <action name="menu_delete_repeat">
+  <action name="menu_remove_duplicates">
    <property name="text">
     <string>Remove Duplicates</string>
    </property>
