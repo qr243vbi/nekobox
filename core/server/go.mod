@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.25.0
+go 1.26.1
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
@@ -13,10 +13,10 @@ require (
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
 	github.com/sagernet/sing v0.8.4
-	github.com/sagernet/sing-box v1.13.6
-	github.com/sagernet/sing-tun v0.8.6
+	github.com/sagernet/sing-box v1.13.7
+	github.com/sagernet/sing-tun v0.8.7
 	github.com/spf13/cobra v1.10.2
-	golang.org/x/sys v0.42.0
+	golang.org/x/sys v0.43.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.78
 )
@@ -172,3 +172,5 @@ require (
 )
 
 replace github.com/sagernet/sing-box => ./sing-box
+
+replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7

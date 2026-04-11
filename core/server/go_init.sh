@@ -3,7 +3,10 @@ rm go.sum
 
 go mod init nekobox_core
 go mod tidy
-echo 'replace github.com/sagernet/sing-box => ./sing-box' >> go.mod
+
+go mod edit -replace=github.com/sagernet/sing-box=./sing-box
+go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@latest
+
 go mod tidy
 pushd gen
 . update_libs.sh
