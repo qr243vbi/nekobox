@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.26.1
+go 1.25.0
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
