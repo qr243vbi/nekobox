@@ -76,8 +76,9 @@ namespace Configs {
     QString BuildChain(int chainId, const std::shared_ptr<BuildConfigStatus> &status);
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
-                               const std::shared_ptr<BuildConfigStatus> &status);
+                               const std::shared_ptr<BuildConfigStatus> &status, int route_suffix = -1);
 
+    QList<std::shared_ptr<ProxyEntity>> ResolveChainInternal(const std::shared_ptr<BuildConfigStatus> &status, const std::shared_ptr<ProxyEntity> &ent);
 
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag);

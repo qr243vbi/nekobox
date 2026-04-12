@@ -2,17 +2,17 @@
 #include <winsock2.h>
 #endif
 
-#include "nekobox/ui/setting/dialog_basic_settings.h"
+#include <nekobox/ui/setting/dialog_basic_settings.h>
 
-#include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "nekobox/configs/proxy/Preset.hpp"
-#include "nekobox/ui/setting/ThemeManager.hpp"
-#include "nekobox/ui/setting/Icon.hpp"
-#include "nekobox/global/GuiUtils.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/global/HTTPRequestHelper.hpp"
-#include "nekobox/global/DeviceDetailsHelper.hpp"
-#include "nekobox/dataStore/ResourceEntity.hpp"
+#include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/ui/setting/ThemeManager.hpp>
+#include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/DeviceDetailsHelper.hpp>
+#include <nekobox/dataStore/ResourceEntity.hpp>
 
 #include <QStyleFactory>
 #include <QFileDialog>
@@ -21,11 +21,11 @@
 #include <QTimer>
 #include <qboxlayout.h>
 #include <qfontdatabase.h>
-#include "nekobox/sys/Settings.h"
-#include "nekobox/dataStore/ResourceEntity.hpp"
+#include <nekobox/sys/Settings.h>
+#include <nekobox/dataStore/ResourceEntity.hpp>
 #include <QString>
 
-#include "nekobox/ui/mainwindow_interface.h"
+#include <nekobox/ui/mainwindow_interface.h>
 
 #include <QtGlobal> // For QT_VERSION_CHECK
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
@@ -360,13 +360,14 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->resource_manager->setHidden(true);
 
     connect(ui->select_core, &QPushButton::clicked, this, [=,this]{
-        QString fileName = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
-                                                        "", nullptr, QFileDialog::Option::ReadOnly);
+        QString fileName = OPEN_FILENAME;
         ui->core_path->setText(fileName);
+        SAVE_LATEST(fileName);
     });
     connect(ui->select_icons, &QPushButton::clicked, this, [=,this]{
         QString folderName = QFileDialog::getExistingDirectory(this, QObject::tr("Select a Folder"), "");
         ui->icons_path->setText(folderName);
+        SAVE_LATEST(folderName);
     });
 
     connect(this, &DialogBasicSettings::size_changed, parent, &MainWindow::size_changed);

@@ -32,7 +32,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string notr="true">Stack</string>
+         <string>Stack</string>
         </property>
        </widget>
       </item>
@@ -82,7 +82,10 @@
       <item>
        <widget class="QCheckBox" name="vpn_ipv6">
         <property name="text">
-         <string>Tun Enable IPv6</string>
+         <string>Enable IPv6</string>
+        </property>
+        <property name="tristate">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -148,6 +151,13 @@
       <widget class="QPushButton" name="exclude_cidrs">
        <property name="text">
         <string>Exclude CIDR's</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="tun_applications">
+       <property name="text">
+        <string>Applications</string>
        </property>
       </widget>
      </item>

@@ -142,7 +142,7 @@ SET_NODE(jsonShared) {
 SET_NODE(jsonStoreList) {
   if (value.isArray()) {
     QJsonArray array = value.toArray();
-    if (!array.isEmpty()) {
+    {
       auto list = (QJsonStoreListBase *)this->getPtr(store);
       if (list == nullptr) {
         return;
@@ -366,7 +366,7 @@ GET_NODE(jsonStoreList) {
   auto list = (QJsonStoreListBase *)this->getPtr(store);
   QJsonArray array; if (list == nullptr) return array;
   for (auto st : *list) {
-    if (st == nullptr) {
+    if (st != nullptr) {
       array.append(st->ToJson());
     }
   }

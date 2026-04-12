@@ -56,6 +56,29 @@
     </message>
 </context>
 <context>
+    <name>DialogAppSettings</name>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
+        <source>Proxy</source>
+        <translation type="unfinished">Meghatalmazott</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
+        <source>Direct</source>
+        <translation type="unfinished">Közvetlen</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
+        <source>Block</source>
+        <translation type="unfinished">Tömb</translation>
+    </message>
+</context>
+<context>
     <name>DialogBasicSettings</name>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
@@ -453,27 +476,31 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Biztonság</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">A jogosultságkérés letiltása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <source>Skip TLS certificate authentication</source>
+        <translation type="unfinished">TLS-tanúsítvány-hitelesítés kihagyása</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Használja a Mozilla Certificate Store szolgáltatást</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="913"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation type="unfinished">Alapértelmezés szerint kihagyja a TLS-tanúsítvány-hitelesítést (allowInsecure)</translation>
+        <translation type="obsolete">Alapértelmezés szerint kihagyja a TLS-tanúsítvány-hitelesítést (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Alapértelmezett uTLS ujjlenyomat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ne próbálja meg rendszergazdaként kezdeni, hacsak nincs kifejezetten kérve&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -488,189 +515,193 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Használjon UDS-t az IPC-hez</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="957"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Mindig normál felhasználóként induljon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished">Használjon Json helyett binárist a konfigurációkhoz</translation>
+        <translation type="obsolete">Használjon Json helyett binárist a konfigurációkhoz</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Kérje a profil törlését</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Automatikus tesztelés</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Automatikusan tesztelheti a proxykat a háttérben, és karbantarthatja a működő proxyk készletét</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Automatikus tesztelés engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Teszt intervallum (másodperc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Milyen gyakran kell futtatni a tesztciklust</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Proxy ciklusonként</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Az egyes ciklusokban tesztelendő proxyk száma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Működő medenceméret</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">A karbantartandó ellenőrzött működő proxyk maximális száma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Késési küszöb (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1169"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Maximális késleltetés a proxy működőképesnek tekintéséhez</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Sikertelen próbálkozások száma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Az újrapróbálkozások száma, mielőtt a proxyt sikertelennek tekintené</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Cél URL tesztelése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1218"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL a proxyk teszteléséhez</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Automatikus váltás másik működő proxyra, ha a TUN módú proxy meghibásodik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN feladatátvétel engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Startup</source>
         <translation type="unfinished">Indítás</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Geometria automatikus mentése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1339"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
         <source>Autosave position</source>
         <translation type="unfinished">Pozíció automatikus mentése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
         <source>Apply now</source>
         <translation type="unfinished">Jelentkezzen most</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1433"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
         <source>Width</source>
         <translation type="unfinished">Szélesség</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1465"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1533"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
+        <source>Configs format</source>
+        <translation type="unfinished">Konfigurációk formátum</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
         <source>Height</source>
         <translation type="unfinished">Magasság</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Alapvető végrehajtható útvonal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
         <source>Use default</source>
         <translation type="unfinished">Alapértelmezés használata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1666"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
         <source>Remote Control</source>
         <translation type="unfinished">Távirányító</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1881"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
         <source>Select</source>
         <translation type="unfinished">Válassza ki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Erőforrás-könyvtár</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1855"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Erőforrás-kezelő</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="246"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">A program neve</translation>
     </message>
@@ -765,17 +796,17 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Az automatikus frissítés kihagyása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="64"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63"/>
         <source>Copied</source>
         <translation type="unfinished">Másolva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Warning</source>
         <translation type="unfinished">Figyelmeztetés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Please input URL</source>
         <translation type="unfinished">Kérjük, adja meg az URL-t</translation>
     </message>
@@ -910,7 +941,7 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="760"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">Alkalmazza a beállításokat erre a csoportra</translation>
     </message>
@@ -946,7 +977,7 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="691"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687"/>
         <source>Certificate</source>
         <translation type="unfinished">Bizonyítvány</translation>
     </message>
@@ -967,7 +998,7 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH Config</translation>
     </message>
@@ -1037,12 +1068,12 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Valóság SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="242"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Egyéni (%1 kimenő)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="244"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Egyéni (% 1 konfiguráció)</translation>
     </message>
@@ -1065,30 +1096,30 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Egyéni (% 1 konfiguráció)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72"/>
         <source>both</source>
         <translation type="unfinished">mindkét</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="672"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668"/>
         <source>Not set</source>
         <translation type="unfinished">Nincs beállítva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="661"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="674"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670"/>
         <source>Already set</source>
         <translation type="unfinished">Már beállítva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="732"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728"/>
         <source>Confirm</source>
         <translation type="unfinished">Erősítse meg</translation>
     </message>
@@ -1121,49 +1152,50 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">2. csoport</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="420"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Első proxy a %1 csoporthoz</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="422"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421"/>
         <source>Front proxy: </source>
         <translation type="unfinished">Első proxy:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="433"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Leszállási proxy a(z) %1 csoporthoz</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="435"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">Leszállási proxy:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="448"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
         <source>Proxy</source>
         <translation type="unfinished">Meghatalmazott</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="451"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Direct</source>
         <translation type="unfinished">Közvetlen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457"/>
         <source>None</source>
         <translation type="unfinished">Egyik sem</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="51"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">Proxy hozzáadása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="71"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Cserélje ki a %1 proxyt</translation>
     </message>
@@ -1181,6 +1213,11 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149"/>
         <source>Outbound</source>
         <translation type="unfinished">Kimenő</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151"/>
+        <source>Block</source>
+        <translation type="unfinished">Tömb</translation>
     </message>
 </context>
 <context>
@@ -1244,12 +1281,12 @@ perc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Frissítse az összes előfizetést</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Confirmation</source>
         <translation type="unfinished">Megerősítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Frissíti az összes előfizetést?</translation>
     </message>
@@ -1524,38 +1561,38 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Töröl</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>Invalid state</source>
         <translation type="unfinished">Érvénytelen állapot</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Az útválasztási profilok listája üres, ennek elérhetetlen állapotnak kell lennie, most összeomlhatnak</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>Invalid settings</source>
         <translation type="unfinished">Érvénytelen beállítások</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Az útválasztási profil nem lehet üres</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">A DNS-szabályok nem érvényesek</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Érvénytelen művelet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Az útválasztási profilok nem lehetnek üresek, próbáljon meg egy másik profilt hozzáadni vagy módosítani ezt</translation>
     </message>
@@ -1568,44 +1605,58 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Tun Enable IPv6</source>
-        <translation type="unfinished">Hang Enable IPv6</translation>
+        <translation type="obsolete">Hang Enable IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
+        <source>Stack</source>
+        <translation type="unfinished">Verem</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <source>Enable IPv6</source>
+        <translation type="unfinished">IPv6 engedélyezése</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">Szigorú útvonal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ha engedélyezve van, a közvetlen IP CIDR-ek és szabálykészletek is hozzáadódnak a Tun beállításhoz, hogy kizárják őket az operációs rendszer útválasztási szintjén.FONTOS: A jelentések szerint a nagy szabálykészletek hatalmas CPU-használatot okoznak a Windowsban. Kérjük, óvatosan engedélyezze ezt a lehetőséget.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Tun Routing engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">Automatikus átirányítás</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">Tun cím</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">Tun ipv6 cím</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
         <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">A CIDR-ek kizárása</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
+        <source>Applications</source>
+        <translation type="unfinished">Alkalmazások</translation>
     </message>
 </context>
 <context>
@@ -1644,7 +1695,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Válassza a Profil lehetőséget</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="33"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">A név nem lehet üres.</translation>
     </message>
@@ -1662,17 +1713,17 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Json szerkesztő</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">Kimenő JSON, kérjük, olvassa el a dokumentációt.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="60"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Kérjük, töltse ki a teljes konfigurációt.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="69"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">A név nem lehet üres.</translation>
     </message>
@@ -1808,7 +1859,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="14"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">Le</translation>
     </message>
@@ -1928,7 +1979,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="154"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">Bizonyítvány</translation>
     </message>
@@ -2263,7 +2314,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">állapotfelmérés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="13"/>
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">Le</translation>
     </message>
@@ -2437,32 +2488,32 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Távolítsa el</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Basic</source>
         <translation type="unfinished">Alapvető</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Subscription</source>
         <translation type="unfinished">Előfizetés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="140"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138"/>
         <source>Archive</source>
         <translation type="unfinished">Archívum</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="152"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150"/>
         <source>Last update: %1</source>
         <translation type="unfinished">Utolsó frissítés: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Confirmation</source>
         <translation type="unfinished">Megerősítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Eltávolítja %1?</translation>
     </message>
@@ -2484,45 +2535,26 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Használati statisztika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="394"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">Forgalmi statisztika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="432"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Teljes proxy forgalom:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="43"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="66"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="89"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="116"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="141"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="170"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="241"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="248"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="255"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="301"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="308"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="364"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="371"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="378"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="412"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="419"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="442"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="485"/>
         <source>TextLabel</source>
-        <translation type="unfinished">TextLabel</translation>
+        <translation type="obsolete">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="449"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Teljes közvetlen forgalom:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="129"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">Biztonsági statisztika</translation>
     </message>
@@ -2531,65 +2563,65 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Profil statisztika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">Használati idő:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">Utolsó indulási idő:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="96"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">Első indítás időpontja:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">Kezdő számlálás:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="465"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="478"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">Letöltés:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="498"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="511"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">Feltöltés:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="205"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">Proxy profilok</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="199"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">Adatbázis-statisztika</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="281"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="344"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">Törölve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="221"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="291"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="354"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">Létezik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="231"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="271"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">Létrehozva</translation>
     </message>
@@ -2599,7 +2631,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Csoportok és előfizetések</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">Útvonalprofilok</translation>
     </message>
@@ -2609,7 +2641,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="unfinished">Sikertelen hitelesítések száma:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="183"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">Felhasználók száma:</translation>
     </message>
@@ -2625,50 +2657,50 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="62"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="91"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="101"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="685"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
         <source>Profiles</source>
         <translation type="unfinished">Profilok</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">Beállítások elemre</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="149"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">Útválasztás</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="178"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
         <source>Update</source>
         <translation type="unfinished">Frissítés</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="218"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
         <source>Tun Mode</source>
         <translation type="unfinished">Tun mód</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
         <source>System DNS</source>
         <translation type="unfinished">Rendszer DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="244"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2686"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2689"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684"/>
         <source>System Proxy</source>
         <translation type="unfinished">Rendszer proxy</translation>
     </message>
@@ -2677,103 +2709,103 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">URL teszt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="396"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="145"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="390"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144"/>
         <source>Type</source>
         <translation type="unfinished">Írja be</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="401"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="148"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="395"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147"/>
         <source>Address</source>
         <translation type="unfinished">Cím</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="406"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="400"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150"/>
         <source>Name</source>
         <translation type="unfinished">Név</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="411"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="300"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="405"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299"/>
         <source>Test Result</source>
         <translation type="unfinished">Teszt eredménye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="416"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="555"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Traffic</source>
         <translation type="unfinished">Forgalom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454"/>
         <source>Logs</source>
         <translation type="unfinished">Naplók</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Connections</source>
         <translation type="unfinished">Kapcsolatok</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="523"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="517"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">Cél (domain)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="526"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="520"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Kattintson a rendezés letiltásához</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="531"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="525"/>
         <source>Process</source>
         <translation type="unfinished">Folyamat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="534"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="528"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Kattintson a Folyamat szerinti rendezéshez</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Protocol</source>
         <translation type="unfinished">Jegyzőkönyv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="542"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Kattintson a Protokoll szerinti rendezésre</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="547"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541"/>
         <source>Outbound</source>
         <translation type="unfinished">Kimenő</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="550"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Kattintson a Kimenő szerinti rendezéshez</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Kattintson a Forgalom szerinti rendezés váltásához</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="567"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="561"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">Forgalmi grafikon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="650"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644"/>
         <source>Program</source>
         <translation type="unfinished">Program</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="674"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="668"/>
         <source>Preferences</source>
         <translation type="unfinished">Preferences</translation>
     </message>
@@ -2782,7 +2814,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Szerver</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
         <source>Share</source>
         <translation type="unfinished">Részesedés</translation>
     </message>
@@ -2791,296 +2823,296 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Jelenlegi csoport</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="709"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755"/>
         <source>Test</source>
         <translation type="unfinished">Teszt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689"/>
         <source>Current Selected</source>
         <translation type="unfinished">Jelenlegi kiválasztva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683"/>
         <source>Current Group</source>
         <translation type="unfinished">Jelenlegi csoport</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="188"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">Info</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="738"/>
         <source>Hidden menu</source>
         <translation type="unfinished">Rejtett menü</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="756"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="750"/>
         <source>Routing Menu</source>
         <translation type="unfinished">Útválasztás menü</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="762"/>
         <source>Context</source>
         <translation type="unfinished">Kontextus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">Kontextusprofilok</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Exit</source>
         <translation type="unfinished">Kijárat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795"/>
         <source>Toggle Window</source>
         <translation type="unfinished">Az ablak váltása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="806"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="800"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Alapbeállítások</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="811"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
         <source>New profile</source>
         <translation type="unfinished">Új profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810"/>
         <source>Groups</source>
         <translation type="unfinished">Csoportok</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="821"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3765"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3775"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3772"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
         <source>Start</source>
         <translation type="unfinished">Indul</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="829"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3764"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3775"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3771"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="837"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
         <source>Edit</source>
         <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>Routing Settings</source>
         <translation type="unfinished">Útválasztási beállítások</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="844"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Profil hozzáadása a vágólapról</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="852"/>
         <source>Delete</source>
         <translation type="unfinished">Töröl</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
         <source>Debug Info</source>
         <translation type="unfinished">Hibakeresési információ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="865"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR kód és link</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="873"/>
         <source>Copy Link</source>
         <translation type="unfinished">Link másolása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1141"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">Tiszta teszteredmény</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1575"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1579"/>
         <source>Export %1 config</source>
         <translation type="unfinished">% 1 konfiguráció exportálása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">Forgalom visszaállítása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QR-kód beolvasása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">Rendszerproxy engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934"/>
         <source>Disable</source>
         <translation type="unfinished">Letiltás</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Az ismétlődések eltávolítása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032"/>
         <source>fake</source>
         <translation type="unfinished">hamisítvány</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
         <source>Move</source>
         <translation type="unfinished">Mozog</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966"/>
         <source>Start with system</source>
         <translation type="unfinished">Kezdje a rendszerrel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
         <source>Remember last profile</source>
         <translation type="unfinished">Emlékezzen az utolsó profilra</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Engedélyezze a többi eszköz csatlakozását</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Eltávolítás Nem elérhető</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995"/>
         <source>Full Test</source>
         <translation type="unfinished">Teljes teszt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Gyorsbillentyűk beállításai</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008"/>
         <source>Select All</source>
         <translation type="unfinished">Válassza az Összes lehetőséget</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1016"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">Egyéni hivatkozások másolása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1046"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
         <source>Copy links</source>
         <translation type="unfinished">Linkek másolása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1124"/>
         <source>Url Test</source>
         <translation type="unfinished">URL teszt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1163"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">Domain feloldása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1253"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1247"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Regisztrálja a Windows emelt szintű feladatát</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1258"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1273"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1252"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1267"/>
         <source>About</source>
         <translation type="unfinished">Körülbelül</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1257"/>
         <source>Statistics</source>
         <translation type="unfinished">Statisztika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1268"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1262"/>
         <source>Check for updates</source>
         <translation type="unfinished">Ellenőrizze a frissítéseket</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1245"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1239"/>
         <source>Information</source>
         <translation type="unfinished">Információ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Tun engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3076"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3071"/>
         <source>Clone</source>
         <translation type="unfinished">Klón</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1064"/>
         <source>Update subscription</source>
         <translation type="unfinished">Frissítse az előfizetést</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
         <source>Resolve domain</source>
         <translation type="unfinished">Domain feloldása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Restart Program</source>
         <translation type="unfinished">Indítsa újra a programot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">Nyissa meg a Config mappát</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1114"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">Indítsa újra a proxyt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1119"/>
         <source>Stop Testing</source>
         <translation type="unfinished">Állítsa le a tesztelést</translation>
     </message>
@@ -3089,7 +3121,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
         <source>Url Test Group</source>
         <translation type="unfinished">URL tesztcsoport</translation>
     </message>
@@ -3098,7 +3130,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Érvénytelen eltávolítás</translation>
     </message>
@@ -3107,420 +3139,420 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1240"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1234"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Current</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176"/>
         <source>Full test Selected</source>
         <translation type="unfinished">Teljes teszt kiválasztva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1187"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181"/>
         <source>Download test Selected</source>
         <translation type="unfinished">Letöltési teszt kiválasztva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">Feltöltési teszt kiválasztva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1197"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191"/>
         <source>Country test Selected</source>
         <translation type="unfinished">Országteszt Kiválasztva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1202"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">Egyszerű letöltési teszt Kijelölve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1207"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest csoport</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1212"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206"/>
         <source>Hide window</source>
         <translation type="unfinished">Ablak elrejtése</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
         <source>Add profile from File</source>
         <translation type="unfinished">Profil hozzáadása a fájlból</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3794"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3801"/>
         <source>Add new Group</source>
         <translation type="unfinished">Új csoport hozzáadása</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Security Settings</source>
         <translation type="unfinished">Biztonsági beállítások</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="231"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Unavailable</source>
         <translation type="unfinished">Nem elérhető</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1230"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Útválasztási profilok szerkesztése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1252"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1256"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Útválasztási profilok frissítése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1336"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1340"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">Válasz frissítése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1265"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Nincsenek útválasztási profilok frissítve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1273"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 útválasztási profil frissítve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1279"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1283"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">RuleSet Map frissítése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1290"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1294"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Nem sikerült frissíteni a szabálykészleteket</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1297"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">A szabálykészletek sikeresen frissítve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Frissítse a RuleSet gyorsítótárat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1337"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1341"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">A szabálykészletek gyorsítótára frissül</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Törölje a RuleSet gyorsítótárat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1387"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1391"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock engedélyezése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1793"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1797"/>
         <source>Error</source>
         <translation type="unfinished">Hiba</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1884"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun A beállítások megváltoztak</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1885"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Indítsa újra a Tunt, hogy életbe lépjen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1945"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3132"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3508"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3563"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3612"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3843"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1946"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3512"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3850"/>
         <source>Confirmation</source>
         <translation type="unfinished">Megerősítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1946"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1947"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">A beállítások megváltoztak, a proxy újraindítása?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1917"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1921"/>
         <source>Settings changed</source>
         <translation type="unfinished">A beállítások megváltoztak</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1918"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1922"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Indítsa újra a programot, hogy életbe lépjen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1961"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 profil importálva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2248"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2243"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">A felhasználó úgy döntött, hogy nem igényel jogosultságot, előfordulhat, hogy egyes funkciók nem működnek</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2313"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2308"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Kérjük, adja meg az alapvető root jogosultságokat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2657"/>
         <source>Not Running</source>
         <translation type="unfinished">Nem fut</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3077"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3072"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 elem klónozása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3112"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3116"/>
         <source> Confirmation </source>
         <translation type="unfinished">Megerősítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3113"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3117"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Eltávolítja a(z) %1 elemet?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3133"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Eltávolítja a(z) %1 elemet?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3170"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3183"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3174"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3187"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 elem másolva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3422"/>
         <source>QR Code not found</source>
         <translation type="unfinished">A QR-kód nem található</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3440"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3444"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Nem sikerült rögzíteni a képernyőt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3509"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3513"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Eltávolítja a(z) %1 nem elérhető elem(eke)t?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 Érvénytelen elem(ek) eltávolítása?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3613"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3617"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Lecseréli a tartománykiszolgáló címeit a feloldott IP-címeikre?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3762"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769"/>
         <source>Clear</source>
         <translation type="unfinished">Világos</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">A kiválasztott csoport törlése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3841"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">A kiválasztott csoport szerkesztése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Eltávolítja %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4593"/>
         <source>Cannot start</source>
         <translation type="unfinished">Nem lehet elindítani</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4582"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4594"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Az utolsó letöltési kérés még nem fejeződött be</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4616"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Nem sikerült letölteni a frissítési eszközöket</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="87"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">A profilteszt megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="138"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="184"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] teszthiba: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="167"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="499"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Valami nagyon nincs rendben, a tárgy ent nem található!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="173"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="505"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">A profilkezelő adatai sérültek, próbálkozzon újra.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Az utolsó URL-teszt nem fejezte be teljesen, kérjük, várjon.Ha továbbra is fennáll, indítsa újra a programot.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="216"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="329"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Nem sikerült összeállítani a tesztkonfigurációt:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="257"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Az URL-teszt befejeződött!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="268"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Nem sikerült leállítani a teszteket</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="274"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273"/>
         <source>Testing</source>
         <translation type="unfinished">Tesztelés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Az utolsó sebességteszt nem fejezte be teljesen, kérjük, várjon.Ha továbbra is fennáll, indítsa újra a programot.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="355"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">A sebességteszt befejeződött!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="436"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Profil sebességteszt megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="524"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] sebességteszt hiba: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="533"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Először engedélyeznie kell a DNS-kiszolgáló eltérítését</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="547"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Nem sikerült beállítani a rendszer DNS-t:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Az eszköz hibásan működik</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="597"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ha gondjai vannak a VPN indításával, itt kényszerítheti vissza az alapfolyamatot, majd próbálja meg újra elindítani a profilt.A hiba %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600"/>
         <source>Reset</source>
         <translation type="unfinished">Reset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="602"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="638"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Újabb profil indul...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Egy másik profil leáll...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="666"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="748"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ha hosszú ideig nem érkezik válasz, javasoljuk a szoftver újraindítását.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="680"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Kezdőprofil %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="682"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Nem sikerült elindítani a %1 profilt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="731"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730"/>
         <source>Stop return error</source>
         <translation type="unfinished">Visszatérés leállítása hiba</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="771"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Profil %1 leállítása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="773"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Nem sikerült leállítani, indítsa újra a programot.</translation>
     </message>
@@ -3551,12 +3583,12 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">Megerősítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Eltávolítja %1?</translation>
     </message>
@@ -3572,7 +3604,7 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="382"/>
+        <location filename="../../src/gharqad/main.cpp" line="381"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3580,42 +3612,42 @@ További információkért lásd a „Konfiguráció/DNS” dokumentumot.</trans
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="165"/>
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">A Tun mód nem használható egyéni konfigurációkkal</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="875"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Előfizetés kérése: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="879"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="878"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Előfizetés kérése %1 hiba: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="886"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="885"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Előfizetési kérelem befejezve: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="903"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Szerverek törlése...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="909"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="908"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Előfizetési adatok feldolgozása...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="912"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="911"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">A folyamat befejeződött, jelentkezés...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="974"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3626,146 +3658,144 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="980"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="979"/>
         <source>Nothing</source>
         <translation type="unfinished">Semmi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="983"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="982"/>
         <source>Change of %1:</source>
         <translation type="unfinished">%1 változása:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="327"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
         <source>Default</source>
         <translation type="unfinished">Alapértelmezett</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="194"/>
+        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="199"/>
         <source>Could not open file.</source>
         <translation type="unfinished">Nem sikerült megnyitni a fájlt.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="132"/>
+        <location filename="../../src/gharqad/main.cpp" line="131"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">Lánc proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="147"/>
         <source>Custom</source>
         <translation type="unfinished">Szokás</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="149"/>
+        <location filename="../../src/gharqad/main.cpp" line="148"/>
         <source>Extra Core</source>
         <translation type="unfinished">Extra Core</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="33"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="364"/>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="126"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">Válassza ki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2630"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2625"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proxy: %1
 Közvetlen: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="123"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Core kilépve, takarítás...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="130"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">A mag túl gyakran lép ki. Állítsa le az automatikus újraindítást a profilban.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="139"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">A mag újraindítása...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="379"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
         <source>System</source>
         <translation type="unfinished">Rendszer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>URL detected</source>
         <translation type="unfinished">URL észlelve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31"/>
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 Hogyan kell frissíteni?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">Új előfizetési csoport létrehozása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="38"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36"/>
         <source>Add profiles to this group</source>
         <translation type="unfinished">Profilok hozzáadása ehhez a csoporthoz</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Hozzáadás http/https proxyként</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42"/>
         <source>Group name</source>
         <translation type="unfinished">Csoport neve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="111"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Használt: %1 Maradék: %2 Lejár: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="315"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="317"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Profilok letöltése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="316"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="318"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Profilhiba kérése: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="498"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 duplikátum törölve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="529"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="532"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Törölve %1 Érvénytelen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="555"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="558"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Törölve %1 Nem érhető el</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1672"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1676"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Szabálykészletek ellenőrzése: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1694"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1698"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Szabálykészlet-lista hiba kérése: %1</translation>
     </message>
@@ -3774,64 +3804,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP-cím: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2667"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Bejövő IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3052"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Profilok áthelyezése csoportba</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3201"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3205"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfig másolva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3213"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3217"/>
         <source>Copy core config</source>
         <translation type="unfinished">Alapkonfiguráció másolása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219"/>
         <source>Copy test config</source>
         <translation type="unfinished">Tesztkonfiguráció másolása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3216"/>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="36"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">RENDBEN</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4485"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4540"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4563"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4572"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4607"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4503"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4575"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
         <source>Update</source>
         <translation type="unfinished">Frissítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4494"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Nem hivatalos támogatási platform</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4497"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4504"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Frissítési kérés hiba: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
         <source>No update</source>
         <translation type="unfinished">Nincs frissítés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4576"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3840,37 +3870,42 @@ Kiadási megjegyzés:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4579"/>
         <source>Close</source>
         <translation type="unfinished">Közeli</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581"/>
         <source>Open in browser</source>
         <translation type="unfinished">Nyissa meg a böngészőben</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4608"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">A frissítés készen áll, indítsa újra a telepítéshez?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">Hozzáférés megtagadva</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="369"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Válasszon ki egy mappát</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="50"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180"/>
+        <source>Application Rules</source>
+        <translation type="unfinished">Pályázati szabályok</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203"/>
         <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">A CIDR-ek kizárása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="59"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégsem</translation>
     </message>
@@ -3885,7 +3920,7 @@ Kiadási megjegyzés:
         <translation type="obsolete">Extra Core</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="162"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Proxy: ⚡%1 📦%3
@@ -3895,92 +3930,92 @@ Közvetlen: ⚡%2 📦%4</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="87"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="88"/>
         <source>Apply</source>
         <translation type="unfinished">Alkalmazni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="89"/>
         <source>Yes</source>
         <translation type="unfinished">Igen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="90"/>
         <source>No</source>
         <translation type="unfinished">Nem</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="91"/>
         <source>OK</source>
         <translation type="unfinished">RENDBEN</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="92"/>
         <source>Defaults</source>
         <translation type="unfinished">Alapértelmezések</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">Alapértelmezések visszaállítása</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="95"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Discard</source>
         <translation type="unfinished">Eldobni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>Undo</source>
         <translation type="unfinished">Visszavonás</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>Redo</source>
         <translation type="unfinished">Újra</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Cut</source>
         <translation type="unfinished">Vágott</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Copy</source>
         <translation type="unfinished">Másolat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Paste</source>
         <translation type="unfinished">Paszta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="101"/>
         <source>Delete</source>
         <translation type="unfinished">Töröl</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Select All</source>
         <translation type="unfinished">Válassza az Összes lehetőséget</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Clear</source>
         <translation type="unfinished">Világos</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="106"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">Másolja a hivatkozás helyét</translation>
     </message>
@@ -4102,50 +4137,50 @@ Közvetlen: ⚡%2 📦%4</translation>
         <translation type="unfinished">Megjegyzések</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Invalid rules</source>
         <translation type="unfinished">Érvénytelen szabályok</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Néhány szabályt nem sikerült hozzáadni:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Érvénytelen JSON-tömb</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">A megadott bemenet nem értelmezhető érvényes útvonalszabály tömbbe:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Érvénytelen művelet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Üres névvel nem lehet útvonalprofilt létrehozni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">Üres útvonalprofil</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">A profilban nincsenek érvényes szabályok</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Néhány szabályt nem sikerült hozzáadni. Mentés előtt javítsa ki őket:</translation>
@@ -4197,24 +4232,24 @@ Közvetlen: ⚡%2 📦%4</translation>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="263"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="265"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Érvénytelen JSON-tömb</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="264"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">A megadott bemenet nem értelmezhető érvényes útvonalszabály tömbbe:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="388"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="391"/>
         <source>Fetching information</source>
         <translation type="unfinished">Információk lekérése</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="404"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1415"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Profilok letöltése</translation>
     </message>

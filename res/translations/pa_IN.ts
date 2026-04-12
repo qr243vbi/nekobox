@@ -56,6 +56,29 @@
     </message>
 </context>
 <context>
+    <name>DialogAppSettings</name>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
+        <source>Proxy</source>
+        <translation type="unfinished">ਪ੍ਰੌਕਸੀ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
+        <source>Direct</source>
+        <translation type="unfinished">ਸਿੱਧਾ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
+        <source>Block</source>
+        <translation type="unfinished">ਬਲਾਕ</translation>
+    </message>
+</context>
+<context>
     <name>DialogBasicSettings</name>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
@@ -453,27 +476,31 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">ਸੁਰੱਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਬੇਨਤੀ ਨੂੰ ਅਯੋਗ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="906"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <source>Skip TLS certificate authentication</source>
+        <translation type="unfinished">TLS ਸਰਟੀਫਿਕੇਟ ਪ੍ਰਮਾਣੀਕਰਨ ਛੱਡੋ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">ਮੋਜ਼ੀਲਾ ਸਰਟੀਫਿਕੇਟ ਸਟੋਰ ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="913"/>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation type="unfinished">ਮੂਲ ਰੂਪ ਵਿੱਚ TLS ਸਰਟੀਫਿਕੇਟ ਪ੍ਰਮਾਣਿਕਤਾ ਛੱਡੋ (ਅਸੁਰੱਖਿਅਤ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ)</translation>
+        <translation type="obsolete">ਮੂਲ ਰੂਪ ਵਿੱਚ TLS ਸਰਟੀਫਿਕੇਟ ਪ੍ਰਮਾਣਿਕਤਾ ਛੱਡੋ (ਅਸੁਰੱਖਿਅਤ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ਡਿਫੌਲਟ uTLS ਫਿੰਗਰਪ੍ਰਿੰਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="954"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ਜਦੋਂ ਤੱਕ ਸਪਸ਼ਟ ਤੌਰ &apos;ਤੇ ਬੇਨਤੀ ਨਾ ਕੀਤੀ ਜਾਵੇ ਤਾਂ ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਨਾ ਕਰੋ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -488,189 +515,193 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">IPC ਲਈ UDS ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="957"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">ਹਮੇਸ਼ਾਂ ਮਿਆਰੀ ਉਪਭੋਗਤਾ ਵਜੋਂ ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1053"/>
         <source>Use Json instead binary for configs</source>
-        <translation type="unfinished">ਸੰਰਚਨਾ ਲਈ ਬਾਈਨਰੀ ਦੀ ਬਜਾਏ Json ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
+        <translation type="obsolete">ਸੰਰਚਨਾ ਲਈ ਬਾਈਨਰੀ ਦੀ ਬਜਾਏ Json ਦੀ ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1060"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮਿਟਾਉਣ ਲਈ ਪੁੱਛੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1077"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">ਆਟੋ-ਟੈਸਟਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1083"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">ਬੈਕਗ੍ਰਾਉਂਡ ਵਿੱਚ ਆਟੋਮੈਟਿਕਲੀ ਪ੍ਰੌਕਸੀਆਂ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀਆਂ ਦੇ ਪੂਲ ਨੂੰ ਬਣਾਈ ਰੱਖੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">ਆਟੋ-ਟੈਸਟਿੰਗ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">ਟੈਸਟ ਅੰਤਰਾਲ (ਸਕਿੰਟ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1100"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">ਟੈਸਟ ਚੱਕਰ ਨੂੰ ਕਿੰਨੀ ਵਾਰ ਚਲਾਉਣਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਪ੍ਰਤੀ ਚੱਕਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1123"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ਹਰੇਕ ਚੱਕਰ ਵਿੱਚ ਟੈਸਟ ਕਰਨ ਲਈ ਪ੍ਰੌਕਸੀ ਦੀ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ਵਰਕਿੰਗ ਪੂਲ ਦਾ ਆਕਾਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">ਬਣਾਈ ਰੱਖਣ ਲਈ ਪ੍ਰਮਾਣਿਤ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀਆਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1162"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">ਲੇਟੈਂਸੀ ਥ੍ਰੈਸ਼ਹੋਲਡ (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1169"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ਇੱਕ ਪ੍ਰੌਕਸੀ ਨੂੰ ਕੰਮ ਕਰਨ ਲਈ ਅਧਿਕਤਮ ਲੇਟੈਂਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1188"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ਅਸਫਲਤਾ ਦੀ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਦੀ ਗਿਣਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1195"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ਇੱਕ ਪ੍ਰੌਕਸੀ ਨੂੰ ਅਸਫਲ ਮੰਨਣ ਤੋਂ ਪਹਿਲਾਂ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕੋਸ਼ਿਸ਼ਾਂ ਦੀ ਸੰਖਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1211"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
         <source>Test Target URL</source>
         <translation type="unfinished">ਟੀਚਾ URL ਦੀ ਜਾਂਚ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1218"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ਪਰਾਕਸੀ ਦੇ ਵਿਰੁੱਧ ਜਾਂਚ ਕਰਨ ਲਈ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN ਮੋਡ ਪ੍ਰੌਕਸੀ ਫੇਲ ਹੋਣ &apos;ਤੇ ਆਟੋਮੈਟਿਕਲੀ ਕਿਸੇ ਹੋਰ ਕਾਰਜਸ਼ੀਲ ਪ੍ਰੌਕਸੀ &apos;ਤੇ ਸਵਿਚ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ਫੇਲਓਵਰ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Startup</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਕਰਣਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
         <source>Geometry</source>
         <translation type="unfinished">ਜਿਓਮੈਟਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">ਜਿਓਮੈਟਰੀ ਆਟੋ ਸੇਵ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1339"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
         <source>Autosave position</source>
         <translation type="unfinished">ਆਟੋ-ਸੇਵ ਸਥਿਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
         <source>Apply now</source>
         <translation type="unfinished">ਹੁਣੇ ਅਪਲਾਈ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1433"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
         <source>Width</source>
         <translation type="unfinished">ਚੌੜਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
         <source>X</source>
         <translation type="unfinished">ਐਕਸ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1465"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
         <source>Y</source>
         <translation type="unfinished">ਵਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1533"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
+        <source>Configs format</source>
+        <translation type="unfinished">ਸੰਰਚਨਾ ਫਾਰਮੈਟ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
         <source>Height</source>
         <translation type="unfinished">ਉਚਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1630"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">ਕੋਰ ਐਗਜ਼ੀਕਿਊਟੇਬਲ ਮਾਰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1659"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1848"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
         <source>Use default</source>
         <translation type="unfinished">ਡਿਫੌਲਟ ਵਰਤੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1666"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
         <source>Remote Control</source>
         <translation type="unfinished">ਰਿਮੋਟ ਕੰਟਰੋਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1881"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
         <source>Select</source>
         <translation type="unfinished">ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1819"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
         <source>Resources Directory</source>
         <translation type="unfinished">ਸਰੋਤ ਡਾਇਰੈਕਟਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1855"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
         <source>Resource Manager</source>
         <translation type="unfinished">ਸਰੋਤ ਪ੍ਰਬੰਧਕ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="246"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ ਦਾ ਨਾਮ</translation>
     </message>
@@ -765,17 +796,17 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">ਆਟੋਮੈਟਿਕ ਅੱਪਡੇਟ ਛੱਡੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="64"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63"/>
         <source>Copied</source>
         <translation type="unfinished">ਕਾਪੀ ਕੀਤਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Warning</source>
         <translation type="unfinished">ਚੇਤਾਵਨੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Please input URL</source>
         <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ URL ਇਨਪੁਟ ਕਰੋ</translation>
     </message>
@@ -910,7 +941,7 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="760"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">ਇਸ ਸਮੂਹ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਲਾਗੂ ਕਰੋ</translation>
     </message>
@@ -946,7 +977,7 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="691"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687"/>
         <source>Certificate</source>
         <translation type="unfinished">ਸਰਟੀਫਿਕੇਟ</translation>
     </message>
@@ -967,7 +998,7 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH ਸੰਰਚਨਾ</translation>
     </message>
@@ -1037,12 +1068,12 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">ਅਸਲੀਅਤ SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="242"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">ਕਸਟਮ (% 1 ਆਊਟਬਾਉਂਡ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="244"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">ਕਸਟਮ (% 1 ਸੰਰਚਨਾ)</translation>
     </message>
@@ -1065,30 +1096,30 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="obsolete">ਕਸਟਮ (% 1 ਸੰਰਚਨਾ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72"/>
         <source>both</source>
         <translation type="unfinished">ਦੋਵੇਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="649"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="654"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="659"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="664"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="672"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668"/>
         <source>Not set</source>
         <translation type="unfinished">ਸੈੱਟ ਨਹੀਂ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="651"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="656"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="661"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="666"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="674"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670"/>
         <source>Already set</source>
         <translation type="unfinished">ਪਹਿਲਾਂ ਹੀ ਸੈੱਟ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="732"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728"/>
         <source>Confirm</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ ਕਰੋ</translation>
     </message>
@@ -1121,49 +1152,50 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">ਸਮੂਹ 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="420"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">ਗਰੁੱਪ % 1 ਲਈ ਫਰੰਟ ਪ੍ਰੌਕਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="422"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421"/>
         <source>Front proxy: </source>
         <translation type="unfinished">ਫਰੰਟ ਪ੍ਰੌਕਸੀ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="433"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">ਗਰੁੱਪ % 1 ਲਈ ਲੈਂਡਿੰਗ ਪ੍ਰੌਕਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="435"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">ਲੈਂਡਿੰਗ ਪ੍ਰੌਕਸੀ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="448"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
         <source>Proxy</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="451"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Direct</source>
         <translation type="unfinished">ਸਿੱਧਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457"/>
         <source>None</source>
         <translation type="unfinished">ਕੋਈ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="51"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="71"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">% 1 ਪਰਾਕਸੀ ਬਦਲੋ</translation>
     </message>
@@ -1181,6 +1213,11 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149"/>
         <source>Outbound</source>
         <translation type="unfinished">ਆਊਟਬਾਉਂਡ</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151"/>
+        <source>Block</source>
+        <translation type="unfinished">ਬਲਾਕ</translation>
     </message>
 </context>
 <context>
@@ -1244,12 +1281,12 @@ sing-box ਦਾ ਬਿਲਟ-ਇਨ NTP ਕਲਾਇੰਟ&lt;/p&gt;&lt;/body&gt
         <translation type="unfinished">ਸਾਰੀਆਂ ਗਾਹਕੀਆਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="61"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">ਕੀ ਸਾਰੀਆਂ ਗਾਹਕੀਆਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨਾ ਹੈ?</translation>
     </message>
@@ -1524,38 +1561,38 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>Invalid state</source>
         <translation type="unfinished">ਅਵੈਧ ਸਥਿਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਦੀ ਸੂਚੀ ਖਾਲੀ ਹੈ, ਇਹ ਇੱਕ ਪਹੁੰਚਯੋਗ ਸਥਿਤੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ, ਹੁਣ ਕਰੈਸ਼ ਹੋ ਸਕਦੇ ਹਨ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>Invalid settings</source>
         <translation type="unfinished">ਅਵੈਧ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="211"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS ਨਿਯਮ ਵੈਧ ਨਹੀਂ ਹਨ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
         <source>Invalid operation</source>
         <translation type="unfinished">ਅਵੈਧ ਕਾਰਵਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="319"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦੇ ਹਨ, ਕੋਈ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰਨ ਜਾਂ ਇਸ ਨੂੰ ਸੰਪਾਦਿਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</translation>
     </message>
@@ -1568,44 +1605,58 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਟੂਨ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Tun Enable IPv6</source>
+        <translation type="obsolete">IPv6 ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
+        <source>Stack</source>
+        <translation type="unfinished">ਸਟੈਕ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <source>Enable IPv6</source>
         <translation type="unfinished">IPv6 ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">ਸਖ਼ਤ ਰਸਤਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ਜਦੋਂ ਚਾਲੂ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਡਾਇਰੈਕਟ IP CIDR ਅਤੇ ਨਿਯਮ ਸੈੱਟ ਵੀ OS ਰੂਟਿੰਗ ਪੱਧਰ &apos;ਤੇ ਬਾਹਰ ਰੱਖਣ ਲਈ Tun ਸੈਟਿੰਗ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਜਾਣਗੇ।ਮਹੱਤਵਪੂਰਨ: ਵਿੰਡੋਜ਼ ਵਿੱਚ ਵੱਡੇ ਪੱਧਰ &apos;ਤੇ CPU ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਵੱਡੇ ਨਿਯਮ ਸੈੱਟਾਂ ਦੀ ਰਿਪੋਰਟ ਕੀਤੀ ਗਈ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਵਿਕਲਪ ਨੂੰ ਸਾਵਧਾਨੀ ਨਾਲ ਚਾਲੂ ਕਰੋ।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">ਟੂਨ ਰੂਟਿੰਗ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">ਆਟੋ ਰੀਡਾਇਰੈਕਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">ਤੁਨ ਪਤਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="135"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">ipv6 ਐਡਰੈੱਸ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="150"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
         <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR ਨੂੰ ਬਾਹਰ ਕੱਢੋ</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
+        <source>Applications</source>
+        <translation type="unfinished">ਐਪਲੀਕੇਸ਼ਨਾਂ</translation>
     </message>
 </context>
 <context>
@@ -1644,7 +1695,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="33"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">ਨਾਮ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ।</translation>
     </message>
@@ -1662,17 +1713,17 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਜੇਸਨ ਸੰਪਾਦਕ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">ਆਊਟਬਾਉਂਡ JSON, ਕਿਰਪਾ ਕਰਕੇ ਦਸਤਾਵੇਜ਼ ਪੜ੍ਹੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="60"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਪੂਰੀ ਸੰਰਚਨਾ ਭਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="69"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">ਨਾਮ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ।</translation>
     </message>
@@ -1808,7 +1859,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="14"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">ਬੰਦ</translation>
     </message>
@@ -1928,7 +1979,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="154"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">ਸਰਟੀਫਿਕੇਟ</translation>
     </message>
@@ -2259,7 +2310,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਸਿਹਤ ਜਾਂਚ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="13"/>
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">ਬੰਦ</translation>
     </message>
@@ -2433,32 +2484,32 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਹਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Basic</source>
         <translation type="unfinished">ਮੂਲ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="139"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Subscription</source>
         <translation type="unfinished">ਗਾਹਕੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="140"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138"/>
         <source>Archive</source>
         <translation type="unfinished">ਪੁਰਾਲੇਖ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="152"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150"/>
         <source>Last update: %1</source>
         <translation type="unfinished">ਆਖਰੀ ਅੱਪਡੇਟ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Remove %1?</source>
         <translation type="unfinished">ਕੀ %1 ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
@@ -2480,45 +2531,26 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਵਰਤੋਂ ਦੇ ਅੰਕੜੇ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="394"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">ਆਵਾਜਾਈ ਦੇ ਅੰਕੜੇ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="432"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">ਕੁੱਲ ਪ੍ਰੌਕਸੀ ਟ੍ਰੈਫਿਕ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="43"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="66"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="89"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="116"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="141"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="170"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="241"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="248"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="255"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="301"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="308"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="364"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="371"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="378"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="412"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="419"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="442"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="485"/>
         <source>TextLabel</source>
-        <translation type="unfinished">ਟੈਕਸਟ ਲੇਬਲ</translation>
+        <translation type="obsolete">ਟੈਕਸਟ ਲੇਬਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="449"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">ਕੁੱਲ ਸਿੱਧੀ ਆਵਾਜਾਈ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="129"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">ਸੁਰੱਖਿਆ ਅੰਕੜੇ</translation>
     </message>
@@ -2527,65 +2559,65 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਪ੍ਰੋਫਾਈਲ ਅੰਕੜੇ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">ਵਰਤੋਂ ਦਾ ਸਮਾਂ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">ਆਖਰੀ ਲਾਂਚ ਸਮਾਂ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="96"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">ਪਹਿਲਾ ਲਾਂਚ ਸਮਾਂ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">ਗਿਣਤੀ ਸ਼ੁਰੂ ਕਰੋ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="465"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="478"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">ਡਾਊਨਲੋਡ ਕਰੋ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="498"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="511"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">ਅੱਪਲੋਡ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="205"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">ਪਰਾਕਸੀ ਪ੍ਰੋਫਾਈਲਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="199"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">ਡਾਟਾਬੇਸ ਅੰਕੜੇ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="281"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="344"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">ਮਿਟਾਇਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="221"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="291"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="354"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">ਮੌਜੂਦ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="231"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="271"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">ਬਣਾਇਆ</translation>
     </message>
@@ -2595,7 +2627,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਸਮੂਹ ਅਤੇ ਗਾਹਕੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">ਰੂਟ ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
@@ -2605,7 +2637,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ਅਸਫ਼ਲ ਪ੍ਰਮਾਣੀਕਰਨ ਗਿਣਤੀ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="183"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">ਉਪਭੋਗਤਾਵਾਂ ਦੀ ਗਿਣਤੀ:</translation>
     </message>
@@ -2621,50 +2653,50 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="62"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="91"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="101"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="685"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
         <source>Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="120"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="130"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="149"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">ਰੂਟਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="178"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
         <source>Update</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="218"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
         <source>Tun Mode</source>
         <translation type="unfinished">ਟੂਨ ਮੋਡ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
         <source>System DNS</source>
         <translation type="unfinished">ਸਿਸਟਮ DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="244"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="654"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2686"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2689"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684"/>
         <source>System Proxy</source>
         <translation type="unfinished">ਸਿਸਟਮ ਪਰਾਕਸੀ</translation>
     </message>
@@ -2673,103 +2705,103 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">URL ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="396"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="145"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="390"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144"/>
         <source>Type</source>
         <translation type="unfinished">ਟਾਈਪ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="401"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="148"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="395"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147"/>
         <source>Address</source>
         <translation type="unfinished">ਪਤਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="406"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="400"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150"/>
         <source>Name</source>
         <translation type="unfinished">ਨਾਮ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="411"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="300"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="405"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299"/>
         <source>Test Result</source>
         <translation type="unfinished">ਟੈਸਟ ਦਾ ਨਤੀਜਾ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="416"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="555"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Traffic</source>
         <translation type="unfinished">ਆਵਾਜਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="460"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454"/>
         <source>Logs</source>
         <translation type="unfinished">ਲਾਗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Connections</source>
         <translation type="unfinished">ਕਨੈਕਸ਼ਨ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="523"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="517"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">ਮੰਜ਼ਿਲ (ਡੋਮੇਨ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="526"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="520"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">ਛਾਂਟੀ ਨੂੰ ਅਯੋਗ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="531"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="525"/>
         <source>Process</source>
         <translation type="unfinished">ਪ੍ਰਕਿਰਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="534"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="528"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">ਪ੍ਰਕਿਰਿਆ ਦੁਆਰਾ ਕ੍ਰਮਬੱਧ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="539"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Protocol</source>
         <translation type="unfinished">ਪ੍ਰੋਟੋਕੋਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="542"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">ਪ੍ਰੋਟੋਕੋਲ ਦੁਆਰਾ ਕ੍ਰਮਬੱਧ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="547"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541"/>
         <source>Outbound</source>
         <translation type="unfinished">ਆਊਟਬਾਉਂਡ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="550"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">ਆਊਟਬਾਉਂਡ ਦੁਆਰਾ ਛਾਂਟਣ ਲਈ ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">ਟ੍ਰੈਫਿਕ ਦੁਆਰਾ ਕ੍ਰਮਬੱਧ ਟੌਗਲ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="567"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="561"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">ਟ੍ਰੈਫਿਕ ਗ੍ਰਾਫ਼</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="650"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644"/>
         <source>Program</source>
         <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="674"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="668"/>
         <source>Preferences</source>
         <translation type="unfinished">ਤਰਜੀਹਾਂ</translation>
     </message>
@@ -2778,7 +2810,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਸਰਵਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
         <source>Share</source>
         <translation type="unfinished">ਸ਼ੇਅਰ ਕਰੋ</translation>
     </message>
@@ -2787,250 +2819,250 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਮੌਜੂਦਾ ਸਮੂਹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="321"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="709"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755"/>
         <source>Test</source>
         <translation type="unfinished">ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="695"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689"/>
         <source>Current Selected</source>
         <translation type="unfinished">ਮੌਜੂਦਾ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683"/>
         <source>Current Group</source>
         <translation type="unfinished">ਮੌਜੂਦਾ ਸਮੂਹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="188"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">ਜਾਣਕਾਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="744"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="738"/>
         <source>Hidden menu</source>
         <translation type="unfinished">ਲੁਕਿਆ ਹੋਇਆ ਮੀਨੂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="756"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="750"/>
         <source>Routing Menu</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਮੀਨੂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="762"/>
         <source>Context</source>
         <translation type="unfinished">ਸੰਦਰਭ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">ਸੰਦਰਭ ਪ੍ਰੋਫਾਈਲਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="796"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Exit</source>
         <translation type="unfinished">ਨਿਕਾਸ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795"/>
         <source>Toggle Window</source>
         <translation type="unfinished">ਵਿੰਡੋ ਨੂੰ ਟੌਗਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="806"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="800"/>
         <source>Basic Settings</source>
         <translation type="unfinished">ਬੁਨਿਆਦੀ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="811"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
         <source>New profile</source>
         <translation type="unfinished">ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810"/>
         <source>Groups</source>
         <translation type="unfinished">ਸਮੂਹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="821"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3765"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3775"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3772"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
         <source>Start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="829"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3764"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3775"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3771"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
         <source>Stop</source>
         <translation type="unfinished">ਰੂਕੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="837"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
         <source>Edit</source>
         <translation type="unfinished">ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>Routing Settings</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="844"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="852"/>
         <source>Delete</source>
         <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
         <source>Debug Info</source>
         <translation type="unfinished">ਡੀਬੱਗ ਜਾਣਕਾਰੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="871"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="865"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR ਕੋਡ ਅਤੇ ਲਿੰਕ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="873"/>
         <source>Copy Link</source>
         <translation type="unfinished">ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1141"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">ਟੈਸਟ ਦਾ ਨਤੀਜਾ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1575"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1579"/>
         <source>Export %1 config</source>
         <translation type="unfinished">% 1 ਸੰਰਚਨਾ ਨਿਰਯਾਤ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="916"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">ਟ੍ਰੈਫਿਕ ਰੀਸੈਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="924"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QR ਕੋਡ ਸਕੈਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="932"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">ਸਿਸਟਮ ਪ੍ਰੌਕਸੀ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934"/>
         <source>Disable</source>
         <translation type="unfinished">ਅਸਮਰੱਥ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">ਡੁਪਲੀਕੇਟ ਹਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032"/>
         <source>fake</source>
         <translation type="unfinished">ਜਾਅਲੀ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
         <source>Move</source>
         <translation type="unfinished">ਮੂਵ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966"/>
         <source>Start with system</source>
         <translation type="unfinished">ਸਿਸਟਮ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
         <source>Remember last profile</source>
         <translation type="unfinished">ਆਖਰੀ ਪ੍ਰੋਫਾਈਲ ਯਾਦ ਰੱਖੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="988"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">ਹੋਰ ਡਿਵਾਈਸਾਂ ਨੂੰ ਕਨੈਕਟ ਕਰਨ ਦਿਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="993"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ ਹਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995"/>
         <source>Full Test</source>
         <translation type="unfinished">ਪੂਰਾ ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">ਹੌਟਕੀ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008"/>
         <source>Select All</source>
         <translation type="unfinished">ਸਭ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1016"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">ਕਸਟਮ ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1046"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
         <source>Copy links</source>
         <translation type="unfinished">ਲਿੰਕ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1124"/>
         <source>Url Test</source>
         <translation type="unfinished">ਯੂਆਰਐਲ ਟੈਸਟ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1163"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1253"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1247"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">ਵਿੰਡੋਜ਼ ਐਲੀਵੇਟਿਡ ਟਾਸਕ ਨੂੰ ਰਜਿਸਟਰ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1258"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1273"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1252"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1267"/>
         <source>About</source>
         <translation type="unfinished">ਬਾਰੇ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1257"/>
         <source>Statistics</source>
         <translation type="unfinished">ਅੰਕੜੇ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1268"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1262"/>
         <source>Check for updates</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਲਈ ਚੈੱਕ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1245"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1239"/>
         <source>Information</source>
         <translation type="unfinished">ਜਾਣਕਾਰੀ</translation>
     </message>
@@ -3043,48 +3075,48 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਚੁਣੇ ਹੋਏ ਲਿੰਕਾਂ ਨੂੰ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>Enable Tun</source>
         <translation type="unfinished">ਟੂਨ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3076"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3071"/>
         <source>Clone</source>
         <translation type="unfinished">ਕਲੋਨ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1070"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1064"/>
         <source>Update subscription</source>
         <translation type="unfinished">ਗਾਹਕੀ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
         <source>Resolve domain</source>
         <translation type="unfinished">ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083"/>
         <source>Tun Settings</source>
         <translation type="unfinished">ਟੂਨ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1094"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Restart Program</source>
         <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਫੋਲਡਰ ਖੋਲ੍ਹੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1114"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਮੁੜ-ਚਾਲੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1119"/>
         <source>Stop Testing</source>
         <translation type="unfinished">ਟੈਸਟ ਕਰਨਾ ਬੰਦ ਕਰੋ</translation>
     </message>
@@ -3101,7 +3133,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਚੁਣਿਆ ਗਿਆ ਟੈਸਟ ਨਤੀਜਾ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1152"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Url ਟੈਸਟ ਗਰੁੱਪ</translation>
     </message>
@@ -3114,7 +3146,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਚੁਣੇ ਹੋਏ ਡੋਮੇਨ ਨੂੰ ਹੱਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">ਅਵੈਧ ਨੂੰ ਹਟਾਓ</translation>
     </message>
@@ -3127,420 +3159,420 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">ਓਪਨ ਮੈਨੇਜਰ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1240"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1234"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">ਸਪੀਡਟੈਸਟ ਵਰਤਮਾਨ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176"/>
         <source>Full test Selected</source>
         <translation type="unfinished">ਪੂਰਾ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1187"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181"/>
         <source>Download test Selected</source>
         <translation type="unfinished">ਡਾਊਨਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">ਅੱਪਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1197"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191"/>
         <source>Country test Selected</source>
         <translation type="unfinished">ਦੇਸ਼ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1202"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">ਸਧਾਰਨ ਡਾਊਨਲੋਡ ਟੈਸਟ ਚੁਣਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1207"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">ਸਪੀਡਟੈਸਟ ਗਰੁੱਪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1212"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206"/>
         <source>Hide window</source>
         <translation type="unfinished">ਵਿੰਡੋ ਲੁਕਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
         <source>Add profile from File</source>
         <translation type="unfinished">ਫਾਈਲ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3794"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3801"/>
         <source>Add new Group</source>
         <translation type="unfinished">ਨਵਾਂ ਸਮੂਹ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Security Settings</source>
         <translation type="unfinished">ਸੁਰੱਖਿਆ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="231"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Unavailable</source>
         <translation type="unfinished">ਅਣਉਪਲਬਧ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1230"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1252"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1256"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1336"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1340"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">ਜਵਾਬ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1265"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ਕੋਈ ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲ ਅੱਪਡੇਟ ਨਹੀਂ ਕੀਤੇ ਗਏ ਹਨ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1273"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 ਰੂਟਿੰਗ ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1279"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1283"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">RuleSet ਨਕਸ਼ਾ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1290"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1294"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ਨਿਯਮ ਸੈੱਟ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1297"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ਨਿਯਮ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤੇ ਗਏ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet ਕੈਸ਼ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1337"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1341"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets ਕੈਸ਼ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet ਕੈਸ਼ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1387"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1391"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1793"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1797"/>
         <source>Error</source>
         <translation type="unfinished">ਗਲਤੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1880"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1884"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ਟੂਨ ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ ਗਈਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1885"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Tun ਨੂੰ ਪ੍ਰਭਾਵੀ ਕਰਨ ਲਈ ਮੁੜ-ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1945"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3132"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3508"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3563"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3612"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3843"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1946"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3512"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3850"/>
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1888"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1946"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1947"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ, ਪ੍ਰੌਕਸੀ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1917"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1921"/>
         <source>Settings changed</source>
         <translation type="unfinished">ਸੈਟਿੰਗਾਂ ਬਦਲੀਆਂ ਗਈਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1918"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1922"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">ਪ੍ਰਭਾਵੀ ਹੋਣ ਲਈ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1961"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">ਆਯਾਤ ਕੀਤਾ % 1 ਪ੍ਰੋਫਾਈਲ(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2248"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2243"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ਉਪਭੋਗਤਾ ਨੇ ਕੋਈ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਬੇਨਤੀ ਲਈ ਚੋਣ ਨਹੀਂ ਕੀਤੀ, ਕੁਝ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੀਆਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2313"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2308"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਕੋਰ ਰੂਟ ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਦਿਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2657"/>
         <source>Not Running</source>
         <translation type="unfinished">ਨਹੀਂ ਚੱਲ ਰਿਹਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3077"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3072"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 ਆਈਟਮ(ਆਂ) ਨੂੰ ਕਲੋਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3112"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3116"/>
         <source> Confirmation </source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3113"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3117"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3133"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">% 1 ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3170"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3183"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3174"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3187"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">ਕਾਪੀ ਕੀਤੀ ਗਈ % 1 ਆਈਟਮਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3418"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3422"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3440"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3444"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">ਸਕ੍ਰੀਨ ਕੈਪਚਰ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3509"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3513"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">% 1 ਅਣਉਪਲਬਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 ਅਵੈਧ ਆਈਟਮਾਂ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3613"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3617"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ਡੋਮੇਨ ਸਰਵਰ ਪਤਿਆਂ ਨੂੰ ਉਹਨਾਂ ਦੇ ਹੱਲ ਕੀਤੇ IP ਨਾਲ ਬਦਲਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3762"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769"/>
         <source>Clear</source>
         <translation type="unfinished">ਸਾਫ਼</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਨੂੰ ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3841"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">ਚੁਣੇ ਗਏ ਸਮੂਹ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851"/>
         <source>Remove %1?</source>
         <translation type="unfinished">ਕੀ %1 ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4593"/>
         <source>Cannot start</source>
         <translation type="unfinished">ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4582"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4594"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">ਆਖਰੀ ਡਾਊਨਲੋਡ ਦੀ ਬੇਨਤੀ ਅਜੇ ਪੂਰੀ ਨਹੀਂ ਹੋਈ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4616"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਸੰਪਤੀਆਂ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="87"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਟੈਸਟ ਅਧੂਰਾ ਛੱਡਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="138"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="184"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[% 1] ਟੈਸਟ ਗਲਤੀ: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="167"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="499"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">ਕੁਝ ਬਹੁਤ ਗਲਤ ਹੈ, ਵਿਸ਼ਾ ENT ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="173"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="505"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਮੈਨੇਜਰ ਡਾਟਾ ਖਰਾਬ ਹੋ ਗਿਆ ਹੈ, ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ਆਖਰੀ url ਟੈਸਟ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਾਹਰ ਨਹੀਂ ਆਇਆ, ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ।ਜੇਕਰ ਇਹ ਜਾਰੀ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="216"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="329"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">ਟੈਸਟ ਸੰਰਚਨਾ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="257"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL ਟੈਸਟ ਪੂਰਾ ਹੋਇਆ!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="268"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">ਟੈਸਟਾਂ ਨੂੰ ਰੋਕਣ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="274"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273"/>
         <source>Testing</source>
         <translation type="unfinished">ਟੈਸਟਿੰਗ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">ਆਖਰੀ ਸਪੀਡ ਟੈਸਟ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਾਹਰ ਨਹੀਂ ਆਇਆ, ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ।ਜੇਕਰ ਇਹ ਜਾਰੀ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="355"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">ਸਪੀਡ ਟੈਸਟ ਪੂਰਾ ਹੋਇਆ!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="436"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਸਪੀਡ ਟੈਸਟ ਅਧੂਰਾ ਛੱਡਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="524"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[% 1] ਸਪੀਡ ਟੈਸਟ ਗਲਤੀ: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="533"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਹਾਈਜੈਕ DNS ਸਰਵਰ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਦੀ ਲੋੜ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="547"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">ਸਿਸਟਮ dns ਸੈੱਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">ਟਿਊਨ ਡਿਵਾਈਸ ਦੁਰਵਿਹਾਰ ਕਰ ਰਹੀ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="597"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">ਜੇਕਰ ਤੁਹਾਨੂੰ VPN ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆਉਂਦੀ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਇੱਥੇ ਕੋਰ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਰੀਸੈਟ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਫਿਰ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ।ਗਲਤੀ % 1 ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600"/>
         <source>Reset</source>
         <translation type="unfinished">ਰੀਸੈਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="602"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
         <source>Cancel</source>
         <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="638"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">ਇੱਕ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">ਇੱਕ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਰੁਕ ਰਿਹਾ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="666"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="748"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">ਜੇ ਲੰਬੇ ਸਮੇਂ ਲਈ ਕੋਈ ਜਵਾਬ ਨਹੀਂ ਮਿਲਦਾ, ਤਾਂ ਸੌਫਟਵੇਅਰ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="680"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="682"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="731"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730"/>
         <source>Stop return error</source>
         <translation type="unfinished">ਵਾਪਸੀ ਗਲਤੀ ਨੂੰ ਰੋਕੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="771"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ % 1 ਨੂੰ ਰੋਕਿਆ ਜਾ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="773"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">ਰੋਕਣ ਵਿੱਚ ਅਸਫਲ, ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰੋਗਰਾਮ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ।</translation>
     </message>
@@ -3571,12 +3603,12 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">ਪੁਸ਼ਟੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">ਕੀ %1 ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</translation>
     </message>
@@ -3592,7 +3624,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="382"/>
+        <location filename="../../src/gharqad/main.cpp" line="381"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3600,42 +3632,42 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="165"/>
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">ਟੂਨ ਮੋਡ ਨੂੰ ਕਸਟਮ ਸੰਰਚਨਾਵਾਂ ਨਾਲ ਨਹੀਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="875"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">ਗਾਹਕੀ ਲਈ ਬੇਨਤੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="879"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="878"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">ਗਾਹਕੀ ਲਈ ਬੇਨਤੀ %1 ਗਲਤੀ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="886"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="885"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਬੇਨਤੀ ਸਮਾਪਤ: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="904"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="903"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">ਸਰਵਰ ਕਲੀਅਰ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="909"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="908"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">ਗਾਹਕੀ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਹੋ ਰਹੀ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="912"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="911"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">ਪ੍ਰਕਿਰਿਆ ਪੂਰੀ ਹੋਈ, ਅਰਜ਼ੀ ਦਿੱਤੀ ਜਾ ਰਹੀ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="975"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="974"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3646,146 +3678,144 @@ Deleted %3 Profiles:
 % 4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="980"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="979"/>
         <source>Nothing</source>
         <translation type="unfinished">ਕੁਝ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="983"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="982"/>
         <source>Change of %1:</source>
         <translation type="unfinished">% 1 ਦੀ ਤਬਦੀਲੀ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="327"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
         <source>Default</source>
         <translation type="unfinished">ਡਿਫਾਲਟ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="194"/>
+        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="199"/>
         <source>Could not open file.</source>
         <translation type="unfinished">ਫ਼ਾਈਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="132"/>
+        <location filename="../../src/gharqad/main.cpp" line="131"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">ਚੇਨ ਪ੍ਰੌਕਸੀ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="147"/>
         <source>Custom</source>
         <translation type="unfinished">ਕਸਟਮ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="149"/>
+        <location filename="../../src/gharqad/main.cpp" line="148"/>
         <source>Extra Core</source>
         <translation type="unfinished">ਵਾਧੂ ਕੋਰ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_ssh.cpp" line="33"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="364"/>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="126"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2630"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2625"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ਪਰਾਕਸੀ: % 1
 ਸਿੱਧਾ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="123"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">ਕੋਰ ਬਾਹਰ ਨਿਕਲਿਆ, ਸਫਾਈ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="130"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">ਕੋਰ ਬਹੁਤ ਵਾਰ ਬਾਹਰ ਨਿਕਲਦਾ ਹੈ, ਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਆਟੋਮੈਟਿਕ ਰੀਸਟਾਰਟ ਬੰਦ ਕਰੋ।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="139"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">ਕੋਰ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="379"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
         <source>System</source>
         <translation type="unfinished">ਸਿਸਟਮ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="28"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>URL detected</source>
         <translation type="unfinished">URL ਖੋਜਿਆ ਗਿਆ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="33"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31"/>
         <source>%1
 How to update?</source>
         <translation type="unfinished">% 1
 ਅਪਡੇਟ ਕਿਵੇਂ ਕਰੀਏ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">ਨਵਾਂ ਗਾਹਕੀ ਸਮੂਹ ਬਣਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="38"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36"/>
         <source>Add profiles to this group</source>
         <translation type="unfinished">ਇਸ ਸਮੂਹ ਵਿੱਚ ਪ੍ਰੋਫਾਈਲਾਂ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="39"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https ਪ੍ਰੌਕਸੀ ਵਜੋਂ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="44"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42"/>
         <source>Group name</source>
         <translation type="unfinished">ਸਮੂਹ ਦਾ ਨਾਮ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="111"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">ਵਰਤਿਆ ਗਿਆ: %1 ਬਾਕੀ: %2 ਮਿਆਦ ਪੁੱਗਣ: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="315"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="317"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="316"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="318"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਗਲਤੀ ਲਈ ਬੇਨਤੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="498"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 ਡੁਪਲੀਕੇਟ ਮਿਟਾਏ ਗਏ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="529"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="532"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">ਹਟਾਇਆ ਗਿਆ % 1 ਗਲਤ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="555"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="558"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">ਮਿਟਾਇਆ ਗਿਆ % 1 ਅਣਉਪਲਬਧ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1672"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1676"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ਨਿਯਮ ਸੈੱਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1694"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1698"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ਨਿਯਮ-ਸੈੱਟ ਸੂਚੀ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
@@ -3794,64 +3824,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP ਪਤਾ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2667"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">ਅੰਦਰ ਵੱਲ ਆਈਪੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3052"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਗਰੁੱਪ ਵਿੱਚ ਭੇਜੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3201"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3205"/>
         <source>Config copied</source>
         <translation type="unfinished">ਸੰਰਚਨਾ ਕਾਪੀ ਕੀਤੀ ਗਈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3213"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3217"/>
         <source>Copy core config</source>
         <translation type="unfinished">ਕੋਰ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219"/>
         <source>Copy test config</source>
         <translation type="unfinished">ਟੈਸਟ ਸੰਰਚਨਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3216"/>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="36"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">ਠੀਕ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4485"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4496"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4540"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4563"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4572"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4607"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4503"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4575"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
         <source>Update</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4494"/>
         <source>Not official support platform</source>
         <translation type="unfinished">ਅਧਿਕਾਰਤ ਸਮਰਥਨ ਪਲੇਟਫਾਰਮ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4497"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4504"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਦੀ ਬੇਨਤੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
         <source>No update</source>
         <translation type="unfinished">ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4576"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3860,37 +3890,42 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4579"/>
         <source>Close</source>
         <translation type="unfinished">ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581"/>
         <source>Open in browser</source>
         <translation type="unfinished">ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4608"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ਅੱਪਡੇਟ ਤਿਆਰ ਹੈ, ਇੰਸਟੌਲ ਕਰਨ ਲਈ ਰੀਸਟਾਰਟ ਕਰਨਾ ਹੈ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">ਐਕਸੇਸ ਡਿਨਾਇਡ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="369"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368"/>
         <source>Select a Folder</source>
         <translation type="unfinished">ਇੱਕ ਫੋਲਡਰ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="50"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180"/>
+        <source>Application Rules</source>
+        <translation type="unfinished">ਐਪਲੀਕੇਸ਼ਨ ਨਿਯਮ</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203"/>
         <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR ਨੂੰ ਬਾਹਰ ਕੱਢੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="59"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213"/>
         <source>Cancel</source>
         <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
     </message>
@@ -3905,7 +3940,7 @@ Release note:
         <translation type="obsolete">ਵਾਧੂ ਕੋਰ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="162"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">ਪ੍ਰੌਕਸੀ: ⚡%1 📦%3
@@ -3915,92 +3950,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="87"/>
         <source>Cancel</source>
         <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="88"/>
         <source>Apply</source>
         <translation type="unfinished">ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="89"/>
         <source>Yes</source>
         <translation type="unfinished">ਹਾਂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="90"/>
         <source>No</source>
         <translation type="unfinished">ਨੰ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="91"/>
         <source>OK</source>
         <translation type="unfinished">ਠੀਕ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="92"/>
         <source>Defaults</source>
         <translation type="unfinished">ਡਿਫਾਲਟ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">ਡਿਫੌਲਟ ਰੀਸਟੋਰ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="95"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Discard</source>
         <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>Undo</source>
         <translation type="unfinished">ਅਣਡੂ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>Redo</source>
         <translation type="unfinished">ਦੁਬਾਰਾ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Cut</source>
         <translation type="unfinished">ਕੱਟੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Copy</source>
         <translation type="unfinished">ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Paste</source>
         <translation type="unfinished">ਪੇਸਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="101"/>
         <source>Delete</source>
         <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Select All</source>
         <translation type="unfinished">ਸਭ ਚੁਣੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Stop</source>
         <translation type="unfinished">ਰੂਕੋ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Clear</source>
         <translation type="unfinished">ਸਾਫ਼</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="106"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">ਲਿੰਕ ਟਿਕਾਣਾ ਕਾਪੀ ਕਰੋ</translation>
     </message>
@@ -4122,50 +4157,50 @@ Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">ਨੋਟਸ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Invalid rules</source>
         <translation type="unfinished">ਅਵੈਧ ਨਿਯਮ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="307"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">ਕੁਝ ਨਿਯਮ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">ਅਵੈਧ JSON ਐਰੇ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="363"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ਪ੍ਰਦਾਨ ਕੀਤੇ ਇਨਪੁਟ ਨੂੰ ਇੱਕ ਵੈਧ ਰੂਟ ਨਿਯਮ ਐਰੇ ਵਿੱਚ ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Invalid operation</source>
         <translation type="unfinished">ਅਵੈਧ ਕਾਰਵਾਈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="446"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">ਖਾਲੀ ਨਾਮ ਨਾਲ ਰੂਟ ਪ੍ਰੋਫਾਈਲ ਨਹੀਂ ਬਣਾਇਆ ਜਾ ਸਕਦਾ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">ਖਾਲੀ ਰੂਟ ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="462"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਵਿੱਚ ਕੋਈ ਵੈਧ ਨਿਯਮ ਨਹੀਂ ਹਨ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">ਕੁਝ ਨਿਯਮ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ, ਉਹਨਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਠੀਕ ਕਰੋ:</translation>
@@ -4217,24 +4252,24 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="263"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="265"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">ਅਵੈਧ JSON ਐਰੇ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="264"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ਪ੍ਰਦਾਨ ਕੀਤੇ ਇਨਪੁਟ ਨੂੰ ਇੱਕ ਵੈਧ ਰੂਟ ਨਿਯਮ ਐਰੇ ਵਿੱਚ ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="388"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="391"/>
         <source>Fetching information</source>
         <translation type="unfinished">ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="404"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1415"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ</translation>
     </message>

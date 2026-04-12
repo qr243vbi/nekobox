@@ -79,7 +79,7 @@ set(BUILD_SHARED_LIBS OFF)
 
 if (USE_HOTKEYS)
   set(QHOTKEY_INSTALL OFF CACHE BOOL "Disable install QHotkey library")
-  set(QHOTKEY_EXAMPLES ON CACHE BOOL "Enable compiling examples")
+  set(QHOTKEY_EXAMPLES OFF CACHE BOOL "Enable compiling examples")
   add_subdirectory("3rdparty/QHotkey")
   nkr_add_compile_definitions(USE_HOTKEYS)
   list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
@@ -304,6 +304,7 @@ set(PROJECT_SOURCES
         ${GHARQAD}/ui/setting/dialog_vpn_settings.cpp
         ${NYXARIA}/ui/setting/dialog_vpn_settings.h
         ${NYXARIA}/ui/setting/dialog_vpn_settings.ui
+        ${NYXARIA}/ui/setting/dialog_app_settings.ui
 
         ${GHARQAD}/ui/setting/dialog_hotkey.cpp
         ${NYXARIA}/ui/setting/dialog_hotkey.h

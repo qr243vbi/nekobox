@@ -132,6 +132,7 @@ bool confirmLockStatic(LockValue val, bool restart){
   if (*ptr > seconds) return true;
 
   auto confirm = new ConfirmForm();
+  confirm->setAttribute(Qt::WA_DeleteOnClose);
   confirm->ui->comboBox->setCurrentIndex(time_type);
   confirm->ui->spinBox->setValue(time_line);
   if (restart){
@@ -372,30 +373,32 @@ void modify_security_action(MainWindow *win, QAction *sec) {
   QObject::connect(sec, &QAction::triggered, win, [win]() {
     if (confirmLock(LockValue::LockSettings)){
       auto sec = new SecurityForm(false, win);
-      sec->show();
+      sec->setAttribute(Qt::WA_DeleteOnClose);
+      sec->exec();
+      MW_dialog_message(Dialog_DialogBasicSettings, "NeedRestart");
     }
   });
 }
 
-ConfirmForm::ConfirmForm(QWidget *parent) {
+ConfirmForm::ConfirmForm(QWidget *parent) : QDialog(parent) {
   ui = new Ui::ConfirmForm();
   ui->setupUi(this);
   this->setWindowTitle(software_name);
 }
 
-PasswordForm::PasswordForm(QWidget *parent) {
+PasswordForm::PasswordForm(QWidget *parent) : QDialog(parent) {
   ui = new Ui::PasswordForm();
   ui->setupUi(this);
   this->setWindowTitle(software_name);
 }
 
-UsersForm::UsersForm(QWidget *parent) {
+UsersForm::UsersForm(QWidget *parent) : QDialog(parent) {
   ui = new Ui::UsersForm();
   ui->setupUi(this);
   this->setWindowTitle(software_name);
 }
 
-SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
+SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) : QDialog(parent) {
   ui = new Ui::SecurityForm();
   ui->setupUi(this);
   this->setWindowTitle(software_name);
@@ -414,7 +417,7 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
 
   QObject::connect(
       ui->reset_settings, &QPushButton::clicked, this, [this]() -> void {
-        auto users = new UsersForm();
+        auto users = new UsersForm(this);
         auto model = new CheckableListModel();
         users->ui->listView->setModel(model);
         QObject::connect(users->ui->buttonBox, &QDialogButtonBox::rejected,
@@ -435,7 +438,7 @@ SecurityForm::SecurityForm(bool is_user_defined, QWidget *parent) {
 
   QObject::connect(
       ui->edit_users, &QPushButton::clicked, this, [this]() -> void {
-        auto users = new UsersForm();
+        auto users = new UsersForm(this);
         auto model = new SimpleListModel();
         users->ui->listView->setModel(model);
         users->ui->buttonBox->setStandardButtons(QDialogButtonBox::Ok);

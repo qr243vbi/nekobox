@@ -449,6 +449,9 @@ QString DialogEditGroup::get_proxy_name(int id, bool is_for_routeprofile ) {
             } else if (id == -2){
                 return QCoreApplication::translate(
         "DialogGroupChooseProxy", "Direct");
+            } else if (id == -3){
+                return QCoreApplication::translate(
+        "DialogGroupChooseProxy", "Direct");
             }
         }
         return QCoreApplication::translate(

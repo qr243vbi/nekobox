@@ -2,15 +2,15 @@
 #include <winsock2.h>
 #endif
 
-#include "nekobox/ui/setting/dialog_manage_routes.h"
+#include <nekobox/ui/setting/dialog_manage_routes.h>
 
 #include <QClipboard>
 
-#include "nekobox/dataStore/Database.hpp"
+#include <nekobox/dataStore/Database.hpp>
 
-#include "3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp"
-#include "nekobox/global/GuiUtils.hpp"
-#include "nekobox/configs/proxy/Preset.hpp"
+#include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
 
 #include <QFile>
 #include <QMessageBox>
@@ -18,7 +18,7 @@
 #include <QTimer>
 #include <QToolTip>
 #include <nekobox/api/RPC.h>
-#include "nekobox/ui/mainwindow.h"
+#include <nekobox/ui/mainwindow.h>
 
 #include <QtGlobal> // For QT_VERSION_CHECK
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)

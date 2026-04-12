@@ -185,12 +185,13 @@ namespace Configs {
     {
         if (ent->type == "chain")
         {
-            for (int eId : ent->ChainBean()->list)
+            auto bean = ent->ChainBean();
+            for (int eId : bean->list)
             {
                 auto e = profileManager->GetProfile(eId);
                 if (e == nullptr)
                 {
-                    MW_show_log("Null ent in validator");
+                    MW_show_log("Null ent in validator: ID=" + QString::number(eId));
                     return false;
                 }
                 if (!IsValid(e))
@@ -329,14 +330,8 @@ namespace Configs {
         return results;
     }
 
-    QString BuildChain(int chainId, const std::shared_ptr<BuildConfigStatus> &status) {
-        auto group = profileManager->GetGroup(status->ent->gid);
-        if (group == nullptr) {
-            status->result->error = QString("This profile is not in any group, your data may be corrupted.");
-            return {};
-        }
-
-        auto resolveChain = [=](const std::shared_ptr<ProxyEntity> &ent) {
+    QList<std::shared_ptr<ProxyEntity>> ResolveChainInternal(const std::shared_ptr<BuildConfigStatus> &status, 
+                const std::shared_ptr<ProxyEntity> &ent){
             QList<std::shared_ptr<ProxyEntity>> resolved;
             if (ent->type == "chain") {
                 auto list = ent->ChainBean()->list;
@@ -356,10 +351,30 @@ namespace Configs {
                 resolved += ent;
             };
             return resolved;
-        };
+    }
+
+    #define resolveChain(X) ResolveChainInternal(status, X);
+
+    QString BuildChain(int chainId, const std::shared_ptr<BuildConfigStatus> &status) {
+        auto group = profileManager->GetGroup(status->ent->gid);
+        if (group == nullptr) {
+            status->result->error = QString("This profile is not in any group, your data may be corrupted.");
+            return {};
+        }
+
+        QList<std::shared_ptr<ProxyEntity>> ents;
+        if (group->landing_proxy_id >= 0) {
+            auto lEnt = profileManager->GetProfile(group->landing_proxy_id);
+            if (lEnt == nullptr) {
+                status->result->error = QString("landing proxy ent not found.");
+                return {};
+            }
+            ents = resolveChain(lEnt);
+            if (!status->result->error.isEmpty()) return {};
+        }
 
         // Make list
-        auto ents = resolveChain(status->ent);
+        ents += resolveChain(status->ent);
         if (!status->result->error.isEmpty()) return {};
 
         if (group->front_proxy_id >= 0) {
@@ -372,15 +387,6 @@ namespace Configs {
             if (!status->result->error.isEmpty()) return {};
         }
 
-        if (group->landing_proxy_id >= 0) {
-            auto lEnt = profileManager->GetProfile(group->landing_proxy_id);
-            if (lEnt == nullptr) {
-                status->result->error = QString("landing proxy ent not found.");
-                return {};
-            }
-            ents = resolveChain(lEnt) + ents;
-            if (!status->result->error.isEmpty()) return {};
-        }
 
         // BuildChain
         QString chainTagOut = BuildChainInternal(chainId, ents, status);
@@ -397,18 +403,28 @@ namespace Configs {
     }
 
     QString BuildChainInternal(int chainId, const QList<std::shared_ptr<ProxyEntity>> &ents,
-                               const std::shared_ptr<BuildConfigStatus> &status) {
+                               const std::shared_ptr<BuildConfigStatus> &status, int route_suffix) {
+        bool is_route = route_suffix >= 0;
+
         QString chainTag = "c-" + QString::number(chainId);
         QString chainTagOut = "";
         bool lastWasEndpoint = false;
+        if (is_route){
+            chainTag = "r-" + QString::number(route_suffix) + "-" + chainTag;
+        }
 
         for (int index = 0; index < ents.length(); index++) {
             const auto& ent = ents.at(index);
-            auto tagOut = chainTag + "-" + QString::number(ent->id) + "-" + QString::number(index);
+            QString tagOut;
 
             // last profile set as "proxy"
             if (index == 0) {
                 tagOut = "proxy";
+                if (is_route){
+                    tagOut = chainTag + "-" + tagOut;
+                } 
+            } else {
+                tagOut = chainTag + "-" + QString::number(ent->id) + "-" + QString::number(index);
             }
 
             if (index > 0) {
@@ -886,16 +902,11 @@ namespace Configs {
                     status->result->error = "The routing profile is referencing outbounds that no longer exists, consider revising your settings";
                     return;
                 }
-                QJsonObject currOutbound;
-                QString tag = "rout-" + QString::number(suffix++);
-                BuildOutbound(neededEnt, status, currOutbound, tag);
-                if (neededEnt->type == "wireguard")
-                {
-                    status->endpoints += currOutbound;
-                } else
-                {
-                    status->outbounds += currOutbound;
-                }
+
+                auto ents = resolveChain(neededEnt);
+                if (!status->result->error.isEmpty()) return;
+                auto tag = BuildChainInternal(status->chainID, ents, status, suffix);
+
                 outboundMap[item] = tag;
 
                 // add to dns direct resolve
@@ -904,7 +915,36 @@ namespace Configs {
                     needDirectDnsRules = true;
                 }
             }
+
             auto routeRules = routeChain->get_route_rules(false, outboundMap);
+
+            // tun process routing
+            if (dataStore->spmode_vpn && !status->forTest){
+                auto split = dataStore->routing->tun_split;
+                if (split->proxy.size() > 0){
+                    routeRules += QJsonObject({
+                        {"action", "route"},
+                        {"outbound", "proxy"},
+                        {"process_path", QListStr2QJsonArray(split->proxy)}
+                    });
+                }
+
+                if (split->direct.size() > 0){
+                    routeRules += QJsonObject({
+                        {"action", "route"},
+                        {"outbound", "direct"},
+                        {"process_path", QListStr2QJsonArray(split->direct)}
+                    });
+                }
+
+                if (split->block.size() > 0){
+                    routeRules += QJsonObject({
+                        {"action", "reject"},
+                        {"process_path", QListStr2QJsonArray(split->block)}
+                    });
+                }
+            }
+
             routeObj["rules"] = routeRules;
 
             if (dataStore->enable_dns_server) {

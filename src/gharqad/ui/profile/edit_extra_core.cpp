@@ -31,11 +31,12 @@ void EditExtraCore::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
 
     connect(ui->path_button, &QPushButton::pressed, this, [=,this]
     {
-        auto f = QFileDialog::getOpenFileName();
+        auto f = OPEN_FILENAME;
         if (f.isEmpty())
         {
             return;
         }
+        SAVE_LATEST(f);
         if (!QDir::current().relativeFilePath(f).startsWith("../../"))
         {
             f = QDir::current().relativeFilePath(f);

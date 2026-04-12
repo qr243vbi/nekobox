@@ -390,21 +390,6 @@ width:15px;
 height:15px;
 }
 
-QRadioButton::indicator::unchecked{
-image:url(:/qss/lightblue/radiobutton_unchecked.png);
-}
-
-QRadioButton::indicator::unchecked:disabled{
-image:url(:/qss/lightblue/radiobutton_unchecked_disable.png);
-}
-
-QRadioButton::indicator::checked{
-image:url(:/qss/lightblue/radiobutton_checked.png);
-}
-
-QRadioButton::indicator::checked:disabled{
-image:url(:/qss/lightblue/radiobutton_checked_disable.png);
-}
 
 QGroupBox::indicator,QTreeView::indicator,QListView::indicator,QTableView::indicator{
 padding:0px 0px 0px 0px;
@@ -413,30 +398,6 @@ padding:0px 0px 0px 0px;
 QCheckBox::indicator,QGroupBox::indicator,QTreeView::indicator,QListView::indicator,QTableView::indicator{
 width:13px;
 height:13px;
-}
-
-QCheckBox::indicator:unchecked,QGroupBox::indicator:unchecked,QTreeView::indicator:unchecked,QListView::indicator:unchecked,QTableView::indicator:unchecked{
-image:url(:/qss/lightblue/checkbox_unchecked.png);
-}
-
-QCheckBox::indicator:unchecked:disabled,QGroupBox::indicator:unchecked:disabled,QTreeView::indicator:unchecked:disabled,QListView::indicator:unchecked:disabled,QTableView::indicator:unchecked:disabled{
-image:url(:/qss/lightblue/checkbox_unchecked_disable.png);
-}
-
-QCheckBox::indicator:checked,QGroupBox::indicator:checked,QTreeView::indicator:checked,QListView::indicator:checked,QTableView::indicator:checked{
-image:url(:/qss/lightblue/checkbox_checked.png);
-}
-
-QCheckBox::indicator:checked:disabled,QGroupBox::indicator:checked:disabled,QTreeView::indicator:checked:disabled,QListView::indicator:checked:disabled,QTableView::indicator:checked:disabled{
-image:url(:/qss/lightblue/checkbox_checked_disable.png);
-}
-
-QCheckBox::indicator:indeterminate,QGroupBox::indicator:indeterminate,QTreeView::indicator:indeterminate,QListView::indicator:indeterminate,QTableView::indicator:indeterminate{
-image:url(:/qss/lightblue/checkbox_parcial.png);
-}
-
-QCheckBox::indicator:indeterminate:disabled,QGroupBox::indicator:indeterminate:disabled,QTreeView::indicator:indeterminate:disabled,QListView::indicator:indeterminate:disabled,QTableView::indicator:indeterminate:disabled{
-image:url(:/qss/lightblue/checkbox_parcial_disable.png);
 }
 
 QTimeEdit::up-button,QDateEdit::up-button,QDateTimeEdit::up-button,QDoubleSpinBox::up-button,QSpinBox::up-button{
@@ -965,29 +926,6 @@ QCheckBox::indicator:checked {
     image: none;
 }
 
-/* Checkmark (SVG) centered on the filled background; stroke uses PanelColor for contrast */
-QCheckBox::indicator:checked {
-    background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
-<polyline points='2,7 5,10 11,3' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
-</svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Indeterminate (Partially checked) - show a horizontal line */
-QCheckBox::indicator:indeterminate {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                stop:0 #575959, stop:1 #454546);
-    border: 1px solid #B6B6B6;
-    background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
-<rect x='2' y='6' width='9' height='2' fill='%23FFFFFF' />\
-</svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 /* Disabled state - muted colors */
 QCheckBox:disabled {
     color: #A0A0A0; /* dimmed text */
@@ -1000,25 +938,221 @@ QCheckBox::indicator:disabled {
     opacity: 0.65;
 }
 
-QCheckBox::indicator:disabled:checked {
-    background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
-<polyline points='2,7 5,10 11,3' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
-</svg>");
-    opacity: 0.65;
-}
-
 /* Focus ring around the whole checkbox when focused (subtle) */
 QCheckBox:focus {
     outline: none;
 }
 
-QCheckBox:focus::indicator {
-    /* faint outer glow using a semi-transparent version of HighColor */
-    box-shadow: 0 0 0 3px rgba(87,89,89,0.08);
-}
-
 /* Larger hit area when using the check text label */
 QCheckBox::indicator, QCheckBox {
     min-height: 18px;
+}
+
+
+QRadioButton::indicator::unchecked{
+image:url(:/qss/lightblue/radiobutton_unchecked.png);
+}
+
+QRadioButton::indicator::unchecked:disabled{
+image:url(:/qss/lightblue/radiobutton_unchecked_disable.png);
+}
+
+QRadioButton::indicator::checked{
+image:url(:/qss/lightblue/radiobutton_checked.png);
+}
+
+QRadioButton::indicator::checked:disabled{
+image:url(:/qss/lightblue/radiobutton_checked_disable.png);
+}
+
+
+QCheckBox::indicator:unchecked,QGroupBox::indicator:unchecked,QTreeView::indicator:unchecked,QListView::indicator:unchecked,QTableView::indicator:unchecked{
+image:url(:/qss/lightblue/checkbox_unchecked.png);
+}
+
+QCheckBox::indicator:unchecked:disabled,QGroupBox::indicator:unchecked:disabled,QTreeView::indicator:unchecked:disabled,QListView::indicator:unchecked:disabled,QTableView::indicator:unchecked:disabled{
+image:url(:/qss/lightblue/checkbox_unchecked_disable.png);
+}
+
+QCheckBox::indicator:checked,QGroupBox::indicator:checked,QTreeView::indicator:checked,QListView::indicator:checked,QTableView::indicator:checked{
+image:url(:/qss/lightblue/checkbox_checked.png);
+}
+
+QCheckBox::indicator:checked:disabled,QGroupBox::indicator:checked:disabled,QTreeView::indicator:checked:disabled,QListView::indicator:checked:disabled,QTableView::indicator:checked:disabled{
+image:url(:/qss/lightblue/checkbox_checked_disable.png);
+}
+
+QCheckBox::indicator:indeterminate,QGroupBox::indicator:indeterminate,QTreeView::indicator:indeterminate,QListView::indicator:indeterminate,QTableView::indicator:indeterminate{
+image:url(:/qss/lightblue/checkbox_parcial.png);
+}
+
+QCheckBox::indicator:indeterminate:disabled,QGroupBox::indicator:indeterminate:disabled,QTreeView::indicator:indeterminate:disabled,QListView::indicator:indeterminate:disabled,QTableView::indicator:indeterminate:disabled{
+image:url(:/qss/lightblue/checkbox_parcial_disable.png);
+}
+
+
+
+/* Base radio text and spacing */
+QRadioButton {
+    color: #57595B;               /* TextColor */
+    spacing: 6px;
+    padding: 2px 4px;
+    background: transparent;
+}
+
+/* Indicator size (circular instead of square) */
+QRadioButton::indicator {
+    width: 13px;
+    height: 13px;
+    border-radius: 7px; /* makes it circular */
+    margin: 0 4px 0 0;
+}
+
+/* Unchecked */
+QRadioButton::indicator:unchecked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #E4E4E4, stop:1 #E4E4E4);
+    border: 1px solid #B6B6B6;
+}
+
+/* Hover */
+QRadioButton::indicator:unchecked:hover {
+    background: #F6F6F6;
+    border: 1px solid #AFAFAF;
+}
+
+/* Pressed */
+QRadioButton::indicator:unchecked:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #E4E4E4, stop:1 #DDDDDD);
+    border: 1px solid #9f9f9f;
+}
+
+/* Checked state outer circle */
+QRadioButton::indicator:checked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #575959, stop:1 #454546); /* HighColor */
+    border: 1px solid #B6B6B6;
+}
+
+/* Inner dot (this is the "radio check") */
+QRadioButton::indicator:checked {
+    image: none;
+    position: relative;
+}
+
+/* Disabled */
+QRadioButton:disabled {
+    color: #A0A0A0;
+}
+
+QRadioButton::indicator:disabled {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #F0F0F0, stop:1 #E8E8E8);
+    border: 1px solid #D0D0D0;
+    opacity: 0.65;
+}
+
+/* Focus */
+QRadioButton:focus {
+    outline: none;
+}
+
+
+/* Hit area consistency */
+QRadioButton::indicator, QRadioButton {
+    min-height: 18px;
+}
+
+
+/* Base menu item */
+QMenu {
+    color: #57595B;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    padding: 4px;
+}
+
+/* Menu item spacing */
+QMenu::item {
+    padding: 4px 24px 4px 28px; /* space for indicator on the left */
+    background: transparent;
+}
+
+/* Hover */
+QMenu::item:selected {
+    background: #F6F6F6;
+    color: #57595B;
+}
+
+/* Pressed */
+QMenu::item:pressed {
+    background: #E4E4E4;
+}
+
+/* ========================= */
+/* CHECKBOX INDICATOR (menu) */
+/* ========================= */
+
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
+
+    border-radius: 3px;
+    margin-left: 6px;
+}
+
+/* Unchecked */
+QMenu::indicator:unchecked {
+    background: #E4E4E4;
+    border: 1px solid #B6B6B6;
+}
+
+/* Hover (when item is hovered) */
+QMenu::indicator:unchecked:selected {
+    background: #F6F6F6;
+    border: 1px solid #AFAFAF;
+}
+
+/* Checked */
+QMenu::indicator:checked {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #575959, stop:1 #454546);
+    border: 1px solid #B6B6B6;
+
+    /* checkmark */
+    image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Pressed checked */
+QMenu::indicator:checked:pressed {
+    background: #454546;
+}
+
+/* Disabled */
+QMenu::item:disabled {
+    color: #A0A0A0;
+}
+
+QMenu::indicator:disabled {
+    background: #F0F0F0;
+    border: 1px solid #D0D0D0;
+    opacity: 0.6;
+}
+
+QMenu::indicator:disabled:checked {
+    image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'>\
+<polyline points='2,7 5,10 11,3' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />\
+</svg>");
+}
+
+/* Focus/keyboard navigation */
+QMenu::item:selected {
+    outline: none;
 }

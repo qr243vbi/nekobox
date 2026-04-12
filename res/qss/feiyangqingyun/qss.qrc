@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="nekobox">
-        <file>qss/flatgray.css</file>
-        <file>qss/lightblue.css</file>
+        <file alias="qss/flatgray.css">qss/flatgray.qss</file>
+        <file alias="qss/lightblue.css">qss/lightblue.qss</file>
         <file>qss/flatgray/add_bottom.png</file>
         <file>qss/flatgray/add_left.png</file>
         <file>qss/flatgray/add_right.png</file>
@@ -48,7 +48,7 @@
         <file>qss/lightblue/radiobutton_checked_disable.png</file>
         <file>qss/lightblue/radiobutton_unchecked.png</file>
         <file>qss/lightblue/radiobutton_unchecked_disable.png</file>
-        <file>qss/blacksoft.css</file>
+        <file alias="qss/blacksoft.css">qss/blacksoft.qss</file>
         <file>qss/blacksoft/add_bottom.png</file>
         <file>qss/blacksoft/add_left.png</file>
         <file>qss/blacksoft/add_right.png</file>

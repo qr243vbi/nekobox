@@ -5,14 +5,16 @@
 
 #pragma once
 
-#include "3rdparty/qv2ray/wrapper.hpp"
-#include "3rdparty/QThreadCreateThread.hpp"
+#include <3rdparty/qv2ray/wrapper.hpp>
+#include <3rdparty/QThreadCreateThread.hpp>
 #include <nekobox/ui/setting/Icon.hpp>
+#include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <functional>
 #include <memory>
 #include <QObject>
+#include <QFileDialog>
 #include <QApplication>
 #include <QTimer>
 #include <QString>
@@ -28,7 +30,7 @@
 #endif
 
 #ifdef Q_OS_WIN
-#include "nekobox/sys/windows/guihelper.h"
+#include <nekobox/sys/windows/guihelper.h>
 #endif
 // Dialogs
 
@@ -123,12 +125,16 @@ inline QString joinCommand(const QStringList &arguments) {
 
 #define EMPTY_JOB {}
 
-#define CREATE_LINK(name) {                                                 \
-    QString fileName = QFileDialog::getOpenFileName(this,                   \
+#define OPEN_FILENAME QFileDialog::getOpenFileName(this,                   \
         QObject::tr("Select"), Configs::resourceManager->getLatestPath(),   \
-        "", nullptr, QFileDialog::Option::ReadOnly);                        \
+        "", nullptr, QFileDialog::Option::ReadOnly);
+
+#define CREATE_LINK(name) {                                                 \
+    QString fileName = OPEN_FILENAME;                                       \
     Configs::resourceManager->saveLink(name, fileName);                     \
 }
+
+#define SAVE_LATEST(fileName) Configs::resourceManager->latest_path = QFileInfo(fileName).absoluteFilePath();
 
 #define LINK_RESOURCE_MANAGER(name, id, job) {                  \
     connect(ui->id, &QPushButton::clicked, this, [=, this](){   \
@@ -175,8 +181,6 @@ inline QString joinCommand(const QStringList &arguments) {
             checkBox->setText(text + "*");                           \
         }                                                            \
     }
-
-
 // UI
 
 QWidget *GetMessageBoxParent();

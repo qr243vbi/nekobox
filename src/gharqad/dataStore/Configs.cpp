@@ -412,6 +412,12 @@ QByteArray hash = QCryptographicHash::hash(
 
     DataStore::DataStore() : JsonStore() {
     }
+    
+    DECL_MAP(TunSplit)
+        ADD_MAP("proxy", proxy, stringlist);
+        ADD_MAP("direct", direct, stringlist);
+        ADD_MAP("block", block, stringlist);
+    STOP_MAP
 
     DECL_MAP(DataStore)
         ADD_MAP("sub_custom_hwid_params", sub_custom_hwid_params, string);
@@ -556,6 +562,8 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("use_dns_object", use_dns_object, boolean);
         ADD_MAP("dns_object", dns_object, string);
         ADD_MAP("dns_final_out_direct", dns_final_out_direct, boolean);
+
+        ADD_MAP("tun_split", tun_split, jsonStore);
     STOP_MAP
 
     #undef d_add

@@ -5,6 +5,7 @@
 #include <nekobox/ui/profile/edit_ssh.h>
 #include <QFileDialog>
 #include <nekobox/configs/proxy/SSHBean.h>
+#include <nekobox/global/GuiUtils.hpp>
 
 EditSSH::EditSSH(QWidget *parent) : QWidget(parent), ui(new Ui::EditSSH) {
     ui->setupUi(this);
@@ -28,10 +29,10 @@ void EditSSH::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     ui->client_version->setText(bean->clientVersion);
 
     connect(ui->choose_pk, &QPushButton::clicked, this, [=,this] {
-        auto fn = QFileDialog::getOpenFileName(this, QObject::tr("Select"), QDir::currentPath(),
-                                               "", nullptr, QFileDialog::Option::ReadOnly);
+        auto fn = OPEN_FILENAME;
         if (!fn.isEmpty()) {
             ui->private_key_path->setText(fn);
+            SAVE_LATEST(fn);
         }
     });
 }

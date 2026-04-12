@@ -17,6 +17,15 @@
 
 namespace Configs {
 
+    class TunSplit: public JsonStore {
+        public:
+        
+        DECLARE_STORE_TYPE(NoSave)
+        virtual ConfJsMap _map() override;
+
+        QStringList proxy, direct, block;
+    };
+
     enum DatabaseType {
         json_type = 1,
         binary_type = 2,
@@ -60,6 +69,8 @@ namespace Configs {
         QString outbound_domain_strategy = "AsIs";
         int sniffing_mode = Configs::SniffingMode::FOR_ROUTING;
         int ruleset_mirror = Configs::Mirrors::CLOUDFLARE;
+
+        std::shared_ptr<TunSplit> tun_split = std::make_shared<TunSplit>();
 
         explicit Routing(int preset = 0);
 

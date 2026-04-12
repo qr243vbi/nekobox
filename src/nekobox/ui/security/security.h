@@ -26,7 +26,7 @@ QT_END_NAMESPACE
 
 
 
-class SecurityForm : public QWidget {
+class SecurityForm : public QDialog {
     Q_OBJECT
 public:
     Ui::SecurityForm *ui;

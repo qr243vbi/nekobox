@@ -352,7 +352,7 @@ void MainWindow::getRemoteRouteProfiles() {
 
 void MainWindow::on_menu_add_from_file() {
   CHECK_SETTINGS_ACCESS_W
-  auto path = QFileDialog::getOpenFileName();
+  auto path = OPEN_FILENAME;
   if (path.isEmpty()) {
     return;
   }
@@ -368,6 +368,7 @@ void MainWindow::on_menu_add_from_file() {
     file.close();
     Subscription::groupUpdater->AsyncUpdate(this->post_update_job, contents,
                                             &chooseUpdateGroup);
+    SAVE_LATEST(path);
   }
 }
 
