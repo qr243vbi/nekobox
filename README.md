@@ -9,6 +9,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 <img width="558" height="641" alt="image" src="https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png" />
 
 
+
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
 
 - [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
