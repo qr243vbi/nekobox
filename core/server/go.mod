@@ -1,6 +1,6 @@
 module nekobox_core
 
-go 1.25.0
+go 1.25.7
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
@@ -13,7 +13,7 @@ require (
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
 	github.com/sagernet/sing v0.8.4
-	github.com/sagernet/sing-box v1.13.7
+	github.com/sagernet/sing-box v1.13.8
 	github.com/sagernet/sing-tun v0.8.7
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/sys v0.43.0
