@@ -366,7 +366,7 @@ jobs:
           arch: ${{ matrix.target }}
 
       - name: vcpkg build
-        uses: johnwason/vcpkg-action@v7
+        uses: qr243vbi/vcpkg-action@master
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
