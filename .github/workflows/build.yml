@@ -372,6 +372,7 @@ jobs:
         with:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap
           triplet: ${{ matrix.triplet }}
+          vcpkg-subdir: ..\..\src
           token: ${{ secrets.UPLOAD_TOKEN }}
           
       - name: Download Artifacts
