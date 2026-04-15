@@ -85,6 +85,7 @@ if (USE_HOTKEYS)
   list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 endif()
 
+
 find_program(THRIFT_COMPILER thrift REQUIRED)
 
 if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
@@ -113,20 +114,49 @@ set(THRIFT_GENERATED_SOURCES
     "${GHARQAD}/libcore.cpp"
 )
 
+# Check if the directory exists
+if(EXISTS "${CMAKE_SOURCE_DIR}/core/server/vendor")
+    message(STATUS "Directory core/server/vendor exists.")
+else()
+    message(STATUS "Directory core/server/vendor does not exist.")
+endif()
+
+file(GLOB_RECURSE PROJECT_SOURCES_GLOB
+        ${GHARQAD}/configs/proxy/*.cpp
+        ${NYXARIA}/configs/proxy/*.hpp
+        ${NYXARIA}/configs/proxy/*.h
+
+        ${NYXARIA}/dataStore/*.hpp
+        ${NYXARIA}/dataStore/*.h
+        ${GHARQAD}/dataStore/*.cpp
+
+        ${NYXARIA}/global/*.hpp
+        ${NYXARIA}/global/*.h
+        ${GHARQAD}/global/*.cpp
+
+        ${NYXARIA}/ui/info/*.ui
+        ${NYXARIA}/ui/info/*.h
+
+        ${NYXARIA}/ui/profile/*.h
+        ${NYXARIA}/ui/profile/*.ui
+        ${GHARQAD}/ui/profile/*.cpp
+
+        ${GHARQAD}/ui/setting/*.cpp
+        ${NYXARIA}/ui/setting/*.h
+        ${NYXARIA}/ui/setting/*.ui
+
+        ${GHARQAD}/ui/group/*.cpp
+        ${NYXARIA}/ui/group/*.h
+        ${NYXARIA}/ui/group/*.ui
+)
 
 # Sources
 set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
         ${THRIFT_GENERATED_SOURCES}
         ${SECURITY_SOURCES}
+        ${PROJECT_SOURCES_GLOB}
         ${GHARQAD}/main.cpp
-        ${GHARQAD}/dataStore/Configs.cpp
-        ${GHARQAD}/dataStore/ConfigItem.cpp
-        ${GHARQAD}/dataStore/Utils.cpp
-        ${GHARQAD}/global/GuiUtils.cpp
-        ${GHARQAD}/global/HTTPRequestHelper.cpp
-        ${GHARQAD}/global/DeviceDetailsHelper.cpp
-        ${GHARQAD}/global/CountryHelper.cpp
 
         3rdparty/base64.cpp
         3rdparty/qrcodegen.cpp
@@ -149,61 +179,15 @@ set(PROJECT_SOURCES
         3rdparty/quirc/version_db.c
 
         ${GHARQAD}/api/RPC.cpp
-        ${GHARQAD}/dataStore/Database.cpp
         ${GHARQAD}/stats/traffic/TrafficLooper.cpp
-        ${GHARQAD}/dataStore/ProfileFilter.cpp
+
         ${GHARQAD}/configs/ConfigBuilder.cpp
 
-        ${GHARQAD}/configs/proxy/AbstractBean.cpp
-        ${GHARQAD}/configs/proxy/WireguardBean.cpp
-        ${GHARQAD}/configs/proxy/Bean2CoreObj_box.cpp
-        ${GHARQAD}/configs/proxy/Bean2Link.cpp
-        ${GHARQAD}/configs/proxy/Link2Bean.cpp
-        ${NYXARIA}/configs/proxy/AbstractBean.hpp
-        ${NYXARIA}/configs/proxy/AnyTLSBean.hpp
-        ${NYXARIA}/configs/proxy/ChainBean.hpp
-        ${NYXARIA}/configs/proxy/CustomBean.hpp
-        ${NYXARIA}/configs/proxy/ExtraCore.h
-        ${NYXARIA}/configs/proxy/includes.h
-        ${NYXARIA}/configs/proxy/TrustTunnelBean.hpp
-        ${NYXARIA}/configs/proxy/JuicityBean.hpp
-        ${NYXARIA}/configs/proxy/MieruBean.hpp
-        ${NYXARIA}/configs/proxy/NaiveBean.hpp
-        ${NYXARIA}/configs/proxy/TorBean.hpp
-        ${NYXARIA}/configs/proxy/Preset.hpp
-        ${NYXARIA}/configs/proxy/QUICBean.hpp
-        ${NYXARIA}/configs/proxy/ShadowSocksBean.hpp
-        ${NYXARIA}/configs/proxy/ShadowTLSBean.hpp
-        ${NYXARIA}/configs/proxy/HttpBean.hpp
-        ${NYXARIA}/configs/proxy/SocksBean.hpp
-        ${NYXARIA}/configs/proxy/SSHBean.h
-        ${NYXARIA}/configs/proxy/Tailscale.hpp
-        ${NYXARIA}/configs/proxy/TrojanVLESSBean.hpp
-        ${NYXARIA}/configs/proxy/V2RayStreamSettings.hpp
-        ${NYXARIA}/configs/proxy/VMessBean.hpp
-        ${NYXARIA}/configs/proxy/WireguardBean.h
+
         ${NYXARIA}/configs/sub/GroupUpdater.hpp
         ${NYXARIA}/configs/ConfigBuilder.hpp
         ${NYXARIA}/api/RPC.h
-        ${NYXARIA}/dataStore/ConfigItem.hpp
-        ${NYXARIA}/dataStore/Configs.hpp
-        ${NYXARIA}/dataStore/Const.hpp
-        ${NYXARIA}/dataStore/Database.hpp
-        ${NYXARIA}/dataStore/DataStore.hpp
-        ${NYXARIA}/dataStore/Group.hpp
-        ${NYXARIA}/dataStore/ProfileFilter.hpp
-        ${NYXARIA}/dataStore/ProxyEntity.hpp
-        ${NYXARIA}/dataStore/ResourceEntity.hpp
-        ${NYXARIA}/dataStore/RouteEntity.h
-        ${NYXARIA}/dataStore/Utils.hpp
 
-        ${NYXARIA}/global/CountryHelper.hpp
-        ${NYXARIA}/global/DeviceDetailsHelper.hpp
-        ${NYXARIA}/global/GuiUtils.hpp
-        ${NYXARIA}/global/HTTPRequestHelper.hpp
-        ${NYXARIA}/global/keyvaluerange.h
-
-        ${NYXARIA}/dataStore/TrafficData.hpp
         ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
         ${GHARQAD}/configs/sub/GroupUpdater.cpp
@@ -215,130 +199,23 @@ set(PROJECT_SOURCES
         ${GHARQAD}/sys/Process.cpp
         ${GHARQAD}/sys/AutoRun.cpp
 
-        ${NYXARIA}/ui/setting/ThemeManager.hpp
-        ${GHARQAD}/ui/setting/ThemeManager.cpp
-        ${GHARQAD}/ui/setting/Icon.cpp
-
         ${GHARQAD}/ui/mainwindow_rpc.cpp
         ${GHARQAD}/ui/mainwindow.cpp
         ${NYXARIA}/ui/mainwindow.h
         ${NYXARIA}/ui/mainwindow.ui
-        ${NYXARIA}/ui/info/main.ui
-        ${NYXARIA}/ui/info/about.ui
-        ${NYXARIA}/ui/info/info.h
-        ${NYXARIA}/ui/profile/edit_shadowtls.ui
-        ${NYXARIA}/ui/profile/dialog_edit_profile.h
-        ${GHARQAD}/ui/profile/dialog_edit_profile.cpp
-        ${NYXARIA}/ui/profile/dialog_edit_profile.ui
-        ${NYXARIA}/ui/group/dialog_edit_group.h
-        ${GHARQAD}/ui/group/dialog_edit_group.cpp
-        ${NYXARIA}/ui/group/dialog_edit_group.ui
-        ${NYXARIA}/ui/group/dialog_group_choose_proxy.ui
-
-        ${NYXARIA}/ui/profile/edit_chain.h
-        ${GHARQAD}/ui/profile/edit_chain.cpp
-        ${NYXARIA}/ui/profile/edit_chain.ui
-        ${NYXARIA}/ui/profile/edit_socks_http.h
-        ${GHARQAD}/ui/profile/edit_socks_http.cpp
-        ${NYXARIA}/ui/profile/edit_socks_http.ui
-        ${NYXARIA}/ui/profile/edit_shadowsocks.h
-        ${GHARQAD}/ui/profile/edit_shadowsocks.cpp
-        ${NYXARIA}/ui/profile/edit_shadowsocks.ui
-        ${NYXARIA}/ui/profile/edit_naive.h
-        ${GHARQAD}/ui/profile/edit_naive.cpp
-        ${NYXARIA}/ui/profile/edit_naive.ui
-        ${NYXARIA}/ui/profile/edit_juicity.h
-        ${GHARQAD}/ui/profile/edit_juicity.cpp
-        ${NYXARIA}/ui/profile/edit_juicity.ui
-        ${NYXARIA}/ui/profile/edit_trusttunnel.h
-        ${GHARQAD}/ui/profile/edit_trusttunnel.cpp
-        ${NYXARIA}/ui/profile/edit_trusttunnel.ui
-        ${NYXARIA}/ui/profile/edit_vmess.h
-        ${GHARQAD}/ui/profile/edit_vmess.cpp
-        ${NYXARIA}/ui/profile/edit_vmess.ui
-        ${NYXARIA}/ui/profile/edit_mieru.h
-        ${GHARQAD}/ui/profile/edit_mieru.cpp
-        ${NYXARIA}/ui/profile/edit_mieru.ui
-        ${NYXARIA}/ui/profile/edit_tor.h
-        ${GHARQAD}/ui/profile/edit_tor.cpp
-        ${NYXARIA}/ui/profile/edit_tor.ui
-        ${NYXARIA}/ui/profile/edit_trojan_vless.h
-        ${GHARQAD}/ui/profile/edit_trojan_vless.cpp
-        ${NYXARIA}/ui/profile/edit_trojan_vless.ui
-        ${NYXARIA}/ui/profile/edit_anytls.h
-        ${NYXARIA}/ui/profile/edit_shadowtls.h
-        ${GHARQAD}/ui/profile/edit_anytls.cpp
-        ${NYXARIA}/ui/profile/edit_anytls.ui
-        ${NYXARIA}/ui/profile/edit_tailscale.h
-        ${GHARQAD}/ui/profile/edit_tailscale.cpp
-        ${NYXARIA}/ui/profile/edit_tailscale.ui
-
-        ${NYXARIA}/ui/profile/edit_quic.h
-        ${GHARQAD}/ui/profile/edit_quic.cpp
-        ${NYXARIA}/ui/profile/edit_quic.ui
-
-        ${NYXARIA}/ui/profile/edit_custom.h
-        ${GHARQAD}/ui/profile/edit_custom.cpp
-        ${NYXARIA}/ui/profile/edit_custom.ui
-
-        ${NYXARIA}/ui/profile/edit_extra_core.h
-        ${GHARQAD}/ui/profile/edit_extra_core.cpp
-        ${NYXARIA}/ui/profile/edit_extra_core.ui
-
-        ${NYXARIA}/ui/profile/edit_wireguard.h
-        ${GHARQAD}/ui/profile/edit_wireguard.cpp
-        ${NYXARIA}/ui/profile/edit_wireguard.ui
-
-        ${GHARQAD}/ui/setting/dialog_basic_settings.cpp
-        ${NYXARIA}/ui/setting/dialog_basic_settings.h
-        ${NYXARIA}/ui/setting/dialog_basic_settings.ui
-
-        ${GHARQAD}/ui/group/dialog_manage_groups.cpp
-        ${NYXARIA}/ui/group/dialog_manage_groups.h
-        ${NYXARIA}/ui/group/dialog_manage_groups.ui
-
-        ${GHARQAD}/ui/setting/dialog_manage_routes.cpp
-        ${NYXARIA}/ui/setting/dialog_manage_routes.h
-        ${NYXARIA}/ui/setting/dialog_manage_routes.ui
-
-        ${GHARQAD}/ui/setting/dialog_vpn_settings.cpp
-        ${NYXARIA}/ui/setting/dialog_vpn_settings.h
-        ${NYXARIA}/ui/setting/dialog_vpn_settings.ui
-        ${NYXARIA}/ui/setting/dialog_app_settings.ui
-
-        ${GHARQAD}/ui/setting/dialog_hotkey.cpp
-        ${NYXARIA}/ui/setting/dialog_hotkey.h
-        ${NYXARIA}/ui/setting/dialog_hotkey.ui
-
-        ${GHARQAD}/ui/profile/ProxyItem.cpp
-        ${NYXARIA}/ui/profile/ProxyItem.h
-        ${NYXARIA}/ui/profile/ProxyItem.ui
-        ${GHARQAD}/ui/group/GroupItem.cpp
-        ${NYXARIA}/ui/group/GroupItem.h
-        ${NYXARIA}/ui/group/GroupItem.ui
-        ${GHARQAD}/ui/setting/RouteItem.cpp
-        ${NYXARIA}/ui/setting/RouteItem.h
-        ${NYXARIA}/ui/setting/RouteItem.ui
 
         res/nekobox.qrc
         ${QV2RAY_RC}
-        ${GHARQAD}/dataStore/RouteEntity.cpp
-        ${GHARQAD}/dataStore/ResourceEntity.cpp
         res/darkstyle.qrc
         res/qss/feiyangqingyun/qss.qrc
-        ${GHARQAD}/ui/profile/edit_ssh.cpp
-        ${NYXARIA}/ui/profile/edit_ssh.h
-        ${NYXARIA}/ui/profile/edit_ssh.ui
-        ${GHARQAD}/sys/Settings.cpp
 
+        ${GHARQAD}/sys/Settings.cpp
         ${GHARQAD}/sys/AutoRun.cpp
         ${GHARQAD}/sys/Process.cpp
         ${NYXARIA}/ui/mainwindow_interface.h
         ${NYXARIA}/stats/connections/connectionLister.hpp
         ${GHARQAD}/stats/connectionLister/connectionLister.cpp
         ${GHARQAD}/configs/proxy/Json2Bean.cpp
-        ${GHARQAD}/dataStore/Group.cpp
-        ${GHARQAD}/dataStore/ProxyEntity.cpp
 
         ${GHARQAD}/stats/autotester/ProxyAutoTester.cpp
         ${NYXARIA}/stats/autotester/ProxyAutoTester.hpp
@@ -462,6 +339,16 @@ endif()
 
 if (BUILD_GO_PARTS)
     find_program(GO_EXECUTABLE go)
+
+
+# Check if the vendor directory exists
+    if(EXISTS "${CMAKE_SOURCE_DIR}/core/server/vendor")
+        message(STATUS "Directory core/server/vendor exists.")
+        set(GO_MOD_TIDY_FLAG OFF CACHE STRING "Run go mod tidy before build")
+    else()
+        message(STATUS "Directory core/server/vendor does not exist.")
+        set(GO_MOD_TIDY_FLAG ON CACHE STRING "Run go mod tidy before build")
+    endif()
 
     set(GO_SOURCE_DIR ${CMAKE_SOURCE_DIR}/core)
 
