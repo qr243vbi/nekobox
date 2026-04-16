@@ -153,7 +153,7 @@ jobs:
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Install Golang
         if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
-        uses: qr243vbi/setup-go@main
+        uses: actions/setup-go@main
         with:            
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
