@@ -15,6 +15,10 @@
 #include <boost/bimap.hpp>
 #include <QFileInfo>
 
+#ifndef SKIP_LEVELDB
+#include <leveldb/db.h>
+#endif
+
 
 namespace Configs_ConfigItem {
 struct configItem;
@@ -308,8 +312,11 @@ public:
   virtual QList<int> Query(char type) = 0;
 };
 
+
+
 class FileDatabaseManager : public DatabaseManager {
 public:
+  FileDatabaseManager();
   virtual bool Save(JsonStore *) override;
   virtual bool Load(JsonStore *) override;
   virtual bool Drop(char, int) override;
@@ -318,6 +325,10 @@ public:
   static bool LoadFromFile(JsonStore *);
   static bool DropFromDirectory(char, int);
   virtual QList<int> Query(char type) override;
+private:
+#ifndef SKIP_LEVELDB
+  std::shared_ptr<leveldb::DB> database;
+#endif
 };
 
 inline std::shared_ptr<DatabaseManager> databaseManager =

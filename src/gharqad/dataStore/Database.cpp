@@ -12,7 +12,73 @@
 #include <nekobox/configs/proxy/includes.h>
 
 // Query
-#include <leveldb/db.h>
+#ifndef SKIP_LEVELDB
+std::shared_ptr<leveldb::DB> leveldb_initialize(bool * ok) {
+  std::string db_path = "iblis.db"; // directory path
+  leveldb::Options options;
+  options.create_if_missing = true; // key setting
+
+  leveldb::DB* raw_db = nullptr;
+  leveldb::Status status = leveldb::DB::Open(options, db_path, &raw_db);
+
+  if (!status.ok()) {
+    if (ok != nullptr){
+      *ok = false;
+    }
+    return nullptr;
+  }
+
+  std::shared_ptr<leveldb::DB> db(raw_db);
+  if (ok != nullptr){
+    *ok = false;
+  }
+  return db;
+}
+
+std::string pack_char_int(char c, int32_t x) {
+  std::string s(5, '\0');
+  s[0] = c;
+  s[1] = static_cast<char>( x        & 0xFF);
+  s[2] = static_cast<char>((x >> 8)  & 0xFF);
+  s[3] = static_cast<char>((x >> 16) & 0xFF);
+  s[4] = static_cast<char>((x >> 24) & 0xFF);
+  return s;
+}
+
+bool SaveToLeveldb(std::shared_ptr<leveldb::DB> db, JsonStore * store, bool empty){
+  int id = store->Id();
+  char type = store->StoreType();
+  std::string key = pack_char_int(type, id);
+  std::string value = "";
+  if (!empty){
+    auto b = store->ToBytes();
+    std::string value = std::string(b.constData(), static_cast<size_t>(b.size()));
+  }
+  leveldb::WriteOptions wo;
+  wo.sync = true;                 // strongest durability guarantee
+  leveldb::Status st = db->Put(wo, key, value);
+  return st.ok();
+}
+
+
+bool LoadFromLeveldb(std::shared_ptr<leveldb::DB> db, JsonStore * store){
+  int id = store->Id();
+  char type = store->StoreType();
+  std::string key = pack_char_int(type, id);
+  std::string out;
+  leveldb::Status st = db->Get(leveldb::ReadOptions{}, key, &out);
+  if (st.ok()) {
+    auto size = out.size();
+    if (size == 0){
+      return false;
+    }
+    QByteArray outBA(out.data(), static_cast<int>(size));
+    store->FromBytes(outBA);
+    return true;
+  }
+  return false;
+}
+#endif
 
 #ifdef NKR_SOFTWARE_KEYS
 #include <nekobox/ui/security_addon.h>
@@ -171,6 +237,11 @@ bool FileDatabaseManager::Drop(char chr, int id) {
   }
   return ret;
 }
+
+
+  FileDatabaseManager::FileDatabaseManager(){
+
+  };
 
 bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   auto type = store->StoreType();
