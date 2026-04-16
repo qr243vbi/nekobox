@@ -11,8 +11,8 @@
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/includes.h>
 
-
-// #include <leveldb/db.h>
+// Query
+#include <leveldb/db.h>
 
 #ifdef NKR_SOFTWARE_KEYS
 #include <nekobox/ui/security_addon.h>

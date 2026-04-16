@@ -136,17 +136,21 @@ file(GLOB_RECURSE PROJECT_SOURCES_GLOB
 
         ${NYXARIA}/ui/info/*.ui
         ${NYXARIA}/ui/info/*.h
+        ${NYXARIA}/ui/info/*.hpp
 
         ${NYXARIA}/ui/profile/*.h
+        ${NYXARIA}/ui/profile/*.hpp
         ${NYXARIA}/ui/profile/*.ui
         ${GHARQAD}/ui/profile/*.cpp
 
         ${GHARQAD}/ui/setting/*.cpp
         ${NYXARIA}/ui/setting/*.h
+        ${NYXARIA}/ui/setting/*.hpp
         ${NYXARIA}/ui/setting/*.ui
 
         ${GHARQAD}/ui/group/*.cpp
         ${NYXARIA}/ui/group/*.h
+        ${NYXARIA}/ui/group/*.hpp
         ${NYXARIA}/ui/group/*.ui
 )
 
@@ -358,6 +362,9 @@ if (BUILD_GO_PARTS)
         message(STATUS "Go server not found, skipping")
     endif()
 endif()
+
+find_package(leveldb REQUIRED)
+target_link_libraries(nekobox PRIVATE leveldb)
 
 #qt_finalize_executable(nekobox)
 if (UNIX)
