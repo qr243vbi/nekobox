@@ -17,6 +17,8 @@ namespace Configs {
   lmdb::env initialize_lmdb();
   void clear_lmdb(lmdb::env& env, char c, int32_t x);
   void clear_lmdb(lmdb::env& env, JsonStore * store);
+  void write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view);
+  void write_lmdb(lmdb::env& env, JsonStore * store);
   std::tuple<char, int32_t> unpack_char_int(const std::string_view& key);
 }
 #endif

@@ -1,5 +1,6 @@
 #include "nekobox/dataStore/ConfigItem.hpp"
 #include "nekobox/dataStore/Utils.hpp"
+#include <string_view>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -291,16 +292,25 @@ void Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
 }
 
 void Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
+  Configs::write_lmdb(env, c, x, "");
+}
+
+void Configs::write_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+  auto bytes = store->ToBytes();
+  write_lmdb(env, store->StoreType(), store->Id(), bytes.data());
+}
+
+void Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view){
   auto key = pack_char_int(c, x);
   lmdb::dbi dbi;
   // Get the dbi handle, and insert some key/value pairs in a write transaction:
   auto wtxn = lmdb::txn::begin(env);
   dbi = lmdb::dbi::open(wtxn, nullptr);
-  dbi.put(wtxn, key, "");
+  dbi.put(wtxn, key, view);
   wtxn.commit();
 }
 
-#define DATABASE_NAME "iblis.db"
+#define DATABASE_NAME "db"
 
 lmdb::env Configs::initialize_lmdb(){
   QDir dir(".");

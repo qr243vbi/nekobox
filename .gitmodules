@@ -4,3 +4,6 @@
 [submodule "3rdparty/QHotkey"]
 	path = 3rdparty/QHotkey
 	url = https://github.com/qr243vbi/QHotkey
+[submodule "3rdparty/lmdbxx"]
+	path = 3rdparty/lmdbxx
+	url = https://github.com/qr243vbi/lmdbxx
