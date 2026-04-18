@@ -17,6 +17,7 @@
 #include <memory>
 #include <iostream>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
+#include <nekobox/dataStore/DatabaseLMDB.hpp>
 #include <nekobox/sys/Settings.h>
 #include <qfontdatabase.h>
 #include <qnamespace.h>
@@ -74,6 +75,11 @@ QTranslator* trans = nullptr;
 
 namespace Stats {
     std::unique_ptr<DatabaseLogger> databaseLogger = std::make_unique<DatabaseLogger>();
+}
+
+namespace Configs {
+    std::shared_ptr<DatabaseManager> databaseManager;
+      class ResourceManager  * resourceManager;
 }
 
 
@@ -268,13 +274,14 @@ int main(int argc, char** argv) {
         QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("settings"));
         return 1;
     }
-
-
     dir_success &= isFileAppendable("nekobox.cfg");
     
     if (!dir_success){
         goto loop_back_2;
     }
+
+    Configs::databaseManager = std::make_shared<Configs::FileDatabaseManager>();
+    Configs::resourceManager = new class Configs::ResourceManager();
 
     CHECK_STARTUP_ACCESS_M
     Stats::databaseLogger->Load();

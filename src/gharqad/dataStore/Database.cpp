@@ -1,8 +1,11 @@
+#include "nekobox/dataStore/ConfigItem.hpp"
+#include "nekobox/dataStore/Utils.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
 #include <nekobox/dataStore/Database.hpp>
+#include <nekobox/dataStore/DatabaseLMDB.hpp>
 
 #include <QDir>
 #include <QMutex>
@@ -10,75 +13,6 @@
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/includes.h>
-
-// Query
-#ifndef SKIP_LEVELDB
-std::shared_ptr<leveldb::DB> leveldb_initialize(bool * ok) {
-  std::string db_path = "iblis.db"; // directory path
-  leveldb::Options options;
-  options.create_if_missing = true; // key setting
-
-  leveldb::DB* raw_db = nullptr;
-  leveldb::Status status = leveldb::DB::Open(options, db_path, &raw_db);
-
-  if (!status.ok()) {
-    if (ok != nullptr){
-      *ok = false;
-    }
-    return nullptr;
-  }
-
-  std::shared_ptr<leveldb::DB> db(raw_db);
-  if (ok != nullptr){
-    *ok = false;
-  }
-  return db;
-}
-
-std::string pack_char_int(char c, int32_t x) {
-  std::string s(5, '\0');
-  s[0] = c;
-  s[1] = static_cast<char>( x        & 0xFF);
-  s[2] = static_cast<char>((x >> 8)  & 0xFF);
-  s[3] = static_cast<char>((x >> 16) & 0xFF);
-  s[4] = static_cast<char>((x >> 24) & 0xFF);
-  return s;
-}
-
-bool SaveToLeveldb(std::shared_ptr<leveldb::DB> db, JsonStore * store, bool empty){
-  int id = store->Id();
-  char type = store->StoreType();
-  std::string key = pack_char_int(type, id);
-  std::string value = "";
-  if (!empty){
-    auto b = store->ToBytes();
-    std::string value = std::string(b.constData(), static_cast<size_t>(b.size()));
-  }
-  leveldb::WriteOptions wo;
-  wo.sync = true;                 // strongest durability guarantee
-  leveldb::Status st = db->Put(wo, key, value);
-  return st.ok();
-}
-
-
-bool LoadFromLeveldb(std::shared_ptr<leveldb::DB> db, JsonStore * store){
-  int id = store->Id();
-  char type = store->StoreType();
-  std::string key = pack_char_int(type, id);
-  std::string out;
-  leveldb::Status st = db->Get(leveldb::ReadOptions{}, key, &out);
-  if (st.ok()) {
-    auto size = out.size();
-    if (size == 0){
-      return false;
-    }
-    QByteArray outBA(out.data(), static_cast<int>(size));
-    store->FromBytes(outBA);
-    return true;
-  }
-  return false;
-}
-#endif
 
 #ifdef NKR_SOFTWARE_KEYS
 #include <nekobox/ui/security_addon.h>
@@ -223,11 +157,15 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Proxies, profiles)
     LOG_CREATE(Groups, groups)
   }
+  #ifndef SKIP_LMDB
+  #endif
   return SaveToFile(store);
 }
 bool FileDatabaseManager::Load(JsonStore *store) { return LoadFromFile(store); }
 bool FileDatabaseManager::Drop(char chr, int id) {
   bool ret = DropFromDirectory(chr, id);
+  #ifndef SKIP_LMDB
+  #endif
   if (ret) {
     switch (chr) {
       LOG_DELETE(Routes, routes);
@@ -239,9 +177,21 @@ bool FileDatabaseManager::Drop(char chr, int id) {
 }
 
 
-  FileDatabaseManager::FileDatabaseManager(){
+FileDatabaseManager::FileDatabaseManager()
+    #ifndef SKIP_LMDB
+    : database(initialize_lmdb())
+    #endif
+{
+};
 
-  };
+
+FileDatabaseManager::~FileDatabaseManager(){
+  #ifndef SKIP_LMDB
+  this->database.close();
+  #endif
+};
+
+
 
 bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   auto type = store->StoreType();
@@ -277,6 +227,10 @@ bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
+  return FileDatabaseManager::QueryFromDirectory(type);
+}
+
+QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
   QList<int> result;
   QString fn = getJsonStorePathName(type);
   if (fn == "") {
@@ -299,6 +253,79 @@ QList<int> FileDatabaseManager::Query(char type) {
   return result;
 }
 } // namespace Configs
+
+// Query
+#ifndef SKIP_LMDB
+std::string Configs::pack_char_int(char c, int32_t x) {
+  uint32_t u = static_cast<uint32_t>(x); // preserve bit pattern
+  std::string s(5, '\0');
+  s[0] = c;
+  s[1] = static_cast<char>( u         & 0xFF);
+  s[2] = static_cast<char>((u >> 8)  & 0xFF);
+  s[3] = static_cast<char>((u >> 16) & 0xFF);
+  s[4] = static_cast<char>((u >> 24) & 0xFF);
+  return s;
+}
+
+std::tuple<char, int32_t> Configs::unpack_char_int(const std::string_view& key) {
+  // Expect key size == 5: [0]=char, [1..4]=int32 bytes (little-endian)
+  // Caller can decide whether to validate; here we do minimal validation.
+  if (key.size() != 5) {
+    throw std::runtime_error("Invalid key size for unpack_char_int_portable");
+  }
+
+  char c = key[0];
+
+  uint32_t u = 0;
+  u |= static_cast<uint32_t>(static_cast<unsigned char>(key[1])) << 0;
+  u |= static_cast<uint32_t>(static_cast<unsigned char>(key[2])) << 8;
+  u |= static_cast<uint32_t>(static_cast<unsigned char>(key[3])) << 16;
+  u |= static_cast<uint32_t>(static_cast<unsigned char>(key[4])) << 24;
+
+  int32_t x = static_cast<int32_t>(u); // restores original bit-pattern to signed int32
+  return std::tie(c, x);
+}
+
+void Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+  clear_lmdb(env, store->StoreType(), store->Id());
+}
+
+void Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
+  auto key = pack_char_int(c, x);
+  lmdb::dbi dbi;
+  // Get the dbi handle, and insert some key/value pairs in a write transaction:
+  auto wtxn = lmdb::txn::begin(env);
+  dbi = lmdb::dbi::open(wtxn, nullptr);
+  dbi.put(wtxn, key, "");
+  wtxn.commit();
+}
+
+#define DATABASE_NAME "iblis.db"
+
+lmdb::env Configs::initialize_lmdb(){
+  QDir dir(".");
+  bool init_db = false;
+  if (!dir.exists(DATABASE_NAME)){
+    dir.mkdir(DATABASE_NAME);
+    init_db = true;
+  }
+  auto env = lmdb::env::create();
+  env.open(DATABASE_NAME, 0, 0664);
+  if (init_db){
+    auto wtxn = lmdb::txn::begin(env);
+    lmdb::dbi dbi = lmdb::dbi::open(wtxn, nullptr);
+    std::vector<char> types = {Proxies, Beans, Routes, Groups};
+    for (char c : types){
+      auto ids = FileDatabaseManager::QueryFromDirectory(c);
+      for (int x : ids){
+        dbi.put(wtxn, pack_char_int(c, x), "");
+      }
+    }
+    wtxn.commit();
+  }
+  return env;
+}
+#endif
 
 namespace Configs {
 ProfileManager *profileManager = new ProfileManager();

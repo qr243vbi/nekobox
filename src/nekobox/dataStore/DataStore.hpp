@@ -30,7 +30,7 @@ namespace Configs {
         json_type = 1,
         binary_type = 2,
         ini_type = 3,
-        leveldb_type = 4
+        lmdb_type = 4
     };
 
     class StoreTypeEnum;
@@ -41,7 +41,7 @@ namespace Configs {
         ADD_ENUM("json", DatabaseType::json_type);
         ADD_ENUM("binary", DatabaseType::binary_type);
         ADD_ENUM("ini", DatabaseType::ini_type);
-        ADD_ENUM("leveldb", DatabaseType::leveldb_type);
+        ADD_ENUM("lmdb", DatabaseType::lmdb_type);
     STOP_ENUM_TRIGGER(SetConfigType)
 
 

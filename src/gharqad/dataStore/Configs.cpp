@@ -7,6 +7,7 @@
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/dataStore/DataStore.hpp>
+#include <nekobox/dataStore/DatabaseLMDB.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/sys/Settings.h>

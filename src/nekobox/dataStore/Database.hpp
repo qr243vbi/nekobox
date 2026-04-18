@@ -9,7 +9,6 @@
 #include "RouteEntity.h"
 #include "TrafficData.hpp"
 
-
 namespace Stats {
     class DatabaseLoggerItem : public JsonStore {
         public:

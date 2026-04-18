@@ -104,5 +104,5 @@ QString ResourceManager::getLink(QString str) {
 
 };
 
-  class ResourceManager  * resourceManager = new class Configs::ResourceManager();
+  extern class ResourceManager  * resourceManager;
 } // namespace Configs
