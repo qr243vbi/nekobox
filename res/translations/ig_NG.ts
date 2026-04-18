@@ -1003,134 +1003,134 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala netwọk (%1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; ahu &gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Usoro nke arịrịọ http, a ga-atụgharị gaa na mkpụrụedemede ukwu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ụdị nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala Camouflage TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;nwere ike mebie arụmọrụ, nwaa buru ụzọ dekọọ iberibe &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado iberibe TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;usoro oge, dị ka 500ms, 10ms wdg &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọdịdaghachi azụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado Iberibe Ndekọ TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igodo ọha eziokwu.Ọ bụrụ na ọ bụghị ihe efu, tụgharịa TLS ka ọ bụrụ REALITY.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eziokwu mkpụmkpụ id.Nabata naanị otu uru.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eziokwu SID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala Nchekwa TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asambodo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbe enyere ya aka, V2Ray agaghị elele izi ezi nke asambodo TLS nke onye ọbịa dịpụrụ adịpụ nyere (nchekwa ahụ dabara na ederede doro anya)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwe ka enweghị nchebe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH nhazi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngosipụta aha sava, ederede doro anya.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkparịta ụka protocol ngwa oyi akwa, ederede doro anya.Biko kewaa ha na rikomas.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
         <source>both</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ha abụọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Omenala (%1 ọpụpụ)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Omenala (%1 nhazi)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
@@ -1139,7 +1139,7 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edobeghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
@@ -1148,12 +1148,12 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">edobelarị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwenye</translation>
     </message>
 </context>
 <context>
@@ -1161,7 +1161,7 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy ọdịda maka otu Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
