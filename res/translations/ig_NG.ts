@@ -2185,27 +2185,27 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
         <source>1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
         <source>2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
         <source>Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
         <source>Headers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">nkụnye eji isi mee</translation>
     </message>
 </context>
 <context>
@@ -2213,72 +2213,72 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akwụkwọ ndekọ aha steeti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">igodo nyocha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL njikwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha nnabata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nabata ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ephemeral</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụ ụzọ ọpụpụ kwe ka ịnweta lan</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpọsa ọnụ ụzọ ọpụpụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepụ ọnụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt; ndepụta subnets kewapụrụ rịkọm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpọsa ozi ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;jiri dns tailscale ka dns remote&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS zuru ụwa ọnụ</translation>
     </message>
 </context>
 <context>
@@ -2291,22 +2291,22 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ omenala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọzọ Args</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Data DIr</translation>
     </message>
 </context>
 <context>
@@ -2314,7 +2314,7 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
 </context>
 <context>
@@ -2322,27 +2322,27 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha njirimara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nyocha ahụike</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
 </context>
 <context>
@@ -2350,7 +2350,7 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
