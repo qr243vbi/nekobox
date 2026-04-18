@@ -1,5 +1,5 @@
-#include "nekobox/dataStore/ConfigItem.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 #include <string_view>
 #ifdef _WIN32
 #include <winsock2.h>
@@ -278,7 +278,7 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 
 // Query
 #ifndef SKIP_LMDB
-QList<int> query_lmdb(lmdb::env &env, char c)
+QList<int> Configs::query_lmdb(lmdb::env &env, char c)
 {
     QList<int> result;
 
