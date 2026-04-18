@@ -186,155 +186,155 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266" />
         <source>Simple Download</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nbudata dị mfe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Only Country</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Naanị Obodo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279" />
         <source>Latency Test URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ule ule latency</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286" />
         <source>Speedtest mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị ule ọsọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293" />
         <source>Concurrent</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">N'otu oge</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;oge agwụ na milliseconds&lt;br/&gt; na-emetụta ule niile n'otu n'otu &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316" />
         <source>Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkeji oge</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Rịba ama na njikọ muxed na-ewe ogologo oge maka arịrịọ mbụ ha, na ịtọba uru a dị oke ala ga-eme ka ule ahụ kwuo ụgha na nhazi ahụ anaghị arụ ọrụ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360" />
         <source>Style</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371" />
         <source>Font</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Font</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381" />
         <source>Font Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogo mkpụrụedemede</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>Connection statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndekọ njikọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>Hide dashboard at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zoo dashboard na mmalite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417" />
         <source>Show System DNS option</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosi nhọrọ DNS Sistemu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434" />
         <source>Disable tray</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ traị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441" />
         <source>Set text under menu icons</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tọọ ederede n'okpuru akara ngosi menu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448" />
         <source>Hide at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zoo na mmalite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461" />
         <source>Max log lines</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahịrị ndekọ kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494" />
         <source>Theme</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isiokwu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistemu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516" />
         <source>Language</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asụsụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536" />
         <source>Icon</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akara ngosi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543" />
         <source>Emoji Font</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Font Emoji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="550" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndebanye aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569" />
         <source>Clear servers before update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpochapụ sava tupu emelite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="576" />
         <source>URL Test after update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale URL ka emelitechara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="827" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="598" />
         <source>Interval (minute, invalid if less than 30)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge (nkeji, adịghị mma ma ọ bụrụ na ọ na-erughị 30)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu oyiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624" />
