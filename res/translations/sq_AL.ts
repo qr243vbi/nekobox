@@ -3892,7 +3892,7 @@ Shënim publikimi:
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zgjidhni</translation>
     </message>
 </context>
 <context>
@@ -3900,92 +3900,92 @@ Shënim publikimi:
     <message>
         <location filename="../../src/gharqad/main.cpp" line="93" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anulo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="94" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aplikoni</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="95" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">po</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="96" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nr</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="97" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="98" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Parazgjedhjet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="99" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rivendosja e parazgjedhjeve</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="100" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hidhni</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="102" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zhbër</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="103" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ribëje</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="104" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prerë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="105" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="106" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paste</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="107" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshije</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="108" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zgjidhni Të gjitha</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="109" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndalo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="110" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E qartë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="111" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo vendndodhjen e lidhjes</translation>
     </message>
 </context>
 <context>
@@ -3993,165 +3993,165 @@ Shënim publikimi:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profili i rrugës</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjeneral</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dalja e parazgjedhur</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direkt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Blloko</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso URL-në</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kapërce përditësimin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso manualisht</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">bazë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E avancuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importo JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregullat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E re</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lëviz lart</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lëvizni Poshtë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshije</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atributet e rregullave</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">atribut</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri_Placeholder</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shënime</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregulla të pavlefshme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Disa rregulla nuk mund të shtoheshin:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Array JSON i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hyrja e dhënë nuk mund të analizohet në një grup të vlefshëm rregullash të rrugës:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Operacion i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuk mund të krijohet Profili i rrugës me emër bosh</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profili i rrugës bosh</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuk ka rregulla të vlefshme në profil</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Disa rregulla nuk mund të shtoheshin, rregullojini përpara se t'i ruani:</translation>
     </message>
 </context>
 <context>
@@ -4159,42 +4159,42 @@ Shënim publikimi:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e sigurisë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Veprimet e kyçjes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e kyçjes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bllokoni fillimin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshi përdoruesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto rolet e përdoruesve</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndrysho fjalëkalimin e UI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vendosni kredencialet e përfaqësuesit</translation>
     </message>
 </context>
 <context>
@@ -4202,24 +4202,24 @@ Shënim publikimi:
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="265" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Array JSON i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hyrja e dhënë nuk mund të analizohet në një grup të vlefshëm rregullash të rrugës:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="391" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Po merr informacion</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1415" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shkarkoni profilet</translation>
     </message>
 </context>
 <context>
@@ -4227,7 +4227,7 @@ Shënim publikimi:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 </TS>
