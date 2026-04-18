@@ -3728,7 +3728,13 @@ void MainWindow::show_log_impl(const QString &log) {
   }
 
   if (!trimmed.isEmpty()) {
-    FastAppendTextDocument(trimmed, qvLogDocument);
+     runOnUiThread([trimmed, this] {
+                FastAppendTextDocument(trimmed, qvLogDocument);
+                if (qvLogAutoScoll) {
+                    auto bar = ui->masterLogBrowser->verticalScrollBar();
+                    bar->setValue(bar->maximum());
+                }
+            });
   }
 
   int blockCount = qvLogDocument->blockCount();

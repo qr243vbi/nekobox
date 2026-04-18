@@ -2792,8 +2792,8 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2681"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2683"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2686"/>
         <source>System Proxy</source>
         <translation type="unfinished">System-Proxy</translation>
     </message>
@@ -2984,15 +2984,15 @@ Bist du sicher?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3772"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3780"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
         <source>Start</source>
         <translation type="unfinished">Start</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3771"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3782"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3779"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
         <source>Stop</source>
         <translation type="unfinished">Stoppen</translation>
     </message>
@@ -3039,7 +3039,7 @@ Bist du sicher?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1579"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1581"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 Konfiguration exportieren</translation>
     </message>
@@ -3178,7 +3178,7 @@ Bist du sicher?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3071"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3073"/>
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
@@ -3302,7 +3302,7 @@ Bist du sicher?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3801"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3809"/>
         <source>Add new Group</source>
         <translation type="unfinished">Neue Gruppe hinzufügen</translation>
     </message>
@@ -3318,218 +3318,223 @@ Bist du sicher?</translation>
         <translation type="unfinished">Nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="716"/>
+        <source>Auto-scroll log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Routing-Profile bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1256"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1258"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Routing-Profile aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1272"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1340"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1270"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1274"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1298"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">Antwort aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Es werden keine Routingprofile aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1273"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1275"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 Routing-Profile aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1283"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1285"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Regelsatzzuordnung aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1294"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Regelsätze konnten nicht aktualisiert werden</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1297"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Regelsätze erfolgreich aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1308"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Regelsatz-Cache aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1341"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1343"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Der Regelsatz-Cache wird aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1357"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Regelsatz-Cache löschen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1391"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1393"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Aktivieren Sie AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1797"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1799"/>
         <source>Error</source>
         <translation type="unfinished">Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1884"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun-Einstellungen geändert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1885"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Starten Sie Tun neu, damit es wirksam wird.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1946"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3136"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3512"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3567"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3850"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1948"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3138"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3514"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3569"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3618"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3858"/>
         <source>Confirmation</source>
         <translation type="unfinished">Bestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1947"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1894"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1949"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Einstellungen geändert, Proxy neu starten?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1921"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1923"/>
         <source>Settings changed</source>
         <translation type="unfinished">Einstellungen geändert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1922"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1924"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Starten Sie das Programm neu, damit es wirksam wird.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1964"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 Profil(e) importiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2243"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Der Benutzer hat sich dafür entschieden, dass keine Berechtigungen erforderlich sind. Einige Funktionen funktionieren möglicherweise nicht</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2308"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2310"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Bitte erteilen Sie dem Kern Root-Rechte</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2657"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2659"/>
         <source>Not Running</source>
         <translation type="unfinished">Läuft nicht</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3072"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3074"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klonen Sie %1 Element(e)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3116"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3118"/>
         <source> Confirmation </source>
         <translation type="unfinished">Bestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3117"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3119"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 Artikel entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3139"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 Artikel entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3174"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3187"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3176"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3189"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 Artikel kopiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3422"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3424"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR-Code nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3444"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3446"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Der Bildschirm kann nicht erfasst werden</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3513"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 Nicht verfügbare Artikel entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 Ungültige Elemente entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3617"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3619"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Domänenserveradressen durch ihre aufgelösten IPs ersetzen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3777"/>
         <source>Clear</source>
         <translation type="unfinished">Klar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3848"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Ausgewählte Gruppe löschen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3841"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3849"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Ausgewählte Gruppe bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3859"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4593"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4601"/>
         <source>Cannot start</source>
         <translation type="unfinished">Kann nicht gestartet werden</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4594"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4602"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Die letzte Download-Anfrage ist noch nicht abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Update-Assets konnten nicht heruntergeladen werden</translation>
     </message>
@@ -3815,7 +3820,7 @@ Gelöschte %3 Profile:
         <translation type="unfinished">Wählen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2625"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2627"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proxy: %1
@@ -3907,12 +3912,12 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Gelöscht %1 Nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1676"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1678"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Regelsätze prüfen: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1698"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1700"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Fehler beim Anfordern der Regelsatzliste: %1</translation>
     </message>
@@ -3921,64 +3926,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP-Adresse: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2664"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Eingehende IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3049"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Profile in die Gruppe verschieben</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3205"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3207"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfiguration kopiert</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3217"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219"/>
         <source>Copy core config</source>
         <translation type="unfinished">Kernkonfiguration kopieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3221"/>
         <source>Copy test config</source>
         <translation type="unfinished">Testkonfiguration kopieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3222"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4503"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4575"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4583"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4592"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
         <source>Update</source>
         <translation type="unfinished">Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4494"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Keine offizielle Support-Plattform</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4504"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4512"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Fehler beim Anfordern eines Updates: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
         <source>No update</source>
         <translation type="unfinished">Kein Update</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4576"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3987,17 +3992,17 @@ Versionshinweis:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4579"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4587"/>
         <source>Close</source>
         <translation type="unfinished">Schließen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4589"/>
         <source>Open in browser</source>
         <translation type="unfinished">Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Das Update ist bereit. Zur Installation neu starten?</translation>
     </message>
@@ -4371,7 +4376,7 @@ Direkt: ⚡%2 📦%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1415"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Profile herunterladen</translation>
     </message>
