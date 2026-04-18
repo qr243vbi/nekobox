@@ -1328,42 +1328,42 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A na-ahụkarị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-ekpochapụ ngwugwu mbụ njikọ iji mata protocol na SNI.Nsonaazụ sniff maka ebe ị na-aga na-edegharịkwa nbibi nke njikọ ahụ na SNI imi.Maka data ndị ọzọ na protocol sniffed rụtụ aka na akwụkwọ sing-box.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị ncha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sniff nsonaazụ maka ntụgharị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atụmatụ ngalaba inbound</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
@@ -1398,115 +1398,115 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngosipụta edobere Iwu dịpụrụ adịpụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kpebie ngalaba na IP tupu ị jikọọ, na-emetụtakwa adreesị nkesa &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Atụmatụ ngalaba ọpụpụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">RuleSet budata url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
         <source>Hijack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njikwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe nkesa DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gere Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
         <source>IPv4 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nzaghachi IPv4</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nzaghachi IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ekwesịrị iji usoro na-esote:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iwu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ma ị ga-ege ntị na 0.0.0.0 ka ngwaọrụ ndị ọzọ dị na LAN nwee ike iji sava a&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwe ka Lan jikọọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala ntụgharị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreesị gee ntị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala DNS dị mfe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;atụ:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/ụzọ&lt;/p&gt;&lt;p&gt;quic://domain&lt;/p&gt;&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS dị anya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe nkesa DNS mbụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro ajụjụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
