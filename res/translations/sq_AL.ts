@@ -2243,42 +2243,42 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Efemerale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nyja e daljes lejon hyrjen në LAN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reklamoni nyjen e daljes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nyja e daljes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;lista e nënrrjetave të ndara me presje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reklamoni rrugët</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;përdor dns tailscale si dns në distancë&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS globale</translation>
     </message>
 </context>
 <context>
@@ -2291,22 +2291,22 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shtegu i personalizuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Args shtesë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfigurimi i Tor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të dhënat DIr</translation>
     </message>
 </context>
 <context>
@@ -2314,7 +2314,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fjalëkalimi</translation>
     </message>
 </context>
 <context>
@@ -2322,27 +2322,27 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Forma</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontroll shëndetësor</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Joaktiv</translation>
     </message>
 </context>
 <context>
@@ -2350,22 +2350,22 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Siguria</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alter Id</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Krijo UUID</translation>
     </message>
 </context>
 <context>
@@ -2378,122 +2378,122 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çelësi Privat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çelësi publik</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
         <source>Pre Shared Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çelësi i përbashkët paraprak</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rezervuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;intervali_keepalive_persistent në sekonda&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbajtja e vazhdueshme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;lista e nënrrjetave të ndara me presje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adresa lokale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Punëtorët</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përdorni ndërfaqen e sistemit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numërimi i paketave të padëshiruara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madhësia minimale e paketës së hedhurinave</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madhësia maksimale e paketës së hedhurinave</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Pako Junk Size</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madhësia e mbeturinave të paketës së përgjigjes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init Pako Magjike Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koka magjike e paketës së përgjigjes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koka Magjike e Paketës Nënngarkesë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koka e Transportit Koka Magjike</translation>
     </message>
 </context>
 <context>
@@ -2501,47 +2501,47 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso abonimin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hiq</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">bazë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abonimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arkivi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditësimi i fundit: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të hiqet %1?</translation>
     </message>
 </context>
 <context>
@@ -2554,110 +2554,110 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Statistikat e Përdorimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koha e fundit e nisjes:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koha e përdorimit:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fillimi i numërimit:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koha e parë e nisjes:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
         <source>Security Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Statistikat e Sigurisë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i vërtetimeve të dështuara:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
         <source>Users count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i përdoruesve:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
         <source>Database Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Statistikat e bazës së të dhënave</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet e përfaqësuesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
         <source>Deleted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshirë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Krijuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ekziston</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupet dhe Abonimet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet e rrugës</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
         <source>Traffic Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Statistikat e trafikut</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
         <source>Total Proxy Traffic:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trafiku total i përfaqësuesve:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shkarko:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngarko:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trafiku total i drejtpërdrejtë:</translation>
     </message>
 </context>
 <context>
@@ -2666,46 +2666,46 @@ je i sigurt?</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="679" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Drejtimi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
         <source>Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Informacion</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
         <source>Tun Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Modaliteti i aktivizimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="225" />
         <source>System DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistemi DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
@@ -2713,95 +2713,95 @@ je i sigurt?</translation>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2681" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684" />
         <source>System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy i sistemit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="315" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="703" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="755" />
         <source>Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="390" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lloji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="395" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adresa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="400" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="405" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rezultati i testit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="410" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trafiku</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
         <source>Logs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regjistrat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lidhjet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="517" />
         <source>Destination (Domain)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Destinacioni (domeni)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="520" />
         <source>Click To Disable Sorting</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klikoni Për të çaktivizuar klasifikimin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="525" />
         <source>Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Procesi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="528" />
         <source>Click To Sort By Process</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klikoni për të renditur sipas procesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
         <source>Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Protokolli</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="536" />
         <source>Click To Sort By Protocol</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klikoni për të renditur sipas protokollit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="541" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jashtë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="544" />
         <source>Click To Sort By Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kliko për të renditur sipas daljes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="552" />
