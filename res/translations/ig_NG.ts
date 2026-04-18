@@ -2516,32 +2516,32 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndebanye aha</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebe nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmelite ikpeazụ: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1?</translation>
     </message>
 </context>
 <context>
@@ -2554,110 +2554,110 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ ojiji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge mmalite ikpeazụ:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge ojiji:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụ ọgụgụ mmalite:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge mmalite izizi:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
         <source>Security Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndekọ nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ nyocha dara:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
         <source>Users count:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndị ọrụ na-agụ:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
         <source>Database Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Database Statistics</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
         <source>Deleted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ehichapụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emepụtara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu na ndebanye aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
         <source>Traffic Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụ ọgụgụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
         <source>Total Proxy Traffic:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbakọta okporo ụzọ proxy:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bulite:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbakọta okporo ụzọ awara awara:</translation>
     </message>
 </context>
 <context>
@@ -2666,26 +2666,26 @@ O doro gị anya?</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>NekoBox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="679" />
         <source>Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntugharị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
