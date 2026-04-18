@@ -143,6 +143,8 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [shellescape](https://al.essio.dev/pkg/shellescape)
 - [go-winio](https://github.com/Microsoft/go-winio)
 - [taskmaster](https://github.com/giert/taskmaster)
+- [lmdbxx](https://github.com/qr243vbi/lmdbxx)
+- [lmdb](https://www.symas.com/mdb)
 
 ## FAQ
 **What is AppImage?** <br/>
