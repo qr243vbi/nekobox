@@ -11,11 +11,10 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
-
-- [![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?style=for-the-badge&label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
 ### OBS repository 
-- [![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
+[![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
 
 - [NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
 
@@ -23,20 +22,20 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
 
 ### WinGet Package
-- [![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=for-the-badge)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
+[![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=for-the-badge)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
 
 ### Aur package
 - [nekobox](https://aur.archlinux.org/packages/nekobox)
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Chocolatey Package
-- [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge&logo=chocolatey&label=downloads-total
+[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge&logo=chocolatey&label=downloads-total
 )](https://community.chocolatey.org/packages/nekobox)
 
 
 ## Changelog Channel
-- [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=for-the-badge&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
-- [![Telegram Group](https://img.shields.io/badge/tg-blue?style=for-the-badge&label=Telegram%20Group)](https://t.me/NyameBox)
+[![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=for-the-badge&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
+[![Telegram Group](https://img.shields.io/badge/tg-blue?style=for-the-badge&label=Telegram%20Group)](https://t.me/NyameBox)
   
 ## TODO
 - Command line tools
