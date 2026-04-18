@@ -524,137 +524,137 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
         <translation type="obsolete">கட்டமைப்புகளுக்கு பைனரிக்குப் பதிலாக Json ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">சுயவிவரத்தை நீக்கும்படி கேட்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">பின்னணியில் ப்ராக்ஸிகளைத் தானாகச் சோதித்து, வேலை செய்யும் ப்ராக்ஸிகளின் தொகுப்பைப் பராமரிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனையை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">சோதனை இடைவெளி (வினாடிகள்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">சோதனை சுழற்சியை எவ்வளவு அடிக்கடி இயக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ஒரு சுழற்சிக்கான பதிலாள்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ஒவ்வொரு சுழற்சியிலும் சோதிக்க வேண்டிய ப்ராக்ஸிகளின் எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">வேலை செய்யும் குளத்தின் அளவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">பராமரிக்க, சரிபார்க்கப்பட்ட பணிப் பிரதிநிதிகளின் அதிகபட்ச எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">தாமத வரம்பு (மிவி)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ப்ராக்ஸி செயல்படுவதாகக் கருதுவதற்கான அதிகபட்ச தாமதம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">தோல்வி மீண்டும் முயற்சி எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ப்ராக்ஸி தோல்வியடைந்ததாகக் கருதுவதற்கு முன் மீண்டும் முயற்சி செய்த எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Test Target URL</source>
         <translation type="unfinished">சோதனை இலக்கு URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ப்ராக்ஸிகளை சோதிக்க URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN பயன்முறை ப்ராக்ஸி தோல்வியடையும் போது தானாகவே மற்றொரு வேலை செய்யும் ப்ராக்ஸிக்கு மாறவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN தோல்வியை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Startup</source>
         <translation type="unfinished">தொடக்கம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Geometry</source>
         <translation type="unfinished">வடிவியல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">வடிவவியலைத் தானாகச் சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Autosave position</source>
         <translation type="unfinished">தானாக சேமிக்கும் நிலை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452"/>
         <source>Apply now</source>
         <translation type="unfinished">இப்போதே விண்ணப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
         <source>Width</source>
         <translation type="unfinished">அகலம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613"/>
         <source>X</source>
         <translation type="unfinished">எக்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558"/>
         <source>Y</source>
         <translation type="unfinished">ஒய்</translation>
     </message>
@@ -664,39 +664,47 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
         <translation type="unfinished">கட்டமைப்பு வடிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120"/>
+        <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
         <source>Height</source>
         <translation type="unfinished">உயரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">கோர் இயங்கக்கூடிய பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941"/>
         <source>Use default</source>
         <translation type="unfinished">இயல்புநிலையைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759"/>
         <source>Remote Control</source>
         <translation type="unfinished">ரிமோட் கண்ட்ரோல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974"/>
         <source>Select</source>
         <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912"/>
         <source>Resources Directory</source>
         <translation type="unfinished">வளங்கள் அடைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948"/>
         <source>Resource Manager</source>
         <translation type="unfinished">வள மேலாளர்</translation>
     </message>
@@ -704,6 +712,42 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">திட்டத்தின் பெயர்</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
+
+An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
+
+Only enable this if you fully trust every network between you and your subscription server.
+
+Are you sure you want to disable TLS verification?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <source>Privacy Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
+
+  • Hardware ID (machine serial / machine-id)
+  • Operating system and version
+  • Device model
+
+The subscription server will be able to permanently identify and track your physical device across IPs and sessions.
+
+This is a significant privacy risk if you are in a country with active internet censorship.
+
+Are you sure you want to enable HWID sending?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1587,12 +1631,28 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">DNS விதிகள் செல்லாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
+        <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
+
+Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
+
+Only enable this if you intend to share DNS with trusted LAN devices.
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Invalid operation</source>
         <translation type="unfinished">தவறான செயல்பாடு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள் காலியாக இருக்கக்கூடாது, மற்றொரு சுயவிவரத்தைச் சேர்க்க முயற்சிக்கவும் அல்லது இதைத் திருத்தவும்</translation>
     </message>
@@ -3600,7 +3660,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="381"/>
+        <location filename="../../src/gharqad/main.cpp" line="388"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3664,7 +3724,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">% 1 இன் மாற்றம்:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
         <source>Default</source>
         <translation type="unfinished">இயல்புநிலை</translation>
     </message>
@@ -3674,17 +3734,17 @@ Deleted %3 Profiles:
         <translation type="unfinished">கோப்பை திறக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131"/>
+        <location filename="../../src/gharqad/main.cpp" line="137"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">செயின் ப்ராக்ஸி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="147"/>
+        <location filename="../../src/gharqad/main.cpp" line="153"/>
         <source>Custom</source>
         <translation type="unfinished">தனிப்பயன்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="154"/>
         <source>Extra Core</source>
         <translation type="unfinished">கூடுதல் கோர்</translation>
     </message>
@@ -3926,92 +3986,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Cancel</source>
         <translation type="unfinished">ரத்து செய்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Apply</source>
         <translation type="unfinished">விண்ணப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>Yes</source>
         <translation type="unfinished">ஆம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>No</source>
         <translation type="unfinished">இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>OK</source>
         <translation type="unfinished">சரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Defaults</source>
         <translation type="unfinished">இயல்புநிலைகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">இயல்புநிலைகளை மீட்டமை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Discard</source>
         <translation type="unfinished">நிராகரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Undo</source>
         <translation type="unfinished">செயல்தவிர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Redo</source>
         <translation type="unfinished">மீண்டும் செய்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Cut</source>
         <translation type="unfinished">வெட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy</source>
         <translation type="unfinished">நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Paste</source>
         <translation type="unfinished">ஒட்டவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Delete</source>
         <translation type="unfinished">நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Select All</source>
         <translation type="unfinished">அனைத்தையும் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Stop</source>
         <translation type="unfinished">நிறுத்து</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="110"/>
         <source>Clear</source>
         <translation type="unfinished">தெளிவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="111"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">இணைப்பு இருப்பிடத்தை நகலெடுக்கவும்</translation>
     </message>

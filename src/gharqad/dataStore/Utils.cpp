@@ -126,6 +126,18 @@ bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dir
     return !relative.startsWith("..");
 }
 
+QString sanitizeLog(const QStringView &raw) {
+  QString s = raw.toString();
+  static const QRegularExpression ansiRe(QStringLiteral("\x1B\\[[0-9;]*[A-Za-z]"));
+  s.remove(ansiRe);
+  static const QRegularExpression escRe(QStringLiteral("\x1B[^\\[]?"));
+  s.remove(escRe);
+  static const QRegularExpression ctrlRe(
+    QStringLiteral("[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]"));
+  s.remove(ctrlRe);
+  return s;
+}
+
 void runOnNewThread(const std::function<void()> &callback) {
   createQThread(callback)->start();
 }

@@ -94,7 +94,7 @@ namespace Configs_sys {
             MW_show_log(log);
         });
         connect(&process, &QProcess::readyReadStandardError, this, [&]() {
-            auto log = process.readAllStandardError().trimmed();
+            auto log = process.readAllStandardError();
             MW_show_log(log);
         });
         connect(&process, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {

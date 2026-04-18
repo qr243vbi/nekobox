@@ -240,7 +240,28 @@ void DialogManageRoutes::accept() {
     }
     Configs::dataStore->dns_server_rules = dnsRules;
 
-    Configs::dataStore->dns_server_listen_lan = ui->dnshijack_allow_lan->isChecked();
+    {
+        bool newLan = ui->dnshijack_allow_lan->isChecked();
+        bool wasLan = Configs::dataStore->dns_server_listen_lan;
+        if (newLan && !wasLan) {
+            auto btn = QMessageBox::warning(
+                this,
+                tr("Security Warning"),
+                tr("Enabling LAN DNS server will listen on 0.0.0.0:%1.\n\n"
+                   "Any device on your local network will be able to query this DNS server, "
+                   "which may reveal your routing rules, blocked domains, and network topology.\n\n"
+                   "Only enable this if you intend to share DNS with trusted LAN devices.\n\n"
+                   "Are you sure?").arg(Configs::dataStore->dns_server_listen_port),
+                QMessageBox::Yes | QMessageBox::No,
+                QMessageBox::No
+            );
+            if (btn != QMessageBox::Yes) {
+                ui->dnshijack_allow_lan->setChecked(false);
+                newLan = false;
+            }
+        }
+        Configs::dataStore->dns_server_listen_lan = newLan;
+    }
     Configs::dataStore->enable_redirect = ui->redirect_enable->isChecked();
     Configs::dataStore->redirect_listen_address = ui->redirect_listenaddr->text();
     Configs::dataStore->redirect_listen_port = ui->redirect_listenport->text().toInt();

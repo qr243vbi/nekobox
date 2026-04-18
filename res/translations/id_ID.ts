@@ -524,137 +524,137 @@ menit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Gunakan Json sebagai ganti biner untuk konfigurasi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Minta untuk menghapus profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Pengujian Otomatis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Secara otomatis menguji proxy di latar belakang dan memelihara kumpulan proxy yang berfungsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Aktifkan Pengujian Otomatis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Interval Tes (detik)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Seberapa sering menjalankan siklus pengujian</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Proksi Per Siklus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Jumlah proxy yang akan diuji di setiap siklus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Ukuran Kolam Kerja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Jumlah maksimum proxy kerja terverifikasi yang harus dipertahankan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Ambang Batas Latensi (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Latensi maksimum untuk menganggap proxy berfungsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Jumlah Percobaan Ulang yang Gagal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Jumlah percobaan ulang sebelum menganggap proxy gagal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Uji URL Target</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL untuk menguji proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Secara otomatis beralih ke proksi lain yang berfungsi ketika proksi mode TUN gagal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Aktifkan Failover TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Startup</source>
         <translation type="unfinished">Rintisan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Geometri penyimpanan otomatis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Autosave position</source>
         <translation type="unfinished">Posisi simpan otomatis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452"/>
         <source>Apply now</source>
         <translation type="unfinished">Lamar sekarang</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
         <source>Width</source>
         <translation type="unfinished">Lebar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
@@ -664,39 +664,47 @@ menit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="unfinished">Format konfigurasi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120"/>
+        <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
         <source>Height</source>
         <translation type="unfinished">Tinggi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Jalur Inti yang Dapat Dieksekusi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941"/>
         <source>Use default</source>
         <translation type="unfinished">Gunakan bawaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759"/>
         <source>Remote Control</source>
         <translation type="unfinished">Kendali Jarak Jauh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974"/>
         <source>Select</source>
         <translation type="unfinished">Memilih</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Direktori Sumber Daya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Manajer Sumber Daya</translation>
     </message>
@@ -704,6 +712,42 @@ menit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">Nama program</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
+
+An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
+
+Only enable this if you fully trust every network between you and your subscription server.
+
+Are you sure you want to disable TLS verification?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <source>Privacy Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
+
+  • Hardware ID (machine serial / machine-id)
+  • Operating system and version
+  • Device model
+
+The subscription server will be able to permanently identify and track your physical device across IPs and sessions.
+
+This is a significant privacy risk if you are in a country with active internet censorship.
+
+Are you sure you want to enable HWID sending?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1587,12 +1631,28 @@ Untuk informasi lebih lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</transl
         <translation type="unfinished">Aturan DNS tidak valid</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
+        <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
+
+Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
+
+Only enable this if you intend to share DNS with trusted LAN devices.
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Operasi tidak valid</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Profil Perutean tidak boleh kosong, coba tambahkan profil lain atau edit profil ini</translation>
     </message>
@@ -3624,7 +3684,7 @@ Untuk informasi lebih lanjut, lihat dokumen &quot;Konfigurasi/DNS&quot;.</transl
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="381"/>
+        <location filename="../../src/gharqad/main.cpp" line="388"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3688,7 +3748,7 @@ Profil %3 yang Dihapus:
         <translation type="unfinished">Perubahan %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
         <source>Default</source>
         <translation type="unfinished">Bawaan</translation>
     </message>
@@ -3698,17 +3758,17 @@ Profil %3 yang Dihapus:
         <translation type="unfinished">Tidak dapat membuka file.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131"/>
+        <location filename="../../src/gharqad/main.cpp" line="137"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">Proksi Rantai</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="147"/>
+        <location filename="../../src/gharqad/main.cpp" line="153"/>
         <source>Custom</source>
         <translation type="unfinished">Kebiasaan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="154"/>
         <source>Extra Core</source>
         <translation type="unfinished">Inti Ekstra</translation>
     </message>
@@ -3950,92 +4010,92 @@ Langsung: ⚡%2 📦%4</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Cancel</source>
         <translation type="unfinished">Membatalkan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Apply</source>
         <translation type="unfinished">Menerapkan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>No</source>
         <translation type="unfinished">TIDAK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>OK</source>
         <translation type="unfinished">OKE</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Defaults</source>
         <translation type="unfinished">Default</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">Kembalikan Default</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Discard</source>
         <translation type="unfinished">Membuang</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Undo</source>
         <translation type="unfinished">Membuka</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Redo</source>
         <translation type="unfinished">Mengulangi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Cut</source>
         <translation type="unfinished">Memotong</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy</source>
         <translation type="unfinished">Menyalin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Paste</source>
         <translation type="unfinished">Pasta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Delete</source>
         <translation type="unfinished">Menghapus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Select All</source>
         <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Stop</source>
         <translation type="unfinished">Berhenti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="110"/>
         <source>Clear</source>
         <translation type="unfinished">Jernih</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="111"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">Salin Lokasi Tautan</translation>
     </message>

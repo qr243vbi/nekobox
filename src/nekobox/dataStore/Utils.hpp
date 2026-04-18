@@ -221,8 +221,10 @@ inline QString root_directory;// = QString(boost::dll::program_location().parent
 inline QString software_path;//  = QString(boost::dll::program_location().string().c_str());
 
 // MainWindow functions
-inline std::function<void(QString)> MW_show_log;
-inline std::function<void(QString, QString)> MW_dialog_message;
+inline std::function<void(const QString&)> MW_show_log;
+inline std::function<void(const QString&, const QString&)> MW_dialog_message;
+
+QString sanitizeLog(const QStringView &raw);
 
 // Dispatchers
 

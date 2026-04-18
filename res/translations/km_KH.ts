@@ -524,137 +524,137 @@
         <translation type="obsolete">ប្រើ Json ជំនួសប្រព័ន្ធគោលពីរសម្រាប់ការកំណត់</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">សុំលុបប្រវត្តិរូប</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">ការធ្វើតេស្តស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">សាកល្បងប្រូកស៊ីដោយស្វ័យប្រវត្តិនៅក្នុងផ្ទៃខាងក្រោយ និងរក្សាក្រុមប្រូកស៊ីដែលកំពុងដំណើរការ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">បើកការសាកល្បងស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">ចន្លោះពេលសាកល្បង (វិនាទី)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">តើត្រូវដំណើរការវដ្តសាកល្បងញឹកញាប់ប៉ុណ្ណា</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ប្រូកស៊ីក្នុងមួយវដ្ត</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ចំនួនប្រូកស៊ីដែលត្រូវសាកល្បងក្នុងវដ្តនីមួយៗ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ទំហំអាងធ្វើការ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">ចំនួនអតិបរិមានៃប្រូកស៊ីការងារដែលបានផ្ទៀងផ្ទាត់ដើម្បីរក្សា</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Latency Threshold (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ភាពយឺតយ៉ាវអតិបរមាដើម្បីពិចារណាប្រូកស៊ីថាកំពុងដំណើរការ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ចំនួនការព្យាយាមម្តងទៀតបរាជ័យ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ចំនួននៃការព្យាយាមម្តងទៀត មុនពេលពិចារណាប្រូកស៊ីថាបរាជ័យ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Test Target URL</source>
         <translation type="unfinished">សាកល្បង URL គោលដៅ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL ដើម្បីសាកល្បងប្រូកស៊ីប្រឆាំងនឹង</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">ប្តូរដោយស្វ័យប្រវត្តិទៅប្រូកស៊ីដែលកំពុងដំណើរការផ្សេងទៀត នៅពេលដែលប្រូកស៊ីរបៀប TUN បរាជ័យ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">បើកដំណើរការ TUN Failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Startup</source>
         <translation type="unfinished">ការចាប់ផ្តើម</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Geometry</source>
         <translation type="unfinished">ធរណីមាត្រ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">រក្សាទុកធរណីមាត្រដោយស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Autosave position</source>
         <translation type="unfinished">រក្សាទុកទីតាំងដោយស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452"/>
         <source>Apply now</source>
         <translation type="unfinished">ដាក់ពាក្យឥឡូវនេះ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
         <source>Width</source>
         <translation type="unfinished">ទទឹង</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558"/>
         <source>Y</source>
         <translation type="unfinished">យ</translation>
     </message>
@@ -664,39 +664,47 @@
         <translation type="unfinished">កំណត់រចនាសម្ព័ន្ធ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120"/>
+        <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
         <source>Height</source>
         <translation type="unfinished">កម្ពស់</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">ផ្លូវប្រតិបត្តិស្នូល</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941"/>
         <source>Use default</source>
         <translation type="unfinished">ប្រើលំនាំដើម</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759"/>
         <source>Remote Control</source>
         <translation type="unfinished">ការបញ្ជាពីចម្ងាយ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974"/>
         <source>Select</source>
         <translation type="unfinished">ជ្រើសរើស</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912"/>
         <source>Resources Directory</source>
         <translation type="unfinished">បញ្ជីរាយនាមធនធាន</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948"/>
         <source>Resource Manager</source>
         <translation type="unfinished">អ្នកគ្រប់គ្រងធនធាន</translation>
     </message>
@@ -704,6 +712,42 @@
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">ឈ្មោះកម្មវិធី</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
+
+An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
+
+Only enable this if you fully trust every network between you and your subscription server.
+
+Are you sure you want to disable TLS verification?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <source>Privacy Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
+
+  • Hardware ID (machine serial / machine-id)
+  • Operating system and version
+  • Device model
+
+The subscription server will be able to permanently identify and track your physical device across IPs and sessions.
+
+This is a significant privacy risk if you are in a country with active internet censorship.
+
+Are you sure you want to enable HWID sending?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1587,12 +1631,28 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">ច្បាប់ DNS មិនត្រឹមត្រូវទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
+        <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
+
+Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
+
+Only enable this if you intend to share DNS with trusted LAN devices.
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Invalid operation</source>
         <translation type="unfinished">ប្រតិបត្តិការមិនត្រឹមត្រូវ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">ទម្រង់​ការ​កំណត់​ផ្លូវ​មិន​អាច​ទទេ​បាន​ទេ សូម​ព្យាយាម​បន្ថែម​ទម្រង់​ផ្សេង​ទៀត ឬ​កែសម្រួល​ទម្រង់​នេះ។</translation>
     </message>
@@ -3600,7 +3660,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="381"/>
+        <location filename="../../src/gharqad/main.cpp" line="388"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3664,7 +3724,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">ការផ្លាស់ប្តូរ% 1៖</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
         <source>Default</source>
         <translation type="unfinished">លំនាំដើម</translation>
     </message>
@@ -3674,17 +3734,17 @@ Deleted %3 Profiles:
         <translation type="unfinished">មិនអាចបើកឯកសារបានទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131"/>
+        <location filename="../../src/gharqad/main.cpp" line="137"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">ប្រូកស៊ីខ្សែសង្វាក់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="147"/>
+        <location filename="../../src/gharqad/main.cpp" line="153"/>
         <source>Custom</source>
         <translation type="unfinished">ផ្ទាល់ខ្លួន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="154"/>
         <source>Extra Core</source>
         <translation type="unfinished">ស្នូលបន្ថែម</translation>
     </message>
@@ -3926,92 +3986,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Cancel</source>
         <translation type="unfinished">បោះបង់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Apply</source>
         <translation type="unfinished">អនុវត្ត</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>Yes</source>
         <translation type="unfinished">បាទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>No</source>
         <translation type="unfinished">ទេ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>OK</source>
         <translation type="unfinished">យល់ព្រម</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Defaults</source>
         <translation type="unfinished">លំនាំដើម</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">ស្តារលំនាំដើមឡើងវិញ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Discard</source>
         <translation type="unfinished">បោះបង់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Undo</source>
         <translation type="unfinished">មិនធ្វើវិញ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Redo</source>
         <translation type="unfinished">ធ្វើឡើងវិញ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Cut</source>
         <translation type="unfinished">កាត់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy</source>
         <translation type="unfinished">ចម្លង</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Paste</source>
         <translation type="unfinished">បិទភ្ជាប់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Delete</source>
         <translation type="unfinished">លុប</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Select All</source>
         <translation type="unfinished">ជ្រើសរើសទាំងអស់។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Stop</source>
         <translation type="unfinished">ឈប់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="110"/>
         <source>Clear</source>
         <translation type="unfinished">ច្បាស់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="111"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">ចម្លងទីតាំងតំណ</translation>
     </message>

@@ -3722,7 +3722,7 @@ void MainWindow::show_log_impl(const QString &log) {
   if (log.size() > 20000) {
     trimmed = ("Ignored massive log of size: " + QString::number(log.size()));
   } else {
-    trimmed = log.trimmed();
+    trimmed = sanitizeLog(log).trimmed();
   }
 
   if (!trimmed.isEmpty()) {

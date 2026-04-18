@@ -478,11 +478,9 @@ void DialogBasicSettings::accept() {
         S_SAVE_BOOL(startup_update)
     }
     D_SAVE_BOOL(sub_clear)
-    D_SAVE_BOOL(net_insecure)
     S_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(core_use_uds)
     S_SAVE_BOOL(ask_delete)
-    D_SAVE_BOOL(sub_send_hwid)
     D_SAVE_STRING(sub_custom_hwid_params)
     D_SAVE_BOOL(sub_rm_invalid)
     D_SAVE_BOOL(sub_url_test)
@@ -490,6 +488,56 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(sub_rm_duplicates)
     D_SAVE_BOOL(sub_rm_unavailable)
     D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
+
+    {
+        bool newInsecure = ui->net_insecure->isChecked();
+        bool wasInsecure = Configs::dataStore->net_insecure;
+        if (newInsecure && !wasInsecure) {
+            auto btn = QMessageBox::warning(
+                this,
+                tr("Security Warning"),
+                tr("Disabling TLS certificate verification exposes you to man-in-the-middle attacks.\n\n"
+                   "An attacker on your network can silently replace subscription content with a malicious "
+                   "proxy configuration and intercept your traffic.\n\n"
+                   "Only enable this if you fully trust every network between you and your subscription server.\n\n"
+                   "Are you sure you want to disable TLS verification?"),
+                QMessageBox::Yes | QMessageBox::No,
+                QMessageBox::No
+            );
+            if (btn != QMessageBox::Yes) {
+                ui->net_insecure->setChecked(false);
+                newInsecure = false;
+            }
+        }
+        Configs::dataStore->net_insecure = newInsecure;
+    }
+    {
+        bool newHwid = ui->sub_send_hwid->isChecked();
+        bool wasHwid = Configs::dataStore->sub_send_hwid;
+        if (newHwid && !wasHwid) {
+            auto btn = QMessageBox::warning(
+                this,
+                tr("Privacy Warning"),
+                tr("Enabling HWID sending will attach the following device identifiers to every "
+                   "subscription request:\n\n"
+                   "  • Hardware ID (machine serial / machine-id)\n"
+                   "  • Operating system and version\n"
+                   "  • Device model\n\n"
+                   "The subscription server will be able to permanently identify and track your "
+                   "physical device across IPs and sessions.\n\n"
+                   "This is a significant privacy risk if you are in a country with active "
+                   "internet censorship.\n\n"
+                   "Are you sure you want to enable HWID sending?"),
+                QMessageBox::Yes | QMessageBox::No,
+                QMessageBox::No
+            );
+            if (btn != QMessageBox::Yes) {
+                ui->sub_send_hwid->setChecked(false);
+                newHwid = false;
+            }
+        }
+        Configs::dataStore->sub_send_hwid = newHwid;
+    }
 
     // Core
     Configs::dataStore->disable_traffic_stats = ui->disable_stats->isChecked();

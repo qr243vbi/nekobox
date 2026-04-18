@@ -524,137 +524,137 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <translation type="obsolete">구성에 바이너리 대신 Json을 사용하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">프로필 삭제 요청</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1159"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">자동 테스트</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">백그라운드에서 자동으로 프록시를 테스트하고 작동 중인 프록시 풀을 유지합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1168"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">자동 테스트 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">테스트 간격(초)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">테스트 주기를 실행하는 빈도</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1198"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">주기당 프록시</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1205"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">각 주기에서 테스트할 프록시 수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">작업 풀 크기</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1228"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">유지 관리할 확인된 작동 프록시의 최대 수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">지연 시간 임계값(ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1251"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">프록시가 작동하는 것으로 간주하는 최대 대기 시간</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">실패 재시도 횟수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">프록시가 실패한 것으로 간주되기 전의 재시도 횟수</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Test Target URL</source>
         <translation type="unfinished">테스트 대상 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">프록시를 테스트할 URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN 모드 프록시가 실패할 경우 작동 중인 다른 프록시로 자동 전환</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN 장애 조치 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Startup</source>
         <translation type="unfinished">시작</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1385"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Geometry</source>
         <translation type="unfinished">기하학</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1414"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">자동 저장 기하학</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Autosave position</source>
         <translation type="unfinished">자동 저장 위치</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452"/>
         <source>Apply now</source>
         <translation type="unfinished">지금 신청하세요</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1515"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
         <source>Width</source>
         <translation type="unfinished">너비</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1602"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613"/>
         <source>X</source>
         <translation type="unfinished">엑스</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1547"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558"/>
         <source>Y</source>
         <translation type="unfinished">와이</translation>
     </message>
@@ -664,39 +664,47 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <translation type="unfinished">구성 형식</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1615"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120"/>
+        <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
         <source>Height</source>
         <translation type="unfinished">키</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1712"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">핵심 실행 파일 경로</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1741"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1930"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941"/>
         <source>Use default</source>
         <translation type="unfinished">기본값 사용</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759"/>
         <source>Remote Control</source>
         <translation type="unfinished">원격 제어</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1774"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1963"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974"/>
         <source>Select</source>
         <translation type="unfinished">선택하다</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912"/>
         <source>Resources Directory</source>
         <translation type="unfinished">자원 디렉토리</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1937"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948"/>
         <source>Resource Manager</source>
         <translation type="unfinished">자원 관리자</translation>
     </message>
@@ -704,6 +712,42 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">프로그램 이름</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
+
+An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
+
+Only enable this if you fully trust every network between you and your subscription server.
+
+Are you sure you want to disable TLS verification?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <source>Privacy Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
+
+  • Hardware ID (machine serial / machine-id)
+  • Operating system and version
+  • Device model
+
+The subscription server will be able to permanently identify and track your physical device across IPs and sessions.
+
+This is a significant privacy risk if you are in a country with active internet censorship.
+
+Are you sure you want to enable HWID sending?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1587,12 +1631,28 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">DNS 규칙이 유효하지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
+        <source>Security Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
+        <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
+
+Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
+
+Only enable this if you intend to share DNS with trusted LAN devices.
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Invalid operation</source>
         <translation type="unfinished">잘못된 작업</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="318"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">라우팅 프로필은 비워둘 수 없습니다. 다른 프로필을 추가하거나 이 프로필을 편집해 보세요.</translation>
     </message>
@@ -3628,7 +3688,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="381"/>
+        <location filename="../../src/gharqad/main.cpp" line="388"/>
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3692,7 +3752,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">%1 변경:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="331"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
         <source>Default</source>
         <translation type="unfinished">기본</translation>
     </message>
@@ -3702,17 +3762,17 @@ Deleted %3 Profiles:
         <translation type="unfinished">파일을 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="131"/>
+        <location filename="../../src/gharqad/main.cpp" line="137"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">체인 프록시</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="147"/>
+        <location filename="../../src/gharqad/main.cpp" line="153"/>
         <source>Custom</source>
         <translation type="unfinished">관습</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="148"/>
+        <location filename="../../src/gharqad/main.cpp" line="154"/>
         <source>Extra Core</source>
         <translation type="unfinished">엑스트라 코어</translation>
     </message>
@@ -3959,92 +4019,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="87"/>
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Cancel</source>
         <translation type="unfinished">취소</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="88"/>
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Apply</source>
         <translation type="unfinished">적용하다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="89"/>
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>Yes</source>
         <translation type="unfinished">예</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="90"/>
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>No</source>
         <translation type="unfinished">아니요</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91"/>
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>OK</source>
         <translation type="unfinished">좋아요</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92"/>
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Defaults</source>
         <translation type="unfinished">기본값</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93"/>
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">기본값 복원</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94"/>
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Discard</source>
         <translation type="unfinished">버리다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96"/>
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Undo</source>
         <translation type="unfinished">끄르다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97"/>
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Redo</source>
         <translation type="unfinished">다시 하다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98"/>
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Cut</source>
         <translation type="unfinished">자르다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99"/>
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy</source>
         <translation type="unfinished">복사</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100"/>
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Paste</source>
         <translation type="unfinished">반죽</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101"/>
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Delete</source>
         <translation type="unfinished">삭제</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102"/>
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Select All</source>
         <translation type="unfinished">모두 선택</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103"/>
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Stop</source>
         <translation type="unfinished">멈추다</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104"/>
+        <location filename="../../src/gharqad/main.cpp" line="110"/>
         <source>Clear</source>
         <translation type="unfinished">분명한</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105"/>
+        <location filename="../../src/gharqad/main.cpp" line="111"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">링크 위치 복사</translation>
     </message>

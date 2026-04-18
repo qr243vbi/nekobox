@@ -414,7 +414,7 @@ std::tuple<std::string_view, bool> Configs::read_lmdb(lmdb::env& env, char c, in
 }
 
 
-#define DATABASE_NAME "db"
+#define DATABASE_NAME "iblis"
 lmdb::env Configs::initialize_lmdb(){
   QDir dir(".");
   bool init_db = false;
