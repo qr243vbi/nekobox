@@ -715,7 +715,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   logAutoScrollCheckBox =
       new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
-  logAutoScrollCheckBox->setChecked(qvLogAutoScoll);
+  logAutoScrollCheckBox->setChecked(Configs::windowSettings->auto_scroll_log);
   ui->stats_widget->setCornerWidget(logAutoScrollCheckBox, Qt::TopRightCorner);
   auto updateAutoScrollVisibility = [=, this]() {
     logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() ==
@@ -726,7 +726,7 @@ MainWindow::MainWindow(QWidget *parent)
           [=](int) { updateAutoScrollVisibility(); });
   connect(logAutoScrollCheckBox, &QCheckBox::toggled, this,
           [=, this](bool checked) {
-            qvLogAutoScoll = checked;
+            Configs::windowSettings->auto_scroll_log = checked;
             if (checked) {
               auto bar = ui->masterLogBrowser->verticalScrollBar();
               bar->setValue(bar->maximum());
@@ -3763,7 +3763,7 @@ void MainWindow::show_log_impl(const QString &log) {
           bar->value() -
           static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
       FastAppendTextDocument(trimmedBatch, qvLogDocument);
-      if (qvLogAutoScoll) {
+      if (Configs::windowSettings->auto_scroll_log) {
         bar->setValue(bar->maximum());
       } else if (anchorBlock.isValid()) {
         int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());

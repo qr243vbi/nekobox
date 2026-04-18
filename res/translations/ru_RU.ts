@@ -4191,7 +4191,7 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">ОК</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">Система</translation>
     </message>

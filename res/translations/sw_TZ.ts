@@ -3830,7 +3830,7 @@ Moja kwa moja: %2</translation>
         <translation type="unfinished">Inaanzisha upya msingi ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">Mfumo</translation>
     </message>

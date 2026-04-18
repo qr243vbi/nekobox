@@ -3760,7 +3760,7 @@ Direct: %2</source>
         <translation type="unfinished">د کور بیا پیل کول ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">سیسټم</translation>
     </message>

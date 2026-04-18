@@ -3842,7 +3842,7 @@ Direct: %2</source>
         <translation type="unfinished">মূলটি পুনরায় চালু করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">সিস্টেম</translation>
     </message>

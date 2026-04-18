@@ -3834,7 +3834,7 @@ Direct: %2</source>
         <translation type="unfinished">코어를 다시 시작하는 중...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">체계</translation>
     </message>

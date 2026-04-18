@@ -3802,7 +3802,7 @@ Okuqondile: %2</translation>
         <translation type="unfinished">Iqala kabusha umongo...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">Uhlelo</translation>
     </message>

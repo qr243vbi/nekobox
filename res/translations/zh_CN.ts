@@ -4209,7 +4209,7 @@ Release note:
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation>系统</translation>
     </message>

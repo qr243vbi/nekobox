@@ -3806,7 +3806,7 @@ Directo: % 2</translation>
         <translation type="unfinished">Reiniciando o núcleo...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">Sistema</translation>
     </message>

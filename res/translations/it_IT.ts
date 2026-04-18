@@ -3842,7 +3842,7 @@ Diretto: %2</translation>
         <translation type="unfinished">Riavvio del nucleo...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">Sistema</translation>
     </message>

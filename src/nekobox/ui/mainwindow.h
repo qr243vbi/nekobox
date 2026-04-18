@@ -310,7 +310,6 @@ private:
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;
     //
-    bool qvLogAutoScoll = true;
     QCheckBox *logAutoScrollCheckBox = nullptr;
     QTextDocument *qvLogDocument = new QTextDocument(this);
     //

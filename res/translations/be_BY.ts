@@ -3830,7 +3830,7 @@ Direct: %2</source>
         <translation type="unfinished">Перазапуск ядра...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="369"/>
         <source>System</source>
         <translation type="unfinished">сістэма</translation>
     </message>
