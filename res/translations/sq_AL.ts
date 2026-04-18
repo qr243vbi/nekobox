@@ -1105,32 +1105,32 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tregimi i emrit të serverit, tekst i qartë.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Negocimi i protokollit të shtresës së aplikimit, tekst i qartë.Ju lutemi ndani ato me presje.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
         <source>both</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">të dyja</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Me porosi (% 1 dalëse)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I personalizuar (konfigurimi %1)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
@@ -1139,7 +1139,7 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuk është vendosur</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
@@ -1148,12 +1148,12 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E vendosur tashmë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfirmo</translation>
     </message>
 </context>
 <context>
@@ -1161,95 +1161,95 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësuesi i uljes për grupin Grupi 2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërko:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupi 1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupi 2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësuesi i përparmë për grupin % 1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësuesi i përparmë:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432" />
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësuesi i uljes për grupin % 1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434" />
         <source>Landing proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësuesi i uljes:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direkt</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asnjë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
         <source>Add proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shto përfaqësues</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
         <source>Replace %1 proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zëvendëso %1 përfaqësuesin</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
         <source>Select outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zgjidhni jashtë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
         <source>Outbound: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jashtë:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jashtë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Blloko</translation>
     </message>
 </context>
 <context>
@@ -1257,37 +1257,37 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Shortcuts</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shkurtoret</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
         <source>Global</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">globale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
         <source>Trigger main window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizoni dritaren kryesore</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
         <source>Show groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shfaq grupet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
         <source>Show routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Trego itineraret</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
         <source>Proxy mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Modaliteti i përfaqësuesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
@@ -1300,27 +1300,27 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Grupi i ri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditësoni të gjitha abonimet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
         <source>Update all subscriptions?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të përditësohen të gjitha abonimet?</translation>
     </message>
 </context>
 <context>
@@ -1328,42 +1328,42 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rrugët</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndihet paketat fillestare të lidhjeve për të identifikuar protokollin dhe SNI.Rezultati i nuhatjes për destinacionin gjithashtu rishkruan destinacionin e lidhjes me SNI-n e nuhatur.Për më shumë të dhëna mbi protokollin e nuhatur, referojuni dokumentacionit të sing-box.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>Sniffing Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Modaliteti i nuhatjes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çaktivizo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
         <source>Sniff result for routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rezultati i nuhatjes për rrugëtim</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
         <source>Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profili i rrugëtimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
         <source>Inbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Strategjia e Domenit Inbound</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
@@ -1398,228 +1398,230 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
         <source>Remote Rule-set Mirror</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pasqyrë e vendosur me rregulla në distancë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zgjidhni domenet në IP përpara lidhjes, gjithashtu ndikon edhe në adresën e serverit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
         <source>Outbound Domain Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Strategjia e Domenit të Jashtëm</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
         <source>RuleSet download url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url-ja e shkarkimit të RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
         <source>Hijack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rrëmbimi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
         <source>DNS Server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Server DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
         <source>Listen Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dëgjoni Portin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
         <source>IPv4 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përgjigja IPv4</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
         <source>IPv6 Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përgjigja IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duhet të përdoret formati i mëposhtëm:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;prapashtesa:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregullat</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nëse duhet dëgjuar në 0.0.0.0 në mënyrë që pajisjet e tjera në LAN të mund ta përdorin këtë server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
         <source>Allow Lan to Connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lejo që Lan të lidhet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
         <source>Redirect Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e ridrejtimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
         <source>Listen Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adresa e dëgjimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e thjeshta të DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;shembuj:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;&lt;p&gt;&lt;4&gt;3/3/2/2/</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS në distancë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Serveri i parazgjedhur DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Strategjia e pyetjeve</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS lokale nuk mund të përdoret në disa konfigurime, do të duhet të vendosni një ip këtu për t'u përdorur si dns lokale në situata të tilla&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbështetja lokale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kjo është veçanërisht e rëndësishme dhe rekomandohet të përdoret vlera e paracaktuar e "localhost".
+Nëse vlera e paracaktuar nuk funksionon, provoni ta ndryshoni atë në "223.5.5.5".
+Për më shumë informacion, shihni dokumentin "Konfigurimi/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS direkte</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo FakeIP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e objektit DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përdorni objektin DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formati</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dokumenti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Itinerari</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet e rrugëtimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E re</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Klon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eksporto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshije</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjendje e pavlefshme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lista e profileve të rrugëtimit është bosh, kjo duhet të jetë një gjendje e paarritshme, mund të ndodhin përplasje tani</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e pavlefshme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profili i rrugëtimit nuk mund të jetë bosh</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregullat DNS nuk janë të vlefshme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249" />
         <source>Security Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paralajmërim sigurie</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250" />
@@ -1630,17 +1632,23 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizimi i serverit LAN DNS do të dëgjojë në 0.0.0.0:%1.
+
+Çdo pajisje në rrjetin tuaj lokal do të jetë në gjendje të kërkojë këtë server DNS, i cili mund të zbulojë rregullat tuaja të rrugëtimit, domenet e bllokuara dhe topologjinë e rrjetit.
+
+Aktivizoni këtë vetëm nëse keni ndërmend të ndani DNS me pajisje të besuara LAN.
+
+je i sigurt?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Operacion i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet e rrugëtimit nuk mund të jenë bosh, provo të shtosh një profil tjetër ose ta modifikosh këtë</translation>
     </message>
 </context>
 <context>
@@ -1648,32 +1656,32 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregulloni cilësimet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stack</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rrugë e rreptë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kur aktivizohet, CIDR-të direkte të IP-së dhe grupet e rregullave do të shtohen gjithashtu në cilësimin Tun për t'u përjashtuar në nivelin e rrugëtimit të sistemit operativ.E RËNDËSISHME: grupe të mëdha rregullash janë raportuar se shkaktojnë përdorim masiv të CPU-së në Windows, ju lutemi aktivizoni këtë opsion me kujdes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo Tun Routing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
