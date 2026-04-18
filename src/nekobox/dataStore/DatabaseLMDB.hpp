@@ -15,10 +15,13 @@ using namespace Configs_ConfigItem;
 namespace Configs {
   std::string pack_char_int(char c, int32_t x);
   lmdb::env initialize_lmdb();
-  void clear_lmdb(lmdb::env& env, char c, int32_t x);
-  void clear_lmdb(lmdb::env& env, JsonStore * store);
-  void write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view);
-  void write_lmdb(lmdb::env& env, JsonStore * store);
+  bool clear_lmdb(lmdb::env& env, char c, int32_t x);
+  bool clear_lmdb(lmdb::env& env, JsonStore * store);
+  bool write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view);
+  bool write_lmdb(lmdb::env& env, JsonStore * store);
+  QList<int> query_lmdb(lmdb::env &env, char c);
+  std::tuple<std::string_view, bool> read_lmdb(lmdb::env& env, char c, int32_t x);
+  std::tuple<bool, bool> read_lmdb(lmdb::env& env, JsonStore * store);
   std::tuple<char, int32_t> unpack_char_int(const std::string_view& key);
 }
 #endif

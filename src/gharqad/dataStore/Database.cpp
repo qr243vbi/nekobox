@@ -159,10 +159,29 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Groups, groups)
   }
   #ifndef SKIP_LMDB
+  if (Configs::config_type == Configs::DatabaseType::lmdb_type){
+    return Configs::write_lmdb(this->database, store);
+  }
   #endif
-  return SaveToFile(store);
+  auto ret = SaveToFile(store);
+  #ifndef SKIP_LMDB
+  if (ret){
+    Configs::clear_lmdb(this->database, store);
+  }
+  #endif
+  return ret;
 }
-bool FileDatabaseManager::Load(JsonStore *store) { return LoadFromFile(store); }
+bool FileDatabaseManager::Load(JsonStore *store) { 
+  #ifndef SKIP_LMDB
+  auto [ok, readed] = Configs::read_lmdb(this->database, store);
+  if (!ok){
+    return false;
+  } else if (readed){
+    return true;
+  }
+  #endif
+  return LoadFromFile(store); 
+}
 bool FileDatabaseManager::Drop(char chr, int id) {
   bool ret = DropFromDirectory(chr, id);
   #ifndef SKIP_LMDB
@@ -191,8 +210,6 @@ FileDatabaseManager::~FileDatabaseManager(){
   this->database.close();
   #endif
 };
-
-
 
 bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   auto type = store->StoreType();
@@ -228,7 +245,11 @@ bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
+  #ifdef SKIP_LMDB
   return FileDatabaseManager::QueryFromDirectory(type);
+  #else
+  return Configs::query_lmdb(type);
+  #endif
 }
 
 QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
@@ -287,31 +308,63 @@ std::tuple<char, int32_t> Configs::unpack_char_int(const std::string_view& key) 
   return std::tie(c, x);
 }
 
-void Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
-  clear_lmdb(env, store->StoreType(), store->Id());
+bool Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+  return clear_lmdb(env, store->StoreType(), store->Id());
 }
 
-void Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
-  Configs::write_lmdb(env, c, x, "");
+bool Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
+  return Configs::write_lmdb(env, c, x, "");
 }
 
-void Configs::write_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+bool Configs::write_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
   auto bytes = store->ToBytes();
-  write_lmdb(env, store->StoreType(), store->Id(), bytes.data());
+  return write_lmdb(env, store->StoreType(), store->Id(), bytes.data());
 }
 
-void Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view){
+bool Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view){
   auto key = pack_char_int(c, x);
   lmdb::dbi dbi;
   // Get the dbi handle, and insert some key/value pairs in a write transaction:
   auto wtxn = lmdb::txn::begin(env);
   dbi = lmdb::dbi::open(wtxn, nullptr);
-  dbi.put(wtxn, key, view);
+  bool ret = dbi.put(wtxn, key, view);
   wtxn.commit();
+  return ret;
 }
 
-#define DATABASE_NAME "db"
+std::tuple<bool, bool> Configs::read_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+  auto bytes = store->ToBytes();
+  auto [view, isok] = read_lmdb(env, store->StoreType(), store->Id());
+  bool readed = false;
+  if (isok) {
+    if (view.size() > 0){
+      readed = true;
+      store->FromBytes(view.data());
+    }
+  }
+  return std::make_tuple(isok, readed);
+}
 
+std::tuple<std::string_view, bool> Configs::read_lmdb(lmdb::env& env, char c, int32_t x) {
+  auto key_data = pack_char_int(c, x);
+
+  lmdb::txn txn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
+  lmdb::dbi dbi = lmdb::dbi::open(txn, nullptr);
+  std::string_view ret;
+
+  bool found = dbi.get(txn, key_data, ret);
+
+  txn.abort(); // read-only safety (or txn.commit(); also fine)
+
+  if (!found) {
+    return std::make_tuple("", false); // or throw / optional handling
+  }
+
+  return std::make_tuple(ret, true);
+}
+
+
+#define DATABASE_NAME "db"
 lmdb::env Configs::initialize_lmdb(){
   QDir dir(".");
   bool init_db = false;
@@ -331,10 +384,16 @@ lmdb::env Configs::initialize_lmdb(){
         dbi.put(wtxn, pack_char_int(c, x), "");
       }
     }
+    std::vector<char> common_types = {Shortcuts, ResourceManager, ProxyManager, NekoBox, DefaultRoute, TrafficLooper, DatabaseLogger};
+    for (char c : common_types){
+      dbi.put(wtxn, pack_char_int(c, 0), "");
+    }
     wtxn.commit();
   }
   return env;
 }
+#undef DATABASE_NAME
+
 #endif
 
 namespace Configs {
