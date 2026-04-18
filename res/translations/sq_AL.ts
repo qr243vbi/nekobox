@@ -1292,7 +1292,7 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
         <source>Toggle System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndrysho përfaqësuesin e sistemit</translation>
     </message>
 </context>
 <context>
