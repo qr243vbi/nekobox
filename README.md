@@ -11,7 +11,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
-[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?style=for-the-badge&label=downloads-total&logo=github)](https://github.com/qr243vbi/nekobox/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?style=for-the-badge&logo=github)](https://github.com/qr243vbi/nekobox/releases)
 
 ### OBS repository 
 [![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
@@ -29,7 +29,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Chocolatey Package
-[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge&logo=chocolatey&label=downloads-total
+[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge&logo=chocolatey
 )](https://community.chocolatey.org/packages/nekobox)
 
 
