@@ -311,6 +311,7 @@ private:
     qint64 vpn_pid = 0;
     //
     bool qvLogAutoScoll = true;
+    QCheckBox *logAutoScrollCheckBox = nullptr;
     QTextDocument *qvLogDocument = new QTextDocument(this);
     //
     QString title_error;
