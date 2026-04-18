@@ -554,57 +554,57 @@ binar — 2026 — format arbitrar të vlerave të bajtit për cilësimet e Neko
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193" />
         <source>How often to run the test cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sa shpesh duhet kryer cikli i testimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209" />
         <source>Proxies Per Cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues për cikël</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216" />
         <source>Number of proxies to test in each cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i përfaqësuesve për të testuar në çdo cikël</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232" />
         <source>Working Pool Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madhësia e pishinës së punës</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239" />
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri maksimal i përfaqësuesve të verifikuar të punës për të ruajtur</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255" />
         <source>Latency Threshold (ms)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pragu i vonesës (ms)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262" />
         <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vonesa maksimale për të konsideruar një përfaqësues si funksional</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281" />
         <source>Failure Retry Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i riprovës së dështimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i përpjekjeve të përsëritura përpara se të konsiderohet një përfaqësues si i dështuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testoni URL-në e synuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL për të testuar përfaqësuesit kundër</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314" />
@@ -614,99 +614,99 @@ binar — 2026 — format arbitrar të vlerave të bajtit për cilësimet e Neko
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kaloni automatikisht në një përfaqësues tjetër funksional kur përfaqësuesi i modalitetit TUN dështon</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fillimi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjeometria</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjeometria e ruajtjes automatike</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pozicioni i ruajtjes automatike</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aplikoni tani</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjerësia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lartësia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rruga kryesore e ekzekutueshme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përdorni parazgjedhjen</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Telekomandë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zgjidhni</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Drejtoria e Burimeve</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Menaxheri i burimeve</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244" />
         <source>Name of program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri i programit</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498" />
         <source>Security Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paralajmërim sigurie</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499" />
@@ -717,12 +717,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çaktivizimi i verifikimit të certifikatës TLS ju ekspozon ndaj sulmeve nga njeriu në mes.
+
+Një sulmues në rrjetin tuaj mund të zëvendësojë në heshtje përmbajtjen e abonimit me një konfigurim proxy keqdashës dhe të përgjojë trafikun tuaj.
+
+Aktivizoni këtë vetëm nëse i besoni plotësisht çdo rrjeti midis jush dhe serverit tuaj të pajtimit.
+
+Jeni i sigurt që dëshironi të çaktivizoni verifikimin TLS?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520" />
         <source>Privacy Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paralajmërim për privatësinë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521" />
@@ -737,7 +743,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizimi i dërgimit HWID do t'i bashkëngjisë identifikuesit e mëposhtëm të pajisjes në çdo kërkesë abonimi:
+
+• ID-ja e harduerit (seriali i makinës / identifikimi i makinës)
+• Sistemi operativ dhe versioni
+• Modeli i pajisjes
+
+Serveri i abonimit do të jetë në gjendje të identifikojë dhe gjurmojë përgjithmonë pajisjen tuaj fizike nëpër IP dhe sesione.
+
+Ky është një rrezik i rëndësishëm për privatësinë nëse jeni në një vend me censurë aktive në internet.
+
+Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
     </message>
 </context>
 <context>
@@ -745,104 +761,104 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto grupin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lloji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">bazë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abonimi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138" />
         <source>Manually column width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gjerësia e kolonës me dorë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arkivi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asnjë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy i përparmë</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Prokura e uljes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shpërndaje</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo lidhjet e ndarjes së profilit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo lidhjet e ndarjes së profilit (Lidhje të personalizuara)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shënime</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320" />
         <source>Skip automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kapërce përditësimin automatik</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E kopjuar</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paralajmërim</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ju lutemi futni URL-në</translation>
     </message>
 </context>
 <context>
@@ -851,240 +867,240 @@ Are you sure you want to enable HWID sending?</source>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lloji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adresa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rrjeti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Metoda themelore e transportit.Duhet të jetë në përputhje me serverin, përndryshe, lidhja nuk mund të vendoset.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Transporti</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërkohet mbështetje për serverin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multipleks</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Siguria e shtresës së transportit.Duhet të jetë në përputhje me serverin, përndryshe, lidhja nuk mund të vendoset.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Siguria</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kodimi i paketës UDP FullCone për zbatimin e veçorive të tilla si UDP FullCone.Kërkohet mbështetja e serverit, nëse bëhet përzgjedhja e gabuar, lidhja nuk mund të bëhet.Ju lutemi lëreni bosh.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273" />
         <source>Packet Encoding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kodimi i paketave</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
         <source>Keep Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbani të paracaktuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286" />
         <source>On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktiv</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Joaktiv</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;E anashkalon mux në Aktiv&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307" />
         <source>Enable TCP Brutal</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo TCP Brutal</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shpejtësia brutale TCP e serverit te klienti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
         <source>TCP Brutal Speed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shpejtësia brutale e TCP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334" />
         <source>Mb/s</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355" />
         <source>Custom Outbound Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e personalizuara të daljes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371" />
         <source>Custom Config Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e konfigurimit të personalizuar</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756" />
         <source>Apply settings to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aplikoni cilësimet në këtë grup</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
         <source>Network Settings (%1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e rrjetit (% 1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Metoda e kërkesës http, do të konvertohet në shkronja të mëdha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
         <source>Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Metoda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
         <source>header type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">lloji i kokës</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e kamuflazhit TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mund të degradojë performancën, provoni fillimisht të regjistroni fragmentin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
         <source>Enable TLS fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo fragmentin TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;formati i kohës, si p.sh. 500ms, 10ms etj.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
         <source>Fallback Delay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vonesa e kthimit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
         <source>Enable TLS Record Fragment</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo fragmentin e regjistrimit TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Çelësi publik i realitetit.Nëse nuk është bosh, kthejeni TLS në REALITET.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
         <source>Reality short id. Accept only one value.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ID e shkurtër e realitetit.Prano vetëm një vlerë.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
         <source>Reality SID</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">SID e realitetit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
         <source>TLS Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e sigurisë TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Certifikata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kur aktivizohet, V2Ray nuk do të kontrollojë vlefshmërinë e certifikatës TLS të ofruar nga hosti në distancë (siguria është e barabartë me tekstin e thjeshtë)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lejo të pasigurt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktivizo ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfigurimi i ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
