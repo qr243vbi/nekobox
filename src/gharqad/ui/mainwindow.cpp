@@ -3728,11 +3728,19 @@ void MainWindow::show_log_impl(const QString &log) {
   }
 
   if (!trimmed.isEmpty()) {
-     runOnUiThread([trimmed, this] {
-                FastAppendTextDocument(trimmed, qvLogDocument);
+     runOnUiThread([trimmedBatch = std::move(trimmed), this] {
+                auto bar = ui->masterLogBrowser->verticalScrollBar();
+                auto layout = qvLogDocument->documentLayout();
+                // Anchor to the block at the top of the viewport; if trim shifts its
+                // document-Y afterwards, we replay the original sub-block offset.
+                QTextBlock anchorBlock = ui->masterLogBrowser->cursorForPosition(QPoint(0, 0)).block();
+                int viewportOffset = bar->value() - static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
+                FastAppendTextDocument(trimmedBatch, qvLogDocument);
                 if (qvLogAutoScoll) {
-                    auto bar = ui->masterLogBrowser->verticalScrollBar();
                     bar->setValue(bar->maximum());
+                } else if (anchorBlock.isValid()) {
+                    int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
+                    bar->setValue(newY + viewportOffset);
                 }
             });
   }
