@@ -248,7 +248,7 @@ QList<int> FileDatabaseManager::Query(char type) {
   #ifdef SKIP_LMDB
   return FileDatabaseManager::QueryFromDirectory(type);
   #else
-  return Configs::query_lmdb(type);
+  return Configs::query_lmdb(this->database, type);
   #endif
 }
 
@@ -281,23 +281,33 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 QList<int> Configs::query_lmdb(lmdb::env &env, char c)
 {
     QList<int> result;
+    
 
     lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
     lmdb::dbi dbi  = lmdb::dbi::open(rtxn, nullptr);
 
+    std::string_view key(&c, 1);
     lmdb::cursor cursor = lmdb::cursor::open(rtxn, dbi);
 
-    for (auto kv = cursor.get(MDB_FIRST);
-         kv; kv = cursor.get(MDB_NEXT))
+    for (auto kv = cursor.get(key, MDB_SET_RANGE);
+         kv; kv = cursor.get(key, MDB_NEXT))
     {
-        auto key = kv.key;
-        if (key.size() != 5)
+        if (key.size() != 5) {
+          #ifdef DEBUG_MODE
+          qDebug() << "ERROR: Corrupted database";        
+          #endif
+              throw std::runtime_error("Invalid key size");
             continue;
+        }
 
         const char* k = static_cast<const char*>(key.data());
 
-        if (k[0] != c)
-            continue;
+        if (k[0] != c) {
+          #ifdef DEBUG_MODE
+          qDebug() << "Found " << result.count() << " elements for type " << int(c);
+          #endif
+          break;
+        }
 
         // decode little-endian int32
         const unsigned char* b =
@@ -524,7 +534,7 @@ void ProfileManager::LoadManager() {
     auto route = LoadRouteChain(id);
     if (route == nullptr) {
       MW_show_log(
-          QString("File route_profiles/%1.cfg is corrupted, consider delete it")
+          QString("Route Profile with id %d is corrupted, consider delete it")
               .arg(id));
       continue;
     }

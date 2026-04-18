@@ -1116,6 +1116,17 @@
              </item>
              <item>
               <widget class="QComboBox" name="store_type">
+               <property name="toolTip">
+                <string>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string notr="true">lmdb</string>
+                </property>
+               </item>
                <item>
                 <property name="text">
                  <string notr="true">json</string>
