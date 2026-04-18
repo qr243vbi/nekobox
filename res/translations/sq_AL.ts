@@ -3336,207 +3336,207 @@ je i sigurt?</translation>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3174" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3187" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">U kopjua %1 artikull(a)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3422" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kodi QR nuk u gjet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3444" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ekrani nuk mund të regjistrohet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3513" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të hiqet %1 Artikujt e padisponueshëm ?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të hiqet %1 artikuj të pavlefshëm ?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3617" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të zëvendësohen adresat e serverit të domenit me IP-të e tyre të zgjidhura?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3769" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E qartë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fshi grupin e zgjedhur</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3841" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redakto grupin e zgjedhur</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të hiqet %1?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4593" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nuk mund të fillojë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4594" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërkesa për shkarkimin e fundit nuk ka përfunduar ende</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shkarkimi i aktiveve të përditësimit dështoi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi i profilit u ndërpre</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabim testimi [% 1]: % 2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Diçka është shumë e gabuar, subjekti nuk mund të gjendet!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të dhënat e menaxherit të profilit janë të dëmtuara, provoni përsëri.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi i fundit i URL-së nuk doli plotësisht, ju lutemi prisni.Nëse vazhdon, ju lutemi rinisni programin.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndërtimi i konfigurimit të testit dështoi:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi i URL-së përfundoi!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dështoi në ndalimin e testeve</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi i fundit i shpejtësisë nuk doli plotësisht, ju lutemi prisni.Nëse vazhdon, ju lutemi rinisni programin.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Speedtest përfundoi!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi i shpejtësisë së profilit u ndërpre</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabim i testit të shpejtësisë [% 1]: % 2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Së pari duhet të aktivizoni rrëmbimin e serverit DNS</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vendosja e dns-ve të sistemit dështoi:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregulloni sjelljen e gabuar të pajisjes</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nëse keni probleme me nisjen e VPN-së, mund të detyroni të rivendosni procesin Core këtu dhe më pas të provoni të filloni përsëri profilin.Gabimi është % 1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rivendos</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anulo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Një tjetër profil po fillon...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Një tjetër profil po ndalon...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nëse nuk ka përgjigje për një kohë të gjatë, rekomandohet të rindizni softuerin.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profili i fillimit %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nisja e profilit %1 dështoi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabim i ndalimit të kthimit</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndalimi i profilit %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndalimi dështoi, rinisni programin.</translation>
     </message>
 </context>
 <context>
@@ -3549,17 +3549,17 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fjalëkalim i ri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfirmo fjalëkalimin</translation>
     </message>
 </context>
 <context>
@@ -3567,12 +3567,12 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Të hiqet %1?</translation>
     </message>
 </context>
 <context>
@@ -3580,7 +3580,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cilësimet e sigurisë</translation>
     </message>
 </context>
 <context>
@@ -3596,37 +3596,37 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Modaliteti Tun nuk mund të përdoret me konfigurime të personalizuara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duke kërkuar abonim: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="878" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabim %1 duke kërkuar abonim: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="885" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërkesa për abonim përfundoi: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="903" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Po pastron serverët...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="908" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Po përpunon të dhënat e abonimit...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="911" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Procesi ka përfunduar, aplikimi...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="974" />
@@ -3634,180 +3634,186 @@ je i sigurt?</translation>
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profilet e shtuara %1:
+%2
+Profilet e fshirë %3:
+%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="979" />
         <source>Nothing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asgjë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="982" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndryshimi i % 1:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="548" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E paracaktuar</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="199" />
         <source>Could not open file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Skedari nuk mund të hapej.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="137" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy zinxhir</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="153" />
         <source>Custom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Me porosi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="154" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bërthama shtesë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues: ⚡% 1 📦% 3
+Direkt: ⚡% 2 📦% 4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bërthama doli, po pastrohet...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bërthama del shumë shpesh, ndalo rinisjen automatike të këtij profili.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rinisja e bërthamës ...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Settings.cpp" line="368" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistemi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">U zbulua URL</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1
+Si të përditësoni?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Krijo grup të ri abonimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shtoni profile në këtë grup</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
         <source>Add as http/https proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shto si përfaqësues http/https</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
         <source>Group name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emri i grupit</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përdorur: % 1 Mbetet: % 2 Skadon: %3</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="317" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shkarkoni profilet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="318" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërkon gabimin e profilit: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="498" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">U fshinë %1 Dublikata</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="532" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">U fshi % 1 E pavlefshme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="558" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">U fshi % 1 I padisponueshëm</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1676" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kontrolloni grupet e rregullave: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1698" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Duke kërkuar gabimin e listës së grupit të rregullave: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2625" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përfaqësues: % 1
+Direkt: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2662" />
         <source>Inbound IP: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP hyrëse: % 1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3047" />
         <source>Move profiles to group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zhvendosni profilet në grup</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3205" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfigurimi u kopjua</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3217" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo konfigurimin bazë</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kopjo konfigurimin e testit</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4493" />
@@ -3817,69 +3823,71 @@ Direct: %2</source>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4494" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jo platformë zyrtare mbështetëse</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4504" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kërkon gabimin e përditësimit: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asnjë përditësim</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4576" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditësimi u gjet: % 1
+Shënim publikimi:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4579" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbylle</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4581" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hapni në shfletues</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditësimi është gati, riniset për ta instaluar?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Qasja u refuzua</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zgjidhni një dosje</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180" />
         <source>Application Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rregullat e Aplikimit</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përjashtoni CIDR-të</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anulo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
