@@ -498,22 +498,22 @@ nkeji&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
         <source>Skip TLS certificate authentication</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mafere nyocha asambodo TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981" />
         <source>Use Mozilla Certificate Store</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri Ụlọ Ahịa Asambodo Mozilla</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024" />
         <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpịsị aka mkpịsị aka uTLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113" />
         <source>Configs format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị nhazi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120" />
@@ -521,87 +521,90 @@ nkeji&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">LMDB - 2009 - igodo agbakwunyere ebe nchekwa - uru DB nwere azụmahịa ACID - Howard Chu / Symas
+JSON - 2001 - Ọkpụkpọ ederede dị fechaa maka ịgbanwe data ahaziri ahazi (ihe, nhazi, primitives) - Douglas Crockford
+INI - mmalite 1980s - usoro nhazi ederede dị mfe nwere ngalaba na igodo = uru ụzọ abụọ - Microsoft Corporation
+ọnụọgụ abụọ - 2026 - usoro nke ụkpụrụ ụkpụrụ maka ntọala NekoBox ejiri dị ka ụkpụrụ LMDB ma ọ bụ faịlụ kwụ ọtọ - qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150" />
         <source>Ask for deleting profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rịọ maka ihichapụ profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170" />
         <source>Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nwalee proxies na-akpaghị aka na ndabere ma jikwaa ọdọ mmiri proxies na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
         <source>Enable Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado nnwale akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
         <source>Test Interval (seconds)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge ule (sekọnd)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193" />
         <source>How often to run the test cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ugboro ole ka ị na-agba ọsọ okirikiri ule</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209" />
         <source>Proxies Per Cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxies kwa okirikiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216" />
         <source>Number of proxies to test in each cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ proxies iji nwalee na okirikiri ọ bụla</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232" />
         <source>Working Pool Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogo ọdọ mmiri na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239" />
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ proxies na-arụ ọrụ akwadoro iji kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255" />
         <source>Latency Threshold (ms)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụ ala (ms)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262" />
         <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge nkwụsị kacha elu iji tụlee proxy ka ọ na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281" />
         <source>Failure Retry Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngụgharị nwaa ọdịda ọdịda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ nwaa ọzọ tupu atụle proxy ka ọ dara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nwale URL ebumnuche</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL iji nwalee proxies megide</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314" />
@@ -611,47 +614,47 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee na akpaghị aka gaa na proxy ọzọ na-arụ ọrụ mgbe proxy ọnọdụ TUN dara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chekwaa akpaaka geometry</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chekwa akpaghị aka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye ugbu a</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obosara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613" />
