@@ -1,9 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sq_AL">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>
@@ -11,37 +12,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
         <translation type="unfinished">Mbani mend</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished">sekonda</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished">minuta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished">orë</translation>
     </message>
@@ -49,30 +50,30 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
         <source>Proxy</source>
         <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
         <source>Direct</source>
         <translation type="unfinished">Direkt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
         <source>Block</source>
         <translation type="unfinished">Blloko</translation>
     </message>
@@ -80,18 +81,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Cilësimet bazë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
         <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -99,295 +100,295 @@
 + Përfaqësues HTTP&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
         <translation type="unfinished">Dëgjoni Portin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="110"/>
         <source>Edit</source>
         <translation type="unfinished">Redakto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="117"/>
         <source>Custom Inbound</source>
         <translation type="unfinished">Përbrenda e personalizuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zgjedh një port të disponueshëm rastësor në çdo ekzekutim&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="130"/>
         <source>Random port</source>
         <translation type="unfinished">Porta e rastësishme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="137"/>
         <source>Proxy Format</source>
         <translation type="unfinished">Formati i përfaqësuesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="144"/>
         <source>Listen Address</source>
         <translation type="unfinished">Adresa e dëgjimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="164"/>
         <source>Network Settings</source>
         <translation type="unfinished">Cilësimet e rrjetit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="185"/>
         <source>Use proxy when activated</source>
         <translation type="unfinished">Përdor proxy kur aktivizohet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="192"/>
         <source>URL Test after profile start</source>
         <translation type="unfinished">Testi i URL-së pas fillimit të profilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="199"/>
         <source>Request update at startup</source>
         <translation type="unfinished">Kërkoni përditësim në fillim</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="206"/>
         <source>Ignore TLS errors</source>
         <translation type="unfinished">Injoroni gabimet TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="216"/>
         <source>Test Settings</source>
         <translation type="unfinished">Cilësimet e testit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="243"/>
         <source>Simple Download URL</source>
         <translation type="unfinished">URL e thjeshtë e shkarkimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="251"/>
         <source>Download + Upload</source>
         <translation type="unfinished">Shkarko + Ngarko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="256"/>
         <source>Only Download</source>
         <translation type="unfinished">Vetëm Shkarko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="261"/>
         <source>Only Upload</source>
         <translation type="unfinished">Vetëm Ngarko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="266"/>
         <source>Simple Download</source>
         <translation type="unfinished">Shkarkim i thjeshtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Only Country</source>
         <translation type="unfinished">Vetëm shteti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="279"/>
         <source>Latency Test URL</source>
         <translation type="unfinished">URL-ja e testit të vonesës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="286"/>
         <source>Speedtest mode</source>
         <translation type="unfinished">Mënyra e testimit të shpejtësisë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="293"/>
         <source>Concurrent</source>
         <translation type="unfinished">Njëkohësisht</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="300"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;përfundimi i kohës në milisekonda&lt;br/&gt;zbatohet për të gjitha testet individualisht&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="316"/>
         <source>Timeout</source>
         <translation type="unfinished">Kohëzgjatja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="313"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Përfundimi i kohës për testin URL në ms&lt;br/&gt;Vini re se lidhjet e muksuara kërkojnë shumë më shumë kohë për kërkesën e tyre fillestare dhe vendosja e kësaj vlere shumë të ulët do të bëjë që testi të raportojë në mënyrë të rreme se konfigurimi nuk po funksionon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="360"/>
         <source>Style</source>
         <translation type="unfinished">Stili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="371"/>
         <source>Font</source>
         <translation type="unfinished">Fonti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="381"/>
         <source>Font Size</source>
         <translation type="unfinished">Madhësia e shkronjave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>Connection statistics</source>
         <translation type="unfinished">Statistikat e lidhjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">Fshih pultin në fillim</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="417"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">Shfaq opsionin e Sistemit DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="434"/>
         <source>Disable tray</source>
         <translation type="unfinished">Çaktivizo tabaka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="441"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">Vendosni tekstin nën ikonat e menysë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="448"/>
         <source>Hide at startup</source>
         <translation type="unfinished">Fshihu në fillim</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="461"/>
         <source>Max log lines</source>
         <translation type="unfinished">Linjat maksimale të regjistrit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="494"/>
         <source>Theme</source>
         <translation type="unfinished">Tema</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="502"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="523"/>
         <source>System</source>
         <translation type="unfinished">Sistemi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="516"/>
         <source>Language</source>
         <translation type="unfinished">Gjuha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="536"/>
         <source>Icon</source>
         <translation type="unfinished">Ikona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="543"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Fonti Emoji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="550" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="550"/>
         <source>Name</source>
         <translation type="unfinished">Emri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="563"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="569"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Pastro serverët përpara përditësimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="576" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="576"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Testi i URL-së pas përditësimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="827" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="591"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="827"/>
         <source>Enable</source>
         <translation type="unfinished">Aktivizo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="598" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="598"/>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">Intervali (minuta, i pavlefshëm nëse më pak se 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Hiq Dublikatat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=value_custom,os=custom_os,osVersion=version_custom,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
         <source>User Agent</source>
         <translation type="unfinished">Agjenti i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="641" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="641"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Versioni i OS=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Dërgo parametrat e sistemit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657"/>
         <source>Automatic update</source>
         <translation type="unfinished">Përditësim automatik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formati: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Lëreni bosh për të përdorur vlerat e paracaktuara.Specifikoni vetëm parametrat që dëshironi të anashkaloni.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Parametrat e personalizuar të sistemit (opsionale)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Hiq Invalid</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Hiq E padisponueshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="689" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="689"/>
         <source>Core</source>
         <translation type="unfinished">Bërthama</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -395,80 +396,80 @@
 Përmirëso Ping dhe Performancë&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Çaktivizo statistikat e trafikut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="746" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="746"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Përdorni Unix Domain Socket për komunikim midis nekobox dhe nekobox_core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="749" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="749"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Përdorni UDS për IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763"/>
         <source>concurrency</source>
         <translation type="unfinished">konkurencë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773"/>
         <source>Padding</source>
         <translation type="unfinished">Mbushje</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="780" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="780"/>
         <source>Default On</source>
         <translation type="unfinished">Parazgjedhja Aktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796"/>
         <source>Loglevel</source>
         <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="806" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="806"/>
         <source>Core Options</source>
         <translation type="unfinished">Opsionet kryesore</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cilësimet për
 klienti i integruar NTP i sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="821" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="821"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Cilësimet e NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836"/>
         <source>server</source>
         <translation type="unfinished">server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846"/>
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863"/>
         <source>sync interval</source>
         <translation type="unfinished">intervali i sinkronizimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="870" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="870"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -476,47 +477,47 @@ klienti i integruar NTP i sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translat
 minuta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Security</source>
         <translation type="unfinished">Siguria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mos u përpiqni të filloni si administrator nëse nuk kërkohet në mënyrë eksplicite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Fillo gjithmonë si përdorues standard</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Çaktivizo kërkesën për privilegjin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Kapërce vërtetimin e certifikatës TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="981"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Përdorni dyqanin e certifikatave Mozilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Gjurma e gishtit e parazgjedhur uTLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1113"/>
         <source>Configs format</source>
         <translation type="unfinished">Formati i konfigurimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1120"/>
         <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
@@ -527,189 +528,189 @@ INI - fillimi i viteve 1980 - format i thjeshtë i konfigurimit të tekstit të 
 binar — 2026 — format arbitrar të vlerave të bajtit për cilësimet e NekoBox të përdorura si vlera LMDB ose skedarë të pavarur — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1150"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Kërkoni fshirjen e profilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1170"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Auto-Testim</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Testoni automatikisht përfaqësuesit në sfond dhe mbani një grup përfaqësuesish që punojnë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Aktivizo testimin automatik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Intervali i testimit (sekonda)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1193"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Sa shpesh duhet kryer cikli i testimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1209"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Përfaqësues për cikël</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1216"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Numri i përfaqësuesve për të testuar në çdo cikël</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1232"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Madhësia e pishinës së punës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1239"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Numri maksimal i përfaqësuesve të verifikuar të punës për të ruajtur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1255"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Pragu i vonesës (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1262"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Vonesa maksimale për të konsideruar një përfaqësues si funksional</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1281"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Numri i riprovës së dështimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1288"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Numri i përpjekjeve të përsëritura përpara se të konsiderohet një përfaqësues si i dështuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Testoni URL-në e synuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1311"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL për të testuar përfaqësuesit kundër</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1314"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1321"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Kaloni automatikisht në një përfaqësues tjetër funksional kur përfaqësuesi i modalitetit TUN dështon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1324"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Aktivizo TUN Failover</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1332"/>
         <source>Startup</source>
         <translation type="unfinished">Fillimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Geometry</source>
         <translation type="unfinished">Gjeometria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Gjeometria e ruajtjes automatike</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Autosave position</source>
         <translation type="unfinished">Pozicioni i ruajtjes automatike</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1452"/>
         <source>Apply now</source>
         <translation type="unfinished">Aplikoni tani</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1526"/>
         <source>Width</source>
         <translation type="unfinished">Gjerësia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1558"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1613"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
         <source>Height</source>
         <translation type="unfinished">Lartësia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1723"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Rruga kryesore e ekzekutueshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1752"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1941"/>
         <source>Use default</source>
         <translation type="unfinished">Përdorni parazgjedhjen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1759"/>
         <source>Remote Control</source>
         <translation type="unfinished">Telekomandë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1974"/>
         <source>Select</source>
         <translation type="unfinished">Zgjidhni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1912"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Drejtoria e Burimeve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1948"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Menaxheri i burimeve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
         <source>Name of program</source>
         <translation type="unfinished">Emri i programit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
         <translation type="unfinished">Paralajmërim sigurie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -726,12 +727,12 @@ Aktivizoni këtë vetëm nëse i besoni plotësisht çdo rrjeti midis jush dhe s
 Jeni i sigurt që dëshironi të çaktivizoni verifikimin TLS?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Paralajmërim për privatësinë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -743,7 +744,7 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished">Aktivizimi i dërgimit HWID do t'i bashkëngjisë identifikuesit e mëposhtëm të pajisjes në çdo kërkesë abonimi:
+        <translation type="unfinished">Aktivizimi i dërgimit HWID do t&apos;i bashkëngjisë identifikuesit e mëposhtëm të pajisjes në çdo kërkesë abonimi:
 
 • ID-ja e harduerit (seriali i makinës / identifikimi i makinës)
 • Sistemi operativ dhe versioni
@@ -759,104 +760,104 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
         <source>Edit Group</source>
         <translation type="unfinished">Redakto grupin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
         <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105"/>
         <source>Name</source>
         <translation type="unfinished">Emri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112"/>
         <source>Type</source>
         <translation type="unfinished">Lloji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120"/>
         <source>Basic</source>
         <translation type="unfinished">bazë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138"/>
         <source>Manually column width</source>
         <translation type="unfinished">Gjerësia e kolonës me dorë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Archive</source>
         <translation type="unfinished">Arkivi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158"/>
         <source>Proxy</source>
         <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224"/>
         <source>None</source>
         <translation type="unfinished">Asnjë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204"/>
         <source>Front Proxy</source>
         <translation type="unfinished">Proxy i përparmë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">Prokura e uljes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Share</source>
         <translation type="unfinished">Shpërndaje</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">Kopjo lidhjet e ndarjes së profilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">Kopjo lidhjet e ndarjes së profilit (Lidhje të personalizuara)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256"/>
         <source>Notes</source>
         <translation type="unfinished">Shënime</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320"/>
         <source>Skip automatic update</source>
         <translation type="unfinished">Kapërce përditësimin automatik</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63"/>
         <source>Copied</source>
         <translation type="unfinished">E kopjuar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Warning</source>
         <translation type="unfinished">Paralajmërim</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Please input URL</source>
         <translation type="unfinished">Ju lutemi futni URL-në</translation>
     </message>
@@ -864,294 +865,294 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853"/>
         <source>Edit</source>
         <translation type="unfinished">Redakto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
         <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
         <source>Type</source>
         <translation type="unfinished">Lloji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
         <source>Name</source>
         <translation type="unfinished">Emri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
         <source>Address</source>
         <translation type="unfinished">Adresa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
         <source>Network</source>
         <translation type="unfinished">Rrjeti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
         <source>Settings</source>
         <translation type="unfinished">Cilësimet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176"/>
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Metoda themelore e transportit.Duhet të jetë në përputhje me serverin, përndryshe, lidhja nuk mund të vendoset.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179"/>
         <source>Transport</source>
         <translation type="unfinished">Transporti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236"/>
         <source>Server support is required</source>
         <translation type="unfinished">Kërkohet mbështetje për serverin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239"/>
         <source>Multiplex</source>
         <translation type="unfinished">Multipleks</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246"/>
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Siguria e shtresës së transportit.Duhet të jetë në përputhje me serverin, përndryshe, lidhja nuk mund të vendoset.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249"/>
         <source>Security</source>
         <translation type="unfinished">Siguria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270"/>
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">Kodimi i paketës UDP FullCone për zbatimin e veçorive të tilla si UDP FullCone.Kërkohet mbështetja e serverit, nëse bëhet përzgjedhja e gabuar, lidhja nuk mund të bëhet.Ju lutemi lëreni bosh.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273"/>
         <source>Packet Encoding</source>
         <translation type="unfinished">Kodimi i paketave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281"/>
         <source>Keep Default</source>
         <translation type="unfinished">Mbani të paracaktuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286"/>
         <source>On</source>
         <translation type="unfinished">Aktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291"/>
         <source>Off</source>
         <translation type="unfinished">Joaktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;E anashkalon mux në Aktiv&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307"/>
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">Aktivizo TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shpejtësia brutale TCP e serverit te klienti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324"/>
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">Shpejtësia brutale e TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334"/>
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355"/>
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">Cilësimet e personalizuara të daljes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371"/>
         <source>Custom Config Settings</source>
         <translation type="unfinished">Cilësimet e konfigurimit të personalizuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">Aplikoni cilësimet në këtë grup</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446"/>
         <source>Network Settings (%1)</source>
         <translation type="unfinished">Cilësimet e rrjetit (% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Metoda e kërkesës http, do të konvertohet në shkronja të mëdha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554"/>
         <source>Method</source>
         <translation type="unfinished">Metoda</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588"/>
         <source>header type</source>
         <translation type="unfinished">lloji i kokës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628"/>
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">Cilësimet e kamuflazhit TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mund të degradojë performancën, provoni fillimisht të regjistroni fragmentin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685"/>
         <source>Enable TLS fragment</source>
         <translation type="unfinished">Aktivizo fragmentin TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;formati i kohës, si p.sh. 500ms, 10ms etj.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695"/>
         <source>Fallback Delay</source>
         <translation type="unfinished">Vonesa e kthimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708"/>
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">Aktivizo fragmentin e regjistrimit TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">Çelësi publik i realitetit.Nëse nuk është bosh, kthejeni TLS në REALITET.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760"/>
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">ID e shkurtër e realitetit.Prano vetëm një vlerë.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763"/>
         <source>Reality SID</source>
         <translation type="unfinished">SID e realitetit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785"/>
         <source>TLS Security Settings</source>
         <translation type="unfinished">Cilësimet e sigurisë TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687"/>
         <source>Certificate</source>
         <translation type="unfinished">Certifikata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">Kur aktivizohet, V2Ray nuk do të kontrollojë vlefshmërinë e certifikatës TLS të ofruar nga hosti në distancë (siguria është e barabartë me tekstin e thjeshtë)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832"/>
         <source>Allow insecure</source>
         <translation type="unfinished">Lejo të pasigurt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839"/>
         <source>Enable ECH</source>
         <translation type="unfinished">Aktivizo ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
         <source>ECH Config</source>
         <translation type="unfinished">Konfigurimi i ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864"/>
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871"/>
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">Tregimi i emrit të serverit, tekst i qartë.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">Negocimi i protokollit të shtresës së aplikimit, tekst i qartë.Ju lutemi ndani ato me presje.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72"/>
         <source>both</source>
         <translation type="unfinished">të dyja</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Me porosi (% 1 dalëse)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">I personalizuar (konfigurimi %1)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668"/>
         <source>Not set</source>
         <translation type="unfinished">Nuk është vendosur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670"/>
         <source>Already set</source>
         <translation type="unfinished">E vendosur tashmë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728"/>
         <source>Confirm</source>
         <translation type="unfinished">Konfirmo</translation>
     </message>
@@ -1159,95 +1160,95 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">Përfaqësuesi i uljes për grupin Grupi 2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
         <source>Proxy:</source>
         <translation type="unfinished">Përfaqësues:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
         <source>Search:</source>
         <translation type="unfinished">Kërko:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
         <source>Group1</source>
         <translation type="unfinished">Grupi 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
         <source>Group2</source>
         <translation type="unfinished">Grupi 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Përfaqësuesi i përparmë për grupin % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421"/>
         <source>Front proxy: </source>
         <translation type="unfinished">Përfaqësuesi i përparmë:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Përfaqësuesi i uljes për grupin % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">Përfaqësuesi i uljes:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
         <source>Proxy</source>
         <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Direct</source>
         <translation type="unfinished">Direkt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457"/>
         <source>None</source>
         <translation type="unfinished">Asnjë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">Shto përfaqësues</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Zëvendëso %1 përfaqësuesin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140"/>
         <source>Select outbound</source>
         <translation type="unfinished">Zgjidhni jashtë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142"/>
         <source>Outbound: </source>
         <translation type="unfinished">Jashtë:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149"/>
         <source>Outbound</source>
         <translation type="unfinished">Jashtë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151"/>
         <source>Block</source>
         <translation type="unfinished">Blloko</translation>
     </message>
@@ -1255,42 +1256,42 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
         <source>Hotkey</source>
         <translation type="unfinished">Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Shkurtoret</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
         <source>Global</source>
         <translation type="unfinished">globale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
         <source>Trigger main window</source>
         <translation type="unfinished">Aktivizoni dritaren kryesore</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
         <source>Show groups</source>
         <translation type="unfinished">Shfaq grupet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
         <source>Show routes</source>
         <translation type="unfinished">Trego itineraret</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
         <source>Proxy mode</source>
         <translation type="unfinished">Modaliteti i përfaqësuesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
         <source>Toggle System Proxy</source>
         <translation type="unfinished">Ndrysho përfaqësuesin e sistemit</translation>
     </message>
@@ -1298,27 +1299,27 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
         <source>Groups</source>
         <translation type="unfinished">Grupet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
         <source>New group</source>
         <translation type="unfinished">Grupi i ri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
         <source>Update all subscriptions</source>
         <translation type="unfinished">Përditësoni të gjitha abonimet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Confirmation</source>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Të përditësohen të gjitha abonimet?</translation>
     </message>
@@ -1326,305 +1327,305 @@ Jeni i sigurt që dëshironi të aktivizoni dërgimin HWID?</translation>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
         <source>Routes</source>
         <translation type="unfinished">Rrugët</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
         <translation type="unfinished">E zakonshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39" />
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="39"/>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
         <translation type="unfinished">Ndihet paketat fillestare të lidhjeve për të identifikuar protokollin dhe SNI.Rezultati i nuhatjes për destinacionin gjithashtu rishkruan destinacionin e lidhjes me SNI-n e nuhatur.Për më shumë të dhëna mbi protokollin e nuhatur, referojuni dokumentacionit të sing-box.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
         <source>Sniffing Mode</source>
         <translation type="unfinished">Modaliteti i nuhatjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="50"/>
         <source>Disable</source>
         <translation type="unfinished">Çaktivizo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="55"/>
         <source>Sniff result for routing</source>
         <translation type="unfinished">Rezultati i nuhatjes për rrugëtim</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="69"/>
         <source>Routing Profile</source>
         <translation type="unfinished">Profili i rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="92"/>
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">Strategjia e Domenit Inbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="107"/>
         <source>GitHub</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="112"/>
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="122"/>
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="127"/>
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="132"/>
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="149"/>
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">Pasqyrë e vendosur me rregulla në distancë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="162"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zgjidhni domenet në IP përpara lidhjes, gjithashtu ndikon edhe në adresën e serverit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="165"/>
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">Strategjia e Domenit të Jashtëm</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="178"/>
         <source>RuleSet download url</source>
         <translation type="unfinished">Url-ja e shkarkimit të RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="192"/>
         <source>Hijack</source>
         <translation type="unfinished">Rrëmbimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="198"/>
         <source>DNS Server</source>
         <translation type="unfinished">Server DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="312"/>
         <source>Listen Port</source>
         <translation type="unfinished">Dëgjoni Portin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="226"/>
         <source>IPv4 Response</source>
         <translation type="unfinished">Përgjigja IPv4</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="236"/>
         <source>IPv6 Response</source>
         <translation type="unfinished">Përgjigja IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="246"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duhet të përdoret formati i mëposhtëm:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;prapashtesa:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="249"/>
         <source>Rules</source>
         <translation type="unfinished">Rregullat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="280"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="319"/>
         <source>Enable</source>
         <translation type="unfinished">Aktivizo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="287"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nëse duhet dëgjuar në 0.0.0.0 në mënyrë që pajisjet e tjera në LAN të mund ta përdorin këtë server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="290"/>
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">Lejo që Lan të lidhet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="303"/>
         <source>Redirect Settings</source>
         <translation type="unfinished">Cilësimet e ridrejtimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="329"/>
         <source>Listen Address</source>
         <translation type="unfinished">Adresa e dëgjimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="340"/>
         <source>DNS</source>
         <translation type="unfinished">DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="346"/>
         <source>Simple DNS Settings</source>
         <translation type="unfinished">Cilësimet e thjeshta të DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;shembuj:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;&lt;p&gt;&lt;4&gt;3/3/2/2/</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="355"/>
         <source>Remote DNS</source>
         <translation type="unfinished">DNS në distancë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="367"/>
         <source>Default DNS server</source>
         <translation type="unfinished">Serveri i parazgjedhur DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="428"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="502"/>
         <source>Query Strategy</source>
         <translation type="unfinished">Strategjia e pyetjeve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS lokale nuk mund të përdoret në disa konfigurime, do të duhet të vendosni një ip këtu për t'u përdorur si dns lokale në situata të tilla&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS lokale nuk mund të përdoret në disa konfigurime, do të duhet të vendosni një ip këtu për t&apos;u përdorur si dns lokale në situata të tilla&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="443"/>
         <source>Local Override</source>
         <translation type="unfinished">Mbështetja lokale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450" />
-        <source>This is especially important and it is recommended to use the default value of "localhost".
-If the default value does not work, try changing it to "223.5.5.5".
-For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished">Kjo është veçanërisht e rëndësishme dhe rekomandohet të përdoret vlera e paracaktuar e "localhost".
-Nëse vlera e paracaktuar nuk funksionon, provoni ta ndryshoni atë në "223.5.5.5".
-Për më shumë informacion, shihni dokumentin "Konfigurimi/DNS".</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="450"/>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <translation type="unfinished">Kjo është veçanërisht e rëndësishme dhe rekomandohet të përdoret vlera e paracaktuar e &quot;localhost&quot;.
+Nëse vlera e paracaktuar nuk funksionon, provoni ta ndryshoni atë në &quot;223.5.5.5&quot;.
+Për më shumë informacion, shihni dokumentin &quot;Konfigurimi/DNS&quot;.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="455"/>
         <source>Direct DNS</source>
         <translation type="unfinished">DNS direkte</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="514"/>
         <source>Enable FakeIP</source>
         <translation type="unfinished">Aktivizo FakeIP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="524"/>
         <source>DNS Object Settings</source>
         <translation type="unfinished">Cilësimet e objektit DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="532"/>
         <source>Use DNS Object</source>
         <translation type="unfinished">Përdorni objektin DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="545"/>
         <source>Format</source>
         <translation type="unfinished">Formati</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="558"/>
         <source>Document</source>
         <translation type="unfinished">Dokumenti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
         <source>Route</source>
         <translation type="unfinished">Itinerari</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="580"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Profilet e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="592"/>
         <source>New</source>
         <translation type="unfinished">E re</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="599"/>
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="606"/>
         <source>Export</source>
         <translation type="unfinished">Eksporto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="613"/>
         <source>Edit</source>
         <translation type="unfinished">Redakto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="620"/>
         <source>Delete</source>
         <translation type="unfinished">Fshije</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>Invalid state</source>
         <translation type="unfinished">Gjendje e pavlefshme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Lista e profileve të rrugëtimit është bosh, kjo duhet të jetë një gjendje e paarritshme, mund të ndodhin përplasje tani</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>Invalid settings</source>
         <translation type="unfinished">Cilësimet e pavlefshme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="206"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Profili i rrugëtimit nuk mund të jetë bosh</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="210"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">Rregullat DNS nuk janë të vlefshme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
         <translation type="unfinished">Paralajmërim sigurie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -1641,12 +1642,12 @@ Aktivizoni këtë vetëm nëse keni ndërmend të ndani DNS me pajisje të besua
 je i sigurt?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Operacion i pavlefshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Profilet e rrugëtimit nuk mund të jenë bosh, provo të shtosh një profil tjetër ose ta modifikosh këtë</translation>
     </message>
@@ -1654,57 +1655,57 @@ je i sigurt?</translation>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Rregulloni cilësimet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
         <source>Stack</source>
         <translation type="unfinished">Stack</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Enable IPv6</source>
         <translation type="unfinished">Aktivizo IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">Rrugë e rreptë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kur aktivizohet, CIDR-të direkte të IP-së dhe grupet e rregullave do të shtohen gjithashtu në cilësimin Tun për t'u përjashtuar në nivelin e rrugëtimit të sistemit operativ.E RËNDËSISHME: grupe të mëdha rregullash janë raportuar se shkaktojnë përdorim masiv të CPU-së në Windows, ju lutemi aktivizoni këtë opsion me kujdes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kur aktivizohet, CIDR-të direkte të IP-së dhe grupet e rregullave do të shtohen gjithashtu në cilësimin Tun për t&apos;u përjashtuar në nivelin e rrugëtimit të sistemit operativ.E RËNDËSISHME: grupe të mëdha rregullash janë raportuar se shkaktojnë përdorim masiv të CPU-së në Windows, ju lutemi aktivizoni këtë opsion me kujdes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Aktivizo Tun Routing</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">Ridrejtimi automatik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">Tun adresën</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">Vendosni adresën ipv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">Përjashtoni CIDR-të</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
         <source>Applications</source>
         <translation type="unfinished">Aplikacionet</translation>
     </message>
@@ -1712,22 +1713,22 @@ je i sigurt?</translation>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">Intervali i kontrollit të sesionit në punë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
         <source>Idle Session Timeout</source>
         <translation type="unfinished">Koha e seancës së papunë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
         <source>Min Idle Session</source>
         <translation type="unfinished">Min sesioni i papunë</translation>
     </message>
@@ -1735,17 +1736,17 @@ je i sigurt?</translation>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">Rendi i trafikut është nga lart poshtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
         <source>Select Profile</source>
         <translation type="unfinished">Zgjidhni Profilin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Emri nuk mund të jetë bosh.</translation>
     </message>
@@ -1753,27 +1754,27 @@ je i sigurt?</translation>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
         <translation type="unfinished">Bërthama</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
         <source>Json Editor</source>
         <translation type="unfinished">Redaktori Json</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">JSON dalëse, ju lutemi lexoni dokumentacionin.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Ju lutemi plotësoni konfigurimin e plotë.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Emri nuk mund të jetë bosh.</translation>
     </message>
@@ -1781,67 +1782,67 @@ je i sigurt?</translation>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
         <source>Socks address</source>
         <translation type="unfinished">Adresa e çorapeve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
         <source>Socks port</source>
         <translation type="unfinished">Porti i çorapeve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
         <source>Core path</source>
         <translation type="unfinished">Rruga kryesore</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
         <source>Choose from file</source>
         <translation type="unfinished">Zgjidhni nga skedari</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args për të kaluar te ekzekutuesi.Mund të futni një %s të vetme dhe ajo do të zëvendësohet me shtegun drejt një skedari që përmban konfigurimin e futur më poshtë.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
         <source>Args</source>
         <translation type="unfinished">Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
         <source>run -confPath %s</source>
         <translation type="unfinished">ekzekuto -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;përmbajtja e skedarit të konfigurimit që do t'i kalohet procesit bazë shtesë nëse %s është specifikuar në args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;përmbajtja e skedarit të konfigurimit që do t&apos;i kalohet procesit bazë shtesë nëse %s është specifikuar në args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
         <source>Config</source>
         <translation type="unfinished">Konfigurimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
         <source>No logs</source>
         <translation type="unfinished">Nuk ka regjistra</translation>
     </message>
@@ -1849,12 +1850,12 @@ je i sigurt?</translation>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
@@ -1862,32 +1863,32 @@ je i sigurt?</translation>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Multiplexing</source>
         <translation type="unfinished">Multipleksimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
         <source>Traffic Pattern</source>
         <translation type="unfinished">Modeli i trafikut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
         <source>Port range</source>
         <translation type="unfinished">Gama e portit</translation>
     </message>
@@ -1895,43 +1896,43 @@ je i sigurt?</translation>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - Algoritmi i kontrollit të kongjestionit QUIC.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - Numri i lidhjeve të njëkohshme të tunelit.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Versioni i UDP mbi protokollin TCP, kërkohet mbështetja e serverit.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">Joaktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - Titujt shtesë për të dërguar në kërkesat HTTP.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
         <source>Headers</source>
         <translation type="unfinished">Titujt</translation>
     </message>
@@ -1939,104 +1940,104 @@ je i sigurt?</translation>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
         <source>Heartbeat</source>
         <translation type="unfinished">Rrahjet e zemrës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
         <source>Download (Mbps)</source>
         <translation type="unfinished">Shkarko (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
         <source>Upload (Mbps)</source>
         <translation type="unfinished">Ngarko (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">Zero Rtt Shtrëngim duarsh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
         <source>UDP Relay Mode</source>
         <translation type="unfinished">Mënyra e stafetës UDP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
         <source>Congestion Control</source>
         <translation type="unfinished">Kontrolli i mbingarkesës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vargjet e ndara me presje: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
         <source>Obfs Password</source>
         <translation type="unfinished">Fjalëkalimi i Obfs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">Çaktivizo zbulimin MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
         <source>Port range</source>
         <translation type="unfinished">Gama e portit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
         <source>Hop Interval</source>
         <translation type="unfinished">Intervali i hopit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 ms&lt;br/&gt;1 s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
         <source>Auth Type</source>
         <translation type="unfinished">Lloji i autorizimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
         <source>Auth Payload</source>
         <translation type="unfinished">Auth Payload</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
         <source>Generate UUID</source>
         <translation type="unfinished">Krijo UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">Certifikata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
         <source>Disable SNI</source>
         <translation type="unfinished">Çaktivizo SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
         <source>SNI</source>
         <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
         <source>Allow Insecure</source>
         <translation type="unfinished">Lejo të pasigurt</translation>
     </message>
@@ -2044,52 +2045,52 @@ je i sigurt?</translation>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
         <source>EditSSH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
         <source>User</source>
         <translation type="unfinished">Përdoruesi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
         <source>Private Key</source>
         <translation type="unfinished">Çelësi Privat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
         <source>Private Key Password</source>
         <translation type="unfinished">Fjalëkalimi i çelësit privat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
         <translation type="unfinished">Çelësi pritës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
         <translation type="unfinished">Algoritmet kryesore të hostit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
         <source>Client Version</source>
         <translation type="unfinished">Versioni i klientit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
         <source>Private Key Path</source>
         <translation type="unfinished">Rruga e çelësit privat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
         <source>Choose File</source>
         <translation type="unfinished">Zgjidhni Skedarin</translation>
     </message>
@@ -2097,32 +2098,32 @@ je i sigurt?</translation>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Versioni i UDP mbi protokollin TCP, kërkohet mbështetja e serverit.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
         <source>Encryption</source>
         <translation type="unfinished">Enkriptimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
         <source>Plugin Args</source>
         <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
         <source>Off</source>
         <translation type="unfinished">Joaktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
         <source>Plugin</source>
         <translation type="unfinished">Plugin</translation>
     </message>
@@ -2130,27 +2131,27 @@ je i sigurt?</translation>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
         <source>Version</source>
         <translation type="unfinished">Versioni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2158,52 +2159,52 @@ je i sigurt?</translation>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
         <source>Version</source>
         <translation type="unfinished">Versioni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Versioni i UDP mbi protokollin TCP, kërkohet mbështetja e serverit.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
         <source>Off</source>
         <translation type="unfinished">Joaktiv</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
         <source>Path</source>
         <translation type="unfinished">Rruga</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
         <source>Headers</source>
         <translation type="unfinished">Titujt</translation>
     </message>
@@ -2211,72 +2212,72 @@ je i sigurt?</translation>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
         <source>State directory</source>
         <translation type="unfinished">Drejtoria e shtetit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
         <translation type="unfinished">Çelësi i vërtetimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
         <source>Control URL</source>
         <translation type="unfinished">URL e kontrollit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
         <source>Hostname</source>
         <translation type="unfinished">Emri i hostit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
         <translation type="unfinished">Pranoni rrugët</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
         <source>Ephemeral</source>
         <translation type="unfinished">Efemerale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
         <source>Exit node allow lan access</source>
         <translation type="unfinished">Nyja e daljes lejon hyrjen në LAN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
         <source>Advertise exit node</source>
         <translation type="unfinished">Reklamoni nyjen e daljes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
         <source>Exit node</source>
         <translation type="unfinished">Nyja e daljes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;lista e nënrrjetave të ndara me presje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
         <source>Advertise routes</source>
         <translation type="unfinished">Reklamoni rrugët</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;përdor dns tailscale si dns në distancë&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
         <source>Global DNS</source>
         <translation type="unfinished">DNS globale</translation>
     </message>
@@ -2284,27 +2285,27 @@ je i sigurt?</translation>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
         <translation type="unfinished">Shtegu i personalizuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
         <translation type="unfinished">Args shtesë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
         <translation type="unfinished">Konfigurimi i Tor</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
         <translation type="unfinished">Të dhënat DIr</translation>
     </message>
@@ -2312,7 +2313,7 @@ je i sigurt?</translation>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="23"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
@@ -2320,27 +2321,27 @@ je i sigurt?</translation>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Fjalëkalimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
         <source>Health Check</source>
         <translation type="unfinished">Kontroll shëndetësor</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">Joaktiv</translation>
     </message>
@@ -2348,22 +2349,22 @@ je i sigurt?</translation>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
         <translation type="unfinished">Siguria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
         <source>Alter Id</source>
         <translation type="unfinished">Alter Id</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
         <source>Generate UUID</source>
         <translation type="unfinished">Krijo UUID</translation>
     </message>
@@ -2371,127 +2372,127 @@ je i sigurt?</translation>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
         <source>EditWireguard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23"/>
         <source>Private Key</source>
         <translation type="unfinished">Çelësi Privat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33"/>
         <source>Public Key</source>
         <translation type="unfinished">Çelësi publik</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">Çelësi i përbashkët paraprak</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53"/>
         <source>Reserved</source>
         <translation type="unfinished">Rezervuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;intervali_keepalive_persistent në sekonda&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">Mbajtja e vazhdueshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;lista e nënrrjetave të ndara me presje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82"/>
         <source>Local Address</source>
         <translation type="unfinished">Adresa lokale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92"/>
         <source>MTU</source>
         <translation type="unfinished">MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106"/>
         <source>Workers</source>
         <translation type="unfinished">Punëtorët</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
         <source>Use System Interface</source>
         <translation type="unfinished">Përdorni ndërfaqen e sistemit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">Cilësimet e Amnezia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
         <source>Enable</source>
         <translation type="unfinished">Aktivizo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
         <source>Junk Packet Count</source>
         <translation type="unfinished">Numërimi i paketave të padëshiruara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
         <source>Junk Packet Min Size</source>
         <translation type="unfinished">Madhësia minimale e paketës së hedhurinave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
         <source>Junk Packet Max Size</source>
         <translation type="unfinished">Madhësia maksimale e paketës së hedhurinave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169"/>
         <source>Init Packet Junk Size</source>
         <translation type="unfinished">Init Pako Junk Size</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179"/>
         <source>Response Packet Junk Size</source>
         <translation type="unfinished">Madhësia e mbeturinave të paketës së përgjigjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189"/>
         <source>Init Packet Magic Header</source>
         <translation type="unfinished">Init Pako Magjike Header</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199"/>
         <source>Response Packet Magic Header</source>
         <translation type="unfinished">Koka magjike e paketës së përgjigjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209"/>
         <source>Underload Packet Magic Header</source>
         <translation type="unfinished">Koka Magjike e Paketës Nënngarkesë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219"/>
         <source>Transport Header Magic Header</source>
         <translation type="unfinished">Koka e Transportit Koka Magjike</translation>
     </message>
@@ -2499,47 +2500,47 @@ je i sigurt?</translation>
 <context>
     <name>GroupItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63"/>
         <source>Update Subscription</source>
         <translation type="unfinished">Përditëso abonimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
         <source>Edit</source>
         <translation type="unfinished">Redakto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
         <source>Remove</source>
         <translation type="unfinished">Hiq</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Basic</source>
         <translation type="unfinished">bazë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138"/>
         <source>Archive</source>
         <translation type="unfinished">Arkivi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150"/>
         <source>Last update: %1</source>
         <translation type="unfinished">Përditësimi i fundit: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Confirmation</source>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Të hiqet %1?</translation>
     </message>
@@ -2547,115 +2548,115 @@ je i sigurt?</translation>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
         <source>Usage Statistics</source>
         <translation type="unfinished">Statistikat e Përdorimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">Koha e fundit e nisjes:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">Koha e përdorimit:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">Fillimi i numërimit:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">Koha e parë e nisjes:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">Statistikat e Sigurisë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
         <source>Failed authentications count:</source>
         <translation type="unfinished">Numri i vërtetimeve të dështuara:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">Numri i përdoruesve:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">Statistikat e bazës së të dhënave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">Profilet e përfaqësuesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">Fshirë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">Krijuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">ekziston</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Grupet dhe Abonimet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">Profilet e rrugës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">Statistikat e trafikut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Trafiku total i përfaqësuesve:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">Shkarko:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">Ngarko:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Trafiku total i drejtpërdrejtë:</translation>
     </message>
@@ -2663,883 +2664,883 @@ je i sigurt?</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
         <source>Profiles</source>
         <translation type="unfinished">Profilet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">Cilësimet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">Drejtimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
         <source>Update</source>
         <translation type="unfinished">Përditëso</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">Informacion</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
         <source>Tun Mode</source>
         <translation type="unfinished">Modaliteti i aktivizimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
         <source>System DNS</source>
         <translation type="unfinished">Sistemi DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2683" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2686" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2687"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2690"/>
         <source>System Proxy</source>
         <translation type="unfinished">Proxy i sistemit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="315" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="703" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="755"/>
         <source>Test</source>
         <translation type="unfinished">Test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="390" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="390"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144"/>
         <source>Type</source>
         <translation type="unfinished">Lloji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="395" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="395"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147"/>
         <source>Address</source>
         <translation type="unfinished">Adresa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="400" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="400"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150"/>
         <source>Name</source>
         <translation type="unfinished">Emri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="405" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="405"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299"/>
         <source>Test Result</source>
         <translation type="unfinished">Rezultati i testit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="410" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Traffic</source>
         <translation type="unfinished">Trafiku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="454"/>
         <source>Logs</source>
         <translation type="unfinished">Regjistrat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Connections</source>
         <translation type="unfinished">Lidhjet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="517" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="517"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">Destinacioni (domeni)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="520" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="520"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Klikoni Për të çaktivizuar klasifikimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="525" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="525"/>
         <source>Process</source>
         <translation type="unfinished">Procesi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="528" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="528"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Klikoni për të renditur sipas procesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Protocol</source>
         <translation type="unfinished">Protokolli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="536"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Klikoni për të renditur sipas protokollit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="541"/>
         <source>Outbound</source>
         <translation type="unfinished">Jashtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="544"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Kliko për të renditur sipas daljes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="552"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Klikoni Për të ndryshuar renditjen sipas trafikut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="561" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="561"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">Grafiku i trafikut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="644"/>
         <source>Program</source>
         <translation type="unfinished">Programi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="668" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="668"/>
         <source>Preferences</source>
         <translation type="unfinished">Preferencat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="683"/>
         <source>Current Group</source>
         <translation type="unfinished">Grupi aktual</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="689"/>
         <source>Current Selected</source>
         <translation type="unfinished">Zgjedhur aktuale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="693"/>
         <source>Share</source>
         <translation type="unfinished">Shpërndaje</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="738" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="738"/>
         <source>Hidden menu</source>
         <translation type="unfinished">Menuja e fshehur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="750" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="750"/>
         <source>Routing Menu</source>
         <translation type="unfinished">Menyja e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="762" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="762"/>
         <source>Context</source>
         <translation type="unfinished">Konteksti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">Profilet e kontekstit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1239" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1239"/>
         <source>Information</source>
         <translation type="unfinished">Informacion</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Exit</source>
         <translation type="unfinished">Dilni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="795"/>
         <source>Toggle Window</source>
         <translation type="unfinished">Ndrysho dritaren</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="800" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="800"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Cilësimet bazë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
         <source>New profile</source>
         <translation type="unfinished">Profili i ri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="810"/>
         <source>Groups</source>
         <translation type="unfinished">Grupet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3780" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3794"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3804"/>
         <source>Start</source>
         <translation type="unfinished">Filloni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3779" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3793"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3804"/>
         <source>Stop</source>
         <translation type="unfinished">Ndalo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831"/>
         <source>Edit</source>
         <translation type="unfinished">Redakto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>Routing Settings</source>
         <translation type="unfinished">Cilësimet e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="844" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="844"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Shto profilin nga clipboard</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="852" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="852"/>
         <source>Delete</source>
         <translation type="unfinished">Fshije</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860"/>
         <source>Debug Info</source>
         <translation type="unfinished">Informacioni i korrigjimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="865" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="865"/>
         <source>QR Code and link</source>
         <translation type="unfinished">Kodi QR dhe lidhja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="873" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="873"/>
         <source>Copy Link</source>
         <translation type="unfinished">Kopjo lidhjen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="894"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">Pastro rezultatin e testit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1581" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1585"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Eksporto konfigurimin %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">Rivendos trafikun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">Skanoni kodin QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">Aktivizo përfaqësuesin e sistemit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934"/>
         <source>Disable</source>
         <translation type="unfinished">Çaktivizo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="939"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Hiq Dublikatat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="947" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="947"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032"/>
         <source>fake</source>
         <translation type="unfinished">e rreme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
         <source>Move</source>
         <translation type="unfinished">Lëvizni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="966"/>
         <source>Start with system</source>
         <translation type="unfinished">Filloni me sistemin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
         <source>Remember last profile</source>
         <translation type="unfinished">Mbani mend profilin e fundit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Lejo pajisjet e tjera të lidhen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="987"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Hiq E padisponueshme</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="995"/>
         <source>Full Test</source>
         <translation type="unfinished">Test i plotë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Cilësimet e tastierës së nxehtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1008"/>
         <source>Select All</source>
         <translation type="unfinished">Zgjidhni Të gjitha</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1016" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1016"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">Kopjoni lidhjet e personalizuara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040"/>
         <source>Copy links</source>
         <translation type="unfinished">Kopjoni lidhjet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Aktivizo Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3073" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3077"/>
         <source>Clone</source>
         <translation type="unfinished">Klon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1064" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1064"/>
         <source>Update subscription</source>
         <translation type="unfinished">Përditëso abonimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
         <source>Resolve domain</source>
         <translation type="unfinished">Zgjidhja e domenit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1083"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Rregulloni cilësimet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Restart Program</source>
         <translation type="unfinished">Rinisni programin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">Hapni dosjen e konfigurimit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1114" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1114"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">Rinis Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1119" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1119"/>
         <source>Stop Testing</source>
         <translation type="unfinished">Ndalo testimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1124"/>
         <source>Url Test</source>
         <translation type="unfinished">Testi Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Grupi i Testit Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1157"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">Zgjidheni domenin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Hiq Invalid</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1176"/>
         <source>Full test Selected</source>
         <translation type="unfinished">Testi i plotë i zgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181"/>
         <source>Download test Selected</source>
         <translation type="unfinished">Shkarko testin e zgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1186"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">Testi i ngarkimit u zgjodh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1191"/>
         <source>Country test Selected</source>
         <translation type="unfinished">Testi i shtetit u zgjodh</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1196"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">Testi i thjeshtë i shkarkimit i zgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">Grupi i shpejtësisë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206"/>
         <source>Hide window</source>
         <translation type="unfinished">Fshih dritaren</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
         <source>Add profile from File</source>
         <translation type="unfinished">Shto profilin nga Skedari</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3809" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3823"/>
         <source>Add new Group</source>
         <translation type="unfinished">Shto një grup të ri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Security Settings</source>
         <translation type="unfinished">Cilësimet e sigurisë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1234" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1234"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">Rryma më e shpejtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1247" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1247"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Regjistro detyrën e ngritur të Windows</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1252" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1267" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1252"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1267"/>
         <source>About</source>
         <translation type="unfinished">Rreth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1257" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1257"/>
         <source>Statistics</source>
         <translation type="unfinished">Statistikat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1262" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1262"/>
         <source>Check for updates</source>
         <translation type="unfinished">Kontrolloni për përditësime</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Unavailable</source>
         <translation type="unfinished">I padisponueshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="716" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="717"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">Regjistri i lëvizjes automatike</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1240"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Redakto profilet e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1258" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1262"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Përditëso profilet e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1270" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1274" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1298" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1274"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">Përditësimi i përgjigjes</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1275"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Asnjë profil i rrugëtimit nuk është përditësuar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1275" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1279"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Përditësuar %1 profilet e rrugëtimit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1285" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Përditëso hartën e grupit të rregullave</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Përditësimi i grupeve të rregullave dështoi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1303"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Rregulloret u përditësuan me sukses</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1308" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1312"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Përditëso cache RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1343" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Cache e grupeve të rregullave është përditësuar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1357" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1361"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Pastro cache-in e RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1393" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1397"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Aktivizo AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1799" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1803"/>
         <source>Error</source>
         <translation type="unfinished">Gabim</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1890"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Cilësimet e rregullimit ndryshuan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Rinisni Tun për të hyrë në fuqi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1893" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1948" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3138" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3514" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3569" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3618" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3858" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1897"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1952"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3518"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3573"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3622"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3872"/>
         <source>Confirmation</source>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1894" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1949" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1898"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1953"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Cilësimet ndryshuan, rinisni përfaqësuesin?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1923" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1927"/>
         <source>Settings changed</source>
         <translation type="unfinished">Cilësimet ndryshuan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1924" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1928"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Rinisni programin për të hyrë në fuqi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1964" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1968"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Profil i importuar %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2249"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Përdoruesi ka zgjedhur për asnjë kërkesë privilegji, disa veçori mund të mos funksionojnë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2310" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2314"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Ju lutemi jepni privilegjet kryesore të rrënjës</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2659" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2663"/>
         <source>Not Running</source>
         <translation type="unfinished">Nuk Vrapon</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3074" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3078"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klononi %1 artikull(a)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3118" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3122"/>
         <source> Confirmation </source>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3119" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3123"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Të hiqet %1 artikull(ë) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3139" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3143"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Të hiqet %1 artikull(ë) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3176" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3189" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3180"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3193"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">U kopjua %1 artikull(a)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3424" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3428"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Kodi QR nuk u gjet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3446" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3450"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Ekrani nuk mund të regjistrohet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3519"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Të hiqet %1 Artikujt e padisponueshëm ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3574"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Të hiqet %1 artikuj të pavlefshëm ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3619" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3623"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Të zëvendësohen adresat e serverit të domenit me IP-të e tyre të zgjidhura?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3777" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3791"/>
         <source>Clear</source>
         <translation type="unfinished">E qartë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3848" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3862"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Fshi grupin e zgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3849" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3863"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Redakto grupin e zgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3859" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3873"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Të hiqet %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4601" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4615"/>
         <source>Cannot start</source>
         <translation type="unfinished">Nuk mund të fillojë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4602" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4616"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Kërkesa për shkarkimin e fundit nuk ka përfunduar ende</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4650"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Shkarkimi i aktiveve të përditësimit dështoi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">Testi i profilit u ndërpre</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">Gabim testimi [% 1]: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Diçka është shumë e gabuar, subjekti nuk mund të gjendet!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Të dhënat e menaxherit të profilit janë të dëmtuara, provoni përsëri.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Testi i fundit i URL-së nuk doli plotësisht, ju lutemi prisni.Nëse vazhdon, ju lutemi rinisni programin.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Ndërtimi i konfigurimit të testit dështoi:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Testi i URL-së përfundoi!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Dështoi në ndalimin e testeve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273"/>
         <source>Testing</source>
         <translation type="unfinished">Testimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Testi i fundit i shpejtësisë nuk doli plotësisht, ju lutemi prisni.Nëse vazhdon, ju lutemi rinisni programin.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest përfundoi!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Testi i shpejtësisë së profilit u ndërpre</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">Gabim i testit të shpejtësisë [% 1]: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Së pari duhet të aktivizoni rrëmbimin e serverit DNS</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Vendosja e dns-ve të sistemit dështoi:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Rregulloni sjelljen e gabuar të pajisjes</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Nëse keni probleme me nisjen e VPN-së, mund të detyroni të rivendosni procesin Core këtu dhe më pas të provoni të filloni përsëri profilin.Gabimi është % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600"/>
         <source>Reset</source>
         <translation type="unfinished">Rivendos</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
         <source>Cancel</source>
         <translation type="unfinished">Anulo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Një tjetër profil po fillon...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Një tjetër profil po ndalon...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Nëse nuk ka përgjigje për një kohë të gjatë, rekomandohet të rindizni softuerin.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Profili i fillimit %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Nisja e profilit %1 dështoi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730"/>
         <source>Stop return error</source>
         <translation type="unfinished">Gabim i ndalimit të kthimit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Ndalimi i profilit %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Ndalimi dështoi, rinisni programin.</translation>
     </message>
@@ -3547,22 +3548,22 @@ je i sigurt?</translation>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Emri i përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
         <translation type="unfinished">Fjalëkalim i ri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
         <translation type="unfinished">Konfirmo fjalëkalimin</translation>
     </message>
@@ -3570,12 +3571,12 @@ je i sigurt?</translation>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Të hiqet %1?</translation>
     </message>
@@ -3583,7 +3584,7 @@ je i sigurt?</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
         <source>Security Settings</source>
         <translation type="unfinished">Cilësimet e sigurisë</translation>
     </message>
@@ -3591,50 +3592,50 @@ je i sigurt?</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="388" />
+        <location filename="../../src/gharqad/main.cpp" line="388"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164" />
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">Modaliteti Tun nuk mund të përdoret me konfigurime të personalizuara</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="874"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Duke kërkuar abonim: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="878" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="878"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Gabim %1 duke kërkuar abonim: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="885" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="885"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Kërkesa për abonim përfundoi: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="903" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="903"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Po pastron serverët...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="908" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="908"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Po përpunon të dhënat e abonimit...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="911" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="911"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">Procesi ka përfunduar, aplikimi...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="974" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="974"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3645,208 +3646,208 @@ Profilet e fshirë %3:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="979" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="979"/>
         <source>Nothing</source>
         <translation type="unfinished">Asgjë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="982" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="982"/>
         <source>Change of %1:</source>
         <translation type="unfinished">Ndryshimi i % 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
         <source>Default</source>
         <translation type="unfinished">E paracaktuar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="199" />
+        <location filename="../../src/gharqad/global/HTTPRequestHelper.cpp" line="199"/>
         <source>Could not open file.</source>
         <translation type="unfinished">Skedari nuk mund të hapej.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="137" />
+        <location filename="../../src/gharqad/main.cpp" line="137"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">Proxy zinxhir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="153" />
+        <location filename="../../src/gharqad/main.cpp" line="153"/>
         <source>Custom</source>
         <translation type="unfinished">Me porosi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="154" />
+        <location filename="../../src/gharqad/main.cpp" line="154"/>
         <source>Extra Core</source>
         <translation type="unfinished">Bërthama shtesë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Përfaqësues: ⚡% 1 📦% 3
 Direkt: ⚡% 2 📦% 4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Bërthama doli, po pastrohet...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Bërthama del shumë shpesh, ndalo rinisjen automatike të këtij profili.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">Rinisja e bërthamës ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="368" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="368"/>
         <source>System</source>
         <translation type="unfinished">Sistemi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>URL detected</source>
         <translation type="unfinished">U zbulua URL</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31"/>
         <source>%1
 How to update?</source>
         <translation type="unfinished">% 1
 Si të përditësoni?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">Krijo grup të ri abonimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36"/>
         <source>Add profiles to this group</source>
         <translation type="unfinished">Shtoni profile në këtë grup</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Shto si përfaqësues http/https</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42"/>
         <source>Group name</source>
         <translation type="unfinished">Emri i grupit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Përdorur: % 1 Mbetet: % 2 Skadon: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="317" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="317"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Shkarkoni profilet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="318" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="318"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Kërkon gabimin e profilit: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="498" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="498"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">U fshinë %1 Dublikata</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="532" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="532"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">U fshi % 1 E pavlefshme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="558" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="558"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">U fshi % 1 I padisponueshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1678" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1682"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Kontrolloni grupet e rregullave: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1700" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1704"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Duke kërkuar gabimin e listës së grupit të rregullave: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2627" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2631"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Përfaqësues: % 1
 Direkt: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2664" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2668"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP hyrëse: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3049" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3053"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Zhvendosni profilet në grup</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3207" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3211"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfigurimi u kopjua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3223"/>
         <source>Copy core config</source>
         <translation type="unfinished">Kopjo konfigurimin bazë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3221" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3225"/>
         <source>Copy test config</source>
         <translation type="unfinished">Kopjo konfigurimin e testit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3222" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3226"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4583" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4592" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4515"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4525"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4597"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4606"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4641"/>
         <source>Update</source>
         <translation type="unfinished">Përditëso</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4516"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Jo platformë zyrtare mbështetëse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4512" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4526"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Kërkon gabimin e përditësimit: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
         <source>No update</source>
         <translation type="unfinished">Asnjë përditësim</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4598"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3855,47 +3856,47 @@ Shënim publikimi:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4587" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4601"/>
         <source>Close</source>
         <translation type="unfinished">Mbylle</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4589" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4603"/>
         <source>Open in browser</source>
         <translation type="unfinished">Hapni në shfletues</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4642"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Përditësimi është gati, riniset për ta instaluar?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">Qasja u refuzua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Zgjidhni një dosje</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180"/>
         <source>Application Rules</source>
         <translation type="unfinished">Rregullat e Aplikimit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">Përjashtoni CIDR-të</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213"/>
         <source>Cancel</source>
         <translation type="unfinished">Anulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">Zgjidhni</translation>
     </message>
@@ -3903,92 +3904,92 @@ Shënim publikimi:
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93" />
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Cancel</source>
         <translation type="unfinished">Anulo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94" />
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>Apply</source>
         <translation type="unfinished">Aplikoni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="95" />
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>Yes</source>
         <translation type="unfinished">po</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96" />
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>No</source>
         <translation type="unfinished">Nr</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97" />
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98" />
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Defaults</source>
         <translation type="unfinished">Parazgjedhjet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="99" />
+        <location filename="../../src/gharqad/main.cpp" line="99"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">Rivendosja e parazgjedhjeve</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100" />
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Discard</source>
         <translation type="unfinished">Hidhni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102" />
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Undo</source>
         <translation type="unfinished">Zhbër</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103" />
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Redo</source>
         <translation type="unfinished">Ribëje</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104" />
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Cut</source>
         <translation type="unfinished">Prerë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105" />
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Copy</source>
         <translation type="unfinished">Kopjo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="106" />
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Paste</source>
         <translation type="unfinished">Paste</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="107" />
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Delete</source>
         <translation type="unfinished">Fshije</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="108" />
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Select All</source>
         <translation type="unfinished">Zgjidhni Të gjitha</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="109" />
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Stop</source>
         <translation type="unfinished">Ndalo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="110" />
+        <location filename="../../src/gharqad/main.cpp" line="110"/>
         <source>Clear</source>
         <translation type="unfinished">E qartë</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="111" />
+        <location filename="../../src/gharqad/main.cpp" line="111"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">Kopjo vendndodhjen e lidhjes</translation>
     </message>
@@ -3996,208 +3997,208 @@ Shënim publikimi:
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
         <source>Route Profile</source>
         <translation type="unfinished">Profili i rrugës</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
         <source>General</source>
         <translation type="unfinished">Gjeneral</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
         <source>Default outbound</source>
         <translation type="unfinished">Dalja e parazgjedhur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
         <source>Name</source>
         <translation type="unfinished">Emri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
         <source>Proxy</source>
         <translation type="unfinished">Përfaqësues</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
         <source>Direct</source>
         <translation type="unfinished">Direkt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
         <source>Block</source>
         <translation type="unfinished">Blloko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
         <source>Update url</source>
         <translation type="unfinished">Përditëso URL-në</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
         <source>Skip update</source>
         <translation type="unfinished">Kapërce përditësimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
         <source>Update manually</source>
         <translation type="unfinished">Përditëso manualisht</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
         <source>Basic</source>
         <translation type="unfinished">bazë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
         <source>Advanced</source>
         <translation type="unfinished">E avancuar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
         <source>Import JSON</source>
         <translation type="unfinished">Importo JSON</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
         <source>Rules</source>
         <translation type="unfinished">Rregullat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
         <source>New</source>
         <translation type="unfinished">E re</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
         <source>Move Up</source>
         <translation type="unfinished">Lëviz lart</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
         <source>Move Down</source>
         <translation type="unfinished">Lëvizni Poshtë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
         <source>Delete</source>
         <translation type="unfinished">Fshije</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
         <source>Rule Attributes</source>
         <translation type="unfinished">Atributet e rregullave</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
         <source>Attribute</source>
         <translation type="unfinished">atribut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
         <source>Name_Placeholder</source>
         <translation type="unfinished">Emri_Placeholder</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
         <source>Notes</source>
         <translation type="unfinished">Shënime</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Invalid rules</source>
         <translation type="unfinished">Rregulla të pavlefshme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Disa rregulla nuk mund të shtoheshin:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Array JSON i pavlefshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Hyrja e dhënë nuk mund të analizohet në një grup të vlefshëm rregullash të rrugës:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Operacion i pavlefshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Nuk mund të krijohet Profili i rrugës me emër bosh</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">Profili i rrugës bosh</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Nuk ka rregulla të vlefshme në profil</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished">Disa rregulla nuk mund të shtoheshin, rregullojini përpara se t'i ruani:</translation>
+        <translation type="unfinished">Disa rregulla nuk mund të shtoheshin, rregullojini përpara se t&apos;i ruani:</translation>
     </message>
 </context>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
         <translation type="unfinished">Cilësimet e sigurisë</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
         <source>Lock Actions</source>
         <translation type="unfinished">Veprimet e kyçjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
         <source>Lock Settings</source>
         <translation type="unfinished">Cilësimet e kyçjes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
         <source>Lock Startup</source>
         <translation type="unfinished">Bllokoni fillimin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
         <source>Delete Users</source>
         <translation type="unfinished">Fshi përdoruesit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
         <source>Edit User Roles</source>
         <translation type="unfinished">Redakto rolet e përdoruesve</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
         <source>Change UI Password</source>
         <translation type="unfinished">Ndrysho fjalëkalimin e UI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Vendosni kredencialet e përfaqësuesit</translation>
     </message>
@@ -4205,24 +4206,24 @@ Shënim publikimi:
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="265" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="265"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Array JSON i pavlefshëm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="266"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Hyrja e dhënë nuk mund të analizohet në një grup të vlefshëm rregullash të rrugës:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="391" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="391"/>
         <source>Fetching information</source>
         <translation type="unfinished">Po merr informacion</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1421"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Shkarkoni profilet</translation>
     </message>
@@ -4230,7 +4231,7 @@ Shënim publikimi:
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Forma</translation>
     </message>

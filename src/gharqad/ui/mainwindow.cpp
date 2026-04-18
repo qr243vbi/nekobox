@@ -52,15 +52,15 @@
 #include <nekobox/ui/group/dialog_edit_group.h>
 
 #ifdef Q_OS_WIN
-#include <windows.h>
 #include <3rdparty/WinCommander.hpp>
 #include <nekobox/sys/windows/WinVersion.h>
+#include <windows.h>
 #else
 #ifdef Q_OS_UNIX
-#include <nekobox/sys/linux/LinuxCap.h>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
+#include <nekobox/sys/linux/LinuxCap.h>
 #include <unistd.h> // For access()
 #endif
 #include <unistd.h>
@@ -713,21 +713,25 @@ MainWindow::MainWindow(QWidget *parent)
     }
   });
 
-  logAutoScrollCheckBox = new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
+  logAutoScrollCheckBox =
+      new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
   logAutoScrollCheckBox->setChecked(qvLogAutoScoll);
   ui->stats_widget->setCornerWidget(logAutoScrollCheckBox, Qt::TopRightCorner);
-  auto updateAutoScrollVisibility = [=,this]() {
-    logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() == ui->Logs);
+  auto updateAutoScrollVisibility = [=, this]() {
+    logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() ==
+                                      ui->Logs);
   };
   updateAutoScrollVisibility();
-  connect(ui->stats_widget, &QTabWidget::currentChanged, this, [=](int) { updateAutoScrollVisibility(); });
-  connect(logAutoScrollCheckBox, &QCheckBox::toggled, this, [=,this](bool checked) {
-    qvLogAutoScoll = checked;
-    if (checked) {
-      auto bar = ui->masterLogBrowser->verticalScrollBar();
-      bar->setValue(bar->maximum());
-    }
-  });
+  connect(ui->stats_widget, &QTabWidget::currentChanged, this,
+          [=](int) { updateAutoScrollVisibility(); });
+  connect(logAutoScrollCheckBox, &QCheckBox::toggled, this,
+          [=, this](bool checked) {
+            qvLogAutoScoll = checked;
+            if (checked) {
+              auto bar = ui->masterLogBrowser->verticalScrollBar();
+              bar->setValue(bar->maximum());
+            }
+          });
   MW_show_log = [=, this](const QString &log) {
     runOnUiThread([=, this] { show_log_impl(log); });
   };
@@ -2132,57 +2136,57 @@ void MainWindow::point_changed(int width, int height) {
   runOnUiThread([=, this] { this->move(width, height); });
 }
 
-void MainWindow::call_updater(){
+void MainWindow::call_updater() {
 #ifndef SKIP_UPDATE_BUTTON
-    QStringList list;
-    QString updateDir;
+  QStringList list;
+  QString updateDir;
 #ifdef Q_OS_UNIX
-    if (isAppImage()) {
-      updateDir = softwareFilePath;
-    } else {
+  if (isAppImage()) {
+    updateDir = softwareFilePath;
+  } else {
 #endif
-      updateDir = softwarePath;
+    updateDir = softwarePath;
 #ifdef Q_OS_UNIX
-    }
+  }
 #endif
-    list << this->updater_args;
-    list << "--";
-    list << this->archive_name;
-    list << updateDir;
-    auto arguments = Configs::dataStore->argv;
-    if (arguments.length() > 0) {
-      arguments.removeFirst();
-      arguments.removeAll("-tray");
-      arguments.removeAll("-flag_restart_tun_on");
-      arguments.removeAll("-flag_restart_dns_set");
-    }
-    list += arguments;
-    QString sourceFilePath = updaterPath;
-    QDir tempdir;
-    tempdir.mkpath("temp");
-    QString destinationFilePath = Configs::GetBasePath();
+  list << this->updater_args;
+  list << "--";
+  list << this->archive_name;
+  list << updateDir;
+  auto arguments = Configs::dataStore->argv;
+  if (arguments.length() > 0) {
+    arguments.removeFirst();
+    arguments.removeAll("-tray");
+    arguments.removeAll("-flag_restart_tun_on");
+    arguments.removeAll("-flag_restart_dns_set");
+  }
+  list += arguments;
+  QString sourceFilePath = updaterPath;
+  QDir tempdir;
+  tempdir.mkpath("temp");
+  QString destinationFilePath = Configs::GetBasePath();
 #ifdef Q_OS_WIN
-    destinationFilePath += "\\temp\\updater.exe";
+  destinationFilePath += "\\temp\\updater.exe";
 #else
-    destinationFilePath += "/temp/updater";
+  destinationFilePath += "/temp/updater";
 #endif
-    if (QFile::copy(sourceFilePath, destinationFilePath)) {
+  if (QFile::copy(sourceFilePath, destinationFilePath)) {
 #ifdef DEBUG_MODE
-      qDebug() << "File copied successfully from" << sourceFilePath << "to"
-               << destinationFilePath;
+    qDebug() << "File copied successfully from" << sourceFilePath << "to"
+             << destinationFilePath;
 #endif
 #ifdef Q_OS_WIN
-      WinCommander::runProcess(destinationFilePath, list, "", SW_NORMAL, false,
-                               (!isDirectoryWritable(updateDir)));
+    WinCommander::runProcess(destinationFilePath, list, "", SW_NORMAL, false,
+                             (!isDirectoryWritable(updateDir)));
 #else
-      QProcess::startDetached(destinationFilePath, list);
+    QProcess::startDetached(destinationFilePath, list);
 #endif
-    } else {
+  } else {
 #ifdef DEBUG_MODE
-      qDebug() << "Failed to copy file from" << sourceFilePath << "to"
-               << destinationFilePath;
+    qDebug() << "Failed to copy file from" << sourceFilePath << "to"
+             << destinationFilePath;
 #endif
-    }
+  }
 #endif
 }
 
@@ -3093,16 +3097,16 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
       Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, true,
       false);
 
-  #ifdef DEBUG_MODE
-    qDebug() << "UNIQUE " << out.count();
-  #endif
+#ifdef DEBUG_MODE
+  qDebug() << "UNIQUE " << out.count();
+#endif
 
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
       Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, out_del);
 
-  #ifdef DEBUG_MODE
-    qDebug() << "DUPLICATES" << out_del.count();
-  #endif
+#ifdef DEBUG_MODE
+  qDebug() << "DUPLICATES" << out_del.count();
+#endif
 
   int remove_display_count = 0;
   QString remove_display;
@@ -3647,8 +3651,8 @@ void MainWindow::on_menu_resolve_domain_triggered() {
     this->lasty = -1;                                                          \
     auto pos1_x = pos1.x();                                                    \
     auto pos1_y = pos1.y();                                                    \
-    if (pos1_x+24 > lastx && pos1_x-24 < lastx &&                                \
-        pos1_y+24 > lasty && pos1_y-24 < lasty) {                                \
+    if (pos1_x + 24 > lastx && pos1_x - 24 < lastx && pos1_y + 24 > lasty &&   \
+        pos1_y - 24 < lasty) {                                                 \
       return;                                                                  \
     }                                                                          \
   }
@@ -3726,25 +3730,6 @@ void MainWindow::show_log_impl(const QString &log) {
   } else {
     trimmed = sanitizeLog(log).trimmed();
   }
-
-  if (!trimmed.isEmpty()) {
-     runOnUiThread([trimmedBatch = std::move(trimmed), this] {
-                auto bar = ui->masterLogBrowser->verticalScrollBar();
-                auto layout = qvLogDocument->documentLayout();
-                // Anchor to the block at the top of the viewport; if trim shifts its
-                // document-Y afterwards, we replay the original sub-block offset.
-                QTextBlock anchorBlock = ui->masterLogBrowser->cursorForPosition(QPoint(0, 0)).block();
-                int viewportOffset = bar->value() - static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
-                FastAppendTextDocument(trimmedBatch, qvLogDocument);
-                if (qvLogAutoScoll) {
-                    bar->setValue(bar->maximum());
-                } else if (anchorBlock.isValid()) {
-                    int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
-                    bar->setValue(newY + viewportOffset);
-                }
-            });
-  }
-
   int blockCount = qvLogDocument->blockCount();
   // Check the number of blocks
   if (logClear) {
@@ -3764,6 +3749,27 @@ void MainWindow::show_log_impl(const QString &log) {
     if (blockCount > 600) {
       logClear = true;
     }
+  }
+
+  if (!trimmed.isEmpty()) {
+    runOnUiThread([trimmedBatch = std::move(trimmed), this] {
+      auto bar = ui->masterLogBrowser->verticalScrollBar();
+      auto layout = qvLogDocument->documentLayout();
+      // Anchor to the block at the top of the viewport; if trim shifts its
+      // document-Y afterwards, we replay the original sub-block offset.
+      QTextBlock anchorBlock =
+          ui->masterLogBrowser->cursorForPosition(QPoint(0, 0)).block();
+      int viewportOffset =
+          bar->value() -
+          static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
+      FastAppendTextDocument(trimmedBatch, qvLogDocument);
+      if (qvLogAutoScoll) {
+        bar->setValue(bar->maximum());
+      } else if (anchorBlock.isValid()) {
+        int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
+        bar->setValue(newY + viewportOffset);
+      }
+    });
   }
 
   logLock.unlock();
@@ -4574,7 +4580,7 @@ skip1:
     qDebug() << "ARCHIVE PATH" << archive_name;
 #endif
     this->archive_name = archive_name;
-    if (!this->keep_running){
+    if (!this->keep_running) {
       this->exit_reason = 1;
       runOnNewThread([=, this] { on_menu_exit_triggered(); });
     } else {

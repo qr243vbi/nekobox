@@ -2780,8 +2780,8 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2683"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2686"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2687"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2690"/>
         <source>System Proxy</source>
         <translation type="unfinished">सिस्टम प्रॉक्सी</translation>
     </message>
@@ -2972,15 +2972,15 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3780"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3794"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3804"/>
         <source>Start</source>
         <translation type="unfinished">सुरू करा</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3779"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3793"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3804"/>
         <source>Stop</source>
         <translation type="unfinished">थांबा</translation>
     </message>
@@ -3027,7 +3027,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1581"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1585"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 कॉन्फिगरेशन एक्सपोर्ट करा</translation>
     </message>
@@ -3166,7 +3166,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3073"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3077"/>
         <source>Clone</source>
         <translation type="unfinished">क्लोन</translation>
     </message>
@@ -3286,7 +3286,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3809"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3823"/>
         <source>Add new Group</source>
         <translation type="unfinished">नवीन गट जोडा</translation>
     </message>
@@ -3302,223 +3302,223 @@ Are you sure?</source>
         <translation type="unfinished">अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="716"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="717"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1236"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1240"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">राउटिंग प्रोफाइल संपादित करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1258"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1262"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">राउटिंग प्रोफाइल अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1270"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1274"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1298"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1342"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">प्रतिसाद अद्यतनित करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1275"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">कोणतीही राउटिंग प्रोफाइल अपडेट केलेली नाहीत</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1275"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1279"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 राउटिंग प्रोफाइल अद्यतनित केले</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1285"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1289"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">नियम सेट नकाशा अद्यतनित करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">नियम अपडेट करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1303"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">नियमसेट यशस्वीरित्या अपडेट केले</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1308"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1312"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">RuleSet कॅशे अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1343"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets कॅशे अद्यतनित केले आहे</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1357"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1361"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet कॅशे साफ करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1393"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1397"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock सक्षम करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1799"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1803"/>
         <source>Error</source>
         <translation type="unfinished">त्रुटी</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1890"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ट्यून सेटिंग्ज बदलल्या</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1887"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">प्रभावी होण्यासाठी Tun रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1893"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1948"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3138"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3514"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3569"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3618"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3858"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1897"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1952"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3142"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3518"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3573"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3622"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3872"/>
         <source>Confirmation</source>
         <translation type="unfinished">पुष्टी</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1894"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1949"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1898"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1953"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">सेटिंग्ज बदलली, प्रॉक्सी रीस्टार्ट करायची?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1923"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1927"/>
         <source>Settings changed</source>
         <translation type="unfinished">सेटिंग्ज बदलल्या</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1924"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1928"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">प्रभावी होण्यासाठी प्रोग्राम रीस्टार्ट करा.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1964"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1968"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">इंपोर्ट केलेले %1 प्रोफाईल</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2245"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2249"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">वापरकर्त्याने विशेषाधिकार विनंतीसाठी निवडले नाही, काही वैशिष्ट्ये कार्य करू शकत नाहीत</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2310"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2314"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">कृपया मूळ विशेषाधिकार द्या</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2659"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2663"/>
         <source>Not Running</source>
         <translation type="unfinished">चालत नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3074"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3078"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">% 1 आयटम क्लोन करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3118"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3122"/>
         <source> Confirmation </source>
         <translation type="unfinished">पुष्टी</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3119"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3123"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3139"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3143"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3176"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3189"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3180"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3193"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 आयटम कॉपी केले</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3424"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3428"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR कोड सापडला नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3446"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3450"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">स्क्रीन कॅप्चर करण्यात अक्षम</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3519"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 अनुपलब्ध आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3574"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 अवैध आयटम काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3623"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">डोमेन सर्व्हर पत्ते त्यांच्या निराकरण केलेल्या IP सह पुनर्स्थित करायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3777"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3791"/>
         <source>Clear</source>
         <translation type="unfinished">साफ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3862"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">निवडलेला गट हटवा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3849"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3863"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">निवडलेला गट संपादित करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3859"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3873"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1 काढून टाकायचे?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4601"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4615"/>
         <source>Cannot start</source>
         <translation type="unfinished">सुरू करू शकत नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4602"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4616"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">शेवटची डाउनलोड विनंती अद्याप पूर्ण झालेली नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4650"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">अपडेट मालमत्ता डाउनलोड करण्यात अयशस्वी</translation>
     </message>
@@ -3804,7 +3804,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">निवडा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2627"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2631"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">प्रॉक्सी: % 1
@@ -3896,12 +3896,12 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">हटवलेले %1 अनुपलब्ध</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1678"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1682"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">नियम सेट तपासा: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1700"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1704"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">नियम-सेट सूचीची विनंती करताना त्रुटी: %1</translation>
     </message>
@@ -3910,64 +3910,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP पत्ता: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2664"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2668"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">इनबाउंड IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3049"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3053"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">प्रोफाइल गटात हलवा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3211"/>
         <source>Config copied</source>
         <translation type="unfinished">कॉन्फिग कॉपी केले</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3219"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3223"/>
         <source>Copy core config</source>
         <translation type="unfinished">कोर कॉन्फिगरेशन कॉपी करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3221"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3225"/>
         <source>Copy test config</source>
         <translation type="unfinished">चाचणी कॉन्फिगरेशन कॉपी करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3222"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3226"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">ठीक आहे</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4501"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4511"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4583"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4592"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4515"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4525"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4597"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4606"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4641"/>
         <source>Update</source>
         <translation type="unfinished">अपडेट करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4502"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4516"/>
         <source>Not official support platform</source>
         <translation type="unfinished">अधिकृत समर्थन प्लॅटफॉर्म नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4512"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4526"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">अद्यतनाची विनंती करताना त्रुटी: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4569"/>
         <source>No update</source>
         <translation type="unfinished">अपडेट नाही</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4584"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4598"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3976,17 +3976,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4587"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4601"/>
         <source>Close</source>
         <translation type="unfinished">बंद करा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4589"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4603"/>
         <source>Open in browser</source>
         <translation type="unfinished">ब्राउझरमध्ये उघडा</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4642"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">अपडेट तयार आहे, इंस्टॉल करण्यासाठी रीस्टार्ट करायचे?</translation>
     </message>
@@ -4355,7 +4355,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="407"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1421"/>
         <source>Download Profiles</source>
         <translation type="unfinished">प्रोफाइल डाउनलोड करा</translation>
     </message>
