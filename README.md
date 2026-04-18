@@ -37,7 +37,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 ![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=for-the-badge&logo=boxysvg) <br/>
 ```
 scoop bucket add extras
-scoop install extras/activemq-artemis
+scoop install extras/nekobox
 ```
 
 ### Changelog Channel
