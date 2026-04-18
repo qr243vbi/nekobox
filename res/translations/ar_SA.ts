@@ -669,7 +669,10 @@
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LMDB — 2009 — قاعدة بيانات قيمة المفتاح المعين للذاكرة المضمنة مع معاملات ACID — Howard Chu / Symas
+JSON — 2001 — تنسيق نصي خفيف الوزن لتبادل البيانات المنظمة (الكائنات، المصفوفات، الأوليات) — دوجلاس كروكفورد
+INI — أوائل الثمانينات — تنسيق تكوين نص عادي بسيط مع الأقسام وأزواج المفاتيح=القيمة — شركة Microsoft
+ثنائي - 2026 - تنسيق قيم البايت التعسفي لإعدادات NekoBox المستخدمة كقيم LMDB أو ملفات مستقلة - qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
@@ -716,7 +719,7 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تحذير أمني</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
@@ -727,12 +730,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يؤدي تعطيل التحقق من شهادة TLS إلى تعريضك لهجمات الوسيط.
+
+يمكن للمهاجم الموجود على شبكتك استبدال محتوى الاشتراك بتكوين وكيل ضار بصمت واعتراض حركة المرور الخاصة بك.
+
+قم بتمكين هذا فقط إذا كنت تثق بشكل كامل في كل شبكة بينك وبين خادم الاشتراك الخاص بك.
+
+هل أنت متأكد أنك تريد تعطيل التحقق من TLS؟</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تحذير الخصوصية</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
@@ -747,7 +756,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">سيؤدي تمكين إرسال HWID إلى إرفاق معرفات الأجهزة التالية بكل طلب اشتراك:
+
+• معرف الجهاز (معرف الجهاز التسلسلي / معرف الجهاز)
+• نظام التشغيل والإصدار
+• طراز الجهاز
+
+سيتمكن خادم الاشتراك من التعرف على جهازك الفعلي وتتبعه بشكل دائم عبر عناوين IP والجلسات.
+
+يعد هذا خطرًا كبيرًا على الخصوصية إذا كنت في بلد يخضع لرقابة نشطة على الإنترنت.
+
+هل أنت متأكد أنك تريد تمكين إرسال HWID؟</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1652,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تحذير أمني</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
@@ -1644,7 +1663,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">سيؤدي تمكين خادم LAN DNS إلى الاستماع إلى 0.0.0.0:%1.
+
+سيتمكن أي جهاز على شبكتك المحلية من الاستعلام عن خادم DNS هذا، مما قد يكشف عن قواعد التوجيه والمجالات المحظورة وهيكل الشبكة.
+
+قم بتمكين هذا فقط إذا كنت تنوي مشاركة DNS مع أجهزة LAN الموثوقة.
+
+هل أنت متأكد؟</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>

@@ -669,7 +669,10 @@ dakika&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LMDB — 2009 — ACID işlemlerine sahip yerleşik bellek eşlemeli anahtar-değer veritabanı — Howard Chu / Symas
+JSON — 2001 — yapısal verilerin (nesneler, diziler, temel öğeler) alışverişi için hafif metin formatı — Douglas Crockford
+INI - 1980&apos;lerin başı - bölümler ve anahtar=değer çiftleri içeren basit düz metin yapılandırma formatı - Microsoft Corporation
+ikili — 2026 — LMDB değerleri veya bağımsız dosyalar olarak kullanılan NekoBox ayarları için isteğe bağlı bayt değerleri formatı — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
@@ -716,7 +719,7 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Güvenlik Uyarısı</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
@@ -727,12 +730,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TLS sertifika doğrulamasını devre dışı bırakmak sizi ortadaki adam saldırılarına maruz bırakır.
+
+Ağınızdaki bir saldırgan, abonelik içeriğini sessizce kötü amaçlı bir proxy yapılandırmasıyla değiştirebilir ve trafiğinize müdahale edebilir.
+
+Bunu yalnızca sizinle abonelik sunucunuz arasındaki her ağa tamamen güveniyorsanız etkinleştirin.
+
+TLS doğrulamasını devre dışı bırakmak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gizlilik Uyarısı</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
@@ -747,7 +756,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HWID göndermeyi etkinleştirmek, her abonelik isteğine aşağıdaki cihaz tanımlayıcılarını ekleyecektir:
+
+• Donanım Kimliği (makine seri / makine kimliği)
+• İşletim sistemi ve sürümü
+• Cihaz modeli
+
+Abonelik sunucusu, fiziksel cihazınızı IP&apos;ler ve oturumlar arasında kalıcı olarak tanımlayabilecek ve izleyebilecektir.
+
+Aktif internet sansürünün olduğu bir ülkedeyseniz bu önemli bir gizlilik riskidir.
+
+HWID gönderimini etkinleştirmek istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1652,7 @@ Daha fazla bilgi için &quot;Yapılandırma/DNS&quot; belgesine bakın.</transla
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Güvenlik Uyarısı</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
@@ -1644,7 +1663,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN DNS sunucusu etkinleştirildiğinde 0.0.0.0:%1 dinlenecektir.
+
+Yerel ağınızdaki herhangi bir cihaz bu DNS sunucusunu sorgulayabilir; bu da yönlendirme kurallarınızı, engellenen alan adlarınızı ve ağ topolojinizi ortaya çıkarabilir.
+
+Bunu yalnızca DNS&apos;yi güvenilir LAN cihazlarıyla paylaşmayı düşünüyorsanız etkinleştirin.
+
+Emin misin?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>

@@ -669,7 +669,10 @@ sing-box の組み込み NTP クライアント&lt;/p&gt;&lt;/body&gt;&lt;/html&
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LMDB — 2009 — ACID トランザクションを備えた組み込みメモリマップ型キーバリュー DB — Howard Chu / Symas
+JSON — 2001 — 構造化データ (オブジェクト、配列、プリミティブ) を交換するための軽量テキスト形式 — Douglas Crockford
+INI — 1980 年代初頭 — セクションと key=value ペアを含むシンプルなプレーンテキスト構成フォーマット — Microsoft Corporation
+バイナリ — 2026 — LMDB 値またはスタンドアロン ファイルとして使用される猫ボックス設定の任意のバイト値形式 — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
@@ -716,7 +719,7 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">セキュリティ警告</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
@@ -727,12 +730,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TLS 証明書の検証を無効にすると、中間者攻撃にさらされます。
+
+ネットワーク上の攻撃者は、サブスクリプション コンテンツをサイレントに悪意のあるプロキシ構成に置き換え、トラフィックを傍受する可能性があります。
+
+これは、ユーザーとサブスクリプション サーバー間のすべてのネットワークを完全に信頼する場合にのみ有効にします。
+
+TLS 検証を無効にしてもよろしいですか?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">プライバシーに関する警告</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
@@ -747,7 +756,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HWID 送信を有効にすると、次のデバイス識別子がすべてのサブスクリプション要求に添付されます。
+
+• ハードウェア ID (マシンのシリアル/マシン ID)
+• オペレーティング システムとバージョン
+• デバイスモデル
+
+サブスクリプション サーバーは、IP およびセッション全体で物理デバイスを永続的に識別し、追跡できるようになります。
+
+インターネット検閲が行われている国にいる場合、これは重大なプライバシー リスクとなります。
+
+HWID 送信を有効にしてもよろしいですか?</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1652,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">セキュリティ警告</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
@@ -1644,7 +1663,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN を有効にすると、DNS サーバーは 0.0.0.0:%1 でリッスンします。
+
+ローカル ネットワーク上のすべてのデバイスがこの DNS サーバーにクエリを実行できるようになり、ルーティング ルール、ブロックされたドメイン、ネットワーク トポロジが明らかになる可能性があります。
+
+これは、信頼された LAN デバイスと DNS を共有する場合にのみ有効にします。
+
+本気ですか？</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>

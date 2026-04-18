@@ -669,7 +669,10 @@ sing-box의 내장 NTP 클라이언트&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LMDB — 2009 — ACID 트랜잭션이 포함된 내장형 메모리 매핑 키-값 DB — Howard Chu / Symas
+JSON — 2001 — 구조화된 데이터(객체, 배열, 기본 요소) 교환을 위한 경량 텍스트 형식 — Douglas Crockford
+INI — 1980년대 초반 — 섹션과 키=값 쌍이 있는 간단한 일반 텍스트 구성 형식 — Microsoft Corporation
+바이너리 — 2026 — LMDB 값 또는 독립형 파일로 사용되는 NekoBox 설정에 대한 임의 바이트 값 형식 — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
@@ -716,7 +719,7 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">보안 경고</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
@@ -727,12 +730,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TLS 인증서 확인을 비활성화하면 중간자 공격에 노출됩니다.
+
+네트워크의 공격자는 구독 콘텐츠를 악성 프록시 구성으로 자동으로 대체하고 트래픽을 가로챌 수 있습니다.
+
+귀하와 구독 서버 사이의 모든 네트워크를 완전히 신뢰하는 경우에만 이 기능을 활성화하십시오.
+
+TLS 확인을 비활성화하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">개인 정보 보호 경고</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
@@ -747,7 +756,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HWID 전송을 활성화하면 모든 구독 요청에 다음 장치 식별자가 첨부됩니다.
+
+• 하드웨어 ID(머신 일련번호/머신 ID)
+• 운영체제 및 버전
+• 기기 모델
+
+구독 서버는 IP와 세션 전반에 걸쳐 귀하의 물리적 장치를 영구적으로 식별하고 추적할 수 있습니다.
+
+인터넷 검열이 활발한 국가에 거주하는 경우 이는 심각한 개인 정보 보호 위험입니다.
+
+HWID 전송을 활성화하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1652,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">보안 경고</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
@@ -1644,7 +1663,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN DNS 서버를 활성화하면 0.0.0.0:%1에서 수신됩니다.
+
+로컬 네트워크의 모든 장치는 이 DNS 서버에 쿼리할 수 있으며, 이를 통해 라우팅 규칙, 차단된 도메인 및 네트워크 토폴로지가 드러날 수 있습니다.
+
+신뢰할 수 있는 LAN 장치와 DNS를 공유하려는 경우에만 이 기능을 활성화하십시오.
+
+확실합니까?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>

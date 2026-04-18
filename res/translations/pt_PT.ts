@@ -669,7 +669,10 @@ minutos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LMDB — 2009 — banco de dados de valor-chave mapeado em memória incorporado com transações ACID — Howard Chu / Symas
+JSON — 2001 — formato de texto leve para troca de dados estruturados (objetos, arrays, primitivos) — Douglas Crockford
+INI — início da década de 1980 — formato de configuração de texto simples com seções e pares chave=valor — Microsoft Corporation
+binário — 2026 — formato de valores de bytes arbitrários para configurações do NekoBox usados como valores LMDB ou arquivos independentes — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1626"/>
@@ -716,7 +719,7 @@ binary — 2026 — arbitrary byte-values format for NekoBox settings used as LM
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aviso de segurança</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
@@ -727,12 +730,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Desativar a verificação do certificado TLS expõe você a ataques man-in-the-middle.
+
+Um invasor em sua rede pode substituir silenciosamente o conteúdo da assinatura por uma configuração de proxy mal-intencionada e interceptar seu tráfego.
+
+Habilite isso apenas se você confiar totalmente em todas as redes entre você e seu servidor de assinatura.
+
+Tem certeza de que deseja desativar a verificação TLS?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
         <source>Privacy Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aviso de privacidade</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
@@ -747,7 +756,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A ativação do envio de HWID anexará os seguintes identificadores de dispositivo a cada solicitação de assinatura:
+
+• ID de hardware (série da máquina/id da máquina)
+• Sistema operacional e versão
+• Modelo do dispositivo
+
+O servidor de assinatura será capaz de identificar e rastrear permanentemente seu dispositivo físico em IPs e sessões.
+
+Este é um risco significativo para a privacidade se você estiver em um país com censura ativa na Internet.
+
+Tem certeza de que deseja ativar o envio de HWID?</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1652,7 @@ Para mais informações, consulte o documento &quot;Configuração/DNS&quot;.</t
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="249"/>
         <source>Security Warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aviso de segurança</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="250"/>
@@ -1644,7 +1663,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A ativação do servidor DNS da LAN escutará em 0.0.0.0:%1.
+
+Qualquer dispositivo na sua rede local poderá consultar este servidor DNS, o que pode revelar suas regras de roteamento, domínios bloqueados e topologia de rede.
+
+Habilite isto apenas se você pretende compartilhar DNS com dispositivos LAN confiáveis.
+
+Tem certeza?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="339"/>
