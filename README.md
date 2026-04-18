@@ -23,7 +23,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 - [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
 
 ### WinGet Package
-[![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=for-the-badge)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
+[![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=for-the-badge&logo=gitforwindows)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
 
 ### Aur package
 - [nekobox](https://aur.archlinux.org/packages/nekobox)
