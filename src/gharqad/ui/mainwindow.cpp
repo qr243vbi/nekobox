@@ -713,18 +713,20 @@ MainWindow::MainWindow(QWidget *parent)
     }
   });
 
-  connect(ui->masterLogBrowser->verticalScrollBar(), &QSlider::valueChanged,
-          this, [=, this](int value) {
-            if (ui->masterLogBrowser->verticalScrollBar()->maximum() == value)
-              qvLogAutoScoll = true;
-            else
-              qvLogAutoScoll = false;
-          });
-  connect(ui->masterLogBrowser, &QTextBrowser::textChanged, this, [=, this]() {
-    if (!qvLogAutoScoll)
-      return;
-    auto bar = ui->masterLogBrowser->verticalScrollBar();
-    bar->setValue(bar->maximum());
+  logAutoScrollCheckBox = new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
+  logAutoScrollCheckBox->setChecked(qvLogAutoScoll);
+  ui->stats_widget->setCornerWidget(logAutoScrollCheckBox, Qt::TopRightCorner);
+  auto updateAutoScrollVisibility = [=,this]() {
+    logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() == ui->Logs);
+  };
+  updateAutoScrollVisibility();
+  connect(ui->stats_widget, &QTabWidget::currentChanged, this, [=](int) { updateAutoScrollVisibility(); });
+  connect(logAutoScrollCheckBox, &QCheckBox::toggled, this, [=,this](bool checked) {
+    qvLogAutoScoll = checked;
+    if (checked) {
+      auto bar = ui->masterLogBrowser->verticalScrollBar();
+      bar->setValue(bar->maximum());
+    }
   });
   MW_show_log = [=, this](const QString &log) {
     runOnUiThread([=, this] { show_log_impl(log); });

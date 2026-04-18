@@ -1851,12 +1851,12 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
 </context>
 <context>
@@ -1869,27 +1869,27 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha njirimara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Multiplexing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplexing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụkpụrụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oke ọdụ ụgbọ mmiri</translation>
     </message>
 </context>
 <context>
@@ -1897,43 +1897,43 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha njirimara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">quic_congestion_control - QUIC algorithm njikwa mkpọchi.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">insecure_concurrency - Ọnụọgụ njikọ ọwara otu oge.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị UDP karịrị ụkpụrụ TCP, a chọrọ nkwado nkesa.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
         <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">extra_headers - mgbakwunye nkụnye eji isi mee ka izipu na arịrịọ HTTP.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>Headers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">nkụnye eji isi mee</translation>
     </message>
 </context>
 <context>
@@ -1941,78 +1941,78 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obi mgbawa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bulite (Mbps)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aka aka eme efu Rtt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">UDP Relay Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njikwa mkpọchi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt;body&gt;&lt;p&gt;Rịkọ dị iche iche: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ nchọpụta MTU</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oke ọdụ ụgbọ mmiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge Hop</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwụ ụgwọ akwụkwọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
