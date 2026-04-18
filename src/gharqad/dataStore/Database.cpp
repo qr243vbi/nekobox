@@ -278,10 +278,50 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 
 // Query
 #ifndef SKIP_LMDB
-std::string Configs::pack_char_int(char c, int32_t x) {
-  uint32_t u = static_cast<uint32_t>(x); // preserve bit pattern
+QList<int> query_lmdb(lmdb::env &env, char c)
+{
+    QList<int> result;
+
+    lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
+    lmdb::dbi dbi  = lmdb::dbi::open(rtxn, nullptr);
+
+    lmdb::cursor cursor = lmdb::cursor::open(rtxn, dbi);
+
+    for (auto kv = cursor.get(MDB_FIRST);
+         kv; kv = cursor.get(MDB_NEXT))
+    {
+        auto key = kv.key;
+        if (key.size() != 5)
+            continue;
+
+        const char* k = static_cast<const char*>(key.data());
+
+        if (k[0] != c)
+            continue;
+
+        // decode little-endian int32
+        const unsigned char* b =
+            reinterpret_cast<const unsigned char*>(k);
+
+        uint32_t u =
+            (uint32_t(b[1]) << 0)  |
+            (uint32_t(b[2]) << 8)  |
+            (uint32_t(b[3]) << 16) |
+            (uint32_t(b[4]) << 24);
+
+        result.append(static_cast<int32_t>(u));
+    }
+
+    cursor.close();
+    rtxn.abort(); // read-only, no commit needed
+
+    return result;
+}
+
+std::string Configs::pack_char_int(char type, int32_t id) {
+  uint32_t u = static_cast<uint32_t>(id); // preserve bit pattern
   std::string s(5, '\0');
-  s[0] = c;
+  s[0] = type;
   s[1] = static_cast<char>( u         & 0xFF);
   s[2] = static_cast<char>((u >> 8)  & 0xFF);
   s[3] = static_cast<char>((u >> 16) & 0xFF);
