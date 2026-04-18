@@ -33,7 +33,14 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 [![Chocolatey Version](https://img.shields.io/chocolatey/v/nekobox?style=for-the-badge&logo=chocolatey)](https://community.chocolatey.org/packages/nekobox)
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge)](https://community.chocolatey.org/packages/nekobox)
 
-## Changelog Channel
+### Scoop Package
+![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=for-the-badge&logo=boxysvg) <br/>
+```
+scoop bucket add extras
+scoop install extras/activemq-artemis
+```
+
+### Changelog Channel
 [![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=for-the-badge&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
 [![Telegram Group](https://img.shields.io/badge/tg-blue?style=for-the-badge&label=Telegram%20Group)](https://t.me/NyameBox)
   
