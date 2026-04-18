@@ -3164,33 +3164,33 @@ O doro gị anya?</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1252" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1267" />
         <source>About</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe gbasara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1257" />
         <source>Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1262" />
         <source>Check for updates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lelee maka mmelite</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ dịghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1234" />
         <source>Edit Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie profaịlụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1256" />
         <source>Update Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite profaịlụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1268" />
@@ -3201,69 +3201,69 @@ O doro gị anya?</translation>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
         <source>Update Response</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite nzaghachi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1269" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ nweghị profaịlụ okporo ụzọ emelitere</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1273" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 profaịlụ okporo ụzọ emelitere</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1283" />
         <source>Update RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite maapụ RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1294" />
         <source>Failed to update rulesets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emelite usoro iwu agaghị eme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1297" />
         <source>Rulesets updated successfully</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emelitere usoro iwu nke ọma</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306" />
         <source>Update RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite cache RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1341" />
         <source>Rulesets cache is updated</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A na-emelite cache Rulesets</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1355" />
         <source>Clear RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpochapụ cache RuleSet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1391" />
         <source>Enable AdBlock</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado AdBlock</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1797" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njehie</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1884" />
         <source>Tun Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee ntọala Tun</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1885" />
         <source>Restart Tun to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malitegharịa Tun ka ọ rụọ ọrụ.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1891" />
@@ -3274,58 +3274,58 @@ O doro gị anya?</translation>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3850" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1947" />
         <source>Settings changed, restart proxy?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Agbanwere ntọala, malitegharịa proxy?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1921" />
         <source>Settings changed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Agbanwere ntọala</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1922" />
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malitegharịa mmemme ka ọ rụọ ọrụ.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962" />
         <source>Imported %1 profile(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebubatara profaịlụ (s) %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2243" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye ọrụ ahọrọla maka enweghị ihe ùgwù req, ụfọdụ atụmatụ nwere ike ọ gaghị arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2308" />
         <source>Please give the core root privileges</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Biko nye isi ihe ùgwù mgbọrọgwụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2657" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anaghị agba ọsọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3072" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone%1 ihe(s)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3116" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3117" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1 ihe(s)?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
