@@ -339,158 +339,161 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">hwid = uru_ọdịnala, os = omenala_os, osVersion = ụdị_ọdịnala, ihe nlere = omenala_ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631" />
         <source>User Agent</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye nnọchi anya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="641" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="644" />
         <source>Send System Parameters</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zipu oke sistemu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="657" />
         <source>Automatic update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmelite akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="664" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Hapụ ihe efu iji jiri ụkpụrụ ndabara.Naanị kọwapụta paramita ị chọrọ ịkagbu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="667" />
         <source>Custom System Parameters (optional)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oke Sistemu Ọpụrụiche (nhọrọ)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="674" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="681" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu adịghị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="689" />
         <source>Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;Enwere ike
+Melite Ping na arụmọrụ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="739" />
         <source>Disable Traffic Stats</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ ọnụ ọgụgụ okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="746" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri Unix Domain Socket maka nkwukọrịta n'etiti nekobox na nekobox_core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="749" />
         <source>Use UDS for IPC</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri UDS maka IPC</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="763" />
         <source>concurrency</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">concurrency</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="773" />
         <source>Padding</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpuchi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="780" />
         <source>Default On</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Agbanye ya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="789" />
         <source>Multiplex (mux)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="796" />
         <source>Loglevel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="806" />
         <source>Core Options</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nhọrọ isi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="816" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;Ntọala maka
+onye ahịa NTP wuru n'ime sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="821" />
         <source>NTP Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala NTP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="836" />
         <source>server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ihe nkesa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="846" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="863" />
         <source>sync interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">etiti oge mmekọrịta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="870" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;N'ime
+nkeji&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Agbalịla ịmalite dị ka onye nchịkwa ma ọ bụrụ na achọrọghị ya hoo haa &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933" />
         <source>Always Start as Standard User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite mgbe niile dị ka onye ọrụ ọkọlọtọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
         <source>Disable Privilege request</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ arịrịọ ikike</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
