@@ -457,7 +457,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("hk_toggle", hotkey_toggle_system_proxy, string);
         ADD_MAP("fakedns", fake_dns, boolean);
         ADD_MAP("active_routing", active_routing, string);
-        ADD_MAP("store_type", store_type, string);
+        ADD_MAP("data_store_type", store_type, string);
    //     _add(new configItem("mw_size", &mw_size, itemType::string));
         ADD_MAP("disable_traffic_stats", disable_traffic_stats, boolean);
         ADD_MAP("vpn_stack", vpn_implementation, string);
