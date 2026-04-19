@@ -371,6 +371,7 @@ jobs:
         with:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap lmdb
           triplet: ${{ matrix.triplet }}
+          repository: qr243vbi/vcpkg
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.UPLOAD_TOKEN }}
           
