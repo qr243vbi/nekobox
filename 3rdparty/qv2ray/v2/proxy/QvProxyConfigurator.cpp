@@ -30,31 +30,7 @@
 namespace Qv2ray::components::proxy {
 
     using ProcessArgument = QPair<QString, QStringList>;
-#ifdef Q_OS_MACOS
-    QStringList macOSgetNetworkServices() {
-        QProcess p;
-        p.setProgram("/usr/sbin/networksetup");
-        p.setArguments(QStringList{"-listallnetworkservices"});
-        p.start();
-        p.waitForStarted();
-        p.waitForFinished();
-        LOG(p.errorString());
-        auto str = p.readAllStandardOutput();
-        auto lines = SplitLines(str);
-        QStringList result;
 
-        // Start from 1 since first line is unneeded.
-        for (auto i = 1; i < lines.count(); i++) {
-            // * means disabled.
-            if (!lines[i].contains("*")) {
-                result << lines[i];
-            }
-        }
-
-        LOG("Found " + QSTRN(result.size()) + " network services: " + result.join(";"));
-        return result;
-    }
-#endif
 #ifdef Q_OS_WIN
 #define NO_CONST(expr) const_cast<wchar_t *>(expr)
     // static auto DEFAULT_CONNECTION_NAME =
