@@ -1,0 +1,42 @@
+{% import "macros/head.html" as macros_head %}
+{% import "macros/header.html" as macros_header %}
+{% import "macros/footer.html" as macros_footer %}
+{% import "macros/sidebar.html" as macros_sidebar %}
+
+{% set not_found_title = "404" %}
+{% set not_found_desc = "Page not found" %}
+{% set not_found_url = config.base_url ~ "/404.html" %}
+
+<!DOCTYPE html>
+<html lang="{{ lang | default(value='en') }}">
+<head>
+    {{ macros_head::head(
+        config=config,
+        page=false,
+        section=false,
+        current_url=not_found_url
+    ) }}
+    <title>{{ not_found_title }}</title>
+    <meta name="description" content="{{ not_found_desc }}">
+    <meta property="og:title" content="{{ not_found_title }}">
+    <meta property="og:description" content="{{ not_found_desc }}">
+    <meta property="og:url" content="{{ not_found_url }}">
+</head>
+<body>
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col pt-16">
+            {{ macros_header::header(config=config, lang=lang) }}
+            <div class="p-8 w-full max-w-3xl mx-auto flex flex-col justify-center items-center min-h-[60vh]">
+                <main class="flex flex-auto flex-col items-center justify-center px-4 text-center sm:flex-row">
+                    <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:mr-6 sm:border-r sm:border-gray-900/10 sm:pr-6 sm:text-3xl dark:text-gray-200 sm:dark:border-gray-300/10">{{ not_found_title }}</h1>
+                    <h2 class="mt-2 text-gray-700 sm:mt-0 dark:text-gray-400">{{ not_found_desc }}</h2>
+                </main>
+            </div>
+        </div>
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
+            {{ macros_sidebar::sidebar(config=config, lang=lang, current_path='/', section=false) }}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+{% import "macros/footer.html" as macros_footer %}
+{% macro sidebar(config, lang, current_path, section) %}
+{% if config.extra.sidebar_expand_depth is defined %}{% set sidebar_expand_depth = config.extra.sidebar_expand_depth | int %}{% else %}{% set sidebar_expand_depth = 0 %}{% endif %}
+{# Normalize current_path for comparison by removing language prefix #}
+{% if lang != config.default_language and current_path is starting_with("/" ~ lang ~ "/") %}
+    {% set normalized_current_path = current_path | replace(from="/" ~ lang, to="", count=1) %}
+{% else %}
+    {% set normalized_current_path = current_path %}
+{% endif %}
+<label for="my-drawer-2" class="drawer-overlay"></label>
+<div class="mt-4 w-68 h-[calc(100vh-4rem)] bg-base-100 text-base-content flex flex-col overflow-auto">
+    {% if config.build_search_index %}
+    <div class="px-2 pt-4 pb-0 flex flex-col items-center gap-2">
+        <div class="w-full flex items-center gap-2">
+            <label for="search-modal" class="input w-full flex items-center justify-between text-left bg-base-100 cursor-pointer border-gray-500/15 hover:border-gray-500/55 hover:border-1 transition" aria-label="검색">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span class="text-gray-400"><kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd></span>
+            </label>
+        </div>
+    </div>
+    {% endif %}
+    <ul class="menu w-full flex-grow">
+        {% if lang != config.default_language %}
+            {% set index = get_section(path="_index." ~ lang ~ ".md") %}
+        {% else %}
+            {% set index = get_section(path="_index.md") %}
+        {% endif %}
+        {# Level 1 - Root #}
+        {% for page in index.pages %}
+            <li {% if normalized_current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a></li>
+        {% endfor %}
+        {% for s1_path in index.subsections %}
+            {% set s1 = get_section(path=s1_path) %}{% set is_active1 = normalized_current_path is starting_with(s1.path) %}
+            <li>
+                {% if s1.subsections or s1.pages %}
+                    <details {% if is_active1 or sidebar_expand_depth >= 1 %}open{% endif %}>
+                        <summary {% if normalized_current_path == s1.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=s1.path, lang=lang) | safe }}">{{ s1.title }}</a></summary>
+                        <ul>
+                            {# Level 2 #}
+                            {% for page in s1.pages %}
+                                <li {% if normalized_current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                            {% for s2_path in s1.subsections %}
+                                {% set s2 = get_section(path=s2_path) %}{% set is_active2 = normalized_current_path is starting_with(s2.path) %}
+                                <li>
+                                    {% if s2.subsections or s2.pages %}
+                                        <details {% if is_active2 or sidebar_expand_depth >= 2 %}open{% endif %}>
+                                            <summary {% if normalized_current_path == s2.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=s2.path, lang=lang) | safe }}">{{ s2.title }}</a></summary>
+                                            <ul>
+                                                {# Level 3 #}
+                                                {% for page in s2.pages %}
+                                                    <li {% if normalized_current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a></li>
+                                                {% endfor %}
+                                                {% for s3_path in s2.subsections %}
+                                                    {% set s3 = get_section(path=s3_path) %}{% set is_active3 = normalized_current_path is starting_with(s3.path) %}
+                                                    <li>
+                                                        {% if s3.subsections or s3.pages %}
+                                                            <details {% if is_active3 or sidebar_expand_depth >= 3 %}open{% endif %}>
+                                                                <summary {% if normalized_current_path == s3.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=s3.path, lang=lang) | safe }}">{{ s3.title }}</a></summary>
+                                                                <ul>
+                                                                    {# Level 4 #}
+                                                                    {% for page in s3.pages %}
+                                                                        <li {% if normalized_current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a></li>
+                                                                    {% endfor %}
+                                                                    {% for s4_path in s3.subsections %}
+                                                                        {% set s4 = get_section(path=s4_path) %}{% set is_active4 = normalized_current_path is starting_with(s4.path) %}
+                                                                        <li>
+                                                                            {% if s4.subsections or s4.pages %}
+                                                                                <details {% if is_active4 or sidebar_expand_depth >= 4 %}open{% endif %}>
+                                                                                    <summary {% if normalized_current_path == s4.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=s4.path, lang=lang) | safe }}">{{ s4.title }}</a></summary>
+                                                                                    <ul>
+                                                                                        {# Level 5 #}
+                                                                                        {% for page in s4.pages %}
+                                                                                            <li {% if normalized_current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}><a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a></li>
+                                                                                        {% endfor %}
+                                                                                        {% for s5_path in s4.subsections %}
+                                                                                            {% set s5 = get_section(path=s5_path) %}
+                                                                                            <li><a {% if normalized_current_path == s5.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s5.path, lang=lang) | safe }}">{{ s5.title }}</a></li>
+                                                                                        {% endfor %}
+                                                                                    </ul>
+                                                                                </details>
+                                                                            {% else %}<a {% if normalized_current_path == s4.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s4.path, lang=lang) | safe }}">{{ s4.title }}</a>{% endif %}
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </details>
+                                                        {% else %}<a {% if normalized_current_path == s3.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s3.path, lang=lang) | safe }}">{{ s3.title }}</a>{% endif %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </details>
+                                    {% else %}<a {% if normalized_current_path == s2.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s2.path, lang=lang) | safe }}">{{ s2.title }}</a>{% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </details>
+                {% else %}<a {% if normalized_current_path == s1.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s1.path, lang=lang) | safe }}">{{ s1.title }}</a>{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {{ macros_footer::footer(config=config) }}
+</div>
+{% endmacro sidebar %}

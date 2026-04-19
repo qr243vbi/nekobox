@@ -1,0 +1,22 @@
+# On every push this script is executed
+on: 
+  workflow_dispatch:
+name: Build and deploy GH Pages
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: build_and_deploy
+        uses: DeadPoetSpoon/zola-deploy-action@master
+        env:
+          # Target branch
+          PAGES_BRANCH: gh-pages
+          # Provide personal access token
+          # TOKEN: ${{ secrets.TOKEN }}
+          # Or if publishing to the same repo, use the automatic token
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}

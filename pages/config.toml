@@ -1,0 +1,38 @@
+# The URL the site will be built for
+base_url = "https://qr243vbi.github.io/nekobox/"
+title = "NekoBox"
+description = "NekoBox"
+
+build_search_index = true
+default_language = "en"
+generate_feeds = true
+generate_sitemap = true
+
+[markdown]
+bottom_footnotes = true
+
+[languages.fa]
+generate_feeds = true
+
+[languages.ru]
+generate_feeds = true
+build_search_index = true
+
+[languages.zh]
+generate_feeds = true
+build_search_index = true
+
+[extra]
+logo_text = "NekoBox"
+logo_image_path = "https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png"
+default_thumbnail = "https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png"
+default_colorset = "dark"
+gtag = ""
+sidebar_expand_depth = 1
+disable_root_sidebar_hide = false
+
+nav = [
+    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/qr243vbi/nekobox", type = "url", icon = "fa-brands fa-github" },
+]
+highlighting = true

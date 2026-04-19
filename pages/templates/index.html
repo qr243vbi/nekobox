@@ -1,0 +1,104 @@
+{% import "macros/head.html" as macros_head %}
+{% import "macros/search.html" as macros_search %}
+{% import "macros/header.html" as macros_header %}
+{% import "macros/comments.html" as macros_comments %}
+{% import "macros/toc.html" as macros_toc %}
+{% import "macros/footer.html" as macros_footer %}
+{% import "macros/sidebar.html" as macros_sidebar %}
+
+<!DOCTYPE html>
+<html lang="{{ lang | default(value='en') }}" {% if lang == "fa" %} dir="rtl" {% endif %}>
+<head>
+    {% if page is defined %}
+        {{ macros_head::head(config=config, page=page, section=false, current_url=config.base_url) }}
+    {% elif section is defined %}
+        {{ macros_head::head(config=config, page=false, section=section, current_url=config.base_url) }}
+    {% endif %}
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    {{ macros_search::search(config=config) }}
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col pt-16">
+            {{ macros_header::header(config=config, lang=lang) }}
+
+            {% set lang_root_path = "/" ~ lang ~ "/" %}
+            {% if section is defined and (section.path == "/" or section.path == lang_root_path) and not config.extra.disable_root_sidebar_hide %}
+            <div class="w-full">
+                <main class="prose w-full mx-auto">
+            {% else %}
+            <div class="p-8 w-full max-w-7xl mx-auto lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
+                <main class="prose w-full max-w-7xl mx-auto">
+            {% endif %}
+                    {% block content %}{% endblock content %}
+
+                    {{ macros_comments::comments(config=config) }}
+
+                    <div class="flex justify-between mt-8">
+                        <div class="prev-link">
+                            {% block prev_link %}{% endblock prev_link %}
+                        </div>
+                        <div class="next-link">
+                            {% block next_link %}{% endblock next_link %}
+                        </div>
+                    </div>
+                </main>
+
+                {% if page is defined %}
+                    {{ macros_toc::toc(page=page) }}
+                {% endif %}
+                {% if section is defined %}
+                    {{ macros_toc::toc(page=section) }}
+                {% endif %}
+            </div>
+
+            <script>
+              // Determine theme: localStorage > extra.default_colorset > night
+              // Expose theme config for global use (e.g., goyo.js)
+              window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
+              window.themeMap = { "dark": "night", "light": "lofi" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
+              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var mermaidTheme = "dark";
+              if(currentTheme == "lofi") {
+                mermaidTheme = "light";
+              }
+              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+              document.addEventListener('DOMContentLoaded', async () => {
+                const mermaidElements = document.querySelectorAll('.mermaid');
+
+                if (mermaidElements.length > 0) {
+                    await mermaid.run({
+                        nodes: mermaidElements
+                    });
+                }
+              });
+            </script>
+
+        </div>
+
+        {% set lang_root_path = "/" ~ lang ~ "/" %}
+        {% if section is defined and (section.path == "/" or section.path == lang_root_path) and not config.extra.disable_root_sidebar_hide %}
+        <div id="sidebar" class="hidden">
+        {% else %}
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 {% if lang == "fa" %} border-l {% else %} border-r {% endif %} border-gray-500/15">
+        {% endif %}
+            {% if section is defined %}
+                {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=section) }}
+            {% else %}
+                {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=false) }}
+            {% endif %}
+        </div>
+    </div>
+
+    {% block js_body %}
+        {% if config.build_search_index %}
+        <script type="text/javascript" src="{{ get_url(path='fuse.min.js') | safe }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='search_index.' ~ lang ~ '.js') | safe }}"></script>
+        {% endif %}
+        <script type="text/javascript" src="{{ get_url(path='goyo.js') | safe }}"></script>
+    {% endblock js_body %}
+</body>
+</html>

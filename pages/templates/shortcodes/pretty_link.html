@@ -1,0 +1,27 @@
+<div class="card w-full bg-base-100 border border-gray-500/15 shadow-sm hover:shadow-md transition-shadow duration-200">
+  <div class="card-body p-4">
+    <div class="flex items-start space-x-3">
+      {% if image %}
+      <div class="flex-shrink-0">
+        <img src="{{ image }}" alt="{{ title | default(value=url) }}" class="w-12 h-12 rounded-lg object-cover" />
+      </div>
+      {% endif %}
+      <div class="flex-1 min-w-0">
+        <h2 class="card-title text-base font-semibold text-base-content mb-1">
+          <a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+            {% if title %}{{ title }}{% else %}{{ url | safe }}{% endif %}
+          </a>
+        </h2>
+        {% if description %}
+        <p class="text-sm text-base-content/70 mb-2">{{ description }}</p>
+        {% endif %}
+        <div class="text-xs text-base-content/50 flex items-center">
+          <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+          {{ url | replace(from="https://", to="") | replace(from="http://", to="") | truncate(length=50) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
