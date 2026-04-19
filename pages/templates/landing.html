@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {# Hero Section #}
+    {% if section.extra.hero %}
+        <div class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+            <div class="relative z-10 p-8">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">{{ section.extra.hero.title }}</h1>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8 drop-shadow-md">{{ section.extra.hero.description }}</p>
+                {% if section.extra.hero.cta_buttons %}
+                    <div class="flex justify-center gap-4">
+                        {% for button in section.extra.hero.cta_buttons %}
+                            {% if button.url is starting_with("/") %}
+                                {% set path = get_url(path=button.url, lang=lang) %}
+                            {% else %}
+                                {% set path = button.url %}
+                            {% endif %}
+                            <a href="{{ path | safe }}"
+                               class="btn btn-lg transition-transform transform hover:scale-105
+                                      {% if button.style == 'primary' %}btn-primary{% else %}btn-ghost{% endif %}">
+                                {{ button.text }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

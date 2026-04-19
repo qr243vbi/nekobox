@@ -1,0 +1,508 @@
+@import "tailwindcss" source(none);
+@source "../templates/**/*.{html,md}";
+@source "../content/**/*.{html,md}";
+@plugin "./daisyui.js" {
+    themes:
+        night --default,
+        lofi;
+}
+
+/* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
+@plugin "./daisyui-theme.js" {
+}
+
+@layer base {
+    /* Article base styling */
+
+    html {
+        scroll-padding-top: 130px;
+    }
+
+    body {
+        line-height: 1.7;
+        color: var(--fallback-bc, oklch(var(--bc) / 1));
+        font-size: 18px;
+        font-feature-settings:
+            "liga" 1,
+            "kern" 1;
+    }
+
+    h1 {
+        @apply text-3xl font-bold mb-6 mt-8 text-base-content;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+    }
+
+    h2 {
+        @apply text-2xl font-bold mt-12 mb-6 text-base-content;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+    }
+
+    h3 {
+        @apply text-xl font-bold mt-10 mb-5 text-base-content;
+        line-height: 1.4;
+    }
+
+    h4 {
+        @apply text-lg font-bold mt-8 mb-4 text-base-content;
+        line-height: 1.4;
+    }
+
+    p {
+        @apply my-5;
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Enhanced List Styling */
+    main ul {
+        @apply list-none mb-6;
+        padding-left: 0;
+    }
+
+    main ul li {
+        @apply relative pl-6 mb-3;
+        line-height: 1.7;
+    }
+
+    main ul li::before {
+        content: "•";
+        @apply absolute left-0 top-0;
+        @apply text-gray-500/50 font-bold;
+        font-size: 1.2em;
+    }
+
+    /* Beautiful Numbered Lists */
+    main ol {
+        @apply list-none mb-6;
+        padding-left: 0;
+        counter-reset: list-counter;
+    }
+
+    main ol li {
+        @apply relative pl-10 mb-4;
+        line-height: 1.7;
+        counter-increment: list-counter;
+    }
+
+    main ol li::before {
+        content: counter(list-counter);
+        @apply absolute left-0 top-0;
+        @apply bg-gray-500/50 text-base-content;
+        @apply w-7 h-7 rounded-full;
+        @apply flex items-center justify-center;
+        @apply text-sm font-bold;
+        @apply shadow-md;
+        min-width: 1.75rem;
+        min-height: 1.75rem;
+    }
+
+    /* Nested lists */
+    main ul ul,
+    main ol ol,
+    main ul ol,
+    main ol ul {
+        @apply mt-2 mb-2;
+        margin-left: 1.5rem;
+    }
+
+    main ul ul li::before {
+        content: "◦";
+        @apply text-base-content opacity-70;
+    }
+
+    main ol ol {
+        counter-reset: nested-counter;
+    }
+
+    main ol ol li {
+        counter-increment: nested-counter;
+        @apply pl-8;
+    }
+
+    main ol ol li::before {
+        content: counter(nested-counter, lower-alpha);
+        @apply bg-gray-500/50 text-base-content;
+        @apply w-6 h-6;
+        @apply text-xs;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+    }
+
+    /* Enhanced Task Lists */
+    main ul li:has(input[type="checkbox"]) {
+        @apply pl-10;
+        list-style: none;
+    }
+
+    main ul li:has(input[type="checkbox"])::before {
+        display: none;
+    }
+
+    main ul li input[type="checkbox"] {
+        @apply absolute left-0 top-1;
+        @apply w-5 h-5;
+        @apply rounded border-2 border-gray-500/15;
+        @apply bg-gray-500/50;
+        @apply cursor-pointer;
+        @apply transition-all duration-200;
+        appearance: none;
+        margin: 0;
+    }
+
+    main ul li input[type="checkbox"]:checked {
+        @apply bg-success border-success;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e");
+        background-size: 0.75rem;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    main ul li input[type="checkbox"]:checked + * {
+        @apply text-base-content opacity-60 line-through;
+    }
+
+    main ul li input[type="checkbox"]:hover {
+        @apply border-primary shadow-sm;
+    }
+
+    a {
+        @apply text-base-content font-bold;
+        @apply hover:underline;
+    }
+
+    /* Improve anchor visibility in content areas */
+    main a {
+        @apply text-primary;
+        text-decoration: underline;
+    }
+
+    main a:hover {
+        opacity: 0.8;
+    }
+
+    img {
+        @apply w-full h-auto rounded-lg;
+    }
+
+    pre {
+        @apply overflow-x-auto bg-base-200 text-base-content p-4 rounded-lg my-4;
+        word-break: break-all;
+        white-space: pre;
+    }
+
+    pre code {
+        @apply text-sm;
+        @apply whitespace-pre-wrap;
+    }
+
+    :not(pre) > code {
+        @apply kbd kbd-sm;
+    }
+
+    blockquote {
+        @apply text-base-content;
+        @apply italic;
+        @apply border-l-2;
+        @apply border-gray-500;
+        @apply pl-4;
+        @apply mb-4;
+    }
+
+    blockquote p {
+        @apply py-0;
+    }
+
+    blockquote cite {
+        @apply block mt-2 text-right text-sm text-base-content;
+    }
+
+    table {
+        @apply table;
+        @apply w-full my-4;
+        @apply table-zebra;
+        @apply mb-4;
+    }
+
+    th,
+    td {
+        @apply border border-base-300 px-4 py-2;
+    }
+
+    em {
+        @apply italic text-sm;
+        @apply text-base-content;
+    }
+
+    /* Footnote Styling */
+    
+    /* Footnote References - make them more visually appealing */
+    .footnote-reference {
+        @apply inline-block;
+        @apply ml-1;
+        line-height: 1;
+    }
+    
+    .footnote-reference a {
+        @apply bg-primary text-primary-content;
+        @apply text-xs font-bold;
+        @apply px-1.5 py-0.5;
+        @apply rounded-full;
+        @apply no-underline;
+        @apply transition-all duration-200;
+        @apply hover:bg-primary/90 hover:shadow-md;
+        @apply hover:scale-110;
+        min-width: 1.2rem;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none !important;
+    }
+    
+    .footnote-reference a:hover {
+        text-decoration: none !important;
+        opacity: 1;
+    }
+    
+    /* Footnote List - enhanced styling */
+    .footnotes-list {
+        @apply mt-8 pt-6;
+        @apply border-t border-gray-500/15;
+        @apply bg-base-200/30;
+        @apply p-6 rounded-lg;
+        @apply list-none;
+        counter-reset: footnote-counter;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+    .footnotes-list li {
+        @apply relative pl-12 mb-4 pb-4;
+        @apply border-b border-gray-500/10;
+        counter-increment: footnote-counter;
+        line-height: 1.6;
+    }
+    
+    .footnotes-list li:last-child {
+        @apply border-b-0 mb-0 pb-0;
+    }
+    
+    .footnotes-list li::before {
+        content: counter(footnote-counter);
+        @apply absolute left-0 top-0;
+        @apply bg-primary text-primary-content;
+        @apply w-8 h-8 rounded-full;
+        @apply flex items-center justify-center;
+        @apply text-sm font-bold;
+        @apply shadow-md;
+        min-width: 2rem;
+        min-height: 2rem;
+    }
+    
+    .footnotes-list li p {
+        @apply m-0;
+        @apply text-base-content;
+    }
+    
+    /* Back-link styling */
+    .footnotes-list a[href^="#fr-"] {
+        @apply ml-2 px-2 py-1;
+        @apply bg-gray-500/20 text-base-content;
+        @apply rounded-md text-sm;
+        @apply no-underline;
+        @apply transition-all duration-200;
+        @apply hover:bg-primary hover:text-primary-content;
+        @apply hover:shadow-sm;
+        text-decoration: none !important;
+        font-weight: normal;
+    }
+    
+    .footnotes-list a[href^="#fr-"]:hover {
+        text-decoration: none !important;
+        opacity: 1;
+    }
+    
+    /* Hide the horizontal rule before footnotes since we have our own styling */
+    hr + .footnotes-list {
+        @apply border-t-0 pt-0;
+    }
+    
+    .footnotes-list::before {
+        content: "Footnotes";
+        @apply block text-base-content font-bold text-lg mb-4;
+        @apply border-b border-gray-500/15 pb-2;
+    }
+
+    /* Color definitions for the syntax highlighting */
+    .z-code {
+        @apply text-base-content;
+        @apply bg-base-100;
+    }
+}
+
+.nav-menu {
+    @apply text-base-content hover:text-primary transition-colors duration-200 no-underline hover:no-underline;
+}
+.gallery-box {
+    margin-bottom: 30px;
+}
+.gallery-box em {
+    display: inline-block;
+    width: 100%;
+    padding: 13px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8); /* Assuming $text-color is white */
+    background-color: #333; /* Assuming $dark is dark grey */
+}
+.gallery-box em a {
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+blockquote {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 37px;
+    font-weight: 700;
+}
+
+blockquote cite {
+    font-size: 16px;
+    font-style: normal;
+}
+
+blockquote cite:before {
+    content: "- ";
+}
+
+@media only screen and (max-width: 768px) {
+    /* Assuming $mobile is 768px */
+    blockquote {
+        padding: 20px 20px 20px 35px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+@import "./syntax-highlight.css";
+
+.copy-code-button {
+    visibility: hidden;
+    position: absolute !important;
+    top: 0.5em !important;
+    right: 0.5em !important;
+    color: #fff;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 0.6em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.copy-code-button:hover {
+    opacity: 1;
+}
+
+pre {
+    position: relative !important;
+}
+
+pre:hover .copy-code-button {
+    visibility: visible;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+}
+
+.copy-heading-link-button {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    visibility: hidden;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+
+h1:hover .copy-heading-link-button,
+h2:hover .copy-heading-link-button,
+h3:hover .copy-heading-link-button,
+h4:hover .copy-heading-link-button,
+h5:hover .copy-heading-link-button,
+h6:hover .copy-heading-link-button {
+    visibility: visible;
+}
+
+.copy-heading-link-button:hover {
+    opacity: 1;
+}
+
+.copy-heading-link-button svg {
+    width: 1rem;
+    height: 1rem;
+    margin: auto;
+}
+
+.copy-heading-link-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+}
+
+.copy-heading-link-button:hover .copy-heading-link-tooltip {
+    visibility: visible;
+}
+
+.modal-toggle:checked + .modal .modal-box {
+    border: 1px solid rgb(107 114 128 / 0.15);
+    opacity: 0.95;
+    backdrop-filter: blur(3rem);
+}

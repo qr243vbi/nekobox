@@ -1,0 +1,31 @@
+{% macro toc(page) %}
+{% if page.toc %}
+<div class="hidden lg:block">
+    <div class="sticky top-20 px-4 py-2 {% if lang == "fa" %} border-r {% else %} border-l {% endif %} border-gray-500/15">
+        <h4 class="text-lg font-bold mb-1">ON THIS PAGE</h4>
+            <ul class="menu menu-sm toc-menu">
+            {% for h1 in page.toc %}
+                <li>
+                    {% if h1.children %}
+                    <details class="toc-details">
+                        <summary>
+                            <a href="{{ h1.permalink | safe }}" class="toc-link">{{ h1.title }}</a>
+                        </summary>
+                        <ul>
+                            {% for h2 in h1.children %}
+                                <li>
+                                    <a href="{{ h2.permalink | safe }}" class="toc-link">{{ h2.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </details>
+                    {% else %}
+                    <a href="{{ h1.permalink | safe }}" class="toc-link">{{ h1.title }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endif %}
+{% endmacro toc %}

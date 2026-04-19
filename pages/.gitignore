@@ -1,0 +1,11 @@
+# Public
+public
+
+# DS_Store
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# Binary
+src/tailwindcss

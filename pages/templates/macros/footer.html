@@ -1,0 +1,9 @@
+{% macro footer(config) %}
+<footer class="footer text-xs pt-4 px-4 text-base-content border-t border-gray-500/15">
+    <aside>
+        <p>
+            {{ config.extra.footer_html | default(value="Powered by <a href='https://www.getzola.org'>Zola</a>" | safe) | safe }}
+        </p>
+    </aside>
+</footer>
+{% endmacro footer %}
