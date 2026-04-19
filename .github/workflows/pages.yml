@@ -10,7 +10,10 @@ jobs:
       contents: write
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
+        with:
+          ref: 'main'
+          submodules: 'false'
       - name: build_and_deploy
         uses: DeadPoetSpoon/zola-deploy-action@master
         env:
