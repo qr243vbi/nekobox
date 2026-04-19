@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Configs.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -1977,6 +1978,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
     if (info == "Crashed") {
       profile_stop();
     } else if (info.startsWith("CoreStarted")) {
+
 #ifdef DEBUG_MODE
       qDebug() << "IsAdmin After Core Started" <<
 #endif
@@ -2245,7 +2247,9 @@ void MainWindow::toggle_system_proxy() {
 }
 
 bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
+  elevated_mutex.lock();
   if (elevated_future.isRunning()) {
+    elevated_mutex.unlock();
     elevated_future.waitForFinished();
     return elevated_future.result();
   }
@@ -2260,11 +2264,13 @@ bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
         delete ret;
         return rr;
       });
+  elevated_mutex.unlock();
   *ret = get_elevated_permissions_future(reason, pointer);
   mut.unlock();
   elevated_future.waitForFinished();
-  return *ret;
+  return elevated_future.result();
 }
+
 bool MainWindow::get_elevated_permissions_future(int reason, void *pointer) {
   if (Configs::dataStore->disable_privilege_req) {
     MW_show_log(
@@ -2276,8 +2282,9 @@ bool MainWindow::get_elevated_permissions_future(int reason, void *pointer) {
     }
     return true;
   }
-  if (Configs::IsAdmin())
+  if (Configs::IsAdmin()) {
     return true;
+  }
 #undef ELEVATE_CORE_PROGRAM
 
 #ifdef Q_OS_UNIX
@@ -2307,6 +2314,7 @@ skip_start_elevate_process:
 #ifdef ELEVATE_CORE_PROGRAM
   goto skip_start_elevate_process;
 start_elevate_process: {
+  Configs::isAdminCache = 1;
   StopVPNProcess();
   core_process->elevateCoreProcessProgram();
   runOnUiThread([=, this]() {

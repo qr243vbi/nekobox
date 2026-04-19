@@ -12,6 +12,8 @@ namespace Configs {
 
     QString FindCoreRealPath();
 
+    extern signed char isAdminCache;
+
     bool IsAdmin(bool forceRenew=false);
 
     bool isSetuidSet(const std::string& path);

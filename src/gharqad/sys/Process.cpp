@@ -152,9 +152,10 @@ namespace Configs_sys {
 
         QString rulesets = QDir("rule_sets").absolutePath();
         list << "NEKOBOX_RULESET_CACHE_DIRECTORY=" + rulesets;
-        #ifdef DEBUG_MODE
+
+#ifdef DEBUG_MODE
         qDebug() << "RULESETS ARE IN " << rulesets;
-        #endif
+#endif
 
         list << "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core";
 
