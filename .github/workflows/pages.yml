@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          ref: 'main'
+
+      - name: pre_build
+        run: |
+          data="$( cat ./pages/content/introduction/_index.md ; cat ./README.md ; )"
+          echo "$data" > ./pages/content/introduction/_index.md
+
       - name: build_and_deploy
         uses: DeadPoetSpoon/zola-deploy-action@master
         env:
