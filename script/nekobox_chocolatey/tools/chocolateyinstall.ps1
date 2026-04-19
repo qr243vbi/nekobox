@@ -82,7 +82,7 @@ $packageArgs = @{
   checksumType  = 'sha256'
   checksum64    = '@SHA_x64@'
   checksumType64= 'sha256'
-  silentArgs    = "/S /D=C:\tools\NekoBox"
+  silentArgs    = "/S /CHOCOLATEY=1 /D=C:\tools\NekoBox"
   validExitCodes= @(0, 3010, 1641)
 }
 
