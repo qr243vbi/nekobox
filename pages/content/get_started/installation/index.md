@@ -57,7 +57,22 @@ unzip NekoBox-x.x.x-linux-*.zip
 
 Distro | Repository
 -- | --
-
+Windows | [scoop](https://scoop.sh/#/apps?p=1&q=nekobox)
+Windows | [winget](https://winstall.app/apps/qr243vbi.NekoBox)
+Windows | [chocolatey](https://community.chocolatey.org/packages/nekobox)
+openSUSE Leap | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+openSUSE Tumbleweed | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+Mageia | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+Debian | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+Ubuntu | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+openEuler | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+Raspbian | [obs](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox)
+Fedora | [copr](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox)
+Redhat | [copr](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox)
+CentOS | [copr](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox)
+AlmaLinux | [copr](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox)
+Arch Linux | [aur](https://aur.archlinux.org/packages/nekobox)
+Arch Linux | [aur-git](https://aur.archlinux.org/packages/nekobox)
 
 ## Updating
 
