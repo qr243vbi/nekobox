@@ -22,7 +22,7 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 [![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat)](https://community.chocolatey.org/packages/nekobox)
 
 ### Scoop Package
-![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=flat&logo=boxysvg) <br/>
+[![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=flat&logo=boxysvg)](https://scoop.sh/#/apps?p=1&q=nekobox) <br/>
 ```
 scoop bucket add extras
 scoop install extras/nekobox
