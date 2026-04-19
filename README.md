@@ -29,7 +29,7 @@ scoop install extras/nekobox
 ```
 
 ### OBS repository 
-[![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
+[![obs build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
 
 - [NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
 
