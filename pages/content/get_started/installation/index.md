@@ -58,6 +58,7 @@ unzip NekoBox-x.x.x-linux-*.zip
 Distro | Repository
 -- | --
 
+
 ## Updating
 
 NekoBox has a built-in update function. You can also download new releases manually from the [Releases page](https://github.com/qr243vbi/NekoBox/releases).
