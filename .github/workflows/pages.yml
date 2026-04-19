@@ -14,5 +14,5 @@ jobs:
         uses: DeadPoetSpoon/zola-deploy-action@master
         env:
           BUILD_DIR: ./pages
-          PAGES_BRANCH: gh-pages
+          PAGES_BRANCH: pages
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
