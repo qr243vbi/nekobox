@@ -11,25 +11,25 @@ Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.
 
 
 ### GitHub Releases (Portable ZIPs, Windows installers, AppImages)
-[![GitHub Release](https://img.shields.io/github/v/release/qr243vbi/nekobox?display_name=release&style=for-the-badge&logo=github)](https://github.com/qr243vbi/nekobox/releases)
-[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?style=for-the-badge)](https://github.com/qr243vbi/nekobox/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/qr243vbi/nekobox?display_name=release&style=flat&logo=github)](https://github.com/qr243vbi/nekobox/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/qr243vbi/nekobox/total?style=flat)](https://github.com/qr243vbi/nekobox/releases)
 
 ### WinGet Package
-[![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=for-the-badge&logo=gitforwindows)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
-
-### OBS repository 
-[![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
+[![WinGet Page](https://img.shields.io/winget/v/qr243vbi.NekoBox?style=flat&logo=gitforwindows)](https://winget.ragerworks.com/package/qr243vbi.NekoBox)
 
 ### Chocolatey Package
-[![Chocolatey Version](https://img.shields.io/chocolatey/v/nekobox?style=for-the-badge&logo=chocolatey)](https://community.chocolatey.org/packages/nekobox)
-[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=for-the-badge)](https://community.chocolatey.org/packages/nekobox)
+[![Chocolatey Version](https://img.shields.io/chocolatey/v/nekobox?style=flat&logo=chocolatey)](https://community.chocolatey.org/packages/nekobox)
+[![Chocolatey Package For Windows](https://img.shields.io/chocolatey/dt/nekobox?style=flat)](https://community.chocolatey.org/packages/nekobox)
 
 ### Scoop Package
-![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=for-the-badge&logo=boxysvg) <br/>
+![Scoop Version](https://img.shields.io/scoop/v/nekobox?bucket=extras&style=flat&logo=boxysvg) <br/>
 ```
 scoop bucket add extras
 scoop install extras/nekobox
 ```
+
+### OBS repository 
+[![build result](https://build.opensuse.org/projects/home:qr243vbi/packages/nekobox/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:qr243vbi/nekobox) <br/>
 
 - [NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([OpenSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
 
@@ -41,8 +41,8 @@ scoop install extras/nekobox
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
 
 ### Changelog Channel
-[![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=for-the-badge&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
-[![Telegram Group](https://img.shields.io/badge/tg-blue?style=for-the-badge&label=Telegram%20Group)](https://t.me/NyameBox)
+[![Matrix Room](https://img.shields.io/matrix/nyamebox%3Amatrix.org?style=flat&label=Matrix%20Room)](https://matrix.to/#/#NyameBox:matrix.org)
+[![Telegram Group](https://img.shields.io/badge/tg-blue?style=flat&label=Telegram%20Group)](https://t.me/NyameBox)
   
 ## TODO
 - Command line tools
