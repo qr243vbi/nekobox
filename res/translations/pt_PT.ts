@@ -3819,17 +3819,17 @@ Direct: %2</source>
 Direto: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Core saiu, limpando...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">O Core sai com muita frequência, pare a reinicialização automática deste perfil.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">Reiniciando o núcleo...</translation>
     </message>

@@ -3795,17 +3795,17 @@ Direct: %2</source>
 Директно: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Ядрото излезе, почиства се...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Core излиза твърде често, спрете автоматичното рестартиране на този профил.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">Рестартиране на ядрото...</translation>
     </message>

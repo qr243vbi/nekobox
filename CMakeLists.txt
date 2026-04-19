@@ -35,7 +35,7 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 set(NYXARIA "src/nekobox")
 set(GHARQAD "src/gharqad")
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools Concurrent)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -327,7 +327,7 @@ endif()
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Network 
+        Qt6::Widgets Qt6::Network Qt6::Concurrent
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

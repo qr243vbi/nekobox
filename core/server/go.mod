@@ -12,7 +12,7 @@ require (
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
-	github.com/sagernet/sing v0.8.4
+	github.com/sagernet/sing v0.8.6
 	github.com/sagernet/sing-box v1.13.8
 	github.com/sagernet/sing-tun v0.8.7
 	github.com/spf13/cobra v1.10.2

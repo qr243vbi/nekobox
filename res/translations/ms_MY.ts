@@ -3811,17 +3811,17 @@ Direct: %2</source>
 Langsung: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Teras keluar, membersihkan...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Teras keluar terlalu kerap, hentikan automatik memulakan semula profil ini.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">Memulakan semula teras...</translation>
     </message>

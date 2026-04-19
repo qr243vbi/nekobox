@@ -4064,7 +4064,7 @@ Direct: %2</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>هسته بیش از حد متوقف می‌شود، راه‌اندازی خودکار این نمایه متوقف شود.</translation>
     </message>
@@ -4124,12 +4124,12 @@ Direct: %2</source>
         <translation type="unfinished">درخواست خطای نمایه: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">هسته خارج شد، در حال تمیز کردن...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">راه اندازی مجدد هسته ...</translation>
     </message>

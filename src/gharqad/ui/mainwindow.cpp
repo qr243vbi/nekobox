@@ -17,6 +17,7 @@
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/mainwindow.h>
 #include <nekobox/ui/utils/MapListModel.hpp>
+#include <QtConcurrent>
 
 #ifndef NKR_SOFTWARE_KEYS
 #define ADD_SECURITY_ACTION
@@ -2244,6 +2245,26 @@ void MainWindow::toggle_system_proxy() {
 }
 
 bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
+  if (elevated_future.isRunning()){
+    elevated_future.waitForFinished();
+    return elevated_future.result();
+  }
+  QMutex mut;
+  bool * ret = new bool(false);
+  mut.lock();
+  elevated_future = QtConcurrent::run([this, &mut, ret]() { 
+    mut.lock();
+    mut.unlock();
+    bool rr = *ret;
+    delete ret;
+    return rr;
+  });
+  *ret = get_elevated_permissions_future(reason, pointer);
+  mut.unlock();
+  elevated_future.waitForFinished();
+  return *ret;
+}
+bool MainWindow::get_elevated_permissions_future(int reason, void *pointer) {
   if (Configs::dataStore->disable_privilege_req) {
     MW_show_log(
         tr("User opted for no privilege req, some features may not work"));

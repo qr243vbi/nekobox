@@ -31,7 +31,6 @@ namespace Configs_sys {
         QStringList arguments;
         int waitpid;
         std::string * domain;
-        bool listening = false;
         int * port;
         std::function<void()> core_pre_start;
 

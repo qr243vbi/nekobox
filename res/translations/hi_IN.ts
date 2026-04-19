@@ -3815,17 +3815,17 @@ Direct: %2</source>
 प्रत्यक्ष: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">कोर बाहर निकल गया, सफाई हो रही है...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">कोर बहुत बार बाहर निकलता है, इस प्रोफ़ाइल को स्वचालित पुनरारंभ करना बंद करें।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">कोर को पुनः प्रारंभ किया जा रहा है...</translation>
     </message>

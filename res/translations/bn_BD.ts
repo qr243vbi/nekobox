@@ -3827,17 +3827,17 @@ Direct: %2</source>
 সরাসরি: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="126"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">কোর প্রস্থান করা হয়েছে, পরিষ্কার করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="133"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">কোর খুব ঘন ঘন প্রস্থান করে, এই প্রোফাইলটি স্বয়ংক্রিয়ভাবে পুনরায় চালু করা বন্ধ করুন।</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="142"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">মূলটি পুনরায় চালু করা হচ্ছে...</translation>
     </message>
