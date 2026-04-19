@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang | default(value='en') }}" {% if lang == "fa" %} dir="rtl" {% endif %}>
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     {% if page is defined %}
         {{ macros_head::head(config=config, page=page, section=false, current_url=config.base_url) }}
     {% elif section is defined %}

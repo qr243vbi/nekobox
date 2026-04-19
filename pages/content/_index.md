@@ -2,7 +2,7 @@
 template = "landing.html"
 
 [extra]
-version = "v1.0.0"
+version = "v5.11.0"
 
 [extra.hero]
 title = "NekoBox"

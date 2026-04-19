@@ -21,7 +21,7 @@ sidebar_expand_depth = 1
 disable_root_sidebar_hide = false
 
 nav = [
-    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/qr243vbi/NekoBox", type = "url", icon = "fa-brands fa-github" },
+    { name = "Documents", url = "/introduction", type = "url", icon = "bi bi-book" },
+    { name = "GitHub", url = "https://github.com/qr243vbi/NekoBox", type = "url", icon = "bi bi-github" },
 ]
 highlighting = true
