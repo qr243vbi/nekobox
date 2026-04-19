@@ -390,11 +390,11 @@ QByteArray hash = QCryptographicHash::hash(
 }
 
     int config_type = 
-    #ifdef DEBUG_MODE
-    DatabaseType::json_type
-    #else
+ //   #ifdef DEBUG_MODE
+ //   DatabaseType::json_type
+ //   #else
     DatabaseType::lmdb_type
-    #endif
+ //   #endif
     ;
 
     void SetConfigType(StoreTypeEnum * th, int old_value, int new_value){

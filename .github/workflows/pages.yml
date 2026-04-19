@@ -15,7 +15,8 @@ jobs:
 
       - name: pre_build
         run: |
-          data="$( cat ./pages/content/introduction/_index.md ; cat ./README.md | sed -E 's@.*[GitHub All Releases].*@@g; s@.*[Chocolatey Package For Windows].*@@g; s@.*[obs build result].*@@g; s/\[\!\[([^]]*)\]\([^)]*\)\]\(([^)]*)\)/[\1](\2)/g' ; )"
+          regex='s/\[\!\[([^]]*)\]\([^)]*\)\]\(([^)]*)\)/[\1](\2)/g; s@\[GitHub All Releases\]\(https://github.com/qr243vbi/nekobox/releases\)@@g; s@\[Chocolatey Package For Windows\]\(https://community.chocolatey.org/packages/nekobox\)@@g; s@\[obs build result\]\(https://build.opensuse.org/package/show/home:qr243vbi/nekobox\) <br/>@@g; '
+          data="$( cat ./pages/content/introduction/_index.md ; cat ./README.md | sed -E "$regex" ; )"
           echo "$data" > ./pages/content/introduction/_index.md
 
       - name: build_and_deploy

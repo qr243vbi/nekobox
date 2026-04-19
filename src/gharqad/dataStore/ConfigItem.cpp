@@ -490,6 +490,9 @@ bool JsonStore::UnknownKeyHash(const QByteArray &data){
 }
 
 void JsonStore::FromBytes(const QByteArray &data) {
+  #ifdef DEBUG_MODE
+  qDebug() << "Data Size IS" << data.size() ;
+  #endif
   QDataStream stream(data);
   auto _map = this->_map();
   while (!stream.atEnd()) {

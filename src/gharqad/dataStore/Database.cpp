@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/ProxyEntity.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -179,14 +180,30 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   if (!ok){
     return false;
   } else if (readed){
+    if (Configs::config_type != Configs::DatabaseType::lmdb_type){
+      if (SaveToFile(store)){
+        Configs::clear_lmdb(this->database, store);
+      };
+    }
     return true;
   }
   #endif
-  return LoadFromFile(store); 
+  readed = LoadFromFile(store);
+  #ifndef SKIP_LMDB
+  if (readed){
+    if (Configs::config_type == Configs::DatabaseType::lmdb_type){
+      Configs::write_lmdb(this->database, store);
+      DropFromDirectory(store->StoreType(), store->Id());
+    }
+  }
+  #endif
+  return readed;
 }
 bool FileDatabaseManager::Drop(char chr, int id) {
-  bool ret = DropFromDirectory(chr, id);
   #ifndef SKIP_LMDB
+    bool ret = Configs::drop_lmdb(this->database, chr, id);
+  #else
+    bool ret = DropFromDirectory(chr, id);
   #endif
   if (ret) {
     switch (chr) {
@@ -238,9 +255,9 @@ bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
 }
 
 bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
-  QString fn = getJsonStorePathName(chr);
+  QString fn = getJsonStoreFileName(chr, id);
   if (fn != "") {
-    QFile file(fn + QDir::separator() + QString::number(id) + ".cfg");
+    QFile file(fn);
     return file.remove();
   }
   return false;
@@ -365,12 +382,31 @@ bool Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
 }
 
 bool Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
+  #ifdef DEBUG_MODE
+    qDebug() << "Clearing LMDB ";
+  #endif  
   return Configs::write_lmdb(env, c, x, "");
+}
+
+bool Configs::drop_lmdb(lmdb::env& env, char c, int32_t x){
+  #ifdef DEBUG_MODE
+    qDebug() << "Drop LMDB ";
+  #endif  
+  auto key = pack_char_int(c, x);
+  auto wtxn = lmdb::txn::begin(env);
+  auto dbi = lmdb::dbi::open(wtxn, nullptr);
+  bool ret = dbi.del(wtxn, key);
+  wtxn.commit();
+  return ret;
 }
 
 bool Configs::write_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
   auto bytes = store->ToBytes();
-  return write_lmdb(env, store->StoreType(), store->Id(), bytes.data());
+  std::string_view data(bytes.data(), bytes.size());
+  #ifdef DEBUG_MODE
+    qDebug() << "Writing data" << data.size() << bytes.size();
+  #endif  
+  return write_lmdb(env, store->StoreType(), store->Id(), data);
 }
 
 bool Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view){
@@ -381,38 +417,59 @@ bool Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_vi
   dbi = lmdb::dbi::open(wtxn, nullptr);
   bool ret = dbi.put(wtxn, key, view);
   wtxn.commit();
+  #ifdef DEBUG_MODE
+    qDebug() << "Wrote Data To LMDB With Status" << ret << " and count " << view.size() ;
+  #endif
   return ret;
 }
 
 std::tuple<bool, bool> Configs::read_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+
+  #ifdef DEBUG_MODE 
+  qDebug() << "READING LMDB FILE";
+  #endif
   auto bytes = store->ToBytes();
-  auto [view, isok] = read_lmdb(env, store->StoreType(), store->Id());
+  std::string_view view;
+  bool isok = read_lmdb(env, store->StoreType(), store->Id(), view);
   bool readed = false;
   if (isok) {
     if (view.size() > 0){
       readed = true;
-      store->FromBytes(view.data());
+      #ifdef DEBUG_MODE
+      qDebug() << "READED DATA" << "ID" << store->Id() << "TYPE" << (int)store->StoreType()  << "LEN" << view.size(); 
+      #endif
+      QByteArray ba = QByteArray::fromRawData(view.data(), static_cast<int>(view.size()));
+      store->FromBytes(ba);
     }
   }
+  #ifdef DEBUG_MODE
+  else {
+    qDebug() << "LMDB IS NOT READED";
+  }
+  #endif
   return std::make_tuple(isok, readed);
 }
 
-std::tuple<std::string_view, bool> Configs::read_lmdb(lmdb::env& env, char c, int32_t x) {
+bool Configs::read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view &view) {
   auto key_data = pack_char_int(c, x);
 
   lmdb::txn txn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
   lmdb::dbi dbi = lmdb::dbi::open(txn, nullptr);
-  std::string_view ret;
 
-  bool found = dbi.get(txn, key_data, ret);
+  bool found = dbi.get(txn, key_data, view);
 
-  txn.abort(); // read-only safety (or txn.commit(); also fine)
+  txn.commit(); // read-only safety (or txn.commit(); also fine)
+
+  #ifdef DEBUG_MODE
+    qDebug() << "DATA FOUND" << found << view.size();
+  #endif
 
   if (!found) {
-    return std::make_tuple("", false); // or throw / optional handling
+    view = "";
+    return false;
   }
 
-  return std::make_tuple(ret, true);
+  return true;
 }
 
 
