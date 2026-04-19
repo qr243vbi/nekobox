@@ -13,9 +13,6 @@ jobs:
       - name: build_and_deploy
         uses: DeadPoetSpoon/zola-deploy-action@master
         env:
-          # Target branch
-          PAGES_BRANCH: gh-pages
-          # Provide personal access token
-          # TOKEN: ${{ secrets.TOKEN }}
-          # Or if publishing to the same repo, use the automatic token
+          BUILD_DIR: ./pages
+          PAGES_BRANCH: pages
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
