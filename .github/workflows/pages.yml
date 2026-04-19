@@ -1,5 +1,8 @@
 # On every push this script is executed
-on: push
+on: 
+  workflow_dispatch:
+  release:
+    types: [created]
 name: Build and deploy GH Pages
 jobs:
   build:

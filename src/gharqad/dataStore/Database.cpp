@@ -473,7 +473,7 @@ bool Configs::read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view &vie
 }
 
 
-#define DATABASE_NAME "iblis"
+#define DATABASE_NAME "iblis.lmdb"
 lmdb::env Configs::initialize_lmdb(){
   QDir dir(".");
   bool init_db = false;
