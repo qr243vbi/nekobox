@@ -13,8 +13,8 @@ bottom_footnotes = true
 
 [extra]
 logo_text = "NekoBox"
-logo_image_path = "https://raw.githubusercontent.com/qr243vbi/nekobox/refs/heads/main/res/public/icon.png"
-default_thumbnail = "https://raw.githubusercontent.com/qr243vbi/nekobox/refs/heads/main/res/public/icon.png"
+logo_image_path = "images/NekoBox.png"
+default_thumbnail = "images/NekoBox.png"
 default_colorset = "dark"
 gtag = ""
 sidebar_expand_depth = 1
