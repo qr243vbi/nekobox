@@ -1,9 +1,11 @@
-#include <nekobox/dataStore/ConfigItem.hpp>
-#include <nekobox/dataStore/Utils.hpp>
-#include <string_view>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
+
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/Utils.hpp>
+#include <string_view>
+
 
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/dataStore/DatabaseLMDB.hpp>

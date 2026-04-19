@@ -1,10 +1,11 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 #ifndef MAIN_WINDOW_HEADER
 #define MAIN_WINDOW_HEADER
 
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
+
 
 #pragma once
 
@@ -15,6 +16,7 @@
 #include <nekobox/api/RPC.h>
 #endif
 
+#include <QtConcurrent>
 #include <QSettings>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/stats/connections/connectionLister.hpp>
@@ -292,7 +294,7 @@ private slots:
 
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
 private:
-    QFuture<bool> elevated_future;
+    std::shared_ptr<QFuture<bool>> elevated_future;
     bool get_elevated_permissions_future(int reason = 3, void *pointer = nullptr);
 
     bool dialog_is_using = false;
