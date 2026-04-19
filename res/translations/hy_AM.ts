@@ -2780,8 +2780,8 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2708"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2711"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2709"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2712"/>
         <source>System Proxy</source>
         <translation type="unfinished">Համակարգի վստահված անձ</translation>
     </message>
@@ -2972,15 +2972,15 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3816"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3826"/>
         <source>Start</source>
         <translation type="unfinished">Սկսել</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3814"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3826"/>
         <source>Stop</source>
         <translation type="unfinished">Դադարեցրեք</translation>
     </message>
@@ -3166,7 +3166,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3098"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3099"/>
         <source>Clone</source>
         <translation type="unfinished">Կլոնավորում</translation>
     </message>
@@ -3290,7 +3290,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3845"/>
         <source>Add new Group</source>
         <translation type="unfinished">Ավելացնել նոր խումբ</translation>
     </message>
@@ -3396,11 +3396,11 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1898"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1953"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3163"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3539"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3594"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3643"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3595"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3894"/>
         <source>Confirmation</source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
@@ -3426,103 +3426,103 @@ Are you sure?</source>
         <translation type="unfinished">Ներմուծվել է %1 պրոֆիլ(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2270"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2271"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Օգտատերը ընտրել է առանց արտոնությունների պահանջի, որոշ գործառույթներ կարող են չաշխատել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2335"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2336"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Խնդրում ենք տալ հիմնական արմատային արտոնությունները</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2685"/>
         <source>Not Running</source>
         <translation type="unfinished">Չի վազում</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3099"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3100"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Կլոնավորել %1 տարր(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144"/>
         <source> Confirmation </source>
         <translation type="unfinished">Հաստատում</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3145"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3165"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 տարրը:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3201"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3214"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Պատճենվել է %1 տարր(ներ)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3449"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3450"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR կոդը չի գտնվել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Հնարավոր չէ լուսանկարել էկրանը</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3541"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անհասանելի տարր(ներ)ը:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3595"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3596"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Հեռացնե՞լ %1 Անվավեր տարր(ներ):</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3645"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Փոխարինե՞լ տիրույթի սերվերի հասցեները իրենց լուծված IP-ներով:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3812"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3813"/>
         <source>Clear</source>
         <translation type="unfinished">Պարզ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3883"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3884"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Ջնջել ընտրված խումբը</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3884"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3885"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Խմբագրել ընտրված խումբը</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3894"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3895"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Հեռացնե՞լ %1-ը:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4637"/>
         <source>Cannot start</source>
         <translation type="unfinished">Հնարավոր չէ սկսել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4637"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4638"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Վերջին ներբեռնման հարցումը դեռ ավարտված չէ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4672"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Չհաջողվեց ներբեռնել թարմացման ակտիվները</translation>
     </message>
@@ -3778,7 +3778,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">%1-ի փոփոխություն.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="607"/>
         <source>Default</source>
         <translation type="unfinished">Կանխադրված</translation>
     </message>
@@ -3808,7 +3808,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">Ընտրել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2652"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2653"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Վստահված անձ՝ %1
@@ -3914,64 +3914,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP հասցե՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2689"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2690"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Մուտքային IP՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3074"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3075"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Տեղափոխեք պրոֆիլները խումբ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3232"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3233"/>
         <source>Config copied</source>
         <translation type="unfinished">Կազմաձևը պատճենվեց</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3244"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3245"/>
         <source>Copy core config</source>
         <translation type="unfinished">Պատճենել հիմնական կազմաձևը</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3246"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3247"/>
         <source>Copy test config</source>
         <translation type="unfinished">Պատճենել թեստային կազմաձևը</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3248"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">Լավ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4546"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4590"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4618"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4662"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4591"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4663"/>
         <source>Update</source>
         <translation type="unfinished">Թարմացնել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4538"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Պաշտոնական աջակցության հարթակ չէ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4548"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Թարմացման հարցում սխալ՝ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4590"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4591"/>
         <source>No update</source>
         <translation type="unfinished">Թարմացում չկա</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3980,17 +3980,17 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4622"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4623"/>
         <source>Close</source>
         <translation type="unfinished">Փակել</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4624"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4625"/>
         <source>Open in browser</source>
         <translation type="unfinished">Բացեք բրաուզերում</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4663"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4664"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Թարմացումը պատրաստ է, վերսկսե՞լ՝ տեղադրելու համար:</translation>
     </message>

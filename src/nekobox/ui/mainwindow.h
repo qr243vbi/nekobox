@@ -294,7 +294,7 @@ private slots:
 
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
 private:
-    std::shared_ptr<QFuture<bool>> elevated_future;
+    QFuture<bool> elevated_future;
     bool get_elevated_permissions_future(int reason = 3, void *pointer = nullptr);
 
     bool dialog_is_using = false;

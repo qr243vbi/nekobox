@@ -2784,8 +2784,8 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2708"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2711"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2709"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2712"/>
         <source>System Proxy</source>
         <translation type="unfinished">Systemproxy</translation>
     </message>
@@ -2976,15 +2976,15 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3816"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3826"/>
         <source>Start</source>
         <translation type="unfinished">Start</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3814"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3825"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3815"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3826"/>
         <source>Stop</source>
         <translation type="unfinished">Stopp</translation>
     </message>
@@ -3170,7 +3170,7 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3098"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3099"/>
         <source>Clone</source>
         <translation type="unfinished">Klona</translation>
     </message>
@@ -3294,7 +3294,7 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3844"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3845"/>
         <source>Add new Group</source>
         <translation type="unfinished">Lägg till ny grupp</translation>
     </message>
@@ -3400,11 +3400,11 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1898"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1953"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3163"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3539"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3594"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3643"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3595"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3894"/>
         <source>Confirmation</source>
         <translation type="unfinished">Bekräftelse</translation>
     </message>
@@ -3430,103 +3430,103 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
         <translation type="unfinished">Importerade %1 profil(er)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2270"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2271"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Användaren valde ingen behörighetskrav, vissa funktioner kanske inte fungerar</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2335"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2336"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Vänligen ge core root-privilegier</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2684"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2685"/>
         <source>Not Running</source>
         <translation type="unfinished">Springer inte</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3099"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3100"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klona %1 objekt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144"/>
         <source> Confirmation </source>
         <translation type="unfinished">Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3144"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3145"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Ta bort %1 objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3165"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Ta bort %1 objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3201"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3214"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3202"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3215"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopierade %1 objekt(er)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3449"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3450"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR-koden hittades inte</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Det gick inte att fånga skärmen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3541"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Ta bort %1 otillgängliga objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3595"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3596"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Ta bort %1 Ogiltig(a) objekt?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3645"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Ersätta domänserveradresser med deras lösta IP-adresser?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3812"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3813"/>
         <source>Clear</source>
         <translation type="unfinished">Rensa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3883"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3884"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Ta bort vald grupp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3884"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3885"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Redigera vald grupp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3894"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3895"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Vill du ta bort %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4637"/>
         <source>Cannot start</source>
         <translation type="unfinished">Kan inte starta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4637"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4638"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Senaste nedladdningsbegäran har inte avslutats ännu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4672"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Det gick inte att ladda ned uppdateringstillgångar</translation>
     </message>
@@ -3782,7 +3782,7 @@ Raderade %3 profiler:
         <translation type="unfinished">Ändring av %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="548"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="607"/>
         <source>Default</source>
         <translation type="unfinished">Standard</translation>
     </message>
@@ -3812,7 +3812,7 @@ Raderade %3 profiler:
         <translation type="unfinished">Välja</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2652"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2653"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proxy: %1
@@ -3918,64 +3918,64 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP-adress: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2689"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2690"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Inkommande IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3074"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3075"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Flytta profiler till grupp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3232"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3233"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfiguration kopierad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3244"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3245"/>
         <source>Copy core config</source>
         <translation type="unfinished">Kopiera kärnkonfiguration</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3246"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3247"/>
         <source>Copy test config</source>
         <translation type="unfinished">Kopiera testkonfiguration</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3247"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3248"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4536"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4546"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4590"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4618"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4662"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4591"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4663"/>
         <source>Update</source>
         <translation type="unfinished">Uppdatera</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4537"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4538"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Inte officiell supportplattform</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4547"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4548"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Begär uppdateringsfel: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4590"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4591"/>
         <source>No update</source>
         <translation type="unfinished">Ingen uppdatering</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4619"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4620"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3984,17 +3984,17 @@ Releasenota:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4622"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4623"/>
         <source>Close</source>
         <translation type="unfinished">Nära</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4624"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4625"/>
         <source>Open in browser</source>
         <translation type="unfinished">Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4663"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4664"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Uppdateringen är klar, starta om för att installera?</translation>
     </message>

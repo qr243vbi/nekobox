@@ -38,20 +38,20 @@ Press `Ctrl+V` directly on the main interface to paste the subscription link.
 5. Click OK to save
 6. Right-click the group and select `Refresh List`
 
-![Import Subscription](/images/configuration/1.png)
+![Import Subscription](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_1.png)
 
-![Refresh List](/images/configuration/2.png)
+![Refresh List](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_2.png)
 
 If the link is correct, the proxy list will be parsed.
 
-![Proxy List](/images/configuration/3.png)
+![Proxy List](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_3.png)
 
 ## Testing Latency
 
 1. Select the entire list, then right-click
 2. Select `URL Test Selected Items` (shortcut: `Ctrl+Shift+S`)
 
-![URL Test](/images/configuration/4.png)
+![URL Test](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_4.png)
 
 3. Select the node with the lowest latency, right-click and select `Enable`, or simply press `Enter`
 
@@ -64,7 +64,7 @@ Whether using TUN mode or System Proxy, you need to configure routing rules (usi
 3. Click `Routes` → `Routing Settings` → `Routes`
 4. Delete the default routing rules, keeping only the two rules you just downloaded
 
-![Routing Settings](/images/configuration/5.png)
+![Routing Settings](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_5.png)
 
 ### Start Proxy
 
@@ -75,4 +75,4 @@ Whether using TUN mode or System Proxy, you need to configure routing rules (usi
 
 > Note: If using TUN mode, please disable TUN first when updating the subscription, and re-enable it after the update is complete.
 
-![Start Proxy](/images/configuration/6.png)
+![Start Proxy](https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/Screenshot_6.png)

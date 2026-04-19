@@ -2245,25 +2245,24 @@ void MainWindow::toggle_system_proxy() {
 }
 
 bool MainWindow::get_elevated_permissions(int reason, void *pointer) {
-  if (elevated_future->isRunning()) {
-    elevated_future->waitForFinished();
-    return elevated_future->result();
+  if (elevated_future.isRunning()) {
+    elevated_future.waitForFinished();
+    return elevated_future.result();
   }
   QMutex mut;
   bool *ret = new bool(false);
   mut.lock();
-  elevated_future.reset();
   elevated_future =
-      std::make_shared<QFuture<bool>>(QtConcurrent::run([this, &mut, ret]() {
+      QtConcurrent::run([this, &mut, ret]() {
         mut.lock();
         mut.unlock();
         bool rr = *ret;
         delete ret;
         return rr;
-      }));
+      });
   *ret = get_elevated_permissions_future(reason, pointer);
   mut.unlock();
-  elevated_future->waitForFinished();
+  elevated_future.waitForFinished();
   return *ret;
 }
 bool MainWindow::get_elevated_permissions_future(int reason, void *pointer) {
