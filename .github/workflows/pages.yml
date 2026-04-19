@@ -15,7 +15,7 @@ jobs:
 
       - name: pre_build
         run: |
-          data="$( cat ./pages/content/introduction/_index.md ; cat ./README.md ; )"
+          data="$( cat ./pages/content/introduction/_index.md ; cat ./README.md | sed -E 's/\[\!\[([^]]*)\]\([^)]*\)\]\(([^)]*)\)/[\1](\2)/g' ; )"
           echo "$data" > ./pages/content/introduction/_index.md
 
       - name: build_and_deploy
