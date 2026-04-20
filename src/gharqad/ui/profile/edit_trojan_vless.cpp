@@ -17,7 +17,7 @@ EditTrojanVLESS::~EditTrojanVLESS() {
 
 void EditTrojanVLESS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
     this->ent = _ent;
-    auto bean = this->ent->TrojanVLESSBean();
+    std::shared_ptr<const Configs::TrojanVLESSBean> bean = this->ent->TrojanVLESSBean();
     if (bean->proxy_type == Configs::TrojanVLESSBean::proxy_VLESS) {
         ui->password_l->setText("UUID");
     }
@@ -26,10 +26,12 @@ void EditTrojanVLESS::onStart(std::shared_ptr<Configs::ProxyEntity> _ent) {
         ui->flow_l->hide();
         ui->encryption_l->hide();
         ui->encryption->hide();
+    } else {
+        ui->flow->addItems(Preset::SingBox::Flows );
+        ui->flow->setCurrentText(bean->flow);
+        ui->encryption->setText(bean->encryption);
     }
     ui->password->setText(bean->password);
-    ui->flow->addItems(Preset::SingBox::Flows );
-    ui->flow->setCurrentText(bean->flow);
     bean.reset();
 }
 
