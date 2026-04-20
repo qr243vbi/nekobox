@@ -4,10 +4,10 @@
 
 #include <QJsonObject>
 #include <QJsonArray>
-#include "nekobox/configs/proxy/AbstractBean.hpp"
-#include "nekobox/dataStore/RouteEntity.h"
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/configs/proxy/Preset.hpp"
+#include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <nekobox/dataStore/RouteEntity.h>
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
 #include <iostream>
 
 namespace Configs {

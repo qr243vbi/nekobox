@@ -7,8 +7,8 @@
 #include <QFile>
 #include <QPalette>
 
-#include "nekobox/ui/setting/ThemeManager.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/ui/setting/ThemeManager.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 
 ThemeManager *themeManager = new ThemeManager;
 

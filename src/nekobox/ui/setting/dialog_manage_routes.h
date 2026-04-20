@@ -9,8 +9,8 @@
 #include <QMenu>
 
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/ui/setting/RouteItem.h"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/ui/setting/RouteItem.h>
 #include "ui_dialog_manage_routes.h"
 
 #include <QVariantMap>

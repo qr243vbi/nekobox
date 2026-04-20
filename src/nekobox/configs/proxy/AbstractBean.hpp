@@ -8,9 +8,9 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
-#include "nekobox/dataStore/ConfigItem.hpp"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 
 
 namespace Configs {

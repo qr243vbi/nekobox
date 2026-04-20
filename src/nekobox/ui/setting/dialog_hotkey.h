@@ -6,7 +6,7 @@
 #pragma once
 
 #include <QDialog>
-#include "nekobox/dataStore/Configs.hpp"
+#include <nekobox/dataStore/Configs.hpp>
 #include "ui_dialog_hotkey.h"
 
 QT_BEGIN_NAMESPACE

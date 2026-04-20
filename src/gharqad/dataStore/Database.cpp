@@ -1,8 +1,8 @@
-#include "nekobox/dataStore/ProxyEntity.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
+#include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <string_view>

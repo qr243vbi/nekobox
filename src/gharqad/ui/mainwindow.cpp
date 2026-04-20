@@ -1,8 +1,8 @@
-#include "nekobox/dataStore/Configs.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
+#include <nekobox/dataStore/Configs.hpp>
 #include <3rdparty/qv2ray/wrapper.hpp>
 #include <QtConcurrent>
 #include <nekobox/configs/ConfigBuilder.hpp>

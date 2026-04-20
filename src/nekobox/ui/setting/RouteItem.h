@@ -14,7 +14,7 @@
 class DialogManageRoutes;
 class RouteItem;
 
-#include "nekobox/dataStore/RouteEntity.h"
+#include <nekobox/dataStore/RouteEntity.h>
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
 #include "ui_RouteItem.h"
 
