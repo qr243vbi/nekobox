@@ -372,6 +372,7 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
             }
             outbound["uuid"] = password.trimmed();
             outbound["flow"] = flow;
+            add_non_empty(outbound, "encryption", encryption);
         } else {
             outbound["password"] = password;
         }

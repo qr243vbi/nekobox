@@ -242,6 +242,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         // protocol
         if (proxy_type == proxy_VLESS) {
             flow = GetQueryValue(query, "flow", "");
+            encryption = GetQueryValue(query, "encryption", "");
             stream->packet_encoding = GetQueryValue(query, "packetEncoding", "xudp");
         }
 

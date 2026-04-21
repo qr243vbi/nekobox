@@ -3,10 +3,10 @@
 #include <windows.h>
 #endif
 
-#include "nekobox/dataStore/ConfigItem.hpp"
+#include <nekobox/dataStore/ConfigItem.hpp>
 #include "libcore_types.h"
-#include "nekobox/dataStore/Configs.hpp"
-#include "nekobox/dataStore/Utils.hpp"
+#include <nekobox/dataStore/Configs.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 #include <qbuffer.h>
 #include <qcborcommon.h>
 #include <qcontainerfwd.h>

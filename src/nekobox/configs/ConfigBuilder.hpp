@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/sys/Process.hpp"
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/sys/Process.hpp>
 
 #include <map>
 #include <string>

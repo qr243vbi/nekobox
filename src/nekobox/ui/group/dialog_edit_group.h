@@ -10,8 +10,8 @@
 #include <QString>
 #include <QEvent>
 #include <qtmetamacros.h>
-#include "nekobox/ui/setting/RouteItem.h"
-#include "nekobox/dataStore/Group.hpp"
+#include <nekobox/ui/setting/RouteItem.h>
+#include <nekobox/dataStore/Group.hpp>
 #include <vector>
 #include "ui_dialog_edit_group.h"
 

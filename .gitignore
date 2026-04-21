@@ -9,6 +9,7 @@ run.sh
 *.dat
 *.db
 *.gpg
+easytier-magisk
 server/gen/*.pb.go
 server/gen/*.pb.*.go
 script/nekobox_chocolatey/_TODO.txt

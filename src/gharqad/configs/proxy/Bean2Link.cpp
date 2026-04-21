@@ -78,15 +78,45 @@ namespace Configs {
             add_query_nonempty("query_server_name", query, stream->query_server_name);
         }
         if (stream->allow_insecure) query.addQueryItem("insecure", "1");
-        add_query_nonempty("fp", query, stream->utlsFingerprint);
+        if (stream->utlsFingerprint.isEmpty()) {
+            query.addQueryItem("fp", Configs::dataStore->utlsFingerprint);
+        } else {
+            query.addQueryItem("fp", stream->utlsFingerprint);
+        }
         if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
         add_query_nonempty("fragment_fallback_delay", query, stream->tls_fragment_fallback_delay);
         if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
 
         if (security == "reality") {
-            query.addQueryItem("pbk", stream->reality_pbk);
+            add_query_nonempty("pbk", query, stream->reality_pbk);
             add_query_nonempty("sid", query, stream->reality_sid);
         }
+
+        // type
+        add_query_nonempty("type", query, stream->network);
+
+        if (stream->network == "ws" || stream->network == "httpupgrade") {
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+        } else if (stream->network == "http" ) {
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+            add_query_nonempty("method", query, stream->method);
+        } else if (stream->network == "grpc") {
+            add_query_nonempty("serviceName", query, stream->path);
+        } else if (stream->network == "tcp") {
+            if (stream->header_type == "http") {
+                add_query_nonempty("path", query, stream->path);
+                add_query_nonempty("headerType", query, "http");
+                add_query_nonempty("host", query, stream->host);
+            }
+        } else if (stream->network == "xhttp") {
+            add_query_nonempty("path", query, stream->path);
+            add_query_nonempty("host", query, stream->host);
+            add_query_nonempty("mode", query, stream->xhttp_mode);
+            add_query_nonempty("extra", query, stream->xhttp_extra);
+        }
+
     }
 
     QString HttpBean::ToShareLink() const {
@@ -162,31 +192,6 @@ namespace Configs {
         //  security
         add_tls(stream, query);
 
-        // type
-        query.addQueryItem("type", stream->network);
-
-        if (stream->network == "ws" || stream->network == "httpupgrade") {
-            add_query_nonempty("path", query, stream->path);
-            add_query_nonempty("host", query, stream->host);
-        } else if (stream->network == "http" ) {
-            add_query_nonempty("path", query, stream->path);
-            add_query_nonempty("host", query, stream->host);
-            add_query_nonempty("method", query, stream->method);
-        } else if (stream->network == "grpc") {
-            add_query_nonempty("serviceName", query, stream->path);
-        } else if (stream->network == "tcp") {
-            if (stream->header_type == "http") {
-                add_query_nonempty("path", query, stream->path);
-                query.addQueryItem("headerType", "http");
-                query.addQueryItem("host", stream->host);
-            }
-        } else if (stream->network == "xhttp") {
-            add_query_nonempty("path", query, stream->path);
-            add_query_nonempty("host", query, stream->host);
-            add_query_nonempty("mode", query, stream->xhttp_mode);
-            add_query_nonempty("extra", query, stream->xhttp_extra);
-        }
-
         // mux
         add_mux_state(query, this);
 
@@ -194,7 +199,7 @@ namespace Configs {
         if (proxy_type == proxy_VLESS) {
             add_query_nonempty("flow", query, flow);
             add_query_nonempty("packetEncoding", query, stream->packet_encoding);
-            query.addQueryItem("encryption", "none");
+            query.addQueryItem("encryption", (encryption == "" ) ? "none" : encryption);
         }
 
         url.setQuery(query);
@@ -239,49 +244,11 @@ namespace Configs {
         add_query_boolean("global_padding", query, this->global_padding);
         add_query_boolean("authenticated_length", query, this->authenticated_length);
 
-        query.addQueryItem("encryption", security);
+        add_query_nonempty("encryption", query, security);
         add_network(query, this);
 
         //  security
-        auto security = stream->security;
-        if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
-        query.addQueryItem("security", security == "" ? "none" : security);
-
-        if (!stream->sni.isEmpty()) query.addQueryItem("sni", stream->sni);
-        if (stream->allow_insecure) query.addQueryItem("allowInsecure", "1");
-        if (stream->utlsFingerprint.isEmpty()) {
-            query.addQueryItem("fp", Configs::dataStore->utlsFingerprint);
-        } else {
-            query.addQueryItem("fp", stream->utlsFingerprint);
-        }
-        if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
-        if (!stream->tls_fragment_fallback_delay.isEmpty()) query.addQueryItem("fragment_fallback_delay", stream->tls_fragment_fallback_delay);
-        if (stream->enable_tls_record_fragment) query.addQueryItem("record_fragment", "1");
-
-        if (security == "reality") {
-            query.addQueryItem("pbk", stream->reality_pbk);
-            if (!stream->reality_sid.isEmpty()) query.addQueryItem("sid", stream->reality_sid);
-        }
-
-        // type
-        query.addQueryItem("type", stream->network);
-
-        if (stream->network == "ws" || stream->network == "http" || stream->network == "httpupgrade") {
-            add_query_nonempty("path", query, stream->path);
-            add_query_nonempty("host", query, stream->host);
-        } else if (stream->network == "grpc") {
-            add_query_nonempty("serviceName", query, stream->path);
-        } else if (stream->network == "tcp") {
-            if (stream->header_type == "http") {
-                query.addQueryItem("headerType", "http");
-                query.addQueryItem("host", stream->host);
-            }
-        } else if (stream->network == "xhttp") {
-            add_query_nonempty("path", query, stream->path);
-            add_query_nonempty("host", query, stream->host);
-            add_query_nonempty("mode", query, stream->xhttp_mode);
-            add_query_nonempty("extra", query, stream->xhttp_extra);
-        }
+        add_tls(stream, query);
 
         // mux
         add_mux_state(query, this);

@@ -4,7 +4,7 @@
 #endif
 
 #pragma once
-#include "nekobox/configs/ConfigBuilder.hpp"
+#include <nekobox/configs/ConfigBuilder.hpp>
 #include <QString>
 #ifndef Q_MOC_RUN
 #include <gen-cpp/libcore_types.h>

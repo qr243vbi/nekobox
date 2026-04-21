@@ -239,6 +239,7 @@ namespace Configs
         password = obj["password"].toString();
         if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
         flow = obj["flow"].toString();
+        encryption = obj["encryption"].toString();
         add_mux_state(this, obj);
 
         stream->packet_encoding = obj["packet_encoding"].toString();

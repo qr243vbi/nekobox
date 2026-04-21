@@ -19,6 +19,7 @@ namespace Configs {
 
         QString password = "";
         QString flow = "";
+        QString encryption = "";
 
         std::shared_ptr<V2rayStreamSettings> stream;
 
@@ -32,6 +33,7 @@ namespace Configs {
             ADD_MAP("pass", password, string);
             ADD_MAP("flow", flow, string);
             ADD_MAP("stream", stream, jsonStore);
+            ADD_MAP("enc", encryption, string);
         STOP_MAP
 /*/
         QString DisplayType() override { return proxy_type == proxy_VLESS ? "VLESS" : "Trojan"; };

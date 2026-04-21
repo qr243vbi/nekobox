@@ -7,8 +7,8 @@
 
 #include <nekobox/configs/proxy/Preset.hpp>
 
-#include "nekobox/dataStore/ConfigItem.hpp"
-#include "nekobox/dataStore/Configs.hpp"
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/Configs.hpp>
 #include <QUrl>
 
 namespace Configs {
