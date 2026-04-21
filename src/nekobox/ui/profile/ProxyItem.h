@@ -8,7 +8,7 @@
 #include <QWidget>
 #include <QListWidgetItem>
 
-#include "nekobox/dataStore/ProxyEntity.hpp"
+#include <nekobox/dataStore/ProxyEntity.hpp>
 #include "ui_ProxyItem.h"
 
 QT_BEGIN_NAMESPACE

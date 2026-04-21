@@ -8,7 +8,7 @@
 #include <QWidget>
 #include <QListWidgetItem>
 
-#include "nekobox/dataStore/Database.hpp"
+#include <nekobox/dataStore/Database.hpp>
 #include "ui_GroupItem.h"
 
 QString chooseUpdateGroup(bool *, bool *, const QString& content);

@@ -7,10 +7,10 @@
 #define DIALOG_EDIT_PROFILE_H
 
 #include <QDialog>
-#include "nekobox/dataStore/Database.hpp"
+#include <nekobox/dataStore/Database.hpp>
 #include "profile_editor.h"
 
-#include "nekobox/ui/utils/FloatCheckBox.h"
+#include <nekobox/ui/utils/FloatCheckBox.h>
 #include "ui_dialog_edit_profile.h"
 
 namespace Ui {

@@ -9,7 +9,7 @@
 #include <QDialog>
 #include <QJsonObject>
 #include "ui_dialog_basic_settings.h"
-#include "nekobox/ui/mainwindow.h"
+#include <nekobox/ui/mainwindow.h>
 
 
 

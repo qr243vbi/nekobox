@@ -10,7 +10,7 @@
 #include <QMenu>
 #include <QTableWidgetItem>
 
-#include "nekobox/dataStore/Group.hpp"
+#include <nekobox/dataStore/Group.hpp>
 #include "ui_dialog_manage_groups.h"
 
 QT_BEGIN_NAMESPACE

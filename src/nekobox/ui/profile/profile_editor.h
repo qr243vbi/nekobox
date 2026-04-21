@@ -7,8 +7,8 @@
 
 #include <QPushButton>
 
-#include "nekobox/dataStore/ProxyEntity.hpp"
-#include "nekobox/global/GuiUtils.hpp"
+#include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/global/GuiUtils.hpp>
 
 class ProfileEditor {
 public:
