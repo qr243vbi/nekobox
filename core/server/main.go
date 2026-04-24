@@ -99,7 +99,13 @@ func main() {
 				switch first_arg {
 				case "resolvectl-check":
 					CheckResolvectl()
-				case "resolvectl":
+				case "domain":
+					RunResolvectl()
+				case "default-route":
+					RunResolvectl()
+				case "dns":
+					RunResolvectl()
+				case "revert":
 					RunResolvectl()
 				}
 			}

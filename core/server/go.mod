@@ -176,5 +176,3 @@ require (
 replace github.com/sagernet/sing-box => ./sing-box
 
 replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7
-
-replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20260424151740-b0237ec5bee5
