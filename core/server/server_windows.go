@@ -5,7 +5,6 @@ import (
 	"context"
 	"crypto/rand"
 	"encoding/json"
-	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -477,21 +476,21 @@ func runAdmin() (int, error) {
 	var ret int
 
 	pipesDone := make(chan struct{})
-    go func() {
-        wg.Wait()
-        close(pipesDone)
-    }()
+	go func() {
+		wg.Wait()
+		close(pipesDone)
+	}()
 
-    cmdDone := make(chan struct{})
-    go func() {
-        ret, err = runShellExec(executablePath, formattedString, true)
-        close(cmdDone)
-    }()
+	cmdDone := make(chan struct{})
+	go func() {
+		ret, err = runShellExec(executablePath, formattedString, true)
+		close(cmdDone)
+	}()
 
-    select {
-        case <-cmdDone:
-        case <-pipesDone:
-    }
+	select {
+	case <-cmdDone:
+	case <-pipesDone:
+	}
 
 	return ret, err
 }
@@ -676,17 +675,6 @@ func DownloadWithProgress(url, outPath string) error {
 	return nil
 }
 
-func fileExists(path string) bool {
-	info, err := os.Stat(path)
-	if err != nil {
-		if errors.Is(err, os.ErrNotExist) {
-			return false
-		}
-		return false
-	}
-	return !info.IsDir()
-}
-
 func wsainit() {
 	var data windows.WSAData
 
@@ -773,4 +761,12 @@ func InstallerMode() {
 	}
 
 	os.Exit(0)
+}
+
+func CheckResolvectl() {
+
+}
+
+func RunResolvectl() {
+
 }

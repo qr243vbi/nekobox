@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	_ "embed"
 	"fmt"
 	"log"
 	"nekobox_core/gen"
@@ -146,18 +147,16 @@ func ensureGroupAndSetOwnership(programPath string, groupName string) error {
 		return fmt.Errorf("failed to set group ownership: %v", err)
 	}
 
-	// Step 4: Set the setgid bit on the program file
-	err = setSetGidBit(programPath)
-	if err != nil {
-		return fmt.Errorf("failed to set setgid bit: %v", err)
-	}
-
 	fmt.Println("Successfully ensured group and set ownership and special bits.")
 	return nil
 }
 
 const polkitRuleDir = "/etc/polkit-1/rules.d/"
 const polkitRuleFile = "99_nekobox_core.rules"
+
+//go:embed elevated_resolvctl
+var resolvectlContent []byte
+
 const polkitRuleContent = `
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.freedesktop.resolve1.set-domains" ||
@@ -224,9 +223,31 @@ func restartAsAdmin(save bool) {
 			if err != nil {
 				panic(err)
 			}
+
+			resolvectl := file + "_elevated_resolvectl"
+			file1, err := os.Create(resolvectl)
+			if err != nil {
+				log.Fatalf("Error creating rule file: %v", err)
+			}
+			defer file1.Close()
+
+			_, err = file1.Write(resolvectlContent)
+			if err != nil {
+				log.Fatalf("Error writing to resolvectl file: %v", err)
+			}
+
+			err = ensureGroupAndSetOwnership(resolvectl, "sing-box")
+			if err != nil {
+				panic(err)
+			}
 			err = ensureGroupAndSetOwnership(file, "sing-box")
 			if err != nil {
 				panic(err)
+			}
+			// Step 4: Set the setgid bit on the program file
+			err = setSetGidBit(resolvectl)
+			if err != nil {
+				log.Fatalf("failed to set setgid bit: %v", err)
 			}
 			err = caps.SetFile(file)
 			if err != nil {
@@ -292,5 +313,55 @@ func restartAsAdmin(save bool) {
 }
 
 func InstallerMode() {
+
+}
+
+func CheckResolvectl() {
+	path, err := exec.LookPath("resolvectl")
+	if err != nil && path != "" {
+		os.Exit(1)
+	}
+	os.Exit(0)
+}
+
+func RunResolvectl() {
+	path := ""
+	var err error = nil
+
+	if os.Geteuid() != 0 {
+		path, err = os.Executable()
+		if err != nil {
+			err = nil
+			path = ""
+		} else {
+			path = path + "_elevated_resolvectl"
+			if !fileExists(path) {
+				path = ""
+			}
+		}
+	}
+
+	if path == "" {
+		path, err = exec.LookPath("resolvectl")
+	}
+
+	defer func() {
+		if err != nil {
+			fmt.Printf("Error executing '%s': %v\n", path, err)
+			os.Exit(1)
+		}
+	}()
+
+	if err != nil {
+		return
+	}
+	if path == "" {
+		err = fmt.Errorf("Path not found")
+		return
+	}
+
+	command := exec.Command(path, os.Args[2:]...)
+	command.Stdout = os.Stdout
+	err = command.Run()
 
 }

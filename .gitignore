@@ -10,6 +10,7 @@ bash.py
 *.dat
 *.db
 *.gpg
+/core/server/elevated_resolvctl
 easytier-magisk
 server/gen/*.pb.go
 server/gen/*.pb.*.go

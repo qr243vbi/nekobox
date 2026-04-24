@@ -81,7 +81,8 @@ func main() {
 				main_sing.MainFunc()
 				return
 			}
-			if runtime.GOOS == "windows" {
+			switch runtime.GOOS {
+			case "windows":
 				switch first_arg {
 				case "launch-server-mode":
 					if len_os_args > 2 {
@@ -93,6 +94,13 @@ func main() {
 					fmt.Println("nekobox_core installer mode")
 					InstallerMode()
 					return
+				}
+			case "linux":
+				switch first_arg {
+				case "resolvectl-check":
+					CheckResolvectl()
+				case "resolvectl":
+					RunResolvectl()
 				}
 			}
 		}

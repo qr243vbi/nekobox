@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(go_multi_build)
 
+enable_language(C)
 # ----------------------------
 # Platform variables
 # ----------------------------
@@ -11,8 +12,9 @@ set(GOARCH "" CACHE STRING "Target GOARCH (e.g. amd64, arm64, 386, arm)")
 if (GOOS STREQUAL "")
     if(WIN32)
         set(GOOS "windows")
+    elseif(LINUX)
+        set(GOOS "linux")
     else()
-        set(GOOS "")
     endif()
 endif()
 
@@ -114,7 +116,7 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE ${GOARCH} with platform ${
 # ----------------------------
 # Tags
 # ----------------------------
-set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme")
+set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_internal_resolvectl")
 
 if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
     set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
@@ -181,8 +183,42 @@ set(LDFLAGS
 run_go_command("${GO_SOURCE_DIR}/server" ${GO_TIDY_CMD})
 run_go_command("${GO_SOURCE_DIR}/server" ${GO_VENDOR_CMD})
 
+
+if (GOOS STREQUAL "linux")
+    # Define the source file (ensure wrapper.c is in your source directory)
+    set(WRAPPER_SRC "${GO_SOURCE_DIR}/server/stub/elevated_resolvctl.c")
+
+    if(EXISTS "${WRAPPER_SRC}")
+        add_executable(nekobox_core_elevated_resolvectl "${WRAPPER_SRC}")
+
+        # Apply optimizations and strip symbols
+        target_compile_options(nekobox_core_elevated_resolvectl PRIVATE -O3)
+
+        add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
+            COMMAND ${CMAKE_STRIP} --strip-all $<TARGET_FILE:nekobox_core_elevated_resolvectl>
+            COMMENT "Stripping symbols from C wrapper..."
+        )
+
+        # Rename output to match 'resolvectl' if desired, or keep as wrapper
+        set_target_properties(nekobox_core_elevated_resolvectl PROPERTIES OUTPUT_NAME "nekobox_core_elevated_resolvectl")
+
+        set(WRAPPER_DEP_FILE $<TARGET_FILE:nekobox_core_elevated_resolvectl>)
+
+        set(EMBED_PATH "${GO_SOURCE_DIR}/server/elevated_resolvctl")
+        # Create a hardlink (removes existing file first to avoid 'File exists' errors)
+        add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:nekobox_core_elevated_resolvectl> "${EMBED_PATH}"
+            COMMENT "Copying stripped wrapper to Go source for embedding"
+        )
+    else()
+        message(WARNING "wrapper not found at ${WRAPPER_SRC}, skipping wrapper build.")
+    endif()
+endif()
+
+
 add_custom_command(
     OUTPUT ${DESTDIR}/nekobox_core${EXE_SUFFIX}
+    DEPENDS ${WRAPPER_DEP_FILE}
     COMMAND ${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
             ${GOCMD} build "${GO_MOD_FLAG}" -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )

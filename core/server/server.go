@@ -32,6 +32,17 @@ func To[T any](v T) *T {
 	return &v
 }
 
+func fileExists(path string) bool {
+	info, err := os.Stat(path)
+	if err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return false
+		}
+		return false
+	}
+	return !info.IsDir()
+}
+
 func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported, error) {
 	out := new(gen.Supported)
 	ok := true
