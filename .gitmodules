@@ -7,3 +7,6 @@
 [submodule "3rdparty/lmdbxx"]
 	path = 3rdparty/lmdbxx
 	url = https://github.com/qr243vbi/lmdbxx
+[submodule "core/server/sing-tun"]
+	path = core/server/sing-tun
+	url = https://github.com/qr243vbi/sing-tun

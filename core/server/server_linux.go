@@ -120,14 +120,15 @@ func setGroupOwnership(programPath string, groupName string) error {
 }
 
 // Function to set the setgid bit on the program file
-func setSetGidBit(programPath string) error {
+func setSetGidBit(programPath string, groupName string) error {
 	// Set the root owner to ensure the program runs with the root ownership
-	err := syscall.Chown(programPath, 0, 0)
+	grp, _ := getGroupInfo(groupName)
+	err := syscall.Chown(programPath, 0, grp)
 	if err != nil {
 		return fmt.Errorf("failed to set setgid bit on %s: %v", programPath, err)
 	}
 	// Set the setuid bit to ensure the program runs with the root ownership
-	err = os.Chmod(programPath, 0755|os.ModeSetuid)
+	err = os.Chmod(programPath, 0755|os.ModeSetgid|os.ModeSetuid)
 	if err != nil {
 		return fmt.Errorf("failed to set setgid bit on %s: %v", programPath, err)
 	}
@@ -155,6 +156,41 @@ func ensureGroupAndSetOwnership(programPath string, groupName string) error {
 	return nil
 }
 
+/*
+const polkitRuleDir = "/etc/polkit-1/rules.d/"
+const polkitRuleFile = "10_nekobox_core.rules"
+const polkitRuleContent = `
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.resolve1.set-domains" ||
+         action.id == "org.freedesktop.resolve1.set-default-route" ||
+         action.id == "org.freedesktop.resolve1.revert" ||
+         action.id == "org.freedesktop.resolve1.set-dns-servers") &&
+        subject.isInGroup("sing-box")) {
+        return polkit.Result.YES;
+    }
+});`
+
+func CreatePolkitRule() {
+	filePath := polkitRuleDir + polkitRuleFile
+	os.MkdirAll(polkitRuleDir, 0755)
+	// Check if the directory exists, create if not
+	if _, err := os.Stat(polkitRuleDir); os.IsNotExist(err) {
+		log.Fatalf("Directory does not exist: %v", polkitRuleDir)
+	}
+	// Create the rule file
+	file, err := os.Create(filePath)
+	if err != nil {
+		log.Fatalf("Error creating rule file: %v", err)
+	}
+	defer file.Close()
+	// Write the rule content to the file
+	_, err = file.WriteString(polkitRuleContent)
+	if err != nil {
+		log.Fatalf("Error writing to rule file: %v", err)
+	}
+	fmt.Printf("Polkit rule written to: %s\n", filePath)
+}
+*/
 //go:embed elevated_resolvctl
 var resolvectlContent []byte
 
@@ -204,7 +240,7 @@ func restartAsAdmin(save bool) {
 				panic(err)
 			}
 			// Step 4: Set the setgid bit on the program file
-			err = setSetGidBit(resolvectl)
+			err = setSetGidBit(resolvectl, "sing-box")
 			if err != nil {
 				log.Fatalf("failed to set setgid bit: %v", err)
 			}
@@ -212,6 +248,7 @@ func restartAsAdmin(save bool) {
 			if err != nil {
 				panic(err)
 			}
+			//	CreatePolkitRule()
 		}
 		/*
 				if gid > 0 {
@@ -284,24 +321,23 @@ func CheckResolvectl() {
 }
 
 func RunResolvectl() {
-	path := ""
-	var err error = nil
+	path, err := exec.LookPath("resolvectl")
+	if err != nil && path != "" {
+		os.Exit(1)
+	}
+	oldpath := path
 
 	if os.Geteuid() != 0 {
 		path, err = os.Executable()
 		if err != nil {
 			err = nil
-			path = ""
+			path = oldpath
 		} else {
 			path = path + "_elevated_resolvectl"
 			if !fileExists(path) {
-				path = ""
+				path = oldpath
 			}
 		}
-	}
-
-	if path == "" {
-		path, err = exec.LookPath("resolvectl")
 	}
 
 	defer func() {

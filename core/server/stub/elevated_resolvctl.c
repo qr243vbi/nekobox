@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     // realpath() resolves the symlink
     if (realpath(proc_path, exe_path) == NULL) {
         printf("realpath not called \n");
-        printf(proc_path);
+        printf("%s\n", proc_path);
         return 1;
     }
 

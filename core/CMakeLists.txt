@@ -116,7 +116,7 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE ${GOARCH} with platform ${
 # ----------------------------
 # Tags
 # ----------------------------
-set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme")
+set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_internal_resolvectl")
 
 if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
     set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
