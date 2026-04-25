@@ -39,6 +39,7 @@ bool EditTrojanVLESS::onEnd() {
     auto bean = ent->unlock(ent->TrojanVLESSBean());
     bean->password = ui->password->text();
     bean->flow = ui->flow->currentText();
+    bean->encryption = ui->encryption->text();
     bean.reset();
     return true;
 }
