@@ -1,3 +1,4 @@
+#ifdef USE_CPP_PROXY_CONFIGURATOR
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -417,3 +418,6 @@ namespace Qv2ray::components::proxy {
 #endif
     }
 } // namespace Qv2ray::components::proxy
+
+
+#endif

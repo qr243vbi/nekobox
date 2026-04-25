@@ -500,7 +500,9 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("disable_win_admin", windows_no_admin, boolean);
         ADD_MAP("enable_stats", connection_statistics, boolean);
         ADD_MAP("stats_tab", stats_tab, integer);
+        #ifdef USE_CPP_PROXY_CONFIGURATOR
         ADD_MAP("proxy_scheme", proxy_scheme, string);
+        #endif
         ADD_MAP("disable_privilege_req", disable_privilege_req, boolean);
         ADD_MAP("enable_tun_routing", enable_tun_routing, boolean);
         ADD_MAP("speed_test_mode", speed_test_mode, integer);

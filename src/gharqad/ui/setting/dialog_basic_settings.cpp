@@ -162,7 +162,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     ui->disable_stats->setChecked(Configs::dataStore->disable_traffic_stats);
+    #ifdef USE_CPP_PROXY_CONFIGURATOR
     ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
+    #endif
 
     #define UPDATE_ICON CACHE.updateIcon = true
     #define UPDATE_FONT {                   \
@@ -218,6 +220,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->proxy_scheme->hide();
     ui->windows_no_admin->hide();
 #endif
+    #ifndef USE_CPP_PROXY_CONFIGURATOR
+    #ifdef Q_OS_WIN
+    ui->proxy_scheme_l->hide();
+    ui->proxy_scheme->hide();
+    #endif
+    #endif
 
     // Style
     D_LOAD_BOOL(connection_statistics)
@@ -442,7 +450,9 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_BOOL(disable_tray)
+    #ifdef USE_CPP_PROXY_CONFIGURATOR
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
+    #endif
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
     D_SAVE_STRING(simple_dl_url)
     D_SAVE_INT(url_test_timeout_ms)

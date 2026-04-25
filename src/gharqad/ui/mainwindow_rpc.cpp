@@ -694,14 +694,32 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
 }
 
 void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
+    #ifndef USE_CPP_PROXY_CONFIGURATOR
+    bool isok;
+    #endif
     if (enable != Configs::dataStore->spmode_system_proxy) {
+        
         if (enable) {
             auto socks_port = Configs::dataStore->inbound_socks_port;
+            #ifdef USE_CPP_PROXY_CONFIGURATOR
             SetSystemProxy(socks_port, socks_port, Configs::dataStore->proxy_scheme);
+            #else
+            defaultClient->EnableSystemProxy(Configs::dataStore->inbound_address, 
+                socks_port, true, &isok);
+            #endif
         } else {
+            #ifdef USE_CPP_PROXY_CONFIGURATOR
             ClearSystemProxy();
+            #else
+            defaultClient->DisableSystemProxy(&isok);
+            #endif
         }
     }
+    #ifndef USE_CPP_PROXY_CONFIGURATOR
+    #ifdef DEBUG_MODE
+    qDebug() << "System proxy set to " << enable << " with status " << ok;
+    #endif 
+    #endif
 
     if (save) {
         Configs::dataStore->remember_spmode.removeAll("system_proxy");

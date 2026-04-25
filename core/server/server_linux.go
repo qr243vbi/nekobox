@@ -16,6 +16,7 @@ import (
 	"time"
 
 	tun "github.com/sagernet/sing-tun"
+	"github.com/sagernet/sing/common/shell"
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
@@ -343,8 +344,8 @@ func RunResolvectl(args ...string) error {
 		return err
 	}
 
-	command := exec.Command(path, args...)
-	command.Stdout = os.Stdout
-	command.Stderr = os.Stderr
+	command := shell.Exec(path, args...)
+	//	command.Stdout = os.Stdout
+	//	command.Stderr = os.Stderr
 	return command.Run()
 }

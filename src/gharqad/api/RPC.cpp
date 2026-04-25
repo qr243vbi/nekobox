@@ -116,6 +116,42 @@ try{                                                                            
         }
     }
 
+    QString Client::EnableSystemProxy(const QString& address, int port, bool isSocksSupported, bool *rpcOK){
+        CHECK("EnableSystemProxy")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
+        libcore::SystemProxy request;
+        request.port = port;
+        request.support_socks = isSocksSupported;
+        request.address = address.toStdString();
+        CHANNEL(EnableSystemProxy, ErrorResp)
+        if(status.isOk()) {
+            *rpcOK = true;
+            return QString::fromUtf8(reply->error.c_str());
+        } else {
+            NOT_OK
+            return status.message();
+        }
+    };
+    QString Client::DisableSystemProxy(bool *rpcOK){
+        CHECK("DisableSystemProxy")
+        if (!is_running){
+            *rpcOK = false;
+            return "";
+        }
+        libcore::EmptyReq request;
+        CHANNEL(DisableSystemProxy, ErrorResp)
+        if(status.isOk()) {
+            *rpcOK = true;
+            return QString::fromUtf8(reply->error.c_str());
+        } else {
+            NOT_OK
+            return status.message();
+        }
+    };
+
     std::optional<libcore::QueryStatsResp> Client::QueryStats() {
         CHECK("QueryStats")
         if (!is_running){
