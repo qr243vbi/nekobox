@@ -157,7 +157,16 @@ struct Supported {
   1: bool ok;
 }
 
+struct SystemProxy {
+  1: string address;
+  2: i32 port;
+//  4: string fully_qualified_domain_name;
+  3: bool support_socks;
+}
+
 service LibcoreService {
+  ErrorResp EnableSystemProxy(1: SystemProxy req),
+  ErrorResp DisableSystemProxy(1: EmptyReq req),
   Supported IsSupported(1: Type req),
   CacheURLResult CacheHTTP(1: CacheURLRequest req),
   QueryIPTestResponse IPTest(1: IPTestRequest req),

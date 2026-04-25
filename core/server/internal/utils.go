@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"net"
+
 	"github.com/sagernet/sing-box/common/settings"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/option"
@@ -32,19 +33,50 @@ var ruleset_cachedir string
 var BoxInstance *boxbox.Box
 var ExtraProcess *process.Process
 var NeedUnsetDNS bool
+
 var SystemProxyController settings.SystemProxy
-var SystemProxyAddr metadata.Socksaddr
+var SystemProxyAddr string
+var SystemProxyPort uint16
+var SystemProxySupportSOCKS bool
+
 var InstanceCancel context.CancelFunc
 var Debug bool
+
+func IsSystemProxyEnabled() bool {
+	return SystemProxyController != nil && SystemProxyController.IsEnabled()
+}
+
+func ResetSystemProxy() error {
+	if IsSystemProxyEnabled() {
+		return SystemProxyController.Disable()
+	}
+	return nil
+}
+
+func SetSystemProxy(ctx context.Context, serverAddr string, serverPort uint16, supportSOCKS bool) error {
+	if serverAddr == SystemProxyAddr && serverPort == SystemProxyPort && supportSOCKS == SystemProxySupportSOCKS {
+		if IsSystemProxyEnabled() {
+			return nil
+		}
+	} else {
+		ResetSystemProxy()
+	}
+	SystemProxyAddr = serverAddr
+	SystemProxyPort = serverPort
+	SystemProxySupportSOCKS = supportSOCKS
+	addr := metadata.ParseSocksaddrHostPort(serverAddr, serverPort)
+	SystemProxyController, _ = settings.NewSystemProxy(ctx, addr, supportSOCKS)
+	return SystemProxyController.Enable()
+}
 
 func SetRulesetCachedir(v string) bool {
 	ruleset_cachedir = v
 	return true
 }
 
-func BoxCreateHttpClient(instance *boxbox.Box) * http.Client {
-	if (instance == nil){
-		return &http.Client{};
+func BoxCreateHttpClient(instance *boxbox.Box) *http.Client {
+	if instance == nil {
+		return &http.Client{}
 	}
 	outbound := BoxInstance.Outbound().Default()
 	client := &http.Client{
@@ -54,7 +86,7 @@ func BoxCreateHttpClient(instance *boxbox.Box) * http.Client {
 			},
 		},
 	}
-	return client;
+	return client
 }
 
 func DownloadFile(originalURL, targetPath string, use_default_outbound bool) error {
@@ -70,20 +102,20 @@ func DownloadFile(originalURL, targetPath string, use_default_outbound bool) err
 	// Download the file
 	var client *http.Client
 
-	if (use_default_outbound){
+	if use_default_outbound {
 		goto def_cli
 	} else {
-		if (BoxInstance == nil){
+		if BoxInstance == nil {
 			goto def_cli
 		} else {
 			client = BoxCreateHttpClient(BoxInstance)
 			goto skip_def_cli
 		}
 	}
-	def_cli:
+def_cli:
 
 	client = &http.Client{}
-	skip_def_cli:
+skip_def_cli:
 
 	parsedURL, err := url.Parse(originalURL)
 	if err != nil {
@@ -147,8 +179,8 @@ func fileExists(path string) bool {
 	return !os.IsNotExist(err)
 }
 
-func CacheHttpBool(url string, use_default_outbound bool, s * bool) string {
-	if (url == ""){
+func CacheHttpBool(url string, use_default_outbound bool, s *bool) string {
+	if url == "" {
 		*s = false
 		return ""
 	}
@@ -159,16 +191,16 @@ func CacheHttpBool(url string, use_default_outbound bool, s * bool) string {
 				return "with proxy"
 			}
 			return "without proxy"
-		}() )
+		}())
 		err := DownloadFile(url, path, use_default_outbound)
-		if (err != nil){
+		if err != nil {
 			log.Fatalf("Error while downloading: %s", err.Error())
 		}
 		if s != nil {
 			*s = true
 		}
 	} else if s != nil {
-		log.Printf("Cached %s", url);
+		log.Printf("Cached %s", url)
 		*s = false
 	}
 	return path
@@ -178,7 +210,7 @@ func CacheHttp(url string, use_default_outbound bool) string {
 	return CacheHttpBool(url, use_default_outbound, nil)
 }
 
-func cacheRuleSet(url string, format string, tag string) option.RuleSet{
+func cacheRuleSet(url string, format string, tag string) option.RuleSet {
 	var ruleset option.RuleSet
 	ruleset.Tag = tag
 	ruleset.Type = C.RuleSetTypeLocal
@@ -187,7 +219,7 @@ func cacheRuleSet(url string, format string, tag string) option.RuleSet{
 	return ruleset
 }
 
-func ClearRulesets(){
+func ClearRulesets() {
 	paths := []string{
 		"ftps",
 		"ftp",
@@ -200,13 +232,13 @@ func ClearRulesets(){
 	}
 }
 
-func ModifyRulesets(opt * option.Options){
-	if (ruleset_cachedir == ""){
+func ModifyRulesets(opt *option.Options) {
+	if ruleset_cachedir == "" {
 		return
 	}
-	if (opt.Route != nil){
+	if opt.Route != nil {
 		for u, i := range opt.Route.RuleSet {
-			if (i.Type == C.RuleSetTypeRemote){
+			if i.Type == C.RuleSetTypeRemote {
 				url := i.RemoteOptions.URL
 				opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format, i.Tag)
 			}

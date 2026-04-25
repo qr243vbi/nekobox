@@ -766,7 +766,3 @@ func InstallerMode() {
 func CheckResolvectl() {
 
 }
-
-func RunResolvectl() {
-
-}

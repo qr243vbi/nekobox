@@ -15,6 +15,7 @@ import (
 	"syscall"
 	"time"
 
+	tun "github.com/sagernet/sing-tun"
 	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
@@ -156,6 +157,9 @@ func ensureGroupAndSetOwnership(programPath string, groupName string) error {
 	return nil
 }
 
+const elevatedLauncherDir = "/usr/local/sbin/"
+const elevatedLauncherFile = "nekobox_core_elevated_resolvectl"
+
 /*
 const polkitRuleDir = "/etc/polkit-1/rules.d/"
 const polkitRuleFile = "10_nekobox_core.rules"
@@ -223,7 +227,8 @@ func restartAsAdmin(save bool) {
 				panic(err)
 			}
 
-			resolvectl := file + "_elevated_resolvectl"
+			resolvectl := elevatedLauncherDir + elevatedLauncherFile
+			os.MkdirAll(elevatedLauncherDir, 0755)
 			file1, err := os.Create(resolvectl)
 			if err != nil {
 				log.Fatalf("Error creating elevated file: %v", err)
@@ -313,52 +318,33 @@ func InstallerMode() {
 }
 
 func CheckResolvectl() {
-	path, err := exec.LookPath("resolvectl")
-	if err != nil && path != "" {
-		os.Exit(1)
-	}
-	os.Exit(0)
+	tun.ResolveCtl = RunResolvectl
 }
 
-func RunResolvectl() {
+func RunResolvectl(args ...string) error {
 	path, err := exec.LookPath("resolvectl")
-	if err != nil && path != "" {
-		os.Exit(1)
+	if err != nil {
+		return err
 	}
 	oldpath := path
 
 	if os.Geteuid() != 0 {
-		path, err = os.Executable()
-		if err != nil {
-			err = nil
+		path = elevatedLauncherDir + elevatedLauncherFile
+		if !fileExists(path) {
 			path = oldpath
-		} else {
-			path = path + "_elevated_resolvectl"
-			if !fileExists(path) {
-				path = oldpath
-			}
 		}
 	}
 
-	defer func() {
-		if err != nil {
-			fmt.Printf("Error executing '%s': %v\n", path, err)
-			os.Exit(1)
-		}
-		os.Exit(0)
-	}()
-
 	if err != nil {
-		return
+		return err
 	}
 	if path == "" {
 		err = fmt.Errorf("Path not found")
-		return
+		return err
 	}
 
-	command := exec.Command(path, os.Args[1:]...)
+	command := exec.Command(path, args...)
 	command.Stdout = os.Stdout
 	command.Stderr = os.Stderr
-	err = command.Run()
-	command.Wait()
+	return command.Run()
 }

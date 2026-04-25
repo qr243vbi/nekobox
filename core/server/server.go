@@ -132,6 +132,36 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	return out, nil
 }
 
+func (s *server) EnableSystemProxy(ctx context.Context, in *gen.SystemProxy) (*gen.ErrorResp, error) {
+	out := new(gen.ErrorResp)
+	var err error
+
+	defer func() {
+		if err != nil {
+			out.Error = (err.Error())
+		}
+	}()
+
+	err = internal.SetSystemProxy(ctx, in.Address, uint16(in.Port), in.SupportSocks)
+
+	return out, nil
+}
+
+func (s *server) DisableSystemProxy(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, error) {
+	out := new(gen.ErrorResp)
+	var err error
+
+	defer func() {
+		if err != nil {
+			out.Error = (err.Error())
+		}
+	}()
+
+	err = internal.ResetSystemProxy()
+
+	return out, nil
+}
+
 func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, error) {
 	out := new(gen.ErrorResp)
 	var err error

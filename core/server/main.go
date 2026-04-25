@@ -95,19 +95,6 @@ func main() {
 					InstallerMode()
 					return
 				}
-			case "linux":
-				switch first_arg {
-				case "resolvectl-check":
-					CheckResolvectl()
-				case "domain":
-					RunResolvectl()
-				case "default-route":
-					RunResolvectl()
-				case "dns":
-					RunResolvectl()
-				case "revert":
-					RunResolvectl()
-				}
 			}
 		}
 	}
@@ -127,6 +114,7 @@ func main() {
 	if runtime.GOOS == "windows" {
 		comment = "Register windows elevated task for executable"
 	} else {
+		CheckResolvectl()
 		comment = "Set admin capabilities to executable"
 	}
 	_save = flag.Bool("save", false, comment)
