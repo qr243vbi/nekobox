@@ -905,7 +905,8 @@ namespace Configs {
 
                 auto ents = resolveChain(neededEnt);
                 if (!status->result->error.isEmpty()) return;
-                auto tag = BuildChainInternal(status->chainID, ents, status, suffix);
+                auto tag = BuildChainInternal(status->chainID, ents, status, status->routeID);
+                status->routeID ++;
 
                 outboundMap[item] = tag;
 

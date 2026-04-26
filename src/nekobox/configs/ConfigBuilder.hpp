@@ -47,6 +47,7 @@ namespace Configs {
         std::shared_ptr<BuildConfigResult> result;
         std::shared_ptr<ProxyEntity> ent;
         int chainID = 0;
+        int routeID = 0;
         bool forTest;
         bool forExport;
 
