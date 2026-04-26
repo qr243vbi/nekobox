@@ -9,6 +9,8 @@ if(UNIX)
     include(GNUInstallDirs)
 endif()# ----------------------------
 
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+
 # Platform variables
 # ----------------------------
 if(EXISTS "${GO_SOURCE_DIR}/server/vendor")
