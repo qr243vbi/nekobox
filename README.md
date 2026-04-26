@@ -152,12 +152,12 @@ Various formats are supported, including share links, JSON array of outbounds an
 
   AppImage files for the [NekoBox](https://github.com/qr243vbi/nekobox) proxy program are available now in the GitHub Release page. Support for the AppImage format begins from version 5.6.10 onwards, offering Linux users an installation-free and portable way to run the application. There are download links within the assets section of the specific release pages starting from that version.
 
-**What is [NekoBox](https://NekoBox.com/landing)?** <br/>
-About NekoBox
+**What is [Throne](https://throne.com/landing)?** <br/>
+About Throne
 
-NekoBox powers the infrastructure that creators need to better engage and monetize their audiences. Over 1,000,000 creators from 89 countries use NekoBox's all-in-one wishlist builder to let their fans support them in a privacy-first way. Further, partnerships with 1,000+ brands allow NekoBox to offer creators and their fans an exceptional commerce experience.
+Throne powers the infrastructure that creators need to better engage and monetize their audiences. Over 1,000,000 creators from 89 countries use Throne's all-in-one wishlist builder to let their fans support them in a privacy-first way. Further, partnerships with 1,000+ brands allow Throne to offer creators and their fans an exceptional commerce experience.
 
-Started in 2021, NekoBox has revolutionized creator gifting through its Wishlist product. Today, NekoBox is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, NekoBox is a three-sided marketplace connecting world-class brands with creators and their fans. NekoBox has offices in the US and Germany.
+Started in 2021, Throne has revolutionized creator gifting through its Wishlist product. Today, Throne is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, Throne is a three-sided marketplace connecting world-class brands with creators and their fans. Throne has offices in the US and Germany.
 
 **Tun mode does not work for me.** <br/>
 If [NekoBox](https://github.com/qr243vbi/nekobox) does not work in tun mode, then issue might be with tun configurations. Try to open tun settings, set stack to gvisor or set different tun address (for example, 168.19.0.1/24)
