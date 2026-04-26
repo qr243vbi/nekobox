@@ -162,9 +162,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
     ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     ui->disable_stats->setChecked(Configs::dataStore->disable_traffic_stats);
-    #ifdef USE_CPP_PROXY_CONFIGURATOR
-    ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
-    #endif
+
 
     #define UPDATE_ICON CACHE.updateIcon = true
     #define UPDATE_FONT {                   \
@@ -216,15 +214,25 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
 
 #ifndef Q_OS_WIN
-    ui->proxy_scheme_l->hide();
-    ui->proxy_scheme->hide();
     ui->windows_no_admin->hide();
 #endif
-    #ifndef USE_CPP_PROXY_CONFIGURATOR
-    #ifdef Q_OS_WIN
+
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+    ui->proxy_scheme_l->setText(tr("Proxy type"));
+    ui->proxy_scheme->clear();
+    ui->proxy_scheme->addItem(tr("Off"));
+    ui->proxy_scheme->addItems(Preset::SingBox::SimpleProxyInbounds);
+#else
+#ifndef Q_OS_WIN
     ui->proxy_scheme_l->hide();
     ui->proxy_scheme->hide();
-    #endif
+#endif
+#endif
+
+    #ifdef USE_CPP_PROXY_CONFIGURATOR
+    ui->proxy_scheme->setCurrentText(Configs::dataStore->proxy_scheme);
+    #else
+    ui->proxy_scheme->setCurrentIndex(CACHE.proxy_type = Configs::dataStore->inbound_proxy_type->value);
     #endif
 
     // Style
@@ -311,7 +319,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
     D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
-    D_LOAD_BOOL(net_use_proxy);
+    D_LOAD_BOOL(network_use_proxy);
     D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
@@ -436,7 +444,6 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(auto_test_tun_failover)
 
     // Common
-    bool needChoosePort = false;
 
     D_SAVE_STRING(inbound_address)
     D_SAVE_COMBO_STRING(log_level)
@@ -444,7 +451,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(inbound_socks_port)
     if (!Configs::dataStore->random_inbound_port && ui->random_inbound_port->isChecked())
     {
-        needChoosePort = true;
+        CACHE.needChoosePort = true;
     }
     D_SAVE_BOOL(random_inbound_port);
     D_SAVE_INT(test_concurrent)
@@ -452,6 +459,14 @@ void DialogBasicSettings::accept() {
     D_SAVE_BOOL(disable_tray)
     #ifdef USE_CPP_PROXY_CONFIGURATOR
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
+    #else
+    {
+        int value = ui->proxy_scheme->currentIndex();
+        *Configs::dataStore->inbound_proxy_type = value;
+        if (CACHE.proxy_type != value){
+            CACHE.needChoosePort = true;
+        }
+    }
     #endif
     Configs::dataStore->speed_test_mode = ui->speedtest_mode->currentIndex();
     D_SAVE_STRING(simple_dl_url)
@@ -481,7 +496,7 @@ void DialogBasicSettings::accept() {
     }
 
     D_SAVE_STRING(user_agent)
-    D_SAVE_BOOL(net_use_proxy)
+    D_SAVE_BOOL(network_use_proxy)
 
     S_SAVE_BOOL(test_after_start)
     if (!ui->startup_update->isHidden()){
@@ -622,7 +637,7 @@ void DialogBasicSettings::accept() {
     if (CACHE.needRestart) str << "NeedRestart";
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
-    if (needChoosePort) str << "NeedChoosePort";
+    if (CACHE.needChoosePort) str << "NeedChoosePort";
     if (CACHE.updateMenuIcon){
         settings->text_under_buttons = (ui->set_text_under_menu_icons->isChecked());
     }

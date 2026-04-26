@@ -26,7 +26,7 @@ static inline void InitializeRequest(
     QString & error,
     bool sendHwid
 ){
-        bool net_use_proxy = Configs::dataStore->net_use_proxy;
+        bool net_use_proxy = Configs::dataStore->useProxyForHttpRequest();
         bool proxy_started = Configs::dataStore->started_id >= 0;
         net_use_proxy |= Configs::dataStore->spmode_system_proxy;
         
@@ -35,7 +35,7 @@ static inline void InitializeRequest(
         if (net_use_proxy) {
             QNetworkProxy p;
             if (proxy_started) {
-                p.setType(QNetworkProxy::Socks5Proxy);
+                p.setType(QNetworkProxy::HttpProxy);
                 p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
                 p.setPort(Configs::dataStore->inbound_socks_port);
                 QString &inbound_username = Configs::dataStore->inbound_username;

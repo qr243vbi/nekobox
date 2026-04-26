@@ -75,7 +75,7 @@ bool MainWindow::fetch_ruleset_cache(const QString & url){
     libcore::CacheURLRequest req;
     req.clear = false;
     req.filepath = false;
-    req.use_default_outbound = Configs::dataStore->net_use_proxy;
+    req.use_default_outbound = Configs::dataStore->network_use_proxy;
     req.http_url = url.toStdString();
     defaultClient->CacheHTTP(&isok, req);
     return isok;
@@ -693,19 +693,25 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
     });
 }
 
-void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
+bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     #ifndef USE_CPP_PROXY_CONFIGURATOR
-    bool isok;
+    bool isok = true;
+    int inbound_proxy_type = Configs::dataStore->inbound_proxy_type->value;
+    bool socks_supported = inbound_proxy_type == 2;
+    if (!socks_supported){
+        if (inbound_proxy_type != 1){
+            enable = false;
+        }
+    }
     #endif
     if (enable != Configs::dataStore->spmode_system_proxy) {
-        
         if (enable) {
             auto socks_port = Configs::dataStore->inbound_socks_port;
             #ifdef USE_CPP_PROXY_CONFIGURATOR
             SetSystemProxy(socks_port, socks_port, Configs::dataStore->proxy_scheme);
             #else
             defaultClient->EnableSystemProxy(Configs::dataStore->inbound_address, 
-                socks_port, true, &isok);
+                socks_port, socks_supported, &isok);
             #endif
         } else {
             #ifdef USE_CPP_PROXY_CONFIGURATOR
@@ -717,8 +723,11 @@ void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     }
     #ifndef USE_CPP_PROXY_CONFIGURATOR
     #ifdef DEBUG_MODE
-    qDebug() << "System proxy set to " << enable << " with status " << ok;
+    qDebug() << "System proxy set to " << enable << " with status " << isok;
     #endif 
+    if (!isok){
+        enable = !enable;
+    }
     #endif
 
     if (save) {
@@ -731,6 +740,7 @@ void MainWindow::set_spmode_system_proxy(bool enable, bool save) {
 
     Configs::dataStore->spmode_system_proxy = enable;
     refresh_status();
+    return enable;
 }
 
 void MainWindow::profile_stop(bool crash, bool block, bool manual) {

@@ -81,6 +81,13 @@ namespace Configs {
         ADD_ENUM_LIST(Preset::SingBox::VpnImplementation, 1)
     STOP_ENUM
 
+
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+    INIT_ENUM(SimpleProxyInbound)
+        ADD_ENUM_LIST(Preset::SingBox::SimpleProxyInbounds, 1)
+    STOP_ENUM
+#endif
+
     class DataStore : public JsonStore {
     public:
         DECLARE_STORE_TYPE(NekoBox)
@@ -90,6 +97,7 @@ namespace Configs {
         // Custom system parameters: format "hwid=value,os=value,osVersion=value,model=value"
         // 
 
+        bool useProxyForHttpRequest();
 
         bool core_use_uds = 
         // Strange errors on windows
@@ -122,6 +130,9 @@ namespace Configs {
         QString tun_address_6 = "fdfe:dcba:9876::1/96";
         #ifdef USE_CPP_PROXY_CONFIGURATOR
         QString proxy_scheme = "{ip}:{port}";
+        #else
+        std::shared_ptr<SimpleProxyInboundEnum> inbound_proxy_type = std::make_shared<SimpleProxyInboundEnum>(2); 
+        bool proxyInboundEnabled();
         #endif
         std::unique_ptr<Routing> routing;
         int imported_count = 0;
@@ -180,7 +191,7 @@ namespace Configs {
         bool auto_test_tun_failover = true;
 
         // Network
-        bool net_use_proxy = true;
+        bool network_use_proxy = true;
         bool net_insecure = false;
 
         // Subscription

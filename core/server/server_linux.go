@@ -301,12 +301,23 @@ func restartAsAdmin(save bool) {
 		}
 	}
 
+	u, err := user.Current()
+	if err != nil {
+		log.Fatalf("Cannot get username: %v", err)
+	}
+
 	executablePath, err := filepath.Abs(os.Args[0])
-	args = append(args, pkexecPath, "sh", "-c", "exec sudo \"${0}\" \"${@}\"", "env", "NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "-ruleset-cache-directory", internal.GetRulesetCachedir())
+	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"",
+		"env")
+	environ := os.Environ()
+	args = append(args, environ...)
+	args = append(args, "DISPLAY="+os.Getenv("DISPLAY"), "SUDO_USER="+u.Username,
+		"NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath,
+		"-ruleset-cache-directory", internal.GetRulesetCachedir())
 
 	args = append(args, os.Args[1:]...)
 
-	err = syscall.Exec(pkexecPath, args, os.Environ())
+	err = syscall.Exec(pkexecPath, args, environ)
 	if err != nil {
 		// This part of the code will only be reached if syscall.Exec fails
 		fmt.Println("Error executing 'pkexec':", err)

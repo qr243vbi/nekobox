@@ -712,17 +712,27 @@ binārs — 2026 — patvaļīgs baitu vērtību formāts NekoBox iestatījumiem
         <translation type="unfinished">Resursu pārvaldnieks</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="221"/>
+        <source>Proxy type</source>
+        <translation type="unfinished">Starpniekservera veids</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223"/>
+        <source>Off</source>
+        <translation type="unfinished">Izslēgts</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="260"/>
         <source>Name of program</source>
         <translation type="unfinished">Programmas nosaukums</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="523"/>
         <source>Security Warning</source>
         <translation type="unfinished">Drošības brīdinājums</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="524"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -739,12 +749,12 @@ Iespējojiet to tikai tad, ja pilnībā uzticaties katram tīklam starp jums un 
 Vai tiešām vēlaties atspējot TLS verifikāciju?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="545"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Privātuma brīdinājums</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="546"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -2785,8 +2795,8 @@ Vai esat pārliecināts?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2717"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2720"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2729"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2732"/>
         <source>System Proxy</source>
         <translation type="unfinished">Sistēmas starpniekserveris</translation>
     </message>
@@ -2977,15 +2987,15 @@ Vai esat pārliecināts?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3824"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3836"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3846"/>
         <source>Start</source>
         <translation type="unfinished">Sākt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3835"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3846"/>
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
@@ -3032,7 +3042,7 @@ Vai esat pārliecināts?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1587"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1588"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Eksportēt %1 konfigurāciju</translation>
     </message>
@@ -3163,7 +3173,7 @@ Vai esat pārliecināts?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3107"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3119"/>
         <source>Clone</source>
         <translation type="unfinished">Klonēt</translation>
     </message>
@@ -3271,7 +3281,7 @@ Vai esat pārliecināts?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3853"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3865"/>
         <source>Add new Group</source>
         <translation type="unfinished">Pievienot jaunu grupu</translation>
     </message>
@@ -3292,218 +3302,218 @@ Vai esat pārliecināts?</translation>
         <translation type="unfinished">Automātiskās ritināšanas žurnāls</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1242"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1243"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Rediģēt maršrutēšanas profilus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1265"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Atjauniniet maršrutēšanas profilus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1276"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1280"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1301"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1304"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1348"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1349"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">Atjaunināt atbildi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Neviens maršrutēšanas profils netiek atjaunināts</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Atjaunināti %1 maršrutēšanas profili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1291"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Atjauniniet RuleSet karti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1303"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Neizdevās atjaunināt kārtulu kopas</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Noteikumu kopas ir veiksmīgi atjauninātas</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1314"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1315"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Atjauniniet RuleSet kešatmiņu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1349"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Noteikumu kopu kešatmiņa ir atjaunināta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1363"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1364"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Notīriet RuleSet kešatmiņu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1399"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1400"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Iespējot AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1805"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1806"/>
         <source>Error</source>
         <translation type="unfinished">Kļūda</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1895"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Iestatījumi mainīti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Restartējiet Tun, lai tas stātos spēkā.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1899"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1954"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3548"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3603"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3652"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1957"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3184"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3615"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3914"/>
         <source>Confirmation</source>
         <translation type="unfinished">Apstiprinājums</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1900"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1955"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1903"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1958"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Iestatījumi mainīti, restartēt starpniekserveri?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1929"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1932"/>
         <source>Settings changed</source>
         <translation type="unfinished">Iestatījumi mainīti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1933"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Restartējiet programmu, lai tā stātos spēkā.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1970"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1973"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Importēts % 1 profils(-i)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2280"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Lietotājs izvēlējās nepieprasīt privilēģijas, dažas funkcijas var nedarboties</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2344"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2347"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Lūdzu, piešķiriet galvenās root tiesības</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2693"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2696"/>
         <source>Not Running</source>
         <translation type="unfinished">Neskrien</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3108"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3120"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klonēt % 1 vienumu(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3152"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
         <source> Confirmation </source>
         <translation type="unfinished">Apstiprinājums</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3153"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3165"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Vai noņemt %1 vienumu(s) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3173"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3185"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Vai noņemt %1 vienumu(s) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3210"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3223"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3222"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3235"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopēts %1 vienums(-i)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3470"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR kods nav atrasts</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3492"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Nevar uzņemt ekrānu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3549"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Vai noņemt %1&#xa0;nepieejamu(-us) vienumu(-us)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3604"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Noņemt %1 Nederīgs(-i) vienums(-i) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3653"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3665"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Vai aizstāt domēna serveru adreses ar to atrisinātajiem IP?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3821"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833"/>
         <source>Clear</source>
         <translation type="unfinished">Skaidrs</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3904"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Dzēst atlasīto grupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3905"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Rediģēt atlasīto grupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3903"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3915"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Vai noņemt %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4645"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4657"/>
         <source>Cannot start</source>
         <translation type="unfinished">Nevar sākt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4646"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4658"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Pēdējais lejupielādes pieprasījums vēl nav pabeigts</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4680"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4692"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Neizdevās lejupielādēt atjauninājumu līdzekļus</translation>
     </message>
@@ -3618,7 +3628,7 @@ Vai esat pārliecināts?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="775"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ja ilgstoši nav atbildes, ieteicams restartēt programmatūru.</translation>
     </message>
@@ -3633,17 +3643,17 @@ Vai esat pārliecināts?</translation>
         <translation type="unfinished">Neizdevās palaist profilu %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="758"/>
         <source>Stop return error</source>
         <translation type="unfinished">Apturēt atgriešanas kļūdu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="798"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Tiek apturēts profils %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="800"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Neizdevās apturēt, lūdzu, restartējiet programmu.</translation>
     </message>
@@ -3789,7 +3799,7 @@ Izdzēsti %3 profili:
         <translation type="unfinished">Izvēlieties</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2661"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2664"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Starpniekserveris: %1
@@ -3881,12 +3891,12 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Izdzēsts %1 Nav pieejams</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1684"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1685"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Pārbaudiet noteikumu kopas: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1706"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1707"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Pieprasot noteikumu kopas saraksta kļūdu: %1</translation>
     </message>
@@ -3895,64 +3905,78 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP adrese: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2698"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2702"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Ienākošais IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3083"/>
+        <source>Off</source>
+        <translation type="obsolete">Izslēgts</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2706"/>
+        <source>Inbound: %2 %1</source>
+        <translation type="unfinished">Ienākošais: %2 %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2708"/>
+        <source>Inbound: Off</source>
+        <translation type="unfinished">Ienākošais: izslēgts</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3095"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Pārvietot profilus uz grupu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3253"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfigurācija nokopēta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3253"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3265"/>
         <source>Copy core config</source>
         <translation type="unfinished">Kopēt pamata konfigurāciju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3255"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3267"/>
         <source>Copy test config</source>
         <translation type="unfinished">Kopēt testa konfigurāciju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3256"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3268"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">Labi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4545"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4599"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4557"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4611"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4639"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4648"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4683"/>
         <source>Update</source>
         <translation type="unfinished">Atjaunināt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4546"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4558"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Nav oficiāla atbalsta platforma</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4556"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4568"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Atjaunināšanas pieprasīšanas kļūda: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4599"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4611"/>
         <source>No update</source>
         <translation type="unfinished">Nav atjauninājumu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4640"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3961,17 +3985,17 @@ Izlaiduma piezīme:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4631"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4643"/>
         <source>Close</source>
         <translation type="unfinished">Aizvērt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4633"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4645"/>
         <source>Open in browser</source>
         <translation type="unfinished">Atvērt pārlūkprogrammā</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4672"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4684"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Atjauninājums ir gatavs, restartēt, lai instalētu?</translation>
     </message>
@@ -3981,7 +4005,7 @@ Izlaiduma piezīme:
         <translation type="unfinished">Piekļuve liegta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="384"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Izvēlieties mapi</translation>
     </message>
@@ -4340,7 +4364,7 @@ Tiešs: ⚡%2 📦%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1423"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Lejupielādēt profilus</translation>
     </message>

@@ -11,6 +11,10 @@
 namespace Preset::SingBox {
   extern QMap<QString, QString> OutboundTypes;
   inline QStringList QUICCongestionControlAlgorithm = {"bbr", "bbr2", "cubic", "reno", "bbr_standard", "bbr_variant"};
+  
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+  inline QStringList SimpleProxyInbounds = {"http", "mixed"};
+#endif
   inline QStringList VpnImplementation = {"system", "gvisor", "mixed"};
   inline QStringList MieruMultiplexing = {
       "MULTIPLEXING_OFF",

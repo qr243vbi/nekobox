@@ -1,13 +1,9 @@
 package boxmain
 
 import (
-	"nekobox_core/internal/boxbox"
-	"nekobox_core/internal"
 	"context"
-	"os"
-	"os/signal"
-	runtimeDebug "runtime/debug"
-	"syscall"
+	"nekobox_core/internal"
+	"nekobox_core/internal/boxbox"
 	"time"
 
 	C "github.com/sagernet/sing-box/constant"
@@ -15,23 +11,20 @@ import (
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/json"
-	"github.com/spf13/cobra"
 )
 
-var commandRun = &cobra.Command{
-	Use:   "run",
-	Short: "Run service",
-	Run: func(cmd *cobra.Command, args []string) {
-		err := run()
-		if err != nil {
-			log.Fatal(err)
-		}
-	},
-}
-
-func init() {
-	mainCommand.AddCommand(commandRun)
-}
+/*
+	var commandRun = &cobra.Command{
+		Use:   "run",
+		Short: "Run service",
+		Run: func(cmd *cobra.Command, args []string) {
+			err := run()
+			if err != nil {
+				log.Fatal(err)
+			}
+		},
+	}
+*/
 
 type OptionsEntry struct {
 	content []byte
@@ -73,20 +66,9 @@ func Create(configContent []byte) (*boxbox.Box, context.CancelFunc, error) {
 		return nil, nil, E.Cause(err, "create service")
 	}
 
-	osSignals := make(chan os.Signal, 1)
-	signal.Notify(osSignals, os.Interrupt, syscall.SIGTERM, syscall.SIGHUP)
-	defer func() {
-		signal.Stop(osSignals)
-		close(osSignals)
-	}()
 	startCtx, finishStart := context.WithCancel(context.Background())
-	go func() {
-		_, loaded := <-osSignals
-		if loaded {
-			cancel()
-			closeMonitor(startCtx)
-		}
-	}()
+	instance.StartCtx = startCtx
+
 	err = instance.Start()
 	finishStart()
 	if err != nil {
@@ -96,6 +78,7 @@ func Create(configContent []byte) (*boxbox.Box, context.CancelFunc, error) {
 	return instance, cancel, nil
 }
 
+/*
 func run() error {
 	osSignals := make(chan os.Signal, 1)
 	signal.Notify(osSignals, os.Interrupt, syscall.SIGTERM)
@@ -122,9 +105,9 @@ func run() error {
 			break
 		}
 	}
-}
+}*/
 
-func closeMonitor(ctx context.Context) {
+func CloseMonitor(ctx context.Context) {
 	time.Sleep(C.FatalStopTimeout)
 	select {
 	case <-ctx.Done():

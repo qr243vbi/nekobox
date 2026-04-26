@@ -779,10 +779,20 @@ namespace Configs {
         skip_multiple_jobs:
         // Inbounds
         // mixed-in
-        if (IsValidPort(dataStore->inbound_socks_port) && (!status->forTest || blockAll)) {
+        int proxy_type = Configs::dataStore->inbound_proxy_type->value;
+        if (IsValidPort(dataStore->inbound_socks_port) && (!status->forTest || blockAll) 
+        #ifndef USE_CPP_PROXY_CONFIGURATOR 
+            && Configs::dataStore->proxyInboundEnabled()
+        #endif
+        ) {
             QJsonObject inboundObj;
             inboundObj["tag"] = "mixed-in";
-            inboundObj["type"] = "mixed";
+            inboundObj["type"] = 
+            #ifdef USE_CPP_PROXY_CONFIGURATOR
+            "mixed"
+            #else
+            (QString)*Configs::dataStore->inbound_proxy_type;
+            #endif
             inboundObj["listen"] = dataStore->inbound_address;
             inboundObj["listen_port"] = dataStore->inbound_socks_port;
             QString& inbound_username = dataStore->inbound_username;

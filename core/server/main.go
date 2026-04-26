@@ -12,9 +12,11 @@ import (
 	_ "nekobox_core/internal/distro/all"
 	"net"
 	"os"
+	"os/signal"
 	"runtime"
 	runtimeDebug "runtime/debug"
 	"strconv"
+	"syscall"
 	"time"
 
 	"github.com/apache/thrift/lib/go/thrift"
@@ -23,6 +25,25 @@ import (
 
 func RunCore(addr net.Addr, _debug *bool) {
 	wsainit()
+
+	osSignals := make(chan os.Signal, 1)
+	signal.Notify(osSignals, os.Interrupt, syscall.SIGTERM, syscall.SIGHUP)
+	defer func() {
+		signal.Stop(osSignals)
+		close(osSignals)
+	}()
+
+	go func() {
+		_, loaded := <-osSignals
+		if loaded {
+			internal.ResetSystemProxy()
+			if internal.BoxInstance != nil {
+				internal.InstanceCancel()
+				boxmain.CloseMonitor(internal.BoxInstance.StartCtx)
+			}
+			//		closeMonitor(startCtx)
+		}
+	}()
 
 	internal.Debug = *_debug
 

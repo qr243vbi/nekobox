@@ -54,6 +54,8 @@ type Box struct {
 	router          *route.Router
 	internalService []adapter.LifecycleService
 	done            chan struct{}
+
+	StartCtx context.Context
 }
 
 type Options struct {

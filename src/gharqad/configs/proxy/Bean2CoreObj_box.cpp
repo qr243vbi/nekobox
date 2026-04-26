@@ -3,30 +3,15 @@
 #endif
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/includes.h>
 
 #include <qjsonobject.h>
 #include <QStandardPaths>
 
 namespace Configs {
-    static QJsonObject getXbadoptionRange(const QJsonValue & value);
-
-
-    template<typename T>
-    static void add_default_fields(T & obj, const AbstractBean * bean){
-        obj["type"] = bean->type();
-        obj["server"] = bean->entity->serverAddress;
-        obj["server_port"] = bean->entity->serverPort;
-    }
-
-    template<typename T>
-    static void add_non_empty(T & obj, const QString & key, const QString & value){
-        if (!value.isEmpty()){
-            obj[key] = value;
-        }
-    }
-
-    static QJsonValue udp_over_tcp_object(int version){
+    namespace CoreObj_box = To_CoreObj_box;
+    QJsonValue CoreObj_box::udp_over_tcp_object(int version){
         QJsonValue val;
         if (version == 0){
             val = false;
@@ -39,41 +24,7 @@ namespace Configs {
         return val;
     }
 
-    template<typename T, typename B>
-    static void add_username_password(T & obj, B * bean){
-        add_non_empty(obj, "password", bean->password);
-        add_non_empty(obj, "username", bean->username);
-    }
-
-    template<typename T, typename B>
-    static void add_network(T & obj, B * bean){
-        if (bean->network->value > 0){
-            add_non_empty(obj, "network", *bean->network);
-        }
-    }
-
-    template<typename T, typename B>
-    static void add_udp_over_tcp(T & obj, B * bean){
-        obj["udp_over_tcp"] = udp_over_tcp_object(bean->uot);
-    }
-
-    template<typename T, typename B>
-    static void add_quic(T & obj, B * bean){
-        bool quic = bean->quic;
-        obj["quic"] = quic;
-        if (quic){
-            obj["quic_congestion_control"] = *bean->quic_congestion_control;
-        }
-    }
-
-    template<typename T>
-    static void add_non_empty(T & obj, const QString & key, const QVariantMap & value){
-        if (!value.isEmpty()){
-            obj[key] = QJsonObject::fromVariantMap(value);
-        }
-    }
-
-    static QJsonObject getXmux(const QJsonValue & value){
+    QJsonObject CoreObj_box::getXmux(const QJsonValue & value){
         QJsonObject obj;
         for (auto [k, v]: asKeyValueRange(value.toObject().toVariantMap()) ){
             QString key = k.toLower().replace("_", "");
@@ -95,7 +46,7 @@ namespace Configs {
         return obj;
     }
 
-    static QJsonObject getXbadoptionRange(const QJsonValue & value){
+    QJsonObject CoreObj_box::getXbadoptionRange(const QJsonValue & value){
         QJsonObject obj ;
         if (value.isString()){
             QString str = value.toString();
@@ -113,7 +64,7 @@ namespace Configs {
         return obj;
     }
 
-    static void parseExtraXhttp(QJsonObject & transport, QString extra){
+    void CoreObj_box::parseExtraXhttp(QJsonObject & transport, QString extra){
         extra = extra.replace("+", "");
         for (auto [k, v]: asKeyValueRange(QJsonDocument::fromJson(extra.toUtf8()).object().toVariantMap())){
             QString key = k.toLower().replace("_", "");
@@ -141,6 +92,8 @@ namespace Configs {
             }
         }
     }
+
+    using namespace CoreObj_box;
 
     void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
@@ -273,19 +226,6 @@ CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     return result;
 }
 
-    CoreObjOutboundBuildResult HttpBean::BuildCoreObjSingBox() const {
-        CoreObjOutboundBuildResult result;
-
-        QJsonObject outbound;
-        add_default_fields(outbound, this);
-        add_non_empty(outbound, "path", path);
-        add_username_password(outbound, this);
-        add_non_empty(outbound, "headers", this->headers);
-
-        stream->BuildStreamSettingsSingBox(&outbound);
-        result.outbound = outbound;
-        return result;
-    }
 
     CoreObjOutboundBuildResult ShadowSocksBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;

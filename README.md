@@ -176,10 +176,12 @@ No, that is not necessary. [NekoBox](https://github.com/qr243vbi/nekobox) restar
 No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](https://github.com/qr243vbi/nekobox) will ask for administrator password to order to restart nekobox_core with administrator privilegies, if TUN mode is selected and [NekoBox](https://github.com/qr243vbi/nekobox) is not already running as root (or with special capabilities), [NekoBox](https://github.com/qr243vbi/nekobox) will ask for password for once, and will not configure `SUID`.
 
 **Why does my internet stop working after I force quit [NekoBox](https://github.com/qr243vbi/nekobox)?** <br/>
-If [NekoBox](https://github.com/qr243vbi/nekobox) is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
-Solution:
+If [NekoBox](https://github.com/qr243vbi/nekobox) of version below that 5.10.41 is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
+Solution for version < 5.10.40:
 - Ensure that [NekoBox](https://github.com/qr243vbi/nekobox) closed manually.
-- If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it- this will reset the settings.
+- If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it - this will reset the settings.
+Solution for version >= 5.10.41:
+- This won't happen, but if it does, please submit [issue](https://github.com/qr243vbi/nekobox/issues).
 
 **Why [NekoBox](https://github.com/qr243vbi/nekobox) uses Noto emoji instead of Twitter emoji? What differences between them two?** <br/>
   Noto Emoji is part of the Noto font family developed by Google. It aims for a clean, simple, and consistent design across various platforms, emphasizing legibility. It is often used in Android systems and Google services. Noto Emoji is designed to support a wide range of characters and symbols, making it suitable for diverse languages and scripts. Also, Noto Emoji is open source, which allows developers to use and modify it freely in their applications.

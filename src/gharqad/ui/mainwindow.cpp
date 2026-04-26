@@ -1171,7 +1171,8 @@ skip_updater_hide:
   });
   connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this,
           [=, this](bool checked) {
-            CHECK_ACTION_ACCESS_W set_spmode_system_proxy(checked);
+            CHECK_ACTION_ACCESS_W 
+            ui->checkBox_SystemProxy->setChecked(set_spmode_system_proxy(checked));
           });
   connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=, this]() {
     ui->menu_spmode_disabled->setChecked(
@@ -1871,11 +1872,13 @@ void MainWindow::dialog_message_impl(const QString &sender,
       else
         ui->system_dns->hide();
     }
-    if (info.contains("NeedChoosePort")) {
-      Configs::dataStore->inbound_socks_port = MkPort();
-      if (Configs::dataStore->spmode_system_proxy) {
-        set_spmode_system_proxy(false);
-        set_spmode_system_proxy(true);
+    if (Configs::dataStore->random_inbound_port){
+      if (info.contains("NeedChoosePort")) {
+        Configs::dataStore->inbound_socks_port = MkPort();
+        if (Configs::dataStore->spmode_system_proxy) {
+          set_spmode_system_proxy(false);
+          set_spmode_system_proxy(true);
+        }
       }
     }
     auto suggestRestartProxy = Configs::dataStore->Save();
@@ -2695,7 +2698,16 @@ void MainWindow::refresh_status(const QString &traffic_update) {
   //
   auto display_socks = DisplayAddress(Configs::dataStore->inbound_address,
                                       Configs::dataStore->inbound_socks_port);
+  #ifdef USE_CPP_PROXY_CONFIGURATOR
   auto inbound_txt = QObject::tr("Inbound IP: %1").arg(display_socks);
+  #else
+  QString inbound_txt;
+  if (Configs::dataStore->proxyInboundEnabled()){
+    inbound_txt = QObject::tr("Inbound: %2 %1").arg(display_socks, (QString)*Configs::dataStore->inbound_proxy_type);
+  } else {
+    inbound_txt = QObject::tr("Inbound: Off");
+  }
+  #endif
   ui->label_inbound->setText(inbound_txt);
   //
   ui->checkBox_VPN->setChecked(Configs::dataStore->spmode_vpn);

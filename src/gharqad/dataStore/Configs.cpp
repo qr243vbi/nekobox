@@ -409,6 +409,31 @@ QByteArray hash = QCryptographicHash::hash(
 
     DataStore *dataStore = new DataStore();
 
+
+    #ifndef USE_CPP_PROXY_CONFIGURATOR
+    bool DataStore::proxyInboundEnabled(){
+        int value = this->inbound_proxy_type->value;
+        if (!(value == 1 || value == 2)){
+            return false;
+        }
+        return true;
+    }
+    #endif
+
+    bool DataStore::useProxyForHttpRequest(){
+        if (this->network_use_proxy){
+            #ifndef USE_CPP_PROXY_CONFIGURATOR
+            if (!(this->proxyInboundEnabled())){
+                return false;
+            }
+            #endif
+            return true;
+        }
+        return false;
+    }
+
+
+
     // datastore
 
     DataStore::DataStore() : JsonStore() {
@@ -442,7 +467,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("core_use_uds", core_use_uds, boolean);
         ADD_MAP("custom_inbound", custom_inbound, string);
         ADD_MAP("custom_route", custom_route_global, string);
-        ADD_MAP("network_use_proxy", net_use_proxy, boolean);
+        ADD_MAP("network_use_proxy", network_use_proxy, boolean);
         ADD_MAP("remember_id", remember_id, integer);
         ADD_MAP("remember_enable", remember_enable, boolean);
    //     _add(new configItem("language", &language, itemType::integer));
@@ -502,6 +527,8 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("stats_tab", stats_tab, integer);
         #ifdef USE_CPP_PROXY_CONFIGURATOR
         ADD_MAP("proxy_scheme", proxy_scheme, string);
+        #else
+        ADD_MAP("inbound_proxy_type", inbound_proxy_type, string);
         #endif
         ADD_MAP("disable_privilege_req", disable_privilege_req, boolean);
         ADD_MAP("enable_tun_routing", enable_tun_routing, boolean);

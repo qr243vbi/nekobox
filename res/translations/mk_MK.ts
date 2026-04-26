@@ -712,17 +712,27 @@ INI - почетокот на 1980-тите - едноставен формат 
         <translation type="unfinished">Менаџер со ресурси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="244"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="221"/>
+        <source>Proxy type</source>
+        <translation type="unfinished">Тип на прокси</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223"/>
+        <source>Off</source>
+        <translation type="unfinished">Исклучено</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="260"/>
         <source>Name of program</source>
         <translation type="unfinished">Име на програмата</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="498"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="523"/>
         <source>Security Warning</source>
         <translation type="unfinished">Безбедносно предупредување</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="499"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="524"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -739,12 +749,12 @@ Are you sure you want to disable TLS verification?</source>
 Дали сте сигурни дека сакате да ја оневозможите потврдата TLS?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="520"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="545"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Предупредување за приватност</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="546"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -2785,8 +2795,8 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="648"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2717"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2720"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2729"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2732"/>
         <source>System Proxy</source>
         <translation type="unfinished">Системски прокси</translation>
     </message>
@@ -2977,15 +2987,15 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3824"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3836"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3846"/>
         <source>Start</source>
         <translation type="unfinished">Започнете</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3823"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3834"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3835"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3846"/>
         <source>Stop</source>
         <translation type="unfinished">Стоп</translation>
     </message>
@@ -3032,7 +3042,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="902"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1587"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1588"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Извези % 1 конфигурација</translation>
     </message>
@@ -3163,7 +3173,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3107"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3119"/>
         <source>Clone</source>
         <translation type="unfinished">Клон</translation>
     </message>
@@ -3271,7 +3281,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3853"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3865"/>
         <source>Add new Group</source>
         <translation type="unfinished">Додадете нова група</translation>
     </message>
@@ -3292,218 +3302,218 @@ Are you sure?</source>
         <translation type="unfinished">Дневник за автоматско лизгање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1242"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1243"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Уредете ги профилите за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1264"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1265"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">Ажурирајте ги профилите за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1276"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1280"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1301"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1304"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1348"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1349"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">Ажурирајте го одговорот</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1278"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Не се ажурирани профили за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1281"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1282"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Ажурирани %1 профили за рутирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1291"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1292"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">Ажурирајте ја картата на RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1302"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1303"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Не успеа да се ажурираат правилата</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Правилата се ажурирани успешно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1314"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1315"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">Ажурирајте го кешот на RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1349"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Кешот на множества на правила е ажуриран</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1363"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1364"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Исчистете го кешот на RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1399"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1400"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Овозможи AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1805"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1806"/>
         <source>Error</source>
         <translation type="unfinished">Грешка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1895"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Поставките за прилагодување се сменија</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1896"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Рестартирајте го Tun за да стапи на сила.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1899"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1954"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3548"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3603"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3652"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1902"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1957"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3184"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3615"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3664"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3914"/>
         <source>Confirmation</source>
         <translation type="unfinished">Потврда</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1900"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1955"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1903"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1958"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Поставките се сменија, рестартирај прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1929"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1932"/>
         <source>Settings changed</source>
         <translation type="unfinished">Поставките се сменија</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1933"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Рестартирајте ја програмата за да стапи на сила.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1970"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1973"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Увезени % 1 профил(и)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2280"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Корисникот избра без барање за привилегии, некои функции може да не работат</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2344"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2347"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Ве молиме дајте ги основните права за root</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2693"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2696"/>
         <source>Not Running</source>
         <translation type="unfinished">Не трчање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3108"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3120"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Клонирајте % 1 ставка(и)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3152"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3164"/>
         <source> Confirmation </source>
         <translation type="unfinished">Потврда</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3153"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3165"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3173"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3185"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Да се ​​отстрани %1 ставка(и)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3210"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3223"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3222"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3235"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Копирани %1 ставки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3470"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR-кодот не е пронајден</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3480"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3492"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Не може да се сними екранот</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3549"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Отстрани % 1 Недостапни ставки?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3604"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3616"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Отстрани %1 неважечки ставки?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3653"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3665"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Да се ​​заменат адресите на серверот на доменот со нивните решени IP-адреси?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3821"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3833"/>
         <source>Clear</source>
         <translation type="unfinished">Јасно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3892"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3904"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Избришете ја избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3893"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3905"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Уредете ја избраната група</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3903"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3915"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Да се ​​отстрани %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4645"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4657"/>
         <source>Cannot start</source>
         <translation type="unfinished">Не може да започне</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4646"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4658"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Последното барање за преземање сè уште не е завршено</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4680"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4692"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Не успеа да се преземат средствата за ажурирање</translation>
     </message>
@@ -3618,7 +3628,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="747"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="775"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ако нема одговор долго време, се препорачува да го рестартирате софтверот.</translation>
     </message>
@@ -3633,17 +3643,17 @@ Are you sure?</source>
         <translation type="unfinished">Не успеа да започне профилот % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="730"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="758"/>
         <source>Stop return error</source>
         <translation type="unfinished">Грешка за стоп враќање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="770"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="798"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Запирање на профилот % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="772"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="800"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Не успеа да се запре, рестартирајте ја програмата.</translation>
     </message>
@@ -3789,7 +3799,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">Изберете</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2661"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2664"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Прокси: % 1
@@ -3881,12 +3891,12 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Избришано % 1 Недостапно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1684"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1685"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Проверете ги групите правила: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1706"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1707"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Барање грешка во списокот со множество правила: % 1</translation>
     </message>
@@ -3895,64 +3905,78 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP адреса: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2698"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2702"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Влезна IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3083"/>
+        <source>Off</source>
+        <translation type="obsolete">Исклучено</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2706"/>
+        <source>Inbound: %2 %1</source>
+        <translation type="unfinished">Влезни: % 2 % 1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2708"/>
+        <source>Inbound: Off</source>
+        <translation type="unfinished">Влезни: Исклучено</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3095"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Преместете ги профилите во групата</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3253"/>
         <source>Config copied</source>
         <translation type="unfinished">Конфигурацијата е копирана</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3253"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3265"/>
         <source>Copy core config</source>
         <translation type="unfinished">Копирајте ја основната конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3255"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3267"/>
         <source>Copy test config</source>
         <translation type="unfinished">Копирај тест конфигурација</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3256"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3268"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">Во ред</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4545"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4555"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4599"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4627"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4636"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4557"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4567"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4611"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4639"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4648"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4683"/>
         <source>Update</source>
         <translation type="unfinished">Ажурирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4546"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4558"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Не е официјална платформа за поддршка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4556"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4568"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Барање грешка за ажурирање: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4599"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4611"/>
         <source>No update</source>
         <translation type="unfinished">Нема ажурирање</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4628"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4640"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -3961,17 +3985,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4631"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4643"/>
         <source>Close</source>
         <translation type="unfinished">Затвори</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4633"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4645"/>
         <source>Open in browser</source>
         <translation type="unfinished">Отворете во прелистувачот</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4672"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4684"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Ажурирањето е подготвено, да се рестартира за да се инсталира?</translation>
     </message>
@@ -3981,7 +4005,7 @@ Release note:
         <translation type="unfinished">Пристапот е одбиен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="368"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="384"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Изберете папка</translation>
     </message>
@@ -4340,7 +4364,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1423"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Преземете профили</translation>
     </message>

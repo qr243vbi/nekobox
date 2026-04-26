@@ -194,11 +194,6 @@ if (GOOS STREQUAL "linux")
         # Apply optimizations and strip symbols
         target_compile_options(nekobox_core_elevated_resolvectl PRIVATE -O3)
 
-        add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
-            COMMAND ${CMAKE_STRIP} --strip-all $<TARGET_FILE:nekobox_core_elevated_resolvectl>
-            COMMENT "Stripping symbols from C wrapper..."
-        )
-
         # Rename output to match 'resolvectl' if desired, or keep as wrapper
         set_target_properties(nekobox_core_elevated_resolvectl PROPERTIES OUTPUT_NAME "nekobox_core_elevated_resolvectl")
 
@@ -207,9 +202,16 @@ if (GOOS STREQUAL "linux")
         set(EMBED_PATH "${GO_SOURCE_DIR}/server/elevated_resolvctl")
         # Create a hardlink (removes existing file first to avoid 'File exists' errors)
         add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:nekobox_core_elevated_resolvectl> "${EMBED_PATH}"
-            COMMENT "Copying stripped wrapper to Go source for embedding"
+            COMMAND strip --strip-all $<TARGET_FILE:nekobox_core_elevated_resolvectl>
+            COMMENT "Stripping symbols from C wrapper..."
         )
+
+        add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:nekobox_core_elevated_resolvectl> "${EMBED_PATH}"
+            COMMENT "Copying wrapper to Go source for embedding"
+        )
+
+
     else()
         message(WARNING "wrapper not found at ${WRAPPER_SRC}, skipping wrapper build.")
     endif()

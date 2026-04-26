@@ -184,7 +184,7 @@ public:
 
     void profile_stop(bool crash = false, bool block = false, bool manual = false);
 
-    void set_spmode_system_proxy(bool enable, bool save = true);
+    bool set_spmode_system_proxy(bool enable, bool save = true);
 
     void toggle_system_proxy();
 

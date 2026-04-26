@@ -97,6 +97,10 @@ private:
         bool updateIcon = false;
         bool updateFont = false;
         bool updateMenuIcon = false;
+        bool needChoosePort = false;
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+        int proxy_type = 0;
+#endif
     } CACHE;
 
 private slots:

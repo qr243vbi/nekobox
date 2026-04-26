@@ -180,7 +180,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QCheckBox" name="net_use_proxy">
+           <widget class="QCheckBox" name="network_use_proxy">
             <property name="text">
              <string>Use proxy when activated</string>
             </property>
