@@ -1,0 +1,2 @@
+#!/bin/sh
+exec @MAIN_CORE@ sing-box "${@}"

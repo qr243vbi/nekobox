@@ -6,6 +6,7 @@ if(UNIX)
     if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
         set(CMAKE_INSTALL_PREFIX /usr CACHE PATH "default prefix" FORCE)
     endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    include(GNUInstallDirs)
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -428,14 +429,6 @@ configure_file(
     @ONLY
 )
 
-# Configure the desktop file
-configure_file(
-    "${CMAKE_SOURCE_DIR}/script/start_sing_box.sh.in"
-    "${CMAKE_BINARY_DIR}/start_sing_box.sh"
-    @ONLY
-)
-
-
 install(
     FILES "${CMAKE_SOURCE_DIR}/res/public/icon.png"
     RENAME "nekobox.png"
@@ -450,12 +443,6 @@ install(
 install(
     PROGRAMS "${CMAKE_BINARY_DIR}/start.sh"
     RENAME "nekobox"
-    DESTINATION "${CMAKE_INSTALL_BINDIR}"
-)
-
-install(
-    PROGRAMS "${CMAKE_BINARY_DIR}/start_sing_box.sh"
-    RENAME "sing-box"
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 

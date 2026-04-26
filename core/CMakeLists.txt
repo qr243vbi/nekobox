@@ -1,10 +1,21 @@
-cmake_minimum_required(VERSION 3.16)
-project(go_multi_build)
+cmake_minimum_required(VERSION 3.10)
+project(nekobox_core VERSION 6.0.0)
 
-enable_language(C)
-# ----------------------------
+# Use this snippet *after* PROJECT(xxx):
+if(UNIX)
+    if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+        set(CMAKE_INSTALL_PREFIX /usr CACHE PATH "default prefix" FORCE)
+    endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    include(GNUInstallDirs)
+endif()# ----------------------------
+
 # Platform variables
 # ----------------------------
+if(EXISTS "${GO_SOURCE_DIR}/server/vendor")
+    set(GO_MOD_TIDY_FLAG OFF CACHE STRING "Run go mod tidy before build")
+else()
+    set(GO_MOD_TIDY_FLAG ON CACHE STRING "Run go mod tidy before build")
+endif()
 
 set(GOOS "" CACHE STRING "Target GOOS (e.g. linux, windows, darwin)")
 set(GOARCH "" CACHE STRING "Target GOARCH (e.g. amd64, arm64, 386, arm)")
@@ -15,6 +26,7 @@ if (GOOS STREQUAL "")
     elseif(LINUX)
         set(GOOS "linux")
     else()
+        set(GOOS "")
     endif()
 endif()
 
@@ -218,6 +230,23 @@ if (GOOS STREQUAL "linux")
 endif()
 
 
+
+if (UNIX)
+    get_filename_component(MAIN_CORE "${PROGRAMPREFIX}/nekobox_core${EXE_SUFFIX}" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+
+    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
+    install(PROGRAMS "${CMAKE_BINARY_DIR}/start_sing_box.sh" RENAME "sing-box" DESTINATION "${CMAKE_INSTALL_BINDIR}")
+
+    # Configure the desktop file
+    configure_file(
+        "${GO_SOURCE_DIR}/start_sing_box.sh.in"
+        "${CMAKE_BINARY_DIR}/start_sing_box.sh"
+        @ONLY
+    )
+
+endif()
+
+
 add_custom_command(
     OUTPUT ${DESTDIR}/nekobox_core${EXE_SUFFIX}
     DEPENDS ${WRAPPER_DEP_FILE}
@@ -227,7 +256,3 @@ add_custom_command(
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
 
-
-if (UNIX)
-    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
-endif()
