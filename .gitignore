@@ -3,6 +3,7 @@
 pypy.py
 run.sh
 bash.py
+/res/public/py.py
 *.log
 *.pem
 *.json

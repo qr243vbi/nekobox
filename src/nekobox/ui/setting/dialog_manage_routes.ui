@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="routes_tab">
      <property name="currentIndex">
-      <number>4</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -704,6 +704,19 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
             </property>
             <property name="text">
              <string>Enable Warp</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Auto Generate</string>
             </property>
            </widget>
           </item>
