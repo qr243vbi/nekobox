@@ -64,7 +64,6 @@ class JsUpdaterWindow;
 #include <nekobox/global/GuiUtils.hpp>
 #include "ui_mainwindow.h"
 
-
 #endif
 #ifndef SKIP_JS_UPDATER
 #include <nekobox/js/js_updater.h>
@@ -81,6 +80,8 @@ class JsUpdaterWindow;
 #include <QMessageBox>
 #include <QLineEdit>
 #include <QInputDialog>
+
+#include "mainwindow_table.h"
 
 class MainWindow;
 
@@ -142,6 +143,7 @@ public:
     std::function<void(std::shared_ptr<Configs::Group>)> post_update_job;
     friend class SpinnerDialog;
     std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
+    std::unique_ptr<MyTableModel> tableModel;
 
     int lastx = -1, lasty = -1;
     explicit MainWindow(QWidget *parent = nullptr);
@@ -286,7 +288,7 @@ private slots:
 
     void on_menu_update_subscription_triggered();
 
-    void on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item);
+    void on_proxyListTable_itemDoubleClicked(QModelIndex item);
 
     void on_proxyListTable_customContextMenuRequested(const QPoint &pos);
 
@@ -385,7 +387,7 @@ private:
 
     void refresh_proxy_list_impl_refresh_data(const int &id = -1, bool stopping = false);
 
-    void refresh_table_item(int row, const std::shared_ptr<Configs::ProxyEntity>& profile, bool stopping);
+  //  void refresh_table_item(int row, const std::shared_ptr<Configs::ProxyEntity>& profile, bool stopping);
 
     void parseQrImage(const QPixmap *image);
 

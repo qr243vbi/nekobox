@@ -568,6 +568,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   mainwindow = this;
   Configs::windowSettings->Load();
+  this->tableModel = std::make_unique<MyTableModel>(this);
 
 #ifdef DEBUG_MODE
   qDebug() << "Software Name" << Configs::windowSettings->program_name;
@@ -835,12 +836,12 @@ MainWindow::MainWindow(QWidget *parent)
   parallelCoreCallPool->setMaxThreadCount(10); // constant value
   //
   connect(ui->menu_edit, &QAction::triggered, this, [this]() -> void {
-    QTableWidgetItem *item = nullptr;
-    auto Items = ui->proxyListTable->selectedItems();
+    QModelIndex item;
+    auto Items = ui->proxyListTable->selectionModel()->selection().indexes();
     if (Items.count() > 0) {
       item = Items.at(0);
     }
-    if (item != nullptr) {
+    if (item.isValid()) {
       on_proxyListTable_itemDoubleClicked(item);
     }
   });
@@ -987,7 +988,7 @@ skip_updater_hide:
   // setup Speed Chart
   speedChartWidget = new SpeedWidget(this);
   ui->graph_tab->layout()->addWidget(speedChartWidget);
-
+/*
   // table UI
   ui->proxyListTable->rowsSwapped = [=, this](int row1, int row2) {
     if (row1 == row2)
@@ -997,7 +998,10 @@ skip_updater_hide:
     refresh_proxy_list();
     group->Save();
   };
+*/
 
+  this->ui->proxyListTable->setModel(tableModel.get());
+  
   ui->proxyListTable->setAlternatingRowColors(true);
 
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
@@ -1814,6 +1818,7 @@ void MainWindow::show_group(int gid) {
     Configs::dataStore->current_group = gid;
     Configs::dataStore->Save();
   }
+
 
   ui->tabWidget->widget(groupId2TabIndex(gid))
       ->layout()
@@ -2957,19 +2962,17 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
       ui->proxyListTable->setUpdatesEnabled(true);
       return;
     }
-    auto rowID = currentGroup->profiles.indexOf(id);
-    refresh_table_item(rowID, profile, stopping);
+ //   auto rowID = currentGroup->profiles.indexOf(id);
+ //   refresh_table_item(rowID, profile, stopping);
   } else {
     ui->proxyListTable->blockSignals(true);
     int row = 0;
     auto profiles = filterProfilesList(currentGroup->profiles);
     int row_count = profiles.count();
 
-    ui->proxyListTable->setRowCount(row_count);
     if (row_count >= 350) {
       for (const auto &profile : profiles) {
         profile->latencyOrder = -1;
-        refresh_table_item(row++, profile, stopping);
       }
     } else {
       std::multiset<std::shared_ptr<Configs::ProxyEntity>,
@@ -2983,16 +2986,13 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
         i++;
         profile->latencyOrder = i;
       }
-      for (const auto &profile : profiles) {
-        refresh_table_item(row++, profile, stopping);
-      }
     }
 
     ui->proxyListTable->blockSignals(false);
   }
   ui->proxyListTable->setUpdatesEnabled(true);
 }
-
+/*
 void MainWindow::refresh_table_item(
     const int row, const std::shared_ptr<Configs::ProxyEntity> &profile,
     bool stopping) {
@@ -3046,15 +3046,15 @@ void MainWindow::refresh_table_item(
   f->setText(profile->traffic_data->DisplayTraffic());
   ui->proxyListTable->setItem(row, 4, f);
 }
-
+*/
 // table
 
 #define SHOW_EDIT_DIALOG(dialog)                                               \
   connect(dialog, &QDialog::finished, dialog, &QDialog::deleteLater);          \
   dialog->show();
 
-void MainWindow::on_proxyListTable_itemDoubleClicked(QTableWidgetItem *item) {
-  auto id = item->data(114514).toInt();
+void MainWindow::on_proxyListTable_itemDoubleClicked(QModelIndex item) {
+  auto id = this->tableModel->data_id(item);
   auto dialog = new DialogEditProfile("", id, this);
 
   SHOW_EDIT_DIALOG(dialog)
@@ -3708,10 +3708,10 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
 
 QList<std::shared_ptr<Configs::ProxyEntity>>
 MainWindow::get_now_selected_list() {
-  auto items = ui->proxyListTable->selectedItems();
+  auto items = ui->proxyListTable->selectionModel()->selection().indexes();
   QList<std::shared_ptr<Configs::ProxyEntity>> list;
   for (auto item : items) {
-    auto id = item->data(114514).toInt();
+    auto id = this->tableModel->data_id(item);
     auto ent = Configs::profileManager->GetProfile(id);
     if (ent != nullptr && !list.contains(ent))
       list += ent;

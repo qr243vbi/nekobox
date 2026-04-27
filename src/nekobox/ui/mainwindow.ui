@@ -354,7 +354,7 @@ QToolButton::menu-indicator {
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <widget class="MyTableWidget" name="proxyListTable">
+          <widget class="QTableView" name="proxyListTable">
            <property name="contextMenuPolicy">
             <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
            </property>
@@ -373,43 +373,18 @@ QToolButton::menu-indicator {
            <property name="wordWrap">
             <bool>false</bool>
            </property>
-           <attribute name="horizontalHeaderMinimumSectionSize">
-            <number>16</number>
-           </attribute>
-           <attribute name="horizontalHeaderHighlightSections">
+           <attribute name="horizontalHeaderStretchLastSection">
             <bool>false</bool>
            </attribute>
-           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <attribute name="verticalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderCascadingSectionResizes">
             <bool>false</bool>
            </attribute>
-           <attribute name="verticalHeaderDefaultSectionSize">
-            <number>32</number>
+           <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+            <bool>true</bool>
            </attribute>
-           <column>
-            <property name="text">
-             <string>Type</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Address</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Name</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Test Result</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Traffic</string>
-            </property>
-           </column>
           </widget>
          </item>
         </layout>
@@ -1268,13 +1243,6 @@ QToolButton::menu-indicator {
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>MyTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>nekobox/ui/utils/MyTableWidget.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
