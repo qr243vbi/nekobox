@@ -179,7 +179,7 @@ No, it is not needed, but if `SUID` does not configured properly, the [NekoBox](
 If [NekoBox](https://github.com/qr243vbi/nekobox) of version below that 5.10.41 is force-quit while `System proxy` is enabled, the process ends immediately and [NekoBox](https://github.com/qr243vbi/nekobox) cannot reset the proxy. <br/>
 Solution for version < 5.10.40:
 - Ensure that [NekoBox](https://github.com/qr243vbi/nekobox) closed manually.
-- If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it - this will reset the settings.
+- If you force quit by accident, open [NekoBox](https://github.com/qr243vbi/nekobox) again, enable `System proxy`, then disable it - this will reset the settings. <br/>
 Solution for version >= 5.10.41:
 - This won't happen, but if it does, please submit [issue](https://github.com/qr243vbi/nekobox/issues).
 
