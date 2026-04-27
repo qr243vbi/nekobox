@@ -671,6 +671,9 @@ std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(int id) {
 }
 
 QString ProfileManager::GetDisplayType(const QString &type) {
+  if (type.isEmpty()){
+    return type;
+  }
   return Preset::SingBox::OutboundTypes.value(type, type);
 }
 

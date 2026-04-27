@@ -568,7 +568,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   mainwindow = this;
   Configs::windowSettings->Load();
-  this->tableModel = std::make_unique<MyTableModel>(this);
+  this->tableModel = std::make_unique<MyTableModel>();
 
 #ifdef DEBUG_MODE
   qDebug() << "Software Name" << Configs::windowSettings->program_name;
@@ -1001,7 +1001,8 @@ skip_updater_hide:
 */
 
   this->ui->proxyListTable->setModel(tableModel.get());
-  
+  tableModel->capture(this->ui->proxyListTable);
+
   ui->proxyListTable->setAlternatingRowColors(true);
 
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
@@ -1052,6 +1053,7 @@ skip_updater_hide:
   ui->proxyListTable->verticalHeader()->setDefaultSectionSize(24);
   ui->proxyListTable->setTabKeyNavigation(false);
 
+  /*
   // search box
   setSearchState(false);
   connect(shortcut_ctrl_f, &QShortcut::activated, this, [=, this] {
@@ -1068,7 +1070,7 @@ skip_updater_hide:
       setSearchState(false);
     }
   });
-
+*/
   // refresh
   this->refresh_groups();
 
@@ -2614,7 +2616,7 @@ void MainWindow::UpdateConnectionListWithRecreate(
   }
   ui->connections->setUpdatesEnabled(true);
 }
-
+/*
 void MainWindow::setSearchState(bool enable) {
   searchEnabled = enable;
   if (enable) {
@@ -2640,7 +2642,7 @@ void MainWindow::setSearchState(bool enable) {
     }
   }
 }
-
+*/
 QList<std::shared_ptr<Configs::ProxyEntity>>
 MainWindow::filterProfilesList(const QList<int> &profiles) {
   QList<std::shared_ptr<Configs::ProxyEntity>> res;
@@ -2875,21 +2877,36 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
       std::sort(
           currentGroup->profiles.begin(), currentGroup->profiles.end(),
           [=, this](int a, int b) {
-            QString ms_a;
-            QString ms_b;
-            if (groupSortAction.method == GroupSortMethod::ByType) {
-              ms_a = Configs::profileManager->GetProfile(a)->type;
-              ms_b = Configs::profileManager->GetProfile(b)->type;
-            } else if (groupSortAction.method == GroupSortMethod::ByName) {
-              ms_a = Configs::profileManager->GetProfile(a)->name;
-              ms_b = Configs::profileManager->GetProfile(b)->name;
-            } else if (groupSortAction.method == GroupSortMethod::ByAddress) {
-              ms_a = Configs::profileManager->GetProfile(a)->DisplayAddress();
-              ms_b = Configs::profileManager->GetProfile(b)->DisplayAddress();
-            } else if (groupSortAction.method == GroupSortMethod::ByLatency) {
-              ms_a = Configs::profileManager->GetProfile(a)->full_test_report;
-              ms_b = Configs::profileManager->GetProfile(b)->full_test_report;
+            QString ms_a = "";
+            QString ms_b = "";
+            auto pr_a = Configs::profileManager->GetProfile(a);
+            auto pr_b = Configs::profileManager->GetProfile(b);
+            auto method = groupSortAction.method;
+
+            if (pr_a != nullptr){
+            if (method == GroupSortMethod::ByType) {
+              ms_a = pr_a->type;
+            } else if (method == GroupSortMethod::ByName) {
+              ms_a = pr_a->name;
+            } else if (method == GroupSortMethod::ByAddress) {
+              ms_a = pr_a->DisplayAddress();
+            } else if (method == GroupSortMethod::ByLatency) {
+              ms_a = pr_a->full_test_report;
             }
+            }
+
+            if (pr_b != nullptr){
+            if (method == GroupSortMethod::ByType) {
+              ms_b = pr_b->type;
+            } else if (method == GroupSortMethod::ByName) {
+              ms_b = pr_b->name;
+            } else if (method == GroupSortMethod::ByAddress) {
+              ms_b = pr_b->DisplayAddress();
+            } else if (method == GroupSortMethod::ByLatency) {
+              ms_b = pr_b->full_test_report;
+            }
+            }
+            
             auto get_latency_for_sort = [](int id) {
               auto i = Configs::profileManager->GetProfile(id)->latencyInt;
               if (i == 0)
@@ -2991,6 +3008,8 @@ void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
     ui->proxyListTable->blockSignals(false);
   }
   ui->proxyListTable->setUpdatesEnabled(true);
+
+  this->tableModel->refresh();
 }
 /*
 void MainWindow::refresh_table_item(
@@ -3581,9 +3600,11 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     std::atomic counter(0);
     QMutex mu;
     QMutex access;
-    int profileSize = currentGroup->GetProfileEnts().size();
     mu.lock();
-    for (const auto &profile : currentGroup->GetProfileEnts()) {
+    int nulls1 = currentGroup->DropNulls();
+    auto ents = currentGroup->GetProfileEnts();
+    int profileSize = ents.size();
+    for (const auto &profile : ents) {
       parallelCoreCallPool->start(
           [&out_del, profile, &counter, &mu, profileSize, &access] {
             if (!IsValid(profile)) {
@@ -3609,6 +3630,7 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     }
 
     runOnUiThread([=, this] {
+      int nulls = nulls1;
       if (!out_del.empty() &&
           (!Configs::windowSettings->ask_delete ||
            QMessageBox::question(
@@ -3620,6 +3642,9 @@ void MainWindow::on_menu_remove_invalid_triggered() {
           del_ids += ent->id;
         }
         Configs::profileManager->BatchDeleteProfiles(del_ids);
+        nulls = 1;
+      } 
+      if (nulls > 0){
         refresh_proxy_list();
       }
     });

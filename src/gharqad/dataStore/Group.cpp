@@ -3,6 +3,7 @@
 #endif
 
 #include <nekobox/dataStore/Group.hpp>
+#include <nekobox/dataStore/DatabaseLMDB.hpp>
 #include <QFile>
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
@@ -49,6 +50,21 @@ namespace Configs
 
     QList<int> Group::Profiles() const {
         return profiles;
+    }
+
+    int Group::DropNulls() {
+        QList<int> drop;
+        for (auto id : profiles){
+            auto ent = profileManager->GetProfile(id);
+            if (!ent){
+                drop << id;
+            }
+        }
+        for (auto id: drop){
+            profiles.removeAll(id);
+        }
+        this->Save();
+        return drop.size();
     }
 
     QList<std::shared_ptr<ProxyEntity>> Group::GetProfileEnts() const

@@ -300,9 +300,6 @@ QToolButton::menu-indicator {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="search_input"/>
-      </item>
-      <item>
        <widget class="QPushButton" name="url_test_button">
         <property name="styleSheet">
          <string notr="true">QPushButton::menu-indicator,

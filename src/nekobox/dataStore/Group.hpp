@@ -37,6 +37,9 @@ namespace Configs
 
         [[nodiscard]] QList<int> Profiles() const;
 
+
+        int DropNulls();
+
         [[nodiscard]] QList<std::shared_ptr<ProxyEntity>> GetProfileEnts() const;
 
         bool RemoveProfile(int id);

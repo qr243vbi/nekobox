@@ -305,8 +305,8 @@ private:
 
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;
-    QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
-    QShortcut *shortcut_esc = new QShortcut(QKeySequence("Esc"), this);
+ //   QShortcut *shortcut_ctrl_f = new QShortcut(QKeySequence("Ctrl+F"), this);
+ //   QShortcut *shortcut_esc = new QShortcut(QKeySequence("Esc"), this);
 
     //
     QThreadPool *parallelCoreCallPool = new QThreadPool(this);
@@ -373,7 +373,7 @@ private:
 
     void getRemoteRouteProfiles();
 
-    void setSearchState(bool enable);
+  //  void setSearchState(bool enable);
 
     QList<std::shared_ptr<Configs::ProxyEntity>> filterProfilesList(const QList<int>& profiles);
 
