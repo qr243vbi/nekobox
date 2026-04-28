@@ -12,4 +12,4 @@
 	url = https://github.com/qr243vbi/sing-tun
 [submodule "3rdparty/cpr"]
 	path = 3rdparty/cpr
-	url = https://github.com/libcpr/cpr
+	url = https://github.com/qr243vbi/cpr

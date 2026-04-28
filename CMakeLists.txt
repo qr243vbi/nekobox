@@ -70,6 +70,7 @@ option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
+option(CPR_SKIP_INSTALL "Use cpr as bundled dependency" ON)
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
@@ -318,11 +319,7 @@ if(cpr_FOUND)
     message(STATUS "Using system CPR")
 else()
     message(STATUS "System CPR not found, using bundled version")
-    ExternalProject_Add(some_project
-        SOURCE_DIR ${CMAKE_SOURCE_DIR}/3rdparty/cpr
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/deps
-        INSTALL_COMMAND ""
-    )
+    add_subdirectory("${CMAKE_SOURCE_DIR}/3rdparty/cpr")
 endif()
 
 target_link_libraries(nekobox PRIVATE cpr::cpr)
