@@ -107,6 +107,11 @@ namespace Subscription {
             goto ret_loop;
         }
 
+        // is comment or too short
+        if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
+            goto ret_loop;
+        }
+
         bool json_ok;
         bool json_contains_outbounds;
         bool json_contains_inbounds;
@@ -141,11 +146,6 @@ namespace Subscription {
             goto ret_loop;
         }
 
-        // is comment or too short
-        if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
-            goto ret_loop;
-        }
-
         parse_json:
 
         std::shared_ptr<Configs::ProxyEntity> ent;
@@ -166,9 +166,24 @@ namespace Subscription {
             }
         }
 
+        QString scheme;
+
+        int scheme_index = str.indexOf("://");
+#ifdef DEBUG_MODE
+        qDebug() << "scheme index is " << scheme_index;
+#endif
+
+        if (scheme_index > 0){
+            scheme = str.sliced(0, scheme_index).toLower();
+#ifdef DEBUG_MODE
+        qDebug() << "Scheme Is : " << scheme ;
+#endif 
+        } else {
+            goto ret_loop;
+        }
 
         // Nekoray format
-        if (str.startsWith("nekoray://")) {
+        if (scheme == "nekoray") {
             needFix = false;
             auto link = QUrl(str);
             if (!link.isValid()) goto ret_loop;
@@ -180,50 +195,50 @@ namespace Subscription {
         }
 
         // SOCKS
-        if (str.startsWith("socks5://") || str.startsWith("socks4://") ||
-            str.startsWith("socks4a://") || str.startsWith("socks://")) {
+        if (scheme == ("socks5") || scheme == ("socks4") ||
+            scheme == ("socks4a") || scheme == ("socks")) {
             ent = Configs::ProfileManager::NewProxyEntity("socks");
             auto ok = ent->unlock(ent->SocksBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // HTTP
-        if (str.startsWith("http://") || str.startsWith("https://")) {
+        if (scheme == ("http") || scheme == ("https")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
             auto ok = ent->unlock(ent->HttpBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // ShadowSocks
-        if (str.startsWith("ss://")) {
+        if (scheme == ("ss")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
             auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // VMess
-        if (str.startsWith("vmess://")) {
+        if (scheme == ("vmess")) {
             ent = Configs::ProfileManager::NewProxyEntity("vmess");
             auto ok = ent->unlock(ent->VMessBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // VLESS
-        if (str.startsWith("vless://")) {
+        if (scheme == ("vless")) {
             ent = Configs::ProfileManager::NewProxyEntity("vless");
             auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // Trojan
-        if (str.startsWith("trojan://")) {
+        if (scheme == ("trojan")) {
             ent = Configs::ProfileManager::NewProxyEntity("trojan");
             auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // Mieru
-        if (str.startsWith("mierus://") || str.startsWith("mieru://")) {
+        if (scheme == ("mierus") || str.startsWith("mieru")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
             auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
@@ -233,8 +248,8 @@ namespace Subscription {
         {
             bool quic_enabled = false;
             if (
-                (str.startsWith("naive://") || str.startsWith("naive+https://") || str.startsWith("naive+http://")) ||
-                (quic_enabled = str.startsWith("naive+quic://"))
+                (scheme == ("naive") || scheme == ("naive+https") || scheme == ("naive+http")) ||
+                (quic_enabled = scheme == ("naive+quic"))
             ) {
                 ent = Configs::ProfileManager::NewProxyEntity("naive");
                 auto bean = ent->unlock(ent->NaiveBean());
@@ -248,35 +263,35 @@ namespace Subscription {
         }
 
         // TrustTunnel
-        if (str.startsWith("tt://")) {
+        if (scheme == ("tt")) {
             ent = Configs::ProfileManager::NewProxyEntity("trusttunnel");
             auto ok = ent->unlock(ent->TrustTunnelBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // Juicity
-        if (str.startsWith("juicity://")) {
+        if (scheme == ("juicity")) {
             ent = Configs::ProfileManager::NewProxyEntity("juicity");
             auto ok = ent->unlock(ent->JuicityBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // AnyTLS
-        if (str.startsWith("anytls://")) {
+        if (scheme == ("anytls")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
             auto ok = ent->unlock(ent->AnyTLSBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // ShadowTLS
-        if (str.startsWith("shadowtls://")) {
+        if (scheme == ("shadowtls")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
             auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseLink(str);
             if (!ok) goto ret_loop;
         }
 
         // Hysteria1
-        if (str.startsWith("hysteria://")) {
+        if (scheme == ("hysteria")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -284,7 +299,7 @@ namespace Subscription {
         }
 
         // Hysteria2
-        if (str.startsWith("hysteria2://") || str.startsWith("hy2://")) {
+        if (scheme == ("hysteria2") || scheme == ("hy2")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -292,7 +307,7 @@ namespace Subscription {
         }
 
         // TUIC
-        if (str.startsWith("tuic://")) {
+        if (scheme == ("tuic")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tuic");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -300,7 +315,7 @@ namespace Subscription {
         }
 
         // Wireguard
-        if (str.startsWith("wg://")) {
+        if (scheme == ("wg")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("wireguard");
             auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
@@ -308,7 +323,7 @@ namespace Subscription {
         }
 
         // SSH
-        if (str.startsWith("ssh://")) {
+        if (scheme == ("ssh")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("ssh");
             auto ok = ent->unlock(ent->SSHBean())->TryParseLink(str);
@@ -316,7 +331,7 @@ namespace Subscription {
         }
 
         // tor
-        if (str.startsWith("tor://")) {
+        if (scheme == ("tor")) {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tor");
             auto ok = ent->unlock(ent->TorBean())->TryParseLink(str);
