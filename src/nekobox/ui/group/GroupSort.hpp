@@ -13,6 +13,7 @@ namespace GroupSortMethod {
         ByAddress,
         ByName,
         ByLatency,
+        ByTotalData,
         ById,
     };
 }

@@ -1,8 +1,9 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
+#include <boost/bimap.hpp>
+#include <qkeysequence.h>
 #pragma once
 
 #include <QDialog>
@@ -31,6 +32,7 @@ public:
 
 private:
     void generateShortcutItems(const QList<QAction*>& actions);
-    QMap<QtExtKeySequenceEdit*, QString> seqEdit2ID;
+    boost::bimap<size_t, size_t> seqEdit2ID;
+    QMap<QKeySequence, QAction*> labels;
     Ui::DialogHotkey *ui;
 };

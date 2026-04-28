@@ -686,6 +686,7 @@ QToolButton::menu-indicator {
      <addaction name="menu_stop"/>
      <addaction name="menu_edit"/>
      <addaction name="menu_select_all"/>
+     <addaction name="menu_unselect_all"/>
      <addaction name="separator"/>
      <addaction name="menu_share_item"/>
      <addaction name="menu_clone"/>
@@ -700,6 +701,7 @@ QToolButton::menu-indicator {
     <addaction name="actionAdd_new_Group"/>
     <addaction name="menu_add_from_input"/>
     <addaction name="actionAdd_profile_from_File"/>
+    <addaction name="menu_toggle_filter"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
     <addaction name="menu_server"/>
@@ -1237,6 +1239,19 @@ QToolButton::menu-indicator {
   <action name="menu_about">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="menu_toggle_filter">
+   <property name="text">
+    <string>Toggle filter</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+S</string>
+   </property>
+  </action>
+  <action name="menu_unselect_all">
+   <property name="text">
+    <string>Unselect</string>
    </property>
   </action>
  </widget>

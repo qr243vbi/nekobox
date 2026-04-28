@@ -22,7 +22,7 @@ void QtExtKeySequenceEdit::keyPressEvent(QKeyEvent *pEvent) {
         return;
     }
     auto key = keySeq[0].key();
-    if (key == Qt::Key_Backspace || key == Qt::Key_Delete) {
+    if (key == Qt::Key_Backspace) {
         key = static_cast<Qt::Key>(0);
         setKeySequence(key);
     }

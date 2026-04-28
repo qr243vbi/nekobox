@@ -213,7 +213,6 @@ namespace Configs {
         // Remember
         QStringList remember_spmode = {};
         int remember_id = -1919;
-        bool remember_enable = false;
         bool windows_set_admin = false;
 
         // Socks & HTTP Inbound

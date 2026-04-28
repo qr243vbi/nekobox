@@ -8,17 +8,39 @@
 
 #include <QObject>
 #include <QTableView>
+#include <QStyledItemDelegate>
 #include <QItemSelection>
 #include <QPersistentModelIndex>
 #include <QSet>
+#include <QHeaderView>
+#include <QLineEdit>
+#include <QVector>
 
-class MyTableModel;
+#include <QSortFilterProxyModel>
+#include <QHash>
 
-class SelectionKeeper : public QObject {
+class ColumnFilterProxy : public QSortFilterProxyModel
+{
     Q_OBJECT
 
 public:
-    explicit SelectionKeeper(QTableView* view, MyTableModel * model);
+    void setColumnFilter(int column, const QString& text);
+    void setEnabled(bool enable);
+
+protected:
+    bool filterAcceptsRow(int row, const QModelIndex &parent) const override;
+
+private:
+    QHash<int, QString> m_filters;
+    bool enabled = false;
+};
+
+class SelectionKeeper : public QObject
+{
+    Q_OBJECT
+
+public:
+    SelectionKeeper(QTableView* view, QAbstractItemModel* model);
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected,
@@ -30,21 +52,49 @@ private slots:
     void restoreSelection();
 
 private:
-    void setup();
-    QModelIndex toSource(const QModelIndex& index) const;
-    QModelIndex fromSource(const QModelIndex& index) const;
+    int idFromIndex(const QModelIndex& idx) const;
+    QModelIndex indexFromId(int id) const;
 
 private:
     QTableView* m_view = nullptr;
-    MyTableModel * m_idRole;
+    QAbstractItemModel* m_model = nullptr;
 
-    // selection state (by ID + persistent fallback)
     QSet<int> m_selectedIds;
-    QSet<QPersistentModelIndex> m_selectedPersistent;
+    int m_currentId = -1;
+};
 
-    // current index state
-    QPersistentModelIndex m_currentPersistent;
-    int m_currentId;
+
+class FilterHeader : public QHeaderView
+{
+    Q_OBJECT
+
+public:
+    explicit FilterHeader(Qt::Orientation orientation, QWidget *parent = nullptr);
+
+    void setFilterCount(int count);
+    QString filterText(int column) const;
+    bool setFiltersVisible(bool visible); 
+    void mousePressEvent(QMouseEvent *event) override;
+    bool filtersVisible() const;
+    friend class MyTableModel;
+
+signals:
+    void filterChanged(int column, const QString &text);
+
+protected:
+    QSize sizeHint() const override;
+    void resizeEvent(QResizeEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
+    bool event(QEvent *event) override;
+
+private:
+    void updatePositions();
+    int editorHeight() const;
+    void refresh();
+private:
+    QVector<QLineEdit*> m_filters;
+    int m_spacing = 1;
+    
 };
 
 
@@ -55,6 +105,7 @@ class MyTableModel : public QAbstractTableModel
 public:
     explicit MyTableModel(QObject *parent = nullptr);
 
+    Qt::ItemFlags flags(const QModelIndex &index) const  override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -64,11 +115,16 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     void refresh();
     void capture(QTableView*view);
+    bool filterEnabled();
+    bool setFilterEnabled(bool filter);
 private:
     std::shared_ptr<Configs::Group> m_data() const;
     int count() const ;
     int old_count = -1;
+    QTableView * m_view;
+    std::shared_ptr<FilterHeader> filter;
     std::shared_ptr<SelectionKeeper> keeper;
+    std::shared_ptr<ColumnFilterProxy> proxy;
 };
 
 /*

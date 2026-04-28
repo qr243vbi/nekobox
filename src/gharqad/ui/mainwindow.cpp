@@ -1,3 +1,5 @@
+#include "nekobox/ui/group/GroupSort.hpp"
+#include <qtoolbutton.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -474,7 +476,7 @@ bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
 void MainWindow::set_misc_checkboxes() {
   // Misc menu
   ui->actionRemember_last_proxy->setChecked(
-      Configs::dataStore->remember_enable);
+      Configs::windowSettings->remember_last_profile);
   ui->actionStart_with_system->setChecked(AutoRun_IsEnabled());
   ui->actionAllow_LAN->setChecked(QStringList{"::", "0.0.0.0"}.contains(
       Configs::dataStore->inbound_address));
@@ -715,7 +717,8 @@ MainWindow::MainWindow(QWidget *parent)
       }
     }
   });
-
+  filterButton = new QToolButton(ui->tabWidget);
+  filterButton->setText("🔽");
   logAutoScrollCheckBox =
       new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
   logAutoScrollCheckBox->setChecked(Configs::windowSettings->auto_scroll_log);
@@ -724,6 +727,10 @@ MainWindow::MainWindow(QWidget *parent)
     logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() ==
                                       ui->Logs);
   };
+
+  ui->tabWidget->setCornerWidget(filterButton);
+  connect(filterButton, &QPushButton::clicked, this, &MainWindow::on_menu_toggle_filter_triggered);
+
   updateAutoScrollVisibility();
   connect(ui->stats_widget, &QTabWidget::currentChanged, this,
           [=](int) { updateAutoScrollVisibility(); });
@@ -801,7 +808,7 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Core file located at " << core_path;
 #endif
         // Remember last started
-        if (Configs::dataStore->remember_enable &&
+        if (Configs::windowSettings->remember_last_profile &&
             Configs::dataStore->remember_id >= 0) {
           core_process->start_profile_when_core_is_up =
               Configs::dataStore->remember_id;
@@ -882,7 +889,7 @@ MainWindow::MainWindow(QWidget *parent)
           dashFile.exists() && dashFile.open(QIODevice::ReadOnly)) {
         auto data = dashFile.readAll();
         if (auto dest = QFile(dashboardDir.filePath("index.html"));
-            dest.open(QIODevice::Truncate | QIODevice::WriteOnly)) {
+          dest.open(QIODevice::Truncate | QIODevice::WriteOnly)) {
           dest.write(data);
           dest.close();
         }
@@ -1000,7 +1007,6 @@ skip_updater_hide:
   };
 */
 
-  this->ui->proxyListTable->setModel(tableModel.get());
   tableModel->capture(this->ui->proxyListTable);
 
   ui->proxyListTable->setAlternatingRowColors(true);
@@ -1030,6 +1036,8 @@ skip_updater_hide:
               action.method = GroupSortMethod::ByName;
             } else if (logicalIndex == 3) {
               action.method = GroupSortMethod::ByLatency;
+            }  else if (logicalIndex == 4) {
+              action.method = GroupSortMethod::ByTotalData;
             } else {
               return;
             }
@@ -1146,7 +1154,7 @@ skip_updater_hide:
           [=, this](bool checked) {
             ui->actionRemember_last_proxy->setChecked(!checked);
             CHECK_SETTINGS_ACCESS_W
-            Configs::dataStore->remember_enable = checked;
+            Configs::windowSettings->remember_last_profile = checked;
             ui->actionRemember_last_proxy->setChecked(checked);
             Configs::dataStore->Save();
           });
@@ -2095,7 +2103,7 @@ void MainWindow::on_commitDataRequest() {
   }
   //
   auto last_id = Configs::dataStore->started_id;
-  if (Configs::dataStore->remember_enable && last_id >= 0) {
+  if (Configs::windowSettings->remember_last_profile && last_id >= 0) {
     Configs::dataStore->remember_id = last_id;
   }
   if (running)
@@ -2871,6 +2879,7 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
       break;
     }
     case GroupSortMethod::ByAddress:
+    case GroupSortMethod::ByTotalData:
     case GroupSortMethod::ByName:
     case GroupSortMethod::ByLatency:
     case GroupSortMethod::ByType: {
@@ -2892,6 +2901,14 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
               ms_a = pr_a->DisplayAddress();
             } else if (method == GroupSortMethod::ByLatency) {
               ms_a = pr_a->full_test_report;
+            } else if (method == GroupSortMethod::ByTotalData) {
+              auto tr = pr_a->traffic_data;
+              if (tr != nullptr){
+                auto value = (tr->downlink + tr->uplink);
+                ms_a = QString("%1")
+                  .arg(value, 16, 16, QChar('0'))
+                  .toUpper();
+              }
             }
             }
 
@@ -2904,6 +2921,14 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
               ms_b = pr_b->DisplayAddress();
             } else if (method == GroupSortMethod::ByLatency) {
               ms_b = pr_b->full_test_report;
+            } else if (method == GroupSortMethod::ByTotalData) {
+              auto tr = pr_b->traffic_data;
+              if (tr != nullptr){
+                auto value = (tr->downlink + tr->uplink);
+                ms_b = QString("%1")
+                  .arg(value, 16, 16, QChar('0'))
+                  .toUpper();
+              }
             }
             }
             
@@ -3530,6 +3555,21 @@ void MainWindow::on_menu_clear_test_result_triggered(bool isSelected) {
   refresh_proxy_list();
 }
 
+void MainWindow::on_menu_toggle_filter_triggered(){
+  auto &filter = this->tableModel;
+  filter->setFilterEnabled(!filter->filterEnabled());
+}
+
+void MainWindow::on_menu_unselect_all_triggered(){
+  if (ui->masterLogBrowser->hasFocus()){
+    ui->masterLogBrowser->textCursor().clearSelection();
+    return;
+  }
+  auto *sm = this->ui->proxyListTable->selectionModel();
+  sm->clearSelection();
+  sm->setCurrentIndex(QModelIndex(), QItemSelectionModel::NoUpdate);
+}
+
 void MainWindow::on_menu_select_all_triggered() {
   if (ui->masterLogBrowser->hasFocus()) {
     ui->masterLogBrowser->selectAll();
@@ -4141,6 +4181,7 @@ void MainWindow::setActionsData() {
   ui->menu_delete->setData(QString("m33"));
   ui->menu_select_all->setData(QString("m34"));
   ui->actionSpeedtest_Current->setData(QString("m40"));
+  ui->menu_toggle_filter->setData(QString("m41"));
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {

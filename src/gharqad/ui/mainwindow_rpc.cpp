@@ -732,7 +732,7 @@ bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
 
     if (save) {
         Configs::dataStore->remember_spmode.removeAll("system_proxy");
-        if (enable && Configs::dataStore->remember_enable) {
+        if (enable && Configs::windowSettings->remember_last_profile) {
             Configs::dataStore->remember_spmode.append("system_proxy");
         }
         Configs::dataStore->Save();

@@ -469,7 +469,6 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("custom_route", custom_route_global, string);
         ADD_MAP("network_use_proxy", network_use_proxy, boolean);
         ADD_MAP("remember_id", remember_id, integer);
-        ADD_MAP("remember_enable", remember_enable, boolean);
    //     _add(new configItem("language", &language, itemType::integer));
    //     _add(new configItem("font", &font, itemType::string));
    //     _add(new configItem("font_size", &font_size, itemType::integer));

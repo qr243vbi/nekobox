@@ -671,7 +671,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="warp">
       <attribute name="title">
        <string>Warp</string>
       </attribute>

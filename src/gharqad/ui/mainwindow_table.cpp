@@ -9,25 +9,23 @@
 #include <QAbstractProxyModel>
 #include <qitemselectionmodel.h>
 #include <qnamespace.h>
+#include <QPainter>
+#include <QStyle>
+#include <QStyleOptionHeader>
+#include <QEvent>
+#include <QTableView>
+#include <QItemSelectionModel>
+#include <QAbstractItemModel>
+#include <QScrollBar>
 
-SelectionKeeper::SelectionKeeper(QTableView* view, MyTableModel* idRole)
+#define SELECTION_KEEPER_ROLE Qt::UserRole + 3
+
+SelectionKeeper::SelectionKeeper(QTableView* view, QAbstractItemModel* model)
     : QObject(view),
       m_view(view),
-      m_idRole(idRole)
-      //, m_idRole(idRole)
+      m_model(model)
 {
-    m_view->horizontalHeader()->setSortIndicatorShown(false);
-    m_view->verticalHeader()->setSortIndicatorShown(false);
-    setup();
-}
-
-void SelectionKeeper::setup()
-{
-    if (!m_view || !m_view->model() || !m_view->selectionModel())
-        return;
-
     auto sm = m_view->selectionModel();
-    auto model = m_view->model();
 
     connect(sm, &QItemSelectionModel::selectionChanged,
             this, &SelectionKeeper::onSelectionChanged);
@@ -38,136 +36,360 @@ void SelectionKeeper::setup()
     connect(model, &QAbstractItemModel::modelReset,
             this, &SelectionKeeper::restoreSelection);
 
-    connect(model, &QAbstractItemModel::rowsInserted,
-            this, &SelectionKeeper::restoreSelection);
-
-    connect(model, &QAbstractItemModel::rowsRemoved,
-            this, &SelectionKeeper::restoreSelection);
-
     connect(model, &QAbstractItemModel::layoutChanged,
             this, &SelectionKeeper::restoreSelection);
 }
 
-QModelIndex SelectionKeeper::toSource(const QModelIndex& index) const
+int SelectionKeeper::idFromIndex(const QModelIndex& idx) const
 {
-    QModelIndex idx = index;
-    const QAbstractItemModel* model = m_view->model();
+    QModelIndex src = idx;
 
-    while (auto proxy = qobject_cast<const QAbstractProxyModel*>(model)) {
-        idx = proxy->mapToSource(idx);
-        model = proxy->sourceModel();
-    }
+    if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
+        src = proxy->mapToSource(idx);
 
-    return idx;
+    return src.data(SELECTION_KEEPER_ROLE).toInt();
 }
 
-QModelIndex SelectionKeeper::fromSource(const QModelIndex& sourceIndex) const
+QModelIndex SelectionKeeper::indexFromId(int id) const
 {
-    QModelIndex idx = sourceIndex;
-    const QAbstractItemModel* model = m_view->model();
+    if (!m_model) return {};
 
-    QList<const QAbstractProxyModel*> proxies;
+    for (int r = 0; r < m_model->rowCount(); ++r)
+    {
+        QModelIndex src = m_model->index(r, 0);
 
-    while (auto proxy = qobject_cast<const QAbstractProxyModel*>(model)) {
-        proxies.prepend(proxy);
-        model = proxy->sourceModel();
+        if (src.data(SELECTION_KEEPER_ROLE).toInt() == id)
+        {
+            if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
+                return proxy->mapFromSource(src);
+
+            return src;
+        }
     }
 
-    for (auto proxy : proxies)
-        idx = proxy->mapFromSource(idx);
-
-    return idx;
+    return {};
 }
 
 void SelectionKeeper::onSelectionChanged(const QItemSelection& selected,
                                          const QItemSelection& deselected)
 {
-    for (const QModelIndex& idx : deselected.indexes()) {
-        if (idx.column() != 0) continue;
+    auto process = [&](const QItemSelection& sel, bool add)
+    {
+        for (const auto& range : sel)
+        {
+            for (int r = range.top(); r <= range.bottom(); ++r)
+            {
+                QModelIndex idx = m_view->model()->index(r, 0);
+                int id = idFromIndex(idx);
 
-        QModelIndex src = toSource(idx);
-        int id = m_idRole->data_id(src.row());
+                if (add) m_selectedIds.insert(id);
+                else     m_selectedIds.remove(id);
+            }
+        }
+    };
 
-        m_selectedIds.remove(id);
-        m_selectedPersistent.remove(QPersistentModelIndex(src));
-    }
-
-    for (const QModelIndex& idx : selected.indexes()) {
-        if (idx.column() != 0) continue;
-
-        QModelIndex src = toSource(idx);
-        int id = m_idRole->data_id(src.row());
-
-        m_selectedIds.insert(id);
-        m_selectedPersistent.insert(QPersistentModelIndex(src));
-    }
+    process(deselected, false);
+    process(selected, true);
 }
 
 void SelectionKeeper::onCurrentChanged(const QModelIndex& current,
-                                       const QModelIndex& previous)
+                                       const QModelIndex&)
 {
-    Q_UNUSED(previous);
+    if (!current.isValid()) return;
 
-    QModelIndex src = toSource(current);
-
-    m_currentPersistent = QPersistentModelIndex(src);
-    m_currentId = m_idRole->data_id(src.row());
+    m_currentId = idFromIndex(current);
 }
 
 void SelectionKeeper::restoreSelection()
 {
     auto sm = m_view->selectionModel();
-    auto model = m_view->model();
-
-    if (!model || model->rowCount() == 0)
-        return;
-
-    sm->blockSignals(true);
-    sm->clearSelection();
+    if (!sm || !m_model) return;
 
     QItemSelection selection;
+    QModelIndex current;
 
-    // 1. Restore selection by persistent indexes
-    for (const QPersistentModelIndex& pidx : m_selectedPersistent) {
-        if (!pidx.isValid()) continue;
+    // Save scroll state
+    QScrollBar* vbar = m_view->verticalScrollBar();
+    QScrollBar* hbar = m_view->horizontalScrollBar();
 
-        QModelIndex viewIdx = fromSource(pidx);
-        if (viewIdx.isValid()) {
-            selection.select(viewIdx, viewIdx);
+    int v = vbar ? vbar->value() : 0;
+    int h = hbar ? hbar->value() : 0;
+
+    for (int id : m_selectedIds)
+    {
+        QModelIndex idx = indexFromId(id);
+        if (idx.isValid())
+            selection.select(idx, idx);
+    }
+
+    if (m_currentId != -1)
+        current = indexFromId(m_currentId);
+
+    sm->select(selection,
+               QItemSelectionModel::SelectionFlag::Select |
+               QItemSelectionModel::Rows);
+
+    if (current.isValid())
+        sm->setCurrentIndex(current,
+                            QItemSelectionModel::NoUpdate);
+
+
+    // Restore scroll state
+    if (vbar) vbar->setValue(v);
+    if (hbar) hbar->setValue(h);
+}
+
+FilterHeader::FilterHeader(Qt::Orientation orientation, QWidget *parent)
+    : QHeaderView(orientation, parent)
+{
+    setSectionsMovable(true);
+    connect(this, &QHeaderView::sectionResized,
+            this, [this](int, int, int){ updatePositions(); });
+
+    connect(this, &QHeaderView::sectionMoved,
+            this, [this](int, int, int){ updatePositions(); });
+}
+
+void ColumnFilterProxy::setEnabled(bool enable){
+    this->enabled = enable;
+    if (!enable){
+        this->m_filters.clear();
+    }
+}
+
+void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
+{
+    if (text.isEmpty())
+        m_filters.remove(column);
+    else
+        m_filters[column] = text;
+}
+
+bool ColumnFilterProxy::filterAcceptsRow(int row, const QModelIndex &parent) const
+{
+    if (!enabled || !sourceModel()){
+        return true;
+    }
+
+    for (auto it = m_filters.begin(); it != m_filters.end(); ++it)
+    {
+        int col = it.key();
+        const QString &pattern = it.value();
+        
+        QModelIndex idx = sourceModel()->index(row, col, parent);
+        QString data = sourceModel()->data(idx).toString();
+
+        if (!data.contains(pattern, Qt::CaseInsensitive))
+            return false;
+    }
+
+    return true;
+}
+
+void FilterHeader::setFilterCount(int count)
+{
+    qDeleteAll(m_filters);
+    m_filters.clear();
+
+    for (int i = 0; i < count; ++i) {
+        QLineEdit *edit = new QLineEdit(this);
+        edit->setPlaceholderText(tr("Filter"));
+        edit->setClearButtonEnabled(true);
+
+        connect(edit, &QLineEdit::textChanged, this,
+                [this, i](const QString &text) {
+                    emit filterChanged(i, text);
+                });
+
+        m_filters.append(edit);
+    }
+
+    updateGeometry();   // triggers sizeHint recalculation
+    updatePositions();
+}
+
+QString FilterHeader::filterText(int column) const
+{
+    if (column < 0 || column >= m_filters.size()){
+        return QString();
+    }
+    return m_filters[column]->text();
+}
+
+int FilterHeader::editorHeight() const
+{
+    if (m_spacing == 0){
+        return 0;
+    }
+    if (m_filters.isEmpty()){
+        return 0;
+    }
+    return m_filters.first()->sizeHint().height();
+}
+
+bool FilterHeader::setFiltersVisible(bool visible){
+    if (visible){
+        this->m_spacing = 1;
+    } else {
+        this->m_spacing = 0;
+    }
+    for (auto filter: this->m_filters){
+        filter->setVisible(visible);
+        if (!visible){
+            filter->clear();
         }
     }
+    return visible;
+}
 
-    // 2. Fallback to IDs if needed
-    if (selection.isEmpty() && !m_selectedIds.isEmpty()) {
-        for (int row = 0; row < model->rowCount(); ++row) {
-            QModelIndex viewIdx = model->index(row, 0);
-            QModelIndex srcIdx = toSource(viewIdx);
+QSize FilterHeader::sizeHint() const
+{
+    QSize base = QHeaderView::sizeHint();
 
-            if (m_selectedIds.contains(m_idRole->data_id(srcIdx.row()))) {
-                selection.select(viewIdx, viewIdx);
-            }
+    int h = base.height();
+    int eheight = editorHeight();
+    if (h > 0){
+        h += m_spacing;
+        h += eheight;
+    }
+    base.setHeight(h);
+    return base;
+}
+
+void FilterHeader::resizeEvent(QResizeEvent *event)
+{
+    QHeaderView::resizeEvent(event);
+    updatePositions();
+}
+
+bool FilterHeader::event(QEvent *event)
+{
+    if (event->type() == QEvent::FontChange ||
+        event->type() == QEvent::StyleChange) {
+        updateGeometry();
+        updatePositions();
+    }
+    return QHeaderView::event(event);
+}
+
+bool FilterHeader::filtersVisible() const
+{
+    return this->m_spacing != 0;
+}
+
+void FilterHeader::mousePressEvent(QMouseEvent *event)
+{
+    int x = event->pos().x();
+
+    int h = editorHeight();
+    int filterTop = height() - h - m_spacing;
+
+    if (event->pos().y() >= filterTop) {
+        QHeaderView::mousePressEvent(event);
+        return;
+    }
+
+    int logicalIndex = logicalIndexAt(x);
+
+    if (logicalIndex >= 0) {
+        emit sectionClicked(logicalIndex);
+        #ifdef DEBUG_MODE
+        qDebug() << "Header clicked:" << logicalIndex;
+        #endif
+    }
+
+    QHeaderView::mousePressEvent(event);
+}
+
+void FilterHeader::updatePositions()
+{
+    int h = editorHeight();
+
+    if (m_filters.isEmpty() || h == 0){
+        return;
+    }
+
+    int y = height();
+    y -= h;
+    y -= m_spacing;
+
+    for (int i = 0; i < m_filters.size(); ++i) {
+        int x = sectionViewportPosition(i);
+        int w = sectionSize(i);
+        m_filters[i]->setGeometry(x, y, w, h);
+    }
+}
+
+void FilterHeader::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+
+    QPainter painter(viewport());
+
+    int h = editorHeight();
+    int textHeight = height();
+    if (h > 0){
+        textHeight -= h;
+        textHeight -= m_spacing;
+    }
+
+    for (int i = 0; i < count(); ++i) {
+        if (isSectionHidden(i)){
+            continue;
         }
-    }
+        QRect rect(
+            sectionViewportPosition(i),
+            0,
+            sectionSize(i),
+            height()
+        );
 
-    if (!selection.isEmpty()) {
-        sm->select(selection,
-                   QItemSelectionModel::Select | QItemSelectionModel::Rows);
-    }
+        // Split into two areas
+        QRect textRect = rect;
+        textRect.setHeight(textHeight);
 
-    // 3. Restore current index AFTER selection
-    if (m_currentPersistent.isValid()) {
-        sm->setCurrentIndex(fromSource(m_currentPersistent),
-                            QItemSelectionModel::NoUpdate);
-    } else if (!selection.isEmpty()) {
-        sm->setCurrentIndex(selection.indexes().first(),
-                            QItemSelectionModel::NoUpdate);
-    }
+        // Draw header section (ONLY text area)
+        QStyleOptionHeader option;
+        initStyleOption(&option);
 
-    sm->blockSignals(false);
+        option.rect = textRect;
+        option.section = i;
+        option.text = model()->headerData(i, orientation(), Qt::DisplayRole).toString();
+        option.textAlignment = Qt::AlignCenter;
+
+        style()->drawControl(QStyle::CE_Header, &option, &painter, this);
+/*
+        if (h > 0){
+        // Optional separator line
+            painter.setPen(Qt::gray);
+            painter.drawLine(rect.left(), textHeight, rect.right(), textHeight);
+        }
+*/          
+    }
 }
 
 void MyTableModel::capture(QTableView * view){
+    this->m_view = view;
+    
+    this->proxy = std::make_shared<ColumnFilterProxy>();
+    proxy->setSourceModel(this);
+    view->setModel(proxy.get());
+
+    this->filter = std::make_shared<FilterHeader>(Qt::Horizontal, view);
+    FilterHeader *header = this->filter.get();
+    view->setHorizontalHeader(header);
+    
+    header->setFilterCount(3);
+    header->setFiltersVisible(false);
+    view->horizontalHeader()->setSortIndicatorShown(false);
+    view->verticalHeader()->setSortIndicatorShown(false);
     this->keeper = std::make_shared<SelectionKeeper>(view, this);
+
+    QObject::connect(header, &FilterHeader::filterChanged,
+        proxy.get(), [this](int id, const QString &text)->void{
+            this->proxy->setColumnFilter(id, text);
+            this->refresh();
+        });
 }
 
 MyTableModel::MyTableModel(QObject *parent): QAbstractTableModel(parent){
@@ -184,17 +406,18 @@ static std::shared_ptr<Configs::ProxyEntity> getProxyRow(int row){
 int MyTableModel::data_id(const QModelIndex &index) const
 {
     #ifdef DEBUG_MODE
-    qDebug() << "Valid Index? " << index.isValid();
+   // qDebug() << "Valid Index? " << index.isValid();
     #endif
 
-    if (!index.isValid())
+    if (!index.isValid()){
         return -1;
+    }
 
     int column = index.column();
     int row = index.row();
 
     #ifdef DEBUG_MODE
-    qDebug() << "Row Id" << row;
+  //  qDebug() << "Row Id" << row;
     #endif
 
     if (!(column < 5 && row < this->count())){
@@ -218,10 +441,10 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
 {
     int row = data_id(index);
     #ifdef DEBUG_MODE
-    qDebug() << "Row Id" << row;
+  //  qDebug() << "Row Id" << row;
     #endif
 
-    if (role == Qt::UserRole + 1){
+    if (role == SELECTION_KEEPER_ROLE){
         return row;
     }
 
@@ -242,16 +465,17 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
     }
 
     if (role != Qt::DisplayRole){
-        if (role == Qt::BackgroundRole && !invalid){
-            if (row == Configs::dataStore->started_id){
-                QColor green(0, 255, 0, 30);
-                return QBrush(green);
-            }
-        } 
         if (role == Qt::ForegroundRole && !invalid){
             switch (index.column()){
                 case 3: {
                     return QBrush(DisplayLatencyColor(person.get()));
+                }
+                case 2:
+                case 1:
+                case 0:
+                if (row == Configs::dataStore->started_id){
+                    QColor green(0x32, 0xCD, 0x32);
+                    return QBrush(green);
                 }
                 default:
                 break;
@@ -298,6 +522,15 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
+Qt::ItemFlags MyTableModel::flags(const QModelIndex &index) const {
+    if (!index.isValid()) return Qt::NoItemFlags;
+    /*
+    if (index.row() == 0) {
+        return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable;
+    }*/
+    return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+}
+
 int MyTableModel::rowCount(const QModelIndex &parent) const {
     return this->count();
 };
@@ -306,11 +539,30 @@ int MyTableModel::count() const {
     return this->m_data()->profiles.count();
 }
 
+bool MyTableModel::filterEnabled(){
+    return this->filter->filtersVisible();
+};
+
+bool MyTableModel::setFilterEnabled(bool filter){
+    auto ret = this->filter->setFiltersVisible(filter);
+    this->proxy->setEnabled(filter);
+    this->refresh();
+    return ret;
+};
+
 void MyTableModel::refresh(){
     if (this->count() != this->old_count){
         this->beginResetModel();
         this->endResetModel();
     }
+    filter->refresh();
+    this->m_view->doItemsLayout();
+}
+
+void FilterHeader::refresh(){
+    this->updatePositions();
+    this->updateGeometry();
+    this->setFixedHeight(this->sizeHint().height());
 }
 
 std::shared_ptr<Configs::Group> MyTableModel::m_data() const {
@@ -326,7 +578,7 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
         if (data_id(section) == Configs::dataStore->started_id){
             return "*";
         } 
-        return section + 1;
+        return QString::number(section + 1) + "  ";
     }
 
     if (orientation == Qt::Horizontal) {

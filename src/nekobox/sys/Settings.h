@@ -136,6 +136,7 @@ public:
   bool manually_column_width = false;
   bool ask_delete = true;
   QStringList column_width;
+  bool remember_last_profile = true;
   QString language = "";
   bool first_start = true;
   QString program_name = "Iblis";

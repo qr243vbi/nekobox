@@ -157,6 +157,9 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
 
+    ui->warp->hide();
+    ui->routes_tab->removeTab(4);
+
 
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
     for (const auto& item : ruleSetMap.keys()) {

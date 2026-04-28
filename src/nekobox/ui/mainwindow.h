@@ -57,7 +57,7 @@ class JsUpdaterWindow;
 #include <QThreadPool>
 //#include <nekobox/js/message_queue.h>
 
-#include "group/GroupSort.hpp"
+#include <nekobox/ui/group/GroupSort.hpp>
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -81,7 +81,7 @@ class JsUpdaterWindow;
 #include <QLineEdit>
 #include <QInputDialog>
 
-#include "mainwindow_table.h"
+#include <nekobox/ui/mainwindow_table.h>
 
 class MainWindow;
 
@@ -278,6 +278,10 @@ private slots:
 
     void on_menu_select_all_triggered();
 
+    void on_menu_unselect_all_triggered();
+
+    void on_menu_toggle_filter_triggered();
+
     void on_menu_remove_unavailable_triggered();
 
     void on_menu_remove_invalid_triggered();
@@ -320,6 +324,7 @@ private:
     qint64 vpn_pid = 0;
     //
     QCheckBox *logAutoScrollCheckBox = nullptr;
+    QToolButton * filterButton = nullptr;
     QTextDocument *qvLogDocument = new QTextDocument(this);
     //
     QString title_error;
