@@ -52,7 +52,7 @@ RUN apt-get install -y file
 RUN apt-get install -y mesa-utils libegl1-mesa-dev libgl1-mesa-dev libglu1-mesa-dev
 RUN apt-get install -y --no-install-recommends qmake6 chrpath
 RUN apt-get install -y --no-install-recommends liblmdb-dev 
-RUN apt-get install -y libunistring-dev libssl-dev libzstd-dev
+RUN apt-get install -y libunistring-dev libzstd-dev libcurl4-openssl-dev
 
 WORKDIR "/app"
 CMD ["bash", "-x", "/app/script/build_docker.sh"]
