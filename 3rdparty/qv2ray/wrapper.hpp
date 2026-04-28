@@ -22,9 +22,17 @@ namespace Qv2ray {
 } // namespace Qv2ray
 
 // QString >> QJson
-inline QJsonObject QString2QJsonObject(const QString &jsonString) {
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
+inline QJsonObject QString2QJsonObject(const QString &jsonString, bool *ok = nullptr) {
+    QJsonParseError error{};
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8(), &error);
     QJsonObject jsonObject = jsonDocument.object();
+    if (ok != nullptr){
+        if (error.error != error.NoError) {
+            *ok = false;
+        } else {
+            *ok = true;
+        }
+    }
     return jsonObject;
 }
 

@@ -70,88 +70,113 @@ namespace Subscription {
         return res;
     }
 
-    void RawUpdater::update(QString str, bool needParse) {
+    void RawUpdater::update(const QString &str3) {
         // Base64 encoded subscription
-        int i = 32;
-        loop:
-        if (i > 0){
-            if (auto str2 = DecodeB64IfValid(str); !str2.isEmpty()) {
-                str = str2;
-                i --;
-                goto loop;
-            } 
+        QList<QString> stack = {str3};
+        QString str;
+
+        ret_loop:
+        if (stack.size() != 0){
+            str = stack.takeFirst();
+        } else {
+            return;
+        }
+
+        {
+            int i = 32;
+            loop:
+            if (i > 0){
+                if (auto str2 = DecodeB64IfValid(str); !str2.isEmpty()) {
+                    str = str2;
+                    i --;
+                    goto loop;
+                } 
+            }
         }
 
         // Clash
         if (str.contains("proxies:")) {
             updateClash(str);
-            return;
-        }
-
-        // SingBox
-        if (str.contains("outbounds") || str.contains("endpoints"))
-        {
-            updateSingBox(str);
-            return;
+            goto ret_loop;
         }
 
         // Wireguard Config
         if (str.contains("[Interface]") && str.contains("[Peer]"))
         {
             updateWireguardFileConfig(str);
-            return;
+            goto ret_loop;
         }
 
-        // SIP008
-        if (str.contains("version") && str.contains("servers"))
-        {
-            updateSIP008(str);
-            return;
+        bool json_ok;
+        bool json_contains_outbounds;
+        bool json_contains_inbounds;
+        bool json_contains_endpoints;
+        auto json = QString2QJsonObject(str, &json_ok);
+        if (json_ok){
+            json_contains_endpoints = json.contains("endpoints");
+            json_contains_outbounds = json.contains("outbounds");
+            json_contains_inbounds = json.contains("inbounds");
+            // SingBox
+            if ((json_contains_outbounds || json_contains_endpoints) && (!json_contains_inbounds))
+            {
+                updateSingBox(json);
+                goto ret_loop;
+            }
+
+            // SIP008
+            if (json.contains("version") && json.contains("servers"))
+            {
+                updateSIP008(json);
+                goto ret_loop;
+            }
+            goto parse_json;
         }
 
         // Multi line
-        if (str.count("\n") > 0 && needParse) {
+        if (str.count("\n") > 0) {
             auto list = Disect(str);
             for (const auto &str2: list) {
-                update(str2.trimmed(), false);
+                stack << str2.trimmed();
             }
-            return;
+            goto ret_loop;
         }
 
         // is comment or too short
         if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
-            return;
+            goto ret_loop;
         }
+
+        parse_json:
 
         std::shared_ptr<Configs::ProxyEntity> ent;
         bool needFix = true;
+
+        // Json
+        if (json_ok){
+            ent = Configs::ProfileManager::NewProxyEntity("custom");
+            auto bean = ent->unlock(ent->CustomBean());
+            if ((json_contains_outbounds || json_contains_endpoints) && (json_contains_inbounds || json_contains_endpoints)) {
+                bean->core = "internal-full";
+                bean->config_simple = str;
+            } else if (json.contains("type")) {
+                bean->core = "internal";
+                bean->config_simple = str;
+            } else {
+                goto ret_loop;
+            }
+        }
+
 
         // Nekoray format
         if (str.startsWith("nekoray://")) {
             needFix = false;
             auto link = QUrl(str);
-            if (!link.isValid()) return;
+            if (!link.isValid()) goto ret_loop;
             ent = Configs::ProfileManager::NewProxyEntity(link.host());
-            if (!ent->isValid()) return;
+            if (!ent->isValid()) goto ret_loop;
             auto j = DecodeB64IfValid(link.fragment().toUtf8(), QByteArray::Base64UrlEncoding);
-            if (j.isEmpty()) return;
+            if (j.isEmpty()) goto ret_loop;
             ent->unlock(ent->bean())->FromJsonBytes(j);
-        }
-
-        // Json
-        if (str.startsWith('{')) {
-            ent = Configs::ProfileManager::NewProxyEntity("custom");
-            auto bean = ent->unlock(ent->CustomBean());
-            auto obj = QString2QJsonObject(str);
-            if (obj.contains("outbounds")) {
-                bean->core = "internal-full";
-                bean->config_simple = str;
-            } else if (obj.contains("server")) {
-                bean->core = "internal";
-                bean->config_simple = str;
-            } else {
-                return;
-            }
         }
 
         // SOCKS
@@ -159,49 +184,49 @@ namespace Subscription {
             str.startsWith("socks4a://") || str.startsWith("socks://")) {
             ent = Configs::ProfileManager::NewProxyEntity("socks");
             auto ok = ent->unlock(ent->SocksBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // HTTP
         if (str.startsWith("http://") || str.startsWith("https://")) {
             ent = Configs::ProfileManager::NewProxyEntity("http");
             auto ok = ent->unlock(ent->HttpBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // ShadowSocks
         if (str.startsWith("ss://")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
             auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // VMess
         if (str.startsWith("vmess://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vmess");
             auto ok = ent->unlock(ent->VMessBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // VLESS
         if (str.startsWith("vless://")) {
             ent = Configs::ProfileManager::NewProxyEntity("vless");
             auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Trojan
         if (str.startsWith("trojan://")) {
             ent = Configs::ProfileManager::NewProxyEntity("trojan");
             auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Mieru
         if (str.startsWith("mierus://") || str.startsWith("mieru://")) {
             ent = Configs::ProfileManager::NewProxyEntity("mieru");
             auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Naive
@@ -218,7 +243,7 @@ namespace Subscription {
                     *bean->quic_congestion_control = 1;
                 }
                 auto ok = bean->TryParseLink(str);
-                if (!ok) return;
+                if (!ok) goto ret_loop;
             }
         }
 
@@ -226,28 +251,28 @@ namespace Subscription {
         if (str.startsWith("tt://")) {
             ent = Configs::ProfileManager::NewProxyEntity("trusttunnel");
             auto ok = ent->unlock(ent->TrustTunnelBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Juicity
         if (str.startsWith("juicity://")) {
             ent = Configs::ProfileManager::NewProxyEntity("juicity");
             auto ok = ent->unlock(ent->JuicityBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // AnyTLS
         if (str.startsWith("anytls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("anytls");
             auto ok = ent->unlock(ent->AnyTLSBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // ShadowTLS
         if (str.startsWith("shadowtls://")) {
             ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
             auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Hysteria1
@@ -255,7 +280,7 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Hysteria2
@@ -263,7 +288,7 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // TUIC
@@ -271,7 +296,7 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tuic");
             auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // Wireguard
@@ -279,7 +304,7 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("wireguard");
             auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // SSH
@@ -287,7 +312,7 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("ssh");
             auto ok = ent->unlock(ent->SSHBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
         // tor
@@ -295,22 +320,22 @@ namespace Subscription {
             needFix = false;
             ent = Configs::ProfileManager::NewProxyEntity("tor");
             auto ok = ent->unlock(ent->TorBean())->TryParseLink(str);
-            if (!ok) return;
+            if (!ok) goto ret_loop;
         }
 
-        if (ent == nullptr) return;
+        if (ent == nullptr) goto ret_loop;
 
         // Fix
         if (needFix) RawUpdater_FixEnt(ent);
 
         // End
         updated_order += ent;
+
+        goto ret_loop;
     }
 
-    void RawUpdater::updateSIP008(const QString& str)
+    void RawUpdater::updateSIP008(const QJsonObject& json)
     {
-        auto json = QString2QJsonObject(str);
-
         for (auto o : json["servers"].toArray())
         {
             auto out = o.toObject();
@@ -322,14 +347,14 @@ namespace Subscription {
 
             auto ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
             auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseFromSIP008(out);
-            if (!ok) continue;
-            updated_order += ent;
+            if (ok){
+                updated_order += ent;
+            }
         }
     }
 
-    void RawUpdater::updateSingBox(const QString& str)
+    void RawUpdater::updateSingBox(const QJsonObject& json)
     {
-        auto json = QString2QJsonObject(str);
         auto outbounds = json["outbounds"].toArray();
         auto endpoints = json["endpoints"].toArray();
         QJsonArray items;

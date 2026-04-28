@@ -13,13 +13,13 @@
 namespace Subscription {
     class RawUpdater {
     public:
-        void updateSIP008(const QString& str);
+        void updateSIP008(const QJsonObject& str);
         
         void updateClash(const QString &str);
 
-        void update(QString str, bool needParse = true);
+        void update(const QString &str);
 
-        void updateSingBox(const QString &str);
+        void updateSingBox(const QJsonObject &str);
 
         void updateWireguardFileConfig(const QString &str);
 
