@@ -36,7 +36,7 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 set(NYXARIA "src/nekobox")
 set(GHARQAD "src/gharqad")
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools Concurrent)
+find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -67,6 +67,7 @@ option(SKIP_LMDB "Do not use lmdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
+option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
 
 include("cmake/print.cmake")
 include("cmake/nkr.cmake")
@@ -307,6 +308,19 @@ endif()
 target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
 
+
+# Try system-installed CPR first
+find_package(cpr CONFIG QUIET)
+
+if(cpr_FOUND)
+    message(STATUS "Using system CPR")
+else()
+    message(STATUS "System CPR not found, using bundled version")
+    add_subdirectory(3rdparty/cpr)
+endif()
+
+target_link_libraries(nekobox PRIVATE cpr::cpr)
+
 #if (MSVC)
 #    include(FindBoost)
 #    set(Boost_USE_STATIC_LIBS ON)
@@ -330,7 +344,7 @@ endif()
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Network Qt6::Concurrent
+        Qt6::Widgets Qt6::Concurrent
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

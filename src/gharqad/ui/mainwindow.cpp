@@ -112,15 +112,17 @@ extern QVariantMap ruleSetMap;
 #include <QVBoxLayout>
 
 
-#define REMOVE_DUPLICATE_IDS(grp) \
+#define REMOVE_DUPLICATE_IDS(grp)                         \
+if (grp != nullptr) {                                     \
   QSet<int> profiles_set;                                 \
-  for (int i : grp->profiles){                            \
+  auto &profiles = grp->profiles;                         \
+  for (int i : profiles){                                 \
     profiles_set.insert(i);                               \
   }                                                       \
-  grp->profiles.clear();                                  \
+  profiles.clear();                                       \
   for (int i : profiles_set){                             \
     grp->AddProfile(i);                                   \
-  }
+  } }
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
@@ -2876,6 +2878,11 @@ void MainWindow::refresh_proxy_list(const int &id) {
 
 void MainWindow::refresh_proxy_list_impl(const int &id,
                                          GroupSortAction groupSortAction) {
+
+  {
+    auto grp = Configs::profileManager->CurrentGroup();
+    REMOVE_DUPLICATE_IDS(grp)
+  }
   ui->proxyListTable->setUpdatesEnabled(false);
   if (id < 0) {
     auto currentGroup = Configs::profileManager->CurrentGroup();

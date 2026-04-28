@@ -343,13 +343,13 @@ jobs:
           arch: ${{ matrix.target }}
 
       - name: Install Customized Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'x86'
         uses: qr243vbi/qt6windows7@main
         with:
           version: ${{ matrix.qt_version }}_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'arm64'
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'x86'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -369,9 +369,8 @@ jobs:
         if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap lmdb
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap lmdb cpr
           triplet: ${{ matrix.triplet }}
-          repository: qr243vbi/vcpkg
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.UPLOAD_TOKEN }}
           

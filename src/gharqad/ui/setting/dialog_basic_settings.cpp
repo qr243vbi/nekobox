@@ -179,6 +179,8 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_COMBO_STRING(log_level)
     CACHE.custom_inbound = Configs::dataStore->custom_inbound;
     D_LOAD_INT(inbound_socks_port)
+    D_LOAD_INT(download_retries)
+    D_LOAD_INT(download_timeout)
     D_LOAD_BOOL(random_inbound_port);
     D_LOAD_INT(test_concurrent)
     D_LOAD_STRING(test_latency_url)
@@ -449,6 +451,8 @@ void DialogBasicSettings::accept() {
     D_SAVE_COMBO_STRING(log_level)
     Configs::dataStore->custom_inbound = CACHE.custom_inbound;
     D_SAVE_INT(inbound_socks_port)
+    D_SAVE_INT(download_retries)
+    D_SAVE_INT(download_timeout)
     if (!Configs::dataStore->random_inbound_port && ui->random_inbound_port->isChecked())
     {
         CACHE.needChoosePort = true;

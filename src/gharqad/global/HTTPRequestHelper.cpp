@@ -1,206 +1,411 @@
+#include <cpr/proxyauth.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <cpr/cpr.h>
 
-#include <QNetworkProxy>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QTimer>
+
+#include <QString>
 #include <QFile>
-#include <QApplication>
+#include <QDir>
 #include <QFileInfo>
 #include <QMap>
-#include <QDir>
-#include <QStringList>
+
+#include <string>
+
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <nekobox/dataStore/Configs.hpp>
-#include <nekobox/ui/mainwindow.h>
 #include <nekobox/global/DeviceDetailsHelper.hpp>
+#include <nekobox/ui/mainwindow.h>
 
-static inline void InitializeRequest(
-    QNetworkRequest & request, 
-    QNetworkAccessManager & accessManager,
-    const QString & url,
-    QString & error,
-    bool sendHwid
-){
-        bool net_use_proxy = Configs::dataStore->useProxyForHttpRequest();
-        bool proxy_started = Configs::dataStore->started_id >= 0;
-        net_use_proxy |= Configs::dataStore->spmode_system_proxy;
-        
-        accessManager.setTransferTimeout(10000);
-        request.setUrl(url);
-        if (net_use_proxy) {
-            QNetworkProxy p;
-            if (proxy_started) {
-                p.setType(QNetworkProxy::HttpProxy);
-                p.setHostName(Configs::dataStore->inbound_address == "::" ? "127.0.0.1" : Configs::dataStore->inbound_address);
-                p.setPort(Configs::dataStore->inbound_socks_port);
-                QString &inbound_username = Configs::dataStore->inbound_username;
-                QString &inbound_password = Configs::dataStore->inbound_password;
-                if (inbound_username != "" && inbound_password != ""){
-                    p.setUser(inbound_username);
-                    p.setPassword(inbound_password);
+static inline void BuildSession(const QString &url, bool sendHwid, cpr::Session& session)
+{
+    auto s = Configs::dataStore;
+
+    session.SetUrl(cpr::Url{url.toStdString()});
+    session.SetTimeout(cpr::Timeout{Configs::dataStore->download_timeout});
+
+    // ------------------------
+    // USER AGENT
+    // ------------------------
+    session.SetHeader({
+        {"User-Agent", s->GetUserAgent().toStdString()}
+    });
+
+    // ------------------------
+    // SSL
+    // ------------------------
+    if (s->net_insecure) {
+        session.SetVerifySsl(cpr::VerifySsl{false});
+    }
+
+    // ------------------------
+    // PROXY
+    // ------------------------
+    bool useProxy = s->useProxyForHttpRequest() || s->spmode_system_proxy;
+    bool proxyStarted = s->started_id >= 0;
+
+    if (useProxy && proxyStarted)
+    {
+        QString host = (s->inbound_address == "::")
+            ? "127.0.0.1"
+            : s->inbound_address;
+
+        std::string proxy =
+            host.toStdString() + ":" +
+            std::to_string(s->inbound_socks_port);
+
+        session.SetProxies({
+            {"http", proxy},
+            {"https", proxy},
+        });
+
+        if (!s->inbound_username.isEmpty() &&
+            !s->inbound_password.isEmpty())
+        {
+            auto user = s->inbound_username.toStdString();
+            auto pass = s->inbound_password.toStdString();
+            session.SetProxyAuth({
+                {"http", cpr::EncodedAuthentication{user, pass}},   
+                {"https", cpr::EncodedAuthentication{user, pass}}
+            });
+        }
+    }
+
+    // ------------------------
+    // HWID HEADERS
+    // ------------------------
+    if (sendHwid)
+    {
+        auto d = GetDeviceDetails();
+
+        QMap<QString, QString> custom;
+
+        if (!s->sub_custom_hwid_params.isEmpty()) {
+            QStringList pairs = s->sub_custom_hwid_params.split(',');
+            for (auto &p : pairs) {
+                auto t = p.trimmed();
+                int eq = t.indexOf('=');
+                if (eq > 0) {
+                    custom[t.left(eq).toLower()] = t.mid(eq + 1).trimmed();
                 }
-            } else {
-                p.setType(QNetworkProxy::NoProxy);
             }
-            accessManager.setProxy(p);
         }
-        // Set attribute
-        request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
-        request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, Configs::dataStore->GetUserAgent());
-        if (Configs::dataStore->net_insecure) {
-            QSslConfiguration c;
-            c.setPeerVerifyMode(QSslSocket::PeerVerifyMode::VerifyNone);
-            request.setSslConfiguration(c);
-        }
-        //Attach HWID and device info headers if enabled in settings
-        if (sendHwid) {
-            auto details = GetDeviceDetails();
-           
-            
-            // Parse custom parameters if provided
-            QMap<QString, QString> customParams;
-            if (!Configs::dataStore->sub_custom_hwid_params.isEmpty()) {
-                QStringList pairs = Configs::dataStore->sub_custom_hwid_params.split(',');
-                for (const QString &pair : pairs) {
-                    QString trimmed = pair.trimmed();
-                    int eqPos = trimmed.indexOf('=');
-                    if (eqPos > 0) {
-                        QString key = trimmed.left(eqPos).trimmed();
-                        QString value = trimmed.mid(eqPos + 1).trimmed();
-                        // Validate: key must be one of the allowed parameters, value must not contain newlines
-                        if (!key.isEmpty() && !value.isEmpty() &&
-                            !value.contains('\n') && !value.contains('\r') &&
-                            value.length() < 1000) { // Reasonable length limit
-                            QString lowerKey = key.toLower();
-                            // Only accept known parameter keys
-                            if (lowerKey == "hwid" || lowerKey == "os" ||
-                                lowerKey == "osversion" || lowerKey == "model") {
-                                customParams[lowerKey] = value;
-                            }
-                        }
-                    }
-                }
-            }
 
-            // Use custom values if provided, otherwise use default values
-            QString hwid = customParams.contains("hwid") ? customParams["hwid"] : details.hwid;
-            QString os = customParams.contains("os") ? customParams["os"] : details.os;
-            QString osVersion = customParams.contains("osversion") ? customParams["osversion"] : details.osVersion;
-            QString model = customParams.contains("model") ? customParams["model"] : details.model;
+        auto hwid   = custom.value("hwid", d.hwid);
+        auto os     = custom.value("os", d.os);
+        auto osv    = custom.value("osversion", d.osVersion);
+        auto model  = custom.value("model", d.model);
 
-            if (!hwid.isEmpty()) request.setRawHeader("x-hwid", hwid.toUtf8());
-            if (!os.isEmpty()) request.setRawHeader("x-device-os", os.toUtf8());
-            if (!osVersion.isEmpty()) request.setRawHeader("x-ver-os", osVersion.toUtf8());
-            if (!model.isEmpty()) request.setRawHeader("x-device-model", model.toUtf8());
-        }
+        cpr::Header headers;
+
+        if (!hwid.isEmpty())  headers["x-hwid"] = hwid.toStdString();
+        if (!os.isEmpty())    headers["x-device-os"] = os.toStdString();
+        if (!osv.isEmpty())   headers["x-ver-os"] = osv.toStdString();
+        if (!model.isEmpty()) headers["x-device-model"] = model.toStdString();
+
+        session.UpdateHeader(headers);
+    }
 }
 
-namespace Configs_network {
+namespace Configs_network
+{
 
-    HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid) {
-        QNetworkRequest request;
-        QNetworkAccessManager accessManager;
-        QString error;
+HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid)
+{
+    cpr::Session session; 
+    BuildSession(url, sendHwid, session);
+    cpr::Response r = session.Get();
 
-        InitializeRequest(request, accessManager, url, error, sendHwid);
+    auto resp = HTTPResponse{
+        r.error ? QString::fromStdString(r.error.message) : "",
+        QByteArray(r.text.data(), r.text.size()),
+        {}
+    };
 
-        if (!error.isEmpty()){
-            return HTTPResponse{error};
-        }
-        //
-        auto _reply = accessManager.get(request);
-        connect(_reply, &QNetworkReply::sslErrors, _reply, [](const QList<QSslError> &errors) {
-            QStringList error_str;
-            for (const auto &err: errors) {
-                error_str << err.errorString();
-            }
-            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
-        });
-        // Wait for response
-        QEventLoop loop;
-        connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
-        
-        //
-        auto result = HTTPResponse{_reply->error() == QNetworkReply::NetworkError::NoError ? "" : _reply->errorString(),
-                                       _reply->readAll(), _reply->rawHeaderPairs()};
-        _reply->deleteLater();
-        return result;
+    auto & result = resp.header;
+    auto & headers = r.header;
+    result.reserve(static_cast<int>(headers.size()));
+
+    for (const auto &kv : headers)
+    {
+        QByteArray key   = QByteArray::fromStdString(kv.first);
+        QByteArray value = QByteArray::fromStdString(kv.second);
+
+        result.append(qMakePair(key, value));
     }
 
-    QString NetworkRequestHelper::GetHeader(const QList<QPair<QByteArray, QByteArray>> &header, const QString &name) {
-        for (const auto &p: header) {
-            if (QString(p.first).toLower() == name.toLower()) return p.second;
-        }
-        return "";
+    return resp;
+}
+
+QString NetworkRequestHelper::GetHeader(const QList<QPair<QByteArray, QByteArray>> &header, const QString &name) {
+    for (const auto &p: header) {
+        if (QString(p.first).toLower() == name.toLower()) return p.second;
     }
+    return "";
+}
 
-    QString NetworkRequestHelper::DownloadAsset(const QString &url, const QString &fileName) {
-        QNetworkRequest request;
-        QNetworkAccessManager accessManager;
-        QString error;
+QString NetworkRequestHelper::DownloadAsset(const QString &url, const QString &fileName)
+{
+    QString result;
+    QEventLoop loop;
 
-        InitializeRequest(request, accessManager, url, error, false);
-        if (!error.isEmpty()){
-            return error;
-        }
+    QString filePath = Configs::GetBasePath() + "/" + fileName;
 
-        auto _reply = accessManager.get(request);
-        connect(_reply, &QNetworkReply::sslErrors, _reply, [](const QList<QSslError> &errors) {
-            QStringList error_str;
-            for (const auto &err: errors) {
-                error_str << err.errorString();
-            }
-            MW_show_log(QString("SSL Errors: %1 %2").arg(error_str.join(","), Configs::dataStore->net_insecure ? "(Ignored)" : ""));
-        });
-        bool show_rule_set;
-        if (!(show_rule_set = GetMainWindow()->isShowRuleSetData())){
-        connect(_reply, &QNetworkReply::downloadProgress, _reply, [&](qint64 bytesReceived, qint64 bytesTotal)
+    QFuture future = QtConcurrent::run([=, &result, &loop]()
+    {
+        QDir().mkpath(QFileInfo(filePath).absolutePath());
+
+        auto mw = GetMainWindow();
+
+        const int maxRetries = Configs::dataStore->download_retries;
+        cpr::Response r;
+
+        for (int i = 0; i < maxRetries; ++i)
         {
-            runOnUiThread([=]{
-                GetMainWindow()->setDownloadReport(DownloadProgressReport{fileName, bytesReceived, bytesTotal}, true);
-                GetMainWindow()->UpdateDataView();
-            });
-        });
-        }
-        QEventLoop loop;
-        connect(_reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
-        if(!show_rule_set){
-        runOnUiThread([=]
-        {
-            GetMainWindow()->setDownloadReport({}, false);
-            GetMainWindow()->UpdateDataView(true);
-        });
-        }
-        _reply->deleteLater();
-        if(_reply->error() != QNetworkReply::NetworkError::NoError) {
-            return _reply->errorString();
+            // =========================
+            // NEW SESSION PER TRY (IMPORTANT FIX)
+            // =========================
+            cpr::Session session;
+            BuildSession(url, false, session);
+
+            qint64 existingSize = QFileInfo(filePath).exists()
+                ? QFileInfo(filePath).size()
+                : 0;
+
+            // =========================
+            // RESUME HEADER (RESET EACH TRY)
+            // =========================
+            if (existingSize > 0)
+            {
+                session.SetHeader({
+                    {"Range", "bytes=" + std::to_string(existingSize) + "-"}
+                });
+            }
+
+            // =========================
+            // FILE OPEN (ONCE PER TRY)
+            // =========================
+            QFile file(filePath);
+
+            if (!file.open(existingSize > 0
+                    ? QIODevice::Append
+                    : QIODevice::WriteOnly))
+            {
+                result = "Could not open file.";
+                QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+                return;
+            }
+
+
+        // ------------------------
+        // STREAM WRITE CALLBACK
+        // ------------------------
+        std::function<bool(std::string_view data, intptr_t userdata)> write_callback;
+        write_callback = [&](std::string_view data, intptr_t)->bool
+            {
+                file.write(data.data(), data.size());
+                return true;
+            };
+
+        // ------------------------
+        // PROGRESS CALLBACK
+        // ------------------------
+
+        std::function<bool(cpr::cpr_pf_arg_t downloadTotal, cpr::cpr_pf_arg_t downloadNow, cpr::cpr_pf_arg_t uploadTotal, cpr::cpr_pf_arg_t uploadNow, intptr_t userdata)> progress_callback = 
+
+
+[&](cpr::cpr_off_t total,
+                cpr::cpr_off_t now,
+                cpr::cpr_off_t uptotal,
+                cpr::cpr_off_t upnow, intptr_t )
+            {
+                if (!mw || mw->isShowRuleSetData())
+                    return true;
+
+                runOnUiThread([=]{
+                    mw->setDownloadReport(
+                        DownloadProgressReport{
+                            fileName,
+                            (qint64)now,
+                            (qint64)total
+                        },
+                        true
+                    );
+                    mw->UpdateDataView();
+                });
+
+                return true;
+            };
+
+            // =========================
+            // WRITE CALLBACK
+            // =========================
+            session.SetWriteCallback(
+                write_callback
+            );
+
+            // =========================
+            // PROGRESS CALLBACK
+            // =========================
+            session.SetProgressCallback(
+                progress_callback
+            );
+
+            // =========================
+            // EXECUTE
+            // =========================
+            r = session.Get();
+
+            file.close();
+
+            // =========================
+            // SUCCESS
+            // =========================
+            if (!r.error)
+                break;
+
+            // backoff
+            int delay = std::min(10000, (1 << i) * 1000);
+            QThread::msleep(delay);
         }
 
-        auto filePath = Configs::GetBasePath()+ "/" + fileName;
-        auto file = QFile(filePath);
-        if (file.exists()) {
-            file.remove();
-        } else {
-            QFileInfo info(file);
-            QString path = info.absolutePath();
-            QDir dir(path);
-            if (!dir.exists()){
-                dir.mkpath(path);
-            }
+        // =========================
+        // RESET UI
+        // =========================
+        runOnUiThread([=]{
+            mw->setDownloadReport({}, false);
+            mw->UpdateDataView(true);
+        });
+
+        // =========================
+        // ERROR HANDLING
+        // =========================
+        if (r.error)
+        {
+            result = QString::fromStdString(r.error.message);
+
+            qint64 size = QFileInfo(filePath).exists()
+                ? QFileInfo(filePath).size()
+                : 0;
+
+            result += "\n(fetched: " + QString::number(size) + ")";
         }
+
+        QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+    });
+
+    loop.exec();
+    future.waitForFinished();
+
+    return result;
+}
+
+/*
+QString NetworkRequestHelper::DownloadAsset(const QString &url, const QString &fileName)
+{
+    QString result;
+    QEventLoop loop;
+
+    QFuture future = QtConcurrent::run([=, &result, &loop]()
+    {
+        cpr::Session session;
+        BuildSession(url, false, session);
+
+        QString filePath = Configs::GetBasePath() + "/" + fileName;
+        QDir().mkpath(QFileInfo(filePath).absolutePath());
+
+        QFile file(filePath);
         if (!file.open(QIODevice::WriteOnly)) {
-            return QObject::tr("Could not open file.");
+            result = "Could not open file.";
+            QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+            return;
         }
-        file.write(_reply->readAll());
-        file.close();
-        return "";
-    }
 
-} // namespace Configs_network
+        auto mw = GetMainWindow();
+
+        // ------------------------
+        // STREAM WRITE CALLBACK
+        // ------------------------
+        std::function<bool(std::string_view data, intptr_t userdata)> write_callback;
+        write_callback = [&](std::string_view data, intptr_t)->bool
+            {
+                file.write(data.data(), data.size());
+                return true;
+            };
+
+        // ------------------------
+        // PROGRESS CALLBACK
+        // ------------------------
+
+std::function<bool(cpr::cpr_pf_arg_t downloadTotal, cpr::cpr_pf_arg_t downloadNow, cpr::cpr_pf_arg_t uploadTotal, cpr::cpr_pf_arg_t uploadNow, intptr_t userdata)> progress_callback = 
+
+
+[&](cpr::cpr_off_t total,
+                cpr::cpr_off_t now,
+                cpr::cpr_off_t uptotal,
+                cpr::cpr_off_t upnow, intptr_t )
+            {
+                if (!mw || mw->isShowRuleSetData())
+                    return true;
+
+                runOnUiThread([=]{
+                    mw->setDownloadReport(
+                        DownloadProgressReport{
+                            fileName,
+                            (qint64)now,
+                            (qint64)total
+                        },
+                        true
+                    );
+                    mw->UpdateDataView();
+                });
+
+                return true;
+            };
+
+        session.SetProgressCallback(
+            progress_callback
+        );
+
+        // ------------------------
+        // RETRY LOGIC (25x)
+        // ------------------------
+        cpr::Response r;
+
+        for (int i = 0; i < 25; ++i)
+        {
+            r = session.Get();
+
+            if (!r.error)
+                break;
+
+            if (
+                r.error.code != cpr::ErrorCode::OPERATION_TIMEDOUT )
+                break;
+
+            QThread::msleep(500 * (i + 1));
+        }
+
+        file.close();
+
+        // reset UI
+        runOnUiThread([=]{
+            mw->setDownloadReport({}, false);
+            mw->UpdateDataView(true);
+        });
+
+        if (r.error) {
+            result = QString::fromStdString(r.error.message);
+        }
+
+        QMetaObject::invokeMethod(&loop, "quit", Qt::QueuedConnection);
+    });
+
+    loop.exec();
+    future.waitForFinished();
+    return result;
+}
+*/
+}

@@ -431,10 +431,11 @@ int MyTableModel::data_id(int row) const {
     if (m_data == nullptr){
         return -1;
     }
-    if (m_data->profiles.count() <= row){
+    auto &profiles = m_data->profiles;
+    if (profiles.count() <= row){
         return -1;
     }
-    return m_data->profiles[row];
+    return profiles.at(row);
 }
 
 QVariant MyTableModel::data(const QModelIndex &index, int role) const
@@ -536,7 +537,12 @@ int MyTableModel::rowCount(const QModelIndex &parent) const {
 };
 
 int MyTableModel::count() const {
-    return this->m_data()->profiles.count();
+    auto grp = this->m_data();
+    if (grp == nullptr){
+        return 0;
+    } else {
+        return grp->profiles.count();
+    }
 }
 
 bool MyTableModel::filterEnabled(){

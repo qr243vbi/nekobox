@@ -1,5 +1,5 @@
 # Base Debian image
-FROM debian:oldstable
+FROM debian:stable
 
 # Update package index and install required packages
 ARG TARGETPLATFORM
@@ -51,7 +51,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN apt-get install -y file
 RUN apt-get install -y mesa-utils libegl1-mesa-dev libgl1-mesa-dev libglu1-mesa-dev
 RUN apt-get install -y --no-install-recommends qmake6 chrpath
-RUN apt-get install -y --no-install-recommends liblmdb-dev
+RUN apt-get install -y --no-install-recommends liblmdb-dev libcpr-devel
 
 WORKDIR "/app"
 CMD ["bash", "-x", "/app/script/build_docker.sh"]

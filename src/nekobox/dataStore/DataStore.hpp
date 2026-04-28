@@ -165,6 +165,8 @@ namespace Configs {
         bool mux_padding = false;
         int mux_concurrency = 8;
         bool mux_default_on = false;
+        int download_retries = 25;
+        int download_timeout = 10000;
  //       QString theme = "0";
  //       int language = 0;
  //       QString font = "";

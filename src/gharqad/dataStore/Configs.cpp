@@ -458,6 +458,8 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("mux_protocol", mux_protocol, string);
         ADD_MAP("mux_concurrency", mux_concurrency, integer);
         ADD_MAP("mux_padding", mux_padding, boolean);
+        ADD_MAP("download_retries", download_retries, integer);
+        ADD_MAP("download_timeout", download_retries, integer);
         ADD_MAP("mux_default_on", mux_default_on, boolean);
         ADD_MAP("test_concurrent", test_concurrent, integer);
     //    ADD_MAP("ruleset_json_url", ruleset_json_url, string);
