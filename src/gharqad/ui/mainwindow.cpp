@@ -2879,10 +2879,6 @@ void MainWindow::refresh_proxy_list(const int &id) {
 void MainWindow::refresh_proxy_list_impl(const int &id,
                                          GroupSortAction groupSortAction) {
 
-  {
-    auto grp = Configs::profileManager->CurrentGroup();
-    REMOVE_DUPLICATE_IDS(grp)
-  }
   ui->proxyListTable->setUpdatesEnabled(false);
   if (id < 0) {
     auto currentGroup = Configs::profileManager->CurrentGroup();
@@ -2902,6 +2898,11 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
     case GroupSortMethod::ByName:
     case GroupSortMethod::ByLatency:
     case GroupSortMethod::ByType: {
+      {
+          auto grp = Configs::profileManager->CurrentGroup();
+          REMOVE_DUPLICATE_IDS(grp)
+          grp->DropNulls();
+      }
       std::sort(
           currentGroup->profiles.begin(), currentGroup->profiles.end(),
           [=, this](int a, int b) {
