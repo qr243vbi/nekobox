@@ -396,6 +396,7 @@ jobs:
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Install Zip, Curl, Jq, UPX
+        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq upx
