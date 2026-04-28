@@ -111,6 +111,17 @@ extern QVariantMap ruleSetMap;
 #include <QPushButton>
 #include <QVBoxLayout>
 
+
+#define REMOVE_DUPLICATE_IDS(grp) \
+  QSet<int> profiles_set;                                 \
+  for (int i : grp->profiles){                            \
+    profiles_set.insert(i);                               \
+  }                                                       \
+  grp->profiles.clear();                                  \
+  for (int i : profiles_set){                             \
+    grp->AddProfile(i);                                   \
+  }
+
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
 #define STATE_CHANGED &QCheckBox::checkStateChanged
 #else
@@ -488,6 +499,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 
   post_update_job = [this](std::shared_ptr<Configs::Group> group) {
+    REMOVE_DUPLICATE_IDS(group)
     QList<std::shared_ptr<Configs::ProxyEntity>> out_all;
     QString change_text;
     if (Configs::dataStore->sub_rm_duplicates) {
@@ -3174,13 +3186,18 @@ void MainWindow::on_menu_clone_triggered() {
                                           &chooseUpdateGroup);
 }
 
+
 void MainWindow::on_menu_remove_duplicates_triggered() {
   CHECK_SETTINGS_ACCESS_W
+
+  auto grp = Configs::profileManager->CurrentGroup();   
+  REMOVE_DUPLICATE_IDS(grp)
+
   QList<std::shared_ptr<Configs::ProxyEntity>> out;
   QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
 
   Configs::ProfileFilter::Uniq(
-      Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, true,
+      grp->GetProfileEnts(), out, true,
       false);
 
 #ifdef DEBUG_MODE
@@ -3188,7 +3205,7 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
 #endif
 
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
-      Configs::profileManager->CurrentGroup()->GetProfileEnts(), out, out_del);
+      grp->GetProfileEnts(), out, out_del);
 
 #ifdef DEBUG_MODE
   qDebug() << "DUPLICATES" << out_del.count();
