@@ -17,7 +17,7 @@ namespace Subscription {
         
         void updateClash(const QString &str);
 
-        void update(const QString &str, bool needParse);
+        void update(QString str, bool needParse = true);
 
         void updateSingBox(const QString &str);
 

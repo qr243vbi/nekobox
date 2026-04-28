@@ -99,7 +99,6 @@
 #include <QStandardPaths>
 #include <QToolTip>
 #include <nekobox/global/HTTPRequestHelper.hpp>
-#include <random>
 
 #include <map>
 #include <string>

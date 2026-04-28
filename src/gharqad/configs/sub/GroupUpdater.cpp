@@ -70,11 +70,16 @@ namespace Subscription {
         return res;
     }
 
-    void RawUpdater::update(const QString &str, bool needParse = true) {
+    void RawUpdater::update(QString str, bool needParse) {
         // Base64 encoded subscription
-        if (auto str2 = DecodeB64IfValid(str); !str2.isEmpty()) {
-            update(str2);
-            return;
+        int i = 32;
+        loop:
+        if (i > 0){
+            if (auto str2 = DecodeB64IfValid(str); !str2.isEmpty()) {
+                str = str2;
+                i --;
+                goto loop;
+            } 
         }
 
         // Clash
