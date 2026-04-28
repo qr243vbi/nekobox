@@ -9,6 +9,8 @@ if(UNIX)
     include(GNUInstallDirs)
 endif()
 
+include(ExternalProject)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_SUPPRESS_REGENERATION ON)
@@ -316,7 +318,11 @@ if(cpr_FOUND)
     message(STATUS "Using system CPR")
 else()
     message(STATUS "System CPR not found, using bundled version")
-    add_subdirectory(3rdparty/cpr)
+    ExternalProject_Add(some_project
+        SOURCE_DIR ${CMAKE_SOURCE_DIR}/3rdparty/cpr
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/deps
+        INSTALL_COMMAND ""
+    )
 endif()
 
 target_link_libraries(nekobox PRIVATE cpr::cpr)

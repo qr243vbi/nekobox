@@ -145,6 +145,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [taskmaster](https://github.com/giert/taskmaster)
 - [lmdbxx](https://github.com/qr243vbi/lmdbxx)
 - [lmdb](https://www.symas.com/mdb)
+- [cpr](https://github.com/libcpr/cpr)
 
 ## FAQ
 **What is AppImage?** <br/>
