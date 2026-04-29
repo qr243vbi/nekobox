@@ -4,10 +4,56 @@
 
 #include <QString>
 #include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
+#include <nekobox/configs/proxy/includes.h>
 
 #include <nekobox/configs/proxy/WireguardBean.h>
 
 namespace Configs {
+
+
+
+    CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() const {
+        CoreObjOutboundBuildResult result;
+        using namespace To_CoreObj_box;
+        auto tun_name = "nekobox-wg";
+
+        QJsonObject peer{
+            {"address", entity->serverAddress},
+            {"port", entity->serverPort},
+            {"public_key", publicKey},
+            {"pre_shared_key", preSharedKey},
+            {"reserved", QListInt2QJsonArray(reserved)},
+            {"allowed_ips", QListStr2QJsonArray({"0.0.0.0/0", "::/0"})},
+            {"persistent_keepalive_interval", persistentKeepalive},
+        };
+        QJsonObject outbound{
+            {"type", "wireguard"},
+            {"name", tun_name},
+            {"address", QListStr2QJsonArray(localAddress)},
+            {"private_key", privateKey},
+            {"peers", QJsonArray{peer}},
+            {"mtu", MTU},
+            {"system", useSystemInterface},
+            {"workers", workerCount}
+        };
+        if (enable_amnezia)
+        {
+            outbound["junk_packet_count"] = junk_packet_count;
+            outbound["junk_packet_min_size"] = junk_packet_min_size;
+            outbound["junk_packet_max_size"] = junk_packet_max_size;
+            outbound["init_packet_junk_size"] = init_packet_junk_size;
+            outbound["response_packet_junk_size"] = response_packet_junk_size;
+            outbound["init_packet_magic_header"] = init_packet_magic_header;
+            outbound["response_packet_magic_header"] = response_packet_magic_header;
+            outbound["underload_packet_magic_header"] = underload_packet_magic_header;
+            outbound["transport_packet_magic_header"] = transport_packet_magic_header;
+        }
+
+        result.outbound = outbound;
+        return result;
+    }
+
         QString WireguardBean::FormatReserved() const {
             QString res = "";
             for (int i=0;i<reserved.size();i++) {
