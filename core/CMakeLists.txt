@@ -9,6 +9,19 @@ if(UNIX)
     include(GNUInstallDirs)
 endif()# ----------------------------
 
+set(GO_ENV)
+function(add_env_var KEY VALUE)
+    # Optional: set for current process
+    set(ENV{${KEY}} "${VALUE}")
+
+    # Work on a local copy
+    set(_env "${GO_ENV}")
+    list(APPEND _env "${KEY}=${VALUE}")
+
+    # Export back to parent
+    set(GO_ENV "${_env}" PARENT_SCOPE)
+endfunction()
+
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 
 # Platform variables
@@ -33,7 +46,7 @@ if (GOOS STREQUAL "")
 endif()
 
 
-find_program(THRIFT_COMPILER thrift REQUIRED)
+find_program(THRIFT_COMPILER thrift)
 
 if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
      set(THRIFT_COMPILER "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
@@ -74,8 +87,8 @@ else()
     set(EXE_SUFFIX "")
 endif()
 
-set(ENV{GOOS} ${GOOS})
-set(ENV{GOARCH} ${GOARCH})
+add_env_var("GOOS" ${GOOS})
+add_env_var("GOARCH" ${GOARCH})
 
 # ----------------------------
 # Options (boolean flags)
@@ -90,7 +103,46 @@ set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation
 # ----------------------------
 # Tooling
 # ----------------------------
-set(GOCMD "go" CACHE STRING "Go executable command")
+find_program(GO_COMPILER go)
+set(GOCMD "${GO_COMPILER}" CACHE STRING "Go executable command")
+execute_process(
+    COMMAND "${GOCMD}" env GOROOT
+    OUTPUT_VARIABLE GOROOT
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+	RESULT_VARIABLE GO_RESULT
+)
+
+
+if(NOT GO_RESULT EQUAL 0)
+	get_filename_component(GO_BIN "${GOCMD}" ABSOLUTE)
+
+    if(NOT EXISTS "${GO_BIN}")
+        message(FATAL_ERROR "go binary not found: ${GO_BIN}")
+    endif()
+
+    # bin directory
+    get_filename_component(GO_BIN_DIR "${GO_BIN}" DIRECTORY)
+	
+    # Resolve path (../lib/go relative to GO_BIN_DIR)
+    get_filename_component(GOROOT "${GO_BIN_DIR}/../lib/go" ABSOLUTE)
+
+    if(NOT EXISTS "${GOROOT}")
+        message(FATAL_ERROR "Go root not found at ${GOROOT}")
+    endif()
+
+    set(VERSION_FILE "${GOROOT}/VERSION")
+    set(ENV_FILE "${GOROOT}/go.env")
+
+    if(NOT EXISTS "${VERSION_FILE}")
+        message(FATAL_ERROR "Missing VERSION file in ${GOROOT}")
+    endif()
+
+    if(NOT EXISTS "${ENV_FILE}")
+        message(FATAL_ERROR "Missing go.env file in ${GOROOT}")
+    endif()
+	
+    message(STATUS "Found Go root: ${GOROOT}")
+endif()
 
 # ----------------------------
 # Offline build
@@ -114,13 +166,13 @@ endif()
 # optional tidy command
 set(GO_TIDY_CMD "")
 if(GO_MOD_TIDY)
-    set(GO_TIDY_CMD ${GOCMD} mod tidy)
+    set(GO_TIDY_CMD "${GOCMD}" mod tidy)
 else()
     set(GO_TIDY_CMD "")
 endif()
 set(GO_VENDOR_CMD "")
 if(GO_MOD_TIDY AND GO_MOD_VENDOR)
-    set(GO_VENDOR_CMD ${GOCMD} mod vendor)
+    set(GO_VENDOR_CMD "${GOCMD}" mod vendor)
 else()
     set(GO_VENDOR_CMD "")
 endif()
@@ -152,8 +204,9 @@ endfunction()
 # ----------------------------
 # Environment for Go
 # ----------------------------
-set(ENV{CGO_ENABLED} "0")
-set(ENV{GOTOOLCHAIN} "local")
+add_env_var("GOROOT" "${GOROOT}")
+add_env_var("CGO_ENABLED" "0")
+add_env_var("GOTOOLCHAIN" "local")
 
 # ----------------------------
 # Updater build (optional)
@@ -164,7 +217,8 @@ if(NOT SKIP_UPDATER)
 
     add_custom_command(
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
-        COMMAND ${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
+        COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
+				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
                 "${GOCMD}" build "${GO_MOD_FLAG}" -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
@@ -184,7 +238,7 @@ run_go_command("${GO_SOURCE_DIR}/server/gen" env "THRIFT_COMPILER=${THRIFT_COMPI
 # get VERSION_SINGBOX
 execute_process(
     COMMAND ${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/server"
-            ${GOCMD} list -m -f {{.Version}} github.com/sagernet/sing-box
+            "${GOCMD}" list -m -f {{.Version}} github.com/sagernet/sing-box
     WORKING_DIRECTORY ${GO_SOURCE_DIR}
     OUTPUT_VARIABLE VERSION_SINGBOX
     OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -245,15 +299,15 @@ if (UNIX)
         "${CMAKE_BINARY_DIR}/start_sing_box.sh"
         @ONLY
     )
-
 endif()
 
 
 add_custom_command(
     OUTPUT ${DESTDIR}/nekobox_core${EXE_SUFFIX}
     DEPENDS ${WRAPPER_DEP_FILE}
-    COMMAND ${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
-            ${GOCMD} build "${GO_MOD_FLAG}" -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
+    COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
+			${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
+            "${GOCMD}" build "${GO_MOD_FLAG}" -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")

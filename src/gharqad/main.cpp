@@ -58,7 +58,6 @@ QDBusPendingReply<> OrgFreedesktopPortalRequestInterface::Close()
     return asyncCallWithArgumentList(QStringLiteral("Close"), argumentList);
 }
 
-
 #endif
 #define disable_run_admin windows_no_admin
 
@@ -81,7 +80,6 @@ namespace Configs {
     std::shared_ptr<DatabaseManager> databaseManager;
       class ResourceManager  * resourceManager;
 }
-
 
 namespace Preset {
     namespace SingBox {
@@ -274,7 +272,7 @@ int main(int argc, char** argv) {
         QMessageBox::critical(nullptr, "Error", "No permission to write " + wd.absoluteFilePath("settings"));
         return 1;
     }
-    dir_success &= isFileAppendable("nekobox.cfg");
+    dir_success &= isFileAppendable("window.ini");
     
     if (!dir_success){
         goto loop_back_2;

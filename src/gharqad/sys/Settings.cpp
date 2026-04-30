@@ -160,15 +160,7 @@ QString getResource(QString str, QStringList dirs) {
     if (file2.exists()) {
       return str;
     } else {
-      {
-        QString path = ":/nekobox/public/" + str;
-        QFile file(path);
-        if (file.exists()){
-          return path;
-        } else {
-          return "";
-        }
-      };
+      return ":/nekobox/public/" + str;
     }
   }
 }
