@@ -54,6 +54,9 @@ func ResetSystemProxy() error {
 }
 
 func SetSystemProxy(ctx context.Context, serverAddr string, serverPort uint16, supportSOCKS bool) error {
+	if BoxInstance == nil {
+		return nil
+	}
 	if serverAddr == SystemProxyAddr && serverPort == SystemProxyPort && supportSOCKS == SystemProxySupportSOCKS {
 		if IsSystemProxyEnabled() {
 			return nil

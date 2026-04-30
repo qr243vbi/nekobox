@@ -69,6 +69,10 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		if err != nil {
 			out.Error = (err.Error())
 			internal.BoxInstance = nil
+		} else {
+			context.AfterFunc(internal.BoxInstance.StartCtx, func() {
+				internal.ResetSystemProxy()
+			})
 		}
 	}()
 
@@ -165,6 +169,8 @@ func (s *server) DisableSystemProxy(ctx context.Context, in *gen.EmptyReq) (*gen
 func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, error) {
 	out := new(gen.ErrorResp)
 	var err error
+
+	internal.ResetSystemProxy()
 
 	defer func() {
 		if err != nil {

@@ -805,6 +805,9 @@ namespace Configs {
                 users += user;
                 inboundObj["users"] = users;
             }
+        #ifndef USE_CPP_PROXY_CONFIGURATOR 
+            inboundObj["set_system_proxy"] = Configs::dataStore->spmode_system_proxy;
+        #endif
             status->inbounds += inboundObj;
         }
 
