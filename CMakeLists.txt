@@ -64,6 +64,9 @@ if (NKR_CROSS)
     set_property(TARGET Qt6::lupdate PROPERTY IMPORTED_LOCATION /usr/bin/lupdate)
 endif ()
 
+include("cmake/print.cmake")
+include("cmake/nkr.cmake")
+
 #### Platform Variables ####
 if (WIN32)
     include("cmake/windows/windows.cmake")
@@ -87,9 +90,6 @@ option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
 option(CPR_SKIP_INSTALL "Use cpr as bundled dependency" ON)
-
-include("cmake/print.cmake")
-include("cmake/nkr.cmake")
 
 find_package(Threads)
 

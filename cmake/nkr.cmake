@@ -18,6 +18,32 @@ function(nkr_add_compile_definitions arg)
     add_compile_definitions(${ARGV})
 endfunction()
 
+function(embeed_resources)
+	# Directory containing resources
+	set(STATIC_RESOURCE_DIR "${CMAKE_SOURCE_DIR}/res/public")
+	set(QRC_FILE "${CMAKE_BINARY_DIR}/nekoobox_static.qrc")
+	# Get all files in the directory
+	file(GLOB_RECURSE STATIC_RESOURCE_FILES "${STATIC_RESOURCE_DIR}/*")
+	# Generate .qrc file
+	file(WRITE ${QRC_FILE} "<RCC>\n  <qresource prefix=\"/\">\n")
+	foreach(FILE_PATH IN LISTS STATIC_RESOURCE_FILES)
+		# Make path relative to project root
+		file(RELATIVE_PATH REL_PATH "${CMAKE_SOURCE_DIR}/res/public" "${FILE_PATH}")
+		file(COPY "${FILE_PATH}" DESTINATION "${CMAKE_BINARY_DIR}/")
+		file(APPEND ${QRC_FILE} "    <file>${RELATIVE_PATH}</file>\n")
+	endforeach()
+	foreach(FILE_PATH IN LISTS QM_FILENAMES)
+		# Make path relative to project root
+		file(APPEND ${QRC_FILE} "    <file>${FILE_PATH}.qm</file>\n")
+	endforeach()
+	file(COPY "${CMAKE_SOURCE_DIR}/srslist.json" DESTINATION "${CMAKE_BINARY_DIR}")
+	file(COPY "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${CMAKE_BINARY_DIR}")
+	file(APPEND ${QRC_FILE} "    <file>srslist.json</file>\n")
+	file(APPEND ${QRC_FILE} "    <file>languages.txt</file>\n")
+	file(APPEND ${QRC_FILE} "  </qresource>\n</RCC>\n")
+	set(PLATFORM_SOURCES ${PLATFORM_SOURCES} "${QRC_FILE}")
+endfunction()
+
 function(install_if_exists arg dest)
     if(EXISTS "${arg}")
         install(FILES "${arg}" DESTINATION "${dest}")
