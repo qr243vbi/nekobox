@@ -89,7 +89,7 @@ option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
-option(CPR_SKIP_INSTALL "Use cpr as bundled dependency" ON)
+option(CPR_ENABLE_INSTALL "Use cpr as bundled dependency" OFF)
 
 find_package(Threads)
 
