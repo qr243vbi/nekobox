@@ -51,7 +51,7 @@ namespace Configs {
     public:
         DECLARE_STORE_TYPE(DefaultRoute)
         virtual ConfJsMap _map() override;
-        int current_route_id = 0;
+        int current_route_id = 1;
 
         // DNS
         QString remote_dns = "tls://8.8.8.8";

@@ -659,7 +659,6 @@ void ProfileManager::LoadManager() {
   if (routes.empty()) {
     auto defaultRoute = RoutingChain::GetDefaultChain();
     profileManager->AddRouteChain(defaultRoute);
-    this->max_route_chain_id = 1;
   }
 }
 
