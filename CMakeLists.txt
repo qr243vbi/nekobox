@@ -38,6 +38,22 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 set(NYXARIA "src/nekobox")
 set(GHARQAD "src/gharqad")
 
+
+# Target Source Translations
+
+file(GLOB TS_FILES "res/translations/*.ts")
+
+foreach(TS_FILE ${TS_FILES})
+    # Get the base name of the file without the extension
+    get_filename_component(QM_FILE ${TS_FILE} NAME_WE)
+    # Define the output path for .qm files
+    set(QM_FILE_PATH "${CMAKE_BINARY_DIR}/${QM_FILE}.qm")
+    # Add the generated .qm file to the list
+    list(APPEND QM_FILES ${QM_FILE_PATH})
+    # Add the generated .qm filename to the list
+    list(APPEND QM_FILENAMES ${QM_FILE})
+endforeach()
+
 find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
 
 if (NKR_CROSS)
@@ -278,18 +294,6 @@ set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
-# Target Source Translations
-
-file(GLOB TS_FILES "res/translations/*.ts")
-
-foreach(TS_FILE ${TS_FILES})
-    # Get the base name of the file without the extension
-    get_filename_component(QM_FILE ${TS_FILE} NAME_WE)
-    # Define the output path for .qm files
-    set(QM_FILE_PATH "${CMAKE_BINARY_DIR}/${QM_FILE}.qm")
-    # Add the generated .qm file to the list
-    list(APPEND QM_FILES ${QM_FILE_PATH})
-endforeach()
 
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
@@ -400,10 +404,7 @@ if (NOT SKIP_LMDB)
 endif()
 
 #qt_finalize_executable(nekobox)
-if (UNIX)
-
-remove_rpath(nekobox)
-
+if (UNIX OR MINGW)
 set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
 set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
 
@@ -427,6 +428,11 @@ if(NOT EXISTS "${DEST_FILE}")
 else()
     message(STATUS "File already exists: ${DEST_FILE}")
 endif()
+endif()
+
+if (UNIX)
+
+remove_rpath(nekobox)
 
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 
