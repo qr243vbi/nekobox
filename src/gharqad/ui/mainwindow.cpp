@@ -21,6 +21,7 @@
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/mainwindow.h>
 #include <nekobox/ui/utils/MapListModel.hpp>
+#include <nekobox/ui/setting/shutdownoverlay.hpp>
 
 #ifndef NKR_SOFTWARE_KEYS
 #define ADD_SECURITY_ACTION
@@ -1117,7 +1118,7 @@ skip_updater_hide:
   tray->setContextMenu(trayMenu);
   connect(tray, &QSystemTrayIcon::activated, qApp,
           [=, this](QSystemTrayIcon::ActivationReason reason) {
-            if (reason == QSystemTrayIcon::Trigger) {
+            if (reason == QSystemTrayIcon::Trigger && !this->force_hide_tray) {
               CHECK_ACTION_ACCESS_W
               ToggleWindow(this);
             }
@@ -2142,6 +2143,7 @@ void MainWindow::prepare_exit() {
     mu_exit.unlock();
     return;
   }
+  this->hide();
   Configs::dataStore->prepare_exit = true;
   //
   RegisterHiddenMenuShortcuts(true);
@@ -2155,7 +2157,11 @@ void MainWindow::prepare_exit() {
   Configs::dataStore->save_control_no_save(
       true); // don't change datastore after this line
   profile_stop(false, true);
-
+  Configs::profileManager->lock();
+  Configs::profileManager->unlock();
+#ifdef DEBUG_MODE
+    sleep(2);
+#endif
   mu_exit.unlock();
 #ifdef DEBUG_MODE
   qDebug() << "prepare exit done!";
@@ -2224,9 +2230,31 @@ void MainWindow::call_updater() {
 #endif
 }
 
-void MainWindow::on_menu_exit_triggered() {
+void MainWindow::on_menu_exit_triggered(bool faster){
   CHECK_ACTION_ACCESS_R
 
+  auto overlay = std::make_shared<ShutdownOverlay>(nullptr, true); 
+  overlay->start();
+  this->force_hide_tray = true;
+  bool quit = false;
+
+  runOnNewThread([overlay, this, &quit, faster]()-> void {
+    quit = !faster ? this->on_menu_exit_triggered_func() : true;
+    if (faster){
+      hide();
+      prepare_exit();
+    } else {
+      this->force_hide_tray = false;
+    }
+    overlay->finish();
+  });
+  overlay->exec();
+  if (quit){
+    QApplication::quit();
+  }
+}
+
+bool MainWindow::on_menu_exit_triggered_func() {
   int exit_reason = this->exit_reason;
   this->exit_reason = 0;
 
@@ -2265,7 +2293,7 @@ void MainWindow::on_menu_exit_triggered() {
       QProcess::startDetached(program, arguments);
     }
   }
-  QCoreApplication::quit();
+  return true;
 }
 
 void MainWindow::toggle_system_proxy() {
@@ -3620,7 +3648,7 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
   CHECK_SETTINGS_ACCESS_W
   QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
 
-  for (const auto &[_, profile] : Configs::profileManager->profiles) {
+  for (const auto [_, profile] : (Configs::profileManager->profiles)) {
     if (Configs::dataStore->current_group != profile->gid)
       continue;
     if (profile->latencyInt < 0)

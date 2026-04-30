@@ -178,6 +178,27 @@ QStringList SplitLinesSkipSharp(const QString &_string, int maxLine) {
   return newLines;
 }
 
+void FifoMutex::lock() {
+    std::unique_lock<std::mutex> lock(m_mutex);
+
+    Node node;
+    m_queue.push_back(&node);
+
+    m_cv.wait(lock, [&] {
+        return m_queue.front() == &node && !m_locked;
+    });
+
+    m_queue.pop_front();
+    m_locked = true;
+}
+
+void FifoMutex::unlock() {
+    std::lock_guard<std::mutex> lock(m_mutex);
+
+    m_locked = false;
+    m_cv.notify_all();
+}
+
 QByteArray DecodeB64IfValid(const QString &input,
                             QByteArray::Base64Options options) {
   Qt515Base64::Base64Options newOptions =

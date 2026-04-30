@@ -217,7 +217,8 @@ public:
 public slots:
     void on_commitDataRequest();
 
-    void on_menu_exit_triggered();
+    void on_menu_exit_triggered(bool faster = false);
+    bool on_menu_exit_triggered_func();
 
     void size_changed(int width, int height);
 
@@ -319,6 +320,7 @@ private:
     QMutex logLock;
     bool logClear = false;
     bool force_hide_text_under_buttons = false;
+    bool force_hide_tray = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;

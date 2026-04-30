@@ -488,8 +488,8 @@ namespace Configs {
         if (name == "proxy") return -1;
         if (name == "direct") return -2;
         if (name == "block") return -3;
-        for (const auto& item: profileManager->profiles) {
-            if (item.second->name == name) return item.first;
+        for (const auto [key, value]: (profileManager->profiles) ){
+            if (value->name == name) return key;
         }
 
         return INVALID_ID;

@@ -65,7 +65,7 @@ QDBusPendingReply<> OrgFreedesktopPortalRequestInterface::Close()
 void signal_handler(int signum) {
     auto mainwindow = GetMainWindow();
     if (mainwindow != nullptr) {
-        mainwindow->prepare_exit();
+        mainwindow->on_menu_exit_triggered(true);
         qApp->quit();
     }
 }

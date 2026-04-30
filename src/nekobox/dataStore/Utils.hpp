@@ -206,6 +206,34 @@ public:                                                                 \
 //, ITEM_TYPE(B))
 #endif
 
+#pragma once
+
+#include <mutex>
+#include <condition_variable>
+#include <deque>
+
+class FifoMutex {
+public:
+    FifoMutex() = default;
+    ~FifoMutex() = default;
+
+    FifoMutex(const FifoMutex&) = delete;
+    FifoMutex& operator=(const FifoMutex&) = delete;
+
+    void lock();
+    void unlock();
+
+private:
+    struct Node {
+        bool ready = false;
+    };
+
+    std::mutex m_mutex;
+    std::condition_variable m_cv;
+    std::deque<Node*> m_queue;
+    bool m_locked = false;
+};
+
 #ifndef NKR_VERSION
 inline QString software_version;
 const char *getSoftwareVersion();

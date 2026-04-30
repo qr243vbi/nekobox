@@ -435,6 +435,9 @@ int MyTableModel::data_id(int row) const {
     if (profiles.count() <= row){
         return -1;
     }
+    if (row < 0){
+        return -1;
+    }
     return profiles.at(row);
 }
 

@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Utils.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -8,6 +9,7 @@
 #include "Group.hpp"
 #include "RouteEntity.h"
 #include "TrafficData.hpp"
+#include <atomic>
 
 namespace Stats {
     class DatabaseLoggerItem : public JsonStore {
@@ -77,6 +79,8 @@ namespace Configs {
 
     class ProfileManager;
 
+
+
     extern ProfileManager *profileManager;
 
     class ProfileManager : private JsonStore {
@@ -119,7 +123,7 @@ namespace Configs {
 
         void DeleteProfile(int id);
 
-        void BatchDeleteProfiles(const QList<int>& ids);
+        void BatchDeleteProfiles(const QList<int>& ids, int groupid = -1);
 
         std::shared_ptr<ProxyEntity> GetProfile(int id);
 
@@ -141,18 +145,21 @@ namespace Configs {
 
         bool AddExtraCorePath(const QString &path);
 
+        void lock();
+        void unlock();
+
     private:
         // sort by id
-        QList<int> profilesIdOrder;
-        QList<int> groupsIdOrder;
-        QList<int> routesIdOrder;
+        FifoMutex mutex;
         QSet<QString> extraCorePaths;
 
-        [[nodiscard]] int NewProfileID() const;
+        std::atomic<int> max_profile_id = 0, max_group_id = 0, max_route_chain_id = 0;
 
-        [[nodiscard]] int NewGroupID() const;
+  //      [[nodiscard]] int NewProfileID() const;
 
-        [[nodiscard]] int NewRouteChainID() const;
+//        [[nodiscard]] int NewGroupID() const;
+
+  //      [[nodiscard]] int NewRouteChainID() const;
 
         static std::shared_ptr<ProxyEntity> LoadProxyEntity(
             int id

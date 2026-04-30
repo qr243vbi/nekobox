@@ -18,5 +18,5 @@ namespace Icon {
         SYSTEM_PROXY_DNS,
     };
 
-    QPixmap GetTrayIcon(TrayIconStatus status);
+    QPixmap GetTrayIcon(TrayIconStatus status = TrayIconStatus::NONE);
 } // namespace Icon

@@ -2,11 +2,10 @@
 #include <winsock2.h>
 #endif
 
-#include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/ConfigItem.hpp>
+#include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <string_view>
-
 
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/dataStore/DatabaseLMDB.hpp>
@@ -161,50 +160,50 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Proxies, profiles)
     LOG_CREATE(Groups, groups)
   }
-  #ifndef SKIP_LMDB
-  if (Configs::config_type == Configs::DatabaseType::lmdb_type){
+#ifndef SKIP_LMDB
+  if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
     return Configs::write_lmdb(this->database, store);
   }
-  #endif
+#endif
   auto ret = SaveToFile(store);
-  #ifndef SKIP_LMDB
-  if (ret){
+#ifndef SKIP_LMDB
+  if (ret) {
     Configs::clear_lmdb(this->database, store);
   }
-  #endif
+#endif
   return ret;
 }
-bool FileDatabaseManager::Load(JsonStore *store) { 
-  #ifndef SKIP_LMDB
+bool FileDatabaseManager::Load(JsonStore *store) {
+#ifndef SKIP_LMDB
   auto [ok, readed] = Configs::read_lmdb(this->database, store);
-  if (!ok){
+  if (!ok) {
     return false;
-  } else if (readed){
-    if (Configs::config_type != Configs::DatabaseType::lmdb_type){
-      if (SaveToFile(store)){
+  } else if (readed) {
+    if (Configs::config_type != Configs::DatabaseType::lmdb_type) {
+      if (SaveToFile(store)) {
         Configs::clear_lmdb(this->database, store);
       };
     }
     return true;
   }
-  #endif
+#endif
   readed = LoadFromFile(store);
-  #ifndef SKIP_LMDB
-  if (readed){
-    if (Configs::config_type == Configs::DatabaseType::lmdb_type){
+#ifndef SKIP_LMDB
+  if (readed) {
+    if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
       Configs::write_lmdb(this->database, store);
       DropFromDirectory(store->StoreType(), store->Id());
     }
   }
-  #endif
+#endif
   return readed;
 }
 bool FileDatabaseManager::Drop(char chr, int id) {
-  #ifndef SKIP_LMDB
-    bool ret = Configs::drop_lmdb(this->database, chr, id);
-  #else
-    bool ret = DropFromDirectory(chr, id);
-  #endif
+#ifndef SKIP_LMDB
+  bool ret = Configs::drop_lmdb(this->database, chr, id);
+#else
+  bool ret = DropFromDirectory(chr, id);
+#endif
   if (ret) {
     switch (chr) {
       LOG_DELETE(Routes, routes);
@@ -215,19 +214,17 @@ bool FileDatabaseManager::Drop(char chr, int id) {
   return ret;
 }
 
-
 FileDatabaseManager::FileDatabaseManager()
-    #ifndef SKIP_LMDB
+#ifndef SKIP_LMDB
     : database(initialize_lmdb())
-    #endif
-{
-};
+#endif
+{};
 
-
-FileDatabaseManager::~FileDatabaseManager(){
-  #ifndef SKIP_LMDB
+FileDatabaseManager::~FileDatabaseManager() {
+#ifndef SKIP_LMDB
+  this->database.sync();
   this->database.close();
-  #endif
+#endif
 };
 
 bool FileDatabaseManager::SaveToFile(JsonStore *store) {
@@ -237,11 +234,12 @@ bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   if (path == "") {
     return false;
   }
-  if (Configs::config_type == Configs::DatabaseType::ini_type){
+  if (Configs::config_type == Configs::DatabaseType::ini_type) {
     store->SaveINI(QFileInfo(path), "");
     return true;
   }
-  return store->SaveToFile(path, Configs::config_type == Configs::DatabaseType::json_type);
+  return store->SaveToFile(path, Configs::config_type ==
+                                     Configs::DatabaseType::json_type);
 }
 bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
   auto type = store->StoreType();
@@ -264,11 +262,11 @@ bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
-  #ifdef SKIP_LMDB
+#ifdef SKIP_LMDB
   return FileDatabaseManager::QueryFromDirectory(type);
-  #else
+#else
   return Configs::query_lmdb(this->database, type);
-  #endif
+#endif
 }
 
 QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
@@ -297,68 +295,62 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 
 // Query
 #ifndef SKIP_LMDB
-QList<int> Configs::query_lmdb(lmdb::env &env, char c)
-{
-    QList<int> result;
-    
+QList<int> Configs::query_lmdb(lmdb::env &env, char c) {
+  QList<int> result;
 
-    lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
-    lmdb::dbi dbi  = lmdb::dbi::open(rtxn, nullptr);
+  lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
+  lmdb::dbi dbi = lmdb::dbi::open(rtxn, nullptr);
 
-    std::string_view key(&c, 1);
-    lmdb::cursor cursor = lmdb::cursor::open(rtxn, dbi);
+  std::string_view key(&c, 1);
+  lmdb::cursor cursor = lmdb::cursor::open(rtxn, dbi);
 
-    for (auto kv = cursor.get(key, MDB_SET_RANGE);
-         kv; kv = cursor.get(key, MDB_NEXT))
-    {
-        if (key.size() != 5) {
-          #ifdef DEBUG_MODE
-          qDebug() << "ERROR: Corrupted database";        
-          #endif
-              throw std::runtime_error("Invalid key size");
-            continue;
-        }
-
-        const char* k = static_cast<const char*>(key.data());
-
-        if (k[0] != c) {
-          #ifdef DEBUG_MODE
-          qDebug() << "Found " << result.count() << " elements for type " << int(c);
-          #endif
-          break;
-        }
-
-        // decode little-endian int32
-        const unsigned char* b =
-            reinterpret_cast<const unsigned char*>(k);
-
-        uint32_t u =
-            (uint32_t(b[1]) << 0)  |
-            (uint32_t(b[2]) << 8)  |
-            (uint32_t(b[3]) << 16) |
-            (uint32_t(b[4]) << 24);
-
-        result.append(static_cast<int32_t>(u));
+  for (auto kv = cursor.get(key, MDB_SET_RANGE); kv;
+       kv = cursor.get(key, MDB_NEXT)) {
+    if (key.size() != 5) {
+#ifdef DEBUG_MODE
+      qDebug() << "ERROR: Corrupted database";
+#endif
+      throw std::runtime_error("Invalid key size");
+      continue;
     }
 
-    cursor.close();
-    rtxn.abort(); // read-only, no commit needed
+    const char *k = static_cast<const char *>(key.data());
 
-    return result;
+    if (k[0] != c) {
+#ifdef DEBUG_MODE
+      qDebug() << "Found " << result.count() << " elements for type " << int(c);
+#endif
+      break;
+    }
+
+    // decode little-endian int32
+    const unsigned char *b = reinterpret_cast<const unsigned char *>(k);
+
+    uint32_t u = (uint32_t(b[1]) << 0) | (uint32_t(b[2]) << 8) |
+                 (uint32_t(b[3]) << 16) | (uint32_t(b[4]) << 24);
+
+    result.append(static_cast<int32_t>(u));
+  }
+
+  cursor.close();
+  rtxn.abort(); // read-only, no commit needed
+
+  return result;
 }
 
 std::string Configs::pack_char_int(char type, int32_t id) {
   uint32_t u = static_cast<uint32_t>(id); // preserve bit pattern
   std::string s(5, '\0');
   s[0] = type;
-  s[1] = static_cast<char>( u         & 0xFF);
-  s[2] = static_cast<char>((u >> 8)  & 0xFF);
+  s[1] = static_cast<char>(u & 0xFF);
+  s[2] = static_cast<char>((u >> 8) & 0xFF);
   s[3] = static_cast<char>((u >> 16) & 0xFF);
   s[4] = static_cast<char>((u >> 24) & 0xFF);
   return s;
 }
 
-std::tuple<char, int32_t> Configs::unpack_char_int(const std::string_view& key) {
+std::tuple<char, int32_t>
+Configs::unpack_char_int(const std::string_view &key) {
   // Expect key size == 5: [0]=char, [1..4]=int32 bytes (little-endian)
   // Caller can decide whether to validate; here we do minimal validation.
   if (key.size() != 5) {
@@ -373,25 +365,27 @@ std::tuple<char, int32_t> Configs::unpack_char_int(const std::string_view& key) 
   u |= static_cast<uint32_t>(static_cast<unsigned char>(key[3])) << 16;
   u |= static_cast<uint32_t>(static_cast<unsigned char>(key[4])) << 24;
 
-  int32_t x = static_cast<int32_t>(u); // restores original bit-pattern to signed int32
+  int32_t x =
+      static_cast<int32_t>(u); // restores original bit-pattern to signed int32
   return std::tie(c, x);
 }
 
-bool Configs::clear_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+bool Configs::clear_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
   return clear_lmdb(env, store->StoreType(), store->Id());
 }
 
-bool Configs::clear_lmdb(lmdb::env& env, char c, int32_t x){
-  #ifdef DEBUG_MODE
-    qDebug() << "Clearing LMDB ";
-  #endif  
+bool Configs::clear_lmdb(lmdb::env &env, char c, int32_t x) {
+#ifdef DEBUG_MODE
+  qDebug() << "Clearing LMDB ";
+#endif
   return Configs::write_lmdb(env, c, x, "");
 }
 
-bool Configs::drop_lmdb(lmdb::env& env, char c, int32_t x){
-  #ifdef DEBUG_MODE
-    qDebug() << "Drop LMDB ";
-  #endif  
+bool Configs::drop_lmdb(lmdb::env &env, char c, int32_t x) {
+  std::lock_guard<std::mutex> lock(env.env_mutex);
+#ifdef DEBUG_MODE
+  qDebug() << "Drop LMDB ";
+#endif
   auto key = pack_char_int(c, x);
   auto wtxn = lmdb::txn::begin(env);
   auto dbi = lmdb::dbi::open(wtxn, nullptr);
@@ -400,57 +394,78 @@ bool Configs::drop_lmdb(lmdb::env& env, char c, int32_t x){
   return ret;
 }
 
-bool Configs::write_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+bool Configs::write_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
   auto bytes = store->ToBytes();
   std::string_view data(bytes.data(), bytes.size());
-  #ifdef DEBUG_MODE
-    qDebug() << "Writing data" << data.size() << bytes.size();
-  #endif  
+#ifdef DEBUG_MODE
+  qDebug() << "Writing data" << data.size() << bytes.size();
+#endif
   return write_lmdb(env, store->StoreType(), store->Id(), data);
 }
 
-bool Configs::write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view){
-  auto key = pack_char_int(c, x);
-  lmdb::dbi dbi;
-  // Get the dbi handle, and insert some key/value pairs in a write transaction:
-  auto wtxn = lmdb::txn::begin(env);
-  dbi = lmdb::dbi::open(wtxn, nullptr);
-  bool ret = dbi.put(wtxn, key, view);
-  wtxn.commit();
-  #ifdef DEBUG_MODE
-    qDebug() << "Wrote Data To LMDB With Status" << ret << " and count " << view.size() ;
-  #endif
-  return ret;
+bool Configs::write_lmdb(lmdb::env &env, char c, int32_t x,
+                         const std::string_view &view) {
+  std::lock_guard<std::mutex> lock(env.env_mutex);
+  int u = 2;
+  for (int i = 0; i < 16; i++) {
+    try {
+      auto key = pack_char_int(c, x);
+      lmdb::dbi dbi;
+      // Get the dbi handle, and insert some key/value pairs in a write
+      // transaction:
+      auto wtxn = lmdb::txn::begin(env);
+      dbi = lmdb::dbi::open(wtxn, nullptr);
+      bool ret = dbi.put(wtxn, key, view);
+      wtxn.commit();
+#ifdef DEBUG_MODE
+      qDebug() << "Wrote Data To LMDB With Status" << ret << " and count "
+               << view.size();
+#endif
+      return ret;
+    } catch (lmdb::map_full_error) {
+      auto size = env.latest_mapsize;
+      if (size == 0) {
+        size = 10 * 1024 * 1024;
+      }
+      env.set_mapsize(size * u);
+      u = u * u;
+    }
+  }
+  return false;
 }
 
-std::tuple<bool, bool> Configs::read_lmdb(lmdb::env& env, Configs_ConfigItem::JsonStore * store){
+std::tuple<bool, bool>
+Configs::read_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
 
-  #ifdef DEBUG_MODE 
+#ifdef DEBUG_MODE
   qDebug() << "READING LMDB FILE";
-  #endif
+#endif
   auto bytes = store->ToBytes();
   std::string_view view;
   bool isok = read_lmdb(env, store->StoreType(), store->Id(), view);
   bool readed = false;
   if (isok) {
-    if (view.size() > 0){
+    if (view.size() > 0) {
       readed = true;
-      #ifdef DEBUG_MODE
-      qDebug() << "READED DATA" << "ID" << store->Id() << "TYPE" << (int)store->StoreType()  << "LEN" << view.size(); 
-      #endif
-      QByteArray ba = QByteArray::fromRawData(view.data(), static_cast<int>(view.size()));
+#ifdef DEBUG_MODE
+      qDebug() << "READED DATA" << "ID" << store->Id() << "TYPE"
+               << (int)store->StoreType() << "LEN" << view.size();
+#endif
+      QByteArray ba =
+          QByteArray::fromRawData(view.data(), static_cast<int>(view.size()));
       store->FromBytes(ba);
     }
   }
-  #ifdef DEBUG_MODE
+#ifdef DEBUG_MODE
   else {
     qDebug() << "LMDB IS NOT READED";
   }
-  #endif
+#endif
   return std::make_tuple(isok, readed);
 }
 
-bool Configs::read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view &view) {
+bool Configs::read_lmdb(lmdb::env &env, char c, int32_t x,
+                        std::string_view &view) {
   auto key_data = pack_char_int(c, x);
 
   lmdb::txn txn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
@@ -460,9 +475,9 @@ bool Configs::read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view &vie
 
   txn.commit(); // read-only safety (or txn.commit(); also fine)
 
-  #ifdef DEBUG_MODE
-    qDebug() << "DATA FOUND" << found << view.size();
-  #endif
+#ifdef DEBUG_MODE
+  qDebug() << "DATA FOUND" << found << view.size();
+#endif
 
   if (!found) {
     view = "";
@@ -472,33 +487,51 @@ bool Configs::read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view &vie
   return true;
 }
 
-
 #define DATABASE_NAME "iblis.lmdb"
-lmdb::env Configs::initialize_lmdb(){
+#include <filesystem>
+
+static uint64_t lmdb_dir_size(const std::string &path) {
+  uint64_t total = 0;
+  namespace fs = std::filesystem;
+
+  for (const auto &entry : fs::directory_iterator(path)) {
+    if (fs::is_regular_file(entry.path())) {
+      total += fs::file_size(entry.path());
+    }
+  }
+
+  return total;
+}
+
+lmdb::env Configs::initialize_lmdb() {
   QDir dir(".");
   bool init_db = false;
-  if (!dir.exists(DATABASE_NAME)){
+  if (!dir.exists(DATABASE_NAME)) {
     dir.mkdir(DATABASE_NAME);
     init_db = true;
   }
+
   auto env = lmdb::env::create();
   env.open(DATABASE_NAME, 0, 0664);
-  if (init_db){
+  if (init_db) {
     auto wtxn = lmdb::txn::begin(env);
     lmdb::dbi dbi = lmdb::dbi::open(wtxn, nullptr);
     std::vector<char> types = {Proxies, Beans, Routes, Groups};
-    for (char c : types){
+    for (char c : types) {
       auto ids = FileDatabaseManager::QueryFromDirectory(c);
-      for (int x : ids){
+      for (int x : ids) {
         dbi.put(wtxn, pack_char_int(c, x), "");
       }
     }
-    std::vector<char> common_types = {Shortcuts, ResourceManager, ProxyManager, NekoBox, DefaultRoute, TrafficLooper, DatabaseLogger};
-    for (char c : common_types){
+    std::vector<char> common_types = {
+        Shortcuts,    ResourceManager, ProxyManager,  NekoBox,
+        DefaultRoute, TrafficLooper,   DatabaseLogger};
+    for (char c : common_types) {
       dbi.put(wtxn, pack_char_int(c, 0), "");
     }
     wtxn.commit();
   }
+  env.latest_mapsize = lmdb_dir_size(DATABASE_NAME);
   return env;
 }
 #undef DATABASE_NAME
@@ -520,23 +553,27 @@ void ProfileManager::LoadManager() {
   profiles = {};
   groups = {};
   routes = {};
-  profilesIdOrder =
+  auto profilesIdOrder =
       Configs::databaseManager->Query(Configs::JsonStoreType::Proxies);
-  groupsIdOrder =
+  auto groupsIdOrder =
       Configs::databaseManager->Query(Configs::JsonStoreType::Groups);
-  routesIdOrder =
+  auto routesIdOrder =
       Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
   // Load Proxys
   QList<int> delProfile;
+  int max;
   for (auto id : profilesIdOrder) {
 #ifdef DEBUG_MODE
     qDebug() << "Load Profile With ID" << id;
 #endif
     auto ent = LoadProxyEntity(id);
     // Corrupted profile?
-    if (ent == nullptr || !ent->isValid()) {
+    if (ent == nullptr || !ent->isValid() || ent->id != id) {
       delProfile << id;
       continue;
+    }
+    if (id > max) {
+      max = id;
     }
     profiles[id] = ent;
     if (ent->type == "extracore")
@@ -546,6 +583,8 @@ void ProfileManager::LoadManager() {
   for (auto id : delProfile) {
     deleteProfile(id);
   }
+  this->max_profile_id = max;
+  max = 0;
   // Load Groups
   auto loadedOrder = groupsTabOrder;
   groupsTabOrder = {};
@@ -556,6 +595,9 @@ void ProfileManager::LoadManager() {
     if (ent->id != id) {
       continue;
     }
+    if (id > max) {
+      max = id;
+    }
     // Ensure order contains every group
     if (!loadedOrder.contains(id)) {
       loadedOrder << id;
@@ -564,8 +606,10 @@ void ProfileManager::LoadManager() {
     if (ent->profiles.isEmpty())
       needToCheckGroups << id;
   }
+  this->max_group_id = max;
+  max = 0;
   QList<int> orphanProfiles;
-  for (const auto &[id, proxy] : profiles) {
+  for (const auto [id, proxy] : (profiles)) {
     // corrupted data
     if (!groups.contains(proxy->gid) ||
         (!needToCheckGroups.contains(proxy->gid) &&
@@ -589,6 +633,7 @@ void ProfileManager::LoadManager() {
     }
   }
   // Load Routing profiles
+
   for (auto id : routesIdOrder) {
     auto route = LoadRouteChain(id);
     if (route == nullptr) {
@@ -597,10 +642,12 @@ void ProfileManager::LoadManager() {
               .arg(id));
       continue;
     }
-
+    if (id > max) {
+      max = id;
+    }
     routes[id] = route;
   }
-
+  this->max_route_chain_id = max;
   // First setup
   if (groups.empty()) {
     auto defaultGroup = NewGroup();
@@ -612,6 +659,7 @@ void ProfileManager::LoadManager() {
   if (routes.empty()) {
     auto defaultRoute = RoutingChain::GetDefaultChain();
     profileManager->AddRouteChain(defaultRoute);
+    this->max_route_chain_id = 1;
   }
 }
 
@@ -671,7 +719,7 @@ std::shared_ptr<RoutingChain> ProfileManager::LoadRouteChain(int id) {
 }
 
 QString ProfileManager::GetDisplayType(const QString &type) {
-  if (type.isEmpty()){
+  if (type.isEmpty()) {
     return type;
   }
   return Preset::SingBox::OutboundTypes.value(type, type);
@@ -691,14 +739,6 @@ std::shared_ptr<Group> ProfileManager::NewGroup() {
 
 // Profile
 
-int ProfileManager::NewProfileID() const {
-  if (profiles.empty()) {
-    return 0;
-  } else {
-    return profilesIdOrder.last() + 1;
-  }
-}
-
 bool ProfileManager::AddProfile(const std::shared_ptr<ProxyEntity> &ent,
                                 int gid) {
   QList<std::shared_ptr<ProxyEntity>> list;
@@ -715,16 +755,25 @@ bool ProfileManager::AddProfileBatch(
   for (const auto &ent : ents) {
     if (ent->id >= 0)
       continue;
-    int id = ent->id = NewProfileID();
+    int id = this->max_profile_id = (this->max_profile_id + 1);
+#ifdef DEBUG_MODE
+    qDebug() << "Profile Id Is: " << id;
+#endif
     ent->gid = gid;
+    ent->id = id;
     group->AddProfile(id);
     profiles[id] = ent;
-    profilesIdOrder.push_back(id);
   }
-  group->Save();
   runOnNewThread([=, this] {
-    for (const auto &ent : ents)
+    lock();
+    group->Save();
+    for (const auto &ent : ents) {
+#ifdef DEBUG_MODE
+      qDebug() << "Profile Id Is: Before Save: " << ent->id;
+#endif
       ent->Save();
+    }
+    unlock();
   });
   return true;
 }
@@ -771,31 +820,22 @@ bool ProfileManager::MoveProfileBatch(
   if (added) {
     grps.insert(group);
     runOnNewThread([=, this] {
+      lock();
       for (const auto &grp : grps)
         grp->Save();
       for (const auto &ent : ments)
         ent->Save();
+      unlock();
     });
   }
   return true;
 }
 
 void ProfileManager::DeleteProfile(int id) {
-  if (id < 0)
-    return;
-  if (dataStore->started_id == id)
-    return;
-  auto ent = GetProfile(id);
-  if (ent == nullptr)
-    return;
-  if (auto group = GetGroup(ent->gid); group != nullptr) {
-    group->RemoveProfile(id);
-    group->Save();
-  }
   deleteProfile(id);
 }
 
-void ProfileManager::BatchDeleteProfiles(const QList<int> &ids) {
+void ProfileManager::BatchDeleteProfiles(const QList<int> &ids, int groupid) {
   QSet<std::shared_ptr<Group>> changed_groups;
   QSet<int> deleted_ids;
   for (auto id : ids) {
@@ -806,34 +846,38 @@ void ProfileManager::BatchDeleteProfiles(const QList<int> &ids) {
     auto ent = GetProfile(id);
     if (ent == nullptr)
       continue;
-    if (auto group = GetGroup(ent->gid); group != nullptr) {
-      group->RemoveProfile(id);
-      changed_groups.insert(group);
+    if (groupid < 0) {
+      if (auto group = GetGroup(ent->gid); group != nullptr) {
+        group->RemoveProfile(id);
+        changed_groups.insert(group);
+      }
+    } else {
+      if (groupid != ent->gid) {
+        continue;
+      }
     }
     profiles.erase(id);
     deleted_ids.insert(id);
   }
-  for (const auto &group : changed_groups)
-    group->Save();
-  QList<int> newOrder;
-  for (auto id : profilesIdOrder) {
-    if (deleted_ids.contains(id))
-      continue;
-    newOrder.append(id);
-  }
-  profilesIdOrder = newOrder;
 
   runOnNewThread([=, this] {
+    lock();
+    for (const auto &group : changed_groups)
+      group->Save();
     for (int id : deleted_ids) {
       Configs::databaseManager->Drop(Proxies, id);
       Configs::databaseManager->Drop(Beans, id);
     }
+    unlock();
   });
 }
 
+void ProfileManager::unlock() { this->mutex.unlock(); }
+
+void ProfileManager::lock() { this->mutex.lock(); }
+
 void ProfileManager::deleteProfile(int id) {
-  QList<int> ids;
-  ids << id;
+  QList<int> ids = {id};
   BatchDeleteProfiles(ids);
 }
 
@@ -864,23 +908,14 @@ std::shared_ptr<Group> ProfileManager::LoadGroup(int jsonPath) {
   return ent;
 }
 
-int ProfileManager::NewGroupID() const {
-  if (groups.empty()) {
-    return 0;
-  } else {
-    return groupsIdOrder.last() + 1;
-  }
-}
-
 bool ProfileManager::AddGroup(const std::shared_ptr<Group> &ent) {
   if (ent->id >= 0) {
     return false;
   }
-
-  ent->id = NewGroupID();
+  int id = this->max_group_id = (this->max_group_id + 1);
+  ent->id = id;
   groups[ent->id] = ent;
-  groupsIdOrder.push_back(ent->id);
-  groupsTabOrder.push_back(ent->id);
+  groupsTabOrder.push_back(id);
 
   ent->Save();
   return true;
@@ -892,11 +927,7 @@ void ProfileManager::DeleteGroup(int gid) {
   auto group = GetGroup(gid);
   if (group == nullptr)
     return;
-  for (const auto id : group->Profiles()) {
-    deleteProfile(id);
-  }
-  groups.erase(gid);
-  groupsIdOrder.removeAll(gid);
+  BatchDeleteProfiles(group->Profiles(), gid);
   groupsTabOrder.removeAll(gid);
   Configs::databaseManager->Drop(Groups, gid);
 }
@@ -914,21 +945,13 @@ std::shared_ptr<RoutingChain> ProfileManager::NewRouteChain() {
   return route;
 }
 
-int ProfileManager::NewRouteChainID() const {
-  if (routes.empty()) {
-    return 0;
-  }
-  return routesIdOrder.last() + 1;
-}
-
 bool ProfileManager::AddRouteChain(const std::shared_ptr<RoutingChain> &chain) {
   if (chain->id >= 0) {
     return false;
   }
-
-  chain->id = NewRouteChainID();
+  int id = this->max_route_chain_id = (this->max_route_chain_id + 1);
+  chain->id = id;
   routes[chain->id] = chain;
-  routesIdOrder.push_back(chain->id);
   chain->Save();
 
   return true;
@@ -941,12 +964,10 @@ std::shared_ptr<RoutingChain> ProfileManager::GetRouteChain(int id) {
 void ProfileManager::UpdateRouteChains(
     const QList<std::shared_ptr<RoutingChain>> &newChain) {
   routes.clear();
-  routesIdOrder.clear();
 
   for (const auto &item : newChain) {
     if (!AddRouteChain(item)) {
       routes[item->id] = item;
-      routesIdOrder << item->id;
       item->Save();
     }
   }
