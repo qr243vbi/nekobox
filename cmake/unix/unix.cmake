@@ -4,4 +4,3 @@ set(PLATFORM_SOURCES
 )
 find_package(Qt6 REQUIRED COMPONENTS DBus)
 set(PLATFORM_LIBRARIES dl stdc++ m Qt6::DBus)
-embeed_resources()
