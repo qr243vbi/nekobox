@@ -2894,8 +2894,8 @@ void MainWindow::refresh_groups() {
 
   Configs::dataStore->refreshing_group_list = false;
   int i = this->ui->tabWidget->currentIndex();
-  Configs::dataStore->current_group = tabIndex2GroupId(i);
-  this->tableModel->refresh();
+  int gid = Configs::dataStore->current_group = tabIndex2GroupId(i);
+  show_group(gid);
   #ifdef DEBUG_MODE
     qDebug() << "Current Group is: " << Configs::dataStore->current_group;
   #endif
