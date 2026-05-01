@@ -158,9 +158,9 @@ endif()
 option(GO_MOD_VENDOR "Build Go with -mod=vendor" ${GO_MOD_VENDOR_FLAG})
 
 if(GO_MOD_VENDOR)
-    set(GO_MOD_FLAG "-mod=vendor -buildmode=pie")
+    set(GO_MOD_FLAG "-mod=vendor")
 else()
-    set(GO_MOD_FLAG "-mod=mod -buildmode=pie")
+    set(GO_MOD_FLAG "-mod=mod")
 endif()
 
 # optional tidy command
@@ -219,7 +219,7 @@ if(NOT SKIP_UPDATER)
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
         COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
-                "${GOCMD}" build ${GO_MOD_FLAG} -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
+                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
@@ -270,7 +270,7 @@ if (GOOS STREQUAL "linux")
         set(EMBED_PATH "${GO_SOURCE_DIR}/server/elevated_resolvctl")
         # Create a hardlink (removes existing file first to avoid 'File exists' errors)
         add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
-            COMMAND strip --strip-all $<TARGET_FILE:nekobox_core_elevated_resolvectl>
+            COMMAND strip  $<TARGET_FILE:nekobox_core_elevated_resolvectl>
             COMMENT "Stripping symbols from C wrapper..."
         )
 
@@ -307,7 +307,7 @@ add_custom_command(
     DEPENDS ${WRAPPER_DEP_FILE}
     COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 			${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
-            "${GOCMD}" build ${GO_MOD_FLAG} -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
+            "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
