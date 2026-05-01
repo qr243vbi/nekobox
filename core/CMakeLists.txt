@@ -87,8 +87,8 @@ else()
     set(EXE_SUFFIX "")
 endif()
 
-add_env_var("GOOS" ${GOOS})
-add_env_var("GOARCH" ${GOARCH})
+add_env_var("GOOS" "${GOOS}")
+add_env_var("GOARCH" "${GOARCH}")
 
 # ----------------------------
 # Options (boolean flags)
