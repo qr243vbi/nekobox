@@ -270,7 +270,7 @@ if (GOOS STREQUAL "linux")
         set(EMBED_PATH "${GO_SOURCE_DIR}/server/elevated_resolvctl")
         # Create a hardlink (removes existing file first to avoid 'File exists' errors)
         add_custom_command(TARGET nekobox_core_elevated_resolvectl POST_BUILD
-            COMMAND strip  $<TARGET_FILE:nekobox_core_elevated_resolvectl>
+            COMMAND strip $<TARGET_FILE:nekobox_core_elevated_resolvectl>
             COMMENT "Stripping symbols from C wrapper..."
         )
 
