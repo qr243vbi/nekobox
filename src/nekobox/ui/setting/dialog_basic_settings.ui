@@ -678,39 +678,31 @@
        <string>Subscription</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="sub_clear">
-         <property name="text">
-          <string>Clear servers before update</string>
-         </property>
-        </widget>
+       <item row="1" column="1">
+        <widget class="MyLineEdit" name="user_agent"/>
        </item>
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="sub_url_test">
-         <property name="text">
-          <string>URL Test after update</string>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="sub_custom_hwid_params">
+         <property name="placeholderText">
+          <string>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QCheckBox" name="sub_auto_update_enable">
+          <widget class="QLabel" name="label_21">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="text">
-            <string>Enable</string>
+           <property name="toolTip">
+            <string extracomment="Minutes, value must be 30 or greater"/>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_21">
            <property name="text">
-            <string>Interval (minute, invalid if less than 30)</string>
+            <string>Interval:</string>
            </property>
           </widget>
          </item>
@@ -726,6 +718,29 @@
          </item>
         </layout>
        </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_custom_hwid_params">
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Custom System Parameters (optional)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="sub_auto_update_enable">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Enable automatic update</string>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="1">
         <widget class="QCheckBox" name="sub_rm_duplicates">
          <property name="text">
@@ -733,22 +748,26 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
-        <widget class="QLineEdit" name="sub_custom_hwid_params">
-         <property name="placeholderText">
-          <string>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_4">
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="sub_rm_invalid">
          <property name="text">
-          <string>User Agent</string>
+          <string>Remove Invalid</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="MyLineEdit" name="user_agent"/>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="sub_clear">
+         <property name="text">
+          <string>Clear servers before update</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="sub_url_test">
+         <property name="text">
+          <string>URL Test after update</string>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QCheckBox" name="sub_send_hwid">
@@ -760,33 +779,10 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_20">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Automatic update</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_custom_hwid_params">
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>Custom System Parameters (optional)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="sub_rm_invalid">
-         <property name="text">
-          <string>Remove Invalid</string>
+          <string>User Agent</string>
          </property>
         </widget>
        </item>
