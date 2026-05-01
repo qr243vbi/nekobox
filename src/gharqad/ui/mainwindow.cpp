@@ -1873,7 +1873,7 @@ void MainWindow::show_group(int gid) {
   GroupSortAction gsa;
   gsa.scroll_to_started = true;
   refresh_proxy_list_impl(-1, gsa);
-
+  this->tableModel->refresh();
   Configs::dataStore->refreshing_group = false;
 }
 
@@ -2887,16 +2887,18 @@ void MainWindow::refresh_groups() {
   if (Configs::profileManager->CurrentGroup() == nullptr) {
     Configs::dataStore->current_group = -1;
     ui->tabWidget->setCurrentIndex(groupId2TabIndex(0));
-    show_group(Configs::profileManager->groupsTabOrder.count() > 0
-                   ? Configs::profileManager->groupsTabOrder.first()
-                   : 0);
   } else {
     ui->tabWidget->setCurrentIndex(
         groupId2TabIndex(Configs::dataStore->current_group));
-    show_group(Configs::dataStore->current_group);
   }
 
   Configs::dataStore->refreshing_group_list = false;
+  int i = this->ui->tabWidget->currentIndex();
+  Configs::dataStore->current_group = tabIndex2GroupId(i);
+  this->tableModel->refresh();
+  #ifdef DEBUG_MODE
+    qDebug() << "Current Group is: " << Configs::dataStore->current_group;
+  #endif
 }
 
 void MainWindow::refresh_proxy_list(const int &id) {
@@ -4032,11 +4034,11 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
                   tr("Remove %1?")
                       .arg(Configs::profileManager->groups[id]->name)) ==
                   QMessageBox::StandardButton::Yes) {
-            if (running != nullptr) {
+            /*if (running != nullptr) {
               if (running->gid == id) {
                 profile_stop(false, true, false);
               }
-            }
+            }*/
             Configs::profileManager->DeleteGroup(id);
             MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
           }
