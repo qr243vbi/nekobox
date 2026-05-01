@@ -158,9 +158,9 @@ endif()
 option(GO_MOD_VENDOR "Build Go with -mod=vendor" ${GO_MOD_VENDOR_FLAG})
 
 if(GO_MOD_VENDOR)
-    set(GO_MOD_FLAG "-mod=vendor")
+    set(GO_MOD_FLAG "-mod=vendor -buildmode=pie")
 else()
-    set(GO_MOD_FLAG "-mod=mod")
+    set(GO_MOD_FLAG "-mod=mod -buildmode=pie")
 endif()
 
 # optional tidy command
@@ -219,7 +219,7 @@ if(NOT SKIP_UPDATER)
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
         COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
-                "${GOCMD}" build "${GO_MOD_FLAG}" -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
+                "${GOCMD}" build ${GO_MOD_FLAG} -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
@@ -307,7 +307,7 @@ add_custom_command(
     DEPENDS ${WRAPPER_DEP_FILE}
     COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 			${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
-            "${GOCMD}" build "${GO_MOD_FLAG}" -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
+            "${GOCMD}" build ${GO_MOD_FLAG} -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
