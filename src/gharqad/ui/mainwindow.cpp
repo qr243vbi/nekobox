@@ -1233,7 +1233,7 @@ skip_updater_hide:
       refresh_status();
     }
   });
-  if (Configs::dataStore->show_system_dns)
+  if (Configs::windowSettings->show_system_dns)
     ui->system_dns->show();
   else
     ui->system_dns->hide();
@@ -1896,7 +1896,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
       tray->setVisible(!Configs::dataStore->disable_tray);
     }
     if (info.contains("UpdateSystemDns")) {
-      if (Configs::dataStore->show_system_dns)
+      if (Configs::windowSettings->show_system_dns)
         ui->system_dns->show();
       else
         ui->system_dns->hide();

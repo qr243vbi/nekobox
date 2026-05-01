@@ -138,6 +138,7 @@ public:
   QStringList column_width;
   bool remember_last_profile = true;
   QString language = "";
+  bool show_system_dns = false;
   bool first_start = true;
   QString program_name = "Iblis";
 };

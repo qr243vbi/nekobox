@@ -180,7 +180,7 @@ namespace Configs {
         int speed_test_timeout_ms = 5000;
         QString simple_dl_url = "http://cachefly.cachefly.net/1mb.test";
         bool allow_beta_update = false;
-        bool show_system_dns = false;
+ //       bool show_system_dns = false;
 
         // Auto-testing configuration
         bool auto_test_enable = false;

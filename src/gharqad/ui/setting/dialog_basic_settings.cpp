@@ -240,15 +240,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     // Style
     D_LOAD_BOOL(connection_statistics)
 
-#ifndef Q_OS_WIN
-    ui->show_system_dns->hide();
-#else
-    D_LOAD_BOOL(show_system_dns)
+    S_LOAD_BOOL(show_system_dns)
     connect(ui->show_system_dns, STATE_CHANGED, this, [=,this]
     {
         CACHE.updateSystemDns = true;
     });
-#endif
     //
     D_LOAD_BOOL(start_minimal)
     S_LOAD_INT(max_log_line)
@@ -483,9 +479,7 @@ void DialogBasicSettings::accept() {
     QString locale = "";
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)
-    #ifdef Q_OS_WIN
-    D_SAVE_BOOL(show_system_dns);
-    #endif
+    S_SAVE_BOOL(show_system_dns);
 
     if (settings->max_log_line <= 0) {
         settings->max_log_line = 200;

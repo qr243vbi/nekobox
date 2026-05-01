@@ -538,7 +538,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("adblock_enable", adblock_enable, boolean);
         ADD_MAP("speedtest_timeout_ms", speed_test_timeout_ms, integer);
         ADD_MAP("urltest_timeout_ms", url_test_timeout_ms, integer);
-        ADD_MAP("show_system_dns", show_system_dns, boolean);
+  //      ADD_MAP("show_system_dns", show_system_dns, boolean);
   //      ADD_MAP("cache_database_name", cache_database, string);
         ADD_MAP("simple_dl_url", simple_dl_url, string);
         ADD_MAP("auto_test_enable", auto_test_enable, boolean);
