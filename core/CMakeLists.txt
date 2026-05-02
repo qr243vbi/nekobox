@@ -217,9 +217,9 @@ if(NOT SKIP_UPDATER)
 
     add_custom_command(
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
-        COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV} CGO_ENABLED=0
+        COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
-                "${GOCMD}" build ${GO_MOD_FLAG} -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
+                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
