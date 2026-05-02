@@ -1,3 +1,6 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
 //
 // URL Parser for C++
 // Created Oct 22, 2017.

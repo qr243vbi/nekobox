@@ -1,8 +1,8 @@
-#include <cpr/proxyauth.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
+#include <cpr/proxyauth.h>
 #include <cpr/cpr.h>
 
 

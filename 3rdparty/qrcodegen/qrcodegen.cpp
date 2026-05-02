@@ -1,3 +1,6 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
 /* 
  * QR Code generator library (C++)
  * 
