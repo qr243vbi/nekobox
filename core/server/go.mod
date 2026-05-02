@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
-	github.com/apache/thrift v0.23.0
+	github.com/apache/thrift v0.23.1-0.20260502142354-26137ff89d41
 	github.com/dustin/go-humanize v1.0.1
 	github.com/giert/taskmaster v0.0.0-20251117163809-2ec4a61354ef
 	github.com/gofrs/uuid/v5 v5.4.0
