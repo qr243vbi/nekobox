@@ -93,7 +93,7 @@ on:
         type: boolean
         default: true
         required: false
-      publish_xbps:
+      build_xbps:
         # description: "Publish xbps packages"
         type: boolean
         default: true
@@ -205,8 +205,8 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
-  upload_xbps:
-    name: Upload xbps
+  build_xbps:
+    name: Build xbps
     permissions:
       contents: write
       actions: read
@@ -230,7 +230,7 @@ jobs:
           - { runner: ubuntu-24.04, target: x86_64, variant: glibc, guest: amd64 }
           - { runner: ubuntu-24.04, target: i686, variant: glibc, guest: "386" }
     runs-on: ${{ matrix.runner }}
-    if: github.event.inputs.publish_xbps == 'true'
+    if: github.event.inputs.build_xbps == 'true'
     steps:
      # Checkout this repository (nekobox-void)
       - name: Checkout nekobox-void
@@ -256,8 +256,10 @@ jobs:
           then
             XBPS_TARGET_ARCH="${XBPS_TARGET_ARCH}-musl"
           fi
+          ls
           (
            cd download-artifact
+           ls
            cd *public-public
            tar xvzf artifacts.tgz -C .
            rm artifacts.tgz
