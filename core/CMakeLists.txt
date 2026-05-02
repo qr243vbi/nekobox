@@ -219,7 +219,7 @@ if(NOT SKIP_UPDATER)
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
         COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
-                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
+                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -buildvcs=false -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
@@ -307,7 +307,7 @@ add_custom_command(
     DEPENDS ${WRAPPER_DEP_FILE}
     COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 			${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
-            "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
+            "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -buildvcs=false -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
