@@ -420,7 +420,7 @@ endif()
 
 #qt_finalize_executable(nekobox)
 if (UNIX)
-install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/pre_install.cmake" COMPONENT gui)
+download_srslist()
 
 remove_rpath(nekobox)
 
