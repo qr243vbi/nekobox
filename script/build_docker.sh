@@ -18,7 +18,7 @@ if [[ -d download-artifact && "$SKIP_BUILD_GO" != yes ]]
 then
 (
  cd download-artifact
- cd *public-public
+ cd *public-public ||:
  tar xvzf artifacts.tgz -C .
  mv deployment/* $DEPLOYMENT
 ) ||:
