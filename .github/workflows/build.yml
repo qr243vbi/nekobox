@@ -495,18 +495,22 @@ jobs:
             target: 386
             target1: i686
             target2: i386
+            goarch: 386
           - platform: ubuntu-24.04-arm
             target: arm/v7
             target1: armhf
             target2: armhf
+            goarch: arm
           - platform: ubuntu-24.04
             target: amd64
             target1: x86_64
             target2: x86_64
+            goarch: amd64
           - platform: ubuntu-24.04-arm
             target: arm64
             target1: aarch64
             target2: aarch64
+            goarch: arm64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -579,9 +583,13 @@ jobs:
         shell: bash
         env:
           GUEST_ARCH: ${{ matrix.target }}
+          GOOS: linux
+          GOARCH: ${{ matrix.goarch }}
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          echo "UNAME=${GUEST_ARCH}" >> .ENV
+          echo "UNAME=${GOARCH}" >> .ENV
+          echo "GOARCH=${GOARCH}" >> .ENV
+          echo "GOOS=${GOOS}" >> .ENV
           echo "INPUT_VERSION=${INPUT_VERSION}" >> .ENV
           echo "SKIP_UPDATE_BUTTON=${SKIP_UPDATE_BUTTON}" >> .ENV
           docker compose up --force-recreate --build

@@ -1,6 +1,8 @@
 #!/bin/bash
 source script/env_deploy.sh
 export CURDIR="$SRC_ROOT"
+export PATH=$PATH:/usr/lib/qt6/bin:/usr/lib64/qt6/bin
+
 
 set -e
 
@@ -90,9 +92,9 @@ fi
 chmod +x *.AppImage ||:
 
 export EXTRA_QT_PLUGINS="iconengines;wayland-shell-integration;wayland-decoration-client;"
-export QT_PLUGIN_PATH="${QT_PLUGIN_PATH:-$(qmake6 -query QT_INSTALL_PLUGINS)/platforms}"
+export QT_PLUGIN_PATH="${QT_PLUGIN_PATH:-$(qmake -query QT_INSTALL_PLUGINS)/platforms}"
 
-qmake6 -query QT_INSTALL_PLUGINS
+qmake -query QT_INSTALL_PLUGINS
 ls $QT_PLUGIN_PATH
 echo "extra platform plugins"
 for i in `ls $QT_PLUGIN_PATH`

@@ -1,5 +1,6 @@
 #!/bin/bash
 . script/env_deploy.sh
+
 set -e
 export NEKOBOX_ENV_DEPLOYED=yes
 
@@ -33,6 +34,7 @@ then
    ls $PWD
    echo $archive_standalone
    export SRC_ROOT=$PWD/$archive_standalone
+   ln *.AppImage "$SRC_ROOT" ||:
 #   BUILD="$SRC_ROOT/build"
    export GOFLAGS="-mod=vendor $GOFLAGS"
    export VERSION_SINGBOX="$(cat $SRC_ROOT/SingBox.Version)"
@@ -53,7 +55,7 @@ fi
 echo "$SRC_ROOT"
 cd "$SRC_ROOT"
 
-cmake -S $SRC_ROOT -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}" -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON:-OFF}" -DBUILD_GO_PARTS=ON -DBUILD_GO_PARTS="${BUILD_GO_PARTS}" "-DGO_MOD_TIDY=ON"
+cmake -S "$SRC_ROOT" -B "$BUILD" -GNinja -DNKR_DEFAULT_VERSION="${INPUT_VERSION:-5.0.0}" -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON:-OFF}" -DBUILD_GO_PARTS="${BUILD_GO_PARTS}" -DGOOS="${GOOS}" -DGOARCH="${GOARCH}"
 cmake --build "$BUILD" -v -j $(nproc)
 (
 . script/deploy_linux64.sh; 
