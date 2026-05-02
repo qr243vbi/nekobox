@@ -1,0 +1,104 @@
+name: Build NuGet Package
+on:
+  push:
+    tags: [ '[0-9]+.[0-9]+.[0-9]+' ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The optional semantic version number. If not supplied the branch/tag will be used.'
+        type: string
+      no_publish:
+          description: 'Prevent publishing the NuGet package. Just build it and then upload it as an artifact.'
+          type: boolean
+          default: false
+
+jobs:
+  package-nuget:
+    runs-on: windows-2022
+
+    # Use PowerShell everywhere unless a step overrides it.
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+    # ────────────────────────────── Version handling ─────────────────────────────
+    - name: Set version from manual input
+      if: ${{ github.event_name == 'workflow_dispatch' && inputs.version != '' }}
+      run: |
+        "RELEASE_VERSION=${{ inputs.version }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Set version from Git ref
+      if: ${{ env.RELEASE_VERSION == '' }}
+      run: |
+        $ref = "${{ github.ref }}".Split('/')[-1]
+        "RELEASE_VERSION=$ref" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Print version
+      run: Write-Host "NuGet package version will be '$env:RELEASE_VERSION'."
+
+    # ───────────────────────────── Repository & tools ────────────────────────────
+    - uses: actions/checkout@v6
+
+    - uses: actions/setup-python@v6
+  
+    - name: Install meson
+      run: pip install meson
+
+    # Prepare output folder paths
+    - name: Prepare NuGet output layout
+      shell: bash
+      run: |
+        set -eux
+        mkdir -p "$GITHUB_WORKSPACE/nuget/build/native/{x86,x64}/{Debug,Release}"
+        cp README.md "$GITHUB_WORKSPACE/nuget"
+
+    # ─────────────────────────────── Build x86 ─────────────────────────────────
+    - name: Enable MSVC x86 toolchain
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x86
+
+    - name: Configure & build Release x86
+      run: |
+        cmake -S . -B build-release-x86  -G "Visual Studio 17 2022" -A Win32 -DCMAKE_INSTALL_PREFIX="$env:GITHUB_WORKSPACE/nuget/build/native/x86/Release" -DBUILD_SHARED_LIBS=ON -DCURL_ZLIB=OFF -DCMAKE_BUILD_TYPE=Release
+        cmake --build build-release-x86 --config Release --target install
+
+    - name: Configure & build Debug x86
+      run: |
+        cmake -S . -B build-debug-x86 -G "Visual Studio 17 2022" -A Win32 -DCMAKE_INSTALL_PREFIX="$env:GITHUB_WORKSPACE/nuget/build/native/x86/Debug" -DBUILD_SHARED_LIBS=ON -DCURL_ZLIB=OFF -DCMAKE_BUILD_TYPE=Debug
+        cmake --build build-debug-x86 --config Debug --target install
+
+    # ─────────────────────────────── Build x64 ─────────────────────────────────
+    - name: Enable MSVC x64 toolchain
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
+    - name: Configure & build Release x64
+      run: |
+        cmake -S . -B build-release-x64 -G "Visual Studio 17 2022" -A x64 -DCMAKE_INSTALL_PREFIX="$env:GITHUB_WORKSPACE/nuget/build/native/x64/Release" -DBUILD_SHARED_LIBS=ON -DCURL_ZLIB=OFF -DCMAKE_BUILD_TYPE=Release
+        cmake --build build-release-x64 --config Release --target install
+
+    - name: Configure & build Debug x64
+      run: |
+        cmake -S . -B build-debug-x64 -G "Visual Studio 17 2022" -A x64 -DCMAKE_INSTALL_PREFIX="$env:GITHUB_WORKSPACE/nuget/build/native/x64/Debug" -DBUILD_SHARED_LIBS=ON -DCURL_ZLIB=OFF -DCMAKE_BUILD_TYPE=Debug
+        cmake --build build-debug-x64 --config Debug --target install
+
+    # ────────────────────────── Pack, push, artefact ─────────────────────────────
+    - name: Create NuGet package
+      env:
+        COMMIT_HASH: ${{ github.sha }}
+      run: nuget pack "$env:GITHUB_WORKSPACE/nuget/libcpr.nuspec" -OutputDirectory "$env:GITHUB_WORKSPACE" -Properties "VERSION=$env:RELEASE_VERSION;COMMIT_HASH=$env:COMMIT_HASH"
+
+    - name: Publish package to NuGet.org
+      if: ${{ !inputs.no_publish }}
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: nuget push "$env:GITHUB_WORKSPACE\*.nupkg" $env:NUGET_API_KEY -Source https://api.nuget.org/v3/index.json
+
+    - name: Upload built .nupkg as workflow artefact
+      uses: actions/upload-artifact@v7
+      with:
+        name: artifact-nuget
+        path: '*.nupkg'
