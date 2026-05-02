@@ -8,7 +8,7 @@ RUN echo "FINE"
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
 # Update repositories and install everything
-RUN zypper --non-interactive --no-allow-arch-change install \
+RUN zypper --non-interactive install --no-allow-arch-change \
         bash \
         patterns-devel-base-devel_basis \
         cmake \
