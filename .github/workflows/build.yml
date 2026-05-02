@@ -44,22 +44,7 @@ on:
         default: true
         required: false
       build_ubuntu:
-        description: "Build linux x64 binaries"
-        type: boolean
-        default: true
-        required: false
-      build_ubuntu_arm:
-        description: "Build linux ARM64 binaries"
-        type: boolean
-        default: true
-        required: false
-      build_ubuntu_32:
-        description: "Build linux x86 binaries"
-        type: boolean
-        default: true
-        required: false
-      build_ubuntu_arm_32:
-        description: "Build linux ARM binaries"
+        description: "Build ubuntu binaries"
         type: boolean
         default: true
         required: false
@@ -94,7 +79,7 @@ on:
         default: true
         required: false
       build_xbps:
-        # description: "Publish xbps packages"
+        description: "Publish void linux packages"
         type: boolean
         default: true
         required: false
@@ -117,15 +102,15 @@ jobs:
             go_version: "1.25.9"
           - cross_os: linux
             cross_arch: arm64
-            allow: ${{ github.event.inputs.build_ubuntu_arm }}
+            allow: ${{ github.event.inputs.build_ubuntu }}
             go_version: "1.25.9"
           - cross_os: linux
             cross_arch: 386
-            allow: ${{ github.event.inputs.build_ubuntu_32 }}
+            allow: ${{ github.event.inputs.build_ubuntu }}
             go_version: "1.25.9"
           - cross_os: linux
             cross_arch: arm
-            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
+            allow: ${{ github.event.inputs.build_ubuntu }}
             go_version: "1.25.9"
           - cross_os: windows
             cross_arch: amd64
@@ -205,7 +190,7 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
-  build_xbps:
+  build-xbps:
     name: Build xbps
     permissions:
       contents: write
@@ -230,7 +215,7 @@ jobs:
           - { runner: ubuntu-24.04-arm, target: armv6l, variant: musl, guest: 'arm/v6' }
           - { runner: ubuntu-24.04-arm, target: armv6l, variant: glibc, guest: 'arm/v6' }
     runs-on: ${{ matrix.runner }}
-    if: github.event.inputs.build_xbps == 'true'
+    if: github.event.inputs.build_xbps == 'true' && github.event.inputs.source_only != 'true'
     steps:
      # Checkout this repository (nekobox-void)
       - name: Checkout nekobox-void
@@ -241,7 +226,19 @@ jobs:
         uses: actions/download-artifact@main
         with:
           path: download-artifact
-      # Build the package for the target architecture
+
+      - name: Cache Docker images.
+        uses: AllySummers/docker-cache@main
+        with:
+          key: VoidDockerCache-${{ matrix.runner }}-${{ matrix.target }}-${{ matrix.variant }}-${{ matrix.guest }}-${{ hashFiles('Dockerfile') }}
+
+      - name: Cache Builds
+        id: cache-common
+        uses: actions/cache@main
+        with:
+          path: srcpkgs/packages
+          key: VoidPkgCache-${{ matrix.runner }}-${{ matrix.target }}-${{ matrix.variant }}-${{ matrix.guest }}-${{ hashFiles('Dockerfile') }}
+
       - name: Build NekoBox package
         env:
           PRIVATE_KEY: ${{ secrets.PRIV_KEY }}
@@ -274,22 +271,20 @@ jobs:
           declare -p XBPS_TARGET_VERSION   >> srcpkgs/.ENV
           chmod -Rfv 777 srcpkgs
           sudo -E docker compose up
-          sudo mv srcpkgs/packages void-packages
-          sudo chown `whoami`:`whoami` -Rfv void-packages
-
+          sudo chown `whoami`:`whoami` -Rfv srcpkgs/packages
       - name: Linux - Publish
-        if: github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
+        if: github.event.inputs.publish  == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
-          gh release upload "$INPUT_VERSION" ./void-packages/hostdir/binpkgs/* --clobber
+          gh release upload "$INPUT_VERSION" ./srcpkgs/packages/hostdir/binpkgs/* --clobber
       # Upload build artifacts
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
           name: nekobox-${{ matrix.target }}
-          path: void-packages/hostdir/binpkgs/*.xbps
+          path: srcpkgs/packages/hostdir/binpkgs/*.xbps
           retention-days: 7
   upload_aur:
     name: Upload to Open Build Service and Aur
@@ -500,8 +495,9 @@ jobs:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
 
-  build-cpp-linux:
+  build-ubuntu:
     name: Build linux binaries
+    if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source_only != 'true'
     permissions:
       contents: write
       actions: read
@@ -514,22 +510,18 @@ jobs:
             target: amd64
             target1: x86_64
             target2: x86_64
-            allow: ${{ github.event.inputs.build_ubuntu }}
           - platform: ubuntu-24.04-arm
             target: arm64
             target1: aarch64
             target2: aarch64
-            allow: ${{ github.event.inputs.build_ubuntu_arm }}
           - platform: ubuntu-24.04
             target: 386
             target1: i686
             target2: i386
-            allow: ${{ github.event.inputs.build_ubuntu_32 }}
           - platform: ubuntu-24.04-arm
             target: arm
             target1: armhf
             target2: armhf
-            allow: ${{ github.event.inputs.build_ubuntu_arm_32 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
@@ -537,20 +529,17 @@ jobs:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: "true"
 
       - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/download-artifact@main
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
@@ -558,7 +547,6 @@ jobs:
 
       - name: Cache Builds
         id: cache-common
-        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
         uses: actions/cache@main
         with:
           path: build
@@ -603,7 +591,6 @@ jobs:
           destination: appimagetool-${{ matrix.target1 }}.AppImage
 
       - name: Linux - Generate MakeFile and Build
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         env:
           GUEST_ARCH: ${{ matrix.target }}
@@ -615,7 +602,7 @@ jobs:
           docker compose up --force-recreate --build
 
       - name: Linux - Publish
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
+        if: github.event.inputs.publish  == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
@@ -623,12 +610,10 @@ jobs:
           gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
       - name: Tar files
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         shell: bash
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
