@@ -254,6 +254,7 @@ jobs:
           declare -p XBPS_TARGET_SOURCE    >> srcpkgs/.ENV
           declare -p XBPS_TARGET_VERSION   >> srcpkgs/.ENV
           chmod -Rfv 777 srcpkgs
+          sudo echo 0 > /proc/sys/kernel/apparmor_restrict_unprivileged_userns
           sudo -E docker compose up
           sudo chown `whoami`:`whoami` -Rfv srcpkgs/packages
       - name: Linux - Publish
