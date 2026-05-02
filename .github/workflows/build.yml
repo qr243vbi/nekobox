@@ -93,6 +93,11 @@ on:
         type: boolean
         default: true
         required: false
+      publish_xbps:
+        # description: "Publish xbps packages"
+        type: boolean
+        default: true
+        required: false
 jobs:
   build-go:
     permissions:
@@ -101,7 +106,6 @@ jobs:
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     strategy:
-  #    max-parallel: 1
       matrix:
         include:
           - cross_os: public
@@ -201,6 +205,90 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
+  upload_xbps:
+    name: Upload xbps
+    permissions:
+      contents: write
+      actions: read
+
+    strategy:
+      # Allow all builds to complete even if one fails
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          # Native builds (same arch for host and target)
+          - { runner: ubuntu-24.04-arm, target: aarch64, variant: musl, guest: arm64 }
+          - { runner: ubuntu-24.04-arm, target: aarch64, variant: glibc, guest: arm64 }
+          - { runner: ubuntu-24.04-arm, target: armv7l, variant: musl, guest: 'arm/v7' }
+          - { runner: ubuntu-24.04-arm, target: armv7l, variant: glibc, guest: 'arm/v7' }
+          - { runner: ubuntu-24.04-arm, target: armv6l, variant: musl, guest: 'arm/v6' }
+          - { runner: ubuntu-24.04-arm, target: armv6l, variant: glibc, guest: 'arm/v6' }
+          - { runner: ubuntu-24.04, target: x86_64, variant: musl, guest: amd64 }
+          - { runner: ubuntu-24.04, target: x86_64, variant: glibc, guest: amd64 }
+          - { runner: ubuntu-24.04, target: i686, variant: glibc, guest: "386" }
+    runs-on: ${{ matrix.runner }}
+    if: github.event.inputs.publish_xbps == 'true'
+    steps:
+     # Checkout this repository (nekobox-void)
+      - name: Checkout nekobox-void
+        uses: actions/checkout@main
+        with:
+          repository: qr243vbi/nekobox-void
+      - name: Download Artifacts
+        uses: actions/download-artifact@main
+        with:
+          path: download-artifact
+      # Build the package for the target architecture
+      - name: Build NekoBox package
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIV_KEY }}
+          XBPS_PASSPHRASE: ${{ secrets.SIGN_PASS }}
+          TARGET: ${{ matrix.target }}
+          XBPS_TARGET_VERSION: ${{ github.event.inputs.tag }}
+          GUEST_ARCH: ${{ matrix.guest }}
+          GUEST_VARIANT: ${{ matrix.variant }}
+        run: |
+          XBPS_TARGET_ARCH="${TARGET}"
+          if [[ "${GUEST_VARIANT}" == "musl" ]]
+          then
+            XBPS_TARGET_ARCH="${XBPS_TARGET_ARCH}-musl"
+          fi
+          (
+           cd download-artifact
+           cd *public-public
+           tar xvzf artifacts.tgz -C .
+           rm artifacts.tgz
+           mv deployment/* ../../
+          )
+          XBPS_TARGET_SOURCE="$(ls *$XBPS_TARGET_VERSION*.tar.xz)"
+          export GUEST_UID="$UID"
+          export GUEST_VARIANT
+          export GUEST_ARCH
+          declare -p XBPS_TARGET_ARCH      >> srcpkgs/.ENV
+          declare -p XBPS_PASSPHRASE       >> srcpkgs/.ENV
+          declare -p PRIVATE_KEY           >> srcpkgs/.ENV
+          declare -p XBPS_TARGET_SOURCE    >> srcpkgs/.ENV
+          declare -p XBPS_TARGET_VERSION   >> srcpkgs/.ENV
+          chmod -Rfv 777 srcpkgs
+          sudo -E docker compose up
+          sudo mv srcpkgs/packages void-packages
+          sudo chown `whoami`:`whoami` -Rfv void-packages
+
+      - name: Linux - Publish
+        if: github.event.inputs.source_only != 'true' && github.event.inputs.publish  == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+        run: |
+          gh release upload "$INPUT_VERSION" ./void-packages/hostdir/binpkgs/* --clobber
+      # Upload build artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: nekobox-${{ matrix.target }}
+          path: void-packages/hostdir/binpkgs/*.xbps
+          retention-days: 7
   upload_aur:
     name: Upload to Open Build Service and Aur
     permissions:
@@ -222,20 +310,6 @@ jobs:
           AUR_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
         run: |
           echo copr > requirements.txt
-    #      git config --global user.email "${{ secrets.EMAIL }}"
-    #      git config --global user.name "${{ github.actor }}"
-    #      mkdir -p ~/.ssh
-    #      touch ~/.ssh/config           ||:
-    #      touch ~/.ssh/known_hosts      ||:
-    #      echo "Host aur aur.archlinux.org"     >> ~/.ssh/config
-    #      echo "  IdentityFile ~/.ssh/aur"      >> ~/.ssh/config
-    #      echo "  User aur"                     >> ~/.ssh/config
-    #      chmod -vR 600 ~/.ssh/*
-    #      ssh-keyscan -v -t "rsa,dsa,ecdsa,ed25519" aur.archlinux.org >> ~/.ssh/known_hosts
-    #      echo "$AUR_KEY" > ~/.ssh/aur
-    #      chmod -vR 600 ~/.ssh/*
-    #      ssh-keygen -vy -f ~/.ssh/aur > ~/.ssh/aur.pub
-    #      chmod -vR 600 ~/.ssh/*
 
       - uses: actions/setup-python@v5
         with:
