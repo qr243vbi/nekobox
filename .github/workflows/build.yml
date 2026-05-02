@@ -175,7 +175,7 @@ jobs:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
   build-xbps:
-    name: Build xbps
+    name: Build xbps packages
     permissions:
       contents: write
       actions: read
@@ -480,7 +480,7 @@ jobs:
           path: artifacts.tgz
 
   build-ubuntu:
-    name: Build linux binaries
+    name: Build ubuntu binaries
     if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source_only != 'true'
     permissions:
       contents: write
@@ -488,6 +488,7 @@ jobs:
     needs:
       - build-go
     strategy:
+      max-parallel: 2
       matrix:
         include:
           - platform: ubuntu-24.04
@@ -503,7 +504,7 @@ jobs:
             target1: i686
             target2: i386
           - platform: ubuntu-24.04-arm
-            target: arm
+            target: arm/v7
             target1: armhf
             target2: armhf
       fail-fast: false
