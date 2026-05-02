@@ -21,6 +21,7 @@ then
  cd download-artifact
  cd *public-public ||:
  tar xvzf artifacts.tgz -C .
+ mkdir -p "$DEPLOYMENT" ||:
  mv deployment/* $DEPLOYMENT
 ) ||:
 fi

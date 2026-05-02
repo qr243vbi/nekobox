@@ -38,7 +38,7 @@ then
  cd download-artifact
  cd *"linux-$ARCH" ||:
  tar xvzf artifacts.tgz -C .
- mkdir -p "$DEST"
+ mkdir -p "$DEST" ||:
  mv deployment/*"linux-$ARCH/"* "$DEST"
 ) ||:
 fi
