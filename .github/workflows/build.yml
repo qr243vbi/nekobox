@@ -44,7 +44,7 @@ on:
         default: true
         required: false
       build_ubuntu:
-        description: "Build ubuntu binaries"
+        description: "Build linux binaries"
         type: boolean
         default: true
         required: false
@@ -480,7 +480,7 @@ jobs:
           path: artifacts.tgz
 
   build-ubuntu:
-    name: Build ubuntu binaries
+    name: Build linux binaries
     if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source_only != 'true'
     permissions:
       contents: write

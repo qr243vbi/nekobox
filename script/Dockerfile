@@ -20,7 +20,7 @@ RUN zypper --non-interactive install \
         pkg-config \
         thrift \
         boost-devel \
-        thrift-devel \
+        libthrift-devel \
         patchelf \
         fuse3 \
         squashfs \
@@ -36,7 +36,7 @@ RUN zypper --non-interactive install \
         libunistring-devel \
         libzstd-devel \
         go \
-        openssl-devel \
+        libopenssl-devel \
         libacl-devel \
         libcurl-devel
 WORKDIR /app
