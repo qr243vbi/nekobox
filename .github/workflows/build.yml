@@ -48,11 +48,11 @@ on:
         type: boolean
         default: true
         required: false
-      build_xbps:
-        description: "Build void linux packages"
-        type: boolean
-        default: true
-        required: false
+ #     build_xbps:
+  #      description: "Build void linux packages"
+   #     type: boolean
+    #    default: true
+     #   required: false
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
