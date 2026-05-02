@@ -1,5 +1,5 @@
-# openSUSE Tumbleweed
-FROM opensuse/tumbleweed:latest
+# Void Linux (glibc)
+FROM ghcr.io/void-linux/void-glibc:latest
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -7,42 +7,13 @@ ARG BUILDPLATFORM
 RUN echo "FINE"
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
-# Update repositories and install everything
-RUN zypper --non-interactive install --no-allow-arch-change \
-        bash \
-        patterns-devel-base-devel_basis \
-        cmake \
-        git \
-        ninja \
-        jq \
-        curl \
-        ccache \
-        wget \
-        gcc-c++ \
-        pkg-config \
-        thrift \
-        boost-devel \
-        libthrift-devel \
-        patchelf \
-        fuse3 \
-        squashfs \
-        qt6-tools-devel \
-        qt6-base-devel \
-        qt6-tools-linguist \
-        qt6-linguist-devel \
-        qt6-declarative-devel \
-        qt6-wayland-devel \
-        xcb-util-wm-devel \
-        libboost_filesystem-devel \
-        file \
-        glu-devel \
-        lmdb-devel \
-        libunistring-devel \
-        libzstd-devel \
-        go \
-        libopenssl-devel \
-        libacl-devel \
-        libcurl-devel
+# Update system and install dependencies
+RUN xbps-install -Syu -y
+RUN xbps-install -y bash
+RUN xbps-install -y cmake git ninja jq curl ccache wget sed util-linux coreutils shadow squashfs-tools
+RUN xbps-install -y qt6-base-devel qt6-declarative-devel thrift-devel openssl-devel boost-devel lmdb-devel acl-devel libunistring-devel libcurl-devel libzstd-devel patchelf
+RUN xbps-install -y pkg-config qt6-base qt6-tools go thrift base-devel
+
 WORKDIR /app
 
 CMD ["bash", "-x", "/app/script/build_docker.sh"]
