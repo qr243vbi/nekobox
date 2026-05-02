@@ -40,8 +40,6 @@ script/nekobox_temp
 gen-cpp
 core/updater/vendor
 core/server/vendor
-core/server/gen/libcore_service-remote
-core/server/gen/*.go
 script/winget-pkgs
 srslist.json
 *.Version
@@ -154,9 +152,6 @@ out
 /libs
 /core/server/vendor
 /core/updater/vendor
-/core/server/gen/*.go
-/core/server/gen/main_sing
-/core/server/gen/libcore_server-remote
 /core/server/Core
 /script/nekobox_temp
 /script/PKGBUILD
