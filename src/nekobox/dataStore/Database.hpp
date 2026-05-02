@@ -128,8 +128,10 @@ namespace Configs {
         std::shared_ptr<ProxyEntity> GetProfile(int id);
 
         bool AddGroup(const std::shared_ptr<Group> &ent);
+        bool AddGroupBatch(const QList<std::shared_ptr<Group>> &groups);
 
         void DeleteGroup(int gid);
+        void BatchDeleteGroups(const QList<int> &ids);
 
         std::shared_ptr<Group> GetGroup(int id);
 

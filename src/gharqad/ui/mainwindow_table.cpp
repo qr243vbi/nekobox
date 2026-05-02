@@ -584,10 +584,15 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
         return QVariant();
 
     if (orientation == Qt::Vertical){
-        if (data_id(section) == Configs::dataStore->started_id){
+        int data_id = this->data_id(section);
+        if (data_id == Configs::dataStore->started_id){
             return "*";
         } 
+        #ifdef DEBUG_MODE
+        return QString::number(data_id) + "  ";
+        #else
         return QString::number(section + 1) + "  ";
+        #endif
     }
 
     if (orientation == Qt::Horizontal) {

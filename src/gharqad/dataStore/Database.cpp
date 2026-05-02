@@ -297,6 +297,7 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 #ifndef SKIP_LMDB
 QList<int> Configs::query_lmdb(lmdb::env &env, char c) {
   QList<int> result;
+  QSet<uint32_t> result_set;
 
   lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
   lmdb::dbi dbi = lmdb::dbi::open(rtxn, nullptr);
@@ -329,7 +330,14 @@ QList<int> Configs::query_lmdb(lmdb::env &env, char c) {
     uint32_t u = (uint32_t(b[1]) << 0) | (uint32_t(b[2]) << 8) |
                  (uint32_t(b[3]) << 16) | (uint32_t(b[4]) << 24);
 
-    result.append(static_cast<int32_t>(u));
+    if (!result_set.contains(u)){
+      int i = static_cast<int32_t>(u);
+      if (i < 0 ){
+        continue;
+      }
+      result.append(i);
+      result_set.insert(u);
+    }
   }
 
   cursor.close();
@@ -907,28 +915,62 @@ std::shared_ptr<Group> ProfileManager::LoadGroup(int jsonPath) {
   return ent;
 }
 
-bool ProfileManager::AddGroup(const std::shared_ptr<Group> &ent) {
-  if (ent->id >= 0) {
-    return false;
-  }
-  int id = this->max_group_id = (this->max_group_id + 1);
-  ent->id = id;
-  groups[ent->id] = ent;
-  groupsTabOrder.push_back(id);
+bool ProfileManager::AddGroup(const std::shared_ptr<Group> &ent){
+  return AddGroupBatch({ent});
+}
 
-  ent->Save();
-  return true;
+bool ProfileManager::AddGroupBatch(const QList<std::shared_ptr<Group>> &ents) {
+  QList<std::shared_ptr<Group>> to_save;
+  for (auto ent : ents){
+    if (ent->id >= 0) {
+      continue;
+    }
+    int id = this->max_group_id = (this->max_group_id + 1);
+    ent->id = id;
+    groups[ent->id] = ent;
+    groupsTabOrder.push_back(id);
+
+    to_save << ent;
+  }
+  bool ret = to_save.size() > 0;
+  if (ret){
+   runOnNewThread([=, this] {
+      lock();
+      for (auto gid : to_save){
+       gid->Save();
+      }
+      unlock();
+    });
+  }
+  return ret;
 }
 
 void ProfileManager::DeleteGroup(int gid) {
-  if (groups.size() <= 1)
-    return;
-  auto group = GetGroup(gid);
-  if (group == nullptr)
-    return;
-  BatchDeleteProfiles(group->Profiles(), gid);
-  groupsTabOrder.removeAll(gid);
-  Configs::databaseManager->Drop(Groups, gid);
+  BatchDeleteGroups({gid});
+}
+
+
+void ProfileManager::BatchDeleteGroups(const QList<int> & ids) {
+  QSet<int> to_drop;
+  for (int gid : ids){
+    if (groups.size() <= 1)
+      continue;
+    auto group = GetGroup(gid);
+    if (group == nullptr)
+      continue;
+    BatchDeleteProfiles(group->Profiles(), gid);
+    groupsTabOrder.removeAll(gid);
+    to_drop << gid;
+  }
+  if (to_drop.size() > 0){
+   runOnNewThread([=, this] {
+      lock();
+      for (int gid : to_drop){
+       Configs::databaseManager->Drop(Groups, gid);
+      }
+      unlock();
+    });
+  }
 }
 
 std::shared_ptr<Group> ProfileManager::GetGroup(int id) {
@@ -964,18 +1006,31 @@ void ProfileManager::UpdateRouteChains(
     const QList<std::shared_ptr<RoutingChain>> &newChain) {
   routes.clear();
 
+  QList<std::shared_ptr<Configs::RoutingChain> > to_save;
+
   for (const auto &item : newChain) {
     if (!AddRouteChain(item)) {
       routes[item->id] = item;
+      to_save << item;
+    }
+  }
+
+
+  runOnNewThread([=, this] {
+    lock();
+    for (const auto &item: to_save){
       item->Save();
     }
-  }
-  auto currFiles =
+
+    auto currFiles =
       Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
-  for (const auto &item : currFiles) { // clean up removed route profiles
-    if (!routes.count(item)) {
-      Configs::databaseManager->Drop(Routes, item);
+    for (const auto &item : currFiles) { // clean up removed route profiles
+      if (!routes.count(item)) {
+        Configs::databaseManager->Drop(Routes, item);
+      }
     }
-  }
+    unlock();
+  });
+
 }
 } // namespace Configs

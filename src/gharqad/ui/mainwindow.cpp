@@ -2870,14 +2870,22 @@ void MainWindow::refresh_groups() {
   for (const auto &gid : Configs::profileManager->groupsTabOrder) {
     auto group = Configs::profileManager->GetGroup(gid);
     if (index == 0) {
-      ui->tabWidget->setTabText(0, group->name);
+      ui->tabWidget->setTabText(0, group->name
+      #ifdef DEBUG_MODE
+       + " id:" + QString::number(group->Id())
+      #endif
+      );
     } else {
       auto widget2 = new QWidget();
       auto layout2 = new QVBoxLayout();
       layout2->setContentsMargins(QMargins());
       layout2->setSpacing(0);
       widget2->setLayout(layout2);
-      ui->tabWidget->addTab(widget2, group->name);
+      ui->tabWidget->addTab(widget2, group->name
+      #ifdef DEBUG_MODE
+       + " id:" + QString::number(group->Id())
+      #endif
+      );
     }
     ui->tabWidget->tabBar()->setTabData(index, gid);
     index++;
