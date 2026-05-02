@@ -121,7 +121,7 @@
   <customwidget>
    <class>QtExtKeySequenceEdit</class>
    <extends>QKeySequenceEdit</extends>
-   <header>3rdparty/QtExtKeySequenceEdit.h</header>
+   <header>nekobox/ui/utils/QtExtKeySequenceEdit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

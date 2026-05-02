@@ -1,8 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
-
 //  _______   __ __   __  _____   __  __  __
 // |   __| |_/  |  \_/  |/  _  \ /  \/  \|  |     fkYAML: A C++ header-only YAML library
 // |   __|  _  < \_   _/|  ___  |    _   |  |___  version 0.4.2
@@ -2020,8 +2015,7 @@ inline void from_utf16(
         encoded_size = 2;
     }
     else if (first < 0xD800u || 0xE000u <= first) {
-        const auto utf8_chunk =
-            static_cast<uint32_t>(0xE08080u | ((first & 0xF000u) << 4) | ((first & 0x0FC0u) << 2) | (first & 0x3Fu));
+        const uint32_t utf8_chunk = 0xE08080u | ((first & 0xF000u) << 4) | ((first & 0x0FC0u) << 2) | (first & 0x3Fu);
         utf8[0] = static_cast<uint8_t>(utf8_chunk >> 16);
         utf8[1] = static_cast<uint8_t>(utf8_chunk >> 8);
         utf8[2] = static_cast<uint8_t>(utf8_chunk);
@@ -2031,9 +2025,8 @@ inline void from_utf16(
     else if (first <= 0xDBFFu && 0xDC00u <= second && second <= 0xDFFFu) {
         // surrogate pair
         const uint32_t code_point = 0x10000u + ((first & 0x03FFu) << 10) + (second & 0x03FFu);
-        const auto utf8_chunk = static_cast<uint32_t>(
-            0xF0808080u | ((code_point & 0x1C0000u) << 6) | ((code_point & 0x03F000u) << 4) |
-            ((code_point & 0x0FC0u) << 2) | (code_point & 0x3Fu));
+        const uint32_t utf8_chunk = 0xF0808080u | ((code_point & 0x1C0000u) << 6) | ((code_point & 0x03F000u) << 4) |
+                                    ((code_point & 0x0FC0u) << 2) | (code_point & 0x3Fu);
         utf8[0] = static_cast<uint8_t>(utf8_chunk >> 24);
         utf8[1] = static_cast<uint8_t>(utf8_chunk >> 16);
         utf8[2] = static_cast<uint8_t>(utf8_chunk >> 8);
@@ -2062,17 +2055,15 @@ inline void from_utf32(const char32_t utf32, std::array<uint8_t, 4>& utf8, uint3
         encoded_size = 2;
     }
     else if (utf32 <= 0xFFFFu) {
-        const auto utf8_chunk =
-            static_cast<uint32_t>(0xE08080u | ((utf32 & 0xF000u) << 4) | ((utf32 & 0x0FC0u) << 2) | (utf32 & 0x3F));
+        const uint32_t utf8_chunk = 0xE08080u | ((utf32 & 0xF000u) << 4) | ((utf32 & 0x0FC0u) << 2) | (utf32 & 0x3F);
         utf8[0] = static_cast<uint8_t>(utf8_chunk >> 16);
         utf8[1] = static_cast<uint8_t>(utf8_chunk >> 8);
         utf8[2] = static_cast<uint8_t>(utf8_chunk);
         encoded_size = 3;
     }
     else if (utf32 <= 0x10FFFFu) {
-        const auto utf8_chunk = static_cast<uint32_t>(
-            0xF0808080u | ((utf32 & 0x1C0000u) << 6) | ((utf32 & 0x03F000u) << 4) | ((utf32 & 0x0FC0u) << 2) |
-            (utf32 & 0x3Fu));
+        const uint32_t utf8_chunk = 0xF0808080u | ((utf32 & 0x1C0000u) << 6) | ((utf32 & 0x03F000u) << 4) |
+                                    ((utf32 & 0x0FC0u) << 2) | (utf32 & 0x3Fu);
         utf8[0] = static_cast<uint8_t>(utf8_chunk >> 24);
         utf8[1] = static_cast<uint8_t>(utf8_chunk >> 16);
         utf8[2] = static_cast<uint8_t>(utf8_chunk >> 8);
@@ -14649,7 +14640,7 @@ inline fkyaml::node FK_YAML_QUOTE_OPERATOR(const char32_t* s, std::size_t n) {
 /// @param n The size of `s`.
 /// @return The resulting `node` object deserialized from `s`.
 inline fkyaml::node FK_YAML_QUOTE_OPERATOR(const char8_t* s, std::size_t n) {
-    return fkyaml::node::deserialize((const char8_t*)s, (const char8_t*)s + n);
+    return fkyaml::node::deserialize(s, s + n);
 }
 
 #if defined(__clang__)

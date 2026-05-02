@@ -25,6 +25,54 @@
 //
 
 
+#include <QByteArray>
+
+namespace QtBase64 {
+  enum Base64Option {
+    Base64Encoding = 0,
+    Base64UrlEncoding = 1,
+
+    KeepTrailingEquals = 0,
+    OmitTrailingEquals = 2,
+
+    IgnoreBase64DecodingErrors = 0,
+    AbortOnBase64DecodingErrors = 4,
+  };
+  Q_DECLARE_FLAGS(Base64Options, Base64Option)
+  Q_DECLARE_OPERATORS_FOR_FLAGS(Base64Options)
+
+  enum class Base64DecodingStatus {
+    Ok,
+    IllegalInputLength,
+    IllegalCharacter,
+    IllegalPadding,
+  };
+
+  class FromBase64Result {
+  public:
+    QByteArray decoded;
+    Base64DecodingStatus decodingStatus;
+
+    void swap(FromBase64Result &other) noexcept;
+
+    explicit operator bool() const noexcept ;
+
+    #if defined(Q_COMPILER_REF_QUALIFIERS) && !defined(Q_QDOC)
+    QByteArray &operator*() &noexcept ;
+    const QByteArray &operator*() const &noexcept ;
+    QByteArray &&operator*() &&noexcept ;
+    #else
+    QByteArray &operator*() noexcept ;
+    const QByteArray &operator*() const noexcept ;
+    #endif
+  };
+
+  FromBase64Result QByteArray_fromBase64Encoding(const QByteArray &base64, Base64Options options);
+}
+
+namespace Qt515Base64 = QtBase64;
+
+
 bool createSymlink(const QString &targetPath, const QString &linkPath);
 
 bool isFileInDirectoryOrSubdirectory(const QString &filePath, const QString &dirPath);

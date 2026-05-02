@@ -1,9 +1,8 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
-#include "QtExtKeySequenceEdit.h"
+#include <nekobox/ui/utils/QtExtKeySequenceEdit.h>
 
 #include <QKeyEvent>
 

@@ -51,8 +51,8 @@
 #include <nekobox/ui/setting/dialog_manage_routes.h>
 #include <nekobox/ui/setting/dialog_vpn_settings.h>
 
-#include <3rdparty/QrDecoder.h>
-#include <3rdparty/qrcodegen.hpp>
+#include <nekobox/global/QrDecoder.h>
+#include <3rdparty/qrcodegen/qrcodegen.hpp>
 #include <3rdparty/qv2ray/v2/ui/LogHighlighter.hpp>
 #include <nekobox/ui/group/dialog_edit_group.h>
 

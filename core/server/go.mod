@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
-	github.com/apache/thrift v0.22.0
+	github.com/apache/thrift v0.23.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/giert/taskmaster v0.0.0-20251117163809-2ec4a61354ef
 	github.com/gofrs/uuid/v5 v5.4.0
@@ -173,8 +173,8 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => ./sing-box
+replace github.com/sagernet/sing-box => github.com/kindestone/sing-box v0.0.0-20260428112717-856add9e1e61
 
-replace github.com/sagernet/sing-tun => ./sing-tun
+replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4
 
 replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7

@@ -10,7 +10,7 @@ namespace Configs_ConfigItem {
 using namespace Configs_ConfigItem;
 
 #ifndef SKIP_LMDB
-#include <3rdparty/lmdbxx/include/lmdbxx/lmdb++.h>
+#include <3rdparty/lmdbxx/lmdb++.h>
 
 namespace Configs {
   std::string pack_char_int(char c, int32_t x);

@@ -4,8 +4,6 @@ shopt -s globstar
 
 cd `dirname "$(realpath $0)"`
 rm -rf *.go
-rm -rf */*.go
-rm -rf main_sing
 rm -rf libcore_service-remote
 
 THRIFT_COMPILER="${THRIFT_COMPILER:-thrift}"
@@ -13,8 +11,11 @@ THRIFT_COMPILER="${THRIFT_COMPILER:-thrift}"
 "${THRIFT_COMPILER}" --gen go -out .. libcore.thrift
 
 
+if [[ ! -d main_sing ]]
+then
+
 mkdir main_sing
-cp ../sing-box/cmd/sing-box/cmd*.go main_sing
+cp ${SING_BOX:-../sing-box}/cmd/sing-box/cmd*.go main_sing
 #!(*_stub.go) main_sing
 
 for i in $(ls main_sing)
@@ -35,3 +36,5 @@ func MainFunc() {
         }
 }
 EOF
+
+fi

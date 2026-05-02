@@ -1,14 +1,13 @@
 #ifdef _WIN32
-#include <winsock2.h>
 #include <windows.h>
 #endif
 
-#include "QrDecoder.h"
+#include <nekobox/global/QrDecoder.h>
 
-#include "quirc/quirc.h"
+#include <3rdparty/quirc/lib/quirc.h>
 #include <qdebug.h>
 
-#include "quirc/quirc_internal.h"
+#include <3rdparty/quirc/lib/quirc_internal.h>
 
 QrDecoder::QrDecoder()
     : m_qr(quirc_new())

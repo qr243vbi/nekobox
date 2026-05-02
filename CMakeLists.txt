@@ -174,6 +174,10 @@ file(GLOB_RECURSE PROJECT_SOURCES_GLOB
         ${NYXARIA}/ui/group/*.h
         ${NYXARIA}/ui/group/*.hpp
         ${NYXARIA}/ui/group/*.ui
+
+        ${NYXARIA}/ui/utils/*.hpp
+        ${NYXARIA}/ui/utils/*.h
+        ${GHARQAD}/ui/utils/*.cpp
 )
 
 # Sources
@@ -184,10 +188,7 @@ set(PROJECT_SOURCES
         ${PROJECT_SOURCES_GLOB}
         ${GHARQAD}/main.cpp
 
-        3rdparty/base64.cpp
-        3rdparty/qrcodegen.cpp
-        3rdparty/QtExtKeySequenceEdit.cpp
-        3rdparty/QrDecoder.cpp
+        3rdparty/qrcodegen/qrcodegen.cpp
 
         3rdparty/qv2ray/v2/ui/LogHighlighter.cpp
         3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp
@@ -199,10 +200,10 @@ set(PROJECT_SOURCES
         3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp
         3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.cpp
 
-        3rdparty/quirc/decode.c
-        3rdparty/quirc/identify.c
-        3rdparty/quirc/quirc.c
-        3rdparty/quirc/version_db.c
+        3rdparty/quirc/lib/decode.c
+        3rdparty/quirc/lib/identify.c
+        3rdparty/quirc/lib/quirc.c
+        3rdparty/quirc/lib/version_db.c
 
         ${GHARQAD}/api/RPC.cpp
         ${GHARQAD}/stats/traffic/TrafficLooper.cpp
@@ -220,7 +221,6 @@ set(PROJECT_SOURCES
         ${NYXARIA}/sys/AutoRun.hpp
         ${NYXARIA}/sys/Process.hpp
         ${NYXARIA}/sys/Settings.h
-        ${NYXARIA}/ui/utils/MapListModel.hpp
 
         ${GHARQAD}/sys/Process.cpp
         ${GHARQAD}/sys/AutoRun.cpp

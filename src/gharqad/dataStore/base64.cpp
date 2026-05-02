@@ -3,13 +3,13 @@
 #include <windows.h>
 #endif
 
-#include "base64.h"
+#include <nekobox/dataStore/Utils.hpp>
 
 #ifndef qsizetype
 #define qsizetype size_t
 #endif
 
-namespace Qt515Base64 {
+namespace QtBase64 {
     namespace {
         struct fromBase64_helper_result {
             qsizetype decodedLength;
@@ -83,6 +83,24 @@ namespace Qt515Base64 {
             return result;
         }
     } // namespace
+
+
+    void FromBase64Result::swap(FromBase64Result &other) noexcept {
+        qSwap(decoded, other.decoded);
+        qSwap(decodingStatus, other.decodingStatus);
+    }
+
+
+    FromBase64Result::operator bool() const noexcept { return decodingStatus == Base64DecodingStatus::Ok; }
+
+    #if defined(Q_COMPILER_REF_QUALIFIERS) && !defined(Q_QDOC)
+    QByteArray &FromBase64Result::operator*() &noexcept { return decoded; }
+    const QByteArray &FromBase64Result::operator*() const &noexcept { return decoded; }
+    QByteArray &&FromBase64Result::operator*() &&noexcept { return std::move(decoded); }
+    #else
+    QByteArray &FromBase64Result::operator*() noexcept { return decoded; }
+    const QByteArray &FromBase64Result::operator*() const noexcept { return decoded; }
+    #endif
 
     FromBase64Result QByteArray_fromBase64Encoding(const QByteArray &base64, Base64Options options) {
         const auto base64Size = base64.size();

@@ -1,0 +1,12 @@
+*.o
+*.lo
+quirc-demo
+quirc-scanner
+qrtest
+inspect
+libquirc.a
+libquirc.so*
+.*.swp
+*~
+.DS_Store
+.idea
