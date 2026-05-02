@@ -609,7 +609,7 @@ jobs:
       - name: Uploading Artifact
         uses: actions/upload-artifact@main
         with:
-          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}
+          name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.goarch }}
           path: artifacts.tgz
   #
   # build-cpp-linux:
