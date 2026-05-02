@@ -221,14 +221,14 @@ jobs:
         include:
           # Native builds (same arch for host and target)
           - { runner: ubuntu-24.04-arm, target: aarch64, variant: musl, guest: arm64 }
+          - { runner: ubuntu-24.04, target: x86_64, variant: musl, guest: amd64 }
           - { runner: ubuntu-24.04-arm, target: aarch64, variant: glibc, guest: arm64 }
+          - { runner: ubuntu-24.04, target: x86_64, variant: glibc, guest: amd64 }
           - { runner: ubuntu-24.04-arm, target: armv7l, variant: musl, guest: 'arm/v7' }
+          - { runner: ubuntu-24.04, target: i686, variant: glibc, guest: "386" }
           - { runner: ubuntu-24.04-arm, target: armv7l, variant: glibc, guest: 'arm/v7' }
           - { runner: ubuntu-24.04-arm, target: armv6l, variant: musl, guest: 'arm/v6' }
           - { runner: ubuntu-24.04-arm, target: armv6l, variant: glibc, guest: 'arm/v6' }
-          - { runner: ubuntu-24.04, target: x86_64, variant: musl, guest: amd64 }
-          - { runner: ubuntu-24.04, target: x86_64, variant: glibc, guest: amd64 }
-          - { runner: ubuntu-24.04, target: i686, variant: glibc, guest: "386" }
     runs-on: ${{ matrix.runner }}
     if: github.event.inputs.build_xbps == 'true'
     steps:
@@ -256,13 +256,12 @@ jobs:
           then
             XBPS_TARGET_ARCH="${XBPS_TARGET_ARCH}-musl"
           fi
-          ls
+          ROOT_DIR=$PWD
           (
            cd download-artifact
-           ls
+           cd *public-public ||:
            tar xvzf artifacts.tgz -C .
-           cd *public-public
-           mv deployment/* ../../
+           mv deployment/*.tar.xz "$ROOT_DIR"
           )
           XBPS_TARGET_SOURCE="$(ls *$XBPS_TARGET_VERSION*.tar.xz)"
           export GUEST_UID="$UID"
