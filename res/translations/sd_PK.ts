@@ -1,9 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sd_PK">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>
@@ -11,37 +12,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
         <translation type="unfinished">ياد رکو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished">سيڪنڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished">منٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished">ڪلاڪ</translation>
     </message>
@@ -49,30 +50,30 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
         <source>Proxy</source>
         <translation type="unfinished">پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
         <source>Direct</source>
         <translation type="unfinished">سڌو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
         <source>Block</source>
         <translation type="unfinished">بلاڪ</translation>
     </message>
@@ -80,18 +81,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
         <translation type="unfinished">بنيادي سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
         <translation type="unfinished">عام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -99,245 +100,245 @@
 + HTTP پراکسي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
         <translation type="unfinished">ٻڌو پورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
         <source>Edit</source>
         <translation type="unfinished">ترميم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
         <source>Custom Inbound</source>
         <translation type="unfinished">ڪسٽم انبائونڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هر رن تي بي ترتيب موجود بندرگاهه کي چونڊيو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
         <source>Random port</source>
         <translation type="unfinished">بي ترتيب پورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
         <source>Proxy Format</source>
         <translation type="unfinished">پراکسي فارميٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
         <source>Listen Address</source>
         <translation type="unfinished">ايڊريس ٻڌو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
         <source>Network Settings</source>
         <translation type="unfinished">نيٽ ورڪ سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
         <source>Use proxy when activated</source>
         <translation type="unfinished">استعمال ڪريو پراکسي جڏهن چالو ڪيو وڃي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
         <source>URL Test after profile start</source>
         <translation type="unfinished">پروفائل جي شروعات کان پوء URL ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Request update at startup</source>
         <translation type="unfinished">شروعاتي تي اپڊيٽ جي درخواست ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
         <source>Ignore TLS errors</source>
         <translation type="unfinished">TLS غلطين کي نظرانداز ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
         <source>Test Settings</source>
         <translation type="unfinished">ٽيسٽ سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
         <source>Simple Download URL</source>
         <translation type="unfinished">سادي ڊائون لوڊ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
         <source>Download + Upload</source>
         <translation type="unfinished">ڊائون لوڊ + اپ لوڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
         <source>Only Download</source>
         <translation type="unfinished">صرف ڊائون لوڊ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
         <source>Only Upload</source>
         <translation type="unfinished">صرف اپ لوڊ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
         <source>Simple Download</source>
         <translation type="unfinished">سادي ڊائون لوڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
         <source>Only Country</source>
         <translation type="unfinished">صرف ملڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
         <source>Latency Test URL</source>
         <translation type="unfinished">ويڪرائي جاچ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
         <source>Speedtest mode</source>
         <translation type="unfinished">اسپيڊ ٽيسٽ موڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
         <source>Concurrent</source>
         <translation type="unfinished">همعصر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ملي سيڪنڊن ۾ ٽائيم ختم&lt;br/&gt;سڀني ٽيسٽن تي انفرادي طور تي لاڳو ٿئي ٿو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
         <source>Timeout</source>
         <translation type="unfinished">وقت ختم ٿي ويو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
         <source>Download Retries</source>
         <translation type="unfinished">ڊائون لوڊ ڪريو ٻيهر ڪوششون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ايم ايس ۾ URL ٽيسٽ لاءِ ٽائم آئوٽ&lt;br/&gt;ياد رکو ته مڪسڊ ڪنيڪشن گهڻو وقت وٺن ٿا انهن جي ابتدائي درخواست لاءِ، ۽ هن قدر کي تمام گهٽ سيٽ ڪرڻ سان ٽيسٽ کي غلط رپورٽ ڪرڻ جو سبب بڻجندو ته ترتيب ڪم نه ڪري رهي آهي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
         <source>Style</source>
         <translation type="unfinished">انداز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
         <source>Font</source>
         <translation type="unfinished">فونٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
         <source>Font Size</source>
         <translation type="unfinished">فونٽ جي ماپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
         <source>Connection statistics</source>
         <translation type="unfinished">ڪنيڪشن جا انگ اکر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">شروعات ۾ ڊيش بورڊ لڪايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">ڏيکاريو سسٽم DNS اختيار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="537" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="537"/>
         <source>Disable tray</source>
         <translation type="unfinished">ٽري کي بند ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">مينيو آئڪن جي تحت متن سيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Hide at startup</source>
         <translation type="unfinished">شروعات ۾ لڪايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="564" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="564"/>
         <source>Max log lines</source>
         <translation type="unfinished">وڌ ۾ وڌ لاگ لائنون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="600" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="600"/>
         <source>Theme</source>
         <translation type="unfinished">موضوع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="638" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="617"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="638"/>
         <source>System</source>
         <translation type="unfinished">سسٽم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
         <source>Language</source>
         <translation type="unfinished">ٻولي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="651" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="651"/>
         <source>Icon</source>
         <translation type="unfinished">آئڪن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="658" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="658"/>
         <source>Emoji Font</source>
         <translation type="unfinished">ايموجي فونٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="678"/>
         <source>Subscription</source>
         <translation type="unfinished">رڪنيت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="705" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="705"/>
         <source>Interval:</source>
         <translation type="unfinished">وقفو:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="740" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="740"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">خودڪار اپڊيٽ کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">تازه ڪاري کان پهريان سرور صاف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
         <source>URL Test after update</source>
         <translation type="unfinished">تازه ڪاري کان پوء URL ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="944"/>
         <source>Enable</source>
         <translation type="unfinished">فعال ڪريو</translation>
     </message>
@@ -346,27 +347,27 @@
         <translation type="obsolete">وقفو (منٽ، غلط جيڪڏھن 30 کان گھٽ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">نقل هٽايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
         <source>User Agent</source>
         <translation type="unfinished">استعمال ڪندڙ ايجنٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">سسٽم پيٽرولر موڪليو</translation>
     </message>
@@ -375,32 +376,32 @@
         <translation type="obsolete">خودڪار اپڊيٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="724" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فارميٽ: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;ڊفالٽ ويلز استعمال ڪرڻ لاءِ خالي ڇڏي ڏيو.صرف اهي پيرا ميٽر بيان ڪريو جيڪي توهان اوور رائڊ ڪرڻ چاهيو ٿا.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">ڪسٽم سسٽم پيٽرولر (اختياري)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">هٽايو غلط</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">غير موجود هٽايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="800"/>
         <source>Core</source>
         <translation type="unfinished">ڪور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="845" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="845"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -408,80 +409,80 @@
 پنگ ۽ ڪارڪردگي بهتر ڪريو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="850"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">ٽريفڪ اسٽيٽس کي بند ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="857" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="857"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">nekobox ۽ nekobox_core جي وچ ۾ رابطي لاء يونڪس ڊومين ساکٽ استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">IPC لاءِ UDS استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">ملٽي پلڪس (ميڪس)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="910" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="910"/>
         <source>Loglevel</source>
         <translation type="unfinished">لاگليول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
         <source>concurrency</source>
         <translation type="unfinished">اتفاق</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="884" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="884"/>
         <source>Padding</source>
         <translation type="unfinished">پَدَڻُ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
         <source>Default On</source>
         <translation type="unfinished">ڊفالٽ آن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="923" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="923"/>
         <source>Core Options</source>
         <translation type="unfinished">بنيادي اختيارن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="933"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;جي لاءِ سيٽنگون
 sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="938" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="938"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="953" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="953"/>
         <source>server</source>
         <translation type="unfinished">سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="963" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="963"/>
         <source>Port</source>
         <translation type="unfinished">پورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
         <source>sync interval</source>
         <translation type="unfinished">هم وقت سازي جو وقفو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -489,22 +490,22 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
 منٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1017" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1017"/>
         <source>Security</source>
         <translation type="unfinished">سيڪيورٽي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">استحقاق جي درخواست کي بند ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1091"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">TLS سرٽيفڪيٽ جي تصديق کي ڇڏي ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1098" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1098"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla سرٽيفڪيٽ اسٽور استعمال ڪريو</translation>
     </message>
@@ -513,17 +514,17 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
         <translation type="obsolete">ڊفالٽ طور TLS سرٽيفڪيٽ جي تصديق کي ڇڏي ڏيو (اجازت غير محفوظ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1141" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1141"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">ڊفالٽ uTLS فنگر پرنٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1047" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1047"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ايڊمن طور شروع ڪرڻ جي ڪوشش نه ڪريو جيستائين واضح طور تي درخواست نه ڪئي وڃي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1050" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1050"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">هميشه معياري استعمال ڪندڙ طور شروع ڪريو</translation>
     </message>
@@ -532,147 +533,147 @@ sing-box جي بلٽ ان NTP ڪلائنٽ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</
         <translation type="obsolete">configs لاءِ بائنري بدران Json استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1267" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1267"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">پروفائل کي ختم ڪرڻ لاء پڇو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1287" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1287"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">خودڪار جاچ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1293"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">پس منظر ۾ خود بخود پراکسيز کي جانچيو ۽ ڪم ڪندڙ پراکسيز جو تلاءُ برقرار رکو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1296" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1296"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">خودڪار ٽيسٽ کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">ٽيسٽ وقفو (سيڪنڊ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">ڪيترا ڀيرا ٽيسٽ چڪر کي هلائڻ لاء</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1326" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1326"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">پراڪس في سائيڪل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1333" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1333"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">هر چڪر ۾ ٽيسٽ ڪرڻ لاءِ پراڪسيز جو تعداد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1349" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1349"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ڪم ڪندڙ تلاء جي ماپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">برقرار رکڻ لاءِ تصديق ٿيل ڪم ڪندڙ پروڪسز جو وڌ ۾ وڌ تعداد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1372" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1372"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">دير جي حد (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">پراکسي کي ڪم ڪرڻ جي طور تي غور ڪرڻ لاء وڌ ۾ وڌ دير</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1398" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1398"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">ناڪامي ٻيهر ڪوشش ڳڻپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1405" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1405"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">پراکسي کي ناڪام سمجھڻ کان پھريائين ڪوششن جو تعداد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1421"/>
         <source>Test Target URL</source>
         <translation type="unfinished">ٽيسٽ ٽارگيٽ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1428" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1428"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">پراکسي جي خلاف جانچ ڪرڻ لاءِ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1431" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1431"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">خودڪار طور تي سوئچ ڪريو ٻئي ڪم ڪندڙ پراکسي تي جڏهن TUN موڊ پراکسي ناڪام ٿئي ٿي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1441"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN ناڪامي کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1449" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1449"/>
         <source>Startup</source>
         <translation type="unfinished">شروع ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1513"/>
         <source>Geometry</source>
         <translation type="unfinished">جاميٽري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1542"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">خودڪار محفوظ جاميٽري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
         <source>Autosave position</source>
         <translation type="unfinished">خودڪار محفوظ پوزيشن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1569" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1569"/>
         <source>Apply now</source>
         <translation type="unfinished">هاڻي لاڳو ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1643" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1643"/>
         <source>Width</source>
         <translation type="unfinished">ويڪر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1730" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1730"/>
         <source>X</source>
         <translation type="unfinished">ايڪس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1675" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1675"/>
         <source>Y</source>
         <translation type="unfinished">يو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1230" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1230"/>
         <source>Configs format</source>
         <translation type="unfinished">ٺاھ جوڙ فارميٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237"/>
         <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
@@ -683,64 +684,64 @@ INI - شروعاتي 1980s - سادو سادي متن جي ترتيب واري �
 بائنري - 2026 - NekoBox سيٽنگن لاءِ آربرٽري بائيٽ-ويلوز فارميٽ استعمال ڪيو ويو جيئن LMDB ويلز يا اسٽينڊل فائلون - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743"/>
         <source>Height</source>
         <translation type="unfinished">اوچائي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1840" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1840"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">بنيادي قابل عمل رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1869" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2058" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1869"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2058"/>
         <source>Use default</source>
         <translation type="unfinished">ڊفالٽ استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1876" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1876"/>
         <source>Remote Control</source>
         <translation type="unfinished">ريموٽ ڪنٽرول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1902" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2091" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1902"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2091"/>
         <source>Select</source>
         <translation type="unfinished">چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2029" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2029"/>
         <source>Resources Directory</source>
         <translation type="unfinished">وسيلن جي ڊائريڪٽري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2065" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2065"/>
         <source>Resource Manager</source>
         <translation type="unfinished">ريسورس مئنيجر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223"/>
         <source>Proxy type</source>
         <translation type="unfinished">پراکسي جو قسم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="225" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="225"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="258" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="258"/>
         <source>Name of program</source>
         <translation type="unfinished">پروگرام جو نالو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="521"/>
         <source>Security Warning</source>
         <translation type="unfinished">سيڪيورٽي ڊيڄاريندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="522" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="522"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -757,12 +758,12 @@ Are you sure you want to disable TLS verification?</source>
 ڇا توھان واقعي TLS تصديق کي بند ڪرڻ چاھيو ٿا؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="543" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="543"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">رازداري خبردار</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="544" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="544"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -790,104 +791,104 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
         <source>Edit Group</source>
         <translation type="unfinished">ايڊٽ ڪريو گروپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
         <translation type="unfinished">عام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="105"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="112"/>
         <source>Type</source>
         <translation type="unfinished">قسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="120"/>
         <source>Basic</source>
         <translation type="unfinished">بنيادي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="293"/>
         <source>Subscription</source>
         <translation type="unfinished">رڪنيت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="138"/>
         <source>Manually column width</source>
         <translation type="unfinished">دستي طور ڪالمن جي ويڪر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Archive</source>
         <translation type="unfinished">آرڪائيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="158"/>
         <source>Proxy</source>
         <translation type="unfinished">پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="224"/>
         <source>None</source>
         <translation type="unfinished">ڪو به</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="204"/>
         <source>Front Proxy</source>
         <translation type="unfinished">فرنٽ پراکسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="211"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">لينڊنگ پراکسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Share</source>
         <translation type="unfinished">شيئر ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="241"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">ڪاپي پروفائل شيئر لنڪس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="248"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">پروفائل شيئر لنڪس ڪاپي ڪريو (ڪسٽم لنڪس)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="256"/>
         <source>Notes</source>
         <translation type="unfinished">نوٽس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="320"/>
         <source>Skip automatic update</source>
         <translation type="unfinished">خودڪار اپڊيٽ کي ڇڏي ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="63"/>
         <source>Copied</source>
         <translation type="unfinished">نقل ٿيل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Warning</source>
         <translation type="unfinished">ڊيڄاريندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="362"/>
         <source>Please input URL</source>
         <translation type="unfinished">مھرباني ڪري URL داخل ڪريو</translation>
     </message>
@@ -895,266 +896,266 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853"/>
         <source>Edit</source>
         <translation type="unfinished">ترميم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
         <translation type="unfinished">عام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
         <source>Type</source>
         <translation type="unfinished">قسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
         <translation type="unfinished">پورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
         <source>Address</source>
         <translation type="unfinished">پتو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
         <source>Settings</source>
         <translation type="unfinished">سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176"/>
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">ٽرانسپورٽ جو بنيادي طريقو.اهو سرور سان مطابقت هجڻ گهرجي، ٻي صورت ۾، ڪنيڪشن قائم نه ٿي ڪري سگھجي.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
         <source>Network</source>
         <translation type="unfinished">نيٽ ورڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236"/>
         <source>Server support is required</source>
         <translation type="unfinished">سرور جي حمايت جي ضرورت آهي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239"/>
         <source>Multiplex</source>
         <translation type="unfinished">ملٽي پلڪس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246"/>
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">ٽرانسپورٽ پرت سيڪيورٽي.اهو سرور سان مطابقت هجڻ گهرجي، ٻي صورت ۾، ڪنيڪشن قائم نه ٿي ڪري سگھجي.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249"/>
         <source>Security</source>
         <translation type="unfinished">سيڪيورٽي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270"/>
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">UDP FullCone Packet انڪوڊنگ جي خصوصيتن کي لاڳو ڪرڻ لاءِ جيئن ته UDP FullCone.سرور سپورٽ گهربل آهي، جيڪڏهن غلط چونڊ ڪئي وئي آهي، ڪنيڪشن نه ٿي سگهي.مهرباني ڪري ان کي خالي ڇڏي ڏيو.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273"/>
         <source>Packet Encoding</source>
         <translation type="unfinished">Packet Encoding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281"/>
         <source>Keep Default</source>
         <translation type="unfinished">ڊفالٽ رکو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286"/>
         <source>On</source>
         <translation type="unfinished">تي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;مڪس کي اوور ڪري ٿو آن&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307"/>
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">TCP Brutal کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;سرور کان ڪلائنٽ TCP وحشي رفتار&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324"/>
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCP وحشي رفتار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334"/>
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355"/>
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">ڪسٽم آئوٽ بائونڊ سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371"/>
         <source>Custom Config Settings</source>
         <translation type="unfinished">حسب ضرورت سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">هن گروپ ۾ سيٽنگون لاڳو ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446"/>
         <source>Network Settings (%1)</source>
         <translation type="unfinished">نيٽ ورڪ سيٽنگون (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http درخواست جو طريقو، اپر ڪيز ۾ تبديل ڪيو ويندو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554"/>
         <source>Method</source>
         <translation type="unfinished">طريقو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588"/>
         <source>header type</source>
         <translation type="unfinished">هيڊر جو قسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785"/>
         <source>TLS Security Settings</source>
         <translation type="unfinished">TLS سيڪيورٽي سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687"/>
         <source>Certificate</source>
         <translation type="unfinished">سرٽيفڪيٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">جڏهن فعال ڪيو ويندو، V2Ray ريموٽ ميزبان طرفان فراهم ڪيل TLS سرٽيفڪيٽ جي صحيحيت جي جانچ نه ڪندو (سيڪيورٽي سادي متن جي برابر آهي)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832"/>
         <source>Allow insecure</source>
         <translation type="unfinished">غير محفوظ ٿيڻ جي اجازت ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839"/>
         <source>Enable ECH</source>
         <translation type="unfinished">ECH کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864"/>
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871"/>
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">سرور جو نالو اشارو، صاف متن.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">ايپليڪيشن پرت پروٽوڪول ڳالهين، صاف متن.مھرباني ڪري انھن کي ڪاما سان الڳ ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628"/>
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS ڪيموفلاج سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179"/>
         <source>Transport</source>
         <translation type="unfinished">ٽرانسپورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪارڪردگي کي خراب ڪري سگھي ٿو، ڪوشش ڪريو رڪارڊ ٽڪرا پهرين&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685"/>
         <source>Enable TLS fragment</source>
         <translation type="unfinished">TLS ٽڪرا کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقت جي شڪل، جهڙوڪ 500ms، 10ms وغيره&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695"/>
         <source>Fallback Delay</source>
         <translation type="unfinished">واپسي جي دير</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708"/>
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">TLS ريڪارڊ فريگمينٽ کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">حقيقت عوامي چاٻي.جيڪڏهن خالي نه آهي، TLS کي حقيقت ۾ تبديل ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760"/>
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">حقيقت مختصر id.صرف هڪ قدر قبول ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763"/>
         <source>Reality SID</source>
         <translation type="unfinished">حقيقت SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">حسب ضرورت (%1 ٻاھرين)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">حسب ضرورت (%1 ترتيب)</translation>
     </message>
@@ -1177,30 +1178,30 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">حسب ضرورت (%1 ترتيب)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72"/>
         <source>both</source>
         <translation type="unfinished">ٻئي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668"/>
         <source>Not set</source>
         <translation type="unfinished">مقرر نه ٿيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670"/>
         <source>Already set</source>
         <translation type="unfinished">اڳ ۾ ئي مقرر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728"/>
         <source>Confirm</source>
         <translation type="unfinished">تصديق ڪريو</translation>
     </message>
@@ -1208,95 +1209,95 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">گروپ گروپ 2 لاءِ لينڊنگ پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
         <source>Proxy:</source>
         <translation type="unfinished">پراڪسي:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
         <source>Search:</source>
         <translation type="unfinished">ڳولهي:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
         <source>Group1</source>
         <translation type="unfinished">گروپ 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
         <source>Group2</source>
         <translation type="unfinished">گروپ 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="419"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">گروپ %1 لاءِ فرنٽ پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="421"/>
         <source>Front proxy: </source>
         <translation type="unfinished">اڳيون پراکسي:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="432"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">گروپ %1 لاءِ لينڊنگ پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="434"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">لينڊنگ پراکسي:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="447"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
         <source>Proxy</source>
         <translation type="unfinished">پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="450"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Direct</source>
         <translation type="unfinished">سڌو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="457"/>
         <source>None</source>
         <translation type="unfinished">ڪو به</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">پراکسي شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">بدلايو %1 پراکسي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="140"/>
         <source>Select outbound</source>
         <translation type="unfinished">آئوٽ بائونڊ چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="142"/>
         <source>Outbound: </source>
         <translation type="unfinished">ٻاهر نڪرڻ وارو:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="149"/>
         <source>Outbound</source>
         <translation type="unfinished">ٻاھر نڪرڻ وارو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="151"/>
         <source>Block</source>
         <translation type="unfinished">بلاڪ</translation>
     </message>
@@ -1304,75 +1305,75 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
         <source>Hotkey</source>
         <translation type="unfinished">هٽڪي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
         <source>Global</source>
         <translation type="unfinished">گلوبل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
         <source>Trigger main window</source>
         <translation type="unfinished">مکيه ونڊو کي ڇڪيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
         <source>Show groups</source>
         <translation type="unfinished">گروپ ڏيکاريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
         <source>Show routes</source>
         <translation type="unfinished">رستا ڏيکاريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
         <source>Proxy mode</source>
         <translation type="unfinished">پراکسي موڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
         <source>Toggle System Proxy</source>
         <translation type="unfinished">سسٽم پراکسي کي ٽوگل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
         <source>Shortcuts</source>
         <translation type="unfinished">شارٽ ڪٽ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="59" />
-        <source>Shortcut for '%s' action was cleared</source>
-        <translation type="unfinished">'%s' عمل لاءِ شارٽ ڪٽ صاف ڪيو ويو</translation>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="59"/>
+        <source>Shortcut for &apos;%s&apos; action was cleared</source>
+        <translation type="unfinished">&apos;%s&apos; عمل لاءِ شارٽ ڪٽ صاف ڪيو ويو</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
         <source>Groups</source>
         <translation type="unfinished">گروهه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
         <source>New group</source>
         <translation type="unfinished">نئون گروپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
         <source>Update all subscriptions</source>
         <translation type="unfinished">سڀني رڪنن کي اپڊيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Confirmation</source>
         <translation type="unfinished">تصديق</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="59"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">سڀ رڪنيت کي اپڊيٽ ڪريو؟</translation>
     </message>
@@ -1380,355 +1381,355 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
         <source>Routes</source>
         <translation type="unfinished">رستا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
         <translation type="unfinished">عام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
         <translation type="unfinished">پروٽوڪول ۽ SNI کي سڃاڻڻ لاءِ ڪنيڪشن جي شروعاتي پيڪٽ (ص) کي سنيف ڪري ٿو.منزل لاءِ سنيف نتيجو پڻ سنف ٿيل SNI سان ڪنيڪشن جي منزل کي ٻيهر لکندو آهي.سنيف ٿيل پروٽوڪول تي وڌيڪ ڊيٽا لاءِ سنگ باڪس جي دستاويزن جو حوالو ڏيو.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
         <source>Sniffing Mode</source>
         <translation type="unfinished">سنفنگ موڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
         <source>Disable</source>
         <translation type="unfinished">نااهل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
         <source>Sniff result for routing</source>
         <translation type="unfinished">روٽنگ لاءِ سنيف نتيجو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
         <source>Routing Profile</source>
         <translation type="unfinished">روٽنگ پروفائل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">انبائونڊ ڊومين جي حڪمت عملي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
         <source>GitHub</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">Remote Rule-set Mirror</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڳنڍڻ کان اڳ ڊومينز کي IP ۾ حل ڪريو، سرور ايڊريس کي پڻ متاثر ڪري ٿو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">آئوٽ بائونڊ ڊومين جي حڪمت عملي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
         <source>RuleSet download url</source>
         <translation type="unfinished">RuleSet ڊائون لوڊ url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
         <source>Hijack</source>
         <translation type="unfinished">حجاب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
         <source>DNS Server</source>
         <translation type="unfinished">DNS سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
         <source>Listen Port</source>
         <translation type="unfinished">ٻڌو پورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
         <source>IPv4 Response</source>
         <translation type="unfinished">IPv4 جواب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
         <source>IPv6 Response</source>
         <translation type="unfinished">IPv6 جواب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هيٺ ڏنل فارميٽ استعمال ڪيو وڃي:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
         <source>Rules</source>
         <translation type="unfinished">ضابطو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
         <source>Enable</source>
         <translation type="unfinished">فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڇا 0.0.0.0 تي ٻڌو وڃي ته جيئن LAN تي ٻيا ڊوائيس هي سرور استعمال ڪري سگهن&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">لين کي ڳنڍڻ جي اجازت ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
         <source>Redirect Settings</source>
         <translation type="unfinished">Redirect سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
         <source>Listen Address</source>
         <translation type="unfinished">ايڊريس ٻڌو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
         <source>DNS</source>
         <translation type="unfinished">ڊي اين ايس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
         <source>Simple DNS Settings</source>
         <translation type="unfinished">سادي DNS سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;مثال:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632/p&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;&lt;/p&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
         <source>Remote DNS</source>
         <translation type="unfinished">ريموٽ DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
         <source>Default DNS server</source>
         <translation type="unfinished">ڊفالٽ DNS سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
         <source>Query Strategy</source>
         <translation type="unfinished">سوال جي حڪمت عملي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪجهه ترتيبن ۾ مقامي DNS استعمال نه ٿي ڪري سگھجي، توھان کي ھتي ھڪ ip مقرر ڪرڻو پوندو ته جيئن اھڙين حالتن ۾ مقامي dns طور استعمال ڪيو وڃي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
         <source>Local Override</source>
         <translation type="unfinished">مقامي اوور رائڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
-        <source>This is especially important and it is recommended to use the default value of "localhost".
-If the default value does not work, try changing it to "223.5.5.5".
-For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished">اهو خاص طور تي اهم آهي ۽ اهو "localhost" جي ڊفالٽ قيمت کي استعمال ڪرڻ جي سفارش ڪئي وئي آهي.
-جيڪڏهن ڊفالٽ قدر ڪم نه ڪندو آهي، ان کي تبديل ڪرڻ جي ڪوشش ڪريو "223.5.5.5".
-وڌيڪ معلومات لاءِ، دستاويز ڏسو "Configuration/DNS".</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <translation type="unfinished">اهو خاص طور تي اهم آهي ۽ اهو &quot;localhost&quot; جي ڊفالٽ قيمت کي استعمال ڪرڻ جي سفارش ڪئي وئي آهي.
+جيڪڏهن ڊفالٽ قدر ڪم نه ڪندو آهي، ان کي تبديل ڪرڻ جي ڪوشش ڪريو &quot;223.5.5.5&quot;.
+وڌيڪ معلومات لاءِ، دستاويز ڏسو &quot;Configuration/DNS&quot;.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
         <source>Direct DNS</source>
         <translation type="unfinished">سڌو DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
         <source>Enable FakeIP</source>
         <translation type="unfinished">FakeIP کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
         <source>DNS Object Settings</source>
         <translation type="unfinished">DNS اعتراض سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
         <source>Use DNS Object</source>
         <translation type="unfinished">DNS Object استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
         <source>Format</source>
         <translation type="unfinished">فارميٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
         <source>Document</source>
         <translation type="unfinished">دستاويز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
         <source>Route</source>
         <translation type="unfinished">رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">روٽنگ پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
         <source>New</source>
         <translation type="unfinished">نئون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
         <source>Clone</source>
         <translation type="unfinished">ڪلون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
         <source>Export</source>
         <translation type="unfinished">برآمد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
         <source>Edit</source>
         <translation type="unfinished">ترميم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
         <source>Delete</source>
         <translation type="unfinished">حذف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
         <source>Warp</source>
         <translation type="unfinished">وارپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هيٺ ڏنل ترتيب کي ايگريس طور استعمال ڪرڻ جي قابل بنائي ٿو، غير وارپ وي پي اينز کي محدود ڪرڻ واري خدمتن کي نظرانداز ڪرڻ لاءِ ڪارآمد&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
         <source>Enable Warp</source>
         <translation type="unfinished">وارپ کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
         <source>Auto Generate</source>
         <translation type="unfinished">خودڪار ٺاھيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cloudflare API مان هڪ نئين ترتيب حاصل ڪري ٿي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735"/>
         <source>Generate Warp Config</source>
         <translation type="unfinished">Warp Config ٺاھيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754"/>
         <source>Endpoint</source>
         <translation type="unfinished">آخر پوائنٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
         <source>Public Key</source>
         <translation type="unfinished">عوامي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783"/>
         <source>Private Key</source>
         <translation type="unfinished">خانگي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793"/>
         <source>Interface Addresses</source>
         <translation type="unfinished">انٽرفيس ايڊريس</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>Invalid state</source>
         <translation type="unfinished">غلط حالت</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="33"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">روئٽنگ پروفائلز جي لسٽ خالي آھي، ھي ھڪ ناقابل پھچ حالت ھجڻ گھرجي، ھاڻي حادثا ٿي سگھن ٿا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="209" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="213" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="209"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="213"/>
         <source>Invalid settings</source>
         <translation type="unfinished">غلط سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="209" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="209"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">روٽنگ پروفائل خالي نه ٿي سگھي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="213" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="213"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS ضابطا صحيح نه آهن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="252" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="252"/>
         <source>Security Warning</source>
         <translation type="unfinished">سيڪيورٽي ڊيڄاريندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="253" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="253"/>
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -1745,12 +1746,12 @@ Are you sure?</source>
 ڇا توهان کي پڪ آهي؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="342" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="342"/>
         <source>Invalid operation</source>
         <translation type="unfinished">غلط آپريشن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="342" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="342"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">روئٽنگ پروفائلز خالي نه ٿا ٿي سگھن، ٻيو پروفائل شامل ڪرڻ جي ڪوشش ڪريو يا ھن کي تبديل ڪريو</translation>
     </message>
@@ -1758,7 +1759,7 @@ Are you sure?</source>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
         <source>Tun Settings</source>
         <translation type="unfinished">ٽيون سيٽنگون</translation>
     </message>
@@ -1767,52 +1768,52 @@ Are you sure?</source>
         <translation type="obsolete">IPv6 کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
         <source>Stack</source>
         <translation type="unfinished">اسٽيڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Enable IPv6</source>
         <translation type="unfinished">IPv6 کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">سخت رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;جڏهن فعال ڪيو ويندو، سڌو IP CIDRs ۽ ضابطا سيٽ پڻ شامل ڪيا ويندا Tun سيٽنگ ۾ شامل ڪيا ويندا OS روٽنگ سطح تي خارج ڪيا ويندا.اهم: وڏين قاعدن جي سيٽن کي ٻڌايو ويو آهي ته ونڊوز ۾ وڏي پئماني تي سي پي يو جي استعمال سبب، مهرباني ڪري هن آپشن کي احتياط سان فعال ڪريو.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Tun Routing کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">خودڪار ريڊائريڪٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">ٽين ايڊريس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">ٽيون ipv6 ايڊريس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR جي خارج ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
         <source>Applications</source>
         <translation type="unfinished">درخواستون</translation>
     </message>
@@ -1820,22 +1821,22 @@ Are you sure?</source>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">بيڪار سيشن چيڪ وقفو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
         <source>Idle Session Timeout</source>
         <translation type="unfinished">بيڪار سيشن جو وقت ختم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
         <source>Min Idle Session</source>
         <translation type="unfinished">گھٽ ۾ گھٽ بيڪار سيشن</translation>
     </message>
@@ -1843,17 +1844,17 @@ Are you sure?</source>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">ٽريفڪ جو حڪم مٿي کان هيٺ تائين آهي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
         <source>Select Profile</source>
         <translation type="unfinished">پروفائل چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">نالو خالي نه ٿو ٿي سگھي.</translation>
     </message>
@@ -1861,27 +1862,27 @@ Are you sure?</source>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
         <translation type="unfinished">ڪور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
         <source>Json Editor</source>
         <translation type="unfinished">جيسن ايڊيٽر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">ٻاھرين JSON، مھرباني ڪري پڙھو دستاويز.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">مهرباني ڪري مڪمل ترتيب ڀريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">نالو خالي نه ٿو ٿي سگھي.</translation>
     </message>
@@ -1889,67 +1890,67 @@ Are you sure?</source>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
         <source>Socks address</source>
         <translation type="unfinished">جراب جو پتو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
         <source>Socks port</source>
         <translation type="unfinished">جراب جي بندرگاهه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
         <source>Core path</source>
         <translation type="unfinished">بنيادي رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
         <source>Choose from file</source>
         <translation type="unfinished">فائل مان چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Args to pass to executeable.توھان ھڪڙو %s داخل ڪري سگھو ٿا ۽ اھو ھڪڙي فائل جي رستي سان تبديل ڪيو ويندو جنھن ۾ ھيٺ ڏنل ترتيب ڏنل آھي.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
         <source>Args</source>
         <translation type="unfinished">ارگس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
         <source>run -confPath %s</source>
         <translation type="unfinished">هلائڻ -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪانفگ فائل جو مواد جيڪو اضافي بنيادي عمل ڏانهن منتقل ڪيو ويندو جيڪڏهن %s کي args ۾ بيان ڪيو ويو آهي&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
         <source>Config</source>
         <translation type="unfinished">ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
         <source>No logs</source>
         <translation type="unfinished">ڪوبه لاگ</translation>
     </message>
@@ -1957,12 +1958,12 @@ Are you sure?</source>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
@@ -1974,27 +1975,27 @@ Are you sure?</source>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
         <source>Port range</source>
         <translation type="unfinished">پورٽ جي حد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Multiplexing</source>
         <translation type="unfinished">ملٽي پلڪسنگ</translation>
     </message>
@@ -2003,7 +2004,7 @@ Are you sure?</source>
         <translation type="obsolete">ٽرانسپورٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
         <source>Traffic Pattern</source>
         <translation type="unfinished">ٽرئفڪ جو نمونو</translation>
     </message>
@@ -2011,43 +2012,43 @@ Are you sure?</source>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - سمورو سرنگ جي ڪنيڪشن جو تعداد.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - QUIC ڪنجيشن ڪنٽرول الگورتھم.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP پروٽوڪول تي UDP جو نسخو، سرور جي مدد گھربل آھي.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - اضافي هيڊر HTTP درخواستن ۾ موڪلڻ لاءِ.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
         <source>Headers</source>
         <translation type="unfinished">مٿو</translation>
     </message>
@@ -2055,104 +2056,104 @@ Are you sure?</source>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
         <source>Heartbeat</source>
         <translation type="unfinished">دل جي ڌڙڪن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
         <source>Download (Mbps)</source>
         <translation type="unfinished">ڊائون لوڊ (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
         <source>Upload (Mbps)</source>
         <translation type="unfinished">اپ لوڊ (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">زيرو Rtt هٿ ملائڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
         <source>UDP Relay Mode</source>
         <translation type="unfinished">UDP رلي موڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
         <source>Congestion Control</source>
         <translation type="unfinished">ڪنجيشن ڪنٽرول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ڪاما جدا ٿيل حدون: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
         <source>Obfs Password</source>
         <translation type="unfinished">Obfs پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">MTU دريافت کي بند ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
         <source>Port range</source>
         <translation type="unfinished">پورٽ جي حد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
         <source>Hop Interval</source>
         <translation type="unfinished">هاپ جو وقفو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
         <source>Auth Type</source>
         <translation type="unfinished">سند جو قسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
         <source>Auth Payload</source>
         <translation type="unfinished">آٿ پي لوڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUID ٺاھيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">سرٽيفڪيٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
         <source>Disable SNI</source>
         <translation type="unfinished">SNI کي بند ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
         <source>SNI</source>
         <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
         <source>Allow Insecure</source>
         <translation type="unfinished">اجازت ڏيو غير محفوظ</translation>
     </message>
@@ -2160,52 +2161,52 @@ Are you sure?</source>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
         <source>EditSSH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
         <source>User</source>
         <translation type="unfinished">استعمال ڪندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
         <source>Private Key</source>
         <translation type="unfinished">خانگي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
         <source>Private Key Password</source>
         <translation type="unfinished">پرائيويٽ ڪي پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
         <translation type="unfinished">ميزبان چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
         <translation type="unfinished">ميزبان ڪيئي الگورتھم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
         <source>Client Version</source>
         <translation type="unfinished">ڪلائنٽ ورزن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
         <source>Private Key Path</source>
         <translation type="unfinished">پرائيويٽ ڪيئي رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
         <source>Choose File</source>
         <translation type="unfinished">فائل چونڊيو</translation>
     </message>
@@ -2213,22 +2214,22 @@ Are you sure?</source>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
         <source>Plugin</source>
         <translation type="unfinished">پلگ ان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
         <source>Encryption</source>
         <translation type="unfinished">انڪرپشن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
         <source>Plugin Args</source>
         <translation type="unfinished">پلگ ان Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
@@ -2237,12 +2238,12 @@ Are you sure?</source>
         <translation type="obsolete">نيٽ ورڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP پروٽوڪول تي UDP جو نسخو، سرور جي مدد گھربل آھي.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
@@ -2250,27 +2251,27 @@ Are you sure?</source>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
         <source>Version</source>
         <translation type="unfinished">نسخو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2278,17 +2279,17 @@ Are you sure?</source>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
         <source>Version</source>
         <translation type="unfinished">نسخو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
@@ -2297,37 +2298,37 @@ Are you sure?</source>
         <translation type="obsolete">نيٽ ورڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
         <source>Path</source>
         <translation type="unfinished">رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
         <source>Headers</source>
         <translation type="unfinished">مٿو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP پروٽوڪول تي UDP جو نسخو، سرور جي مدد گھربل آھي.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
         <source>UoT</source>
         <translation type="unfinished">يو او ٽي</translation>
     </message>
@@ -2335,72 +2336,72 @@ Are you sure?</source>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
         <source>State directory</source>
         <translation type="unfinished">رياستي ڊاريڪٽري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
         <translation type="unfinished">تصديق جي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
         <source>Control URL</source>
         <translation type="unfinished">ڪنٽرول URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
         <source>Hostname</source>
         <translation type="unfinished">ميزبان جو نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
         <translation type="unfinished">رستا قبول ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
         <source>Ephemeral</source>
         <translation type="unfinished">عارضي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
         <source>Exit node allow lan access</source>
         <translation type="unfinished">ٻاهر نڪرڻ واري نوڊ کي لين جي رسائي جي اجازت ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
         <source>Advertise exit node</source>
         <translation type="unfinished">نڪرندڙ نوڊ جو اعلان ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
         <source>Exit node</source>
         <translation type="unfinished">ٻاهر نڪرڻ وارو نوڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnets جي ڪاما ڌار ڪيل فهرست&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
         <source>Advertise routes</source>
         <translation type="unfinished">اشتهارن جا رستا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;tailscale dns کي ريموٽ dns طور استعمال ڪريو&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
         <source>Global DNS</source>
         <translation type="unfinished">گلوبل DNS</translation>
     </message>
@@ -2408,27 +2409,27 @@ Are you sure?</source>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
         <translation type="unfinished">مرضي مطابق رستو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
         <translation type="unfinished">اضافي Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
         <translation type="unfinished">ٽور ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
         <translation type="unfinished">ڊيٽا ڊائريڪٽر</translation>
     </message>
@@ -2436,12 +2437,12 @@ Are you sure?</source>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
         <source>Encryption</source>
         <translation type="unfinished">انڪرپشن</translation>
     </message>
@@ -2449,17 +2450,17 @@ Are you sure?</source>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">پاسورڊ</translation>
     </message>
@@ -2468,12 +2469,12 @@ Are you sure?</source>
         <translation type="obsolete">quic_congestion_control - QUIC ڪنجيشن ڪنٽرول الگورتھم.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
         <source>Health Check</source>
         <translation type="unfinished">صحت جي چڪاس</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">بند</translation>
     </message>
@@ -2481,22 +2482,22 @@ Are you sure?</source>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
         <translation type="unfinished">سيڪيورٽي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
         <source>Alter Id</source>
         <translation type="unfinished">تبديل ڪريو ID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUID ٺاھيو</translation>
     </message>
@@ -2504,127 +2505,127 @@ Are you sure?</source>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
         <source>EditWireguard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23"/>
         <source>Private Key</source>
         <translation type="unfinished">خانگي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33"/>
         <source>Public Key</source>
         <translation type="unfinished">عوامي چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">اڳي حصيداري ڪيل چاٻي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53"/>
         <source>Reserved</source>
         <translation type="unfinished">رکيل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Presistent_keepalive_interval سيڪنڊن ۾&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">مسلسل برقرار رکڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnets جي ڪاما ڌار ڪيل فهرست&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82"/>
         <source>Local Address</source>
         <translation type="unfinished">مقامي پتو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92"/>
         <source>MTU</source>
         <translation type="unfinished">MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106"/>
         <source>Workers</source>
         <translation type="unfinished">ڪم ڪندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
         <source>Use System Interface</source>
         <translation type="unfinished">سسٽم انٽرفيس استعمال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">Amnezia سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
         <source>Enable</source>
         <translation type="unfinished">فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
         <source>Junk Packet Count</source>
         <translation type="unfinished">جنڪ پيڪٽ ڳڻپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
         <source>Junk Packet Min Size</source>
         <translation type="unfinished">جنڪ پيڪٽ منٽ سائيز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
         <source>Junk Packet Max Size</source>
         <translation type="unfinished">جنڪ پيڪيٽ وڌ ۾ وڌ سائيز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169"/>
         <source>Init Packet Junk Size</source>
         <translation type="unfinished">Init Packet Junk Size</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179"/>
         <source>Response Packet Junk Size</source>
         <translation type="unfinished">جوابي پيڪيٽ جنڪ سائيز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189"/>
         <source>Init Packet Magic Header</source>
         <translation type="unfinished">Init Packet Magic Header</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199"/>
         <source>Response Packet Magic Header</source>
         <translation type="unfinished">جوابي پيڪيٽ جادو هيڊر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209"/>
         <source>Underload Packet Magic Header</source>
         <translation type="unfinished">ھيٺ لوڊ ڪريو Packet Magic Header</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219"/>
         <source>Transport Header Magic Header</source>
         <translation type="unfinished">ٽرانسپورٽ هيڊر جادو هيڊر</translation>
     </message>
@@ -2632,7 +2633,7 @@ Are you sure?</source>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="196" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="196"/>
         <source>Filter</source>
         <translation type="unfinished">فلٽر</translation>
     </message>
@@ -2640,47 +2641,47 @@ Are you sure?</source>
 <context>
     <name>GroupItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63"/>
         <source>Update Subscription</source>
         <translation type="unfinished">تازه ڪاري سبسڪرپشن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
         <source>Edit</source>
         <translation type="unfinished">ترميم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
         <source>Remove</source>
         <translation type="unfinished">هٽايو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Basic</source>
         <translation type="unfinished">بنيادي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
         <source>Subscription</source>
         <translation type="unfinished">رڪنيت</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138"/>
         <source>Archive</source>
         <translation type="unfinished">آرڪائيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150"/>
         <source>Last update: %1</source>
         <translation type="unfinished">آخري تازه ڪاري: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Confirmation</source>
         <translation type="unfinished">تصديق</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
         <source>Remove %1?</source>
         <translation type="unfinished">هٽايو %1؟</translation>
     </message>
@@ -2688,26 +2689,26 @@ Are you sure?</source>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">شماريات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
         <source>Usage Statistics</source>
         <translation type="unfinished">استعمال جا انگ اکر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">ٽريفڪ شماريات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">ڪل پراڪسي ٽرئفڪ:</translation>
     </message>
@@ -2716,12 +2717,12 @@ Are you sure?</source>
         <translation type="obsolete">ٽيڪسٽ ليبل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">ڪل سڌو ٽريفڪ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">سيڪيورٽي شماريات</translation>
     </message>
@@ -2730,85 +2731,85 @@ Are you sure?</source>
         <translation type="obsolete">پروفائل شماريات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">استعمال وقت:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">آخري لانچ جو وقت:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">پهريون لانچ وقت:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">ڳڻپ شروع ڪريو:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">ڊائون لوڊ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">اپ لوڊ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">پراکسي پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">ڊيٽابيس جي شماريات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">حذف ٿيل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">موجود آهي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">ٺاهيل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">گروپ ۽ رڪنيت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">روٽ پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
         <source>Failed authentications count:</source>
         <translation type="unfinished">ناڪامي جي تصديق جي ڳڻپ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">استعمال ڪندڙن جو تعداد:</translation>
     </message>
@@ -2824,50 +2825,50 @@ Are you sure?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>NekoBox</source>
         <translation type="unfinished">نڪو باڪس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651"/>
         <source>Profiles</source>
         <translation type="unfinished">پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">روئڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
         <source>Update</source>
         <translation type="unfinished">تازه ڪاري</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
         <source>Tun Mode</source>
         <translation type="unfinished">ٽون موڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
         <source>System DNS</source>
         <translation type="unfinished">سسٽم DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2785" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2788" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2785"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2788"/>
         <source>System Proxy</source>
         <translation type="unfinished">سسٽم پراکسي</translation>
     </message>
@@ -2876,98 +2877,98 @@ Are you sure?</source>
         <translation type="obsolete">URL ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="144"/>
         <source>Type</source>
         <translation type="unfinished">قسم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="147"/>
         <source>Address</source>
         <translation type="unfinished">پتو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="150"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="299"/>
         <source>Test Result</source>
         <translation type="unfinished">امتحان جا نتيجا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521"/>
         <source>Traffic</source>
         <translation type="unfinished">ٽريفڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
         <source>Logs</source>
         <translation type="unfinished">لاگز</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461"/>
         <source>Connections</source>
         <translation type="unfinished">ڪنيڪشن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">منزل (ڊومين)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">ترتيب ڏيڻ کي بند ڪرڻ لاءِ ڪلڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497"/>
         <source>Process</source>
         <translation type="unfinished">عمل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">عمل جي ترتيب سان ترتيب ڏيڻ لاء ڪلڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
         <source>Protocol</source>
         <translation type="unfinished">پروٽوڪول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">پروٽوڪول ذريعي ترتيب ڏيڻ لاءِ ڪلڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513"/>
         <source>Outbound</source>
         <translation type="unfinished">ٻاھر نڪرڻ وارو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">آئوٽ بائونڊ ذريعي ترتيب ڏيڻ لاءِ ڪلڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">ٽريفڪ جي ترتيب کي ٽوگل ڪرڻ لاءِ ڪلڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">ٽريفڪ گراف</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
         <source>Program</source>
         <translation type="unfinished">پروگرام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640"/>
         <source>Preferences</source>
         <translation type="unfinished">ترجيحات</translation>
     </message>
@@ -2976,7 +2977,7 @@ Are you sure?</source>
         <translation type="obsolete">سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665"/>
         <source>Share</source>
         <translation type="unfinished">شيئر ڪريو</translation>
     </message>
@@ -2985,306 +2986,306 @@ Are you sure?</source>
         <translation type="obsolete">موجوده گروپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
         <source>Test</source>
         <translation type="unfinished">ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661"/>
         <source>Current Selected</source>
         <translation type="unfinished">موجوده چونڊيل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655"/>
         <source>Current Group</source>
         <translation type="unfinished">موجوده گروپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">ڄاڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
         <source>Hidden menu</source>
         <translation type="unfinished">پوشیدہ مينيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
         <source>Routing Menu</source>
         <translation type="unfinished">روٽنگ مينيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
         <source>Context</source>
         <translation type="unfinished">حوالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
         <source>Exit</source>
         <translation type="unfinished">نڪرڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769"/>
         <source>Toggle Window</source>
         <translation type="unfinished">ونڊو ٽوگل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
         <source>Basic Settings</source>
         <translation type="unfinished">بنيادي سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
         <source>New profile</source>
         <translation type="unfinished">نئون پروفائل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
         <source>Groups</source>
         <translation type="unfinished">گروهه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3955" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3965" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3963"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3973"/>
         <source>Start</source>
         <translation type="unfinished">شروع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3954" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3965" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3962"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3973"/>
         <source>Stop</source>
         <translation type="unfinished">روڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
         <source>Edit</source>
         <translation type="unfinished">ترميم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813"/>
         <source>Routing Settings</source>
         <translation type="unfinished">روٽنگ سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">ڪلپ بورڊ مان پروفائل شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
         <source>Delete</source>
         <translation type="unfinished">حذف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
         <source>Debug Info</source>
         <translation type="unfinished">ڊيبگ ڄاڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR ڪوڊ ۽ لنڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
         <source>Copy Link</source>
         <translation type="unfinished">ڪاپي لنڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">صاف امتحان جا نتيجا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1616"/>
         <source>Export %1 config</source>
         <translation type="unfinished">برآمد ڪريو %1 ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">ٽريفڪ ري سيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QR ڪوڊ اسڪين ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">سسٽم پراکسي کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Disable</source>
         <translation type="unfinished">نااهل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">نقل هٽايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
         <source>fake</source>
         <translation type="unfinished">جعلي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
         <source>Move</source>
         <translation type="unfinished">حرڪت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
         <source>Start with system</source>
         <translation type="unfinished">سسٽم سان شروع ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
         <source>Remember last profile</source>
         <translation type="unfinished">آخري پروفائل ياد رکو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">ٻين ڊوائيسز کي ڳنڍڻ جي اجازت ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">غير موجود هٽايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
         <source>Full Test</source>
         <translation type="unfinished">مڪمل ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Hotkey سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
         <source>Select All</source>
         <translation type="unfinished">سڀ چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
         <source>Copy Custom Links</source>
         <translation type="unfinished">ڪسٽم لنڪس کي نقل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
         <source>Copy links</source>
         <translation type="unfinished">لنڪس نقل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
         <source>Url Test</source>
         <translation type="unfinished">يو آر ايل ٽيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">حل ڪريو ڊومين</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">ونڊوز بلند ٿيل ڪم رجسٽر ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
         <source>About</source>
         <translation type="unfinished">بابت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
         <source>Statistics</source>
         <translation type="unfinished">شماريات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Check for updates</source>
         <translation type="unfinished">تازه ڪاري لاء چيڪ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Toggle filter</source>
         <translation type="unfinished">فلٽر کي ٽوگل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254"/>
         <source>Unselect</source>
         <translation type="unfinished">غير منتخب ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213"/>
         <source>Information</source>
         <translation type="unfinished">ڄاڻ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Tun کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220"/>
         <source>Clone</source>
         <translation type="unfinished">ڪلون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
         <source>Update subscription</source>
         <translation type="unfinished">تازه ڪاري سبسڪرپشن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
         <source>Resolve domain</source>
         <translation type="unfinished">ڊومين کي حل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
         <source>Tun Settings</source>
         <translation type="unfinished">ٽيون سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
         <source>Restart Program</source>
         <translation type="unfinished">پروگرام ٻيهر شروع ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">کوليو Config فولڊر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">پراکسي ٻيهر شروع ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Stop Testing</source>
         <translation type="unfinished">جاچ بند ڪريو</translation>
     </message>
@@ -3293,7 +3294,7 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
         <source>Url Test Group</source>
         <translation type="unfinished">يو آر ايل ٽيسٽ گروپ</translation>
     </message>
@@ -3302,7 +3303,7 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">هٽايو غلط</translation>
     </message>
@@ -3311,425 +3312,425 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">اسپيڊ ٽيسٽ ڪرنٽ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
         <source>Full test Selected</source>
         <translation type="unfinished">مڪمل ٽيسٽ چونڊيو ويو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
         <source>Download test Selected</source>
         <translation type="unfinished">ڊائون لوڊ ٽيسٽ چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">اپلوڊ ٽيسٽ چونڊيو ويو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Country test Selected</source>
         <translation type="unfinished">ملڪ ٽيسٽ چونڊيو ويو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">سادي ڊائون لوڊ ٽيسٽ چونڊيو ويو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">اسپيڊ ٽيسٽ گروپ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180"/>
         <source>Hide window</source>
         <translation type="unfinished">ونڊو لڪايو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185"/>
         <source>Add profile from File</source>
         <translation type="unfinished">فائل مان پروفائل شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3984" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3992"/>
         <source>Add new Group</source>
         <translation type="unfinished">نئون گروپ شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
         <source>Security Settings</source>
         <translation type="unfinished">سيڪيورٽي سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="230"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Unavailable</source>
         <translation type="unfinished">غير موجود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="737" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="737"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">خودڪار اسڪرول لاگ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1271"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">روٽنگ پروفائلز کي تبديل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1293"/>
         <source>Update Routing Profiles</source>
         <translation type="unfinished">تازه ڪاري روٽنگ پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1309" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1330" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1333" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1305"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1309"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1330"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1333"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109"/>
         <source>Update Response</source>
         <translation type="unfinished">تازه ڪاري جواب</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1306"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ڪو به روٽنگ پروفائل اپڊيٽ نه ڪيو ويو آهي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1310" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1310"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">اپڊيٽ ٿيل %1 روٽنگ پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1320" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1320"/>
         <source>Update RuleSet Map</source>
         <translation type="unfinished">تازه ڪاري RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1331" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1331"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ضابطن کي اپڊيٽ ڪرڻ ۾ ناڪام ٿيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1334" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1334"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ضابطا ڪاميابي سان اپڊيٽ ڪيا ويا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1343" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1343"/>
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">تازه ڪاري RuleSet ڪيش</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">ضابطن جي ڪيش کي اپڊيٽ ڪيو ويو آهي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1392" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1392"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet ڪيش صاف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1428" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1428"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock کي فعال ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1834" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1834"/>
         <source>Error</source>
         <translation type="unfinished">نقص</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1924" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1924"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">ٽيون سيٽنگون تبديل ٿي ويون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1925" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1925"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">اثر وٺڻ لاء Tun کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1931" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1986" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3282" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3731" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3783" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1931"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1986"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3290"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3739"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3791"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4041"/>
         <source>Confirmation</source>
         <translation type="unfinished">تصديق</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1932" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1987" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1932"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1987"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">سيٽنگون تبديل ٿي ويون، پراکسي ٻيهر شروع ڪريو؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1961" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1961"/>
         <source>Settings changed</source>
         <translation type="unfinished">سيٽنگون تبديل ٿي ويون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1962"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">اثر وٺڻ لاء پروگرام کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2002" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2002"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">درآمد ٿيل %1 پروفائل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2336" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2336"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">استعمال ڪندڙ کي ڪو به استحقاق جي ضرورت نه آهي، ڪجهه خاصيتون ڪم نه ڪري سگھن ٿيون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2403" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2403"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">مھرباني ڪري بنيادي روٽ استحقاق ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2752" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2752"/>
         <source>Not Running</source>
         <translation type="unfinished">نه هلڻ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3213" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3221"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">ڪلون % 1 شيون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3262" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3270"/>
         <source> Confirmation </source>
         <translation type="unfinished">تصديق</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3263" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3271"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">هٽايو %1 شيون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3283" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3291"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">هٽايو %1 شيون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3320" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3333" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3328"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3341"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">نقل ڪيو ويو %1 شيون</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3576"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR ڪوڊ نه مليو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3590" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3598"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">اسڪرين کي پڪڙڻ ۾ ناڪام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3674" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">هٽايو %1 غير دستياب شيون؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3732" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3740"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">هٽايو %1 غلط شيون؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3784" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3792"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ڊومين سرور ايڊريس کي انهن جي حل ٿيل IP سان تبديل ڪريو؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3952" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3960"/>
         <source>Clear</source>
         <translation type="unfinished">پڌرو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4023" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4031"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">منتخب ٿيل گروپ کي ختم ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4024" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4032"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">منتخب ٿيل گروپ کي تبديل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4042"/>
         <source>Remove %1?</source>
         <translation type="unfinished">هٽايو %1؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4777" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4785"/>
         <source>Cannot start</source>
         <translation type="unfinished">شروع نه ٿو ڪري سگھجي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4778" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4786"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">آخري ڊائون لوڊ درخواست اڃا ختم نه ڪئي آهي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4820"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">اپڊيٽ اثاثن کي ڊائون لوڊ ڪرڻ ۾ ناڪام ٿيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="86"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">پروفائل ٽيسٽ ختم ڪئي وئي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="183"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] ٽيسٽ غلطي: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="498"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">ڪجهه تمام غلط آهي، موضوع ent نه ملي سگهي!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="504"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">پروفائل مئنيجر ڊيٽا خراب ٿي وئي آھي، ٻيهر ڪوشش ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="206"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">آخري url ٽيسٽ مڪمل طور تي نه نڪتي، مھرباني ڪري انتظار ڪريو.جيڪڏهن اهو جاري رهي، مهرباني ڪري پروگرام کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="215"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">ٽيسٽ ترتيب ٺاھڻ ۾ ناڪام ٿيو:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="256"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL ٽيسٽ ختم ٿي وئي!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="267"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">ٽيسٽ کي روڪڻ ۾ ناڪام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="273"/>
         <source>Testing</source>
         <translation type="unfinished">جاچڻ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="317"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">آخري رفتار ٽيسٽ مڪمل طور تي نه نڪتو، مھرباني ڪري انتظار ڪريو.جيڪڏهن اهو جاري رهي، مهرباني ڪري پروگرام کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="354"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">اسپيڊ ٽيسٽ ختم ٿي وئي!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="435"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">پروفائل اسپيڊ ٽيسٽ کي ختم ڪيو ويو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="523"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] اسپيڊ ٽيسٽ غلطي: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="532"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">توھان کي پھريائين چالو ڪرڻ جي ضرورت آھي hijack DNS سرور</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="546"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">سسٽم ڊي اين ايس سيٽ ڪرڻ ۾ ناڪام ٿيو:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="595"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">ٽون ڊوائيس غلط استعمال ڪندي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="596"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">جيڪڏھن توھان کي وي پي اين شروع ڪرڻ ۾ مشڪل آھي، توھان مجبور ڪري سگھوٿا ري سيٽ ڪور پروسيس هتي ۽ پوءِ پروفائل کي ٻيهر شروع ڪرڻ جي ڪوشش ڪريو.غلطي %1 آهي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="600"/>
         <source>Reset</source>
         <translation type="unfinished">ري سيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="601"/>
         <source>Cancel</source>
         <translation type="unfinished">منسوخ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="637"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">ٻيو پروفائل شروع ٿي رهيو آهي ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="644"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">ٻيو پروفائل روڪي رهيو آهي ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="775" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="665"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="775"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">جيڪڏهن هڪ ڊگهي وقت تائين ڪو جواب نه آهي، اهو سافٽ ويئر کي ٻيهر شروع ڪرڻ جي صلاح ڏني وئي آهي.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="679"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">شروعاتي پروفائل %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="681"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">پروفائل %1 شروع ڪرڻ ۾ ناڪام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="758" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="758"/>
         <source>Stop return error</source>
         <translation type="unfinished">واپسي جي غلطي کي روڪيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="798" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="798"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">اسٽاپ پروفائل %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="800" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="800"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">روڪڻ ۾ ناڪام ٿيو، مھرباني ڪري پروگرام ٻيهر شروع ڪريو.</translation>
     </message>
@@ -3737,33 +3738,33 @@ Are you sure?</source>
 <context>
     <name>MyTableModel</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="496" />
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="500" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="496"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="500"/>
         <source>Invalid</source>
         <translation type="unfinished">غلط</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="596" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="601"/>
         <source>Type</source>
         <translation type="unfinished">قسم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="598" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="603"/>
         <source>Address</source>
         <translation type="unfinished">پتو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="600" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="605"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="602" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="607"/>
         <source>Test Result</source>
         <translation type="unfinished">امتحان جا نتيجا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="604" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="609"/>
         <source>Traffic</source>
         <translation type="unfinished">ٽريفڪ</translation>
     </message>
@@ -3771,22 +3772,22 @@ Are you sure?</source>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">يوزر نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
         <translation type="unfinished">نئون پاسورڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
         <translation type="unfinished">پاس ورڊ جي تصديق ڪريو</translation>
     </message>
@@ -3794,12 +3795,12 @@ Are you sure?</source>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">تصديق</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">هٽايو %1؟</translation>
     </message>
@@ -3807,7 +3808,7 @@ Are you sure?</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
         <source>Security Settings</source>
         <translation type="unfinished">سيڪيورٽي سيٽنگون</translation>
     </message>
@@ -3815,50 +3816,50 @@ Are you sure?</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="386" />
+        <location filename="../../src/gharqad/main.cpp" line="386"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164" />
+        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="164"/>
         <source>Tun mode cannot be used with Custom configs</source>
         <translation type="unfinished">Tun موڊ ڪسٽم ترتيبن سان استعمال نٿو ڪري سگھجي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1013" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1013"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">رڪنيت جي درخواست: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1019" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1019"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">رڪنيت جي درخواست %1 غلطي: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1030" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1030"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">رڪنيت جي درخواست ختم ٿي وئي: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1048" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1048"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">سرور صاف ڪري رهيو آهي...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1053" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1053"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">سبسڪرپشن ڊيٽا کي پروسيس ڪري رهيو آهي...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1057" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1057"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">عمل مڪمل، لاڳو ٿي رهيو آهي ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1119" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1119"/>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
@@ -3869,17 +3870,17 @@ Deleted %3 Profiles:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125"/>
         <source>Nothing</source>
         <translation type="unfinished">ڪجھ به نه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1128" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1128"/>
         <source>Change of %1:</source>
         <translation type="unfinished">%1 جي تبديلي:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="654" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="662"/>
         <source>Default</source>
         <translation type="unfinished">ڊفالٽ</translation>
     </message>
@@ -3888,124 +3889,124 @@ Deleted %3 Profiles:
         <translation type="obsolete">فائل نه کولي سگھي.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="135" />
+        <location filename="../../src/gharqad/main.cpp" line="135"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">زنجير پراکسي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="151" />
+        <location filename="../../src/gharqad/main.cpp" line="151"/>
         <source>Custom</source>
         <translation type="unfinished">حسب ضرورت</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="152" />
+        <location filename="../../src/gharqad/main.cpp" line="152"/>
         <source>Extra Core</source>
         <translation type="unfinished">اضافي ڪور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2720" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2720"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">پراکسي: %1
 سڌو: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">ڪور نڪتل، صاف ڪرڻ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">ڪور تمام گهڻو نڪرندو آهي، خودڪار طريقي سان روڪيو هن پروفائل کي ٻيهر شروع ڪريو.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">ڪور کي ٻيهر شروع ڪري رهيو آهي ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="371" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="371"/>
         <source>System</source>
         <translation type="unfinished">سسٽم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>URL detected</source>
         <translation type="unfinished">URL مليل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31"/>
         <source>%1
 How to update?</source>
         <translation type="unfinished">%1
 تازه ڪاري ڪيئن ڪجي؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">نئون سبسڪرپشن گروپ ٺاهيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36"/>
         <source>Add profiles to this group</source>
         <translation type="unfinished">هن گروپ ۾ پروفائيل شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https پراکسي طور شامل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42"/>
         <source>Group name</source>
         <translation type="unfinished">گروپ جو نالو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">استعمال ٿيل: %1 باقي: %2 ختم ٿيڻ: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ڊائون لوڊ پروفائلز</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="335" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="335"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">پروفائل جي غلطي جي درخواست ڪئي وئي: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="516" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="516"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">ڊليٽ ڪيو ويو %1 نقل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="550" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="550"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">حذف ٿيل %1 غلط</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="576" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="576"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">حذف ٿيل %1 دستياب ناهي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1713" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1713"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">چيڪ ڪريو قاعدو سيٽ: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1735" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1735"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">قاعدي-سيٽ لسٽ جي درخواست ڪرڻ ۾ غلطي: %1</translation>
     </message>
@@ -4014,7 +4015,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP پتو: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2758" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2758"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">انبائونڊ IP: %1</translation>
     </message>
@@ -4023,69 +4024,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">بند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2762" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2762"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">انبائونڊ: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2764" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2764"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">اندريون: بند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3188" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3196"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">پروفائلز کي گروپ ڏانھن منتقل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3351" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
         <source>Config copied</source>
         <translation type="unfinished">ترتيب نقل ڪئي وئي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3363" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3371"/>
         <source>Copy core config</source>
         <translation type="unfinished">ڪاپي ڪور ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3365" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3373"/>
         <source>Copy test config</source>
         <translation type="unfinished">ڪاپي ٽيسٽ ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3366" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3374"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">ٺيڪ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4677" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4687" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4731" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4759" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4803" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4685"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4695"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4739"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4767"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4776"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4811"/>
         <source>Update</source>
         <translation type="unfinished">تازه ڪاري</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4678" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4686"/>
         <source>Not official support platform</source>
         <translation type="unfinished">نه سرڪاري سپورٽ پليٽ فارم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4688" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4696"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">تازه ڪاري جي درخواست ۾ غلطي: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4731" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4739"/>
         <source>No update</source>
         <translation type="unfinished">ڪابه تازه ڪاري</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4760" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4094,42 +4095,42 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4763" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4771"/>
         <source>Close</source>
         <translation type="unfinished">بند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4765" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4773"/>
         <source>Open in browser</source>
         <translation type="unfinished">برائوزر ۾ کوليو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4804" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">تازه ڪاري تيار آهي، انسٽال ڪرڻ لاء ٻيهر شروع ڪريو؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">رسائي رد ڪئي وئي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="382" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="382"/>
         <source>Select a Folder</source>
         <translation type="unfinished">فولڊر چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="180"/>
         <source>Application Rules</source>
         <translation type="unfinished">درخواست جا ضابطا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="203"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR جي خارج ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="213"/>
         <source>Cancel</source>
         <translation type="unfinished">منسوخ ڪريو</translation>
     </message>
@@ -4144,7 +4145,7 @@ Release note:
         <translation type="obsolete">اضافي ڪور</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">پراڪسي: ⚡%1 📦%3
@@ -4154,92 +4155,92 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="91" />
+        <location filename="../../src/gharqad/main.cpp" line="91"/>
         <source>Cancel</source>
         <translation type="unfinished">منسوخ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="92" />
+        <location filename="../../src/gharqad/main.cpp" line="92"/>
         <source>Apply</source>
         <translation type="unfinished">لاڳو ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="93" />
+        <location filename="../../src/gharqad/main.cpp" line="93"/>
         <source>Yes</source>
         <translation type="unfinished">ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="94" />
+        <location filename="../../src/gharqad/main.cpp" line="94"/>
         <source>No</source>
         <translation type="unfinished">نه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="95" />
+        <location filename="../../src/gharqad/main.cpp" line="95"/>
         <source>OK</source>
         <translation type="unfinished">ٺيڪ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="96" />
+        <location filename="../../src/gharqad/main.cpp" line="96"/>
         <source>Defaults</source>
         <translation type="unfinished">ڊفالٽ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="97" />
+        <location filename="../../src/gharqad/main.cpp" line="97"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">بحال ڪريو Defaults</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="98" />
+        <location filename="../../src/gharqad/main.cpp" line="98"/>
         <source>Discard</source>
         <translation type="unfinished">رد ڪرڻ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="100" />
+        <location filename="../../src/gharqad/main.cpp" line="100"/>
         <source>Undo</source>
         <translation type="unfinished">اڻڄاتل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="101" />
+        <location filename="../../src/gharqad/main.cpp" line="101"/>
         <source>Redo</source>
         <translation type="unfinished">ٻيهر ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="102" />
+        <location filename="../../src/gharqad/main.cpp" line="102"/>
         <source>Cut</source>
         <translation type="unfinished">ڪٽ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="103" />
+        <location filename="../../src/gharqad/main.cpp" line="103"/>
         <source>Copy</source>
         <translation type="unfinished">ڪاپي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="104" />
+        <location filename="../../src/gharqad/main.cpp" line="104"/>
         <source>Paste</source>
         <translation type="unfinished">پيسٽ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="105" />
+        <location filename="../../src/gharqad/main.cpp" line="105"/>
         <source>Delete</source>
         <translation type="unfinished">حذف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="106" />
+        <location filename="../../src/gharqad/main.cpp" line="106"/>
         <source>Select All</source>
         <translation type="unfinished">سڀ چونڊيو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="107" />
+        <location filename="../../src/gharqad/main.cpp" line="107"/>
         <source>Stop</source>
         <translation type="unfinished">روڪ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="108" />
+        <location filename="../../src/gharqad/main.cpp" line="108"/>
         <source>Clear</source>
         <translation type="unfinished">پڌرو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="109" />
+        <location filename="../../src/gharqad/main.cpp" line="109"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">نقل ڪريو لنڪ جڳه</translation>
     </message>
@@ -4247,164 +4248,164 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
         <source>Route Profile</source>
         <translation type="unfinished">روٽ پروفائل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
         <source>General</source>
         <translation type="unfinished">جنرل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
         <source>Default outbound</source>
         <translation type="unfinished">ڊفالٽ آئوٽ بائونڊ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
         <source>Name</source>
         <translation type="unfinished">نالو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
         <source>Proxy</source>
         <translation type="unfinished">پراڪسي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
         <source>Direct</source>
         <translation type="unfinished">سڌو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
         <source>Block</source>
         <translation type="unfinished">بلاڪ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
         <source>Update url</source>
         <translation type="unfinished">url کي اپڊيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
         <source>Skip update</source>
         <translation type="unfinished">تازه ڪاري کي ڇڏي ڏيو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
         <source>Update manually</source>
         <translation type="unfinished">دستي طور تي اپڊيٽ ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
         <source>Basic</source>
         <translation type="unfinished">بنيادي</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
         <source>Advanced</source>
         <translation type="unfinished">ترقي يافته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
         <source>Import JSON</source>
         <translation type="unfinished">JSON درآمد ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
         <source>Rules</source>
         <translation type="unfinished">ضابطو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
         <source>New</source>
         <translation type="unfinished">نئون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
         <source>Move Up</source>
         <translation type="unfinished">مٿي وڃو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
         <source>Move Down</source>
         <translation type="unfinished">ھيٺ لھي وڃو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
         <source>Delete</source>
         <translation type="unfinished">حذف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
         <source>Rule Attributes</source>
         <translation type="unfinished">ضابطي جون خاصيتون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
         <source>Attribute</source>
         <translation type="unfinished">وصف</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
         <source>Name_Placeholder</source>
         <translation type="unfinished">نالو_ جاءِ رکندڙ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
         <source>Notes</source>
         <translation type="unfinished">نوٽس</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Invalid rules</source>
         <translation type="unfinished">غلط ضابطا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="324"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">ڪجھ ضابطا شامل نه ٿي سگھيا:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">غلط JSON صف</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="380"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">مهيا ڪيل ان پٽ صحيح رستي جي ضابطي واري صف ۾ پارس نه ٿي ڪري سگھجي:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Invalid operation</source>
         <translation type="unfinished">غلط آپريشن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="463"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">خالي نالي سان روٽ پروفائل ٺاهي نٿو سگھجي</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">خالي روٽ پروفائل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="479"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">پروفائيل ۾ ڪي به صحيح ضابطا نه آهن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="491"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">ڪجھ ضابطا شامل نه ٿي سگھيا آھن، محفوظ ڪرڻ کان اڳ انھن کي درست ڪريو:</translation>
@@ -4413,42 +4414,42 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
         <translation type="unfinished">سيڪيورٽي سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
         <source>Lock Actions</source>
         <translation type="unfinished">لاڪ عمل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
         <source>Lock Settings</source>
         <translation type="unfinished">لاڪ سيٽنگون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
         <source>Lock Startup</source>
         <translation type="unfinished">لاڪ شروع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
         <source>Delete Users</source>
         <translation type="unfinished">صارفين کي حذف ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
         <source>Edit User Roles</source>
         <translation type="unfinished">تبديل ڪريو استعمال ڪندڙ ڪردار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
         <source>Change UI Password</source>
         <translation type="unfinished">UI پاسورڊ تبديل ڪريو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">پراکسي سندون سيٽ ڪريو</translation>
     </message>
@@ -4456,12 +4457,12 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
         <source>Exiting %1</source>
         <translation type="unfinished">نڪرندي %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
         <source>Starting %1</source>
         <translation type="unfinished">شروع ٿي رهيو آهي %1</translation>
     </message>
@@ -4469,24 +4470,24 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>SpinnerDialog</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="282" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="282"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">غلط JSON صف</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="283" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="283"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">مهيا ڪيل ان پٽ صحيح رستي جي ضابطي واري صف ۾ پارس نه ٿي ڪري سگھجي:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="408" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="408"/>
         <source>Fetching information</source>
         <translation type="unfinished">معلومات حاصل ڪرڻ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="424" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1452" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="424"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1452"/>
         <source>Download Profiles</source>
         <translation type="unfinished">ڊائون لوڊ پروفائلز</translation>
     </message>
@@ -4494,7 +4495,7 @@ Direct: ⚡%2 📦%4</source>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">فارم</translation>
     </message>

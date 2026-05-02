@@ -3058,15 +3058,15 @@ Bạn có chắc không?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3955"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3965"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3963"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3973"/>
         <source>Start</source>
         <translation type="unfinished">Bắt đầu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3954"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3965"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3962"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3973"/>
         <source>Stop</source>
         <translation type="unfinished">Dừng lại</translation>
     </message>
@@ -3262,7 +3262,7 @@ Bạn có chắc không?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3212"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220"/>
         <source>Clone</source>
         <translation type="unfinished">Dòng vô tính</translation>
     </message>
@@ -3386,7 +3386,7 @@ Bạn có chắc không?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3984"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3992"/>
         <source>Add new Group</source>
         <translation type="unfinished">Thêm nhóm mới</translation>
     </message>
@@ -3492,11 +3492,11 @@ Bạn có chắc không?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1931"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1986"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3282"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3673"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3731"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3783"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3290"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3739"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3791"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4041"/>
         <source>Confirmation</source>
         <translation type="unfinished">Xác nhận</translation>
     </message>
@@ -3537,88 +3537,88 @@ Bạn có chắc không?</translation>
         <translation type="unfinished">Không chạy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3213"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3221"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Sao chép %1 mục</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3262"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3270"/>
         <source> Confirmation </source>
         <translation type="unfinished">Xác nhận</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3263"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3271"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Xóa %1 mục ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3283"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3291"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Xóa %1 mục ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3320"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3333"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3328"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3341"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Đã sao chép %1 mục</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3568"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3576"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Không tìm thấy mã QR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3590"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3598"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Không thể chụp màn hình</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3674"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3682"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Xóa %1 (các) mục không có sẵn?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3732"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3740"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Xóa %1 mục không hợp lệ ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3784"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3792"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Thay thế địa chỉ máy chủ miền bằng IP đã được phân giải của chúng?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3952"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3960"/>
         <source>Clear</source>
         <translation type="unfinished">Thông thoáng</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4023"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4031"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Xóa nhóm đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4024"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4032"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Chỉnh sửa nhóm đã chọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4042"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Xóa %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4777"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4785"/>
         <source>Cannot start</source>
         <translation type="unfinished">Không thể bắt đầu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4778"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4786"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Yêu cầu tải xuống cuối cùng vẫn chưa kết thúc</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4820"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Không tải được nội dung cập nhật xuống</translation>
     </message>
@@ -3772,27 +3772,27 @@ Bạn có chắc không?</translation>
         <translation type="unfinished">Không hợp lệ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="596"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="601"/>
         <source>Type</source>
         <translation type="unfinished">Kiểu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="598"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="603"/>
         <source>Address</source>
         <translation type="unfinished">Địa chỉ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="600"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="605"/>
         <source>Name</source>
         <translation type="unfinished">Tên</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="602"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="607"/>
         <source>Test Result</source>
         <translation type="unfinished">Kết quả kiểm tra</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="604"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="609"/>
         <source>Traffic</source>
         <translation type="unfinished">Giao thông</translation>
     </message>
@@ -3908,7 +3908,7 @@ Hồ sơ %3 đã bị xóa:
         <translation type="unfinished">Thay đổi %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="654"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="662"/>
         <source>Default</source>
         <translation type="unfinished">Mặc định</translation>
     </message>
@@ -4066,59 +4066,59 @@ Deleted %1 Unavailable</source>
         <translation type="unfinished">Trong nước: Tắt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3188"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3196"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Di chuyển hồ sơ vào nhóm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3351"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
         <source>Config copied</source>
         <translation type="unfinished">Đã sao chép cấu hình</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3363"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3371"/>
         <source>Copy core config</source>
         <translation type="unfinished">Sao chép cấu hình lõi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3365"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3373"/>
         <source>Copy test config</source>
         <translation type="unfinished">Sao chép cấu hình thử nghiệm</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3366"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3374"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="212"/>
         <source>OK</source>
         <translation type="unfinished">ĐƯỢC RỒI</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4677"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4687"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4731"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4759"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4803"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4685"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4695"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4739"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4767"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4776"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4811"/>
         <source>Update</source>
         <translation type="unfinished">Cập nhật</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4678"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4686"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Không phải nền tảng hỗ trợ chính thức</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4688"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4696"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Lỗi cập nhật yêu cầu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4731"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4739"/>
         <source>No update</source>
         <translation type="unfinished">Không có cập nhật</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4760"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4127,17 +4127,17 @@ Ghi chú phát hành:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4763"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4771"/>
         <source>Close</source>
         <translation type="unfinished">Đóng</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4765"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4773"/>
         <source>Open in browser</source>
         <translation type="unfinished">Mở trong trình duyệt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4804"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Cập nhật đã sẵn sàng, khởi động lại để cài đặt?</translation>
     </message>
