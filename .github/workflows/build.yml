@@ -492,14 +492,6 @@ jobs:
       matrix:
         include:
           - platform: ubuntu-24.04
-            target: amd64
-            target1: x86_64
-            target2: x86_64
-          - platform: ubuntu-24.04-arm
-            target: arm64
-            target1: aarch64
-            target2: aarch64
-          - platform: ubuntu-24.04
             target: 386
             target1: i686
             target2: i386
@@ -507,6 +499,14 @@ jobs:
             target: arm/v7
             target1: armhf
             target2: armhf
+          - platform: ubuntu-24.04
+            target: amd64
+            target1: x86_64
+            target2: x86_64
+          - platform: ubuntu-24.04-arm
+            target: arm64
+            target1: aarch64
+            target2: aarch64
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:

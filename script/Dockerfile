@@ -8,7 +8,7 @@ RUN echo "FINE"
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
 # Update repositories and install everything
-RUN zypper --non-interactive install \
+RUN zypper --non-interactive --no-allow-arch-change install \
         bash \
         patterns-devel-base-devel_basis \
         cmake \
@@ -16,7 +16,9 @@ RUN zypper --non-interactive install \
         ninja \
         jq \
         curl \
+        ccache \
         wget \
+        gcc-c++ \
         pkg-config \
         thrift \
         boost-devel \
@@ -31,6 +33,7 @@ RUN zypper --non-interactive install \
         qt6-declarative-devel \
         qt6-wayland-devel \
         xcb-util-wm-devel \
+        libboost_filesystem-devel \
         file \
         glu-devel \
         lmdb-devel \
