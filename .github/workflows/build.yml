@@ -19,7 +19,7 @@ on:
         default: false
         required: false
       binary_only:
-        description: "Skip building sources, distribute only binary package"
+        description: "Skip building sources, distribute only binary packages"
         type: boolean
         default: false
         required: false
