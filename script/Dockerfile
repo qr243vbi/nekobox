@@ -26,11 +26,12 @@ RUN zypper --non-interactive install \
         squashfs \
         qt6-tools-devel \
         qt6-base-devel \
+        qt6-tools-linguist \
+        qt6-linguist-devel \
         qt6-declarative-devel \
         qt6-wayland-devel \
         xcb-util-wm-devel \
         file \
-        Mesa-dri \
         glu-devel \
         lmdb-devel \
         libunistring-devel \
