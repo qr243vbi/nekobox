@@ -210,6 +210,8 @@ jobs:
     permissions:
       contents: write
       actions: read
+    needs:
+      - build-go
 
     strategy:
       # Allow all builds to complete even if one fails
