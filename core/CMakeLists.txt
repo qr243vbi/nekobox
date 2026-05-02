@@ -224,7 +224,7 @@ if(NOT SKIP_UPDATER)
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
     if (UNIX)
-        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
+        install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}" COMPONENT core)
     endif()
 endif()
 
@@ -278,8 +278,6 @@ if (GOOS STREQUAL "linux")
             COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:nekobox_core_elevated_resolvectl> "${EMBED_PATH}"
             COMMENT "Copying wrapper to Go source for embedding"
         )
-
-
     else()
         message(WARNING "wrapper not found at ${WRAPPER_SRC}, skipping wrapper build.")
     endif()
@@ -290,8 +288,8 @@ endif()
 if (UNIX)
     get_filename_component(MAIN_CORE "${PROGRAMPREFIX}/nekobox_core${EXE_SUFFIX}" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 
-    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}")
-    install(PROGRAMS "${CMAKE_BINARY_DIR}/start_sing_box.sh" RENAME "sing-box" DESTINATION "${CMAKE_INSTALL_BINDIR}")
+    install(PROGRAMS "${DESTDIR}/nekobox_core${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}" COMPONENT core)
+    install(PROGRAMS "${CMAKE_BINARY_DIR}/start_sing_box.sh" RENAME "sing-box" DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT core)
 
     # Configure the desktop file
     configure_file(

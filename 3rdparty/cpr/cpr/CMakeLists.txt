@@ -50,11 +50,13 @@ set_target_properties(cpr
 # Import GNU common install directory variables
 include(GNUInstallDirs)
 
-install(TARGETS cpr
-        EXPORT cprTargets
-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+if (CPR_ENABLE_INSTALL)
+        install(TARGETS cpr
+                EXPORT cprTargets
+                RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+endif()
 
 if(CPR_USE_SYSTEM_CURL)
         # Include CMake helpers for package config files
@@ -76,11 +78,15 @@ if(CPR_USE_SYSTEM_CURL)
                 INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpr)
         endif()
 
-        install(FILES ${PROJECT_BINARY_DIR}/cpr/cprConfig.cmake
-                ${PROJECT_BINARY_DIR}/cpr/cprConfigVersion.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpr)
+        if (CPR_ENABLE_INSTALL)
+                install(FILES ${PROJECT_BINARY_DIR}/cpr/cprConfig.cmake
+                        ${PROJECT_BINARY_DIR}/cpr/cprConfigVersion.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpr)
+        endif()
 endif()
 
-install(EXPORT cprTargets
-        FILE cprTargets.cmake
-        NAMESPACE cpr::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpr)
+if (CPR_ENABLE_INSTALL)
+        install(EXPORT cprTargets
+                FILE cprTargets.cmake
+                NAMESPACE cpr::
+                DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cpr)
+endif()

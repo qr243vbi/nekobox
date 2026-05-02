@@ -420,6 +420,7 @@ endif()
 
 #qt_finalize_executable(nekobox)
 if (UNIX)
+install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/pre_install.cmake" COMPONENT gui)
 
 remove_rpath(nekobox)
 
@@ -447,34 +448,38 @@ install(
     FILES "${CMAKE_SOURCE_DIR}/res/public/icon.png"
     RENAME "nekobox.png"
     DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps"
+    COMPONENT gui
 )
 
 install(
     FILES "${CMAKE_BINARY_DIR}/nekobox.desktop"
     DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
+    COMPONENT gui
 )
 
 install(
     PROGRAMS "${CMAKE_BINARY_DIR}/start.sh"
     RENAME "nekobox"
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT gui
 )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/global.ini")
-    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION "${PROGRAMPREFIX}/public")
+    install(FILES ${CMAKE_SOURCE_DIR}/global.ini DESTINATION "${PROGRAMPREFIX}/public" COMPONENT gui)
 endif()
 
 if(NOT SKIP_UPDATER AND NOT SKIP_JS_UPDATER)
-    install(FILES ${CMAKE_SOURCE_DIR}/res/public/check_new_release.js DESTINATION "${PROGRAMPREFIX}/public")
+    install(FILES ${CMAKE_SOURCE_DIR}/res/public/check_new_release.js DESTINATION "${PROGRAMPREFIX}/public" COMPONENT gui)
 endif()
 
-install(FILES ${QM_FILES} DESTINATION "${PROGRAMPREFIX}/public")
-install(TARGETS nekobox DESTINATION "${PROGRAMPREFIX}")
+install(FILES ${QM_FILES} DESTINATION "${PROGRAMPREFIX}/public" COMPONENT gui)
+install(TARGETS nekobox DESTINATION "${PROGRAMPREFIX}" COMPONENT gui)
 install(FILES 
     "${CMAKE_SOURCE_DIR}/srslist.json"
     "${CMAKE_SOURCE_DIR}/res/public/announcement_message.js"
     "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
-    "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public")
+    "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public"
+    COMPONENT gui)
 
 install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
 install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")

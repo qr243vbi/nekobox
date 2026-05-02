@@ -10,6 +10,7 @@ else()
         "A custom default version string for application")
 endif()
 
+include("cmake/nkr_download_srslist.cmake")
 
 string(TIMESTAMP CURRENT_DATE_TIME "%Y-%m-%d")
 # Func
@@ -19,26 +20,7 @@ function(nkr_add_compile_definitions arg)
 endfunction()
 
 function(embeed_resources)
-	set(FILE_URL "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json")
-	set(DEST_FILE "${CMAKE_SOURCE_DIR}/srslist.json")
-	if(NOT EXISTS "${DEST_FILE}")
-		message(STATUS "srslist.json not found in source dir, downloading: ${DEST_FILE}")
-		file(DOWNLOAD
-			"${FILE_URL}"
-			"${DEST_FILE}"
-			SHOW_PROGRESS
-			STATUS download_status
-			LOG download_log
-		)
-		list(GET download_status 0 status_code)
-		if(NOT status_code EQUAL 0)
-			message(STATUS
-				"Download failed: ${download_status}\n${download_log}"
-			)
-		endif()
-	else()
-		message(STATUS "File already exists: ${DEST_FILE}")
-	endif()
+	download_srslist()
 	# Directory containing resources
 	set(STATIC_RESOURCE_DIR "${CMAKE_SOURCE_DIR}/res/public")
 	set(QRC_FILE "${CMAKE_BINARY_DIR}/nekoobox_static.qrc")
@@ -66,7 +48,7 @@ endfunction()
 
 function(install_if_exists arg dest)
     if(EXISTS "${arg}")
-        install(FILES "${arg}" DESTINATION "${dest}")
+        install(FILES "${arg}" DESTINATION "${dest}" COMPONENT gui)
     endif()
 endfunction()
 

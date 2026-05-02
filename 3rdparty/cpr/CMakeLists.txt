@@ -51,6 +51,7 @@ endmacro()
 
 message(STATUS "C++ Requests CMake Options")
 message(STATUS "=======================================================")
+cpr_option(CPR_ENABLE_INSTALL "Set to ON to enable all cpr install targets." ON)
 cpr_option(CPR_GENERATE_COVERAGE "Set to ON to generate coverage reports." OFF)
 cpr_option(CPR_CURL_NOSIGNAL "Set to ON to disable use of signals in libcurl." OFF)
 cpr_option(CURL_VERBOSE_LOGGING "Curl verbose logging during building curl" OFF)
