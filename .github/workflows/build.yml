@@ -260,9 +260,8 @@ jobs:
           (
            cd download-artifact
            ls
-           cd *public-public
            tar xvzf artifacts.tgz -C .
-           rm artifacts.tgz
+           cd *public-public
            mv deployment/* ../../
           )
           XBPS_TARGET_SOURCE="$(ls *$XBPS_TARGET_VERSION*.tar.xz)"
