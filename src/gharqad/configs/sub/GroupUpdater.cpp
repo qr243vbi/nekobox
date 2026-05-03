@@ -1039,11 +1039,19 @@ void GroupUpdater::Update(
   QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
 
   bool sub_clear = Configs::dataStore->sub_clear;
-  if (group->profiles.count() > 3000){
-    sub_clear = true;
-  }
-
+  
+  /*
+- Fix core dump (nullpointer exceptions)
+- Improve table responsibility
+- Improve ram usage
+- Use LRU (Least Recently Used) cache for storing proxies
+  */
+  
   if (group != nullptr) {
+	if (group->profiles.count() > 3000){
+      sub_clear = true;
+    }
+  
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();

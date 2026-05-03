@@ -2178,7 +2178,7 @@ void MainWindow::prepare_exit() {
   Configs::profileManager->lock();
   Configs::profileManager->unlock();
 #ifdef DEBUG_MODE
-    sleep(2);
+    QThread::sleep(2);
 #endif
   mu_exit.unlock();
 #ifdef DEBUG_MODE

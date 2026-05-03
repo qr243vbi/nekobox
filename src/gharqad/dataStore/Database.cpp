@@ -525,7 +525,7 @@ lmdb::env Configs::initialize_lmdb() {
     }
     wtxn.commit();
   }
-  env.set_mapsize(10100010001000);
+  env.set_mapsize(999000000);
   return env;
 }
 #undef DATABASE_NAME
