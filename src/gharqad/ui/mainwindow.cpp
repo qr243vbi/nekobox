@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Database.hpp"
 #include "nekobox/ui/group/GroupSort.hpp"
 #include <qtoolbutton.h>
 #ifdef _WIN32
@@ -501,11 +502,16 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 
   post_update_job = [this](std::shared_ptr<Configs::Group> group) {
-    REMOVE_DUPLICATE_IDS(group)
     QList<std::shared_ptr<Configs::ProxyEntity>> out_all;
     QString change_text;
     if (Configs::dataStore->sub_rm_duplicates) {
-      out_all = group->GetProfileEnts();
+      auto &out_all_ids = group->profiles;
+      if (out_all_ids.count() > 3000){
+        goto skip_rm_duplicates;
+      } else {
+        Configs::profileManager->FillProfileEnts(out_all, out_all_ids);
+      }
+
       QList<std::shared_ptr<Configs::ProxyEntity>> out;
       QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
 
@@ -523,7 +529,13 @@ MainWindow::MainWindow(QWidget *parent)
       }
     }
     if (Configs::dataStore->sub_rm_invalid) {
-      out_all = group->GetProfileEnts();
+      out_all.clear();
+      auto &out_all_ids = group->profiles;
+      if (out_all_ids.count() > 3000){
+        goto skip_rm_duplicates;
+      } else {
+        Configs::profileManager->FillProfileEnts(out_all, out_all_ids);
+      }
       QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
       QThreadPool *parallelCoreCallPool = new QThreadPool(this);
 
@@ -557,17 +569,26 @@ MainWindow::MainWindow(QWidget *parent)
       }
     }
     if (Configs::dataStore->sub_url_test) {
+      out_all.clear();
+      auto &out_all_ids = group->profiles;
+      if (out_all_ids.count() > 3000){
+        goto skip_rm_duplicates;
+      }
       urltest_current_group(
-          group->GetProfileEnts(), true,
-          [group](const QList<std::shared_ptr<Configs::ProxyEntity>> &) {
+          out_all_ids, true,
+          [group](const QList<int> & ents) {
             if (Configs::dataStore->sub_rm_unavailable) {
               QList<int> out_del;
               int gid = group->id;
-              for (const auto &[_, profile] :
-                   Configs::profileManager->profiles) {
+              for (const auto & profileid : ents) {
+                auto profile = Configs::profileManager->GetProfile(profileid);
+                if (profile == nullptr){
+                  continue;
+                }
                 if (gid != profile->gid) {
                   continue;
                 }
+
                 if (profile->latencyInt < 0) {
                   out_del += profile->id;
                 }
@@ -579,6 +600,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
           });
     }
+    skip_rm_duplicates:
     MW_show_log(change_text);
   };
 
@@ -723,13 +745,6 @@ MainWindow::MainWindow(QWidget *parent)
         }
       }
     }
-    if (!searchEnabled) {
-      if (document_isempty) {
-        ui->url_test_button->show();
-      } else {
-        ui->url_test_button->hide();
-      }
-    }
   });
   filterButton = new QToolButton(ui->tabWidget);
   filterButton->setText("🔽");
@@ -866,6 +881,7 @@ MainWindow::MainWindow(QWidget *parent)
       on_proxyListTable_itemDoubleClicked(item);
     }
   });
+  
   connect(ui->menu_start, &QAction::triggered, this, [this]() {
     CHECK_ACTION_ACCESS_W
     profile_start(-1, !Configs::windowSettings->test_after_start);
@@ -1023,7 +1039,6 @@ skip_updater_hide:
 
   tableModel->capture(this->ui->proxyListTable);
 
-  ui->proxyListTable->setAlternatingRowColors(true);
 
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
           QString(), Qt::FindDirectChildrenOnly)) {
@@ -1541,7 +1556,7 @@ skip_updater_hide:
   auto url_test_group_action = [=, this]() {
     CHECK_ACTION_ACCESS_W
     urltest_current_group(
-        Configs::profileManager->CurrentGroup()->GetProfileEnts());
+        Configs::profileManager->CurrentGroup()->Profiles());
   };
   connect(ui->actionUrl_Test_Group, &QAction::triggered, this,
           url_test_group_action);
@@ -1589,7 +1604,7 @@ skip_updater_hide:
   connect(ui->actionSpeedtest_Group, &QAction::triggered, this, [=, this]() {
     CHECK_ACTION_ACCESS_W
     speedtest_current_group(
-        Configs::profileManager->CurrentGroup()->GetProfileEnts());
+        Configs::profileManager->CurrentGroup()->profiles);
   });
   connect(ui->menu_stop_testing, &QAction::triggered, this, [=, this]() {
     CHECK_ACTION_ACCESS_W
@@ -1609,7 +1624,10 @@ skip_updater_hide:
     QString name;
     auto selected = get_now_selected_list();
     if (!selected.isEmpty()) {
-      auto ent = selected.first();
+      auto ent = Configs::profileManager->GetProfile(selected.first());
+      if (ent == nullptr){
+        return;
+      }
       name = ent->DisplayCoreType();
     }
     ui->menu_export_config->setVisible(name == software_core_name);
@@ -2692,24 +2710,6 @@ void MainWindow::setSearchState(bool enable) {
   }
 }
 */
-QList<std::shared_ptr<Configs::ProxyEntity>>
-MainWindow::filterProfilesList(const QList<int> &profiles) {
-  QList<std::shared_ptr<Configs::ProxyEntity>> res;
-  for (const auto &id : profiles) {
-    auto profile = Configs::profileManager->GetProfile(id);
-    if (!profile) {
-      MW_show_log("Null profile, maybe data is corrupted");
-      continue;
-    }
-    if (searchString.isEmpty() ||
-        profile->name.contains(searchString, Qt::CaseInsensitive) ||
-        profile->serverAddress.contains(searchString, Qt::CaseInsensitive) ||
-        (searchString.startsWith("CODE:") &&
-         searchString.mid(5) == profile->test_country))
-      res.append(profile);
-  }
-  return res;
-}
 
 void MainWindow::refresh_status(const QString &traffic_update) {
   auto refresh_speed_label = [=, this] {
@@ -2936,9 +2936,10 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
     case GroupSortMethod::ByLatency:
     case GroupSortMethod::ByType: {
       {
-          auto grp = Configs::profileManager->CurrentGroup();
-          REMOVE_DUPLICATE_IDS(grp)
-          grp->DropNulls();
+          if (currentGroup->profiles.count() > 12000){
+            MessageBoxWarning(software_name, tr("Group is too big to sort"));
+            return;
+          }
       }
       std::sort(
           currentGroup->profiles.begin(), currentGroup->profiles.end(),
@@ -2990,7 +2991,7 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
             }
             
             auto get_latency_for_sort = [](int id) {
-              auto i = Configs::profileManager->GetProfile(id)->latencyInt;
+              auto i = Configs::profileManager->GetProfileLatency(id);
               if (i == 0)
                 i = 100000;
               if (i < 0)
@@ -3007,8 +3008,8 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
               return ms_a > ms_b;
             } else {
               if (groupSortAction.method == GroupSortMethod::ByLatency) {
-                auto int_a = Configs::profileManager->GetProfile(a)->latencyInt;
-                auto int_b = Configs::profileManager->GetProfile(b)->latencyInt;
+                auto int_a = Configs::profileManager->GetProfileLatency(a);
+                auto int_b = Configs::profileManager->GetProfileLatency(b);
                 if (ms_a.isEmpty() && ms_b.isEmpty()) {
                   // compare latency if full_test_report is empty
                   return get_latency_for_sort(a) < get_latency_for_sort(b);
@@ -3047,37 +3048,34 @@ struct ProxyEntityComparator {
 
 void MainWindow::refresh_proxy_list_impl_refresh_data(const int &id,
                                                       bool stopping) {
-  ui->proxyListTable->setUpdatesEnabled(false);
   auto currentGroup = Configs::profileManager->CurrentGroup();
   if (currentGroup == nullptr)
     return;
+  
+  ui->proxyListTable->setUpdatesEnabled(false);
+
   if (id >= 0) {
-    if (!currentGroup->HasProfile(id)) {
+    if (currentGroup->profiles.count() < 3000 && !currentGroup->HasProfile(id)) {
       ui->proxyListTable->setUpdatesEnabled(true);
       return;
     }
-    auto profile = Configs::profileManager->GetProfile(id);
-    if (filterProfilesList({id}).isEmpty()) {
-      ui->proxyListTable->setUpdatesEnabled(true);
-      return;
-    }
- //   auto rowID = currentGroup->profiles.indexOf(id);
- //   refresh_table_item(rowID, profile, stopping);
   } else {
     ui->proxyListTable->blockSignals(true);
     int row = 0;
-    auto profiles = filterProfilesList(currentGroup->profiles);
+    auto &profiles = currentGroup->profiles;
     int row_count = profiles.count();
 
     if (row_count >= 350) {
-      for (const auto &profile : profiles) {
-        profile->latencyOrder = -1;
-      }
+
     } else {
       std::multiset<std::shared_ptr<Configs::ProxyEntity>,
                     ProxyEntityComparator>
           m;
-      for (const auto &profile : profiles) {
+      for (const auto &profileid : profiles) {
+        auto profile = Configs::profileManager->GetProfile(profileid);
+        if (profile == nullptr){
+          continue;
+        }
         m.insert(profile);
       }
       int i = 0;
@@ -3217,14 +3215,22 @@ void MainWindow::on_menu_clone_triggered() {
   if (ents.isEmpty())
     return;
 
+  if (ents.count() > 3000){
+    MessageBoxWarning(software_name, "Too much selected to copy, cannot proceed");
+    return;
+  }
+
   auto btn = QMessageBox::question(this, tr("Clone"),
                                    tr("Clone %1 item(s)").arg(ents.count()));
   if (btn != QMessageBox::Yes)
     return;
 
   QStringList sls;
-  for (const auto &ent : ents) {
-    sls << ent->bean()->ToNekorayShareLink(ent->type);
+  for (const auto &entid : ents) {
+    auto ent = Configs::profileManager->GetProfile(entid);
+    if (ent != nullptr){
+      sls << ent->bean()->ToNekorayShareLink(ent->type);
+    }
   }
 
   Subscription::groupUpdater->AsyncUpdate(this->post_update_job, sls.join("\n"),
@@ -3238,11 +3244,18 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
   auto grp = Configs::profileManager->CurrentGroup();   
   REMOVE_DUPLICATE_IDS(grp)
 
+  if (grp->profiles.count() > 3000){
+    MessageBoxWarning(software_name,tr("Group is too big to find duplicates"));
+    return;
+  }
+
   QList<std::shared_ptr<Configs::ProxyEntity>> out;
   QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+  QList<std::shared_ptr<Configs::ProxyEntity>> prof_ents;
+  Configs::profileManager->FillProfileEnts(prof_ents, grp->profiles);
 
   Configs::ProfileFilter::Uniq(
-      grp->GetProfileEnts(), out, true,
+      prof_ents, out, true,
       false);
 
 #ifdef DEBUG_MODE
@@ -3250,7 +3263,7 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
 #endif
 
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
-      grp->GetProfileEnts(), out, out_del);
+      prof_ents, out, out_del);
 
 #ifdef DEBUG_MODE
   qDebug() << "DUPLICATES" << out_del.count();
@@ -3292,7 +3305,7 @@ void MainWindow::on_menu_delete_triggered() {
           QMessageBox::StandardButton::Yes) {
     QList<int> del_ids;
     for (const auto &ent : ents) {
-      del_ids += ent->id;
+      del_ids += ent;
     }
     Configs::profileManager->BatchDeleteProfiles(del_ids);
     refresh_proxy_list();
@@ -3304,36 +3317,34 @@ void MainWindow::on_menu_reset_traffic_triggered() {
   auto ents = get_now_selected_list();
   if (ents.count() == 0)
     return;
-  for (const auto &ent : ents) {
-    ent->traffic_data->Reset();
-    ent->Save();
-  }
-  refresh_proxy_list();
+  runOnNewThread([ents, this](){
+    Configs::profileManager->lock();
+    for (const auto &entid : ents) {
+      auto ent = Configs::profileManager->GetProfile(entid);
+      if (ent == nullptr){
+        continue;
+      }
+      ent->traffic_data->Reset();
+      ent->Save();
+    }
+    Configs::profileManager->unlock();
+    refresh_proxy_list();
+  });
 }
 
 void MainWindow::on_menu_copy_links_triggered() {
-  CHECK_SETTINGS_ACCESS_W
-  if (ui->masterLogBrowser->hasFocus()) {
-    ui->masterLogBrowser->copy();
-    return;
-  }
-  auto ents = get_now_selected_list();
-  QStringList links;
-  for (const auto &ent : ents) {
-    links += ent->bean()->ToShareLink();
-  }
-  if (links.length() == 0)
-    return;
-  QApplication::clipboard()->setText(links.join("\n"));
-  show_log_impl(tr("Copied %1 item(s)").arg(links.length()));
+  on_menu_copy_links_nkr_triggered(false);
 }
 
-void MainWindow::on_menu_copy_links_nkr_triggered() {
+void MainWindow::on_menu_copy_links_nkr_triggered(bool isNekoRay) {
   CHECK_SETTINGS_ACCESS_W
   auto ents = get_now_selected_list();
   QStringList links;
-  for (const auto &ent : ents) {
-    links += ent->bean()->ToNekorayShareLink(ent->type);
+  for (const auto &entid : ents) {
+    auto ent = Configs::profileManager->GetProfile(entid);
+    if (ent != nullptr) {
+      links += isNekoRay ? ent->bean()->ToNekorayShareLink(ent->type) : ent->bean()->ToShareLink();
+    }
   }
   if (links.length() == 0)
     return;
@@ -3346,7 +3357,11 @@ void MainWindow::on_menu_export_config_triggered() {
   auto ents = get_now_selected_list();
   if (ents.count() != 1)
     return;
-  auto ent = ents.first();
+  auto entid = ents.first();
+  auto ent = Configs::profileManager->GetProfile(entid);
+  if (ent == nullptr){
+    return;
+  }
   if (ent->DisplayCoreType() != software_core_name)
     return;
 
@@ -3488,10 +3503,15 @@ void MainWindow::display_qr_link(bool nkrFormat) {
     }
   };
 
-  auto link = ents.first()->bean()->ToShareLink();
-  auto link_nk = ents.first()->bean()->ToNekorayShareLink(ents.first()->type);
+  auto ent = Configs::profileManager->GetProfile(ents.first());
+  if (ent == nullptr){
+    return;
+  }
+  auto bean = ent->bean();
+  auto link = bean->ToShareLink();
+  auto link_nk = bean->ToNekorayShareLink(ent->type);
   auto w = new W(link, link_nk);
-  w->setWindowTitle(ents.first()->DisplayTypeAndName());
+  w->setWindowTitle(ent->DisplayTypeAndName());
   w->exec();
   w->deleteLater();
 }
@@ -3601,20 +3621,28 @@ void MainWindow::on_menu_scan_qr_triggered() {
 
 void MainWindow::on_menu_clear_test_result_triggered(bool isSelected) {
   CHECK_ACTION_ACCESS_W
-  QList<std::shared_ptr<Configs::ProxyEntity>> ents;
+  QList<int> ents;
   if (!isSelected) {
-    ents = Configs::profileManager->CurrentGroup()->GetProfileEnts();
+    ents = Configs::profileManager->CurrentGroup()->Profiles();
   } else {
     ents = get_now_selected_list();
   }
-  for (const auto &profile : ents) {
-    profile->latencyInt = 0;
-    profile->dl_speed.clear();
-    profile->ul_speed.clear();
-    profile->full_test_report = "";
-    profile->Save();
-  }
-  refresh_proxy_list();
+  runOnNewThread([ents, this](){
+    Configs::profileManager->lock();
+    for (const auto &profileid : ents) {
+      auto profile = Configs::profileManager->GetProfile(profileid);
+      if (profile == nullptr){
+        continue;
+      }
+      profile->latencyInt = 0;
+      profile->dl_speed.clear();
+      profile->ul_speed.clear();
+      profile->full_test_report = "";
+      profile->Save();
+    }
+    Configs::profileManager->unlock();
+    refresh_proxy_list();
+  });
 }
 
 void MainWindow::on_menu_toggle_filter_triggered(){
@@ -3658,9 +3686,11 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
   CHECK_SETTINGS_ACCESS_W
   QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
 
-  for (const auto [_, profile] : (Configs::profileManager->profiles)) {
-    if (Configs::dataStore->current_group != profile->gid)
+  for (int id : (Configs::profileManager->CurrentGroup()->Profiles())) {
+    auto profile = Configs::profileManager->GetProfile(id);
+    if (profile == nullptr){
       continue;
+    }
     if (profile->latencyInt < 0)
       out_del += profile;
   }
@@ -3693,7 +3723,7 @@ void MainWindow::on_menu_remove_unavailable_triggered() {
 void MainWindow::on_menu_remove_invalid_triggered() {
   CHECK_SETTINGS_ACCESS_W
   runOnNewThread([=, this] {
-    QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
+    QList<int> out_del;
 
     auto currentGroup =
         Configs::profileManager->GetGroup(Configs::dataStore->current_group);
@@ -3704,14 +3734,15 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     QMutex access;
     mu.lock();
     int nulls1 = currentGroup->DropNulls();
-    auto ents = currentGroup->GetProfileEnts();
+    auto ents = currentGroup->profiles;
     int profileSize = ents.size();
-    for (const auto &profile : ents) {
+    for (const auto &profileid : ents) {
+      auto profile = Configs::profileManager->GetProfile(profileid);
       parallelCoreCallPool->start(
-          [&out_del, profile, &counter, &mu, profileSize, &access] {
+          [&out_del, profile, profileid, &counter, &mu, profileSize, &access] {
             if (!IsValid(profile)) {
               access.lock();
-              out_del += profile;
+              out_del += profileid;
               access.unlock();
             }
             if (++counter == profileSize)
@@ -3724,7 +3755,10 @@ void MainWindow::on_menu_remove_invalid_triggered() {
     int remove_display_count = 0;
     QString remove_display;
     for (const auto &ent : out_del) {
-      remove_display += ent->DisplayTypeAndName() + "\n";
+      auto profile = Configs::profileManager->GetProfile(ent);
+      if (profile != nullptr ) { 
+        remove_display += profile->DisplayTypeAndName() + "\n";
+      }
       if (++remove_display_count == 20) {
         remove_display += "...";
         break;
@@ -3739,11 +3773,7 @@ void MainWindow::on_menu_remove_invalid_triggered() {
                this, tr("Confirmation"),
                tr("Remove %1 Invalid item(s) ?").arg(out_del.length()) + "\n" +
                    remove_display) == QMessageBox::StandardButton::Yes)) {
-        QList<int> del_ids;
-        for (const auto &ent : out_del) {
-          del_ids += ent->id;
-        }
-        Configs::profileManager->BatchDeleteProfiles(del_ids);
+        Configs::profileManager->BatchDeleteProfiles(out_del);
         nulls = 1;
       } 
       if (nulls > 0){
@@ -3765,7 +3795,11 @@ void MainWindow::on_menu_resolve_selected_triggered() {
   auto resolve_count = std::atomic<int>(0);
   Configs::dataStore->resolve_count = profiles.count();
 
-  for (const auto &profile : profiles) {
+  for (const auto &profileid : profiles) {
+    auto profile = Configs::profileManager->GetProfile(profileid);
+    if (profile == nullptr){
+      continue;
+    }
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
       if (--Configs::dataStore->resolve_count != 0)
@@ -3801,6 +3835,9 @@ void MainWindow::on_menu_resolve_domain_triggered() {
 
   for (const auto id : profiles) {
     auto profile = Configs::profileManager->GetProfile(id);
+    if (profile == nullptr){
+      continue;
+    }
     auto bean = profile->unlock(profile->bean());
     bean->ResolveDomainToIP([=, this] {
       if (--Configs::dataStore->resolve_count != 0)
@@ -3833,30 +3870,28 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
   ui->menuContext->popup(pos1);
 }
 
-QList<std::shared_ptr<Configs::ProxyEntity>>
+QList<int>
 MainWindow::get_now_selected_list() {
   auto items = ui->proxyListTable->selectionModel()->selection().indexes();
-  QList<std::shared_ptr<Configs::ProxyEntity>> list;
+  QList<int> list;
   for (auto item : items) {
     auto id = this->tableModel->data_id(item);
-    auto ent = Configs::profileManager->GetProfile(id);
-    if (ent != nullptr && !list.contains(ent))
-      list += ent;
+    list << id;
   }
   return list;
 }
 
-QList<std::shared_ptr<Configs::ProxyEntity>>
+QList<int>
 MainWindow::get_selected_or_group() {
   auto selected_or_group =
       ui->menu_server->property("selected_or_group").toInt();
-  QList<std::shared_ptr<Configs::ProxyEntity>> profiles;
+  QList<int> profiles;
   if (selected_or_group > 0) {
     profiles = get_now_selected_list();
     if (profiles.isEmpty() && selected_or_group == 2)
-      profiles = Configs::profileManager->CurrentGroup()->GetProfileEnts();
+      profiles = Configs::profileManager->CurrentGroup()->profiles;
   } else {
-    profiles = Configs::profileManager->CurrentGroup()->GetProfileEnts();
+    profiles = Configs::profileManager->CurrentGroup()->profiles;
   }
   return profiles;
 }

@@ -68,6 +68,9 @@ void setTimeout(const std::function<void()> &callback, QObject *obj,
   t->start();
 }
 
+using Configs::ProxyColorRule;
+using Configs::IndicatorRule;
+
 DECL_MAP(ProxyColorRule)
   ADD_MAP("order_min", orderMin, integer);
   ADD_MAP("order_range", orderRange, integer);
@@ -106,13 +109,16 @@ ProxyColorRule::ProxyColorRule(int a1, int a2, int a3, int a4, bool a5, QColor a
   this->color         = {c1,c2,c3,c4};
 }
 
-std::list<ProxyColorRule> latencyColorList = {
+std::list<ProxyColorRule> Configs::latencyColorList = {
     {1, 5, 0, 0, false, Qt::darkGreen},
     {6, 5, 0, 0, false, QColor(128, 0, 128)},
     {0, 0, 0, 0, false, QColor(255, 165, 0)},
     {0, 0, 0, 0, true, Qt::red}};
 
-QColor QListInt2Color(QList<int> l){
+using Configs::latencyColorList;
+using Configs::QListInt2Color;
+
+QColor Configs::QListInt2Color(QList<int> l){
   int l_size = l.size();
   if (l_size < 3){
     return Qt::black;
@@ -128,7 +134,7 @@ QColor QListInt2Color(QList<int> l){
   return QColor::fromRgb(r,g,b,a);
 }
 
-QColor DisplayLatencyColor(Configs::ProxyEntity *e) {
+QColor Configs::DisplayLatencyColor(Configs::ProxyEntity *e) {
   if (e != nullptr) {
     if (e->latencyInt < 0) {
       for (auto &color : latencyColorList) {
@@ -163,6 +169,8 @@ QColor DisplayLatencyColor(Configs::ProxyEntity *e) {
   return Qt::black;
 }
 
+namespace Configs {
+
 std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
     {Icon::TrayIconStatus::VPN, {0.4, 0.04, 0.4, QColor(165, 42, 42)}},
     {Icon::TrayIconStatus::DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
@@ -171,7 +179,6 @@ std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
     {Icon::TrayIconStatus::RUNNING, {0.4, 0.04, 0.4, Qt::darkGreen}}
 };
 
-namespace Configs {
 Shortcuts::Shortcuts() : JsonStore()
 {
 }
@@ -180,19 +187,5 @@ DECL_MAP(Shortcuts)
     ADD_MAP("shortcuts", shortcuts, stringMap);
 STOP_MAP
 
-bool Shortcuts::UnknownKeyHash(const QByteArray & array) {
-    if (array == Configs::hash("keyval")){
-        this->legacy = true;
-    }
-    return false;
-}
-
-ShortcutsOld::ShortcutsOld() : JsonStore()
-{
-}
-
-DECL_MAP(ShortcutsOld)
-    ADD_MAP("keyval", shortcuts, stringList);
-STOP_MAP
 
 }

@@ -56,7 +56,7 @@ namespace Configs
         QList<int> drop;
         for (auto id : profiles){
             auto ent = profileManager->GetProfile(id);
-            if (!ent){
+            if (ent == nullptr){
                 drop << id;
             }
         }
@@ -66,7 +66,7 @@ namespace Configs
         this->Save();
         return drop.size();
     }
-
+/*
     QList<std::shared_ptr<ProxyEntity>> Group::GetProfileEnts() const
     {
         auto res = QList<std::shared_ptr<ProxyEntity>>{};
@@ -84,7 +84,7 @@ namespace Configs
         }
         return res;
     }
-
+*/
 
     bool Group::AddProfile(int id)
     {

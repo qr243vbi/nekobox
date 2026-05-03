@@ -23,6 +23,10 @@
 #define SYSTRAY_ICON(X) getResource(X)
 #endif
 
+using Configs::indicatorRuleMap;
+using Configs::QListInt2Color;
+
+
 QPixmap Icon::GetTrayIcon(TrayIconStatus status) {
   QPixmap pixmap(256, 256);
   pixmap.fill(Qt::transparent);
@@ -78,7 +82,8 @@ InfoDialog::InfoDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InfoMain) 
   SET_TRAFFIC_STAT(proxy, down, ReadableSize)
   SET_TRAFFIC_STAT(proxy, up, ReadableSize)
   SET_LOGGER_STAT(start_count, QString::number)
-  SET_DATA_STAT(proxy, profiles, Configs::profileManager->profiles.size(), QString::number)
+
+  SET_DATA_STAT(proxy, profiles, Configs::profileManager->getGroupCount(), QString::number)
   SET_DATA_STAT(group, groups, Configs::profileManager->groups.size(), QString::number)
   SET_DATA_STAT(route, routes, Configs::profileManager->routes.size(), QString::number)
   SET_LOGGER_FUNC(usage_time, ReadableDuration)

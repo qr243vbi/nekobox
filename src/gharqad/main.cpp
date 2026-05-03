@@ -342,41 +342,9 @@ int main(int argc, char** argv) {
     }
 
     Configs::windowSettings->shortcuts = std::make_unique<class Configs::Shortcuts>();
-  //  Configs::windowSettings->shortcuts->fn = "shortcuts.cfg";
- //   isLoaded = QFile::exists("shortcuts.cfg");
-  //  if (isLoaded) {
-        isLoaded = Configs::windowSettings->shortcuts->Load();
-  //  }
-    if (Configs::windowSettings->shortcuts->legacy) {
-        auto old = std::make_shared<Configs::ShortcutsOld>();
-   //     old->fn = Configs::windowSettings->shortcuts->fn;
-        old->Load();
-        int size = old->shortcuts.size();
-        Configs::windowSettings->shortcuts->legacy = false;
-        {
-            int i = 0;
-            QString key, value;
-            repeat_shortcuts:
-            if (i >= size){
-                goto finish_shortcuts;
-            }
-            key = old->shortcuts[i];
-            i ++;
-            if (i >= size){
-                goto finish_shortcuts;
-            }
-            value = old->shortcuts[i];
-            Configs::windowSettings->shortcuts->shortcuts[key] = value;
-            i++;
-            goto repeat_shortcuts;
-        }
-    }
-
-    if (!isLoaded) {
-        Configs::windowSettings->shortcuts->legacy = true;
-        finish_shortcuts:
-        Configs::windowSettings->shortcuts->Save();
-    }
+  
+    isLoaded = Configs::windowSettings->shortcuts->Load();
+    Configs::windowSettings->shortcuts->Save();
 
     // Translate
     QString locale = getLocale();

@@ -1038,15 +1038,23 @@ void GroupUpdater::Update(
   QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
   QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
 
+  bool sub_clear = Configs::dataStore->sub_clear;
+  if (group->profiles.count() > 3000){
+    sub_clear = true;
+  }
+
   if (group != nullptr) {
-    in = group->GetProfileEnts();
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();
     //
-    if (Configs::dataStore->sub_clear) {
+    if (sub_clear) {
       MW_show_log(QObject::tr("Clearing servers..."));
       Configs::profileManager->BatchDeleteProfiles(group->profiles);
+    } else {
+      for (int i : group->profiles){
+        in << Configs::profileManager->GetProfile(i);
+      };
     }
   }
 
@@ -1057,16 +1065,16 @@ void GroupUpdater::Update(
   MW_show_log(">>>>>>>> " + QObject::tr("Process complete, applying..."));
 
   if (group != nullptr) {
-    out_all = group->GetProfileEnts();
-
     QString change_text;
 
-    if (Configs::dataStore->sub_clear) {
+    if (sub_clear) {
       // all is new profile
       for (const auto &ent : out_all) {
         change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
       }
     } else {
+      out_all = in;
+
       // find and delete not updated profile by ProfileFilter
       Configs::ProfileFilter::OnlyInSrc_ByPointer(out_all, in, out);
       Configs::ProfileFilter::OnlyInSrc(in, out, only_in);

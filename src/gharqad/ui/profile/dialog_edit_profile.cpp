@@ -774,7 +774,11 @@ void DialogEditProfile::do_apply_to_group(
       }
 
   auto copyStream = [=, this](const void *p) {
-    for (const auto &profile : group->GetProfileEnts()) {
+    for (const auto &profileid : group->profiles) {
+      auto profile = Configs::profileManager->GetProfile(profileid);
+      if (profile == nullptr){
+        continue;
+      }
       auto profile_bean = profile->unlock(profile->bean());
       if (profile_bean == nullptr)
         continue;
@@ -787,7 +791,11 @@ void DialogEditProfile::do_apply_to_group(
   };
 
   auto copyBean = [=, this](const void *p) {
-    for (const auto &profile : group->GetProfileEnts()) {
+    for (const auto &profileid : group->profiles) {
+      auto profile = Configs::profileManager->GetProfile(profileid);
+      if (profile  == nullptr){
+        continue;
+      }
       auto profile_bean = profile->unlock(profile->bean());
       if (profile == ent || profile_bean == nullptr)
         continue;
@@ -797,7 +805,11 @@ void DialogEditProfile::do_apply_to_group(
   };
 
   auto copyEntity = [=, this](const void *p) {
-    for (const auto &profile : group->GetProfileEnts()) {
+    for (const auto &profileid : group->profiles) {
+      auto profile = Configs::profileManager->GetProfile(profileid);
+      if (profile == nullptr){
+        continue;
+      }
       auto profile_bean = profile->unlock(profile->bean());
       if (profile == ent || profile_bean.get() == nullptr)
         continue;

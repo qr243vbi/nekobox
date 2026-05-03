@@ -265,7 +265,7 @@ private slots:
 
     int updateRouteProfiles();
 
-    void on_menu_copy_links_nkr_triggered();
+    void on_menu_copy_links_nkr_triggered(bool isNekoRay = true);
 
     void on_menu_export_config_triggered();
 
@@ -375,18 +375,18 @@ private:
     QMutex mu_remoteRouteProfiles;
 
     // search
-    bool searchEnabled = false;
-    QString searchString;
+//    bool searchEnabled = false;
+//    QString searchString;
 
     void getRemoteRouteProfiles();
 
   //  void setSearchState(bool enable);
 
-    QList<std::shared_ptr<Configs::ProxyEntity>> filterProfilesList(const QList<int>& profiles);
+//    QList<std::shared_ptr<Configs::ProxyEntity>> filterProfilesList(const QList<int>& profiles);
 
-    QList<std::shared_ptr<Configs::ProxyEntity>> get_now_selected_list();
+    QList<int> get_now_selected_list();
 
-    QList<std::shared_ptr<Configs::ProxyEntity>> get_selected_or_group();
+    QList<int> get_selected_or_group();
 
     void dialog_message_impl(const QString &sender, const QString &info);
 
@@ -425,10 +425,10 @@ private:
     static void setup_rpc();
 
     void urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity, 
-        bool skip_last_url_test_warning = false, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish = nullptr);
+        bool skip_last_url_test_warning = false, const std::function<void(const QList<int>&)> &finish = nullptr);
 
-    void urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
-        bool skip_last_url_test_warning = false, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish = nullptr);
+    void urltest_current_group(const QList<int>& profiles, 
+        bool skip_last_url_test_warning = false, const std::function<void(const QList<int>&)> &finish = nullptr);
 
     void stopTests();
 
@@ -436,7 +436,7 @@ private:
 
     void url_test_current();
 
-    void speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
+    void speedtest_current_group(const QList<int>& profiles, 
         bool testCurrent = false, int testmode = -1);
 
     void runSpeedTest(const QString& config, bool useDefault, bool testCurrent, 

@@ -287,8 +287,6 @@ public:
 
   virtual char StoreType() const = 0;
 
-  virtual bool UnknownKeyHash(const QByteArray &data);
-
 protected:
   unsigned char flags = 0;
 };

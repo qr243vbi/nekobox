@@ -181,8 +181,11 @@ namespace Configs {
         return result;
     }
 
-    bool IsValid(const std::shared_ptr<ProxyEntity>& ent)
+    bool IsValid(std::shared_ptr<ProxyEntity> ent)
     {
+        if (ent == nullptr){
+            return false;
+        }
         if (ent->type == "chain")
         {
             auto bean = ent->ChainBean();
@@ -243,6 +246,9 @@ namespace Configs {
 
         QJsonArray directDomainArray;
         for (const auto &item: profiles) {
+            if (item == nullptr){
+                continue;
+            }
             if (item->type == "extracore")
             {
                 MW_show_log("Skipping ExtraCore conf");
@@ -337,7 +343,11 @@ namespace Configs {
                 auto list = ent->ChainBean()->list;
                 std::reverse(std::begin(list), std::end(list));
                 for (auto id: list) {
-                    resolved += profileManager->GetProfile(id);
+                    auto profile = profileManager->GetProfile(id);;
+                    if (profile == nullptr){
+                        continue;
+                    }
+                    resolved += profile;
                     if (resolved.last() == nullptr) {
                         status->result->error = QString("chain missing ent: %1").arg(id);
                         break;

@@ -280,6 +280,7 @@ bool FilterHeader::filtersVisible() const
 void FilterHeader::mousePressEvent(QMouseEvent *event)
 {
     int x = event->pos().x();
+    constexpr int clickMargin = 10; // px
 
     int h = editorHeight();
     int filterTop = height() - h - m_spacing;
@@ -292,6 +293,14 @@ void FilterHeader::mousePressEvent(QMouseEvent *event)
     int logicalIndex = logicalIndexAt(x);
 
     if (logicalIndex >= 0) {
+
+        int left  = sectionViewportPosition(logicalIndex);
+        int right = left + sectionSize(logicalIndex);
+
+        bool insideClickableArea =
+            x >= left + clickMargin &&
+            x <= right - clickMargin;
+        if (insideClickableArea)
         emit sectionClicked(logicalIndex);
         #ifdef DEBUG_MODE
         qDebug() << "Header clicked:" << logicalIndex;
@@ -370,18 +379,23 @@ void FilterHeader::paintEvent(QPaintEvent *event)
 
 void MyTableModel::capture(QTableView * view){
     this->m_view = view;
+
+    view->setWordWrap(false);
+    view->setAlternatingRowColors(false);
+    view->setShowGrid(false);
     
     this->proxy = std::make_shared<ColumnFilterProxy>();
     proxy->setSourceModel(this);
-    view->setModel(proxy.get());
+    view->setModel(this);
+    proxy->setDynamicSortFilter(false);
 
     this->filter = std::make_shared<FilterHeader>(Qt::Horizontal, view);
     FilterHeader *header = this->filter.get();
     view->setHorizontalHeader(header);
-    
+    header->setResizeContentsPrecision(25);
     header->setFilterCount(3);
     header->setFiltersVisible(false);
-    view->horizontalHeader()->setSortIndicatorShown(false);
+    header->setSortIndicatorShown(false);
     view->verticalHeader()->setSortIndicatorShown(false);
     this->keeper = std::make_shared<SelectionKeeper>(view, this);
 
@@ -399,9 +413,6 @@ int MyTableModel::columnCount(const QModelIndex &parent) const {
     return 5;
 };
 
-static std::shared_ptr<Configs::ProxyEntity> getProxyRow(int row){
-    return Configs::profileManager->GetProfile(row);
-}
 
 int MyTableModel::data_id(const QModelIndex &index) const
 {
@@ -441,12 +452,15 @@ int MyTableModel::data_id(int row) const {
     return profiles.at(row);
 }
 
+const QString invalid = QObject::tr("Invalid");
+
 QVariant MyTableModel::data(const QModelIndex &index, int role) const
 {
+
+   // qDebug() << "filter section:" << index.column();
+
     int row = data_id(index);
-    #ifdef DEBUG_MODE
-  //  qDebug() << "Row Id" << row;
-    #endif
+
 
     if (role == SELECTION_KEEPER_ROLE){
         return row;
@@ -457,19 +471,19 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
     }
 
 
-    std::shared_ptr<Configs::ProxyEntity> person = getProxyRow(row);
+    std::shared_ptr<Configs::ProxyEntity> person = Configs::profileManager->GetProfile(row);
 
-    bool invalid = false;
+    bool invalid_yes = false;
 
     if (person == nullptr){
         #ifdef DEBUG_MODE
         qDebug() << "Found invalid data: " << row ;
         #endif
-        invalid = true;
+        invalid_yes = true;
     }
 
     if (role != Qt::DisplayRole){
-        if (role == Qt::ForegroundRole && !invalid){
+        if (role == Qt::ForegroundRole && !invalid_yes){
             switch (index.column()){
                 case 3: {
                     return QBrush(DisplayLatencyColor(person.get()));
@@ -490,14 +504,14 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
 
 
     int column = index.column();
-    if (invalid){
+    if (invalid_yes){
     switch (column){
         case 0:
-            return tr("Invalid");
+            return invalid;
         case 1:
             return "::";
         case 2:
-            return tr("Invalid");
+            return invalid;
         case 3:
             return "";
         case 4:
@@ -506,11 +520,11 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
     } else {
     switch (column) {
         case 0:
-            return person->DisplayType();
+            return person->type;
         case 1:
             return person->DisplayAddress();
         case 2:
-            return person->DisplayName();
+            return person->name;
         case 3:
             if (person->full_test_report.isEmpty()) {
                 return person->DisplayTestResult();
@@ -553,6 +567,11 @@ bool MyTableModel::filterEnabled(){
 };
 
 bool MyTableModel::setFilterEnabled(bool filter){
+    if (filter){
+        this->m_view->setModel(this->proxy.get());
+    } else {
+        this->m_view->setModel(this);
+    }
     auto ret = this->filter->setFiltersVisible(filter);
     this->proxy->setEnabled(filter);
     this->refresh();
@@ -580,6 +599,8 @@ std::shared_ptr<Configs::Group> MyTableModel::m_data() const {
 
 QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
+  //  qDebug() << "filter section:" << section;
+
     if (role != Qt::DisplayRole)
         return QVariant();
 
@@ -589,7 +610,7 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
             return "*";
         } 
         #ifdef DEBUG_MODE
-        return QString::number(data_id) + "  ";
+        return data_id;
         #else
         return QString::number(section + 1) + "  ";
         #endif

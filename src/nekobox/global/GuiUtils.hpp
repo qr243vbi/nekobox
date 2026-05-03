@@ -232,22 +232,11 @@ public:
     bool legacy = false;
     virtual ConfJsMap _map() override;
     QVariantMap shortcuts;
-    virtual bool UnknownKeyHash(const QByteArray & array) override;
 
     explicit Shortcuts();
 };
 
-class ShortcutsOld : public JsonStore
-{
-public:
 
-    DECLARE_STORE_TYPE(Shortcuts)
-    virtual ConfJsMap _map() override;
-    QStringList shortcuts;
-
-    explicit ShortcutsOld();
-};
-}
 
 struct ProxyColorRule : public JsonStore {
     virtual ConfJsMap _map() override;
@@ -280,3 +269,4 @@ extern std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap;
 
 QColor DisplayLatencyColor(Configs::ProxyEntity *e);
 
+}

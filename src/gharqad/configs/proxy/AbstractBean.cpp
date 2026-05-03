@@ -25,11 +25,11 @@ namespace Configs {
     STOP_MAP
 
     char AbstractBean::StoreType() const {
-        if (this->entity->same_path_for_bean()){
-            return Configs::JsonStoreType::Proxies;
-        } else {
+     //   if (this->entity->same_path_for_bean()){
+     //       return Configs::JsonStoreType::Proxies;
+     //   } else {
             return Configs::JsonStoreType::Beans;
-        }
+     //   }
     };
 
     QString AbstractBean::ToNekorayShareLink(const QString &type) const {
@@ -52,12 +52,6 @@ namespace Configs {
         return "unknown";
     }
 
-    bool AbstractBean::UnknownKeyHash(const QByteArray & array) {
-        if (array == bean_key){
-            return true;
-        }
-        return false;
-    };
 
     AbstractBean::~AbstractBean() {
         bool save_control_no_save = this->save_control_no_save();

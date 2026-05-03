@@ -69,7 +69,7 @@ public:
   virtual ConfJsMap _map() override;
   virtual bool Save() override;
 
-  DECLARE_FLAG(same_path_for_bean, custom_flag2)
+  //DECLARE_FLAG(same_path_for_bean, custom_flag2)
   //    DECLARE_FLAG(bean_path_not_defined, custom_flag)
 
   bool isValid() const;
@@ -91,7 +91,6 @@ public:
   QString ul_speed;
   QString test_country;
   std::shared_ptr<const Configs::AbstractBean> bean() const;
-  virtual bool UnknownKeyHash(const QByteArray &array) override;
   std::shared_ptr<Stats::TrafficData> traffic_data =
       std::make_shared<Stats::TrafficData>("");
   QString full_test_report;

@@ -299,10 +299,14 @@ QList<std::shared_ptr<Configs::ProxyEntity>> ProxyAutoTester::getProxiesToTest()
         return result;
     }
 
-    auto allProxies = group->GetProfileEnts();
+    auto &allProxies = group->profiles;
 
     if (allProxies.isEmpty()) {
         logStatus("No proxies in group");
+        return result;
+    }
+    if (allProxies.count() > 3000){
+        logStatus("Too much profiles in group");
         return result;
     }
 
@@ -316,7 +320,7 @@ QList<std::shared_ptr<Configs::ProxyEntity>> ProxyAutoTester::getProxiesToTest()
 
     for (int i = 0; i < allProxies.size() && count < proxyCountPerCycle; i++) {
         int idx = (startIdx + i) % allProxies.size();
-        auto proxy = allProxies[idx];
+        auto proxy = Configs::profileManager->GetProfile(allProxies[idx]);
 
         if (shouldTestProxy(proxy)) {
             result.append(proxy);

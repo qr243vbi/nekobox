@@ -484,9 +484,6 @@ QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
     return byteArray;
 };
 
-bool JsonStore::UnknownKeyHash(const QByteArray &data){
-    return false;
-}
 
 void JsonStore::FromBytes(const QByteArray &data) {
   #ifdef DEBUG_MODE
@@ -500,20 +497,11 @@ void JsonStore::FromBytes(const QByteArray &data) {
     unsigned char type;
     stream >> type;
     auto iter = _map.find(key);
-    bool cont = false;
     std::shared_ptr<configItem> value = nullptr;
     JsonStore *store = this;
     if (iter != _map.end()) {
       value = iter.value();
-    } else {
-        cont = UnknownKeyHash(key);
-    }
-    if (cont && (type == ConfigItemType::type_jsonStore || type == ConfigItemType::type_jsonShared)){
-        QByteArray array;
-        stream >> array;
-        this->FromBytes(array);
-        continue;
-    }
+    } 
     if (value == nullptr || value->type() != type) {
       value = getConfigItem(type);
       store = nullptr;

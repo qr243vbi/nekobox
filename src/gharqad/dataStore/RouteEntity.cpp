@@ -480,20 +480,23 @@ namespace Configs {
             case -2:
                 return true;
             default:
-                return profileManager->profiles.count(id) > 0;
+                return profileManager->GetProfile(id) != nullptr;
         }
     }
-
+/*
     int getOutboundID(const QString& name) {
         if (name == "proxy") return -1;
         if (name == "direct") return -2;
         if (name == "block") return -3;
-        for (const auto [key, value]: (profileManager->profiles) ){
-            if (value->name == name) return key;
+        for (const auto [key, value1]: (profileManager->groups) ){
+            for (const auto value : value1->GetProfileEnts()){
+                if (value != nullptr && value->name == name) return key;
+            }
         }
 
         return INVALID_ID;
     }
+    */
 
     QList<std::shared_ptr<RouteRule>> RoutingChain::parseJsonArray(const QJsonArray& arr, QString* parseError) {
         if (arr.empty()) {
@@ -520,14 +523,14 @@ namespace Configs {
                             return {};
                         }
                         rule->outboundID = val.toInt();
-                    } else if (val.isString()) {
+                    } /*else if (val.isString()) {
                         auto id = getOutboundID(val.toString());
                         if (id == INVALID_ID) {
                             parseError->append(QString("outbound with name %1 does not exist").arg(val.toString()));
                             return {};
                         }
                         rule->outboundID = id;
-                    }
+                    }*/
                 } else if (val.isArray()) {
                     rule->set_field_value(key, QJsonArray2QListStr(val.toArray()));
                 } else if (val.isString()) {

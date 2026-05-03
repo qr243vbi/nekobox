@@ -1,7 +1,5 @@
-#include "nekobox/dataStore/Utils.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #pragma once
@@ -10,6 +8,8 @@
 #include "RouteEntity.h"
 #include "TrafficData.hpp"
 #include <atomic>
+#include <nekobox/dataStore/Utils.hpp>
+#include <3rdparty/LRUCache/LRUCache11.hpp>
 
 namespace Stats {
     class DatabaseLoggerItem : public JsonStore {
@@ -93,7 +93,14 @@ namespace Configs {
 
         // Manager
 
-        std::map<int, std::shared_ptr<ProxyEntity>> profiles;
+        int getGroupCount();
+
+        void FillProfileEnts(QList<std::shared_ptr<Configs::ProxyEntity>> &list, const QList<int> & l);
+        int GetProfileLatency(int id);
+
+        std::map<int, std::shared_ptr<ProxyEntity>> cached_profiles = {};
+        std::mutex weak_profiles_mutex;
+        lru11::Cache<int, std::shared_ptr<ProxyEntity>> weak_profiles = lru11::Cache<int, std::shared_ptr<ProxyEntity>>(700,200);
         std::map<int, std::shared_ptr<Group>> groups;
         std::map<int, std::shared_ptr<RoutingChain>> routes;
 
@@ -117,6 +124,8 @@ namespace Configs {
         bool AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>> &ents, int gid = -1);
 
         bool MoveProfile(int id, int gid);
+        void CacheProfile(std::shared_ptr<ProxyEntity> ent);
+        void UncacheProfile(int id, bool force = false);
 
         bool MoveProfileBatch(const QList<int>& ids, int gid);
         bool MoveProfileBatch(const QList<std::shared_ptr<ProxyEntity>>& ids, int gid);

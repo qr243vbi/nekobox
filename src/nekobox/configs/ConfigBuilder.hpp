@@ -64,7 +64,7 @@ namespace Configs {
     };
 
 
-    bool IsValid(const std::shared_ptr<ProxyEntity> &ent);
+    bool IsValid(std::shared_ptr<ProxyEntity> ent);
 
     std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles);
 

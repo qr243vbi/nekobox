@@ -14,7 +14,6 @@
 
 
 namespace Configs {
-    extern QByteArray bean_key;
 
     struct CoreObjOutboundBuildResult {
     public:
@@ -48,7 +47,6 @@ namespace Configs {
         QString ToNekorayShareLink(const QString &type) const;
 
         void ResolveDomainToIP(const std::function<void()> &onFinished);
-        virtual bool UnknownKeyHash(const QByteArray & array) override;
 
         //
         virtual QString type() const;

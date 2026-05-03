@@ -47,11 +47,18 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         }
     }
 
-    std::function<void(bool)> copy_click = [id=ent->id, this] (bool neko){
+    std::function<void(bool)> copy_click = [group = ent, this] (bool neko){
         QStringList links;
-        for (const auto &[_, profile]: Configs::profileManager->profiles) {
+
+        for (auto profileid: group->profiles) {
+            auto profile = Configs::profileManager->GetProfile(profileid);
+            if (profile == nullptr){
+                continue;
+            }
             auto bean = profile->bean();
-            if (profile->gid != id) continue;
+            if (bean == nullptr){
+                continue;
+            }
             if (neko){
                 links += bean->ToNekorayShareLink(profile->type);
             } else {
@@ -157,6 +164,9 @@ public:
         return QVariant();
     }
 
+
+const QString invalid = QObject::tr("Invalid");
+
 #define DO_NOTHING_ROLE 909090
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override {
 
@@ -172,15 +182,26 @@ public:
             int column = index.column();
             if (column < 3 && column >= 0){
                 int profile_id = profiles.at(row);
-                auto & bean = 
-                    Configs::profileManager->profiles.at(profile_id);
-                switch(column){
-                    case 0:
-                    return bean->DisplayType();
-                    case 1:
-                    return bean->DisplayAddress();
-                    case 2:
-                    return bean->DisplayName();
+                auto bean = 
+                    Configs::profileManager->GetProfile(profile_id);
+                if (bean != nullptr){
+                    switch(column){
+                        case 0:
+                        return bean->type;
+                        case 1:
+                        return bean->DisplayAddress();
+                        case 2:
+                        return bean->name;
+                    }
+                } else {
+                    switch(column){
+                        case 0:
+                        return invalid;
+                        case 1:
+                        return "::";
+                        case 2:
+                        return invalid;
+                    }
                 }
             }
         }

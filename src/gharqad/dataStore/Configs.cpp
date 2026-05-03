@@ -123,7 +123,6 @@ namespace Configs_ConfigItem {
             auto h = Configs::hash(key);
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
-                UnknownKeyHash(h);
             } else {
             #ifdef DEBUG_MODE
                 qDebug() << "Loading" << key;
@@ -135,9 +134,6 @@ namespace Configs_ConfigItem {
             auto h = Configs::hash(key);
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
-                if (UnknownKeyHash(h)){
-                    LoadINI(info, path + key + "/");
-                };
             } else {
                 value->LoadINI(this, info, path);
             }
@@ -153,9 +149,7 @@ namespace Configs_ConfigItem {
             auto item = _map.value(h, nullptr);
 
             if (item == nullptr) {
-                if (UnknownKeyHash(h) && ((value = object[key]).isObject())){
-                    this->FromJson(value.toObject());
-                }
+
                 continue;
             } else {
                 value = object[key];

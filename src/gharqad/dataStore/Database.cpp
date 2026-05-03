@@ -390,7 +390,7 @@ bool Configs::clear_lmdb(lmdb::env &env, char c, int32_t x) {
 }
 
 bool Configs::drop_lmdb(lmdb::env &env, char c, int32_t x) {
-  std::lock_guard<std::mutex> lock(env.env_mutex);
+// std::lock_guard<std::mutex> lock(env.env_mutex);
 #ifdef DEBUG_MODE
   qDebug() << "Drop LMDB ";
 #endif
@@ -413,10 +413,6 @@ bool Configs::write_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
 
 bool Configs::write_lmdb(lmdb::env &env, char c, int32_t x,
                          const std::string_view &view) {
-  std::lock_guard<std::mutex> lock(env.env_mutex);
-  int u = 2;
-  for (int i = 0; i < 16; i++) {
-    try {
       auto key = pack_char_int(c, x);
       lmdb::dbi dbi;
       // Get the dbi handle, and insert some key/value pairs in a write
@@ -430,16 +426,6 @@ bool Configs::write_lmdb(lmdb::env &env, char c, int32_t x,
                << view.size();
 #endif
       return ret;
-    } catch (lmdb::map_full_error) {
-      auto size = env.latest_mapsize;
-      if (size == 0) {
-        size = 10 * 1024 * 1024;
-      }
-      env.set_mapsize(size * u);
-      u = u * u;
-    }
-  }
-  return false;
 }
 
 std::tuple<bool, bool>
@@ -539,7 +525,7 @@ lmdb::env Configs::initialize_lmdb() {
     }
     wtxn.commit();
   }
-  env.latest_mapsize = lmdb_dir_size(DATABASE_NAME);
+  env.set_mapsize(10100010001000);
   return env;
 }
 #undef DATABASE_NAME
@@ -547,7 +533,32 @@ lmdb::env Configs::initialize_lmdb() {
 #endif
 
 namespace Configs {
+void ProfileManager::FillProfileEnts(QList<std::shared_ptr<Configs::ProxyEntity>> &list, const QList<int> & l){
+  for (int i : l){
+    auto profile =  Configs::profileManager->GetProfile(i);
+      if (profile != nullptr){
+        list << profile;
+    }
+  }
+};
+
+int ProfileManager::GetProfileLatency(int id){
+  auto profile = this->GetProfile(id);
+  if (profile == nullptr){
+    return -1;
+  }
+  return profile->latencyInt;
+}
+
 ProfileManager *profileManager = new ProfileManager();
+
+int ProfileManager::getGroupCount(){
+  int proxies = 0;
+  for (const auto & group: Configs::profileManager->groups){
+    proxies += group.second->profiles.size();
+  }
+  return proxies;
+}
 
 ProfileManager::ProfileManager() : JsonStore() {}
 
@@ -558,7 +569,7 @@ STOP_MAP
 void ProfileManager::LoadManager() {
   JsonStore::Load();
   //
-  profiles = {};
+//  weak_profiles;
   groups = {};
   routes = {};
   auto profilesIdOrder =
@@ -568,29 +579,25 @@ void ProfileManager::LoadManager() {
   auto routesIdOrder =
       Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
   // Load Proxys
-  QList<int> delProfile;
   int max;
   for (auto id : profilesIdOrder) {
 #ifdef DEBUG_MODE
     qDebug() << "Load Profile With ID" << id;
 #endif
-    auto ent = LoadProxyEntity(id);
+//    auto ent = LoadProxyEntity(id);
     // Corrupted profile?
-    if (ent == nullptr || !ent->isValid() || ent->id != id) {
-      delProfile << id;
-      continue;
-    }
+//    if (ent == nullptr || !ent->isValid() || ent->id != id) {
+//      delProfile << id;
+//      continue;
+ //   }
     if (id > max) {
       max = id;
     }
-    profiles[id] = ent;
-    if (ent->type == "extracore")
-      extraCorePaths.insert(ent->ExtraCoreBean()->extraCorePath);
+ //   profiles[id] = ent;
+ //   if (ent->type == "extracore")
+ //     extraCorePaths.insert(ent->ExtraCoreBean()->extraCorePath);
   }
   // Clear Corrupted profile
-  for (auto id : delProfile) {
-    deleteProfile(id);
-  }
   this->max_profile_id = max;
   max = 0;
   // Load Groups
@@ -616,6 +623,7 @@ void ProfileManager::LoadManager() {
   }
   this->max_group_id = max;
   max = 0;
+  /*
   QList<int> orphanProfiles;
   for (const auto [id, proxy] : (profiles)) {
     // corrupted data
@@ -628,9 +636,11 @@ void ProfileManager::LoadManager() {
     if (needToCheckGroups.contains(proxy->gid))
       groups[proxy->gid]->AddProfile(id);
   }
+
   for (int id : orphanProfiles) {
     deleteProfile(id);
   }
+    */
   for (const auto groupID : needToCheckGroups) {
     groups[groupID]->Save();
   }
@@ -687,17 +697,14 @@ std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(
     qDebug() << "LOADING FAILED:" << "profiles/" << id << ".cfg";
 #endif
     ent->type = "";
-    return ent;
   }
+  /*
   if (!ent->isValid()) {
 #ifdef DEBUG_MODE
     qDebug() << "UNKNOWN TYPE:" << ent->type;
 #endif
     return ent;
   }
-#ifdef DEBUG_MODE
-  qDebug() << "Migration Mode" << ent->same_path_for_bean();
-#endif
   std::shared_ptr<AbstractBean> bean;
   if (ent->same_path_for_bean()) {
     bean = ent->unlock(ent->bean());
@@ -708,6 +715,7 @@ std::shared_ptr<ProxyEntity> ProfileManager::LoadProxyEntity(
     ent->Save();
   }
   ent->ResetBeans();
+  */
 #ifdef DEBUG_MODE
   qDebug() << "Profiles loaded, beans resetted";
 #endif
@@ -753,6 +761,20 @@ bool ProfileManager::AddProfile(const std::shared_ptr<ProxyEntity> &ent,
   return ProfileManager::AddProfileBatch(list, gid);
 }
 
+void ProfileManager::CacheProfile(std::shared_ptr<ProxyEntity> ent){
+  cached_profiles.insert({ent->Id(), ent});
+}
+
+void ProfileManager::UncacheProfile(int id, bool force){
+  cached_profiles.erase(id);
+  if (force){
+    weak_profiles_mutex.lock();
+    weak_profiles.remove(id);
+    weak_profiles_mutex.unlock();
+  }
+}
+
+
 bool ProfileManager::AddProfileBatch(
     const QList<std::shared_ptr<ProxyEntity>> &ents, int gid) {
   gid = gid < 0 ? dataStore->current_group : gid;
@@ -768,9 +790,11 @@ bool ProfileManager::AddProfileBatch(
 #endif
     ent->gid = gid;
     ent->id = id;
-    group->AddProfile(id);
-    profiles[id] = ent;
+    group->profiles.append(id);
+    this->CacheProfile(ent);
+  //  profiles[id] = ent;
   }
+
   runOnNewThread([=, this] {
     lock();
     group->Save();
@@ -793,9 +817,7 @@ bool ProfileManager::MoveProfile(int id, int gid) {
 
 bool ProfileManager::MoveProfileBatch(const QList<int> &ents, int gid) {
   QList<std::shared_ptr<ProxyEntity>> entsp;
-  for (int i : ents) {
-    entsp << this->GetProfile(i);
-  }
+  Configs::profileManager->FillProfileEnts(entsp, ents);
   return this->MoveProfileBatch(entsp, gid);
 }
 
@@ -863,7 +885,7 @@ void ProfileManager::BatchDeleteProfiles(const QList<int> &ids, int groupid) {
         continue;
       }
     }
-    profiles.erase(id);
+    UncacheProfile(id, true);
     deleted_ids.insert(id);
   }
 
@@ -889,7 +911,36 @@ void ProfileManager::deleteProfile(int id) {
 }
 
 std::shared_ptr<ProxyEntity> ProfileManager::GetProfile(int id) {
-  return profiles.contains(id) ? profiles[id] : nullptr;
+  if (cached_profiles.size() > 0){
+    auto iter = cached_profiles.find(id);
+    if (iter != cached_profiles.end()){
+      return iter->second;
+    }
+  }
+  std::shared_ptr<ProxyEntity> profile;
+//  weak_profiles_mutex.lock();
+  auto iter = weak_profiles.tryGet(id, profile);
+//  weak_profiles_mutex.unlock();
+  if (!iter){
+    get_weak_profile:
+    auto profile = this->LoadProxyEntity(id);
+    if (profile->isValid()){
+ //     std::weak_ptr<ProxyEntity> weak = profile;
+      weak_profiles_mutex.lock();
+      weak_profiles.insert(id, profile);
+      weak_profiles_mutex.unlock();
+      return profile;
+    }
+      #ifdef DEBUG_MODE
+        qDebug() << "ATTENTION!!! Invalid profile id";
+      #endif
+    return nullptr;
+  } else {
+    if (profile == nullptr){
+      goto get_weak_profile;
+    }
+    return profile;
+  }
 }
 
 QStringList ProfileManager::GetExtraCorePaths() const {

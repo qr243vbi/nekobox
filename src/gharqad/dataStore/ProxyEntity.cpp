@@ -40,18 +40,9 @@ namespace Configs
     #define _add(map1, X, Y, B) _put(map1, X, &this->Y)
     //, ITEM_TYPE(B))
 
-    QByteArray bean_key = Configs::hash("bean");
+  //  QByteArray bean_key = Configs::hash("bean");
 
-    bool ProxyEntity::UnknownKeyHash(const QByteArray & array) {
-#ifdef DEBUG_MODE
-    qDebug()<<"Invalid Bean";
-#endif
-        if (array == bean_key){
-            this->same_path_for_bean(true);
-            return true;
-        }
-        return false;
-    };
+
 
     bool ProxyEntity::isValid() const {
         return Preset::SingBox::OutboundTypes.contains(this->type);
@@ -63,6 +54,9 @@ namespace Configs
     }
 
     bool ProxyEntity::Save(){
+        if (Configs::profileManager != nullptr) {
+            Configs::profileManager->UncacheProfile(this->id);
+        }
         return SavePrivate();
     }
 

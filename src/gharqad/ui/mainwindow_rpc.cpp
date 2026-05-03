@@ -189,14 +189,12 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
 }
 
 void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,  
-        bool skip_last_url_test_warning, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish){
-    QList<std::shared_ptr<Configs::ProxyEntity>> list;
-    list << entity;
-    urltest_current_group(list, skip_last_url_test_warning, finish);
+        bool skip_last_url_test_warning, const std::function<void(const QList<int>&)> &finish){
+    urltest_current_group({entity->Id()}, skip_last_url_test_warning, finish);
 }
 
-void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles,  
-        bool skip_last_url_test_warning, const std::function<void(const QList<std::shared_ptr<Configs::ProxyEntity>>&)> &finish) {
+void MainWindow::urltest_current_group(const QList<int>& profiles,  
+        bool skip_last_url_test_warning, const std::function<void(const QList<int>&)> &finish) {
     if (profiles.isEmpty()) {
         return;
     }
@@ -209,13 +207,16 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
         return;
     }
 
-    runOnNewThread([this, profiles, finish]() {
-        auto buildObject = Configs::BuildTestConfig(profiles);
-        if (!buildObject->error.isEmpty()) {
-            MW_show_log(tr("Failed to build test config: ") + buildObject->error);
-            speedtestRunning.unlock();
-            return;
-        }
+    runOnNewThread([this, profiles_ids = profiles, finish]() {
+        QList<std::shared_ptr<Configs::ProxyEntity>> profiles;
+
+        auto lambda = [this, finish](QList<std::shared_ptr<Configs::ProxyEntity>> &profiles)->void{
+            auto buildObject = Configs::BuildTestConfig(profiles);
+            if (!buildObject->error.isEmpty()) {
+                MW_show_log(tr("Failed to build test config: ") + buildObject->error);
+                speedtestRunning.unlock();
+                return;
+            }
 
         std::atomic<int> counter(0);
         stopSpeedtest.store(false);
@@ -248,13 +249,44 @@ void MainWindow::urltest_current_group(const QList<std::shared_ptr<Configs::Prox
 
         speedtestRunning.lock();
         speedtestRunning.unlock();
-        if (finish != nullptr){
-            finish(profiles);
-        }
+
         runOnUiThread([=,this]{
             refresh_proxy_list();
             MW_show_log(tr("URL test finished!"));
         });
+        };
+
+        int count = profiles_ids.count();
+        int index = 0;
+        int batch = 0;
+        stopSpeedtest.store(false);
+        while (index < count){
+            auto profile = Configs::profileManager->GetProfile(profiles_ids.at(index));
+            index ++;
+            if (profile != nullptr){
+             profiles << profile;
+            } else {
+                continue;
+            }
+            batch ++;
+            if (batch == 25){
+                if (!stopSpeedtest.load()){
+                    lambda(profiles);
+                } else {
+                    break;
+                }
+                speedtestRunning.lock();
+                profiles.clear();
+                batch = 0;
+            }
+        }
+        if (!stopSpeedtest.load()){
+            lambda(profiles);
+            profiles.clear();
+        }
+        if (finish != nullptr){
+            finish(profiles_ids);
+        }
     });
 }
 
@@ -300,16 +332,17 @@ void MainWindow::url_test_current() {
                         QString::number(latency) + QString(" ms"));
                     profile->latencyInt = latency;
                 }
+                profile->Save();
                 refresh_proxy_list(running->id);
             }
         });
     });
 }
 
-void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::ProxyEntity>>& profiles, 
+void MainWindow::speedtest_current_group(const QList<int>& profiles_ids, 
     bool testCurrent, int testmode)
 {
-    if (profiles.isEmpty() && !testCurrent) {
+    if (profiles_ids.isEmpty() && !testCurrent) {
         return;
     }
     if (!speedtestRunning.tryLock()) {
@@ -319,15 +352,34 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
         return;
     }
 
-    runOnNewThread([=, this]() {
+    runOnNewThread([testCurrent, this, testmode, profiles_ids]() {
         if (!testCurrent)
         {
+        QList<std::shared_ptr<Configs::ProxyEntity>> profiles;
 
+        int count = profiles_ids.count();
+        stopSpeedtest.store(false);
+        int index = 0;
+        int batch = 0;
+        loop_back:
+        while (index < count){
+            auto profile = Configs::profileManager->GetProfile(profiles_ids.at(index));
+            index ++;
+            if (profile != nullptr){
+             profiles << profile;
+            } else {
+                continue;
+            }
+            batch ++;
+            if (batch == 25){
+                break;
+            }
+        }
+        if (!stopSpeedtest.load()){
             auto buildObject = Configs::BuildTestConfig(profiles);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
-                speedtestRunning.unlock();
-                return;
+                goto skip_loopback;
             }
 
             stopSpeedtest.store(false);
@@ -341,6 +393,17 @@ void MainWindow::speedtest_current_group(const QList<std::shared_ptr<Configs::Pr
                 runSpeedTest(QJsonObject2QString(buildObject->coreConfig, false), false, false, 
                 buildObject->outboundTags, buildObject->tag2entID, -1, testmode);
             }
+        }
+        profiles.clear();
+        batch = 0;
+        skip_loopback:
+        if (!stopSpeedtest.load()){
+            if ((index < count)){
+                speedtestRunning.lock();
+                goto loop_back;
+            }
+        }
+        
         } else
         {
             stopSpeedtest.store(false);
@@ -389,6 +452,7 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
             if (!ul_speed.isEmpty()) profile->ul_speed = (ul_speed);
             if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
             if (!country.isEmpty()) profile->test_country = CountryNameToCode((country));
+            profile->Save();
             refresh_proxy_list(profile->id);
             lastProxyListUpdate = QDateTime::currentDateTime();
         }
@@ -421,6 +485,7 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
                 if (profile->latencyInt <= 0 && latency > 0) profile->latencyInt = latency;
                 if (!country.isEmpty()) profile->test_country = CountryNameToCode(
                     (country));
+                profile->Save();
                 refresh_proxy_list(profile->id);
             }
         });
@@ -563,7 +628,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
 #endif
      
     auto ents = get_now_selected_list();
-    auto ent = (_id < 0 && !ents.isEmpty()) ? ents.first() : Configs::profileManager->GetProfile(_id);
+    auto ent = Configs::profileManager->GetProfile((_id < 0 && !ents.isEmpty()) ? ents.first() : (_id));
     if (ent == nullptr) return;
 /*
     if (select_mode) {
