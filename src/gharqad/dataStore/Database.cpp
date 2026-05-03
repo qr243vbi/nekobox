@@ -186,6 +186,8 @@ bool FileDatabaseManager::Load(JsonStore *store) {
     }
     return true;
   }
+#else
+  bool readed;
 #endif
   readed = LoadFromFile(store);
 #ifndef SKIP_LMDB

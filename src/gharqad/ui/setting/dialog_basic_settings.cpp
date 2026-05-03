@@ -337,6 +337,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     // Core
     ui->groupBox_core->setTitle(software_core_name);
+    #ifdef SKIP_LMDB
+    int i = ui->store_type->findText("lmdb");
+    ui->store_type->removeItem(i);
+    #endif
 
     // Mux
     D_LOAD_INT(mux_concurrency)

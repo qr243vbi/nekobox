@@ -84,7 +84,12 @@ message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 #### NKR ####
 option(SKIP_UPDATER "Always hide update button" ON)
-option(SKIP_LMDB "Do not use lmdb" OFF)
+if(UNIX)
+set(SKIP_LMDB_DEFAULT OFF)
+else()
+set(SKIP_LMDB_DEFAULT ON)
+endif()
+option(SKIP_LMDB "Do not use lmdb" ${SKIP_LMDB_DEFAULT})
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
