@@ -156,7 +156,7 @@ namespace Configs {
         status->forExport = forExport;
         status->chainID = chainID;
 
-        if (status->ent != nullptr){
+        if (status->ent != nullptr && status->ent->type == "custom"){
             auto customBean = ent->CustomBean();
             if (customBean != nullptr && customBean->core == "internal-full") {
                 if (dataStore->spmode_vpn)
@@ -204,7 +204,7 @@ namespace Configs {
         }
         QJsonObject conf;
         auto bean = ent->bean();
-        if (auto custom = ent->CustomBean(); ent->type == "custom" && ent->CustomBean()->core == "internal-full")
+        if (ent->type == "custom" && ent->CustomBean()->core == "internal-full")
         {
             conf = QString2QJsonObject(ent->CustomBean()->config_simple);
         } else {
@@ -452,9 +452,11 @@ namespace Configs {
             // Bypass Lookup for the first profile
             auto serverAddress = ent->serverAddress;
 
-            if (auto customBean = ent->CustomBean(); customBean != nullptr && customBean->core == "internal") {
-                auto server = QString2QJsonObject(customBean->config_simple)["server"].toString();
-                if (!server.isEmpty()) serverAddress = server;
+            if (ent->type == "custom"){
+                if (auto customBean = ent->CustomBean(); customBean != nullptr && customBean->core == "internal") {
+                    auto server = QString2QJsonObject(customBean->config_simple)["server"].toString();
+                    if (!server.isEmpty()) serverAddress = server;
+                }
             }
 
             if (!IsIpAddress(serverAddress)) {

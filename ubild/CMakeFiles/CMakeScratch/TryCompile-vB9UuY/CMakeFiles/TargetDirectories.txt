@@ -1,0 +1,3 @@
+/home/ninkear/Desktop/local/nekobox/ubild/CMakeFiles/CMakeScratch/TryCompile-vB9UuY/CMakeFiles/cmTC_302be.dir
+/home/ninkear/Desktop/local/nekobox/ubild/CMakeFiles/CMakeScratch/TryCompile-vB9UuY/CMakeFiles/edit_cache.dir
+/home/ninkear/Desktop/local/nekobox/ubild/CMakeFiles/CMakeScratch/TryCompile-vB9UuY/CMakeFiles/rebuild_cache.dir
