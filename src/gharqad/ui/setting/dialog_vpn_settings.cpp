@@ -134,7 +134,9 @@ void DialogAppSettings::on_button_box_clicked(QAbstractButton *button) {
         default:
           return;
         }
-      }
+      } else {
+		 return;
+	  }
       int row = model->rowCount();
       model->insertRow(row);
       model->setData(model->index(row), path);
