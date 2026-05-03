@@ -131,7 +131,7 @@ namespace Configs {
         #ifdef USE_CPP_PROXY_CONFIGURATOR
         QString proxy_scheme = "{ip}:{port}";
         #else
-        std::shared_ptr<SimpleProxyInboundEnum> inbound_proxy_type = std::make_shared<SimpleProxyInboundEnum>(2); 
+        std::shared_ptr<SimpleProxyInboundEnum> inbound_proxy_type = std::make_shared<SimpleProxyInboundEnum>(0); 
         bool proxyInboundEnabled();
         #endif
         std::unique_ptr<Routing> routing;

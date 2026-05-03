@@ -523,7 +523,7 @@ QByteArray hash = QCryptographicHash::hash(
         #ifdef USE_CPP_PROXY_CONFIGURATOR
         ADD_MAP("proxy_scheme", proxy_scheme, string);
         #else
-        ADD_MAP("inbound_proxy_type", inbound_proxy_type, string);
+        ADD_MAP("inbound_proxy_scheme", inbound_proxy_type, string);
         #endif
         ADD_MAP("disable_privilege_req", disable_privilege_req, boolean);
         ADD_MAP("enable_tun_routing", enable_tun_routing, boolean);
