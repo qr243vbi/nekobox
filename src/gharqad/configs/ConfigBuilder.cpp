@@ -189,6 +189,9 @@ namespace Configs {
         if (ent->type == "chain")
         {
             auto bean = ent->ChainBean();
+            if (bean == nullptr){
+                return false;
+            }
             for (int eId : bean->list)
             {
                 auto e = profileManager->GetProfile(eId);
@@ -207,7 +210,8 @@ namespace Configs {
         }
         QJsonObject conf;
         auto bean = ent->bean();
-        if (ent->type == "custom" && ent->CustomBean()->core == "internal-full")
+        
+        if (bean != nullptr && ent->type == "custom" && ent->CustomBean()->core == "internal-full")
         {
             conf = QString2QJsonObject(ent->CustomBean()->config_simple);
         } else {
@@ -249,6 +253,10 @@ namespace Configs {
             if (item == nullptr){
                 continue;
             }
+            auto bean = item->bean();
+            if (bean == nullptr){
+                continue;
+            }
             if (item->type == "extracore")
             {
                 MW_show_log("Skipping ExtraCore conf");
@@ -264,7 +272,7 @@ namespace Configs {
                 results->error = res->error;
                 return results;
             }
-            if (item->type == "custom" && item->CustomBean()->core == "internal-full") {
+            if (bean != nullptr && item->type == "custom" && item->CustomBean()->core == "internal-full") {
                 res->coreConfig["inbounds"] = QJsonArray();
                 results->fullConfigs[item->id] = QJsonObject2QString(res->coreConfig, true);
                 continue;
@@ -339,6 +347,13 @@ namespace Configs {
     QList<std::shared_ptr<ProxyEntity>> ResolveChainInternal(const std::shared_ptr<BuildConfigStatus> &status, 
                 const std::shared_ptr<ProxyEntity> &ent){
             QList<std::shared_ptr<ProxyEntity>> resolved;
+            if (ent == nullptr){
+                return resolved;
+            }
+            auto bean = ent->bean();
+            if (bean == nullptr){
+                return resolved;
+            }
             if (ent->type == "chain") {
                 auto list = ent->ChainBean()->list;
                 std::reverse(std::begin(list), std::end(list));
@@ -424,7 +439,14 @@ namespace Configs {
         }
 
         for (int index = 0; index < ents.length(); index++) {
-            const auto& ent = ents.at(index);
+            auto ent = ents.at(index);
+            if (ent == nullptr){
+                continue;
+            }
+            auto bean = ent->bean();
+            if (bean == nullptr){
+                continue;
+            }
             QString tagOut;
 
             // last profile set as "proxy"
@@ -454,8 +476,6 @@ namespace Configs {
             QJsonObject outbound;
 
             BuildOutbound(ent, status, outbound, tagOut);
-
-            auto bean = ent->bean();
             // apply custom outbound settings
             MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
 
@@ -488,7 +508,13 @@ namespace Configs {
     }
 
     void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent, const std::shared_ptr<BuildConfigStatus> &status, QJsonObject& outbound, const QString& tag) {
+        if (ent == nullptr){
+            return;
+        }
         auto bean = ent->bean();
+        if (bean == nullptr){
+            return;
+        }
         if (ent->type == "wireguard") {
             if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
                 MW_dialog_message("configBuilder" ,"NeedAdmin");
@@ -737,9 +763,17 @@ namespace Configs {
         // Outbounds
         tagProxy = BuildChain(status->chainID, status);
         if (!status->result->error.isEmpty()) return;
+        if (status->ent == nullptr) {
+            status->result->error = "NullPointer ProxyEntity";
+            return;
+        }
         if (status->ent->type == "extracore")
         {
             auto bean = status->ent->ExtraCoreBean();
+            if (bean == nullptr){
+                status->result->error = "Bean is null";
+                return;
+            }
             status->result->extraCoreData->path = QFileInfo(bean->extraCorePath).canonicalFilePath();
             status->result->extraCoreData->args = bean->extraCoreArgs;
             status->result->extraCoreData->config = bean->extraCoreConf;
