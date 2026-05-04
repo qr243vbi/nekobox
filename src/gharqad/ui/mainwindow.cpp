@@ -872,7 +872,7 @@ MainWindow::MainWindow(QWidget *parent)
   //
   connect(ui->menu_edit, &QAction::triggered, this, [this]() -> void {
     QModelIndex item;
-    auto Items = ui->proxyListTable->selectionModel()->selection().indexes();
+    auto Items = ui->proxyListTable->selectionModel()->selectedRows();
     if (Items.count() > 0) {
       item = Items.at(0);
     }
@@ -1226,7 +1226,7 @@ skip_updater_hide:
                 QString choice = QInputDialog::getItem( 
                   this,                                   // parent
                   tr("Select Proxy"),                     // dialog title
-                  tr("Proxy:"),                           // label  
+                  tr("Inbound proxy type:"),                      // label  
                   Preset::SingBox::SimpleProxyInbounds,   // items
                   0,                                      // default index
                   false,                                  // editable?
