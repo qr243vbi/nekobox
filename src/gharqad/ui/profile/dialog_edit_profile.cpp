@@ -66,6 +66,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     : QDialog(parent), ui(new Ui::DialogEditProfile) {
   // setup UI
   CHECK_SETTINGS_ACCESS
+  ui->packet_encoding->addItems(Preset::SingBox::VmessPacketEncodings);
   ui->setupUi(this);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
@@ -417,7 +418,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
  //   ui->right_all_w->setVisible(true);
     ui->network->setCurrentText(stream->network);
     ui->security->setCurrentText(stream->security);
-    ui->packet_encoding->setCurrentText(stream->packet_encoding);
+    ui->packet_encoding->setCurrentText(*stream->packet_encoding);
     ui->path->setText(stream->path);
     ui->host->setText(stream->host);
     ui->method->setText(stream->method);
@@ -564,7 +565,7 @@ bool DialogEditProfile::onEnd() {
   if (stream != nullptr) {
     stream->network = ui->network->currentText();
     stream->security = ui->security->currentText();
-    stream->packet_encoding = ui->packet_encoding->currentText();
+    *stream->packet_encoding = ui->packet_encoding->currentText();
     stream->path = ui->path->text();
     stream->host = ui->host->text();
     stream->sni = ui->sni->text();

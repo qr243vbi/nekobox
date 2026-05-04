@@ -14,9 +14,13 @@ namespace Configs {
         ADD_ENUM_LIST(Preset::SingBox::QUICCongestionControlAlgorithm, 1);
     STOP_ENUM
     
-INIT_ENUM(Network)
-    ADD_ENUM_LIST(Preset::SingBox::Network, 1);
-STOP_ENUM
+    INIT_ENUM(Network)
+        ADD_ENUM_LIST(Preset::SingBox::Network, 1);
+    STOP_ENUM
+
+    INIT_ENUM(VmessPacketEncodings)
+        ADD_ENUM_LIST(Preset::SingBox::VmessPacketEncodings, 0);
+    STOP_ENUM
 
     class V2rayStreamSettings : public JsonStore {
     public:
@@ -29,7 +33,7 @@ STOP_ENUM
 
         QString network = "tcp";
         QString security = "";
-        QString packet_encoding = "";
+        std::shared_ptr<VmessPacketEncodingsEnum> packet_encoding = std::make_shared<VmessPacketEncodingsEnum>(0);
 
         QString path = "";
         QString host = "";

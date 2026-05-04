@@ -242,7 +242,7 @@ namespace Configs
         encryption = obj["encryption"].toString();
         add_mux_state(this, obj);
 
-        stream->packet_encoding = obj["packet_encoding"].toString();
+        *stream->packet_encoding = obj["packet_encoding"].toString();
 
         add_tls(stream, obj);
         parse_transport(stream, obj);
@@ -258,7 +258,7 @@ namespace Configs
         aid = obj["alter_id"].toInt();
         add_mux_state(this, obj);
 
-        stream->packet_encoding = obj["packet_encoding"].toString();
+        *stream->packet_encoding = obj["packet_encoding"].toString();
 
         global_padding = obj["global_padding"].toBool();
         authenticated_length = obj["authenticated_length"].toBool();

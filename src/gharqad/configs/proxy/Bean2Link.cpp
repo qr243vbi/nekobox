@@ -198,7 +198,7 @@ namespace Configs {
         // protocol
         if (proxy_type == proxy_VLESS) {
             add_query_nonempty("flow", query, flow);
-            add_query_nonempty("packetEncoding", query, stream->packet_encoding);
+            add_query_nonempty("packetEncoding", query, *stream->packet_encoding);
             query.addQueryItem("encryption", (encryption == "" ) ? "none" : encryption);
         }
 

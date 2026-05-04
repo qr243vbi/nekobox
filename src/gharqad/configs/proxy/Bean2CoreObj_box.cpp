@@ -208,7 +208,7 @@ namespace Configs {
         }
 
         if (type == "vmess" || type == "vless") {
-            outbound->insert("packet_encoding", packet_encoding);
+            outbound->insert("packet_encoding", (QString)*packet_encoding);
         }
     }
 

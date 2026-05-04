@@ -635,10 +635,10 @@ void RawUpdater::updateClash(const QString &str) {
           bean->password = Node2QString(proxy["uuid"]);
           // meta packet encoding
           if (Node2Bool(proxy["packet-addr"])) {
-            bean->stream->packet_encoding = "packetaddr";
+            *bean->stream->packet_encoding = "packetaddr";
           } else {
             // For VLESS, default to use xudp
-            bean->stream->packet_encoding = "xudp";
+            *bean->stream->packet_encoding = "xudp";
           }
         } else {
           bean->password = Node2QString(proxy["password"]);
@@ -721,9 +721,9 @@ void RawUpdater::updateClash(const QString &str) {
 
         // meta packet encoding
         if (Node2Bool(proxy["xudp"]))
-          bean->stream->packet_encoding = "xudp";
+          *bean->stream->packet_encoding = "xudp";
         if (Node2Bool(proxy["packet-addr"]))
-          bean->stream->packet_encoding = "packetaddr";
+          *bean->stream->packet_encoding = "packetaddr";
 
         // opts
         auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
