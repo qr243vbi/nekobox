@@ -384,16 +384,21 @@ QByteArray hash = QCryptographicHash::hash(
 }
 
     int config_type = 
+    #ifdef DEBUG_MODE
+    DatabaseType::json_type
+    #else
     #ifdef SKIP_LMDB
     DatabaseType::binary_type
     #else
     DatabaseType::lmdb_type
     #endif
+    #endif
     ;
 
     void SetConfigType(StoreTypeEnum * th, int old_value, int new_value){
-        if (new_value == 0){
-            if (old_value == 0){
+        auto _map = th->_map();
+        if (_map.right.count(new_value) == 0){
+            if (_map.right.count(old_value) == 0){
                 *th = config_type;
             }
         } else {
