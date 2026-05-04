@@ -4,7 +4,6 @@
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
-
 #include <nekobox/dataStore/Configs.hpp>
 #include <3rdparty/qv2ray/wrapper.hpp>
 #include <QtConcurrent>
@@ -1039,6 +1038,9 @@ skip_updater_hide:
 
   tableModel->capture(this->ui->proxyListTable);
 
+  connect(ui->proxyListTable, &QTableView::doubleClicked,
+        this, &MainWindow::on_proxyListTable_itemDoubleClicked);
+
 
   if (auto button = ui->proxyListTable->findChild<QAbstractButton *>(
           QString(), Qt::FindDirectChildrenOnly)) {
@@ -1117,6 +1119,7 @@ skip_updater_hide:
   auto *trayMenu = new QMenu();
 
   connect(trayMenu, &QMenu::aboutToShow, this, [this, trayMenu]() {
+  if (!this->force_hide_tray){
     trayMenu->clear();
     trayMenu->addAction(ui->actionToggle_window);
     bool skip = true;
@@ -1127,6 +1130,7 @@ skip_updater_hide:
         trayMenu->addAction(i);
       }
     }
+  }
   });
 
   tray->setVisible(!Configs::dataStore->disable_tray);
@@ -1215,7 +1219,29 @@ skip_updater_hide:
   connect(ui->checkBox_SystemProxy, &QCheckBox::clicked, this,
           [=, this](bool checked) {
             CHECK_ACTION_ACCESS_W 
-            ui->checkBox_SystemProxy->setChecked(set_spmode_system_proxy(checked));
+            #ifndef USE_CPP_PROXY_CONFIGURATOR
+            if (checked && !Configs::dataStore->proxyInboundEnabled()){
+              { 
+                bool ok = false;
+                QString choice = QInputDialog::getItem( 
+                  this,                                   // parent
+                  tr("Select Proxy"),                     // dialog title
+                  tr("Proxy:"),                           // label  
+                  Preset::SingBox::SimpleProxyInbounds,   // items
+                  0,                                      // default index
+                  false,                                  // editable?
+                  &ok
+                );
+                if (ok){
+                  *Configs::dataStore->inbound_proxy_type = choice;
+                  set_spmode_system_proxy(true);
+                  profile_start(Configs::dataStore->started_id,
+                    !Configs::windowSettings->test_after_start);
+                }
+              };
+            }
+            #endif
+              ui->checkBox_SystemProxy->setChecked(set_spmode_system_proxy(checked));
           });
   connect(ui->menu_spmode, &QMenu::aboutToShow, this, [=, this]() {
     ui->menu_spmode_disabled->setChecked(
@@ -3872,7 +3898,7 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
 
 QList<int>
 MainWindow::get_now_selected_list() {
-  auto items = ui->proxyListTable->selectionModel()->selection().indexes();
+  auto items = ui->proxyListTable->selectionModel()->selectedRows();
   QList<int> list;
   for (auto item : items) {
     auto id = this->tableModel->data_id(item);

@@ -29,8 +29,10 @@ namespace Configs {
     enum DatabaseType {
         json_type = 1,
         binary_type = 2,
-        ini_type = 3,
-        lmdb_type = 4
+        ini_type = 3
+        #ifndef SKIP_LMDB
+        ,lmdb_type = 4
+        #endif
     };
 
     class StoreTypeEnum;
@@ -41,7 +43,9 @@ namespace Configs {
         ADD_ENUM("json", DatabaseType::json_type);
         ADD_ENUM("binary", DatabaseType::binary_type);
         ADD_ENUM("ini", DatabaseType::ini_type);
+        #ifndef SKIP_LMDB
         ADD_ENUM("lmdb", DatabaseType::lmdb_type);
+        #endif
     STOP_ENUM_TRIGGER(SetConfigType)
 
 
@@ -286,21 +290,6 @@ namespace Configs {
     extern DataStore *dataStore;
 
 } // namespace Configs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif
