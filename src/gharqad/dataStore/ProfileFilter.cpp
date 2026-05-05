@@ -2,6 +2,7 @@
 #include <winsock2.h>
 #endif
 #include <nekobox/dataStore/ProfileFilter.hpp>
+#include <set>
 
 namespace Configs {
 
