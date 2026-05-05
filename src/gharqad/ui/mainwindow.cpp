@@ -57,7 +57,7 @@
 #include <nekobox/ui/group/dialog_edit_group.h>
 
 #ifdef Q_OS_WIN
-#include <3rdparty/WinCommander.hpp>
+#include <nekobox/sys/windows/WinCommander.hpp>
 #include <nekobox/sys/windows/WinVersion.h>
 #include <windows.h>
 #else

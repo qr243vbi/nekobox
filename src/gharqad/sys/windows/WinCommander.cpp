@@ -24,7 +24,7 @@
 **
 ****************************************************************************/
 
-#include "WinCommander.hpp"
+#include <nekobox/sys/windows/WinCommander.hpp>
 
 #include <QSysInfo>
 #include <QDir>

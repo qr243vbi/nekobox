@@ -23,7 +23,7 @@
 #include <qnamespace.h>
 
 #ifdef Q_OS_WIN
-#include <3rdparty/WinCommander.hpp>
+#include <nekobox/sys/windows/WinCommander.hpp>
 #include <windows.h>
 #include <nekobox/sys/windows/MiniDump.h>
 #include <nekobox/sys/windows/eventHandler.h>

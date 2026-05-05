@@ -4,7 +4,7 @@
 
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/dataStore/Configs.hpp>
-#include <3rdparty/QThreadCreateThread.hpp>
+#include <nekobox/sys/QThreadCreateThread.hpp>
 #include <QDir>
 #include <QFileInfo>
 #include <QRandomGenerator>

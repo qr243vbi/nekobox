@@ -1,9 +1,11 @@
-set(PLATFORM_SOURCES 
-    3rdparty/WinCommander.cpp 
-    ${GHARQAD}/sys/windows/guihelper.cpp 
-    ${GHARQAD}/sys/windows/MiniDump.cpp 
-    ${GHARQAD}/sys/windows/eventHandler.cpp 
-    ${GHARQAD}/sys/windows/WinVersion.cpp)
+
+file(GLOB_RECURSE PLATFORM_SOURCES_GLOB
+    ${GHARQAD}/sys/windows/*.cpp
+    ${NYXARIA}/sys/windows/*.hpp
+    ${NYXARIA}/sys/windows/*.h
+)
+set(PLATFORM_SOURCES ${PLATFORM_SOURCES_GLOB})
+
 set(PLATFORM_LIBRARIES wininet wsock32 ws2_32 user32 rasapi32 iphlpapi ntdll wbemuuid)
 
 include(cmake/windows/generate_product_version.cmake)

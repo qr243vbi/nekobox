@@ -6,7 +6,7 @@
 #pragma once
 
 #include <3rdparty/qv2ray/wrapper.hpp>
-#include <3rdparty/QThreadCreateThread.hpp>
+#include <nekobox/sys/QThreadCreateThread.hpp>
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
