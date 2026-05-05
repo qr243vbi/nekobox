@@ -18,7 +18,7 @@ curl -L -o qrcodegen/qrcodegen.hpp https://raw.githubusercontent.com/nayuki/QR-C
 curl -L -o qrcodegen/qrcodegen.cpp https://raw.githubusercontent.com/nayuki/QR-Code-generator/refs/heads/master/cpp/qrcodegen.cpp
 
 rm -rf cpr ||:
-git clone --depth 1 https://github.com/qr243vbi/cpr.git
+git clone --depth 1 https://github.com/libcpr/cpr.git
 rm -rf cpr/.git
 
 mkdir URLParser ||:
