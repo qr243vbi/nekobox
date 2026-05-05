@@ -15,13 +15,13 @@ namespace Subscription {
     public:
         void updateSIP008(const QJsonObject& str);
         
-        void updateClash(const QString &str);
+        bool updateClash(const QString &str);
 
         void update(const QString &str);
 
         void updateSingBox(const QJsonObject &str);
 
-        void updateWireguardFileConfig(const QString &str);
+        bool updateWireguardFileConfig(const QString &str);
 
         int gid_add_to = -1;
 

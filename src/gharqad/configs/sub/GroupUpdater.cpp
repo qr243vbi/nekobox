@@ -84,6 +84,17 @@ void RawUpdater::update(const QString &str3) {
   QList<QString> stack = {str3};
   QString str;
 
+  std::shared_ptr<Configs::ProxyEntity> ent;
+  bool needFix = true;
+
+  bool json_contains_outbounds;
+  bool json_contains_inbounds;
+  bool json_contains_endpoints;
+  QJsonParseError error{};
+  QJsonDocument jsonDocument;
+  bool json_ok;
+  QJsonObject json;
+
 ret_loop:
   if (stack.size() != 0) {
     str = stack.takeFirst();
@@ -103,30 +114,8 @@ ret_loop:
     }
   }
 
-  // Clash
-  if (str.contains("proxies:")) {
-    updateClash(str);
-    goto ret_loop;
-  }
-
-  // Wireguard Config
-  if (str.contains("[Interface]") && str.contains("[Peer]")) {
-    updateWireguardFileConfig(str);
-    goto ret_loop;
-  }
-
-  // is comment or too short
-  if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
-    goto ret_loop;
-  }
-
-  bool json_contains_outbounds;
-  bool json_contains_inbounds;
-  bool json_contains_endpoints;
-  QJsonParseError error{};
-  QJsonDocument jsonDocument = QJsonDocument::fromJson(str.toUtf8(), &error);
-  bool json_ok = error.error == error.NoError;
-  QJsonObject json;
+  jsonDocument = QJsonDocument::fromJson(str.toUtf8(), &error);
+  json_ok = error.error == error.NoError;
   if (json_ok) {
     if (jsonDocument.isArray()) {
       for (auto i : jsonDocument.array()) {
@@ -164,6 +153,18 @@ ret_loop:
     goto parse_json;
   }
 
+  // Clash
+  if (updateClash(str)){
+    goto ret_loop;
+  }
+
+  // Wireguard Config
+  /*
+  if (updateWireguardFileConfig(str)){
+    goto ret_loop;
+  }
+  */
+
   // Multi line
   if (str.count("\n") > 0) {
     auto list = Disect(str);
@@ -175,8 +176,6 @@ ret_loop:
 
 parse_json:
 
-  std::shared_ptr<Configs::ProxyEntity> ent;
-  bool needFix = true;
 
   // Json
   if (json_ok) {
@@ -195,34 +194,29 @@ parse_json:
   }
 
   QString scheme;
-    bool quic_enabled = false;
+  bool quic_enabled = true;
 
-  int scheme_index = str.indexOf("://");
-#ifdef DEBUG_MODE
-  qDebug() << "scheme index is " << scheme_index;
-#endif
-
-  if (scheme_index > 0) {
-    scheme = str.sliced(0, scheme_index).toLower();
-#ifdef DEBUG_MODE
-    qDebug() << "Scheme Is : " << scheme;
-#endif
-  } else {
-    goto ret_loop;
+  QUrl scheme_link = QUrl(str.trimmed());
+  if (scheme_link.isValid()){
+    scheme = scheme_link.scheme();
+    quic_enabled = false;
   }
 
+  // skip if link is invalid
+  if (quic_enabled){
+
+  }
   // Nekoray format
-  if (scheme == "nekoray") {
+  else if (scheme == "nekoray") {
     needFix = false;
-    auto link = QUrl(str);
-    if (!link.isValid()){
+    if (!scheme_link.isValid()){
       goto ret_loop;
     }
-    ent = Configs::ProfileManager::NewProxyEntity(link.host());
+    ent = Configs::ProfileManager::NewProxyEntity(scheme_link.host());
     if (!ent->isValid()){
       goto ret_loop;
     }
-    if (!ent->unlock(ent->bean())->TryParseNekorayLink(link)){
+    if (!ent->unlock(ent->bean())->TryParseNekorayLink(scheme_link)){
       goto ret_loop;
     };
   }
@@ -455,12 +449,13 @@ void RawUpdater::updateSingBox(const QJsonObject &json) {
   }
 }
 
-void RawUpdater::updateWireguardFileConfig(const QString &str) {
+bool RawUpdater::updateWireguardFileConfig(const QString &str) {
   auto ent = Configs::ProfileManager::NewProxyEntity("wireguard");
   auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
   if (!ok)
-    return;
+    return false;
   updated_order += ent;
+  return true;
 }
 
 QString Node2QString(const fkyaml::node &n, const QString &def = "") {
@@ -527,7 +522,7 @@ fkyaml::node NodeChild(const fkyaml::node &n,
 }
 
 // https://github.com/Dreamacro/clash/wiki/configuration
-void RawUpdater::updateClash(const QString &str) {
+bool RawUpdater::updateClash(const QString &str) {
   try {
     auto proxies = fkyaml::node::deserialize(str.toStdString())["proxies"];
     for (auto proxy : proxies) {
@@ -936,7 +931,9 @@ void RawUpdater::updateClash(const QString &str) {
     //         runOnUiThread([=,this] {
     qDebug() << ("YAML Exception") << ex.what();
     //       });
+    return false;
   }
+  return true;
 }
 
 //
