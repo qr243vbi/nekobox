@@ -60,7 +60,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
                 continue;
             }
             if (neko){
-                links += bean->ToNekorayShareLink(profile->type);
+                links += bean->ToNekorayShareLink();
             } else {
                 links += bean->ToShareLink();
             }

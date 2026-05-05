@@ -30,4 +30,21 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+
+    QString NaiveBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("naive");
+        add_default_fields(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_quic(q, this);
+        add_udp_over_tcp(q, this);
+        add_query_map_nonempty("extra_headers", q, extra_headers);
+        add_tls(stream, q);
+
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

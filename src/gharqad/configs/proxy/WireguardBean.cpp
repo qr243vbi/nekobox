@@ -54,6 +54,40 @@ namespace Configs {
         return result;
     }
 
+
+    QString WireguardBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("wg");
+        add_default_fields(url, this);
+        QUrlQuery query;
+        add_query_nonempty("private_key", query, privateKey);
+        add_query_nonempty("peer_public_key", query, publicKey);
+        add_query_nonempty("pre_shared_key", query, preSharedKey);
+        add_query_nonempty("reserved", query, FormatReserved());
+        add_query_int("persistent_keepalive", query, (persistentKeepalive));
+        add_query_int("mtu", query, (MTU));
+        add_query_boolean("use_system_interface", query, useSystemInterface);
+        add_query_nonempty("local_address", query, localAddress.join("-"));
+        add_query_int("workers", query, (workerCount));
+        if (enable_amnezia)
+        {
+            query.addQueryItem("enable_amnezia", "true");
+            add_query_int("junk_packet_count", query, (junk_packet_count));
+            add_query_int("junk_packet_min_size", query, (junk_packet_min_size));
+            add_query_int("junk_packet_max_size", query, (junk_packet_max_size));
+            add_query_int("init_packet_junk_size", query, (init_packet_junk_size));
+            add_query_int("response_packet_junk_size", query, (response_packet_junk_size));
+            add_query_int("init_packet_magic_header", query, (init_packet_magic_header));
+            add_query_int("response_packet_magic_header", query, (response_packet_magic_header));
+            add_query_int("underload_packet_magic_header", query, (underload_packet_magic_header));
+            add_query_int("transport_packet_magic_header", query, (transport_packet_magic_header));
+        }
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
+    
         QString WireguardBean::FormatReserved() const {
             QString res = "";
             for (int i=0;i<reserved.size();i++) {

@@ -3255,7 +3255,7 @@ void MainWindow::on_menu_clone_triggered() {
   for (const auto &entid : ents) {
     auto ent = Configs::profileManager->GetProfile(entid);
     if (ent != nullptr){
-      sls << ent->bean()->ToNekorayShareLink(ent->type);
+      sls << ent->bean()->ToNekorayShareLink();
     }
   }
 
@@ -3369,7 +3369,7 @@ void MainWindow::on_menu_copy_links_nkr_triggered(bool isNekoRay) {
   for (const auto &entid : ents) {
     auto ent = Configs::profileManager->GetProfile(entid);
     if (ent != nullptr) {
-      links += isNekoRay ? ent->bean()->ToNekorayShareLink(ent->type) : ent->bean()->ToShareLink();
+      links += isNekoRay ? ent->bean()->ToNekorayShareLink() : ent->bean()->ToShareLink();
     }
   }
   if (links.length() == 0)
@@ -3535,7 +3535,7 @@ void MainWindow::display_qr_link(bool nkrFormat) {
   }
   auto bean = ent->bean();
   auto link = bean->ToShareLink();
-  auto link_nk = bean->ToNekorayShareLink(ent->type);
+  auto link_nk = bean->ToNekorayShareLink();
   auto w = new W(link, link_nk);
   w->setWindowTitle(ent->DisplayTypeAndName());
   w->exec();

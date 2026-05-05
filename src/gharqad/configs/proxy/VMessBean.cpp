@@ -29,4 +29,30 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+
+
+    QString VMessBean::ToShareLink() const {
+        QUrl url;
+            using namespace Configs::To_Link;
+
+        QUrlQuery query;
+        url.setScheme("vmess");
+        url.setUserName(uuid);
+        add_default_fields(url, this);
+
+        add_query_boolean("global_padding", query, this->global_padding);
+        add_query_boolean("authenticated_length", query, this->authenticated_length);
+
+        add_query_nonempty("encryption", query, security);
+        add_network(query, this);
+
+        //  security
+        add_tls(stream, query);
+
+        // mux
+        add_mux_state(query, this);
+
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

@@ -28,4 +28,21 @@ namespace Configs {
         return result;
     }
 
+
+    QString MieruBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("mierus");
+        add_default_fields(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_query_nonempty( "transport", q, QString(*network).toUpper());
+        add_query_nonempty( "multiplexing", q, *multiplexing);
+        add_query_nonempty( "server_ports", q, serverPorts.join(","));
+        add_query_nonempty("traffic_pattern", q, traffic_pattern);
+        url.setQuery(q);
+
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

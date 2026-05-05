@@ -11,6 +11,25 @@
 
 namespace Configs {
     
+
+    QString AnyTLSBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        QUrlQuery query;
+        url.setScheme("anytls");
+        url.setUserName(password);        
+        add_default_fields(url, this);
+        add_query_nonempty("idle_session_check_interval", query, idle_session_check_interval);
+        add_query_nonempty("idle_session_timeout", query, idle_session_timeout);
+        add_query_int_natural("min_idle_session", query, min_idle_session);
+
+        //  security
+        add_tls(stream, query);
+
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
     CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
         using namespace To_CoreObj_box;

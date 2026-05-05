@@ -44,7 +44,7 @@ namespace Configs {
         explicit AbstractBean(Configs::ProxyEntity * entity, int version);
         //
 
-        QString ToNekorayShareLink(const QString &type) const;
+        QString ToNekorayShareLink() const;
 
         void ResolveDomainToIP(const std::function<void()> &onFinished);
 
@@ -62,15 +62,18 @@ namespace Configs {
         //
         
 
-        virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() const { return {}; };
+        virtual CoreObjOutboundBuildResult BuildCoreObjSingBox() const ;
 
-        virtual QString ToShareLink() const { return {}; };
+        virtual QString ToShareLink() const;
 
-        virtual bool IsEndpoint() const { return false; };
+        virtual bool IsEndpoint() const;
 
-        virtual bool TryParseLink(const QString &link) { return false; };
+        virtual bool TryParseLink(const QString &link);
 
-        virtual bool TryParseJson(const QJsonObject &obj) { return false; };
+        bool TryParseNekorayLink(const QString &link);
+        bool TryParseNekorayLink(const QUrl &link);
+
+        virtual bool TryParseJson(const QJsonObject &obj);
     };
 
 } // namespace Configs

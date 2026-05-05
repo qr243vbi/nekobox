@@ -180,11 +180,11 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         add_network(this, query);
         // security
 
-        auto type =  GetQueryValue(query, "type", "tcp");
-        if (type == "h2") {
-            type = "http";
+        auto network =  GetQueryValue(query, "type", "tcp");
+        if (network == "h2") {
+            network = "http";
         }
-        stream->network = type;
+        *stream->network = network;
 
         if (proxy_type == proxy_Trojan) {
             stream->security = GetQueryValue(query, "security", "tls").replace("reality", "tls").replace("none", "");
@@ -211,25 +211,25 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         }
 
         // type
-        if (stream->network == "ws") {
+        if (network == "ws") {
             stream->path = GetQueryValue(query, "path", "");
             stream->host = GetQueryValue(query, "host", "");
-        } else if (stream->network == "http") {
+        } else if (network == "http") {
             stream->path = GetQueryValue(query, "path", "");
             stream->host = GetQueryValue(query, "host", "").replace("|", ",");
             stream->method = GetQueryValue(query, "method", "");
-        } else if (stream->network == "httpupgrade") {
+        } else if (network == "httpupgrade") {
             stream->path = GetQueryValue(query, "path", "");
             stream->host = GetQueryValue(query, "host", "");
-        } else if (stream->network == "grpc") {
+        } else if (network == "grpc") {
             stream->path = GetQueryValue(query, "serviceName", "");
-        } else if (stream->network == "tcp") {
+        } else if (network == "tcp") {
             if (GetQueryValue(query, "headerType") == "http") {
                 stream->header_type = "http";
                 stream->host = GetQueryValue(query, "host", "");
                 stream->path = GetQueryValue(query, "path", "");
             }
-        } else if (stream->network == "xhttp") {
+        } else if (network == "xhttp") {
             stream->path = GetQueryValue(query, "path", "");
             stream->host = GetQueryValue(query, "host", "");
             stream->xhttp_mode = GetQueryValue(query, "mode", "auto");
@@ -312,7 +312,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
 					net_type_ret:
                     net = "http";
                 }
-                stream->network = net;
+                *stream->network = net;
             } else if (objN["type"].toString() == "http"){
 				goto net_type_ret;
 			}
@@ -337,11 +337,11 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
             set_boolean("authenticated_length", authenticated_length, query);
             add_network(this, query);
             // security
-            auto type = GetQueryValue(query, "type", "tcp");
-            if (type == "h2") {
-                type = "http";
+            auto network = GetQueryValue(query, "type", "tcp");
+            if (network == "h2") {
+                network = "http";
             }
-            stream->network = type;
+            *stream->network = network;
             stream->security = GetQueryValue(query, "security", "tls").replace("reality", "tls");
             auto sni1 = GetQueryValue(query, "sni");
             auto sni2 = GetQueryValue(query, "peer");
@@ -362,24 +362,24 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
             add_mux_state(this, query);
 
             // type
-            if (stream->network == "ws") {
+            if (network == "ws") {
                 stream->path = GetQueryValue(query, "path", "");
                 stream->host = GetQueryValue(query, "host", "");
-            } else if (stream->network == "http") {
+            } else if (network == "http") {
                 stream->path = GetQueryValue(query, "path", "");
                 stream->host = GetQueryValue(query, "host", "").replace("|", ",");
-            } else if (stream->network == "httpupgrade") {
+            } else if (network == "httpupgrade") {
                 stream->path = GetQueryValue(query, "path", "");
                 stream->host = GetQueryValue(query, "host", "");
-            } else if (stream->network == "grpc") {
+            } else if (network == "grpc") {
                 stream->path = GetQueryValue(query, "serviceName", "");
-            } else if (stream->network == "tcp") {
+            } else if (network == "tcp") {
                 if (GetQueryValue(query, "headerType") == "http") {
                     stream->header_type = "http";
                     stream->path = GetQueryValue(query, "path", "");
                     stream->host = GetQueryValue(query, "host", "");
                 }
-            } else if (stream->network == "xhttp") {
+            } else if (network == "xhttp") {
                 stream->path = GetQueryValue(query, "path", "");
                 stream->host = GetQueryValue(query, "host", "");
                 stream->xhttp_mode = GetQueryValue(query, "mode", "auto");

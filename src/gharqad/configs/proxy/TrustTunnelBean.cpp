@@ -25,4 +25,20 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+
+
+    QString TrustTunnelBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("tt");
+        add_default_fields(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_quic(q, this);
+        add_tls(stream, q);
+        add_query_boolean("health_check", q, health_check);
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

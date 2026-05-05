@@ -33,4 +33,31 @@ namespace Configs {
         return result;
     }
 
+    QString SSHBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("ssh");
+        add_default_fields(url, this);
+        QUrlQuery q;
+        add_query_nonempty("user", q, user);
+        add_query_nonempty("password", q, password);
+        add_query_nonempty("private_key", q, privateKey.toUtf8().toBase64(QByteArray::OmitTrailingEquals));
+        add_query_nonempty("private_key_path", q, privateKeyPath);
+        add_query_nonempty("private_key_passphrase", q, privateKeyPass);
+        QStringList b64HostKeys = {};
+        for (const auto& item: hostKey) {
+            b64HostKeys << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+        }
+        add_query_nonempty("host_key", q, b64HostKeys.join("-"));
+        QStringList b64HostKeyAlgs = {};
+        for (const auto& item: hostKeyAlgs) {
+            b64HostKeyAlgs << item.toUtf8().toBase64(QByteArray::OmitTrailingEquals);
+        }
+        add_query_nonempty("host_key_algorithms", q, b64HostKeyAlgs.join("-"));
+        add_query_nonempty("client_version", q, clientVersion);
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
+
 }

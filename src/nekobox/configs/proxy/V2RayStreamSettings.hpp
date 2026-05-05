@@ -22,6 +22,10 @@ namespace Configs {
         ADD_ENUM_LIST(Preset::SingBox::VmessPacketEncodings, 0);
     STOP_ENUM
 
+    INIT_ENUM(V2RAYTransports)
+        ADD_ENUM_LIST(Preset::SingBox::VmessPacketEncodings, 0);
+    STOP_ENUM
+
     class V2rayStreamSettings : public JsonStore {
     public:
 
@@ -31,7 +35,7 @@ namespace Configs {
         bool enable_ech = false;
         QString query_server_name = "";
 
-        QString network = "tcp";
+        std::shared_ptr<V2RAYTransportsEnum> network = std::make_shared<V2RAYTransportsEnum>("tcp");
         QString security = "";
         std::shared_ptr<VmessPacketEncodingsEnum> packet_encoding = std::make_shared<VmessPacketEncodingsEnum>(0);
 

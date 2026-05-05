@@ -38,8 +38,5 @@ namespace Configs {
         virtual QString type()const override {
             return "extra";
         };
-
-
-        QString ToShareLink() const override;
     };
 }

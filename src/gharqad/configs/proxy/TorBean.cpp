@@ -31,4 +31,20 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+
+    QString TorBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("tor");
+        url.setHost("tor");
+        QUrlQuery q;
+        add_query_args_nonempty( "extra_args", q, extra_args);
+        add_query_nonempty("executable_path", q, executable_path);
+        add_query_nonempty("data_directory", q, data_directory);
+        add_query_map_nonempty("torrc", q, torrc);
+
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

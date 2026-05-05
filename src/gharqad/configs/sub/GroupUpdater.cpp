@@ -195,6 +195,7 @@ parse_json:
   }
 
   QString scheme;
+    bool quic_enabled = false;
 
   int scheme_index = str.indexOf("://");
 #ifdef DEBUG_MODE
@@ -214,20 +215,20 @@ parse_json:
   if (scheme == "nekoray") {
     needFix = false;
     auto link = QUrl(str);
-    if (!link.isValid())
+    if (!link.isValid()){
       goto ret_loop;
+    }
     ent = Configs::ProfileManager::NewProxyEntity(link.host());
-    if (!ent->isValid())
+    if (!ent->isValid()){
       goto ret_loop;
-    auto j = DecodeB64IfValid(link.fragment().toUtf8(),
-                              QByteArray::Base64UrlEncoding);
-    if (j.isEmpty())
+    }
+    if (!ent->unlock(ent->bean())->TryParseNekorayLink(link)){
       goto ret_loop;
-    ent->unlock(ent->bean())->FromJsonBytes(j);
+    };
   }
 
   // SOCKS
-  if (scheme == ("socks5") || scheme == ("socks4") || scheme == ("socks4a") ||
+  else if (scheme == ("socks5") || scheme == ("socks4") || scheme == ("socks4a") ||
       scheme == ("socks")) {
     ent = Configs::ProfileManager::NewProxyEntity("socks");
     auto ok = ent->unlock(ent->SocksBean())->TryParseLink(str);
@@ -236,7 +237,7 @@ parse_json:
   }
 
   // HTTP
-  if (scheme == ("http") || scheme == ("https")) {
+  else if (scheme == ("http") || scheme == ("https")) {
     ent = Configs::ProfileManager::NewProxyEntity("http");
     auto ok = ent->unlock(ent->HttpBean())->TryParseLink(str);
     if (!ok)
@@ -244,7 +245,7 @@ parse_json:
   }
 
   // ShadowSocks
-  if (scheme == ("ss")) {
+  else if (scheme == ("ss")) {
     ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
     auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseLink(str);
     if (!ok)
@@ -252,7 +253,7 @@ parse_json:
   }
 
   // VMess
-  if (scheme == ("vmess")) {
+  else if (scheme == ("vmess")) {
     ent = Configs::ProfileManager::NewProxyEntity("vmess");
     auto ok = ent->unlock(ent->VMessBean())->TryParseLink(str);
     if (!ok)
@@ -260,7 +261,7 @@ parse_json:
   }
 
   // VLESS
-  if (scheme == ("vless")) {
+  else if (scheme == ("vless")) {
     ent = Configs::ProfileManager::NewProxyEntity("vless");
     auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
     if (!ok)
@@ -268,7 +269,7 @@ parse_json:
   }
 
   // Trojan
-  if (scheme == ("trojan")) {
+  else if (scheme == ("trojan")) {
     ent = Configs::ProfileManager::NewProxyEntity("trojan");
     auto ok = ent->unlock(ent->TrojanVLESSBean())->TryParseLink(str);
     if (!ok)
@@ -276,7 +277,7 @@ parse_json:
   }
 
   // Mieru
-  if (scheme == ("mierus") || str.startsWith("mieru")) {
+  else if (scheme == ("mierus") || str.startsWith("mieru")) {
     ent = Configs::ProfileManager::NewProxyEntity("mieru");
     auto ok = ent->unlock(ent->MieruBean())->TryParseLink(str);
     if (!ok)
@@ -284,9 +285,7 @@ parse_json:
   }
 
   // Naive
-  {
-    bool quic_enabled = false;
-    if ((scheme == ("naive") || scheme == ("naive+https") ||
+  else if ((scheme == ("naive") || scheme == ("naive+https") ||
          scheme == ("naive+http")) ||
         (quic_enabled = scheme == ("naive+quic"))) {
       ent = Configs::ProfileManager::NewProxyEntity("naive");
@@ -298,11 +297,10 @@ parse_json:
       auto ok = bean->TryParseLink(str);
       if (!ok)
         goto ret_loop;
-    }
   }
 
   // TrustTunnel
-  if (scheme == ("tt")) {
+  else if (scheme == ("tt")) {
     ent = Configs::ProfileManager::NewProxyEntity("trusttunnel");
     auto ok = ent->unlock(ent->TrustTunnelBean())->TryParseLink(str);
     if (!ok)
@@ -310,7 +308,7 @@ parse_json:
   }
 
   // Juicity
-  if (scheme == ("juicity")) {
+  else if (scheme == ("juicity")) {
     ent = Configs::ProfileManager::NewProxyEntity("juicity");
     auto ok = ent->unlock(ent->JuicityBean())->TryParseLink(str);
     if (!ok)
@@ -318,7 +316,7 @@ parse_json:
   }
 
   // AnyTLS
-  if (scheme == ("anytls")) {
+  else if (scheme == ("anytls")) {
     ent = Configs::ProfileManager::NewProxyEntity("anytls");
     auto ok = ent->unlock(ent->AnyTLSBean())->TryParseLink(str);
     if (!ok)
@@ -326,7 +324,7 @@ parse_json:
   }
 
   // ShadowTLS
-  if (scheme == ("shadowtls")) {
+  else if (scheme == ("shadowtls")) {
     ent = Configs::ProfileManager::NewProxyEntity("shadowtls");
     auto ok = ent->unlock(ent->ShadowTLSBean())->TryParseLink(str);
     if (!ok)
@@ -334,7 +332,7 @@ parse_json:
   }
 
   // Hysteria1
-  if (scheme == ("hysteria")) {
+  else if (scheme == ("hysteria")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("hysteria");
     auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -343,7 +341,7 @@ parse_json:
   }
 
   // Hysteria2
-  if (scheme == ("hysteria2") || scheme == ("hy2")) {
+  else if (scheme == ("hysteria2") || scheme == ("hy2")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("hysteria2");
     auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -352,7 +350,7 @@ parse_json:
   }
 
   // TUIC
-  if (scheme == ("tuic")) {
+  else if (scheme == ("tuic")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("tuic");
     auto ok = ent->unlock(ent->QUICBean())->TryParseLink(str);
@@ -361,7 +359,7 @@ parse_json:
   }
 
   // Wireguard
-  if (scheme == ("wg")) {
+  else if (scheme == ("wg")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("wireguard");
     auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
@@ -370,7 +368,7 @@ parse_json:
   }
 
   // SSH
-  if (scheme == ("ssh")) {
+  else if (scheme == ("ssh")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("ssh");
     auto ok = ent->unlock(ent->SSHBean())->TryParseLink(str);
@@ -379,7 +377,7 @@ parse_json:
   }
 
   // tor
-  if (scheme == ("tor")) {
+  else if (scheme == ("tor")) {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("tor");
     auto ok = ent->unlock(ent->TorBean())->TryParseLink(str);
@@ -644,7 +642,7 @@ void RawUpdater::updateClash(const QString &str) {
           bean->password = Node2QString(proxy["password"]);
         }
         bean->stream->security = "tls";
-        bean->stream->network = Node2QString(proxy["network"], "tcp");
+        *bean->stream->network = Node2QString(proxy["network"], "tcp");
         bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]),
                                             Node2QString(proxy["servername"]));
         bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
@@ -699,7 +697,7 @@ void RawUpdater::updateClash(const QString &str) {
         bean->uuid = Node2QString(proxy["uuid"]);
         bean->aid = Node2Int(proxy["alterId"]);
         bean->security = Node2QString(proxy["cipher"], bean->security);
-        bean->stream->network =
+        *bean->stream->network =
             Node2QString(proxy["network"], "tcp").replace("h2", "http");
         bean->stream->sni = FIRST_OR_SECOND(Node2QString(proxy["sni"]),
                                             Node2QString(proxy["servername"]));
@@ -764,7 +762,7 @@ void RawUpdater::updateClash(const QString &str) {
         }
         auto tcp_http = NodeChild(proxy, {"http-opts", "http-opt"});
         if (tcp_http.is_mapping()) {
-          bean->stream->network = "tcp";
+          *bean->stream->network = "tcp";
           bean->stream->header_type = "http";
           auto headers = tcp_http["headers"];
           if (headers.is_mapping()) {

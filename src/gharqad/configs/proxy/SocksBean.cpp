@@ -13,6 +13,22 @@ namespace Configs {
 
 
 
+
+    QString SocksBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        QUrlQuery query;
+        add_default_fields(url, this);
+        {
+            url.setScheme(QString("socks%1").arg(socks_http_type));
+        }
+        add_username_password(url, this);
+        add_network(query, this);
+        add_udp_over_tcp(query, this);
+        url.setQuery(query);
+        return url.toString(QUrl::FullyEncoded);
+    }
 CoreObjOutboundBuildResult SocksBean::BuildCoreObjSingBox() const {
     CoreObjOutboundBuildResult result;
         using namespace To_CoreObj_box;

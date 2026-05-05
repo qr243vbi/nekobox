@@ -99,6 +99,7 @@ namespace Configs {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
         QString type = outbound->value("type").toString();
         bool is_naive = type == "naive";
+        QString network = (QString) *this->network;
         if (is_naive) goto skip_network;
         if (network != "tcp") {
             QJsonObject transport{{"type", network}};

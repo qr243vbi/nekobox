@@ -59,8 +59,9 @@ namespace Configs
 
     static bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj){
         auto transport = obj["transport"].toObject();
-        stream->network = transport["type"].toString();
-        if (stream->network == "ws" || stream->network == "httpupgrade")
+        QString network;
+        *stream->network = network = transport["type"].toString();
+        if (network == "ws" || network == "httpupgrade")
         {
             finalize:
             stream->path = transport["path"].toString();
@@ -68,15 +69,15 @@ namespace Configs
             auto host = transport["host"];
             stream->host = host.isArray() ? QJsonArray2QListStr(host.toArray()).join(",") : host.toString();
             return true;
-        } else if (stream->network == "http")
+        } else if (network == "http")
         {
             stream->method = transport["method"].toString();
             goto finalize;
-        } else if (stream->network == "grpc")
+        } else if (network == "grpc")
         {
             stream->path = transport["service_name"].toString();
             goto finalize2;
-        } else if (stream->network == "xhttp")
+        } else if (network == "xhttp")
         {
             stream->xhttp_mode = transport["mode"].toString();
             goto finalize;

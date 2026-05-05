@@ -546,7 +546,8 @@ namespace Configs {
 
         auto stream = GetStreamSettingsConst(bean.get());
         if (stream != nullptr) {
-            if (stream->network == "grpc" || stream->network == "quic" || stream->network == "anytls" || (stream->network == "http" && stream->security == "tls")) {
+            QString network = *stream->network;
+            if (network == "grpc" || network == "quic" || network == "anytls" || (network == "http" && stream->security == "tls")) {
                 needMux = false;
             }
         }

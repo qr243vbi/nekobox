@@ -24,4 +24,17 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
+
+    QString JuicityBean::ToShareLink() const {
+            using namespace Configs::To_Link;
+
+        QUrl url;
+        url.setScheme("juicity");
+        add_default_fields(url, this);
+        QUrlQuery q;
+        add_username_password(url, this);
+        add_tls(stream, q);
+        url.setQuery(q);
+        return url.toString(QUrl::FullyEncoded);
+    }
 }

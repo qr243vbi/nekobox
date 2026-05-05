@@ -416,7 +416,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     qDebug() << "Stream is not nullptr";
     #endif
  //   ui->right_all_w->setVisible(true);
-    ui->network->setCurrentText(stream->network);
+    ui->network->setCurrentText(*stream->network);
     ui->security->setCurrentText(stream->security);
     ui->packet_encoding->setCurrentText(*stream->packet_encoding);
     ui->path->setText(stream->path);
@@ -563,7 +563,7 @@ bool DialogEditProfile::onEnd() {
   //
   auto stream = GetStreamSettings(bean.get());
   if (stream != nullptr) {
-    stream->network = ui->network->currentText();
+    *stream->network = ui->network->currentText();
     stream->security = ui->security->currentText();
     *stream->packet_encoding = ui->packet_encoding->currentText();
     stream->path = ui->path->text();

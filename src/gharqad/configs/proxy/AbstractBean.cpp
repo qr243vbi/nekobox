@@ -32,12 +32,12 @@ namespace Configs {
      //   }
     };
 
-    QString AbstractBean::ToNekorayShareLink(const QString &type) const {
+    QString AbstractBean::ToNekorayShareLink() const {
         if (this->entity == nullptr) return "";
         auto b = ToJson();
         QUrl url;
         url.setScheme("nekoray");
-        url.setHost(type);
+        url.setHost(type());
         url.setFragment(QJsonObject2QString(b, true)
                             .toUtf8()
                             .toBase64(QByteArray::Base64UrlEncoding));
@@ -88,7 +88,7 @@ namespace Configs {
                     if (stream->security == "tls" && stream->sni.isEmpty()) {
                         stream->sni = domain;
                     }
-                    if (stream->network == "ws" && stream->host.isEmpty()) {
+                    if ((QString)*stream->network == "ws" && stream->host.isEmpty()) {
                         stream->host = domain;
                     }
                 }
@@ -96,4 +96,34 @@ namespace Configs {
             onFinished();
         });
     }
+
+        bool AbstractBean::TryParseNekorayLink(const QString &str){
+            auto link = QUrl(str);
+            if (!link.isValid()){
+                return false;
+            }
+            return this->TryParseNekorayLink(link);
+        }
+
+        bool AbstractBean::TryParseNekorayLink(const QUrl &link){
+            if (link.host() != this->type()){
+                return false;
+            };
+            auto j = DecodeB64IfValid(link.fragment().toUtf8(),
+                              QByteArray::Base64UrlEncoding);
+            if (j.isEmpty()){
+                return false;
+            }
+            return this->FromJsonBytes(j);
+        }
+
+        CoreObjOutboundBuildResult AbstractBean::BuildCoreObjSingBox() const { return {}; };
+
+        QString AbstractBean::ToShareLink() const { return this->ToNekorayShareLink(); };
+
+        bool AbstractBean::IsEndpoint() const { return false; };
+
+        bool AbstractBean::TryParseLink(const QString &link) { return this->TryParseNekorayLink(link); };
+
+        bool AbstractBean::TryParseJson(const QJsonObject &obj) { return false; };
 } // namespace Configs
