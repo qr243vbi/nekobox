@@ -489,8 +489,6 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("vpn_mtu", vpn_mtu, integer);
         ADD_MAP("vpn_ipv6", vpn_ipv6, boolean);
         ADD_MAP("vpn_strict_route", vpn_strict_route, boolean);
-        ADD_MAP("sub_clear", sub_clear, boolean);
-        
         ADD_MAP("sub_rm_invalid", sub_rm_invalid, boolean);
         ADD_MAP("sub_url_test", sub_url_test, boolean);
         ADD_MAP("sub_rm_duplicates", sub_rm_duplicates, boolean);

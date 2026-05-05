@@ -28,6 +28,9 @@ static void _put_store(ConfJsMap _map, const QString &str, void *value,
 #define SET_NODE(X)                                                            \
   void X##Item::setNode(JsonStore *store, const QJsonValue &value)
 
+#define COMPARE(X)                                                            \
+  signed char X##Item::compare(JsonStore *store, configItem* item, JsonStore *other_store)
+
 QString readString(QDataStream &stream) {
   unsigned int i;
   stream.readRawData((char *)&i, sizeof(unsigned int));
@@ -361,6 +364,18 @@ SAVE_CONF(jsonStoreList) {
 
 #define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore *store)
 
+template<typename B>
+inline signed char CompareValue(B a, B b){
+  if (a > b){
+    return 1;
+  } else {
+    if (a == b){
+      return 0;
+    }
+    return -1;
+  }
+}
+
 GET_NODE(jsonStoreList) {
   auto list = (QJsonStoreListBase *)this->getPtr(store);
   QJsonArray array; if (list == nullptr) return array;
@@ -371,6 +386,27 @@ GET_NODE(jsonStoreList) {
   }
   return array;
 }
+
+COMPARE(jsonStoreList) {
+  auto a = (QJsonStoreListBase *)this->getPtr(store);
+  auto b = (QJsonStoreListBase *)item->getPtr(other_store);
+  qsizetype c = a->count();
+  qsizetype d = b->count();
+  auto r = CompareValue(c, d);
+  for (qsizetype i = 0 ; i < c ; i ++){
+    if (r != 0){
+      return r;
+    }
+    auto st = a->value(i);
+    auto st2 = b->value(i);
+    if (st == nullptr){
+      return (st2 == nullptr) ? 0 : 1;
+    }
+    return st->compare(st2);  
+  }
+  return r;
+}
+
 GET_NODE(jsonStore) {
   JsonStore *st = *(JsonStore **)(this->getPtr(store));
   if (st != nullptr) {
@@ -379,6 +415,17 @@ GET_NODE(jsonStore) {
     return QJsonValue::Null;
   }
 }
+
+COMPARE(jsonStore) {
+  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  JsonStore *st2 = *(JsonStore **)(item->getPtr(other_store));
+  if (st == nullptr){
+    return (st2 == nullptr) ? 0 : 1;
+  }
+  return st->compare(st2);  
+}
+
+
 GET_NODE(jsonShared) {
   std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
   if (st != nullptr) {
@@ -387,6 +434,17 @@ GET_NODE(jsonShared) {
     return QJsonValue::Null;
   }
 }
+
+COMPARE(jsonShared) {
+  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  std::shared_ptr<JsonStore> st2 = *(std::shared_ptr<JsonStore> *)(item->getPtr(other_store));
+  if (st == nullptr){
+    return (st2 == nullptr) ? 0 : 1;
+  }
+  return st->compare(st2.get());
+}
+
+
 GET_NODE(enum) {
   std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
   if (st != nullptr) {
@@ -395,29 +453,134 @@ GET_NODE(enum) {
     return "";
   }
 }
+
+COMPARE(enum) {
+  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  std::shared_ptr<JsonEnum> st2 = *(std::shared_ptr<JsonEnum> *)(item->getPtr(other_store));
+  auto r = CompareValue(st == nullptr, st2 == nullptr);
+  if (r != 0){
+    return r;
+  } else if (st == nullptr){
+    return 0;
+  }
+  return CompareValue(st->value, st2->value);
+}
+
 GET_NODE(strMap) {
   return QJsonObject::fromVariantMap(*(QVariantMap *)this->getPtr(store));
 }
+
+COMPARE(strMap) {
+  auto a = (QVariantMap *)this->getPtr(store);
+  auto b = (QVariantMap *)item->getPtr(other_store);
+  qsizetype c = a->count();
+  qsizetype d = b->count();
+  auto r = CompareValue(c, d);
+  if (r == 0){
+    auto keys = a->keys();
+    {
+      auto other_keys = b->keys();
+      r = CompareValue(keys, other_keys);
+      if (r != 0){
+        return r;
+      }
+    }
+    for (auto u : keys){
+      r = CompareValue(a->value(u).toString(), b->value(u).toString());
+      if (r != 0){
+        return r;
+      }
+    }
+  }
+  return r;
+}
+
 GET_NODE(intList) {
   return QListInt2QJsonArray(*(QList<int> *)this->getPtr(store));
+}
+
+COMPARE(intList) {
+  auto a = (QList<int> *)this->getPtr(store);
+  auto b = (QList<int> *)item->getPtr(other_store);
+  qsizetype c = a->count();
+  qsizetype d = b->count();
+  auto r = CompareValue(c, d);
+  for (qsizetype i = 0 ; i < c ; i ++){
+    if (r != 0){
+      return r;
+    }
+    r = CompareValue(a->value(i), b->value(i));
+  }
+  return r;
 }
 
 GET_NODE(strList) {
   return QListStr2QJsonArray(*(QList<QString> *)this->getPtr(store));
 }
 
+COMPARE(strList) {
+  auto a = (QList<QString> *)this->getPtr(store);
+  auto b = (QList<QString> *)item->getPtr(other_store);
+  qsizetype c = a->count();
+  qsizetype d = b->count();
+  auto r = CompareValue(c, d);
+  for (qsizetype i = 0 ; i < c ; i ++){
+    if (r != 0){
+      return r;
+    }
+    r = CompareValue(a->value(i), b->value(i));
+  }
+  return r;
+}
+
 GET_NODE(bool) { return *(bool *)getPtr(store); }
+
+COMPARE(bool) {
+  bool a = *(bool*)getPtr(store);
+  bool b = *(bool*)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
+
 
 GET_NODE(boolPtr) { return **(bool **)getPtr(store); }
 
+COMPARE(boolPtr) {
+  bool a = **(bool**)getPtr(store);
+  bool b = **(bool**)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
+
 GET_NODE(str) { return *(QString *)getPtr(store); }
+
+COMPARE(str) {
+  QString a = *(QString *)getPtr(store);
+  QString b = *(QString *)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
 
 GET_NODE(long) { return *(long long *)getPtr(store); }
 
+COMPARE(long) {
+  long long a = *(long long *)getPtr(store);
+  long long b = *(long long *)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
+
 GET_NODE(int) { return *(int *)getPtr(store); }
+
+COMPARE(int) {
+  int a = *(int *)getPtr(store);
+  int b = *(int *)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
 
 GET_NODE(double) { return *(double *)getPtr(store); }
 
+COMPARE(double) {
+  double a = *(double *)getPtr(store);
+  double b = *(double *)item->getPtr(other_store);
+  return CompareValue(a, b);
+}
 
 #define CASE_TYPE(X)                                                           \
   case ConfigItemType::type_##X:                                               \

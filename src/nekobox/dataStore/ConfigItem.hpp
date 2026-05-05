@@ -114,6 +114,7 @@ struct configItem {
   virtual void deserialize(QDataStream &data, JsonStore *store) = 0;
   virtual void SaveINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
   virtual void LoadINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
+  virtual signed char compare(JsonStore * store, configItem * item, JsonStore * other_store) = 0;
   virtual unsigned short type() = 0;
   size_t ptr;
   QString name;
@@ -141,6 +142,7 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
   struct X##Item : public configItem {                                         \
     QJsonValue getNode(JsonStore *store) override;                             \
     void setNode(JsonStore *store, const QJsonValue &value) override;          \
+    signed char compare(JsonStore * store, configItem * ptr, JsonStore * ptr1) override;                    \
     void serialize(QDataStream &data, JsonStore *store) const override;        \
     void deserialize(QDataStream &data, JsonStore *store) override;            \
     void SaveINI(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
@@ -189,6 +191,7 @@ public:
 
   QByteArray content(bool is_json);
   bool content(const QByteArray &array);
+  signed char compare(JsonStore *, const QStringList &without = {});
 
   virtual ~JsonStore() = default;
   //     QMap<QString, std::shared_ptr<configItem>> _map;

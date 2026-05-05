@@ -318,9 +318,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
     D_LOAD_BOOL(network_use_proxy);
-    #if PROFILE_FILTER_ENABLED
     ui->sub_clear->hide();
-    #endif
   //  D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)

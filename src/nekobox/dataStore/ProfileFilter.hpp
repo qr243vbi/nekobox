@@ -14,9 +14,6 @@ struct ProfileFilterKey
     ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
                      bool unpack_bean) noexcept;
 
-    // --- Bean Bytes ---
-    QByteArray beanBytes() const noexcept;
-
     // --- Equality ---
     bool operator==(const ProfileFilterKey &other) const noexcept;
     bool operator!=(const ProfileFilterKey &other) const noexcept;
@@ -29,11 +26,10 @@ struct ProfileFilterKey
 
 private:
     mutable bool unpack_bean;
-    mutable QByteArray cache;
 };
 
 // --- Hash ---
-inline uint qHash(const ProfileFilterKey &key, uint seed = 0) noexcept;
+//inline uint qHash(const ProfileFilterKey &key, uint seed = 0) noexcept;
 
 // --- Helper factory ---
 ProfileFilterKey ProfileFilter_ent_key(

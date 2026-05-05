@@ -3281,7 +3281,7 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
   Configs::profileManager->FillProfileEnts(prof_ents, grp->profiles);
 
   Configs::ProfileFilter::Uniq(
-      prof_ents, out, true,
+      prof_ents, out, false,
       false);
 
 #ifdef DEBUG_MODE

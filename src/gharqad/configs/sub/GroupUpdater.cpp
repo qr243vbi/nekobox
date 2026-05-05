@@ -1033,14 +1033,6 @@ void GroupUpdater::Update(
   QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    //
   QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
   QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
-
-  // Always clear for now
-  #if PROFILE_FILTER_ENABLED
-  bool sub_clear = Configs::dataStore->sub_clear;
-  #else
-  const bool sub_clear = true;
-  #endif
- // bool sub_clear = Configs::dataStore->sub_clear;
   
   /*
 - Fix core dump (nullpointer exceptions)
@@ -1049,17 +1041,13 @@ void GroupUpdater::Update(
 - Use LRU (Least Recently Used) cache for storing proxies
   */
   
-  if (group != nullptr) {
+  if (group != nullptr) { 
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();
     //
-    if (sub_clear) {
-      MW_show_log(QObject::tr("Clearing servers..."));
-      Configs::profileManager->BatchDeleteProfiles(group->profiles);
-    } else {
-      Configs::profileManager->FillProfileEnts(in, group->profiles);
-    }
+    MW_show_log(QObject::tr("Clearing servers..."));
+    Configs::profileManager->BatchDeleteProfiles(group->profiles);
   }
 
   MW_show_log(">>>>>>>> " + QObject::tr("Processing subscription data..."));
@@ -1068,89 +1056,11 @@ void GroupUpdater::Update(
                                            rawUpdater->gid_add_to);
   MW_show_log(">>>>>>>> " + QObject::tr("Process complete, applying..."));
 
-  bool too_much_profiles = false;
-  int profiles_count = group->profiles.size();
-  if (profiles_count > 120){
-    too_much_profiles = true;
-  } else {
-    Configs::profileManager->FillProfileEnts(out_all, group->profiles);
-  }
-
   if (group != nullptr) {
     QString change_text;
-
-    if (sub_clear) {
-      if (too_much_profiles){
-        change_text = "Added " + QString::number(profiles_count) + " profiles";
-      } else {
-        // all is new profile
-        for (const auto &ent : out_all) {
-          change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
-        }
-      }
-    } else { 
-      #if PROFILE_FILTER_ENABLED
-      // find and delete not updated profile by ProfileFilter
-      Configs::ProfileFilter::OnlyInSrc(out_all, in, out);
-      #ifdef DEBUG_MODE
-      MW_show_log("Out size " + QString::number(out.size()));
-      MW_show_log("In size " + QString::number(in.size()));
-      #endif
-      Configs::ProfileFilter::OnlyInSrc(in, out, only_in);
-      Configs::ProfileFilter::OnlyInSrc(out, in, only_out);
-      Configs::ProfileFilter::Common(in, out, update_keep, update_del, false);
-      QString notice_added;
-      QString notice_deleted;
-      if (only_out.size() < 120) {
-        for (const auto &ent : only_out) {
-          notice_added += "[+] " + ent->DisplayTypeAndName() + "\n";
-        }
-      } else {
-        notice_added += QString("[+] ") + "added " +
-                        QString::number(only_out.size()) + "\n";
-      }
-      if (only_in.size() < 120) {
-        for (const auto &ent : only_in) {
-          notice_deleted += "[-] " + ent->DisplayTypeAndName() + "\n";
-        }
-      } else {
-        notice_deleted += QString("[-] ") + "deleted " +
-                          QString::number(only_in.size()) + "\n";
-      }
-
-      // sort according to order in remote
-      group->profiles.clear();
-      for (const auto &ent : rawUpdater->updated_order) {
-        auto deleted_index = update_del.indexOf(ent);
-        if (deleted_index >= 0) {
-          if (deleted_index >= update_keep.count())
-            continue; // should not happen
-          const auto &ent2 = update_keep[deleted_index];
-          group->profiles.append(ent2->id);
-        } else {
-          group->profiles.append(ent->id);
-        }
-      }
-      group->Save();
-
-      // cleanup
-      QList<int> del_ids;
-      for (const auto &ent : out_all) {
-        if (!group->HasProfile(ent->id)) {
-          del_ids.append(ent->id);
-        }
-      }
-      Configs::profileManager->BatchDeleteProfiles(del_ids);
-
-      change_text =
-          "\n" + QObject::tr("Added %1 profiles:\n%2\nDeleted %3 Profiles:\n%4")
-                     .arg(only_out.length())
-                     .arg(notice_added)
-                     .arg(only_in.length())
-                     .arg(notice_deleted);
-      if (only_out.length() + only_in.length() == 0)
-        change_text = QObject::tr("Nothing");
-      #endif
+    // all is new profile
+    for (const auto &ent : rawUpdater->updated_order) {
+      change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
     }
 
     MW_show_log("<<<<<<<< " + QObject::tr("Change of %1:").arg(group->name) +

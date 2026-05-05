@@ -3,25 +3,61 @@
 #endif
 #include <nekobox/dataStore/ProfileFilter.hpp>
 
-namespace Configs {
+namespace Configs_ConfigItem {
+  signed char JsonStore::compare(JsonStore * store, const QList<QString> &skip){
+    if (store == nullptr){
+      return 1;
+    }
+    auto &_map1 = this->_map();
+    auto &_map2 = store->_map();
+    auto keys = _map1.keys();
 
-// --- Bean Bytes (lazy + cached) ---
-QByteArray ProfileFilterKey::beanBytes() const noexcept
-{
-    if (!unpack_bean)
-        return cache;
-
-    unpack_bean = false;
-    cache = key->bean()->ToBytes({"c_cfg", "c_out"});
-    return cache;
+    for (auto key: keys){
+      auto item1 = _map1.find(key);
+      auto item2 = _map2.find(key);
+      if (item2 == _map2.end()) {
+        return 1;
+      }
+      auto item1val = item1.value();
+      auto item2val = item2.value();
+      if (item1val != nullptr){
+        if (skip.contains(item1val->name)){
+          continue;
+        }
+      }
+      if (item1val == nullptr){
+        if (item2val == nullptr){
+          continue;
+        }
+        return 1;
+      } else if (item2val == nullptr){
+        return -1;
+      }
+      auto ret = item1val->compare(this, item2val.get(), store);
+      if (ret != 0){
+        return ret;
+      }
+    }
+    return 0;
+  }
 }
+
+namespace Configs {
 
 // --- Equality ---
 bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
 {
-    return key->type == other.key->type
+  bool this_key_nullptr = key == nullptr;
+  bool other_key_nullptr = other.key == nullptr;
+  if (this_key_nullptr){
+    return other_key_nullptr;
+  }
+    return this_key_nullptr == other_key_nullptr
+        && key->type == other.key->type
         && key->serverAddress == other.key->serverAddress
-        && beanBytes() == other.beanBytes();
+        && key->serverPort == other.key->serverPort
+        && this->unpack_bean == other.unpack_bean
+        && (this->unpack_bean || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0);
 }
 
 bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
@@ -32,13 +68,17 @@ bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
 // --- Ordering (STRICT WEAK ORDERING) ---
 bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
 {
-    if (key->DisplayType() < other.key->DisplayType())
-        return true;
-
-    if (key->DisplayAddress() < other.key->DisplayAddress())
-        return true;
-
-    return beanBytes() < other.beanBytes();
+  bool this_key_nullptr = key == nullptr;
+  bool other_key_nullptr = other.key == nullptr;
+  if (other_key_nullptr){
+    return false;
+  }
+    return (this_key_nullptr)
+        || key->type < other.key->type
+        || key->serverAddress < other.key->serverAddress
+        || key->serverPort < other.key->serverPort
+        || ( (!this->unpack_bean) && other.unpack_bean )
+        || ( (!this->unpack_bean) && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 );
 }
 
 bool ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
@@ -56,14 +96,6 @@ bool ProfileFilterKey::operator>=(const ProfileFilterKey &other) const noexcept
     return !(*this < other);
 }
 
-// --- Hash ---
-inline uint qHash(const ProfileFilterKey &key, uint seed) noexcept
-{
-    seed = qHash(key.key->DisplayType(), seed);
-    seed = qHash(key.key->DisplayAddress(), seed);
-    seed = qHash(key.beanBytes(), seed);
-    return seed;
-}
 
 // --- Helper factory ---
 ProfileFilterKey ProfileFilter_ent_key(
@@ -79,26 +111,25 @@ ProfileFilterKey ProfileFilter_ent_key(
     {
       this->key = key;
       this->unpack_bean = unpack_bean;
-      this->cache = "";
     }
 
 void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,
                          QList<std::shared_ptr<ProxyEntity>> &out,
                          bool by_address, bool keep_last) {
-  QMap<ProfileFilterKey, std::shared_ptr<ProxyEntity>> hashMap;
+  std::map<ProfileFilterKey, std::shared_ptr<ProxyEntity>> hashMap;
 
   for (const auto &ent : in) {
     ProfileFilterKey key = ProfileFilter_ent_key(ent, by_address);
-    if (hashMap.contains(key)) {
-      if (keep_last) {
-        out.removeAll(hashMap[key]);
-        hashMap[key] = ent;
-        out += ent;
-      }
-    } else {
+    auto iter = hashMap.find(key);
+    auto found = iter != hashMap.end();
+    if (found && keep_last) {
+      out.removeAll(iter->second);
+      found = false;
+    } 
+    if (!found) {
       hashMap[key] = ent;
       out += ent;
-    }
+    } 
   }
 }
 
@@ -128,12 +159,13 @@ void ProfileFilter::OnlyInSrc(const QList<std::shared_ptr<ProxyEntity>> &src,
                               QList<std::shared_ptr<ProxyEntity>> &out,
                               bool by_address) {
   std::set<ProfileFilterKey> keys;
-  for (const auto &ent : dst)
-    keys.insert(ProfileFilter_ent_key(ent, by_address));
 
   for (const auto &ent : src) {
-    if (!keys.contains(ProfileFilter_ent_key(ent, by_address)))
+    auto key = ProfileFilter_ent_key(ent, by_address);
+    if (!keys.contains(key)) {
       out += ent;
+      keys.insert(key);
+    }
   }
 }
 
@@ -153,12 +185,12 @@ void ProfileFilter::OnlyInSrc_ByIds(
     const QList<std::shared_ptr<ProxyEntity>> &dst,
     QList<std::shared_ptr<ProxyEntity>> &out) {
   std::set<int> ids;
-  for (const auto &ent: dst){
-    ids.insert({ent->Id()});
-  }
   for (const auto &ent : src) {
-    if (!ids.contains(ent->Id()))
+    int id;
+    if (!ids.contains(id = ent->Id())) {
       out += ent;
+      ids.insert(id);
+    }
   }
 }
 
