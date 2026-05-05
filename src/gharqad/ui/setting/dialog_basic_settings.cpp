@@ -318,8 +318,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(user_agent)
     ui->user_agent->setPlaceholderText(Configs::dataStore->GetUserAgent(true));
     D_LOAD_BOOL(network_use_proxy);
-    ui->sub_clear->hide();
-  //  D_LOAD_BOOL(sub_clear)
+    D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(net_insecure)
     D_LOAD_BOOL(sub_send_hwid)
     D_LOAD_STRING(sub_custom_hwid_params)
@@ -505,7 +504,7 @@ void DialogBasicSettings::accept() {
     if (!ui->startup_update->isHidden()){
         S_SAVE_BOOL(startup_update)
     }
- //   D_SAVE_BOOL(sub_clear)
+    D_SAVE_BOOL(sub_clear)
     S_SAVE_BOOL(auto_hide)
     D_SAVE_BOOL(core_use_uds)
     S_SAVE_BOOL(ask_delete)
