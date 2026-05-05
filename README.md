@@ -52,6 +52,7 @@ scoop install extras/nekobox
 - Support for all platforms that supported by sing-box and Qt (except macos & ios)
 - Add more protocols that does not supported by upstream sing-box
 - Replace static UI with declarative UI for editing proxies
+- Find the best database storage in the world
 
 ## Supported protocols
  
