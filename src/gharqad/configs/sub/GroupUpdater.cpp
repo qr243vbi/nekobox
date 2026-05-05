@@ -929,7 +929,7 @@ bool RawUpdater::updateClash(const QString &str) {
     }
   } catch (const fkyaml::exception &ex) {
     //         runOnUiThread([=,this] {
-    qDebug() << ("YAML Exception") << ex.what();
+  //  qDebug() << ("YAML Exception") << ex.what();
     //       });
     return false;
   }
