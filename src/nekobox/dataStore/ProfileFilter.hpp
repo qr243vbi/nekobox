@@ -12,7 +12,7 @@ struct ProfileFilterKey
     std::shared_ptr<Configs::ProxyEntity> key;
 
     ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
-                     bool unpack_bean) noexcept;
+                     bool skip_compare_beans) noexcept;
 
     // --- Equality ---
     bool operator==(const ProfileFilterKey &other) const noexcept;
@@ -25,7 +25,7 @@ struct ProfileFilterKey
     bool operator>=(const ProfileFilterKey &other) const noexcept;
 
 private:
-    mutable bool unpack_bean;
+    mutable bool skip_compare_beans;
 };
 
 // --- Hash ---

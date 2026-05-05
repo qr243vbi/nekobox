@@ -57,8 +57,8 @@ bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
         && key->type == other.key->type
         && key->serverAddress == other.key->serverAddress
         && key->serverPort == other.key->serverPort
-        && this->unpack_bean == other.unpack_bean
-        && (this->unpack_bean || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0);
+        && this->skip_compare_beans == other.skip_compare_beans
+        && (this->skip_compare_beans || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0);
 }
 
 bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
@@ -78,8 +78,10 @@ bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
         || key->type < other.key->type
         || key->serverAddress < other.key->serverAddress
         || key->serverPort < other.key->serverPort
-        || ( (!this->unpack_bean) && other.unpack_bean )
-        || ( (!this->unpack_bean) && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 );
+        || ( this->skip_compare_beans && !other.skip_compare_beans )
+        || (     (!other.skip_compare_beans) 
+              && (!this->skip_compare_beans) 
+              && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 );
 }
 
 bool ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
@@ -111,7 +113,7 @@ ProfileFilterKey ProfileFilter_ent_key(
                      bool unpack_bean) noexcept
     {
       this->key = key;
-      this->unpack_bean = unpack_bean;
+      this->skip_compare_beans = unpack_bean;
     }
 
 void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,

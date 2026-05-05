@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/ProfileFilter.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -25,7 +26,11 @@ namespace Subscription {
 
         int gid_add_to = -1;
 
-        QList<std::shared_ptr<Configs::ProxyEntity>> updated_order;
+        QMap<Configs::ProfileFilterKey, bool> ignore_map;
+
+        QList<std::shared_ptr<Configs::ProxyEntity>> proxies;
+
+        bool AddProxy(std::shared_ptr<Configs::ProxyEntity>);
     };
 
     class GroupUpdater : public QObject {

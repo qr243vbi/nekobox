@@ -386,7 +386,7 @@ parse_json:
     RawUpdater_FixEnt(ent);
 
   // End
-  updated_order += ent;
+  AddProxy(ent);
 
   goto ret_loop;
 }
@@ -402,7 +402,7 @@ void RawUpdater::updateSIP008(const QJsonObject &json) {
     auto ent = Configs::ProfileManager::NewProxyEntity("shadowsocks");
     auto ok = ent->unlock(ent->ShadowSocksBean())->TryParseFromSIP008(out);
     if (ok) {
-      updated_order += ent;
+      AddProxy(ent);
     }
   }
 }
@@ -444,7 +444,7 @@ void RawUpdater::updateSingBox(const QJsonObject &json) {
     if (ent == nullptr)
       continue;
 
-    updated_order += ent;
+    AddProxy(ent);
   }
 }
 
@@ -453,7 +453,7 @@ bool RawUpdater::updateWireguardFileConfig(const QString &str) {
   auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
   if (!ok)
     return false;
-  updated_order += ent;
+  AddProxy(ent);
   return true;
 }
 
@@ -924,7 +924,8 @@ bool RawUpdater::updateClash(const QString &str) {
 
       if (needFix)
         RawUpdater_FixEnt(ent);
-      updated_order += ent;
+
+      AddProxy(ent);
     }
   } catch (const fkyaml::exception &ex) {
     //         runOnUiThread([=,this] {
@@ -934,6 +935,17 @@ bool RawUpdater::updateClash(const QString &str) {
   }
   return true;
 }
+
+bool RawUpdater::AddProxy(std::shared_ptr<Configs::ProxyEntity> ent){
+  auto key = Configs::ProfileFilterKey(ent, false);
+  if (ignore_map.contains(key)){
+    ignore_map[key] = true;
+    return false;
+  } else {
+    proxies << ent;
+    return true;
+  }
+};
 
 //
 void GroupUpdater::AsyncUpdate(
@@ -1033,31 +1045,75 @@ void GroupUpdater::Update(
 - Improve ram usage
 - Use LRU (Least Recently Used) cache for storing proxies
   */
+  bool sub_clear = Configs::dataStore->sub_clear;
+  rawUpdater->ignore_map.clear();
+  QString change_text;
+  QList<int> ProfilesToDrop;
 
   if (group != nullptr) {
+    if (!sub_clear){
+      if (group->profiles.count() > 1000){
+        sub_clear = true;
+      }
+    }
     //
-    MW_show_log(QObject::tr("Clearing servers..."));
-    auto profs = group->profiles;
-    group->profiles.clear();
-    Configs::profileManager->BatchDeleteProfiles(profs, -999);
+    if (sub_clear){
+      MW_show_log(QObject::tr("Clearing servers..."));
+      Configs::profileManager->BatchDeleteProfiles(group->profiles, -999);
+      group->profiles.clear();
+    } else {
+      for (auto id : group->profiles){
+        auto key = Configs::ProfileFilterKey(Configs::profileManager->GetProfile(id), false);
+        // found duplicate profile
+        if (rawUpdater->ignore_map.contains(key)){
+          ProfilesToDrop << key.key->Id();
+          change_text += "[-] " + key.key->DisplayTypeAndName() + "\n";
+        }
+        rawUpdater->ignore_map[ 
+           key
+        ] = false;
+      }
+    }
 
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();
   }
 
+  {
+  auto count = rawUpdater->ignore_map.count() ;
+  auto small_count = count < 150;
   MW_show_log(">>>>>>>> " + QObject::tr("Processing subscription data..."));
   rawUpdater->update(content);
-  Configs::profileManager->AddProfileBatch(rawUpdater->updated_order,
+  Configs::profileManager->AddProfileBatch(rawUpdater->proxies,
                                            rawUpdater->gid_add_to);
+
+  if (count > 0){
+    for ( auto [key, save] : asKeyValueRange(rawUpdater->ignore_map) ){
+      if (!save){
+        ProfilesToDrop << key.key->Id();
+        if (small_count){
+          change_text += "[-] " + key.key->DisplayTypeAndName() + "\n";
+        }
+      }
+    }
+    change_text += QObject::tr("--- Dropt %1 proxies\n").arg(ProfilesToDrop.count());
+  }
   MW_show_log(">>>>>>>> " + QObject::tr("Process complete, applying..."));
+  Configs::profileManager->BatchDeleteProfiles(ProfilesToDrop);
+  }
+  
+  rawUpdater->ignore_map.clear();
 
   if (group != nullptr) {
-    QString change_text;
+    auto count = rawUpdater->proxies.count();
     // all is new profile
-    for (const auto &ent : rawUpdater->updated_order) {
-      change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
-    }
+    if (count < 150){
+      for (const auto &ent : rawUpdater->proxies) {
+        change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
+      }
+    } 
+    change_text += QObject::tr("--- Added %1 proxies\n").arg(count);
 
     MW_show_log("<<<<<<<< " + QObject::tr("Change of %1:").arg(group->name) +
                 "\n" + change_text);
@@ -1065,7 +1121,7 @@ void GroupUpdater::Update(
 
     MW_dialog_message("SubUpdater", "finish-dingyue");
   } else {
-    Configs::dataStore->imported_count = rawUpdater->updated_order.count();
+    Configs::dataStore->imported_count = rawUpdater->proxies.count();
     MW_dialog_message("SubUpdater", "finish");
   }
 }
