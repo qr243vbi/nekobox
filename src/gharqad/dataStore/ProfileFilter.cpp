@@ -1,7 +1,6 @@
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
-
 #include <nekobox/dataStore/ProfileFilter.hpp>
 
 namespace Configs {
@@ -20,8 +19,8 @@ QByteArray ProfileFilterKey::beanBytes() const noexcept
 // --- Equality ---
 bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
 {
-    return key->DisplayType() == other.key->DisplayType()
-        && key->DisplayAddress() == other.key->DisplayAddress()
+    return key->type == other.key->type
+        && key->serverAddress == other.key->serverAddress
         && beanBytes() == other.beanBytes();
 }
 
@@ -75,6 +74,13 @@ ProfileFilterKey ProfileFilter_ent_key(
     return ProfileFilterKey(ent, !useAddressOnly);
 }
 
+    ProfileFilterKey::ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
+                     bool unpack_bean) noexcept
+    {
+      this->key = key;
+      this->unpack_bean = unpack_bean;
+      this->cache = "";
+    }
 
 void ProfileFilter::Uniq(const QList<std::shared_ptr<ProxyEntity>> &in,
                          QList<std::shared_ptr<ProxyEntity>> &out,
@@ -101,17 +107,18 @@ void ProfileFilter::Common(const QList<std::shared_ptr<ProxyEntity>> &src,
                            QList<std::shared_ptr<ProxyEntity>> &outSrc,
                            QList<std::shared_ptr<ProxyEntity>> &outDst,
                            bool by_address) {
-  QHash<ProfileFilterKey, std::shared_ptr<ProxyEntity>> map;
+  std::map<ProfileFilterKey, std::shared_ptr<ProxyEntity>> map;
 
   for (const auto &ent : src) {
-    map.insert(ProfileFilter_ent_key(ent, by_address), ent);
+    map.insert({ProfileFilter_ent_key(ent, by_address), ent});
   }
 
   for (const auto &ent : dst) {
     const ProfileFilterKey key = ProfileFilter_ent_key(ent, by_address);
-    if (map.contains(key)) {
+    auto iter = map.find(key);
+    if (iter != map.end()) {
       outDst += ent;
-      outSrc += map.value(key);
+      outSrc += iter->second;
     }
   }
 }
@@ -120,7 +127,7 @@ void ProfileFilter::OnlyInSrc(const QList<std::shared_ptr<ProxyEntity>> &src,
                               const QList<std::shared_ptr<ProxyEntity>> &dst,
                               QList<std::shared_ptr<ProxyEntity>> &out,
                               bool by_address) {
-  QSet<ProfileFilterKey> keys;
+  std::set<ProfileFilterKey> keys;
   for (const auto &ent : dst)
     keys.insert(ProfileFilter_ent_key(ent, by_address));
 
@@ -140,4 +147,20 @@ void ProfileFilter::OnlyInSrc_ByPointer(
   }
 }
 
+
+void ProfileFilter::OnlyInSrc_ByIds(
+    const QList<std::shared_ptr<ProxyEntity>> &src,
+    const QList<std::shared_ptr<ProxyEntity>> &dst,
+    QList<std::shared_ptr<ProxyEntity>> &out) {
+  std::set<int> ids;
+  for (const auto &ent: dst){
+    ids.insert({ent->Id()});
+  }
+  for (const auto &ent : src) {
+    if (!ids.contains(ent->Id()))
+      out += ent;
+  }
+}
+
 } // namespace Configs
+

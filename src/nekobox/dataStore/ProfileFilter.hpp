@@ -1,6 +1,5 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #pragma once
@@ -13,10 +12,7 @@ struct ProfileFilterKey
     std::shared_ptr<Configs::ProxyEntity> key;
 
     ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
-                     bool unpack_bean) noexcept
-        : key(key),
-          unpack_bean(unpack_bean)
-    {}
+                     bool unpack_bean) noexcept;
 
     // --- Bean Bytes ---
     QByteArray beanBytes() const noexcept;
@@ -33,7 +29,7 @@ struct ProfileFilterKey
 
 private:
     mutable bool unpack_bean;
-    mutable QByteArray cache{};
+    mutable QByteArray cache;
 };
 
 // --- Hash ---
@@ -73,5 +69,12 @@ ProfileFilterKey ProfileFilter_ent_key(
             const QList<std::shared_ptr<ProxyEntity>> &src,
             const QList<std::shared_ptr<ProxyEntity>> &dst,
             QList<std::shared_ptr<ProxyEntity>> &out);
+
+
+        static void OnlyInSrc_ByIds(
+            const QList<std::shared_ptr<ProxyEntity>> &src,
+            const QList<std::shared_ptr<ProxyEntity>> &dst,
+            QList<std::shared_ptr<ProxyEntity>> &out);
     };
 } // namespace Configs
+

@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Database.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -1033,7 +1034,13 @@ void GroupUpdater::Update(
   QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
   QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
 
+  // Always clear for now
+  #if PROFILE_FILTER_ENABLED
   bool sub_clear = Configs::dataStore->sub_clear;
+  #else
+  const bool sub_clear = true;
+  #endif
+ // bool sub_clear = Configs::dataStore->sub_clear;
   
   /*
 - Fix core dump (nullpointer exceptions)
@@ -1043,10 +1050,6 @@ void GroupUpdater::Update(
   */
   
   if (group != nullptr) {
-	if (group->profiles.count() > 3000){
-      sub_clear = true;
-    }
-  
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();
@@ -1055,9 +1058,7 @@ void GroupUpdater::Update(
       MW_show_log(QObject::tr("Clearing servers..."));
       Configs::profileManager->BatchDeleteProfiles(group->profiles);
     } else {
-      for (int i : group->profiles){
-        in << Configs::profileManager->GetProfile(i);
-      };
+      Configs::profileManager->FillProfileEnts(in, group->profiles);
     }
   }
 
@@ -1067,25 +1068,40 @@ void GroupUpdater::Update(
                                            rawUpdater->gid_add_to);
   MW_show_log(">>>>>>>> " + QObject::tr("Process complete, applying..."));
 
+  bool too_much_profiles = false;
+  int profiles_count = group->profiles.size();
+  if (profiles_count > 120){
+    too_much_profiles = true;
+  } else {
+    Configs::profileManager->FillProfileEnts(out_all, group->profiles);
+  }
+
   if (group != nullptr) {
     QString change_text;
 
     if (sub_clear) {
-      // all is new profile
-      for (const auto &ent : out_all) {
-        change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
+      if (too_much_profiles){
+        change_text = "Added " + QString::number(profiles_count) + " profiles";
+      } else {
+        // all is new profile
+        for (const auto &ent : out_all) {
+          change_text += "[+] " + ent->DisplayTypeAndName() + "\n";
+        }
       }
-    } else {
-      out_all = in;
-
+    } else { 
+      #if PROFILE_FILTER_ENABLED
       // find and delete not updated profile by ProfileFilter
-      Configs::ProfileFilter::OnlyInSrc_ByPointer(out_all, in, out);
+      Configs::ProfileFilter::OnlyInSrc(out_all, in, out);
+      #ifdef DEBUG_MODE
+      MW_show_log("Out size " + QString::number(out.size()));
+      MW_show_log("In size " + QString::number(in.size()));
+      #endif
       Configs::ProfileFilter::OnlyInSrc(in, out, only_in);
       Configs::ProfileFilter::OnlyInSrc(out, in, only_out);
       Configs::ProfileFilter::Common(in, out, update_keep, update_del, false);
       QString notice_added;
       QString notice_deleted;
-      if (only_out.size() < 1000) {
+      if (only_out.size() < 120) {
         for (const auto &ent : only_out) {
           notice_added += "[+] " + ent->DisplayTypeAndName() + "\n";
         }
@@ -1093,7 +1109,7 @@ void GroupUpdater::Update(
         notice_added += QString("[+] ") + "added " +
                         QString::number(only_out.size()) + "\n";
       }
-      if (only_in.size() < 1000) {
+      if (only_in.size() < 120) {
         for (const auto &ent : only_in) {
           notice_deleted += "[-] " + ent->DisplayTypeAndName() + "\n";
         }
@@ -1134,6 +1150,7 @@ void GroupUpdater::Update(
                      .arg(notice_deleted);
       if (only_out.length() + only_in.length() == 0)
         change_text = QObject::tr("Nothing");
+      #endif
     }
 
     MW_show_log("<<<<<<<< " + QObject::tr("Change of %1:").arg(group->name) +
