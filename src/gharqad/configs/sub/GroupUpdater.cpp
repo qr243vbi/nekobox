@@ -165,6 +165,9 @@ ret_loop:
     goto ret_loop;
   }
   */
+ if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
+    goto ret_loop;
+  }
 
   // Multi line
   if (str.count("\n") > 0) {
@@ -195,29 +198,25 @@ parse_json:
   }
 
   QString scheme;
-  bool quic_enabled = true;
-
-  QUrl scheme_link = QUrl(str.trimmed());
-  if (scheme_link.isValid()){
-    scheme = scheme_link.scheme();
-    quic_enabled = false;
-  }
-
-  // skip if link is invalid
-  if (quic_enabled){
-
+  bool quic_enabled = false;
+  int scheme_index = str.indexOf("://");
+  if (scheme_index > 0) {
+    scheme = str.sliced(0, scheme_index).toLower();
+  } else {
+    goto ret_loop;
   }
   // Nekoray format
-  else if (scheme == "nekoray") {
+  if (scheme == "nekoray") {
     needFix = false;
-    if (!scheme_link.isValid()){
+    auto link = QUrl(str);
+    if (!link.isValid()){
       goto ret_loop;
     }
-    ent = Configs::ProfileManager::NewProxyEntity(scheme_link.host());
+    ent = Configs::ProfileManager::NewProxyEntity(link.host());
     if (!ent->isValid()){
       goto ret_loop;
     }
-    if (!ent->unlock(ent->bean())->TryParseNekorayLink(scheme_link)){
+    if (!ent->unlock(ent->bean())->TryParseNekorayLink(link)){
       goto ret_loop;
     };
   }

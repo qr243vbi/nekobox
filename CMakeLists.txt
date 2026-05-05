@@ -95,6 +95,7 @@ option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
 option(CPR_ENABLE_INSTALL "Use cpr as bundled dependency" OFF)
+option(ENABLE_PROFILE_FILTER "Enable profile filtering on subscription update" ON)
 
 find_package(Threads)
 
