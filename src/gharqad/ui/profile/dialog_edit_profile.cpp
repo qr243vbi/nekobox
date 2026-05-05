@@ -66,8 +66,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     : QDialog(parent), ui(new Ui::DialogEditProfile) {
   // setup UI
   CHECK_SETTINGS_ACCESS
-  ui->packet_encoding->addItems(Preset::SingBox::VmessPacketEncodings);
   ui->setupUi(this);
+  ui->packet_encoding->addItems(Preset::SingBox::VmessPacketEncodings);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
   ui->network_2->addItem(tr("both"));
