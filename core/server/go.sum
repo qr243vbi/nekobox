@@ -114,8 +114,6 @@ github.com/jsimonetti/rtnetlink v1.4.0 h1:Z1BF0fRgcETPEa0Kt0MRk3yV5+kF1FWTni6KUF
 github.com/jsimonetti/rtnetlink v1.4.0/go.mod h1:5W1jDvWdnthFJ7fxYX1GMK07BUpI4oskfOqvPteYS6E=
 github.com/keybase/go-keychain v0.0.1 h1:way+bWYa6lDppZoZcgMbYsvC7GxljxrskdNInRtuthU=
 github.com/keybase/go-keychain v0.0.1/go.mod h1:PdEILRW3i9D8JcdM+FmY6RwkHGnhHxXwkPPMeUgOK1k=
-github.com/kindestone/sing-box v0.0.0-20260428112717-856add9e1e61 h1:9BqUFhgDeM8m4O4irFV+zi1ghWftwSE1vTA8i7Yizp0=
-github.com/kindestone/sing-box v0.0.0-20260428112717-856add9e1e61/go.mod h1:Nl5LzNeBwEkIt2OeLf6sCctkH8vig8czu9kqQEixvVc=
 github.com/klauspost/compress v1.18.0 h1:c/Cqfb0r+Yi+JtIEq73FWXVkRonBlf0CRNYc8Zttxdo=
 github.com/klauspost/compress v1.18.0/go.mod h1:2Pp+KzxcywXVXMr50+X0Q/Lsb43OQHYWRCY2AiWywWQ=
 github.com/klauspost/cpuid/v2 v2.3.0 h1:S4CRMLnYUhGeDFDqkGriYKdfoFlDnMtqTiI/sFzhA9Y=
@@ -165,6 +163,8 @@ github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyf
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9 h1:dndt3WAPKpr3m7yA6IOmOXVX4XIUvyixELQW5tBTkM4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9/go.mod h1:xBrewWRKDk9jPLnQfQXLI+v11v5juBRRhXMhKfj2jfc=
+github.com/qr243vbi/sing-box v0.0.0-20260505192946-94002b1964e0 h1:nm1ODAPee+l2Z2f1zpgU5W7s9BxUSCTkTAsQY6nFm/E=
+github.com/qr243vbi/sing-box v0.0.0-20260505192946-94002b1964e0/go.mod h1:F++kL2r3DVTP/AY/aodJki1eEMRD/kYbFJ8OT3dut7w=
 github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4 h1:Qut9yjTnfgzv8mLS2GngSAYvM/q8Iy2qaoweuuve2TI=
 github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4/go.mod h1:QvarqUtHfj1ULaRR+6kZOS/OoCE+pYGq67A5tyIy+dQ=
 github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7 h1:0LcGSXDTVdCr3Dndmvy43dBGoxxwhN4MnLFeTPChtRE=

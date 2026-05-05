@@ -4,7 +4,7 @@ rm go.sum
 go mod init nekobox_core
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-box=github.com/kindestone/sing-box@HEAD
+go mod edit -replace=github.com/sagernet/sing-box=github.com/qr243vbi/sing-box@HEAD
 go mod tidy
 
 go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@HEAD
