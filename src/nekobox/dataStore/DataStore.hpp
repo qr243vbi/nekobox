@@ -202,6 +202,7 @@ namespace Configs {
 
         // Subscription
         QString user_agent = ""; // set at main.cpp
+        bool sub_clear = false;
         int sub_auto_update = -30;
         bool sub_send_hwid = false;
         bool sub_rm_unavailable = false;

@@ -877,14 +877,16 @@ void ProfileManager::BatchDeleteProfiles(const QList<int> &ids, int groupid) {
     auto ent = GetProfile(id);
     if (ent == nullptr)
       continue;
-    if (groupid < 0) {
-      if (auto group = GetGroup(ent->gid); group != nullptr) {
-        group->RemoveProfile(id);
-        changed_groups.insert(group);
-      }
-    } else {
-      if (groupid != ent->gid) {
-        continue;
+    if (groupid != -999){
+      if (groupid < 0) {
+        if (auto group = GetGroup(ent->gid); group != nullptr) {
+          group->RemoveProfile(id);
+          changed_groups.insert(group);
+        }
+      } else {
+        if (groupid != ent->gid ) {
+          continue;
+        }
       }
     }
     UncacheProfile(id, true);

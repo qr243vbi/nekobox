@@ -496,6 +496,7 @@ QByteArray hash = QCryptographicHash::hash(
 
         ADD_MAP("net_insecure", net_insecure, boolean);
         ADD_MAP("sub_auto_update", sub_auto_update, integer);
+        ADD_MAP("sub_clear", sub_clear, boolean);
         ADD_MAP("sub_send_hwid", sub_send_hwid, boolean);
    //     ADD_MAP("start_minimal", start_minimal, boolean);
    //     ADD_MAP("max_log_line", max_log_line, integer);

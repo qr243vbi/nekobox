@@ -155,7 +155,7 @@ ret_loop:
   }
 
   // Clash
-  if (updateClash(str)){
+  if (updateClash(str)) {
     goto ret_loop;
   }
 
@@ -165,7 +165,7 @@ ret_loop:
     goto ret_loop;
   }
   */
- if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
+  if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
     goto ret_loop;
   }
 
@@ -179,7 +179,6 @@ ret_loop:
   }
 
 parse_json:
-
 
   // Json
   if (json_ok) {
@@ -209,21 +208,21 @@ parse_json:
   if (scheme == "nekoray") {
     needFix = false;
     auto link = QUrl(str);
-    if (!link.isValid()){
+    if (!link.isValid()) {
       goto ret_loop;
     }
     ent = Configs::ProfileManager::NewProxyEntity(link.host());
-    if (!ent->isValid()){
+    if (!ent->isValid()) {
       goto ret_loop;
     }
-    if (!ent->unlock(ent->bean())->TryParseNekorayLink(link)){
+    if (!ent->unlock(ent->bean())->TryParseNekorayLink(link)) {
       goto ret_loop;
     };
   }
 
   // SOCKS
-  else if (scheme == ("socks5") || scheme == ("socks4") || scheme == ("socks4a") ||
-      scheme == ("socks")) {
+  else if (scheme == ("socks5") || scheme == ("socks4") ||
+           scheme == ("socks4a") || scheme == ("socks")) {
     ent = Configs::ProfileManager::NewProxyEntity("socks");
     auto ok = ent->unlock(ent->SocksBean())->TryParseLink(str);
     if (!ok)
@@ -280,17 +279,17 @@ parse_json:
 
   // Naive
   else if ((scheme == ("naive") || scheme == ("naive+https") ||
-         scheme == ("naive+http")) ||
-        (quic_enabled = scheme == ("naive+quic"))) {
-      ent = Configs::ProfileManager::NewProxyEntity("naive");
-      auto bean = ent->unlock(ent->NaiveBean());
-      if (quic_enabled) {
-        bean->quic = true;
-        *bean->quic_congestion_control = 1;
-      }
-      auto ok = bean->TryParseLink(str);
-      if (!ok)
-        goto ret_loop;
+            scheme == ("naive+http")) ||
+           (quic_enabled = scheme == ("naive+quic"))) {
+    ent = Configs::ProfileManager::NewProxyEntity("naive");
+    auto bean = ent->unlock(ent->NaiveBean());
+    if (quic_enabled) {
+      bean->quic = true;
+      *bean->quic_congestion_control = 1;
+    }
+    auto ok = bean->TryParseLink(str);
+    if (!ok)
+      goto ret_loop;
   }
 
   // TrustTunnel
@@ -1025,28 +1024,26 @@ void GroupUpdater::Update(
         QObject::tr("Subscription request fininshed: %1").arg(groupName));
   }
 
-  QList<std::shared_ptr<Configs::ProxyEntity>> in;          //
-  QList<std::shared_ptr<Configs::ProxyEntity>> out_all;     //
-  QList<std::shared_ptr<Configs::ProxyEntity>> out;         //
-  QList<std::shared_ptr<Configs::ProxyEntity>> only_in;     //
-  QList<std::shared_ptr<Configs::ProxyEntity>> only_out;    //
-  QList<std::shared_ptr<Configs::ProxyEntity>> update_del;  //
-  QList<std::shared_ptr<Configs::ProxyEntity>> update_keep; //
-  
+  //
+  //  QMap<Configs::ProfileFilterKey, bool> profile_map;
+
   /*
 - Fix core dump (nullpointer exceptions)
 - Improve table responsibility
 - Improve ram usage
 - Use LRU (Least Recently Used) cache for storing proxies
   */
-  
-  if (group != nullptr) { 
+
+  if (group != nullptr) {
+    //
+    MW_show_log(QObject::tr("Clearing servers..."));
+    auto profs = group->profiles;
+    group->profiles.clear();
+    Configs::profileManager->BatchDeleteProfiles(profs, -999);
+
     group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     group->info = sub_user_info;
     group->Save();
-    //
-    MW_show_log(QObject::tr("Clearing servers..."));
-    Configs::profileManager->BatchDeleteProfiles(group->profiles);
   }
 
   MW_show_log(">>>>>>>> " + QObject::tr("Processing subscription data..."));
