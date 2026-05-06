@@ -80,17 +80,17 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
         <source>Custom System Parameters (optional)</source>
         <translation>自定义系統参数（可选）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="724" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="684" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格式： hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号&lt;/p&gt;&lt;p&gt;若要使用预设值，请留空。仅需指定您要覆写的参数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation>hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号</translation>
     </message>
@@ -107,7 +107,7 @@
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
         <source>User Agent</source>
         <translation>用户代理</translation>
     </message>
@@ -147,32 +147,32 @@
         <translation>启动时请求更新</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792" />
         <source>Clear servers before update</source>
         <translation>更新前清除服务器</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="697" />
         <source>URL Test after update</source>
         <translation>更新后进行URL测试</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734" />
         <source>Remove Duplicates</source>
         <translation>移除 此分组 重复节点</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
         <source>Send System Parameters</source>
         <translation>发送系统参数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778" />
         <source>Remove Invalid</source>
         <translation>移除 此分组 无效节点</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
         <source>Remove Unavailable</source>
         <translation>移除 此分组 不可用节点</translation>
     </message>
@@ -280,12 +280,12 @@
         <translation type="unfinished">名称</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="705" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="715" />
         <source>Interval:</source>
         <translation type="unfinished">间隔：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="740" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747" />
         <source>Enable automatic update</source>
         <translation type="unfinished">启用自动更新</translation>
     </message>
@@ -310,12 +310,11 @@
         <translation type="unfinished">配置格式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
         <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished">LMDB — 2009 — 具有 ACID 事务的嵌入式内存映射键值数据库 — Howard Chu / Symas
+        <translation type="obsolete">LMDB — 2009 — 具有 ACID 事务的嵌入式内存映射键值数据库 — Howard Chu / Symas
 JSON — 2001 — 用于交换结构化数据（对象、数组、基元）的轻量级文本格式 — Douglas Crockford
 INI — 20 世纪 80 年代初 — 带有部分和键=值对的简单纯文本配置格式 — Microsoft Corporation
 二进制 — 2026 — NekoBox 设置的任意字节值格式用作 LMDB 值或独立文件 — qr243vbi</translation>
@@ -359,6 +358,17 @@ INI — 20 世纪 80 年代初 — 带有部分和键=值对的简单纯文本�
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1675" />
         <source>Y</source>
         <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
+        <source>RocksDB — 2011 — embedded persistent LSM-tree key–value store (built on LevelDB) — Facebook
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as RocksDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished">RocksDB — 2011 — 嵌入式持久 LSM 树键值存储（基于 LevelDB 构建） — Facebook
+JSON — 2001 — 用于交换结构化数据（对象、数组、基元）的轻量级文本格式 — Douglas Crockford
+INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分和键=值对 — Microsoft
+二进制 — 2026 — NekoBox 设置的任意字节值格式，用作 RocksDB 值或独立文件 — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1743" />
@@ -728,7 +738,7 @@ INI — 20 世纪 80 年代初 — 带有部分和键=值对的简单纯文本�
         <translation type="vanished">启用在更新订阅时发送 HWID、设备型号以及 OS 版本</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -914,7 +924,7 @@ Are you sure you want to enable HWID sending?</source>
     <name>DialogEditProfile</name>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -949,58 +959,58 @@ Are you sure you want to enable HWID sending?</source>
         <translation>传输(网络)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
         <translation>安全性</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
         <source>Network Settings (%1)</source>
         <translation>传输设置 (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>底层传输方式。它必须与服务器一致，否则无法建立连接。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
         <translation type="unfinished">传输层</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>传输层安全性。它必须与服务器一致，否则无法建立连接。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation>用于实现 UDP FullCone 等特性的 UDF FullCone 数据包编码。需要服务器支持，若选错则无法连接。不懂请留空。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation>启用时，V2Ray 将不会检查远端主机所提供的 TLS 证书的有效性 (安全性相当于明文)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
         <translation>服务器名称指示，明文。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation>应用层协议协商，明文。多项则请用英文逗号分隔。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
         <translation>允许不安全连接</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="739" />
         <source>Certificate</source>
         <translation>证书</translation>
     </message>
@@ -1015,30 +1025,30 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">自定义 (%1 配置)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120" />
         <source>both</source>
         <translation type="unfinished">两个都</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="697" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="707" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
         <source>Not set</source>
         <translation>未设置</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="699" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="704" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="709" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="714" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
         <source>Already set</source>
         <translation>已设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
         <translation>数据包编码</translation>
     </message>
@@ -1048,139 +1058,139 @@ Are you sure you want to enable HWID sending?</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
         <source>TLS Security Settings</source>
         <translation>TLS 安全设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
         <source>TLS Camouflage Settings</source>
         <translation>TLS 伪装设置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation>Reality 公钥。如果不为空则将 TLS 变为 REALITY。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
         <source>Custom (%1 outbound)</source>
         <translation>自定义 (%1 出站)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
         <source>Custom (%1 config)</source>
         <translation>自定义 (%1 配置)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
         <source>Custom Outbound Settings</source>
         <translation>自定义出站设置 (JSON)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
         <source>Custom Config Settings</source>
         <translation>自定义配置设置 (JSON)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="805" />
         <source>Apply settings to this group</source>
         <translation>应用设置到这个分组</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
         <translation>多路复用</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
         <source>Keep Default</source>
         <translation>保持默认</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
         <source>On</source>
         <translation>开启</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
         <source>Off</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="779" />
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
         <translation>需要服务器支持</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;覆盖多路服用为开启&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
         <source>Enable TCP Brutal</source>
         <translation>启用 TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;服务器到客户端的 TCP 极致速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
         <translation>TCP Brutal 速度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
         <source>Mb/s</source>
         <translation>Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HTTP 请求的方法，将被转换为大写字母&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
         <source>Method</source>
         <translation>方法</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
         <translation>启用ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="749" />
         <source>ECH Config</source>
         <translation>ECH配置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
         <translation>QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
         <source>Reality SID</source>
         <translation>Reality SID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
         <translation>头部类型</translation>
     </message>
@@ -1193,32 +1203,32 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">链式代理</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能降低性能，请先尝试记录片段&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
         <translation>启用 TLS 片段</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;时间格式，如 500ms, 10ms 等&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
         <translation>回退延时</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
         <translation>启用 TLS 记录片段</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
         <translation>Reality 短 ID。 仅接受一个值。</translation>
     </message>
@@ -4099,12 +4109,11 @@ How to update?</source>
         <translation>分组名称</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1135" />
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation>添加了 %1 个配置档：
+        <translation type="vanished">添加了 %1 个配置档：
 %2
 删除选中节点了 %3 个配置档：
 %4</translation>
@@ -4256,22 +4265,21 @@ Release note:
         <translation type="unfinished">额外核心</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1013" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1063" />
         <source>Requesting subscription: %1</source>
         <translation>正在请求订阅: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1019" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
         <source>Requesting subscription %1 error: %2</source>
         <translation>请求订阅 %1 时出错: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1141" />
         <source>Nothing</source>
-        <translation>无</translation>
+        <translation type="vanished">无</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1162" />
         <source>Change of %1:</source>
         <translation>%1 的变化:</translation>
     </message>
@@ -4281,12 +4289,12 @@ Release note:
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1060" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1105" />
         <source>Clearing servers...</source>
         <translation>正在清理服务器...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1030" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1080" />
         <source>Subscription request fininshed: %1</source>
         <translation>订阅请求完成: %1</translation>
     </message>
@@ -4296,7 +4304,7 @@ Release note:
         <translation>Core 退出太频繁，停止自动重启这个配置档。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="674" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="840" />
         <source>Default</source>
         <translation>默认</translation>
     </message>
@@ -4330,14 +4338,26 @@ Release note:
         <translation>Tun 模式不能与自定义配置一起使用</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1130" />
         <source>Processing subscription data...</source>
         <translation>正在处理订阅数据...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1073" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <source>--- Dropt %1 proxies
+</source>
+        <translation type="unfinished">--- 删除 %1 代理</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1146" />
         <source>Process complete, applying...</source>
         <translation>处理完成，正在应用...</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1160" />
+        <source>--- Added %1 proxies
+</source>
+        <translation type="unfinished">--- 添加了 %1 代理</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="335" />
@@ -4422,6 +4442,56 @@ Direct: ⚡%2 📦%4</source>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="455" />
         <source>Invalid</source>
         <translation type="unfinished">无效的</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50" />
+        <source>KCP Settings</source>
+        <translation type="unfinished">KCP 设置</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
+        <source>MTU</source>
+        <translation type="unfinished">MTU</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
+        <source>TTI</source>
+        <translation type="unfinished">TT</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
+        <source>Uplink Capacity</source>
+        <translation type="unfinished">上行容量</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
+        <source>Downlink Capacity</source>
+        <translation type="unfinished">下行容量</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
+        <source>Congestion</source>
+        <translation type="unfinished">拥塞</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
+        <source>Read Buffer Size</source>
+        <translation type="unfinished">读取缓冲区大小</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
+        <source>Write Buffer Size</source>
+        <translation type="unfinished">写入缓冲区大小</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
+        <source>Header Type</source>
+        <translation type="unfinished">标头类型</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
+        <source>Seed</source>
+        <translation type="unfinished">种子</translation>
     </message>
 </context>
 <context>

@@ -317,22 +317,22 @@
         <translation type="unfinished">מִנוּי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="705" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="715" />
         <source>Interval:</source>
         <translation type="unfinished">הַפסָקָה:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="740" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747" />
         <source>Enable automatic update</source>
         <translation type="unfinished">אפשר עדכון אוטומטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792" />
         <source>Clear servers before update</source>
         <translation type="unfinished">נקה שרתים לפני עדכון</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="697" />
         <source>URL Test after update</source>
         <translation type="unfinished">בדיקת כתובת URL לאחר עדכון</translation>
     </message>
@@ -346,27 +346,27 @@
         <translation type="obsolete">מרווח (דקה, לא חוקי אם פחות מ-30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="747" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="734" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">הסר כפילויות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
         <source>User Agent</source>
         <translation type="unfinished">סוכן משתמש</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="771" />
         <source>Send System Parameters</source>
         <translation type="unfinished">שלח פרמטרים של מערכת</translation>
     </message>
@@ -375,22 +375,22 @@
         <translation type="obsolete">עדכון אוטומטי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="724" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="684" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פורמט: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;השאר ריק כדי להשתמש בערכי ברירת מחדל.ציין רק את הפרמטרים שברצונך לעקוף.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="727" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">פרמטרי מערכת מותאמים אישית (אופציונלי)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778" />
         <source>Remove Invalid</source>
         <translation type="unfinished">הסר לא חוקי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">הסר לא זמין</translation>
     </message>
@@ -536,6 +536,17 @@
         <translation type="obsolete">השתמש ב-Json במקום בינארי עבור הגדרות</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
+        <source>RocksDB — 2011 — embedded persistent LSM-tree key–value store (built on LevelDB) — Facebook
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as RocksDB values or standalone files — qr243vbi</source>
+        <translation type="unfinished">RocksDB - 2011 - חנות מפתח-ערך של עץ LSM משובץ (בנויה על LevelDB) - פייסבוק
+JSON - 2001 - פורמט טקסט קל להחלפת נתונים מובנים (אובייקטים, מערכים, פרימיטיביים) - דאגלס קרוקפורד
+INI - תחילת שנות השמונים - פורמט תצורה פשוט של טקסט רגיל עם מקטעים וצמדי מפתח=ערך - Microsoft
+בינארי - 2026 - פורמט ערכי בתים שרירותיים עבור הגדרות NekoBox המשמשות כערכי RocksDB או קבצים עצמאיים - qr243vbi</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1267" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">בקשו למחוק את הפרופיל</translation>
@@ -676,12 +687,11 @@
         <translation type="unfinished">פורמט הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
         <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft Corporation
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as LMDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished">LMDB - 2009 - DB עם ערך מפתח-מפות זיכרון מוטבע עם עסקאות ACID - Howard Chu / Symas
+        <translation type="obsolete">LMDB - 2009 - DB עם ערך מפתח-מפות זיכרון מוטבע עם עסקאות ACID - Howard Chu / Symas
 JSON - 2001 - פורמט טקסט קל להחלפת נתונים מובנים (אובייקטים, מערכים, פרימיטיביים) - דאגלס קרוקפורד
 INI - תחילת שנות השמונים - פורמט פשוט של תצורת טקסט רגיל עם קטעים וצמדי מפתח=ערך - Microsoft Corporation
 בינארי - 2026 - פורמט ערכי בתים שרירותיים עבור הגדרות NekoBox המשמשות כערכי LMDB או קבצים עצמאיים - qr243vbi</translation>
@@ -900,7 +910,7 @@ Are you sure you want to enable HWID sending?</source>
     <name>DialogEditProfile</name>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="853" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
         <source>Edit</source>
         <translation type="unfinished">לַעֲרוֹך</translation>
     </message>
@@ -935,7 +945,7 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="unfinished">הגדרות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="176" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">שיטת ההובלה הבסיסית.זה חייב להיות עקבי עם השרת, אחרת לא ניתן ליצור את החיבור.</translation>
     </message>
@@ -945,220 +955,220 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="unfinished">רֶשֶׁת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="236" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
         <translation type="unfinished">נדרשת תמיכה בשרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="239" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
         <translation type="unfinished">מרובה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="246" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">אבטחת שכבת תחבורה.זה חייב להיות עקבי עם השרת, אחרת לא ניתן ליצור את החיבור.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="249" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
         <translation type="unfinished">בִּטָחוֹן</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="270" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">קידוד UDP FullCone Packet ליישום תכונות כגון UDP FullCone.נדרשת תמיכה בשרת, אם בוצעה בחירה שגויה, לא ניתן ליצור את החיבור.אנא השאר אותו ריק.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="273" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
         <translation type="unfinished">קידוד מנות</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="281" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
         <source>Keep Default</source>
         <translation type="unfinished">שמור על ברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="286" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
         <source>On</source>
         <translation type="unfinished">עַל</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="291" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
         <source>Off</source>
         <translation type="unfinished">כבוי</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="304" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;עוקף את mux ל-On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="307" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">אפשר TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="321" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;מהירות אכזרית TCP משרת ללקוח&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="324" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCP מהירות אכזרית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="355" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">הגדרות יוצאות מותאמות אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="371" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
         <source>Custom Config Settings</source>
         <translation type="unfinished">הגדרות תצורה מותאמת אישית</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="391" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="756" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="805" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">החל הגדרות על קבוצה זו</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="446" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
         <source>Network Settings (%1)</source>
         <translation type="unfinished">הגדרות רשת (% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="468" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="551" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;שיטה של ​​בקשת http, תומר לאותיות רישיות&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="554" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
         <source>Method</source>
         <translation type="unfinished">שִׁיטָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="588" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
         <translation type="unfinished">סוג כותרת</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="785" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
         <source>TLS Security Settings</source>
         <translation type="unfinished">הגדרות אבטחה של TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="802" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="687" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="739" />
         <source>Certificate</source>
         <translation type="unfinished">תְעוּדָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="829" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">כאשר מופעל, V2Ray לא יבדוק את תוקפו של אישור ה-TLS שסופק על ידי המארח המרוחק (האבטחה שווה לטקסט רגיל)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="832" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
         <translation type="unfinished">אפשר לא בטוח</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="839" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
         <translation type="unfinished">אפשר ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="846" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="749" />
         <source>ECH Config</source>
         <translation type="unfinished">ECH Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="864" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="871" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">ציון שם השרת, טקסט ברור.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="884" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">משא ומתן על פרוטוקול שכבת יישומים, טקסט ברור.נא להפריד ביניהם בפסיקים.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="628" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">הגדרות הסוואה של TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="179" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
         <translation type="unfinished">תַחְבּוּרָה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="682" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;עשוי לפגוע בביצועים, נסה תחילה להקליט קטע&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="685" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
         <translation type="unfinished">אפשר מקטע TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="692" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;פורמט זמן, כמו 500ms, 10ms וכו'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="695" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
         <translation type="unfinished">עיכוב נגיעה</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="708" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">אפשר TLS Record Fragment</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">מפתח ציבורי של מציאות.אם לא ריק, הפוך TLS למציאות.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="760" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">מציאות קצר מזהה.קבל רק ערך אחד.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="763" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
         <source>Reality SID</source>
         <translation type="unfinished">מציאות SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="238" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">מותאם אישית (% 1 יוצא)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="240" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
         <source>Custom (%1 config)</source>
         <translation type="unfinished">מותאם אישית (תצורה% 1)</translation>
     </message>
@@ -1181,30 +1191,30 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">מותאם אישית (תצורה% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="72" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120" />
         <source>both</source>
         <translation type="unfinished">שְׁנֵיהֶם</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="645" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="650" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="655" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="660" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="668" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="697" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="707" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
         <source>Not set</source>
         <translation type="unfinished">לא מוגדר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="647" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="652" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="657" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="662" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="670" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="699" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="704" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="709" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="714" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
         <source>Already set</source>
         <translation type="unfinished">כבר מוגדר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="779" />
         <source>Confirm</source>
         <translation type="unfinished">לְאַשֵׁר</translation>
     </message>
@@ -3889,58 +3899,68 @@ Are you sure?</source>
         <translation type="unfinished">לא ניתן להשתמש במצב Tun עם הגדרות מותאמות אישית</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1013" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1063" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">מבקש מנוי: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1019" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">בקשת מנוי %1 שגיאה: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1030" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1080" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">בקשת המנוי הסתיימה: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1060" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1105" />
         <source>Clearing servers...</source>
         <translation type="unfinished">מנקה שרתים...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1130" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">מעבד נתוני מנוי...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1073" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <source>--- Dropt %1 proxies
+</source>
+        <translation type="unfinished">--- Dropt %1 פרוקסי</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1146" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">התהליך הושלם, יישום...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1135" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1160" />
+        <source>--- Added %1 proxies
+</source>
+        <translation type="unfinished">--- נוספו פרוקסי %1</translation>
+    </message>
+    <message>
         <source>Added %1 profiles:
 %2
 Deleted %3 Profiles:
 %4</source>
-        <translation type="unfinished">נוספו %1 פרופילים:
+        <translation type="obsolete">נוספו %1 פרופילים:
 %2
 נמחקו %3 פרופילים:
 %4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1141" />
         <source>Nothing</source>
-        <translation type="unfinished">שׁוּם דָבָר</translation>
+        <translation type="obsolete">שׁוּם דָבָר</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1162" />
         <source>Change of %1:</source>
         <translation type="unfinished">שינוי של% 1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="674" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="840" />
         <source>Default</source>
         <translation type="unfinished">בְּרִירַת מֶחדָל</translation>
     </message>
@@ -4225,6 +4245,56 @@ Direct: ⚡%2 📦%4</source>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="455" />
         <source>Invalid</source>
         <translation type="unfinished">לֹא בְּתוֹקֶף</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50" />
+        <source>KCP Settings</source>
+        <translation type="unfinished">הגדרות KCP</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
+        <source>MTU</source>
+        <translation type="unfinished">MTU</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
+        <source>TTI</source>
+        <translation type="unfinished">TTI</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
+        <source>Uplink Capacity</source>
+        <translation type="unfinished">קיבולת Uplink</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
+        <source>Downlink Capacity</source>
+        <translation type="unfinished">קיבולת קישור למטה</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
+        <source>Congestion</source>
+        <translation type="unfinished">גוֹדֶשׁ</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
+        <source>Read Buffer Size</source>
+        <translation type="unfinished">קרא גודל מאגר</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
+        <source>Write Buffer Size</source>
+        <translation type="unfinished">כתוב גודל מאגר</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
+        <source>Header Type</source>
+        <translation type="unfinished">סוג כותרת</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
+        <source>Seed</source>
+        <translation type="unfinished">זֶרַע</translation>
     </message>
 </context>
 <context>
