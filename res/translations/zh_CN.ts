@@ -2653,7 +2653,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation>MTU</translation>
+        <translation />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
@@ -4451,12 +4451,12 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>MTU</source>
-        <translation type="unfinished">MTU</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>TTI</source>
-        <translation type="unfinished">TT</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />

@@ -2582,7 +2582,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished">এমটিইউ</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
@@ -4250,12 +4250,12 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>MTU</source>
-        <translation type="unfinished">এমটিইউ</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>TTI</source>
-        <translation type="unfinished">টিটিআই</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />

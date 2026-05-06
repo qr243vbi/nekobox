@@ -2582,7 +2582,7 @@ Habilite esto solo si tiene la intención de compartir DNS con dispositivos LAN 
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
         <source>MTU</source>
-        <translation type="unfinished">MTU</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
@@ -4247,12 +4247,12 @@ Directo: ⚡%2 📦%4</translation>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>MTU</source>
-        <translation type="unfinished">MTU</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>TTI</source>
-        <translation type="unfinished">ITT</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
