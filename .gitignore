@@ -13,8 +13,6 @@ bash.py
 *.gpg
 /core/server/elevated_resolvctl
 easytier-magisk
-server/gen/*.pb.go
-server/gen/*.pb.*.go
 script/nekobox_chocolatey/_TODO.txt
 !languages.txt
 !CMakeLists.txt
@@ -38,8 +36,6 @@ TEMP
 script/PKGBUILD
 script/nekobox_temp
 gen-cpp
-core/updater/vendor
-core/server/vendor
 script/winget-pkgs
 srslist.json
 *.Version
@@ -150,8 +146,6 @@ CMakeLists.txt.user*
 .vs
 out
 /libs
-/core/server/vendor
-/core/updater/vendor
 /core/server/Core
 /script/nekobox_temp
 /script/PKGBUILD

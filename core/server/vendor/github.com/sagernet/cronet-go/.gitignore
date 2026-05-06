@@ -1,0 +1,13 @@
+/.idea
+/build/
+/thinlto-cache/
+.DS_Store
+CLAUDE.md
+/.claude/
+
+# Prebuilt libraries (committed to go branch only)
+/build-naive
+/lib/
+/include/
+/cgo_*.go
+/lib_*_cgo.go

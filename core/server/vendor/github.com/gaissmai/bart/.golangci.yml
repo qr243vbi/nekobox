@@ -1,0 +1,34 @@
+linters:
+  enable:
+    - gofmt
+    - gofumpt
+    - goimports
+    - govet
+    - gosimple
+    - gocyclo
+    - gosmopolitan
+    - errcheck
+    - staticcheck
+    - intrange
+    - ineffassign
+    - unused
+    - typecheck
+    - unconvert
+    - unparam
+    - misspell
+    - decorder
+    - errorlint
+    - predeclared
+    - reassign
+    - stylecheck
+    - usestdlibvars
+    - wastedassign
+    - nakedret
+    #
+    # - gosec
+    # - dupl
+    # - wrapcheck
+
+linters-settings:
+  gocyclo:
+    min-complexity: 30

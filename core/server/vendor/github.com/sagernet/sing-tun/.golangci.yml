@@ -1,0 +1,49 @@
+version: "2"
+run:
+  go: "1.25"
+linters:
+  default: none
+  enable:
+    - govet
+    - ineffassign
+    - paralleltest
+    - staticcheck
+  settings:
+    staticcheck:
+      checks:
+        - all
+        - -S1000
+        - -S1008
+        - -S1017
+        - -ST1003
+        - -QF1001
+        - -QF1003
+        - -QF1008
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofumpt
+  settings:
+    gci:
+      sections:
+        - standard
+        - prefix(github.com/sagernet/)
+        - default
+      custom-order: true
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
