@@ -7,7 +7,7 @@
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/dataStore/DataStore.hpp>
-#include <nekobox/dataStore/DatabaseLMDB.hpp>
+#include <nekobox/dataStore/DatabaseRocksDB.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/sys/Settings.h>
@@ -387,11 +387,7 @@ QByteArray hash = QCryptographicHash::hash(
     #ifdef DEBUG_MODE
     DatabaseType::json_type
     #else
-    #ifdef SKIP_ROCKSDB
     DatabaseType::binary_type
-    #else
-    DatabaseType::lmdb_type
-    #endif
     #endif
     ;
 

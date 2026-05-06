@@ -48,4 +48,8 @@ rm -rf vendor
 go mod init updater
 go mod tidy
 
+go mod edit -go=1.23
+go mod tidy
+
+
 #go mod vendor

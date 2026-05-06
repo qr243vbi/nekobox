@@ -1,6 +1,6 @@
 module updater
 
-go 1.26.2
+go 1.23
 
 require github.com/codeclysm/extract/v4 v4.0.0
 

@@ -10,7 +10,7 @@
 #include <string_view>
 
 #include <nekobox/dataStore/Database.hpp>
-#include <nekobox/dataStore/DatabaseLMDB.hpp>
+#include <nekobox/dataStore/DatabaseRocksDB.hpp>
 
 #include <QDir>
 #include <QMutex>
@@ -163,7 +163,7 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Groups, groups)
   }
 #ifndef SKIP_ROCKSDB
-  if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
+  if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
     return Configs::write_rocksdb(this->database, store);
   }
 #endif
@@ -181,7 +181,7 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   if (!ok) {
     return false;
   } else if (readed) {
-    if (Configs::config_type != Configs::DatabaseType::lmdb_type) {
+    if (Configs::config_type != Configs::DatabaseType::rocksdb_type) {
       if (SaveToFile(store)) {
         Configs::clear_rocksdb(this->database, store);
       };
@@ -194,7 +194,7 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   readed = LoadFromFile(store);
 #ifndef SKIP_ROCKSDB
   if (readed) {
-    if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
+    if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
       Configs::write_rocksdb(this->database, store);
       DropFromDirectory(store->StoreType(), store->Id());
     }
@@ -246,6 +246,46 @@ bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   return store->SaveToFile(path, Configs::config_type ==
                                      Configs::DatabaseType::json_type);
 }
+#ifndef SKIP_ROCKSDB
+static rocksdb::ReadOptions ReadOptions(){
+  rocksdb::ReadOptions read_options;
+  // Ensure you see only committed data
+  read_options.verify_checksums = true;
+  // Prevent returning data that is being compacted/obsolete
+  read_options.fill_cache = true;
+  // Stronger consistency during iteration 
+  read_options.snapshot = nullptr;
+  return read_options;
+} 
+static rocksdb::WriteOptions WriteOptions() {
+  rocksdb::WriteOptions write_options;
+  // Force durability before returning success
+  write_options.sync = true;
+  // Ensure WAL is always used (never bypass durability log)
+  write_options.disableWAL = false;
+  // Prevent write reordering issues in complex workloads
+  write_options.no_slowdown = false;
+  write_options.low_pri = false;
+  return write_options;
+}
+
+static rocksdb::Options Options() {
+  rocksdb::Options options;
+  options.create_if_missing = true;
+  // Strong consistency checks
+  options.paranoid_checks = true;
+  // never auto-delete WAL
+  options.WAL_ttl_seconds = 0;   
+  // no size-based trimming   
+  options.WAL_size_limit_MB = 0;   
+  // flush in shutdown
+  options.avoid_flush_during_shutdown = false;
+  // auto compaction
+  options.disable_auto_compactions = false; 
+  return options;
+}
+#endif
+
 bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
   auto type = store->StoreType();
   auto id = store->Id();
@@ -304,10 +344,8 @@ QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   QList<int> result;
   QSet<uint32_t> result_set;
 
-  rocksdb::ReadOptions options;
-
   std::unique_ptr<rocksdb::Iterator> it(
-      db->NewIterator(options));
+      db->NewIterator(ReadOptions()));
 
   std::string prefix = "";
   prefix += c;
@@ -322,6 +360,8 @@ QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
     qDebug() << "Slicing? " << it->Valid();
   #endif
     rocksdb::Slice key = it->key();
+
+    it->Next();
 
     if (key.size() != 5) {
 #ifdef DEBUG_MODE
@@ -364,7 +404,6 @@ QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
       result.append(i);
       result_set.insert(u);
     }
-    it->Next();
   }
 
   if (!it->status().ok()) {
@@ -414,7 +453,7 @@ bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem
 
 bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 #ifdef DEBUG_MODE
-  qDebug() << "Clearing LMDB ";
+  qDebug() << "Clearing RocksDB ";
 #endif
   return Configs::write_rocksdb(env, c, x, "");
 }
@@ -422,11 +461,11 @@ bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x)
 bool Configs::drop_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 // std::lock_guard<std::mutex> lock(env.env_mutex);
 #ifdef DEBUG_MODE
-  qDebug() << "Drop LMDB ";
+  qDebug() << "Drop RocksDB ";
 #endif
   auto key = pack_char_int(c, x);
   auto status = env->Delete(
-        rocksdb::WriteOptions(),
+        WriteOptions(),
         key
   );
   return status.ok();
@@ -447,7 +486,7 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
       batch.Put(key, view);
       auto status =
       env->Write(
-        rocksdb::WriteOptions(),
+        WriteOptions(),
         &batch
       );
       #ifdef DEBUG_MODE
@@ -460,7 +499,7 @@ std::tuple<bool, bool>
 Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
 
 #ifdef DEBUG_MODE
-  qDebug() << "READING LMDB FILE";
+  qDebug() << "READING RocksDB FILE";
 #endif
   auto bytes = store->ToBytes();
   std::string view;
@@ -480,7 +519,7 @@ Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::Json
   }
 #ifdef DEBUG_MODE
   else {
-    qDebug() << "LMDB IS NOT READED";
+    qDebug() << "RocksDB is not readed";
   }
 #endif
   return std::make_tuple(isok, readed);
@@ -492,7 +531,7 @@ bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
   rocksdb::Slice slice(key_data.data(), 5);
   rocksdb::Status status =
     db->Get(
-        rocksdb::ReadOptions(),
+        ReadOptions(),
         key_data,
         &view
     );
@@ -501,16 +540,14 @@ bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
 }
 
 #define DATABASE_NAME "./iblis.rocksdb"
+#define OLD_DATABASE_NAME "./iblis.lmdb"
 #include <filesystem>
 
 void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
 
-  rocksdb::Options options;
-  options.create_if_missing = true;
-
   rocksdb::Status status =
     rocksdb::DB::Open(
-        options,
+        Options(),
         DATABASE_NAME,
         &db
   );
@@ -520,14 +557,10 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
     return;
   }
 
-  QDir dir(".");
-  bool init_db = false;
-  if (!dir.exists(DATABASE_NAME)) {
-    dir.mkdir(DATABASE_NAME);
-    init_db = true;
-  }
-  
-  if (init_db) {
+  #ifdef MIGRATE_LMDB
+qDebug() <<" FINE"
+  #endif
+  {
     rocksdb::WriteBatch dbi; 
     std::vector<char> types = {Proxies, Beans, Routes, Groups};
     for (char c : types) {
@@ -544,7 +577,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
     }
     auto status =
     db->Write(
-        rocksdb::WriteOptions(),
+        WriteOptions(),
         &dbi
     );
 
@@ -948,9 +981,9 @@ std::shared_ptr<ProxyEntity> ProfileManager::GetProfile(int id) {
     }
   }
   std::shared_ptr<ProxyEntity> profile;
-//  weak_profiles_mutex.lock();
+  weak_profiles_mutex.lock();
   auto iter = weak_profiles.tryGet(id, profile);
-//  weak_profiles_mutex.unlock();
+  weak_profiles_mutex.unlock();
   if (!iter){
     get_weak_profile:
     auto profile = this->LoadProxyEntity(id);
@@ -1039,12 +1072,15 @@ void ProfileManager::BatchDeleteGroups(const QList<int> & ids) {
     auto group = GetGroup(gid);
     if (group == nullptr)
       continue;
-    BatchDeleteProfiles(group->Profiles(), gid);
     groupsTabOrder.removeAll(gid);
     to_drop << gid;
   }
   if (to_drop.size() > 0){
    runOnNewThread([=, this] {
+      for (int gid : to_drop){
+       auto group = GetGroup(gid);
+       BatchDeleteProfiles(group->profiles, gid);
+      }
       lock();
       for (int gid : to_drop){
        Configs::databaseManager->Drop(Groups, gid);

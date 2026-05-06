@@ -31,7 +31,7 @@ namespace Configs {
         binary_type = 2,
         ini_type = 3
         #ifndef SKIP_ROCKSDB
-        ,lmdb_type = 4
+        ,rocksdb_type = 4
         #endif
     };
 
@@ -44,7 +44,7 @@ namespace Configs {
         ADD_ENUM("binary", DatabaseType::binary_type);
         ADD_ENUM("ini", DatabaseType::ini_type);
         #ifndef SKIP_ROCKSDB
-        ADD_ENUM("lmdb", DatabaseType::lmdb_type);
+        ADD_ENUM("rocksdb", DatabaseType::rocksdb_type);
         #endif
     STOP_ENUM_TRIGGER(SetConfigType)
 

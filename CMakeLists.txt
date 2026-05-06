@@ -435,6 +435,7 @@ if (MIGRATE_LMDB)
             target_link_libraries(nekobox PRIVATE ${LMDB_LIBRARY})
         endif()
     endif()
+    nkr_add_compile_definitions(MIGRATE_LMDB=yes)
 endif()
 
 find_package(yaml-cpp CONFIG REQUIRED)
