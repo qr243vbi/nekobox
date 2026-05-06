@@ -79,6 +79,8 @@ namespace To_CoreObj_box {
     QJsonObject getXbadoptionRange(const QJsonValue & value);
     QJsonValue udp_over_tcp_object(int version);
     QJsonObject getXbadoptionRange(const QJsonValue & value);
+    int domainStrategy(const QJsonValue & value);
+
     void parseExtraXhttp(QJsonObject & transport, QString extra);
 
     template<typename T>

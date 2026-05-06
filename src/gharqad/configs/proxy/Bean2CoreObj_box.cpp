@@ -46,6 +46,25 @@ namespace Configs {
         return obj;
     }
 
+    int CoreObj_box::domainStrategy(const QJsonValue &value){
+        if (value.isDouble()){
+            return value.toInt();
+        } else {
+            QString strategy = value.toString().toLower().replace("_", "");
+            if (strategy == "preferipv4"){
+                return 1;
+            } else if (strategy == "preferipv6"){
+                return 2;
+            } else if (strategy == "ipv4only"){
+                return 3;
+            } else if (strategy == "ipv6only"){
+                return 4;
+            } else {
+                return 0;
+            }
+        }
+    }
+
     QJsonObject CoreObj_box::getXbadoptionRange(const QJsonValue & value){
         QJsonObject obj ;
         if (value.isString()){
@@ -84,11 +103,47 @@ namespace Configs {
             } else if (key == "scstreamupserversecs"){
                 transport["sc_stream_up_server_secs"] = getXbadoptionRange(value);
             } else if (key == "domainstrategy"){
-                transport["domain_strategy"] = value.toInt();
+                transport["domain_strategy"] = domainStrategy(value);
             } else if (key == "headers"){
                 transport["headers"] = value.toObject();
             } else if (key == "xmux"){
                 transport["xmux"] = getXmux(value);
+            }
+            // new options
+            else if (key == "xpaddingobfsmode"){
+                transport["x_padding_obfs_mode"] = value.toBool();
+            } else if (key == "xpaddingkey"){
+                transport["x_padding_key"] = value.toString();
+            } else if (key == "xpaddingheader"){
+                transport["x_padding_header"] = value.toString();
+            } else if (key == "xpaddingplacement"){
+                transport["x_padding_placement"] = value.toString();
+            } else if (key == "xpaddingmethod"){
+                transport["x_padding_method"] = value.toString();
+            } else if (key == "uplinkhttpmethod"){
+                transport["uplink_http_method"] = value.toString();
+            } else if (key == "sessionplacement"){
+                transport["session_placement"] = value.toString();
+            } else if (key == "sessionkey"){
+                transport["session_key"] = value.toString();
+            } else if (key == "seqplacement"){
+                transport["seq_placement"] = value.toString();
+            } else if (key == "seqkey"){
+                transport["seq_key"] = value.toString();
+            } else if (key == "uplinkdataplacement"){
+                transport["uplink_data_placement"] = value.toString();
+            } else if (key == "uplinkdatakey"){
+                transport["uplink_data_key"] = value.toString();
+            } else if (key == "uplinkchunksize"){
+                transport["uplink_chunk_size"] = value.toString();
+            } else if (key == "server"){
+                transport["server"] = value.toString();
+            } else if (key == "serverport"){
+                transport["server_port"] = value.toInt();
+            } else if (key == "detour"){
+                transport["detour"] = value.toString();
+            } else if (key == "tls"){
+                transport["tls"] = value.toObject();
             }
         }
     }
