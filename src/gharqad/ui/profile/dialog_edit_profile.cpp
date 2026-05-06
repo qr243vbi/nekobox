@@ -177,7 +177,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             ui->network_box->setVisible(networkBoxVisible);
             ADJUST_SIZE
           });
-  ui->network->removeItem(0);
+  ui->network->addItems(Preset::SingBox::V2RAYTransports);
 
   // security changed
   connect(ui->security, &QComboBox::currentTextChanged, this,

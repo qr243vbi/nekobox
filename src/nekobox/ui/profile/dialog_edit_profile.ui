@@ -172,46 +172,6 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <item>
-              <property name="text">
-               <string notr="true"/>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">tcp</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">ws</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">httpupgrade</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">http</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">grpc</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">quic</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string notr="true">xhttp</string>
-              </property>
-             </item>
             </widget>
            </item>
            <item row="3" column="0">
