@@ -11,6 +11,8 @@ bash.py
 *.dat
 *.db
 *.gpg
+/core/updater/vendor
+/core/server/vendor
 /core/server/elevated_resolvctl
 easytier-magisk
 script/nekobox_chocolatey/_TODO.txt
