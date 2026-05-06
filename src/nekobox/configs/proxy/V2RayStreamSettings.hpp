@@ -23,7 +23,7 @@ namespace Configs {
     STOP_ENUM
 
     INIT_ENUM(V2RAYTransports)
-        ADD_ENUM_LIST(Preset::SingBox::VmessPacketEncodings, 0);
+        ADD_ENUM_LIST(Preset::SingBox::V2RAYTransports, 0);
     STOP_ENUM
 
     class V2rayStreamSettings : public JsonStore {
