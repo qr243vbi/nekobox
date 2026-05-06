@@ -1,7 +1,7 @@
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
-
+#include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/includes.h>
@@ -81,6 +81,18 @@ namespace Configs {
             obj.insert("to", value.toInt());
         }
         return obj;
+    }
+
+    void CoreObj_box::parseExtraKCP(QJsonObject & transport, std::shared_ptr<KCPExtra> extra){
+        if (extra->mtu >= 0) { transport["mtu"] = extra->mtu; }
+        if (extra->tti >= 0) { transport["tti"] = extra->tti; }
+        if (extra->uplinkcapacity >= 0) { transport["uplink_capacity"] = extra->uplinkcapacity; }
+        if (extra->downlinkcapacity >= 0) { transport["downlink_capacity"] = extra->downlinkcapacity; }
+        if (extra->congestion) { transport["congestion"] = true; }
+        if (extra->readbuffersize >= 0) { transport["read_buffer_size"] = extra->readbuffersize; }
+        if (extra->writebuffersize >= 0) { transport["write_buffer_size"] = extra->writebuffersize; }
+        if (!extra->headertype.isEmpty()) { transport["header_type"] = extra->headertype; }
+        if (!extra->seed.isEmpty()) { transport["seed"] = extra->seed; }
     }
 
     void CoreObj_box::parseExtraXhttp(QJsonObject & transport, QString extra){
@@ -205,6 +217,8 @@ namespace Configs {
                 add_non_empty(transport, "host", host);
                 transport["mode"] = xhttp_mode;
                 parseExtraXhttp(transport, xhttp_extra);
+            } else if (network == "kcp") {
+                parseExtraKCP(transport, kcp_extra);
             }
             if (!network.trimmed().isEmpty()) outbound->insert("transport", transport);
         } else if (header_type == "http") {

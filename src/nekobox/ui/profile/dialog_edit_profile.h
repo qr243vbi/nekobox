@@ -1,3 +1,4 @@
+#include <qtmetamacros.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -12,10 +13,32 @@
 
 #include <nekobox/ui/utils/FloatCheckBox.h>
 #include "ui_dialog_edit_profile.h"
+#include <QSpinBox>
 
 namespace Ui {
     class DialogEditProfile;
 }
+
+class KCPGroupBox: public QGroupBox {
+    Q_OBJECT
+public:
+    KCPGroupBox(
+            const QString &title, 
+            QWidget * parent);
+    QSpinBox  * mtuSpin, 
+              * ttiSpin,
+              * uplinkCapacitySpin,
+              * downlinkCapacitySpin,
+              * readBufferSpin,
+              * writeBufferSpin;
+    
+    QCheckBox * congestionCheck;
+
+    QLineEdit * headerTypeEdit,
+              * seedEdit;
+};
+
+KCPGroupBox* CreateKCPGroupBox(QWidget* parent = nullptr);
 
 class DialogEditProfile : public QDialog {
     Q_OBJECT
@@ -45,6 +68,8 @@ private:
     Ui::DialogEditProfile *ui;
 
     std::map<QWidget *, FloatCheckBox *> apply_to_group_ui;
+
+    KCPGroupBox * kcp;
 
     QWidget *innerWidget{};
     ProfileEditor *innerEditor{};

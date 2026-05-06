@@ -82,6 +82,7 @@ namespace To_CoreObj_box {
     int domainStrategy(const QJsonValue & value);
 
     void parseExtraXhttp(QJsonObject & transport, QString extra);
+    void parseExtraKCP(QJsonObject & transport, std::shared_ptr<KCPExtra>  extra);
 
     template<typename T>
     inline void add_non_empty(T & obj, const QString & key, const QString & value){

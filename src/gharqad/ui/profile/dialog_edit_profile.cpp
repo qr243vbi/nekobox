@@ -2,30 +2,30 @@
 #include <winsock2.h>
 #endif
 
+#include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
+#include <nekobox/configs/proxy/Preset.hpp>
+#include <nekobox/configs/proxy/includes.h>
+#include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/ui/profile/dialog_edit_profile.h>
 #include <nekobox/ui/profile/edit_anytls.h>
-#include <nekobox/ui/profile/edit_shadowtls.h>
 #include <nekobox/ui/profile/edit_chain.h>
 #include <nekobox/ui/profile/edit_custom.h>
 #include <nekobox/ui/profile/edit_extra_core.h>
+#include <nekobox/ui/profile/edit_juicity.h>
 #include <nekobox/ui/profile/edit_mieru.h>
 #include <nekobox/ui/profile/edit_naive.h>
-#include <nekobox/ui/profile/edit_juicity.h>
-#include <nekobox/ui/profile/edit_trusttunnel.h>
-#include <nekobox/ui/profile/edit_tor.h>
 #include <nekobox/ui/profile/edit_quic.h>
 #include <nekobox/ui/profile/edit_shadowsocks.h>
+#include <nekobox/ui/profile/edit_shadowtls.h>
 #include <nekobox/ui/profile/edit_socks_http.h>
 #include <nekobox/ui/profile/edit_ssh.h>
 #include <nekobox/ui/profile/edit_tailscale.h>
+#include <nekobox/ui/profile/edit_tor.h>
 #include <nekobox/ui/profile/edit_trojan_vless.h>
+#include <nekobox/ui/profile/edit_trusttunnel.h>
 #include <nekobox/ui/profile/edit_vmess.h>
 #include <nekobox/ui/profile/edit_wireguard.h>
-#include <nekobox/ui/mainwindow_interface.h>
-#include <nekobox/configs/proxy/Preset.hpp>
-#include <nekobox/global/GuiUtils.hpp>
-#include <nekobox/configs/proxy/includes.h>
-#include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
 
 #include <QApplication>
 #include <QDebug>
@@ -43,6 +43,51 @@
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
 
+KCPGroupBox::KCPGroupBox(const QString &title, QWidget *parent)
+    : QGroupBox(title, parent) {};
+
+KCPGroupBox *CreateKCPGroupBox(QWidget *parent) {
+  auto *group = new KCPGroupBox(QObject::tr("KCP Settings"), parent);
+  auto *layout = new QFormLayout(group);
+
+  auto createUint32SpinBox = [group]() {
+    auto *spin = new QSpinBox(group);
+    spin->setRange(-1, INT_MAX); // uint32 partially covered
+    spin->setValue(-1);
+    return spin;
+  };
+
+  // uint32 fields
+  group->mtuSpin = createUint32SpinBox();
+  group->ttiSpin = createUint32SpinBox();
+  group->uplinkCapacitySpin = createUint32SpinBox();
+  group->downlinkCapacitySpin = createUint32SpinBox();
+  group->readBufferSpin = createUint32SpinBox();
+  group->writeBufferSpin = createUint32SpinBox();
+
+  // bool field
+  group->congestionCheck = new QCheckBox(group);
+
+  // string fields
+  group->headerTypeEdit = new QLineEdit(group);
+  group->seedEdit = new QLineEdit(group);
+
+  // form rows
+  layout->addRow(QObject::tr("MTU"), group->mtuSpin);
+  layout->addRow(QObject::tr("TTI"), group->ttiSpin);
+  layout->addRow(QObject::tr("Uplink Capacity"), group->uplinkCapacitySpin);
+  layout->addRow(QObject::tr("Downlink Capacity"), group->downlinkCapacitySpin);
+  layout->addRow(QObject::tr("Congestion"), group->congestionCheck);
+  layout->addRow(QObject::tr("Read Buffer Size"), group->readBufferSpin);
+  layout->addRow(QObject::tr("Write Buffer Size"), group->writeBufferSpin);
+  layout->addRow(QObject::tr("Header Type"), group->headerTypeEdit);
+  layout->addRow(QObject::tr("Seed"), group->seedEdit);
+
+  group->setLayout(layout);
+
+  return group;
+}
+
 #define ADJUST_SIZE                                                            \
   runOnThread(                                                                 \
       [=, this] {                                                              \
@@ -51,27 +96,29 @@
       },                                                                       \
       this);
 #define LOAD_TYPE(a)                                                           \
-  ui->type->addItem(                                                           \
-      Configs::ProfileManager::GetDisplayType(a), a);
-
-
+  ui->type->addItem(Configs::ProfileManager::GetDisplayType(a), a);
 
 #define ADJUST_RIGHT_BOX                                                       \
-    auto rightNoBox = (                                                       \
-        ui->network_box->isHidden() && ui->security_group->isHidden());        \
-        ui->right_all_w->setVisible(!rightNoBox);
+  auto rightNoBox =                                                            \
+      (ui->network_box->isHidden() && ui->security_group->isHidden());         \
+  ui->right_all_w->setVisible(!rightNoBox);
 
 DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                                      QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogEditProfile) {
   // setup UI
   CHECK_SETTINGS_ACCESS
+
   ui->setupUi(this);
+
+  kcp = CreateKCPGroupBox(this);
+  ui->right_layout->addWidget(kcp);
+
   ui->packet_encoding->addItems(Preset::SingBox::VmessPacketEncodings);
   ui->dialog_layout->setAlignment(ui->left, Qt::AlignTop);
 
   ui->network_2->addItem(tr("both"));
-    ui->network_2->addItems(Preset::SingBox::Network);
+  ui->network_2->addItems(Preset::SingBox::Network);
 
   // network changed
   network_title_base = ui->network_box->title();
@@ -145,28 +192,16 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
               ui->host->setVisible(false);
               ui->host_l->setVisible(false);
             }
-            if (txt == "ws") {
-              ui->ws_early_data_length->setVisible(true);
-              ui->ws_early_data_length_l->setVisible(true);
-              ui->ws_early_data_name->setVisible(true);
-              ui->ws_early_data_name_l->setVisible(true);
-            } else {
-              ui->ws_early_data_length->setVisible(false);
-              ui->ws_early_data_length_l->setVisible(false);
-              ui->ws_early_data_name->setVisible(false);
-              ui->ws_early_data_name_l->setVisible(false);
-            }
-            if (txt == "xhttp") {
-              ui->xhttp_mode->setVisible(true);
-              ui->xhttp_mode_l->setVisible(true);
-              ui->xhttp_extra->setVisible(true);
-              ui->xhttp_extra_l->setVisible(true);
-            } else {
-              ui->xhttp_mode->setVisible(false);
-              ui->xhttp_mode_l->setVisible(false);
-              ui->xhttp_extra->setVisible(false);
-              ui->xhttp_extra_l->setVisible(false);
-            }
+            bool ws = txt == "ws";
+            ui->ws_early_data_length->setVisible(ws);
+            ui->ws_early_data_length_l->setVisible(ws);
+            ui->ws_early_data_name->setVisible(ws);
+            ui->ws_early_data_name_l->setVisible(ws);
+            bool xhttp = txt == "xhttp";
+            ui->xhttp_mode->setVisible(xhttp);
+            ui->xhttp_mode_l->setVisible(xhttp);
+            ui->xhttp_extra->setVisible(xhttp);
+            ui->xhttp_extra_l->setVisible(xhttp);
             if (!ui->utlsFingerprint->count())
               ui->utlsFingerprint->addItems(Preset::SingBox::UtlsFingerPrint);
             int networkBoxVisible = 0;
@@ -174,7 +209,9 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
               if (!label->isHidden())
                 networkBoxVisible++;
             }
-            ui->network_box->setVisible(networkBoxVisible);
+            auto kcp = txt == "kcp";
+            this->kcp->setVisible(kcp);
+            ui->network_box->setVisible(networkBoxVisible && !kcp);
             ADJUST_SIZE
           });
   ui->network->addItems(Preset::SingBox::V2RAYTransports);
@@ -197,7 +234,6 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     ui->tls_frag_fall_delay->setEnabled(state);
   });
 
-
   // mux setting changed
   connect(ui->multiplex, &QComboBox::currentTextChanged, this,
           [=, this](const QString &txt) {
@@ -216,32 +252,32 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     this->type = _type;
 
     // load type to combo box
-      // load type to combo box
-      LOAD_TYPE("socks")
-      LOAD_TYPE("http")
-      LOAD_TYPE("shadowsocks")
-      LOAD_TYPE("trojan")
-      LOAD_TYPE("vmess")
-      LOAD_TYPE("vless")
-      LOAD_TYPE("hysteria")
-      LOAD_TYPE("hysteria2")
-      LOAD_TYPE("tuic")
-      LOAD_TYPE("anytls")
-      LOAD_TYPE("shadowtls")
-      LOAD_TYPE("mieru")
-      LOAD_TYPE("juicity")
-      LOAD_TYPE("trusttunnel")
-      LOAD_TYPE("naive")
-      LOAD_TYPE("wireguard")
-      LOAD_TYPE("tailscale")
-      LOAD_TYPE("ssh")
-      LOAD_TYPE("tor")
-      ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
-                        "internal");
-      ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
-                        "internal-full");
-      LOAD_TYPE("extracore");
-      LOAD_TYPE("chain")
+    // load type to combo box
+    LOAD_TYPE("socks")
+    LOAD_TYPE("http")
+    LOAD_TYPE("shadowsocks")
+    LOAD_TYPE("trojan")
+    LOAD_TYPE("vmess")
+    LOAD_TYPE("vless")
+    LOAD_TYPE("hysteria")
+    LOAD_TYPE("hysteria2")
+    LOAD_TYPE("tuic")
+    LOAD_TYPE("anytls")
+    LOAD_TYPE("shadowtls")
+    LOAD_TYPE("mieru")
+    LOAD_TYPE("juicity")
+    LOAD_TYPE("trusttunnel")
+    LOAD_TYPE("naive")
+    LOAD_TYPE("wireguard")
+    LOAD_TYPE("tailscale")
+    LOAD_TYPE("ssh")
+    LOAD_TYPE("tor")
+    ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
+                      "internal");
+    ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
+                      "internal-full");
+    LOAD_TYPE("extracore");
+    LOAD_TYPE("chain")
     // type changed
     connect(ui->type, &QComboBox::currentIndexChanged, this,
             [=, this](int index) {
@@ -268,21 +304,13 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   type = newType;
   bool validType = true;
 
-  bool networkVisible = this->networkVisible = (
-    type == "socks" ||
-    type == "shadowsocks" ||
-    type == "vmess" ||
-    type == "trojan" ||
-    type == "hysteria" ||
-    type == "vless" ||
-    type == "tuic" ||
-    type == "hysteria2" ||
-    type == "mieru"
-  );
+  bool networkVisible = this->networkVisible =
+      (type == "socks" || type == "shadowsocks" || type == "vmess" ||
+       type == "trojan" || type == "hysteria" || type == "vless" ||
+       type == "tuic" || type == "hysteria2" || type == "mieru");
 
   ui->network_l_2->setVisible(networkVisible);
   ui->network_2->setVisible(networkVisible);
-
 
   if (type == "socks" || type == "http") {
     auto _innerWidget = new EditSocksHttp(this);
@@ -355,27 +383,27 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
   } else if (type == "naive") {
-      auto _innerWidget = new EditNaive(this);
-      innerWidget = _innerWidget;
-      innerEditor = _innerWidget;
+    auto _innerWidget = new EditNaive(this);
+    innerWidget = _innerWidget;
+    innerEditor = _innerWidget;
   } else if (type == "juicity") {
-      auto _innerWidget = new EditJuicity(this);
-      innerWidget = _innerWidget;
-      innerEditor = _innerWidget;
+    auto _innerWidget = new EditJuicity(this);
+    innerWidget = _innerWidget;
+    innerEditor = _innerWidget;
   } else if (type == "trusttunnel") {
-      auto _innerWidget = new EditTrustTunnel(this);
-      innerWidget = _innerWidget;
-      innerEditor = _innerWidget;
+    auto _innerWidget = new EditTrustTunnel(this);
+    innerWidget = _innerWidget;
+    innerEditor = _innerWidget;
   } else if (type == "tor") {
-      auto _innerWidget = new EditTor(this);
-      innerWidget = _innerWidget;
-      innerEditor = _innerWidget;
+    auto _innerWidget = new EditTor(this);
+    innerWidget = _innerWidget;
+    innerEditor = _innerWidget;
   } else {
     validType = false;
   }
 
   if (!validType) {
-    runOnUiThread([newType, this](){
+    runOnUiThread([newType, this]() {
       QMessageBox::warning(this, newType, "Wrong type");
     });
     return;
@@ -396,26 +424,37 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   ui->port_l->setVisible(showAddressPort);
 
   auto bean = ent->bean();
-  #ifdef DEBUG_MODE
+#ifdef DEBUG_MODE
   auto bibi = ent->unlock(bean);
   qDebug() << "INSPECT MAP OF BEAN OF TYPE" << bibi->type();
-  for (auto key: bibi->_map().values()){
+  for (auto key : bibi->_map().values()) {
     qDebug() << key->name;
   }
   qDebug() << "END INSPECT";
-  #endif
+#endif
 
-  if (networkVisible){
+  if (networkVisible) {
     ui->network_2->setCurrentText(bean->_getValue("network").toString());
   }
 
   auto stream = GetStreamSettingsConst(bean.get());
   if (stream != nullptr) {
 
-    #ifdef DEBUG_MODE
+#ifdef DEBUG_MODE
     qDebug() << "Stream is not nullptr";
-    #endif
- //   ui->right_all_w->setVisible(true);
+#endif
+    //   ui->right_all_w->setVisible(true);
+    auto kcpe = stream->kcp_extra;
+    kcp->congestionCheck->setChecked(kcpe->congestion);
+    kcp->downlinkCapacitySpin->setValue(kcpe->downlinkcapacity);
+    kcp->uplinkCapacitySpin->setValue(kcpe->uplinkcapacity);
+    kcp->mtuSpin->setValue(kcpe->mtu);
+    kcp->readBufferSpin->setValue(kcpe->readbuffersize);
+    kcp->ttiSpin->setValue(kcpe->tti);
+    kcp->writeBufferSpin->setValue(kcpe->writebuffersize);
+    kcp->headerTypeEdit->setText(kcpe->headertype);
+    kcp->seedEdit->setText(kcpe->seed);
+
     ui->network->setCurrentText(*stream->network);
     ui->security->setCurrentText(stream->security);
     ui->packet_encoding->setCurrentText(*stream->packet_encoding);
@@ -438,7 +477,8 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->header_type->setCurrentText(stream->header_type);
     ui->headers->setText(stream->headers);
     ui->ws_early_data_name->setText(stream->ws_early_data_name);
-    ui->ws_early_data_length->setText(QString::number(stream->ws_early_data_length));
+    ui->ws_early_data_length->setText(
+        QString::number(stream->ws_early_data_length));
     ui->xhttp_mode->setCurrentText(stream->xhttp_mode);
     ui->xhttp_extra->setText(stream->xhttp_extra);
     ui->reality_pbk->setText(stream->reality_pbk);
@@ -450,9 +490,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->brutal_speed->setText(QString::number(bean->brutal_speed));
     CACHE.certificate = stream->certificate;
     CACHE.ech_config = stream->ech_config;
-  } //else {
+  } // else {
   //  ui->right_all_w->setVisible(false);
- // }
+  // }
 
   // left: custom
   CACHE.custom_config = bean->custom_config;
@@ -505,22 +545,24 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   ADD_ASTERISK(this)
 
   auto packet_encoding_visible = (type == "vmess" || type == "vless");
-    ui->packet_encoding->setVisible(packet_encoding_visible);
-    ui->packet_encoding_l->setVisible(packet_encoding_visible);
+  ui->packet_encoding->setVisible(packet_encoding_visible);
+  ui->packet_encoding_l->setVisible(packet_encoding_visible);
 
+  auto network_visible =
+      (type == "vmess" || type == "vless" || type == "trojan");
+  ui->network_l->setVisible(network_visible);
+  ui->network->setVisible(network_visible);
+  ui->network_box->setVisible(network_visible);
 
-  auto network_visible = (type == "vmess" || type == "vless" || type == "trojan");
-    ui->network_l->setVisible(network_visible);
-    ui->network->setVisible(network_visible);
-    ui->network_box->setVisible(network_visible);
-
-  auto security_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "http" || type == "anytls" || type == "shadowtls" || type == "naive" || type == "trusttunnel" || type == "juicity");
-    ui->security->setVisible(security_visible);
-    ui->security_l->setVisible(security_visible);
+  auto security_visible =
+      (type == "vmess" || type == "vless" || type == "trojan" ||
+       type == "http" || type == "anytls" || type == "shadowtls" ||
+       type == "naive" || type == "trusttunnel" || type == "juicity");
+  ui->security->setVisible(security_visible);
+  ui->security_l->setVisible(security_visible);
 
   auto is_not_naive = (type != "naive");
-  if (security_visible){
+  if (security_visible) {
     ui->tls_camouflage_box->setVisible(is_not_naive);
     ui->query_server_name->setVisible(is_not_naive);
     ui->insecure->setVisible(is_not_naive);
@@ -529,11 +571,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->label_alpn->setVisible(is_not_naive);
   }
 
-  auto brutal_visible = (type == "vmess" || type == "vless" || type == "trojan" ||
-      type == "shadowsocks");
-    ui->multiplex->setVisible(brutal_visible);
-    ui->multiplex_l->setVisible(brutal_visible);
-    ui->brutal_box->setVisible(brutal_visible);
+  auto brutal_visible = (type == "vmess" || type == "vless" ||
+                         type == "trojan" || type == "shadowsocks");
+  ui->multiplex->setVisible(brutal_visible);
+  ui->multiplex_l->setVisible(brutal_visible);
+  ui->brutal_box->setVisible(brutal_visible);
 
   int streamBoxVisible = 0;
   for (auto label : ui->stream_box->findChildren<QLabel *>()) {
@@ -545,7 +587,6 @@ void DialogEditProfile::typeSelected(const QString &newType) {
 
   editor_cache_updated_impl();
   ADJUST_SIZE
-
 }
 
 bool DialogEditProfile::onEnd() {
@@ -591,6 +632,18 @@ bool DialogEditProfile::onEnd() {
     stream->certificate = CACHE.certificate;
     stream->ech_config = CACHE.ech_config;
 
+
+    auto kcpe = stream->kcp_extra;
+    kcpe->congestion = kcp->congestionCheck->isChecked();
+    kcpe->downlinkcapacity = kcp->downlinkCapacitySpin->value();
+    kcpe->uplinkcapacity = kcp->uplinkCapacitySpin->value();
+    kcpe->mtu = kcp->mtuSpin->value();
+    kcpe->readbuffersize = kcp->readBufferSpin->value();
+    kcpe->tti = kcp->ttiSpin->value();
+    kcpe->writebuffersize = kcp->writeBufferSpin->value();
+    kcpe->headertype = kcp->headerTypeEdit->text();
+    kcpe->seed = kcp->seedEdit->text();
+
     bool validHeaders;
     stream->GetHeaderPairs(&validHeaders);
     if (!validHeaders) {
@@ -603,8 +656,7 @@ bool DialogEditProfile::onEnd() {
   bean->custom_outbound = CACHE.custom_outbound;
   bean->custom_config = CACHE.custom_config;
 
-
-  if (this->networkVisible){
+  if (this->networkVisible) {
     bean->_setValue("network", this->ui->network_2->currentText());
   }
   return true;
@@ -623,10 +675,9 @@ void DialogEditProfile::accept() {
   if (newEnt) {
     auto ok = Configs::profileManager->AddProfile(ent);
     if (!ok) {
-      
-    runOnUiThread([this](){
-      QMessageBox::warning(this, "???", "id exists");
-    });
+
+      runOnUiThread(
+          [this]() { QMessageBox::warning(this, "???", "id exists"); });
     }
     ent->Save();
   } else {
@@ -693,7 +744,6 @@ void DialogEditProfile::on_certificate_edit_clicked() {
   }
 }
 
-
 void DialogEditProfile::on_ech_config_edit_clicked() {
   bool ok;
   auto txt = QInputDialog::getMultiLineText(this, tr("ECH Config"), "",
@@ -730,20 +780,18 @@ void DialogEditProfile::on_apply_to_group_clicked() {
   } else {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr) {
-      
-    runOnUiThread([this](){
-      QMessageBox::warning(this, "failed", "unknown group");
-    });
-      
+
+      runOnUiThread(
+          [this]() { QMessageBox::warning(this, "failed", "unknown group"); });
+
       return;
     }
     // save this
     if (onEnd()) {
       ent->Save();
     } else {
-    runOnUiThread([this](){
-      QMessageBox::warning(this, "failed","failed to save");
-    });
+      runOnUiThread(
+          [this]() { QMessageBox::warning(this, "failed", "failed to save"); });
       return;
     }
     // copy keys
@@ -769,15 +817,17 @@ void DialogEditProfile::do_apply_to_group(
 
   QMap<int, std::shared_ptr<Configs::AbstractBean>> to_save;
 
-  #define SAVE_PROFILE       {        \
-        int id = profile->id;         \
-        if (to_save.count(id) == 0) to_save[id] = profile_bean;  \
-      }
+#define SAVE_PROFILE                                                           \
+  {                                                                            \
+    int id = profile->id;                                                      \
+    if (to_save.count(id) == 0)                                                \
+      to_save[id] = profile_bean;                                              \
+  }
 
   auto copyStream = [=, this](const void *p) {
     for (const auto &profileid : group->profiles) {
       auto profile = Configs::profileManager->GetProfile(profileid);
-      if (profile == nullptr){
+      if (profile == nullptr) {
         continue;
       }
       auto profile_bean = profile->unlock(profile->bean());
@@ -794,7 +844,7 @@ void DialogEditProfile::do_apply_to_group(
   auto copyBean = [=, this](const void *p) {
     for (const auto &profileid : group->profiles) {
       auto profile = Configs::profileManager->GetProfile(profileid);
-      if (profile  == nullptr){
+      if (profile == nullptr) {
         continue;
       }
       auto profile_bean = profile->unlock(profile->bean());
@@ -808,7 +858,7 @@ void DialogEditProfile::do_apply_to_group(
   auto copyEntity = [=, this](const void *p) {
     for (const auto &profileid : group->profiles) {
       auto profile = Configs::profileManager->GetProfile(profileid);
-      if (profile == nullptr){
+      if (profile == nullptr) {
         continue;
       }
       auto profile_bean = profile->unlock(profile->bean());
@@ -820,11 +870,11 @@ void DialogEditProfile::do_apply_to_group(
   };
 
   if (bean != nullptr) {
-    if (key == ui->name){
+    if (key == ui->name) {
       copyEntity(&ent->name);
-    } else if (key == ui->port){
+    } else if (key == ui->port) {
       copyEntity(&ent->serverPort);
-    } else if (key == ui->address){
+    } else if (key == ui->address) {
       copyEntity(&ent->serverAddress);
     } else if (key == ui->multiplex) {
       copyBean(&bean->mux_state);
@@ -854,14 +904,14 @@ void DialogEditProfile::do_apply_to_group(
           copyStream(&stream->utlsFingerprint);
         } else if (key == ui->insecure) {
           copyStream(&stream->allow_insecure);
-        } else if (key == ui->enable_ech){
+        } else if (key == ui->enable_ech) {
           copyStream(&stream->enable_ech);
         }
       }
     }
   }
 
-  for (auto ent : to_save.values()){
+  for (auto ent : to_save.values()) {
     ent->entity->Save();
   }
 }

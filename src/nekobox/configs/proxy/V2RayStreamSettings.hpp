@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/ConfigItem.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #include <windows.h>
@@ -25,6 +26,33 @@ namespace Configs {
     INIT_ENUM(V2RAYTransports)
         ADD_ENUM_LIST(Preset::SingBox::V2RAYTransports, 0);
     STOP_ENUM
+
+    class KCPExtra: public JsonStore {
+    public: 
+        DECLARE_STORE_TYPE(NoSave)
+        int mtu = -1;
+        int tti = -1;
+        int uplinkcapacity = -1;
+        int downlinkcapacity = -1;
+        bool congestion = false;
+        int readbuffersize = -1;
+        int writebuffersize = -1;
+        QString headertype = "";
+        QString seed = "";
+        KCPExtra(){};
+
+        NEW_MAP
+            ADD_MAP("mtu", mtu, int);
+            ADD_MAP("tti", tti, int);
+            ADD_MAP("uplinkcapacity", uplinkcapacity, int);
+            ADD_MAP("downlinkcapacity", downlinkcapacity, int);
+            ADD_MAP("congestion", congestion, bool);
+            ADD_MAP("readbuffersize", readbuffersize, int);
+            ADD_MAP("writebuffersize", writebuffersize, int);
+            ADD_MAP("headertype", headertype, string);
+            ADD_MAP("seed", seed, string);
+        STOP_MAP
+    };
 
     class V2rayStreamSettings : public JsonStore {
     public:
@@ -59,6 +87,7 @@ namespace Configs {
         // xhttp
         QString xhttp_mode = "auto";
         QString xhttp_extra = "";
+        std::shared_ptr<KCPExtra> kcp_extra = std::make_shared<KCPExtra>();
         // reality
         QString reality_pbk = "";
         QString reality_sid = "";
