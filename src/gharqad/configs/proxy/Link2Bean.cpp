@@ -505,7 +505,7 @@ static void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & que
         if (!rawLocalAddr.isEmpty()) {
             for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
         }
-        persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive");
+        persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive", GetQueryIntValue(query, "persistent_keepalive_interval"));
         MTU = GetQueryIntValue(query, "mtu");
         set_boolean("use_system_interface", useSystemInterface, query);
         workerCount = GetQueryIntValue(query, "workers");
