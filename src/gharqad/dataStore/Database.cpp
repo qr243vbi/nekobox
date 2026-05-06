@@ -543,6 +543,106 @@ bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
 #define OLD_DATABASE_NAME "./iblis.lmdb"
 #include <filesystem>
 
+
+#ifdef MIGRATE_LMDB
+#include <lmdb.h>
+#include <functional>
+#include <string>
+#include <stdexcept>
+bool export_lmdb(
+    const std::string& path,
+    std::function<void(
+        const std::string&,
+        const std::string&)> callback)
+{
+    MDB_env* env = nullptr;
+    MDB_txn* txn = nullptr;
+    MDB_cursor* cursor = nullptr;
+    MDB_dbi dbi;
+
+    int rc = mdb_env_create(&env);
+    if (rc != MDB_SUCCESS)
+        return false;
+
+    // Don't create if missing
+    rc = mdb_env_open(
+        env,
+        path.c_str(),
+        MDB_RDONLY,
+        0);
+
+    if (rc != MDB_SUCCESS) {
+        mdb_env_close(env);
+
+        // ENOENT => database doesn't exist
+        if (rc == ENOENT)
+            return false;
+
+        throw std::runtime_error(
+            mdb_strerror(rc));
+    }
+
+    rc = mdb_txn_begin(
+        env,
+        nullptr,
+        MDB_RDONLY,
+        &txn);
+
+    if (rc != MDB_SUCCESS)
+        goto cleanup;
+
+    // Open main database
+    rc = mdb_dbi_open(
+        txn,
+        nullptr,
+        0,
+        &dbi);
+
+    if (rc != MDB_SUCCESS)
+        goto cleanup;
+
+    rc = mdb_cursor_open(
+        txn,
+        dbi,
+        &cursor);
+
+    if (rc != MDB_SUCCESS)
+        goto cleanup;
+
+    MDB_val key, value;
+
+    while ((rc = mdb_cursor_get(
+                cursor,
+                &key,
+                &value,
+                MDB_NEXT)) == MDB_SUCCESS)
+    {
+        callback(
+            std::string(
+                static_cast<char*>(key.mv_data),
+                key.mv_size),
+            std::string(
+                static_cast<char*>(value.mv_data),
+                value.mv_size));
+    }
+
+cleanup:
+
+    if (cursor)
+        mdb_cursor_close(cursor);
+
+    if (txn)
+        mdb_txn_abort(txn);
+
+    if (env)
+        mdb_env_close(env);
+
+    // MDB_NOTFOUND after iteration is normal
+    return rc == MDB_NOTFOUND ||
+           rc == MDB_SUCCESS;
+}
+#endif
+
 void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
 
   rocksdb::Status status =
@@ -556,12 +656,19 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
     std::cerr << status.ToString() << std::endl;
     return;
   }
+  rocksdb::WriteBatch dbi; 
+#ifdef MIGRATE_LMDB
+  if (export_lmdb(OLD_DATABASE_NAME, [&dbi](std::string key, std::string value)->void{
+    dbi.Put(key, value);
+  })){
+    db->Write(WriteOptions(), &dbi);
+  } else {
+    dbi.Clear();
+  };
+#endif
 
-  #ifdef MIGRATE_LMDB
-qDebug() <<" FINE"
-  #endif
+
   {
-    rocksdb::WriteBatch dbi; 
     std::vector<char> types = {Proxies, Beans, Routes, Groups};
     for (char c : types) {
       auto ids = FileDatabaseManager::QueryFromDirectory(c);
