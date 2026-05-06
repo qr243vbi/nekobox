@@ -409,7 +409,7 @@ if (NOT SKIP_ROCKSDB)
         target_compile_options(nekobox PRIVATE ${ROCKSDB_CFLAGS_OTHER})
     else()
         find_package(RocksDB CONFIG REQUIRED)
-        target_link_libraries(example PRIVATE RocksDB::rocksdb)
+        target_link_libraries(nekobox PRIVATE RocksDB::rocksdb)
     endif()
 endif()
 
