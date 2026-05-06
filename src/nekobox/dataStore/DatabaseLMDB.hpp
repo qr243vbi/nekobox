@@ -9,21 +9,21 @@ namespace Configs_ConfigItem {
 
 using namespace Configs_ConfigItem;
 
-#ifndef SKIP_LMDB
-#include <3rdparty/lmdbxx/lmdb++.h>
+#ifndef SKIP_ROCKSDB
+#include <rocksdb/db.h>
 
 namespace Configs {
   std::string pack_char_int(char c, int32_t x);
-  lmdb::env initialize_lmdb();
-  bool drop_lmdb(lmdb::env& env, char c, int32_t x);
-  bool clear_lmdb(lmdb::env& env, char c, int32_t x);
-  bool clear_lmdb(lmdb::env& env, JsonStore * store);
-  bool write_lmdb(lmdb::env& env, char c, int32_t x, const std::string_view &view);
-  bool write_lmdb(lmdb::env& env, JsonStore * store);
-  QList<int> query_lmdb(lmdb::env &env, char c);
-  bool read_lmdb(lmdb::env& env, char c, int32_t x, std::string_view & view);
-  std::tuple<bool, bool> read_lmdb(lmdb::env& env, JsonStore * store);
-  std::tuple<char, int32_t> unpack_char_int(const std::string_view& key);
+  void initialize_rocksdb               (std::unique_ptr<rocksdb::DB>&db);
+  bool drop_rocksdb                     (std::unique_ptr<rocksdb::DB>& env, char c, int32_t x);
+  bool clear_rocksdb                    (std::unique_ptr<rocksdb::DB>& env, char c, int32_t x);
+  bool clear_rocksdb                    (std::unique_ptr<rocksdb::DB>& env, JsonStore * store);
+  bool write_rocksdb                    (std::unique_ptr<rocksdb::DB>& env, char c, int32_t x, const std::string &view);
+  bool write_rocksdb                    (std::unique_ptr<rocksdb::DB>& env, JsonStore * store);
+  QList<int> query_rocksdb              (std::unique_ptr<rocksdb::DB>& env, char c);
+  bool read_rocksdb                     (std::unique_ptr<rocksdb::DB>& env, char c, int32_t x, std::string & view);
+  std::tuple<bool, bool> read_rocksdb   (std::unique_ptr<rocksdb::DB>& env, JsonStore * store);
+  std::tuple<char, int32_t> unpack_char_int(const std::string& key);
 }
 #endif
 
@@ -54,8 +54,8 @@ public:
   static bool DropFromDirectory(char, int);
   static QList<int> QueryFromDirectory(char type);
 private:
-#ifndef SKIP_LMDB
-  lmdb::env database;
+#ifndef SKIP_ROCKSDB
+  std::unique_ptr<rocksdb::DB> database;
 #endif
 };
 

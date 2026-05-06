@@ -1,3 +1,5 @@
+#include <memory>
+#include <rocksdb/write_batch.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -160,28 +162,28 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Proxies, profiles)
     LOG_CREATE(Groups, groups)
   }
-#ifndef SKIP_LMDB
+#ifndef SKIP_ROCKSDB
   if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
-    return Configs::write_lmdb(this->database, store);
+    return Configs::write_rocksdb(this->database, store);
   }
 #endif
   auto ret = SaveToFile(store);
-#ifndef SKIP_LMDB
+#ifndef SKIP_ROCKSDB
   if (ret) {
-    Configs::clear_lmdb(this->database, store);
+    Configs::clear_rocksdb(this->database, store);
   }
 #endif
   return ret;
 }
 bool FileDatabaseManager::Load(JsonStore *store) {
-#ifndef SKIP_LMDB
-  auto [ok, readed] = Configs::read_lmdb(this->database, store);
+#ifndef SKIP_ROCKSDB
+  auto [ok, readed] = Configs::read_rocksdb(this->database, store);
   if (!ok) {
     return false;
   } else if (readed) {
     if (Configs::config_type != Configs::DatabaseType::lmdb_type) {
       if (SaveToFile(store)) {
-        Configs::clear_lmdb(this->database, store);
+        Configs::clear_rocksdb(this->database, store);
       };
     }
     return true;
@@ -190,10 +192,10 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   bool readed;
 #endif
   readed = LoadFromFile(store);
-#ifndef SKIP_LMDB
+#ifndef SKIP_ROCKSDB
   if (readed) {
     if (Configs::config_type == Configs::DatabaseType::lmdb_type) {
-      Configs::write_lmdb(this->database, store);
+      Configs::write_rocksdb(this->database, store);
       DropFromDirectory(store->StoreType(), store->Id());
     }
   }
@@ -201,8 +203,8 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   return readed;
 }
 bool FileDatabaseManager::Drop(char chr, int id) {
-#ifndef SKIP_LMDB
-  bool ret = Configs::drop_lmdb(this->database, chr, id);
+#ifndef SKIP_ROCKSDB
+  bool ret = Configs::drop_rocksdb(this->database, chr, id);
 #else
   bool ret = DropFromDirectory(chr, id);
 #endif
@@ -217,15 +219,16 @@ bool FileDatabaseManager::Drop(char chr, int id) {
 }
 
 FileDatabaseManager::FileDatabaseManager()
-#ifndef SKIP_LMDB
-    : database(initialize_lmdb())
+{
+#ifndef SKIP_ROCKSDB
+  initialize_rocksdb(this->database);
 #endif
-{};
+};
 
 FileDatabaseManager::~FileDatabaseManager() {
-#ifndef SKIP_LMDB
-  this->database.sync();
-  this->database.close();
+#ifndef SKIP_ROCKSDB
+//  this->database->CompactRange(rocksdb::CompactRangeOptions(), nullptr, nullptr);
+  this->database->Close();
 #endif
 };
 
@@ -264,10 +267,10 @@ bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
-#ifdef SKIP_LMDB
+#ifdef SKIP_ROCKSDB
   return FileDatabaseManager::QueryFromDirectory(type);
 #else
-  return Configs::query_lmdb(this->database, type);
+  return Configs::query_rocksdb(this->database, type);
 #endif
 }
 
@@ -296,54 +299,78 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 } // namespace Configs
 
 // Query
-#ifndef SKIP_LMDB
-QList<int> Configs::query_lmdb(lmdb::env &env, char c) {
+#ifndef SKIP_ROCKSDB
+QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   QList<int> result;
   QSet<uint32_t> result_set;
 
-  lmdb::txn rtxn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
-  lmdb::dbi dbi = lmdb::dbi::open(rtxn, nullptr);
+  rocksdb::ReadOptions options;
 
-  std::string_view key(&c, 1);
-  lmdb::cursor cursor = lmdb::cursor::open(rtxn, dbi);
+  std::unique_ptr<rocksdb::Iterator> it(
+      db->NewIterator(options));
 
-  for (auto kv = cursor.get(key, MDB_SET_RANGE); kv;
-       kv = cursor.get(key, MDB_NEXT)) {
+  std::string prefix = "";
+  prefix += c;
+  
+  it->Seek(prefix);
+  #ifdef DEBUG_MODE
+    qDebug() << "VALID? " << it->Valid();
+  #endif
+
+  while(it->Valid()) {
+  #ifdef DEBUG_MODE
+    qDebug() << "Slicing? " << it->Valid();
+  #endif
+    rocksdb::Slice key = it->key();
+
     if (key.size() != 5) {
 #ifdef DEBUG_MODE
       qDebug() << "ERROR: Corrupted database";
 #endif
       throw std::runtime_error("Invalid key size");
-      continue;
     }
 
-    const char *k = static_cast<const char *>(key.data());
+    const char* k = key.data();
 
+    // prefix changed -> stop
     if (k[0] != c) {
 #ifdef DEBUG_MODE
-      qDebug() << "Found " << result.count() << " elements for type " << int(c);
+      qDebug() << "Found"
+               << result.count()
+               << "elements for type"
+               << int(c);
 #endif
       break;
     }
 
-    // decode little-endian int32
-    const unsigned char *b = reinterpret_cast<const unsigned char *>(k);
+    // decode little-endian uint32
+    const unsigned char* b =
+        reinterpret_cast<const unsigned char*>(k);
 
-    uint32_t u = (uint32_t(b[1]) << 0) | (uint32_t(b[2]) << 8) |
-                 (uint32_t(b[3]) << 16) | (uint32_t(b[4]) << 24);
+    uint32_t u =
+        (uint32_t(b[1]) << 0)  |
+        (uint32_t(b[2]) << 8)  |
+        (uint32_t(b[3]) << 16) |
+        (uint32_t(b[4]) << 24);
 
-    if (!result_set.contains(u)){
+    if (!result_set.contains(u)) {
+
       int i = static_cast<int32_t>(u);
-      if (i < 0 ){
+
+      if (i < 0) {
         continue;
       }
+
       result.append(i);
       result_set.insert(u);
     }
+    it->Next();
   }
 
-  cursor.close();
-  rtxn.abort(); // read-only, no commit needed
+  if (!it->status().ok()) {
+    throw std::runtime_error(
+        it->status().ToString());
+  }
 
   return result;
 }
@@ -360,13 +387,14 @@ std::string Configs::pack_char_int(char type, int32_t id) {
 }
 
 std::tuple<char, int32_t>
-Configs::unpack_char_int(const std::string_view &key) {
+Configs::unpack_char_int(const std::string &slice) {
   // Expect key size == 5: [0]=char, [1..4]=int32 bytes (little-endian)
   // Caller can decide whether to validate; here we do minimal validation.
-  if (key.size() != 5) {
+  if (slice.size() != 5) {
     throw std::runtime_error("Invalid key size for unpack_char_int_portable");
   }
 
+  const char * key = slice.data();
   char c = key[0];
 
   uint32_t u = 0;
@@ -380,65 +408,63 @@ Configs::unpack_char_int(const std::string_view &key) {
   return std::tie(c, x);
 }
 
-bool Configs::clear_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
-  return clear_lmdb(env, store->StoreType(), store->Id());
+bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
+  return clear_rocksdb(env, store->StoreType(), store->Id());
 }
 
-bool Configs::clear_lmdb(lmdb::env &env, char c, int32_t x) {
+bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 #ifdef DEBUG_MODE
   qDebug() << "Clearing LMDB ";
 #endif
-  return Configs::write_lmdb(env, c, x, "");
+  return Configs::write_rocksdb(env, c, x, "");
 }
 
-bool Configs::drop_lmdb(lmdb::env &env, char c, int32_t x) {
+bool Configs::drop_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 // std::lock_guard<std::mutex> lock(env.env_mutex);
 #ifdef DEBUG_MODE
   qDebug() << "Drop LMDB ";
 #endif
   auto key = pack_char_int(c, x);
-  auto wtxn = lmdb::txn::begin(env);
-  auto dbi = lmdb::dbi::open(wtxn, nullptr);
-  bool ret = dbi.del(wtxn, key);
-  wtxn.commit();
-  return ret;
+  auto status = env->Delete(
+        rocksdb::WriteOptions(),
+        key
+  );
+  return status.ok();
 }
 
-bool Configs::write_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
-  auto bytes = store->ToBytes();
-  std::string_view data(bytes.data(), bytes.size());
+bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
+  auto data = store->ToBytes().toStdString();
 #ifdef DEBUG_MODE
-  qDebug() << "Writing data" << data.size() << bytes.size();
+  qDebug() << "Writing data" << data.size();
 #endif
-  return write_lmdb(env, store->StoreType(), store->Id(), data);
+  return write_rocksdb(env, store->StoreType(), store->Id(), data);
 }
 
-bool Configs::write_lmdb(lmdb::env &env, char c, int32_t x,
-                         const std::string_view &view) {
+bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
+                         const std::string &view) {
       auto key = pack_char_int(c, x);
-      lmdb::dbi dbi;
-      // Get the dbi handle, and insert some key/value pairs in a write
-      // transaction:
-      auto wtxn = lmdb::txn::begin(env);
-      dbi = lmdb::dbi::open(wtxn, nullptr);
-      bool ret = dbi.put(wtxn, key, view);
-      wtxn.commit();
-#ifdef DEBUG_MODE
-      qDebug() << "Wrote Data To LMDB With Status" << ret << " and count "
-               << view.size();
-#endif
-      return ret;
+      rocksdb::WriteBatch batch;
+      batch.Put(key, view);
+      auto status =
+      env->Write(
+        rocksdb::WriteOptions(),
+        &batch
+      );
+      #ifdef DEBUG_MODE
+        qDebug() << "Status is: " << status.ToString() << " Size is: " << view.size();
+      #endif
+      return status.ok();
 }
 
 std::tuple<bool, bool>
-Configs::read_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
+Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
 
 #ifdef DEBUG_MODE
   qDebug() << "READING LMDB FILE";
 #endif
   auto bytes = store->ToBytes();
-  std::string_view view;
-  bool isok = read_lmdb(env, store->StoreType(), store->Id(), view);
+  std::string view;
+  bool isok = read_rocksdb(env, store->StoreType(), store->Id(), view);
   bool readed = false;
   if (isok) {
     if (view.size() > 0) {
@@ -460,75 +486,74 @@ Configs::read_lmdb(lmdb::env &env, Configs_ConfigItem::JsonStore *store) {
   return std::make_tuple(isok, readed);
 }
 
-bool Configs::read_lmdb(lmdb::env &env, char c, int32_t x,
-                        std::string_view &view) {
+bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
+                        std::string &view) {
   auto key_data = pack_char_int(c, x);
+  rocksdb::Slice slice(key_data.data(), 5);
+  rocksdb::Status status =
+    db->Get(
+        rocksdb::ReadOptions(),
+        key_data,
+        &view
+    );
 
-  lmdb::txn txn = lmdb::txn::begin(env, nullptr, MDB_RDONLY);
-  lmdb::dbi dbi = lmdb::dbi::open(txn, nullptr);
-
-  bool found = dbi.get(txn, key_data, view);
-
-  txn.commit(); // read-only safety (or txn.commit(); also fine)
-
-#ifdef DEBUG_MODE
-  qDebug() << "DATA FOUND" << found << view.size();
-#endif
-
-  if (!found) {
-    view = "";
-    return false;
-  }
-
-  return true;
+  return status.ok();
 }
 
-#define DATABASE_NAME "iblis.lmdb"
+#define DATABASE_NAME "./iblis.rocksdb"
 #include <filesystem>
 
-static uint64_t lmdb_dir_size(const std::string &path) {
-  uint64_t total = 0;
-  namespace fs = std::filesystem;
+void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
 
-  for (const auto &entry : fs::directory_iterator(path)) {
-    if (fs::is_regular_file(entry.path())) {
-      total += fs::file_size(entry.path());
-    }
+  rocksdb::Options options;
+  options.create_if_missing = true;
+
+  rocksdb::Status status =
+    rocksdb::DB::Open(
+        options,
+        DATABASE_NAME,
+        &db
+  );
+
+  if (!status.ok()) {
+    std::cerr << status.ToString() << std::endl;
+    return;
   }
 
-  return total;
-}
-
-lmdb::env Configs::initialize_lmdb() {
   QDir dir(".");
   bool init_db = false;
   if (!dir.exists(DATABASE_NAME)) {
     dir.mkdir(DATABASE_NAME);
     init_db = true;
   }
-
-  auto env = lmdb::env::create();
-  env.open(DATABASE_NAME, 0, 0664);
+  
   if (init_db) {
-    auto wtxn = lmdb::txn::begin(env);
-    lmdb::dbi dbi = lmdb::dbi::open(wtxn, nullptr);
+    rocksdb::WriteBatch dbi; 
     std::vector<char> types = {Proxies, Beans, Routes, Groups};
     for (char c : types) {
       auto ids = FileDatabaseManager::QueryFromDirectory(c);
       for (int x : ids) {
-        dbi.put(wtxn, pack_char_int(c, x), "");
+        dbi.Put(pack_char_int(c, x), "");
       }
     }
     std::vector<char> common_types = {
         Shortcuts,    ResourceManager, ProxyManager,  NekoBox,
         DefaultRoute, TrafficLooper,   DatabaseLogger};
     for (char c : common_types) {
-      dbi.put(wtxn, pack_char_int(c, 0), "");
+      dbi.Put(pack_char_int(c, 0), "");
     }
-    wtxn.commit();
+    auto status =
+    db->Write(
+        rocksdb::WriteOptions(),
+        &dbi
+    );
+
+    if (!status.ok()) {
+      std::cerr << status.ToString() << std::endl;
+      return;
+    }
   }
-  env.set_mapsize(999000000);
-  return env;
+  return;
 }
 #undef DATABASE_NAME
 
@@ -657,6 +682,7 @@ void ProfileManager::LoadManager() {
   for (auto id : routesIdOrder) {
     auto route = LoadRouteChain(id);
     if (route == nullptr) {
+      if (MW_show_log != nullptr)
       MW_show_log(
           QString("Route Profile with id %d is corrupted, consider delete it")
               .arg(id));

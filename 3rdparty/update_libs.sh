@@ -2,8 +2,8 @@
 mkdir lmdbxx ||:
 curl -L -o lmdbxx/lmdb++.h https://raw.githubusercontent.com/qr243vbi/lmdbxx/refs/heads/master/include/lmdbxx/lmdb++.h
 
-mkdir fkYAML ||:
-curl -L -o fkYAML/node.hpp https://raw.githubusercontent.com/fktn-k/fkYAML/refs/heads/develop/single_include/fkYAML/node.hpp
+#mkdir fkYAML ||:
+#curl -L -o fkYAML/node.hpp https://raw.githubusercontent.com/fktn-k/fkYAML/refs/heads/develop/single_include/fkYAML/node.hpp
 
 rm -rf QHotkey ||:
 git clone --depth 1 https://github.com/qr243vbi/QHotkey

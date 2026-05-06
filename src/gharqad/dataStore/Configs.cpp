@@ -387,7 +387,7 @@ QByteArray hash = QCryptographicHash::hash(
     #ifdef DEBUG_MODE
     DatabaseType::json_type
     #else
-    #ifdef SKIP_LMDB
+    #ifdef SKIP_ROCKSDB
     DatabaseType::binary_type
     #else
     DatabaseType::lmdb_type

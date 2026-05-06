@@ -3,7 +3,7 @@
 #include <winsock2.h>
 #endif
 
-#include <3rdparty/fkYAML/node.hpp>
+#include <yaml-cpp/yaml.h>
 #include <QMutex>
 #include <QThreadPool>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -165,9 +165,6 @@ ret_loop:
     goto ret_loop;
   }
   */
-  if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
-    goto ret_loop;
-  }
 
   // Multi line
   if (str.count("\n") > 0) {
@@ -195,6 +192,13 @@ parse_json:
       goto ret_loop;
     }
   }
+  
+  #ifdef DEBUG_MODE
+    qDebug() << "checker";
+  #endif
+  if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
+    goto ret_loop;
+  }
 
   QString scheme;
   bool quic_enabled = false;
@@ -204,6 +208,7 @@ parse_json:
   } else {
     goto ret_loop;
   }
+
   // Nekoray format
   if (scheme == "nekoray") {
     needFix = false;
@@ -457,74 +462,112 @@ bool RawUpdater::updateWireguardFileConfig(const QString &str) {
   return true;
 }
 
-QString Node2QString(const fkyaml::node &n, const QString &def = "") {
-  try {
-    return n.as_str().c_str();
-  } catch (const fkyaml::exception &ex) {
-    qDebug() << ex.what();
-    return def;
-  }
-}
-
-QStringList Node2QStringList(const fkyaml::node &n) {
-  try {
-    if (n.is_sequence()) {
-      QStringList list;
-      for (auto item : n) {
-        list << item.as_str().c_str();
-      }
-      return list;
-    } else {
-      return {};
-    }
-  } catch (const fkyaml::exception &ex) {
-    qDebug() << ex.what();
-    return {};
-  }
-}
-
-int Node2Int(const fkyaml::node &n, const int &def = 0) {
-  try {
-    if (n.is_integer())
-      return n.as_int();
-    else if (n.is_string())
-      return atoi(n.as_str().c_str());
-    return def;
-  } catch (const fkyaml::exception &ex) {
-    qDebug() << ex.what();
-    return def;
-  }
-}
-
-bool Node2Bool(const fkyaml::node &n, const bool &def = false) {
-  try {
-    return n.as_bool();
-  } catch (const fkyaml::exception &ex) {
+QString Node2QString(const YAML::Node &n, const QString &def = "") {
     try {
-      return n.as_int();
-    } catch (const fkyaml::exception &ex2) {
-      ex2.what();
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+        return QString::fromStdString(n.as<std::string>());
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
     }
-    qDebug() << ex.what();
-    return def;
-  }
+}
+QStringList Node2QStringList(const YAML::Node &n) {
+    try {
+        if (!n || !n.IsSequence()) {
+            return {};
+        }
+
+        QStringList list;
+        for (const auto &item : n) {
+            list << QString::fromStdString(item.as<std::string>());
+        }
+        return list;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return {};
+    }
 }
 
-// NodeChild returns the first defined children or Null Node
-fkyaml::node NodeChild(const fkyaml::node &n,
-                       const std::list<std::string> &keys) {
-  for (const auto &key : keys) {
-    if (n.contains(key))
-      return n[key];
-  }
-  return {};
+
+int Node2Int(const YAML::Node &n, int def = 0) {
+    try {
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+
+        if (n.IsScalar()) {
+            // yaml-cpp can convert directly if it's numeric
+            try {
+                return n.as<int>();
+            } catch (const YAML::BadConversion &) {
+                // fallback: parse string manually
+                return std::atoi(n.as<std::string>().c_str());
+            }
+        }
+
+        return def;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
+    }
+}
+bool Node2Bool(const YAML::Node &n, bool def = false) {
+    try {
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+
+        // First attempt: direct bool conversion
+        try {
+            return n.as<bool>();
+        } catch (const YAML::BadConversion &) {
+            // fall through to integer attempt
+        }
+
+        // Second attempt: interpret as integer
+        try {
+            return n.as<int>() != 0;
+        } catch (const YAML::BadConversion &) {
+            // fall through to default
+        }
+
+        return def;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
+    }
+}
+
+YAML::Node NodeChild(const YAML::Node &n,
+                     const std::list<std::string> &keys) {
+    for (const auto &key : keys) {
+        YAML::Node child = n[key];
+        if (child && child.IsDefined()) {
+            return child;
+        }
+    }
+    return YAML::Node();  // null node
 }
 
 // https://github.com/Dreamacro/clash/wiki/configuration
 bool RawUpdater::updateClash(const QString &str) {
   try {
-    auto proxies = fkyaml::node::deserialize(str.toStdString())["proxies"];
+    YAML::Node yaml_node = YAML::Load(str.toStdString());
+    YAML::Node proxies   = yaml_node["proxies"];
+    if (proxies.IsNull()){
+      return false;
+    }
+    bool ret = false;
     for (auto proxy : proxies) {
+      #ifdef DEBUG_MODE
+        qDebug() << "Clash iterating";
+      #endif
+      ret = true;
       auto type = Node2QString(proxy["type"]).toLower();
       auto type_clash = type;
 
@@ -556,7 +599,7 @@ bool RawUpdater::updateClash(const QString &str) {
         }
         *bean->network = Node2QString(proxy["network"]);
 
-        if (proxy.contains("plugin") && proxy.contains("plugin-opts")) {
+        if (proxy["plugin"].IsDefined() && proxy["plugin-opts"].IsDefined()) {
           auto plugin_n = proxy["plugin"];
           auto pluginOpts_n = proxy["plugin-opts"];
           QStringList ssPlugin;
@@ -587,7 +630,7 @@ bool RawUpdater::updateClash(const QString &str) {
 
         // sing-mux
         auto smux = NodeChild(proxy, {"smux"});
-        if (!smux.is_null() && Node2Bool(smux["enabled"]))
+        if (!smux.IsNull() && Node2Bool(smux["enabled"]))
           bean->mux_state = 1;
         bean.reset();
       } else if (type == "socks") {
@@ -613,7 +656,7 @@ bool RawUpdater::updateClash(const QString &str) {
           }
 
           auto reality = NodeChild(proxy, {"reality-opts"});
-          if (reality.is_mapping()) {
+          if (reality.IsMap()) {
             bean->stream->reality_pbk = Node2QString(reality["public-key"]);
             bean->stream->reality_sid = Node2QString(reality["short-id"]);
           }
@@ -649,20 +692,20 @@ bool RawUpdater::updateClash(const QString &str) {
 
         // sing-mux
         auto smux = NodeChild(proxy, {"smux"});
-        if (!smux.is_null() && Node2Bool(smux["enabled"]))
+        if (!smux.IsNull() && Node2Bool(smux["enabled"]))
           bean->mux_state = 1;
 
         // opts
         auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
-        if (ws.is_mapping()) {
+        if (ws.IsMap()) {
           auto headers = ws["headers"];
-          if (headers.is_mapping()) {
-            for (auto header : headers.as_map()) {
+          if (headers.IsMap()) {
+            for (auto header : headers) {
               if (Node2QString(header.first).toLower() == "host") {
-                if (header.second.is_string())
+                if (header.second.IsScalar())
                   bean->stream->host = Node2QString(header.second);
-                else if (header.second.is_sequence() &&
-                         header.second[0].is_string())
+                else if (header.second.IsSequence() &&
+                         header.second[0].IsScalar())
                   bean->stream->host = Node2QString(header.second[0]);
                 break;
               }
@@ -675,12 +718,12 @@ bool RawUpdater::updateClash(const QString &str) {
         }
 
         auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
-        if (grpc.is_mapping()) {
+        if (grpc.IsMap()) {
           bean->stream->path = Node2QString(grpc["grpc-service-name"]);
         }
 
         auto reality = NodeChild(proxy, {"reality-opts"});
-        if (reality.is_mapping()) {
+        if (reality.IsMap()) {
           bean->stream->reality_pbk = Node2QString(reality["public-key"]);
           bean->stream->reality_sid = Node2QString(reality["short-id"]);
         }
@@ -708,7 +751,7 @@ bool RawUpdater::updateClash(const QString &str) {
 
         // sing-mux
         auto smux = NodeChild(proxy, {"smux"});
-        if (!smux.is_null() && Node2Bool(smux["enabled"]))
+        if (!smux.IsNull() && Node2Bool(smux["enabled"]))
           bean->mux_state = 1;
 
         // meta packet encoding
@@ -719,10 +762,10 @@ bool RawUpdater::updateClash(const QString &str) {
 
         // opts
         auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
-        if (ws.is_mapping()) {
+        if (ws.IsMap()) {
           auto headers = ws["headers"];
-          if (headers.is_mapping()) {
-            for (auto header : headers.as_map()) {
+          if (headers.IsMap()) {
+            for (auto header : headers) {
               if (Node2QString(header.first).toLower() == "host") {
                 bean->stream->host = Node2QString(header.second);
                 break;
@@ -741,12 +784,12 @@ bool RawUpdater::updateClash(const QString &str) {
         }
 
         auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
-        if (grpc.is_mapping()) {
+        if (grpc.IsMap()) {
           bean->stream->path = Node2QString(grpc["grpc-service-name"]);
         }
 
         auto h2 = NodeChild(proxy, {"h2-opts", "h2-opt"});
-        if (h2.is_mapping()) {
+        if (h2.IsMap()) {
           auto hosts = h2["host"];
           for (auto host : hosts) {
             bean->stream->host = Node2QString(host);
@@ -755,12 +798,12 @@ bool RawUpdater::updateClash(const QString &str) {
           bean->stream->path = Node2QString(h2["path"]);
         }
         auto tcp_http = NodeChild(proxy, {"http-opts", "http-opt"});
-        if (tcp_http.is_mapping()) {
+        if (tcp_http.IsMap()) {
           *bean->stream->network = "tcp";
           bean->stream->header_type = "http";
           auto headers = tcp_http["headers"];
-          if (headers.is_mapping()) {
-            for (auto header : headers.as_map()) {
+          if (headers.IsMap()) {
+            for (auto header : headers) {
               if (Node2QString(header.first).toLower() == "host") {
                 bean->stream->host = Node2QString(header.second);
                 break;
@@ -768,9 +811,9 @@ bool RawUpdater::updateClash(const QString &str) {
             }
           }
           auto paths = tcp_http["path"];
-          if (paths.is_string())
+          if (paths.IsScalar())
             bean->stream->path = Node2QString(paths);
-          else if (paths.is_sequence() && paths[0].is_string())
+          else if (paths.IsSequence() && paths[0].IsScalar())
             bean->stream->path = Node2QString(paths[0]);
         }
         bean.reset();
@@ -802,7 +845,7 @@ bool RawUpdater::updateClash(const QString &str) {
         }
 
         auto reality = NodeChild(proxy, {"reality-opts"});
-        if (reality.is_mapping()) {
+        if (reality.IsMap()) {
           stream->reality_pbk = Node2QString(reality["public-key"]);
           stream->reality_sid = Node2QString(reality["short-id"]);
         }
@@ -927,7 +970,8 @@ bool RawUpdater::updateClash(const QString &str) {
 
       AddProxy(ent);
     }
-  } catch (const fkyaml::exception &ex) {
+    return ret;
+  } catch (const YAML::Exception &ex) {
     //         runOnUiThread([=,this] {
   //  qDebug() << ("YAML Exception") << ex.what();
     //       });
