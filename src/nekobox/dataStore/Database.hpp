@@ -164,7 +164,7 @@ namespace Configs {
         FifoMutex mutex;
         QSet<QString> extraCorePaths;
 
-        std::atomic<int> max_profile_id = 0, max_group_id = 0, max_route_chain_id = 0;
+        std::atomic<int> max_profile_id = 1, max_group_id = 1, max_route_chain_id = 1;
 
   //      [[nodiscard]] int NewProfileID() const;
 

@@ -746,7 +746,11 @@ void ProfileManager::LoadManager() {
   auto routesIdOrder =
       Configs::databaseManager->Query(Configs::JsonStoreType::Routes);
   // Load Proxys
-  int max;
+  int max = 0;
+#ifdef DEBUG_MODE
+  qDebug() << "ID ORDER" << profilesIdOrder;
+#endif
+
   for (auto id : profilesIdOrder) {
 #ifdef DEBUG_MODE
     qDebug() << "Load Profile With ID" << id;
@@ -834,17 +838,20 @@ void ProfileManager::LoadManager() {
     routes[id] = route;
   }
   this->max_route_chain_id = max;
+  max = 1;
   // First setup
   if (groups.empty()) {
     auto defaultGroup = NewGroup();
     defaultGroup->name = QObject::tr("Default");
     profileManager->AddGroup(defaultGroup);
+    defaultGroup->Save();
   }
 
   // First setup
   if (routes.empty()) {
     auto defaultRoute = RoutingChain::GetDefaultChain();
     profileManager->AddRouteChain(defaultRoute);
+    defaultRoute->Save();
   }
 }
 
