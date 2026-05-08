@@ -13,6 +13,7 @@
 #include <nekobox/dataStore/ProfileFilter.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/global/HTTPRequestHelper.hpp>
+#include <QUrl>
 
 namespace Subscription {
 
@@ -1019,17 +1020,13 @@ void GroupUpdater::AsyncUpdate(
     auto gid = _sub_gid;
     if (createNewGroup) {
       auto group = Configs::ProfileManager::NewGroup();
-      if (groupName == "") {
-        group->name = QUrl(str).host();
-      } else {
-        group->name = groupName;
-      }
+      group->name = groupName;
       group->url = str;
       Configs::profileManager->AddGroup(group);
       gid = group->id;
       MW_dialog_message("SubUpdater", "NewGroup");
     }
-    Update(PreFinishJob, str, gid, asURL);
+    Update(PreFinishJob, str, gid, asURL, createNewGroup && groupName.isEmpty());
     emit asyncUpdateCallback(gid);
     if (finish != nullptr)
       finish();
@@ -1042,7 +1039,7 @@ void GroupUpdater::AsyncUpdate(
 
 void GroupUpdater::Update(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
-    const QString &_str, int _sub_gid, bool _not_sub_as_url) {
+    const QString &_str, int _sub_gid, bool _not_sub_as_url, bool _auto_name) {
   //
   Configs::dataStore->imported_count = 0;
   auto rawUpdater = std::make_unique<RawUpdater>();
@@ -1052,6 +1049,7 @@ void GroupUpdater::Update(
   QString sub_user_info;
   bool asURL = _sub_gid >= 0 || _not_sub_as_url;
   auto content = _str.trimmed();
+  auto originalUrl = content;
   auto group = Configs::profileManager->GetGroup(_sub_gid);
   if (group != nullptr && group->archive)
     return;
@@ -1074,6 +1072,24 @@ void GroupUpdater::Update(
     content = resp.data;
     sub_user_info =
         NetworkRequestHelper::GetHeader(resp.header, "Subscription-UserInfo");
+
+    if (group != nullptr) {
+      auto profileTitleRaw = NetworkRequestHelper::GetHeader(resp.header, "Profile-Title");
+      if (!profileTitleRaw.isEmpty()) {
+        QString profileTitle = profileTitleRaw.trimmed();
+        if (profileTitle.startsWith("base64:")) {
+          auto b64 = profileTitle.mid(7).toUtf8();
+          auto decoded = QByteArray::fromBase64(b64, QByteArray::OmitTrailingEquals);
+          if (!decoded.isEmpty()) {
+            profileTitle = QString::fromUtf8(decoded);
+          }
+        }
+        group->name = profileTitle.trimmed();
+        MW_show_log("<<<<<<<< " + QObject::tr("Subscription profile title: %1").arg(group->name));
+      } else if (_auto_name && group->name.isEmpty()) {
+        group->name = QUrl(originalUrl).host();
+      }
+    }
 
     MW_show_log(
         "<<<<<<<< " +

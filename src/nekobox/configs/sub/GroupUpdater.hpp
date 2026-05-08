@@ -41,7 +41,7 @@ namespace Subscription {
             const QString &str, const std::function<QString(bool*,bool*,const QString&)> &info, 
             int _sub_gid = -1, const std::function<void()> &finish = nullptr);
 
-        void Update(const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob, const QString &_str, int _sub_gid = -1, bool _not_sub_as_url = false);
+        void Update(const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob, const QString &_str, int _sub_gid = -1, bool _not_sub_as_url = false, bool _auto_name = false);
 
     signals:
 

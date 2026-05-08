@@ -1,5 +1,7 @@
 #include <memory>
+#ifndef SKIP_ROCKSDB
 #include <rocksdb/write_batch.h>
+#endif
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
