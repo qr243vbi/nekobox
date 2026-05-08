@@ -31,6 +31,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     });
 
     ui->name->setText(ent->name);
+    ui->name->setPlaceholderText(tr("Will use profile-title from subscription if empty"));
     ui->archive->setChecked(ent->archive);
     ui->skip_auto_update->setChecked(ent->skip_auto_update);
     ui->url->setText(ent->url);

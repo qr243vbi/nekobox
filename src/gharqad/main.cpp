@@ -189,6 +189,20 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
+    {
+        int emojiFontId = QFontDatabase::addApplicationFont(":/fonts/NotoEmoji.ttf");
+        if (emojiFontId != -1) {
+            QStringList families = QFontDatabase::applicationFontFamilies(emojiFontId);
+            if (!families.isEmpty()) {
+                QFont appFont = QApplication::font();
+                QStringList fallbackFamilies;
+                fallbackFamilies << appFont.family();
+                fallbackFamilies << families.first();
+                appFont.setFamilies(fallbackFamilies);
+                QApplication::setFont(appFont);
+            }
+        }
+    }
 
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
