@@ -704,8 +704,8 @@ namespace Configs {
 void ProfileManager::FillProfileEnts(QList<std::shared_ptr<Configs::ProxyEntity>> &list, const QList<int> & l){
   for (int i : l){
     auto profile =  Configs::profileManager->GetProfile(i);
-      if (profile != nullptr){
-        list << profile;
+    if (profile != nullptr){
+      list << profile;
     }
   }
 };
@@ -775,7 +775,6 @@ void ProfileManager::LoadManager() {
   // Load Groups
   auto loadedOrder = groupsTabOrder;
   groupsTabOrder = {};
-  auto needToCheckGroups = QSet<int>();
   for (auto id : groupsIdOrder) {
     auto ent = LoadGroup(id);
     // Corrupted group?
@@ -790,8 +789,6 @@ void ProfileManager::LoadManager() {
       loadedOrder << id;
     }
     groups[id] = ent;
-    if (ent->profiles.isEmpty())
-      needToCheckGroups << id;
   }
   this->max_group_id = max;
   max = 0;
@@ -813,9 +810,6 @@ void ProfileManager::LoadManager() {
     deleteProfile(id);
   }
     */
-  for (const auto groupID : needToCheckGroups) {
-    groups[groupID]->Save();
-  }
   // Ensure groups contains order
   for (auto id : loadedOrder) {
     if (groups.count(id)) {
@@ -840,20 +834,25 @@ void ProfileManager::LoadManager() {
   }
   this->max_route_chain_id = max;
   max = 1;
+  /*
   // First setup
   if (groups.empty()) {
     auto defaultGroup = NewGroup();
     defaultGroup->name = QObject::tr("Default");
-    profileManager->AddGroup(defaultGroup);
+    defaultGroup->id = 1;
+    groups[1] = defaultGroup;
+    groupsTabOrder << 1;
     defaultGroup->Save();
   }
 
   // First setup
   if (routes.empty()) {
     auto defaultRoute = RoutingChain::GetDefaultChain();
-    profileManager->AddRouteChain(defaultRoute);
+    defaultRoute->id = 1;
+    routes[1] = defaultRoute;
     defaultRoute->Save();
   }
+  */
 }
 
 void ProfileManager::SaveManager() { JsonStore::Save(); }
