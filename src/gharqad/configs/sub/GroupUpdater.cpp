@@ -1074,20 +1074,24 @@ void GroupUpdater::Update(
         NetworkRequestHelper::GetHeader(resp.header, "Subscription-UserInfo");
 
     if (group != nullptr) {
-      auto profileTitleRaw = NetworkRequestHelper::GetHeader(resp.header, "Profile-Title");
-      if (!profileTitleRaw.isEmpty()) {
-        QString profileTitle = profileTitleRaw.trimmed();
-        if (profileTitle.startsWith("base64:")) {
-          auto b64 = profileTitle.mid(7).toUtf8();
-          auto decoded = QByteArray::fromBase64(b64, QByteArray::OmitTrailingEquals);
-          if (!decoded.isEmpty()) {
-            profileTitle = QString::fromUtf8(decoded);
+      if ( group->name.isEmpty() && _auto_name){
+        auto profileTitleRaw = NetworkRequestHelper::GetHeader(resp.header, "Profile-Title");
+        if (!profileTitleRaw.isEmpty()) {
+          QString profileTitle = profileTitleRaw.trimmed();
+          int counter = 0;
+          while (profileTitle.startsWith("base64:") && counter < 33) {
+            counter ++;
+            auto b64 = profileTitle.mid(7).toUtf8();
+            auto decoded = QByteArray::fromBase64(b64, QByteArray::OmitTrailingEquals);
+            if (!decoded.isEmpty()) {
+              profileTitle = QString::fromUtf8(decoded).trimmed();
+            }
           }
+          group->name = profileTitle;
+          MW_show_log("<<<<<<<< " + QObject::tr("Subscription profile title: %1").arg(profileTitle));
+        } else {
+          group->name = QUrl(originalUrl).host();
         }
-        group->name = profileTitle.trimmed();
-        MW_show_log("<<<<<<<< " + QObject::tr("Subscription profile title: %1").arg(group->name));
-      } else if (_auto_name && group->name.isEmpty()) {
-        group->name = QUrl(originalUrl).host();
       }
     }
 

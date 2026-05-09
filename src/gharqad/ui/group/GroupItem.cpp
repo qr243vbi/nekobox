@@ -39,7 +39,7 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
     layout->addWidget(combo);
 
     auto lineEdit = new QLineEdit;
-    lineEdit->setPlaceholderText(QObject::tr("Group name (optional, will use profile-title from subscription)"));
+    lineEdit->setPlaceholderText(QObject::tr("Group name (will use profile-title from subscription if empty)"));
     layout->addWidget(lineEdit);
 
     auto buttons = new QDialogButtonBox(
