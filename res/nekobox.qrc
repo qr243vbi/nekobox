@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file alias="fonts/NotoEmoji.ttf">fonts/NotoEmoji.ttf</file>
+        <file alias="fonts/TwemojiCOLR.ttf">fonts/TwemojiCOLR.ttf</file>
         <file alias="icon/b-internet-web-browser.png">icon/internet-web-browser.png</file>
         <file alias="icon/b-system-run.png">icon/system-run.png</file>
         <file alias="icon/b-preferences.png">icon/preferences.png</file>

@@ -477,11 +477,13 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
 }
 
 void MainWindow::announcement_message(bool first_start) {
+#ifndef SKIP_JS_UPDATER
   auto bQueue = createJsUpdaterWindow();
   QString text = ReadFileText(getResource("announcement_message.js"));
   if (!text.isEmpty()) {
     jsAnnouncementMessage(bQueue, &text, first_start);
   }
+#endif
 };
 
 bool MainWindow::isShowRuleSetData() { return showRuleSetData; }
