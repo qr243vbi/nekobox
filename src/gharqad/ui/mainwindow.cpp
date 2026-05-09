@@ -679,7 +679,7 @@ MainWindow::MainWindow(QWidget *parent)
             new SyntaxHighlighter(darkMode, qvLogDocument);
           });
 
-  updateEmojiFont();
+//  updateEmojiFont();
 
   // restore size and geometry
   {

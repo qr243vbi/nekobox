@@ -188,13 +188,6 @@ Solution for version < 5.10.40:
 Solution for version >= 5.10.41:
 - This won't happen, but if it does, please submit [issue](https://github.com/qr243vbi/nekobox/issues).
 
-**Why [NekoBox](https://github.com/qr243vbi/nekobox) uses Noto emoji instead of Twitter emoji? What differences between them two?** <br/>
-  Noto Emoji is part of the Noto font family developed by Google. It aims for a clean, simple, and consistent design across various platforms, emphasizing legibility. It is often used in Android systems and Google services. Noto Emoji is designed to support a wide range of characters and symbols, making it suitable for diverse languages and scripts. Also, Noto Emoji is open source, which allows developers to use and modify it freely in their applications.
-
-  Twitter Emoji, also known as Twemoji, has a more colorful and stylized design. It often features more expressive and characterful designs compared to Noto. These emojis are primarily used on Twitter and other platforms where Twitter’s branding is applied. They are designed for use in tweets, direct messages, and other Twitter communications. While Twemoji can be used elsewhere, it is specifically tailored for the Twitter platform, emphasizing a cohesive user experience within Twitter's ecosystem.
-
-  Noto emoji provides better system integration and is part of the larger Noto fonts project, which aims to support all emoji characters defined in Unicode. Generally, Noto emoji are smaller than Twitter emoji. [NekoBox](https://github.com/qr243vbi/nekobox) does use Noto emoji font because we prefer better system integration over specific stylized design.
-
 **Where are the downloadable route profiles/rulesets coming from?**<br/>
 They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/routeprofiles) repository.
 

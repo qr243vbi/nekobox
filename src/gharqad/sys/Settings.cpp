@@ -270,7 +270,7 @@ QString getLocale() {
     #endif
   return forced ? (Configs::windowSettings->language = locale) : defStr(Configs::windowSettings->language, locale);
 }
-
+/*
 void updateEmojiFont() {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
   QString font = getResource("emoji.ttf");
@@ -305,7 +305,7 @@ void updateEmojiFont() {
   }
 #endif
 }
-
+*/
 bool isDirectoryWritable(QString dirPath) {
   // Ensure the directory exists first
   QDir dir(dirPath);

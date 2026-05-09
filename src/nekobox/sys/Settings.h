@@ -145,7 +145,7 @@ public:
 
 }; // namespace Configs
 
-void updateEmojiFont();
+// void updateEmojiFont();
 
 // QSettings getSettings();
 QSettings getGlobal();

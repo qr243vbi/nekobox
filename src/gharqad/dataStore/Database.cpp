@@ -205,10 +205,9 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   return readed;
 }
 bool FileDatabaseManager::Drop(char chr, int id) {
-#ifndef SKIP_ROCKSDB
-  bool ret = Configs::drop_rocksdb(this->database, chr, id);
-#else
   bool ret = DropFromDirectory(chr, id);
+#ifndef SKIP_ROCKSDB
+  ret = Configs::drop_rocksdb(this->database, chr, id);
 #endif
   if (ret) {
     switch (chr) {
