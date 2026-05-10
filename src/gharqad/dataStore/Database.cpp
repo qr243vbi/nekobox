@@ -1,11 +1,8 @@
-#include <memory>
-#ifndef SKIP_ROCKSDB
-#include <rocksdb/write_batch.h>
-#endif
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
 
+#include <memory>
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
@@ -229,7 +226,7 @@ FileDatabaseManager::FileDatabaseManager()
 FileDatabaseManager::~FileDatabaseManager() {
 #ifndef SKIP_ROCKSDB
 //  this->database->CompactRange(rocksdb::CompactRangeOptions(), nullptr, nullptr);
-  this->database->Close();
+  //this->database->Close();
 #endif
 };
 
@@ -263,10 +260,10 @@ static rocksdb::WriteOptions WriteOptions() {
   // Force durability before returning success
   write_options.sync = true;
   // Ensure WAL is always used (never bypass durability log)
-  write_options.disableWAL = false;
+  //write_options.disableWAL = false;
   // Prevent write reordering issues in complex workloads
-  write_options.no_slowdown = false;
-  write_options.low_pri = false;
+  //write_options.no_slowdown = false;
+  //write_options.low_pri = false;
   return write_options;
 }
 
@@ -276,13 +273,13 @@ static rocksdb::Options Options() {
   // Strong consistency checks
   options.paranoid_checks = true;
   // never auto-delete WAL
-  options.WAL_ttl_seconds = 0;   
+  //options.WAL_ttl_seconds = 0;   
   // no size-based trimming   
-  options.WAL_size_limit_MB = 0;   
+  //options.WAL_size_limit_MB = 0;   
   // flush in shutdown
-  options.avoid_flush_during_shutdown = false;
+  //options.avoid_flush_during_shutdown = false;
   // auto compaction
-  options.disable_auto_compactions = false; 
+  //options.disable_auto_compactions = false; 
   return options;
 }
 #endif
@@ -541,7 +538,7 @@ bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
   return status.ok();
 }
 
-#define DATABASE_NAME "./iblis.rocksdb"
+#define DATABASE_NAME "./iblis.leveldb"
 #define OLD_DATABASE_NAME "./iblis.lmdb"
 #include <filesystem>
 
@@ -646,13 +643,14 @@ cleanup:
 #endif
 
 void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
-
+	rocksdb::DB * db1;
   rocksdb::Status status =
     rocksdb::DB::Open(
         Options(),
         DATABASE_NAME,
-        &db
+        &db1
   );
+  db = std::unique_ptr<rocksdb::DB>(db1);
 
   if (!status.ok()) {
     std::cerr << status.ToString() << std::endl;

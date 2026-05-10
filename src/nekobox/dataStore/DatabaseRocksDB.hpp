@@ -10,7 +10,9 @@ namespace Configs_ConfigItem {
 using namespace Configs_ConfigItem;
 
 #ifndef SKIP_ROCKSDB
-#include <rocksdb/db.h>
+#include <leveldb/db.h>
+#include <leveldb/write_batch.h>
+namespace rocksdb = leveldb;
 
 namespace Configs {
   std::string pack_char_int(char c, int32_t x);

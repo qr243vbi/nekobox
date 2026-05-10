@@ -436,7 +436,7 @@ jobs:
         if: matrix.allow == 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr rocksdb yaml-cpp
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.UPLOAD_TOKEN }}
