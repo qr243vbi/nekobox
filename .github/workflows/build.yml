@@ -10,6 +10,11 @@ on:
         type: boolean
         default: true
         required: true
+      pre_release:
+        description: "Publish PreRelease"
+        type: boolean
+        default: false
+        required: false
       text:
         description: "Release Description"
         required: false
@@ -160,9 +165,14 @@ jobs:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
+          PRE=""
+          if [[ ${{ github.event.inputs.pre_release }} == 'true' ]]
+          then
+            PRE="--prerelease"
+          fi
           if ! gh release view "${INPUT_VERSION}" >/dev/null 2>&1
           then
-            gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}"
+            gh release create "${INPUT_VERSION}" --title "${INPUT_VERSION}" --notes "${MESSAGE}" $PRE
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
       - name: Tar files
@@ -278,7 +288,7 @@ jobs:
     needs:
       - build-go
     runs-on: ubuntu-latest
-    if: github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false' && github.event.inputs.pre_release == 'false'
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
@@ -764,17 +774,20 @@ jobs:
             gh release upload "${INPUT_VERSION}" "$version_standalone-windows32-installer.exe" --clobber
             gh release upload "${INPUT_VERSION}" "$version_standalone-windows32.zip" --clobber
           fi
-          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
+          if [[ "${{ github.event.inputs.pre_release }} == 'false' "]]
           then
+           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
+           then
             pushd ..
             bash ./script/trigger_winget_pkgs.sh
             popd
-          fi
-          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
-          then
+           fi
+           if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
+           then
             pushd ../script
             bash chocolatey_push.sh
             popd
+           fi
           fi
 
 

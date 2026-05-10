@@ -2890,6 +2890,14 @@ void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl,
 
 // refresh_groups -> show_group -> refresh_proxy_list
 void MainWindow::refresh_groups() {
+  std::shared_ptr<Configs::Group> defaultGroup = nullptr;
+  
+  if (Configs::profileManager->groups.size() == 0){
+    defaultGroup = Configs::profileManager->NewGroup();
+    defaultGroup->name = QObject::tr("Default");
+    Configs::profileManager->AddGroup(defaultGroup);
+  }
+
   Configs::dataStore->refreshing_group_list = true;
 
   // refresh group?
@@ -4142,8 +4150,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
     menu->addAction(editAction);
     auto group =
         Configs::profileManager->GetGroup(Configs::dataStore->current_group);
-    if (Configs::profileManager->groups.size() > 1)
-      menu->addAction(deleteAction);
+    menu->addAction(deleteAction);
     if (!group->Profiles().empty()) {
       menu->addAction(ui->actionUrl_Test_Group);
       menu->addAction(ui->actionSpeedtest_Group);

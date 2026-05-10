@@ -838,13 +838,13 @@ void ProfileManager::LoadManager() {
   this->max_route_chain_id = max;
 
   if (groups.size() == 0){
-    auto defaultGroup = Configs::profileManager->NewGroup();
+    auto defaultGroup = NewGroup();
     defaultGroup->name = QObject::tr("Default");
-    Configs::profileManager->AddGroup(defaultGroup);
+    AddGroup(defaultGroup);
   }
   if (routes.size() == 0){
     auto defaultRoute = Configs::RoutingChain::GetDefaultChain();
-    Configs::profileManager->AddRouteChain(defaultRoute);
+    AddRouteChain(defaultRoute);
   }
 }
 
@@ -1174,19 +1174,17 @@ void ProfileManager::DeleteGroup(int gid) {
 void ProfileManager::BatchDeleteGroups(const QList<int> & ids) {
   QSet<int> to_drop;
   for (int gid : ids){
-    if (groups.size() <= 1)
-      continue;
-    auto group = GetGroup(gid);
-    if (group == nullptr)
-      continue;
     groupsTabOrder.removeAll(gid);
     to_drop << gid;
+    groups.erase(gid);
   }
   if (to_drop.size() > 0){
    runOnNewThread([=, this] {
       for (int gid : to_drop){
        auto group = GetGroup(gid);
-       BatchDeleteProfiles(group->profiles, gid);
+       if (group != nullptr){
+        BatchDeleteProfiles(group->profiles, gid);
+       }
       }
       lock();
       for (int gid : to_drop){
