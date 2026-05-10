@@ -426,7 +426,7 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true''
+        if: matrix.allow == 'true'
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
