@@ -114,6 +114,9 @@ SET_NODE(strMap) {
   GET_PTR_OR_RETURN
   if (value.isObject()) {
     *(QVariantMap *)ptr = value.toObject().toVariantMap();
+  } else if (value.isString()){
+    auto val = QJsonDocument::fromJson(value.toString().toUtf8());
+    *(QVariantMap *)ptr = val.object().toVariantMap();
   }
 }
 
