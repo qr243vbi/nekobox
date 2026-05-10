@@ -12,7 +12,9 @@ popd
 
 rm -rf quirc ||:
 git clone --depth 1 https://github.com/dlbeer/quirc.git
-rm -rf quirc/.git
+pushd quirc
+rm -rf -- !("lib")
+popd
 
 mkdir qrcodegen ||:
 curl -L -o qrcodegen/qrcodegen.hpp https://raw.githubusercontent.com/nayuki/QR-Code-generator/refs/heads/master/cpp/qrcodegen.hpp

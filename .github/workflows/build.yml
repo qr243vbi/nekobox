@@ -387,35 +387,36 @@ jobs:
             allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
+    if: github.event.inputs.source_only != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ github.event.inputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: "true"
 
       - name: Setup Ninja
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         uses: qr243vbi/setup-ninja@master
 
       - name: Install NSIS
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
+        if: matrix.allow == 'true' && matrix.target != 'arm64'
         uses: negrutiu/nsis-install@v2
         with:
           arch: ${{ matrix.target }}
 
       - name: Install Customized Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target != 'arm64'
+        if: matrix.allow == 'true' && matrix.target != 'arm64'
         uses: qr243vbi/qt6windows7@main
         with:
           version: ${{ matrix.qt_version }}_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true' && matrix.target == 'arm64'
+        if: matrix.allow == 'true' && matrix.target == 'arm64'
         uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
@@ -425,14 +426,14 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true''
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
 
       - name: vcpkg build
         uses: qr243vbi/vcpkg-action@master
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         id: vcpkg
         with:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr rocksdb yaml-cpp
@@ -441,13 +442,13 @@ jobs:
           token: ${{ secrets.UPLOAD_TOKEN }}
           
       - name: Download Artifacts
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         uses: actions/download-artifact@main
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
@@ -455,20 +456,20 @@ jobs:
 
       - name: Cache Builds
         id: cache-common
-        if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
+        if: matrix.allow == 'true'
         uses: actions/cache@main
         with:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
       - name: Install Zip, Curl, Jq, UPX
-        if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
+        if: matrix.allow == 'true'
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq upx
 
       - name: Windows - Generate MakeFile and Build
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true'
         shell: bash
         run: |
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
@@ -480,11 +481,11 @@ jobs:
 
       - name: Tar files
         shell: bash
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true'
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true' && github.event.inputs.source_only  != 'true'
+        if: matrix.allow == 'true'
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
