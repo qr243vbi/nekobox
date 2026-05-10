@@ -362,8 +362,6 @@ QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   #endif
     rocksdb::Slice key = it->key();
 
-    it->Next();
-
     if (key.size() != 5) {
 #ifdef DEBUG_MODE
       qDebug() << "ERROR: Corrupted database";
@@ -399,13 +397,16 @@ QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
       int i = static_cast<int32_t>(u);
 
       if (i < 0) {
-        continue;
+        goto continue_please;
       }
 
       result.append(i);
       result_set.insert(u);
     }
-  }
+
+    continue_please:
+    it->Next();
+  };
 
   if (!it->status().ok()) {
     throw std::runtime_error(
@@ -749,7 +750,9 @@ void ProfileManager::LoadManager() {
   // Load Proxys
   int max = 0;
 #ifdef DEBUG_MODE
-  qDebug() << "ID ORDER" << profilesIdOrder;
+  qDebug() << "Profiles ID ORDER" << profilesIdOrder;
+  qDebug() << "Groups ID ORDER" << groupsIdOrder;
+  qDebug() << "Routes ID ORDER" << routesIdOrder;
 #endif
 
   for (auto id : profilesIdOrder) {
@@ -833,26 +836,16 @@ void ProfileManager::LoadManager() {
     routes[id] = route;
   }
   this->max_route_chain_id = max;
-  max = 1;
-  /*
-  // First setup
-  if (groups.empty()) {
-    auto defaultGroup = NewGroup();
-    defaultGroup->name = QObject::tr("Default");
-    defaultGroup->id = 1;
-    groups[1] = defaultGroup;
-    groupsTabOrder << 1;
-    defaultGroup->Save();
-  }
 
-  // First setup
-  if (routes.empty()) {
-    auto defaultRoute = RoutingChain::GetDefaultChain();
-    defaultRoute->id = 1;
-    routes[1] = defaultRoute;
-    defaultRoute->Save();
+  if (groups.size() == 0){
+    auto defaultGroup = Configs::profileManager->NewGroup();
+    defaultGroup->name = QObject::tr("Default");
+    Configs::profileManager->AddGroup(defaultGroup);
   }
-  */
+  if (routes.size() == 0){
+    auto defaultRoute = Configs::RoutingChain::GetDefaultChain();
+    Configs::profileManager->AddRouteChain(defaultRoute);
+  }
 }
 
 void ProfileManager::SaveManager() { JsonStore::Save(); }

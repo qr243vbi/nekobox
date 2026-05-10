@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>TwemojiCOLR.ttf</file>
+    </qresource>
+</RCC>

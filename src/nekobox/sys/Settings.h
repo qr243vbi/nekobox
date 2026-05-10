@@ -152,7 +152,7 @@ QSettings getGlobal();
 QString getLocale();
 QString getResourcesDir();
 QString getLangResource(const QString &);
-QString getResource(QString, QStringList dirs = {});
+QString getResource(QString, QStringList dirs = {}, QString def = "");
 #ifndef SKIP_UPDATER_BUTTON
 QString getUpdaterPath();
 #endif

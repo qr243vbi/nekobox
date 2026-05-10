@@ -84,11 +84,19 @@ message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 
 #### NKR ####
 option(SKIP_UPDATER "Always hide update button" ON)
+
 if(UNIX)
 set(MIGRATE_LMDB_DEFAULT ON)
 else()
 set(MIGRATE_LMDB_DEFAULT OFF)
 endif()
+
+if(UNIX)
+set(ENABLE_EMOJI_EMBEEDING_DEFAULT OFF)
+else()
+set(ENABLE_EMOJI_EMBEEDING_DEFAULT ON)
+endif()
+
 option(MIGRATE_LMDB "Do not migrate from lmdb" ${MIGRATE_LMDB_DEFAULT})
 option(SKIP_ROCKSDB "Do not use rocksdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
@@ -96,15 +104,23 @@ option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
 option(CPR_ENABLE_INSTALL "Use cpr as bundled dependency" OFF)
-option(ENABLE_PROFILE_FILTER "Enable profile filtering on subscription update" ON)
+option(ENABLE_EMOJI_EMBEEDING "Enable profile filtering on subscription update" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
 
 find_package(Threads)
 
 if (NKR_PACKAGE)
     nkr_add_compile_definitions(NKR_CPP_USE_APPDATA)
-endif ()
+endif()
 
 set(BUILD_SHARED_LIBS OFF)
+
+if (ENABLE_EMOJI_EMBEEDING)
+  if (NOT APPLE AND Qt6Core_VERSION VERSION_GREATER "6.9.0")
+    set(PLATFORM_SOURCES ${PLATFORM_SOURCES} "res/fonts/twe.qrc")
+  else()
+    set(PLATFORM_SOURCES ${PLATFORM_SOURCES} "res/fonts/noto.qrc")
+  endif()
+endif()
 
 if (USE_HOTKEYS)
   set(QHOTKEY_INSTALL OFF CACHE BOOL "Disable install QHotkey library")
@@ -507,7 +523,7 @@ install(FILES
     "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public"
     COMPONENT gui)
 
-install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
+#install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
 install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")
 
 endif()

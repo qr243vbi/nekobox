@@ -1113,7 +1113,6 @@ skip_updater_hide:
   });
 */
   // refresh
-  this->refresh_groups();
 
   // Setup Tray
   tray = new QSystemTrayIcon(nullptr);
@@ -1703,6 +1702,8 @@ skip_updater_hide:
 
   announcement_message(Configs::windowSettings->first_start);
   Configs::windowSettings->first_start = false;
+
+  this->refresh_groups();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
@@ -2933,15 +2934,6 @@ void MainWindow::refresh_groups() {
   Configs::dataStore->refreshing_group_list = false;
   int i = this->ui->tabWidget->currentIndex();
   int gid = Configs::dataStore->current_group = tabIndex2GroupId(i);
-  if (gid == -1 && Configs::profileManager->groups.size() == 0 && Configs::profileManager->routes.size() == 0){
-    auto defaultGroup = Configs::profileManager->NewGroup();
-    defaultGroup->name = QObject::tr("Default");
-    Configs::profileManager->AddGroup(defaultGroup);
-    gid = defaultGroup->Id();
-
-    auto defaultRoute = Configs::RoutingChain::GetDefaultChain();
-    Configs::profileManager->AddRouteChain(defaultRoute);
-  }
   show_group(gid);
   #ifdef DEBUG_MODE
     qDebug() << "Current Group is: " << Configs::dataStore->current_group;

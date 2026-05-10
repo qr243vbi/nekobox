@@ -134,7 +134,7 @@ QString getResourcesDir() {
   return str;
 };
 
-QString getResource(QString str, QStringList dirs) {
+QString getResource(QString str, QStringList dirs, QString def) {
   {
     auto link = Configs::resourceManager->getLink(str);
     // qDebug() << "Link for " << str << " is " << link;
@@ -161,7 +161,11 @@ QString getResource(QString str, QStringList dirs) {
     if (file2.exists()) {
       return str;
     } else {
-      return ":/" + str;
+      if (def.isEmpty()) {
+        return ":/" + str;
+      } else {
+        return def;
+      }
     }
   }
 }

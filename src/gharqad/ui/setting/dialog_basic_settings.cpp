@@ -167,13 +167,12 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     #define UPDATE_ICON CACHE.updateIcon = true
     #define UPDATE_FONT {                   \
         CACHE.updateFont = true;            \
-        updateEmojiFont();                  \
         CACHE.needRestart = true;           \
         adjustSize();                       \
     }                   
 
     LINK_RESOURCE_MANAGER("icon.png", icon, UPDATE_ICON);
-   // LINK_RESOURCE_MANAGER("emoji.ttf", emoji, UPDATE_FONT);
+    LINK_RESOURCE_MANAGER("emoji.ttf", emoji, UPDATE_FONT);
 
     D_LOAD_STRING(inbound_address)
     D_LOAD_COMBO_STRING(log_level)

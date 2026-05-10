@@ -189,35 +189,6 @@ int main(int argc, char** argv) {
     QApplication::setQuitOnLastWindowClosed(false);
     QApplication a(argc, argv);
 
-#if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
-    // Load the color emoji font (Twemoji COLR format — required for Qt 6.9+ colored emoji)
-    int emojiFontId = QFontDatabase::addApplicationFont(":/fonts/TwemojiCOLR.ttf");
-    if (emojiFontId >= 0)
-    {
-        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(emojiFontId);
-        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
-    } else
-    {
-        qDebug() << "could not load emoji font!";
-    }
-#else
-    // Fallback for older Qt or macOS
-    {
-        int emojiFontId = QFontDatabase::addApplicationFont(":/fonts/NotoEmoji.ttf");
-        if (emojiFontId != -1) {
-            QStringList families = QFontDatabase::applicationFontFamilies(emojiFontId);
-            if (!families.isEmpty()) {
-                QFont appFont = QApplication::font();
-                QStringList fallbackFamilies;
-                fallbackFamilies << appFont.family();
-                fallbackFamilies << families.first();
-                appFont.setFamilies(fallbackFamilies);
-                QApplication::setFont(appFont);
-            }
-        }
-    }
-#endif
-
     // Flags
     Configs::dataStore->argv = QApplication::arguments();
     if (Configs::dataStore->argv.contains("-many")) Configs::dataStore->flag_many = true;
@@ -436,6 +407,37 @@ int main(int argc, char** argv) {
     auto eventFilter = new PowerOffTaskkillFilter(signal_handler);
     a.installNativeEventFilter(eventFilter);
 #endif
+
+
+#if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
+    // Load the color emoji font (Twemoji COLR format — required for Qt 6.9+ colored emoji)
+    int emojiFontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf", {}, ":/fonts/TwemojiCOLR.ttf"));
+    if (emojiFontId >= 0)
+    {
+        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(emojiFontId);
+        QFontDatabase::setApplicationEmojiFontFamilies(fontFamilies);
+    } else
+    {
+        qDebug() << "could not load emoji font!";
+    }
+#else
+    // Fallback for older Qt or macOS
+    {
+        int emojiFontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf", {}, ":/fonts/NotoEmoji.ttf"));
+        if (emojiFontId != -1) {
+            QStringList families = QFontDatabase::applicationFontFamilies(emojiFontId);
+            if (!families.isEmpty()) {
+                QFont appFont = QApplication::font();
+                QStringList fallbackFamilies;
+                fallbackFamilies << appFont.family();
+                fallbackFamilies << families.first();
+                appFont.setFamilies(fallbackFamilies);
+                QApplication::setFont(appFont);
+            }
+        }
+    }
+#endif
+
 
     UI_InitMainWindow();
     return QApplication::exec();
