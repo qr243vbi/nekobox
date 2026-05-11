@@ -47,4 +47,25 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
+    bool TorBean::TryParseJson(const QJsonObject &obj){
+        entity->name = obj["tag"].toString();
+        executable_path = obj["executable_path"].toString();
+        extra_args = QJsonArray2QListStr(obj["extra_args"].toArray());
+        data_directory = obj["data_directory"].toString();
+        torrc = obj["torrc"].toObject().toVariantMap();
+        return true;
+    };
+    bool TorBean::TryParseLink(const QString &link){
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto q = GetQuery(url);
+        entity->name = url.fragment(QUrl::FullyDecoded);
+
+        extra_args = GetQueryListValue(q, "extra_args");
+        executable_path = GetQueryValue(q, "executable_path");
+        data_directory = GetQueryValue(q, "data_directory");
+        torrc = GetQueryMapValue(q, "torrc");
+        return true;
+    };
 }

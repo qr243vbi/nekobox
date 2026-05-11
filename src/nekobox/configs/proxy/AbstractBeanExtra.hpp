@@ -7,10 +7,58 @@
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include "AbstractBean.hpp"
 #include "V2RayStreamSettings.hpp"
+#include <3rdparty/URLParser/url_parser.h>
+
+#define DECODE_V2RAY_N_1                                                                                                        \
+    QString linkN = DecodeB64IfValid(SubStrBefore(SubStrAfter(link, "://"), "#"), QByteArray::Base64Option::Base64UrlEncoding); \
+    if (linkN.isEmpty()) return false;                                                                                          \
+    auto hasRemarks = link.contains("#");                                                                                       \
+    if (hasRemarks) linkN += "#" + SubStrAfter(link, "#");                                                                      \
+    auto url = QUrl("https://" + linkN);
+
 
 namespace Configs {
-namespace From_CoreObj_box {
+namespace From_Link {
 
+    void set_boolean(const char * name, bool & value, const QUrlQuery &obj);
+    void add_mux_state(AbstractBean * bean, const QUrlQuery &query);
+    void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query);
+    void add_default_fields(QUrl & url, Configs::ProxyEntity * entity);
+
+template<typename T>
+void add_username_password(T * t, QUrl & url){
+    auto username = url.userName();
+    auto password = url.password();
+    // v2rayN fmt
+    if (password.isEmpty() && !username.isEmpty()) {
+        QString n = DecodeB64IfValid(username);
+        if (!n.isEmpty()) {
+            username = SubStrBefore(n, ":");
+            password = SubStrAfter(n, ":");
+        }
+    }
+    t->username = username;
+    t->password = password;
+}
+
+template<typename T>
+void add_udp_over_tcp(T *t, QUrlQuery & query){
+    t->uot = GetQueryIntValue(query, "uot", GetQueryIntValue(query, "udp_over_tcp", 0));
+}
+
+    template<typename T>
+    void add_quic(T * bean, const QUrlQuery &query){
+        *bean->quic_congestion_control = GetQueryValue(query, "quic_congestion_control");
+        bean->quic = (GetQueryValue(query, "quic").localeAwareCompare("true") == 0);
+    }
+
+    template<typename T>
+    void add_network(T * t, const QUrlQuery &obj){
+        auto network =  GetQueryValue(obj, "network");
+        if (network.isEmpty()){
+            *t->network = network;
+        }
+    }
 };
 
 namespace To_Link {
@@ -63,8 +111,34 @@ namespace To_Link {
 
 };
 
-namespace From_Link {
+namespace From_Json {
+    void add_default_fields(Configs::ProxyEntity * entity, const QJsonObject & obj);
 
+    template<typename T>
+    static void add_network(T * t, const QJsonObject &obj){
+        if (obj.contains("network")) *t->network = obj["network"];
+    }
+
+    template<typename B>
+    static void add_username_password(B * bean, const QJsonObject &obj){
+        bean->username = obj["username"].toString();
+        bean->password = obj["password"].toString();
+    }
+    void add_mux_state(AbstractBean * bean, const QJsonObject &obj);
+    bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj);
+    bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj);
+    int parseUOT(const QJsonObject &obj);
+
+    template<typename T>
+    static void add_udp_over_tcp(T * bean, const QJsonObject &obj){
+        bean->uot = parseUOT(obj);
+    }
+
+    template<typename T>
+    static void add_quic(T * bean, const QJsonObject &obj){
+        *bean->quic_congestion_control = obj["quic_congestion_control"].toString();
+        bean->quic = obj["quic"].toBool();    
+    }
 };
 
 namespace To_CoreObj_box {

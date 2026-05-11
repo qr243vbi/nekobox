@@ -12,6 +12,25 @@
 namespace Configs {
     
 
+    bool AnyTLSBean::TryParseLink(const QString &link) {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+        add_default_fields(url, entity);
+
+        password = url.userName();
+        if (entity->serverPort == -1) entity->serverPort = 443;
+        this->idle_session_check_interval = GetQueryValue(query, "idle_session_check_interval", "30s");
+        this->idle_session_timeout = GetQueryValue(query, "idle_session_timeout", "30s");
+        this->min_idle_session = GetQueryIntValue(query, "min_idle_session", 0);
+        // security
+        add_tls(stream, query);
+
+        return !(password.isEmpty() || entity->serverAddress.isEmpty());
+    }
+
+
     QString AnyTLSBean::ToShareLink() const {
             using namespace Configs::To_Link;
 
@@ -29,6 +48,17 @@ namespace Configs {
 
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
+    }
+    bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        password = obj["password"].toString();
+        idle_session_check_interval = obj["idle_session_check_interval"].toString();
+        idle_session_timeout = obj["idle_session_timeout"].toString();
+        min_idle_session = obj["min_idle_session"].toInt();
+        add_tls(stream, obj);
+        return true;
     }
     CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;

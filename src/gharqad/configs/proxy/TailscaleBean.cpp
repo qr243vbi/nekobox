@@ -56,5 +56,44 @@ namespace Configs {
         add_query_boolean("global_dns", q, globalDNS);
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
+    }    
+    bool TailscaleBean::TryParseJson(const QJsonObject& obj)
+    {
+        entity->name = obj["tag"].toString();
+        state_directory = obj["state_directory"].toString();
+        auth_key = obj["auth_key"].toString();
+        control_url = obj["control_url"].toString();
+        ephemeral = obj["ephemeral"].toBool();
+        hostname = obj["hostname"].toString();
+        accept_routes = obj["accept_routes"].toBool();
+        exit_node = obj["exit_node"].toString();
+        exit_node_allow_lan_access = obj["exit_node_allow_lan_access"].toBool();
+        advertise_routes = QJsonArray2QListStr(obj["advertise_routes"].toArray());
+        advertise_exit_node = obj["advertise_exit_node"].toBool();
+
+        return true;
+    }
+        bool TailscaleBean::TryParseLink(const QString &link)
+    {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+        entity->name = url.fragment(QUrl::FullyDecoded);
+
+        state_directory = QUrl::fromPercentEncoding(query.queryItemValue("state_directory").toUtf8());
+        auth_key = QUrl::fromPercentEncoding(query.queryItemValue("auth_key").toUtf8());
+        control_url = QUrl::fromPercentEncoding(query.queryItemValue("control_url").toUtf8());
+        set_boolean("ephemeral", ephemeral, query);
+        hostname = QUrl::fromPercentEncoding(query.queryItemValue("hostname").toUtf8());
+        set_boolean("accept_routes", accept_routes, query);
+        exit_node = query.queryItemValue("exit_node");
+        set_boolean("exit_node_allow_lan_access", exit_node_allow_lan_access, query);
+        advertise_routes = QUrl::fromPercentEncoding(query.queryItemValue("advertise_routes").toUtf8()).split(",");
+        set_boolean("advertise_exit_node", advertise_exit_node, query);
+        set_boolean("globalDNS", globalDNS, query);
+        set_boolean("global_dns", globalDNS, query);
+
+        return true;
     }
 }

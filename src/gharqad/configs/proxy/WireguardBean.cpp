@@ -6,7 +6,7 @@
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/includes.h>
-
+#include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/WireguardBean.h>
 
 namespace Configs {
@@ -52,6 +52,77 @@ namespace Configs {
 
         result.outbound = outbound;
         return result;
+    }
+
+        bool WireguardBean::TryParseLink(const QString &link) {
+        using namespace From_Link;
+        if (parseWgConfig(link)) return true;
+
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+        add_default_fields(url, entity);
+
+        privateKey = query.queryItemValue("private_key");
+        publicKey = query.queryItemValue("peer_public_key");
+        preSharedKey = query.queryItemValue("pre_shared_key");
+        auto rawReserved = query.queryItemValue("reserved");
+        if (!rawReserved.isEmpty()) {
+            for (const auto &item: rawReserved.split("-")) reserved += item.toInt();
+        }
+        auto rawLocalAddr = query.queryItemValue("local_address");
+        if (!rawLocalAddr.isEmpty()) {
+            for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
+        }
+        persistentKeepalive = GetQueryIntValue(query, "persistent_keepalive", GetQueryIntValue(query, "persistent_keepalive_interval"));
+        MTU = GetQueryIntValue(query, "mtu");
+        set_boolean("use_system_interface", useSystemInterface, query);
+        workerCount = GetQueryIntValue(query, "workers");
+
+        set_boolean("enable_amnezia", enable_amnezia, query);
+        junk_packet_count = GetQueryIntValue(query, "junk_packet_count");
+        junk_packet_min_size = GetQueryIntValue(query, "junk_packet_min_size");
+        junk_packet_max_size = GetQueryIntValue(query, "junk_packet_max_size");
+        init_packet_junk_size = GetQueryIntValue(query, "init_packet_junk_size");
+        response_packet_junk_size = GetQueryIntValue(query, "response_packet_junk_size");
+        init_packet_magic_header = GetQueryIntValue(query, "init_packet_magic_header");
+        response_packet_magic_header = GetQueryIntValue(query, "response_packet_magic_header");
+        underload_packet_magic_header = GetQueryIntValue(query, "underload_packet_magic_header");
+        transport_packet_magic_header = GetQueryIntValue(query, "transport_packet_magic_header");
+
+        return true;
+    }
+
+    bool WireguardBean::TryParseJson(const QJsonObject& obj)
+    {
+            using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        auto peers = obj["peers"].toArray();
+        if (peers.empty()) return false;
+        publicKey = peers[0].toObject()["public_key"].toString();
+        reserved = QJsonArray2QListInt(peers[0].toObject()["reserved"].toArray());
+        persistentKeepalive = peers[0].toObject()["persistent_keepalive_interval"].toInt();
+        workerCount = obj["workers"].toInt();
+        privateKey = obj["private_key"].toString();
+        localAddress = QJsonArray2QListStr(obj["address"].toArray());
+        MTU = obj["mtu"].toInt();
+        useSystemInterface = obj["system"].toBool();
+
+        junk_packet_count = obj["junk_packet_count"].toInt();
+        junk_packet_min_size = obj["junk_packet_min_size"].toInt();
+        junk_packet_max_size = obj["junk_packet_max_size"].toInt();
+        init_packet_junk_size = obj["init_packet_junk_size"].toInt();
+        response_packet_junk_size = obj["response_packet_junk_size"].toInt();
+        init_packet_magic_header = obj["init_packet_magic_header"].toInt();
+        response_packet_magic_header = obj["response_packet_magic_header"].toInt();
+        underload_packet_magic_header = obj["underload_packet_magic_header"].toInt();
+        transport_packet_magic_header = obj["transport_packet_magic_header"].toInt();
+        if (junk_packet_count > 0 || junk_packet_min_size > 0 || junk_packet_max_size > 0)
+        {
+            enable_amnezia = true;
+        }
+
+        return true;
     }
 
 

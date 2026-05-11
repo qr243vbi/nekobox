@@ -26,7 +26,34 @@ namespace Configs {
         return result;
     }
 
+    bool HttpBean::TryParseJson(const QJsonObject& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        path = obj["path"].toString();
+        headers = obj["headers"].toObject().toVariantMap();
+        add_tls(stream, obj);
+        return true;
+    }
 
+    bool HttpBean::TryParseLink(const QString &link) {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+
+        add_default_fields(url, entity);
+        if (entity->serverPort == -1) entity->serverPort = 443;
+        add_username_password(this, url);
+        path = url.path();
+        headers = GetQueryMapValue(query, "headers");
+        if (link.startsWith("https")) {
+            add_tls(stream, query);
+        };
+        return !entity->serverAddress.isEmpty();
+    }
+    
     QString HttpBean::ToShareLink() const {
             using namespace Configs::To_Link;
 

@@ -47,4 +47,33 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
+    bool NaiveBean::TryParseJson(const QJsonObject& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        insecure_concurrency = obj["insecure_concurrency"].toInt();
+        extra_headers = obj["extra_headers"].toObject().toVariantMap();
+        add_udp_over_tcp(this, obj);
+        add_quic(this, obj);
+        add_tls(stream, obj);
+        return true;
+    }
+
+    bool NaiveBean::TryParseLink(const QString& link)
+    {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        QUrlQuery query = GetQuery(url);
+        add_default_fields(url, entity);
+
+        add_username_password(this, url);
+        add_quic(this, query);
+        add_udp_over_tcp(this, query);
+        extra_headers = GetQueryMapValue(query, "extra_headers");
+
+        add_tls(stream, query);
+        return true;
+    }
 }

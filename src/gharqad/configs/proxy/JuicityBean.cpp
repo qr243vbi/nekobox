@@ -37,4 +37,24 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
+    bool JuicityBean::TryParseJson(const QJsonObject& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        this->username = obj["uuid"].toString();
+        this->password = obj["password"].toString();
+        add_tls(stream, obj);
+        return true;
+    }
+    bool JuicityBean::TryParseLink(const QString& link)
+    {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        QUrlQuery query = GetQuery(url);
+        add_default_fields(url, entity);
+        add_username_password(this, url);
+        add_tls(stream, query);
+        return true;
+    }
 }

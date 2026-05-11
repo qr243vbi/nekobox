@@ -31,8 +31,6 @@ namespace Configs {
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseLink(const QString &link) override;
-
         bool TryParseJson(const QJsonObject &obj) override;
 
         virtual QString type()const override {

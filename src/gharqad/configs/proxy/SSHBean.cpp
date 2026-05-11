@@ -59,5 +59,48 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
+    bool SSHBean::TryParseJson(const QJsonObject& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        user = obj["user"].toString();
+        password = obj["password"].toString();
+        privateKey = obj["private_key"].toString();
+        privateKeyPath = obj["private_key_path"].toString();
+        privateKeyPass = obj["private_key_passphrase"].toString();
+        hostKey = QJsonArray2QListStr(obj["host_key"].toArray());
+        hostKeyAlgs = QJsonArray2QListStr(obj["host_key_algorithms"].toArray());
+        clientVersion = obj["client_version"].toString();
+
+        return true;
+    }
+
+
+    bool SSHBean::TryParseLink(const QString &link) {
+        using namespace From_Link;
+        auto url = QUrl(link);
+        if (!url.isValid()) return false;
+        auto query = GetQuery(url);
+        add_default_fields(url, entity);
+
+        user = query.queryItemValue("user");
+        password = query.queryItemValue("password");
+        privateKey = QByteArray::fromBase64(query.queryItemValue("private_key").toUtf8(), QByteArray::OmitTrailingEquals);
+        privateKeyPath = query.queryItemValue("private_key_path");
+        privateKeyPass = query.queryItemValue("private_key_passphrase");
+        auto hostKeysRaw = query.queryItemValue("host_key");
+        for (const auto &item: hostKeysRaw.split("-")) {
+            auto b64hostKey = QByteArray::fromBase64(item.toUtf8(), QByteArray::OmitTrailingEquals);
+            if (!b64hostKey.isEmpty()) hostKey << QString(b64hostKey);
+        }
+        auto hostKeyAlgsRaw = query.queryItemValue("host_key_algorithms");
+        for (const auto &item: hostKeyAlgsRaw.split("-")) {
+            auto b64hostKeyAlg = QByteArray::fromBase64(item.toUtf8(), QByteArray::OmitTrailingEquals);
+            if (!b64hostKeyAlg.isEmpty()) hostKeyAlgs << QString(b64hostKeyAlg);
+        }
+        clientVersion = query.queryItemValue("client_version");
+
+        return true;
+    }
 
 }

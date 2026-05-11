@@ -22,5 +22,8 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
-
+    bool ExtraCoreBean::TryParseJson(const QJsonObject& obj)
+    {
+        return false;
+    }
 }
