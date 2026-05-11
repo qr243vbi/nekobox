@@ -30,7 +30,7 @@ namespace Configs {
         json_type = 1,
         binary_type = 2,
         ini_type = 3
-        #ifndef SKIP_ROCKSDB
+        #ifndef SKIP_LEVELDB
         ,rocksdb_type = 4
         #endif
     };
@@ -43,8 +43,8 @@ namespace Configs {
         ADD_ENUM("json", DatabaseType::json_type);
         ADD_ENUM("binary", DatabaseType::binary_type);
         ADD_ENUM("ini", DatabaseType::ini_type);
-        #ifndef SKIP_ROCKSDB
-        ADD_ENUM("rocksdb", DatabaseType::rocksdb_type);
+        #ifndef SKIP_LEVELDB
+        ADD_ENUM("leveldb", DatabaseType::rocksdb_type);
         #endif
     STOP_ENUM_TRIGGER(SetConfigType)
 

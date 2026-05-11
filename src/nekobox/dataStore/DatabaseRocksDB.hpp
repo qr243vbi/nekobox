@@ -9,7 +9,7 @@ namespace Configs_ConfigItem {
 
 using namespace Configs_ConfigItem;
 
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
 #include <leveldb/db.h>
 #include <leveldb/write_batch.h>
 namespace rocksdb = leveldb;
@@ -56,7 +56,7 @@ public:
   static bool DropFromDirectory(char, int);
   static QList<int> QueryFromDirectory(char type);
 private:
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   std::unique_ptr<rocksdb::DB> database;
 #endif
 };

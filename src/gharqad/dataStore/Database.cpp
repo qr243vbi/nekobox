@@ -161,13 +161,13 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Proxies, profiles)
     LOG_CREATE(Groups, groups)
   }
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
     return Configs::write_rocksdb(this->database, store);
   }
 #endif
   auto ret = SaveToFile(store);
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   if (ret) {
     Configs::clear_rocksdb(this->database, store);
   }
@@ -175,7 +175,7 @@ bool FileDatabaseManager::Save(JsonStore *store) {
   return ret;
 }
 bool FileDatabaseManager::Load(JsonStore *store) {
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   auto [ok, readed] = Configs::read_rocksdb(this->database, store);
   if (!ok) {
     return false;
@@ -191,7 +191,7 @@ bool FileDatabaseManager::Load(JsonStore *store) {
   bool readed;
 #endif
   readed = LoadFromFile(store);
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   if (readed) {
     if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
       Configs::write_rocksdb(this->database, store);
@@ -203,7 +203,7 @@ bool FileDatabaseManager::Load(JsonStore *store) {
 }
 bool FileDatabaseManager::Drop(char chr, int id) {
   bool ret = DropFromDirectory(chr, id);
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   ret = Configs::drop_rocksdb(this->database, chr, id);
 #endif
   if (ret) {
@@ -218,13 +218,13 @@ bool FileDatabaseManager::Drop(char chr, int id) {
 
 FileDatabaseManager::FileDatabaseManager()
 {
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
   initialize_rocksdb(this->database);
 #endif
 };
 
 FileDatabaseManager::~FileDatabaseManager() {
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
 //  this->database->CompactRange(rocksdb::CompactRangeOptions(), nullptr, nullptr);
   //this->database->Close();
 #endif
@@ -244,7 +244,7 @@ bool FileDatabaseManager::SaveToFile(JsonStore *store) {
   return store->SaveToFile(path, Configs::config_type ==
                                      Configs::DatabaseType::json_type);
 }
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
 static rocksdb::ReadOptions ReadOptions(){
   rocksdb::ReadOptions read_options;
   // Ensure you see only committed data
@@ -305,7 +305,7 @@ bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
-#ifdef SKIP_ROCKSDB
+#ifdef SKIP_LEVELDB
   return FileDatabaseManager::QueryFromDirectory(type);
 #else
   return Configs::query_rocksdb(this->database, type);
@@ -337,7 +337,7 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 } // namespace Configs
 
 // Query
-#ifndef SKIP_ROCKSDB
+#ifndef SKIP_LEVELDB
 QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   QList<int> result;
   QSet<uint32_t> result_set;
