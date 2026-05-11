@@ -536,15 +536,25 @@
         <translation type="obsolete">ប្រើ Json ជំនួសប្រព័ន្ធគោលពីរសម្រាប់ការកំណត់</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
         <source>RocksDB — 2011 — embedded persistent LSM-tree key–value store (built on LevelDB) — Facebook
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as RocksDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished">RocksDB — 2011 — បង្កប់ LSM-tree key-value store (បង្កើតនៅលើ LevelDB) — Facebook
+        <translation type="obsolete">RocksDB — 2011 — បង្កប់ LSM-tree key-value store (បង្កើតនៅលើ LevelDB) — Facebook
 JSON — 2001 — ទម្រង់​អត្ថបទ​ស្រាល​សម្រាប់​ការ​ផ្លាស់​ប្តូរ​ទិន្នន័យ​ដែល​មាន​រចនាសម្ព័ន្ធ (វត្ថុ អារេ បុព្វកាល) — Douglas Crockford
 INI — ដើមទសវត្សរ៍ឆ្នាំ 1980 — ទម្រង់កំណត់រចនាសម្ព័ន្ធអត្ថបទធម្មតាសាមញ្ញជាមួយផ្នែក និង key=value pair — Microsoft
 binary — 2026 — ទ្រង់ទ្រាយ​តម្លៃ​បៃ​ដែល​បំពាន​សម្រាប់​ការ​កំណត់ NekoBox ដែល​ប្រើ​ជា​តម្លៃ RocksDB ឬ​ឯកសារ​ឯករាជ្យ — qr243vbi</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
+        <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as leveldb values or standalone files — qr243vbi</source>
+        <translation type="unfinished">leveldb — 2011 — បង្កប់ LSM-tree key–value store — Google
+JSON — 2001 — ទម្រង់​អត្ថបទ​ស្រាល​សម្រាប់​ការ​ផ្លាស់​ប្តូរ​ទិន្នន័យ​ដែល​មាន​រចនាសម្ព័ន្ធ (វត្ថុ អារេ បុព្វកាល) — Douglas Crockford
+INI — ដើមទសវត្សរ៍ឆ្នាំ 1980 — ទម្រង់កំណត់រចនាសម្ព័ន្ធអត្ថបទធម្មតាសាមញ្ញជាមួយផ្នែក និង key=value pair — Microsoft
+binary — 2026 — ទ្រង់ទ្រាយ​តម្លៃ byte បំពាន​សម្រាប់​ការ​កំណត់ NekoBox ដែល​បាន​ប្រើ​ជា​តម្លៃ leveldb ឬ​ឯកសារ​តែឯង — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1267" />
@@ -734,27 +744,27 @@ binary — 2026 — ទ្រង់ទ្រាយ​តម្លៃ​បៃ​
         <translation type="unfinished">អ្នកគ្រប់គ្រងធនធាន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222" />
         <source>Proxy type</source>
         <translation type="unfinished">ប្រភេទប្រូកស៊ី</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="225" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="224" />
         <source>Off</source>
         <translation type="unfinished">បិទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="258" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="257" />
         <source>Name of program</source>
         <translation type="unfinished">ឈ្មោះកម្មវិធី</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="525" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="524" />
         <source>Security Warning</source>
         <translation type="unfinished">ការព្រមានអំពីសុវត្ថិភាព</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="526" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="525" />
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -771,12 +781,12 @@ Are you sure you want to disable TLS verification?</source>
 តើអ្នកប្រាកដថាចង់បិទការផ្ទៀងផ្ទាត់ TLS មែនទេ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="547" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="546" />
         <source>Privacy Warning</source>
         <translation type="unfinished">ការព្រមានអំពីឯកជនភាព</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="548" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="547" />
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -891,17 +901,22 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="unfinished">រំលងការធ្វើបច្ចុប្បន្នភាពដោយស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="70" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="34" />
+        <source>Will use profile-title from subscription if empty</source>
+        <translation type="unfinished">នឹងប្រើចំណងជើងកម្រងព័ត៌មានពីការជាវ ប្រសិនបើទទេ</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="71" />
         <source>Copied</source>
         <translation type="unfinished">ចម្លង</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="384" />
         <source>Warning</source>
         <translation type="unfinished">ការព្រមាន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="384" />
         <source>Please input URL</source>
         <translation type="unfinished">សូមបញ្ចូល URL</translation>
     </message>
@@ -1247,40 +1262,40 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="unfinished">ក្រុមទី 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="440" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="441" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">ប្រូកស៊ីខាងមុខសម្រាប់ក្រុម% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="442" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="443" />
         <source>Front proxy: </source>
         <translation type="unfinished">ប្រូកស៊ីខាងមុខ៖</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="454" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">ប្រូកស៊ីចុះចតសម្រាប់ក្រុម% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="456" />
         <source>Landing proxy: </source>
         <translation type="unfinished">ប្រូកស៊ីចុះចត៖</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="468" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="469" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Proxy</source>
         <translation type="unfinished">ប្រូកស៊ី</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="471" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="474" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="472" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="475" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Direct</source>
         <translation type="unfinished">ផ្ទាល់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="478" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="479" />
         <source>None</source>
         <translation type="unfinished">គ្មាន</translation>
     </message>
@@ -2880,8 +2895,8 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2811" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2814" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2816" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2819" />
         <source>System Proxy</source>
         <translation type="unfinished">ប្រព័ន្ធប្រូកស៊ី</translation>
     </message>
@@ -2890,17 +2905,17 @@ Are you sure?</source>
         <translation type="obsolete">តេស្ត URL</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="152" />
         <source>Type</source>
         <translation type="unfinished">ប្រភេទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="154" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="155" />
         <source>Address</source>
         <translation type="unfinished">អាស័យដ្ឋាន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="158" />
         <source>Name</source>
         <translation type="unfinished">ឈ្មោះ</translation>
     </message>
@@ -3067,15 +3082,15 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4024" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4037" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4047" />
         <source>Start</source>
         <translation type="unfinished">ចាប់ផ្តើម</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4023" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4036" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4047" />
         <source>Stop</source>
         <translation type="unfinished">ឈប់</translation>
     </message>
@@ -3122,7 +3137,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1660" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
         <source>Export %1 config</source>
         <translation type="unfinished">នាំចេញ​ការ​កំណត់​រចនាសម្ព័ន្ធ% 1</translation>
     </message>
@@ -3263,7 +3278,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3249" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3262" />
         <source>Clone</source>
         <translation type="unfinished">ក្លូន</translation>
     </message>
@@ -3371,7 +3386,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4053" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4066" />
         <source>Add new Group</source>
         <translation type="unfinished">បន្ថែមក្រុមថ្មី។</translation>
     </message>
@@ -3387,242 +3402,242 @@ Are you sure?</source>
         <translation type="unfinished">មិនអាចប្រើបាន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="751" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
         <source>Auto-scroll log</source>
         <translation type="unfinished">កំណត់ហេតុរមូរដោយស្វ័យប្រវត្តិ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
         <source>Select Proxy</source>
         <translation type="unfinished">ជ្រើសរើសប្រូកស៊ី</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1230" />
         <source>Inbound proxy type:</source>
         <translation type="unfinished">ប្រភេទប្រូកស៊ីចូល៖</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1312" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1313" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">កែសម្រួលទម្រង់ការនាំផ្លូវ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1334" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1335" />
         <source>Update Routing Profiles</source>
         <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាពកម្រងព័ត៌មានផ្លូវ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1371" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1374" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1418" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1372" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1375" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1419" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
         <source>Update Response</source>
         <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាពការឆ្លើយតប</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1348" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">មិនមានទម្រង់ផ្លូវត្រូវបានធ្វើបច្ចុប្បន្នភាពទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1352" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">បាន​ធ្វើ​បច្ចុប្បន្នភាព​កម្រង​ព័ត៌មាន​កំណត់​ផ្លូវ% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1361" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1362" />
         <source>Update RuleSet Map</source>
         <translation type="unfinished">អាប់ដេត RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1372" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1373" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">បរាជ័យក្នុងការអាប់ដេតច្បាប់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1375" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1376" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">បានធ្វើបច្ចុប្បន្នភាពច្បាប់ដោយជោគជ័យ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1385" />
         <source>Update RuleSet Cache</source>
         <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាព RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1419" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1420" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">ឃ្លាំងសម្ងាត់ច្បាប់ត្រូវបានធ្វើបច្ចុប្បន្នភាព</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1433" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1434" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">សម្អាតឃ្លាំងសម្ងាត់កំណត់ច្បាប់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1469" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1470" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">បើកដំណើរការ AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1878" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881" />
         <source>Error</source>
         <translation type="unfinished">កំហុស</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1968" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1971" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">ការកំណត់ Tun បានផ្លាស់ប្តូរ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1969" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1972" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">ចាប់ផ្ដើម Tun ឡើងវិញ ដើម្បីមានប្រសិទ្ធភាព។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1975" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3737" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3799" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4102" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1978" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2033" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3342" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3864" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4115" />
         <source>Confirmation</source>
         <translation type="unfinished">ការបញ្ជាក់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1976" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1979" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">ការកំណត់បានផ្លាស់ប្តូរ ចាប់ផ្ដើមប្រូកស៊ីឡើងវិញ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2005" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2008" />
         <source>Settings changed</source>
         <translation type="unfinished">បានផ្លាស់ប្តូរការកំណត់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2006" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2009" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">ចាប់ផ្តើមកម្មវិធីឡើងវិញដើម្បីឱ្យមានប្រសិទ្ធភាព។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2051" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">បាន​នាំចូល​កម្រងព័ត៌មាន % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2380" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2385" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">អ្នក​ប្រើ​បាន​ជ្រើស​រើស​មិន​មាន​សិទ្ធិ​ទាមទារ​ទេ មុខងារ​មួយ​ចំនួន​ប្រហែល​ជា​មិន​ដំណើរការ​ទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2447" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2452" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">សូមផ្តល់សិទ្ធិជា root ស្នូល</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2778" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2783" />
         <source>Not Running</source>
         <translation type="unfinished">មិនដំណើរការ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2966" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2979" />
         <source>Group is too big to sort</source>
         <translation type="unfinished">ក្រុមធំពេកក្នុងការតម្រៀប</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3250" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3263" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">ក្លូន % 1 ធាតុ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3274" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3287" />
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">ក្រុមធំពេកក្នុងការស្វែងរកស្ទួន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3309" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3322" />
         <source> Confirmation </source>
         <translation type="unfinished">ការបញ្ជាក់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3310" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3323" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">យក​ធាតុ %1 ចេញ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3330" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3343" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">យក​ធាតុ %1 ចេញ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3378" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3391" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">បាន​ចម្លង​ធាតុ% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3622" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3635" />
         <source>QR Code not found</source>
         <translation type="unfinished">រកមិនឃើញ QR Code</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3657" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">មិនអាចថតអេក្រង់បានទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3738" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">យក %1 ធាតុដែលមិនអាចប្រើបានចេញ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3800" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3813" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">លុប%1 ធាតុមិនត្រឹមត្រូវ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3852" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3865" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ជំនួសអាសយដ្ឋានម៉ាស៊ីនមេដែនជាមួយនឹង IPs ដែលបានដោះស្រាយរបស់ពួកគេ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4021" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
         <source>Clear</source>
         <translation type="unfinished">ច្បាស់</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4092" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4105" />
         <source>Delete selected Group</source>
         <translation type="unfinished">លុបក្រុមដែលបានជ្រើសរើស</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4106" />
         <source>Edit selected Group</source>
         <translation type="unfinished">កែសម្រួលក្រុមដែលបានជ្រើសរើស</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4103" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4116" />
         <source>Remove %1?</source>
         <translation type="unfinished">លុប%1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4846" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4858" />
         <source>Cannot start</source>
         <translation type="unfinished">មិនអាចចាប់ផ្តើមបានទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4847" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4859" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">សំណើទាញយកចុងក្រោយមិនទាន់បញ្ចប់នៅឡើយទេ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4881" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4893" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">បានបរាជ័យក្នុងការទាញយកទ្រព្យសម្បត្តិធ្វើបច្ចុប្បន្នភាព</translation>
     </message>
@@ -3846,7 +3861,7 @@ Are you sure?</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="354" />
+        <location filename="../../src/gharqad/main.cpp" line="353" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation type="unfinished" />
     </message>
@@ -3859,43 +3874,48 @@ Are you sure?</source>
         <translation type="unfinished">របៀប Tun មិនអាចប្រើជាមួយការកំណត់ផ្ទាល់ខ្លួនបានទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1063" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1061" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">កំពុងស្នើសុំការជាវ៖ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1067" />
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">ស្នើសុំការជាវ % 1 កំហុស៖ % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1080" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1091" />
+        <source>Subscription profile title: %1</source>
+        <translation type="unfinished">ចំណងជើងកម្រងព័ត៌មានជាវ៖ %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1100" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">សំណើជាវបានបញ្ចប់៖ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1105" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125" />
         <source>Clearing servers...</source>
         <translation type="unfinished">កំពុងសម្អាតម៉ាស៊ីនមេ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1130" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1150" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">កំពុងដំណើរការទិន្នន័យការជាវ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1164" />
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- ទម្លាក់ប្រូកស៊ី % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1146" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1166" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">ដំណើរការបានបញ្ចប់ ការដាក់ពាក្យ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1160" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1180" />
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- បានបន្ថែមប្រូកស៊ី % 1</translation>
@@ -3915,12 +3935,13 @@ Deleted %3 Profiles:
         <translation type="obsolete">គ្មានអ្វីទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1162" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1182" />
         <source>Change of %1:</source>
         <translation type="unfinished">ការផ្លាស់ប្តូរ% 1៖</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="840" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2897" />
         <source>Default</source>
         <translation type="unfinished">លំនាំដើម</translation>
     </message>
@@ -3949,7 +3970,7 @@ Deleted %3 Profiles:
         <translation type="unfinished">ជ្រើសរើស</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2746" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2751" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">ប្រូកស៊ី៖ % 1
@@ -3971,7 +3992,7 @@ Direct: %2</source>
         <translation type="unfinished">ចាប់ផ្តើមស្នូលឡើងវិញ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="371" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="375" />
         <source>System</source>
         <translation type="unfinished">ប្រព័ន្ធ</translation>
     </message>
@@ -4004,8 +4025,12 @@ How to update?</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
+        <source>Group name (will use profile-title from subscription if empty)</source>
+        <translation type="unfinished">ឈ្មោះក្រុម (នឹងប្រើចំណងជើងកម្រងព័ត៌មានពីការជាវ ប្រសិនបើទទេ)</translation>
+    </message>
+    <message>
         <source>Group name</source>
-        <translation type="unfinished">ឈ្មោះក្រុម</translation>
+        <translation type="obsolete">ឈ្មោះក្រុម</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109" />
@@ -4023,30 +4048,30 @@ How to update?</source>
         <translation type="unfinished">ស្នើសុំកំហុសក្នុងទម្រង់៖ % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="521" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="523" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">បានលុប % 1 ស្ទួន</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="561" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="563" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">បានលុប% 1 មិនត្រឹមត្រូវ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="596" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="598" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">លុប% 1 មិនអាចប្រើបានទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1757" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1760" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ពិនិត្យ​សំណុំ​ច្បាប់៖% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1779" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1782" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ការស្នើសុំកំហុសក្នុងបញ្ជីកំណត់ច្បាប់៖ % 1</translation>
     </message>
@@ -4055,7 +4080,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">អាសយដ្ឋាន IP៖% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2784" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2789" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP ចូល៖ % 1</translation>
     </message>
@@ -4064,69 +4089,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">បិទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2788" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2793" />
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">ចូល៖ % 2 % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2790" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2795" />
         <source>Inbound: Off</source>
         <translation type="unfinished">ច្រកចូល៖ បិទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3233" />
         <source>Move profiles to group</source>
         <translation type="unfinished">ផ្លាស់ទីទម្រង់ទៅក្រុម</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3400" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3413" />
         <source>Config copied</source>
         <translation type="unfinished">បានចម្លងកំណត់រចនាសម្ព័ន្ធ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3412" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3425" />
         <source>Copy core config</source>
         <translation type="unfinished">ចម្លងការកំណត់ស្នូល</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3414" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427" />
         <source>Copy test config</source>
         <translation type="unfinished">ចម្លងការកំណត់រចនាសម្ព័ន្ធសាកល្បង</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3415" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3428" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="214" />
         <source>OK</source>
         <translation type="unfinished">យល់ព្រម</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4746" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4756" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4800" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4828" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4837" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4758" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4840" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4849" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4884" />
         <source>Update</source>
         <translation type="unfinished">ធ្វើបច្ចុប្បន្នភាព</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4747" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4759" />
         <source>Not official support platform</source>
         <translation type="unfinished">មិនមែនជាវេទិកាគាំទ្រផ្លូវការទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4757" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4769" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">ស្នើ​សុំ​ធ្វើ​បច្ចុប្បន្នភាព​កំហុស៖ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4800" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812" />
         <source>No update</source>
         <translation type="unfinished">មិនមានបច្ចុប្បន្នភាពទេ។</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4829" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4841" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4135,17 +4160,17 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4832" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4844" />
         <source>Close</source>
         <translation type="unfinished">បិទ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4834" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4846" />
         <source>Open in browser</source>
         <translation type="unfinished">បើកនៅក្នុងកម្មវិធីរុករក</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4873" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4885" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">ការអាប់ដេតរួចរាល់ហើយ ចាប់ផ្ដើមឡើងវិញដើម្បីដំឡើង?</translation>
     </message>
@@ -4155,7 +4180,7 @@ Release note:
         <translation type="unfinished">ការចូលប្រើត្រូវបានបដិសេធ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="386" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="385" />
         <source>Select a Folder</source>
         <translation type="unfinished">ជ្រើសរើសថតឯកសារ</translation>
     </message>
@@ -4192,7 +4217,7 @@ Direct: ⚡%2 📦%4</source>
 ផ្ទាល់៖ ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="168" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="169" />
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="455" />
         <source>Invalid</source>
         <translation type="unfinished">មិនត្រឹមត្រូវ</translation>
@@ -4583,7 +4608,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="424" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1494" />
         <source>Download Profiles</source>
         <translation type="unfinished">ទាញយកប្រវត្តិរូប</translation>
     </message>

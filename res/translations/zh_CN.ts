@@ -122,6 +122,17 @@
         <translation>表情符号字体</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
+        <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
+JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
+INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
+binary — 2026 — arbitrary byte-values format for NekoBox settings used as leveldb values or standalone files — qr243vbi</source>
+        <translation type="unfinished">leveldb — 2011 — 嵌入式持久 LSM 树键值存储 — Google
+JSON — 2001 — 用于交换结构化数据（对象、数组、基元）的轻量级文本格式 — Douglas Crockford
+INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分和键=值对 — Microsoft
+二进制 — 2026 — NekoBox 设置的任意字节值格式用作 leveldb 值或独立文件 — qr243vbi</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1287" />
         <source>Auto-Testing</source>
         <translation>自动测试</translation>
@@ -360,12 +371,11 @@ INI — 20 世纪 80 年代初 — 带有部分和键=值对的简单纯文本�
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
         <source>RocksDB — 2011 — embedded persistent LSM-tree key–value store (built on LevelDB) — Facebook
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as RocksDB values or standalone files — qr243vbi</source>
-        <translation type="unfinished">RocksDB — 2011 — 嵌入式持久 LSM 树键值存储（基于 LevelDB 构建） — Facebook
+        <translation type="obsolete">RocksDB — 2011 — 嵌入式持久 LSM 树键值存储（基于 LevelDB 构建） — Facebook
 JSON — 2001 — 用于交换结构化数据（对象、数组、基元）的轻量级文本格式 — Douglas Crockford
 INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分和键=值对 — Microsoft
 二进制 — 2026 — NekoBox 设置的任意字节值格式，用作 RocksDB 值或独立文件 — qr243vbi</translation>
@@ -748,27 +758,27 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
         <translation>仅国别</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222" />
         <source>Proxy type</source>
         <translation type="unfinished">代理类型</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="225" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="224" />
         <source>Off</source>
         <translation type="unfinished">关闭</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="258" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="257" />
         <source>Name of program</source>
         <translation type="unfinished">节目名称</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="525" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="524" />
         <source>Security Warning</source>
         <translation type="unfinished">安全警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="526" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="525" />
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -785,12 +795,12 @@ Are you sure you want to disable TLS verification?</source>
 您确定要禁用 TLS 验证吗？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="547" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="546" />
         <source>Privacy Warning</source>
         <translation type="unfinished">隐私警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="548" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="547" />
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -865,12 +875,17 @@ Are you sure you want to enable HWID sending?</source>
         <translation>存档</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="34" />
+        <source>Will use profile-title from subscription if empty</source>
+        <translation type="unfinished">如果为空，将使用订阅中的个人资料标题</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="384" />
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="384" />
         <source>Please input URL</source>
         <translation>请输入 URL</translation>
     </message>
@@ -880,7 +895,7 @@ Are you sure you want to enable HWID sending?</source>
         <translation>复制配置档分享链接</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="70" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="71" />
         <source>Copied</source>
         <translation>已复制</translation>
     </message>
@@ -1261,14 +1276,14 @@ Are you sure you want to enable HWID sending?</source>
         <translation>分组2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="468" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="469" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="471" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="474" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="472" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="475" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Direct</source>
         <translation>直连</translation>
@@ -1294,27 +1309,27 @@ Are you sure you want to enable HWID sending?</source>
         <translation>出站：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="478" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="479" />
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="442" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="443" />
         <source>Front proxy: </source>
         <translation>前置代理：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="440" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="441" />
         <source>Front proxy for group %1</source>
         <translation>前置代理 =&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="456" />
         <source>Landing proxy: </source>
         <translation>落地代理：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="454" />
         <source>Landing proxy for group %1</source>
         <translation>落地代理 =&gt; %1</translation>
     </message>
@@ -2978,44 +2993,44 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1419" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1420" />
         <source>Rulesets cache is updated</source>
         <translation>规则集缓存已更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1348" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="110" />
         <source>No routing profiles are updated</source>
         <translation>没有可用的更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1230" />
         <source>Inbound proxy type:</source>
         <translation type="unfinished">入站代理类型：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1372" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1373" />
         <source>Failed to update rulesets</source>
         <translation>规则集更新失败</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1346" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1350" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1371" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1374" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1418" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1347" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1372" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1375" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1419" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="100" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="109" />
         <source>Update Response</source>
         <translation>更新响应</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="751" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
         <source>Auto-scroll log</source>
         <translation type="unfinished">自动滚动日志</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1228" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1229" />
         <source>Select Proxy</source>
         <translation type="unfinished">选择代理</translation>
     </message>
@@ -3024,12 +3039,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">入站代理：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1312" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1313" />
         <source>Edit Routing Profiles</source>
         <translation>编辑路由文件</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1334" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1335" />
         <source>Update Routing Profiles</source>
         <translation>更新路由文件</translation>
     </message>
@@ -3038,22 +3053,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">请求规则集清单错误：%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1385" />
         <source>Update RuleSet Cache</source>
         <translation>更新规则集缓存</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1433" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1434" />
         <source>Clear RuleSet Cache</source>
         <translation>清除规则集缓存</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1361" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1362" />
         <source>Update RuleSet Map</source>
         <translation>更新规则集</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1469" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1470" />
         <source>Enable AdBlock</source>
         <translation>启用广告拦截</translation>
     </message>
@@ -3077,17 +3092,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">服务器</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="151" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="152" />
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="154" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="155" />
         <source>Address</source>
         <translation>地址</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="158" />
         <source>Name</source>
         <translation>名称</translation>
     </message>
@@ -3105,8 +3120,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2811" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2814" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2816" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2819" />
         <source>System Proxy</source>
         <translation>系统代理</translation>
     </message>
@@ -3164,8 +3179,8 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4023" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4036" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4047" />
         <source>Stop</source>
         <translation>停止</translation>
     </message>
@@ -3293,29 +3308,29 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="unfinished">信息</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1878" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1881" />
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1975" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3329" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3737" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3799" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3851" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4102" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1978" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2033" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3342" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3750" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3864" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4115" />
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1976" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1979" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
         <source>Settings changed, restart proxy?</source>
         <translation>设置已改变，重启代理吗？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2051" />
         <source>Imported %1 profile(s)</source>
         <translation>导入了 %1 个配置档</translation>
     </message>
@@ -3326,7 +3341,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>不可用</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3330" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3343" />
         <source>Remove %1 item(s) ?</source>
         <translation>删除选中节点 %1 项吗？</translation>
     </message>
@@ -3341,7 +3356,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>[%1] 测试错误: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4021" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
         <source>Clear</source>
         <translation>清除</translation>
     </message>
@@ -3367,7 +3382,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">选择</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3622" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3635" />
         <source>QR Code not found</source>
         <translation>未找到二维码</translation>
     </message>
@@ -3418,7 +3433,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>查看此节点（ 二维码和链接 ）</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3378" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3391" />
         <source>Copied %1 item(s)</source>
         <translation>复制了 %1 项</translation>
     </message>
@@ -3462,19 +3477,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>启用 Tun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1968" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1971" />
         <source>Tun Settings changed</source>
         <translation>Tun 设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1969" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1972" />
         <source>Restart Tun to take effect.</source>
         <translation>重启 Tun 以生效。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4024" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4037" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4047" />
         <source>Start</source>
         <translation>启动</translation>
     </message>
@@ -3489,7 +3504,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3249" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3262" />
         <source>Clone</source>
         <translation>复制</translation>
     </message>
@@ -3499,7 +3514,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>更新订阅</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3250" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3263" />
         <source>Clone %1 item(s)</source>
         <translation>复制选中节点 %1 项</translation>
     </message>
@@ -3515,7 +3530,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1660" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
         <source>Export %1 config</source>
         <translation>导出 %1 配置</translation>
     </message>
@@ -3535,7 +3550,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>重启程序</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2778" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2783" />
         <source>Not Running</source>
         <translation>未在运行</translation>
     </message>
@@ -3554,12 +3569,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2005" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2008" />
         <source>Settings changed</source>
         <translation>设置已改变</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2006" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2009" />
         <source>Restart the program to take effect.</source>
         <translation>重启程序以生效。</translation>
     </message>
@@ -3610,22 +3625,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4053" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4066" />
         <source>Add new Group</source>
         <translation>新建分组</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4092" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4105" />
         <source>Delete selected Group</source>
         <translation>删除此分组</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4106" />
         <source>Edit selected Group</source>
         <translation>编辑此分组</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4103" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4116" />
         <source>Remove %1?</source>
         <translation>删除选中节点 %1 吗?</translation>
     </message>
@@ -3634,7 +3649,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">测试选中节点URL延迟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1375" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1376" />
         <source>Rulesets updated successfully</source>
         <translation>规则集更新成功</translation>
     </message>
@@ -3643,7 +3658,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">清除选中节点测试结果</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1351" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1352" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="101" />
         <source>Updated %1 routing profiles</source>
         <translation>更新了 %1 个设定值</translation>
@@ -3693,27 +3708,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>如果启动 VPN 时有问题，您可以在这里强制重置 Core 进程，然后再次尝试启动配置档。错误是 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3309" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3322" />
         <source> Confirmation </source>
         <translation> 确认 </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3310" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3323" />
         <source> Remove %1 item(s) ? </source>
         <translation> 移除 %1 项吗？ </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3738" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3751" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>移除 %1 个不可用项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3800" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3813" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>移除 %1 个无效项吗？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3852" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3865" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>替换域名服务器地址为其解析后的 IP 地址吗？</translation>
     </message>
@@ -3743,7 +3758,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>日志</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2447" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2452" />
         <source>Please give the core root privileges</source>
         <translation>请给核心赋予根(root)权限</translation>
     </message>
@@ -3884,12 +3899,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">复制测试配置</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4846" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4858" />
         <source>Cannot start</source>
         <translation>无法启动</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4847" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4859" />
         <source>Last download request has not finished yet</source>
         <translation>上次的下载请求尚未完成</translation>
     </message>
@@ -3899,7 +3914,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>流量图</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4881" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4893" />
         <source>Failed to download update assets</source>
         <translation>下载更新资源失败</translation>
     </message>
@@ -3938,22 +3953,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>[%1] 速度测试错误：%2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2380" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2385" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation>用户选择无权限请求，某些功能可能不起作用</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2966" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2979" />
         <source>Group is too big to sort</source>
         <translation type="unfinished">组太大无法排序</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3274" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3287" />
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">组太大，无法找到重复项</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3644" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3657" />
         <source>Unable to capture screen</source>
         <translation>无法捕获屏幕</translation>
     </message>
@@ -4075,7 +4090,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="354" />
+        <location filename="../../src/gharqad/main.cpp" line="353" />
         <source>QT_LAYOUT_DIRECTION</source>
         <translation />
     </message>
@@ -4105,8 +4120,12 @@ How to update?</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
+        <source>Group name (will use profile-title from subscription if empty)</source>
+        <translation type="unfinished">组名称（如果为空，将使用订阅中的个人资料标题）</translation>
+    </message>
+    <message>
         <source>Group name</source>
-        <translation>分组名称</translation>
+        <translation type="vanished">分组名称</translation>
     </message>
     <message>
         <source>Added %1 profiles:
@@ -4123,7 +4142,7 @@ Deleted %3 Profiles:
         <translation type="vanished">IP地址: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2746" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2751" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation>代理: %1
@@ -4135,27 +4154,27 @@ Direct: %2</source>
         <translation>已用 %1 剩余 %2 过期 %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4746" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4756" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4800" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4828" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4837" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4872" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4758" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4768" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4840" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4849" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4884" />
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4800" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4812" />
         <source>No update</source>
         <translation>无更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4834" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4846" />
         <source>Open in browser</source>
         <translation>在浏览器打开</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4832" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4844" />
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -4165,40 +4184,40 @@ Direct: %2</source>
         <translation>选择国家地理规则</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="521" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="523" />
         <source>
 Deleted %1 Duplicates</source>
         <translation>已删除 %1 个重复项</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="561" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="563" />
         <source>
 Deleted %1 Invalid</source>
         <translation>已删除 %1 无效项</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="596" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="598" />
         <source>
 Deleted %1 Unavailable</source>
         <translation>已删除 %1 不可用</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1757" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1760" />
         <source>Check Rule Sets: %1</source>
         <translation>检查规则集：%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1779" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1782" />
         <source>Requesting rule-set list error: %1</source>
         <translation>请求规则集清单错误：%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2788" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2793" />
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">入站：%2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2790" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2795" />
         <source>Inbound: Off</source>
         <translation type="unfinished">入站：关闭</translation>
     </message>
@@ -4207,7 +4226,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">%2：%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2784" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2789" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">入站 IP：%1</translation>
     </message>
@@ -4216,32 +4235,32 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">关闭</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3220" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3233" />
         <source>Move profiles to group</source>
         <translation type="unfinished">将配置文件移至组</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3400" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3413" />
         <source>Config copied</source>
         <translation>配置已复制</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3412" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3425" />
         <source>Copy core config</source>
         <translation>复制核心配置</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3414" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3427" />
         <source>Copy test config</source>
         <translation>复制测试配置</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4873" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4885" />
         <source>Update is ready, restart to install?</source>
         <translation>更新已准备好，重启进行安装吗？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4829" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4841" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4265,12 +4284,12 @@ Release note:
         <translation type="unfinished">额外核心</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1063" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1061" />
         <source>Requesting subscription: %1</source>
         <translation>正在请求订阅: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1069" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1067" />
         <source>Requesting subscription %1 error: %2</source>
         <translation>请求订阅 %1 时出错: %2</translation>
     </message>
@@ -4279,7 +4298,7 @@ Release note:
         <translation type="vanished">无</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1162" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1182" />
         <source>Change of %1:</source>
         <translation>%1 的变化:</translation>
     </message>
@@ -4289,12 +4308,12 @@ Release note:
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1105" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125" />
         <source>Clearing servers...</source>
         <translation>正在清理服务器...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1080" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1100" />
         <source>Subscription request fininshed: %1</source>
         <translation>订阅请求完成: %1</translation>
     </message>
@@ -4305,6 +4324,7 @@ Release note:
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="840" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2897" />
         <source>Default</source>
         <translation>默认</translation>
     </message>
@@ -4323,12 +4343,12 @@ Release note:
         <translation type="vanished">无法打开文件。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4747" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4759" />
         <source>Not official support platform</source>
         <translation>非官方支持平台</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4757" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4769" />
         <source>Requesting update error: %1</source>
         <translation>请求更新时出错：%1</translation>
     </message>
@@ -4338,23 +4358,28 @@ Release note:
         <translation>Tun 模式不能与自定义配置一起使用</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1130" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1091" />
+        <source>Subscription profile title: %1</source>
+        <translation type="unfinished">订阅配置文件标题：%1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1150" />
         <source>Processing subscription data...</source>
         <translation>正在处理订阅数据...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1144" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1164" />
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- 删除 %1 代理</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1146" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1166" />
         <source>Process complete, applying...</source>
         <translation>处理完成，正在应用...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1160" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1180" />
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- 添加了 %1 代理</translation>
@@ -4379,7 +4404,7 @@ Release note:
         <translation>正在重新启动核心...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="386" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="385" />
         <source>Select a Folder</source>
         <translation>选择一个文件夹</translation>
     </message>
@@ -4389,14 +4414,14 @@ Release note:
         <translation>访问被拒</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3415" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3428" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="214" />
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="371" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="375" />
         <source>System</source>
         <translation>系统</translation>
     </message>
@@ -4438,7 +4463,7 @@ Direct: ⚡%2 📦%4</source>
 直接：⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="168" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="169" />
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="455" />
         <source>Invalid</source>
         <translation type="unfinished">无效的</translation>
@@ -4858,7 +4883,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="424" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1493" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1494" />
         <source>Download Profiles</source>
         <translation>选择国家地理规则</translation>
     </message>
