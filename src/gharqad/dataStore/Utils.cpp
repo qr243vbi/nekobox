@@ -1,14 +1,14 @@
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
-
+#include <iostream>
+#include <random>
+#include <ctime>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/sys/QThreadCreateThread.hpp>
 #include <QDir>
 #include <QFileInfo>
-#include <QRandomGenerator>
-
 #include <QApplication>
 #include <QDateTime>
 #include <QFile>
@@ -243,6 +243,7 @@ void MoveDirToTrash(const QString &path) {
 
 QString GetRandomString(int length, int flags)
 {
+  static std::mt19937 rng(std::random_device{}());
     int digitStart = -1;
     int lowerStart = -1;
     int upperStart = -1;
@@ -272,9 +273,9 @@ QString GetRandomString(int length, int flags)
 
     for (int i = 0; i < length; ++i)
     {
-        int r = QRandomGenerator::global()->bounded(boundShift);
-        if (upperStart >= 0 && r >= upperStart)
-        {
+      // ...
+      int r = std::uniform_int_distribution<int>(0, boundShift - 1)(rng); // if boundShift > 0        if (upperStart >= 0 && r >= upperStart)
+        if (r >= upperStart && upperStart >= 0){
             result[i] = QChar('A' + (r - upperStart));
         }
         else if (lowerStart >= 0 && r >= lowerStart)
