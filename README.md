@@ -148,6 +148,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [lmdb](https://www.symas.com/mdb)
 - [cpr](https://github.com/libcpr/cpr)
 - [lrucache11](https://github.com/mohaps/lrucache11)
+- [leveldb](https://github.com/google/leveldb)
 
 ## FAQ
 **What is AppImage?** <br/>
