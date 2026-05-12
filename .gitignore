@@ -11,9 +11,9 @@ bash.py
 *.dat
 *.db
 *.gpg
-/core/server/gen/*.go
-/core/server/gen/libcore_service-remote
-/core/server/gen/main_sing
+# /core/server/gen/*.go
+# /core/server/gen/libcore_service-remote
+# /core/server/gen/main_sing
 /core/updater/vendor
 /core/server/vendor
 /core/server/elevated_resolvctl

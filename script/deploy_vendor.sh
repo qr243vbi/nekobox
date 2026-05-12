@@ -39,7 +39,7 @@ rm -fv **/*.so
 rm -fv **/*.a
 rm -fv **/*.dll
 
-git add -f srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} core/updater/vendor SingBox.Version
+git add -f srslist.json global.ini core/{server,updater}/vendor SingBox.Version
 git -c user.name="a" -c user.email="my@email.org" commit -am "New Update"
 
 
@@ -53,7 +53,7 @@ sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_stand
 
 
 git reset --soft HEAD^1
-for i in  srslist* global.ini core/server/{gen/{libcore_service-remote,main_sing,*.go},vendor} core/updater/vendor SingBox.Version
+for i in srslist.json global.ini core/{server,updater}/vendor SingBox.Version
 do
 git rm -rf "$i"
 rm -rf "$i"
