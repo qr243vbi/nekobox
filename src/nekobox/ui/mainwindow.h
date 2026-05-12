@@ -265,7 +265,9 @@ private slots:
 
     int updateRouteProfiles();
 
-    void on_menu_copy_links_nkr_triggered(bool isNekoRay = true);
+    void ShareLink(bool isNekoRay = true);
+
+    void on_menu_copy_links_nkr_triggered();
 
     void on_menu_export_config_triggered();
 
