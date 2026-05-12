@@ -173,10 +173,10 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.11-mod2
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.11-mod3
 
 replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4
 
 replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7
 
-replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.1-fix
+replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.2-fix
