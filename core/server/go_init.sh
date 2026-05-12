@@ -11,13 +11,16 @@ shopt -s globstar
 go mod init nekobox_core
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-box=github.com/qr243vbi/sing-box@latest
+go mod edit -replace=github.com/sagernet/sing-box=github.com/qr243vbi/sing-box@HEAD
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@latest
+go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@HEAD
 go mod tidy
 
 go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@HEAD
+go mod tidy
+
+go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@HEAD  
 go mod tidy
 
 go get -u github.com/apache/thrift@HEAD
