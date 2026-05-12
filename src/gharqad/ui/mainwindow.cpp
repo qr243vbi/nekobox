@@ -3246,28 +3246,31 @@ void MainWindow::on_menu_move_profile_triggered() {
 void MainWindow::on_menu_clone_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto ents = get_now_selected_list();
-  if (ents.isEmpty())
-    return;
-
-  if (ents.count() > 3000){
-    MessageBoxWarning(software_name, "Too much selected to copy, cannot proceed");
-    return;
-  }
-
-  auto btn = QMessageBox::question(this, tr("Clone"),
-                                   tr("Clone %1 item(s)").arg(ents.count()));
-  if (btn != QMessageBox::Yes)
-    return;
-
-  QStringList sls;
+  QStringList links;
+  int link_count = 0;
   for (const auto &entid : ents) {
     auto ent = Configs::profileManager->GetProfile(entid);
-    if (ent != nullptr){
-      sls << ent->bean()->ToNekorayShareLink();
+    if (ent != nullptr) {
+      links += ent->bean()->ToNekorayShareLink();
+      link_count ++;
     }
   }
 
-  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, sls.join("\n"),
+  if (link_count == 0){
+    return;
+  } 
+
+  if (Configs::windowSettings->ask_delete){
+    auto btn = QMessageBox::question(this, tr("Clone"),
+                                   tr("Clone %1 item(s)").arg(link_count));
+    if (btn != QMessageBox::Yes) {
+      return;
+    }
+  }
+
+  auto clipboard = links.join("\n");
+
+  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard,
                                           &chooseUpdateGroup);
 }
 
