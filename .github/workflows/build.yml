@@ -775,7 +775,7 @@ jobs:
             gh release upload "${INPUT_VERSION}" "$version_standalone-windows32-installer.exe" --clobber
             gh release upload "${INPUT_VERSION}" "$version_standalone-windows32.zip" --clobber
           fi
-          if [[ "${{ github.event.inputs.pre_release }} == 'false' ]]
+          if [[ '${{ github.event.inputs.pre_release }}' == 'false' ]]
           then
            if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
            then
