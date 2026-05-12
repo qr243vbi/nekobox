@@ -277,6 +277,26 @@ int main(int argc, char** argv) {
         goto loop_back_2;
     }
 
+
+    // Check if another instance is running
+    QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
+    hashBytes.replace('+', '0').replace('/', '1');
+    serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
+    #ifdef DEBUG_MODE
+    qDebug() << "server name: " << serverName;
+    #endif
+    QLocalSocket socket;
+    socket.connectToServer(serverName);
+    if (socket.waitForConnected(250))
+    {
+        #ifdef DEBUG_MODE
+        qDebug() << "Another instance is running, let's wake it up and quit";
+        #endif
+        socket.disconnectFromServer();
+        return 0;
+    }
+
+
     Configs::databaseManager = std::make_shared<Configs::FileDatabaseManager>();
     Configs::resourceManager = new class Configs::ResourceManager();
 
@@ -352,24 +372,6 @@ int main(int argc, char** argv) {
     #endif
     QGuiApplication::tr("QT_LAYOUT_DIRECTION");
     loadTranslate(locale);
-
-    // Check if another instance is running
-    QByteArray hashBytes = QCryptographicHash::hash(wd.absolutePath().toUtf8(), QCryptographicHash::Md5).toBase64(QByteArray::OmitTrailingEquals);
-    hashBytes.replace('+', '0').replace('/', '1');
-    serverName = LOCAL_SERVER_PREFIX + QString::fromUtf8(hashBytes);
-    #ifdef DEBUG_MODE
-    qDebug() << "server name: " << serverName;
-    #endif
-    QLocalSocket socket;
-    socket.connectToServer(serverName);
-    if (socket.waitForConnected(250))
-    {
-        #ifdef DEBUG_MODE
-        qDebug() << "Another instance is running, let's wake it up and quit";
-        #endif
-        socket.disconnectFromServer();
-        return 0;
-    }
 
     // QLocalServer
     QLocalServer server(qApp);
