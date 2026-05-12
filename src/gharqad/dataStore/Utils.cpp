@@ -235,9 +235,12 @@ QString GetQueryValue(const QUrlQuery &q, const QString &key,
 void MoveDirToTrash(const QString &path) {
   QDir dir(path);
   if (dir.exists()) {
-    if (!QFile::moveToTrash(path)) {
-      dir.removeRecursively();
+    #ifdef MOVE_TO_TRASH
+    if (QFile::moveToTrash(path)) {
+      return;
     }
+    #endif
+    dir.removeRecursively();
   }
 };
 

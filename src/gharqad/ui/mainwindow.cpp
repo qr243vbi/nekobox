@@ -269,11 +269,6 @@ void SpinnerDialog::onOk() {
     if (resp.isEmpty()) {
       return;
     }
-#ifdef DEBUG_MODE
-    else {
-      qDebug() << "PROFILE GETTER IS : " << resp;
-    }
-#endif
     QString err;
     auto parsed =
         Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), &err);
@@ -4256,9 +4251,7 @@ void MainWindow::RegisterHotkey(bool unregister) {
 
 void MainWindow::RegisterHiddenMenuShortcuts(QMenu *menu) {
   for (const auto &action : menu->actions()) {
-#ifdef DEBUG_MODE
-    qDebug() << "HIDDEN SHORTCUT" << action->shortcut().toString();
-#endif
+
     if (!action->shortcut().toString().isEmpty()) {
       hiddenMenuShortcuts.append(std::make_shared<QShortcut>(
           action->shortcut(), this, [=, this]() { action->trigger(); }));
@@ -4364,9 +4357,6 @@ void MainWindow::loadShortcuts() {
     } else {
       QString str;
       QKeySequence seq(str = mp[data_string].toString());
-#ifdef DEBUG_MODE
-      qDebug() << "SHORTCUT IS" << str << seq;
-#endif
       action->setShortcut(seq);
     }
   }
@@ -4453,9 +4443,7 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 #endif
 
 void MainWindow::HotkeyEvent(const QString &key) {
-#ifdef DEBUG_MODE
-  qDebug() << "Hot Key Pressed" << key;
-#endif
+
   if (key.isEmpty())
     return;
   runOnUiThread([=, this] {

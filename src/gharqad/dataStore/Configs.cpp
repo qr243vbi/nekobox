@@ -113,20 +113,11 @@ namespace Configs_ConfigItem {
         auto _map = this->_map();
         QSettings settings = QSettingsFromFileInfo(info);
         settings.beginGroup(path);
-            #ifdef DEBUG_MODE
-                qDebug() << "Settings loading" << info.absoluteFilePath();
-            #endif
         for (auto key : settings.childKeys()){
-            #ifdef DEBUG_MODE
-                qDebug() << "INI KEY" << key;
-            #endif
             auto h = Configs::hash(key);
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
             } else {
-            #ifdef DEBUG_MODE
-                qDebug() << "Loading" << key;
-            #endif
                 value->LoadINI(this, info, path);
             }
         }
@@ -192,9 +183,6 @@ namespace Configs_ConfigItem {
         auto document = QJsonDocument::fromJson(data, &error);
 
         if (error.error != error.NoError) {
-            #ifdef DEBUG_MODE
-            qDebug() << "QJsonParseError" << error.errorString();
-            #endif
             return false;
         }
 
@@ -210,9 +198,6 @@ namespace Configs_ConfigItem {
     bool JsonStore::content(const QByteArray & byteArray){
         if (byteArray.size() > 7) {
             QByteArray magic = byteArray.first(7);
-#ifdef DEBUG_MODE
-            qDebug() << "magic is: " << magic << (magic == "NekoBox");
-#endif
             if (magic == "NekoBox"){
                 FromBytes(byteArray.mid(7));
                 return true;
@@ -237,10 +222,6 @@ namespace Configs_ConfigItem {
         }
         bool ok = file.open(QIODevice::ReadOnly);
         if (!ok) {
-            #ifdef DEBUG_MODE
-    //        if (load_control_must){
-                qDebug() << ("can not open config " + fn + "\n" + file.errorString());
-            #endif
         } else {
             if (!content(file.readAll())){
                 this->LoadINI(QFileInfo(fn), "");
@@ -254,9 +235,6 @@ namespace Configs_ConfigItem {
     bool JsonStore::Save() {
     //    if (callback_before_save != nullptr) callback_before_save();
         if (save_control_no_save() || (this->StoreType() == Configs::JsonStoreType::NoSave)) {
-#ifdef DEBUG_MODE
-            qDebug() << "Store File Name Is" << Configs::getJsonStoreFileName(this->StoreType(), this->Id());
-#endif
             return false;
         }
         auto ret = Configs::databaseManager->Save(this);
@@ -270,9 +248,6 @@ namespace Configs_ConfigItem {
         if (Configs::JsonStoreType::NoSave == this->StoreType()){
             return false;
         }
-        #ifdef DEBUG_MODE
-            qDebug() << "Database Manager IS: " << (long long)(void*)Configs::databaseManager.get();
-        #endif
         auto ret = Configs::databaseManager->Load(this);
         if (ret){
             this->storage_exists(true);
@@ -283,9 +258,6 @@ namespace Configs_ConfigItem {
     void JsonEnum::trigger(int old_value, int new_value) {  } ; 
 
     JsonEnum& JsonEnum::set(int value){
-#ifdef DEBUG_MODE
-            qDebug() << "ENUM IS SETTING" << value;
-#endif
         auto old = this->value;
         this->value = value;
         trigger(old, value);
@@ -293,26 +265,13 @@ namespace Configs_ConfigItem {
     }
     JsonEnum& JsonEnum::set(const QString& value){
 
-#ifdef DEBUG_MODE
-            qDebug() << " add string (=) " << value;
-#endif
         auto map = _map();
 
-#ifdef DEBUG_MODE
-            qDebug() << "ENUM IS SETTING" << value;
-#endif
         try{
             this->set(map.left.at(value.toStdString()));
         } catch (std::out_of_range){
-#ifdef DEBUG_MODE
-            qDebug() << "ENUM NOT FOUND" << value;
-#endif
             this->set(0);
         }
-
-#ifdef DEBUG_MODE
-            qDebug() << "ENUM IS SET" << this->value;
-#endif
         return *this;
     }
     JsonEnum& JsonEnum::set(const char* value){
@@ -348,9 +307,6 @@ namespace Configs_ConfigItem {
         try {
             return map.right.at(this->value).get_name();
         } catch (std::out_of_range){
-#ifdef DEBUG_MODE
-            qDebug() << this->value << "NOT FOUND";
-#endif
             return "";
         }
     }
@@ -361,9 +317,6 @@ namespace Configs_ConfigItem {
         return arr;
     }
     const boost::bimap<EnumFieldName, int>& JsonEnum::_map() const {
-#ifdef DEBUG_MODE
-        qDebug() << "NULL BIMAP";
-#endif
         static boost::bimap<EnumFieldName, int> m;
         static bool initialized = false;
         return m;
@@ -385,7 +338,11 @@ QByteArray hash = QCryptographicHash::hash(
 
     int config_type = 
     #ifdef DEBUG_MODE
+            #ifndef SKIP_LEVELDB
+    DatabaseType::rocksdb_type
+            #else
     DatabaseType::json_type
+            #endif
     #else
     DatabaseType::binary_type
     #endif
