@@ -2917,7 +2917,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="obsolete">О</translation>
+        <translation type="obsolete">О программе</translation>
     </message>
     <message>
         <source>NyameBox / NekoBox for PC</source>
