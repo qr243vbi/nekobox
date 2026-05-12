@@ -163,8 +163,8 @@ github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyf
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9 h1:dndt3WAPKpr3m7yA6IOmOXVX4XIUvyixELQW5tBTkM4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9/go.mod h1:xBrewWRKDk9jPLnQfQXLI+v11v5juBRRhXMhKfj2jfc=
-github.com/qr243vbi/sing-box v1.13.11 h1:5L56hQeQZgggaYq2rdd1pf0L7UJ0525j5jeUHXeU3Lw=
-github.com/qr243vbi/sing-box v1.13.11/go.mod h1:F++kL2r3DVTP/AY/aodJki1eEMRD/kYbFJ8OT3dut7w=
+github.com/qr243vbi/sing-box v1.13.11-mod1 h1:eXQHS6JtIq4J8MGsHMoHSQRBATkwC7ajQHVg/WR+HS4=
+github.com/qr243vbi/sing-box v1.13.11-mod1/go.mod h1:4tq2L7sOUPMCncHyrlt0PbqU7zegUaZaRPZ7dgO+q1w=
 github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4 h1:Qut9yjTnfgzv8mLS2GngSAYvM/q8Iy2qaoweuuve2TI=
 github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4/go.mod h1:QvarqUtHfj1ULaRR+6kZOS/OoCE+pYGq67A5tyIy+dQ=
 github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7 h1:0LcGSXDTVdCr3Dndmvy43dBGoxxwhN4MnLFeTPChtRE=
@@ -246,8 +246,8 @@ github.com/sagernet/cronet-go/lib/windows_arm64 v0.0.0-20260413092954-cd09eb3e27
 github.com/sagernet/cronet-go/lib/windows_arm64 v0.0.0-20260413092954-cd09eb3e271b/go.mod h1:n34YyLgapgjWdKa0IoeczjAFCwD3/dxbsH5sucKw0bw=
 github.com/sagernet/fswatch v0.1.2 h1:/TT7k4mkce1qFPxamLO842WjqBgbTBiXP2mlUjp9PFk=
 github.com/sagernet/fswatch v0.1.2/go.mod h1:5BpGmpUQVd3Mc5r313HRpvADHRg3/rKn5QbwFteB880=
-github.com/sagernet/gvisor v0.0.0-20250811.0-sing-box-mod.1 h1:AzCE2RhBjLJ4WIWc/GejpNh+z30d5H1hwaB0nD9eY3o=
-github.com/sagernet/gvisor v0.0.0-20250811.0-sing-box-mod.1/go.mod h1:NJKBtm9nVEK3iyOYWsUlrDQuoGh4zJ4KOPhSYVidvQ4=
+github.com/sagernet/gvisor v0.0.0-20250811-sing-box-mod.1 h1:bYLFFxOBLbmeMjMSCzsXJwNAS1EHoBb+G9GlE5oBgM8=
+github.com/sagernet/gvisor v0.0.0-20250811-sing-box-mod.1/go.mod h1:NJKBtm9nVEK3iyOYWsUlrDQuoGh4zJ4KOPhSYVidvQ4=
 github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a h1:ObwtHN2VpqE0ZNjr6sGeT00J8uU7JF4cNUdb44/Duis=
 github.com/sagernet/netlink v0.0.0-20240612041022-b9a21c07ac6a/go.mod h1:xLnfdiJbSp8rNqYEdIW/6eDO4mVoogml14Bh2hSiFpM=
 github.com/sagernet/nftables v0.3.0-mod.2 h1:ck2KMU02OxL1eDFgGaWYglMDpoOZ7OHzxje+vW5Q0OQ=
