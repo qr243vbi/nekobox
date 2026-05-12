@@ -161,12 +161,17 @@ bool FileDatabaseManager::Save(JsonStore *store) {
     LOG_CREATE(Proxies, profiles)
     LOG_CREATE(Groups, groups)
   }
+  bool ret;
 #ifndef SKIP_LEVELDB
   if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
-    return Configs::write_rocksdb(this->database, store);
+    ret = Configs::write_rocksdb(this->database, store);
+    if (ret){
+      DropFromDirectory(store->StoreType(), store->Id());
+    }
+    return ret;
   }
 #endif
-  auto ret = SaveToFile(store);
+  ret = SaveToFile(store);
 #ifndef SKIP_LEVELDB
   if (ret) {
     Configs::clear_rocksdb(this->database, store);
@@ -491,7 +496,8 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
       #ifdef DEBUG_MODE
         qDebug() << "Status is: " << status.ToString() << " Size is: " << view.size();
       #endif
-      return status.ok();
+      auto ret = status.ok();
+      return ret;
 }
 
 std::tuple<bool, bool>
