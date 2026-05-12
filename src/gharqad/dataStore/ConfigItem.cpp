@@ -1044,29 +1044,28 @@ namespace Configs_ConfigItem {
       std::shared_ptr<Configs_ConfigItem::configItem> item2val = item2.value();
       
       if (item1val == nullptr){
-        if (item2val == nullptr){
-          continue;
+        if (item2val != nullptr){
+          return 1;
         }
-        return 1;
       } else {
-        if (skip.contains(item1val->name)){
-          continue;
+        if (!skip.contains(item1val->name)){
+          if (item2val == nullptr){
+            return -1;
+          } else {
+            ret = CompareValue(item1val->type(), item2val->type());
+            if (ret != 0){
+              return ret;
+            }
+            ret = CompareValue(item1val->name, item2val->name);
+            if (ret != 0){
+              return ret;
+            }
+            ret = item1val->compare(this, item2val.get(), store);
+            if (ret != 0){
+              return ret;
+            }
+          }
         }
-        if (item2val == nullptr){
-          return -1;
-        }
-      }
-      ret = CompareValue(item1val->type(), item2val->type());
-      if (ret != 0){
-        return ret;
-      }
-      ret = CompareValue(item1val->name, item2val->name);
-      if (ret != 0){
-        return ret;
-      }
-      ret = item1val->compare(this, item2val.get(), store);
-      if (ret != 0){
-        return ret;
       }
     }
     return 0;
