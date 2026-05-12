@@ -48,7 +48,7 @@ then
  mkdir "$DEPLOYMENT"
 fi
 
-(git ls-files | grep -v core/server/sing-box  ; (cd core/server/sing-box; git ls-files | sed 's@^@core/server/sing-box/@') ) | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
+(git ls-files | grep -vE 'pages/*' | grep -vE 'res/public_old/*') | tar --transform="s,^,$archive_standalone/,S" -c --xz -f "$DEPLOYMENT/$archive_standalone.tar.xz" -T-
 sha256sum "$DEPLOYMENT/$archive_standalone.tar.xz" > "$DEPLOYMENT/$archive_standalone.tar.xz.sha256sum"
 
 
