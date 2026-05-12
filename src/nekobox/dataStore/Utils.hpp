@@ -203,7 +203,7 @@ template <typename T> auto asListRange(QList<T> &&list) {
 
 
 
-#ifdef DEBUG_MODE
+#ifdef DEBUG_MODE_ENUM_1
 
 #define DEBUG_INIT_ENUM qDebug() << "CALLED INIT ENUM" << init;         \
 {                                                                       \
@@ -237,7 +237,7 @@ public:                                                                 \
         static bool init = false;                 DEBUG_INIT_ENUM              \
         if (init) return ptr;
 
-#ifdef DEBUG_MODE
+#ifdef DEBUG_MODE_ENUM_1
 #define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V}); qDebug() << "ADD ENUM" << K << V ;
 #else
 #define ADD_ENUM(K, V) ptr.insert({EnumFieldName(K), V})

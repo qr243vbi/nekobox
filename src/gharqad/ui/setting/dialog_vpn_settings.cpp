@@ -96,9 +96,6 @@ void DialogAppSettings::on_button_box_clicked(QAbstractButton *button) {
   case QDialogButtonBox::ActionRole:
   loop1:
 // Open usually falls here
-#ifdef DEBUG_MODE
-    qDebug() << "Open clicked";
-#endif
 #define insert_path(X)                                                         \
   {                                                                            \
     model = X##_list;                                                          \

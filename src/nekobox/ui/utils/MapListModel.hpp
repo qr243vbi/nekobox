@@ -24,9 +24,7 @@ public:
 
     // Override the necessary methods
     int rowCount(const QModelIndex &parent = QModelIndex()) const override {
-#ifdef DEBUG_MODE
-    qDebug() << "MAP LIST MODEL ASK TO SIZE" << dataMap->size();
-#endif
+
         if (parent.isValid()) {
             return 0; // REQUIRED for list models
         }
@@ -113,10 +111,6 @@ public:
         auto count = rowCount();
         if (row < 0 || row > count)
             return;
-
-        #ifdef DEBUG_MODE
-            qDebug() << "Insert to " << row;
-        #endif
 
         beginInsertRows(QModelIndex(), row, row);
         if (row != count){

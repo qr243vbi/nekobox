@@ -503,16 +503,20 @@ Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::Json
   auto bytes = store->ToBytes();
   std::string view;
   bool isok = read_rocksdb(env, store->StoreType(), store->Id(), view);
+#ifdef DEBUG_MODE
+  qDebug() << "READING RocksDB FILE STATUS" << isok;
+#endif
   bool readed = false;
   if (isok) {
-    if (view.size() > 0) {
-      readed = true;
 #ifdef DEBUG_MODE
       qDebug() << "READED DATA" << "ID" << store->Id() << "TYPE"
                << (int)store->StoreType() << "LEN" << view.size();
 #endif
+    if (view.size() > 0) {
+      readed = true;
       QByteArray ba =
           QByteArray::fromRawData(view.data(), static_cast<int>(view.size()));
+      
       store->FromBytes(ba);
     }
   }
@@ -676,11 +680,17 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
         dbi.Put(pack_char_int(c, x), "");
       }
     }
+    auto readopts = ReadOptions();
+    std::string view;
     std::vector<char> common_types = {
         Shortcuts,    ResourceManager, ProxyManager,  NekoBox,
         DefaultRoute, TrafficLooper,   DatabaseLogger};
     for (char c : common_types) {
-      dbi.Put(pack_char_int(c, 0), "");
+      auto key = pack_char_int(c, 0);
+      auto status = db->Get(readopts, key, &view);
+      if (status.IsNotFound()){
+        dbi.Put(key, "");
+      }
     }
     auto status =
     db->Write(
