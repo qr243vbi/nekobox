@@ -508,7 +508,6 @@ jobs:
     needs:
       - build-go
     strategy:
-      max-parallel: 2
       matrix:
         include:
           - platform: ubuntu-24.04
