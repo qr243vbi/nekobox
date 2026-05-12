@@ -479,6 +479,14 @@ jobs:
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
+      - name: Windows - Publish
+        if: github.event.inputs.publish  == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+        run: |
+          gh release upload "$INPUT_VERSION" ./deployment/* --clobber
+          
       - name: Tar files
         shell: bash
         if: matrix.allow == 'true'
@@ -731,7 +739,7 @@ jobs:
       actions: read
     env:
       INPUT_VERSION: ${{ github.event.inputs.tag }}
-    if: github.event.inputs.publish == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.publish == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.pre_release != 'true'
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
@@ -761,34 +769,17 @@ jobs:
           ##
           cd deployment
           ####
-          if [[ -f "$version_standalone-windows64-installer.exe" ]]; then
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64-installer.exe" --clobber
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows64.zip" --clobber
-          fi
-          ####
-          if [[ -f "$version_standalone-windows-arm64-installer.exe" ]]; then
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64-installer.exe" --clobber
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows-arm64.zip" --clobber
-          fi
-          ####
-          if [[ -f "$version_standalone-windows32-installer.exe" ]]; then
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32-installer.exe" --clobber
-            gh release upload "${INPUT_VERSION}" "$version_standalone-windows32.zip" --clobber
-          fi
-          if [[ '${{ github.event.inputs.pre_release }}' == 'false' ]]
+          if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
           then
-           if [[ '${{ github.event.inputs.publish_winget }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip && -f $version_standalone-windows-arm64.zip ]]
-           then
             pushd ..
             bash ./script/trigger_winget_pkgs.sh
             popd
-           fi
-           if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
-           then
+          fi
+          if [[ '${{ github.event.inputs.publish_chocolatey }}' == 'true' && -f $version_standalone-windows32.zip && -f $version_standalone-windows64.zip ]]
+          then
             pushd ../script
             bash chocolatey_push.sh
             popd
-           fi
           fi
 
 
