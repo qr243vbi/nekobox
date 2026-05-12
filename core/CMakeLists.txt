@@ -219,7 +219,7 @@ if(NOT SKIP_UPDATER)
         OUTPUT "${DESTDIR}/updater${EXE_SUFFIX}"
         COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
-                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -modcacherw -buildvcs=false -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
+                "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -buildvcs=false -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
     add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
@@ -245,7 +245,7 @@ execute_process(
 )
 
 set(LDFLAGS
-    "-w -s -X github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX} -X internal/godebug.defaultGODEBUG=multipathtcp=0 -compressdwarf=false -linkmode=external -checklinkname=0"
+    "-w -s -X github.com/sagernet/sing-box/constant.Version=${VERSION_SINGBOX} -X internal/godebug.defaultGODEBUG=multipathtcp=0 -checklinkname=0"
 )
 
 run_go_command("${GO_SOURCE_DIR}/server" ${GO_TIDY_CMD})
@@ -305,7 +305,7 @@ add_custom_command(
     DEPENDS ${WRAPPER_DEP_FILE}
     COMMAND ${CMAKE_COMMAND} -E env ${GO_ENV}
 			${CMAKE_COMMAND} -E chdir ${GO_SOURCE_DIR}/server
-            "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -modcacherw -buildvcs=false -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
+            "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -buildvcs=false -v -o ${DESTDIR}/nekobox_core${EXE_SUFFIX} -trimpath -ldflags "${LDFLAGS}" -tags "${TAGS}"
 )
 
 add_custom_target(core_server ALL DEPENDS "${DESTDIR}/nekobox_core${EXE_SUFFIX}")
