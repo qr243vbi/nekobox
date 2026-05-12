@@ -686,9 +686,9 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
         Shortcuts,    ResourceManager, ProxyManager,  NekoBox,
         DefaultRoute, TrafficLooper,   DatabaseLogger};
     for (char c : common_types) {
-      auto key = pack_char_int(c, 0);
-      auto status = db->Get(readopts, key, &view);
-      if (status.IsNotFound()){
+      QFile config_path (getJsonStoreFileName(c, 0));
+      if (config_path.exists()){
+        auto key = pack_char_int(c, 0);
         dbi.Put(key, "");
       }
     }
