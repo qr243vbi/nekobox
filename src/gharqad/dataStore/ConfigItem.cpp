@@ -1025,13 +1025,21 @@ namespace Configs_ConfigItem {
     auto &_map1 = this->_map();
     auto &_map2 = store->_map();
     auto keys = _map1.keys();
+    int _map1_size = _map1.count();
+    int _map2_size = _map2.count();
+    ret = CompareValue(_map1_size, _map2_size);
+    if (ret != 0){
+      return ret;
+    }
+    auto keys2 = _map2.keys();
+    ret = CompareValue(keys, keys2);
+    if (ret != 0){
+      return ret;
+    }
 
     for (auto key: keys){
       auto item1 = _map1.find(key);
       auto item2 = _map2.find(key);
-      if (item2 == _map2.end()) {
-        return 1;
-      }
       std::shared_ptr<Configs_ConfigItem::configItem> item1val = item1.value();
       std::shared_ptr<Configs_ConfigItem::configItem> item2val = item2.value();
       if (item1val != nullptr){
