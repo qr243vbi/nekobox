@@ -3367,10 +3367,14 @@ void MainWindow::on_menu_reset_traffic_triggered() {
 }
 
 void MainWindow::on_menu_copy_links_triggered() {
-  on_menu_copy_links_nkr_triggered(false);
+  ShareLink(false);
 }
 
-void MainWindow::on_menu_copy_links_nkr_triggered(bool isNekoRay) {
+void MainWindow::on_menu_copy_links_nkr_triggered() {
+  ShareLink(true);
+}
+
+void MainWindow::ShareLink(bool isNekoRay) {
   CHECK_SETTINGS_ACCESS_W
   auto ents = get_now_selected_list();
   QStringList links;
