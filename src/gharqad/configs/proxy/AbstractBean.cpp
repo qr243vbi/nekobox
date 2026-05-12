@@ -36,6 +36,9 @@ namespace Configs {
         if (this->entity == nullptr) return "";
         auto b = ToJson();
         QUrl url;
+        b["name"] = this->entity->name;
+        b["addr"] = this->entity->serverAddress;
+        b["port"] = this->entity->serverPort;
         url.setScheme("nekoray");
         url.setHost(type());
         url.setFragment(QJsonObject2QString(b, true)
@@ -114,7 +117,14 @@ namespace Configs {
             if (j.isEmpty()){
                 return false;
             }
-            return this->FromJsonBytes(j);
+            auto ret = this->FromJsonBytes(j);
+            if (ret){
+                auto json = QJsonDocument::fromJson(j).object();
+                this->entity->name = json["name"].toString(this->entity->name);
+                this->entity->serverAddress = json["addr"].toString(this->entity->serverAddress);
+                this->entity->serverPort = json["port"].toInt(this->entity->serverPort);
+            }
+            return ret;
         }
 
         CoreObjOutboundBuildResult AbstractBean::BuildCoreObjSingBox() const { return {}; };
