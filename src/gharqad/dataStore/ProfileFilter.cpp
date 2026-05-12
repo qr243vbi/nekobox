@@ -4,44 +4,6 @@
 #include <nekobox/dataStore/ProfileFilter.hpp>
 #include <set>
 
-namespace Configs_ConfigItem {
-  signed char JsonStore::compare(JsonStore * store, const QList<QString> &skip){
-    if (store == nullptr){
-      return 1;
-    }
-    auto &_map1 = this->_map();
-    auto &_map2 = store->_map();
-    auto keys = _map1.keys();
-
-    for (auto key: keys){
-      auto item1 = _map1.find(key);
-      auto item2 = _map2.find(key);
-      if (item2 == _map2.end()) {
-        return 1;
-      }
-      auto item1val = item1.value();
-      auto item2val = item2.value();
-      if (item1val != nullptr){
-        if (skip.contains(item1val->name)){
-          continue;
-        }
-      }
-      if (item1val == nullptr){
-        if (item2val == nullptr){
-          continue;
-        }
-        return 1;
-      } else if (item2val == nullptr){
-        return -1;
-      }
-      auto ret = item1val->compare(this, item2val.get(), store);
-      if (ret != 0){
-        return ret;
-      }
-    }
-    return 0;
-  }
-}
 
 namespace Configs {
 

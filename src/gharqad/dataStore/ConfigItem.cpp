@@ -873,19 +873,6 @@ SET_BIN(double) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-#include <algorithm> // std::transform
-#include <cctype>    // std::tolower
 #include <utility>
 #include <functional> // std::hash
 
@@ -1024,4 +1011,55 @@ namespace std {
         EnumFieldNameHasher hsr;
         return hsr(w);
     }
+}
+
+
+
+
+namespace Configs_ConfigItem {
+  signed char JsonStore::compare(JsonStore * store, const QList<QString> &skip){
+    if (store == nullptr){
+      return 1;
+    }
+    int ret = 0;
+    auto &_map1 = this->_map();
+    auto &_map2 = store->_map();
+    auto keys = _map1.keys();
+
+    for (auto key: keys){
+      auto item1 = _map1.find(key);
+      auto item2 = _map2.find(key);
+      if (item2 == _map2.end()) {
+        return 1;
+      }
+      std::shared_ptr<Configs_ConfigItem::configItem> item1val = item1.value();
+      std::shared_ptr<Configs_ConfigItem::configItem> item2val = item2.value();
+      if (item1val != nullptr){
+        if (skip.contains(item1val->name)){
+          continue;
+        }
+      }
+      if (item1val == nullptr){
+        if (item2val == nullptr){
+          continue;
+        }
+        return 1;
+      } else if (item2val == nullptr){
+        return -1;
+      }
+      ret = CompareValue(item1val->type(), item2val->type());
+      if (ret != 0){
+        return ret;
+      }
+      ret = CompareValue(item1val->name, item2val->name);
+      if (ret != 0){
+        return ret;
+      }
+      ret = item1val->compare(this, item2val.get(), store);
+      if (ret != 0){
+        return ret;
+      }
+    }
+    return 0;
+  }
 }
