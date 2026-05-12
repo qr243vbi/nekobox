@@ -1042,18 +1042,19 @@ namespace Configs_ConfigItem {
       auto item2 = _map2.find(key);
       std::shared_ptr<Configs_ConfigItem::configItem> item1val = item1.value();
       std::shared_ptr<Configs_ConfigItem::configItem> item2val = item2.value();
-      if (item1val != nullptr){
-        if (skip.contains(item1val->name)){
-          continue;
-        }
-      }
+      
       if (item1val == nullptr){
         if (item2val == nullptr){
           continue;
         }
         return 1;
-      } else if (item2val == nullptr){
-        return -1;
+      } else {
+        if (skip.contains(item1val->name)){
+          continue;
+        }
+        if (item2val == nullptr){
+          return -1;
+        }
       }
       ret = CompareValue(item1val->type(), item2val->type());
       if (ret != 0){
