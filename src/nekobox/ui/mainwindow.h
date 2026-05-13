@@ -148,6 +148,9 @@ public:
     int lastx = -1, lasty = -1;
     explicit MainWindow(QWidget *parent = nullptr);
 
+    void import_route_profile(const QString & name, const QString & url, const QString &resp, bool proxy = true);
+    static void import_route_profile_static(QWidget * widget, QString  name, QString url, const QString &resp, bool proxy = true);
+
     ~MainWindow() override;
 
     void call_updater();

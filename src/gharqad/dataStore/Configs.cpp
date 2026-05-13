@@ -1,3 +1,4 @@
+#include "nekobox/dataStore/Database.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -532,6 +533,7 @@ QByteArray hash = QCryptographicHash::hash(
 
     DECL_MAP(Routing)
         ADD_MAP("current_route_id", current_route_id, integer);
+        ADD_MAP("imported_group", imported_group, integer);
         ADD_MAP("remote_dns", remote_dns, string);
         ADD_MAP("remote_dns_strategy", remote_dns_strategy, string);
         ADD_MAP("direct_dns", direct_dns, string);
@@ -550,7 +552,19 @@ QByteArray hash = QCryptographicHash::hash(
 
     #undef d_add
 
-
+    int Routing::getProxyId(const std::shared_ptr<ProxyEntity> & ent){
+        int i = this->imported_group;
+        if (i < 0 || Configs::profileManager->GetGroup(i) == nullptr){
+            auto group =  Configs::profileManager->NewGroup();
+            group->name = QObject::tr("Imported");
+            Configs::profileManager->AddGroup(group);
+            i = this->imported_group = group->Id();
+        }
+        if (Configs::profileManager->AddProfile(ent, i)){
+            return ent->Id();
+        };
+        return INVALID_ID;
+    }
 
     QStringList Routing::List() {
         return {"Default"};

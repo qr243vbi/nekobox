@@ -82,14 +82,8 @@ namespace Configs
     std::shared_ptr<const Configs::AbstractBean> ProxyEntity::bean() const {
         auto ent = (ProxyEntity*)this;
         Configs::AbstractBean * bean;
-        {
-            std::shared_ptr<AbstractBean> ret1 = nullptr;
-            if (ent->weak_bean.use_count() > 0){
-                ret1 = ent->weak_bean.lock();
-            }
-            if (ret1 != nullptr){
-                return ret1;
-            }
+        if (auto ret1 = ent->weak_bean.lock()) {
+            return ret1;
         }
         bool make_strong_bean = false;
 

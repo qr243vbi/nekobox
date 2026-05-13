@@ -977,7 +977,7 @@ namespace Configs {
                 }
             }
 
-            auto routeRules = routeChain->get_route_rules(false, outboundMap);
+            auto routeRules = routeChain->get_route_rules(false, false, outboundMap);
 
             // tun process routing
             if (dataStore->spmode_vpn && !status->forTest){

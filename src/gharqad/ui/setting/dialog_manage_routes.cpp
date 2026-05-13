@@ -292,13 +292,19 @@ void DialogManageRoutes::on_export_route_clicked()
     auto idx = ui->route_profiles->currentRow();
     if (idx < 0) return;
 
-    QJsonArray arr = chainList[idx]->get_route_rules(true, {});
+    auto chain = chainList[idx];
+
+    QJsonObject ret = {
+        {"name", chain->chain_name},
+        {"url", chain->update_url},
+        {"proxy", chain->defaultOutboundID},
+        {"skip_update", chain->skip_update},
+        {"rules",  chain->get_route_rules(true, true, {})}
+    };
     QStringList res;
-    for (int i = 0; i < arr.count(); i++)
-    {
-        res.append(QJsonObject2QString(arr[i].toObject(), false));
-    }
-    QApplication::clipboard()->setText("[" + res.join(",") + "]");
+    QApplication::clipboard()->setText(
+        QJsonDocument(ret).toJson(QJsonDocument::JsonFormat::Indented)
+    );
 
     QToolTip::showText(QCursor::pos(), "Copied!", this);
     int r = ++tooltipID;

@@ -6,12 +6,12 @@
 #pragma once
 
 #include <nekobox/configs/proxy/Preset.hpp>
-
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <QUrl>
 
 namespace Configs {
+    class ProxyEntity;
     enum outboundID {proxyID=-1, directID=-2, blockID=-3, dnsOutID=-4};
     inline QString outboundIDToString(int id)
     {
@@ -72,6 +72,8 @@ namespace Configs {
 
     class RouteRule : public JsonStore {
     public:
+        static QJsonObject getOutboundObject(std::shared_ptr<ProxyEntity> prof);    
+
         RouteRule();
 
         DECLARE_STORE_TYPE(NoSave)
@@ -122,7 +124,7 @@ namespace Configs {
         // resolve options
         QString strategy;
 
-        [[nodiscard]] QJsonObject get_rule_json(bool forView = false, const QString& outboundTag = "");
+        [[nodiscard]] QJsonObject get_rule_json(bool for_export, bool forView, const QString& outboundTag);
         static QStringList get_attributes();
         static inputType get_input_type(const QString& fieldName);
         static QStringList get_values_for_field(const QString& fieldName);
@@ -132,6 +134,10 @@ namespace Configs {
         void set_field_value(const QString& fieldName, const QStringList& value);
         [[nodiscard]] bool isEmpty();
     };
+
+    int getOutboundID(const QJsonObject& object);
+
+    int getOutboundID(const QString& name) ;
 
     class RoutingChain : public JsonStore {
     public:
@@ -159,7 +165,7 @@ namespace Configs {
 
    //     void FromJson(QJsonObject object) override;
 
-        QJsonArray get_route_rules(bool forView = false, std::map<int, QString> outboundMap = {});
+        QJsonArray get_route_rules(bool for_export, bool forView, std::map<int, QString> outboundMap);
 
         static std::shared_ptr<RoutingChain> GetDefaultChain();
 

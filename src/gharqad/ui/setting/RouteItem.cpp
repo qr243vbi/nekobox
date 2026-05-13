@@ -554,7 +554,7 @@ void RouteItem::updateRuleSection() {
 void RouteItem::updateRulePreview() {
     if (currentIndex == -1) return;
 
-    ui->rule_preview->setText(QJsonObject2QString(chain->Rules[currentIndex]->get_rule_json(true), false));
+    ui->rule_preview->setText(QJsonObject2QString(chain->Rules[currentIndex]->get_rule_json(false, true, {}), false));
 }
 
 void RouteItem::setDefaultRuleData(const QString& currentData) {

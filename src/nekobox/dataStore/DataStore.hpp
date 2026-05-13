@@ -17,6 +17,8 @@
 
 namespace Configs {
 
+    class ProxyEntity;
+
     class TunSplit: public JsonStore {
         public:
         
@@ -52,11 +54,13 @@ namespace Configs {
     extern int config_type;
 
     class Routing : public JsonStore {
+    private:
+        int imported_group = -1;
     public:
         DECLARE_STORE_TYPE(DefaultRoute)
         virtual ConfJsMap _map() override;
         int current_route_id = 1;
-
+        int getProxyId(const std::shared_ptr<ProxyEntity> & ent);
         // DNS
         QString remote_dns = "tls://8.8.8.8";
         QString remote_dns_strategy = "";

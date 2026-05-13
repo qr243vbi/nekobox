@@ -1,5 +1,7 @@
 #include "nekobox/dataStore/Database.hpp"
+#include "nekobox/dataStore/RouteEntity.h"
 #include "nekobox/ui/group/GroupSort.hpp"
+#include <qcoreapplication.h>
 #include <qtoolbutton.h>
 #ifdef _WIN32
 #include <winsock2.h>
@@ -269,12 +271,61 @@ void SpinnerDialog::onOk() {
     if (resp.isEmpty()) {
       return;
     }
+
+    QString name =  window->remoteRouteProfileNames.value(profile, profile);
+    MainWindow::import_route_profile_static(this, name, url, resp, proxy);
+    window->refresh_groups();
+  }
+}
+
+void MainWindow::import_route_profile_static( QWidget *widget, QString name, QString url, const QString &resp, bool proxy){
     QString err;
+    QJsonArray array;
+    bool skip_update = false;
+    int outboundId = proxy ? Configs::proxyID : Configs::directID; 
+    auto json = QJsonDocument::fromJson(resp.toUtf8());
+    if (json.isObject()){
+      auto object = json.object();
+      auto json_name = object["name"];
+      auto json_proxy = object["proxy"];
+      auto json_array = object["rules"];
+      auto json_url = object["url"];
+      auto skip_update = object["skip_update"];
+      if (skip_update.isBool()){
+        skip_update = skip_update.toBool();
+      }
+      if (json_name.isString()){
+        name = json_name.toString();
+      }
+      if (json_url.isString()){
+        url = json_url.toString();
+      }
+      if (json_array.isArray()){
+        is_array:
+        array = json_array.toArray();
+      } else {
+        json_array = object["array"];
+        if (json_array.isArray()){
+          goto is_array;
+        }
+      }
+      if (json_proxy.isBool()){
+        proxy = json_proxy.toBool();
+        outboundId = proxy ? Configs::proxyID : Configs::directID; 
+      } else if (json_proxy.isDouble()){
+        outboundId = json_proxy.toInt();
+      } else if (json_proxy.isString()){
+        outboundId = Configs::getOutboundID(json_proxy.toString());
+      }
+    } else if (json.isArray()){
+      array = json.array();
+    }
+
     auto parsed =
-        Configs::RoutingChain::parseJsonArray(QString2QJsonArray(resp), &err);
+        Configs::RoutingChain::parseJsonArray(array, &err);
     if (!err.isEmpty()) {
-      runOnUiThread([=, this] {
-        QMessageBox::information(this, tr("Invalid JSON Array"),
+      runOnUiThread([widget, err] {
+        QMessageBox::information(widget, tr("Invalid JSON Array"),
                                  tr("The provided input cannot be parsed to a "
                                     "valid route rule array:\n") +
                                      err);
@@ -283,15 +334,13 @@ void SpinnerDialog::onOk() {
     }
     std::shared_ptr<Configs::RoutingChain> chain =
         Configs::ProfileManager::NewRouteChain();
-    chain->chain_name = window->remoteRouteProfileNames.value(profile, profile);
+    chain->chain_name = name;
     chain->update_url = url;
-    chain->defaultOutboundID =
-        // profile.startsWith("bypass", Qt::CaseInsensitive)
-        proxy ? Configs::proxyID : Configs::directID;
+    chain->defaultOutboundID = outboundId;
     chain->Rules.clear();
     chain->Rules << parsed;
+    chain->skip_update = skip_update;
     Configs::profileManager->AddRouteChain(chain);
-  }
 }
 
 void SpinnerDialog::onCancel() { this->close(); }
@@ -445,6 +494,11 @@ void MainWindow::set_icons_from_settings() {
   bool text_under_buttons = Configs::windowSettings->text_under_buttons;
   set_icons_from_flag(text_under_buttons);
 }
+
+void MainWindow::import_route_profile(const QString & name, const QString & url, const QString &resp, bool proxy){
+    MainWindow::import_route_profile_static(this, name, url, resp, proxy);
+    this->refresh_groups();
+};
 
 void MainWindow::set_icons_from_flag(bool text_under_buttons) {
   QSize button_size;
@@ -1298,6 +1352,7 @@ skip_updater_hide:
 
   //  QFile file_route(getResource("check_routeprofiles.js"));
 
+
   connect(ui->menuRouting_Menu, &QMenu::aboutToShow, this, [=, this]() {
     //    if (remoteRouteProfiles.isEmpty())
     //      runOnNewThread(getRemoteRouteProfiles);
@@ -1325,10 +1380,50 @@ skip_updater_hide:
     ui->menuRouting_Menu->addSeparator();
     // ui->menuRouting_Menu->addAction(ui->menu_routing_settings);
 
-    auto *actionUpdateProfiles = new QAction(ui->menuRouting_Menu);
+    auto * chooseMenu = new QMenu(ui->menuRouting_Menu);
+    auto * updateMenu = new QMenu(ui->menuRouting_Menu);
+
+    auto *chooseProfile = new QAction(chooseMenu);
+    chooseMenu->setTitle(
+        QCoreApplication::translate("MainWindow", "Import Routing Profile"));
+    updateMenu->setTitle(
+        QCoreApplication::translate("MainWindow", "Update"));
+    chooseProfile->setText(
+        QCoreApplication::translate("MainWindow", "From clipboard"));
+
+    auto *chooseProfileFile = new QAction(chooseMenu);
+    chooseProfileFile->setText(
+        QCoreApplication::translate("MainWindow", "From file"));
+    
+    chooseMenu->addAction(chooseProfile);
+    connect(
+        chooseProfile, &QAction::triggered, this,
+        [=, this]() {
+          CHECK_SETTINGS_ACCESS_W
+          this->import_route_profile( QCoreApplication::translate("MainWindow", "Imported from clipboard"), 
+            "",  QApplication::clipboard()->text());
+        }, Qt::SingleShotConnection);
+    connect(
+        chooseProfileFile, &QAction::triggered, this,
+        [=, this]() {
+          CHECK_SETTINGS_ACCESS_W
+          auto filename = OPEN_FILENAME;
+          QFileInfo file(filename);
+          if (file.exists()){
+            SAVE_LATEST(filename);
+            auto clipboard = ReadFileText(filename);
+            this->import_route_profile( QCoreApplication::translate("MainWindow", "Imported from %1").arg(file.baseName()), 
+              "",  clipboard);
+          }
+        }, Qt::SingleShotConnection);
+    chooseMenu->addAction(chooseProfileFile);
+    ui->menuRouting_Menu->addMenu(chooseMenu);
+    ui->menuRouting_Menu->addMenu(updateMenu);
+
+    auto *actionUpdateProfiles = new QAction(updateMenu);
     actionUpdateProfiles->setText(
-        QCoreApplication::translate("MainWindow", "Update Routing Profiles"));
-    ui->menuRouting_Menu->addAction(actionUpdateProfiles);
+        QCoreApplication::translate("MainWindow", "Routing Profiles"));
+    updateMenu->addAction(actionUpdateProfiles);
     connect(
         actionUpdateProfiles, &QAction::triggered, this,
         [=, this]() {
@@ -1352,10 +1447,10 @@ skip_updater_hide:
         },
         Qt::SingleShotConnection);
 
-    auto *actionUpdateRuleSet = new QAction(ui->menuRouting_Menu);
+    auto *actionUpdateRuleSet = new QAction(updateMenu);
     actionUpdateRuleSet->setText(
-        QCoreApplication::translate("MainWindow", "Update RuleSet Map"));
-    ui->menuRouting_Menu->addAction(actionUpdateRuleSet);
+        QCoreApplication::translate("MainWindow", "RuleSet Map"));
+    updateMenu->addAction(actionUpdateRuleSet);
     connect(
         actionUpdateRuleSet, &QAction::triggered, this,
         [this]() {
@@ -1375,10 +1470,10 @@ skip_updater_hide:
         },
         Qt::SingleShotConnection);
 
-    auto *actionUpdateRuleSetCache = new QAction(ui->menuRouting_Menu);
+    auto *actionUpdateRuleSetCache = new QAction(updateMenu);
     actionUpdateRuleSetCache->setText(
-        QCoreApplication::translate("MainWindow", "Update RuleSet Cache"));
-    ui->menuRouting_Menu->addAction(actionUpdateRuleSetCache);
+        QCoreApplication::translate("MainWindow", "RuleSet Cache"));
+    updateMenu->addAction(actionUpdateRuleSetCache);
     connect(
         actionUpdateRuleSetCache, &QAction::triggered, this,
         [this]() {
