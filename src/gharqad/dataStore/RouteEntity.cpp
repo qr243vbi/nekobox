@@ -1,3 +1,7 @@
+#include "nekobox/dataStore/ConfigItem.hpp"
+#include <functional>
+#include <memory>
+#include <qjsonobject.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
@@ -5,6 +9,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
+#include <nekobox/configs/proxy/ChainBean.hpp>
 #include <nekobox/dataStore/RouteEntity.h>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
@@ -103,8 +108,44 @@ namespace Configs {
         type = other.type;
         simpleAction = other.simpleAction;
     }
+    #define rule_lambda RouteRule::getOutboundObject
 
-    QJsonObject RouteRule::get_rule_json(bool forView, const QString& outboundTag) {
+    QJsonObject RouteRule::getOutboundObject(std::shared_ptr<ProxyEntity> prof){
+            if (prof == nullptr){
+                ret_null:
+                return {{"type", "proxy"}};
+            } else if (prof->type == "chain"){
+                QJsonObject obj;
+                QJsonArray arr;
+                auto chain_bean = prof->bean();
+                if (chain_bean == nullptr){
+                    goto ret_null;
+                }
+                obj["type"] = "chain";
+                obj["tag"] = prof->DisplayName();
+                for (auto id: prof->ChainBean()->list){
+                    auto profile = Configs::profileManager->GetProfile(id);
+                    if (profile != nullptr){
+                        auto bean = profile->bean();
+                        if (bean != nullptr){
+                            arr.append(rule_lambda(profile));
+                        }
+                    }
+                }
+                obj["chain"] = arr;
+                return obj;
+            } else {
+                auto bean = prof->bean();
+                if (bean == nullptr){
+                    goto ret_null;
+                }
+                auto coreobj = bean->BuildCoreObjSingBox();
+                coreobj.outbound["tag"] = prof->DisplayName();
+                return coreobj.outbound;
+            }
+    }
+
+    QJsonObject RouteRule::get_rule_json(bool for_export, bool forView, const QString& outboundTag) {
         QJsonObject obj;
 
         if (!ip_version.isEmpty()) obj["ip_version"] = ip_version.toInt();
@@ -162,13 +203,20 @@ namespace Configs {
                     case -2:
                         obj["outbound"] = "direct";
                         break;
+                    case -3:
+                        obj["outbound"] = "block";
+                        break;
                     default:
                         auto prof = Configs::profileManager->GetProfile(outboundID);
                         if (prof == nullptr) {
                             MW_show_log("The outbound described in the rule chain is missing, maybe your data is corrupted");
                             return {};
                         }
-                        obj["outbound"] = prof->DisplayName();
+                        if (for_export){
+                            obj["outbound"] = rule_lambda(prof);
+                        } else {
+                            obj["outbound"] = prof->DisplayName();
+                        }
                     }
                 } else {
                     if (!outboundTag.isEmpty()) obj["outbound"] = outboundTag;
@@ -455,7 +503,7 @@ namespace Configs {
     }
 
     bool RouteRule::isEmpty() {
-        auto ruleJson = get_rule_json();
+        auto ruleJson = get_rule_json(false, false, {});
         if (action == "route" || action == "route-options" || action == "hijack-dns") return ruleJson.keys().length() <= 1;
         if (action == "sniff" || action == "resolve" || action == "reject") return ruleJson.keys().length() < 1;
         return false;
@@ -483,20 +531,78 @@ namespace Configs {
                 return profileManager->GetProfile(id) != nullptr;
         }
     }
-/*
+
+    int getOutboundID(const QJsonObject& object){
+        static auto chain_lambda = [](QString type, const QJsonObject & object){
+            if (type == ""){
+                type = object["type"].toString();
+            }
+            if (Preset::SingBox::OutboundTypes.contains(type)) {
+                auto ent = Configs::ProfileManager::NewProxyEntity(type);
+                auto ok = ent->unlock(ent->bean())->TryParseJson(object);
+                auto tag = object["tag"];
+                if (tag.isString()){
+                    ent->name = tag.toString();
+                }
+                if (ok){
+                    return Configs::dataStore->routing->getProxyId(ent);
+                }
+            }
+            return INVALID_ID;
+        };
+
+        auto type_obj = object["type"];
+        if (type_obj.isString()){
+            auto type = type_obj.toString();
+            if (type == "proxy") return -1;
+            if (type == "direct") return -2;
+            if (type == "block") return -3;
+            if (type == "chain"){
+                QList<int> chain_list;
+                auto object_chain = object["chain"];
+                auto tag = object["tag"];
+                if (object_chain.isArray()) {
+                    for (auto val: object_chain.toArray()){
+                        if (val.isObject()){
+                            int i = chain_lambda("", val.toObject());
+                            if (i == INVALID_ID){
+                                return i;
+                            }
+                            chain_list << i;
+                        } else {
+                            return INVALID_ID;
+                        }
+                    }
+                } else {
+                    return INVALID_ID;
+                }
+                auto ent = Configs::ProfileManager::NewProxyEntity("chain");
+                std::shared_ptr<Configs::ChainBean> chain = ent->unlock(ent->ChainBean());
+                chain->list = chain_list;
+                if (tag.isString()){
+                    ent->name = tag.toString();
+                }
+                return Configs::dataStore->routing->getProxyId(ent);
+            }
+              // All Types
+            return chain_lambda(type, object);
+        }
+        return INVALID_ID;
+    }
+
     int getOutboundID(const QString& name) {
         if (name == "proxy") return -1;
         if (name == "direct") return -2;
         if (name == "block") return -3;
         for (const auto [key, value1]: (profileManager->groups) ){
-            for (const auto value : value1->GetProfileEnts()){
+            for (const auto value1 : value1->profiles){
+                auto value = profileManager->GetProfile(value1);
                 if (value != nullptr && value->name == name) return key;
             }
         }
-
         return INVALID_ID;
     }
-    */
+    
 
     QList<std::shared_ptr<RouteRule>> RoutingChain::parseJsonArray(const QJsonArray& arr, QString* parseError) {
         if (arr.empty()) {
@@ -523,14 +629,21 @@ namespace Configs {
                             return {};
                         }
                         rule->outboundID = val.toInt();
-                    } /*else if (val.isString()) {
+                    } else if (val.isString()) {
                         auto id = getOutboundID(val.toString());
                         if (id == INVALID_ID) {
                             parseError->append(QString("outbound with name %1 does not exist").arg(val.toString()));
                             return {};
                         }
                         rule->outboundID = id;
-                    }*/
+                    } else if (val.isObject()) {
+                        auto id = getOutboundID(val.toObject());
+                        if (id == INVALID_ID) {
+                            parseError->append(QString("outbound json %1 not parseable").arg(val.toString()));
+                            return {};
+                        }
+                        rule->outboundID = id;
+                    }
                 } else if (val.isArray()) {
                     rule->set_field_value(key, QJsonArray2QListStr(val.toArray()));
                 } else if (val.isString()) {
@@ -546,7 +659,7 @@ namespace Configs {
         return rules;
     }
 
-    QJsonArray RoutingChain::get_route_rules(bool forView, std::map<int, QString> outboundMap) {
+    QJsonArray RoutingChain::get_route_rules(bool for_export, bool forView, std::map<int, QString> outboundMap) {
         QJsonArray res;
         bool added_adblock = false;
         auto createAdblockRule = []() -> QJsonObject {
@@ -560,7 +673,7 @@ namespace Configs {
         for (const auto &item: Rules) {
             auto outboundTag = QString();
             if (outboundMap.contains(item->outboundID)) outboundTag = outboundMap[item->outboundID];
-            auto rule_json = item->get_rule_json(forView, outboundTag);
+            auto rule_json = item->get_rule_json(for_export, forView, outboundTag);
             if (rule_json.empty()) {
                 MW_show_log("Aborted generating routing section, an error has occurred");
                 return {};
