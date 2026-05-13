@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 /* quirc -- QR-code recognition library
  * Copyright (C) 2010-2012 Daniel Beer <dlbeer@gmail.com>

@@ -6,8 +6,6 @@ file(GLOB_RECURSE PLATFORM_SOURCES_GLOB
 )
 set(PLATFORM_SOURCES ${PLATFORM_SOURCES_GLOB})
 
-add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX -DWIN32_LEAN_AND_MEAN)
-
 set(PLATFORM_LIBRARIES wininet wsock32 ws2_32 user32 rasapi32 iphlpapi ntdll wbemuuid)
 include(cmake/windows/generate_product_version.cmake)
 generate_product_version(
@@ -32,6 +30,4 @@ elseif (MSVC)
     add_compile_options("/utf-8")
     add_compile_options("/wd4702")
 endif ()
-
-add_definitions(-D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
 

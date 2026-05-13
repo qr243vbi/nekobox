@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>

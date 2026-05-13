@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <nekobox/configs/proxy/V2RayStreamSettings.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
