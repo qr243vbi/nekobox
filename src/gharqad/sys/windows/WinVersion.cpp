@@ -9,7 +9,6 @@
 // 1.1.0: Added IsBuildNumGreaterOrEqual()
 // 1.2.0: Removed the Windows 11 build number check to set major version to 11.
 
-#define WIN32_LEAN_AND_MEAN
 #include <nekobox/sys/windows/WinVersion.h>
 #include <windows.h>
 

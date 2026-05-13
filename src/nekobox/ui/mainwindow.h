@@ -1,11 +1,5 @@
-
-
-
-
 #ifndef MAIN_WINDOW_HEADER
 #define MAIN_WINDOW_HEADER
-
-
 
 #pragma once
 

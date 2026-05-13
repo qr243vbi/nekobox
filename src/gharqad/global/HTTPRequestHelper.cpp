@@ -1,6 +1,5 @@
 
-
-
+#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <cpr/proxyauth.h>
 #include <cpr/cpr.h>
 
@@ -13,7 +12,6 @@
 
 #include <string>
 
-#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/global/DeviceDetailsHelper.hpp>
 #include <nekobox/ui/mainwindow.h>

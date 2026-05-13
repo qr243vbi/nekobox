@@ -1,11 +1,3 @@
-
-
-#ifdef _WIN32
-#include <windows.h>
-#include <winsock2.h>
-
-#endif
-
 #pragma once
 #ifndef CONFIG_ITEM_H
 #define CONFIG_ITEM_H

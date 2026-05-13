@@ -1,7 +1,3 @@
-
-
-
-
 /****************************************************************************
 **
 ** Copyright (C) 2014 UpdateNode UG (haftungsbeschränkt)
@@ -27,6 +23,7 @@
 #ifndef WINCOMMANDER_H
 #define WINCOMMANDER_H
 
+#include <windows.h>
 #include <QString>
 #include <QStringList>
 
