@@ -6,6 +6,8 @@ file(GLOB_RECURSE PLATFORM_SOURCES_GLOB
 )
 set(PLATFORM_SOURCES ${PLATFORM_SOURCES_GLOB})
 
+add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX -DWIN32_LEAN_AND_MEAN)
+
 set(PLATFORM_LIBRARIES wininet wsock32 ws2_32 user32 rasapi32 iphlpapi ntdll wbemuuid)
 include(cmake/windows/generate_product_version.cmake)
 generate_product_version(
@@ -17,7 +19,6 @@ generate_product_version(
         COMPANY_COPYRIGHT "nekobox"
         FILE_DESCRIPTION "nekobox"
 )
-add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX)
 set(GUI_TYPE WIN32)
 if (MINGW)
     embeed_resources()
