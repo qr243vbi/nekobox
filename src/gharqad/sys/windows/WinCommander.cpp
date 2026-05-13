@@ -20,21 +20,18 @@
 **
 ****************************************************************************/
 
+#include <winsock2.h>
+#include <windows.h>
+
 #include <nekobox/sys/windows/WinCommander.hpp>
 
 #include <QSysInfo>
 #include <QDir>
 
-#ifdef Q_OS_WIN
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
 #include <shellapi.h>
 #include <sddl.h>
 #define MAX_KEY_LENGTH 255
 #define MAX_VALUE_NAME 16383
-#endif
 
 
 /*!
@@ -77,7 +74,6 @@ uint WinCommander::runProcess(const QString &path,
                                 int nShow, bool aWait, bool elevated) {
     uint result = 0;
 
-#ifdef Q_OS_WIN
     QString params;
     HWND hwnd = NULL;
     LPCTSTR pszPath = (LPCTSTR)path.utf16();
@@ -121,11 +117,5 @@ uint WinCommander::runProcess(const QString &path,
         return -1;
 
     result = (uint)dwCode;
-#else
-    Q_UNUSED(path);
-    Q_UNUSED(parameters);
-    Q_UNUSED(workingDir);
-    Q_UNUSED(aWait);
-#endif
     return result;
 }

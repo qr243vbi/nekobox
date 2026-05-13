@@ -1,6 +1,7 @@
-#include <nekobox/sys/windows/MiniDump.h>
 
+#include <winsock2.h>
 #include <windows.h>
+#include <nekobox/sys/windows/MiniDump.h>
 #include <tchar.h>
 #include <dbghelp.h>
 

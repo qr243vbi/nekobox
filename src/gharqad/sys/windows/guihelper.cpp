@@ -1,9 +1,9 @@
 
+#include <winsock2.h>
+#include <windows.h>
 #include <nekobox/sys/windows/guihelper.h>
 
 #include <QWidget>
-
-#include <windows.h>
 #include <shlobj.h>
 
 void Windows_QWidget_SetForegroundWindow(QWidget *w) {

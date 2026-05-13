@@ -1,8 +1,9 @@
 
+#include <winsock2.h>
+#include <windows.h>
 #include <nekobox/sys/windows/eventHandler.h>
 
 #include <QDebug>
-#include <windows.h>
 
 bool PowerOffTaskkillFilter::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
 {
