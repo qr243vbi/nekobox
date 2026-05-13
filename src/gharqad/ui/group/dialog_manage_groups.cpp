@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 #include <nekobox/ui/group/dialog_manage_groups.h>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/sub/GroupUpdater.hpp>

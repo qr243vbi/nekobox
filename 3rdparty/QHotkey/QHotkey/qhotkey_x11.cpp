@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 #include "qhotkey.h"
 #include "qhotkey_p.h"
 

@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 /* This is free and unencumbered software released into the public domain. */
 
 #ifndef LMDBXX_H

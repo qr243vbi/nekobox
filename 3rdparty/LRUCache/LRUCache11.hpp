@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 /*
  * LRUCache11 - a templated C++11 based LRU cache class that allows
  * specification of

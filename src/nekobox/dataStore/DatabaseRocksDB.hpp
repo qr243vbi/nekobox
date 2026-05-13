@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 
 #ifndef DATABASE_LMDB
 #define DATABASE_LMDB

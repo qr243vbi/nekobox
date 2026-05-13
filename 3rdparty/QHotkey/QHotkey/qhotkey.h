@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <winsock2.h>
+#endif
+
 #ifndef QHOTKEY_H
 #define QHOTKEY_H
 

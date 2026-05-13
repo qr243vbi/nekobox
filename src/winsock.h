@@ -1,4 +1,8 @@
 #ifdef _WIN32
+#include <winsock2.h>
+#endif
+
+#ifdef _WIN32
 #ifndef _NEKOBOX_WINSOCKS2_COMPATIBILITY_
 #define _NEKOBOX_WINSOCKS2_COMPATIBILITY_
 
