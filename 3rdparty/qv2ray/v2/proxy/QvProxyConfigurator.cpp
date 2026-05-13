@@ -1,8 +1,8 @@
-#ifdef USE_CPP_PROXY_CONFIGURATOR
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
+
+#ifdef USE_CPP_PROXY_CONFIGURATOR
 
 #include "QvProxyConfigurator.hpp"
 

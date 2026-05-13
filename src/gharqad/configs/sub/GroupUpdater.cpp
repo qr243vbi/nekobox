@@ -1,7 +1,7 @@
-#include "nekobox/dataStore/Database.hpp"
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
+#include <nekobox/dataStore/Database.hpp>
 
 #include <yaml-cpp/yaml.h>
 #include <QMutex>

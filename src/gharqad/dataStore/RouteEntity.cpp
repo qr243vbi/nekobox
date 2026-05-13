@@ -1,10 +1,12 @@
-#include "nekobox/dataStore/ConfigItem.hpp"
-#include <functional>
-#include <memory>
-#include <qjsonobject.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #endif
+
+#include <nekobox/dataStore/ConfigItem.hpp>
+#include <functional>
+#include <memory>
+#include <qjsonobject.h>
+
 
 #include <QJsonObject>
 #include <QJsonArray>

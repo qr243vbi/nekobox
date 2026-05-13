@@ -1,6 +1,5 @@
 #ifdef _WIN32
 #include <winsock2.h>
-#include <windows.h>
 #endif
 
 #pragma once
@@ -15,7 +14,7 @@ class DialogManageRoutes;
 class RouteItem;
 
 #include <nekobox/dataStore/RouteEntity.h>
-#include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
+#include <3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp>
 #include "ui_RouteItem.h"
 
 #include <map>

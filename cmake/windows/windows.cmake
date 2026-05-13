@@ -7,7 +7,7 @@ file(GLOB_RECURSE PLATFORM_SOURCES_GLOB
 set(PLATFORM_SOURCES ${PLATFORM_SOURCES_GLOB})
 
 set(PLATFORM_LIBRARIES wininet wsock32 ws2_32 user32 rasapi32 iphlpapi ntdll wbemuuid)
-
+add_definitions(-DWIN32_LEAN_AND_MEAN)
 include(cmake/windows/generate_product_version.cmake)
 generate_product_version(
         QV2RAY_RC
