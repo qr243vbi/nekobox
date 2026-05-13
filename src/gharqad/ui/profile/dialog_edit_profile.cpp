@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>

@@ -1,6 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
 
 // The MIT License (MIT)
 // Windows Version Detection 1.2.0

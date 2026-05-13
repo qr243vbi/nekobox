@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <nekobox/ui/profile/edit_shadowsocks.h>
 #include <nekobox/configs/proxy/ShadowSocksBean.hpp>

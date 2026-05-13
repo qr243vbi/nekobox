@@ -1,8 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
-
 /****************************************************************************
 **
 ** Copyright (C) 2016 The Qt Company Ltd.

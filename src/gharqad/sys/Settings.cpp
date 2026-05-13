@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <nekobox/sys/Settings.h>
 #include <nekobox/dataStore/ResourceEntity.hpp>

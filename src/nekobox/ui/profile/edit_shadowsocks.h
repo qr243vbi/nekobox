@@ -1,7 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
+
 
 #ifndef EDIT_SHADOWSOCKS_H
 #define EDIT_SHADOWSOCKS_H

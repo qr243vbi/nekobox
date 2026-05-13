@@ -1,7 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
-
 /****************************************************************************
 **
 ** Copyright (C) 2014 UpdateNode UG (haftungsbeschränkt)

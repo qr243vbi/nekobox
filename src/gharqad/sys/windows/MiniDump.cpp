@@ -1,7 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
-
 #include <nekobox/sys/windows/MiniDump.h>
 
 #include <windows.h>

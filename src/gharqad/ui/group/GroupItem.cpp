@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/group/dialog_edit_group.h>

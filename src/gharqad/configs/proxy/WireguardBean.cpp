@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #include <QString>
 #include <nekobox/dataStore/ProxyEntity.hpp>

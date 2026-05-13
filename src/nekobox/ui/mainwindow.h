@@ -1,6 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 
 #ifndef MAIN_WINDOW_HEADER
 #define MAIN_WINDOW_HEADER

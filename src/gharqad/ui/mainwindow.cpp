@@ -3,9 +3,7 @@
 #include "nekobox/ui/group/GroupSort.hpp"
 #include <qcoreapplication.h>
 #include <qtoolbutton.h>
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
+
 #include <nekobox/dataStore/Configs.hpp>
 #include <3rdparty/qv2ray/wrapper.hpp>
 #include <QtConcurrent>

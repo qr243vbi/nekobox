@@ -1,7 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
+
 
 #ifndef EDIT_NAIVE_H
 #define EDIT_NAIVE_H

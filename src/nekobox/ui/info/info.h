@@ -1,7 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#include <windows.h>
-#endif
+
 
 #ifndef INFO_DIALOG_H
 #define INFO_DIALOG_H

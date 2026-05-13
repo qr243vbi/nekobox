@@ -1,6 +1,3 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#endif
 #ifdef USE_CPP_PROXY_CONFIGURATOR
 
 #pragma once
