@@ -49,7 +49,7 @@ EOF
 # 2. Sync and install keyring
 sudo pacman -Syy archlinuxcn-keyring
 
-# 4. Install NekoBox
+# 3. Install NekoBox
 sudo pacman -S nekobox
 ```
 
