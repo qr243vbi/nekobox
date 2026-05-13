@@ -36,6 +36,23 @@ scoop install extras/nekobox
 ### COPR repository
 - [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
 
+### ArchlinuxCN package
+- [build logs](https://build.archlinuxcn.org/packages/#/nekobox)
+```
+# 1. Add archlinuxcn repo
+sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
+
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+EOF
+
+# 2. Sync and install keyring
+sudo pacman -Syy archlinuxcn-keyring
+
+# 4. Install NekoBox
+sudo pacman -S nekobox
+```
+
 ### Aur package
 - [nekobox](https://aur.archlinux.org/packages/nekobox)
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
