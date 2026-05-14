@@ -1,5 +1,6 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+debian
 pypy.py
 run.sh
 bash.py

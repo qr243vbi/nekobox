@@ -399,6 +399,13 @@ if (MSVC)
     endif()
 endif()
 
+# force suppress unused warnings
+if (MSVC)
+    target_compile_options(nekobox PRIVATE /wd4101 /wd4189)
+else()
+    target_compile_options(nekobox PRIVATE -Wno-unused-value)
+endif()
+
 if (BUILD_GO_PARTS)
     find_program(GO_EXECUTABLE go)
 
