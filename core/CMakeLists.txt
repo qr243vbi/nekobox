@@ -32,7 +32,7 @@ else()
     set(GO_MOD_TIDY_FLAG ON CACHE STRING "Run go mod tidy before build")
 endif()
 
-set(GOOS "" CACHE STRING "Target GOOS (e.g. linux, windows, darwin)")
+set(GOOS "" CACHE STRING "Target GOOS (e.g. linux, windows)")
 set(GOARCH "" CACHE STRING "Target GOARCH (e.g. amd64, arm64, 386, arm)")
 
 if (GOOS STREQUAL "")
@@ -40,6 +40,8 @@ if (GOOS STREQUAL "")
         set(GOOS "windows")
     elseif(LINUX)
         set(GOOS "linux")
+    elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+        set(GOOS "freebsd")
     else()
         set(GOOS "")
     endif()
@@ -182,10 +184,13 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE ${GOARCH} with platform ${
 # ----------------------------
 # Tags
 # ----------------------------
-set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_awg")
+set(TAGS "with_clash_api,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_awg")
 
-if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
-    set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+    set(TAGS "${TAGS},with_gvisor")
+    if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
+        set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
+    endif()
 endif()
 
 file(MAKE_DIRECTORY "${DESTDIR}")

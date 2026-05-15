@@ -409,7 +409,7 @@ int main(int argc, char** argv) {
 #endif
 
 
-#if !defined(Q_OS_MACOS) && (QT_VERSION >= QT_VERSION_CHECK(6,9,0))
+#if QT_VERSION >= QT_VERSION_CHECK(6,9,0)
     // Load the color emoji font (Twemoji COLR format — required for Qt 6.9+ colored emoji)
     int emojiFontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf", {}, ":/fonts/TwemojiCOLR.ttf"));
     if (emojiFontId >= 0)
@@ -421,7 +421,7 @@ int main(int argc, char** argv) {
         qDebug() << "could not load emoji font!";
     }
 #else
-    // Fallback for older Qt or macOS
+    // Fallback for older Qt
     {
         int emojiFontId = QFontDatabase::addApplicationFont(getResource("emoji.ttf", {}, ":/fonts/NotoEmoji.ttf"));
         if (emojiFontId != -1) {

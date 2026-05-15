@@ -115,7 +115,7 @@ endif()
 set(BUILD_SHARED_LIBS OFF)
 
 if (ENABLE_EMOJI_EMBEEDING)
-  if (NOT APPLE AND Qt6Core_VERSION VERSION_GREATER "6.9.0")
+  if (Qt6Core_VERSION VERSION_GREATER "6.9.0")
     set(PLATFORM_SOURCES ${PLATFORM_SOURCES} "res/fonts/twe.qrc")
   else()
     set(PLATFORM_SOURCES ${PLATFORM_SOURCES} "res/fonts/noto.qrc")
@@ -372,10 +372,16 @@ if (UNIX)
 find_library(ACL_LIB acl)
 
 if(NOT ACL_LIB)
-    message(FATAL_ERROR "libacl not found. Install libacl-devel.")
+    if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+        message(FATAL_ERROR "libacl not found. Install libacl-devel.")
+    else()
+        message(STATUS "libacl not found on FreeBSD, continuing without it")
+    endif()
 endif()
 
-target_link_libraries(nekobox PRIVATE ${ACL_LIB})
+if(ACL_LIB)
+    target_link_libraries(nekobox PRIVATE ${ACL_LIB})
+endif()
 endif()
 
 # Target Link
@@ -479,7 +485,9 @@ target_link_libraries(nekobox
 if (UNIX)
 download_srslist()
 
-remove_rpath(nekobox)
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+    remove_rpath(nekobox)
+endif()
 
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 

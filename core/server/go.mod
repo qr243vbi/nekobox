@@ -12,7 +12,7 @@ require (
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
-	github.com/sagernet/sing v0.8.9
+	github.com/sagernet/sing v0.8.10
 	github.com/sagernet/sing-box v1.13.11
 	github.com/sagernet/sing-tun v0.8.9
 	github.com/spf13/cobra v1.10.2
@@ -179,4 +179,4 @@ replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-2026
 
 replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7
 
-replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.2-fix
+replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.0-20250915152807-20b7e9b2d7e2
