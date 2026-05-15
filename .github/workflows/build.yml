@@ -53,6 +53,11 @@ on:
         type: boolean
         default: true
         required: false
+      publish_ppa:
+        description: "Upload to ppa"
+        type: boolean
+        default: true
+        required: false
  #     build_xbps:
   #      description: "Build void linux packages"
    #     type: boolean
@@ -152,6 +157,7 @@ jobs:
             export SKIP_UPDATER=OFF
           fi
           GO_MOD_TIDY=ON GOOS=${{ matrix.cross_os }} GOARCH=${{ matrix.cross_arch }} ./script/build_go.sh
+
       - name: Build vendor
         if: matrix.cross_os == 'public'
         shell: bash

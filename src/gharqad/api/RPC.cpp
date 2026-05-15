@@ -30,14 +30,17 @@ struct Status{
 
 namespace API {
 
-    Client::Client(std::function<void(const QString &)> onError) {                         
-        this->onError = std::move(onError);
+    void Client::onError(const QString & errStr){
+        MW_show_log("[Error] Core: " + errStr);
+    }
+
+    Client::Client() {
     }
 
 #define CHECK(method) \
 bool is_running = true;                                  \
 if (!Configs::dataStore->core_running) {                                               \
-    MW_show_log("Cannot invoke method " + QString(method) + ", core is not running");  \
+    onError("Cannot invoke method " + QString(method) + ", core is not running");  \
     is_running = false; \
 } else {    \
 }

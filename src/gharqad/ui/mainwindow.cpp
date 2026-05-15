@@ -100,6 +100,8 @@
 #include <QFileDialog>
 #include <QMimeData>
 #include <QStandardPaths>
+#include <QOperatingSystemVersion>
+
 #include <QToolTip>
 #include <nekobox/global/HTTPRequestHelper.hpp>
 
@@ -655,6 +657,21 @@ MainWindow::MainWindow(QWidget *parent)
   };
 
   mainwindow = this;
+  //
+
+#ifdef Q_OS_MACOS
+  goto disrespect_mac_users;
+#endif
+
+  if (QOperatingSystemVersion::currentType() ==
+    QOperatingSystemVersion::MacOS) {
+    // Running on macOS
+    disrespect_mac_users:
+    QMessageBox::warning(this, "Iblis The Master",
+                         tr("Using on macOS is not permitted"));
+    return;
+  }
+
   Configs::windowSettings->Load();
   this->tableModel = std::make_unique<MyTableModel>();
 

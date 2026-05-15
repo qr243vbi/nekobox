@@ -9,7 +9,7 @@
 namespace API {
 class Client {
 public:
-  explicit Client(std::function<void(const QString &)> onError);
+  explicit Client();
 
   // QString returns is error string
 
@@ -60,8 +60,8 @@ public:
   QString DisableSystemProxy(bool *rpcOK);
 
 private:
-  std::function<void(const QString &)> onError;
+  static void onError(const QString & error);
 };
 
-inline Client *defaultClient;
+inline std::unique_ptr<Client> defaultClient;
 } // namespace API

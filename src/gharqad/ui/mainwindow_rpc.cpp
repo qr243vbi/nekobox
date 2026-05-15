@@ -36,16 +36,11 @@ using namespace API;
 
 void MainWindow::setup_rpc() {
     // Setup Connection
-    defaultClient = new Client(
-        [=](const QString &errStr) {
-            MW_show_log("[Error] Core: " + errStr);
-        }
-    );
-
+    defaultClient = std::make_unique<Client>();
 
     // Looper
     runOnNewThread([=] { Stats::trafficLooper->Loop(); });
-    runOnNewThread([=] {Stats::connection_lister->Loop(); });
+    runOnNewThread([=] { Stats::connection_lister->Loop(); });
 
     // Start auto-testing if enabled (access via GetMainWindow since this is static)
     auto mw = GetMainWindow();
