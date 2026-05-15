@@ -53,6 +53,14 @@ sudo pacman -Syy archlinuxcn-keyring
 sudo pacman -S nekobox
 ```
 
+### Ubuntu PPA
+- [nekobox](https://launchpad.net/~miamosagernaki/+archive/ubuntu/nekobox)
+```
+sudo add-apt-repository ppa:miamosagernaki/nekobox
+sudo apt update
+sudo apt-get install -y nekobox
+```
+
 ### Aur package
 - [nekobox](https://aur.archlinux.org/packages/nekobox)
 - [nekobox-git](https://aur.archlinux.org/packages/nekobox-git)
