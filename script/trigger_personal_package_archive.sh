@@ -61,9 +61,9 @@ print(text)
 "
 
 cp -R "${dir}/nekobox-unified-source-${pkgver}"/* ./
-git add --all
-git -c user.email="${EMAIL}" -c user.name="${USER}" commit -am "Update to $INPUT_VERSION"
-git -c user.email="${EMAIL}" -c user.name="${USER}" push --force
+git add --all ||:
+git -c user.email="${EMAIL}" -c user.name="${USER}" commit -am "Update to $INPUT_VERSION" ||:
+git -c user.email="${EMAIL}" -c user.name="${USER}" push --force ||:
 unset PPA_SSH_COMMAND
 
 popd
