@@ -60,10 +60,16 @@ if len(msg) > 0 and k not in text:
 print(text)
 "
 
-cp -R "${dir}/nekobox-unified-source-${pkgver}"/* ./
-git add --all ||:
-git -c user.email="${EMAIL}" -c user.name="${USER}" commit -am "Update to $INPUT_VERSION" ||:
-git -c user.email="${EMAIL}" -c user.name="${USER}" push --force ||:
+cp -R "${dir}/nekobox-unified-source-${pkgver}"/* ./ 
+
+echo copied
+
+git add --all || echo fine
+
+git -c user.email="${EMAIL}" -c user.name="${USER}" commit -am "Update to $INPUT_VERSION" || echo fine
+
+git -c user.email="${EMAIL}" -c user.name="${USER}" push --force || echo fine
+
 unset PPA_SSH_COMMAND
 
 popd
