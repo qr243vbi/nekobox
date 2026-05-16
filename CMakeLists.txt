@@ -472,11 +472,16 @@ if (MIGRATE_LMDB)
     nkr_add_compile_definitions(LMDB_ENABLE_MAPSIZE_METRICS=yes)
 endif()
 
-find_package(yaml-cpp CONFIG REQUIRED)
-target_link_libraries(nekobox
-    PRIVATE
-    yaml-cpp::yaml-cpp
-)
+find_package(yaml-cpp CONFIG QUIET)
+
+if (TARGET yaml-cpp::yaml-cpp)
+    set(YAML_CPP_TARGET yaml-cpp::yaml-cpp)
+else()
+    find_package(yaml-cpp REQUIRED)
+    set(YAML_CPP_TARGET yaml-cpp)
+endif()
+
+target_link_libraries(nekobox PRIVATE ${YAML_CPP_TARGET})
 
 #qt_finalize_executable(nekobox)
 if (UNIX)
