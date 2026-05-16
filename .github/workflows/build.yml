@@ -335,9 +335,12 @@ jobs:
           COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
           COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
           INPUT_VERSION: ${{ github.event.inputs.tag }}
+          PUBLISH_PPA: ${{ github.event.inputs.publish_ppa }}
+          PPA_SSH_KEY: ${{ secrets.PPA_SSH_PRIVATE_KEY }}
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
           echo "Version is ${INPUT_VERSION}"
+          if [[ "$PUBLISH_PPA" == "true" ]]; then . ./script/trigger_personal_package_archive.sh; fi
           if [[ "$PUBLISH_AUR" == "true" ]]; then . ./script/generate_pkgbuild.sh; fi
           if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
           if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi

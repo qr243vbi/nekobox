@@ -162,4 +162,4 @@ download-artifact
 deployment
 srslist.json
 runtime-*
-
+*.tar.xz

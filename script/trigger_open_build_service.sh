@@ -18,7 +18,10 @@ sed -i "s@Version:.*@Version:        $pkgver@g;" nekobox.spec
 
 file_0="$(basename "${source_0}")"
 
+if [[ ! -f "${file_0}" ]]
+then
 curl -L "${source_0}" -o "${file_0}"
+fi
 
 python -c "
 import os
@@ -36,7 +39,7 @@ if len(msg) > 0 and 'Update to ${pkgver}' not in text:
  if msg[-1] != '\n':
   msg = msg + '\n'
  k='-------------------------------------------------------------------'
- k+='\n$(date) - ${USER} <${EMAIL}>\n\n'
+ k+='\n$(date -u '+%a %b %d %H:%M:%S UTC %Y') - ${USER} <${EMAIL}>\n\n'
  k+='Update to ${pkgver}\n' + msg + '\n'
  text=k+text
  f=open('nekobox.changes', 'w')
@@ -44,6 +47,8 @@ if len(msg) > 0 and 'Update to ${pkgver}' not in text:
  f.close()
 print(text)
 "
+
+bash
 
 curl -s -u "${OBS_USER}:${OBS_PASSWORD}"   "https://api.opensuse.org/source/network:vpn/nekobox" | grep -oP '<entry[^>]*\sname="\K[^"]+' | while IFS= read -r name
 do
