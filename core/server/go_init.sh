@@ -20,7 +20,7 @@ go mod tidy
 go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@HEAD
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@HEAD  
+go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@v0.0.2-fix  
 go mod tidy
 
 go get -u github.com/apache/thrift@HEAD
