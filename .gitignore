@@ -1,6 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 debian
+per_day.py
 pypy.py
 run.sh
 bash.py

@@ -54,7 +54,7 @@ on:
         default: true
         required: false
       publish_ppa:
-        description: "Upload to ppa"
+        description: "Publish to PPA"
         type: boolean
         default: true
         required: false

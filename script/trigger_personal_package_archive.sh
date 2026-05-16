@@ -18,18 +18,10 @@ pushd "${dir}/nekobox-unified-source-${pkgver}"
 rm .gitignore
 popd
 
-echo "$PPA_SSH_KEY" > SSH_KEY
-PPA_SSH_COMMAND="ssh -i $PWD/SSH_KEY -o IdentitiesOnly=yes"
-
-chmod 600 SSH_KEY
-ppa_git(){
-  GIT_SSH_COMMAND="$PPA_SSH_COMMAND" git "${@}"
-}
-
 gitdir="$(mktemp -d)"
 
 pushd "${gitdir}"
-ppa_git clone --depth 1 git+ssh://miamosagernaki@git.launchpad.net/~miamosagernaki/+git/nekobox
+git clone --depth 1 https://miamosagernaki:${PPA_SSH_KEY}@git.launchpad.net/~miamosagernaki/+git/nekobox
 pushd nekobox
 shopt -s extglob
 shopt -s globstar
@@ -69,8 +61,8 @@ print(text)
 "
 
 cp -R "${dir}/nekobox-unified-source-${pkgver}"/* ./
-ppa_git add --all
-ppa_git commit -am "Update to $INPUT_VERSION"
+git add --all
+git commit -am "Update to $INPUT_VERSION"
 
 ppa_git push --force
 unset PPA_SSH_COMMAND
