@@ -1,7 +1,3 @@
-
-
-
-
 #ifndef JS_UPDATER
 #define JS_UPDATER
 #include "message_queue.h"

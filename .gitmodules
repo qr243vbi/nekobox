@@ -1,3 +1,6 @@
 [submodule "3rdparty/cpr"]
 	path = 3rdparty/cpr
 	url = https://github.com/libcpr/cpr
+[submodule "3rdparty/qjs"]
+	path = 3rdparty/qjs
+	url = https://github.com/quickjs-ng/quickjs

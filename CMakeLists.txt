@@ -54,7 +54,7 @@ foreach(TS_FILE ${TS_FILES})
     list(APPEND QM_FILENAMES ${QM_FILE})
 endforeach()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network LinguistTools Concurrent)
+find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -85,11 +85,11 @@ message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 #### NKR ####
 option(SKIP_UPDATER "Always hide update button" ON)
 
-if(UNIX)
-set(MIGRATE_LMDB_DEFAULT ON)
-else()
-set(MIGRATE_LMDB_DEFAULT OFF)
-endif()
+#if(UNIX)
+#set(MIGRATE_LMDB_DEFAULT ON)
+#else()
+#set(MIGRATE_LMDB_DEFAULT OFF)
+#endif()
 
 if(UNIX)
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT OFF)
@@ -97,7 +97,7 @@ else()
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT ON)
 endif()
 
-option(MIGRATE_LMDB "Migrate from lmdb" ${MIGRATE_LMDB_DEFAULT})
+option(MIGRATE_LMDB "Migrate from lmdb" OFF)
 option(SKIP_LEVELDB "Do not use rocksdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
@@ -310,7 +310,9 @@ if(SKIP_JS_UPDATER)
     nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
 else()
     find_package(Qt6 REQUIRED COMPONENTS Qml)
+
     target_link_libraries(nekobox PRIVATE Qt6::Qml)
+
     target_sources(nekobox
             PRIVATE
             ${GHARQAD}/js/js_updater.cpp
@@ -396,7 +398,7 @@ endif()
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Network Qt6::Concurrent
+        Qt6::Widgets Qt6::Concurrent
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}
