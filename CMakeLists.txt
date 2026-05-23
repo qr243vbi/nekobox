@@ -41,7 +41,7 @@ set(GHARQAD "src/gharqad")
 
 # Target Source Translations
 
-file(GLOB TS_FILES "res/translations/*.ts")
+file(GLOB TS_FILES CONFIGURE_DEPENDS "res/translations/*.ts")
 
 foreach(TS_FILE ${TS_FILES})
     # Get the base name of the file without the extension
@@ -167,6 +167,7 @@ else()
 endif()
 
 file(GLOB_RECURSE PROJECT_SOURCES_GLOB
+        CONFIGURE_DEPENDS
         ${GHARQAD}/configs/proxy/*.cpp
         ${NYXARIA}/configs/proxy/*.hpp
         ${NYXARIA}/configs/proxy/*.h
@@ -309,9 +310,9 @@ endif()
 if(SKIP_JS_UPDATER)
     nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
 else()
-    find_package(Qt6 REQUIRED COMPONENTS Qml)
+    find_package(quickjs REQUIRED CONFIG)
 
-    target_link_libraries(nekobox PRIVATE Qt6::Qml)
+    target_link_libraries(nekobox PRIVATE qjs)
 
     target_sources(nekobox
             PRIVATE
