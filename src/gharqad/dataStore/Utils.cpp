@@ -1,5 +1,13 @@
 
-
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#else
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#endif
 #include <iostream>
 #include <random>
 #include <ctime>
@@ -17,7 +25,6 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QRegularExpression>
-#include <QTcpServer>
 #include <QTimer>
 #include <QUrlQuery>
 #include <functional>
@@ -457,15 +464,36 @@ bool WriteFileText(QFile &file, const QString &notes) {
   return WriteFile(file, array);
 }
 
-int MkPort() {
-  QTcpServer s;
-  s.listen();
-  auto port = s.serverPort();
-  s.close();
-  if (port < 0){
-    return 19810;
-  }
-  return port;
+
+
+
+#ifndef _WIN32
+  #define closesocket close
+#endif
+
+int MkPort()
+{
+    int s = (int)socket(AF_INET, SOCK_STREAM, 0);
+    if (s < 0)
+        return 19810;
+
+    sockaddr_in addr{};
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+    addr.sin_port = 0;
+
+    if (bind(s, (sockaddr*)&addr, sizeof(addr)) < 0)
+    {
+        closesocket(s);
+        return 19810;
+    }
+
+    socklen_t len = sizeof(addr);
+    getsockname(s, (sockaddr*)&addr, &len);
+    int port = ntohs(addr.sin_port);
+
+    closesocket(s);
+    return port;
 }
 
 QString ReadableSize(const qint64 &size) {
@@ -490,26 +518,25 @@ QString ReadableSize(const qint64 &size) {
   return QString::fromLatin1("%1 %2").arg(sizeAsDouble, 0, 'f', 2).arg(measure);
 }
 
-bool IsIpAddress(const QString &str) {
-  auto address = QHostAddress(str);
-  if (address.protocol() == QAbstractSocket::IPv4Protocol ||
-      address.protocol() == QAbstractSocket::IPv6Protocol)
-    return true;
-  return false;
+bool IsIpAddressV4(const QString &str)
+{
+    sockaddr_in sa{};
+    return inet_pton(AF_INET,
+                     str.toUtf8().constData(),
+                     &(sa.sin_addr)) == 1;
 }
 
-bool IsIpAddressV4(const QString &str) {
-  auto address = QHostAddress(str);
-  if (address.protocol() == QAbstractSocket::IPv4Protocol)
-    return true;
-  return false;
+bool IsIpAddressV6(const QString &str)
+{
+    sockaddr_in6 sa{};
+    return inet_pton(AF_INET6,
+                     str.toUtf8().constData(),
+                     &(sa.sin6_addr)) == 1;
 }
 
-bool IsIpAddressV6(const QString &str) {
-  auto address = QHostAddress(str);
-  if (address.protocol() == QAbstractSocket::IPv6Protocol)
-    return true;
-  return false;
+bool IsIpAddress(const QString &str)
+{
+    return IsIpAddressV4(str) || IsIpAddressV6(str);
 }
 
 QString DisplayTime(long long time, int formatType) {

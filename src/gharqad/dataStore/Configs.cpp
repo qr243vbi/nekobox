@@ -22,7 +22,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QKeySequence>
-#include <QNetworkAccessManager>
 #include <QStandardPaths>
 #include <memory>
 #include <utility>

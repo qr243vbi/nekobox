@@ -663,7 +663,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
   db = std::unique_ptr<rocksdb::DB>(db1);
 
   if (!status.ok()) {
-    std::cerr << status.ToString() << std::endl;
+    qWarning() << status.ToString();
     return;
   }
   rocksdb::WriteBatch dbi; 
@@ -705,7 +705,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
     );
 
     if (!status.ok()) {
-      std::cerr << status.ToString() << std::endl;
+      qWarning() << status.ToString();
       return;
     }
   }

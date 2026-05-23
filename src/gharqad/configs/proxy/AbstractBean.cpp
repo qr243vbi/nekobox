@@ -1,11 +1,21 @@
-
+#include <qnamespace.h>
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#else
+#include <netdb.h>
+#include <arpa/inet.h>
+#endif
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/configs/proxy/includes.h>
+#include <QThreadPool>
+#include <QMetaObject>
+#include <QPointer>
+
 
 #include <QApplication>
-#include <QHostInfo>
 #include <QUrl>
 
 namespace Configs {
@@ -63,40 +73,94 @@ namespace Configs {
             this->entity->Save();
         }
     }
+void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished)
+{
+    if (entity == nullptr)
+        return;
 
-    void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished) {
-        if (this->entity == nullptr) return;
-        bool noResolve = false;
-        auto serverAddress = entity->serverAddress;
-        if (dynamic_cast<ChainBean *>(this) != nullptr) noResolve = true;
-        if (dynamic_cast<CustomBean *>(this) != nullptr) noResolve = true;
-        if (IsIpAddress(serverAddress)) noResolve = true;
-        if (noResolve) {
-            onFinished();
-            return;
-        }
-        QHostInfo::lookupHost(serverAddress, QApplication::instance(), [=,this](const QHostInfo &host) {
-            auto addr = host.addresses();
-            if (!addr.isEmpty()) {
-                auto domain = serverAddress;
-                auto stream = GetStreamSettings(this);
+    auto serverAddress = entity->serverAddress;
 
-                // replace serverAddress
-                this->entity->serverAddress = addr.first().toString();
+    bool noResolve =
+        dynamic_cast<ChainBean*>(this) != nullptr ||
+        dynamic_cast<CustomBean*>(this) != nullptr ||
+        IsIpAddress(serverAddress);
 
-                // replace ws tls
-                if (stream != nullptr) {
-                    if (stream->security == "tls" && stream->sni.isEmpty()) {
-                        stream->sni = domain;
+    if (noResolve)
+    {
+        onFinished();
+        return;
+    }
+
+    QThreadPool::globalInstance()->start(
+        [this, serverAddress, onFinished]
+        {
+            QString ip;
+
+            addrinfo hints{};
+            hints.ai_family = AF_UNSPEC;
+            hints.ai_socktype = SOCK_STREAM;
+
+            addrinfo* result = nullptr;
+
+            if (getaddrinfo(
+                    serverAddress.toUtf8().constData(),
+                    nullptr,
+                    &hints,
+                    &result) == 0)
+            {
+                char buffer[INET6_ADDRSTRLEN];
+
+                for (auto* p = result; p; p = p->ai_next)
+                {
+                    if (p->ai_family == AF_INET)
+                    {
+                        auto* addr = (sockaddr_in*)p->ai_addr;
+                        inet_ntop(AF_INET, &addr->sin_addr, buffer, sizeof(buffer));
+                        ip = buffer;
+                        break;
                     }
-                    if ((QString)*stream->network == "ws" && stream->host.isEmpty()) {
-                        stream->host = domain;
+                    else if (p->ai_family == AF_INET6)
+                    {
+                        auto* addr = (sockaddr_in6*)p->ai_addr;
+                        inet_ntop(AF_INET6, &addr->sin6_addr, buffer, sizeof(buffer));
+                        ip = buffer;
+                        break;
                     }
                 }
+
+                freeaddrinfo(result);
             }
-            onFinished();
+
+    //        QMetaObject::invokeMethod(
+      //          qApp,
+        //        [this, serverAddress, ip, onFinished]
+                {
+                    if (!ip.isEmpty())
+                    {
+                        auto stream = GetStreamSettings(this);
+
+                        entity->serverAddress = ip;
+
+                        if (stream)
+                        {
+                            if (stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
+                                stream->sni.isEmpty())
+                            {
+                                stream->sni = serverAddress;
+                            }
+
+                            if (stream->network->toString().compare("ws", Qt::CaseInsensitive) == 0 &&
+                                stream->host.isEmpty())
+                            {
+                                stream->host = serverAddress;
+                            }
+                        }
+                    }
+
+                    onFinished();
+                }//);
         });
-    }
+}
 
         bool AbstractBean::TryParseNekorayLink(const QString &str){
             auto link = QUrl(str);

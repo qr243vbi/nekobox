@@ -7,8 +7,8 @@
 #include <QTranslator>
 #include <QMessageBox>
 #include <QStandardPaths>
-#include <QLocalSocket>
-#include <QLocalServer>
+//#include <QLocalSocket>
+//#include <QLocalServer>
 #include <QThread>
 #include <QFileInfo>
 #include <QApplication>
@@ -283,6 +283,7 @@ int main(int argc, char** argv) {
     #ifdef DEBUG_MODE
     qDebug() << "server name: " << serverName;
     #endif
+    /*
     QLocalSocket socket;
     socket.connectToServer(serverName);
     if (socket.waitForConnected(250))
@@ -293,7 +294,7 @@ int main(int argc, char** argv) {
         socket.disconnectFromServer();
         return 0;
     }
-
+*/
 
     Configs::databaseManager = std::make_shared<Configs::FileDatabaseManager>();
     Configs::resourceManager = new class Configs::ResourceManager();
@@ -372,6 +373,7 @@ int main(int argc, char** argv) {
     loadTranslate(locale);
 
     // QLocalServer
+    /*
     QLocalServer server(qApp);
     server.setSocketOptions(QLocalServer::WorldAccessOption);
     if (!server.listen(serverName)) {
@@ -397,6 +399,7 @@ int main(int argc, char** argv) {
         server.close();
         QLocalServer::removeServer(serverName);
     });
+    */
 
 #ifdef Q_OS_UNIX
     signal(SIGTERM, signal_handler);

@@ -81,7 +81,7 @@ public:
   operator int() const;
   operator QString() const;
   operator QByteArray() const;
-
+  inline QString toString() const { return (QString)(*this); }
   template <typename K> JsonEnum &operator=(K val) { return this->set(val); }
   int value;
 
@@ -175,6 +175,7 @@ PTR_ITEM(double)
 PTR_ITEM(enum)
 
 class JsonStore {
+
 private:
   std::shared_ptr<configItem> _get_const_job(const QString &name) const;
 

@@ -3953,14 +3953,15 @@ void MainWindow::on_menu_resolve_selected_triggered() {
     if (profile == nullptr){
       continue;
     }
-    auto bean = profile->unlock(profile->bean());
-    bean->ResolveDomainToIP([=, this] {
+    std::shared_ptr<Configs::AbstractBean>  beanConst = profile->unlock(profile->bean());
+    beanConst->ResolveDomainToIP([this, beanConst] {
+      std::shared_ptr<Configs::AbstractBean>  bean = beanConst;
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
+      bean.reset();
     });
-    bean.reset();
   }
 }
 
@@ -3991,14 +3992,15 @@ void MainWindow::on_menu_resolve_domain_triggered() {
     if (profile == nullptr){
       continue;
     }
-    auto bean = profile->unlock(profile->bean());
-    bean->ResolveDomainToIP([=, this] {
+    std::shared_ptr<Configs::AbstractBean>  beanConst = profile->unlock(profile->bean());
+    beanConst->ResolveDomainToIP([this, beanConst] {
+      std::shared_ptr<Configs::AbstractBean>  bean = beanConst;
       if (--Configs::dataStore->resolve_count != 0)
         return;
       refresh_proxy_list();
       mw_sub_updating = false;
+      bean.reset();
     });
-    bean.reset();
   }
 }
 
