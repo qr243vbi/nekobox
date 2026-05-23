@@ -185,3 +185,7 @@ service LibcoreService {
   QuerySpeedTestResponse QuerySpeedTest(1: EmptyReq req),
   QueryCountryTestResponse QueryCountryTest(1: EmptyReq req)
 }
+
+service InstanceService {
+  void wakeUp()
+}

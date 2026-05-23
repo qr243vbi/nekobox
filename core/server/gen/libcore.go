@@ -13228,3 +13228,342 @@ func (p *LibcoreServiceQueryCountryTestResult) LogValue() slog.Value {
 var _ slog.LogValuer = (*LibcoreServiceQueryCountryTestResult)(nil)
 
 
+type InstanceService interface {
+	WakeUp(ctx context.Context) (_err error)
+}
+
+type InstanceServiceClient struct {
+	c thrift.TClient
+	meta thrift.ResponseMeta
+}
+
+func NewInstanceServiceClientFactory(t thrift.TTransport, f thrift.TProtocolFactory) *InstanceServiceClient {
+	return &InstanceServiceClient{
+		c: thrift.NewTStandardClient(f.GetProtocol(t), f.GetProtocol(t)),
+	}
+}
+
+func NewInstanceServiceClientProtocol(t thrift.TTransport, iprot thrift.TProtocol, oprot thrift.TProtocol) *InstanceServiceClient {
+	return &InstanceServiceClient{
+		c: thrift.NewTStandardClient(iprot, oprot),
+	}
+}
+
+func NewInstanceServiceClient(c thrift.TClient) *InstanceServiceClient {
+	return &InstanceServiceClient{
+		c: c,
+	}
+}
+
+func (p *InstanceServiceClient) Client_() thrift.TClient {
+	return p.c
+}
+
+func (p *InstanceServiceClient) LastResponseMeta_() thrift.ResponseMeta {
+	return p.meta
+}
+
+func (p *InstanceServiceClient) SetLastResponseMeta_(meta thrift.ResponseMeta) {
+	p.meta = meta
+}
+
+func (p *InstanceServiceClient) WakeUp(ctx context.Context) (_err error) {
+	var _args254 InstanceServiceWakeUpArgs
+	var _result256 InstanceServiceWakeUpResult
+	var _meta255 thrift.ResponseMeta
+	_meta255, _err = p.Client_().Call(ctx, "wakeUp", &_args254, &_result256)
+	p.SetLastResponseMeta_(_meta255)
+	if _err != nil {
+		return
+	}
+	return nil
+}
+
+type InstanceServiceProcessor struct {
+	processorMap map[string]thrift.TProcessorFunction
+	handler InstanceService
+}
+
+func (p *InstanceServiceProcessor) AddToProcessorMap(key string, processor thrift.TProcessorFunction) {
+	p.processorMap[key] = processor
+}
+
+func (p *InstanceServiceProcessor) GetProcessorFunction(key string) (processor thrift.TProcessorFunction, ok bool) {
+	processor, ok = p.processorMap[key]
+	return processor, ok
+}
+
+func (p *InstanceServiceProcessor) ProcessorMap() map[string]thrift.TProcessorFunction {
+	return p.processorMap
+}
+
+func NewInstanceServiceProcessor(handler InstanceService) *InstanceServiceProcessor {
+
+	self257 := &InstanceServiceProcessor{handler:handler, processorMap:make(map[string]thrift.TProcessorFunction)}
+	self257.processorMap["wakeUp"] = &instanceServiceProcessorWakeUp{handler:handler}
+	return self257
+}
+
+func (p *InstanceServiceProcessor) Process(ctx context.Context, iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
+	name, _, seqId, err2 := iprot.ReadMessageBegin(ctx)
+	if err2 != nil { return false, thrift.WrapTException(err2) }
+	if processor, ok := p.GetProcessorFunction(name); ok {
+		return processor.Process(ctx, seqId, iprot, oprot)
+	}
+	iprot.Skip(ctx, thrift.STRUCT)
+	iprot.ReadMessageEnd(ctx)
+	x258 := thrift.NewTApplicationException(thrift.UNKNOWN_METHOD, "Unknown function " + name)
+	oprot.WriteMessageBegin(ctx, name, thrift.EXCEPTION, seqId)
+	x258.Write(ctx, oprot)
+	oprot.WriteMessageEnd(ctx)
+	oprot.Flush(ctx)
+	return false, x258
+}
+
+type instanceServiceProcessorWakeUp struct {
+	handler InstanceService
+}
+
+func (p *instanceServiceProcessorWakeUp) Process(ctx context.Context, seqId int32, iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
+	var _write_err259 thrift.TException
+	args := InstanceServiceWakeUpArgs{}
+	if err2 := args.Read(ctx, iprot); err2 != nil {
+		iprot.ReadMessageEnd(ctx)
+		x := thrift.NewTApplicationException(thrift.PROTOCOL_ERROR, err2.Error())
+		oprot.WriteMessageBegin(ctx, "wakeUp", thrift.EXCEPTION, seqId)
+		x.Write(ctx, oprot)
+		oprot.WriteMessageEnd(ctx)
+		oprot.Flush(ctx)
+		return false, thrift.WrapTException(err2)
+	}
+	iprot.ReadMessageEnd(ctx)
+
+	tickerCancel := func() {}
+	// Start a goroutine to do server side connectivity check.
+	if thrift.ServerConnectivityCheckInterval > 0 {
+		var cancel context.CancelCauseFunc
+		ctx, cancel = context.WithCancelCause(ctx)
+		defer cancel(nil)
+		var tickerCtx context.Context
+		tickerCtx, tickerCancel = context.WithCancel(context.Background())
+		defer tickerCancel()
+		go func(ctx context.Context, cancel context.CancelCauseFunc) {
+			ticker := time.NewTicker(thrift.ServerConnectivityCheckInterval)
+			defer ticker.Stop()
+			for {
+				select {
+				case <-ctx.Done():
+					return
+				case <-ticker.C:
+					if !iprot.Transport().IsOpen() {
+						cancel(thrift.ErrAbandonRequest)
+						return
+					}
+				}
+			}
+		}(tickerCtx, cancel)
+	}
+
+	result := InstanceServiceWakeUpResult{}
+	if err2 := p.handler.WakeUp(ctx); err2 != nil {
+		tickerCancel()
+		err = thrift.WrapTException(err2)
+		if errors.Is(err2, thrift.ErrAbandonRequest) {
+			return false, &thrift.ProcessorError{
+				WriteError:    thrift.WrapTException(err2),
+				EndpointError: err,
+			}
+		}
+		if errors.Is(err2, context.Canceled) {
+			if err3 := context.Cause(ctx); errors.Is(err3, thrift.ErrAbandonRequest) {
+				return false, &thrift.ProcessorError{
+					WriteError:    thrift.WrapTException(err3),
+					EndpointError: err,
+				}
+			}
+		}
+		_exc260 := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing wakeUp: " + err2.Error())
+		if err2 := oprot.WriteMessageBegin(ctx, "wakeUp", thrift.EXCEPTION, seqId); err2 != nil {
+			_write_err259 = thrift.WrapTException(err2)
+		}
+		if err2 := _exc260.Write(ctx, oprot); _write_err259 == nil && err2 != nil {
+			_write_err259 = thrift.WrapTException(err2)
+		}
+		if err2 := oprot.WriteMessageEnd(ctx); _write_err259 == nil && err2 != nil {
+			_write_err259 = thrift.WrapTException(err2)
+		}
+		if err2 := oprot.Flush(ctx); _write_err259 == nil && err2 != nil {
+			_write_err259 = thrift.WrapTException(err2)
+		}
+		if _write_err259 != nil {
+			return false, &thrift.ProcessorError{
+				WriteError:    _write_err259,
+				EndpointError: err,
+			}
+		}
+		return true, err
+	}
+	tickerCancel()
+	if err2 := oprot.WriteMessageBegin(ctx, "wakeUp", thrift.REPLY, seqId); err2 != nil {
+		_write_err259 = thrift.WrapTException(err2)
+	}
+	if err2 := result.Write(ctx, oprot); _write_err259 == nil && err2 != nil {
+		_write_err259 = thrift.WrapTException(err2)
+	}
+	if err2 := oprot.WriteMessageEnd(ctx); _write_err259 == nil && err2 != nil {
+		_write_err259 = thrift.WrapTException(err2)
+	}
+	if err2 := oprot.Flush(ctx); _write_err259 == nil && err2 != nil {
+		_write_err259 = thrift.WrapTException(err2)
+	}
+	if _write_err259 != nil {
+		return false, &thrift.ProcessorError{
+			WriteError:    _write_err259,
+			EndpointError: err,
+		}
+	}
+	return true, err
+}
+
+
+// HELPER FUNCTIONS AND STRUCTURES
+
+type InstanceServiceWakeUpArgs struct {
+}
+
+func NewInstanceServiceWakeUpArgs() *InstanceServiceWakeUpArgs {
+	return &InstanceServiceWakeUpArgs{}
+}
+
+func (p *InstanceServiceWakeUpArgs) Read(ctx context.Context, iprot thrift.TProtocol) error {
+	if _, err := iprot.ReadStructBegin(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
+	}
+
+
+	for {
+		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
+		if err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T field %d read error: ", p, fieldId), err)
+		}
+		if fieldTypeId == thrift.STOP {
+			break
+		}
+		if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+			return err
+		}
+		if err := iprot.ReadFieldEnd(ctx); err != nil {
+			return err
+		}
+	}
+	if err := iprot.ReadStructEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceWakeUpArgs) Write(ctx context.Context, oprot thrift.TProtocol) error {
+	if err := oprot.WriteStructBegin(ctx, "wakeUp_args"); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
+	}
+	if p != nil {
+	}
+	if err := oprot.WriteFieldStop(ctx); err != nil {
+		return thrift.PrependError("write field stop error: ", err)
+	}
+	if err := oprot.WriteStructEnd(ctx); err != nil {
+		return thrift.PrependError("write struct stop error: ", err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceWakeUpArgs) String() string {
+	if p == nil {
+		return "<nil>"
+	}
+	return fmt.Sprintf("InstanceServiceWakeUpArgs(%+v)", *p)
+}
+
+func (p *InstanceServiceWakeUpArgs) LogValue() slog.Value {
+	if p == nil {
+		return slog.AnyValue(nil)
+	}
+	v := thrift.SlogTStructWrapper{
+		Type: "*gen.InstanceServiceWakeUpArgs",
+		Value: p,
+	}
+	return slog.AnyValue(v)
+}
+
+var _ slog.LogValuer = (*InstanceServiceWakeUpArgs)(nil)
+
+type InstanceServiceWakeUpResult struct {
+}
+
+func NewInstanceServiceWakeUpResult() *InstanceServiceWakeUpResult {
+	return &InstanceServiceWakeUpResult{}
+}
+
+func (p *InstanceServiceWakeUpResult) Read(ctx context.Context, iprot thrift.TProtocol) error {
+	if _, err := iprot.ReadStructBegin(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
+	}
+
+
+	for {
+		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
+		if err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T field %d read error: ", p, fieldId), err)
+		}
+		if fieldTypeId == thrift.STOP {
+			break
+		}
+		if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+			return err
+		}
+		if err := iprot.ReadFieldEnd(ctx); err != nil {
+			return err
+		}
+	}
+	if err := iprot.ReadStructEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceWakeUpResult) Write(ctx context.Context, oprot thrift.TProtocol) error {
+	if err := oprot.WriteStructBegin(ctx, "wakeUp_result"); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
+	}
+	if p != nil {
+	}
+	if err := oprot.WriteFieldStop(ctx); err != nil {
+		return thrift.PrependError("write field stop error: ", err)
+	}
+	if err := oprot.WriteStructEnd(ctx); err != nil {
+		return thrift.PrependError("write struct stop error: ", err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceWakeUpResult) String() string {
+	if p == nil {
+		return "<nil>"
+	}
+	return fmt.Sprintf("InstanceServiceWakeUpResult(%+v)", *p)
+}
+
+func (p *InstanceServiceWakeUpResult) LogValue() slog.Value {
+	if p == nil {
+		return slog.AnyValue(nil)
+	}
+	v := thrift.SlogTStructWrapper{
+		Type: "*gen.InstanceServiceWakeUpResult",
+		Value: p,
+	}
+	return slog.AnyValue(v)
+}
+
+var _ slog.LogValuer = (*InstanceServiceWakeUpResult)(nil)
+
+
