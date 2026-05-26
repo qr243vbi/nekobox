@@ -310,9 +310,13 @@ endif()
 if(SKIP_JS_UPDATER)
     nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
 else()
-    find_package(qjs REQUIRED CONFIG)
-
-    target_link_libraries(nekobox PRIVATE qjs)
+    find_package(qjs CONFIG QUIET)
+    if(qjs_FOUND)
+        message(STATUS "Using system QuickJS-NG")
+    else()
+        message(STATUS "System QuickJS-NG not found, using bundled version")
+        add_subdirectory("${CMAKE_SOURCE_DIR}/3rdparty/qjs")
+    endif()
 
     target_sources(nekobox
             PRIVATE
