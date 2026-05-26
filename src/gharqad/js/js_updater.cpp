@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/js/js_updater.h>
 #include <QJSEngine>
 #include <QVariantMap>
@@ -16,7 +12,6 @@
 #include <QString>
 #include <QProcessEnvironment>
 #include <iostream>
-#include <memory>
 #include <functional>
 #include <QCoreApplication>
 #include <QLocale>

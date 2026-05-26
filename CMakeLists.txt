@@ -11,7 +11,6 @@ endif()
 
 include(ExternalProject)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_SUPPRESS_REGENERATION ON)
 
@@ -31,6 +30,7 @@ endif()
 
 #if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 #	if (NOT MSVC)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 #	endif ()
 #endif ()
@@ -310,7 +310,7 @@ endif()
 if(SKIP_JS_UPDATER)
     nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
 else()
-    find_package(quickjs REQUIRED CONFIG)
+    find_package(qjs REQUIRED CONFIG)
 
     target_link_libraries(nekobox PRIVATE qjs)
 
