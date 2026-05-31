@@ -26,3 +26,6 @@ curl -L -o URLParser/url_parser_function.h https://raw.githubusercontent.com/don
 
 mkdir LRUCache ||:
 curl -L -o LRUCache/LRUCache11.hpp https://raw.githubusercontent.com/mohaps/lrucache11/refs/heads/master/LRUCache11.hpp
+
+mkdir ini ||:
+curl -L -o ini/ini.h https://raw.githubusercontent.com/mcmtroffaes/inipp/refs/heads/develop/inipp/inipp.h
