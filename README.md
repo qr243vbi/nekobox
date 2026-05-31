@@ -174,6 +174,7 @@ Various formats are supported, including share links, JSON array of outbounds an
 - [cpr](https://github.com/libcpr/cpr)
 - [lrucache11](https://github.com/mohaps/lrucache11)
 - [leveldb](https://github.com/google/leveldb)
+- [iniqt](https://github.com/qr243vbi/iniqt.hpp)
 
 ## FAQ
 **What is AppImage?** <br/>
