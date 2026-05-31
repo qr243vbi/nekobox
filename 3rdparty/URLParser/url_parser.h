@@ -1,5 +1,3 @@
-
-
 //
 // URL Parser for C++
 // Created Oct 22, 2017.

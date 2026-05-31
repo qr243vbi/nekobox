@@ -37,7 +37,7 @@ function open_url(url){
     return window.open_url(url);
 }
 
-window.tempdir_path = tempdir_path;
+window.tempdir_path = curdir_path("temp");
 
 function download(url, fileName, ifexists){
     return window.download(_n(url), _n(fileName), _b(ifexists));

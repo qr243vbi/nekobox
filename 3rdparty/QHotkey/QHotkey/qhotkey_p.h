@@ -1,5 +1,3 @@
-
-
 #ifndef QHOTKEY_P_H
 #define QHOTKEY_P_H
 

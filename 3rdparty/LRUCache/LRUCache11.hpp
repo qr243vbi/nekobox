@@ -1,5 +1,3 @@
-
-
 /*
  * LRUCache11 - a templated C++11 based LRU cache class that allows
  * specification of

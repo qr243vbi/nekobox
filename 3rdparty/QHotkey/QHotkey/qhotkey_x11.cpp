@@ -1,5 +1,3 @@
-
-
 #include "qhotkey.h"
 #include "qhotkey_p.h"
 

@@ -1,5 +1,3 @@
-
-
 /* 
  * QR Code generator library (C++)
  * 

@@ -70,12 +70,12 @@ public:
     // Virtual destructor is a good practice for QObject subclasses
     virtual ~JsHTTPRequest() override;
 
-private:
-    void init(const QString& url);
-private:
     QString m_text;
     QString m_error;
     QVariantMap m_header;
+    
+private:
+    void init(const QString& url);
 };
 
 
