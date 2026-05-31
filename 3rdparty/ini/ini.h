@@ -1,282 +1,268 @@
-/*
-MIT License
-
-Copyright (c) 2017-2020 Matthias C. M. Troffaes
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-
 #pragma once
 
-#include <algorithm>
-#include <cctype>
-#include <cstring>
-#include <functional>
-#include <iostream>
-#include <list>
-#include <vector>
-#include <locale>
-#include <map>
-#include <memory>
-#include <sstream>
-#include <string>
+#include <QString>
+#include <QMap>
+#include <QList>
+#include <QTextStream>
+#include <QSharedPointer>
+#include <QVariant>
+#include <type_traits>
 
-namespace inipp {
+namespace iniqt {
 
 namespace detail {
 
-// trim functions based on http://stackoverflow.com/a/217605
-
-template <class CharT>
-inline void ltrim(std::basic_string<CharT> & s, const std::locale & loc) {
-	s.erase(s.begin(),
-                std::find_if(s.begin(), s.end(),
-                             [&loc](CharT ch) { return !std::isspace(ch, loc); }));
-}
-
-template <class CharT>
-inline void rtrim(std::basic_string<CharT> & s, const std::locale & loc) {
-	s.erase(std::find_if(s.rbegin(), s.rend(),
-                             [&loc](CharT ch) { return !std::isspace(ch, loc); }).base(),
-                s.end());
-}
-
-template <class CharT, class UnaryPredicate>
-inline void rtrim2(std::basic_string<CharT>& s, UnaryPredicate pred) {
-	s.erase(std::find_if(s.begin(), s.end(), pred), s.end());
-}
-
-// string replacement function based on http://stackoverflow.com/a/3418285
-
-template <class CharT>
-inline bool replace(std::basic_string<CharT> & str, const std::basic_string<CharT> & from, const std::basic_string<CharT> & to) {
-	auto changed = false;
-	size_t start_pos = 0;
-	while ((start_pos = str.find(from, start_pos)) != std::basic_string<CharT>::npos) {
-		str.replace(start_pos, from.length(), to);
-		start_pos += to.length();
-		changed = true;
-	}
-	return changed;
+// Safely replaces instances of 'from' with 'to' in a string using Qt
+inline bool replace(QString &str, const QString &from, const QString &to) {
+    if (!str.contains(from)) {
+        return false;
+    }
+    str.replace(from, to);
+    return true;
 }
 
 } // namespace detail
 
-template <typename CharT, typename T>
-inline bool extract(const std::basic_string<CharT> & value, T & dst) {
-	CharT c;
-	std::basic_istringstream<CharT> is{ value };
-	T result;
-	if ((is >> std::boolalpha >> result) && !(is >> c)) {
-		dst = result;
-		return true;
-	}
-	else {
-		return false;
-	}
+// Converts a QString to a target type T using QVariant casting abstractions
+template <typename T>
+inline bool extract(const QString &value, T &dst) {
+    QVariant var(value);
+    if constexpr (std::is_same_v<T, bool>) {
+        // Handle special JavaScript/INI string booleans safely
+        QString lower = value.toLower().trimmed();
+        if (lower == "true" || lower == "1" || lower == "yes") {
+            dst = true;
+            return true;
+        }
+        if (lower == "false" || lower == "0" || lower == "no") {
+            dst = false;
+            return true;
+        }
+        return false;
+    } else {
+        if (var.canConvert<T>()) {
+            dst = var.value<T>();
+            return true;
+        }
+        return false;
+    }
 }
 
-template <typename CharT>
-inline bool extract(const std::basic_string<CharT> & value, std::basic_string<CharT> & dst) {
-	dst = value;
-	return true;
+// Specialization if the target type is already a QString
+inline bool extract(const QString &value, QString &dst) {
+    dst = value;
+    return true;
 }
 
-template <typename CharT, typename T>
-inline bool get_value(const std::map<std::basic_string<CharT>, std::basic_string<CharT>> & sec, const std::basic_string<CharT> & key, T & dst) {
-	const auto it = sec.find(key);
-	if (it == sec.end()) return false;
-	return extract(it->second, dst);
+// Automatically serializes any type T into a string representation inside the Section map
+template <typename T>
+inline void set_value(QMap<QString, QString> &sec, const QString &key, const T &src) {
+    if constexpr (std::is_same_v<T, bool>) {
+        // Enforce clean explicit string primitives for booleans ("true"/"false")
+        sec.insert(key, src ? "true" : "false");
+    } else if constexpr (std::is_same_v<T, QString>) {
+        sec.insert(key, src);
+    } else {
+        // Fall back to QVariant's structural string generation path
+        sec.insert(key, QVariant::fromValue(src).toString());
+    }
 }
 
-template <typename CharT, typename T>
-inline bool get_value(const std::map<std::basic_string<CharT>, std::basic_string<CharT>>& sec, const CharT* key, T& dst) {
-	return get_value(sec, std::basic_string<CharT>(key), dst);
+// Overload helper to accept raw literal C-strings (e.g., set_value(sec, "key", "my_string_literal"))
+inline void set_value(QMap<QString, QString> &sec, const QString &key, const char* src) {
+    sec.insert(key, QString::fromUtf8(src));
 }
 
-template<class CharT>
+// Extracts value from map and safely converts it to type T
+template <typename T>
+inline bool get_value(const QMap<QString, QString> &sec, const QString &key, T &dst) {
+    auto it = sec.find(key);
+    if (it == sec.end()) return false;
+    return extract(it.value(), dst);
+}
+
 class Format
 {
 public:
-	// used for generating
-	const CharT char_section_start;
-	const CharT char_section_end;
-	const CharT char_assign;
-	const CharT char_comment;
+    const QChar char_section_start;
+    const QChar char_section_end;
+    const QChar char_assign;
+    const QChar char_comment;
 
-	// used for parsing
-	virtual bool is_section_start(CharT ch) const { return ch == char_section_start; }
-	virtual bool is_section_end(CharT ch) const { return ch == char_section_end; }
-	virtual bool is_assign(CharT ch) const { return ch == char_assign; }
-	virtual bool is_comment(CharT ch) const { return ch == char_comment; }
+    virtual bool is_section_start(QChar ch) const { return ch == char_section_start; }
+    virtual bool is_section_end(QChar ch) const { return ch == char_section_end; }
+    virtual bool is_assign(QChar ch) const { return ch == char_assign; }
+    virtual bool is_comment(QChar ch) const { return ch == char_comment; }
 
-	// used for interpolation
-	const CharT char_interpol;
-	const CharT char_interpol_start;
-	const CharT char_interpol_sep;
-	const CharT char_interpol_end;
+    const QChar char_interpol;
+    const QChar char_interpol_start;
+    const QChar char_interpol_sep;
+    const QChar char_interpol_end;
 
-	Format(CharT section_start, CharT section_end, CharT assign, CharT comment, CharT interpol, CharT interpol_start, CharT interpol_sep, CharT interpol_end)
-		: char_section_start(section_start)
-		, char_section_end(section_end)
-		, char_assign(assign)
-		, char_comment(comment)
-		, char_interpol(interpol)
-		, char_interpol_start(interpol_start)
-		, char_interpol_sep(interpol_sep)
-		, char_interpol_end(interpol_end) {}
+    Format(QChar section_start, QChar section_end, QChar assign, QChar comment, 
+           QChar interpol, QChar interpol_start, QChar interpol_sep, QChar interpol_end)
+        : char_section_start(section_start)
+        , char_section_end(section_end)
+        , char_assign(assign)
+        , char_comment(comment)
+        , char_interpol(interpol)
+        , char_interpol_start(interpol_start)
+        , char_interpol_sep(interpol_sep)
+        , char_interpol_end(interpol_end) {}
 
-	Format() : Format('[', ']', '=', ';', '$', '{', ':', '}') {}
+    Format() : Format('[', ']', '=', ';', '$', '{', ':', '}') {}
 
-	const std::basic_string<CharT> local_symbol(const std::basic_string<CharT>& name) const {
-		return char_interpol + (char_interpol_start + name + char_interpol_end);
-	}
+    const QString local_symbol(const QString& name) const {
+        return QString(char_interpol) + char_interpol_start + name + char_interpol_end;
+    }
 
-	const std::basic_string<CharT> global_symbol(const std::basic_string<CharT>& sec_name, const std::basic_string<CharT>& name) const {
-		return local_symbol(sec_name + char_interpol_sep + name);
-	}
+    const QString global_symbol(const QString& sec_name, const QString& name) const {
+        return local_symbol(sec_name + char_interpol_sep + name);
+    }
 };
 
-template<class CharT>
 class Ini
 {
 public:
-	using String = std::basic_string<CharT>;
-	using Section = std::map<String, String>;
-	using Sections = std::map<String, Section>;
+    using Section = QMap<QString, QString>;
+    using Sections = QMap<QString, Section>;
 
-	Sections sections;
-	std::list<String> errors;
-	std::shared_ptr<Format<CharT>> format;
+    Sections sections;
+    QList<QString> errors;
+    QSharedPointer<Format> format;
 
-	static const int max_interpolation_depth = 10;
+    static const int max_interpolation_depth = 10;
 
-	Ini() : format(std::make_shared<Format<CharT>>()) {};
-	Ini(std::shared_ptr<Format<CharT>> fmt) : format(fmt) {};
+    Ini() : format(QSharedPointer<Format>::create()) {}
+    Ini(QSharedPointer<Format> fmt) : format(fmt) {}
 
-	void generate(std::basic_ostream<CharT>& os) const {
-		for (auto const & sec : sections) {
-			os << format->char_section_start << sec.first << format->char_section_end << std::endl;
-			for (auto const & val : sec.second) {
-				os << val.first << format->char_assign << val.second << std::endl;
-			}
-			os << std::endl;
-		}
-	}
+    // Generates an INI file syntax output to a QTextStream
+    void generate(QTextStream &os) const {
+        for (auto it = sections.cbegin(); it != sections.cend(); ++it) {
+            os << format->char_section_start << it.key() << format->char_section_end << "\n";
+            const auto &sec = it.value();
+            for (auto vIt = sec.cbegin(); vIt != sec.cend(); ++vIt) {
+                os << vIt.key() << format->char_assign << vIt.value() << "\n";
+            }
+            os << "\n";
+        }
+    }
 
-	void parse(std::basic_istream<CharT> & is) {
-		String line;
-		String section;
-		const std::locale loc{"C"};
-		while (std::getline(is, line)) {
-			detail::ltrim(line, loc);
-			detail::rtrim(line, loc);
-			const auto length = line.length();
-			if (length > 0) {
-				const auto pos = std::find_if(line.begin(), line.end(), [this](CharT ch) { return format->is_assign(ch); });
-				const auto & front = line.front();
-				if (format->is_comment(front)) {
-				}
-				else if (format->is_section_start(front)) {
-					if (format->is_section_end(line.back()))
-						section = line.substr(1, length - 2);
-					else
-						errors.push_back(line);
-				}
-				else if (pos != line.begin() && pos != line.end()) {
-					String variable(line.begin(), pos);
-					String value(pos + 1, line.end());
-					detail::rtrim(variable, loc);
-					detail::ltrim(value, loc);
-					auto & sec = sections[section];
-					if (sec.find(variable) == sec.end())
-						sec.emplace(variable, value);
-					else
-						errors.push_back(line);
-				}
-				else {
-					errors.push_back(line);
-				}
-			}
-		}
-	}
+    // Parses raw INI configuration lines from a QTextStream source pipeline
+    void parse(QTextStream &is) {
+        QString line;
+        QString section;
+        while (is.readLineInto(&line)) {
+            line = line.trimmed();
+            const auto length = line.length();
+            if (length > 0) {
+                int assign_idx = line.indexOf(format->char_assign);
+                const QChar front = line.front();
 
-	void interpolate() {
-		int global_iteration = 0;
-		auto changed = false;
-		// replace each "${variable}" by "${section:variable}"
-		for (auto & sec : sections)
-			replace_symbols(local_symbols(sec.first, sec.second), sec.second);
-		// replace each "${section:variable}" by its value
-		do {
-			changed = false;
-			const auto syms = global_symbols();
-			for (auto & sec : sections)
-				changed |= replace_symbols(syms, sec.second);
-		} while (changed && (max_interpolation_depth > global_iteration++));
-	}
+                if (format->is_comment(front)) {
+                    // Ignore line comment lines
+                }
+                else if (format->is_section_start(front)) {
+                    if (format->is_section_end(line.back()))
+                        section = line.mid(1, length - 2);
+                    else
+                        errors.append(line);
+                }
+                else if (assign_idx > 0) {
+                    QString variable = line.left(assign_idx).trimmed();
+                    QString value = line.mid(assign_idx + 1).trimmed();
+                    
+                    auto &sec = sections[section];
+                    if (!sec.contains(variable))
+                        sec.insert(variable, value);
+                    else
+                        errors.append(line);
+                }
+                else {
+                    errors.append(line);
+                }
+            }
+        }
+    }
 
-	void default_section(const Section & sec) {
-		for (auto & sec2 : sections)
-			for (const auto & val : sec)
-				sec2.second.insert(val);
-	}
+    void interpolate() {
+        int global_iteration = 0;
+        auto changed = false;
+        
+        for (auto it = sections.begin(); it != sections.end(); ++it) {
+            replace_symbols(local_symbols(it.key(), it.value()), it.value());
+        }
+        
+        do {
+            changed = false;
+            const auto syms = global_symbols();
+            for (auto &sec : sections) {
+                changed |= replace_symbols(syms, sec);
+            }
+        } while (changed && (max_interpolation_depth > global_iteration++));
+    }
 
-	void strip_trailing_comments() {
-		const std::locale loc{ "C" };
-		for (auto & sec : sections)
-			for (auto & val : sec.second) {
-				detail::rtrim2(val.second, [this](CharT ch) { return format->is_comment(ch); });
-				detail::rtrim(val.second, loc);
-			}
-	}
+    void default_section(const Section &sec) {
+        for (auto &sec2 : sections) {
+            for (auto it = sec.cbegin(); it != sec.cend(); ++it) {
+                if (!sec2.contains(it.key())) {
+                    sec2.insert(it.key(), it.value());
+                }
+            }
+        }
+    }
 
-	void clear() {
-		sections.clear();
-		errors.clear();
-	}
+    void strip_trailing_comments() {
+        for (auto &sec : sections) {
+            for (auto &value : sec) {
+                int comment_idx = value.indexOf(format->char_comment);
+                if (comment_idx >= 0) {
+                    value = value.left(comment_idx).trimmed();
+                }
+            }
+        }
+    }
+
+    void clear() {
+        sections.clear();
+        errors.clear();
+    }
 
 private:
-	using Symbols = std::vector<std::pair<String, String>>;
+    struct SymbolPair {
+        QString first;
+        QString second;
+    };
+    using Symbols = QList<SymbolPair>;
 
-	const Symbols local_symbols(const String & sec_name, const Section & sec) const {
-		Symbols result;
-		for (const auto & val : sec)
-			result.emplace_back(format->local_symbol(val.first), format->global_symbol(sec_name, val.first));
-		return result;
-	}
+    const Symbols local_symbols(const QString &sec_name, const Section &sec) const {
+        Symbols result;
+        for (auto it = sec.cbegin(); it != sec.cend(); ++it) {
+            result.append({format->local_symbol(it.key()), format->global_symbol(sec_name, it.key())});
+        }
+        return result;
+    }
 
-	const Symbols global_symbols() const {
-		Symbols result;
-		for (const auto & sec : sections)
-			for (const auto & val : sec.second)
-				result.emplace_back(format->global_symbol(sec.first, val.first), val.second);
-		return result;
-	}
+    const Symbols global_symbols() const {
+        Symbols result;
+        for (auto it = sections.cbegin(); it != sections.cend(); ++it) {
+            const auto &sec = it.value();
+            for (auto vIt = sec.cbegin(); vIt != sec.cend(); ++vIt) {
+                result.append({format->global_symbol(it.key(), vIt.key()), vIt.value()});
+            }
+        }
+        return result;
+    }
 
-	bool replace_symbols(const Symbols & syms, Section & sec) const {
-		auto changed = false;
-		for (auto & sym : syms)
-			for (auto & val : sec)
-				changed |= detail::replace(val.second, sym.first, sym.second);
-		return changed;
-	}
+    bool replace_symbols(const Symbols &syms, Section &sec) const {
+        auto changed = false;
+        for (const auto &sym : syms) {
+            for (auto &value : sec) {
+                changed |= detail::replace(value, sym.first, sym.second);
+            }
+        }
+        return changed;
+    }
 };
 
 } // namespace inipp

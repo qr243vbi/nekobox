@@ -28,4 +28,4 @@ mkdir LRUCache ||:
 curl -L -o LRUCache/LRUCache11.hpp https://raw.githubusercontent.com/mohaps/lrucache11/refs/heads/master/LRUCache11.hpp
 
 mkdir ini ||:
-curl -L -o ini/ini.h https://raw.githubusercontent.com/mcmtroffaes/inipp/refs/heads/develop/inipp/inipp.h
+curl -L -o ini/ini.h https://raw.githubusercontent.com/qr243vbi/iniqt.hpp/refs/heads/main/iniqt.hpp
