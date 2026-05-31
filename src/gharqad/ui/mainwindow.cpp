@@ -103,7 +103,7 @@
 #include <QOperatingSystemVersion>
 
 #include <QToolTip>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelperGui.hpp>
 
 #include <map>
 #include <string>
@@ -4534,7 +4534,7 @@ JsUpdaterWindow *MainWindow::createJsUpdaterWindow() {
 
   connect(bQueue, &JsUpdaterWindow::download_signal, this,
           [=, this](const QString &url, const QString &fileName, QString *ret) {
-            *ret = NetworkRequestHelper::DownloadAsset(url, fileName);
+            *ret = NetworkRequestHelperGui::DownloadAsset(url, fileName);
             ;
             bQueue->unlock();
           });

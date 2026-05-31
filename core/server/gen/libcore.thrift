@@ -164,6 +164,12 @@ struct SystemProxy {
   3: bool support_socks;
 }
 
+struct GenWgKeyPairResponse {
+  1: string private_key;
+  2: string public_key;
+  3: string error;
+}
+
 service LibcoreService {
   ErrorResp EnableSystemProxy(1: SystemProxy req),
   ErrorResp DisableSystemProxy(1: EmptyReq req),
@@ -183,7 +189,8 @@ service LibcoreService {
   IsPrivilegedResponse IsPrivileged(1: EmptyReq req),
   SpeedTestResponse SpeedTest(1: SpeedTestRequest req),
   QuerySpeedTestResponse QuerySpeedTest(1: EmptyReq req),
-  QueryCountryTestResponse QueryCountryTest(1: EmptyReq req)
+  QueryCountryTestResponse QueryCountryTest(1: EmptyReq req),
+  GenWgKeyPairResponse GenWgKeyPair(1: EmptyReq req)
 }
 
 service InstanceService {

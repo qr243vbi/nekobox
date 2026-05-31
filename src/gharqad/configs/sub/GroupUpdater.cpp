@@ -12,7 +12,7 @@
 #include <nekobox/configs/sub/GroupUpdater.hpp>
 #include <nekobox/dataStore/ProfileFilter.hpp>
 #include <nekobox/dataStore/Utils.hpp>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/dataStore/HTTPRequestHelper.hpp>
 #include <QUrl>
 
 namespace Subscription {

@@ -1,6 +1,3 @@
-
-
-
 #include <nekobox/ui/setting/dialog_hotkey.h>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/global/GuiUtils.hpp>

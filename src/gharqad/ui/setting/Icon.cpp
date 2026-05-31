@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/ui/info/info.h>

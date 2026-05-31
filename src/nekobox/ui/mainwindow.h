@@ -4,7 +4,7 @@
 #pragma once
 
 #include <QMainWindow>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelperGui.hpp>
 
 #ifndef Q_MOC_RUN
 #include <nekobox/api/RPC.h>
@@ -33,7 +33,6 @@
 #ifndef SKIP_JS_UPDATER
 class JsUpdaterWindow;
 
-#include <iostream>
 #include <nekobox/js/js_updater.h>
 #endif
 

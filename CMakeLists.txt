@@ -242,6 +242,8 @@ set(PROJECT_SOURCES
         ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
         ${GHARQAD}/configs/sub/GroupUpdater.cpp
+        ${GHARQAD}/configs/warp/warp.cpp
+        ${NYXARIA}/configs/warp/warp.hpp
         ${NYXARIA}/sys/AutoRun.hpp
         ${NYXARIA}/sys/Process.hpp
         ${NYXARIA}/sys/Settings.h

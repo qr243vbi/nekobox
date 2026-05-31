@@ -1,7 +1,6 @@
 #include <nekobox/js/js_updater.h>
 #include <quickjs.h>
 #include <QVariantMap>
-#include <nekobox/global/HTTPRequestHelper.hpp>
 #include <QFile>
 #include <iostream>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -18,6 +17,7 @@
 #include <QDir>
 #include <QDesktopServices>
 #include <QUrl>
+
 
 
 struct JS_RuntimeOpaque {
@@ -65,13 +65,6 @@ void JsTextWriter::close() {
 
 JsTextWriter::~JsTextWriter() {
     close();
-}
-
-JsHTTPRequest::JsHTTPRequest(const QString& url): QObject(nullptr){
-    init(url);
-}
-
-JsHTTPRequest::~JsHTTPRequest(){
 }
 
 JsUpdaterWindow::JsUpdaterWindow(){ //MainWindow* msgq){
@@ -158,31 +151,7 @@ QString JsUpdaterWindow::translate(const QVariant value){
 QString JsUpdaterWindow::get_jsdelivr_link(const QVariant value){
     return Configs::get_jsdelivr_link(value.toString());
 }
-void JsHTTPRequest::init(const QString& url)
-{
-    auto resp = NetworkRequestHelper::HttpGet(url);
-    m_text = QString::fromUtf8(resp.data);
-    m_error = resp.error;
-    m_header.clear();
 
-    for (const auto& pair : resp.header) {
-        QString key = QString::fromUtf8(pair.first);
-        QVariant value = QString::fromUtf8(pair.second);
-        m_header.insert(key, value);
-    }
-}
-
-QString JsHTTPRequest::get_text() const {
-    return m_text;
-}
-
-QString JsHTTPRequest::get_error() const {
-    return m_error;
-}
-
-QVariantMap JsHTTPRequest::get_header() const {
-    return m_header;
-}
 
 QString JsUpdaterWindow::get_locale() const {
     return QLocale().name();
@@ -547,25 +516,23 @@ static JSValue js_http_request_constructor(JSContext* ctx, JSValueConst new_targ
     }
 
     // 3. Allocate and execute the underlying synchronous C++ Qt network payload
-    JsHTTPRequest* request = new JsHTTPRequest(url);
+    auto request = NetworkRequestHelper::HttpGet(url);
 
     // 4. Create a plain clean target object container to snapshot the results
     JSValue obj = JS_NewObject(ctx);
     if (JS_IsException(obj)) {
-        delete request;
         return JS_EXCEPTION;
     }
 
     // 5. Populate text, error, and headers directly into the plain JS object properties
-    JS_SetPropertyStr(ctx, obj, "text", JS_NewString(ctx, request->m_text.toUtf8().constData()));
-    JS_SetPropertyStr(ctx, obj, "error", JS_NewString(ctx, request->m_error.toUtf8().constData()));
+    QString text(request.data);
+    JS_SetPropertyStr(ctx, obj, "text", JS_NewString(ctx, text.toUtf8().constData()));
+    JS_SetPropertyStr(ctx, obj, "error", JS_NewString(ctx, request.error.toUtf8().constData()));
     
     // Transform and map the nested QVariantMap properties recursively
-    JSValue header_obj = qvariant_to_jsvalue(ctx, QVariant(request->m_header));
+    JSValue header_obj = qvariant_to_jsvalue(ctx, QVariant::fromValue(QMapString2QVariantMap(request.header)));
     JS_SetPropertyStr(ctx, obj, "header", header_obj); // JS_SetPropertyStr consumes header_obj
 
-    // 6. Instantly dispose of the heap memory allocation exactly like your lambda architecture
-    delete request;
 
     return obj;
 }

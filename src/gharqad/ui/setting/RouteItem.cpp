@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/ui/setting/RouteItem.h>
 #include <nekobox/ui/setting/dialog_manage_routes.h>
 #include <nekobox/ui/group/dialog_edit_group.h>
@@ -11,7 +7,7 @@
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <qnamespace.h>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/dataStore/HTTPRequestHelper.hpp>
 #include <QRadioButton>
 
 QList<QString> default_outbound_choose = {"proxy", "direct", "block"};
@@ -82,7 +78,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         auto url = chain->update_url;
         if (!url.isEmpty()) {
             url = Configs::get_jsdelivr_link(url);
-            auto response = NetworkRequestHelper::HttpGet(url);
+            auto response = Configs_network::NetworkRequestHelper::HttpGet(url);
             QString error = response.error;
             if (error.isEmpty() && !response.data.isEmpty()) {
                 auto array = QString2QJsonArray(response.data);

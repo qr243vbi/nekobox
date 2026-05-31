@@ -1,8 +1,5 @@
-
-
-
-
 #include <nekobox/ui/setting/dialog_manage_routes.h>
+#include <nekobox/configs/warp/warp.hpp>
 
 #include <QClipboard>
 
@@ -157,10 +154,6 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     ui->dnshijack_v4resp->setText(Configs::dataStore->dns_v4_resp);
     ui->dnshijack_v6resp->setText(Configs::dataStore->dns_v6_resp);
 
-    ui->warp->hide();
-    ui->routes_tab->removeTab(4);
-
-
     QStringList ruleItems = {"domain:", "suffix:", "regex:"};
     for (const auto& item : ruleSetMap.keys()) {
         ruleItems.append("ruleset:" + item);
@@ -192,6 +185,37 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
     if (EditRouteProfiles){
         ui->routes_tab->setCurrentIndex(3);
     }
+
+    // warp
+    connect(ui->warp_autogen, &QPushButton::clicked, this, [=,this] {
+        auto originalText = ui->warp_autogen->text();
+        ui->warp_autogen->setText(tr("Getting keypair..."));
+        bool ok;
+        auto keyPair = API::defaultClient->GenWgKeyPair(&ok);
+        if (!ok) {
+            runOnUiThread([this, keyPair] {
+               MessageBoxWarning(tr("Failed to get key pair"), keyPair->error.c_str());
+            });
+            ui->warp_autogen->setText(originalText);
+            return;
+        }
+        ui->warp_autogen->setText(tr("Generating config..."));
+        QString error;
+        auto conf = Configs_network::genWarpConfig(&error, keyPair->private_key.c_str(), keyPair->public_key.c_str());
+        if (!error.isEmpty()) {
+            runOnUiThread([this, error] {
+                MessageBoxWarning(tr("Failed to generate warp config"), error);
+            });
+            ui->warp_autogen->setText(originalText);
+            return;
+        }
+        ui->warp_private_key->setText(conf->privateKey);
+        ui->warp_public_key->setText(conf->publicKey);
+        ui->warp_ep->setText(conf->endpoint);
+        ui->warp_ifc_addrs->setText(conf->ipv4Address + "/32," + conf->ipv6Address + "/128");
+        ui->warp_autogen->setText(tr("Success!"));
+        setTimeout([=,this] { ui->warp_autogen->setText(originalText); }, this, 2000);
+    });
 
     ADD_ASTERISK(this)
 }

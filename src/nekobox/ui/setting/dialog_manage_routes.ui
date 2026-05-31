@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="routes_tab">
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -692,7 +692,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QCheckBox" name="enable_warp_2">
+           <widget class="QCheckBox" name="enable_warp">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -708,7 +708,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="auto_generate_warp">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -721,7 +721,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="warp_autogen_2">
+           <widget class="QPushButton" name="warp_autogen">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -775,7 +775,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
            <widget class="QLineEdit" name="warp_private_key"/>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="warp_public_key_2"/>
+           <widget class="QLineEdit" name="warp_public_key"/>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_5">
@@ -798,7 +798,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</string>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="warp_ifc_addrs_2"/>
+           <widget class="QLineEdit" name="warp_ifc_addrs"/>
           </item>
          </layout>
         </widget>

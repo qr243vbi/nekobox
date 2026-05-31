@@ -1,5 +1,3 @@
-
-
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/ui/setting/shutdownoverlay.hpp>

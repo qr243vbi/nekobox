@@ -1,5 +1,4 @@
-
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelperGui.hpp>
 #include <cpr/proxyauth.h>
 #include <cpr/cpr.h>
 
@@ -16,134 +15,7 @@
 #include <nekobox/global/DeviceDetailsHelper.hpp>
 #include <nekobox/ui/mainwindow.h>
 
-static inline void BuildSession(const QString &url, bool sendHwid, cpr::Session& session)
-{
-    auto s = Configs::dataStore;
-
-    session.SetUrl(cpr::Url{url.toStdString()});
-    session.SetTimeout(cpr::Timeout{Configs::dataStore->download_timeout});
-
-    // ------------------------
-    // USER AGENT
-    // ------------------------
-    session.SetHeader({
-        {"User-Agent", s->GetUserAgent().toStdString()}
-    });
-
-    // ------------------------
-    // SSL
-    // ------------------------
-    if (s->net_insecure) {
-        session.SetVerifySsl(cpr::VerifySsl{false});
-    }
-
-    // ------------------------
-    // PROXY
-    // ------------------------
-    bool useProxy = s->useProxyForHttpRequest() || s->spmode_system_proxy;
-    bool proxyStarted = s->started_id >= 0;
-
-    if (useProxy && proxyStarted)
-    {
-        QString host = (s->inbound_address == "::")
-            ? "127.0.0.1"
-            : s->inbound_address;
-
-        std::string proxy =
-            host.toStdString() + ":" +
-            std::to_string(s->inbound_socks_port);
-
-        session.SetProxies({
-            {"http", proxy},
-            {"https", proxy},
-        });
-
-        if (!s->inbound_username.isEmpty() &&
-            !s->inbound_password.isEmpty())
-        {
-            auto user = s->inbound_username.toStdString();
-            auto pass = s->inbound_password.toStdString();
-            session.SetProxyAuth({
-                {"http", cpr::EncodedAuthentication{user, pass}},   
-                {"https", cpr::EncodedAuthentication{user, pass}}
-            });
-        }
-    }
-
-    // ------------------------
-    // HWID HEADERS
-    // ------------------------
-    if (sendHwid)
-    {
-        auto d = GetDeviceDetails();
-
-        QMap<QString, QString> custom;
-
-        if (!s->sub_custom_hwid_params.isEmpty()) {
-            QStringList pairs = s->sub_custom_hwid_params.split(',');
-            for (auto &p : pairs) {
-                auto t = p.trimmed();
-                int eq = t.indexOf('=');
-                if (eq > 0) {
-                    custom[t.left(eq).toLower()] = t.mid(eq + 1).trimmed();
-                }
-            }
-        }
-
-        auto hwid   = custom.value("hwid", d.hwid);
-        auto os     = custom.value("os", d.os);
-        auto osv    = custom.value("osversion", d.osVersion);
-        auto model  = custom.value("model", d.model);
-
-        cpr::Header headers;
-
-        if (!hwid.isEmpty())  headers["x-hwid"] = hwid.toStdString();
-        if (!os.isEmpty())    headers["x-device-os"] = os.toStdString();
-        if (!osv.isEmpty())   headers["x-ver-os"] = osv.toStdString();
-        if (!model.isEmpty()) headers["x-device-model"] = model.toStdString();
-
-        session.UpdateHeader(headers);
-    }
-}
-
-namespace Configs_network
-{
-
-HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid)
-{
-    cpr::Session session; 
-    BuildSession(url, sendHwid, session);
-    cpr::Response r = session.Get();
-
-    auto resp = HTTPResponse{
-        r.error ? QString::fromStdString(r.error.message) : "",
-        QByteArray(r.text.data(), r.text.size()),
-        {}
-    };
-
-    auto & result = resp.header;
-    auto & headers = r.header;
-    result.reserve(static_cast<int>(headers.size()));
-
-    for (const auto &kv : headers)
-    {
-        QByteArray key   = QByteArray::fromStdString(kv.first);
-        QByteArray value = QByteArray::fromStdString(kv.second);
-
-        result.append(qMakePair(key, value));
-    }
-
-    return resp;
-}
-
-QString NetworkRequestHelper::GetHeader(const QList<QPair<QByteArray, QByteArray>> &header, const QString &name) {
-    for (const auto &p: header) {
-        if (QString(p.first).toLower() == name.toLower()) return p.second;
-    }
-    return "";
-}
-
-QString NetworkRequestHelper::DownloadAsset(const QString &url, const QString &fileName)
+QString Configs_network::NetworkRequestHelperGui::DownloadAsset(const QString &url, const QString &fileName)
 {
     QString result;
     QEventLoop loop;
@@ -405,4 +277,3 @@ std::function<bool(cpr::cpr_pf_arg_t downloadTotal, cpr::cpr_pf_arg_t downloadNo
     return result;
 }
 */
-}

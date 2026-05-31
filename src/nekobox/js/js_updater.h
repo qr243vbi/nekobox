@@ -8,7 +8,7 @@
 #include <QTextStream>
 #include <functional>
 #include <QStringList>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/dataStore/HTTPRequestHelper.hpp>
 
 class JsUpdaterWindow : public QObject
 {
@@ -50,32 +50,6 @@ public:
 private:
     QFile file;
     QTextStream stream;
-};
-
-class JsHTTPRequest : public QObject
-{
-    Q_OBJECT
-    Q_PROPERTY(QString text READ get_text)
-    Q_PROPERTY(QString error READ get_error)
-    Q_PROPERTY(QVariantMap header READ get_header)
-
-public:
-    Q_INVOKABLE explicit JsHTTPRequest(const QString& url);
-
-    // Q_INVOKABLE methods for JavaScript access
-    Q_INVOKABLE QString get_text() const;
-    Q_INVOKABLE QString get_error() const;
-    Q_INVOKABLE QVariantMap get_header() const;
-
-    // Virtual destructor is a good practice for QObject subclasses
-    virtual ~JsHTTPRequest() override;
-
-    QString m_text;
-    QString m_error;
-    QVariantMap m_header;
-    
-private:
-    void init(const QString& url);
 };
 
 

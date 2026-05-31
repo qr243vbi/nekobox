@@ -12,6 +12,7 @@ import (
 	"nekobox_core/internal/boxbox"
 	"nekobox_core/internal/boxmain"
 	"nekobox_core/internal/process"
+	"nekobox_core/internal/wg"
 
 	//	"nekobox_core/internal/sys"
 	"os"
@@ -510,6 +511,18 @@ func (s *server) QuerySpeedTest(ctx context.Context, in *gen.EmptyReq) (*gen.Que
 	}
 	out.IsRunning = (isRunning)
 	return out, nil
+}
+
+func (s *server) GenWgKeyPair(ctx context.Context, _ *gen.EmptyReq) (out *gen.GenWgKeyPairResponse, _ error) {
+	res := new(gen.GenWgKeyPairResponse)
+	privateKey, err := wg.GeneratePrivateKey()
+	if err != nil {
+		res.Error = err.Error()
+		return res, nil
+	}
+	res.PrivateKey = privateKey.String()
+	res.PublicKey = privateKey.PublicKey().String()
+	return res, nil
 }
 
 func (s *server) QueryCountryTest(ctx context.Context, in *gen.EmptyReq) (*gen.QueryCountryTestResponse, error) {

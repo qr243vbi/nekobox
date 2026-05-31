@@ -1,8 +1,4 @@
-
-
 #include <qnamespace.h>
-
-
 #include <QTextEdit>
 #include <nekobox/ui/setting/dialog_vpn_settings.h>
 

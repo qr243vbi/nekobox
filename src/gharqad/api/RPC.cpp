@@ -259,6 +259,26 @@ try{                                                                            
         }
     }
 
+
+    std::optional<libcore::GenWgKeyPairResponse> Client::GenWgKeyPair(bool *rpcOK)
+    {
+        CHECK("GenWgKeyPair")
+        if (!is_running){
+            *rpcOK = false;
+            return std::nullopt;
+        }
+        libcore::EmptyReq request;
+        CHANNEL(GenWgKeyPair, GenWgKeyPairResponse)
+     
+        if(status.isOk()) {
+            *rpcOK = true;
+            return reply;
+        } else {
+            NOT_OK
+            return std::nullopt;
+        }
+    }
+
     QString Client::SetSystemDNS(bool *rpcOK, const bool clear) const {
         CHECK("SetSystemDNS")
         if (!is_running){

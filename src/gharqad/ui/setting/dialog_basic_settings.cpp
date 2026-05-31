@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/ui/setting/dialog_basic_settings.h>
 
 #include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
@@ -10,7 +6,7 @@
 #include <nekobox/ui/setting/Icon.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/dataStore/Configs.hpp>
-#include <nekobox/global/HTTPRequestHelper.hpp>
+#include <nekobox/global/HTTPRequestHelperGui.hpp>
 #include <nekobox/global/DeviceDetailsHelper.hpp>
 #include <nekobox/dataStore/ResourceEntity.hpp>
 

@@ -373,6 +373,55 @@ QSettings QSettingsFromFileInfo(const QFileInfo& settings);
 
 QJsonObject QMapString2QJsonObject(const QMap<QString, QString> &mp);
 
+QVariantMap QMapString2QVariantMap(const QMap<QString, QString> &mp);
+
+template<typename B, typename C>
+inline QMap<QString, QString> QStdMapString2QMapString(const std::map<B, B, C> &mp){
+    QMap<QString, QString> vm;
+
+    for (auto it = mp.begin(); it != mp.end(); ++it) {
+        vm.insert(QString::fromStdString(it->first), QString::fromStdString(it->second));
+    }
+    return vm;
+}
+
+enum osType {
+  Linux = 1, Windows = 2, FreeBSD = 3, unknown = 0
+};
+
+namespace Runtime {
+#if defined(Q_OS_LINUX)
+constexpr osType os = Linux;
+#elif defined(Q_OS_WIN)
+constexpr osType os = Windows;
+#elif defined(Q_OS_FREEBSD)
+constexpr osType os = FreeBSD;
+#else
+constexpr osType os = unknown;
+#endif
+
+inline constexpr const char* osString = []() constexpr {
+  if constexpr (os == Linux){
+    return "Linux";
+  } else if constexpr (os == Windows){
+    return "Windows";
+  } else if constexpr (os == FreeBSD) {
+    return "FreeBSD";
+  } else {
+    return "Unknown";
+  };
+}();
+
+};
+
+inline constexpr const char* getOSString() {
+    return Runtime::osString;
+}
+
+inline constexpr osType getOS() {
+    return Runtime::os;
+}
+
 #define QJSONARRAY_ADD(arr, add)                                               \
   for (const auto &a : (add)) {                                                \
     (arr) += a;                                                                \

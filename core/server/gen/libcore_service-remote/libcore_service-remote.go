@@ -41,6 +41,7 @@ func Usage() {
 	fmt.Fprintln(os.Stderr, "  SpeedTestResponse SpeedTest(SpeedTestRequest req)")
 	fmt.Fprintln(os.Stderr, "  QuerySpeedTestResponse QuerySpeedTest(EmptyReq req)")
 	fmt.Fprintln(os.Stderr, "  QueryCountryTestResponse QueryCountryTest(EmptyReq req)")
+	fmt.Fprintln(os.Stderr, "  GenWgKeyPairResponse GenWgKeyPair(EmptyReq req)")
 	fmt.Fprintln(os.Stderr)
 	os.Exit(0)
 }
@@ -164,19 +165,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "EnableSystemProxy requires 1 args")
 			flag.Usage()
 		}
-		arg140 := flag.Arg(1)
-		mbTrans141 := thrift.NewTMemoryBufferLen(len(arg140))
-		defer mbTrans141.Close()
-		_, err142 := mbTrans141.WriteString(arg140)
-		if err142 != nil {
+		arg146 := flag.Arg(1)
+		mbTrans147 := thrift.NewTMemoryBufferLen(len(arg146))
+		defer mbTrans147.Close()
+		_, err148 := mbTrans147.WriteString(arg146)
+		if err148 != nil {
 			Usage()
 			return
 		}
-		factory143 := thrift.NewTJSONProtocolFactory()
-		jsProt144 := factory143.GetProtocol(mbTrans141)
+		factory149 := thrift.NewTJSONProtocolFactory()
+		jsProt150 := factory149.GetProtocol(mbTrans147)
 		argvalue0 := gen.NewSystemProxy()
-		err145 := argvalue0.Read(context.Background(), jsProt144)
-		if err145 != nil {
+		err151 := argvalue0.Read(context.Background(), jsProt150)
+		if err151 != nil {
 			Usage()
 			return
 		}
@@ -189,19 +190,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "DisableSystemProxy requires 1 args")
 			flag.Usage()
 		}
-		arg146 := flag.Arg(1)
-		mbTrans147 := thrift.NewTMemoryBufferLen(len(arg146))
-		defer mbTrans147.Close()
-		_, err148 := mbTrans147.WriteString(arg146)
-		if err148 != nil {
+		arg152 := flag.Arg(1)
+		mbTrans153 := thrift.NewTMemoryBufferLen(len(arg152))
+		defer mbTrans153.Close()
+		_, err154 := mbTrans153.WriteString(arg152)
+		if err154 != nil {
 			Usage()
 			return
 		}
-		factory149 := thrift.NewTJSONProtocolFactory()
-		jsProt150 := factory149.GetProtocol(mbTrans147)
+		factory155 := thrift.NewTJSONProtocolFactory()
+		jsProt156 := factory155.GetProtocol(mbTrans153)
 		argvalue0 := gen.NewEmptyReq()
-		err151 := argvalue0.Read(context.Background(), jsProt150)
-		if err151 != nil {
+		err157 := argvalue0.Read(context.Background(), jsProt156)
+		if err157 != nil {
 			Usage()
 			return
 		}
@@ -214,19 +215,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "IsSupported requires 1 args")
 			flag.Usage()
 		}
-		arg152 := flag.Arg(1)
-		mbTrans153 := thrift.NewTMemoryBufferLen(len(arg152))
-		defer mbTrans153.Close()
-		_, err154 := mbTrans153.WriteString(arg152)
-		if err154 != nil {
+		arg158 := flag.Arg(1)
+		mbTrans159 := thrift.NewTMemoryBufferLen(len(arg158))
+		defer mbTrans159.Close()
+		_, err160 := mbTrans159.WriteString(arg158)
+		if err160 != nil {
 			Usage()
 			return
 		}
-		factory155 := thrift.NewTJSONProtocolFactory()
-		jsProt156 := factory155.GetProtocol(mbTrans153)
+		factory161 := thrift.NewTJSONProtocolFactory()
+		jsProt162 := factory161.GetProtocol(mbTrans159)
 		argvalue0 := gen.NewType()
-		err157 := argvalue0.Read(context.Background(), jsProt156)
-		if err157 != nil {
+		err163 := argvalue0.Read(context.Background(), jsProt162)
+		if err163 != nil {
 			Usage()
 			return
 		}
@@ -239,19 +240,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "CacheHTTP requires 1 args")
 			flag.Usage()
 		}
-		arg158 := flag.Arg(1)
-		mbTrans159 := thrift.NewTMemoryBufferLen(len(arg158))
-		defer mbTrans159.Close()
-		_, err160 := mbTrans159.WriteString(arg158)
-		if err160 != nil {
+		arg164 := flag.Arg(1)
+		mbTrans165 := thrift.NewTMemoryBufferLen(len(arg164))
+		defer mbTrans165.Close()
+		_, err166 := mbTrans165.WriteString(arg164)
+		if err166 != nil {
 			Usage()
 			return
 		}
-		factory161 := thrift.NewTJSONProtocolFactory()
-		jsProt162 := factory161.GetProtocol(mbTrans159)
+		factory167 := thrift.NewTJSONProtocolFactory()
+		jsProt168 := factory167.GetProtocol(mbTrans165)
 		argvalue0 := gen.NewCacheURLRequest()
-		err163 := argvalue0.Read(context.Background(), jsProt162)
-		if err163 != nil {
+		err169 := argvalue0.Read(context.Background(), jsProt168)
+		if err169 != nil {
 			Usage()
 			return
 		}
@@ -264,19 +265,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "IPTest requires 1 args")
 			flag.Usage()
 		}
-		arg164 := flag.Arg(1)
-		mbTrans165 := thrift.NewTMemoryBufferLen(len(arg164))
-		defer mbTrans165.Close()
-		_, err166 := mbTrans165.WriteString(arg164)
-		if err166 != nil {
+		arg170 := flag.Arg(1)
+		mbTrans171 := thrift.NewTMemoryBufferLen(len(arg170))
+		defer mbTrans171.Close()
+		_, err172 := mbTrans171.WriteString(arg170)
+		if err172 != nil {
 			Usage()
 			return
 		}
-		factory167 := thrift.NewTJSONProtocolFactory()
-		jsProt168 := factory167.GetProtocol(mbTrans165)
+		factory173 := thrift.NewTJSONProtocolFactory()
+		jsProt174 := factory173.GetProtocol(mbTrans171)
 		argvalue0 := gen.NewIPTestRequest()
-		err169 := argvalue0.Read(context.Background(), jsProt168)
-		if err169 != nil {
+		err175 := argvalue0.Read(context.Background(), jsProt174)
+		if err175 != nil {
 			Usage()
 			return
 		}
@@ -289,19 +290,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "QueryIPTest requires 1 args")
 			flag.Usage()
 		}
-		arg170 := flag.Arg(1)
-		mbTrans171 := thrift.NewTMemoryBufferLen(len(arg170))
-		defer mbTrans171.Close()
-		_, err172 := mbTrans171.WriteString(arg170)
-		if err172 != nil {
+		arg176 := flag.Arg(1)
+		mbTrans177 := thrift.NewTMemoryBufferLen(len(arg176))
+		defer mbTrans177.Close()
+		_, err178 := mbTrans177.WriteString(arg176)
+		if err178 != nil {
 			Usage()
 			return
 		}
-		factory173 := thrift.NewTJSONProtocolFactory()
-		jsProt174 := factory173.GetProtocol(mbTrans171)
+		factory179 := thrift.NewTJSONProtocolFactory()
+		jsProt180 := factory179.GetProtocol(mbTrans177)
 		argvalue0 := gen.NewEmptyReq()
-		err175 := argvalue0.Read(context.Background(), jsProt174)
-		if err175 != nil {
+		err181 := argvalue0.Read(context.Background(), jsProt180)
+		if err181 != nil {
 			Usage()
 			return
 		}
@@ -314,19 +315,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "Start requires 1 args")
 			flag.Usage()
 		}
-		arg176 := flag.Arg(1)
-		mbTrans177 := thrift.NewTMemoryBufferLen(len(arg176))
-		defer mbTrans177.Close()
-		_, err178 := mbTrans177.WriteString(arg176)
-		if err178 != nil {
+		arg182 := flag.Arg(1)
+		mbTrans183 := thrift.NewTMemoryBufferLen(len(arg182))
+		defer mbTrans183.Close()
+		_, err184 := mbTrans183.WriteString(arg182)
+		if err184 != nil {
 			Usage()
 			return
 		}
-		factory179 := thrift.NewTJSONProtocolFactory()
-		jsProt180 := factory179.GetProtocol(mbTrans177)
+		factory185 := thrift.NewTJSONProtocolFactory()
+		jsProt186 := factory185.GetProtocol(mbTrans183)
 		argvalue0 := gen.NewLoadConfigReq()
-		err181 := argvalue0.Read(context.Background(), jsProt180)
-		if err181 != nil {
+		err187 := argvalue0.Read(context.Background(), jsProt186)
+		if err187 != nil {
 			Usage()
 			return
 		}
@@ -339,19 +340,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "Stop requires 1 args")
 			flag.Usage()
 		}
-		arg182 := flag.Arg(1)
-		mbTrans183 := thrift.NewTMemoryBufferLen(len(arg182))
-		defer mbTrans183.Close()
-		_, err184 := mbTrans183.WriteString(arg182)
-		if err184 != nil {
+		arg188 := flag.Arg(1)
+		mbTrans189 := thrift.NewTMemoryBufferLen(len(arg188))
+		defer mbTrans189.Close()
+		_, err190 := mbTrans189.WriteString(arg188)
+		if err190 != nil {
 			Usage()
 			return
 		}
-		factory185 := thrift.NewTJSONProtocolFactory()
-		jsProt186 := factory185.GetProtocol(mbTrans183)
+		factory191 := thrift.NewTJSONProtocolFactory()
+		jsProt192 := factory191.GetProtocol(mbTrans189)
 		argvalue0 := gen.NewEmptyReq()
-		err187 := argvalue0.Read(context.Background(), jsProt186)
-		if err187 != nil {
+		err193 := argvalue0.Read(context.Background(), jsProt192)
+		if err193 != nil {
 			Usage()
 			return
 		}
@@ -364,19 +365,19 @@ func main() {
 			fmt.Fprintln(os.Stderr, "CheckConfig requires 1 args")
 			flag.Usage()
 		}
-		arg188 := flag.Arg(1)
-		mbTrans189 := thrift.NewTMemoryBufferLen(len(arg188))
-		defer mbTrans189.Close()
-		_, err190 := mbTrans189.WriteString(arg188)
-		if err190 != nil {
+		arg194 := flag.Arg(1)
+		mbTrans195 := thrift.NewTMemoryBufferLen(len(arg194))
+		defer mbTrans195.Close()
+		_, err196 := mbTrans195.WriteString(arg194)
+		if err196 != nil {
 			Usage()
 			return
 		}
-		factory191 := thrift.NewTJSONProtocolFactory()
-		jsProt192 := factory191.GetProtocol(mbTrans189)
+		factory197 := thrift.NewTJSONProtocolFactory()
+		jsProt198 := factory197.GetProtocol(mbTrans195)
 		argvalue0 := gen.NewLoadConfigReq()
-		err193 := argvalue0.Read(context.Background(), jsProt192)
-		if err193 != nil {
+		err199 := argvalue0.Read(context.Background(), jsProt198)
+		if err199 != nil {
 			Usage()
 			return
 		}
@@ -389,31 +390,6 @@ func main() {
 			fmt.Fprintln(os.Stderr, "Test requires 1 args")
 			flag.Usage()
 		}
-		arg194 := flag.Arg(1)
-		mbTrans195 := thrift.NewTMemoryBufferLen(len(arg194))
-		defer mbTrans195.Close()
-		_, err196 := mbTrans195.WriteString(arg194)
-		if err196 != nil {
-			Usage()
-			return
-		}
-		factory197 := thrift.NewTJSONProtocolFactory()
-		jsProt198 := factory197.GetProtocol(mbTrans195)
-		argvalue0 := gen.NewTestReq()
-		err199 := argvalue0.Read(context.Background(), jsProt198)
-		if err199 != nil {
-			Usage()
-			return
-		}
-		value0 := argvalue0
-		fmt.Print(client.Test(context.Background(), value0))
-		fmt.Print("\n")
-		break
-	case "StopTest":
-		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "StopTest requires 1 args")
-			flag.Usage()
-		}
 		arg200 := flag.Arg(1)
 		mbTrans201 := thrift.NewTMemoryBufferLen(len(arg200))
 		defer mbTrans201.Close()
@@ -424,19 +400,19 @@ func main() {
 		}
 		factory203 := thrift.NewTJSONProtocolFactory()
 		jsProt204 := factory203.GetProtocol(mbTrans201)
-		argvalue0 := gen.NewEmptyReq()
+		argvalue0 := gen.NewTestReq()
 		err205 := argvalue0.Read(context.Background(), jsProt204)
 		if err205 != nil {
 			Usage()
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.StopTest(context.Background(), value0))
+		fmt.Print(client.Test(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "QueryURLTest":
+	case "StopTest":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "QueryURLTest requires 1 args")
+			fmt.Fprintln(os.Stderr, "StopTest requires 1 args")
 			flag.Usage()
 		}
 		arg206 := flag.Arg(1)
@@ -456,12 +432,12 @@ func main() {
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.QueryURLTest(context.Background(), value0))
+		fmt.Print(client.StopTest(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "QueryStats":
+	case "QueryURLTest":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "QueryStats requires 1 args")
+			fmt.Fprintln(os.Stderr, "QueryURLTest requires 1 args")
 			flag.Usage()
 		}
 		arg212 := flag.Arg(1)
@@ -481,12 +457,12 @@ func main() {
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.QueryStats(context.Background(), value0))
+		fmt.Print(client.QueryURLTest(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "ListConnections":
+	case "QueryStats":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "ListConnections requires 1 args")
+			fmt.Fprintln(os.Stderr, "QueryStats requires 1 args")
 			flag.Usage()
 		}
 		arg218 := flag.Arg(1)
@@ -506,12 +482,12 @@ func main() {
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.ListConnections(context.Background(), value0))
+		fmt.Print(client.QueryStats(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "SetSystemDNS":
+	case "ListConnections":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "SetSystemDNS requires 1 args")
+			fmt.Fprintln(os.Stderr, "ListConnections requires 1 args")
 			flag.Usage()
 		}
 		arg224 := flag.Arg(1)
@@ -524,19 +500,19 @@ func main() {
 		}
 		factory227 := thrift.NewTJSONProtocolFactory()
 		jsProt228 := factory227.GetProtocol(mbTrans225)
-		argvalue0 := gen.NewSetSystemDNSRequest()
+		argvalue0 := gen.NewEmptyReq()
 		err229 := argvalue0.Read(context.Background(), jsProt228)
 		if err229 != nil {
 			Usage()
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.SetSystemDNS(context.Background(), value0))
+		fmt.Print(client.ListConnections(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "IsPrivileged":
+	case "SetSystemDNS":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "IsPrivileged requires 1 args")
+			fmt.Fprintln(os.Stderr, "SetSystemDNS requires 1 args")
 			flag.Usage()
 		}
 		arg230 := flag.Arg(1)
@@ -549,19 +525,19 @@ func main() {
 		}
 		factory233 := thrift.NewTJSONProtocolFactory()
 		jsProt234 := factory233.GetProtocol(mbTrans231)
-		argvalue0 := gen.NewEmptyReq()
+		argvalue0 := gen.NewSetSystemDNSRequest()
 		err235 := argvalue0.Read(context.Background(), jsProt234)
 		if err235 != nil {
 			Usage()
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.IsPrivileged(context.Background(), value0))
+		fmt.Print(client.SetSystemDNS(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "SpeedTest":
+	case "IsPrivileged":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "SpeedTest requires 1 args")
+			fmt.Fprintln(os.Stderr, "IsPrivileged requires 1 args")
 			flag.Usage()
 		}
 		arg236 := flag.Arg(1)
@@ -574,19 +550,19 @@ func main() {
 		}
 		factory239 := thrift.NewTJSONProtocolFactory()
 		jsProt240 := factory239.GetProtocol(mbTrans237)
-		argvalue0 := gen.NewSpeedTestRequest()
+		argvalue0 := gen.NewEmptyReq()
 		err241 := argvalue0.Read(context.Background(), jsProt240)
 		if err241 != nil {
 			Usage()
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.SpeedTest(context.Background(), value0))
+		fmt.Print(client.IsPrivileged(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "QuerySpeedTest":
+	case "SpeedTest":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "QuerySpeedTest requires 1 args")
+			fmt.Fprintln(os.Stderr, "SpeedTest requires 1 args")
 			flag.Usage()
 		}
 		arg242 := flag.Arg(1)
@@ -599,19 +575,19 @@ func main() {
 		}
 		factory245 := thrift.NewTJSONProtocolFactory()
 		jsProt246 := factory245.GetProtocol(mbTrans243)
-		argvalue0 := gen.NewEmptyReq()
+		argvalue0 := gen.NewSpeedTestRequest()
 		err247 := argvalue0.Read(context.Background(), jsProt246)
 		if err247 != nil {
 			Usage()
 			return
 		}
 		value0 := argvalue0
-		fmt.Print(client.QuerySpeedTest(context.Background(), value0))
+		fmt.Print(client.SpeedTest(context.Background(), value0))
 		fmt.Print("\n")
 		break
-	case "QueryCountryTest":
+	case "QuerySpeedTest":
 		if flag.NArg() - 1 != 1 {
-			fmt.Fprintln(os.Stderr, "QueryCountryTest requires 1 args")
+			fmt.Fprintln(os.Stderr, "QuerySpeedTest requires 1 args")
 			flag.Usage()
 		}
 		arg248 := flag.Arg(1)
@@ -631,7 +607,57 @@ func main() {
 			return
 		}
 		value0 := argvalue0
+		fmt.Print(client.QuerySpeedTest(context.Background(), value0))
+		fmt.Print("\n")
+		break
+	case "QueryCountryTest":
+		if flag.NArg() - 1 != 1 {
+			fmt.Fprintln(os.Stderr, "QueryCountryTest requires 1 args")
+			flag.Usage()
+		}
+		arg254 := flag.Arg(1)
+		mbTrans255 := thrift.NewTMemoryBufferLen(len(arg254))
+		defer mbTrans255.Close()
+		_, err256 := mbTrans255.WriteString(arg254)
+		if err256 != nil {
+			Usage()
+			return
+		}
+		factory257 := thrift.NewTJSONProtocolFactory()
+		jsProt258 := factory257.GetProtocol(mbTrans255)
+		argvalue0 := gen.NewEmptyReq()
+		err259 := argvalue0.Read(context.Background(), jsProt258)
+		if err259 != nil {
+			Usage()
+			return
+		}
+		value0 := argvalue0
 		fmt.Print(client.QueryCountryTest(context.Background(), value0))
+		fmt.Print("\n")
+		break
+	case "GenWgKeyPair":
+		if flag.NArg() - 1 != 1 {
+			fmt.Fprintln(os.Stderr, "GenWgKeyPair requires 1 args")
+			flag.Usage()
+		}
+		arg260 := flag.Arg(1)
+		mbTrans261 := thrift.NewTMemoryBufferLen(len(arg260))
+		defer mbTrans261.Close()
+		_, err262 := mbTrans261.WriteString(arg260)
+		if err262 != nil {
+			Usage()
+			return
+		}
+		factory263 := thrift.NewTJSONProtocolFactory()
+		jsProt264 := factory263.GetProtocol(mbTrans261)
+		argvalue0 := gen.NewEmptyReq()
+		err265 := argvalue0.Read(context.Background(), jsProt264)
+		if err265 != nil {
+			Usage()
+			return
+		}
+		value0 := argvalue0
+		fmt.Print(client.GenWgKeyPair(context.Background(), value0))
 		fmt.Print("\n")
 		break
 	case "":

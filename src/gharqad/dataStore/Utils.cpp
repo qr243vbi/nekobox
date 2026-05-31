@@ -539,6 +539,17 @@ bool IsIpAddress(const QString &str)
     return IsIpAddressV4(str) || IsIpAddressV6(str);
 }
 
+QVariantMap QMapString2QVariantMap(const QMap<QString, QString> &mp)
+{
+    QVariantMap vm;
+
+    for (auto it = mp.constBegin(); it != mp.constEnd(); ++it) {
+        vm.insert(it.key(), it.value());
+    }
+    return vm;
+}
+
+
 QString DisplayTime(long long time, int formatType) {
   QDateTime t;
   t.setMSecsSinceEpoch(time * 1000);

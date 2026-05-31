@@ -75,6 +75,8 @@ public:
 
   std::optional<libcore::QueryIPTestResponse> QueryIPTest(bool *rpcOK);
 
+  std::optional<libcore::GenWgKeyPairResponse> GenWgKeyPair(bool *rpcOK);
+
   QString EnableSystemProxy(const QString &address, int port,
                             bool isSocksSupported, bool *rpcOK);
   QString DisableSystemProxy(bool *rpcOK);
