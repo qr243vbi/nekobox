@@ -97,7 +97,7 @@ QString ResourceManager::getLink(QString str) {
   }
   QFileInfo info(filepath);
   if (info.exists()) {
-    return info.absoluteFilePath();
+    return QDir::toNativeSeparators(info.absoluteFilePath());
   } else {
     return "";
   }

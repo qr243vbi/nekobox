@@ -23,6 +23,7 @@ func Usage() {
 	flag.PrintDefaults()
 	fmt.Fprintln(os.Stderr, "\nFunctions:")
 	fmt.Fprintln(os.Stderr, "  void wakeUp()")
+	fmt.Fprintln(os.Stderr, "  void catchDeeplink(string deeplink)")
 	fmt.Fprintln(os.Stderr)
 	os.Exit(0)
 }
@@ -147,6 +148,16 @@ func main() {
 			flag.Usage()
 		}
 		fmt.Print(client.WakeUp(context.Background()))
+		fmt.Print("\n")
+		break
+	case "catchDeeplink":
+		if flag.NArg() - 1 != 1 {
+			fmt.Fprintln(os.Stderr, "CatchDeeplink requires 1 args")
+			flag.Usage()
+		}
+		argvalue0 := flag.Arg(1)
+		value0 := argvalue0
+		fmt.Print(client.CatchDeeplink(context.Background(), value0))
 		fmt.Print("\n")
 		break
 	case "":

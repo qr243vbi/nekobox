@@ -13230,6 +13230,10 @@ var _ slog.LogValuer = (*LibcoreServiceQueryCountryTestResult)(nil)
 
 type InstanceService interface {
 	WakeUp(ctx context.Context) (_err error)
+	// Parameters:
+	//  - Deeplink
+	// 
+	CatchDeeplink(ctx context.Context, deeplink string) (_err error)
 }
 
 type InstanceServiceClient struct {
@@ -13279,6 +13283,22 @@ func (p *InstanceServiceClient) WakeUp(ctx context.Context) (_err error) {
 	return nil
 }
 
+// Parameters:
+//  - Deeplink
+// 
+func (p *InstanceServiceClient) CatchDeeplink(ctx context.Context, deeplink string) (_err error) {
+	var _args257 InstanceServiceCatchDeeplinkArgs
+	_args257.Deeplink = deeplink
+	var _result259 InstanceServiceCatchDeeplinkResult
+	var _meta258 thrift.ResponseMeta
+	_meta258, _err = p.Client_().Call(ctx, "catchDeeplink", &_args257, &_result259)
+	p.SetLastResponseMeta_(_meta258)
+	if _err != nil {
+		return
+	}
+	return nil
+}
+
 type InstanceServiceProcessor struct {
 	processorMap map[string]thrift.TProcessorFunction
 	handler InstanceService
@@ -13299,9 +13319,10 @@ func (p *InstanceServiceProcessor) ProcessorMap() map[string]thrift.TProcessorFu
 
 func NewInstanceServiceProcessor(handler InstanceService) *InstanceServiceProcessor {
 
-	self257 := &InstanceServiceProcessor{handler:handler, processorMap:make(map[string]thrift.TProcessorFunction)}
-	self257.processorMap["wakeUp"] = &instanceServiceProcessorWakeUp{handler:handler}
-	return self257
+	self260 := &InstanceServiceProcessor{handler:handler, processorMap:make(map[string]thrift.TProcessorFunction)}
+	self260.processorMap["wakeUp"] = &instanceServiceProcessorWakeUp{handler:handler}
+	self260.processorMap["catchDeeplink"] = &instanceServiceProcessorCatchDeeplink{handler:handler}
+	return self260
 }
 
 func (p *InstanceServiceProcessor) Process(ctx context.Context, iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
@@ -13312,12 +13333,12 @@ func (p *InstanceServiceProcessor) Process(ctx context.Context, iprot, oprot thr
 	}
 	iprot.Skip(ctx, thrift.STRUCT)
 	iprot.ReadMessageEnd(ctx)
-	x258 := thrift.NewTApplicationException(thrift.UNKNOWN_METHOD, "Unknown function " + name)
+	x261 := thrift.NewTApplicationException(thrift.UNKNOWN_METHOD, "Unknown function " + name)
 	oprot.WriteMessageBegin(ctx, name, thrift.EXCEPTION, seqId)
-	x258.Write(ctx, oprot)
+	x261.Write(ctx, oprot)
 	oprot.WriteMessageEnd(ctx)
 	oprot.Flush(ctx)
-	return false, x258
+	return false, x261
 }
 
 type instanceServiceProcessorWakeUp struct {
@@ -13325,7 +13346,7 @@ type instanceServiceProcessorWakeUp struct {
 }
 
 func (p *instanceServiceProcessorWakeUp) Process(ctx context.Context, seqId int32, iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
-	var _write_err259 thrift.TException
+	var _write_err262 thrift.TException
 	args := InstanceServiceWakeUpArgs{}
 	if err2 := args.Read(ctx, iprot); err2 != nil {
 		iprot.ReadMessageEnd(ctx)
@@ -13382,22 +13403,22 @@ func (p *instanceServiceProcessorWakeUp) Process(ctx context.Context, seqId int3
 				}
 			}
 		}
-		_exc260 := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing wakeUp: " + err2.Error())
+		_exc263 := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing wakeUp: " + err2.Error())
 		if err2 := oprot.WriteMessageBegin(ctx, "wakeUp", thrift.EXCEPTION, seqId); err2 != nil {
-			_write_err259 = thrift.WrapTException(err2)
+			_write_err262 = thrift.WrapTException(err2)
 		}
-		if err2 := _exc260.Write(ctx, oprot); _write_err259 == nil && err2 != nil {
-			_write_err259 = thrift.WrapTException(err2)
+		if err2 := _exc263.Write(ctx, oprot); _write_err262 == nil && err2 != nil {
+			_write_err262 = thrift.WrapTException(err2)
 		}
-		if err2 := oprot.WriteMessageEnd(ctx); _write_err259 == nil && err2 != nil {
-			_write_err259 = thrift.WrapTException(err2)
+		if err2 := oprot.WriteMessageEnd(ctx); _write_err262 == nil && err2 != nil {
+			_write_err262 = thrift.WrapTException(err2)
 		}
-		if err2 := oprot.Flush(ctx); _write_err259 == nil && err2 != nil {
-			_write_err259 = thrift.WrapTException(err2)
+		if err2 := oprot.Flush(ctx); _write_err262 == nil && err2 != nil {
+			_write_err262 = thrift.WrapTException(err2)
 		}
-		if _write_err259 != nil {
+		if _write_err262 != nil {
 			return false, &thrift.ProcessorError{
-				WriteError:    _write_err259,
+				WriteError:    _write_err262,
 				EndpointError: err,
 			}
 		}
@@ -13405,20 +13426,125 @@ func (p *instanceServiceProcessorWakeUp) Process(ctx context.Context, seqId int3
 	}
 	tickerCancel()
 	if err2 := oprot.WriteMessageBegin(ctx, "wakeUp", thrift.REPLY, seqId); err2 != nil {
-		_write_err259 = thrift.WrapTException(err2)
+		_write_err262 = thrift.WrapTException(err2)
 	}
-	if err2 := result.Write(ctx, oprot); _write_err259 == nil && err2 != nil {
-		_write_err259 = thrift.WrapTException(err2)
+	if err2 := result.Write(ctx, oprot); _write_err262 == nil && err2 != nil {
+		_write_err262 = thrift.WrapTException(err2)
 	}
-	if err2 := oprot.WriteMessageEnd(ctx); _write_err259 == nil && err2 != nil {
-		_write_err259 = thrift.WrapTException(err2)
+	if err2 := oprot.WriteMessageEnd(ctx); _write_err262 == nil && err2 != nil {
+		_write_err262 = thrift.WrapTException(err2)
 	}
-	if err2 := oprot.Flush(ctx); _write_err259 == nil && err2 != nil {
-		_write_err259 = thrift.WrapTException(err2)
+	if err2 := oprot.Flush(ctx); _write_err262 == nil && err2 != nil {
+		_write_err262 = thrift.WrapTException(err2)
 	}
-	if _write_err259 != nil {
+	if _write_err262 != nil {
 		return false, &thrift.ProcessorError{
-			WriteError:    _write_err259,
+			WriteError:    _write_err262,
+			EndpointError: err,
+		}
+	}
+	return true, err
+}
+
+type instanceServiceProcessorCatchDeeplink struct {
+	handler InstanceService
+}
+
+func (p *instanceServiceProcessorCatchDeeplink) Process(ctx context.Context, seqId int32, iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
+	var _write_err264 thrift.TException
+	args := InstanceServiceCatchDeeplinkArgs{}
+	if err2 := args.Read(ctx, iprot); err2 != nil {
+		iprot.ReadMessageEnd(ctx)
+		x := thrift.NewTApplicationException(thrift.PROTOCOL_ERROR, err2.Error())
+		oprot.WriteMessageBegin(ctx, "catchDeeplink", thrift.EXCEPTION, seqId)
+		x.Write(ctx, oprot)
+		oprot.WriteMessageEnd(ctx)
+		oprot.Flush(ctx)
+		return false, thrift.WrapTException(err2)
+	}
+	iprot.ReadMessageEnd(ctx)
+
+	tickerCancel := func() {}
+	// Start a goroutine to do server side connectivity check.
+	if thrift.ServerConnectivityCheckInterval > 0 {
+		var cancel context.CancelCauseFunc
+		ctx, cancel = context.WithCancelCause(ctx)
+		defer cancel(nil)
+		var tickerCtx context.Context
+		tickerCtx, tickerCancel = context.WithCancel(context.Background())
+		defer tickerCancel()
+		go func(ctx context.Context, cancel context.CancelCauseFunc) {
+			ticker := time.NewTicker(thrift.ServerConnectivityCheckInterval)
+			defer ticker.Stop()
+			for {
+				select {
+				case <-ctx.Done():
+					return
+				case <-ticker.C:
+					if !iprot.Transport().IsOpen() {
+						cancel(thrift.ErrAbandonRequest)
+						return
+					}
+				}
+			}
+		}(tickerCtx, cancel)
+	}
+
+	result := InstanceServiceCatchDeeplinkResult{}
+	if err2 := p.handler.CatchDeeplink(ctx, args.Deeplink); err2 != nil {
+		tickerCancel()
+		err = thrift.WrapTException(err2)
+		if errors.Is(err2, thrift.ErrAbandonRequest) {
+			return false, &thrift.ProcessorError{
+				WriteError:    thrift.WrapTException(err2),
+				EndpointError: err,
+			}
+		}
+		if errors.Is(err2, context.Canceled) {
+			if err3 := context.Cause(ctx); errors.Is(err3, thrift.ErrAbandonRequest) {
+				return false, &thrift.ProcessorError{
+					WriteError:    thrift.WrapTException(err3),
+					EndpointError: err,
+				}
+			}
+		}
+		_exc265 := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing catchDeeplink: " + err2.Error())
+		if err2 := oprot.WriteMessageBegin(ctx, "catchDeeplink", thrift.EXCEPTION, seqId); err2 != nil {
+			_write_err264 = thrift.WrapTException(err2)
+		}
+		if err2 := _exc265.Write(ctx, oprot); _write_err264 == nil && err2 != nil {
+			_write_err264 = thrift.WrapTException(err2)
+		}
+		if err2 := oprot.WriteMessageEnd(ctx); _write_err264 == nil && err2 != nil {
+			_write_err264 = thrift.WrapTException(err2)
+		}
+		if err2 := oprot.Flush(ctx); _write_err264 == nil && err2 != nil {
+			_write_err264 = thrift.WrapTException(err2)
+		}
+		if _write_err264 != nil {
+			return false, &thrift.ProcessorError{
+				WriteError:    _write_err264,
+				EndpointError: err,
+			}
+		}
+		return true, err
+	}
+	tickerCancel()
+	if err2 := oprot.WriteMessageBegin(ctx, "catchDeeplink", thrift.REPLY, seqId); err2 != nil {
+		_write_err264 = thrift.WrapTException(err2)
+	}
+	if err2 := result.Write(ctx, oprot); _write_err264 == nil && err2 != nil {
+		_write_err264 = thrift.WrapTException(err2)
+	}
+	if err2 := oprot.WriteMessageEnd(ctx); _write_err264 == nil && err2 != nil {
+		_write_err264 = thrift.WrapTException(err2)
+	}
+	if err2 := oprot.Flush(ctx); _write_err264 == nil && err2 != nil {
+		_write_err264 = thrift.WrapTException(err2)
+	}
+	if _write_err264 != nil {
+		return false, &thrift.ProcessorError{
+			WriteError:    _write_err264,
 			EndpointError: err,
 		}
 	}
@@ -13565,5 +13691,189 @@ func (p *InstanceServiceWakeUpResult) LogValue() slog.Value {
 }
 
 var _ slog.LogValuer = (*InstanceServiceWakeUpResult)(nil)
+
+// Attributes:
+//  - Deeplink
+// 
+type InstanceServiceCatchDeeplinkArgs struct {
+	Deeplink string `thrift:"deeplink,1" db:"deeplink" json:"deeplink"`
+}
+
+func NewInstanceServiceCatchDeeplinkArgs() *InstanceServiceCatchDeeplinkArgs {
+	return &InstanceServiceCatchDeeplinkArgs{}
+}
+
+
+
+func (p *InstanceServiceCatchDeeplinkArgs) GetDeeplink() string {
+	return p.Deeplink
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) Read(ctx context.Context, iprot thrift.TProtocol) error {
+	if _, err := iprot.ReadStructBegin(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
+	}
+
+
+	for {
+		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
+		if err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T field %d read error: ", p, fieldId), err)
+		}
+		if fieldTypeId == thrift.STOP {
+			break
+		}
+		switch fieldId {
+		case 1:
+			if fieldTypeId == thrift.STRING {
+				if err := p.ReadField1(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		default:
+			if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+				return err
+			}
+		}
+		if err := iprot.ReadFieldEnd(ctx); err != nil {
+			return err
+		}
+	}
+	if err := iprot.ReadStructEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) ReadField1(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(ctx); err != nil {
+		return thrift.PrependError("error reading field 1: ", err)
+	} else {
+		p.Deeplink = v
+	}
+	return nil
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) Write(ctx context.Context, oprot thrift.TProtocol) error {
+	if err := oprot.WriteStructBegin(ctx, "catchDeeplink_args"); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
+	}
+	if p != nil {
+		if err := p.writeField1(ctx, oprot); err != nil { return err }
+	}
+	if err := oprot.WriteFieldStop(ctx); err != nil {
+		return thrift.PrependError("write field stop error: ", err)
+	}
+	if err := oprot.WriteStructEnd(ctx); err != nil {
+		return thrift.PrependError("write struct stop error: ", err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) writeField1(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "deeplink", thrift.STRING, 1); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 1:deeplink: ", p), err)
+	}
+	if err := oprot.WriteString(ctx, string(p.Deeplink)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.deeplink (1) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 1:deeplink: ", p), err)
+	}
+	return err
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) String() string {
+	if p == nil {
+		return "<nil>"
+	}
+	return fmt.Sprintf("InstanceServiceCatchDeeplinkArgs(%+v)", *p)
+}
+
+func (p *InstanceServiceCatchDeeplinkArgs) LogValue() slog.Value {
+	if p == nil {
+		return slog.AnyValue(nil)
+	}
+	v := thrift.SlogTStructWrapper{
+		Type: "*gen.InstanceServiceCatchDeeplinkArgs",
+		Value: p,
+	}
+	return slog.AnyValue(v)
+}
+
+var _ slog.LogValuer = (*InstanceServiceCatchDeeplinkArgs)(nil)
+
+type InstanceServiceCatchDeeplinkResult struct {
+}
+
+func NewInstanceServiceCatchDeeplinkResult() *InstanceServiceCatchDeeplinkResult {
+	return &InstanceServiceCatchDeeplinkResult{}
+}
+
+func (p *InstanceServiceCatchDeeplinkResult) Read(ctx context.Context, iprot thrift.TProtocol) error {
+	if _, err := iprot.ReadStructBegin(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
+	}
+
+
+	for {
+		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
+		if err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T field %d read error: ", p, fieldId), err)
+		}
+		if fieldTypeId == thrift.STOP {
+			break
+		}
+		if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+			return err
+		}
+		if err := iprot.ReadFieldEnd(ctx); err != nil {
+			return err
+		}
+	}
+	if err := iprot.ReadStructEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceCatchDeeplinkResult) Write(ctx context.Context, oprot thrift.TProtocol) error {
+	if err := oprot.WriteStructBegin(ctx, "catchDeeplink_result"); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
+	}
+	if p != nil {
+	}
+	if err := oprot.WriteFieldStop(ctx); err != nil {
+		return thrift.PrependError("write field stop error: ", err)
+	}
+	if err := oprot.WriteStructEnd(ctx); err != nil {
+		return thrift.PrependError("write struct stop error: ", err)
+	}
+	return nil
+}
+
+func (p *InstanceServiceCatchDeeplinkResult) String() string {
+	if p == nil {
+		return "<nil>"
+	}
+	return fmt.Sprintf("InstanceServiceCatchDeeplinkResult(%+v)", *p)
+}
+
+func (p *InstanceServiceCatchDeeplinkResult) LogValue() slog.Value {
+	if p == nil {
+		return slog.AnyValue(nil)
+	}
+	v := thrift.SlogTStructWrapper{
+		Type: "*gen.InstanceServiceCatchDeeplinkResult",
+		Value: p,
+	}
+	return slog.AnyValue(v)
+}
+
+var _ slog.LogValuer = (*InstanceServiceCatchDeeplinkResult)(nil)
 
 

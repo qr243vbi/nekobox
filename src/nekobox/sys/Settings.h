@@ -121,6 +121,7 @@ public:
   bool logs_enabled = true;
   bool test_after_start = true;
   char startup_update = false;
+  QString url_scheme_mirror = "";
   int max_log_line = 200;
   int width = 0;
   int height = 0;

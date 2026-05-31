@@ -49,6 +49,7 @@ ADD_LIST(ask_delete)
 ADD_LIST(test_after_start)
 ADD_LIST(startup_update)
 ADD_LIST(max_log_line)
+ADD_LIST(url_scheme_mirror)
 ADD_LIST(width)
 ADD_LIST(height)
 ADD_LIST(X)
@@ -146,7 +147,7 @@ QString getResource(QString str, QStringList dirs, QString def) {
     QString path = dir + "/" + str;
     QFile file(path);
     if (file.exists()){
-      return path;
+      return QDir::toNativeSeparators(path);
     }
   }
   QString dir = getResourcesDir();
@@ -159,7 +160,7 @@ QString getResource(QString str, QStringList dirs, QString def) {
     str = getRootResource(str);
     QFile file2(str);
     if (file2.exists()) {
-      return str;
+      return QDir::toNativeSeparators(str);
     } else {
       if (def.isEmpty()) {
         return ":/" + str;

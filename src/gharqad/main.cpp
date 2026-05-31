@@ -1,5 +1,4 @@
-
-
+#include "nekobox/api/RPC.h"
 #include <csignal>
 
 #include <QCryptographicHash>
@@ -12,7 +11,7 @@
 #include <QApplication>
 #include <QFileInfo>
 #include <QThread>
-#include <iostream>
+#include <nekobox/sys/UrlScheme.hpp>
 #include <memory>
 #include <nekobox/dataStore/DatabaseRocksDB.hpp>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
@@ -137,6 +136,28 @@ getLocalServerTransport(const QString &serverName) {
                                                        .toStdString()));
 }
 
+static bool sendDeeplink(const QString &serverName, const QString & deeplink){
+  if (deeplink.isEmpty()){
+    return false;
+  }
+  try {
+    auto transport = (getLocalTransport(serverName));
+    transport->open();
+
+    libcore::InstanceServiceClient client(
+        std::make_shared<apache::thrift::protocol::TBinaryProtocol>(transport));
+
+    client.catchDeeplink(deeplink.toStdString());
+
+    transport->close();
+
+    qWarning() << "Deeplink sent";
+    return true; // instance exists
+  } catch (...) {
+    return false; // no server running
+  }  
+}
+
 static bool wakeExistingInstance(const QString &serverName) {
   try {
     auto transport = (getLocalTransport(serverName));
@@ -234,7 +255,7 @@ int main(int argc, char **argv) {
     return 1;
   }
   root_directory = QString::fromWCharArray(unicodepath.parent_path().c_str());
-  software_path = QString::fromWCharArray(unicodepath.c_str());
+  software_path = QDir::toNativeSeparators(QString::fromWCharArray(unicodepath.c_str()));
 #else
   Unix_SetCrashHandler();
   root_directory = QString::fromUtf8(unicodepath.parent_path().c_str());
@@ -255,6 +276,8 @@ int main(int argc, char **argv) {
   QApplication::setQuitOnLastWindowClosed(false);
   QApplication a(argc, argv);
 
+  QString deeplink = "";
+
   // Flags
   Configs::dataStore->argv = QApplication::arguments();
   if (Configs::dataStore->argv.contains("-many"))
@@ -266,6 +289,12 @@ int main(int argc, char **argv) {
         !Configs::dataStore->argv.at(appdataIndex).startsWith("-")) {
       Configs::dataStore->appdataDir =
           Configs::dataStore->argv.at(appdataIndex);
+    }
+  } if (Configs::dataStore->argv.contains("-deeplink")) {
+    int appdataIndex = Configs::dataStore->argv.lastIndexOf("-deeplink") + 1;
+    if (Configs::dataStore->argv.size() > appdataIndex &&
+        !Configs::dataStore->argv.at(appdataIndex).startsWith("-")) {
+      deeplink = Configs::dataStore->argv.at(appdataIndex);
     }
   }
 
@@ -362,21 +391,11 @@ int main(int argc, char **argv) {
 #ifdef DEBUG_MODE
   qDebug() << "server name: " << serverName;
 #endif
-  /*
-  QLocalSocket socket;
-  socket.connectToServer(serverName);
-  if (socket.waitForConnected(250))
-  {
-      #ifdef DEBUG_MODE
-      qDebug() << "Another instance is running, let's wake it up and quit";
-      #endif
-      socket.disconnectFromServer();
-      return 0;
-  }
-*/
+
   if (wakeExistingInstance(serverName)) {
+    sendDeeplink(serverName, deeplink);
     return 0;
-  }
+  } 
 
   Configs::databaseManager = std::make_shared<Configs::FileDatabaseManager>();
   Configs::resourceManager = new class Configs::ResourceManager();
@@ -459,11 +478,22 @@ int main(int argc, char **argv) {
 
   // QLocalServer
   auto handler = std::make_shared<API::InstanceHandler>();
-  QObject::connect(handler.get(), &API::InstanceHandler::wokeUp, qApp, [&] {
+  
+  // connect to slots 
+  {
+  auto handler_pointer = handler.get();
+  QObject::connect(handler_pointer, &API::InstanceHandler::deeplinkCought, qApp, [&](QString link){
+#ifdef DEBUG_MODE
+    qDebug() << "Deeplink received via Thrift";
+#endif
+    MainWindow *window = GetMainWindow();
+    window->add_from_deeplink(link);
+  });
+
+  QObject::connect(handler_pointer, &API::InstanceHandler::wokeUp, qApp, [&] {
 #ifdef DEBUG_MODE
     qDebug() << "Wake received via Thrift";
 #endif
-
     MainWindow *window = GetMainWindow();
     if (window) {
       do {
@@ -471,6 +501,7 @@ int main(int argc, char **argv) {
       } while (window->isHidden());
     }
   });
+  }
   auto transport = getLocalServerTransport(serverName);
   auto processor = std::make_shared<libcore::InstanceServiceProcessor>(handler);
   auto server = std::make_shared<apache::thrift::server::TThreadedServer>(
@@ -479,34 +510,6 @@ int main(int argc, char **argv) {
       std::make_shared<apache::thrift::protocol::TBinaryProtocolFactory>());
 
   QFuture future = QtConcurrent::run([server] { server->serve(); });
-
-  /*
-  QLocalServer server(qApp);
-  server.setSocketOptions(QLocalServer::WorldAccessOption);
-  if (!server.listen(serverName)) {
-      qWarning() << "Failed to start QLocalServer! Error:" <<
-  server.errorString(); return 1;
-  }
-  QObject::connect(&server, &QLocalServer::newConnection, qApp, [&] {
-      auto s = server.nextPendingConnection();
-      #ifdef DEBUG_MODE
-      qDebug() << "Another instance tried to wake us up on " << serverName << s;
-      #endif
-      s->close();
-      // raise main window
-      MainWindow * window = GetMainWindow();
-      if (window != nullptr){
-          do {
-              ToggleWindow(window);
-          } while (window->isHidden());
-      }
-  });
-  QObject::connect(qApp, &QApplication::aboutToQuit, [&]
-  {
-      server.close();
-      QLocalServer::removeServer(serverName);
-  });
-  */
 
 #ifdef Q_OS_UNIX
   signal(SIGTERM, signal_handler);
@@ -551,6 +554,13 @@ int main(int argc, char **argv) {
 #endif
 
   UI_InitMainWindow();
+
+  if (!deeplink.isEmpty()){
+    GetMainWindow()->add_from_deeplink(deeplink);
+  }
+
+  UrlScheme_RegisterIfNeeded();
+
   auto ret = QApplication::exec();
   server->stop();
   future.waitForFinished();

@@ -17,9 +17,11 @@ class InstanceHandler :
 public:
 #ifndef Q_MOC_RUN
   void wakeUp() override { emit wokeUp(); }
+  void catchDeeplink(const std::string& link) override { emit deeplinkCought(QString::fromStdString(link)); }
 #endif
 signals:
   void wokeUp();
+  void deeplinkCought(QString link);
 };
 } // namespace API
 

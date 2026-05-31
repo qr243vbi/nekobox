@@ -244,9 +244,11 @@ set(PROJECT_SOURCES
         ${GHARQAD}/configs/sub/GroupUpdater.cpp
         ${NYXARIA}/sys/AutoRun.hpp
         ${NYXARIA}/sys/Process.hpp
+        ${NYXARIA}/sys/UrlScheme.hpp
         ${NYXARIA}/sys/Settings.h
 
         ${GHARQAD}/sys/Process.cpp
+        ${GHARQAD}/sys/UrlScheme.cpp
         ${GHARQAD}/sys/AutoRun.cpp
 
         ${GHARQAD}/ui/mainwindow_rpc.cpp

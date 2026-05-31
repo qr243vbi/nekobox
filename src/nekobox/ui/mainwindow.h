@@ -147,6 +147,8 @@ public:
 
     ~MainWindow() override;
 
+    void add_from_deeplink(const QString&);
+
     void call_updater();
 
     void prepare_exit();
@@ -245,6 +247,7 @@ private slots:
     void on_menu_add_from_input_triggered();
 
     void on_menu_add_from_clipboard_triggered();
+
 
     void on_menu_move_profile_triggered();
 

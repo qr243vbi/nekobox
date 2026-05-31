@@ -187,5 +187,6 @@ service LibcoreService {
 }
 
 service InstanceService {
-  void wakeUp()
+  void wakeUp(),
+  void catchDeeplink(1: string deeplink)
 }

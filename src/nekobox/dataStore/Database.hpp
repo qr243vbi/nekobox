@@ -100,7 +100,7 @@ namespace Configs {
 
         std::map<int, std::shared_ptr<ProxyEntity>> cached_profiles = {};
         std::mutex weak_profiles_mutex;
-        lru11::Cache<int, std::shared_ptr<ProxyEntity>> weak_profiles = lru11::Cache<int, std::shared_ptr<ProxyEntity>>(700,200);
+        lru11::Cache<int, std::shared_ptr<ProxyEntity>> weak_profiles = lru11::Cache<int, std::shared_ptr<ProxyEntity>>(300,100);
         std::map<int, std::shared_ptr<Group>> groups;
         std::map<int, std::shared_ptr<RoutingChain>> routes;
 

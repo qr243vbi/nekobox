@@ -3314,6 +3314,10 @@ void MainWindow::on_menu_add_from_input_triggered() {
 void MainWindow::on_menu_add_from_clipboard_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto clipboard = QApplication::clipboard()->text();
+  this->add_from_deeplink(clipboard);
+}
+
+void MainWindow::add_from_deeplink(const QString & clipboard){
   Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard,
                                           &chooseUpdateGroup);
 }
