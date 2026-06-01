@@ -4131,83 +4131,84 @@ Otu esi emelite?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
         <source>Requesting profile error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-arịọ njehie profaịlụ: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="574" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ehichapụrụ %1 oyiri</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="614" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ehichapụrụ %1 adịghị mma</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="649" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E kpochapụrụ %1 adịghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1867" />
         <source>Check Rule Sets: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lelee Usoro Usoro: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1889" />
         <source>Requesting rule-set list error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arịrịọ njehie ndepụta nhazi iwu: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2863" />
         <source>Proxy: %1
 Direct: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye nnọchi anya: %1
+Ntuziaka: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2901" />
         <source>Inbound IP: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">IP mbata: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2905" />
         <source>Inbound: %2 %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntinye: %2%1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2907" />
         <source>Inbound: Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntinye: Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3349" />
         <source>Move profiles to group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bugharịa profaịlụ na otu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3536" />
         <source>Config copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eṅomiri nhazi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3548" />
         <source>Copy core config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo nhazi isi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
         <source>Copy test config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo nhazi ule</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551" />
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ DỊ MMA</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4876" />
@@ -4217,49 +4218,51 @@ Direct: %2</source>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4967" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002" />
         <source>Update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmelite</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4877" />
         <source>Not official support platform</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ bụghị ikpo okwu nkwado gọọmentị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4887" />
         <source>Requesting update error: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-arịọ njehie mmelite: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930" />
         <source>No update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị mmelite</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4959" />
         <source>Update found: %1
 Release note:
 %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Achọpụtara mmelite: %1
+ndetu mwepụta:
+%2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4962" />
         <source>Close</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mechie</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4964" />
         <source>Open in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mepee na ihe nchọgharị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5003" />
         <source>Update is ready, restart to install?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmelite adịla njikere, malitegharịa ka ịwụnye?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50" />
         <source>KCP Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala KCP</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
@@ -4274,32 +4277,32 @@ Release note:
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
         <source>Uplink Capacity</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ike Uplink</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
         <source>Downlink Capacity</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ikike Downlink</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
         <source>Congestion</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpọchi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
         <source>Read Buffer Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gụọ nha ihe nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Write Buffer Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dee nha ihe nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
         <source>Header Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
