@@ -1663,155 +1663,157 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
         <source>DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
         <source>Simple DNS Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala DNS dị mfe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;atụ:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/ụzọ&lt;/p&gt;&lt;p&gt;quic://domain&lt;/p&gt;&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
         <source>Remote DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS dị anya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
         <source>Default DNS server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe nkesa DNS mbụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
         <source>Query Strategy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro ajụjụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enweghị ike iji DNS mpaghara na nhazi ụfọdụ, ị ga-edobe ip ebe a ka ejiri mee dns mpaghara n'ọnọdụ ndị dị otú ahụ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
         <source>Local Override</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpuchi mpaghara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
         <source>This is especially important and it is recommended to use the default value of "localhost".
 If the default value does not work, try changing it to "223.5.5.5".
 For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nke a dị mkpa karịsịa ma a na-atụ aro ka iji uru ndabara nke "localhost".
+Ọ bụrụ na uru ndabara anaghị arụ ọrụ, gbalịa gbanwee ya ka ọ bụrụ "223.5.5.5".
+Maka ozi ọzọ, hụ akwụkwọ "Nhazi/DNS".</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
         <source>Direct DNS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">DNS ozugbo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
         <source>Enable FakeIP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado adịgboroja IP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
         <source>DNS Object Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala Ihe DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Use DNS Object</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri ihe DNS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
         <source>Format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
         <source>Document</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akwụkwọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
         <source>Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
         <source>Routing Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọhụrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
         <source>Export</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbupụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Warp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Na-eme ka nhazi ndị a dị ka egress, bara uru maka ịgafe ọrụ na-egbochi VPN ndị na-abụghị warp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Enable Warp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado Warp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Auto Generate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mepụta akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Na-enweta nhazi ọhụrụ site na API cloudflare&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
         <source>Generate Warp Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mepụta Config Warp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
         <source>Endpoint</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebe njedebe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
         <source>Public Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igodo Ọha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
