@@ -3792,93 +3792,93 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="342" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale ọsọ ikpeazụ apụghị kpamkpam, biko chere.Ọ bụrụ na ọ na-aga, biko malitegharịa mmemme.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="409" />
         <source>Speedtest finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emechara ọsọ ọsọ!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="492" />
         <source>Profile speed test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akwụpụrụ ule ọsọ profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="580" />
         <source>[%1] speed test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] mperi ule ọsọ: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589" />
         <source>You need to enable hijack DNS server first</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ikwesiri ibu ụzọ mee ka sava DNS hijack</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="603" />
         <source>Failed to set system dns: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịtọ usoro dns agaghị adị:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="652" />
         <source>Tun device misbehaving</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tụgharịa omume ọjọọ ngwaọrụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="653" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ bụrụ na ị nwere nsogbu ịmalite VPN, ị nwere ike ịmanye nrụpụta Core usoro ebe a wee gbalịa ịmalite profaịlụ ọzọ.Njehie a bụ %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
         <source>Reset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tọgharia</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kagbuo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="694" />
         <source>Another profile is starting...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ọzọ na-amalite...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="701" />
         <source>Another profile is stopping...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ọzọ na-akwụsị...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="722" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="832" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ bụrụ na enweghị nzaghachi ruo ogologo oge, a na-atụ aro ka ịmalitegharịa ngwanro ahụ.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="736" />
         <source>Starting profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmalite profaịlụ %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="738" />
         <source>Failed to start profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịmalite profaịlụ %1 agaghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="815" />
         <source>Stop return error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwụsị njehie nloghachi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="855" />
         <source>Stopping profile %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwụsị profaịlụ %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="857" />
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwụsịghị, biko malitegharịa mmemme.</translation>
     </message>
 </context>
 <context>
@@ -3886,27 +3886,27 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="762" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="764" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">adreesị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="766" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nsonaazụ ule</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770" />
         <source>Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okporo ụzọ</translation>
     </message>
 </context>
 <context>
@@ -3919,17 +3919,17 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha njirimara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe Ọhụrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwenye Na Okwuntughe</translation>
     </message>
 </context>
 <context>
@@ -3937,12 +3937,12 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1?</translation>
     </message>
 </context>
 <context>
@@ -3950,7 +3950,7 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala nche</translation>
     </message>
 </context>
 <context>
@@ -3966,7 +3966,7 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="160" />
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike iji ọnọdụ Tun na nhazi omenala</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1061" />
