@@ -3637,157 +3637,157 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2895" />
         <source>Not Running</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anaghị agba ọsọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3091" />
         <source>Group is too big to sort</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu dị oke oke ịhazi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3386" />
         <source>Clone %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone%1 ihe(s)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3406" />
         <source>Group is too big to find duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu dị oke ibu ịchọta oyiri</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3441" />
         <source> Confirmation </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3442" />
         <source> Remove %1 item(s) ? </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1 ihe(s)?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3462" />
         <source>Remove %1 item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1 ihe(s)?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3514" />
         <source>Copied %1 item(s)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eṅomiri %1 ihe(s)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3758" />
         <source>QR Code not found</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahụghị koodu QR</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3780" />
         <source>Unable to capture screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịse ihuenyo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3874" />
         <source>Remove %1 Unavailable item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1 ihe(s) adịghị?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3936" />
         <source>Remove %1 Invalid item(s) ?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1 ihe(s) ezighi ezi?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3989" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dochie adreesị ngalaba nkesa na adreesị IP ha edoziri?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4159" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpochapụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4230" />
         <source>Delete selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ otu ahọpụtara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4231" />
         <source>Edit selected Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie otu ahọpụtara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4241" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4976" />
         <source>Cannot start</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ibido</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4977" />
         <source>Last download request has not finished yet</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arịrịọ nbudata ikpeazụ emechabeghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5011" />
         <source>Failed to download update assets</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ibudata akụrụngwa emelite agaghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78" />
         <source>Profile test aborted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akwụpụrụ ule profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175" />
         <source>[%1] test error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">[%1] mperi ule: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="555" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe dị njọ nke ukwuu, enweghị ike ịchọta isiokwu ent!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="561" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E mebiela data njikwa profaịlụ, nwaa ọzọ.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale url ikpeazụ apụghị kpamkpam, biko chere.Ọ bụrụ na ọ na-aga, biko malitegharịa mmemme.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="373" />
         <source>Failed to build test config: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịwulite nhazi ule agaghị:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="247" />
         <source>URL test finished!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ule URL agwụla!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="291" />
         <source>Failed to stop tests</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwụsị ule agaghị ekwe omume</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297" />
         <source>Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="320" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="323" />
         <source>Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nsonaazụ ule</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="342" />
