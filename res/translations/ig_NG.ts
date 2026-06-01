@@ -1308,7 +1308,7 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
         <source>Custom (%1 config)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Omenala (%1 nhazi)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="697" />
@@ -1317,7 +1317,7 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
         <source>Not set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Edobeghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="699" />
@@ -1326,12 +1326,12 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="714" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
         <source>Already set</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">edobelarị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="779" />
         <source>Confirm</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwenye</translation>
     </message>
 </context>
 <context>
@@ -1339,95 +1339,95 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy ọdịda maka otu Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye nnọchi anya:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chọọ:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy n'ihu maka otu %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455" />
         <source>Front proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye nnọchi anya ihu:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="466" />
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy ọdịda maka otu %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="468" />
         <source>Landing proxy: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy ọdịda:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="481" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="484" />
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="487" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direct</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="491" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ dịghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
         <source>Add proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
         <source>Replace %1 proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dochie %1 proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="136" />
         <source>Select outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ ọpụpụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="138" />
         <source>Outbound: </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọpụpụ:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọpụpụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbochie</translation>
     </message>
 </context>
 <context>
@@ -1435,42 +1435,42 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Shortcuts</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ mkpirisi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
         <source>Global</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gburugburu ụwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
         <source>Trigger main window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpalite isi window</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
         <source>Show groups</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosi otu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
         <source>Show routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gosi ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
         <source>Proxy mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
         <source>Toggle System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee Proxy Sistemu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
