@@ -1914,17 +1914,17 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Generating config...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கட்டமைப்பை உருவாக்குகிறது...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
         <source>Failed to generate warp config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">வார்ப் கட்டமைப்பை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
         <source>Success!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">வெற்றி!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
@@ -3465,7 +3465,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
         <source>Copy Nekoray links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nekoray இணைப்புகளை நகலெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
@@ -3676,32 +3676,32 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="671" />
         <source>Using on macOS is not permitted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">MacOS இல் பயன்படுத்த அனுமதி இல்லை</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1405" />
         <source>Import Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூட்டிங் சுயவிவரத்தை இறக்குமதி செய்யவும்</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409" />
         <source>From clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கிளிப்போர்டில் இருந்து</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413" />
         <source>From file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கோப்பிலிருந்து</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1420" />
         <source>Imported from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">கிளிப்போர்டிலிருந்து இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1432" />
         <source>Imported from %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 இலிருந்து இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1442" />
@@ -3711,12 +3711,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1469" />
         <source>RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூல்செட் வரைபடம்</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1492" />
         <source>RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ரூல்செட் கேச்</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1527" />
@@ -4525,12 +4525,13 @@ Direct: ⚡%2 📦%4</source>
         <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">தவறான பதில் கிடைத்தது: % 1
+பேலோட் கோரிக்கை:% 2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Configs.cpp" line="558" />
         <source>Imported</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">இறக்குமதி செய்யப்பட்டது</translation>
     </message>
 </context>
 <context>
