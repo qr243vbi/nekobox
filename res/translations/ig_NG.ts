@@ -497,79 +497,81 @@ Melite Ping na arụmọrụ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;Ntọala maka
+onye ahịa NTP wuru n'ime sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="945" />
         <source>NTP Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala NTP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="960" />
         <source>server</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ihe nkesa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987" />
         <source>sync interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">oge mmekọrịta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="994" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt;N'ime
+nkeji&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024" />
         <source>Security</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Agbalịla ịmalite dị ka onye nchịkwa ma ọ bụrụ na achọrọghị ya hoo haa &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057" />
         <source>Always Start as Standard User</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite mgbe niile dị ka onye ọrụ ọkọlọtọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064" />
         <source>Disable Privilege request</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ arịrịọ ikike</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1098" />
         <source>Skip TLS certificate authentication</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mafere nyocha asambodo TLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1105" />
         <source>Use Mozilla Certificate Store</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri Ụlọ Ahịa Asambodo Mozilla</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1148" />
         <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpịsị aka mkpịsị aka uTLS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237" />
         <source>Configs format</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị nhazi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244" />
@@ -577,77 +579,80 @@ Melite Ping na arụmọrụ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as leveldb values or standalone files — qr243vbi</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">leveldb - 2011 - ụlọ ahịa uru igodo LSM-osisi na-adịgide adịgide - Google
+JSON - 2001 - Ọkpụkpọ ederede dị fechaa maka ịgbanwe data ahaziri ahazi (ihe, nhazi, primitives) - Douglas Crockford
+INI - mmalite 1980s - usoro nhazi ederede dị mfe nke nwere ngalaba na igodo = uru ụzọ abụọ - Microsoft
+ọnụọgụ abụọ - 2026 - usoro nke ụkpụrụ ụkpụrụ maka ntọala NekoBox ejiri dị ka ụkpụrụ leveldb ma ọ bụ faịlụ kwụ ọtọ - qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1274" />
         <source>Ask for deleting profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rịọ maka ihichapụ profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1294" />
         <source>Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nwalee proxies na-akpaghị aka na ndabere ma jikwaa ọdọ mmiri proxies na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303" />
         <source>Enable Auto-Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado nnwale akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310" />
         <source>Test Interval (seconds)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge ule (sekọnd)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1317" />
         <source>How often to run the test cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ugboro ole ka ị na-agba ọsọ okirikiri ule</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1333" />
         <source>Proxies Per Cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxies kwa okirikiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340" />
         <source>Number of proxies to test in each cycle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ proxies iji nwalee na okirikiri ọ bụla</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356" />
         <source>Working Pool Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogo ọdọ mmiri na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363" />
         <source>Maximum number of verified working proxies to maintain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ proxies na-arụ ọrụ akwadoro iji kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379" />
         <source>Latency Threshold (ms)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụ ala (ms)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1386" />
         <source>Maximum latency to consider a proxy as working</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge nkwụsị kacha elu iji tụlee proxy ka ọ na-arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1405" />
         <source>Failure Retry Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngụgharị nwaa ọdịda ọdịda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1412" />
         <source>Number of retry attempts before considering a proxy as failed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ nwaa ọzọ tupu ị tụlee proxy ka ọ dara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1428" />
