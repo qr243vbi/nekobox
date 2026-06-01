@@ -1,13 +1,10 @@
-#include "nekobox/api/RPC.h"
+#include <nekobox/api/RPC.h>
 #include <csignal>
-
 #include <QCryptographicHash>
 #include <QDir>
 #include <QMessageBox>
 #include <QStandardPaths>
 #include <QTranslator>
-// #include <QLocalSocket>
-// #include <QLocalServer>
 #include <QApplication>
 #include <QFileInfo>
 #include <QThread>
@@ -20,9 +17,9 @@
 #include <qnamespace.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TPipe.h>
+#include <thrift/transport/TPipeServer.h>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TTransport.h>
-
 #include <thrift/server/TThreadedServer.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/transport/TServerSocket.h>
@@ -103,43 +100,28 @@ static QString getSocketPath(const QString &serverName) {
 
 static std::shared_ptr<apache::thrift::transport::TTransport>
 getLocalTransport(const QString &serverName) {
-
 #ifdef Q_OS_UNIX
-  QString filename = getSocketPath(serverName);
-#endif
-  return std::shared_ptr<apache::thrift::transport::TTransport>(
-      new apache::thrift::transport::TPipe((
-#ifdef Q_OS_UNIX
-                                               filename
+  std::string path = getSocketPath(serverName).toStdString();
 #else
-                                               serverName
+  std::string path = serverName.toStdString();
 #endif
-                                               )
-                                               .toStdString()));
+  return std::make_shared<apache::thrift::transport::TPipe>(path);
 }
 
 static std::shared_ptr<apache::thrift::transport::TServerTransport>
 getLocalServerTransport(const QString &serverName) {
-
 #ifdef Q_OS_UNIX
   QString filename = getSocketPath(serverName);
-  {
-    QFile file(filename);
-    if (file.exists()) {
-      file.remove();
-    }
-  }
-#endif
-  return std::shared_ptr<apache::thrift::transport::TServerTransport>(
-      new apache::thrift::transport::TServerSocket((
-#ifdef Q_OS_UNIX
-                                                       filename
+  QFile::remove(filename); // Cleaner shortcut to delete existing socket file
+  
+  // Unix domain sockets use TServerSocket with a path string
+  return std::make_shared<apache::thrift::transport::TServerSocket>(filename.toStdString());
 #else
-                                                       serverName
+  // Windows named pipes use TPipeServer
+  return std::make_shared<apache::thrift::transport::TPipeServer>(serverName.toStdString());
 #endif
-                                                       )
-                                                       .toStdString()));
 }
+
 
 
 

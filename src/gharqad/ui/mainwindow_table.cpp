@@ -541,12 +541,6 @@ bool MyTableModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
         uniqueRowCount --;
     }
     std::sort(indexes.begin(), indexes.end());
-    {
-        int sourceRow = indexes[0];
-        if (sourceRow < targetRow) {
-            targetRow--; 
-        }
-    }
 
     int count = 0;
 
