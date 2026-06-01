@@ -3971,159 +3971,162 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1061" />
         <source>Requesting subscription: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-arịọ ndenye aha: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1067" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Arịrịọ ndenye aha %1 mperi: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1091" />
         <source>Subscription profile title: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha profaịlụ ndebanye aha: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1100" />
         <source>Subscription request fininshed: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Emechara arịrịọ ndenye aha: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125" />
         <source>Clearing servers...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-ehichapụ sava...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1150" />
         <source>Processing subscription data...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-ahazi data ndenye aha...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1164" />
         <source>--- Dropt %1 proxies
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">--- Wepu %1 proxies</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1166" />
         <source>Process complete, applying...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro zuru oke, itinye...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1180" />
         <source>--- Added %1 proxies
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">--- Agbakwunyere %1 proxies</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1182" />
         <source>Change of %1:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbanwe nke %1:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anatara nzaghachi na-ezighi ezi: %1
+Arịrịọ ugwo arịrịọ bụ: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Configs.cpp" line="558" />
         <source>Imported</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebubatara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="856" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3009" />
         <source>Default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọdabara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="223" />
         <source>Chain Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chain Proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="239" />
         <source>Custom</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Omenala</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="240" />
         <source>Extra Core</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbakwunye isi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy: ⚡%1 📦%3
+Direct: ⚡%2 📦%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
         <source>Core exited, cleaning up...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi pụta, na-ehicha ihe...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi na-apụ apụ ugboro ugboro, kwụsị ịmalitegharịa profaịlụ a na akpaaka.</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
         <source>Restarting the core ...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-amalitegharị isi ...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/sys/Settings.cpp" line="375" />
         <source>System</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sistemu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="182" />
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="463" />
         <source>Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na adịghị mma</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>URL detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Achọpụtara URL</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31" />
         <source>%1
 How to update?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1
+Otu esi emelite?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35" />
         <source>Create new subscription group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mepụta otu ndenye aha ọhụrụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36" />
         <source>Add profiles to this group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye profaịlụ na otu a</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37" />
         <source>Add as http/https proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye ka http/https proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42" />
         <source>Group name (will use profile-title from subscription if empty)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha otu (ga-eji profaịlụ-aha site na ndenye aha ma ọ bụrụ na efu)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eji: %1 Nnọọ: %2 Emechaa: %3</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="380" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381" />
