@@ -4466,137 +4466,137 @@ ndetu mwepụta:
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Direct</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbochie</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mafere mmelite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri aka kwalite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nke dị elu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bubata JSON</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iwu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọhụrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bulie elu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata ala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụkpụrụ Iwu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njirimara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha_Ebe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe ndetu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
         <source>Invalid rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iwu na-ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
         <source>Some rules could not be added:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịgbakwunye ụfọdụ iwu:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro JSON ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịtụgharị ndenye enyere na usoro iwu ụzọ dị irè:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọrụ ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịmepụta profaịlụ okporo ụzọ na aha efu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
         <source>Empty Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ụzọ efu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
         <source>No valid rules are in the profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị iwu ziri ezi dị na profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
         <source>Some rules could not be added, fix them before saving:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịgbakwunye ụfọdụ iwu, dozie ha tupu ịchekwa:</translation>
     </message>
 </context>
 <context>
@@ -4604,22 +4604,22 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala nche</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpọchi Omume</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala mkpọchi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpọchi mmalite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
