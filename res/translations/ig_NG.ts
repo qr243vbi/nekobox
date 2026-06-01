@@ -849,93 +849,93 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="128" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="136" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="141" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndebanye aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="175" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebe nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="188" />
         <source>Autoupdate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite akpaaka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="195" />
         <source>Extra</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbakwunye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="247" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ dịghị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="254" />
         <source>Front Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy n'ihu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="261" />
         <source>Landing Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy ọdịda</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="285" />
         <source>Share</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kekọrịta</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="291" />
         <source>Copy profile share links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo njikọ nkekọrịta profaịlụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="298" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo njikọ njikọ profaịlụ (njikọ ndị omenala)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="306" />
         <source>Notes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe ndetu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="38" />
         <source>Will use profile-title from subscription if empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ga-eji profaịlụ-aha site na ndenye aha ma ọ bụrụ na ọ tọgbọrọ chakoo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="84" />
         <source>Copied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Eṅomiri</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="397" />
         <source>Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịdọ aka ná ntị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="397" />
         <source>Please input URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Biko tinye URL</translation>
     </message>
 </context>
 <context>
@@ -945,62 +945,62 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A na-ahụkarị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Port</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">adreesị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Netwọk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro mbufe n'okpuru.Ọ ga-adabarịrị na ihe nkesa, ma ọ bụghị ya, enweghị ike ịmepụta njikọ ahụ.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụgbọ njem</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Achọrọ nkwado nkesa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multiplex</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
