@@ -4307,37 +4307,37 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
         <source>Seed</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkpụrụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
         <source>Access denied</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajụrụ nnweta</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="382" />
         <source>Select a Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iwu ngwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu CID</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kagbuo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/global/GuiUtils.hpp" line="128" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ</translation>
     </message>
 </context>
 <context>
@@ -4345,92 +4345,92 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/gharqad/main.cpp" line="181" />
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kagbuo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="182" />
         <source>Apply</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="183" />
         <source>Yes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ee</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="184" />
         <source>No</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mba</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="185" />
         <source>OK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ DỊ MMA</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="186" />
         <source>Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe ndabara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="187" />
         <source>Restore Defaults</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Weghachite ndapụta</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="188" />
         <source>Discard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tufuo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="190" />
         <source>Undo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Megharịa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="191" />
         <source>Redo</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Megharịa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="192" />
         <source>Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bee</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="193" />
         <source>Copy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="194" />
         <source>Paste</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tapawa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="195" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="196" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ Ha niile</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="197" />
         <source>Stop</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwụsị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="198" />
         <source>Clear</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpochapụ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="199" />
         <source>Copy Link Location</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo Ebe Njikọ</translation>
     </message>
 </context>
 <context>
@@ -4438,29 +4438,29 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Izugbe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọpụpụ mbụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
