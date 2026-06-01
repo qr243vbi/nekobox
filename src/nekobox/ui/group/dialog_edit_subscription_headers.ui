@@ -32,7 +32,7 @@
         </column>
         <column>
          <property name="text">
-          <string>Valeu</string>
+          <string>Value</string>
          </property>
         </column>
        </widget>
