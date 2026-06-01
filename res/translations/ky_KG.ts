@@ -3993,27 +3993,27 @@ Are you sure?</source>
         <translation type="obsolete">Жараксыз</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="624"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="762"/>
         <source>Type</source>
         <translation type="unfinished">Түр</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="626"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="764"/>
         <source>Address</source>
         <translation type="unfinished">Дарек</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="628"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="766"/>
         <source>Name</source>
         <translation type="unfinished">аты</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="630"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768"/>
         <source>Test Result</source>
         <translation type="unfinished">Сынактын жыйынтыгы</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="632"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770"/>
         <source>Traffic</source>
         <translation type="unfinished">Трафик</translation>
     </message>
@@ -4412,7 +4412,7 @@ Direct: ⚡%2 📦%4</source>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="182"/>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="457"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="463"/>
         <source>Invalid</source>
         <translation type="unfinished">Жараксыз</translation>
     </message>
