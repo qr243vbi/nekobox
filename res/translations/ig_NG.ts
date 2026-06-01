@@ -1818,68 +1818,68 @@ Maka ozi ọzọ, hụ akwụkwọ "Nhazi/DNS".</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
         <source>Private Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igodo nkeonwe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
         <source>Interface Addresses</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreesị ihu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Steeti ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndepụta nke profaịlụ okporo ụzọ bụ ihe efu, nke a kwesịrị ịbụ ọnọdụ a na-apụghị ịchọta, mkpọka nwere ike ime ugbu a</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193" />
         <source>Getting keypair...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-enweta igodo...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198" />
         <source>Failed to get key pair</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enwetaghị ụzọ igodo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Generating config...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Na-emepụta nhazi...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
         <source>Failed to generate warp config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịmepụta nhazi warp dara</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
         <source>Success!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe ịga nke ọma!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
         <source>Invalid settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
         <source>Routing profile cannot be empty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ okporo ụzọ enweghị ike ịbụ ihe efu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
         <source>DNS Rules are not valid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iwu DNS adịghị mma</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280" />
         <source>Security Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịdọ aka ná ntị nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281" />
@@ -1890,17 +1890,23 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwanye sava LAN DNS ga-ege ntị na 0.0.0.0:%1.
+
+Ngwaọrụ ọ bụla dị na netwọkụ mpaghara gị ga-enwe ike ịjụ ajụjụ nkesa DNS a, nke nwere ike ikpughere iwu ịkwọgharị gị, ngalaba gbochiri, na topology netwọkụ.
+
+Naanị mee nke a ma ọ bụrụ na ịchọrọ ịkekọrịta DNS na ngwaọrụ LAN tụkwasịrị obi.
+
+O doro gị anya?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
         <source>Invalid operation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọrụ ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Profaịlụ ntụgharị enweghị ike ịbụ ihe efu, gbalịa ịgbakwunye profaịlụ ọzọ ma ọ bụ dezie nke a</translation>
     </message>
 </context>
 <context>
@@ -1908,57 +1914,57 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tuna ntọala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngwunye</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Enable IPv6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ siri ike</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mgbe enyere ya aka, Direct IP CIDRs na usoro iwu ga-agbakwunye na ntọala Tun ka ewewepu ya na ọkwa ntụgharị OS.DỊ MKPA: A kọwawo usoro iwu buru ibu na-ebute oke ojiji CPU na windo, biko jiri nlezianya mee nhọrọ a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado Tun Routing</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
         <source>AutoRedirect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">AutoRedirect</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tun adreesị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye adreesị IPv6</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
         <source>Exclude CIDR's</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu CID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
         <source>Applications</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngwa</translation>
     </message>
 </context>
 <context>
@@ -1966,17 +1972,17 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Okwuntughe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge nlele nnọkọ na-adịghị arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọgbụgba oge na-adịghị arụ ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
