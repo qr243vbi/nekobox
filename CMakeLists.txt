@@ -107,6 +107,7 @@ option(BUILD_GO_PARTS "Build go parts" ON)
 option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
 option(CPR_ENABLE_INSTALL "Use cpr as bundled dependency" OFF)
 option(ENABLE_EMOJI_EMBEEDING "Enable profile filtering on subscription update" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
+set(QJS_ENABLE_INSTALL OFF CACHE BOOL "Enable quickjs-ng install")
 
 find_package(Threads)
 
