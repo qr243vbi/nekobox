@@ -542,6 +542,7 @@ bool MyTableModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     }
     std::sort(indexes.begin(), indexes.end());
 
+
     int count = 0;
 
     for (int & sourceRow : indexes){
@@ -554,6 +555,15 @@ bool MyTableModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
 
     int visualTarget = (sourceRow < targetRow) ? targetRow + 1 : targetRow; 
 
+
+    auto m_table = m_data(); 
+    QList<int> & m_tableData = m_table->profiles;
+    auto prof_size = m_table->profiles.size();
+
+    if (visualTarget >= prof_size){
+        visualTarget = prof_size;
+    }
+
     if (!beginMoveRows(QModelIndex(), sourceRow, sourceRow, QModelIndex(), visualTarget)) {
 #ifdef DEBUG_MODE
     qDebug() << "Something went wrong <beginMoveRows> ";
@@ -561,15 +571,12 @@ bool MyTableModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
         continue;
     }
 
-    auto m_table = m_data(); 
-    QList<int> & m_tableData = m_table->profiles;
-
     if (sourceRow < targetRow) {
-        m_tableData.insert(targetRow, m_tableData[sourceRow]);
+        m_tableData.insert(visualTarget, m_tableData[sourceRow]);
         m_tableData.removeAt(sourceRow);
     } else {
         auto movedRowItem = m_tableData.takeAt(sourceRow);
-        m_tableData.insert(targetRow, movedRowItem);
+        m_tableData.insert(visualTarget, movedRowItem);
     }
 
     endMoveRows();
