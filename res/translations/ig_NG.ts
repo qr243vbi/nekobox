@@ -2666,22 +2666,22 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; ahu &gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>Persistent Keepalive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Keepalive na-adịgide adịgide</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;html&gt;&lt; isi/&gt;&lt; body&gt;&lt;p&gt; ndepụta subnets kewapụrụ rịkọm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82" />
         <source>Local Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Adreesị mpaghara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92" />
@@ -2691,72 +2691,72 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99" />
         <source>1420</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">1420</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106" />
         <source>Workers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndị ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116" />
         <source>Use System Interface</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri interface interface</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126" />
         <source>Amnezia Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala Amnezia</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132" />
         <source>Enable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139" />
         <source>Junk Packet Count</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ ngwugwu junk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nha junk akpa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oke junk ngwugwu kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169" />
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nha junk nke ngwugwu Init</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179" />
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nha nzaghachi ngwugwu junk</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189" />
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Init ngwugwu Magic nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199" />
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nzaghachi ngwugwu Magic nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209" />
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata Isi Ihe Ime Anwansi ngwugwu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219" />
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Transport nkụnye eji isi mee Magic nkụnye eji isi mee</translation>
     </message>
 </context>
 <context>
@@ -2764,7 +2764,7 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="198" />
         <source>Filter</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iyo</translation>
     </message>
 </context>
 <context>
@@ -2772,47 +2772,47 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63" />
         <source>Update Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite ndenye aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76" />
         <source>Edit</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89" />
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Basic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Isi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137" />
         <source>Subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ndebanye aha</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138" />
         <source>Archive</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ebe nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150" />
         <source>Last update: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mmelite ikpeazụ: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Confirmation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwenye</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194" />
         <source>Remove %1?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu %1?</translation>
     </message>
 </context>
 <context>
@@ -2825,12 +2825,12 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ ojiji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge mmalite ikpeazụ:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
