@@ -657,12 +657,12 @@ INI - mmalite 1980s - usoro nhazi ederede dị mfe nke nwere ngalaba na igodo = 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1428" />
         <source>Test Target URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nwale URL ebumnuche</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1435" />
         <source>URL to test proxies against</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">URL iji nwalee proxies megide</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438" />
@@ -672,109 +672,109 @@ INI - mmalite 1980s - usoro nhazi ederede dị mfe nke nwere ngalaba na igodo = 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee na akpaghị aka gaa na proxy ọzọ na-arụ ọrụ mgbe proxy ọnọdụ TUN dara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448" />
         <source>Enable TUN Failover</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado TUN Failover</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456" />
         <source>Startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1520" />
         <source>Geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Geometry</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549" />
         <source>Autosave geometry</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chekwaa akpaaka geometry</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1556" />
         <source>Autosave position</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Chekwa akpaghị aka</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1576" />
         <source>Apply now</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye ugbu a</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1650" />
         <source>Width</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obosara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1682" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1737" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1750" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1847" />
         <source>Core Executable Path</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụzọ Isi executable</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1876" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2065" />
         <source>Use default</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jiri ndabara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1883" />
         <source>Remote Control</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njikwa anya</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1909" />
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2098" />
         <source>Select</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2036" />
         <source>Resources Directory</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akwụkwọ ndekọ aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2072" />
         <source>Resource Manager</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Onye njikwa akụrụngwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="219" />
         <source>Proxy type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị proxy</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="221" />
         <source>Off</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="254" />
         <source>Name of program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha mmemme</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="527" />
         <source>Security Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịdọ aka ná ntị nchekwa</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="528" />
@@ -785,12 +785,18 @@ An attacker on your network can silently replace subscription content with a mal
 Only enable this if you fully trust every network between you and your subscription server.
 
 Are you sure you want to disable TLS verification?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwụsị nkwenye asambodo TLS na-ekpughere gị na mwakpo mmadụ-na etiti.
+
+Onye na-awakpo netwọk gị nwere ike dochie ọdịnaya ndenye aha na nzuzo na nhazi proxy ọjọọ wee gbochie okporo ụzọ gị.
+
+Naanị mee nke a ma ọ bụrụ na ị tụkwasịrị obi nke ọma netwọk ọ bụla n'etiti gị na nkesa ndenye aha gị.
+
+Ị ji n'aka na ịchọrọ gbanyụọ nkwenye TLS?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="549" />
         <source>Privacy Warning</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịdọ aka ná ntị nzuzo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="550" />
@@ -805,7 +811,17 @@ The subscription server will be able to permanently identify and track your phys
 This is a significant privacy risk if you are in a country with active internet censorship.
 
 Are you sure you want to enable HWID sending?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ịkwado izipu HWID ga-agbakwunye ihe nchọpụta ngwaọrụ ndị a na arịrịọ ndenye aha ọ bụla:
+
+• NJ ngwaike (usoro igwe / igwe-id)
+• Sistemụ arụmọrụ na ụdị
+• Ụdị ngwaọrụ
+
+Ihe nkesa ndenye aha ga-enwe ike ịchọpụta na soro ngwaọrụ gị n'ofe IP na oge.
+
+Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyocha ịntanetị na-arụsi ọrụ ike.
+
+Ị ji n'aka na ịchọrọ ịme ka izipu HWID rụọ ọrụ?</translation>
     </message>
 </context>
 <context>
@@ -813,22 +829,22 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie otu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A na-ahụkarị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
         <source>Url</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="118" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="128" />
