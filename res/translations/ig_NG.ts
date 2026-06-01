@@ -3318,156 +3318,156 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
         <source>Restart Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malitegharịa Proxy</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Stop Testing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwụsị Nnwale</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
         <source>Url Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ule Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Url Test Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu ule Url</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131" />
         <source>Resolve Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpebie ngalaba</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139" />
         <source>Remove Invalid</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
         <source>Full test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahọpụtara ule zuru oke</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
         <source>Download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nhọrọ nbudata ahọpụtara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160" />
         <source>Upload test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahọpụtara ule bulite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
         <source>Country test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahọpụtara ule obodo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahọpụtara ule nbudata dị mfe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
         <source>Speedtest Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otu Speedtest</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180" />
         <source>Hide window</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zoo windo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185" />
         <source>Add profile from File</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye profaịlụ site na Faịlụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4191" />
         <source>Add new Group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye otu ọhụrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
         <source>Security Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala nche</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208" />
         <source>Speedtest Current</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngwa ngwa ugbu a</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Register Windows elevated task</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Debanye aha ọrụ dị elu Windows</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
         <source>About</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ihe gbasara</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Statistics</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọnụọgụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
         <source>Check for updates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Lelee maka mmelite</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
         <source>Toggle filter</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee nzacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254" />
         <source>Unselect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ahọpụtaghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="218" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="320" />
         <source>Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ọ dịghị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="165" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="168" />
         <source>Address</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">adreesị</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="171" />
         <source>Name</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aha</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="330" />
         <source>Invalid JSON Array</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro JSON ezighi ezi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="331" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị ike ịtụgharị ndenye enyere na usoro iwu ụzọ dị irè:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="671" />
         <source>Using on macOS is not permitted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Achọghị iji macOS</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="819" />
