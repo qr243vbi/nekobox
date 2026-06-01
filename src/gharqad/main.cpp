@@ -96,6 +96,11 @@ static QString getSocketPath(const QString &serverName) {
 }
 #endif
 
+
+
+
+
+
 static std::shared_ptr<apache::thrift::transport::TTransport>
 getLocalTransport(const QString &serverName) {
 
@@ -135,6 +140,10 @@ getLocalServerTransport(const QString &serverName) {
                                                        )
                                                        .toStdString()));
 }
+
+
+
+
 
 static bool sendDeeplink(const QString &serverName, const QString & deeplink){
   if (deeplink.isEmpty()){
