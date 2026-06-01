@@ -1157,153 +1157,153 @@ Nke a bụ nnukwu ihe egwu nzuzo ma ọ bụrụ na ịnọ na obodo nwere nyoch
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="739" />
         <source>Certificate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Asambodo</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mgbe enyere ya aka, V2Ray agaghị elele izi ezi nke asambodo TLS nke onye ọbịa dịpụrụ adịpụ nyere (nchekwa ahụ dabara na ederede doro anya)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwe ka enweghị nchebe</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="749" />
         <source>ECH Config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ECH nhazi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">QSN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngosipụta aha sava, ederede doro anya.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mkparịta ụka protocol ngwa oyi akwa, ederede doro anya.Biko kewaa ha na rikomas.</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
         <source>Network Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala netwọkụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Max Post Bytes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge nkeji nkeji</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo oge ijikwa ya kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">X Padding Bytes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Debe Oge Ndụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
         <source>Max Concurrency</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Max Concurrency</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sek enwere ike ijikwa ya kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
         <source>Headers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
         <source>Edit download settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie ntọala nbudata</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Oge Arịrịọ kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">XPading nkụnye eji isi mee</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Usoro XPading</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igodo XPading</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ogologo EarlyData</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
         <source>Max Connections</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Njikọ kacha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nkwanye XPading</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
         <source>Multi Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Multi Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị XPading Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
         <source>No GRPC Headers</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Enweghị isi isi GRPC</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120" />
         <source>both</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ha abụọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
         <source>Custom (%1 outbound)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Omenala (%1 ọpụpụ)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
