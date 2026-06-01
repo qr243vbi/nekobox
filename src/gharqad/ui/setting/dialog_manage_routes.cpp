@@ -186,6 +186,7 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
         ui->routes_tab->setCurrentIndex(3);
     }
 
+    #ifdef WARP_GENERATOR_ENABLED
     // warp
     connect(ui->warp_autogen, &QPushButton::clicked, this, [=,this] {
         auto originalText = ui->warp_autogen->text();
@@ -216,6 +217,9 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
         ui->warp_autogen->setText(tr("Success!"));
         setTimeout([=,this] { ui->warp_autogen->setText(originalText); }, this, 2000);
     });
+    #else
+    ui->routes_tab->removeTab(4);
+    #endif
 
     ADD_ASTERISK(this)
 }

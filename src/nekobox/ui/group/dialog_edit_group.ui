@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>366</height>
+    <height>431</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabs">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -69,7 +69,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -96,8 +96,21 @@
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="name"/>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_url">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Url</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="MyLineEdit" name="url"/>
              </item>
              <item row="0" column="0">
               <widget class="QLabel" name="label">
@@ -105,6 +118,9 @@
                 <string>Name</string>
                </property>
               </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="name"/>
              </item>
              <item row="1" column="0">
               <widget class="QLabel" name="label_2">
@@ -132,17 +148,51 @@
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>7</number>
+            </property>
+            <property name="leftMargin">
+             <number>7</number>
+            </property>
+            <property name="topMargin">
+             <number>7</number>
+            </property>
+            <property name="rightMargin">
+             <number>7</number>
+            </property>
+            <property name="bottomMargin">
+             <number>7</number>
+            </property>
             <item>
-             <widget class="QCheckBox" name="manually_column_width">
+             <widget class="QCheckBox" name="archive">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
-               <string>Manually column width</string>
+               <string>Archive</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="archive">
+             <widget class="QCheckBox" name="auto_update">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
-               <string>Archive</string>
+               <string>Autoupdate</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sub_extra">
+              <property name="text">
+               <string>Extra</string>
               </property>
              </widget>
             </item>
@@ -279,89 +329,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="cat_sub">
+    <widget class="QDialogButtonBox" name="buttonBox">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="title">
-      <string>Subscription</string>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-     <layout class="QGridLayout" name="_2">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>6</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="skip_auto_update">
-        <property name="text">
-         <string>Skip automatic update</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QGroupBox" name="horizontalGroupBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"> QGroupBox{ border: none; background: transparent; }   </string>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="MyLineEdit" name="url"/>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
       <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
@@ -376,10 +350,6 @@
    <header>nekobox/ui/utils/MyLineEdit.h</header>
   </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>manually_column_width</tabstop>
-  <tabstop>archive</tabstop>
- </tabstops>
  <resources/>
  <connections>
   <connection>

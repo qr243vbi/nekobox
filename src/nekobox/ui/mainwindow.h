@@ -156,6 +156,8 @@ public:
 
     void move_selected_profiles(int profile_id);
 
+    void refresh_table_columns();
+
     bool context_menu_locked();
 
     void refresh_proxy_list(const int &id = -1);

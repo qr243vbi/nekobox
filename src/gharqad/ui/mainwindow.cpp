@@ -2002,7 +2002,17 @@ void MainWindow::show_group(int gid) {
       ->layout()
       ->addWidget(ui->proxyListTable);
 
-  {
+  refresh_table_columns();
+
+  // show proxies
+  GroupSortAction gsa;
+  gsa.scroll_to_started = true;
+  refresh_proxy_list_impl(-1, gsa);
+  this->tableModel->refresh();
+  Configs::dataStore->refreshing_group = false;
+}
+
+void MainWindow::refresh_table_columns(){
     // Make headers resizable on proxy list table
     QHeaderView *header = ui->proxyListTable->horizontalHeader();
     header->setSectionsMovable(true); // Allow moving sections
@@ -2021,14 +2031,6 @@ void MainWindow::show_group(int gid) {
       header->setSectionResizeMode(3, QHeaderView::ResizeToContents);
       header->setSectionResizeMode(4, QHeaderView::ResizeToContents);
     }
-  }
-
-  // show proxies
-  GroupSortAction gsa;
-  gsa.scroll_to_started = true;
-  refresh_proxy_list_impl(-1, gsa);
-  this->tableModel->refresh();
-  Configs::dataStore->refreshing_group = false;
 }
 
 // callback
@@ -2045,6 +2047,9 @@ void MainWindow::dialog_message_impl(const QString &sender,
     });
   }
   bool updateCorePath = (info.contains("UpdateCorePath"));
+  if (info.contains("RefreshTableColumns")){
+    refresh_table_columns();
+  }
   if (info.contains("UpdateDataStore") || updateCorePath) {
     if (info.contains("UpdateDisableTray")) {
       tray->setVisible(!Configs::dataStore->disable_tray);

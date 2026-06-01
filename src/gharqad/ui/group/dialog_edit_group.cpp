@@ -26,23 +26,36 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     this->ent = ent;
 
     connect(ui->type, &QComboBox::currentIndexChanged, this, [=,this](int index) {
-        ui->cat_sub->setHidden(index == 0);
+        bool is_basic = index == 0;
+        ui->auto_update->setHidden(is_basic);
+        ui->url->setHidden(is_basic);
+        ui->label_url->setHidden(is_basic);
+        #ifdef SUBSCRIPTION_EXTRA_PARAMETERS
+        ui->sub_extra->setHidden(is_basic);
+        #endif
+        ui->name->setPlaceholderText(
+            is_basic ? "" : 
+            tr("Will use profile-title from subscription if empty")
+        );
         ADJUST_SIZE
     });
+    
+    #ifndef SUBSCRIPTION_EXTRA_PARAMETERS
+    ui->sub_extra->setHidden(true);
+    #endif
 
     ui->name->setText(ent->name);
-    ui->name->setPlaceholderText(tr("Will use profile-title from subscription if empty"));
     ui->archive->setChecked(ent->archive);
-    ui->skip_auto_update->setChecked(ent->skip_auto_update);
+    ui->auto_update->setChecked(!ent->skip_auto_update);
     ui->url->setText(ent->url);
     ui->type->setCurrentIndex(ent->url.isEmpty() ? 0 : 1);
     ui->type->currentIndexChanged(ui->type->currentIndex());
-    ui->manually_column_width->setChecked(Configs::tableSettings.manually_column_width);
 
     bool disable_share = true;
 
     if (ent->id >= 0) { // already a group
-        ui->type->setDisabled(true);
+        ui->type->setHidden(true);
+        ui->label_2->setHidden(true);
         if (!ent->Profiles().isEmpty()) {
             disable_share = false;
         }
@@ -389,8 +402,7 @@ void DialogEditGroup::accept() {
     ent->name = ui->name->text();
     ent->url = ui->url->text();
     ent->archive = ui->archive->isChecked();
-    ent->skip_auto_update = ui->skip_auto_update->isChecked();
-    Configs::tableSettings.manually_column_width = ui->manually_column_width->isChecked();
+    ent->skip_auto_update = !ui->auto_update->isChecked();
     if (CACHE.edited){
         ent->landing_proxy_id = CACHE.landing_proxy_id;
         ent->front_proxy_id = CACHE.front_proxy_id;

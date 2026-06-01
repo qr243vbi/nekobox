@@ -183,6 +183,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_BOOL(auto_hide)
     D_LOAD_BOOL(core_use_uds)
     S_LOAD_BOOL(ask_delete)
+    S_LOAD_BOOL(manually_column_width)
     ui->set_text_under_menu_icons->setChecked(settings->text_under_buttons);
     connect(ui->set_text_under_menu_icons, STATE_CHANGED, this, [=,this]
     {
@@ -456,6 +457,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_BOOL(disable_tray)
+    S_SAVE_BOOL(manually_column_width)
     #ifdef USE_CPP_PROXY_CONFIGURATOR
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();
     #else
@@ -483,6 +485,11 @@ void DialogBasicSettings::accept() {
     if (settings->max_log_line <= 0) {
         settings->max_log_line = 200;
     }
+
+    bool manually_column_width_before = Configs::tableSettings.manually_column_width;
+    bool manually_column_width_after = Configs::windowSettings->manually_column_width;
+
+    Configs::tableSettings.manually_column_width = Configs::windowSettings->manually_column_width;
 
     // Subscription
 
@@ -631,6 +638,9 @@ void DialogBasicSettings::accept() {
     Configs::dataStore->use_mozilla_certs = ui->use_mozilla_certs->isChecked();
 
     QStringList str{"UpdateDataStore"};
+    if (manually_column_width_after != manually_column_width_before){
+        str << "RefreshTableColumns";
+    }
     if (CACHE.needRestart) str << "NeedRestart";
     if (CACHE.updateDisableTray) str << "UpdateDisableTray";
     if (CACHE.updateSystemDns) str << "UpdateSystemDns";
