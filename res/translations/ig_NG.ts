@@ -3162,158 +3162,158 @@ O doro gị anya?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
         <source>Add profile from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tinye profaịlụ site na klipbọọdụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
         <source>Debug Info</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ozi nbipu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>QR Code and link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koodu QR na njikọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo njikọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
         <source>Clear Test Result</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpochapụ nsonaazụ ule</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1768" />
         <source>Export %1 config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mbupụ %1 nhazi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
         <source>Reset Traffic</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tọgharịa okporo ụzọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
         <source>Scan QR Code</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nyochaa koodu QR</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
         <source>Enable System Proxy</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado Proxy Sistemu</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Disable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanyụọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
         <source>Remove Duplicates</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu oyiri</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
         <source>fake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">adịgboroja</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
         <source>Move</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bugharịa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
         <source>Start with system</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite na sistemụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
         <source>Remember last profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cheta profaịlụ ikpeazụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
         <source>Allow other devices to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwe ka ngwaọrụ ndị ọzọ jikọọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Remove Unavailable</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepu adịghị</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
         <source>Full Test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nnwale zuru oke</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <source>Hotkey Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ntọala Hotkey</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
         <source>Select All</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Họrọ Ha niile</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
         <source>Copy Nekoray links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo njikọ Nekoray</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Copy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Detuo njikọ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
         <source>Enable Tun</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kwado Tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3385" />
         <source>Clone</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Clone</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Update subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Melite ndenye aha</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049" />
         <source>Resolve domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kpebie ngalaba</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
         <source>Tun Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tuna ntọala</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062" />
         <source>Restart Program</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malitegharịa mmemme</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Open Config Folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mepee folda Config</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
