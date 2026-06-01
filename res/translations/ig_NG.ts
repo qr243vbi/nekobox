@@ -4624,22 +4624,22 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hichapụ ndị ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dezie Ọrụ Onye Ọrụ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbanwee paswọọdụ UI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tọọ nzere proxy</translation>
     </message>
 </context>
 <context>
@@ -4647,12 +4647,12 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
         <source>Exiting %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wepụ %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Malite %1</translation>
     </message>
 </context>
 <context>
@@ -4660,13 +4660,13 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="454" />
         <source>Fetching information</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nweta ozi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="470" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1601" />
         <source>Download Profiles</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Budata profaịlụ</translation>
     </message>
 </context>
 <context>
@@ -4674,7 +4674,7 @@ ndetu mwepụta:
     <message>
         <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ụdị</translation>
     </message>
 </context>
 </TS>
