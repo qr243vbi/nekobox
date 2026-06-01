@@ -987,7 +987,7 @@ QToolButton::menu-indicator {
   </action>
   <action name="menu_copy_links_nkr">
    <property name="text">
-    <string>Copy Custom Links</string>
+    <string>Copy Nekoray links</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Alt+C</string>
