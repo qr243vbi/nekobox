@@ -1914,17 +1914,17 @@ Weitere Informationen finden Sie im Dokument „Konfiguration/DNS“.</translati
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Generating config...</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Konfiguration wird generiert...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
         <source>Failed to generate warp config</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Die Warp-Konfiguration konnte nicht generiert werden</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
         <source>Success!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Erfolg!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
@@ -3579,7 +3579,7 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
         <source>Copy Nekoray links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nekoray-Links kopieren</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
@@ -3712,32 +3712,32 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="671" />
         <source>Using on macOS is not permitted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Die Nutzung unter macOS ist nicht gestattet</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1405" />
         <source>Import Routing Profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Routing-Profil importieren</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409" />
         <source>From clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aus der Zwischenablage</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413" />
         <source>From file</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aus Datei</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1420" />
         <source>Imported from clipboard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aus der Zwischenablage importiert</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1432" />
         <source>Imported from %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importiert von %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1442" />
@@ -3747,12 +3747,12 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1469" />
         <source>RuleSet Map</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regelsatzzuordnung</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1492" />
         <source>RuleSet Cache</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regelsatz-Cache</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1527" />
@@ -4570,12 +4570,13 @@ Direkt: ⚡%2 📦%4</translation>
         <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungültige Antwort erhalten: %1
+Die Nutzlast der Anforderung war: %2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Configs.cpp" line="558" />
         <source>Imported</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importiert</translation>
     </message>
 </context>
 <context>
