@@ -119,6 +119,11 @@ public:
     void capture(QTableView*view);
     bool filterEnabled();
     bool setFilterEnabled(bool filter);
+    QMimeData* mimeData(const QModelIndexList &indexes) const override;
+    Qt::DropActions supportedDropActions() const override;
+    QStringList mimeTypes() const override;
+    bool dropMimeData(const QMimeData *data, Qt::DropAction action, 
+                      int row, int column, const QModelIndex &parent) override;
 private:
     std::shared_ptr<Configs::Group> m_data() const;
     int count() const ;

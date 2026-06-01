@@ -385,7 +385,7 @@ void MyTableModel::capture(QTableView * view){
     view->setWordWrap(false);
     view->setAlternatingRowColors(false);
     view->setShowGrid(false);
-    
+
     this->proxy = std::make_shared<ColumnFilterProxy>();
     proxy->setSourceModel(this);
     view->setModel(this);
@@ -400,6 +400,12 @@ void MyTableModel::capture(QTableView * view){
     header->setSortIndicatorShown(false);
     view->verticalHeader()->setSortIndicatorShown(false);
     this->keeper = std::make_shared<SelectionKeeper>(view, this);
+
+    view->setDragEnabled(true);
+    view->setAcceptDrops(true);
+    view->setDropIndicatorShown(true);
+    view->setDefaultDropAction(Qt::MoveAction);
+    view->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     QObject::connect(header, &FilterHeader::filterChanged,
         proxy.get(), [this](int id, const QString &text)->void{
@@ -455,6 +461,134 @@ int MyTableModel::data_id(int row) const {
 }
 
 const QString invalid = QObject::tr("Invalid");
+
+QStringList MyTableModel::mimeTypes() const {
+    QStringList types;
+    types << "application/x-nekobox-proxy-row";
+    return types;
+}
+
+QMimeData* MyTableModel::mimeData(const QModelIndexList &indexes) const {
+    QMimeData *mimeData = new QMimeData();
+    
+    QByteArray encodedData;
+    QDataStream stream(&encodedData, QIODevice::WriteOnly);
+
+    QSet<int> uniqueRows;
+    for (const QModelIndex &index : indexes) {
+        if (index.isValid()) {
+            uniqueRows.insert(index.row());
+        }
+    }
+
+    stream << (int)uniqueRows.size();
+    for (int row : uniqueRows) {
+        stream << row;
+    }
+
+    mimeData->setData("application/x-nekobox-proxy-row", encodedData);
+    
+    return mimeData;
+}
+
+Qt::DropActions MyTableModel::supportedDropActions() const {
+    return Qt::MoveAction;
+}
+
+bool MyTableModel::dropMimeData(const QMimeData *data, Qt::DropAction action, 
+                           int row, int column, const QModelIndex &parent) {
+    
+#ifdef DEBUG_MODE
+    qDebug() << "drop is called";
+#endif
+    const QString targetFormat = "application/x-nekobox-proxy-row";
+
+    if (action != Qt::MoveAction || !data->hasFormat(targetFormat)) {
+#ifdef DEBUG_MODE
+    qDebug() << "Something went wrong: " << (action != Qt::MoveAction) << !data->hasFormat(targetFormat);
+#endif
+        return false;
+    }
+
+    int targetRow;
+    if (row != -1) {
+        targetRow = row;
+    } else if (parent.isValid()) {
+        targetRow = parent.row();
+    } else {
+        targetRow = rowCount(QModelIndex());
+    }
+
+    QByteArray encodedData = data->data(targetFormat);
+    QDataStream stream(&encodedData, QIODevice::ReadOnly);
+    
+    int uniqueRowCount = 0;
+    stream >> uniqueRowCount; 
+    
+    if (uniqueRowCount <= 0) {
+#ifdef DEBUG_MODE
+    qDebug() << "row count =(" << uniqueRowCount << encodedData.size();
+#endif
+        return false;
+    }
+
+    QList<int> indexes;
+
+    while (uniqueRowCount > 0){
+        int sourceRow;
+        stream >> sourceRow; 
+        indexes << sourceRow;
+        uniqueRowCount --;
+    }
+    std::sort(indexes.begin(), indexes.end());
+    {
+        int sourceRow = indexes[0];
+        if (sourceRow < targetRow) {
+            targetRow--; 
+        }
+    }
+
+    int count = 0;
+
+    for (int & sourceRow : indexes){
+    if (sourceRow == targetRow) {
+#ifdef DEBUG_MODE
+    qDebug() << "source and target are the same" << sourceRow << targetRow;
+#endif
+        continue;
+    }
+
+    int visualTarget = (sourceRow < targetRow) ? targetRow + 1 : targetRow; 
+
+    if (!beginMoveRows(QModelIndex(), sourceRow, sourceRow, QModelIndex(), visualTarget)) {
+#ifdef DEBUG_MODE
+    qDebug() << "Something went wrong <beginMoveRows> ";
+#endif
+        continue;
+    }
+
+    auto m_table = m_data(); 
+    QList<int> & m_tableData = m_table->profiles;
+
+    if (sourceRow < targetRow) {
+        m_tableData.insert(targetRow, m_tableData[sourceRow]);
+        m_tableData.removeAt(sourceRow);
+    } else {
+        auto movedRowItem = m_tableData.takeAt(sourceRow);
+        m_tableData.insert(targetRow, movedRowItem);
+    }
+
+    endMoveRows();
+    count ++;
+    }
+
+    if (count > 0){
+        m_data()->Save();
+        return true;
+    };
+    return false;
+}
+
 
 QVariant MyTableModel::data(const QModelIndex &index, int role) const
 {
@@ -543,12 +677,16 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
 }
 
 Qt::ItemFlags MyTableModel::flags(const QModelIndex &index) const {
-    if (!index.isValid()) return Qt::NoItemFlags;
+    if (!index.isValid()) return Qt::NoItemFlags | Qt::ItemIsDropEnabled;
     /*
     if (index.row() == 0) {
         return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable;
     }*/
-    return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+    if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier) {
+        return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+    } else {
+        return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
+    }
 }
 
 int MyTableModel::rowCount(const QModelIndex &parent) const {
