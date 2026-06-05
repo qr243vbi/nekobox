@@ -94,4 +94,15 @@ namespace std {
     };
 }
 
+
+template<typename B, typename C>
+inline QMap<EnumFieldName, QString> QStdMapString2QMapEnumFieldName(const std::map<B, B, C> &mp){
+    QMap<EnumFieldName, QString> vm;
+
+    for (auto it = mp.begin(); it != mp.end(); ++it) {
+        vm.insert(QString::fromStdString(it->first), QString::fromStdString(it->second));
+    }
+    return vm;
+}
+
 #endif // WIDGET_HPP_INCLUDED

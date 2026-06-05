@@ -132,12 +132,12 @@ HTTPResponse NetworkRequestHelper::HttpJob(const QString &url, bool sendHwid, QM
         {}
     };
 
-    resp.header = QStdMapString2QMapString(r.header);
+    resp.header = QStdMapString2QMapEnumFieldName(r.header);
 
     return resp;
 }
 
-QString NetworkRequestHelper::GetHeader(const QMap<QString, QString> &header, const QString &name) {
+QString NetworkRequestHelper::GetHeader(const QMap<EnumFieldName, QString> &header, const QString &name) {
     return header.value(name, "");
 }
 

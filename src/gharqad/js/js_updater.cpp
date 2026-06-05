@@ -528,11 +528,14 @@ static JSValue js_http_request_constructor(JSContext* ctx, JSValueConst new_targ
     QString text(request.data);
     JS_SetPropertyStr(ctx, obj, "text", JS_NewString(ctx, text.toUtf8().constData()));
     JS_SetPropertyStr(ctx, obj, "error", JS_NewString(ctx, request.error.toUtf8().constData()));
-    
-    // Transform and map the nested QVariantMap properties recursively
-    JSValue header_obj = qvariant_to_jsvalue(ctx, QVariant::fromValue(QMapString2QVariantMap(request.header)));
-    JS_SetPropertyStr(ctx, obj, "header", header_obj); // JS_SetPropertyStr consumes header_obj
+    QVariantMap map;
+    for (auto [key, value]: asKeyValueRange(request.header)){
+        map.insert(key.get_name(), value);
+    }
 
+    // Transform and map the nested QVariantMap properties recursively
+    JSValue header_obj = qvariant_to_jsvalue(ctx, QVariant::fromValue(map) );
+    JS_SetPropertyStr(ctx, obj, "header", header_obj); // JS_SetPropertyStr consumes header_obj
 
     return obj;
 }

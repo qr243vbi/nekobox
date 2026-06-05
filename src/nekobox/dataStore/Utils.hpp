@@ -385,6 +385,7 @@ inline QMap<QString, QString> QStdMapString2QMapString(const std::map<B, B, C> &
     return vm;
 }
 
+
 enum osType {
   Linux = 1, Windows = 2, FreeBSD = 3, unknown = 0
 };

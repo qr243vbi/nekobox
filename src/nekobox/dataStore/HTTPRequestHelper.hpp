@@ -3,6 +3,7 @@
 #include <winsock2.h>
 #endif
 
+#include <nekobox/dataStore/ConfigItem.hpp>
 #include <QObject>
 #include <QString>
 #include <QMap>
@@ -22,7 +23,7 @@ namespace Configs_network {
     struct HTTPResponse {
         QString error;
         QByteArray data;
-        QMap<QString, QString> header;
+        QMap<EnumFieldName, QString> header;
     };
 
     struct DownloadProgressReport
@@ -47,7 +48,7 @@ namespace Configs_network {
         static HTTPResponse HttpPost(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
         static HTTPResponse HttpHead(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
 
-        static QString GetHeader(const QMap<QString, QString> &header, const QString &name);
+        static QString GetHeader(const QMap<EnumFieldName, QString> &header, const QString &name);
     };
 
 }
