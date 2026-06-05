@@ -108,7 +108,7 @@ struct configItem {
   virtual void deserialize(QDataStream &data, size_t store) = 0;
   virtual void SaveINI(size_t store, const QFileInfo& settings, const QString & path) = 0;
   virtual void LoadINI(size_t store, const QFileInfo& settings, const QString & path) = 0;
-  virtual signed char compare(JsonStore * store, configItem * item, JsonStore * other_store) = 0;
+  virtual signed char compare(size_t store, size_t other_store) = 0;
   virtual unsigned short type() = 0;
   size_t ptr;
   QString name;
@@ -119,6 +119,7 @@ struct configItem {
    void deserialize(QDataStream &data, const JsonStore * store) ;
    void SaveINI(const JsonStore * store, const QFileInfo& settings, const QString & path) ;
    void LoadINI(const JsonStore * store, const QFileInfo& settings, const QString & path) ;
+   signed char compare(JsonStore * store, configItem * item, JsonStore * other_store) ;
 };
 
 struct Bin {
@@ -138,16 +139,16 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
   return in;
 }
 
-#define PTR_ITEM(X)                                                            \
-  struct X##Item : public configItem {                                         \
-    QJsonValue getNode(size_t store) override;                             \
-    void setNode(size_t store, const QJsonValue &value) override;          \
-    signed char compare(JsonStore * store, configItem * ptr, JsonStore * ptr1) override;                    \
-    void serialize(QDataStream &data, size_t store) const override;        \
-    void deserialize(QDataStream &data, size_t store) override;            \
+#define PTR_ITEM(X)                                                                               \
+  struct X##Item : public configItem {                                                            \
+    QJsonValue getNode(size_t store) override;                                                    \
+    void setNode(size_t store, const QJsonValue &value) override;                                 \
+    signed char compare(size_t store, size_t ptr1) override;                                      \
+    void serialize(QDataStream &data, size_t store) const override;                               \
+    void deserialize(QDataStream &data, size_t store) override;                                   \
     void SaveINI(size_t store, const QFileInfo& settings, const QString &path) override;          \
     void LoadINI(size_t store, const QFileInfo& settings, const QString &path) override;          \
-    unsigned short type() override { return ConfigItemType::type_##X; };       \
+    unsigned short type() override { return ConfigItemType::type_##X; };                          \
   };
 
 enum ConfigItemType {

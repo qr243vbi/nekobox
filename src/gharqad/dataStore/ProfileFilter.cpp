@@ -20,7 +20,8 @@ bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
         && key->serverAddress == other.key->serverAddress
         && key->serverPort == other.key->serverPort
         && this->skip_compare_beans == other.skip_compare_beans
-        && (this->skip_compare_beans || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0);
+        && (this->skip_compare_beans || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0)
+        && key->name == other.key->name;
 }
 
 bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
@@ -43,7 +44,8 @@ bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
         || ( this->skip_compare_beans && !other.skip_compare_beans )
         || (     (!other.skip_compare_beans) 
               && (!this->skip_compare_beans) 
-              && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 );
+              && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 )
+        || key->name < other.key->name;
 }
 
 bool ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept

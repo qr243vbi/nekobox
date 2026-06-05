@@ -26,7 +26,11 @@ static void _put_store(ConfJsMap _map, const QString &str, void *value,
   void X##Item::setNode(size_t store, const QJsonValue &value)
 
 #define COMPARE(X)                                                            \
-  signed char X##Item::compare(JsonStore *store, configItem* item, JsonStore *other_store)
+  signed char X##Item::compare(size_t store, size_t other_store)
+
+#define GET_PTR_TYPE2(T)                \
+  auto a = (T *)(void*)(store);         \
+  auto b = (T *)(void*)(other_store);   \
 
 QString readString(QDataStream &stream) {
   unsigned int i;
@@ -178,6 +182,7 @@ void configItem::LoadINI(const JsonStore * store, const QFileInfo& settings, con
 #define LOAD_CONF(X) void X##Item::LoadINI(size_t store, const QFileInfo& settings, const QString &path)
 #define GET_PTR_TYPE(T) T * ptr = (T *) (void*)store;
 #define GET_PTR_TYPE_INI(T) auto val =  QSettingsFromFileInfo(settings); GET_PTR_TYPE(T)
+
 
 LOAD_CONF(int) {
   GET_PTR_TYPE_INI(int)
@@ -391,8 +396,7 @@ GET_NODE(jsonStoreList) {
 }
 
 COMPARE(jsonStoreList) {
-  auto a = (QJsonStoreListBase *)this->getPtr(store);
-  auto b = (QJsonStoreListBase *)item->getPtr(other_store);
+  GET_PTR_TYPE2(QJsonStoreListBase)
   qsizetype c = a->count();
   qsizetype d = b->count();
   auto r = CompareValue(c, d);
@@ -421,8 +425,9 @@ GET_NODE(jsonStore) {
 }
 
 COMPARE(jsonStore) {
-  JsonStore *st = *(JsonStore **)(this->getPtr(store));
-  JsonStore *st2 = *(JsonStore **)(item->getPtr(other_store));
+  GET_PTR_TYPE2(JsonStore*)
+  auto st = *a;
+  auto st2 = *b;
   if (st == nullptr){
     return (st2 == nullptr) ? 0 : 1;
   }
@@ -441,8 +446,9 @@ GET_NODE(jsonShared) {
 }
 
 COMPARE(jsonShared) {
-  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
-  std::shared_ptr<JsonStore> st2 = *(std::shared_ptr<JsonStore> *)(item->getPtr(other_store));
+  GET_PTR_TYPE2(std::shared_ptr<JsonStore>)
+  auto st = *a;
+  auto st2 = *b;
   if (st == nullptr){
     return (st2 == nullptr) ? 0 : 1;
   }
@@ -461,8 +467,9 @@ GET_NODE(enum) {
 }
 
 COMPARE(enum) {
-  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
-  std::shared_ptr<JsonEnum> st2 = *(std::shared_ptr<JsonEnum> *)(item->getPtr(other_store));
+  GET_PTR_TYPE2(std::shared_ptr<JsonEnum>)
+  auto st = *a;
+  auto st2 = *b;
   auto r = CompareValue(st == nullptr, st2 == nullptr);
   if (r != 0){
     return r;
@@ -478,8 +485,7 @@ GET_NODE(strMap) {
 }
 
 COMPARE(strMap) {
-  auto a = (QVariantMap *)this->getPtr(store);
-  auto b = (QVariantMap *)item->getPtr(other_store);
+  GET_PTR_TYPE2(QVariantMap)
   qsizetype c = a->count();
   qsizetype d = b->count();
   auto r = CompareValue(c, d);
@@ -508,8 +514,7 @@ GET_NODE(intList) {
 }
 
 COMPARE(intList) {
-  auto a = (QList<int> *)this->getPtr(store);
-  auto b = (QList<int> *)item->getPtr(other_store);
+  GET_PTR_TYPE2(QList<int>)
   qsizetype c = a->count();
   qsizetype d = b->count();
   auto r = CompareValue(c, d);
@@ -528,8 +533,7 @@ GET_NODE(strList) {
 }
 
 COMPARE(strList) {
-  auto a = (QList<QString> *)this->getPtr(store);
-  auto b = (QList<QString> *)item->getPtr(other_store);
+  GET_PTR_TYPE2(QList<QString>)
   qsizetype c = a->count();
   qsizetype d = b->count();
   auto r = CompareValue(c, d);
@@ -548,9 +552,8 @@ GET_NODE(bool) {
 }
 
 COMPARE(bool) {
-  bool a = *(bool*)getPtr(store);
-  bool b = *(bool*)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(bool)
+  return CompareValue(*a, *b);
 }
 
 
@@ -560,9 +563,8 @@ GET_NODE(boolPtr) {
 }
 
 COMPARE(boolPtr) {
-  bool a = **(bool**)getPtr(store);
-  bool b = **(bool**)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(bool*)
+  return CompareValue(**a, **b);
 }
 
 GET_NODE(str) { 
@@ -571,9 +573,8 @@ GET_NODE(str) {
 }
 
 COMPARE(str) {
-  QString a = *(QString *)getPtr(store);
-  QString b = *(QString *)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(QString)
+  return CompareValue(*a, *b);
 }
 
 GET_NODE(long) { 
@@ -582,9 +583,8 @@ GET_NODE(long) {
 }
 
 COMPARE(long) {
-  long long a = *(long long *)getPtr(store);
-  long long b = *(long long *)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(long long)
+  return CompareValue(*a, *b);
 }
 
 GET_NODE(int) { 
@@ -593,9 +593,8 @@ GET_NODE(int) {
 }
 
 COMPARE(int) {
-  int a = *(int *)getPtr(store);
-  int b = *(int *)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(int)
+  return CompareValue(*a, *b);
 }
 
 GET_NODE(double) { 
@@ -604,9 +603,8 @@ GET_NODE(double) {
 }
 
 COMPARE(double) {
-  double a = *(double *)getPtr(store);
-  double b = *(double *)item->getPtr(other_store);
-  return CompareValue(a, b);
+  GET_PTR_TYPE2(double)
+  return CompareValue(*a, *b);
 }
 
 #define CASE_TYPE(X)                                                           \
@@ -1068,8 +1066,19 @@ namespace std {
     }
 }
 
-
-
+signed char configItem::compare(JsonStore * store, configItem * item, JsonStore * other_store) {
+  signed char ret = CompareValue(this->type(), item->type());
+  if (ret != 0){
+    return ret;
+  }
+  ret = CompareValue(this->name, item->name);
+  if (ret != 0){
+    return ret;
+  }
+  size_t this_ptr = (size_t)this->getPtr(store);
+  size_t other_ptr = (size_t)item->getPtr(other_store);
+  return this->compare(this_ptr, other_ptr);
+}
 
 namespace Configs_ConfigItem {
   signed char JsonStore::compare(JsonStore * store, const QList<QString> &skip){
@@ -1107,14 +1116,6 @@ namespace Configs_ConfigItem {
           if (item2val == nullptr){
             return -1;
           } else {
-            ret = CompareValue(item1val->type(), item2val->type());
-            if (ret != 0){
-              return ret;
-            }
-            ret = CompareValue(item1val->name, item2val->name);
-            if (ret != 0){
-              return ret;
-            }
             ret = item1val->compare(this, item2val.get(), store);
             if (ret != 0){
               return ret;
