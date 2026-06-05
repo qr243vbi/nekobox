@@ -102,17 +102,23 @@ class QJsonStoreList : public QJsonStoreListBase {
 };
 
 struct configItem {
-  virtual QJsonValue getNode(JsonStore *store) = 0;
-  virtual void setNode(JsonStore *store, const QJsonValue &value) = 0;
-  virtual void serialize(QDataStream &data, JsonStore *store) const = 0;
-  virtual void deserialize(QDataStream &data, JsonStore *store) = 0;
-  virtual void SaveINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
-  virtual void LoadINI(JsonStore *store, const QFileInfo& settings, const QString & path) = 0;
+  virtual QJsonValue getNode(size_t store) = 0;
+  virtual void setNode(size_t store, const QJsonValue &value) = 0;
+  virtual void serialize(QDataStream &data, size_t store) const = 0;
+  virtual void deserialize(QDataStream &data, size_t store) = 0;
+  virtual void SaveINI(size_t store, const QFileInfo& settings, const QString & path) = 0;
+  virtual void LoadINI(size_t store, const QFileInfo& settings, const QString & path) = 0;
   virtual signed char compare(JsonStore * store, configItem * item, JsonStore * other_store) = 0;
   virtual unsigned short type() = 0;
   size_t ptr;
   QString name;
   virtual void *getPtr(const JsonStore *store) const;
+   QJsonValue getNode(const JsonStore * store) ;
+   void setNode(const JsonStore * store, const QJsonValue &value) ;
+   void serialize(QDataStream &data, const JsonStore * store) const ;
+   void deserialize(QDataStream &data, const JsonStore * store) ;
+   void SaveINI(const JsonStore * store, const QFileInfo& settings, const QString & path) ;
+   void LoadINI(const JsonStore * store, const QFileInfo& settings, const QString & path) ;
 };
 
 struct Bin {
@@ -134,13 +140,13 @@ inline QDataStream &operator>>(QDataStream &in, Bin &p) {
 
 #define PTR_ITEM(X)                                                            \
   struct X##Item : public configItem {                                         \
-    QJsonValue getNode(JsonStore *store) override;                             \
-    void setNode(JsonStore *store, const QJsonValue &value) override;          \
+    QJsonValue getNode(size_t store) override;                             \
+    void setNode(size_t store, const QJsonValue &value) override;          \
     signed char compare(JsonStore * store, configItem * ptr, JsonStore * ptr1) override;                    \
-    void serialize(QDataStream &data, JsonStore *store) const override;        \
-    void deserialize(QDataStream &data, JsonStore *store) override;            \
-    void SaveINI(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
-    void LoadINI(JsonStore *store, const QFileInfo& settings, const QString &path) override;          \
+    void serialize(QDataStream &data, size_t store) const override;        \
+    void deserialize(QDataStream &data, size_t store) override;            \
+    void SaveINI(size_t store, const QFileInfo& settings, const QString &path) override;          \
+    void LoadINI(size_t store, const QFileInfo& settings, const QString &path) override;          \
     unsigned short type() override { return ConfigItemType::type_##X; };       \
   };
 

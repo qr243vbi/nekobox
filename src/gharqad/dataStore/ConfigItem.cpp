@@ -8,6 +8,7 @@
 
 #include <boost/algorithm/string.hpp>
 #include <qnamespace.h>
+#include <qvariant.h>
 
 
 static void _put_store(ConfJsMap _map, const QString &str, void *value,
@@ -18,11 +19,11 @@ static void _put_store(ConfJsMap _map, const QString &str, void *value,
 }
 
 #define GET_PTR_OR_RETURN                                                      \
-  void *ptr = this->getPtr(store);                                             \
+  void *ptr = (void*)store;                                             \
   if (ptr == nullptr)                                                          \
     return;
 #define SET_NODE(X)                                                            \
-  void X##Item::setNode(JsonStore *store, const QJsonValue &value)
+  void X##Item::setNode(size_t store, const QJsonValue &value)
 
 #define COMPARE(X)                                                            \
   signed char X##Item::compare(JsonStore *store, configItem* item, JsonStore *other_store)
@@ -85,7 +86,6 @@ SET_NODE(boolPtr) {
   }
 }
 
-
 SET_NODE(strList) {
   GET_PTR_OR_RETURN
   if (value.isArray()) {
@@ -141,13 +141,11 @@ SET_NODE(jsonShared) {
 }
 
 SET_NODE(jsonStoreList) {
+  GET_PTR_OR_RETURN
   if (value.isArray()) {
     QJsonArray array = value.toArray();
     {
-      auto list = (QJsonStoreListBase *)this->getPtr(store);
-      if (list == nullptr) {
-        return;
-      }
+      auto list = (QJsonStoreListBase *)ptr;
       list->clear();
       for (auto ptr : array) {
         JsonStore *store = list->createJsonStore();
@@ -158,91 +156,104 @@ SET_NODE(jsonStoreList) {
   }
 }
 
+QJsonValue configItem::getNode(const JsonStore * store) { 
+  return getNode((size_t)getPtr(store)); 
+}
+void configItem::setNode(const JsonStore * store, const QJsonValue &value) { 
+  setNode((size_t)getPtr(store), value); 
+}
+void configItem::serialize(QDataStream &data, const JsonStore * store) const { 
+  serialize(data, (size_t)getPtr(store)); 
+}
+void configItem::deserialize(QDataStream &data, const JsonStore * store) { 
+  deserialize(data, (size_t)getPtr(store)); 
+}
+void configItem::SaveINI(const JsonStore * store, const QFileInfo& settings, const QString & path) { 
+  SaveINI( (size_t)getPtr(store), settings, path ); 
+}
+void configItem::LoadINI(const JsonStore * store, const QFileInfo& settings, const QString & path) { 
+  LoadINI( (size_t)getPtr(store), settings, path ); 
+}
 
-#define LOAD_CONF(X) void X##Item::LoadINI(JsonStore * store, const QFileInfo& settings, const QString &path)
+#define LOAD_CONF(X) void X##Item::LoadINI(size_t store, const QFileInfo& settings, const QString &path)
+#define GET_PTR_TYPE(T) T * ptr = (T *) (void*)store;
+#define GET_PTR_TYPE_INI(T) auto val =  QSettingsFromFileInfo(settings); GET_PTR_TYPE(T)
 
 LOAD_CONF(int) {
-  auto val =  QSettingsFromFileInfo(settings);
-  int * ptr = (int *)getPtr(store);
+  GET_PTR_TYPE_INI(int)
   *ptr = val.value(path + this->name, 0).toInt();
 }
 
 LOAD_CONF(double) {
-  auto val =  QSettingsFromFileInfo(settings);
-  double * ptr = (double *)getPtr(store);
+  GET_PTR_TYPE_INI(double)
   *ptr = val.value( path + this->name, 0).toDouble();
 }
 
 LOAD_CONF(long) {
-  auto val =  QSettingsFromFileInfo(settings);
-  long long * ptr = (long long *)getPtr(store);
+  GET_PTR_TYPE_INI(long long)
   *ptr = val.value( path + this->name, 0).toLongLong();
 }
 
 LOAD_CONF(bool) {
-  auto val =  QSettingsFromFileInfo(settings);
-  bool * ptr = (bool *)getPtr(store);
+  GET_PTR_TYPE_INI(bool)
   *ptr = val.value( path + this->name, false).toBool();
 }
 
 LOAD_CONF(boolPtr) {
-  auto val =  QSettingsFromFileInfo(settings);
-  bool ** ptr = (bool **)getPtr(store);
+  GET_PTR_TYPE_INI(bool*)
   **ptr = val.value( path + this->name, false).toBool();
 }
 
 LOAD_CONF(str) {
-  auto val =  QSettingsFromFileInfo(settings);
-  QString * ptr = (QString *)getPtr(store);
+  GET_PTR_TYPE_INI(QString)
   *ptr = val.value( path + this->name, "").toString();
 }
 
 LOAD_CONF(strList) {
-  auto val =  QSettingsFromFileInfo(settings);
-  QList<QString> * ptr = (QList<QString> *)getPtr(store);
+  GET_PTR_TYPE_INI(QStringList)
   *ptr = val.value( path + this->name, {}).toStringList();
 }
 
 LOAD_CONF(intList) {
-  auto val =  QSettingsFromFileInfo(settings);
-  QList<int> * ptr = (QList<int> *)getPtr(store);
+  GET_PTR_TYPE_INI(QList<int>)
   *ptr = QListStr2QListInt(val.value(path + this->name, {}).toStringList());
 }
 
 LOAD_CONF(strMap) {
-  QVariantMap * ptr = (QVariantMap *)getPtr(store);
-  QSettings ini = QSettingsFromFileInfo(settings);
+  GET_PTR_TYPE_INI(QVariantMap)
   ptr->clear();
-  ini.beginGroup(path + this->name);
-  for (auto & key : ini.childKeys()){
-    ptr->insert(key, ini.value(key, ""));
+  val.beginGroup(path + this->name);
+  for (auto & key : val.childKeys()){
+    ptr->insert(key, val.value(key, ""));
   }
-  ini.endGroup();
+  val.endGroup();
 }
 
 LOAD_CONF(enum) {
-  auto val =  QSettingsFromFileInfo(settings);
-  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  GET_PTR_TYPE_INI(std::shared_ptr<JsonEnum>)
+  auto st = *ptr;
   if (st != nullptr) {
     st->set(val.value(path + this->name, "").toString());
   }
 }
 
 LOAD_CONF(jsonShared) {
-  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  GET_PTR_TYPE_INI(std::shared_ptr<JsonStore>)
+  auto st = *ptr;
   if (st != nullptr) {
     st->LoadINI(settings, path + this->name + "/");
   }
 }
 LOAD_CONF(jsonStore) {
-  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  GET_PTR_TYPE_INI(JsonStore*)
+  auto st = *ptr;
   if (st != nullptr) {
     st->LoadINI(settings, path + this->name + "/");
   }
 }
 LOAD_CONF(jsonStoreList) {
-  auto list = (QJsonStoreListBase *)this->getPtr(store);
-  int index = 0; if (list == nullptr) return;
+  GET_PTR_TYPE_INI(QJsonStoreListBase)
+  int index = 0;
   QStringList keys;
   {
     auto val = QSettingsFromFileInfo(settings);
@@ -252,7 +263,7 @@ LOAD_CONF(jsonStoreList) {
   }
   index = keys.count();
   for (int i = 0; i < index; i ++){
-    list->append(list->createJsonStore());
+    ptr->append(ptr->createJsonStore());
   }
 
   for (auto st : keys) {
@@ -260,7 +271,7 @@ LOAD_CONF(jsonStoreList) {
       bool ok;
       int key = st.toInt(&ok);
       if (ok){
-        auto stt = list->value(key, nullptr) ;
+        auto stt = ptr->value(key, nullptr) ;
         if (stt != nullptr) {
           stt->LoadINI(settings, path + this->name + "/" + st + "/");
         }
@@ -269,91 +280,84 @@ LOAD_CONF(jsonStoreList) {
   }
 }
 
-#define SAVE_CONF(X) void X##Item::SaveINI(JsonStore * store, const QFileInfo& settings, const QString &path)
+#define SAVE_CONF(X) void X##Item::SaveINI(size_t store, const QFileInfo& settings, const QString &path)
 
 SAVE_CONF(int) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (int *)getPtr(store);
+  GET_PTR_TYPE_INI(int)
   val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(double) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (double *)getPtr(store);
+  GET_PTR_TYPE_INI(double)
   val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(long) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (long long *)getPtr(store);
+  GET_PTR_TYPE_INI(long long)
   val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(bool) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (bool *)getPtr(store);
+  GET_PTR_TYPE_INI(bool)
   val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(boolPtr) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (bool * *)getPtr(store);
+  GET_PTR_TYPE_INI(bool*)
   val.setValue(path + this->name, **ptr);
 }
 
 SAVE_CONF(str) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto ptr = *(QString *)getPtr(store);
-  val.setValue(path + this->name, ptr);
+  GET_PTR_TYPE_INI(QString)
+  val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(strList) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto ptr = *(QStringList *)getPtr(store);
-  val.setValue(path + this->name, ptr);
+  GET_PTR_TYPE_INI(QStringList)
+  val.setValue(path + this->name, *ptr);
 }
 
 SAVE_CONF(intList) {
-  auto val = QSettingsFromFileInfo(settings);
-  auto * ptr = (QList<int> *)getPtr(store);
+  GET_PTR_TYPE_INI(QList<int>)
   val.setValue(path + this->name, QListInt2QListStr(*ptr));
 }
 
 SAVE_CONF(strMap) {
-  QVariantMap * ptr = (QVariantMap *)getPtr(store);
-  QSettings ini = QSettingsFromFileInfo(settings);
-  ini.beginGroup(path + this->name);
-  ini.remove("");
+  GET_PTR_TYPE_INI(QVariantMap)
+  val.beginGroup(path + this->name);
+  val.remove("");
   for (auto [key, value] : asKeyValueRange(*ptr)){
-    ini.setValue(key, value);
+    val.setValue(key, value);
   }
-  ini.endGroup();
+  val.endGroup();
 }
 
 SAVE_CONF(enum) {
-  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  GET_PTR_TYPE_INI(std::shared_ptr<JsonEnum>)
+  auto st = *ptr;
   if (st != nullptr) {
-    auto ini = QSettingsFromFileInfo(settings);
-    ini.setValue(path + this->name, (QString)*st);
+    val.setValue(path + this->name, (QString)*st);
   }
 }
 
 SAVE_CONF(jsonShared) {
-  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  GET_PTR_TYPE_INI(std::shared_ptr<JsonStore>)
+  auto st = *ptr;
   if (st != nullptr) {
     st->SaveINI(settings, path + this->name + "/");
   }
 }
 SAVE_CONF(jsonStore) {
-  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  GET_PTR_TYPE_INI(JsonStore*)
+  auto st = *ptr;
   if (st != nullptr) {
     st->SaveINI(settings, path + this->name + "/");
   }
 }
 SAVE_CONF(jsonStoreList) {
-  auto list = (QJsonStoreListBase *)this->getPtr(store);
-  int index = 0; if (list == nullptr) return;
-  for (auto st : *list) {
+  GET_PTR_TYPE_INI(QJsonStoreListBase)
+  int index = 0; 
+  for (auto st : *ptr) {
     if (st != nullptr) { 
       st->SaveINI(settings, path + this->name + "/" + QString::number(index) + "/");
       index ++;
@@ -361,7 +365,7 @@ SAVE_CONF(jsonStoreList) {
   }
 }
 
-#define GET_NODE(X) QJsonValue X##Item::getNode(JsonStore *store)
+#define GET_NODE(X) QJsonValue X##Item::getNode(size_t store)
 
 template<typename B>
 inline signed char CompareValue(B a, B b){
@@ -376,9 +380,9 @@ inline signed char CompareValue(B a, B b){
 }
 
 GET_NODE(jsonStoreList) {
-  auto list = (QJsonStoreListBase *)this->getPtr(store);
-  QJsonArray array; if (list == nullptr) return array;
-  for (auto st : *list) {
+  GET_PTR_TYPE(QJsonStoreListBase)
+  QJsonArray array;
+  for (auto st : *ptr) {
     if (st != nullptr) {
       array.append(st->ToJson());
     }
@@ -407,7 +411,8 @@ COMPARE(jsonStoreList) {
 }
 
 GET_NODE(jsonStore) {
-  JsonStore *st = *(JsonStore **)(this->getPtr(store));
+  GET_PTR_TYPE(JsonStore*)
+  auto st = *ptr;
   if (st != nullptr) {
     return st->ToJson();
   } else {
@@ -426,7 +431,8 @@ COMPARE(jsonStore) {
 
 
 GET_NODE(jsonShared) {
-  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore> *)(this->getPtr(store));
+  GET_PTR_TYPE(std::shared_ptr<JsonStore>)
+  auto st = *ptr;
   if (st != nullptr) {
     return st->ToJson();
   } else {
@@ -445,7 +451,8 @@ COMPARE(jsonShared) {
 
 
 GET_NODE(enum) {
-  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum> *)(this->getPtr(store));
+  GET_PTR_TYPE(std::shared_ptr<JsonEnum>)
+  auto st = *ptr;
   if (st != nullptr) {
     return (QString)*st;
   } else {
@@ -466,7 +473,8 @@ COMPARE(enum) {
 }
 
 GET_NODE(strMap) {
-  return QJsonObject::fromVariantMap(*(QVariantMap *)this->getPtr(store));
+  GET_PTR_TYPE(QVariantMap)
+  return QJsonObject::fromVariantMap(*ptr);
 }
 
 COMPARE(strMap) {
@@ -495,7 +503,8 @@ COMPARE(strMap) {
 }
 
 GET_NODE(intList) {
-  return QListInt2QJsonArray(*(QList<int> *)this->getPtr(store));
+  GET_PTR_TYPE(QList<int>)
+  return QListInt2QJsonArray(*ptr);
 }
 
 COMPARE(intList) {
@@ -514,7 +523,8 @@ COMPARE(intList) {
 }
 
 GET_NODE(strList) {
-  return QListStr2QJsonArray(*(QList<QString> *)this->getPtr(store));
+  GET_PTR_TYPE(QStringList)
+  return QListStr2QJsonArray(*ptr);
 }
 
 COMPARE(strList) {
@@ -532,7 +542,10 @@ COMPARE(strList) {
   return r;
 }
 
-GET_NODE(bool) { return *(bool *)getPtr(store); }
+GET_NODE(bool) { 
+  GET_PTR_TYPE(bool)
+  return *ptr; 
+}
 
 COMPARE(bool) {
   bool a = *(bool*)getPtr(store);
@@ -541,7 +554,10 @@ COMPARE(bool) {
 }
 
 
-GET_NODE(boolPtr) { return **(bool **)getPtr(store); }
+GET_NODE(boolPtr) { 
+  GET_PTR_TYPE(bool*)
+  return **ptr; 
+}
 
 COMPARE(boolPtr) {
   bool a = **(bool**)getPtr(store);
@@ -549,7 +565,10 @@ COMPARE(boolPtr) {
   return CompareValue(a, b);
 }
 
-GET_NODE(str) { return *(QString *)getPtr(store); }
+GET_NODE(str) { 
+  GET_PTR_TYPE(QString)
+  return *ptr; 
+}
 
 COMPARE(str) {
   QString a = *(QString *)getPtr(store);
@@ -557,7 +576,10 @@ COMPARE(str) {
   return CompareValue(a, b);
 }
 
-GET_NODE(long) { return *(long long *)getPtr(store); }
+GET_NODE(long) { 
+  GET_PTR_TYPE(long long)
+  return *ptr; 
+}
 
 COMPARE(long) {
   long long a = *(long long *)getPtr(store);
@@ -565,7 +587,10 @@ COMPARE(long) {
   return CompareValue(a, b);
 }
 
-GET_NODE(int) { return *(int *)getPtr(store); }
+GET_NODE(int) { 
+  GET_PTR_TYPE(int)
+  return *ptr; 
+}
 
 COMPARE(int) {
   int a = *(int *)getPtr(store);
@@ -573,7 +598,10 @@ COMPARE(int) {
   return CompareValue(a, b);
 }
 
-GET_NODE(double) { return *(double *)getPtr(store); }
+GET_NODE(double) { 
+  GET_PTR_TYPE(double)
+  return *ptr; 
+}
 
 COMPARE(double) {
   double a = *(double *)getPtr(store);
@@ -729,22 +757,50 @@ void JsonStore::_put(ConfJsMap _map, const QString &str,
 
 
 #define SET_BIN(X)                                                             \
-  void X##Item::deserialize(QDataStream &data, JsonStore *store)
+  void X##Item::deserialize(QDataStream &data, size_t store)
 #define GET_BIN(X)                                                             \
-  void X##Item::serialize(QDataStream &data, JsonStore *store) const
+  void X##Item::serialize(QDataStream &data, size_t store) const
 
-GET_BIN(int) { data << *(int *)this->getPtr(store); }
-GET_BIN(double) { data << *(double *)this->getPtr(store); }
-GET_BIN(long) { data << *(long long *)this->getPtr(store); }
-GET_BIN(str) { data << *(QString *)this->getPtr(store); }
-GET_BIN(bool) { data << *(bool *)this->getPtr(store); }
-GET_BIN(boolPtr) { data << **(bool **)this->getPtr(store); }
-GET_BIN(strList) { data << *(QStringList *)this->getPtr(store); }
-GET_BIN(intList) { data << *(QList<int> *)this->getPtr(store); }
-GET_BIN(strMap) { data << *(QVariantMap *)this->getPtr(store); }
+GET_BIN(int) {
+  GET_PTR_TYPE(int) 
+  data << *ptr; 
+}
+GET_BIN(double) {   
+  GET_PTR_TYPE(double) 
+  data << *ptr; 
+}
+GET_BIN(long) { 
+  GET_PTR_TYPE(long long) 
+  data << *ptr; 
+}
+GET_BIN(str) { 
+  GET_PTR_TYPE(QString) 
+  data << *ptr; 
+}
+GET_BIN(bool) { 
+  GET_PTR_TYPE(bool) 
+  data << *ptr; 
+}
+GET_BIN(boolPtr) { 
+  GET_PTR_TYPE(bool*) 
+  data << **ptr; 
+}
+GET_BIN(strList) { 
+  GET_PTR_TYPE(QStringList) 
+  data << *ptr; 
+}
+GET_BIN(intList) { 
+  GET_PTR_TYPE(QList<int>) 
+  data << *ptr; 
+}
+GET_BIN(strMap) { 
+  GET_PTR_TYPE(QVariantMap) 
+  data << *ptr; 
+}
 GET_BIN(jsonStore) {
+  GET_PTR_TYPE(JsonStore*) 
   QByteArray array;
-  JsonStore *st = *(JsonStore **)this->getPtr(store);
+  JsonStore *st = *ptr;
   if (st != nullptr) {
     array = st->ToBytes();
   }
@@ -752,7 +808,8 @@ GET_BIN(jsonStore) {
 }
 GET_BIN(jsonShared) {
   QByteArray array;
-  std::shared_ptr<JsonStore> st = *(std::shared_ptr<JsonStore>*)this->getPtr(store);
+  GET_PTR_TYPE(std::shared_ptr<JsonStore>) 
+  auto st = *ptr;
   if (st != nullptr) {
     array = st->ToBytes();
   }
@@ -760,7 +817,8 @@ GET_BIN(jsonShared) {
 }
 GET_BIN(enum) {
   QByteArray array;
-  std::shared_ptr<JsonEnum> st = *(std::shared_ptr<JsonEnum>*)this->getPtr(store);
+  GET_PTR_TYPE(std::shared_ptr<JsonEnum>) 
+  auto st = *ptr;
   if (st != nullptr) {
     array = (QByteArray)*st;
   }
@@ -768,7 +826,8 @@ GET_BIN(enum) {
 }
 GET_BIN(jsonStoreList) {
   QList<QByteArray> value;
-  for (JsonStore *st : *(QJsonStoreListBase *)this->getPtr(store)) {
+  GET_PTR_TYPE(QJsonStoreListBase) 
+  for (JsonStore *st : *ptr) {
     value.append(st->ToBytes());
   }
   data << value;
@@ -777,7 +836,7 @@ SET_BIN(jsonStoreList) {
   QList<QByteArray> value;
   data >> value;
   GET_PTR_OR_RETURN;
-  QJsonStoreListBase *base = (QJsonStoreListBase *)this->getPtr(store);
+  QJsonStoreListBase *base = (QJsonStoreListBase *)ptr;
   base->clear();
   for (QByteArray &array : value) {
     JsonStore *st = base->createJsonStore();
