@@ -1545,28 +1545,6 @@ skip_updater_hide:
         [this]() {
           CHECK_SETTINGS_ACCESS_W
           clear_ruleset_cache();
-          /*
-          runOnNewThread([this] {
-            showRuleSetData = false;
-            mu_download_update.lock();
-            mu_download_update.unlock();
-            MoveDirToTrash("rule_sets/ftps");
-            MoveDirToTrash("rule_sets/ftp");
-            MoveDirToTrash("rule_sets/http");
-            MoveDirToTrash("rule_sets/https");
-
-            QMutex mut;
-            mut.lock();
-            runOnUiThread([this, &mut]() {
-              showRuleSetData = false;
-              setDownloadReport({}, false);
-              UpdateDataView(true);
-              mut.unlock();
-            });
-            mut.lock();
-            mut.unlock();
-          });
-          */
         },
         Qt::SingleShotConnection);
 
@@ -1609,53 +1587,6 @@ skip_updater_hide:
 #ifndef SKIP_JS_UPDATER
     }
 #endif
-    /*
-    if (!remoteRouteProfiles.isEmpty()) {
-      QMenu *profilesMenu =
-          ui->menuRouting_Menu->addMenu(QObject::tr("Download Profiles"));
-      for (const auto &profile : remoteRouteProfiles) {
-        auto *action = new QAction(profilesMenu);
-        action->setText(remoteRouteProfileNames.value(profile, profile));
-        connect(action, &QAction::triggered, this, [=, this]() {
-          QString url = "";
-          bool proxy = false;
-          auto resp = remoteRouteProfileGetter(profile, &url, &proxy);
-          if (resp.isEmpty()) {
-            return;
-          } else {
-            qDebug() << resp;
-          }
-          QString err;
-          auto parsed = Configs::RoutingChain::parseJsonArray(
-              QString2QJsonArray(resp), &err);
-          if (!err.isEmpty()) {
-            runOnUiThread([=, this] {
-              MessageBoxInfo(tr("Invalid JSON Array"),
-                             tr("The provided input cannot be parsed to a "
-                                "valid route rule array:\n") +
-                                 err);
-            });
-            return;
-          }
-          std::shared_ptr<Configs::RoutingChain> chain =
-              Configs::ProfileManager::NewRouteChain();
-          chain->chain_name =
-              this->remoteRouteProfileNames.value(profile, profile);
-          chain->update_url = url;
-          chain->defaultOutboundID =
-              //profile.startsWith("bypass", Qt::CaseInsensitive)
-                  proxy
-                  ? Configs::proxyID
-                  : Configs::directID;
-          chain->Rules.clear();
-          chain->Rules << parsed;
-          Configs::profileManager->AddRouteChain(chain);
-        });
-        profilesMenu->addAction(action);
-      }
-    }
-      */
-
     mu_remoteRouteProfiles.unlock();
 
     ui->menuRouting_Menu->addSeparator();
@@ -3835,12 +3766,12 @@ bool mw_sub_updating = false;
 void MainWindow::on_menu_update_subscription_triggered() {
   CHECK_SETTINGS_ACCESS_W
   auto group = Configs::profileManager->CurrentGroup();
-  if (group->url.isEmpty() || mw_sub_updating) {
+  if (!group->is_subscription || mw_sub_updating) {
     return;
   }
   mw_sub_updating = true;
   Subscription::groupUpdater->AsyncUpdate(
-      this->post_update_job, group->url, &chooseUpdateGroup, group->id,
+      this->post_update_job, group->getExtra()->url, &chooseUpdateGroup, group->id,
       [&, group, this] { mw_sub_updating = false; });
 }
 
@@ -4285,7 +4216,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       menu->addAction(ui->menu_remove_unavailable);
       menu->addAction(ui->menu_remove_invalid);
     }
-    if (!group->url.isEmpty())
+    if (group->is_subscription)
       menu->addAction(ui->menu_update_subscription);
     if (!speedtestRunning.tryLock()) {
       menu->addAction(ui->menu_stop_testing);

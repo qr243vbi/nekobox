@@ -62,7 +62,8 @@ enum JsonStoreType {
   DefaultRoute = 9,
   NoSave = 10,
   TrafficLooper = 11,
-  DatabaseLogger = 12
+  DatabaseLogger = 12,
+  GroupBeans = 13
 };
 
 } // namespace Configs
@@ -195,12 +196,13 @@ public:
   bool content(const QByteArray &array);
   signed char compare(JsonStore *, const QStringList &without = {});
 
-  virtual ~JsonStore() = default;
-  //     QMap<QString, std::shared_ptr<configItem>> _map;
+  // create fallback store if needed
+  virtual std::shared_ptr<JsonStore> fallback() { return nullptr; }
+  
+  // do fallback job
+  virtual void fallback_job(JsonStore * store){}
 
-  //    void _put<T>(ConfJsMap _map,
-  //        QString str, T * ptr
-  //    );
+  virtual ~JsonStore() = default;
   void _put(ConfJsMap _map, const QString &str, int *);
   void _put(ConfJsMap _map, const QString &str, long long *);
   void _put(ConfJsMap _map, const QString &str, QString *);
@@ -227,34 +229,9 @@ public:
                                     JsonEnum>;
     _put(_map, str, (std::shared_ptr<Base> *)type);
   }
-  /*
-  template<typename T>
-  requires (std::derived_from<T, JsonStore> || std::derived_from<T, JsonEnum>)
-  void _put(ConfJsMap map, const QString& str, std::shared_ptr<T>* value)
-  {
-      using Base = std::conditional_t<
-          std::derived_from<T, JsonStore>,
-          JsonStore,
-          JsonEnum>;
-
-      auto base = std::static_pointer_cast<Base>(*value);
-      _put(map, str, &base);
-  }
-*/
   virtual ConfJsMap _map() = 0;
 
-  //      std::function<void()> callback_after_load = nullptr;
-  //      std::function<void()> callback_before_save = nullptr;
-
-  //       QString fn;
-  //       bool load_control_must = false;
-  //       bool save_control_no_save = false;
-
   JsonStore() = default;
-
-  //       explicit JsonStore(QString fileName) {
-  //           fn = std::move(fileName);
-  //       }
 
   void _setValue(const QString &name, const QJsonValue &p);
   void _setValue(const JsonStore *store, const void *p);
@@ -269,7 +246,7 @@ public:
 
   QByteArray ToJsonBytes(const QStringList &without = {}) const;
 
-  void FromJson(QJsonObject object);
+  void FromJson(const QJsonObject& object);
 
   void LoadINI(const QFileInfo&  settings, const QString &path);
 

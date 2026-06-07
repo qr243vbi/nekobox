@@ -1,9 +1,5 @@
-
-
-
-
 #include <nekobox/ui/group/dialog_edit_group.h>
-
+#include <QSortFilterProxyModel>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/ui/mainwindow_interface.h>
 #include <nekobox/sys/Settings.h>
@@ -17,8 +13,69 @@
 #include <functional>
 #include <qdialogbuttonbox.h>
 #include <qnamespace.h>
+#include <qtablewidget.h>
 
 #define ADJUST_SIZE runOnThread([=,this] { adjustSize(); adjustPosition(mainwindow); }, this);
+
+DialogHWID::DialogHWID(QWidget * parent ) : QDialog(parent), ui(new Ui::DialogHWID()) {
+    ui->setupUi(this);
+}
+DialogHWID::~DialogHWID(){
+    delete ui;
+}
+DialogHeaders::DialogHeaders(QWidget * parent ) : QDialog(parent), ui(new Ui::DialogHeaders()) {
+    ui->setupUi(this);
+    QTableWidget * tableWidget = ui->custom_headers_table;
+    QHeaderView *header = tableWidget->horizontalHeader();
+    header->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    header->setSectionResizeMode(1, QHeaderView::Stretch);
+    auto button = ui->buttonBox->addButton(tr("New"), QDialogButtonBox::ButtonRole::ActionRole);
+    ui->buttonBox->setStandardButtons(QDialogButtonBox::Discard | QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
+
+    QPushButton *discardButton = ui->buttonBox->button(QDialogButtonBox::Discard);
+
+    tableWidget->setSelectionBehavior(
+        QAbstractItemView::SelectRows
+    );
+
+    tableWidget->setSelectionMode(
+        QAbstractItemView::ExtendedSelection
+    );
+
+    connect(discardButton, &QPushButton::clicked, this, [this](){
+        
+    });
+
+    connect(button, &QPushButton::clicked, this, [this](){
+        bool ok;
+        QString text = QInputDialog::getText(
+        this,
+        software_name,
+        tr("Header name"),
+        QLineEdit::Normal,
+        "",
+        &ok
+        );
+        if (ok){
+            QTableWidget * tableWidget = ui->custom_headers_table;
+            int row = tableWidget->rowCount();
+            tableWidget->insertRow(row);
+
+            // Column 0: read-only
+            auto *item0 = new QTableWidgetItem(text);
+            item0->setFlags(item0->flags() & ~Qt::ItemIsEditable);
+            tableWidget->setItem(row, 0, item0);
+
+            // Column 1: editable
+            auto *item1 = new QTableWidgetItem("");
+            item1->setFlags(item1->flags() | Qt::ItemIsEditable);
+            tableWidget->setItem(row, 1, item1);
+        }
+    });
+}
+DialogHeaders::~DialogHeaders(){
+    delete ui;
+}
 
 DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWidget *parent) : QDialog(parent), ui(new Ui::DialogEditGroup) {
     CHECK_SETTINGS_ACCESS
@@ -30,25 +87,35 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         ui->auto_update->setHidden(is_basic);
         ui->url->setHidden(is_basic);
         ui->label_url->setHidden(is_basic);
-        #ifdef SUBSCRIPTION_EXTRA_PARAMETERS
         ui->sub_extra->setHidden(is_basic);
-        #endif
+        ent->is_subscription = !is_basic;
         ui->name->setPlaceholderText(
             is_basic ? "" : 
             tr("Will use profile-title from subscription if empty")
         );
         ADJUST_SIZE
     });
-    
-    #ifndef SUBSCRIPTION_EXTRA_PARAMETERS
-    ui->sub_extra->setHidden(true);
-    #endif
 
+    connect(ui->sub_extra, &QPushButton::clicked, this, [this](){
+        auto window = new DialogEditSubscription(this->ent, this);
+        window->show();
+        window->exec();
+        if (window->edited){
+            window->save();
+        }
+        delete window;
+    });
+    
     ui->name->setText(ent->name);
     ui->archive->setChecked(ent->archive);
-    ui->auto_update->setChecked(!ent->skip_auto_update);
-    ui->url->setText(ent->url);
-    ui->type->setCurrentIndex(ent->url.isEmpty() ? 0 : 1);
+    if (ent->is_subscription){
+        std::shared_ptr<Configs::GroupExtra> extra = ent->getExtra();
+        ui->auto_update->setChecked(!extra->skip_auto_update);
+        ui->url->setText(extra->url);
+        ui->type->setCurrentIndex(1);
+    } else {
+        ui->type->setCurrentIndex(0);
+    }
     ui->type->currentIndexChanged(ui->type->currentIndex());
 
     bool disable_share = true;
@@ -107,10 +174,71 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     }
     
     ADJUST_SIZE
+}
+
+void DialogEditSubscription::save(){
+    auto extra = this->ent->getExtra();
+    extra->text_payload = this->ui->text->toPlainText();
+    extra->javascript_payload = this->ui->javascript->toPlainText();
+    extra->enable_custom_payload = this->ui->payload->isChecked();
+    extra->enable_custom_headers = this->ui->custom_headers->isChecked();
+    extra->Save();
+}
+
+DialogEditSubscription::DialogEditSubscription(
+        std::shared_ptr<Configs::Group> ent,
+        QWidget * widget): ui(new Ui::DialogEditSubscription), QDialog(widget), ent(ent) {
+    ui->setupUi(this);
+    auto extra = ent->getExtra();
+    ui->custom_headers->setChecked(extra->enable_custom_headers);
+    ui->payload->setChecked(extra->enable_custom_payload);
+    ui->text->setPlainText(extra->text_payload);
+    ui->javascript->setPlainText(extra->javascript_payload);
+
+    QObject::connect(ui->hwid, &QPushButton::clicked, this, [this](bool clicked)->void{
+        auto * hwid = new DialogHWID(this);
+        hwid->show();
+        hwid->exec();
+        delete hwid;
+    });
+
+
+    QObject::connect(ui->headers, &QPushButton::clicked, this, [this](bool clicked)->void{
+        auto * hwid = new DialogHeaders(this);
+        hwid->show();
+        hwid->exec();
+        delete hwid;
+    });
+
+    QObject::connect(ui->custom_headers, &QGroupBox::toggled, this, [this](bool checked){
+        edited = true;
+    }, Qt::SingleShotConnection);
+
+    QObject::connect(ui->payload, &QGroupBox::toggled, this, [this](bool checked){
+        edited = true;
+    }, Qt::SingleShotConnection);
+
+
+    QObject::connect(ui->text, &QTextEdit::textChanged, this, [this](){
+        edited = true;
+    }, Qt::SingleShotConnection);
+
+
+    QObject::connect(ui->javascript, &QTextEdit::textChanged, this, [this](){
+        edited = true;
+    }, Qt::SingleShotConnection);
+
+    connect(ui->buttons, &QDialogButtonBox::rejected, this, [this](){
+        edited = false;
+        this->close();
+    }, Qt::SingleShotConnection);
+
 
 }
 
-#include <QSortFilterProxyModel>
+DialogEditSubscription::~DialogEditSubscription() {
+    delete ui;
+}
 
 class GroupTableProxyModel : public QSortFilterProxyModel {
 
@@ -391,18 +519,25 @@ DialogEditGroup::~DialogEditGroup() {
 }
 
 void DialogEditGroup::accept() {
-    if (ent->id >= 0) { // already a group
-        if (!ent->url.isEmpty() && ui->url->text().isEmpty()) {
+    if (ent->id >= 0 && ent->is_subscription) { // already a group
+        auto extra = ent->getExtra();
+
+        auto urltext = ui->url->text();
+
+        if (urltext.isEmpty()) {
             runOnUiThread([this](){
                 QMessageBox::warning(this, tr("Warning"), tr("Please input URL"));
             });
             return;
         }
+
+        extra->skip_auto_update = !ui->auto_update->isChecked();
+        extra->url = urltext;
+        extra->Save();
     }
     ent->name = ui->name->text();
-    ent->url = ui->url->text();
     ent->archive = ui->archive->isChecked();
-    ent->skip_auto_update = !ui->auto_update->isChecked();
+
     if (CACHE.edited){
         ent->landing_proxy_id = CACHE.landing_proxy_id;
         ent->front_proxy_id = CACHE.front_proxy_id;

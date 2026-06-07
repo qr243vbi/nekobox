@@ -28,6 +28,32 @@ namespace Configs
     Group::Group() {
     }
 
+    std::shared_ptr<GroupExtra> Group::getExtra(){
+        int id = this->Id();
+        auto ptr = std::make_shared<GroupExtra>();
+        ptr->id = id;
+        ptr->Load();
+        return ptr;
+    };
+    
+    void GroupExtra::fallback_job(JsonStore * store) {
+        if (auto group = dynamic_cast<Configs::Group*>(store)){
+            group->is_subscription = !this->url.isEmpty();
+        }
+        this->Save();
+    };
+
+    std::shared_ptr<JsonStore> Group::fallback() {
+        if (id >= 0) {
+            auto store = std::make_shared<GroupExtra>();
+            store->id = id;
+            store->Load();
+            return store;
+        } else {
+            return nullptr;
+        }
+    };
+
     #ifndef  d_add
     #define  d_add(X, Y, B) _put(ptr, X, &this->Y, B)
     #endif
@@ -37,13 +63,14 @@ namespace Configs
         ADD_MAP("front_proxy_id", front_proxy_id, integer);
         ADD_MAP("landing_proxy_id", landing_proxy_id, integer);
         ADD_MAP("archive", archive, boolean);
-        ADD_MAP("skip_auto_update", skip_auto_update, boolean);
+    //    ADD_MAP("skip_auto_update", skip_auto_update, boolean);
         ADD_MAP("name", name, string);
         ADD_MAP("profiles", profiles, integerList);
-        ADD_MAP("url", url, string);
-        ADD_MAP("info", info, string);
+        ADD_MAP("is_subscription", is_subscription, boolean);
+    //    ADD_MAP("url", url, string);
+    //    ADD_MAP("info", info, string);
     //    _add(new configItem("notes", &notes, string));
-        ADD_MAP("lastup", sub_last_update, integer64);
+    //    ADD_MAP("lastup", sub_last_update, integer64);
     //    d_add("manually_column_width", manually_column_width, boolean);
     //    d_add("column_width", column_width, integerList);
     STOP_MAP

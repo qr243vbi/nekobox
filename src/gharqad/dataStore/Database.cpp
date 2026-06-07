@@ -81,6 +81,7 @@ QString getJsonStoreFileName(short type, long id) {
   case Routes:
   case Proxies:
   case Groups:
+  case GroupBeans:
   case Beans:
     break;
   case Shortcuts:
@@ -104,21 +105,7 @@ QString getJsonStoreFileName(short type, long id) {
     QString str;
     if (id < 0)
       return "";
-    switch (type) {
-    case Routes:
-      str = "route_profiles/%1.cfg";
-      break;
-    case Proxies:
-      str = "profiles/%1.cfg";
-      break;
-    case Groups:
-      str = "groups/%1.cfg";
-      break;
-    case Beans:
-      str = "beans/%1.cfg";
-      break;
-    }
-    return str.arg(id);
+    return getJsonStorePathName(type) + QDir::separator() + QString::number(id) + ".cfg";
   }
 };
 
@@ -130,6 +117,8 @@ QString getJsonStorePathName(char type) {
     return "profiles";
   case Groups:
     return "groups";
+  case GroupBeans:
+    return "group_beans";
   case Beans:
     return "beans";
   default:
@@ -679,7 +668,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
 
 
   {
-    std::vector<char> types = {Proxies, Beans, Routes, Groups};
+    std::vector<char> types = {Proxies, Beans, Routes, Groups, GroupBeans};
     for (char c : types) {
       auto ids = FileDatabaseManager::QueryFromDirectory(c);
       for (int x : ids) {

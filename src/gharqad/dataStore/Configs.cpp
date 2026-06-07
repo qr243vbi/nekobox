@@ -113,10 +113,12 @@ namespace Configs_ConfigItem {
         auto _map = this->_map();
         QSettings settings = QSettingsFromFileInfo(info);
         settings.beginGroup(path);
+        bool fallback = false;
         for (auto key : settings.childKeys()){
             auto h = Configs::hash(key);
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
+                fallback = true;
             } else {
                 value->LoadINI(this, info, path);
             }
@@ -125,36 +127,48 @@ namespace Configs_ConfigItem {
             auto h = Configs::hash(key);
             auto value = _map.value(h, nullptr);
             if (value == nullptr){
+                fallback = true;
             } else {
                 value->LoadINI(this, info, path);
             }
         }
         settings.endGroup();
+
+        if (fallback){
+            auto fallback_store = this->fallback();
+            if (fallback_store == nullptr){
+                return;
+            }
+            fallback_store->LoadINI(info, path);
+            fallback_store->fallback_job(this);
+        }
     }
 
-    void JsonStore::FromJson(QJsonObject object) {
+    void JsonStore::FromJson(const QJsonObject& object) {
         auto  _map = this->_map();
+        bool fallback = false;
         for (const auto &key: object.keys()) {
             auto h = Configs::hash(key);
             QJsonValue value;
             auto item = _map.value(h, nullptr);
 
-            if (item == nullptr) {
-
+            if (item == nullptr || item->name != key) {
+                fallback = true;
                 continue;
             } else {
                 value = object[key];
             }
 
-            if ((item == nullptr) || (item->name != key)){
-                continue;
-            }
-
             item->setNode(this, value);
-
         }
-
-//        if (callback_after_load != nullptr) callback_after_load();
+        if (fallback){
+            auto fallback_store = this->fallback();
+            if (fallback_store == nullptr){
+                return;
+            }
+            fallback_store->FromJson(object);
+            fallback_store->fallback_job(this);
+        }
     }
 
     void JsonStore::_setValue(const JsonStore * store, const void *p){

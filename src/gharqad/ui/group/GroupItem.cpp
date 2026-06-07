@@ -134,23 +134,24 @@ GroupItem::~GroupItem() {
 void GroupItem::refresh_data() {
     ui->name->setText(ent->name);
 
-    auto type = ent->url.isEmpty() ? tr("Basic") : tr("Subscription");
+    auto type = !ent->is_subscription ? tr("Basic") : tr("Subscription");
     if (ent->archive) type = tr("Archive") + " " + type;
     type += " (" + QString::number(ent->Profiles().length()) + ")";
     ui->type->setText(type);
 
-    if (ent->url.isEmpty()) {
+    if (!ent->is_subscription) {
         ui->url->hide();
         ui->subinfo->hide();
         ui->update_sub->hide();
     } else {
-        ui->url->setText(ent->url);
+        auto extra = ent->getExtra();
+        ui->url->setText(extra->url);
         QStringList info;
-        if (ent->sub_last_update != 0) {
-            info << tr("Last update: %1").arg(DisplayTime(ent->sub_last_update, QLocale::ShortFormat));
+        if (extra->sub_last_update != 0) {
+            info << tr("Last update: %1").arg(DisplayTime(extra->sub_last_update, QLocale::ShortFormat));
         }
-        auto subinfo = ParseSubInfo(ent->info);
-        if (!ent->info.isEmpty()) {
+        auto subinfo = ParseSubInfo(extra->info);
+        if (!extra->info.isEmpty()) {
             info << subinfo;
         }
         if (info.isEmpty()) {
@@ -170,10 +171,13 @@ void GroupItem::refresh_data() {
 }
 
 void GroupItem::on_update_sub_clicked() {
-    QString url = ent->url;
+    if (this->ent->is_subscription) {
+        auto ent = this->ent->getExtra();
+        QString url = ent->url;
 
-    Subscription::groupUpdater->AsyncUpdate(GetMainWindow()->post_update_job,
-    url, &chooseUpdateGroup, ent->id);
+        Subscription::groupUpdater->AsyncUpdate(GetMainWindow()->post_update_job,
+        url, &chooseUpdateGroup, ent->id);
+    }
 }
 
 void GroupItem::on_edit_clicked() {

@@ -85,19 +85,12 @@ message("[CMAKE_FIND_ROOT_PATH] ${CMAKE_FIND_ROOT_PATH}")
 #### NKR ####
 option(SKIP_UPDATER "Always hide update button" ON)
 
-#if(UNIX)
-#set(MIGRATE_LMDB_DEFAULT ON)
-#else()
-#set(MIGRATE_LMDB_DEFAULT OFF)
-#endif()
-
 if(UNIX)
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT OFF)
 else()
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT ON)
 endif()
 
-option(ENABLE_SUBSCRIPTION_EXTRA_PARAMETERS OFF)
 option(ENABLE_WARP_PROFILE_GENERATOR OFF)
 option(MIGRATE_LMDB "Migrate from lmdb" OFF)
 option(SKIP_LEVELDB "Do not use rocksdb" OFF)
@@ -305,9 +298,6 @@ if(ENABLE_WARP_PROFILE_GENERATOR)
     nkr_add_compile_definitions(WARP_GENERATOR_ENABLED=yes)
 endif()
 
-if (ENABLE_SUBSCRIPTION_EXTRA_PARAMETERS)
-    nkr_add_compile_definitions(SUBSCRIPTION_EXTRA_PARAMETERS=yes)
-endif()
 
 if (NOT SKIP_LEVELDB)
     find_package(leveldb)

@@ -1021,8 +1021,11 @@ void GroupUpdater::AsyncUpdate(
     if (createNewGroup) {
       auto group = Configs::ProfileManager::NewGroup();
       group->name = groupName;
-      group->url = str;
       Configs::profileManager->AddGroup(group);
+      auto extra = group->getExtra();
+
+      extra->url = str;
+      extra->Save();
       gid = group->id;
       MW_dialog_message("SubUpdater", "NewGroup");
     }
@@ -1139,9 +1142,11 @@ void GroupUpdater::Update(
       }
     }
 
-    group->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
-    group->info = sub_user_info;
     group->Save();
+    auto extra = group->getExtra();
+    extra->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
+    extra->info = sub_user_info;
+    extra->Save();
   }
 
   {
@@ -1194,8 +1199,8 @@ void GroupUpdater::Update(
 bool UI_update_all_groups_Updating = false;
 
 #define should_skip_group(g)                                                   \
-  (g == nullptr || g->url.isEmpty() || g->archive ||                           \
-   (onlyAllowed && g->skip_auto_update))
+  (g == nullptr || !g->is_subscription || g->archive ||                           \
+   (onlyAllowed && g->getExtra()->skip_auto_update))
 
 void serialUpdateSubscription(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
@@ -1228,7 +1233,7 @@ void serialUpdateSubscription(
   // Async update current group
   UI_update_all_groups_Updating = true;
   Subscription::groupUpdater->AsyncUpdate(
-      PreFinishJob, group->url, info, group->id, [=] {
+      PreFinishJob, group->getExtra()->url, info, group->id, [=] {
         serialUpdateSubscription(PreFinishJob, groupsTabOrder, info, nextOrder,
                                  onlyAllowed);
       });

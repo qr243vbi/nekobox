@@ -13,16 +13,53 @@
 #include <nekobox/dataStore/Group.hpp>
 #include <vector>
 #include "ui_dialog_edit_group.h"
-
+#include "ui_dialog_edit_subscription.h"
+#include "ui_dialog_edit_subscription_hwid.h"
+#include "ui_dialog_edit_subscription_headers.h"
 #include "ui_dialog_group_choose_proxy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class DialogEditGroup;
+    class DialogEditSubscription;
     class DialogGroupChooseProxy;
+    class DialogHWID;
+    class DialogHeaders;
 }
 QT_END_NAMESPACE
 
+class DialogHWID: public QDialog {
+    Q_OBJECT
+public:
+    explicit DialogHWID(QWidget * parent = nullptr);
+    ~DialogHWID() override;
+    Ui::DialogHWID *ui;
+};
+
+class DialogHeaders: public QDialog {
+    Q_OBJECT
+public:
+    explicit DialogHeaders(QWidget * parent = nullptr);
+    ~DialogHeaders() override;
+    Ui::DialogHeaders *ui;
+};
+
+class DialogEditSubscription: public QDialog {
+    Q_OBJECT
+public:
+    explicit DialogEditSubscription(
+        std::shared_ptr<Configs::Group> ent,
+        QWidget *parent = nullptr);
+
+    ~DialogEditSubscription() override;
+
+    bool edited = false;
+    void save();
+private:
+    Ui::DialogEditSubscription *ui;
+    std::shared_ptr<Configs::Group> ent;
+
+};
 
 class DialogEditGroup : public QDialog {
     Q_OBJECT
@@ -53,7 +90,6 @@ private slots:
     void accept() override;
     void set_landing_proxy(int id);
     void set_front_proxy(int id);
-
 };
 
 

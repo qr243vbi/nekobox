@@ -79,7 +79,8 @@ namespace Configs {
 
     class ProfileManager;
 
-
+    QString getJsonStoreFileName(short type, long id) ;
+    QString getJsonStorePathName(char type);
 
     extern ProfileManager *profileManager;
 

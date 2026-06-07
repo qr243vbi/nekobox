@@ -678,6 +678,7 @@ void JsonStore::FromBytes(const QByteArray &data) {
   qDebug() << "Data Size IS" << data.size() ;
   #endif
   QDataStream stream(data);
+  bool fallback = false;
   auto _map = this->_map();
   while (!stream.atEnd()) {
     QByteArray key;
@@ -693,6 +694,7 @@ void JsonStore::FromBytes(const QByteArray &data) {
     if (value == nullptr || value->type() != type) {
       value = getConfigItem(type);
       store = nullptr;
+      fallback = true;
     }
     #ifdef DEBUG_MODE
     if (value == nullptr){
@@ -704,6 +706,14 @@ void JsonStore::FromBytes(const QByteArray &data) {
     bin.item = value.get();
     bin.store = store;
     stream >> bin;
+  }
+  if (fallback){
+    auto fallback_store = this->fallback();
+    if (fallback_store == nullptr){
+      return;
+    }
+    fallback_store->FromBytes(data);
+    fallback_store->fallback_job(this);
   }
 };
 
