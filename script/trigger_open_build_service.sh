@@ -10,9 +10,9 @@ curl -u "${OBS_USER}:${OBS_PASSWORD}" \
 export pkgver="$INPUT_VERSION"
 export source_0="https://github.com/qr243vbi/nekobox/releases/download/$pkgver/nekobox-unified-source-$pkgver.tar.xz"
 
-curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec -o nekobox.spec
-curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-core.spec.in -o nekobox-core.spec.in
-curl -L https://gitea.com/qr243vbi/nekobox/raw/branch/main/nekobox-qt.spec.in -o nekobox-qt.spec.in
+curl -L https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox.spec -o nekobox.spec
+curl -L https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox-core.spec.in -o nekobox-core.spec.in
+curl -L https://codefloe.com/qr243vbi/nekobox/raw/branch/main/nekobox-qt.spec.in -o nekobox-qt.spec.in
 
 sed -i "s@Version:.*@Version:        $pkgver@g;" nekobox.spec
 

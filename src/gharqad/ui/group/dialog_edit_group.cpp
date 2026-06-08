@@ -23,6 +23,21 @@ DialogHWID::DialogHWID(QWidget * parent ) : QDialog(parent), ui(new Ui::DialogHW
 DialogHWID::~DialogHWID(){
     delete ui;
 }
+void DialogHeaders::addRow(const QString & title, const QString & value){
+    QTableWidget * tableWidget = ui->custom_headers_table;
+    int row = tableWidget->rowCount();
+    tableWidget->insertRow(row);
+
+    // Column 0: read-only
+    auto *item0 = new QTableWidgetItem(title);
+    item0->setFlags(item0->flags() & ~Qt::ItemIsEditable);
+    tableWidget->setItem(row, 0, item0);
+
+    // Column 1: editable
+    auto *item1 = new QTableWidgetItem(value);
+    item1->setFlags(item1->flags() | Qt::ItemIsEditable);
+    tableWidget->setItem(row, 1, item1);
+}
 DialogHeaders::DialogHeaders(QWidget * parent ) : QDialog(parent), ui(new Ui::DialogHeaders()) {
     ui->setupUi(this);
     QTableWidget * tableWidget = ui->custom_headers_table;
@@ -43,7 +58,21 @@ DialogHeaders::DialogHeaders(QWidget * parent ) : QDialog(parent), ui(new Ui::Di
     );
 
     connect(discardButton, &QPushButton::clicked, this, [this](){
-        
+        auto table = this->ui->custom_headers_table;
+
+        QModelIndexList rows = table->selectionModel()->selectedRows();
+
+        // Remove from highest index to lowest
+        std::sort(rows.begin(), rows.end(),
+                  [](const QModelIndex &a, const QModelIndex &b)
+                  {
+                      return a.row() > b.row();
+                  });
+
+        for (const QModelIndex &index : rows)
+        {
+            table->removeRow(index.row());
+        }
     });
 
     connect(button, &QPushButton::clicked, this, [this](){
@@ -57,19 +86,7 @@ DialogHeaders::DialogHeaders(QWidget * parent ) : QDialog(parent), ui(new Ui::Di
         &ok
         );
         if (ok){
-            QTableWidget * tableWidget = ui->custom_headers_table;
-            int row = tableWidget->rowCount();
-            tableWidget->insertRow(row);
-
-            // Column 0: read-only
-            auto *item0 = new QTableWidgetItem(text);
-            item0->setFlags(item0->flags() & ~Qt::ItemIsEditable);
-            tableWidget->setItem(row, 0, item0);
-
-            // Column 1: editable
-            auto *item1 = new QTableWidgetItem("");
-            item1->setFlags(item1->flags() | Qt::ItemIsEditable);
-            tableWidget->setItem(row, 1, item1);
+            addRow(text, "");
         }
     });
 }
@@ -109,7 +126,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
     ui->name->setText(ent->name);
     ui->archive->setChecked(ent->archive);
     if (ent->is_subscription){
-        std::shared_ptr<Configs::GroupExtra> extra = ent->getExtra();
+        std::shared_ptr<const Configs::GroupExtra> extra = Configs::GetExtra(ent);
         ui->auto_update->setChecked(!extra->skip_auto_update);
         ui->url->setText(extra->url);
         ui->type->setCurrentIndex(1);
@@ -120,9 +137,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
 
     bool disable_share = true;
 
-    if (ent->id >= 0) { // already a group
-        ui->type->setHidden(true);
-        ui->label_2->setHidden(true);
+    if (ent->id >= 0) {
         if (!ent->Profiles().isEmpty()) {
             disable_share = false;
         }
@@ -177,36 +192,60 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
 }
 
 void DialogEditSubscription::save(){
-    auto extra = this->ent->getExtra();
+    auto extra = GetExtraUnlocked(this->ent);
     extra->text_payload = this->ui->text->toPlainText();
     extra->javascript_payload = this->ui->javascript->toPlainText();
     extra->enable_custom_payload = this->ui->payload->isChecked();
     extra->enable_custom_headers = this->ui->custom_headers->isChecked();
-    extra->Save();
 }
 
 DialogEditSubscription::DialogEditSubscription(
         std::shared_ptr<Configs::Group> ent,
         QWidget * widget): ui(new Ui::DialogEditSubscription), QDialog(widget), ent(ent) {
     ui->setupUi(this);
-    auto extra = ent->getExtra();
+    auto extra = GetExtra(ent);
     ui->custom_headers->setChecked(extra->enable_custom_headers);
     ui->payload->setChecked(extra->enable_custom_payload);
     ui->text->setPlainText(extra->text_payload);
     ui->javascript->setPlainText(extra->javascript_payload);
 
+#ifdef SKIP_JS_UPDATER
+    ui->tabs->tabBar()->setTabVisible(1, false);
+#endif
     QObject::connect(ui->hwid, &QPushButton::clicked, this, [this](bool clicked)->void{
         auto * hwid = new DialogHWID(this);
+        auto extra = this->ent->getExtra();
+        hwid->ui->enable_hwid->setChecked(extra->enable_hwid);
+        hwid->ui->custom_hwid->setText(extra->custom_hwid);
         hwid->show();
-        hwid->exec();
+        if (hwid->exec() == QDialog::Accepted){
+            auto extraunlock = this->ent->getExtraUnlocked();
+            extraunlock->custom_hwid = hwid->ui->custom_hwid->text();
+            extraunlock->enable_hwid = hwid->ui->enable_hwid->isChecked();
+        }
         delete hwid;
     });
 
 
     QObject::connect(ui->headers, &QPushButton::clicked, this, [this](bool clicked)->void{
         auto * hwid = new DialogHeaders(this);
+        auto extra = this->ent->getExtra();
+        for (auto [key, value]: asKeyValueRange(extra->custom_headers)){
+            hwid->addRow(key, value.toString());
+        }
         hwid->show();
-        hwid->exec();
+        if (hwid->exec() == QDialog::Accepted){
+            auto extraunlock = this->ent->getExtraUnlocked();
+            QVariantMap & map = extraunlock->custom_headers;
+            map.clear();
+            auto table = hwid->ui->custom_headers_table;
+            for (int row = 0, rowcount = table->rowCount(); row < rowcount; ++row)
+            {
+                QTableWidgetItem *key = table->item(row, 0);
+                QTableWidgetItem *val = table->item(row, 1);
+                map.insert(key->text(), val->text());
+            }
+        }
         delete hwid;
     });
 
@@ -520,7 +559,7 @@ DialogEditGroup::~DialogEditGroup() {
 
 void DialogEditGroup::accept() {
     if (ent->id >= 0 && ent->is_subscription) { // already a group
-        auto extra = ent->getExtra();
+        auto extra = GetExtraUnlocked(ent);
 
         auto urltext = ui->url->text();
 
@@ -533,7 +572,6 @@ void DialogEditGroup::accept() {
 
         extra->skip_auto_update = !ui->auto_update->isChecked();
         extra->url = urltext;
-        extra->Save();
     }
     ent->name = ui->name->text();
     ent->archive = ui->archive->isChecked();

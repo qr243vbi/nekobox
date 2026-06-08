@@ -129,6 +129,11 @@ public:
   bool maximized = false;
   QString splitter_state = "";
   bool auto_hide = false;
+#ifdef DEBUG_MODE
+  bool show_profile_id = true;
+#else
+  bool show_profile_id = false;
+#endif
   bool save_geometry = true;
   bool save_position = true;
   bool text_under_buttons = true;

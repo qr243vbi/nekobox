@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -521,6 +521,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="show_profile_id">
+              <property name="text">
+               <string>Show profile IDs</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -766,6 +773,9 @@
         <widget class="QLabel" name="label_4">
          <property name="text">
           <string>User Agent</string>
+         </property>
+         <property name="indent">
+          <number>20</number>
          </property>
         </widget>
        </item>

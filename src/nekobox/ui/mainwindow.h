@@ -133,6 +133,10 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public: 
+#ifndef SKIP_JS_UPDATER
+    JsUpdaterWindow* createJsUpdaterWindow();
+#endif
+
     std::function<void(std::shared_ptr<Configs::Group>)> post_update_job;
     friend class SpinnerDialog;
     std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester;
@@ -303,6 +307,8 @@ private slots:
     void on_tabWidget_currentChanged(int index);
 
     void on_tabWidget_customContextMenuRequested(const QPoint& p);
+
+
 private:
     QFuture<bool> elevated_future;
     QMutex elevated_mutex;
@@ -448,9 +454,6 @@ private:
     bool set_system_dns(bool set, bool save_set = true);
 #ifndef SKIP_UPDATE_BUTTON
     void CheckUpdate(bool button_clicked = false);
-#endif
-#ifndef SKIP_JS_UPDATER
-    JsUpdaterWindow* createJsUpdaterWindow();
 #endif
 //    void message_queue(MessageQueue & queue);
     void setupConnectionList();

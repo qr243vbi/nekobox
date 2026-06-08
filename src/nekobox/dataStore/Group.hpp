@@ -7,13 +7,24 @@
 #include "ProxyEntity.hpp"
 #include "Configs.hpp"
 #include "ConfigItem.hpp"
+#include <map>
+#include <memory>
 
 namespace Configs
 {
+    struct GroupExtra;
+    struct Group;
+    extern std::map<int, std::weak_ptr<GroupExtra>> weakExtraMap;
+
+    std::shared_ptr<const GroupExtra> GetExtra(std::shared_ptr<Group>);
+    std::shared_ptr<GroupExtra> GetExtraUnlocked(std::shared_ptr<Group>);
+
     struct GroupExtra : public JsonStore {
+        ~GroupExtra();
         virtual void fallback_job(JsonStore * ) override;
-        DECLARE_STORE_TYPE(GroupBeans)
+        DECLARE_STORE_TYPE(Subscriptions)
         DECLARE_ID_RETURN
+        DECLARE_FLAG(save_before_destroy, custom_flag)
         int id = -1;
         bool enable_custom_headers = false;
         bool enable_custom_payload = false;
@@ -57,8 +68,8 @@ namespace Configs
         QList<int> profiles;
 
         Group();
-
-        std::shared_ptr<GroupExtra> getExtra();
+        std::shared_ptr<const GroupExtra> getExtra();
+        std::shared_ptr<GroupExtra> getExtraUnlocked();
 
         virtual std::shared_ptr<JsonStore> fallback() override;
 

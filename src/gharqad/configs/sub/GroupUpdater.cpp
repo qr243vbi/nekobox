@@ -1,8 +1,4 @@
-
-
-
 #include <nekobox/dataStore/Database.hpp>
-
 #include <yaml-cpp/yaml.h>
 #include <QMutex>
 #include <QThreadPool>
@@ -992,12 +988,56 @@ bool RawUpdater::AddProxy(std::shared_ptr<Configs::ProxyEntity> ent){
   }
 };
 
+void GroupUpdater::AsyncUpdateGroup(
+    std::shared_ptr<Configs::Group> group,
+    const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
+    const std::function<QString(bool*,bool*,const QString&)> &info,
+    const std::function<void()> &finish,
+    const std::function<std::shared_ptr<const Configs::GroupExtra>(
+        std::shared_ptr<const Configs::GroupExtra>)> &updater
+){
+    if (group->is_subscription){
+        bool send_hwid;
+        QString custom_hwid;
+        auto extra = group->getExtra();
+        bool custom_payload = extra->enable_custom_payload;
+        if (custom_payload && updater != nullptr){
+            auto & javascript = extra->javascript_payload;
+            if (!javascript.isEmpty()){
+                extra = updater(extra);
+            }
+        }
+        QByteArray payload = {};
+        bool headers_enabled;
+        if ((headers_enabled = extra->enable_custom_headers)){
+            send_hwid = extra->enable_hwid;
+            custom_hwid = extra->custom_hwid;
+        } else {
+            send_hwid = Configs::dataStore->sub_send_hwid;
+            custom_hwid = Configs::dataStore->sub_custom_hwid_params;
+        }
+        QMap<QString, QString> headers;
+        if (send_hwid) headers = Configs_network::GetHWID(custom_hwid);
+        if (headers_enabled){
+            for (auto [key, value] : asKeyValueRange(extra->custom_headers)){
+                headers.insert(key, value.toString());
+            }
+        }
+        if (custom_payload){
+            payload = extra->text_payload.toUtf8();
+        }
+        AsyncUpdate(PreFinishJob, extra->url, info, group->id, finish, headers, payload, true);
+    }
+};
+
 //
 void GroupUpdater::AsyncUpdate(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
     const QString &str,
     const std::function<QString(bool *, bool *, const QString &)> &info,
-    int _sub_gid, const std::function<void()> &finish) {
+    int _sub_gid, const std::function<void()> &finish,
+    const QMap<QString, QString> &headers,
+    const QByteArray & array, bool no_hwid) {
   auto content = str.trimmed();
   bool asURL = false;
   bool createNewGroup = false;
@@ -1022,14 +1062,14 @@ void GroupUpdater::AsyncUpdate(
       auto group = Configs::ProfileManager::NewGroup();
       group->name = groupName;
       Configs::profileManager->AddGroup(group);
-      auto extra = group->getExtra();
+      auto extra = group->getExtraUnlocked();
 
       extra->url = str;
-      extra->Save();
       gid = group->id;
       MW_dialog_message("SubUpdater", "NewGroup");
     }
-    Update(PreFinishJob, str, gid, asURL, createNewGroup && groupName.isEmpty());
+    Update(PreFinishJob, str, gid, asURL, createNewGroup && groupName.isEmpty(),
+           headers, array, no_hwid);
     emit asyncUpdateCallback(gid);
     if (finish != nullptr)
       finish();
@@ -1042,7 +1082,9 @@ void GroupUpdater::AsyncUpdate(
 
 void GroupUpdater::Update(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
-    const QString &_str, int _sub_gid, bool _not_sub_as_url, bool _auto_name) {
+    const QString &_str, int _sub_gid, bool _not_sub_as_url, bool _auto_name,
+    const QMap<QString, QString> &headers,
+    const QByteArray & array, bool no_hwid) {
   //
   Configs::dataStore->imported_count = 0;
   auto rawUpdater = std::make_unique<RawUpdater>();
@@ -1064,7 +1106,7 @@ void GroupUpdater::Update(
                 QObject::tr("Requesting subscription: %1").arg(groupName));
 
     auto resp = NetworkRequestHelper::HttpGet(
-        content, Configs::dataStore->sub_send_hwid);
+        content, Configs::dataStore->sub_send_hwid && (!no_hwid), headers, array);
     if (!resp.error.isEmpty()) {
       MW_show_log("<<<<<<<< " +
                   QObject::tr("Requesting subscription %1 error: %2")
@@ -1143,10 +1185,9 @@ void GroupUpdater::Update(
     }
 
     group->Save();
-    auto extra = group->getExtra();
+    auto extra = group->getExtraUnlocked();
     extra->sub_last_update = QDateTime::currentMSecsSinceEpoch() / 1000;
     extra->info = sub_user_info;
-    extra->Save();
   }
 
   {
@@ -1206,7 +1247,8 @@ void serialUpdateSubscription(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
     const QList<int> &groupsTabOrder,
     const std::function<QString(bool *, bool *, const QString &)> &info,
-    int _order, bool onlyAllowed) {
+    int _order, bool onlyAllowed,     const std::function<std::shared_ptr<const Configs::GroupExtra>(
+            std::shared_ptr<const Configs::GroupExtra>)> &updater) {
   if (_order >= groupsTabOrder.size()) {
     UI_update_all_groups_Updating = false;
     return;
@@ -1216,7 +1258,7 @@ void serialUpdateSubscription(
   auto group = Configs::profileManager->GetGroup(groupsTabOrder[_order]);
   if (group == nullptr || should_skip_group(group)) {
     serialUpdateSubscription(PreFinishJob, groupsTabOrder, info, _order + 1,
-                             onlyAllowed);
+                             onlyAllowed, updater);
     return;
   }
 
@@ -1232,22 +1274,25 @@ void serialUpdateSubscription(
 
   // Async update current group
   UI_update_all_groups_Updating = true;
-  Subscription::groupUpdater->AsyncUpdate(
-      PreFinishJob, group->getExtra()->url, info, group->id, [=] {
+  Subscription::groupUpdater->AsyncUpdateGroup( group,
+      PreFinishJob, info, [=] {
         serialUpdateSubscription(PreFinishJob, groupsTabOrder, info, nextOrder,
-                                 onlyAllowed);
-      });
+                                 onlyAllowed, updater);
+      }, updater);
 }
 
 void UI_update_all_groups(
     const std::function<void(std::shared_ptr<Configs::Group>)> PreFinishJob,
     bool onlyAllowed,
-    const std::function<QString(bool *, bool *, const QString &)> &info) {
+    const std::function<QString(bool *, bool *, const QString &)> &info,
+    const std::function<std::shared_ptr<const Configs::GroupExtra>(
+            std::shared_ptr<const Configs::GroupExtra>)> &updater
+        ) {
   if (UI_update_all_groups_Updating) {
     MW_show_log("The last subscription update has not exited.");
     return;
   }
 
   auto groupsTabOrder = Configs::profileManager->groupsTabOrder;
-  serialUpdateSubscription(PreFinishJob, groupsTabOrder, info, 0, onlyAllowed);
+  serialUpdateSubscription(PreFinishJob, groupsTabOrder, info, 0, onlyAllowed, updater);
 }

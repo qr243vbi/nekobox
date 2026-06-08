@@ -15,14 +15,20 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGroupBox" name="custom_headers">
-     <property name="title">
-      <string>Enable HTTP Headers</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
+    <widget class="QFrame" name="custom_headers">
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QTableWidget" name="custom_headers_table">
         <column>

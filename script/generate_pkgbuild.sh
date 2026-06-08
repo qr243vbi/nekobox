@@ -4,7 +4,7 @@ asset_res="$(echo "$text"  | jq '.assets[] | select(.browser_download_url | ends
 url_res="$(echo "$asset_res" | jq -r '.browser_download_url' | sed "s~$INPUT_VERSION~\${pkgver}~g")"
 sha_res="$(echo "$asset_res" | jq -r '.digest' | sed 's~sha256:~~g')"
 
-curl -L -o PKGBUILD https://gitea.com/qr243vbi/nekobox/raw/branch/main/PKGBUILD
+curl -L -o PKGBUILD https://codefloe.com/qr243vbi/nekobox/raw/branch/main/PKGBUILD
 sed -i "s@pkgver=.*@pkgver=${INPUT_VERSION}@g; s@sha256sums=(.*@sha256sums=(\"$sha_res\")@g; s@source=(.*@source=(\"$url_res\")@g;" ./PKGBUILD
 mkdir aur_git ||:
 install -Dm644 PKGBUILD aur_git/PKGBUILD

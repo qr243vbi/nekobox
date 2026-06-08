@@ -17,8 +17,9 @@ namespace Configs_network {
         Head = 2
     };
 
+    QMap<QString, QString> GetHWID(const QString & sub_custom_hwid_params);
 
-    void BuildSession(const QString &url, bool sendHwid, cpr::Session& session, QMap<QString, QString> headerMap = {}, QByteArray payload = "");
+    void BuildSession(const QString &url, bool sendHwid, cpr::Session& session, const QMap<QString, QString> &headerMap = {}, const QByteArray &payload = "");
 
     struct HTTPResponse {
         QString error;
@@ -42,11 +43,11 @@ namespace Configs_network {
 
     public:
         template<HTTPMethod method>
-        static HTTPResponse HttpJob(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
+        static HTTPResponse HttpJob(const QString &url, bool sendHwid = false, const QMap<QString, QString>& headers = {}, const QByteArray& payload = "");
 
-        static HTTPResponse HttpGet(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
-        static HTTPResponse HttpPost(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
-        static HTTPResponse HttpHead(const QString &url, bool sendHwid = false, QMap<QString, QString> headers = {}, QByteArray payload = "");
+        static HTTPResponse HttpGet(const QString &url, bool sendHwid = false, const QMap<QString, QString>& headers = {}, const QByteArray& payload = "");
+        static HTTPResponse HttpPost(const QString &url, bool sendHwid = false, const QMap<QString, QString>& headers = {}, const QByteArray& payload = "");
+        static HTTPResponse HttpHead(const QString &url, bool sendHwid = false, const QMap<QString, QString>& headers = {}, const QByteArray& payload = "");
 
         static QString GetHeader(const QMap<EnumFieldName, QString> &header, const QString &name);
     };

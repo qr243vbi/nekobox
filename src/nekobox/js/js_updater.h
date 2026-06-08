@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QVariantMap>
 #include <QFile>
+#include <nekobox/dataStore/Group.hpp>
 #include <QTextStream>
 #include <functional>
 #include <QStringList>
@@ -77,5 +78,9 @@ bool jsAnnouncementMessage(
     QString * updater_js,
     bool first_start
 );
+
+std::shared_ptr<const Configs::GroupExtra> jsSubscription(
+        JsUpdaterWindow* factory,
+        std::shared_ptr<const Configs::GroupExtra> extra);
 
 #endif

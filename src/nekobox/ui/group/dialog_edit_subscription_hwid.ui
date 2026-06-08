@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>474</width>
-    <height>183</height>
+    <width>459</width>
+    <height>121</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,48 +15,32 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QFrame" name="frame">
-     <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
+    <widget class="QGroupBox" name="enable_hwid">
+     <property name="title">
+      <string>Send System Parameters</string>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
+     <property name="checkable">
+      <bool>true</bool>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
-       <widget class="QFrame" name="frame_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QLineEdit" name="custom_hwid">
+        <property name="placeholderText">
+         <string>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</string>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QCheckBox" name="enable_hwid">
-           <property name="text">
-            <string>Send System Parameters</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="enable_custom_hwid">
-           <property name="text">
-            <string>Custom HWID</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
        </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="custom_hwid"/>
       </item>
      </layout>
     </widget>

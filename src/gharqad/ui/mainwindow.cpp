@@ -1,10 +1,15 @@
 
 
-#include "nekobox/dataStore/Database.hpp"
-#include "nekobox/dataStore/RouteEntity.h"
-#include "nekobox/ui/group/GroupSort.hpp"
+#include <nekobox/dataStore/Database.hpp>
+#include <nekobox/dataStore/RouteEntity.h>
+#include <nekobox/ui/group/GroupSort.hpp>
 #include <qcoreapplication.h>
 #include <qtoolbutton.h>
+
+#ifndef SKIP_JS_UPDATER
+#include <iostream>
+#include <nekobox/js/js_updater.h>
+#endif
 
 #include <nekobox/dataStore/Configs.hpp>
 #include <3rdparty/qv2ray/wrapper.hpp>
@@ -1721,7 +1726,19 @@ skip_updater_hide:
       TM_auto_update_subsctiption->start(m * 60 * 1000);
   };
   connect(TM_auto_update_subsctiption, &QTimer::timeout, this, [&] {
-    UI_update_all_groups(this->post_update_job, true, &chooseUpdateGroup);
+    UI_update_all_groups(this->post_update_job, true, &chooseUpdateGroup,
+        [this] (std::shared_ptr<const Configs::GroupExtra> extra) -> std::shared_ptr<const Configs::GroupExtra> {
+#ifndef SKIP_JS_UPDATER
+            auto window = createJsUpdaterWindow();
+            auto extra_new = jsSubscription(window, extra);
+            delete window;
+            return extra_new;
+#else
+            return extra;
+#endif
+
+        }
+    );
   });
   TM_auto_update_subsctiption_Reset_Minute(Configs::dataStore->sub_auto_update);
 
@@ -3770,9 +3787,21 @@ void MainWindow::on_menu_update_subscription_triggered() {
     return;
   }
   mw_sub_updating = true;
-  Subscription::groupUpdater->AsyncUpdate(
-      this->post_update_job, group->getExtra()->url, &chooseUpdateGroup, group->id,
-      [&, group, this] { mw_sub_updating = false; });
+  Subscription::groupUpdater->AsyncUpdateGroup(
+      group, this->post_update_job, &chooseUpdateGroup,
+      [&, group, this] { mw_sub_updating = false; },
+    [this] (std::shared_ptr<const Configs::GroupExtra> extra) -> std::shared_ptr<const Configs::GroupExtra> {
+#ifndef SKIP_JS_UPDATER
+      auto window = createJsUpdaterWindow();
+      auto extra_new = jsSubscription(window, extra);
+      delete window;
+      return extra_new;
+#else
+      return extra;
+#endif
+
+    }
+  );
 }
 
 void MainWindow::on_menu_remove_unavailable_triggered() {
@@ -4635,10 +4664,7 @@ bool isNewer(QString assetName) {
 #endif
 
 #ifndef SKIP_UPDATE_BUTTON
-#ifndef SKIP_JS_UPDATER
-#include <iostream>
-#include <nekobox/js/js_updater.h>
-#endif
+
 void MainWindow::CheckUpdate(bool button_clicked) {
 #ifdef NKR_SOFTWARE_KEYS
   QMutex mut;

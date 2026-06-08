@@ -6,15 +6,15 @@ require (
 	github.com/Microsoft/go-winio v0.6.2
 	github.com/apache/thrift v0.23.1-0.20260502142354-26137ff89d41
 	github.com/dustin/go-humanize v1.0.1
-	github.com/giert/taskmaster v0.0.0-20251117163809-2ec4a61354ef
+	github.com/giert/taskmaster v0.1.0
 	github.com/gofrs/uuid/v5 v5.4.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
 	github.com/sagernet/sing v0.8.10
-	github.com/sagernet/sing-box v1.13.12
-	github.com/sagernet/sing-tun v0.8.9
+	github.com/sagernet/sing-box v1.13.13
+	github.com/sagernet/sing-tun v0.8.10
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/crypto v0.52.0
 	golang.org/x/sys v0.45.0
@@ -58,6 +58,7 @@ require (
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/nftables v0.2.1-0.20240414091927-5e242ec57806 // indirect
 	github.com/google/uuid v1.6.0 // indirect
+	github.com/govalues/decimal v0.1.32 // indirect
 	github.com/hashicorp/yamux v0.1.2 // indirect
 	github.com/hdevalence/ed25519consensus v0.2.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
@@ -82,7 +83,7 @@ require (
 	github.com/pires/go-proxyproto v0.8.1 // indirect
 	github.com/prometheus-community/pro-bing v0.4.0 // indirect
 	github.com/quic-go/qpack v0.6.0 // indirect
-	github.com/rickb777/date v1.21.1 // indirect
+	github.com/rickb777/period v1.0.8 // indirect
 	github.com/rickb777/plural v1.4.2 // indirect
 	github.com/safchain/ethtool v0.3.0 // indirect
 	github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a // indirect
@@ -173,9 +174,9 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.12-mod1
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod1
 
-replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20260425125752-7a939c6364c4
+replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20260608095939-1db9186448db
 
 replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7
 

@@ -5,6 +5,7 @@
 #include <nekobox/ui/mainwindow.h>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/dataStore/Database.hpp>
+#include <nekobox/sys/Settings.h>
 
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
@@ -748,13 +749,17 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
     if (orientation == Qt::Vertical){
         int data_id = this->data_id(section);
         if (data_id == Configs::dataStore->started_id){
-            return "*";
+            if (Configs::windowSettings->show_profile_id){
+                return "*" + QString::number(data_id);
+            } else {
+                return "*";
+            }
         } 
-        #ifdef DEBUG_MODE
-        return data_id;
-        #else
-        return QString::number(section + 1) + "  ";
-        #endif
+        if (Configs::windowSettings->show_profile_id){
+            return data_id;
+        } else {
+            return (section + 1);
+        }
     }
 
     if (orientation == Qt::Horizontal) {

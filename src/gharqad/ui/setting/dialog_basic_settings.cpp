@@ -181,6 +181,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_BOOL(disable_tray)
     S_LOAD_BOOL(auto_hide)
+    S_LOAD_BOOL(show_profile_id)
     D_LOAD_BOOL(core_use_uds)
     S_LOAD_BOOL(ask_delete)
     S_LOAD_BOOL(manually_column_width)
@@ -457,6 +458,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(test_concurrent)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_BOOL(disable_tray)
+    S_SAVE_BOOL(show_profile_id)
     S_SAVE_BOOL(manually_column_width)
     #ifdef USE_CPP_PROXY_CONFIGURATOR
     Configs::dataStore->proxy_scheme = ui->proxy_scheme->currentText().toLower();

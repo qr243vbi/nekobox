@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/sys/Settings.h>
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
@@ -57,6 +53,7 @@ ADD_LIST(Y)
 ADD_LIST(maximized)
 ADD_LIST(splitter_state)
 ADD_LIST(auto_hide)
+ADD_LIST(show_profile_id)
 ADD_LIST(save_position)
 ADD_LIST(save_geometry)
 ADD_LIST(program_name)

@@ -57,6 +57,17 @@ void DialogManageGroups::on_update_all_clicked() {
     if (QMessageBox::question(this, tr("Confirmation"), tr("Update all subscriptions?")) == QMessageBox::StandardButton::Yes) {
         UI_update_all_groups(
             GetMainWindow()->post_update_job,
-            false,  &chooseUpdateGroup);
+            false,  &chooseUpdateGroup,
+                    [this] (std::shared_ptr<const Configs::GroupExtra> extra) -> std::shared_ptr<const Configs::GroupExtra> {
+#ifndef SKIP_JS_UPDATER
+                      auto window = GetMainWindow()->createJsUpdaterWindow();
+                      auto extra_new = jsSubscription(window, extra);
+                      delete window;
+                      return extra_new;
+#else
+                      return extra;
+#endif
+                    }
+                    );
     }
 }

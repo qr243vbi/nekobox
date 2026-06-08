@@ -13,7 +13,8 @@
 #include <nekobox/global/DeviceDetailsHelper.hpp>
 #include <nekobox/ui/mainwindow.h>
 
-void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Session& session, QMap<QString, QString> headerMap, QByteArray payload)
+void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Session& session,
+                                   const QMap<QString, QString> &headerMap, const QByteArray& payload)
 {
     auto s = Configs::dataStore;
 
@@ -71,33 +72,10 @@ void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Sessi
     // HWID HEADERS
     // ------------------------
     cpr::Header headers;
-    if (sendHwid)
-    {
-        auto d = GetDeviceDetails();
-
-        QMap<QString, QString> custom;
-
-        if (!s->sub_custom_hwid_params.isEmpty()) {
-            QStringList pairs = s->sub_custom_hwid_params.split(',');
-            for (auto &p : pairs) {
-                auto t = p.trimmed();
-                int eq = t.indexOf('=');
-                if (eq > 0) {
-                    custom[t.left(eq).toLower()] = t.mid(eq + 1).trimmed();
-                }
-            }
+    if (sendHwid){        
+        for (auto [key, value]: asKeyValueRange(GetHWID(s->sub_custom_hwid_params))){
+            headers[key.toStdString()] = value.toStdString();
         }
-
-        auto hwid   = custom.value("hwid", d.hwid);
-        auto os     = custom.value("os", d.os);
-        auto osv    = custom.value("osversion", d.osVersion);
-        auto model  = custom.value("model", d.model);
-
-        if (!hwid.isEmpty())  headers["x-hwid"] = hwid.toStdString();
-        if (!os.isEmpty())    headers["x-device-os"] = os.toStdString();
-        if (!osv.isEmpty())   headers["x-ver-os"] = osv.toStdString();
-        if (!model.isEmpty()) headers["x-device-model"] = model.toStdString();
-
     }
 
     for (auto [key, value]: asKeyValueRange(headerMap)){
@@ -109,10 +87,50 @@ void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Sessi
     session.UpdateHeader(headers);
 }
 
+
+QMap<QString, QString> Configs_network::GetHWID(const QString & sub_custom_hwid_params){
+        auto d = GetDeviceDetails();
+        QMap<QString, QString> headers;
+
+        QMap<QString, QString> custom;
+
+        if (!sub_custom_hwid_params.isEmpty()) {
+            const QStringList pairs = sub_custom_hwid_params.split(',');
+
+            for (const auto& p : pairs) {
+                const auto t = p.trimmed();
+                const int eq = t.indexOf('=');
+
+                if (eq > 0) {
+                    custom[t.left(eq).toLower()] =
+                        t.mid(eq + 1).trimmed();
+                }
+            }
+        }
+
+        const auto hwid  = custom.value("hwid", d.hwid);
+        const auto os    = custom.value("os", d.os);
+        const auto osv   = custom.value("osversion", d.osVersion);
+        const auto model = custom.value("model", d.model);
+
+        if (!hwid.isEmpty())
+            headers.insert("x-hwid", hwid);
+
+        if (!os.isEmpty())
+            headers.insert("x-device-os", os);
+
+        if (!osv.isEmpty())
+            headers.insert("x-ver-os", osv);
+
+        if (!model.isEmpty())
+            headers.insert("x-device-model", model);
+        return headers;
+}
+
 namespace Configs_network
 {
 template<HTTPMethod method>
-HTTPResponse NetworkRequestHelper::HttpJob(const QString &url, bool sendHwid, QMap<QString, QString> headers, QByteArray payload )
+HTTPResponse NetworkRequestHelper::HttpJob(const QString &url, bool sendHwid, const QMap<QString, QString>& headers, const QByteArray& payload )
 {
     cpr::Session session; 
     BuildSession(url, sendHwid, session, headers, payload);
@@ -142,17 +160,17 @@ QString NetworkRequestHelper::GetHeader(const QMap<EnumFieldName, QString> &head
 }
 
 
-template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Get>(const QString&, bool, QMap<QString, QString>, QByteArray payload);
-template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Post>(const QString&, bool, QMap<QString, QString>, QByteArray payload);
-template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Head>(const QString&, bool, QMap<QString, QString>, QByteArray payload);
+template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Get>(const QString&, bool, const QMap<QString, QString>&,const QByteArray &payload);
+template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Post>(const QString&, bool, const QMap<QString, QString>&,const QByteArray &payload);
+template HTTPResponse NetworkRequestHelper::HttpJob<HTTPMethod::Head>(const QString&, bool, const QMap<QString, QString>&,const QByteArray &payload);
 
-HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid, QMap<QString, QString> headers, QByteArray payload ){
+HTTPResponse NetworkRequestHelper::HttpGet(const QString &url, bool sendHwid, const QMap<QString, QString>& headers, const QByteArray& payload ){
     return NetworkRequestHelper::HttpJob<HTTPMethod::Get>(url, sendHwid, headers, payload);
 };
-HTTPResponse NetworkRequestHelper::HttpPost(const QString &url, bool sendHwid, QMap<QString, QString> headers, QByteArray payload){
+HTTPResponse NetworkRequestHelper::HttpPost(const QString &url, bool sendHwid, const QMap<QString, QString>& headers, const QByteArray& payload){
     return NetworkRequestHelper::HttpJob<HTTPMethod::Post>(url, sendHwid, headers, payload);
 };
-HTTPResponse NetworkRequestHelper::HttpHead(const QString &url, bool sendHwid, QMap<QString, QString> headers, QByteArray payload){
+HTTPResponse NetworkRequestHelper::HttpHead(const QString &url, bool sendHwid, const QMap<QString, QString>& headers, const QByteArray& payload){
     return NetworkRequestHelper::HttpJob<HTTPMethod::Head>(url, sendHwid, headers, payload);
 };
 

@@ -63,7 +63,7 @@ enum JsonStoreType {
   NoSave = 10,
   TrafficLooper = 11,
   DatabaseLogger = 12,
-  GroupBeans = 13
+  Subscriptions = 13
 };
 
 } // namespace Configs

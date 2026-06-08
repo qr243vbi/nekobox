@@ -1034,3 +1034,54 @@ bool jsAnnouncementMessage(
     JS_FreeRuntime(rt);
     return true;
 }
+
+std::shared_ptr<const Configs::GroupExtra> jsSubscription(
+        JsUpdaterWindow* factory,
+        std::shared_ptr<const Configs::GroupExtra> extra){
+    JSRuntime* rt = JS_NewRuntime();
+    if (!rt) return extra;
+    JSContext* ctx = JS_NewContext(rt);
+    if (!ctx) {
+        JS_FreeRuntime(rt);
+        return extra;
+    }
+
+    JSValue global_obj = JS_GetGlobalObject(ctx);
+    QString javascript = extra->javascript_payload;
+    QString script = "var subscription = " + QString::fromUtf8(extra->ToJsonBytes());
+    if (!plain_js_eval(ctx, script, "javascript_payload.js")) {
+        goto return_ptr;
+    }
+
+    if (jsInit(ctx, &javascript, factory)) {
+        JSValue val = JS_GetPropertyStr(ctx, global_obj, "subscription");
+        if (JS_IsObject(val)){
+            if (!JS_IsArray(val)){
+                auto extra_new = std::make_shared<Configs::GroupExtra>();
+                const char* str = JS_ToCString(ctx, val);
+                if (str) {
+                    extra_new->FromJsonBytes(str);
+                    JS_FreeCString(ctx, str); // Must free C strings allocated by JS_ToCString
+                }
+            }
+        }
+        JS_FreeValue(ctx, val);
+    }
+
+    return_ptr:
+    JS_FreeValue(ctx, global_obj);
+    JS_FreeContext(ctx);
+    JS_FreeRuntime(rt);
+    return extra;
+}
+
+
+
+
+
+
+
+
+
+
+

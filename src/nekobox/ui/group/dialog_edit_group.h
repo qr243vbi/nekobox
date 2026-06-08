@@ -40,6 +40,7 @@ class DialogHeaders: public QDialog {
     Q_OBJECT
 public:
     explicit DialogHeaders(QWidget * parent = nullptr);
+    void addRow(const QString & title, const QString & value);
     ~DialogHeaders() override;
     Ui::DialogHeaders *ui;
 };

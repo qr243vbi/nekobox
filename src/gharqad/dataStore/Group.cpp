@@ -1,7 +1,3 @@
-
-
-
-
 #include <nekobox/dataStore/Group.hpp>
 #include <nekobox/dataStore/DatabaseRocksDB.hpp>
 #include <QFile>
@@ -28,13 +24,51 @@ namespace Configs
     Group::Group() {
     }
 
-    std::shared_ptr<GroupExtra> Group::getExtra(){
-        int id = this->Id();
-        auto ptr = std::make_shared<GroupExtra>();
-        ptr->id = id;
-        ptr->Load();
-        return ptr;
+
+    std::map<int, std::weak_ptr<GroupExtra>> weakExtraMap;
+
+    static std::shared_ptr<GroupExtra> getExtra(int id){
+        if (id < 0){
+            return nullptr;
+        }
+        std::shared_ptr<GroupExtra> extr = nullptr;
+        auto iter = weakExtraMap.find(id);
+        if (iter != weakExtraMap.end()){
+            extr = iter->second.lock();
+        }
+        if (extr == nullptr){
+            extr = std::make_shared<GroupExtra>();
+            extr->id = id;
+            extr->save_before_destroy(true);
+            extr->Load();
+            weakExtraMap.emplace(id, extr);
+        }
+        return extr;
+    }
+
+    std::shared_ptr<const GroupExtra> GetExtra(std::shared_ptr<Group> ent){
+        if (ent == nullptr){
+            return nullptr;
+        }
+        return getExtra(ent->id);
     };
+    static std::shared_ptr<GroupExtra> getExtraUnlocked(int id){
+        auto extr = getExtra(id);
+        if (extr == nullptr){
+            return nullptr;
+        }
+        extr->save_before_destroy(true);
+        return extr;
+    };
+    std::shared_ptr<GroupExtra> GetExtraUnlocked(std::shared_ptr<Group> ent){
+        return getExtraUnlocked(ent->id);
+    };
+    GroupExtra::~GroupExtra(){
+        weakExtraMap.erase(this->id);
+        if (this->save_before_destroy()){
+            this->Save();
+        }
+    }
     
     void GroupExtra::fallback_job(JsonStore * store) {
         if (auto group = dynamic_cast<Configs::Group*>(store)){
@@ -44,14 +78,7 @@ namespace Configs
     };
 
     std::shared_ptr<JsonStore> Group::fallback() {
-        if (id >= 0) {
-            auto store = std::make_shared<GroupExtra>();
-            store->id = id;
-            store->Load();
-            return store;
-        } else {
-            return nullptr;
-        }
+        return this->getExtraUnlocked();
     };
 
     #ifndef  d_add
@@ -150,4 +177,12 @@ namespace Configs
     {
         return profiles.contains(id);
     }
+
+    std::shared_ptr<const GroupExtra> Group::getExtra(){
+        return Configs::getExtra(this->id);
+    };
+
+    std::shared_ptr<GroupExtra> Group::getExtraUnlocked(){
+        return Configs::getExtraUnlocked(this->id);
+    };
 }

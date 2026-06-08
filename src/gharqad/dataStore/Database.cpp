@@ -81,7 +81,7 @@ QString getJsonStoreFileName(short type, long id) {
   case Routes:
   case Proxies:
   case Groups:
-  case GroupBeans:
+  case Subscriptions:
   case Beans:
     break;
   case Shortcuts:
@@ -117,8 +117,8 @@ QString getJsonStorePathName(char type) {
     return "profiles";
   case Groups:
     return "groups";
-  case GroupBeans:
-    return "group_beans";
+  case Subscriptions:
+    return "subscriptions";
   case Beans:
     return "beans";
   default:
@@ -652,7 +652,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
   db = std::unique_ptr<rocksdb::DB>(db1);
 
   if (!status.ok()) {
-    qWarning() << status.ToString();
+    qWarning() << QString::fromStdString(status.ToString());
     return;
   }
   rocksdb::WriteBatch dbi; 
@@ -668,7 +668,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
 
 
   {
-    std::vector<char> types = {Proxies, Beans, Routes, Groups, GroupBeans};
+    std::vector<char> types = {Proxies, Beans, Routes, Groups, Subscriptions};
     for (char c : types) {
       auto ids = FileDatabaseManager::QueryFromDirectory(c);
       for (int x : ids) {
@@ -694,7 +694,7 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
     );
 
     if (!status.ok()) {
-      qWarning() << status.ToString();
+      qWarning() << QString::fromStdString(status.ToString());
       return;
     }
   }
@@ -1192,6 +1192,7 @@ void ProfileManager::BatchDeleteGroups(const QList<int> & ids) {
       lock();
       for (int gid : to_drop){
        Configs::databaseManager->Drop(Groups, gid);
+       Configs::databaseManager->Drop(Subscriptions, gid);
       }
       unlock();
     });
