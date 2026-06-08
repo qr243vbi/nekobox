@@ -3,8 +3,23 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #else
-#include <netdb.h>
-#include <arpa/inet.h>
+#if defined(__has_include)
+#  if __has_include(<sys/types.h>)
+#    include <sys/types.h>
+#  endif
+#  if __has_include(<sys/socket.h>)
+#    include <sys/socket.h>
+#  endif
+#  if __has_include(<netinet/in.h>)
+#    include <netinet/in.h>
+#  endif
+#  if __has_include(<netdb.h>)
+#    include <netdb.h>
+#  endif
+#  if __has_include(<arpa/inet.h>)
+#    include <arpa/inet.h>
+#  endif
+#endif
 #endif
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
