@@ -22,9 +22,10 @@ namespace Configs
     struct GroupExtra : public JsonStore {
         ~GroupExtra();
         virtual void fallback_job(JsonStore * ) override;
-        DECLARE_STORE_TYPE(Subscriptions)
+        virtual char StoreType() const override;
         DECLARE_ID_RETURN
         DECLARE_FLAG(save_before_destroy, custom_flag)
+        DECLARE_FLAG(fallback_load, custom_flag2)
         int id = -1;
         bool enable_custom_headers = false;
         bool enable_custom_payload = false;

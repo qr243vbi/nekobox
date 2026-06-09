@@ -8,6 +8,13 @@
 
 namespace Configs
 {
+    char GroupExtra::StoreType() const {
+        if (this->fallback_load()){
+            return Configs::JsonStoreType::Groups;
+        }
+        return Configs::JsonStoreType::Subscriptions;
+    };
+
     bool Group::saveNotes(const QString &notes){
         #ifdef DEBUG_MODE
         qDebug() << "OnSaveNotes";
@@ -78,7 +85,11 @@ namespace Configs
     };
 
     std::shared_ptr<JsonStore> Group::fallback() {
-        return this->getExtraUnlocked();
+        auto ret = this->getExtraUnlocked();
+        ret->fallback_load(true);
+        ret->Load();
+        ret->fallback_load(false);
+        return ret;
     };
 
     #ifndef  d_add

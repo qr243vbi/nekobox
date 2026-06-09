@@ -30,7 +30,7 @@ typedef ConfJsMapStat &ConfJsMap;
     X &= ~Y;                                                                   \
   }
 #define DECLARE_FLAG(X, Y)                                                     \
-  bool X() { return GET_FLAG(this->flags, Configs::JsonStoreFlags::Y); }       \
+  bool X() const { return GET_FLAG(this->flags, Configs::JsonStoreFlags::Y); }       \
   bool X(bool flag) {                                                          \
     SET_FLAG(this->flags, Configs::JsonStoreFlags::Y, flag);                   \
     return flag;                                                               \
