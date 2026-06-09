@@ -97,6 +97,7 @@ sudo apt-get install -y nekobox
 - TrustTunnel
 - Naive
 - Wireguard
+- AmneziaWG
 - Tailscale
 - SSH
 - Tor
