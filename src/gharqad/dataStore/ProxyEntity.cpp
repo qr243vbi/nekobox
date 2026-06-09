@@ -229,7 +229,7 @@ qDebug() << "Type Unknown" << make_strong_bean;
 
         #define cast_func(X)         \
         std::shared_ptr<const Configs::X##Bean> ProxyEntity::X##Bean() const {           \
-            std::shared_ptr<const Configs::X##Bean> ret = std::static_pointer_cast<const Configs::X##Bean>(bean());    \
+            std::shared_ptr<const Configs::X##Bean> ret = std::dynamic_pointer_cast<const Configs::X##Bean>(bean());    \
             return ret; \
         };
 
@@ -252,5 +252,6 @@ qDebug() << "Type Unknown" << make_strong_bean;
         cast_func(Naive)
         cast_func(TrustTunnel)
         cast_func(Juicity)
+        cast_func(AmneziaWG)
 
 }

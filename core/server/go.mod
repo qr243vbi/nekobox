@@ -174,7 +174,7 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod1
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod3
 
 replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.8.10-mod1
 

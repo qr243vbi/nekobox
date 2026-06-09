@@ -11,12 +11,10 @@
 
 namespace Configs {
 
-
-
     CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
         using namespace To_CoreObj_box;
-        auto tun_name = "nekobox-wg";
+        auto tun_name = "wg_" + GetRandomString(9, ExcludeUppercase | ExcludeDigits);
 
         QJsonObject peer{
             {"address", entity->serverAddress},
@@ -261,4 +259,141 @@ namespace Configs {
             entity->name = "Wg file config";
             return true;
         };
+}
+
+namespace Configs {
+
+CoreObjOutboundBuildResult AmneziaWGBean::BuildCoreObjSingBox() const {
+    CoreObjOutboundBuildResult result;
+    using namespace To_CoreObj_box;
+
+    QJsonArray peers;
+    for (JsonStore* peerobjjs: this->peers){
+        Peer * peerobj = dynamic_cast<Peer*>(peerobjjs);
+        if (peerobj == nullptr){
+            continue;
+        }
+        QJsonObject peer{
+            {"address", peerobj->address},
+            {"port", peerobj->port},
+            {"public_key", peerobj->publicKey},
+            {"preshared_key", peerobj->presharedKey},
+            {"allowed_ips", QListStr2QJsonArray(peerobj->allowedIPs)},
+            {"persistent_keepalive_interval", peerobj->persistentKeepaliveInterval}
+        };
+
+        peers << peer;
+    }
+
+    QJsonObject outbound{
+        {"type", "amneziawg"},
+        {"address", QListStr2QJsonArray(this->address)},
+        {"private_key", privateKey},
+        {"peers", peers},
+        {"mtu", MTU},
+        {"listen_port", listenPort},
+        {"useIntegratedTun", useIntegratedTun}
+    };
+
+    // AmneziaWG params
+    {
+        outbound["jc"] = jc;
+        outbound["jmin"] = jmin;
+        outbound["jmax"] = jmax;
+
+        outbound["s1"] = s1;
+        outbound["s2"] = s2;
+        outbound["s3"] = s3;
+        outbound["s4"] = s4;
+
+        outbound["h1"] = h1;
+        outbound["h2"] = h2;
+        outbound["h3"] = h3;
+        outbound["h4"] = h4;
+
+        outbound["i1"] = i1;
+        outbound["i2"] = i2;
+        outbound["i3"] = i3;
+        outbound["i4"] = i4;
+        outbound["i5"] = i5;
+    }
+
+    result.outbound = outbound;
+    return result;
+}
+
+
+// -------------------- LINK PARSER --------------------
+
+bool AmneziaWGBean::TryParseLink(const QString &link) {
+    return this->TryParseNekorayLink(link);
+}
+
+
+// -------------------- JSON PARSER --------------------
+
+bool AmneziaWGBean::TryParseJson(const QJsonObject &obj) {
+    using namespace Configs::From_Json;
+
+    // -------------------- Basic fields --------------------
+    privateKey = obj["private_key"].toString();
+
+    address = QJsonArray2QListStr(obj["address"].toArray());
+
+    MTU = obj["mtu"].toInt();
+    listenPort = obj["listen_port"].toInt();
+
+    useIntegratedTun = obj["useIntegratedTun"].toBool();
+
+    // -------------------- Peers --------------------
+    auto peersArray = obj["peers"].toArray();
+
+    peers.clear();
+
+    for (const auto &p : peersArray) {
+        QJsonObject peerObj = p.toObject();
+
+        auto *peer = new Peer();
+
+        peer->address = peerObj["address"].toString();
+        peer->port = peerObj["port"].toInt();
+        peer->publicKey = peerObj["public_key"].toString();
+        peer->presharedKey = peerObj["preshared_key"].toString();
+        peer->allowedIPs = QJsonArray2QListStr(peerObj["allowed_ips"].toArray());
+        peer->persistentKeepaliveInterval =
+            peerObj["persistent_keepalive_interval"].toInt();
+
+        peers.append(peer);
+    }
+
+    // -------------------- AmneziaWG params --------------------
+    jc = obj["jc"].toInt();
+    jmin = obj["jmin"].toInt();
+    jmax = obj["jmax"].toInt();
+
+    s1 = obj["s1"].toInt();
+    s2 = obj["s2"].toInt();
+    s3 = obj["s3"].toInt();
+    s4 = obj["s4"].toInt();
+
+    h1 = obj["h1"].toString();
+    h2 = obj["h2"].toString();
+    h3 = obj["h3"].toString();
+    h4 = obj["h4"].toString();
+
+    i1 = obj["i1"].toString();
+    i2 = obj["i2"].toString();
+    i3 = obj["i3"].toString();
+    i4 = obj["i4"].toString();
+    i5 = obj["i5"].toString();
+
+    return true;
+}
+
+// -------------------- SHARE LINK --------------------
+
+QString AmneziaWGBean::ToShareLink() const {
+    return this->ToNekorayShareLink();
+}
+
 }
