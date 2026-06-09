@@ -252,6 +252,9 @@ if (resp_error) {
         let ar = release_array[0];
         release_note = ar[0] + ': ' + ar[1];
         for (let i = 1; i < release_length; i++) {
+            if (i > 4){
+                break;
+            }
             release_note += "\n"
             ar = release_array[i];
             release_note += ar[0] + ': ' + ar[1];

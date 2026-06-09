@@ -37,6 +37,7 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 
 set(NYXARIA "src/nekobox")
 set(GHARQAD "src/gharqad")
+set(ONPARTY "src/3rdparty")
 
 
 # Target Source Translations
@@ -121,7 +122,7 @@ endif()
 if (USE_HOTKEYS)
   set(QHOTKEY_INSTALL OFF CACHE BOOL "Disable install QHotkey library")
   set(QHOTKEY_EXAMPLES OFF CACHE BOOL "Enable compiling examples")
-  add_subdirectory("3rdparty/QHotkey")
+  add_subdirectory("${ONPARTY}/QHotkey")
   nkr_add_compile_definitions(USE_HOTKEYS)
   list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 endif()
@@ -208,22 +209,20 @@ set(PROJECT_SOURCES
         ${PROJECT_SOURCES_GLOB}
         ${GHARQAD}/main.cpp
 
-        3rdparty/qrcodegen/qrcodegen.cpp
-
-        3rdparty/qv2ray/v2/ui/LogHighlighter.cpp
-        3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp
-        3rdparty/qv2ray/v2/ui/widgets/common/QJsonModel.cpp
-        3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp
-        3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp
-        3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui
-        3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp
-        3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp
-        3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.cpp
-
-        3rdparty/quirc/lib/decode.c
-        3rdparty/quirc/lib/identify.c
-        3rdparty/quirc/lib/quirc.c
-        3rdparty/quirc/lib/version_db.c
+        ${ONPARTY}/qrcodegen/qrcodegen.cpp
+        ${ONPARTY}/qv2ray/v2/ui/LogHighlighter.cpp
+        ${ONPARTY}/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp
+        ${ONPARTY}/qv2ray/v2/ui/widgets/common/QJsonModel.cpp
+        ${ONPARTY}/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp
+        ${ONPARTY}/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp
+        ${ONPARTY}/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui
+        ${ONPARTY}/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp
+        ${ONPARTY}/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp
+        ${ONPARTY}/qv2ray/v2/proxy/QvProxyConfigurator.cpp
+        ${ONPARTY}/quirc/lib/decode.c
+        ${ONPARTY}/quirc/lib/identify.c
+        ${ONPARTY}/quirc/lib/quirc.c
+        ${ONPARTY}/quirc/lib/version_db.c
 
         ${GHARQAD}/api/RPC.cpp
         ${GHARQAD}/stats/traffic/TrafficLooper.cpp
@@ -318,7 +317,7 @@ else()
         message(STATUS "Using system QuickJS-NG")
     else()
         message(STATUS "System QuickJS-NG not found, using bundled version")
-        add_subdirectory("${CMAKE_SOURCE_DIR}/3rdparty/qjs")
+        add_subdirectory("${ONPARTY}/qjs")
     endif()
 
     target_link_libraries(nekobox PRIVATE qjs)
@@ -374,7 +373,7 @@ if(cpr_FOUND)
     message(STATUS "Using system CPR")
 else()
     message(STATUS "System CPR not found, using bundled version")
-    add_subdirectory("${CMAKE_SOURCE_DIR}/3rdparty/cpr")
+    add_subdirectory("${ONPARTY}/cpr")
 endif()
 
 target_link_libraries(nekobox PRIVATE cpr::cpr)

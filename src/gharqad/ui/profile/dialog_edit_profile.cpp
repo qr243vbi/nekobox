@@ -269,6 +269,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     LOAD_TYPE("trusttunnel")
     LOAD_TYPE("naive")
     LOAD_TYPE("wireguard")
+    LOAD_TYPE("awg")
     LOAD_TYPE("tailscale")
     LOAD_TYPE("ssh")
     LOAD_TYPE("tor")
@@ -352,7 +353,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditShadowTLS(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
-  } else if (type == "wireguard") {
+  } else if (type == "wireguard" || type == "awg") {
     auto _innerWidget = new EditWireguard(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
