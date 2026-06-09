@@ -7,10 +7,8 @@ import (
 )
 
 type interfaceMonitor struct{}
+type monitorOptions struct{}
 
-func newInterfaceMonitor(options *monitorOptions) (*interfaceMonitor, error) {
-	return &interfaceMonitor{}, nil
-}
 
 func (m *interfaceMonitor) Start() error { return nil }
 func (m *interfaceMonitor) Stop() error  { return nil }

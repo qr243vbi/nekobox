@@ -184,10 +184,10 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE ${GOARCH} with platform ${
 # ----------------------------
 # Tags
 # ----------------------------
-set(TAGS "with_clash_api,with_quic,with_wireguard,with_utls,with_dhcp,with_shadowtls,with_grpc,with_acme,with_awg")
+set(TAGS "with_clash_api,with_gvisor,with_quic,with_wireguard,with_utls,with_dhcp,with_shadowtls,with_grpc,with_acme,with_awg")
 
 if(NOT GOOS STREQUAL "freebsd")
-    set(TAGS "${TAGS},with_gvisor,with_tailscale")
+    set(TAGS "${TAGS},with_tailscale")
     if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
         set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
     endif()
@@ -226,7 +226,7 @@ if(NOT SKIP_UPDATER)
 				${CMAKE_COMMAND} -E chdir "${GO_SOURCE_DIR}/updater"
                 "${GOCMD}" build ${GO_MOD_FLAG} -buildmode=pie -buildvcs=false -o "${DESTDIR}/updater${EXE_SUFFIX}" -trimpath -ldflags "-w -s"
     )
-    add_custom_target(updater ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
+    add_custom_target(updater_target ALL DEPENDS "${DESTDIR}/updater${EXE_SUFFIX}")
 
     if (UNIX)
         install(PROGRAMS "${DESTDIR}/updater${EXE_SUFFIX}" DESTINATION "${PROGRAMPREFIX}" COMPONENT core)

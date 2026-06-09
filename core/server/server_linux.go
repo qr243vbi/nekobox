@@ -1,77 +1,56 @@
 //go:build linux
 package main
-
 import (
-	"context"
-	_ "embed"
-	"fmt"
-	"log"
-	"nekobox_core/gen"
-	"nekobox_core/internal"
-	"os"
-	"os/exec"
-	"os/user"
-	"path/filepath"
-	"strconv"
-	"syscall"
-	"time"
-
-	tun "github.com/sagernet/sing-tun"
-	"github.com/sagernet/sing/common/shell"
 	"kernel.org/pub/linux/libs/security/libcap/cap"
+	"strconv"
+	tun "github.com/sagernet/sing-tun"
+
+	"github.com/sagernet/sing/common/shell"
+	"os/exec"
+	"fmt"
+	"os"
+	"os/user"
+	"syscall"
+	_ "embed"
+	"log"
+	"path/filepath"
 )
 
-func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
-	out := new(gen.EmptyResp)
-	return out, nil
-}
 
-func runAdmin() (int, error) {
-	return 0, nil
-}
+func RunResolvectl(args ...string) error {
+	path, err := exec.LookPath("resolvectl")
+	if err != nil {
+		return err
+	}
+	oldpath := path
 
-func checkTaskScheduler(save bool) error {
-	return nil
-}
-
-func doRun(_ string) error {
-	return nil
-}
-
-func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
-	out := new(gen.IsPrivilegedResponse)
-	priv, err := isElevated()
-	out.HasPrivilege = priv
-	return out, err
-}
-
-func WaitForProcessExit(pid int) error {
-	// Wait for the process to terminate
-	for {
-		// Send signal 0 to check if the process exists
-		err := syscall.Kill(pid, syscall.Signal(0))
-		if err != nil {
-			if err == syscall.ESRCH {
-				return nil
-			}
-			return fmt.Errorf("Error checking process status: %v", err)
+	if os.Geteuid() != 0 {
+		path = elevatedLauncherDir + elevatedLauncherFile
+		if !fileExists(path) {
+			path = oldpath
 		}
-		time.Sleep(442 * time.Millisecond)
 	}
-}
 
-func wsainit() {
-
-}
-
-func isElevated() (bool, error) {
-	if os.Geteuid() == 0 {
-		return true, nil
+	if err != nil {
+		return err
 	}
-	c := cap.GetProc()
-	cp, err := c.GetFlag(cap.Effective, cap.NET_ADMIN)
-	return cp, err
+	if path == "" {
+		err = fmt.Errorf("Path not found")
+		return err
+	}
+
+	command := shell.Exec(path, args...)
+	//	command.Stdout = os.Stdout
+	//	command.Stderr = os.Stderr
+	return command.Run()
 }
+
+func CheckResolvectl() {
+	tun.ResolveCtl = RunResolvectl
+}
+
+//go:embed elevated_resolvctl
+var resolvectlContent []byte
 
 // Function to create a group if it does not exist
 func createGroup(groupName string) error {
@@ -159,50 +138,20 @@ func ensureGroupAndSetOwnership(programPath string, groupName string) error {
 	return nil
 }
 
+
+func isElevated() (bool, error) {
+	if os.Geteuid() == 0 {
+		return true, nil
+	}
+	c := cap.GetProc()
+	cp, err := c.GetFlag(cap.Effective, cap.NET_ADMIN)
+	return cp, err
+}
+
 const elevatedLauncherDir = "/usr/local/sbin/"
 const elevatedLauncherFile = "nekobox_core_elevated_resolvectl"
 
-/*
-const polkitRuleDir = "/etc/polkit-1/rules.d/"
-const polkitRuleFile = "10_nekobox_core.rules"
-const polkitRuleContent = `
-polkit.addRule(function(action, subject) {
-    if ((action.id == "org.freedesktop.resolve1.set-domains" ||
-         action.id == "org.freedesktop.resolve1.set-default-route" ||
-         action.id == "org.freedesktop.resolve1.revert" ||
-         action.id == "org.freedesktop.resolve1.set-dns-servers") &&
-        subject.isInGroup("sing-box")) {
-        return polkit.Result.YES;
-    }
-});`
-
-func CreatePolkitRule() {
-	filePath := polkitRuleDir + polkitRuleFile
-	os.MkdirAll(polkitRuleDir, 0755)
-	// Check if the directory exists, create if not
-	if _, err := os.Stat(polkitRuleDir); os.IsNotExist(err) {
-		log.Fatalf("Directory does not exist: %v", polkitRuleDir)
-	}
-	// Create the rule file
-	file, err := os.Create(filePath)
-	if err != nil {
-		log.Fatalf("Error creating rule file: %v", err)
-	}
-	defer file.Close()
-	// Write the rule content to the file
-	_, err = file.WriteString(polkitRuleContent)
-	if err != nil {
-		log.Fatalf("Error writing to rule file: %v", err)
-	}
-	fmt.Printf("Polkit rule written to: %s\n", filePath)
-}
-*/
-//go:embed elevated_resolvctl
-var resolvectlContent []byte
-
-func restartAsAdmin(save bool) {
-	elevated, err := isElevated()
-	if elevated {
+func checkFlags(save bool){
 		caps := cap.NewSet()
 		cap_value := []cap.Value{
 			cap.NET_ADMIN,
@@ -289,75 +238,6 @@ func restartAsAdmin(save bool) {
 				log.Fatalf("failed to apply capabilities: %v (Are you root?)", err)
 			}
 		*/
-		return
-	}
-	var args []string
-	pkexecPath, err := exec.LookPath("pkexec")
-	if err != nil {
-		// exec.ErrNotFound is returned if the executable cannot be found.
-		if err == exec.ErrNotFound {
-			log.Fatalf("pkexec executable not found in PATH: %v", err)
-		} else {
-			log.Fatalf("Error finding pkexec executable: %v", err)
-		}
-	}
-
-	u, err := user.Current()
-	if err != nil {
-		log.Fatalf("Cannot get username: %v", err)
-	}
-
-	executablePath, err := filepath.Abs(os.Args[0])
-	args = append(args, pkexecPath, "sh", "-c", "exec \"${0}\" \"${@}\"",
-		"env")
-	environ := os.Environ()
-	args = append(args, environ...)
-	args = append(args, "DISPLAY="+os.Getenv("DISPLAY"), "SUDO_USER="+u.Username,
-		"NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath,
-		"-ruleset-cache-directory", internal.GetRulesetCachedir())
-
-	args = append(args, os.Args[1:]...)
-
-	err = syscall.Exec(pkexecPath, args, environ)
-	if err != nil {
-		// This part of the code will only be reached if syscall.Exec fails
-		fmt.Println("Error executing 'pkexec':", err)
-		os.Exit(1)
-	}
 }
 
-func InstallerMode() {
 
-}
-
-func CheckResolvectl() {
-	tun.ResolveCtl = RunResolvectl
-}
-
-func RunResolvectl(args ...string) error {
-	path, err := exec.LookPath("resolvectl")
-	if err != nil {
-		return err
-	}
-	oldpath := path
-
-	if os.Geteuid() != 0 {
-		path = elevatedLauncherDir + elevatedLauncherFile
-		if !fileExists(path) {
-			path = oldpath
-		}
-	}
-
-	if err != nil {
-		return err
-	}
-	if path == "" {
-		err = fmt.Errorf("Path not found")
-		return err
-	}
-
-	command := shell.Exec(path, args...)
-	//	command.Stdout = os.Stdout
-	//	command.Stderr = os.Stderr
-	return command.Run()
-}

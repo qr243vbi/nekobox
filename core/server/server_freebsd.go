@@ -2,22 +2,27 @@
 package main
 
 import (
-	"context"
-	"nekobox_core/gen"
+	"os"
 )
 
-func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
-	return &gen.EmptyResp{}, nil
+func checkFlags(save bool){
+	
 }
 
-func runAdmin() (int, error) { return 0, nil }
 
-func checkTaskScheduler(save bool) error { return nil }
-
-func doRun(_ string) error { return nil }
-
-func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
-	return &gen.IsPrivilegedResponse{HasPrivilege: false}, nil
+func isElevated() (bool, error) {
+	if os.Geteuid() == 0 {
+		return true, nil
+	}
+	return false, nil
 }
 
-func WaitForProcessExit(pid int) error { return nil }
+
+func CheckResolvectl() {
+}
+
+
+
+func RunResolvectl(args ...string) error {
+	return nil
+}
