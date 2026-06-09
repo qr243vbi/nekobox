@@ -184,10 +184,10 @@ message(STATUS "DESTINATION IS ${DESTDIR} FOR MACHINE ${GOARCH} with platform ${
 # ----------------------------
 # Tags
 # ----------------------------
-set(TAGS "with_clash_api,with_quic,with_wireguard,with_utls,with_dhcp,with_tailscale,with_shadowtls,with_grpc,with_acme,with_awg")
+set(TAGS "with_clash_api,with_quic,with_wireguard,with_utls,with_dhcp,with_shadowtls,with_grpc,with_acme,with_awg")
 
-if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-    set(TAGS "${TAGS},with_gvisor")
+if(NOT GOOS STREQUAL "freebsd")
+    set(TAGS "${TAGS},with_gvisor,with_tailscale")
     if(GOARCH STREQUAL "arm64" OR GOARCH STREQUAL "amd64")
         set(TAGS "${TAGS},with_naive,with_naive_outbound,with_purego")
     endif()
