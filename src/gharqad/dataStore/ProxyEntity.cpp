@@ -115,6 +115,8 @@ namespace Configs
             bean = new Configs::AnyTLSBean(ent);
         cast(shadowtls)
             bean = new Configs::ShadowTLSBean(ent);
+        cast(awg)
+            bean = new Configs::WireguardBean(ent, true);
         cast(wireguard) 
             bean = new Configs::WireguardBean(ent);
         cast(tailscale)
@@ -252,6 +254,5 @@ qDebug() << "Type Unknown" << make_strong_bean;
         cast_func(Naive)
         cast_func(TrustTunnel)
         cast_func(Juicity)
-        cast_func(AmneziaWG)
 
 }

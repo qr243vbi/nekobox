@@ -77,6 +77,7 @@ QList<QString> Disect(const QString &str) {
   return res;
 }
 
+
 void RawUpdater::update(const QString &str3) {
   // Base64 encoded subscription
   QList<QString> stack = {str3};
@@ -112,6 +113,56 @@ ret_loop:
     }
   }
 
+
+  int scheme_index ;
+  QString scheme;
+
+  {
+    int slash_count = 0;
+    int colon_index = -1;
+    int index = 0;
+    int count = str.size();
+    if (count > 30){
+        // there is no scheme name with a size greater than 27
+        count = 30;
+    }
+    while (index < count){
+      auto ch = str[index].unicode();
+      if (colon_index >= 0){
+        if (ch == '/'){
+          slash_count ++;
+          if (slash_count == 2){
+            break;
+          } else {
+            index ++;
+            continue;
+          }
+        } else {
+          break;
+        }
+      }
+      // check if letter
+      if (QChar::isLetter(ch)){
+          index ++;
+          continue;
+        } else {
+          if (ch == ':'){
+            colon_index = index;
+            index ++;
+            continue;
+          } else {
+            break;
+          }
+        }
+    }
+    if (colon_index > 0 && slash_count == 2){
+      scheme_index = colon_index;
+    } else {
+      scheme_index = -1;
+    }
+  }
+
+  if (scheme_index == -1) {
   jsonDocument = QJsonDocument::fromJson(str.toUtf8(), &error);
   json_ok = error.error == error.NoError;
   if (json_ok) {
@@ -132,6 +183,9 @@ ret_loop:
     } else {
       auto json = jsonDocument.object();
     }
+    }
+  } else {
+    json_ok = false;
   }
   if (json_ok) {
     json_contains_endpoints = json.contains("endpoints");
@@ -151,17 +205,18 @@ ret_loop:
     goto parse_json;
   }
 
-  // Clash
-  if (updateClash(str)) {
-    goto ret_loop;
-  }
 
-  // Wireguard Config
-  /*
-  if (updateWireguardFileConfig(str)){
-    goto ret_loop;
+  if (scheme_index == -1){
+    // Clash
+    if (updateClash(str)) {
+      goto ret_loop;
+    }
+
+   // Wireguard Config
+    if (updateWireguardFileConfig(str)){
+      goto ret_loop;
+    }
   }
-  */
 
   // Multi line
   if (str.count("\n") > 0) {
@@ -189,6 +244,7 @@ parse_json:
       goto ret_loop;
     }
   }
+
   
   #ifdef DEBUG_MODE
     qDebug() << "checker";
@@ -197,14 +253,13 @@ parse_json:
     goto ret_loop;
   }
 
-  QString scheme;
-  bool quic_enabled = false;
-  int scheme_index = str.indexOf("://");
   if (scheme_index > 0) {
     scheme = str.sliced(0, scheme_index).toLower();
   } else {
     goto ret_loop;
   }
+
+  bool quic_enabled = false;
 
   // Nekoray format
   if (scheme == "nekoray") {
@@ -354,7 +409,11 @@ parse_json:
   }
 
   // Wireguard
-  else if (scheme == ("wg")) {
+  else if (scheme == "wg"
+        || scheme == "awg"
+        || scheme == "wireguard"
+        || scheme == "amneziawg"
+        || scheme == "amnezia") {
     needFix = false;
     ent = Configs::ProfileManager::NewProxyEntity("wireguard");
     auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);

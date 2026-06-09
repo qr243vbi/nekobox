@@ -292,23 +292,28 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
       outbounds.append(endpoint);
     for (const auto &outboundRef : outbounds) {
       auto outbound = outboundRef.toObject();
-      if (outbound["tag"] == "direct" || outbound["tag"] == "block" ||
-          outbound["tag"] == "dns-out" ||
-          outbound["tag"].toString().startsWith("rout"))
+      QString outboundTag = outbound["tag"].toString();
+
+      if (outboundTag == "direct" || outboundTag == "block" ||
+          outboundTag == "dns-out" ||
+          outboundTag.startsWith("rout"))
         continue;
-      if (outbound["tag"] == "proxy") {
-        QString tag = "proxy";
+      if (outboundTag == "proxy") {
         if (index > 1)
-          tag += QString::number(index);
-        outbound.insert("tag", tag);
-        if (outbound["type"] == "wireguard" ||
-            outbound["type"] == "tailscale") {
+          outboundTag += QString::number(index);
+        outbound.insert("tag", outboundTag);
+        if (
+            QString outboundType = outbound.value("type").toString();
+            outboundType == "wireguard" ||
+            outboundType == "tailscale" ||
+            outboundType == "awg"
+        ) {
           endpointArray.append(outbound);
         } else {
           outboundArray.append(outbound);
         }
-        results->outboundTags << tag;
-        results->tag2entID.insert(tag, item->id);
+        results->outboundTags << outboundTag;
+        results->tag2entID.insert(outboundTag, item->id);
         continue;
       }
       outboundArray.append(outbound);
@@ -523,7 +528,7 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
   if (bean == nullptr) {
     return;
   }
-  if (ent->type == "wireguard") {
+  if (ent->type == "wireguard" || ent->type == "awg") {
     if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
       MW_dialog_message("configBuilder", "NeedAdmin");
       status->result->error =

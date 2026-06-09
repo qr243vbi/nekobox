@@ -50,7 +50,6 @@ class ChainBean;
 
 class NaiveBean;
 
-class AmneziaWGBean;
 }; // namespace Configs
 
 namespace Configs {
@@ -130,7 +129,6 @@ public:
 
   cast_func(Chain) cast_func(Socks) cast_func(Http) cast_func(ShadowSocks)
       cast_func(VMess) cast_func(TrojanVLESS)
-        cast_func(AmneziaWG)
       cast_func(Mieru) cast_func(QUIC) cast_func(AnyTLS) cast_func(ShadowTLS)
           cast_func(Wireguard) cast_func(Tailscale) cast_func(SSH)
               cast_func(Tor) cast_func(Custom) cast_func(ExtraCore)

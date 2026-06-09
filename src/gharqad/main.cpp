@@ -221,6 +221,7 @@ static void loadTranslate(QString locale) {
       {"anytls", "AnyTLS"},
       {"shadowtls", "ShadowTLS"},
       {"wireguard", "Wireguard"},
+      {"awg", "AmneziaWG"},
       {"tailscale", "Tailscale"},
       {"ssh", "SSH"},
       {"tor", "Tor"},

@@ -25,24 +25,35 @@ void EditWireguard::onStart(std::shared_ptr<Configs::ProxyEntity> ent) {
     ui->private_key->setText(bean->privateKey);
     ui->public_key->setText(bean->publicKey);
     ui->preshared_key->setText(bean->preSharedKey);
+
     auto reservedStr = bean->FormatReserved().replace("-", ",");
     ui->reserved->setText(reservedStr);
     ui->persistent_keepalive->setText(QString::number(bean->persistentKeepalive));
     ui->mtu->setText(QString::number(bean->MTU));
     ui->sys_ifc->setChecked(bean->useSystemInterface);
     ui->local_addr->setText(bean->localAddress.join(","));
-    ui->workers->setText(QString::number(bean->workerCount));
 
-    ui->enable_amnezia->setChecked(bean->enable_amnezia);
-    ui->junk_packet_count->setText(QString::number(bean->junk_packet_count));
-    ui->junk_packet_min_size->setText(QString::number(bean->junk_packet_min_size));
-    ui->junk_packet_max_size->setText(QString::number(bean->junk_packet_max_size));
-    ui->init_packet_junk_size->setText(QString::number(bean->init_packet_junk_size));
-    ui->response_packet_junk_size->setText(QString::number(bean->response_packet_junk_size));
-    ui->init_packet_magic_header->setText(QString::number(bean->init_packet_magic_header));
-    ui->response_packet_magic_header->setText(QString::number(bean->response_packet_magic_header));
-    ui->underload_packet_magic_header->setText(QString::number(bean->underload_packet_magic_header));
-    ui->transport_packet_magic_header->setText(QString::number(bean->transport_packet_magic_header));
+    ui->enable_amnezia->setChecked(ent->type == "awg");
+
+    P_LOAD_INT(junk_packet_count);
+    P_LOAD_INT(junk_packet_min_size);
+    P_LOAD_INT(junk_packet_max_size);
+
+    P_LOAD_INT(init_packet_junk_size);
+    P_LOAD_INT(response_packet_junk_size);
+    P_LOAD_INT(cookie_reply_junk_size);
+    P_LOAD_INT(transport_packet_junk_size);
+
+    P_LOAD_STRING(init_packet_magic_header);
+    P_LOAD_STRING(response_packet_magic_header);
+    P_LOAD_STRING(cookie_reply_magic_header);
+    P_LOAD_STRING(transport_packet_magic_header);
+
+    P_LOAD_STRING(i1);
+    P_LOAD_STRING(i2);
+    P_LOAD_STRING(i3);
+    P_LOAD_STRING(i4);
+    P_LOAD_STRING(i5);
 }
 
 bool EditWireguard::onEnd() {
@@ -61,18 +72,28 @@ bool EditWireguard::onEnd() {
     bean->MTU = ui->mtu->text().toInt();
     bean->useSystemInterface = ui->sys_ifc->isChecked();
     bean->localAddress = ui->local_addr->text().replace(" ", "").split(",");
-    bean->workerCount = ui->workers->text().toInt();
 
-    bean->enable_amnezia = ui->enable_amnezia->isChecked();
-    bean->junk_packet_count = ui->junk_packet_count->text().toInt();
-    bean->junk_packet_min_size = ui->junk_packet_min_size->text().toInt();
-    bean->junk_packet_max_size = ui->junk_packet_max_size->text().toInt();
-    bean->init_packet_junk_size = ui->init_packet_junk_size->text().toInt();
-    bean->response_packet_junk_size = ui->response_packet_junk_size->text().toInt();
-    bean->init_packet_magic_header = ui->init_packet_magic_header->text().toInt();
-    bean->response_packet_magic_header = ui->response_packet_magic_header->text().toInt();
-    bean->underload_packet_magic_header = ui->underload_packet_magic_header->text().toInt();
-    bean->transport_packet_magic_header = ui->transport_packet_magic_header->text().toInt();
+    bean->enableAmnezia(ui->enable_amnezia->isChecked());
+
+    P_SAVE_INT(junk_packet_count);
+    P_SAVE_INT(junk_packet_min_size);
+    P_SAVE_INT(junk_packet_max_size);
+
+    P_SAVE_INT(init_packet_junk_size);
+    P_SAVE_INT(response_packet_junk_size);
+    P_SAVE_INT(cookie_reply_junk_size);
+    P_SAVE_INT(transport_packet_junk_size);
+
+    P_SAVE_STRING(init_packet_magic_header);
+    P_SAVE_STRING(response_packet_magic_header);
+    P_SAVE_STRING(cookie_reply_magic_header);
+    P_SAVE_STRING(transport_packet_magic_header);
+
+    P_SAVE_STRING(i1);
+    P_SAVE_STRING(i2);
+    P_SAVE_STRING(i3);
+    P_SAVE_STRING(i4);
+    P_SAVE_STRING(i5);
 
     return true;
 }
