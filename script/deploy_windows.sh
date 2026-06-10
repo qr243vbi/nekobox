@@ -100,7 +100,7 @@ pwd
 
 rm "$DEST/icu"*.dll ||:
 
-if [[ "$SKIP_UPX" != "true" ]]
+if [[ "$SKIP_UPX" == "false" ]]
 then
 if command -v upx
 then
