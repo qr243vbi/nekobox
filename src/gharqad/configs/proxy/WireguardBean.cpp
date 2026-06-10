@@ -352,7 +352,7 @@ CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBoxAwg() const {
             {"address", entity->serverAddress},
             {"port", entity->serverPort},
             {"public_key", publicKey},
-            {"pre_shared_key", preSharedKey},
+            {"preshared_key", preSharedKey},
             {"allowed_ips", QListStr2QJsonArray({"0.0.0.0/0", "::/0"})},
             {"persistent_keepalive_interval", persistentKeepalive},
         };
