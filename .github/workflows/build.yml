@@ -489,7 +489,7 @@ jobs:
           ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Windows - Publish
-        if: github.event.inputs.publish  == 'true'
+        if: github.event.inputs.publish == 'true' && matrix.allow == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
