@@ -354,8 +354,9 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 # configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
 # target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
-if (MSVC)
-    find_package(Thrift REQUIRED)
+find_package(Thrift REQUIRED)
+
+if (Thrift_FOUND)
     set(THRIFT_LIBRARIES thrift::thrift)
 else()
     find_package(PkgConfig REQUIRED)
