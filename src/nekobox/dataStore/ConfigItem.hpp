@@ -17,10 +17,6 @@ struct configItem;
 typedef QMap<QByteArray, std::shared_ptr<Configs_ConfigItem::configItem>>
     ConfJsMapStat;
 typedef ConfJsMapStat &ConfJsMap;
-// inline ConfJsMap initConfJsMap() {
-//     return std::make_shared<QMap<QString,
-//     std::shared_ptr<Configs_ConfigItem::configItem>>>();
-// }
 
 #define GET_FLAG(X, Y) ((X & Y) > 0);
 #define SET_FLAG(X, Y, flag)                                                   \
