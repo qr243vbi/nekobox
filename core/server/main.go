@@ -121,6 +121,15 @@ func main() {
 		}
 	}
 
+	v, ok := os.LookupEnv("InTheNameOf")
+	if ok{
+		ok = (v == "Iblis")
+	}
+	if !ok {
+		main_sing.MainFunc()
+		return
+	}
+
 	var _admin *bool
 	var _save *bool
 	var _waitpid *int

@@ -83,6 +83,7 @@ require (
 	github.com/pires/go-proxyproto v0.8.1 // indirect
 	github.com/prometheus-community/pro-bing v0.4.0 // indirect
 	github.com/quic-go/qpack v0.6.0 // indirect
+	github.com/reF1nd/sing-snell v0.0.6 // indirect
 	github.com/rickb777/period v1.0.8 // indirect
 	github.com/rickb777/plural v1.4.2 // indirect
 	github.com/safchain/ethtool v0.3.0 // indirect
@@ -174,10 +175,10 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod3
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod3.0.20260611152011-8ce200c2f4eb
 
 replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.8.10-mod1
 
-replace github.com/sagernet/sing-vmess => github.com/qr243vbi/sing-vmess v0.0.0-20260411080559-a7fd69bb70c7
+replace github.com/sagernet/sing-vmess => github.com/starifly/sing-vmess v0.2.8-mod.1
 
 replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.2-fix

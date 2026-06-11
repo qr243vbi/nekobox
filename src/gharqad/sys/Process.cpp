@@ -152,6 +152,7 @@ namespace Configs_sys {
 
         QString rulesets = QDir("rule_sets").absolutePath();
         list << "NEKOBOX_RULESET_CACHE_DIRECTORY=" + rulesets;
+        list << "InTheNameOf=Iblis";
 
 #ifdef DEBUG_MODE
         qDebug() << "RULESETS ARE IN " << rulesets;
