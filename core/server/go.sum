@@ -167,8 +167,8 @@ github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyf
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9 h1:dndt3WAPKpr3m7yA6IOmOXVX4XIUvyixELQW5tBTkM4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9/go.mod h1:xBrewWRKDk9jPLnQfQXLI+v11v5juBRRhXMhKfj2jfc=
-github.com/qr243vbi/sing-box v1.13.13-mod3.0.20260611152011-8ce200c2f4eb h1:3XhkvNvRVFJzGhG6M1bBm8LAFpPNUiuCZmXoTgNHnfU=
-github.com/qr243vbi/sing-box v1.13.13-mod3.0.20260611152011-8ce200c2f4eb/go.mod h1:mGwH2xX/2ULNiphI1KNE5oOO97g5EFgqbnD71MocrDk=
+github.com/qr243vbi/sing-box v1.13.13-mod5 h1:q37ysjeeAnFU+keIcVG4ACgnytI/Cj405c1AXmkWDag=
+github.com/qr243vbi/sing-box v1.13.13-mod5/go.mod h1:mGwH2xX/2ULNiphI1KNE5oOO97g5EFgqbnD71MocrDk=
 github.com/qr243vbi/sing-tun v0.8.10-mod1 h1:IDq98fh4q3zKEA9+fupIbMV0NJmPIj9sNDPn5eGP2oM=
 github.com/qr243vbi/sing-tun v0.8.10-mod1/go.mod h1:QvarqUtHfj1ULaRR+6kZOS/OoCE+pYGq67A5tyIy+dQ=
 github.com/quic-go/qpack v0.6.0 h1:g7W+BMYynC1LbYLSqRt8PBg5Tgwxn214ZZR34VIOjz8=
