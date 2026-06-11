@@ -87,7 +87,7 @@ sudo apt-get install -y nekobox
 - Terminal UI
 - Remote control
 - Support for all platforms that supported by sing-box and Qt (except macos & ios)
-- Add more protocols that does not supported by upstream sing-box ( currently added: mieru, juicity, trusttunnel, vless encryption, xhttp transport, kcp transport, amnezia )
+- Add more protocols that does not supported by upstream sing-box ( currently added: mieru, juicity, trusttunnel, vless encryption, xhttp transport, kcp transport, amnezia, snell (in [core](https://github.com/qr243vbi/sing-box)))
 - Replace static UI with declarative UI for editing proxies
 - Find the best database storage in the world
 
