@@ -2868,7 +2868,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Init Packet Junk Size (S1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tamaño do paquete lixo de inicio (S1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
@@ -2903,7 +2903,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231" />
         <source>Signature Packet (I1)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paquete de sinatura (I1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241" />
