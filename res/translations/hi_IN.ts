@@ -3251,12 +3251,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">सिंटैक्स त्रुटियाँ</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">कृपया JSON त्रुटियों को ठीक करें या जारी रखने से पहले टिप्पणियाँ हटा दें</translation>
     </message>
 </context>
 <context>
@@ -4362,12 +4362,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 पंजीकृत करने में विफल.त्रुटि: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 को अपंजीकृत करने में विफल।त्रुटि: %2</translation>
     </message>
 </context>
 <context>
@@ -4928,7 +4928,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">आप यहां स्पेस कैरेक्टर इनपुट नहीं कर सकते.</translation>
     </message>
 </context>
 <context>
