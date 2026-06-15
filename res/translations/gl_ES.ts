@@ -1433,7 +1433,7 @@ Estás seguro de que queres activar o envío HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
         <source>Javascript</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Javascript</translation>
     </message>
 </context>
 <context>
@@ -2938,7 +2938,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328" />
         <source>Signature Packet (I4)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paquete de sinatura (I4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
@@ -3205,7 +3205,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
         <source>JSON Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Editor JSON</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
@@ -4515,7 +4515,7 @@ Como actualizar?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Actualizar o grupo existente</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
