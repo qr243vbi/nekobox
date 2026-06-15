@@ -15,7 +15,7 @@ namespace Subscription {
 
         void update(const QString &str);
 
-        void updateSingBox(const QJsonObject &str);
+        void updateSingBox(const QJsonObject &str, const QString &name = QString());
 
         bool updateWireguardFileConfig(const QString &str);
 

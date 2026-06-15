@@ -36,7 +36,8 @@ void UrlScheme_RegisterIfNeeded() {
     desktop["Type"] = "Application";
     desktop["Name"] = software_name;
     desktop["Exec"] = desired;
-    desktop["MimeType"] = "x-scheme-handler/nekoray;";
+    desktop["MimeType"] =
+        "x-scheme-handler/nekoray;x-scheme-handler/nekobox;x-scheme-handler/v2raytun;";
     desktop["Terminal"] = "false";
     desktop["NoDisplay"] = "true";
 
@@ -68,6 +69,8 @@ void UrlScheme_RegisterIfNeeded() {
             desktopFile.close();
             QProcess::execute("update-desktop-database", {QDir::toNativeSeparators(dir)});
             QProcess::execute("xdg-mime", {"default", kDesktopId, "x-scheme-handler/nekoray"});
+            QProcess::execute("xdg-mime", {"default", kDesktopId, "x-scheme-handler/nekobox"});
+            QProcess::execute("xdg-mime", {"default", kDesktopId, "x-scheme-handler/v2raytun"});
         }
     }
 

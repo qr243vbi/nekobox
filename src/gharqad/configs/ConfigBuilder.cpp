@@ -17,7 +17,282 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#else
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#endif
+
 namespace Configs {
+
+static QString ResolveDomainForTestConfig(const QString &server) {
+  if (server.isEmpty() || IsIpAddress(server)) {
+    return {};
+  }
+
+  addrinfo hints{};
+  hints.ai_family = AF_UNSPEC;
+  hints.ai_socktype = SOCK_STREAM;
+
+  addrinfo *result = nullptr;
+  if (getaddrinfo(server.toUtf8().constData(), nullptr, &hints, &result) != 0) {
+    return {};
+  }
+
+  QString ip;
+  char buffer[INET6_ADDRSTRLEN] = {};
+  for (auto *p = result; p != nullptr; p = p->ai_next) {
+    if (p->ai_family == AF_INET) {
+      auto *addr = reinterpret_cast<sockaddr_in *>(p->ai_addr);
+      if (inet_ntop(AF_INET, &addr->sin_addr, buffer, sizeof(buffer)) !=
+          nullptr) {
+        ip = QString::fromLatin1(buffer);
+        break;
+      }
+    } else if (p->ai_family == AF_INET6) {
+      auto *addr = reinterpret_cast<sockaddr_in6 *>(p->ai_addr);
+      if (inet_ntop(AF_INET6, &addr->sin6_addr, buffer, sizeof(buffer)) !=
+          nullptr) {
+        ip = QString::fromLatin1(buffer);
+        break;
+      }
+    }
+  }
+
+  freeaddrinfo(result);
+  return ip;
+}
+
+static void ResolveOutboundServerForTestConfig(QJsonObject &outbound) {
+  const auto server = outbound["server"].toString();
+  const auto ip = ResolveDomainForTestConfig(server);
+  if (ip.isEmpty()) {
+    return;
+  }
+
+  outbound["server"] = ip;
+
+  auto tls = outbound["tls"].toObject();
+  if (!tls.isEmpty() && tls["server_name"].toString().isEmpty()) {
+    tls["server_name"] = server;
+    outbound["tls"] = tls;
+  }
+}
+
+static void NormalizeFullConfigDnsForRuntime(QJsonObject &config) {
+  auto dns = config["dns"].toObject();
+  auto servers = dns["servers"].toArray();
+  QJsonArray cleanServers;
+  QString firstDnsTag;
+  auto remoteDnsAddress = dataStore->routing->remote_dns;
+  if (remoteDnsAddress.isEmpty() || remoteDnsAddress.startsWith("local") ||
+      remoteDnsAddress == "localhost") {
+    remoteDnsAddress = "tls://8.8.8.8";
+  }
+  for (auto serverRef : servers) {
+    if (!serverRef.isObject()) {
+      cleanServers.append(serverRef);
+      continue;
+    }
+    auto server = serverRef.toObject();
+    auto tag = server["tag"].toString();
+    if (tag.isEmpty()) {
+      tag = "dns-" + QString::number(cleanServers.size());
+    }
+    server.remove("address_resolver");
+    const auto type = server["type"].toString();
+    const auto address = server["address"].toString();
+    if (type == "fakeip" || address == "fakeip") {
+      server["tag"] = tag;
+      server["type"] = "fakeip";
+      server.remove("address");
+      server.remove("domain_resolver");
+      server.remove("detour");
+    } else {
+      server = BuildDnsObject(remoteDnsAddress, true);
+      server["tag"] = tag;
+      server["detour"] = "proxy";
+      if (!IsIpAddress(server["server"].toString())) {
+        server["domain_resolver"] = "dns-local";
+      }
+      if (firstDnsTag.isEmpty()) firstDnsTag = tag;
+    }
+    cleanServers.append(server);
+  }
+  {
+    bool hasLocal = false;
+    for (const auto &serverRef : cleanServers) {
+      const auto server = serverRef.toObject();
+      if (server["tag"].toString() == "dns-local") {
+        hasLocal = true;
+        break;
+      }
+    }
+    if (!hasLocal) {
+      QJsonObject dnsLocalObj = BuildDnsObject("local", true);
+      dnsLocalObj["tag"] = "dns-local";
+      cleanServers.append(dnsLocalObj);
+    }
+    if (!firstDnsTag.isEmpty()) {
+      dns["final"] = firstDnsTag;
+      auto route = config["route"].toObject();
+      route["default_domain_resolver"] = QJsonObject{{"server", firstDnsTag}};
+      config["route"] = route;
+    }
+  }
+  if (!cleanServers.isEmpty()) {
+    dns["servers"] = cleanServers;
+    config["dns"] = dns;
+  }
+}
+
+static void NormalizeFullConfigOutboundForRuntime(QJsonObject &outbound) {
+  const auto type = outbound["type"].toString();
+  if (type == "hysteria") {
+    const bool hasUp = outbound.contains("up") || outbound.contains("up_mbps");
+    const bool hasDown =
+        outbound.contains("down") || outbound.contains("down_mbps");
+    if (!hasUp) outbound["up_mbps"] = 100;
+    if (!hasDown) outbound["down_mbps"] = 100;
+  }
+  if (type == "hysteria" || type == "hysteria2") {
+    auto tls = outbound["tls"].toObject();
+    if (tls.isEmpty()) {
+      tls["enabled"] = true;
+    }
+    if (tls["server_name"].toString().isEmpty()) {
+      tls["server_name"] = outbound["server"].toString();
+    }
+    tls.remove("utls");
+    outbound["tls"] = tls;
+  }
+  if (type == "tuic") {
+    auto tls = outbound["tls"].toObject();
+    if (!tls.isEmpty()) {
+      tls.remove("utls");
+      outbound["tls"] = tls;
+    }
+  }
+}
+
+static void ResolveFullConfigOutboundServersForRuntime(QJsonObject &config) {
+  auto resolveArray = [](QJsonArray outbounds) {
+    QJsonArray resolved;
+    for (auto outboundRef : outbounds) {
+      auto outbound = outboundRef.toObject();
+      NormalizeFullConfigOutboundForRuntime(outbound);
+      const auto type = outbound["type"].toString();
+      if (type != "direct" && type != "block" && type != "dns") {
+        ResolveOutboundServerForTestConfig(outbound);
+      }
+      resolved.append(outbound);
+    }
+    return resolved;
+  };
+  config["outbounds"] = resolveArray(config["outbounds"].toArray());
+  if (config.contains("endpoints")) {
+    config["endpoints"] = resolveArray(config["endpoints"].toArray());
+  }
+}
+
+static QString ToTunRouteExclude(const QString &server) {
+  auto address = server;
+  if (address.isEmpty()) {
+    return {};
+  }
+  if (!IsIpAddress(address)) {
+    address = ResolveDomainForTestConfig(address);
+  }
+  if (address.isEmpty()) {
+    return {};
+  }
+  return IsIpAddressV6(address) ? address + "/128" : address + "/32";
+}
+
+static void CollectTunRouteExcludesFromArray(const QJsonArray &outbounds,
+                                             QStringList &excludes) {
+  for (const auto &value : outbounds) {
+    const auto outbound = value.toObject();
+    const auto type = outbound["type"].toString();
+    if (type == "direct" || type == "block" || type == "dns") {
+      continue;
+    }
+    const auto exclude = ToTunRouteExclude(outbound["server"].toString());
+    if (!exclude.isEmpty() && !excludes.contains(exclude)) {
+      excludes += exclude;
+    }
+  }
+}
+
+static QStringList CollectTunRouteExcludesForFullConfig(
+    const QJsonObject &config) {
+  QStringList excludes;
+  CollectTunRouteExcludesFromArray(config["outbounds"].toArray(), excludes);
+  CollectTunRouteExcludesFromArray(config["endpoints"].toArray(), excludes);
+  return excludes;
+}
+
+static QString TunDnsAddress() {
+  auto address = getTunAddress().section('/', 0, 0);
+  auto parts = address.split('.');
+  if (parts.size() == 4) {
+    parts[3] = "2";
+    return parts.join('.');
+  }
+  return "172.19.0.2";
+}
+
+static void AddTunRuntimeRules(QJsonObject &config,
+                               const QStringList &serverExcludes,
+                               const QJsonArray &nekoboxRules = {}) {
+  auto route = config["route"].toObject();
+  auto rules = route["rules"].toArray();
+
+  QJsonArray patchedRules;
+  if (!serverExcludes.isEmpty()) {
+    patchedRules += QJsonObject{
+        {"action", "route"},
+        {"ip_cidr", QListStr2QJsonArray(serverExcludes)},
+        {"outbound", "direct"},
+    };
+  }
+  patchedRules += QJsonObject{
+      {"action", "hijack-dns"},
+      {"ip_cidr", QJsonArray{TunDnsAddress() + "/32"}},
+      {"port", 53},
+      {"inbound", QJsonArray{"tun-in"}},
+  };
+  patchedRules += QJsonObject{
+      {"action", "hijack-dns"},
+      {"protocol", "dns"},
+      {"inbound", QJsonArray{"tun-in"}},
+  };
+  if (!dataStore->routing->domain_strategy.isEmpty()) {
+    patchedRules += QJsonObject{
+        {"action", "resolve"},
+        {"inbound", QJsonArray{"tun-in"}},
+        {"strategy", dataStore->routing->domain_strategy},
+    };
+  }
+  patchedRules += QJsonObject{
+      {"action", "sniff"},
+      {"inbound", QJsonArray{"tun-in"}},
+  };
+  for (const auto &rule : rules) {
+    patchedRules += rule;
+  }
+  for (const auto &rule : nekoboxRules) {
+    patchedRules += rule;
+  }
+
+  route["auto_detect_interface"] = true;
+  route["rules"] = patchedRules;
+  config["route"] = route;
+}
 
 QString get_rule_set_name_1(const QString &ruleSet) {
   QUrl url;
@@ -93,6 +368,9 @@ label1:
   return QJsonObject{};
 }
 
+static QJsonArray BuildNekoboxTunRulesForFullConfig(
+    const std::shared_ptr<BuildConfigStatus> &status, QJsonObject &config);
+
 QString getTunAddress() {
   if (Configs::dataStore->tun_address.isEmpty())
     return "172.19.0.1/24";
@@ -155,12 +433,53 @@ BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest,
   if (status->ent != nullptr && status->ent->type == "custom") {
     auto customBean = ent->CustomBean();
     if (customBean != nullptr && customBean->core == "internal-full") {
-      if (dataStore->spmode_vpn) {
-        status->result->error =
-            QObject::tr("Tun mode cannot be used with Custom configs");
-        return result;
-      }
       result->coreConfig = QString2QJsonObject(customBean->config_simple);
+      NormalizeFullConfigDnsForRuntime(result->coreConfig);
+      ResolveFullConfigOutboundServersForRuntime(result->coreConfig);
+      if (!status->forTest) {
+        QJsonArray clientInbounds;
+        if (IsValidPort(dataStore->inbound_socks_port) &&
+            Configs::dataStore->proxyInboundEnabled()) {
+          QJsonObject inboundObj;
+          inboundObj["tag"] = "mixed-in";
+          inboundObj["type"] =
+#ifdef USE_CPP_PROXY_CONFIGURATOR
+              "mixed"
+#else
+              (QString)*Configs::dataStore->inbound_proxy_type;
+#endif
+          inboundObj["listen"] = dataStore->inbound_address;
+          inboundObj["listen_port"] = dataStore->inbound_socks_port;
+          auto &uname = dataStore->inbound_username;
+          auto &upass = dataStore->inbound_password;
+          if (!uname.isEmpty() && !upass.isEmpty()) {
+            QJsonArray users;
+            QJsonObject user;
+            user["username"] = uname;
+            user["password"] = upass;
+            users += user;
+            inboundObj["users"] = users;
+          }
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+          inboundObj["set_system_proxy"] = Configs::dataStore->spmode_system_proxy;
+#endif
+          clientInbounds.append(inboundObj);
+        }
+        if (dataStore->spmode_vpn) {
+          auto nekoboxTunRules =
+              BuildNekoboxTunRulesForFullConfig(status, result->coreConfig);
+          if (!status->result->error.isEmpty()) {
+            return result;
+          }
+          auto tunServerExcludes =
+              CollectTunRouteExcludesForFullConfig(result->coreConfig);
+          clientInbounds.append(BuildTunInbound({}, tunServerExcludes));
+          AddTunRuntimeRules(result->coreConfig, tunServerExcludes,
+                             nekoboxTunRules);
+        }
+        if (!clientInbounds.isEmpty())
+          result->coreConfig["inbounds"] = clientInbounds;
+      }
     } else {
       BuildConfigSingBox(status);
     }
@@ -263,6 +582,43 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
     if (bean != nullptr && item->type == "custom" &&
         item->CustomBean()->core == "internal-full") {
       res->coreConfig["inbounds"] = QJsonArray();
+      auto dns = res->coreConfig["dns"].toObject();
+      dns.remove("fakeip");
+      auto dnsLocalObj = BuildDnsObject("local", false);
+      dnsLocalObj["tag"] = "dns-local";
+      QJsonObject simpleDns;
+      simpleDns["servers"] = QJsonArray{dnsLocalObj};
+      res->coreConfig["dns"] = simpleDns;
+      auto outbounds = res->coreConfig["outbounds"].toArray();
+      QJsonArray testOutbounds;
+      QString testOutboundTag;
+      for (auto o : outbounds) {
+        auto ob = o.toObject();
+        ob.remove("domain_resolver");
+        auto type = ob["type"].toString();
+        auto tag = ob["tag"].toString();
+        if (testOutboundTag.isEmpty() && type != "direct" && type != "block" &&
+            type != "dns") {
+          if (tag.isEmpty()) {
+            tag = "proxy";
+            ob["tag"] = tag;
+          }
+          testOutboundTag = tag;
+        }
+        if (type != "direct" && type != "block" && type != "dns") {
+          ResolveOutboundServerForTestConfig(ob);
+        }
+        testOutbounds.append(ob);
+      }
+      res->coreConfig["outbounds"] = testOutbounds;
+      auto route = res->coreConfig["route"].toObject();
+      route.remove("rules");
+      if (!testOutboundTag.isEmpty())
+        route["final"] = testOutboundTag;
+      QJsonObject defResolver;
+      defResolver["server"] = "dns-local";
+      route["default_domain_resolver"] = defResolver;
+      res->coreConfig["route"] = route;
       results->fullConfigs[item->id] =
           QJsonObject2QString(res->coreConfig, true);
       continue;
@@ -516,6 +872,99 @@ QString BuildChainInternal(int chainId,
   }
 
   return chainTagOut;
+}
+
+static void AppendMissingRuleSet(QJsonObject &route, const QJsonObject &ruleSet) {
+  if (ruleSet.isEmpty()) {
+    return;
+  }
+  auto ruleSets = route["rule_set"].toArray();
+  const auto tag = ruleSet["tag"].toString();
+  for (const auto &existing : ruleSets) {
+    if (!tag.isEmpty() && existing.toObject()["tag"].toString() == tag) {
+      return;
+    }
+  }
+  ruleSets += ruleSet;
+  route["rule_set"] = ruleSets;
+}
+
+static QJsonArray BuildNekoboxTunRulesForFullConfig(
+    const std::shared_ptr<BuildConfigStatus> &status, QJsonObject &config) {
+  auto routeChain =
+      profileManager->GetRouteChain(dataStore->routing->current_route_id);
+  if (routeChain == nullptr) {
+    return {};
+  }
+
+  std::map<int, QString> outboundMap;
+  outboundMap[proxyID] = "proxy";
+  outboundMap[directID] = "direct";
+  outboundMap[blockID] = "block";
+
+  for (const auto &item : *routeChain->get_used_outbounds()) {
+    if (item < 0) {
+      continue;
+    }
+    auto neededEnt = profileManager->GetProfile(item);
+    if (neededEnt == nullptr) {
+      status->result->error =
+          "The routing profile is referencing outbounds that no longer exists, "
+          "consider revising your settings";
+      return {};
+    }
+
+    auto ents = resolveChain(neededEnt);
+    if (!status->result->error.isEmpty()) {
+      return {};
+    }
+    auto tag =
+        BuildChainInternal(status->chainID, ents, status, status->routeID);
+    status->routeID++;
+    outboundMap[item] = tag;
+  }
+
+  auto extraOutbounds = config["outbounds"].toArray();
+  for (const auto &outbound : status->outbounds) {
+    extraOutbounds += outbound;
+  }
+  config["outbounds"] = extraOutbounds;
+
+  auto extraEndpoints = config["endpoints"].toArray();
+  for (const auto &endpoint : status->endpoints) {
+    extraEndpoints += endpoint;
+  }
+  if (!extraEndpoints.isEmpty()) {
+    config["endpoints"] = extraEndpoints;
+  }
+
+  auto route = config["route"].toObject();
+  for (const auto &ruleSet : *routeChain->get_used_rule_sets()) {
+    AppendMissingRuleSet(route, get_rule_set_json(ruleSet));
+  }
+  if (dataStore->adblock_enable) {
+    AppendMissingRuleSet(route, get_rule_set_json("nekobox-adblocksingbox"));
+  }
+  config["route"] = route;
+
+  auto routeRules = routeChain->get_route_rules(false, false, outboundMap);
+  auto split = dataStore->routing->tun_split;
+  if (!split->proxy.isEmpty()) {
+    routeRules += QJsonObject{{"action", "route"},
+                              {"outbound", "proxy"},
+                              {"process_path", QListStr2QJsonArray(split->proxy)}};
+  }
+  if (!split->direct.isEmpty()) {
+    routeRules += QJsonObject{
+        {"action", "route"},
+        {"outbound", "direct"},
+        {"process_path", QListStr2QJsonArray(split->direct)}};
+  }
+  if (!split->block.isEmpty()) {
+    routeRules += QJsonObject{{"action", "reject"},
+                              {"process_path", QListStr2QJsonArray(split->block)}};
+  }
+  return routeRules;
 }
 
 void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,

@@ -231,12 +231,14 @@ set(PROJECT_SOURCES
 
 
         ${NYXARIA}/configs/sub/GroupUpdater.hpp
+        ${NYXARIA}/configs/sub/HappDecrypt.hpp
         ${NYXARIA}/configs/ConfigBuilder.hpp
         ${NYXARIA}/api/RPC.h
 
         ${NYXARIA}/stats/traffic/TrafficLooper.hpp
 
         ${GHARQAD}/configs/sub/GroupUpdater.cpp
+        ${GHARQAD}/configs/sub/HappDecrypt.cpp
         ${GHARQAD}/configs/warp/warp.cpp
         ${NYXARIA}/configs/warp/warp.hpp
         ${NYXARIA}/sys/AutoRun.hpp
@@ -344,6 +346,14 @@ set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
+add_custom_command(TARGET nekobox POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+        "$<TARGET_FILE_DIR:nekobox>/public"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/expanded_rsa_keys.json"
+        "$<TARGET_FILE_DIR:nekobox>/public/expanded_rsa_keys.json"
+    COMMENT "Copying happ crypt5 key data..."
+)
 
 set(LUPDATE_OPTIONS
         -locations none -no-obsolete
@@ -389,6 +399,10 @@ target_link_libraries(nekobox PRIVATE cpr::cpr)
 find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE Boost::filesystem)
+
+find_package(OpenSSL REQUIRED)
+target_include_directories(nekobox PRIVATE ${OPENSSL_INCLUDE_DIR})
+target_link_libraries(nekobox PRIVATE OpenSSL::SSL OpenSSL::Crypto)
 if (UNIX)
 find_library(ACL_LIB acl)
 
@@ -557,6 +571,7 @@ install(FILES
     "${CMAKE_SOURCE_DIR}/srslist.json"
     "${CMAKE_SOURCE_DIR}/res/public/announcement_message.js"
     "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
+    "${CMAKE_SOURCE_DIR}/res/public/expanded_rsa_keys.json"
     "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public"
     COMPONENT gui)
 

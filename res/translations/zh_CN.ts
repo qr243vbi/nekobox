@@ -4575,6 +4575,42 @@ Release note:
         <translation>添加配置档到这个分组</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>检测到订阅链接</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>您想如何导入此订阅？</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>更新现有分组</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>作为代理链接导入</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>分组名称：</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>从订阅自动检测</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>导入</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>已解密 happ:// 链接</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>解密 happ:// 链接失败</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation>创建新的订阅分组</translation>

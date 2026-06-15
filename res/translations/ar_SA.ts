@@ -4297,6 +4297,42 @@ How to update?</source>
         <translation type="unfinished">إضافة ملفات شخصية إلى هذه المجموعة</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>تم اكتشاف رابط الاشتراك</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>كيف تريد استيراد هذا الاشتراك؟</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>تحديث المجموعة الحالية</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>استيراد كروابط بروكسي</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>اسم المجموعة:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>اكتشاف تلقائي من الاشتراك</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>استيراد</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>تم فك تشفير رابط happ://</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>فشل في فك تشفير رابط happ://</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">أضف كوكيل http/https</translation>

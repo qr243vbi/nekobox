@@ -4297,6 +4297,42 @@ Jak zaktualizować?</translation>
         <translation type="unfinished">Dodaj profile do tej grupy</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>Wykryto URL subskrypcji</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>Jak chcesz zaimportować tę subskrypcję?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>Aktualizuj istniejącą grupę</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>Importuj jako linki proxy</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>Nazwa grupy:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>Automatyczne wykrywanie z subskrypcji</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importuj</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>Odszyfrowano link happ://</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>Nie udało się odszyfrować linka happ://</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Dodaj jako serwer proxy http/https</translation>

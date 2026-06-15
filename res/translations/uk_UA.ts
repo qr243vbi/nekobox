@@ -4273,6 +4273,42 @@ How to update?</source>
         <translation type="unfinished">Додайте профілі до цієї групи</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>Виявлено посилання підписки</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>Як ви хочете імпортувати цю підписку?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>Оновити існуючу групу</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>Імпортувати як посилання проксі</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>Назва групи:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>Автовизначення з підписки</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Імпортувати</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>Розшифровано посилання happ://</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>Не вдалося розшифрувати посилання happ://</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">Додати як http/https проксі</translation>

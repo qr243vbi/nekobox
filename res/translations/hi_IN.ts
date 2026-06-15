@@ -4293,6 +4293,42 @@ How to update?</source>
         <translation type="unfinished">इस समूह में प्रोफ़ाइल जोड़ें</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>सदस्यता URL का पता चला</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>आप इस सदस्यता को कैसे आयात करना चाहेंगे?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>मौजूदा समूह अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>प्रॉक्सी लिंक के रूप में आयात करें</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>समूह का नाम:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>सदस्यता से स्वतः पता लगाएं</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>आयात</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>happ:// लिंक को डिक्रिप्ट किया गया</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>happ:// लिंक को डिक्रिप्ट करने में विफल</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https प्रॉक्सी के रूप में जोड़ें</translation>

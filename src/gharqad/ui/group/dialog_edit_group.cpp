@@ -105,6 +105,7 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         ui->url->setHidden(is_basic);
         ui->label_url->setHidden(is_basic);
         ui->sub_extra->setHidden(is_basic);
+        ui->paste_url_btn->setHidden(is_basic);
         ent->is_subscription = !is_basic;
         ui->name->setPlaceholderText(
             is_basic ? "" : 
@@ -122,10 +123,19 @@ DialogEditGroup::DialogEditGroup(const std::shared_ptr<Configs::Group> &ent, QWi
         }
         delete window;
     });
+
+    connect(ui->paste_url_btn, &QPushButton::clicked, this, [this](){
+        auto clipboard = QApplication::clipboard()->text().trimmed();
+        if (!clipboard.isEmpty()) {
+            ui->url->setText(clipboard);
+        }
+    });
     
     ui->name->setText(ent->name);
     ui->archive->setChecked(ent->archive);
-    if (ent->is_subscription){
+    if (ent->id < 0) {
+        ui->type->setCurrentIndex(1);
+    } else if (ent->is_subscription){
         std::shared_ptr<const Configs::GroupExtra> extra = Configs::GetExtra(ent);
         ui->auto_update->setChecked(!extra->skip_auto_update);
         ui->url->setText(extra->url);
@@ -557,24 +567,33 @@ DialogEditGroup::~DialogEditGroup() {
     delete ui;
 }
 
-void DialogEditGroup::accept() {
-    if (ent->id >= 0 && ent->is_subscription) { // already a group
-        auto extra = GetExtraUnlocked(ent);
-
-        auto urltext = ui->url->text();
-
-        if (urltext.isEmpty()) {
-            runOnUiThread([this](){
-                QMessageBox::warning(this, tr("Warning"), tr("Please input URL"));
-            });
-            return;
-        }
-
-        extra->skip_auto_update = !ui->auto_update->isChecked();
-        extra->url = urltext;
+void DialogEditGroup::saveSubscriptionSettings() {
+    if (!ent->is_subscription || ent->id < 0) {
+        return;
     }
+
+    auto extra = GetExtraUnlocked(ent);
+    if (extra == nullptr) {
+        return;
+    }
+
+    extra->skip_auto_update = !ui->auto_update->isChecked();
+    extra->url = ui->url->text().trimmed();
+    extra->Save();
+}
+
+void DialogEditGroup::accept() {
+    if (ent->is_subscription && ui->url->text().trimmed().isEmpty()) {
+        runOnUiThread([this](){
+            QMessageBox::warning(this, tr("Warning"), tr("Please input URL"));
+        });
+        return;
+    }
+
     ent->name = ui->name->text();
     ent->archive = ui->archive->isChecked();
+
+    saveSubscriptionSettings();
 
     if (CACHE.edited){
         ent->landing_proxy_id = CACHE.landing_proxy_id;
