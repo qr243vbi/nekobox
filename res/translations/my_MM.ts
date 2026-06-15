@@ -3251,12 +3251,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Syntax အမှားများ</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဆက်မလုပ်မီ JSON အမှားများကို ပြင်ဆင်ပါ သို့မဟုတ် မှတ်ချက်များကို ဖယ်ရှားပါ။</translation>
     </message>
 </context>
 <context>
@@ -4338,12 +4338,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ကို စာရင်းသွင်းရန် မအောင်မြင်ပါ။အမှား- %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 ကို မှတ်ပုံတင်ခြင်းမှ ဖျက်၍မရပါ။အမှား- %2</translation>
     </message>
 </context>
 <context>
@@ -4356,13 +4356,13 @@ Are you sure?</source>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ကုဒ်ဝှက်ထားသော happ:// လင့်ခ်</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">happ:// လင့်ခ်ကို ကုဒ်ဝှက်ရန် မအောင်မြင်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4500,12 +4500,12 @@ How to update?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှု URL ကို ရှာတွေ့ခဲ့သည်။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဤစာရင်းသွင်းမှုကို သင်မည်ကဲ့သို့ ထည့်သွင်းလိုသနည်း။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4515,27 +4515,27 @@ How to update?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ရှိပြီးသားအဖွဲ့ကို အပ်ဒိတ်လုပ်ပါ။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ပရောက်စီလင့်ခ်များအဖြစ် ထည့်သွင်းပါ။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">အဖွဲ့အမည်-</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">စာရင်းသွင်းမှုမှ အလိုအလျောက် သိရှိနိုင်သည်။</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">သွင်းကုန်</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4904,7 +4904,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ဤနေရာတွင် နေရာလွတ်စာလုံးများ ထည့်သွင်း၍မရပါ။</translation>
     </message>
 </context>
 <context>
