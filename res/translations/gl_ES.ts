@@ -877,7 +877,7 @@ Estás seguro de que queres activar o envío HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
         <source>Paste URL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pegar URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
@@ -1423,7 +1423,7 @@ Estás seguro de que queres activar o envío HWID?</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
         <source>Custom Payload</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Carga útil personalizada</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
@@ -2913,7 +2913,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251" />
         <source>Junk Packet Min Size (Jmin)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Tamaño mínimo do paquete lixo (Jmin)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
@@ -2943,7 +2943,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
         <source>Signature Packet (I5)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paquete de sinatura (I5)</translation>
     </message>
     <message>
         <source>Workers</source>
@@ -3246,7 +3246,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
         <source>You must correct these errors before continuing.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Debes corrixir estes erros antes de continuar.</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
