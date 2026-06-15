@@ -3229,12 +3229,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awọn aṣiṣe Sintasi</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Jọwọ ṣatunṣe awọn aṣiṣe JSON tabi yọ awọn asọye kuro ṣaaju ki o to tẹsiwaju</translation>
     </message>
 </context>
 <context>
@@ -4292,12 +4292,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kuna lati forukọsilẹ %1.Aṣiṣe:%2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kuna lati yọkuro %1.Aṣiṣe:%2</translation>
     </message>
 </context>
 <context>
@@ -4310,13 +4310,13 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Decrypted happ:// ọna asopọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">O kuna lati yọkuro happ:// ọna asopọ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4454,12 +4454,12 @@ Bawo ni lati ṣe imudojuiwọn?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ti ṣe awari URL alabapin</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bawo ni o ṣe fẹ lati gbe ṣiṣe alabapin yii wọle?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4469,27 +4469,27 @@ Bawo ni lati ṣe imudojuiwọn?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣe imudojuiwọn ẹgbẹ ti o wa tẹlẹ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gbe wọle bi awọn ọna asopọ aṣoju</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Orukọ ẹgbẹ:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ṣewadii aifọwọyi lati ṣiṣe alabapin</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">gbe wọle</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4848,7 +4848,7 @@ Ibere isanwo jẹ: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">O ko le tẹ awọn ohun kikọ aaye sii si ibi.</translation>
     </message>
 </context>
 <context>
