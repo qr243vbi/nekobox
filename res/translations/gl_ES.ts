@@ -2878,7 +2878,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175" />
         <source>Transport Packet Magic Header (H4)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Cabeceira máxica do paquete de transporte (H4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185" />
@@ -4535,7 +4535,7 @@ Como actualizar?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importar</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
