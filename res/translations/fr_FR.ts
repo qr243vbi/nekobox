@@ -3263,12 +3263,12 @@ Es-tu sûr?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Erreurs de syntaxe</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Veuillez corriger les erreurs JSON ou supprimer les commentaires avant de continuer</translation>
     </message>
 </context>
 <context>
@@ -4374,12 +4374,12 @@ Es-tu sûr?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Échec de l'enregistrement de %1.Erreur : %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Échec de la désinscription de %1.Erreur : %2</translation>
     </message>
 </context>
 <context>
@@ -4949,7 +4949,7 @@ La charge utile de la demande était : %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vous ne pouvez pas saisir de caractères d'espace ici.</translation>
     </message>
 </context>
 <context>
