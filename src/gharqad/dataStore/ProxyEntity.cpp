@@ -30,6 +30,7 @@ namespace Configs
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayType(){
+    if (!display_type.isEmpty()) return display_type;
     return ProfileManager::GetDisplayType(this->type);
 }
 
@@ -184,6 +185,7 @@ qDebug() << "Type Unknown" << make_strong_bean;
             _add(map1, "is_working", is_working, boolean);
             _add(map1, "last_auto_test_time", last_auto_test_time, integer64);
             _add(map1, "name", name, string);
+            _add(map1, "dtype", display_type, string);
             _add(map1, "addr", serverAddress, string);
             _add(map1, "port", serverPort, integer);
             

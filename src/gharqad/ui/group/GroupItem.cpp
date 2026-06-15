@@ -23,27 +23,41 @@
 
 QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
     QDialog dlg;
-    dlg.setWindowTitle(QObject::tr("URL detected"));
+    dlg.setWindowTitle(QObject::tr("Subscription URL Detected"));
+    dlg.setMinimumWidth(450);
 
     auto layout = new QVBoxLayout(&dlg);
+    layout->setSpacing(12);
 
-    layout->addWidget(new QLabel(
-        QObject::tr("%1\nHow to update?").arg(content)));
+    auto titleLabel = new QLabel(QObject::tr("How would you like to import this subscription?"));
+    QFont titleFont = titleLabel->font();
+    titleFont.setBold(true);
+    titleLabel->setFont(titleFont);
+    layout->addWidget(titleLabel);
+
+    auto urlLabel = new QLabel(content);
+    urlLabel->setWordWrap(true);
+    urlLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    urlLabel->setStyleSheet("QLabel { background-color: palette(base); padding: 8px; border: 1px solid palette(mid); border-radius: 4px; }");
+    layout->addWidget(urlLabel);
 
     auto combo = new QComboBox();
-    combo->addItems({
-        QObject::tr("Create new subscription group"),
-        QObject::tr("Add profiles to this group"),
-        QObject::tr("Add as http/https proxy")
-    });
+    combo->addItem(QObject::tr("Create new subscription group"));
+    combo->addItem(QObject::tr("Update existing group"));
+    combo->addItem(QObject::tr("Import as proxy links"));
     layout->addWidget(combo);
 
+    auto nameLayout = new QHBoxLayout();
+    auto nameLabel = new QLabel(QObject::tr("Group name:"));
     auto lineEdit = new QLineEdit;
-    lineEdit->setPlaceholderText(QObject::tr("Group name (will use profile-title from subscription if empty)"));
-    layout->addWidget(lineEdit);
+    lineEdit->setPlaceholderText(QObject::tr("Auto-detect from subscription"));
+    nameLayout->addWidget(nameLabel);
+    nameLayout->addWidget(lineEdit);
+    layout->addLayout(nameLayout);
 
     auto buttons = new QDialogButtonBox(
         QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    buttons->button(QDialogButtonBox::Ok)->setText(QObject::tr("Import"));
     layout->addWidget(buttons);
 
     QObject::connect(buttons, &QDialogButtonBox::accepted,
@@ -52,9 +66,14 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
                      &dlg, &QDialog::reject);
 
     QObject::connect(combo, &QComboBox::currentIndexChanged,
-                     &dlg, [lineEdit](int index) {
-                         lineEdit->setVisible(index == 0 );
+                     &dlg, [lineEdit, nameLabel](int index) {
+                         bool showName = (index == 0);
+                         lineEdit->setVisible(showName);
+                         nameLabel->setVisible(showName);
                      });
+
+    lineEdit->setVisible(true);
+    nameLabel->setVisible(true);
 
     int index;
 
@@ -134,9 +153,10 @@ GroupItem::~GroupItem() {
 void GroupItem::refresh_data() {
     ui->name->setText(ent->name);
 
+    auto profileCount = ent->Profiles().length();
     auto type = !ent->is_subscription ? tr("Basic") : tr("Subscription");
     if (ent->archive) type = tr("Archive") + " " + type;
-    type += " (" + QString::number(ent->Profiles().length()) + ")";
+    type += " (" + QString::number(profileCount) + ")";
     ui->type->setText(type);
 
     if (!ent->is_subscription) {
@@ -145,10 +165,15 @@ void GroupItem::refresh_data() {
         ui->update_sub->hide();
     } else {
         auto extra = ent->getExtra();
-        ui->url->setText(extra->url);
+        auto url = extra->url;
+        if (url.length() > 80) {
+            url = url.left(37) + "..." + url.right(40);
+        }
+        ui->url->setText(url);
+        ui->url->setToolTip(extra->url);
         QStringList info;
         if (extra->sub_last_update != 0) {
-            info << tr("Last update: %1").arg(DisplayTime(extra->sub_last_update, QLocale::ShortFormat));
+            info << tr("Updated: %1").arg(DisplayTime(extra->sub_last_update, QLocale::ShortFormat));
         }
         auto subinfo = ParseSubInfo(extra->info);
         if (!extra->info.isEmpty()) {

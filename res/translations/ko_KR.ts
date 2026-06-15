@@ -4297,6 +4297,42 @@ How to update?</source>
         <translation type="unfinished">이 그룹에 프로필 추가</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>구독 URL 감지됨</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>이 구독을 어떻게 가져오시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>기존 그룹 업데이트</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>프록시 링크로 가져오기</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>그룹 이름:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>구독에서 자동 감지</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>가져오기</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>happ:// 링크 복호화됨</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>happ:// 링크 복호화 실패</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https 프록시로 추가</translation>

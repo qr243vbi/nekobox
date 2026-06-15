@@ -4,6 +4,7 @@
 
 #include <nekobox/stats/autotester/ProxyAutoTester.hpp>
 #include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/configs/proxy/CustomBean.hpp>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/global/GuiUtils.hpp>
@@ -340,8 +341,12 @@ bool ProxyAutoTester::shouldTestProxy(std::shared_ptr<Configs::ProxyEntity> prox
     }
 
     // Skip certain proxy types that shouldn't be auto-tested
-    if (proxy->type == "custom" || proxy->type == "chain") {
+    if (proxy->type == "chain") {
         return false;
+    }
+    if (proxy->type == "custom") {
+        auto bean = proxy->CustomBean();
+        return bean != nullptr && bean->core == "internal-full";
     }
 
     return true;
@@ -388,6 +393,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
             return;
         }
 
+        int testedCount = 0;
         int workingCount = 0;
         qint64 currentTime = QDateTime::currentSecsSinceEpoch();
         QMap<QString, int> tag2entID = buildObject->tag2entID;
@@ -448,16 +454,54 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
                 updateWorkingPool(proxyId, isWorking);
 
                 lastTestTime[proxyId] = currentTime;
+                testedCount++;
+            }
+        }
+
+        for (auto it = buildObject->fullConfigs.constBegin();
+             it != buildObject->fullConfigs.constEnd(); ++it) {
+            int proxyId = it.key();
+            auto proxy = Configs::profileManager->GetProfile(proxyId);
+            if (!proxy) {
+                continue;
+            }
+
+            libcore::TestReq req;
+            req.config = it.value().toStdString();
+            req.url = getTargetUrl().toStdString();
+            req.test_timeout_ms = Configs::dataStore->url_test_timeout_ms;
+            req.use_default_outbound = true;
+
+            bool rpcOK;
+            auto result = API::defaultClient->Test(&rpcOK, req);
+            bool isWorking = false;
+            if (rpcOK && result.has_value() && !result->results.empty()) {
+                const auto &res = result->results.front();
+                isWorking = res.error.empty() && res.latency_ms > 0 &&
+                            res.latency_ms < getLatencyThreshold();
+                proxy->latencyInt = isWorking ? res.latency_ms : -1;
+            } else {
+                proxy->latencyInt = -1;
+            }
+
+            proxy->is_working = isWorking;
+            proxy->last_auto_test_time = currentTime;
+            proxy->Save();
+            updateWorkingPool(proxyId, isWorking);
+            lastTestTime[proxyId] = currentTime;
+            testedCount++;
+            if (isWorking) {
+                workingCount++;
             }
         }
 
         pruneWorkingPool();
 
         logStatus(QString("Test cycle completed: %1 proxies tested, %2 working, pool size: %3")
-            .arg(proxyIds.size()).arg(workingCount).arg(workingProxyPool.size()));
+            .arg(testedCount).arg(workingCount).arg(workingProxyPool.size()));
 
         isTestingInProgress = false;
-        emit testCycleCompleted(proxyIds.size(), workingProxyPool.size());
+        emit testCycleCompleted(testedCount, workingProxyPool.size());
         emit workingPoolUpdated(workingProxyPool);
 
         // Auto-start a working proxy if none is running

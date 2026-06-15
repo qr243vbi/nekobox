@@ -658,7 +658,7 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
     } else {
     switch (column) {
         case 0:
-            return person->type;
+            return person->DisplayType();
         case 1:
             return person->DisplayAddress();
         case 2:

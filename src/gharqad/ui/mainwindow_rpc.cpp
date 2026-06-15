@@ -212,12 +212,17 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
 
         std::atomic<int> counter(0);
         stopSpeedtest.store(false);
-        auto testCount = buildObject->fullConfigs.size() + 
+        auto testCount = (!buildObject->fullConfigs.isEmpty()) +
             (!buildObject->outboundTags.isEmpty());
-        for (const auto &entID: buildObject->fullConfigs.keys()) {
-            auto configStr = buildObject->fullConfigs[entID];
-            auto func = [this, &counter, testCount, configStr, entID]() {
-                MainWindow::runURLTest(configStr, true, {}, {}, entID);
+        if (!buildObject->fullConfigs.isEmpty()) {
+            auto fullConfigs = buildObject->fullConfigs;
+            auto func = [this, &counter, testCount, fullConfigs]() {
+                for (auto it = fullConfigs.constBegin(); it != fullConfigs.constEnd(); ++it) {
+                    if (stopSpeedtest.load()) {
+                        break;
+                    }
+                    MainWindow::runURLTest(it.value(), true, {}, {}, it.key());
+                }
                 counter++;
                 if (counter.load() == testCount) {
                     speedtestRunning.unlock();

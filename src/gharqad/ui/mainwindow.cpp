@@ -80,6 +80,7 @@
 
 #include <QClipboard>
 #include <QDesktopServices>
+#include <QUrlQuery>
 #include <QDir>
 #include <QFileInfo>
 #include <QInputDialog>
@@ -177,12 +178,9 @@ void MainWindow::changeEvent(QEvent *event) {
     this->ui->checkBox_VPN->setFont(font);
     this->ui->system_dns->setFont(font);
 
-    QColor c = ui->label_inbound->palette().color(QPalette::WindowText);
-    QString stylesheet =
-        QString("border: 3px solid %1; border-radius: 7px;").arg(c.name());
-    ui->label_inbound->setStyleSheet(stylesheet);
-    ui->label_speed->setStyleSheet(stylesheet);
-    ui->label_running->setStyleSheet(stylesheet);
+    ui->label_inbound->setStyleSheet("");
+    ui->label_speed->setStyleSheet("");
+    ui->label_running->setStyleSheet("");
     ui->toolbox_group->setStyleSheet(
         "QGroupBox { background: transparent; border: none; }");
     break;
@@ -445,12 +443,13 @@ void MainWindow::on_menu_add_new_group_triggered() {
   auto ent = Configs::ProfileManager::NewGroup();
   auto dialog = new DialogEditGroup(ent, this);
   int ret = dialog->exec();
-  dialog->deleteLater();
 
   if (ret == QDialog::Accepted) {
     Configs::profileManager->AddGroup(ent);
+    dialog->saveSubscriptionSettings();
     MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
   }
+  dialog->deleteLater();
 }
 
 SpinnerDialog::SpinnerDialog(MainWindow *window) {
@@ -3270,8 +3269,71 @@ void MainWindow::on_menu_add_from_clipboard_triggered() {
   this->add_from_deeplink(clipboard);
 }
 
+static QString decodeMaybeBase64Url(QString value) {
+  value = value.trimmed();
+  while (value.startsWith('/')) {
+    value.remove(0, 1);
+  }
+  if (value.startsWith("http://") || value.startsWith("https://") ||
+      value.startsWith("happ://")) {
+    return value;
+  }
+
+  auto decoded = QByteArray::fromBase64(value.toUtf8(),
+                                        QByteArray::Base64UrlEncoding |
+                                            QByteArray::OmitTrailingEquals);
+  auto decodedText = QString::fromUtf8(decoded).trimmed();
+  if (decodedText.startsWith("http://") || decodedText.startsWith("https://") ||
+      decodedText.startsWith("happ://")) {
+    return decodedText;
+  }
+  return value;
+}
+
+static QString subscriptionUrlFromInternalDeeplink(const QString &input) {
+  const auto trimmed = input.trimmed();
+  QUrl url(trimmed);
+  const auto scheme = url.scheme().toLower();
+  if (scheme != "nekoray" && scheme != "nekobox" && scheme != "v2raytun") {
+    return {};
+  }
+
+  QUrlQuery query(url);
+  const QStringList urlKeys = {
+      "url", "uri", "link", "subscription", "sub", "target", "config"};
+  for (const auto &key : urlKeys) {
+    if (!query.hasQueryItem(key)) {
+      continue;
+    }
+    auto value = decodeMaybeBase64Url(query.queryItemValue(key));
+    if (value.startsWith("http://") || value.startsWith("https://") ||
+        value.startsWith("happ://")) {
+      return value;
+    }
+  }
+
+  QStringList candidates;
+  candidates << url.path(QUrl::FullyDecoded)
+             << url.fragment(QUrl::FullyDecoded)
+             << url.host(QUrl::FullyDecoded);
+  for (auto candidate : candidates) {
+    candidate = decodeMaybeBase64Url(candidate);
+    if (candidate.startsWith("http://") || candidate.startsWith("https://") ||
+        candidate.startsWith("happ://")) {
+      return candidate;
+    }
+  }
+
+  return {};
+}
+
 void MainWindow::add_from_deeplink(const QString & clipboard){
-  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, clipboard,
+  auto content = clipboard.trimmed();
+  const auto subscriptionUrl = subscriptionUrlFromInternalDeeplink(content);
+  if (!subscriptionUrl.isEmpty()) {
+    content = subscriptionUrl;
+  }
+  Subscription::groupUpdater->AsyncUpdate(this->post_update_job, content,
                                           &chooseUpdateGroup);
 }
 
@@ -3786,10 +3848,33 @@ void MainWindow::on_menu_update_subscription_triggered() {
   if (!group->is_subscription || mw_sub_updating) {
     return;
   }
+
+  QString runningProfileName;
+  int runningProfileGid = -1;
+  if (running != nullptr) {
+    runningProfileName = running->name;
+    runningProfileGid = running->gid;
+    profile_stop(false, false, true);
+  }
+
   mw_sub_updating = true;
   Subscription::groupUpdater->AsyncUpdateGroup(
       group, this->post_update_job, &chooseUpdateGroup,
-      [&, group, this] { mw_sub_updating = false; },
+      [this, group, runningProfileName, runningProfileGid] {
+        mw_sub_updating = false;
+        if (!runningProfileName.isEmpty() && runningProfileGid >= 0) {
+          auto grp = Configs::profileManager->GetGroup(runningProfileGid);
+          if (grp != nullptr) {
+            for (auto id : grp->profiles) {
+              auto ent = Configs::profileManager->GetProfile(id);
+              if (ent != nullptr && ent->name == runningProfileName) {
+                profile_start(ent->id, !Configs::windowSettings->test_after_start);
+                break;
+              }
+            }
+          }
+        }
+      },
     [this] (std::shared_ptr<const Configs::GroupExtra> extra) -> std::shared_ptr<const Configs::GroupExtra> {
 #ifndef SKIP_JS_UPDATER
       auto window = createJsUpdaterWindow();
@@ -4155,12 +4240,13 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
               auto ent = Configs::ProfileManager::NewGroup();
               auto dialog = new DialogEditGroup(ent, this);
               int ret = dialog->exec();
-              dialog->deleteLater();
 
               if (ret == QDialog::Accepted) {
                 Configs::profileManager->AddGroup(ent);
+                dialog->saveSubscriptionSettings();
                 MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
               }
+              dialog->deleteLater();
             },
             Qt::SingleShotConnection);
 

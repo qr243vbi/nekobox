@@ -4297,6 +4297,42 @@ How to update?</source>
         <translation type="unfinished">このグループにプロフィールを追加する</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>サブスクリプションURLを検出しました</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>このサブスクリプションをどうインポートしますか？</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>既存のグループを更新</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>プロキシリンクとしてインポート</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>グループ名：</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>サブスクリプションから自動検出</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>インポート</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>happ://リンクを復号しました</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>happ://リンクの復号に失敗しました</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https プロキシとして追加</translation>

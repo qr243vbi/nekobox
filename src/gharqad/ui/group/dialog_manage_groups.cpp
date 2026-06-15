@@ -44,13 +44,14 @@ void DialogManageGroups::on_add_clicked() {
     auto ent = Configs::ProfileManager::NewGroup();
     auto dialog = new DialogEditGroup(ent, this);
     int ret = dialog->exec();
-    dialog->deleteLater();
 
     if (ret == QDialog::Accepted) {
         Configs::profileManager->AddGroup(ent);
+        dialog->saveSubscriptionSettings();
         AddGroupToListIfExist(ent->id);
         MW_dialog_message(Dialog_DialogManageGroups, "refresh-1");
     }
+    dialog->deleteLater();
 }
 
 void DialogManageGroups::on_update_all_clicked() {

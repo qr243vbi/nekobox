@@ -4559,6 +4559,42 @@ Deleted %1 Unavailable</source>
         <translation>Добавить профили в эту группу</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>Обнаружена ссылка подписки</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>Как вы хотите импортировать эту подписку?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>Обновить существующую группу</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>Импортировать как ссылки прокси</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>Имя группы:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>Автоопределение из подписки</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Импортировать</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>Расшифрована ссылка happ://</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>Не удалось расшифровать ссылку happ://</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35" />
         <source>Create new subscription group</source>
         <translation>Создать новую группу подписки</translation>

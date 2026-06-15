@@ -4297,6 +4297,42 @@ Nasıl güncellenir?</translation>
         <translation type="unfinished">Bu gruba profil ekleyin</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>Abonelik URL'si algılandı</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>Bu aboneliği nasıl içe aktarmak istersiniz?</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>Mevcut grubu güncelle</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>Proxy bağlantıları olarak içe aktar</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>Grup adı:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>Abonelikten otomatik algıla</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>İçe aktar</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>happ:// bağlantısı şifresi çözüldü</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>happ:// bağlantısının şifresi çözülemedi</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
         <translation type="unfinished">http/https proxy olarak ekle</translation>

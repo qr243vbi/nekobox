@@ -71,6 +71,7 @@ public:
   bool isValid() const;
 
   QString type;
+  QString display_type;
 
   QString name = "";
   QString serverAddress = "127.0.0.1";

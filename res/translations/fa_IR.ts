@@ -4527,6 +4527,42 @@ Direct: %2</source>
         <translation>افزودن نمایه‌ها به این گروه</translation>
     </message>
     <message>
+        <source>Subscription URL Detected</source>
+        <translation>آدرس اشتراک شناسایی شد</translation>
+    </message>
+    <message>
+        <source>How would you like to import this subscription?</source>
+        <translation>چگونه می‌خواهید این اشتراک را وارد کنید؟</translation>
+    </message>
+    <message>
+        <source>Update existing group</source>
+        <translation>به‌روزرسانی گروه موجود</translation>
+    </message>
+    <message>
+        <source>Import as proxy links</source>
+        <translation>وارد کردن به عنوان لینک‌های پروکسی</translation>
+    </message>
+    <message>
+        <source>Group name:</source>
+        <translation>نام گروه:</translation>
+    </message>
+    <message>
+        <source>Auto-detect from subscription</source>
+        <translation>تشخیص خودکار از اشتراک</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>وارد کردن</translation>
+    </message>
+    <message>
+        <source>Decrypted happ:// link</source>
+        <translation>لینک happ:// رمزگشایی شد</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt happ:// link</source>
+        <translation>رمزگشایی لینک happ:// ناموفق بود</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
         <source>Create new subscription group</source>
         <translation>ایجاد گروه اشتراک جدید</translation>

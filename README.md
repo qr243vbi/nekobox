@@ -122,6 +122,18 @@ sudo apt-get install -y nekobox
 
 Various formats are supported, including share links, JSON array of outbounds and v2rayN link format as well as limited support for Shadowsocks and Clash formats.
 
+Full JSON subscriptions are supported for sing-box and v2rayN-style configurations. Imported JSON profiles keep their original routing and DNS rules, work with URL testing and auto testing, and can be used with TUN mode.
+
+Happ subscription links are supported, including encrypted `happ://` links. Subscription groups can also be added from browser deeplinks using `nekobox://` and `v2raytun://` URLs.
+
+Supported JSON subscription features include:
+- Full sing-box configuration import with inbounds stripped and local application inbounds added at runtime
+- V2Ray-style JSON conversion for VLESS, VMess, Trojan, Shadowsocks, Hysteria, Hysteria2, TUIC, direct and block outbounds
+- Route rule preservation for full JSON profiles, including profile-specific direct rules in TUN mode
+- DNS migration for newer sing-box versions, including fakeip server conversion
+- Full JSON URL testing and auto testing
+- Hysteria2 detection from v2rayN/Happ-style Hysteria v2 JSON
+
 ## Credits
 
 - [starifly/NekoBoxForAndroid](https://github.com/starifly/NekoBoxForAndroid)
