@@ -3263,12 +3263,12 @@ Habilite esto solo si tiene la intención de compartir DNS con dispositivos LAN 
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Errores de sintaxis</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Corrija los errores JSON o elimine los comentarios antes de continuar.</translation>
     </message>
 </context>
 <context>
@@ -4370,12 +4370,12 @@ Habilite esto solo si tiene la intención de compartir DNS con dispositivos LAN 
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No se pudo registrar %1.Error: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No se pudo cancelar el registro de %1.Error: %2</translation>
     </message>
 </context>
 <context>
@@ -4946,7 +4946,7 @@ La carga útil de la solicitud fue: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">No puede ingresar caracteres de espacio aquí.</translation>
     </message>
 </context>
 <context>
