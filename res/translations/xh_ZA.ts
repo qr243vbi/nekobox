@@ -3247,12 +3247,12 @@ Ingaba uqinisekile?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Iimpazamo zesintaksi</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Nceda ulungise iimpazamo ze-JSON okanye ususe izimvo ngaphambi kokuba uqhubeke</translation>
     </message>
 </context>
 <context>
@@ -4334,12 +4334,12 @@ Ingaba uqinisekile?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ayiphumelelanga ukubhalisa %1.Imposiso: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ayiphumelelanga ukubhalisa i-%1.Imposiso: %2</translation>
     </message>
 </context>
 <context>
@@ -4352,13 +4352,13 @@ Ingaba uqinisekile?</translation>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Decrypted happ:// ikhonkco</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ayiphumelelanga ukususa uguqulelo oluntsonkothileyo ku-happ:// ikhonkco</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4496,12 +4496,12 @@ Uhlaziywa njani?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">I-URL yomrhumo ifunyenwe</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ungathanda ukungenisa njani olu rhumo?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4511,27 +4511,27 @@ Uhlaziywa njani?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Hlaziya iqela esele likho</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngenisa njengamakhonkco ommeli</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igama leqela:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zibonele ngokuzenzekela kumrhumo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ngenisa ngaphandle</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4900,7 +4900,7 @@ Isicelo sokuhlawulwa kwaba: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Awukwazi ukufaka amagama kwindawo apha.</translation>
     </message>
 </context>
 <context>
