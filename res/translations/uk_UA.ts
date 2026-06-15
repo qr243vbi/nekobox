@@ -3255,12 +3255,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Синтаксичні помилки</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Перш ніж продовжити, виправте помилки JSON або видаліть коментарі</translation>
     </message>
 </context>
 <context>
@@ -4342,12 +4342,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не вдалося зареєструвати %1.Помилка: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Не вдалося скасувати реєстрацію %1.Помилка: %2</translation>
     </message>
 </context>
 <context>
@@ -4912,7 +4912,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Тут не можна вводити пробіли.</translation>
     </message>
 </context>
 <context>
