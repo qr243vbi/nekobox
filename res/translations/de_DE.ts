@@ -3263,12 +3263,12 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Syntaxfehler</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bitte beheben Sie die JSON-Fehler oder entfernen Sie die Kommentare, bevor Sie fortfahren</translation>
     </message>
 </context>
 <context>
@@ -4374,12 +4374,12 @@ Bist du sicher?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">%1 konnte nicht registriert werden.Fehler: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Die Registrierung von %1 konnte nicht aufgehoben werden.Fehler: %2</translation>
     </message>
 </context>
 <context>
@@ -4949,7 +4949,7 @@ Die Nutzlast der Anforderung war: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sie können hier keine Leerzeichen eingeben.</translation>
     </message>
 </context>
 <context>
