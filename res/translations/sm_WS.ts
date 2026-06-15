@@ -3229,12 +3229,12 @@ E mo'i lava oe?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Syntax Mease</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fa'amolemole fa'aleleia mea sese a le JSON pe aveese fa'amatalaga a'o le'i fa'aauau</translation>
     </message>
 </context>
 <context>
@@ -4292,12 +4292,12 @@ E mo'i lava oe?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ua le mafai ona resitala %1.Sese: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ua le mafai ona aveese le resitala %1.Sese: %2</translation>
     </message>
 </context>
 <context>
@@ -4310,13 +4310,13 @@ E mo'i lava oe?</translation>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Decrypted hap:// sootaga</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ua le mafai ona fa'asese le sootaga hap://</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4454,12 +4454,12 @@ E fa'afefea ona fa'afou?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fa'amauina URL ua maua</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E fa'apefea ona e mana'o e fa'aulufale mai lenei saofaga?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4469,27 +4469,27 @@ E fa'afefea ona fa'afou?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fa'afou le vaega o iai</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Auina mai e fai ma sui sui</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Igoa o vaega:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Otometi-saili mai le saofaga</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fa'aulufale mai</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4848,7 +4848,7 @@ Talosaga totogi: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">E le mafai ona e fa'aogaina mataitusi avanoa iinei.</translation>
     </message>
 </context>
 <context>
