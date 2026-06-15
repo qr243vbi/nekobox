@@ -3229,12 +3229,12 @@ Ka tabbata?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kurakurai Tsari</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Da fatan za a gyara kurakuran JSON ko cire sharhi kafin a ci gaba</translation>
     </message>
 </context>
 <context>
@@ -4292,12 +4292,12 @@ Ka tabbata?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa yin rijista %1.Kuskure: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa cire rajista %1.Kuskure: %2</translation>
     </message>
 </context>
 <context>
@@ -4310,13 +4310,13 @@ Ka tabbata?</translation>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An ɓoye happ:// mahada</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An kasa warware hanyar haɗin happ://</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4454,12 +4454,12 @@ Yadda za a sabunta?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">An Gano URL Biyan Kuɗi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ta yaya kuke son shigo da wannan kuɗin shiga?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4469,27 +4469,27 @@ Yadda za a sabunta?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sabunta ƙungiyar data kasance</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shigo azaman hanyar haɗin yanar gizo</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sunan rukuni:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gano kai tsaye daga biyan kuɗi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Shigo da</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4848,7 +4848,7 @@ Bukatar biya shine: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ba za ku iya shigar da haruffan sarari a nan ba.</translation>
     </message>
 </context>
 <context>
