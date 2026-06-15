@@ -3251,12 +3251,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਸੰਟੈਕਸ ਗਲਤੀਆਂ</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਜਾਰੀ ਰੱਖਣ ਤੋਂ ਪਹਿਲਾਂ JSON ਤਰੁੱਟੀਆਂ ਨੂੰ ਠੀਕ ਕਰੋ ਜਾਂ ਟਿੱਪਣੀਆਂ ਨੂੰ ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -4362,12 +4362,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ਨੂੰ ਰਜਿਸਟਰ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।ਗਲਤੀ: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">% 1 ਨੂੰ ਅਣਰਜਿਸਟਰ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।ਗਲਤੀ: %2</translation>
     </message>
 </context>
 <context>
@@ -4380,13 +4380,13 @@ Are you sure?</source>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">happ:// ਲਿੰਕ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">happ:// ਲਿੰਕ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
@@ -4524,12 +4524,12 @@ How to update?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਗਾਹਕੀ URL ਖੋਜਿਆ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਤੁਸੀਂ ਇਸ ਗਾਹਕੀ ਨੂੰ ਕਿਵੇਂ ਆਯਾਤ ਕਰਨਾ ਚਾਹੋਗੇ?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4539,27 +4539,27 @@ How to update?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਮੌਜੂਦਾ ਸਮੂਹ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਪ੍ਰੌਕਸੀ ਲਿੰਕਾਂ ਵਜੋਂ ਆਯਾਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਸਮੂਹ ਦਾ ਨਾਮ:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਗਾਹਕੀ ਤੋਂ ਸਵੈ-ਖੋਜ</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਆਯਾਤ ਕਰੋ</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
@@ -4928,7 +4928,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ਤੁਸੀਂ ਇੱਥੇ ਸਪੇਸ ਅੱਖਰ ਇੰਪੁੱਟ ਨਹੀਂ ਕਰ ਸਕਦੇ ਹੋ।</translation>
     </message>
 </context>
 <context>
