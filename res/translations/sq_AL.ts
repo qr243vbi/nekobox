@@ -4432,7 +4432,7 @@ Si të përditësoni?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Importi</translation>
     </message>
     <message>
         <source>Add profiles to this group</source>
