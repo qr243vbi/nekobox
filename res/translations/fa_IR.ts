@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='UTF-8'?>
 <TS version="2.1" language="fa_IR">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">فرم</translation>
     </message>
@@ -12,37 +11,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
         <translation type="unfinished">به یاد داشته باشید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
         <translation type="unfinished">ثانیه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
         <translation type="unfinished">دقیقه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
         <translation type="unfinished">ساعت</translation>
     </message>
@@ -50,9 +49,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Custom Headers</source>
@@ -94,22 +93,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
         <source>Proxy</source>
         <translation type="unfinished">پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
         <source>Direct</source>
         <translation type="unfinished">مستقیم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
         <source>Block</source>
         <translation type="unfinished">مسدود کردن</translation>
     </message>
@@ -117,84 +116,84 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
         <source>Basic Settings</source>
         <translation>تنظیمات پایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961" />
         <source>Enable</source>
         <translation>فعال کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
         <source>Listen Address</source>
         <translation>آدرس درحال شنود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891" />
         <source>concurrency</source>
         <translation>همزمانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775" />
         <source>User Agent</source>
         <translation>عامل کاربر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
         <translation>متداول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
         <source>Style</source>
         <translation>استایل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614" />
         <source>Theme</source>
         <translation>پوسته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692" />
         <source>Subscription</source>
         <translation>اشتراک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817" />
         <source>Core</source>
         <translation>هسته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
         <source>Edit</source>
         <translation>ویرایش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
         <source>Custom Inbound</source>
         <translation>ورودی سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
         <source>Concurrent</source>
         <translation>هم زمان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034" />
         <source>Security</source>
         <translatorcomment>امنیت security</translatorcomment>
         <translation>امنیت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
         <source>Connection statistics</source>
         <translation>آمار اتصال</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
         <source>Hide dashboard at startup</source>
         <translation>مخفی کردن داشبورد هنگام راه‌اندازی</translation>
     </message>
@@ -203,7 +202,7 @@
         <translation type="vanished">قبل از به‌روزرسانی اشتراک، سرورها را پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578" />
         <source>Max log lines</source>
         <translation>حداکثر خطوط فایل لاگ</translation>
     </message>
@@ -212,32 +211,32 @@
         <translation type="vanished">رد شدن از احراز هویت گواهی TLS به طور پیش فرض (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158" />
         <source>Default uTLS Fingerprint</source>
         <translation>اثرانگشت پیشفرض uTLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
         <source>Core Options</source>
         <translation>تنظیمات هسته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908" />
         <source>Default On</source>
         <translation>به صورت پیشفرض فعال</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917" />
         <source>Multiplex (mux)</source>
         <translation>Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
         <source>Latency Test URL</source>
         <translation>آدرس تست تاخیر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544" />
         <source>Disable tray</source>
         <translation>غیرفعال‌سازی سینی</translation>
     </message>
@@ -254,103 +253,103 @@
         <translation type="vanished">فاصله (به دقیقا ، اگر کمتر از ۳۰ باشد نادرست است)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
         <source>Use proxy when activated</source>
         <translation type="unfinished">هنگام فعال شدن از پروکسی استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
         <source>URL Test after profile start</source>
         <translation type="unfinished">تست URL بعد از شروع نمایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Request update at startup</source>
         <translation type="unfinished">درخواست به روز رسانی در هنگام راه اندازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
         <source>Show profile IDs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایش شناسه های نمایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
         <source>Set text under menu icons</source>
         <translation type="unfinished">متن را در زیر نمادهای منو تنظیم کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Hide at startup</source>
         <translation type="unfinished">هنگام راه اندازی پنهان شوید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>Manually column width</source>
         <translation type="unfinished">عرض ستون به صورت دستی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652" />
         <source>System</source>
         <translation type="unfinished">سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665" />
         <source>Icon</source>
         <translation type="unfinished">نماد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672" />
         <source>Emoji Font</source>
         <translation type="unfinished">فونت ایموجی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فرمت: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;برای استفاده از مقادیر پیش فرض خالی بگذارید.فقط پارامترهایی را که می‌خواهید لغو شوند، مشخص کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701" />
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">پارامترهای سیستم سفارشی (اختیاری)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=مقدار_سفارشی، os=سفارشی_os، osVersion=نسخه_سفارشی، مدل=مدل_سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
         <source>Clear servers before update</source>
         <translation type="unfinished">قبل از بروزرسانی سرورها را پاک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711" />
         <source>URL Test after update</source>
         <translation type="unfinished">تست URL پس از به روز رسانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">موارد تکراری را حذف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788" />
         <source>Send System Parameters</source>
         <translation type="unfinished">ارسال پارامترهای سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795" />
         <source>Remove Invalid</source>
         <translation type="unfinished">حذف موارد نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">غیرقابل دستیابی پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867" />
         <source>Disable Traffic Stats</source>
         <translation>غیرفعال کردن آمار ترافیک</translation>
     </message>
@@ -359,47 +358,47 @@
         <translation type="obsolete">از TCP استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927" />
         <source>Loglevel</source>
         <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901" />
         <source>Padding</source>
         <translation type="unfinished">بالشتک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679" />
         <source>Name</source>
         <translation type="unfinished">نام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">از سوکت دامنه یونیکس برای ارتباط بین nekobox و nekobox_core استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
         <source>Use UDS for IPC</source>
         <translation type="unfinished">از UDS برای IPC استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955" />
         <source>NTP Settings</source>
         <translation>تنظیمات NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970" />
         <source>server</source>
         <translation>سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980" />
         <source>Port</source>
         <translation>پورت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997" />
         <source>sync interval</source>
         <translation>فاصله همگام‌سازی</translation>
     </message>
@@ -418,7 +417,7 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
 باینری — 2026 — فرمت مقادیر بایت دلخواه برای تنظیمات NekoBox که به عنوان مقادیر RocksDB یا فایل های مستقل استفاده می شود — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254" />
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -429,162 +428,162 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
 باینری — 2026 — قالب مقادیر بایت دلخواه برای تنظیمات NekoBox که به عنوان مقادیر leveldb یا فایل های مستقل استفاده می شود — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">درخواست حذف نمایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
         <source>Auto-Testing</source>
         <translation type="unfinished">تست خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">به طور خودکار پراکسی ها را در پس زمینه آزمایش کنید و مجموعه ای از پراکسی های فعال را حفظ کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">تست خودکار را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">فاصله آزمون (ثانیه)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">هر چند وقت یکبار چرخه آزمایش را اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">پروکسی در هر چرخه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">تعداد پراکسی هایی که باید در هر چرخه آزمایش شوند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
         <source>Working Pool Size</source>
         <translation type="unfinished">اندازه استخر کار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">حداکثر تعداد پروکسی های فعال تأیید شده برای نگهداری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">آستانه تأخیر (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">حداکثر تأخیر برای در نظر گرفتن یک پروکسی به عنوان کارآمد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">تعداد تلاش مجدد ناموفق</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">تعداد تلاش های مجدد قبل از در نظر گرفتن یک پروکسی به عنوان ناموفق</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438" />
         <source>Test Target URL</source>
         <translation type="unfinished">URL هدف را آزمایش کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL برای آزمایش پروکسی ها در مقابل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448" />
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">هنگامی که پراکسی حالت TUN از کار بیفتد، به طور خودکار به یک پراکسی فعال دیگر بروید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN Failover را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466" />
         <source>Startup</source>
         <translation type="unfinished">راه اندازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530" />
         <source>Geometry</source>
         <translation type="unfinished">هندسه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559" />
         <source>Autosave geometry</source>
         <translation type="unfinished">ذخیره خودکار هندسه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566" />
         <source>Autosave position</source>
         <translation type="unfinished">موقعیت ذخیره خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
         <source>Apply now</source>
         <translation type="unfinished">اکنون درخواست دهید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660" />
         <source>Width</source>
         <translation type="unfinished">عرض</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747" />
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692" />
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
         <source>Download Retries</source>
         <translation type="unfinished">بارگیری مجدد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729" />
         <source>Interval:</source>
         <translation type="unfinished">فاصله زمانی:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
         <source>Enable automatic update</source>
         <translation type="unfinished">فعال کردن به روز رسانی خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108" />
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">از احراز هویت گواهی TLS رد شوید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
         <source>Configs format</source>
         <translation type="unfinished">فرمت تنظیمات</translation>
     </message>
@@ -599,49 +598,49 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
 باینری — 2026 — فرمت مقادیر بایت دلخواه برای تنظیمات NekoBox که به عنوان مقادیر LMDB یا فایل های مستقل استفاده می شود — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
         <source>Height</source>
         <translation type="unfinished">ارتفاع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857" />
         <source>Core Executable Path</source>
         <translation type="unfinished">مسیر اجرایی اصلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075" />
         <source>Use default</source>
         <translation type="unfinished">از پیش فرض استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893" />
         <source>Remote Control</source>
         <translation type="unfinished">کنترل از راه دور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108" />
         <source>Select</source>
         <translation type="unfinished">انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046" />
         <source>Resources Directory</source>
         <translation type="unfinished">فهرست منابع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082" />
         <source>Resource Manager</source>
         <translation type="unfinished">مدیر منابع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
         <source>Listen Port</source>
         <translation>پورت شنود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -650,17 +649,17 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
                                                             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
         <source>Font Size</source>
         <translation>اندازه قلم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
         <source>Font</source>
         <translation>قلم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -669,16 +668,16 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
                                                                         </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;تنظیمات برای کلاینت
                                              NTP داخلی sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -687,144 +686,144 @@ INI - اوایل دهه 1980 - قالب پیکربندی ساده متن ساد�
                                                             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
         <source>Proxy Format</source>
         <translation>قالب پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645" />
         <source>Language</source>
         <translation>زبان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
         <source>Speedtest mode</source>
         <translation>حالت تست سرعت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
         <source>Download + Upload</source>
         <translation>بارگیری + بارگذاری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
         <source>Only Download</source>
         <translation>فقط بارگیری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
         <source>Only Upload</source>
         <translation>فقط بارگذاری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074" />
         <source>Disable Privilege request</source>
         <translation>غیرفعال کردن درخواست دسترسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
         <source>Simple Download</source>
         <translation>بارگیری ساده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
         <source>Simple Download URL</source>
         <translation>نشانی بارگیری ساده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;تلاش برای شروع به‌عنوان مدیر انجام نشود مگر اینکه صراحتاً درخواست شده باشد&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
         <source>Always Start as Standard User</source>
         <translation>همیشه به‌عنوان کاربر استاندارد شروع شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;در هر اجرا یک پورت در دسترس تصادفی انتخاب می‌کند&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
         <source>Random port</source>
         <translation type="unfinished">پورت تصادفی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115" />
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">از فروشگاه گواهی موزیلا استفاده کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
         <source>Network Settings</source>
         <translation type="unfinished">تنظیمات شبکه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
         <source>Ignore TLS errors</source>
         <translation type="unfinished">خطاهای TLS را نادیده بگیرید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
         <source>Test Settings</source>
         <translation type="unfinished">تنظیمات تست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
         <source>Only Country</source>
         <translation type="unfinished">فقط کشور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;تایم‌اوت در میلی‌ثانیه&lt;br/&gt;برای همه تست‌ها به‌صورت جداگانه اعمال می‌شود&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
         <source>Timeout</source>
         <translation type="unfinished">تایم اوت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;تایم وقفه برای آزمون URL در ms&lt;br/&gt;توجه داشته باشید که اتصالات مختل شده زمان بیشتری برای درخواست اولیه خود می برد و تنظیم این مقدار بسیار کم باعث می شود که آزمایش به اشتباه گزارش دهد که پیکربندی کار نمی کند&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
         <source>Show System DNS option</source>
         <translation type="unfinished">نمایش گزینه System DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;نسخه سیستم عامل=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220" />
         <source>Proxy type</source>
         <translation type="unfinished">نوع پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222" />
         <source>Off</source>
         <translation type="unfinished">خاموش</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255" />
         <source>Name of program</source>
         <translation type="unfinished">نام برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529" />
         <source>Security Warning</source>
         <translation type="unfinished">هشدار امنیتی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530" />
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -841,12 +840,12 @@ Are you sure you want to disable TLS verification?</source>
 آیا مطمئن هستید که می خواهید تأیید TLS را غیرفعال کنید؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551" />
         <source>Privacy Warning</source>
         <translation type="unfinished">هشدار حریم خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552" />
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -874,42 +873,42 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
         <translation>ویرایش گروه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Type</source>
         <translation>نوع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
         <source>Url</source>
         <translation type="unfinished">آدرس اینترنتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
         <source>Paste URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL را جایگذاری کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
         <source>Basic</source>
         <translation>پایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
         <source>Subscription</source>
         <translation>اشتراک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
         <source>Archive</source>
         <translation>بایگانی</translation>
     </message>
@@ -918,27 +917,27 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
         <source>Copy profile share links</source>
         <translation>لینک های اشتراک گذاری نمایه را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">در صورت خالی بودن، از عنوان نمایه از اشتراک استفاده خواهد کرد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Warning</source>
         <translation>هشدار</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Please input URL</source>
         <translation>لطفا URL را وارد کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
         <source>Copied</source>
         <translation>کپی شده است</translation>
     </message>
@@ -947,23 +946,23 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">عرض ستون به صورت دستی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Proxy</source>
         <translation type="unfinished">پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
         <source>None</source>
         <translation type="unfinished">هیچ کدام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
         <source>Front Proxy</source>
         <translation>پروکسی front</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
         <source>Notes</source>
         <translation type="unfinished">یادداشت ها</translation>
     </message>
@@ -972,32 +971,32 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">لغو به‌روزرسانی اتوماتیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
         <translation>متداول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
         <source>Autoupdate</source>
         <translation type="unfinished">به روز رسانی خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
         <source>Extra</source>
         <translation type="unfinished">اضافی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
         <source>Share</source>
         <translation>اشتراک گذاری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
         <source>Landing Proxy</source>
         <translation>پروکسی مقصد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">کپی پیوندهای اشتراک گذاری نمایه (پیوندهای سفارشی)</translation>
     </message>
@@ -1005,100 +1004,100 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
         <source>Edit</source>
         <translation>ویرایش کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
         <translation>متداول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
         <translation>نوع</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
         <translation>پورت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Address</source>
         <translation>آدرس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Name</source>
         <translation>اسم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>روش انتقال باید با سرور سازگار باشد، در غیر این صورت، اتصال نمی تواند برقرار شود.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
         <translation>شبکه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>امنیت لایه انتقال باید با سرور سازگار باشد، در غیر این صورت، اتصال نمی تواند برقرار شود.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
         <translation>امنیت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation>رمزنگاری بسته‌های UDP FullCone برای پیاده‌سازی ویژگی‌هایی مانند UDP FullCone. پشتیبانی سرور لازم است، در صورت انتخاب نادرست، اتصال برقرار نمی‌شود. لطفاً خالی بگذارید.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
         <translation>رمزنگاری بسته ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
         <source>Network Settings (%1)</source>
         <translation>تنظیمات شبکه (1%)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation>در صورت فعال بودن، V2Ray اعتبار گواهی TLS ارائه‌شده توسط میزبان راه دور را بررسی نمی‌کند (امنیت معادل متن ساده است)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
         <translation>اجازه ناامن بودن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="740"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="740" />
         <source>Certificate</source>
         <translation>گواهی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
         <translation>شناسه نام سرور ، متن صریح</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation>مذاکره پروتکل لایه برنامه، متن آشکار. لطفاً آن‌ها را با ویرگول جدا کنید.</translation>
     </message>
@@ -1113,167 +1112,167 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">سفارشی (%1 پیکربندی)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120" />
         <source>both</source>
         <translation type="unfinished">هر دو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="703"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="708"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="713"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="721"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="703" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="708" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="713" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="721" />
         <source>Not set</source>
         <translation>تنظیم نشده</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="700"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="723"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="700" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="723" />
         <source>Already set</source>
         <translation>تنظیم شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
         <source>TLS Security Settings</source>
         <translation>تنظیمات امنیت TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
         <source>TLS Camouflage Settings</source>
         <translation>تنظیمات استتار TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation>کلید عمومی Reality. اگر خالی نباشد، TLS به REALITY تبدیل می‌شود.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="276"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="276" />
         <source>Custom (%1 outbound)</source>
         <translation>سفارشی (%1 خروجی)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278" />
         <source>Custom (%1 config)</source>
         <translation>سفارشی (%1 پیکربندی)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
         <source>Custom Outbound Settings</source>
         <translation>تنظیمات خروجی سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
         <source>Custom Config Settings</source>
         <translation>تنظیمات پیکربندی سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="806"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="806" />
         <source>Apply settings to this group</source>
         <translation>تنظیمات به این گروه اعمال شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
         <translation>چندگانه‌سازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
         <translation type="unfinished">حمل و نقل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
         <source>Keep Default</source>
         <translation>نگه داری مقدار پیشفرض</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
         <source>On</source>
         <translation>فعال</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
         <source>Off</source>
         <translation>خاموش</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="780"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="780" />
         <source>Confirm</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
         <translation>نیازمند پشتیبانی در سمت سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;چندگانه‌سازی را به حالت فعال بازنویسی می‌کند&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
         <source>Enable TCP Brutal</source>
         <translation>فعال کردن TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;سرعت TCP Brutal از سرور به کلاینت&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
         <translation>سرعت TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
         <source>Mb/s</source>
         <translation>مگابیت بر ثانیه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;روش درخواست HTTP، به حروف بزرگ تبدیل می‌شود&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
         <source>Method</source>
         <translation>روش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
         <translation type="unfinished">ECH را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="750"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="750" />
         <source>ECH Config</source>
         <translation type="unfinished">پیکربندی ECH</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
         <source>Reality SID</source>
         <translation>شناسه Reality</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
         <translation>نوع سربرگ</translation>
     </message>
@@ -1286,132 +1285,132 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">پروکسی زنجیره ای</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ممکن است عملکرد را کاهش دهد، ابتدا قطعه ضبط را امتحان کنید&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
         <translation type="unfinished">قطعه TLS را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;قالب زمان، مانند 500ms، 10ms و غیره&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
         <translation type="unfinished">تاخیر برگشتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">TLS Record Fragment را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">شناسه کوتاه واقعیت.فقط یک مقدار را بپذیرید.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
         <source>Network Settings</source>
         <translation type="unfinished">تنظیمات شبکه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
         <translation type="unfinished">حداکثر بایت پست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
         <translation type="unfinished">حداقل فاصله ارسال</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
         <translation type="unfinished">حداکثر زمان استفاده مجدد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
         <translation type="unfinished">X Padding Bytes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
         <translation type="unfinished">دوره زنده نگه داشتن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
         <source>Max Concurrency</source>
         <translation type="unfinished">حداکثر همزمانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
         <translation type="unfinished">حداکثر ثانیه قابل استفاده مجدد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
         <source>Headers</source>
         <translation type="unfinished">سرصفحه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
         <source>Edit download settings</source>
         <translation type="unfinished">تنظیمات دانلود را ویرایش کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
         <translation type="unfinished">حداکثر زمان درخواست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
         <translation type="unfinished">هدر XPadding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
         <translation type="unfinished">روش XPadding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
         <translation type="unfinished">کلید XPadding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
         <translation type="unfinished">طول داده های اولیه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
         <source>Max Connections</source>
         <translation type="unfinished">حداکثر اتصالات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
         <translation type="unfinished">XPadding Placement</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
         <source>Multi Mode</source>
         <translation type="unfinished">حالت چندگانه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">حالت XPadding Obfs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
         <source>No GRPC Headers</source>
         <translation type="unfinished">بدون سرصفحه GRPC</translation>
     </message>
@@ -1419,133 +1418,133 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
         <source>Custom Headers</source>
         <translation type="unfinished">هدرهای سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">هدرهای HTTP سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
         <source>System Parameters</source>
         <translation type="unfinished">پارامترهای سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
         <source>Custom Payload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بار سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">متن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
         <source>Javascript</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">جاوا اسکریپت</translation>
     </message>
 </context>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">پروکسی فرود برای گروه Group2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
         <translation type="unfinished">پروکسی:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
         <translation type="unfinished">جستجو:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
         <translation type="unfinished">گروه 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
         <translation type="unfinished">گروه 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">پراکسی جلو برای گروه % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
         <source>Front proxy: </source>
         <translation type="unfinished">پروکسی جلو:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">پراکسی فرود برای گروه % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
         <source>Landing proxy: </source>
         <translation type="unfinished">پروکسی فرود:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141" />
         <source>Proxy</source>
         <translation type="unfinished">پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143" />
         <source>Direct</source>
         <translation type="unfinished">مستقیم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
         <source>None</source>
         <translation type="unfinished">هیچ کدام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="136"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="136" />
         <source>Select outbound</source>
         <translation type="unfinished">خروجی را انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="138"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="138" />
         <source>Outbound: </source>
         <translation type="unfinished">خروجی:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
         <source>Outbound</source>
         <translation type="unfinished">خروجی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
         <source>Block</source>
         <translation type="unfinished">مسدود کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
         <source>Add proxy</source>
         <translation type="unfinished">پروکسی اضافه کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
         <source>Replace %1 proxy</source>
         <translation type="unfinished">پروکسی % 1 را جایگزین کنید</translation>
     </message>
@@ -1553,17 +1552,17 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
         <source>Send System Parameters</source>
         <translation type="unfinished">ارسال پارامترهای سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=مقدار_سفارشی، os=سفارشی_os، osVersion=نسخه_سفارشی، مدل=مدل_سفارشی</translation>
     </message>
@@ -1571,103 +1570,103 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
         <source>Value</source>
         <translation type="unfinished">ارزش</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
         <source>New</source>
         <translation type="unfinished">جدید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
         <source>Header name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام سربرگ</translation>
     </message>
 </context>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
         <translation>کلید میانبر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
         <source>Show routes</source>
         <translation>مسیرها را نمایش بده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
         <source>Show groups</source>
         <translation>نمایش گروه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
         <source>Trigger main window</source>
         <translation>نمایش پنجره اصلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
         <source>Proxy mode</source>
         <translation>حالت پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
         <source>Toggle System Proxy</source>
         <translation>تغییر وضعیت پروکسی سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
         <source>Global</source>
         <translation type="unfinished">جهانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Shortcuts</source>
         <translation type="unfinished">میانبرها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
-        <source>Shortcut for &apos;%s&apos; action was cleared</source>
-        <translation type="unfinished">میانبر برای عمل &apos;%s&apos; پاک شد</translation>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
+        <source>Shortcut for '%s' action was cleared</source>
+        <translation type="unfinished">میانبر برای عمل '%s' پاک شد</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
         <translation>گروه هاگروه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
         <translation>گروه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
         <translation>به روز رسانی تمام اشتراک ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Confirmation</source>
         <translation>تاییدیه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Update all subscriptions?</source>
         <translation>آیا همه اشتراک ها بروزرسانی شوند؟</translation>
     </message>
@@ -1675,154 +1674,154 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
         <translation>مسیرها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
         <source>Sniffing Mode</source>
         <translation>حالت پویش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
         <source>Disable</source>
         <translation>غیرفعال کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
         <source>Remote DNS</source>
         <translation>دی ان اس سمت-سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
         <source>Direct DNS</source>
         <translation>دی ان اس مستقیم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
         <source>Sniff result for routing</source>
         <translation>نتیجه پویش برای مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
         <translation>متداول</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
         <source>DNS</source>
         <translation>دی‌ان‌اس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
         <source>Simple DNS Settings</source>
         <translation>تنظیمات دی ان اس ساده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Use DNS Object</source>
         <translation>به‌کارگیری شیء دی‌ان‌اس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
         <source>DNS Object Settings</source>
         <translation>تنظیمات شیء دی‌ان‌اس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
         <source>Query Strategy</source>
         <translation>راهبرد پرس‌وجو</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
         <source>Document</source>
         <translation>اسناد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
         <source>Format</source>
         <translation>فرمت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
-        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
+        <source>This is especially important and it is recommended to use the default value of "localhost".
+If the default value does not work, try changing it to "223.5.5.5".
+For more information, see the document "Configuration/DNS".</source>
         <translation>این بسیار مهم است و توصیه می‌شود از مقدار پیش‌فرض
-        &quot;localhost&quot;
-        استفاده کنید. اگر مقدار پیش‌فرض کار نکرد، آن را به &quot;223.5.5.5&quot; تغییر دهید.
-        برای اطلاعات بیشتر، به مستند &quot;Configuration/DNS&quot; مراجعه کنید.</translation>
+        "localhost"
+        استفاده کنید. اگر مقدار پیش‌فرض کار نکرد، آن را به "223.5.5.5" تغییر دهید.
+        برای اطلاعات بیشتر، به مستند "Configuration/DNS" مراجعه کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
         <translation>بسته‌های اولیه اتصال را پویش می‌کند تا پروتکل و SNI را شناسایی کند. نتیجه پویش برای مقصد، مقصد اتصال را به SNI پویش‌شده بازنویسی می‌کند. برای اطلاعات بیشتر درباره پروتکل پویش‌شده، به مستندات sing-box مراجعه کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
         <source>Routing Profile</source>
         <translation>نمایه مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
         <source>Default DNS server</source>
         <translation>سرور دی‌ان‌اس پیش‌فرض</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
         <source>Route</source>
         <translation>مسیر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
         <source>Routing Profiles</source>
         <translation>نمایه‌های مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
         <source>New</source>
         <translation>جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
         <source>Edit</source>
         <translation>ویرایش کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
         <source>Delete</source>
         <translation>از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
         <source>Outbound Domain Strategy</source>
         <translation>راهبرد دامنه خروجی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
         <source>Inbound Domain Strategy</source>
         <translation>راهبرد دامنه ورودی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
         <source>Enable FakeIP</source>
         <translation>فعال کردن IP جعلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <source>Hijack</source>
         <translation>ربایش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
         <source>DNS Server</source>
         <translation>سرور دی‌ان‌اس</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
         <source>Enable</source>
         <translation>فعال کردن</translation>
     </message>
@@ -1831,109 +1830,109 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="vanished">چگونه کار می‌کند؟</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
         <source>Listen Address</source>
         <translation>آدرس درحال شنود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
         <source>Listen Port</source>
         <translation>پورت گوش کن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;از قالب زیر باید استفاده شود:&lt;br/&gt;دامنه:a.com&lt;/p&gt;&lt;p&gt;پسوند:a.com&lt;/p&gt;&lt;p&gt;رجکس:someregex&lt;/p&gt;&lt;p&gt;مجموعه_قوانین:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
         <source>Rules</source>
         <translation>قوانین</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
         <source>IPv4 Response</source>
         <translation>پاسخ IPv4</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
         <source>IPv6 Response</source>
         <translation>پاسخ IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
         <source>Redirect Settings</source>
         <translation>تنظیمات هدایت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
         <source>Clone</source>
         <translation>همزادسازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
         <source>Export</source>
         <translation>استخراج</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>Invalid state</source>
         <translation>وضعیت نامعتبر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation>فهرست نمایه‌های مسیریابی خالی است، این وضعیت غیرقابل دسترس است و ممکن است خرابی رخ دهد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193" />
         <source>Getting keypair...</source>
         <translation type="unfinished">در حال دریافت جفت کلید...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198" />
         <source>Failed to get key pair</source>
         <translation type="unfinished">جفت کلید دریافت نشد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
         <source>Generating config...</source>
         <translation type="unfinished">در حال ایجاد پیکربندی...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
         <source>Failed to generate warp config</source>
         <translation type="unfinished">پیکربندی warp ایجاد نشد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
         <source>Success!</source>
         <translation type="unfinished">موفقیت!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
         <source>Invalid settings</source>
         <translation>تنظیمات نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
         <source>Routing profile cannot be empty</source>
         <translation>نمایه مسیریابی نمی‌تواند خالی باشد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
         <source>DNS Rules are not valid</source>
         <translation>قوانین دی‌ان‌اس معتبر نیستند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280" />
         <source>Security Warning</source>
         <translation type="unfinished">هشدار امنیتی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281" />
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -1950,132 +1949,132 @@ Are you sure?</source>
 مطمئنی؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
         <source>Invalid operation</source>
         <translation>عملیات نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation>نمایه‌های مسیریابی نمی‌توانند خالی باشند، یک نمایه دیگر اضافه کنید یا این یکی را ویرایش کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;آیا روی 0.0.0.0 شنود کند تا دستگاه‌های دیگر در LAN بتوانند از این سرور استفاده کنند&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
         <source>Allow Lan to Connect</source>
         <translation>اجازه اتصال به LAN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;حل و فصل دامنه ها به IP قبل از اتصال، همچنین بر آدرس سرور نیز تأثیر می گذارد&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;نمونه‌ها:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;&lt;p&gt;&lt;6&gt;quic://domain/path&lt;/p&gt;&lt;p&gt;&gt;&lt;6&gt;quic://domain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">آیینه تنظیم قوانین از راه دور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
         <source>GitHub</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>RuleSet download url</source>
         <translation type="unfinished">آدرس دانلود RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS محلی را نمی توان در برخی از تنظیمات استفاده کرد، شما باید یک ip را در اینجا تنظیم کنید تا در چنین شرایطی به عنوان dns محلی استفاده شود&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
         <source>Local Override</source>
         <translation type="unfinished">لغو محلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
         <translation type="unfinished">پیچ و تاب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیکربندی زیر را فعال می‌کند تا به‌عنوان خروجی استفاده شود، که برای دور زدن سرویس‌هایی که VPN‌های غیرقابل تغییر را محدود می‌کنند مفید است&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Enable Warp</source>
         <translation type="unfinished">Warp را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Auto Generate</source>
         <translation type="unfinished">تولید خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیکربندی جدیدی از cloudflare API دریافت می‌کند&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
         <source>Generate Warp Config</source>
         <translation type="unfinished">ایجاد Warp Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
         <source>Endpoint</source>
         <translation type="unfinished">نقطه پایانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
         <source>Public Key</source>
         <translation type="unfinished">کلید عمومی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
         <source>Private Key</source>
         <translation type="unfinished">کلید خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
         <source>Interface Addresses</source>
         <translation type="unfinished">آدرس های رابط</translation>
     </message>
@@ -2083,7 +2082,7 @@ Are you sure?</source>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
         <translation>تنظیمات vpn</translation>
     </message>
@@ -2092,37 +2091,37 @@ Are you sure?</source>
         <translation type="vanished">فعال کردن IPv6 برای Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
         <source>AutoRedirect</source>
         <translation type="unfinished">تغییر مسیر خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">CIDR را حذف کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
         <source>Applications</source>
         <translation type="unfinished">برنامه های کاربردی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
         <translation type="unfinished">آدرس تون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
         <translation type="unfinished">پشته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Enable IPv6</source>
         <translation type="unfinished">IPv6 را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
         <translation type="unfinished">آدرس IPv6 Tun</translation>
     </message>
@@ -2149,17 +2148,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">لغو کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
         <translation>مسیر سخت‌گیرانه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;در صورت فعال بودن، CIDRهای IP مستقیم و مجموعه‌قوانین نیز به تنظیمات Tun اضافه می‌شوند تا در سطح مسیریابی سیستم‌عامل مستثنی شوند. مهم: گزارش شده که مجموعه‌قوانین بزرگ در ویندوز مصرف CPU زیادی دارند، لطفاً این گزینه را با احتیاط فعال کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
         <translation>فعال کردن مسیریابی Tun</translation>
     </message>
@@ -2167,22 +2166,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">بازه بررسی جلسه بیکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
         <translation type="unfinished">زمان پایان جلسه بیکار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
         <translation type="unfinished">حداقل جلسه بیکار</translation>
     </message>
@@ -2190,17 +2189,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
         <translation>عبور ترافیک از بالا به پایین است</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
         <translation>انتخاب کردن نمایه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
         <source>Name cannot be empty.</source>
         <translation>نام نمیتواند خالی باشد</translation>
     </message>
@@ -2208,27 +2207,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
         <translation>هسته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
         <translation>ویرایشگر Json</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
         <source>Outbound JSON, please read the documentation.</source>
         <translation>JSON خروجی، لطفاً مستندات را بخوانید.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
         <source>Please fill the complete config.</source>
         <translation>لطفاً پیکربندی کامل را پر کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
         <source>Name cannot be empty.</source>
         <translation>نام نمیتواند خالی باشد</translation>
     </message>
@@ -2236,67 +2235,67 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
         <translation>فرم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
         <translation>نشانی Socks</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
         <source>127.0.0.1</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
         <translation>پورت Socks</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
         <translation>1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
         <translation>مسیر هسته</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
         <translation>انتخاب از پرونده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;آرگومان‌هایی که به فایل اجرایی منتقل می‌شوند. می‌توانید %s را وارد کنید که با مسیر پرونده حاوی پیکربندی زیر جایگزین می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
         <translation>آرگومان‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
         <translation>اجرا -مسیر_پیکربندی %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;محتویات پرونده پیکربندی که به فرآیند هسته اضافی منتقل می‌شود اگر %s در آرگومان‌ها مشخص شده باشد&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
         <translation>پیکربندی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
         <translation>بدون گزارش</translation>
     </message>
@@ -2304,12 +2303,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">فرم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
@@ -2321,27 +2320,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
         <source>Port range</source>
         <translation type="unfinished">محدوده پورت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Multiplexing</source>
         <translation type="unfinished">مالتی پلکس کردن</translation>
     </message>
@@ -2350,7 +2349,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">حمل و نقل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
         <translation type="unfinished">الگوی ترافیک</translation>
     </message>
@@ -2358,28 +2357,28 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
         <source>Off</source>
         <translation type="unfinished">خاموش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - تعداد اتصالات تونل همزمان.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - الگوریتم کنترل ازدحام QUIC.</translation>
     </message>
@@ -2392,17 +2391,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">QUIC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">نسخه پروتکل UDP روی TCP، پشتیبانی سرور لازم است.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - سرصفحه های اضافی برای ارسال درخواست های HTTP.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>Headers</source>
         <translation type="unfinished">سرصفحه ها</translation>
     </message>
@@ -2410,104 +2409,104 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
         <source>Certificate</source>
         <translation>گواهی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
         <translation>نوع احراز هویت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
         <translation>دانلود (مگابیت بر ثانیه)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
         <translation>غیرفعال کردن کشف MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
         <translation>اجازه ارتباطات ناامن داده شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
         <translation>آپلود (مگابیت بر ثانیه)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
         <translation>گذرواژه مبهم‌سازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
         <translation>شناسه نام سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
         <translation>محموله احراز هویت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
         <translation>غیرفعال کردن SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
         <translation>تولید UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
         <translation>ضربان قلب</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
         <translation>دست‌دهی صفر RTT</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
         <translation>کنترل ازدحام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
         <translation>حالت رله UDP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
         <translation>محدوده پورت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
         <translation>فاصله پرش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 میلی‌ثانیه&lt;br/&gt;1 ثانیه&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;محدوده‌های جدا شده با کاما: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -2515,52 +2514,52 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
         <translation>کاربر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
         <translation>کلید خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
         <translation>گذرواژه کلید خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
         <translation>کلید میزبان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
         <translation>الگوریتم‌های کلید میزبان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
         <translation>نسخه کلاینت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
         <translation>مسیر کلید خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
         <translation>انتخاب پرونده</translation>
     </message>
@@ -2568,12 +2567,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
         <source>Plugin Args</source>
         <translation>آرگومان‌های پلاگین</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
@@ -2582,22 +2581,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">شبکه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
         <source>Encryption</source>
         <translation>رمزگذاری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
         <source>Plugin</source>
         <translation>پلاگین</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation>نسخه پروتکل UDP روی TCP، پشتیبانی سرور لازم است.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
         <source>Off</source>
         <translation>خاموش</translation>
     </message>
@@ -2605,27 +2604,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
         <translation type="unfinished">نسخه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2633,17 +2632,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
         <source>Version</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation>نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
@@ -2652,37 +2651,37 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">شبکه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
         <source>Path</source>
         <translation type="unfinished">مسیر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
         <source>Headers</source>
         <translation type="unfinished">سرصفحه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
         <source>Off</source>
         <translation type="unfinished">خاموش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">نسخه پروتکل UDP روی TCP، پشتیبانی سرور لازم است.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
@@ -2690,72 +2689,72 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">فرم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
         <translation type="unfinished">فهرست ایالتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
         <translation type="unfinished">کلید احراز هویت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
         <translation type="unfinished">کنترل URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
         <translation type="unfinished">نام میزبان</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
         <translation type="unfinished">پذیرش مسیرها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
         <translation type="unfinished">زودگذر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
         <translation type="unfinished">گره خروج اجازه دسترسی به شبکه را می دهد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
         <translation type="unfinished">گره خروج را تبلیغ کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
         <translation type="unfinished">گره خروج</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فهرست زیرشبکه‌های جدا شده با کاما&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
         <translation type="unfinished">مسیرها را تبلیغ کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;استفاده از tailscale dns به عنوان dns راه دور&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
         <translation type="unfinished">DNS جهانی</translation>
     </message>
@@ -2763,27 +2762,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
         <translation type="unfinished">مسیر سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
         <translation type="unfinished">ارگ اضافی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
         <translation type="unfinished">پیکربندی Tor</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
         <translation type="unfinished">داده DIr</translation>
     </message>
@@ -2791,12 +2790,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
         <source>Encryption</source>
         <translation type="unfinished">رمزگذاری</translation>
     </message>
@@ -2804,17 +2803,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">فرم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">کلمه عبور</translation>
     </message>
@@ -2827,12 +2826,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">QUIC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
         <translation type="unfinished">بررسی سلامت</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
         <source>Off</source>
         <translation type="unfinished">خاموش</translation>
     </message>
@@ -2840,22 +2839,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
         <translation>شناسه تغییر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
         <translation>امنیت</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
         <translation>شناسه یکتا</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
         <translation>تولید شناسه یکتا</translation>
     </message>
@@ -2863,151 +2862,151 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
         <source>Reserved</source>
         <translation>رزروشده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فهرست زیرشبکه‌های جدا شده با کاما&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
         <source>Local Address</source>
         <translation>نشانی محلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
         <source>Init Packet Junk Size (S1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Init Packet Junk Size (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
         <source>Init Packet Magic Header (H1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Init Packet Magic Header (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175" />
         <source>Transport Packet Magic Header (H4)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">سربرگ جادویی بسته حمل و نقل (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185" />
         <source>Cookie Reply Packet Junk Size (S3)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اندازه ناخواسته بسته پاسخ کوکی (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201" />
         <source>Signature Packet (I3)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته امضا (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211" />
         <source>Junk Packet Count (Jc)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تعداد بسته های ناخواسته (Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221" />
         <source>Response Packet Magic Header (H2)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">سربرگ جادویی بسته پاسخ (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231" />
         <source>Signature Packet (I1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته امضا (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241" />
         <source>Junk Packet Max Size (Jmax)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حداکثر اندازه بسته ناخواسته (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251" />
         <source>Junk Packet Min Size (Jmin)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته ناخواسته حداقل اندازه (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هدر جادویی بسته پاسخ کوکی (H3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280" />
         <source>Transport Packet Junk Size (S4)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اندازه ناخواسته بسته حمل و نقل (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296" />
         <source>Signature Packet (I2)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته امضا (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312" />
         <source>Response Packet Junk Size (S2)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اندازه ناخواسته بسته پاسخ (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328" />
         <source>Signature Packet (I4)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته امضا (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
         <source>Signature Packet (I5)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بسته امضا (I5)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
         <source>Pre Shared Key</source>
         <translation>کلید پیش‌اشتراک‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
         <source>Use System Interface</source>
         <translation>استفاده از رابط سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
         <source>Public Key</source>
         <translation>کلید عمومی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
         <source>Private Key</source>
         <translation>کلید خصوصی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
         <source>1420</source>
         <translation>1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
         <source>MTU</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Workers</source>
         <translation type="vanished">کارگران</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فاصله نگه‌داری پایدار به ثانیه&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
         <source>Persistent Keepalive</source>
         <translation>نگه‌داری پایدار</translation>
     </message>
@@ -3052,7 +3051,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">سربرگ جادویی حمل و نقل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128" />
         <source>Amnezia Settings</source>
         <translation type="unfinished">تنظیمات آمنزیا</translation>
     </message>
@@ -3060,7 +3059,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="199"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="199" />
         <source>Filter</source>
         <translation type="unfinished">فیلتر کنید</translation>
     </message>
@@ -3072,51 +3071,51 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">به روز رسانی اشتراک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
         <source>Update</source>
         <translation type="unfinished">بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
         <source>Edit</source>
         <translation>ویرایش</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
         <source>Remove</source>
         <translation>حذف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Basic</source>
         <translation>پایه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Subscription</source>
         <translation>اشتراک</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
         <source>Archive</source>
         <translation>آرشیو</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
         <source>Updated: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">به روز شده: %1</translation>
     </message>
     <message>
         <source>Last update: %1</source>
         <translation type="vanished">آخرین به‌روزرسانی : %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Confirmation</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Remove %1?</source>
         <translation>حذف %1?</translation>
     </message>
@@ -3124,26 +3123,26 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">آمار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
         <translation type="unfinished">آمار استفاده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">آمار ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">کل ترافیک پروکسی:</translation>
     </message>
@@ -3152,12 +3151,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">کل ترافیک مستقیم:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
         <source>Security Statistics</source>
         <translation type="unfinished">آمار امنیتی</translation>
     </message>
@@ -3166,85 +3165,85 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">آمار پروفایل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
         <translation type="unfinished">زمان استفاده:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
         <translation type="unfinished">آخرین زمان راه اندازی:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
         <translation type="unfinished">اولین زمان راه اندازی:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
         <translation type="unfinished">شروع شمارش:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
         <translation type="unfinished">دانلود کنید:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
         <translation type="unfinished">آپلود:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">پروفایل های پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
         <source>Database Statistics</source>
         <translation type="unfinished">آمار پایگاه داده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
         <source>Deleted</source>
         <translation type="unfinished">حذف شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
         <translation type="unfinished">وجود دارد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
         <translation type="unfinished">ایجاد شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">گروه ها و اشتراک ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
         <translation type="unfinished">پروفایل های مسیر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">تعداد احراز هویت ناموفق:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
         <source>Users count:</source>
         <translation type="unfinished">تعداد کاربران:</translation>
     </message>
@@ -3260,58 +3259,58 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
         <source>JSON Editor</source>
         <translation>ویرایشگر JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
         <source>Format JSON</source>
         <translation>فرمت JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
         <source>Remove All Comments</source>
         <translation>حذف همه کامنت ها</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
         <source>Json Editor</source>
         <translation>ویرایشگر Json</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
         <source>Structure Preview</source>
         <translation>پیش نمایش ساختار</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
         <source>OK</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
         <source>Json Contains Syntax Errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Json حاوی خطاهای نحوی است</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Json اصلی ممکن است دارای خطاهای نحوی باشد.درخت Json غیر فعال است.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
         <source>You must correct these errors before continuing.</source>
         <translation>شما باید این ایرادات را قبل از ادامه دادن اصلاح کنید</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
         <translation>خطاهای نحوی</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation>لطفا قبل از ادامه دادن ایرادات JSON را اصلاح کنید یا کامنت ها را حذف کنید</translation>
     </message>
@@ -3319,12 +3318,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
         <source>Program</source>
         <translation>برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640" />
         <source>Preferences</source>
         <translation>تنظیمات</translation>
     </message>
@@ -3333,27 +3332,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">سرور</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411" />
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>NekoBox</source>
         <translation type="unfinished">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
         <source>Tun Mode</source>
         <translation>حالتvpn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878" />
         <source>System Proxy</source>
         <translation>پروکسی سیستمی</translation>
     </message>
@@ -3362,33 +3361,33 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">تست URL</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
         <source>Type</source>
         <translation>نوع</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
         <source>Address</source>
         <translation>آدرس</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
         <source>Name</source>
         <translation>اسم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328" />
         <source>Test Result</source>
         <translation>نتیجه تست</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521" />
         <source>Traffic</source>
         <translation>ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665" />
         <source>Share</source>
         <translation>اشتراک گذاری</translation>
     </message>
@@ -3397,235 +3396,235 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">گروه فعلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
         <source>Test</source>
         <translation type="unfinished">تست کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661" />
         <source>Current Selected</source>
         <translation type="unfinished">فعلی انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655" />
         <source>Current Group</source>
         <translation type="unfinished">گروه فعلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
         <source>Info</source>
         <translation type="unfinished">اطلاعات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
         <source>Context</source>
         <translation type="unfinished">زمینه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740" />
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfiles</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764" />
         <source>Exit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769" />
         <source>Toggle Window</source>
         <translation type="unfinished">تغییر وضعیت پنجره</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774" />
         <source>Basic Settings</source>
         <translation>تنظیمات پایه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779" />
         <source>New profile</source>
         <translation>نمایه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
         <source>Groups</source>
         <translation>گروه ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217" />
         <source>Start</source>
         <translation>آغازکردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217" />
         <source>Stop</source>
         <translation>متوقف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805" />
         <source>Edit</source>
         <translation type="unfinished">ویرایش کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813" />
         <source>Routing Settings</source>
         <translation>تنظیمات مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
         <source>Add profile from clipboard</source>
         <translation>افزودن نمایه از کلیپ بورد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
         <source>Delete</source>
         <translation>از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
         <source>Debug Info</source>
         <translation>اطلاعات اشکال زدایی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
         <source>QR Code and link</source>
         <translation>کد QR و پیوند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
         <source>Copy Link</source>
         <translation>لینک را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
         <source>Clear Test Result</source>
         <translation>نتایج تست پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703" />
         <source>Export %1 config</source>
         <translation>استخراج پیکربندی %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
         <source>Reset Traffic</source>
         <translation>بازنشانی ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
         <source>Scan QR Code</source>
         <translation>کد QR را اسکن کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
         <source>Enable System Proxy</source>
         <translation>پروکسی سیستم را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Disable</source>
         <translation>غیرفعال کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
         <source>Remove Duplicates</source>
         <translation>موارد تکراری را حذف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
         <source>fake</source>
         <translation>جعلی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
         <source>Move</source>
         <translation>جابجایی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
         <source>Start with system</source>
         <translation>با سیستم شروع شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
         <source>Remember last profile</source>
         <translation>آخرین نمایه را به خاطر بسپار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
         <source>Allow other devices to connect</source>
         <translation>به دستگاه های دیگر اجازه اتصال دهید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Remove Unavailable</source>
         <translation>غیرقابل دستیابی پاک شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
         <source>Full Test</source>
         <translation>تست کامل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
         <source>Hotkey Settings</source>
         <translation>تنظیمات کلید میانبر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
         <source>Select All</source>
         <translation>انتخاب همه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
         <source>Copy Nekoray links</source>
         <translation type="unfinished">لینک های Nekoray را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Windows elevated task را ثبت کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
         <source>About</source>
         <translation type="unfinished">درباره</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Statistics</source>
         <translation type="unfinished">آمار</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
         <source>Check for updates</source>
         <translation type="unfinished">به روز رسانی را بررسی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
         <source>Toggle filter</source>
         <translation type="unfinished">فیلتر را تغییر دهید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254" />
         <source>Unselect</source>
         <translation type="unfinished">لغو انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213" />
         <source>Information</source>
         <translation type="unfinished">اطلاعات</translation>
     </message>
@@ -3634,53 +3633,53 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">لینک های انتخاب شده را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
         <source>Enable Tun</source>
         <translation>فعال کردن tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395" />
         <source>Clone</source>
         <translation>همزادسازی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Update subscription</source>
         <translation>اشتراک را به روز کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049" />
         <source>Resolve domain</source>
         <translation>دامنه را حل کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
         <source>Tun Settings</source>
         <translation>تنظیمات vpn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062" />
         <source>Restart Program</source>
         <translation>اجرا دوباره برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>Open Config Folder</source>
         <translation>پوشه Config باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
         <source>Security Settings</source>
         <translation type="unfinished">تنظیمات امنیتی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823" />
         <source>Auto-scroll log</source>
         <translation type="unfinished">گزارش اسکرول خودکار</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299" />
         <source>Select Proxy</source>
         <translation type="unfinished">Proxy را انتخاب کنید</translation>
     </message>
@@ -3689,12 +3688,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">پروکسی ورودی:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300" />
         <source>Inbound proxy type:</source>
         <translation type="unfinished">نوع پروکسی ورودی:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ویرایش پروفایل های مسیریابی</translation>
     </message>
@@ -3703,25 +3702,25 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">به روز رسانی پروفایل های مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
         <source>Update Response</source>
         <translation type="unfinished">به روز رسانی پاسخ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">هیچ نمایه مسیریابی به روز نمی شود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">نمایه های مسیریابی % 1 به روز شد</translation>
     </message>
@@ -3730,12 +3729,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">نقشه RuleSet را به روز کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">به‌روزرسانی مجموعه قوانین انجام نشد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">مجموعه قوانین با موفقیت به روز شد</translation>
     </message>
@@ -3744,104 +3743,104 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">حافظه پنهان RuleSet را به روز کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675" />
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">استفاده در macOS مجاز نیست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409" />
         <source>Import Routing Profile</source>
         <translation type="unfinished">وارد کردن نمایه مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413" />
         <source>From clipboard</source>
         <translation type="unfinished">از کلیپ بورد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417" />
         <source>From file</source>
         <translation type="unfinished">از فایل</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424" />
         <source>Imported from clipboard</source>
         <translation type="unfinished">از کلیپ بورد وارد شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436" />
         <source>Imported from %1</source>
         <translation type="unfinished">از % 1 وارد شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446" />
         <source>Routing Profiles</source>
         <translation type="unfinished">نمایه‌های مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473" />
         <source>RuleSet Map</source>
         <translation type="unfinished">نقشه RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496" />
         <source>RuleSet Cache</source>
         <translation type="unfinished">RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">حافظه پنهان مجموعه قوانین به روز شده است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">کش RuleSet را پاک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030" />
         <source>Tun Settings changed</source>
         <translation>تنظیمات Tun تغییر کرد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031" />
         <source>Restart Tun to take effect.</source>
         <translation>Tun را مجدداً راه اندازی کنید تا اعمال شود.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286" />
         <source>Confirmation</source>
         <translation>تائیدیه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093" />
         <source>Settings changed, restart proxy?</source>
         <translation>تنظیمات تغییر کرد، پراکسی راه اندازی مجدد شود؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110" />
         <source>Imported %1 profile(s)</source>
         <translation>%1 نمایه وارد شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842" />
         <source>Not Running</source>
         <translation>در حال اجرا نیست</translation>
     </message>
@@ -3850,22 +3849,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">انتخاب</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396" />
         <source>Clone %1 item(s)</source>
         <translation>همزادسازی %1 مورد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416" />
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">گروه برای یافتن موارد تکراری بسیار بزرگ است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
         <source>Remove %1 item(s) ?</source>
         <translation>حذف %1 مورد؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524" />
         <source>Copied %1 item(s)</source>
         <translation>%1 مورد کپی شد</translation>
     </message>
@@ -3874,39 +3873,39 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">کانفیگ کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768" />
         <source>QR Code not found</source>
         <translation>کد QR یافت نشد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204" />
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175" />
         <source>[%1] test error: %2</source>
         <translation>خطای تست [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302" />
         <source>Testing</source>
         <translation>آزمایش کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325" />
         <source>Unavailable</source>
         <translation>غیرقایل دسترسی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741" />
         <source>Starting profile %1</source>
         <translation>اغاز نمایه %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
         <source>Stopping profile %1</source>
         <translation>متوقف کردن نمایه %1</translation>
     </message>
@@ -3915,74 +3914,74 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">نمایش پنجره برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067" />
         <source>Settings changed</source>
         <translation>تنظیمات تغییر کرد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
         <source>Restart Proxy</source>
         <translation>راه اندازی مجدد پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>اگر برای مدت زمان طولانی هیچ پاسخی دریافت نشد ، پیشنهاد میشود که نرم افزار را دوباره اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743" />
         <source>Failed to start profile %1</source>
         <translation>راه‌اندازی نمایه %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862" />
         <source>Failed to stop, please restart the program.</source>
         <translation>توقف ناموفق بود ، لطفا برنامه را دوباره اجرا کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068" />
         <source>Restart the program to take effect.</source>
         <translation>برای مشاهده نتیجه برنامه را دوباره راه اندازی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
         <source>Stop Testing</source>
         <translation>تست را متوقف کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
         <source>Tun device misbehaving</source>
         <translation>تنظیم نادرست دستگاه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
         <source>Reset</source>
         <translation>بازنشانی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663" />
         <source>Cancel</source>
         <translation>لغو کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236" />
         <source>Add new Group</source>
         <translation>افزودن گروه جدید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276" />
         <source>Delete selected Group</source>
         <translation>حذف گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277" />
         <source>Edit selected Group</source>
         <translation>ویرایش گروه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287" />
         <source>Remove %1?</source>
         <translation>حذف %1?</translation>
     </message>
@@ -3995,7 +3994,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Url Test Group</source>
         <translation>تست نشانی گروه</translation>
     </message>
@@ -4004,7 +4003,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
         <source>Hidden menu</source>
         <translation>منوی مخفی</translation>
     </message>
@@ -4013,7 +4012,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">حل دامنه انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139" />
         <source>Remove Invalid</source>
         <translation>حذف موارد نادرست</translation>
     </message>
@@ -4022,62 +4021,62 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>اگر در راه‌اندازی VPN مشکل دارید، می‌توانید فرآیند هسته را اینجا بازنشانی کنید و سپس دوباره نمایه را راه‌اندازی کنید. خطا: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451" />
         <source> Confirmation </source>
         <translation>تأیید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452" />
         <source> Remove %1 item(s) ? </source>
         <translation>% 1 مورد(های) حذف شود؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>حذف %1 مورد غیرقابل دسترس؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>حذف %1 مورد نادرست؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>جایگزینی نشانی‌های سرور دامنه با IPهای حل‌شده آن‌ها؟</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225" />
         <source>System DNS</source>
         <translation>دی‌ان‌اس سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461" />
         <source>Connections</source>
         <translation>اتصال‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
         <source>Click To Disable Sorting</source>
         <translation>برای غیرفعال کردن مرتب‌سازی کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505" />
         <source>Protocol</source>
         <translation>پروتکل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
         <source>Logs</source>
         <translation>گزارش‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511" />
         <source>Please give the core root privileges</source>
         <translation>لطفاً به هسته دسترسی ریشه بدهید</translation>
     </message>
@@ -4094,41 +4093,41 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">برنامه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651" />
         <source>Profiles</source>
         <translation>نمایه‌ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
         <translation>مسیریابی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
         <source>Destination (Domain)</source>
         <translation>مقصد (دامنه)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497" />
         <source>Process</source>
         <translation>فرآیند</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500" />
         <source>Click To Sort By Process</source>
         <translation>برای مرتب‌سازی بر اساس فرآیند کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Routing Menu</source>
         <translation>منوی مسیریابی</translation>
     </message>
@@ -4141,50 +4140,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">باز کردن مدیر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78" />
         <source>Profile test aborted</source>
         <translation>تست نمایه لغو شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>مشکلی جدی وجود دارد، موضوع موردنظر یافت نشد!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation>داده‌های مدیر نمایه خراب شده‌اند، دوباره امتحان کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>آخرین تست سرعت به‌طور کامل پایان نیافته است، لطفاً صبر کنید. اگر ادامه یافت، برنامه را دوباره راه‌اندازی کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378" />
         <source>Failed to build test config: </source>
         <translation>ساخت پیکربندی تست ناموفق بود: </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414" />
         <source>Speedtest finished!</source>
         <translation>تست سرعت به پایان رسید!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
         <source>Failed to stop tests</source>
         <translation>توقف تست‌ها ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
         <source>You need to enable hijack DNS server first</source>
         <translation>ابتدا باید سرور دی‌ان‌اس ربایش را فعال کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608" />
         <source>Failed to set system dns: </source>
         <translation>تنظیم دی‌ان‌اس سیستم ناموفق بود: </translation>
     </message>
@@ -4193,12 +4192,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">خطای بازگشت BuildConfig</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699" />
         <source>Another profile is starting...</source>
         <translation>نمایه دیگری در حال راه‌اندازی است...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706" />
         <source>Another profile is stopping...</source>
         <translation>نمایه دیگری در حال توقف است...</translation>
     </message>
@@ -4207,7 +4206,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">تلاش برای شروع پیکربندی، اما هسته به پورت RPC گوش نداده است، بنابراین آن را دوباره راه‌اندازی کنید...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
         <source>Stop return error</source>
         <translation>خطای بازگشت توقف</translation>
     </message>
@@ -4220,27 +4219,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">کپی پیکربندی تست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019" />
         <source>Cannot start</source>
         <translation>نمی‌توان شروع کرد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020" />
         <source>Last download request has not finished yet</source>
         <translation>آخرین درخواست بارگیری هنوز به پایان نرسیده است</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
         <source>Traffic Graph</source>
         <translation>نمودار ترافیک</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054" />
         <source>Failed to download update assets</source>
         <translation>بارگیری منابع به‌روزرسانی ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208" />
         <source>Speedtest Current</source>
         <translation>تست سرعت کنونی</translation>
     </message>
@@ -4249,52 +4248,52 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">تست سرعت انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
         <source>Speedtest Group</source>
         <translation>تست سرعت گروه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>آخرین تست نشانی به‌طور کامل پایان نیافته است، لطفاً صبر کنید. اگر ادامه یافت، برنامه را دوباره راه‌اندازی کنید.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252" />
         <source>URL test finished!</source>
         <translation>تست نشانی به پایان رسید!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
         <source>Profile speed test aborted</source>
         <translation>تست سرعت نمایه لغو شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585" />
         <source>[%1] speed test error: %2</source>
         <translation>خطای تست سرعت [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation>کاربر درخواست دسترسی را غیرفعال کرده است، برخی ویژگی‌ها ممکن است کار نکنند</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038" />
         <source>Group is too big to sort</source>
         <translation type="unfinished">گروه برای مرتب سازی خیلی بزرگ است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790" />
         <source>Unable to capture screen</source>
         <translation>ناتوانی در ضبط صفحه</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513" />
         <source>Outbound</source>
         <translation>خروجی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524" />
         <source>Click To Toggle sort by Traffic</source>
         <translation>برای تغییر مرتب‌سازی بر اساس ترافیک کلیک کنید</translation>
     </message>
@@ -4303,24 +4302,24 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">کپی پیوندهای انتخاب شده (پیوندهای سفارشی)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">آرایه JSON نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">ورودی ارائه‌شده نمی‌تواند به آرایه قوانین مسیر معتبر تجزیه شود:
 </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">برای مرتب سازی بر اساس پروتکل کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">برای مرتب سازی بر اساس خروجی کلیک کنید</translation>
     </message>
@@ -4329,52 +4328,52 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">لینک های سفارشی را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
         <source>Copy links</source>
         <translation type="unfinished">لینک ها را کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
         <source>Url Test</source>
         <translation type="unfinished">آزمون آدرس اینترنتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131" />
         <source>Resolve Domain</source>
         <translation type="unfinished">دامنه را حل کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
         <source>Full test Selected</source>
         <translation type="unfinished">تست کامل انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
         <source>Download test Selected</source>
         <translation type="unfinished">دانلود آزمون انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160" />
         <source>Upload test Selected</source>
         <translation type="unfinished">تست آپلود انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
         <source>Country test Selected</source>
         <translation type="unfinished">آزمون کشوری انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
         <source>Simple download test Selected</source>
         <translation type="unfinished">تست دانلود ساده انتخاب شد</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180" />
         <source>Hide window</source>
         <translation type="unfinished">پنهان کردن پنجره</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185" />
         <source>Add profile from File</source>
         <translation type="unfinished">افزودن نمایه از فایل</translation>
     </message>
@@ -4386,27 +4385,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">نامعتبر است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768" />
         <source>Type</source>
         <translation type="unfinished">نوع</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770" />
         <source>Address</source>
         <translation type="unfinished">آدرس</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="772"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="772" />
         <source>Name</source>
         <translation type="unfinished">نام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="774"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="774" />
         <source>Test Result</source>
         <translation type="unfinished">نتیجه تست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="776"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="776" />
         <source>Traffic</source>
         <translation type="unfinished">ترافیک</translation>
     </message>
@@ -4414,22 +4413,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">نام کاربری</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
         <translation type="unfinished">رمز عبور جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
         <translation type="unfinished">رمز عبور را تایید کنید</translation>
     </message>
@@ -4437,12 +4436,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Confirmation</source>
         <translation>تائیدیه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Remove %1?</source>
         <translation>حذف %1?</translation>
     </message>
@@ -4450,7 +4449,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
         <translation type="unfinished">تنظیمات امنیتی</translation>
     </message>
@@ -4458,22 +4457,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="468"/>
+        <location filename="../../src/gharqad/main.cpp" line="468" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ثبت % 1 ناموفق بود.خطا: %2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لغو ثبت % 1 ناموفق بود.خطا: %2</translation>
     </message>
 </context>
 <context>
@@ -4495,32 +4494,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">نام گروه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>استفاده‌شده: %1 باقی‌مانده: %2 انقضا: %3</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
         <source>Select</source>
         <translation>انتخاب کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045" />
         <source>Update</source>
         <translation>بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973" />
         <source>No update</source>
         <translation>بدون بروزرسانی جدید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4529,50 +4528,50 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007" />
         <source>Open in browser</source>
         <translation>در مرور گر باز شود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005" />
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">% 1 تکراری حذف شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">حذف % 1 نامعتبر است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">حذف % 1 در دسترس نیست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">مجموعه قوانین را بررسی کنید: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">خطای فهرست مجموعه قوانین درخواستی: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852" />
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">ورودی: % 2 % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854" />
         <source>Inbound: Off</source>
         <translation type="unfinished">ورودی: خاموش</translation>
     </message>
@@ -4585,7 +4584,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">% 2: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP ورودی: %1</translation>
     </message>
@@ -4594,27 +4593,27 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">آدرس IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359" />
         <source>Move profiles to group</source>
         <translation type="unfinished">پروفایل ها را به گروه منتقل کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546" />
         <source>Config copied</source>
         <translation type="unfinished">کانفیگ کپی شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558" />
         <source>Copy core config</source>
         <translation type="unfinished">کپی پیکربندی هسته</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560" />
         <source>Copy test config</source>
         <translation type="unfinished">کپی پیکربندی تست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046" />
         <source>Update is ready, restart to install?</source>
         <translation>به روز رسانی آماده است، برای نصب مجدد راه اندازی شود؟</translation>
     </message>
@@ -4628,27 +4627,27 @@ How to update?</source>
         <translation type="vanished">چگونه بروزرسانی کنم ؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
         <source>Requesting subscription: %1</source>
         <translation>درخواست اشتراک: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853" />
         <source>Requesting subscription %1 error: %2</source>
         <translation>خطای درخواست اشتراک %1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">عنوان نمایه اشتراک: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911" />
         <source>Clearing servers...</source>
         <translation>در حال پاک کردن سرورها...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967" />
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- % 1 پراکسی اضافه شد</translation>
@@ -4668,44 +4667,44 @@ Deleted %3 Profiles:
         <translation type="vanished">خالی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969" />
         <source>Change of %1:</source>
         <translation>تغییر %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214"/>
+        <location filename="../../src/gharqad/main.cpp" line="214" />
         <source>Chain Proxy</source>
         <translation>پروکسی زنجیره ای</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="231"/>
+        <location filename="../../src/gharqad/main.cpp" line="231" />
         <source>Custom</source>
         <translation type="unfinished">سفارشی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232"/>
+        <location filename="../../src/gharqad/main.cpp" line="232" />
         <source>Extra Core</source>
         <translation type="unfinished">هسته اضافی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation>پروکسی: %1 مستقیم: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886" />
         <source>Subscription request fininshed: %1</source>
         <translation>درخواست اشتراک به پایان رسید: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>هسته بیش از حد متوقف می‌شود، راه‌اندازی خودکار این نمایه متوقف شود.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956" />
         <source>Default</source>
         <translation>پیش فرض</translation>
     </message>
@@ -4714,54 +4713,54 @@ Direct: %2</source>
         <translation type="vanished">افزودن نمایه‌ها به این گروه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
         <translation>آدرس اشتراک شناسایی شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
         <translation>چگونه می‌خواهید این اشتراک را وارد کنید؟</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
         <translation>به‌روزرسانی گروه موجود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
         <translation>وارد کردن به عنوان لینک‌های پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
         <translation>نام گروه:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
         <translation>تشخیص خودکار از اشتراک</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
         <translation>وارد کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
         <source>Decrypted happ:// link</source>
         <translation>لینک happ:// رمزگشایی شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
         <source>Failed to decrypt happ:// link</source>
         <translation>رمزگشایی لینک happ:// ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
         <source>Create new subscription group</source>
         <translation>ایجاد گروه اشتراک جدید</translation>
     </message>
@@ -4770,12 +4769,12 @@ Direct: %2</source>
         <translation type="vanished">نمی‌توان پرونده را باز کرد.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920" />
         <source>Not official support platform</source>
         <translation>پلتفرم پشتیبانی رسمی نیست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930" />
         <source>Requesting update error: %1</source>
         <translation>خطای درخواست به‌روزرسانی: %1</translation>
     </message>
@@ -4784,75 +4783,75 @@ Direct: %2</source>
         <translation type="vanished">حالت Tun با پیکربندی‌های سفارشی قابل استفاده نیست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">در حال پردازش داده های اشتراک...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951" />
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- پراکسی های % 1 را رها کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">فرآیند تکمیل شد، درخواست...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383" />
         <source>Download Profiles</source>
         <translation type="unfinished">دانلود نمایه ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">درخواست خطای نمایه: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">هسته خارج شد، در حال تمیز کردن...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">راه اندازی مجدد هسته ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383" />
         <source>Select a Folder</source>
         <translation type="unfinished">یک پوشه را انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
         <source>Access denied</source>
         <translation type="unfinished">دسترسی رد شد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
         <source>OK</source>
         <translation type="unfinished">تایید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="372"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="372" />
         <source>System</source>
         <translation type="unfinished">سیستم</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
         <translation type="unfinished">قوانین کاربردی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">CIDR را حذف کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
         <source>Cancel</source>
         <translation type="unfinished">لغو کردن</translation>
     </message>
@@ -4872,77 +4871,77 @@ Direct: %2</source>
         <translation type="obsolete">هسته اضافی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">پروکسی: ⚡% 1 📦% 3
 مستقیم: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="464"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="464" />
         <source>Invalid</source>
         <translation type="unfinished">نامعتبر است</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50" />
         <source>KCP Settings</source>
         <translation type="unfinished">تنظیمات KCP</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>MTU</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>TTI</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
         <source>Uplink Capacity</source>
         <translation type="unfinished">ظرفیت Uplink</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
         <source>Downlink Capacity</source>
         <translation type="unfinished">ظرفیت پایین لینک</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
         <source>Congestion</source>
         <translation type="unfinished">ازدحام</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
         <source>Read Buffer Size</source>
         <translation type="unfinished">اندازه بافر را بخوانید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Write Buffer Size</source>
         <translation type="unfinished">اندازه بافر را بنویسید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
         <source>Header Type</source>
         <translation type="unfinished">نوع سربرگ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
         <source>Seed</source>
         <translation type="unfinished">بذر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">پاسخ نامعتبر دریافت شد: %1
 بار درخواستی: %2 بود</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
         <source>Imported</source>
         <translation type="unfinished">وارداتی</translation>
     </message>
@@ -4950,92 +4949,92 @@ Request payload was: %2</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172"/>
+        <location filename="../../src/gharqad/main.cpp" line="172" />
         <source>Cancel</source>
         <translation>لغو کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173"/>
+        <location filename="../../src/gharqad/main.cpp" line="173" />
         <source>Apply</source>
         <translation>به‌کار بردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174"/>
+        <location filename="../../src/gharqad/main.cpp" line="174" />
         <source>Yes</source>
         <translation>بله</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175"/>
+        <location filename="../../src/gharqad/main.cpp" line="175" />
         <source>No</source>
         <translation>خیر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176"/>
+        <location filename="../../src/gharqad/main.cpp" line="176" />
         <source>OK</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177"/>
+        <location filename="../../src/gharqad/main.cpp" line="177" />
         <source>Defaults</source>
         <translation type="unfinished">پیش فرض ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178"/>
+        <location filename="../../src/gharqad/main.cpp" line="178" />
         <source>Restore Defaults</source>
         <translation type="unfinished">بازیابی پیش فرض ها</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179"/>
+        <location filename="../../src/gharqad/main.cpp" line="179" />
         <source>Discard</source>
         <translation type="unfinished">دور انداختن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181"/>
+        <location filename="../../src/gharqad/main.cpp" line="181" />
         <source>Undo</source>
         <translation type="unfinished">واگرد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182"/>
+        <location filename="../../src/gharqad/main.cpp" line="182" />
         <source>Redo</source>
         <translation type="unfinished">دوباره انجام دهید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183"/>
+        <location filename="../../src/gharqad/main.cpp" line="183" />
         <source>Cut</source>
         <translation type="unfinished">برش دهید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184"/>
+        <location filename="../../src/gharqad/main.cpp" line="184" />
         <source>Copy</source>
         <translation type="unfinished">کپی کنید</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185"/>
+        <location filename="../../src/gharqad/main.cpp" line="185" />
         <source>Paste</source>
         <translation type="unfinished">چسباندن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186"/>
+        <location filename="../../src/gharqad/main.cpp" line="186" />
         <source>Delete</source>
         <translation type="unfinished">از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187"/>
+        <location filename="../../src/gharqad/main.cpp" line="187" />
         <source>Select All</source>
         <translation type="unfinished">انتخاب همه</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188"/>
+        <location filename="../../src/gharqad/main.cpp" line="188" />
         <source>Stop</source>
         <translation type="unfinished">متوقف کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189"/>
+        <location filename="../../src/gharqad/main.cpp" line="189" />
         <source>Clear</source>
         <translation type="unfinished">پاک کردن</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190"/>
+        <location filename="../../src/gharqad/main.cpp" line="190" />
         <source>Copy Link Location</source>
         <translation type="unfinished">مکان پیوند را کپی کنید</translation>
     </message>
@@ -5043,7 +5042,7 @@ Request payload was: %2</source>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
         <translation>شما نمی توانید کاراکتر فضای خالی در اینجا استفاده کنید.</translation>
     </message>
@@ -5051,83 +5050,83 @@ Request payload was: %2</source>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
         <translation>نمایه مسیر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
         <source>Update url</source>
         <translation type="unfinished">به روز رسانی آدرس اینترنتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
         <source>Skip update</source>
         <translation type="unfinished">رد شدن از به روز رسانی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
         <source>Update manually</source>
         <translation type="unfinished">به روز رسانی دستی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
         <source>Rules</source>
         <translation>قوانین</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
         <source>New</source>
         <translation>جدید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
         <source>Move Up</source>
         <translation>بالا بردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
         <source>Move Down</source>
         <translation>پایین آوردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
         <source>Delete</source>
         <translation>از بین بردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
         <source>Rule Attributes</source>
         <translation>ویژگی‌های قانون</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
         <source>Attribute</source>
         <translation>ویژگی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Name_Placeholder</source>
         <translation>جای‌نما_نام</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Notes</source>
         <translation type="unfinished">یادداشت ها</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
         <source>Import JSON</source>
         <translation>وارد کردن JSON</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
         <source>Basic</source>
         <translation>پایه</translation>
     </message>
@@ -5136,36 +5135,36 @@ Request payload was: %2</source>
         <translation type="vanished">چگونه استفاده شود</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
         <source>Direct</source>
         <translation>مستقیم</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
         <source>Proxy</source>
         <translation>پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
         <source>Block</source>
         <translation>مسدود کردن</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
         <source>Advanced</source>
         <translation>پیشرفته</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
         <source>Invalid rules</source>
         <translation>قوانین نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
         <source>Some rules could not be added:
 </source>
         <translation>برخی قوانین اضافه نشدند:
@@ -5176,51 +5175,51 @@ Request payload was: %2</source>
         <translation type="vanished">راهنمای ساده قوانین</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
         <source>Invalid JSON Array</source>
         <translation>آرایه JSON نادرست</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation>ورودی ارائه‌شده نمی‌تواند به آرایه قوانین مسیر معتبر تجزیه شود:
 </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
         <source>Invalid operation</source>
         <translation>عملیات نامعتبر</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
         <source>Cannot create Route Profile with empty name</source>
         <translation>نمی‌توان نمایه مسیر با نام خالی ایجاد کرد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
         <source>Empty Route Profile</source>
         <translation>نمایه مسیر خالی</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
         <source>No valid rules are in the profile</source>
         <translation>هیچ قانون معتبری در نمایه وجود ندارد</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation>برخی قوانین اضافه نشدند، قبل از ذخیره آن‌ها را اصلاح کنید:
 </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
         <translation type="unfinished">ژنرال</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
         <source>Default outbound</source>
         <translation type="unfinished">خروجی پیش فرض</translation>
     </message>
@@ -5228,42 +5227,42 @@ Request payload was: %2</source>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
         <translation type="unfinished">تنظیمات امنیتی</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
         <translation type="unfinished">اقدامات قفل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
         <translation type="unfinished">تنظیمات قفل</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
         <translation type="unfinished">راه اندازی را قفل کنید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
         <translation type="unfinished">حذف کاربران</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
         <translation type="unfinished">ویرایش نقش های کاربر</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
         <translation type="unfinished">رمز عبور رابط کاربری را تغییر دهید</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">اعتبار پروکسی را تنظیم کنید</translation>
     </message>
@@ -5271,12 +5270,12 @@ Request payload was: %2</source>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
         <source>Exiting %1</source>
         <translation type="unfinished">خروج از % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
         <translation type="unfinished">شروع % 1</translation>
     </message>
@@ -5284,14 +5283,14 @@ Request payload was: %2</source>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
         <source>Proxy</source>
         <translation>پروکسی</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
         <source>Direct</source>
         <translation>مستقیم</translation>
     </message>
@@ -5309,13 +5308,13 @@ Request payload was: %2</source>
 </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458" />
         <source>Fetching information</source>
         <translation type="unfinished">واکشی اطلاعات</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583" />
         <source>Download Profiles</source>
         <translation type="unfinished">دانلود نمایه ها</translation>
     </message>
@@ -5323,7 +5322,7 @@ Request payload was: %2</source>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">فرم</translation>
     </message>
