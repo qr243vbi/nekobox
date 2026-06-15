@@ -50,57 +50,45 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
         <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
         <source>Custom Headers</source>
-        <translation type="unfinished">En-têtes personnalisés</translation>
+        <translation type="obsolete">En-têtes personnalisés</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="53"/>
         <source>Custom HTTP Headers</source>
-        <translation type="unfinished">En-têtes HTTP personnalisés</translation>
+        <translation type="obsolete">En-têtes HTTP personnalisés</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="60"/>
         <source>System Parameters</source>
-        <translation type="unfinished">Paramètres système</translation>
+        <translation type="obsolete">Paramètres système</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="73"/>
         <source>Custom payload (javascript/text)</source>
-        <translation type="unfinished">Charge utile personnalisée (javascript/texte)</translation>
+        <translation type="obsolete">Charge utile personnalisée (javascript/texte)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="20"/>
         <source>Enable HTTP Headers</source>
-        <translation type="unfinished">Activer les en-têtes HTTP</translation>
+        <translation type="obsolete">Activer les en-têtes HTTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="30"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation type="obsolete">Nom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="35"/>
         <source>Value</source>
-        <translation type="unfinished">Valeur</translation>
+        <translation type="obsolete">Valeur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="44"/>
         <source>Send System Parameters</source>
-        <translation type="unfinished">Envoyer les paramètres système</translation>
+        <translation type="obsolete">Envoyer les paramètres système</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="51"/>
         <source>Custom HWID</source>
-        <translation type="unfinished">ID HWID personnalisé</translation>
+        <translation type="obsolete">ID HWID personnalisé</translation>
     </message>
 </context>
 <context>
@@ -310,88 +298,93 @@
         <translation type="unfinished">Afficher l&apos;option DNS du système</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="537"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <source>Show profile IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
         <source>Disable tray</source>
         <translation type="unfinished">Désactiver le bac</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">Définir le texte sous les icônes de menu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Hide at startup</source>
         <translation type="unfinished">Masquer au démarrage</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>Manually column width</source>
         <translation type="unfinished">Largeur de colonne manuellement</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="571"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578"/>
         <source>Max log lines</source>
         <translation type="unfinished">Lignes de journal maximales</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="607"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614"/>
         <source>Theme</source>
         <translation type="unfinished">Thème</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="624"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652"/>
         <source>System</source>
         <translation type="unfinished">Système</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="638"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
         <source>Language</source>
         <translation type="unfinished">Langue</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="658"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
         <source>Icon</source>
         <translation type="unfinished">Icône</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Police Emoji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679"/>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="685"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonnement</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="722"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
         <source>Interval:</source>
         <translation type="unfinished">Intervalle:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="754"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">Activer la mise à jour automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="799"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Effacer les serveurs avant la mise à jour</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="704"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Test d&apos;URL après mise à jour</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="951"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
         <source>Enable</source>
         <translation type="unfinished">Activer</translation>
     </message>
@@ -400,27 +393,27 @@
         <translation type="obsolete">Intervalle (minute, invalide si inférieur à 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="741"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Supprimer les doublons</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
         <source>User Agent</source>
         <translation type="unfinished">Agent utilisateur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Version du système d&apos;exploitation=%3&lt;/p&gt;&lt;p&gt;Modèle=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="778"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Envoyer les paramètres système</translation>
     </message>
@@ -429,32 +422,32 @@
         <translation type="obsolete">Mise à jour automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="691"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format&#xa0;: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Laissez vide pour utiliser les valeurs par défaut.Spécifiez uniquement les paramètres que vous souhaitez remplacer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="694"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Paramètres système personnalisés (facultatif)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Supprimer invalide</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="792"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Supprimer indisponible</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="807"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817"/>
         <source>Core</source>
         <translation type="unfinished">Cœur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="852"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -462,7 +455,7 @@
 Améliorer le ping et les performances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="857"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Désactiver les statistiques de trafic</translation>
     </message>
@@ -471,37 +464,37 @@ Améliorer le ping et les performances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <translation type="obsolete">Utiliser TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplexage (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927"/>
         <source>Loglevel</source>
         <translation type="unfinished">Niveau de journalisation</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="881"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
         <source>concurrency</source>
         <translation type="unfinished">concurrence</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901"/>
         <source>Padding</source>
         <translation type="unfinished">Rembourrage</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="898"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908"/>
         <source>Default On</source>
         <translation type="unfinished">Activé par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="930"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
         <source>Core Options</source>
         <translation type="unfinished">Options de base</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -509,27 +502,27 @@ Améliorer le ping et les performances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
 client NTP intégré de sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Paramètres NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="960"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
         <source>server</source>
         <translation type="unfinished">server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="987"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997"/>
         <source>sync interval</source>
         <translation type="unfinished">intervalle de synchronisation</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="994"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -537,22 +530,22 @@ client NTP intégré de sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translatio
 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1024"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Security</source>
         <translation type="unfinished">Sécurité</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Désactiver la demande de privilège</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1098"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Ignorer l&apos;authentification du certificat TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1105"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Utiliser le magasin de certificats Mozilla</translation>
     </message>
@@ -561,27 +554,27 @@ minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Ignorer l&apos;authentification du certificat TLS par défaut (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1148"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Empreinte digitale uTLS par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1054"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;N&apos;essayez pas de démarrer en tant qu&apos;administrateur sauf demande explicite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="864"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Utilisez Unix Domain Socket pour la communication entre nekobox et nekobox_core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Utiliser UDS pour IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Toujours démarrer en tant qu&apos;utilisateur standard</translation>
     </message>
@@ -600,7 +593,7 @@ INI — début des années 1980 — format de configuration simple en texte brut
 binaire - 2026 - format de valeurs d&apos;octets arbitraires pour les paramètres NekoBox utilisés comme valeurs RocksDB ou fichiers autonomes - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1244"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -611,142 +604,142 @@ INI — début des années 1980 — format de configuration simple en texte brut
 binaire — 2026 — format de valeurs d&apos;octets arbitraires pour les paramètres NekoBox utilisés comme valeurs leveldb ou fichiers autonomes — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1274"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Demander la suppression du profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1294"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Test automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1300"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Testez automatiquement les proxys en arrière-plan et maintenez un pool de proxys fonctionnels</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1303"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Activer les tests automatiques</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Intervalle de test (secondes)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1317"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">À quelle fréquence exécuter le cycle de test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1333"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Procurations par cycle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1340"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Nombre de proxys à tester à chaque cycle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1356"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Taille du pool de travail</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1363"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Nombre maximum de proxys de travail vérifiés à maintenir</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1379"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Seuil de latence (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1386"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Latence maximale pour considérer un proxy comme fonctionnel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1405"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Nombre de tentatives d&apos;échec</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1412"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Nombre de nouvelles tentatives avant de considérer un proxy comme ayant échoué</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1428"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Tester l&apos;URL cible</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1435"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL pour tester les proxys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Basculer automatiquement vers un autre proxy fonctionnel en cas d&apos;échec du proxy en mode TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Activer le basculement TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1456"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466"/>
         <source>Startup</source>
         <translation type="unfinished">Démarrer</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530"/>
         <source>Geometry</source>
         <translation type="unfinished">Géométrie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1549"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Géométrie d&apos;enregistrement automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1556"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566"/>
         <source>Autosave position</source>
         <translation type="unfinished">Position de sauvegarde automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1576"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586"/>
         <source>Apply now</source>
         <translation type="unfinished">Postulez maintenant</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1650"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660"/>
         <source>Width</source>
         <translation type="unfinished">Largeur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1737"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1682"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
         <source>Y</source>
         <translation type="unfinished">Oui</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1237"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
         <source>Configs format</source>
         <translation type="unfinished">Format des configurations</translation>
     </message>
@@ -761,64 +754,64 @@ INI — début des années 1980 — format de configuration simple en texte brut
 binaire — 2026 — format de valeurs d&apos;octets arbitraires pour les paramètres NekoBox utilisés comme valeurs LMDB ou fichiers autonomes — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1750"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760"/>
         <source>Height</source>
         <translation type="unfinished">Hauteur</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1847"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Chemin de l&apos;exécutable principal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1876"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2065"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075"/>
         <source>Use default</source>
         <translation type="unfinished">Utiliser par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1883"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893"/>
         <source>Remote Control</source>
         <translation type="unfinished">Télécommande</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1909"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2098"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108"/>
         <source>Select</source>
         <translation type="unfinished">Sélectionner</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2036"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Répertoire des ressources</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2072"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Gestionnaire de ressources</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="219"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220"/>
         <source>Proxy type</source>
         <translation type="unfinished">Type de proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="221"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222"/>
         <source>Off</source>
         <translation type="unfinished">Désactivé</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="254"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255"/>
         <source>Name of program</source>
         <translation type="unfinished">Nom du programme</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="527"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529"/>
         <source>Security Warning</source>
         <translation type="unfinished">Avertissement de sécurité</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="528"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -835,12 +828,12 @@ Activez-le uniquement si vous faites entièrement confiance à chaque réseau en
 Êtes-vous sûr de vouloir désactiver la vérification TLS&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="549"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Avertissement de confidentialité</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="550"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -883,22 +876,27 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="unfinished">URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="118"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
+        <source>Paste URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="128"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
         <source>Type</source>
         <translation type="unfinished">Taper</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
         <source>Basic</source>
         <translation type="unfinished">Basique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="141"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonnement</translation>
     </message>
@@ -907,58 +905,58 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="obsolete">Largeur de colonne manuellement</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="175"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
         <source>Archive</source>
         <translation type="unfinished">Archive</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="188"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
         <source>Autoupdate</source>
         <translation type="unfinished">Mise à jour automatique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="195"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
         <source>Extra</source>
         <translation type="unfinished">Supplémentaire</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="208"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Proxy</source>
         <translation type="unfinished">Procuration</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="247"/>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
         <source>None</source>
         <translation type="unfinished">None</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="254"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
         <source>Front Proxy</source>
         <translation type="unfinished">Proxy frontal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="261"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">Proxy d&apos;atterrissage</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="285"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
         <source>Share</source>
         <translation type="unfinished">Partager</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="291"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">Copier les liens de partage de profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">Copier les liens de partage de profil (liens personnalisés)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="306"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
         <source>Notes</source>
         <translation type="unfinished">Remarques</translation>
     </message>
@@ -967,22 +965,22 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="obsolete">Ignorer la mise à jour automatique</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="38"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">Utilisera le titre du profil de l&apos;abonnement s&apos;il est vide</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="84"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
         <source>Copied</source>
         <translation type="unfinished">Copié</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="397"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Warning</source>
         <translation type="unfinished">Avertissement</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="397"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Please input URL</source>
         <translation type="unfinished">Veuillez saisir l&apos;URL</translation>
     </message>
@@ -1118,7 +1116,7 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="805"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="806"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">Appliquer les paramètres à ce groupe</translation>
     </message>
@@ -1154,7 +1152,7 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="739"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="740"/>
         <source>Certificate</source>
         <translation type="unfinished">Certificat</translation>
     </message>
@@ -1175,7 +1173,7 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="749"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="750"/>
         <source>ECH Config</source>
         <translation type="unfinished">Configuration ECH</translation>
     </message>
@@ -1245,12 +1243,12 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="unfinished">Réalité SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="276"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Personnalisé (%1 sortant)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Personnalisé (configuration %1)</translation>
     </message>
@@ -1278,25 +1276,25 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="unfinished">les deux</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="697"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="702"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="707"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="703"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="708"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="713"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="721"/>
         <source>Not set</source>
         <translation type="unfinished">Non défini</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="699"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="704"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="709"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="714"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="700"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="723"/>
         <source>Already set</source>
         <translation type="unfinished">Déjà défini</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="779"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="780"/>
         <source>Confirm</source>
         <translation type="unfinished">Confirmer</translation>
     </message>
@@ -1402,6 +1400,44 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
     </message>
 </context>
 <context>
+    <name>DialogEditSubscription</name>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
+        <source>Custom Headers</source>
+        <translation type="unfinished">En-têtes personnalisés</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
+        <source>Custom HTTP Headers</source>
+        <translation type="unfinished">En-têtes HTTP personnalisés</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
+        <source>System Parameters</source>
+        <translation type="unfinished">Paramètres système</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
+        <source>Custom Payload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
+        <source>Javascript</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogGroupChooseProxy</name>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
@@ -1429,40 +1465,40 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="unfinished">Groupe2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="453"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Proxy frontal pour le groupe %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="455"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
         <source>Front proxy: </source>
         <translation type="unfinished">Proxy frontal&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="466"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Proxy d&apos;atterrissage pour le groupe %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="468"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">Proxy d&apos;atterrissage&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="481"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141"/>
         <source>Proxy</source>
         <translation type="unfinished">Procuration</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="484"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="487"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143"/>
         <source>Direct</source>
         <translation type="unfinished">Direct</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="491"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
         <source>None</source>
         <translation type="unfinished">None</translation>
     </message>
@@ -1495,6 +1531,52 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Block</source>
         <translation type="unfinished">Bloc</translation>
+    </message>
+</context>
+<context>
+    <name>DialogHWID</name>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
+        <source>Send System Parameters</source>
+        <translation type="unfinished">Envoyer les paramètres système</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
+        <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
+        <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
+    </message>
+</context>
+<context>
+    <name>DialogHeaders</name>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
+        <source>Name</source>
+        <translation type="unfinished">Nom</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
+        <source>Value</source>
+        <translation type="unfinished">Valeur</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
+        <source>New</source>
+        <translation type="unfinished">New</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
+        <source>Header name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1563,12 +1645,12 @@ Il s’agit d’un risque important pour la vie privée si vous résidez dans un
         <translation type="unfinished">Mettre à jour tous les abonnements</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="57"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Confirmation</source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="57"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Mettre à jour tous les abonnements&#xa0;?</translation>
     </message>
@@ -2742,130 +2824,199 @@ Es-tu sûr?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
         <source>Private Key</source>
         <translation type="unfinished">Clé privée</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
         <source>Public Key</source>
         <translation type="unfinished">Clé publique</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">Clé pré-partagée</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="53"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
         <source>Reserved</source>
         <translation type="unfinished">Reserved</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval en secondes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">Keepalive persistant</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;liste de sous-réseaux séparés par des virgules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="82"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
         <source>Local Address</source>
         <translation type="unfinished">Adresse locale</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="92"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
         <source>MTU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="106"/>
-        <source>Workers</source>
-        <translation type="unfinished">Workers</translation>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
+        <source>Init Packet Junk Size (S1)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="116"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
+        <source>Init Packet Magic Header (H1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175"/>
+        <source>Transport Packet Magic Header (H4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185"/>
+        <source>Cookie Reply Packet Junk Size (S3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201"/>
+        <source>Signature Packet (I3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211"/>
+        <source>Junk Packet Count (Jc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221"/>
+        <source>Response Packet Magic Header (H2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231"/>
+        <source>Signature Packet (I1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241"/>
+        <source>Junk Packet Max Size (Jmax)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251"/>
+        <source>Junk Packet Min Size (Jmin)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267"/>
+        <source>Cookie Reply Packet Magic Header (H3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280"/>
+        <source>Transport Packet Junk Size (S4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296"/>
+        <source>Signature Packet (I2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312"/>
+        <source>Response Packet Junk Size (S2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328"/>
+        <source>Signature Packet (I4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341"/>
+        <source>Signature Packet (I5)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workers</source>
+        <translation type="obsolete">Workers</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
         <source>Use System Interface</source>
         <translation type="unfinished">Utiliser l&apos;interface système</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="126"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">Paramètres d&apos;Amnezia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="132"/>
         <source>Enable</source>
-        <translation type="unfinished">Activer</translation>
+        <translation type="obsolete">Activer</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="139"/>
         <source>Junk Packet Count</source>
-        <translation type="unfinished">Nombre de paquets indésirables</translation>
+        <translation type="obsolete">Nombre de paquets indésirables</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
         <source>Junk Packet Min Size</source>
-        <translation type="unfinished">Taille minimale du paquet indésirable</translation>
+        <translation type="obsolete">Taille minimale du paquet indésirable</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
         <source>Junk Packet Max Size</source>
-        <translation type="unfinished">Taille maximale du paquet indésirable</translation>
+        <translation type="obsolete">Taille maximale du paquet indésirable</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="169"/>
         <source>Init Packet Junk Size</source>
-        <translation type="unfinished">Taille du paquet d&apos;initialisation indésirable</translation>
+        <translation type="obsolete">Taille du paquet d&apos;initialisation indésirable</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="179"/>
         <source>Response Packet Junk Size</source>
-        <translation type="unfinished">Taille des paquets de réponse indésirables</translation>
+        <translation type="obsolete">Taille des paquets de réponse indésirables</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="189"/>
         <source>Init Packet Magic Header</source>
-        <translation type="unfinished">En-tête magique du paquet d&apos;initialisation</translation>
+        <translation type="obsolete">En-tête magique du paquet d&apos;initialisation</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="199"/>
         <source>Response Packet Magic Header</source>
-        <translation type="unfinished">En-tête magique du paquet de réponse</translation>
+        <translation type="obsolete">En-tête magique du paquet de réponse</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="209"/>
         <source>Underload Packet Magic Header</source>
-        <translation type="unfinished">Sous-chargement de l&apos;en-tête magique du paquet</translation>
+        <translation type="obsolete">Sous-chargement de l&apos;en-tête magique du paquet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="219"/>
         <source>Transport Header Magic Header</source>
-        <translation type="unfinished">En-tête de transport En-tête magique</translation>
+        <translation type="obsolete">En-tête de transport En-tête magique</translation>
     </message>
 </context>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="198"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="199"/>
         <source>Filter</source>
         <translation type="unfinished">Filtre</translation>
     </message>
@@ -2873,47 +3024,55 @@ Es-tu sûr?</translation>
 <context>
     <name>GroupItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="63"/>
         <source>Update Subscription</source>
-        <translation type="unfinished">Mettre à jour l&apos;abonnement</translation>
+        <translation type="obsolete">Mettre à jour l&apos;abonnement</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
+        <source>Update</source>
+        <translation type="unfinished">Mise à jour</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
         <source>Edit</source>
         <translation type="unfinished">Modifier</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="89"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
         <source>Remove</source>
         <translation type="unfinished">Retirer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Basic</source>
         <translation type="unfinished">Basique</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="137"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Subscription</source>
         <translation type="unfinished">Abonnement</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="138"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
         <source>Archive</source>
         <translation type="unfinished">Archive</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="150"/>
-        <source>Last update: %1</source>
-        <translation type="unfinished">Dernière mise à jour&#xa0;: %1</translation>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
+        <source>Updated: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
+        <source>Last update: %1</source>
+        <translation type="obsolete">Dernière mise à jour&#xa0;: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Confirmation</source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="194"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Supprimer %1&#xa0;?</translation>
     </message>
@@ -3055,6 +3214,65 @@ Es-tu sûr?</translation>
     </message>
 </context>
 <context>
+    <name>JsonEditor</name>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
+        <source>JSON Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
+        <source>Format JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
+        <source>Remove All Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
+        <source>Json Editor</source>
+        <translation type="unfinished">Éditeur Json</translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
+        <source>Structure Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
+        <source>OK</source>
+        <translation type="unfinished">D&apos;ACCORD</translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
+        <source>Json Contains Syntax Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
+        <source>Original Json may contain syntax errors. Json tree is disabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
+        <source>You must correct these errors before continuing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
+        <source>Syntax Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
+        <source>Please fix the JSON errors or remove the comments before continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
@@ -3083,7 +3301,7 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1407"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
         <source>Update</source>
         <translation type="unfinished">Mise à jour</translation>
     </message>
@@ -3100,8 +3318,8 @@ Es-tu sûr?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2931"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878"/>
         <source>System Proxy</source>
         <translation type="unfinished">Proxy système</translation>
     </message>
@@ -3110,23 +3328,23 @@ Es-tu sûr?</translation>
         <translation type="obsolete">Test d&apos;URL</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="165"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
         <source>Type</source>
         <translation type="unfinished">Taper</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="168"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
         <source>Address</source>
         <translation type="unfinished">Adresse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="171"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="320"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="323"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Test Result</source>
         <translation type="unfinished">Résultat du test</translation>
     </message>
@@ -3287,15 +3505,15 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4162"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
         <source>Start</source>
         <translation type="unfinished">Commencer</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4161"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
         <source>Stop</source>
         <translation type="unfinished">Arrêt</translation>
     </message>
@@ -3342,7 +3560,7 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1768"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Exporter la configuration %1</translation>
     </message>
@@ -3490,7 +3708,7 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3385"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395"/>
         <source>Clone</source>
         <translation type="unfinished">Cloner</translation>
     </message>
@@ -3619,7 +3837,7 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4191"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236"/>
         <source>Add new Group</source>
         <translation type="unfinished">Ajouter un nouveau groupe</translation>
     </message>
@@ -3629,28 +3847,28 @@ Es-tu sûr?</translation>
         <translation type="unfinished">Paramètres de sécurité</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="218"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="320"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
         <source>Unavailable</source>
         <translation type="unfinished">Indisponible</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="819"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">Journal de défilement automatique</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1295"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
         <source>Select Proxy</source>
         <translation type="unfinished">Sélectionnez un mandataire</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1296"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Type de proxy entrant&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1380"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Modifier les profils de routage</translation>
     </message>
@@ -3659,24 +3877,24 @@ Es-tu sûr?</translation>
         <translation type="obsolete">Mettre à jour les profils de routage</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1454"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1479"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1482"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1526"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
         <source>Update Response</source>
         <translation type="unfinished">Mettre à jour la réponse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1455"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Aucun profil de routage n&apos;est mis à jour</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Profils de routage %1 mis à jour</translation>
@@ -3686,12 +3904,12 @@ Es-tu sûr?</translation>
         <translation type="obsolete">Mettre à jour la carte du jeu de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1480"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Échec de la mise à jour des ensembles de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Ensembles de règles mis à jour avec succès</translation>
     </message>
@@ -3700,230 +3918,230 @@ Es-tu sûr?</translation>
         <translation type="obsolete">Mettre à jour le cache de l&apos;ensemble de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="330"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Tableau JSON invalide</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="331"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">L&apos;entrée fournie ne peut pas être analysée dans un tableau de règles de routage valide&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">L&apos;utilisation sur macOS n&apos;est pas autorisée</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1405"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">Importer un profil de routage</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
         <source>From clipboard</source>
         <translation type="unfinished">Depuis le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
         <source>From file</source>
         <translation type="unfinished">À partir du fichier</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1420"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">Importé du presse-papiers</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1432"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436"/>
         <source>Imported from %1</source>
         <translation type="unfinished">Importé de %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1442"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Profils de routage</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1469"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">Carte d&apos;ensemble de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1492"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">Cache d&apos;ensemble de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1527"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Le cache des ensembles de règles est mis à jour</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Effacer le cache de l&apos;ensemble de règles</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1577"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Activer AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1988"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
         <source>Error</source>
         <translation type="unfinished">Erreur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2083"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Paramètres de réglage modifiés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2084"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Redémarrez Tun pour prendre effet.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2090"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2145"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3461"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3873"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3935"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3988"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4240"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286"/>
         <source>Confirmation</source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2091"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2146"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Paramètres modifiés, redémarrer le proxy&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2120"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067"/>
         <source>Settings changed</source>
         <translation type="unfinished">Paramètres modifiés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2121"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Redémarrez le programme pour prendre effet.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2163"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Profil(s) %1 importé(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2497"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">L&apos;utilisateur a opté pour aucune demande de privilège, certaines fonctionnalités peuvent ne pas fonctionner</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Veuillez donner les privilèges root principaux</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2895"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842"/>
         <source>Not Running</source>
         <translation type="unfinished">Ne fonctionne pas</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3091"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">Le groupe est trop grand pour être trié</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3386"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Cloner %1 élément(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3406"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Le groupe est trop grand pour trouver des doublons</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3441"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451"/>
         <source> Confirmation </source>
         <translation type="unfinished">Confirmation</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3442"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Supprimer %1 élément(s)&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3462"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Supprimer %1 élément(s)&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3514"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 élément(s) copié(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3758"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Code QR introuvable</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3780"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Impossible de capturer l&apos;écran</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3874"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Supprimer %1 Élément(s) indisponible(s)&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3936"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Supprimer %1 Élément(s) invalide(s)&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3989"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Remplacer les adresses des serveurs de domaine par leurs adresses IP résolues&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4159"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204"/>
         <source>Clear</source>
         <translation type="unfinished">Clear</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4230"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Supprimer le groupe sélectionné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4231"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Modifier le groupe sélectionné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Supprimer %1&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4976"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019"/>
         <source>Cannot start</source>
         <translation type="unfinished">Impossible de démarrer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4977"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">La dernière demande de téléchargement n&apos;est pas encore terminée</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5011"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Échec du téléchargement des ressources de mise à jour</translation>
     </message>
@@ -3940,13 +4158,13 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="555"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Quelque chose ne va vraiment pas, le sujet est introuvable&#xa0;!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="561"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Les données du gestionnaire de profils sont corrompues, réessayez.</translation>
     </message>
@@ -3957,113 +4175,113 @@ Es-tu sûr?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="373"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Échec de la création de la configuration de test&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="247"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Test d&apos;URL terminé&#xa0;!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="291"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Impossible d&apos;arrêter les tests</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="297"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302"/>
         <source>Testing</source>
         <translation type="unfinished">Essai</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="342"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Le dernier test de vitesse ne s&apos;est pas terminé complètement, veuillez patienter.Si le problème persiste, veuillez redémarrer le programme.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="409"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">Test de vitesse terminé&#xa0;!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="492"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Test de vitesse de profil annulé</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="580"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] erreur de test de vitesse&#xa0;: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="589"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Vous devez d&apos;abord activer le piratage du serveur DNS</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="603"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Échec de la définition du DNS du système&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="652"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">L&apos;appareil Tun se comporte mal</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="653"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Si vous rencontrez des difficultés pour démarrer le VPN, vous pouvez forcer la réinitialisation du processus Core ici, puis réessayer de redémarrer le profil.L&apos;erreur est %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Reset</source>
         <translation type="unfinished">Réinitialiser</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="694"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Un autre profil démarre...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="701"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Un autre profil s&apos;arrête...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="722"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="832"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">S&apos;il n&apos;y a pas de réponse pendant une longue période, il est recommandé de redémarrer le logiciel.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="736"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Profil de démarrage %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="738"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Échec du démarrage du profil %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="815"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
         <source>Stop return error</source>
         <translation type="unfinished">Erreur de retour d&apos;arrêt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="855"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Arrêt du profil %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="857"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Échec de l&apos;arrêt, veuillez redémarrer le programme.</translation>
     </message>
@@ -4075,27 +4293,27 @@ Es-tu sûr?</translation>
         <translation type="obsolete">Invalide</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="762"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768"/>
         <source>Type</source>
         <translation type="unfinished">Taper</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="764"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770"/>
         <source>Address</source>
         <translation type="unfinished">Adresse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="766"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="772"/>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="774"/>
         <source>Test Result</source>
         <translation type="unfinished">Résultat du test</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="776"/>
         <source>Traffic</source>
         <translation type="unfinished">Trafic</translation>
     </message>
@@ -4147,61 +4365,73 @@ Es-tu sûr?</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="476"/>
+        <location filename="../../src/gharqad/main.cpp" line="468"/>
         <source>QT_LAYOUT_DIRECTION</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QHotkey</name>
+    <message>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
+        <source>Failed to register %1. Error: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
+        <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/configs/ConfigBuilder.cpp" line="160"/>
         <source>Tun mode cannot be used with Custom configs</source>
-        <translation type="unfinished">Le mode Tun ne peut pas être utilisé avec les configurations personnalisées</translation>
+        <translation type="obsolete">Le mode Tun ne peut pas être utilisé avec les configurations personnalisées</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1061"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Demande d&apos;abonnement&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1067"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Erreur de demande d&apos;abonnement %1&#xa0;: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1091"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Titre du profil d&apos;abonnement&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1100"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Demande d&apos;abonnement terminée&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1125"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Effacement des serveurs...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1150"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Traitement des données d&apos;abonnement...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1164"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Supprimer les proxys %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1166"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">Processus terminé, candidature...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1180"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Ajout des proxys %1</translation>
@@ -4221,13 +4451,13 @@ Profils %3 supprimés&#xa0;:
         <translation type="obsolete">Rien</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1182"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969"/>
         <source>Change of %1:</source>
         <translation type="unfinished">Modification de %1&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="856"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3009"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956"/>
         <source>Default</source>
         <translation type="unfinished">Défaut</translation>
     </message>
@@ -4236,27 +4466,27 @@ Profils %3 supprimés&#xa0;:
         <translation type="obsolete">Impossible d&apos;ouvrir le fichier.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="223"/>
+        <location filename="../../src/gharqad/main.cpp" line="214"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">Proxy de chaîne</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="239"/>
+        <location filename="../../src/gharqad/main.cpp" line="231"/>
         <source>Custom</source>
         <translation type="unfinished">Coutume</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="240"/>
+        <location filename="../../src/gharqad/main.cpp" line="232"/>
         <source>Extra Core</source>
         <translation type="unfinished">Noyau supplémentaire</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="128"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">Sélectionner</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2863"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Mandataire&#xa0;: %1
@@ -4278,122 +4508,128 @@ Direct&#xa0;: %2</translation>
         <translation type="unfinished">Redémarrage du noyau...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="375"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="372"/>
         <source>System</source>
         <translation type="unfinished">Système</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>URL detected</source>
-        <translation type="unfinished">URL détectée</translation>
+        <translation type="obsolete">URL détectée</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="31"/>
         <source>%1
 How to update?</source>
-        <translation type="unfinished">%1
+        <translation type="obsolete">%1
 Comment mettre à jour ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">Créer un nouveau groupe d&apos;abonnement</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="36"/>
         <source>Add profiles to this group</source>
-        <translation type="unfinished">Ajouter des profils à ce groupe</translation>
+        <translation type="obsolete">Ajouter des profils à ce groupe</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>Subscription URL Detected</source>
-        <translation>URL d'abonnement détectée</translation>
+        <translation>URL d&apos;abonnement détectée</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
         <source>How would you like to import this subscription?</source>
         <translation>Comment souhaitez-vous importer cet abonnement ?</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
         <source>Update existing group</source>
         <translation>Mettre à jour le groupe existant</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
         <source>Import as proxy links</source>
         <translation>Importer en tant que liens proxy</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
         <source>Group name:</source>
         <translation>Nom du groupe :</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
         <source>Auto-detect from subscription</source>
-        <translation>Détection automatique depuis l'abonnement</translation>
+        <translation>Détection automatique depuis l&apos;abonnement</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
         <source>Import</source>
         <translation>Importer</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829"/>
         <source>Decrypted happ:// link</source>
         <translation>Lien happ:// déchiffré</translation>
     </message>
     <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833"/>
         <source>Failed to decrypt happ:// link</source>
         <translation>Échec du déchiffrement du lien happ://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="37"/>
         <source>Add as http/https proxy</source>
-        <translation type="unfinished">Ajouter comme proxy http/https</translation>
+        <translation type="obsolete">Ajouter comme proxy http/https</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="42"/>
         <source>Group name (will use profile-title from subscription if empty)</source>
-        <translation type="unfinished">Nom du groupe (utilisera le titre du profil de l&apos;abonnement s&apos;il est vide)</translation>
+        <translation type="obsolete">Nom du groupe (utilisera le titre du profil de l&apos;abonnement s&apos;il est vide)</translation>
     </message>
     <message>
         <source>Group name</source>
         <translation type="obsolete">Nom du groupe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="109"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Utilisé : %1 Restant : %2 Expire : %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="380"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Télécharger les profils</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="381"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Erreur de demande de profil&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="574"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 doublons supprimés</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="614"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Supprimé %1 Invalide</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="649"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Supprimé %1 Indisponible</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1867"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Vérifier les ensembles de règles&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1889"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Erreur de demande de liste d&apos;ensembles de règles&#xa0;: %1</translation>
     </message>
@@ -4402,7 +4638,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Adresse IP&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2901"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP entrante&#xa0;: %1</translation>
     </message>
@@ -4415,69 +4651,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Désactivé</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2905"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">Entrant&#xa0;: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2907"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">Entrant&#xa0;:&#xa0;Désactivé</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3349"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Déplacer les profils vers le groupe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3536"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546"/>
         <source>Config copied</source>
         <translation type="unfinished">Configuration copiée</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3548"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558"/>
         <source>Copy core config</source>
         <translation type="unfinished">Copier la configuration principale</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
         <source>Copy test config</source>
         <translation type="unfinished">Copier la configuration de test</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">D&apos;ACCORD</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4876"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4886"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4958"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4967"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
         <source>Update</source>
         <translation type="unfinished">Mise à jour</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4877"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Pas de plateforme d&apos;assistance officielle</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4887"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Erreur de demande de mise à jour&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
         <source>No update</source>
         <translation type="unfinished">Aucune mise à jour</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4959"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4486,17 +4722,17 @@ Note de version&#xa0;:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4962"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005"/>
         <source>Close</source>
         <translation type="unfinished">Fermer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4964"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007"/>
         <source>Open in browser</source>
         <translation type="unfinished">Ouvrir dans le navigateur</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5003"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">La mise à jour est prête, redémarrer pour l&apos;installer&#xa0;?</translation>
     </message>
@@ -4506,7 +4742,7 @@ Note de version&#xa0;:
         <translation type="unfinished">Accès refusé</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="382"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Sélectionnez un dossier</translation>
     </message>
@@ -4548,8 +4784,8 @@ Direct: ⚡%2 📦%4</source>
 Direct&#xa0;: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="182"/>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="463"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="464"/>
         <source>Invalid</source>
         <translation type="unfinished">Invalide</translation>
     </message>
@@ -4611,7 +4847,7 @@ Request payload was: %2</source>
 La charge utile de la demande était&#xa0;:&#xa0;%2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="558"/>
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
         <source>Imported</source>
         <translation type="unfinished">Importé</translation>
     </message>
@@ -4619,94 +4855,102 @@ La charge utile de la demande était&#xa0;:&#xa0;%2</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181"/>
+        <location filename="../../src/gharqad/main.cpp" line="172"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182"/>
+        <location filename="../../src/gharqad/main.cpp" line="173"/>
         <source>Apply</source>
         <translation type="unfinished">Appliquer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183"/>
+        <location filename="../../src/gharqad/main.cpp" line="174"/>
         <source>Yes</source>
         <translation type="unfinished">Oui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184"/>
+        <location filename="../../src/gharqad/main.cpp" line="175"/>
         <source>No</source>
         <translation type="unfinished">Non</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185"/>
+        <location filename="../../src/gharqad/main.cpp" line="176"/>
         <source>OK</source>
         <translation type="unfinished">D&apos;ACCORD</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186"/>
+        <location filename="../../src/gharqad/main.cpp" line="177"/>
         <source>Defaults</source>
         <translation type="unfinished">Valeurs par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187"/>
+        <location filename="../../src/gharqad/main.cpp" line="178"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">Restaurer les paramètres par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188"/>
+        <location filename="../../src/gharqad/main.cpp" line="179"/>
         <source>Discard</source>
         <translation type="unfinished">Jeter</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190"/>
+        <location filename="../../src/gharqad/main.cpp" line="181"/>
         <source>Undo</source>
         <translation type="unfinished">Défaire</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="191"/>
+        <location filename="../../src/gharqad/main.cpp" line="182"/>
         <source>Redo</source>
         <translation type="unfinished">Refaire</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="192"/>
+        <location filename="../../src/gharqad/main.cpp" line="183"/>
         <source>Cut</source>
         <translation type="unfinished">Couper</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="193"/>
+        <location filename="../../src/gharqad/main.cpp" line="184"/>
         <source>Copy</source>
         <translation type="unfinished">Copie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="194"/>
+        <location filename="../../src/gharqad/main.cpp" line="185"/>
         <source>Paste</source>
         <translation type="unfinished">Coller</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="195"/>
+        <location filename="../../src/gharqad/main.cpp" line="186"/>
         <source>Delete</source>
         <translation type="unfinished">Supprimer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="196"/>
+        <location filename="../../src/gharqad/main.cpp" line="187"/>
         <source>Select All</source>
         <translation type="unfinished">Sélectionner tout</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="197"/>
+        <location filename="../../src/gharqad/main.cpp" line="188"/>
         <source>Stop</source>
         <translation type="unfinished">Arrêt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="198"/>
+        <location filename="../../src/gharqad/main.cpp" line="189"/>
         <source>Clear</source>
         <translation type="unfinished">Clear</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="199"/>
+        <location filename="../../src/gharqad/main.cpp" line="190"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">Copier l&apos;emplacement du lien</translation>
+    </message>
+</context>
+<context>
+    <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
+        <source>You can not input space characters here.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4932,6 +5176,21 @@ La charge utile de la demande était&#xa0;:&#xa0;%2</translation>
     </message>
 </context>
 <context>
+    <name>SpeedWidget</name>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
+        <source>Proxy</source>
+        <translation type="unfinished">Procuration</translation>
+    </message>
+    <message>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
+        <source>Direct</source>
+        <translation type="unfinished">Direct</translation>
+    </message>
+</context>
+<context>
     <name>SpinnerDialog</name>
     <message>
         <source>Invalid JSON Array</source>
@@ -4943,13 +5202,13 @@ La charge utile de la demande était&#xa0;:&#xa0;%2</translation>
         <translation type="obsolete">L&apos;entrée fournie ne peut pas être analysée dans un tableau de règles de routage valide&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="454"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458"/>
         <source>Fetching information</source>
         <translation type="unfinished">Récupération d&apos;informations</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="470"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1601"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Télécharger les profils</translation>
     </message>
