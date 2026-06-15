@@ -143,6 +143,11 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         }
     });    
 
+    // Indicator borders
+    S_LOAD_BOOL(enable_indicator_borders)
+    S_LOAD_SPIN(indicator_border_width)
+    S_LOAD_SPIN(indicator_border_radius)
+
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
     ui->auto_test_interval_seconds->setValue(Configs::dataStore->auto_test_interval_seconds);
@@ -267,11 +272,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     });
 
     connect(ui->font, &QComboBox::currentTextChanged, this, [=,this](const QString &fontName) {
-        auto font = qApp->font();
-        font.setFamily(fontName);
-        qApp->setFont(font);
-        settings->font_family =  fontName;
+        settings->font_family = fontName;
         settings->Save();
+        GetMainWindow()->changeEventTrigger(true);
         adjustSize();
     });
     for (int i=7;i<=26;i++) {
@@ -279,13 +282,25 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     }
     ui->font_size->setCurrentText(QString::number(qApp->font().pointSize()));
     connect(ui->font_size, &QComboBox::currentTextChanged, this, [=,this](const QString &sizeStr) {
-        auto font = qApp->font();
-        int font_size = sizeStr.toInt();
-        font.setPointSize(font_size);
-        qApp->setFont(font);
-        settings->font_size = font_size;
+        settings->font_size = sizeStr.toInt();
         settings->Save();
+        GetMainWindow()->changeEventTrigger(true);
         adjustSize();
+    });
+
+    connect(ui->enable_indicator_borders, &QGroupBox::toggled, this, [this](int state){
+        S_SAVE_BOOL(enable_indicator_borders)
+        GetMainWindow()->changeEventTrigger(false);
+    });
+
+    connect(ui->indicator_border_width, &QSpinBox::valueChanged, this, [this](int value){
+        S_SAVE_INT(indicator_border_width)
+        GetMainWindow()->changeEventTrigger(false);
+    });
+
+    connect(ui->indicator_border_radius, &QSpinBox::valueChanged, this, [this](int value){
+        S_SAVE_INT(indicator_border_radius)
+        GetMainWindow()->changeEventTrigger(false);
     });
     //
     ui->theme->addItems(QStyleFactory::keys());
@@ -297,7 +312,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     ui->theme->addItem("LightBlue");
     ui->theme->addItem("FlatGray");
     //
-//    bool ok;
     ui->theme->setCurrentText(settings->theme);
     //
     connect(ui->theme, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [=,this](int index) {
@@ -305,7 +319,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         themeManager->ApplyTheme(ui_theme_text);
         settings->theme = ui_theme_text;
         settings->Save();
-        CACHE.needRestart = true;
+        adjustSize();
     });
 
     // Subscription
@@ -450,7 +464,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(inbound_socks_port)
     D_SAVE_INT(download_retries)
     D_SAVE_INT(download_timeout)
-    if (!Configs::dataStore->random_inbound_port && ui->random_inbound_port->isChecked())
+    if (Configs::dataStore->random_inbound_port != ui->random_inbound_port->isChecked())
     {
         CACHE.needChoosePort = true;
     }

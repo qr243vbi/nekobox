@@ -145,6 +145,10 @@ public:
   bool show_system_dns = false;
   bool first_start = true;
   QString program_name = "Iblis";
+
+  bool enable_indicator_borders = true;
+  int indicator_border_width = 2;
+  int indicator_border_radius = 8;
 };
 
 }; // namespace Configs

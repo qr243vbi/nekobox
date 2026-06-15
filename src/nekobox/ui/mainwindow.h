@@ -220,6 +220,7 @@ public:
 
 public slots:
     void on_commitDataRequest();
+    void changeEventTrigger(bool fontChange);
 
     void on_menu_exit_triggered(bool faster = false);
     bool on_menu_exit_triggered_func();

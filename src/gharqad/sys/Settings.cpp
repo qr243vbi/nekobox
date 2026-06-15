@@ -63,6 +63,9 @@ ADD_LIST(language)
 ADD_LIST(first_start)
 ADD_LIST(manually_column_width)
 ADD_LIST(column_width)
+ADD_LIST(enable_indicator_borders)
+ADD_LIST(indicator_border_width)
+ADD_LIST(indicator_border_radius)
 END_LIST
 
 #define KEY parent + name

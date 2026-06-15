@@ -1,7 +1,3 @@
-
-
-
-
 #pragma once
 
 #include <3rdparty/qv2ray/wrapper.hpp>
@@ -94,6 +90,10 @@ inline QString joinCommand(const QStringList &arguments) {
     ui->a->setText(QString::number(Configs::dataStore->a)); \
     ui->a->setValidator(QRegExpValidator_Number);
 #define D_SAVE_INT(a) Configs::dataStore->a = ui->a->text().toInt();
+
+
+#define S_LOAD_SPIN(a)                                  \
+    ui->a->setValue(Configs::windowSettings->a);
 
 #define S_LOAD_INT(a)                                  \
     ui->a->setText(QString::number(Configs::windowSettings->a)); \

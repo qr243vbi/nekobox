@@ -150,41 +150,63 @@ SelectDialog::SelectDialog(QWidget *parent,
   setupUi();
 }
 
+void MainWindow::changeEventTrigger(bool fontChange){
+  auto settings = Configs::windowSettings;
+  auto font = qApp->font();
+  if (
+    fontChange
+  ) {
+    font.setPointSize(settings->font_size);
+    font.setFamily(settings->font_family);
+    qApp->setFont(font);
+    this->setFont(font);
+  }
+  this->ui->label_inbound->setFont(font);
+  this->ui->label_running->setFont(font);
+  this->ui->label_speed->setFont(font);
+  this->qvLogDocument->setDefaultFont(font);
+  this->ui->toolButton_program->setFont(font);
+  this->ui->toolButton_preferences->setFont(font);
+  this->ui->toolButton_routing->setFont(font);
+  this->ui->toolButton_server->setFont(font);
+  this->ui->toolButton_update->setFont(font);
+  this->ui->url_test_button->setFont(font);
+  this->ui->tabWidget->setFont(font);
+  this->ui->proxyListTable->setFont(font);
+  this->ui->stats_widget->setFont(font);
+  this->ui->stats_widget->tabBar()->setFont(font);
+  this->ui->tabWidget->tabBar()->setFont(font);
+  this->ui->proxyListTable->horizontalHeader()->setFont(font);
+  this->ui->proxyListTable->verticalHeader()->setFont(font);
+  this->ui->checkBox_SystemProxy->setFont(font);
+  this->ui->checkBox_VPN->setFont(font);
+  this->ui->system_dns->setFont(font);
+
+  QString stylesheet = "";
+  if (Configs::windowSettings->enable_indicator_borders){
+    QColor c = ui->label_inbound->palette().color(QPalette::WindowText);
+    QString w = QString::number(Configs::windowSettings->indicator_border_width) + "px";
+    QString r = QString::number(Configs::windowSettings->indicator_border_radius) + "px";
+    stylesheet = QString("border: %2 solid %1; border-radius: %3;").arg(c.name(), w, r);
+  }
+  #ifdef DEBUG_MODE
+  qDebug() << "Indicator borders is " << Configs::windowSettings->enable_indicator_borders;
+  qDebug() << "Border stylesheet is" << stylesheet;
+  #endif
+  ui->label_inbound->setStyleSheet(stylesheet);
+  ui->label_speed->setStyleSheet(stylesheet);
+  ui->label_running->setStyleSheet(stylesheet);
+  ui->toolbox_group->setStyleSheet(
+    "QGroupBox { background: transparent; border: none; }");
+}
+
 void MainWindow::changeEvent(QEvent *event) {
   auto type = event->type();
   switch (type) {
+  case QEvent::FontChange:
   case QEvent::StyleChange:
   case QEvent::Style:
-  case QEvent::FontChange: {
-    QFont font = this->font();
-    this->ui->label_inbound->setFont(font);
-    this->ui->label_running->setFont(font);
-    this->ui->label_speed->setFont(font);
-    this->qvLogDocument->setDefaultFont(font);
-    this->ui->toolButton_program->setFont(font);
-    this->ui->toolButton_preferences->setFont(font);
-    this->ui->toolButton_routing->setFont(font);
-    this->ui->toolButton_server->setFont(font);
-    this->ui->toolButton_update->setFont(font);
-    this->ui->url_test_button->setFont(font);
-    this->ui->tabWidget->setFont(font);
-    this->ui->proxyListTable->setFont(font);
-    this->ui->stats_widget->setFont(font);
-    this->ui->stats_widget->tabBar()->setFont(font);
-    this->ui->tabWidget->tabBar()->setFont(font);
-    this->ui->proxyListTable->horizontalHeader()->setFont(font);
-    this->ui->proxyListTable->verticalHeader()->setFont(font);
-    this->ui->checkBox_SystemProxy->setFont(font);
-    this->ui->checkBox_VPN->setFont(font);
-    this->ui->system_dns->setFont(font);
-
-    ui->label_inbound->setStyleSheet("");
-    ui->label_speed->setStyleSheet("");
-    ui->label_running->setStyleSheet("");
-    ui->toolbox_group->setStyleSheet(
-        "QGroupBox { background: transparent; border: none; }");
-    break;
-  }
+    this->changeEventTrigger(type != QEvent::FontChange);
   default:
     break;
   }
@@ -1993,6 +2015,7 @@ void MainWindow::dialog_message_impl(const QString &sender,
       set_icons();
     });
   }
+
   bool updateCorePath = (info.contains("UpdateCorePath"));
   if (info.contains("RefreshTableColumns")){
     refresh_table_columns();
@@ -2016,7 +2039,8 @@ void MainWindow::dialog_message_impl(const QString &sender,
         }
       }
     }
-    auto suggestRestartProxy = Configs::dataStore->Save();
+    auto suggestRestartProxy = false;
+    Configs::dataStore->Save();
     if (info.contains("RouteChanged")) {
       Configs::dataStore->routing->Save();
       suggestRestartProxy = true;
@@ -2031,6 +2055,11 @@ void MainWindow::dialog_message_impl(const QString &sender,
                              tr("Restart Tun to take effect."));
       });
     }
+#ifdef DEBUG_MODE
+qDebug() << "updateCorePath caused" << updateCorePath;
+qDebug() << "suggestRestartProxy caused" << suggestRestartProxy;
+qDebug() << "NeedChoosePort caused" << info.contains("NeedChoosePort");
+#endif
     if ((info.contains("NeedChoosePort") || updateCorePath ||
          suggestRestartProxy) &&
         Configs::dataStore->started_id >= 0 &&
