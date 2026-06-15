@@ -2839,7 +2839,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211" />
         <source>Junk Packet Count (Jc)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Numri i paketave të padëshiruara (Jc)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221" />
@@ -2864,12 +2864,12 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Koka magjike e paketës së përgjigjes së biskotave (H3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280" />
         <source>Transport Packet Junk Size (S4)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Madhësia e paketës së mbeturinave të transportit (S4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296" />
@@ -2889,7 +2889,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
         <source>Signature Packet (I5)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paketa e nënshkrimit (I5)</translation>
     </message>
     <message>
         <source>Workers</source>
@@ -3131,7 +3131,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
         <source>JSON Editor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Redaktori JSON</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
@@ -3151,7 +3151,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
         <source>Structure Preview</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pamja paraprake e strukturës</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
@@ -3162,7 +3162,7 @@ je i sigurt?</translation>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
         <source>Json Contains Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Json përmban gabime sintaksore</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
@@ -3177,7 +3177,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Gabime sintaksore</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
@@ -4240,7 +4240,7 @@ je i sigurt?</translation>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Regjistrimi i %1 dështoi.Gabim: %2</translation>
     </message>
     <message>
         <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
@@ -4402,7 +4402,7 @@ Si të përditësoni?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Si dëshironi ta importoni këtë abonim?</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
@@ -4412,7 +4412,7 @@ Si të përditësoni?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Përditëso grupin ekzistues</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
@@ -4427,7 +4427,7 @@ Si të përditësoni?</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zbulohet automatikisht nga abonimi</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
@@ -4792,7 +4792,7 @@ Ngarkesa e kërkesës ishte: %2</translation>
     <message>
         <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Këtu nuk mund të futni karaktere të hapësirës.</translation>
     </message>
 </context>
 <context>

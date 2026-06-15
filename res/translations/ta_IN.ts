@@ -1,9 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ta_IN">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
@@ -11,37 +12,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
         <translation type="unfinished">நினைவில் கொள்ளுங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished">வினாடிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished">நிமிடங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished">மணி</translation>
     </message>
@@ -49,9 +50,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Custom Headers</source>
@@ -93,22 +94,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
         <source>Proxy</source>
         <translation type="unfinished">பதிலாள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
         <source>Direct</source>
         <translation type="unfinished">நேரடி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
         <source>Block</source>
         <translation type="unfinished">தடு</translation>
     </message>
@@ -116,18 +117,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
         <translation type="unfinished">அடிப்படை அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
         <translation type="unfinished">பொதுவானது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -135,255 +136,255 @@
 + HTTP ப்ராக்ஸி&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
         <translation type="unfinished">லிசன் போர்ட்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
         <source>Edit</source>
         <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
         <source>Custom Inbound</source>
         <translation type="unfinished">தனிப்பயன் உள்வரும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ஒவ்வொரு ஓட்டத்திலும் சீரற்ற கிடைக்கக்கூடிய போர்ட்டைத் தேர்ந்தெடுக்கிறது&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
         <source>Random port</source>
         <translation type="unfinished">சீரற்ற துறைமுகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
         <source>Proxy Format</source>
         <translation type="unfinished">ப்ராக்ஸி வடிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
         <source>Listen Address</source>
         <translation type="unfinished">முகவரியைக் கேளுங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
         <source>Network Settings</source>
         <translation type="unfinished">பிணைய அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
         <source>Use proxy when activated</source>
         <translation type="unfinished">செயல்படுத்தப்படும் போது ப்ராக்ஸியைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
         <source>URL Test after profile start</source>
         <translation type="unfinished">சுயவிவரம் தொடங்கிய பிறகு URL சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Request update at startup</source>
         <translation type="unfinished">தொடக்கத்தில் புதுப்பிப்பைக் கோரவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
         <source>Ignore TLS errors</source>
         <translation type="unfinished">TLS பிழைகளைப் புறக்கணிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
         <source>Test Settings</source>
         <translation type="unfinished">சோதனை அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
         <source>Simple Download URL</source>
         <translation type="unfinished">எளிய பதிவிறக்க URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
         <source>Download + Upload</source>
         <translation type="unfinished">பதிவிறக்கம் + பதிவேற்றம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
         <source>Only Download</source>
         <translation type="unfinished">பதிவிறக்கம் மட்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
         <source>Only Upload</source>
         <translation type="unfinished">பதிவேற்றம் மட்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
         <source>Simple Download</source>
         <translation type="unfinished">எளிய பதிவிறக்கம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
         <source>Only Country</source>
         <translation type="unfinished">ஒரே நாடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
         <source>Latency Test URL</source>
         <translation type="unfinished">தாமத சோதனை URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
         <source>Speedtest mode</source>
         <translation type="unfinished">வேக சோதனை முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
         <source>Concurrent</source>
         <translation type="unfinished">ஒரே நேரத்தில்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;மில்லி விநாடிகளில் நேரம் முடிந்தது&lt;br/&gt;அனைத்து சோதனைகளுக்கும் தனித்தனியாக பொருந்தும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
         <source>Timeout</source>
         <translation type="unfinished">நேரம் முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
         <source>Download Retries</source>
         <translation type="unfinished">பதிவிறக்க மீண்டும் முயற்சிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MS இல் URLtest க்கான காலக்கெடு&lt;br/&gt;மக்ஸட் இணைப்புகள் அவற்றின் ஆரம்ப கோரிக்கைக்கு அதிக நேரம் எடுக்கும் என்பதை நினைவில் கொள்ளவும், மேலும் இந்த மதிப்பை மிகக் குறைவாக அமைப்பதால், config வேலை செய்யவில்லை என்று சோதனை தவறாகப் புகாரளிக்கும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
         <source>Style</source>
         <translation type="unfinished">உடை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
         <source>Font</source>
         <translation type="unfinished">எழுத்துரு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
         <source>Font Size</source>
         <translation type="unfinished">எழுத்துரு அளவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
         <source>Connection statistics</source>
         <translation type="unfinished">இணைப்பு புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">தொடக்கத்தில் டாஷ்போர்டை மறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">கணினி DNS விருப்பத்தைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
         <source>Show profile IDs</source>
         <translation type="unfinished">சுயவிவர ஐடிகளைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
         <source>Disable tray</source>
         <translation type="unfinished">தட்டு முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">மெனு ஐகான்களின் கீழ் உரையை அமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Hide at startup</source>
         <translation type="unfinished">தொடக்கத்தில் மறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>Manually column width</source>
         <translation type="unfinished">கைமுறையாக நெடுவரிசை அகலம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578"/>
         <source>Max log lines</source>
         <translation type="unfinished">அதிகபட்ச பதிவு கோடுகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614"/>
         <source>Theme</source>
         <translation type="unfinished">தீம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652"/>
         <source>System</source>
         <translation type="unfinished">அமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
         <source>Language</source>
         <translation type="unfinished">மொழி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
         <source>Icon</source>
         <translation type="unfinished">ஐகான்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
         <source>Emoji Font</source>
         <translation type="unfinished">ஈமோஜி எழுத்துரு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692"/>
         <source>Subscription</source>
         <translation type="unfinished">சந்தா</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
         <source>Interval:</source>
         <translation type="unfinished">இடைவெளி:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">தானியங்கி புதுப்பிப்பை இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">புதுப்பிக்கும் முன் சர்வர்களை அழிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711"/>
         <source>URL Test after update</source>
         <translation type="unfinished">புதுப்பித்த பிறகு URL சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
         <source>Enable</source>
         <translation type="unfinished">இயக்கு</translation>
     </message>
@@ -392,27 +393,27 @@
         <translation type="obsolete">இடைவெளி (நிமிடம், 30க்கு குறைவாக இருந்தால் செல்லாது)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">நகல்களை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid= custom_value,os= custom_os,osVersion= custom_version,model= custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
         <source>User Agent</source>
         <translation type="unfinished">பயனர் முகவர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS பதிப்பு=%3&lt;/p&gt;&lt;p&gt;மாடல்=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">கணினி அளவுருக்களை அனுப்பவும்</translation>
     </message>
@@ -421,32 +422,32 @@
         <translation type="obsolete">தானியங்கி மேம்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;வடிவம்: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;இயல்புநிலை மதிப்புகளைப் பயன்படுத்த, காலியாக விடவும்.நீங்கள் மேலெழுத விரும்பும் அளவுருக்களை மட்டும் குறிப்பிடவும்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">தனிப்பயன் கணினி அளவுருக்கள் (விரும்பினால்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">செல்லாததை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">கிடைக்கவில்லை என்பதை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817"/>
         <source>Core</source>
         <translation type="unfinished">கோர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -454,7 +455,7 @@
 பிங் மற்றும் செயல்திறனை மேம்படுத்தவும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">போக்குவரத்து புள்ளிவிவரங்களை முடக்கு</translation>
     </message>
@@ -463,65 +464,65 @@
         <translation type="obsolete">TCP ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">மல்டிபிளக்ஸ் (மக்ஸ்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927"/>
         <source>Loglevel</source>
         <translation type="unfinished">லாக்லெவல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
         <source>concurrency</source>
         <translation type="unfinished">ஒத்திசைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901"/>
         <source>Padding</source>
         <translation type="unfinished">திணிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908"/>
         <source>Default On</source>
         <translation type="unfinished">இயல்புநிலை ஆன்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
         <source>Core Options</source>
         <translation type="unfinished">முக்கிய விருப்பங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;அதற்கான அமைப்புகள்
 sing-box இன் உள்ளமைக்கப்பட்ட NTP கிளையன்ட்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
         <source>server</source>
         <translation type="unfinished">சர்வர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
         <source>Port</source>
         <translation type="unfinished">துறைமுகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997"/>
         <source>sync interval</source>
         <translation type="unfinished">ஒத்திசைவு இடைவெளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -529,22 +530,22 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
 நிமிடங்கள்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
         <source>Security</source>
         <translation type="unfinished">பாதுகாப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">சிறப்புரிமை கோரிக்கையை முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">TLS சான்றிதழ் அங்கீகாரத்தைத் தவிர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla சான்றிதழ் கடையைப் பயன்படுத்தவும்</translation>
     </message>
@@ -553,27 +554,27 @@ sing-box இன் உள்ளமைக்கப்பட்ட NTP கிள�
         <translation type="obsolete">இயல்பாக TLS சான்றிதழ் அங்கீகாரத்தைத் தவிர்க்கவும் (பாதுகாப்பானதை அனுமதிக்கவும்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">இயல்புநிலை uTLS கைரேகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;வெளிப்படையாகக் கோரும் வரையில் நிர்வாகியாகத் தொடங்க முயற்சிக்காதீர்கள்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Nekobox மற்றும் nekobox_core இடையே தொடர்பு கொள்ள Unix டொமைன் சாக்கெட்டைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">IPC க்கு UDS ஐப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">எப்போதும் நிலையான பயனராகத் தொடங்கவும்</translation>
     </message>
@@ -592,7 +593,7 @@ INI — 1980களின் முற்பகுதி — பிரிவு�
 பைனரி — 2026 — NekoBox அமைப்புகளுக்கான தன்னிச்சையான பைட் மதிப்புகள் வடிவமைப்பு RocksDB மதிப்புகள் அல்லது தனித்த கோப்புகளாகப் பயன்படுத்தப்படுகிறது — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -603,142 +604,142 @@ INI — 1980களின் முற்பகுதி — பிரிவு�
 பைனரி — 2026 — NekoBox அமைப்புகளுக்கான தன்னிச்சையான பைட்-மதிப்பு வடிவம் leveldb மதிப்புகள் அல்லது தனித்த கோப்புகளாகப் பயன்படுத்தப்படுகிறது — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">சுயவிவரத்தை நீக்கும்படி கேட்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">பின்னணியில் ப்ராக்ஸிகளைத் தானாகச் சோதித்து, வேலை செய்யும் ப்ராக்ஸிகளின் தொகுப்பைப் பராமரிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">தானியங்கு சோதனையை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">சோதனை இடைவெளி (வினாடிகள்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">சோதனை சுழற்சியை எவ்வளவு அடிக்கடி இயக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">ஒரு சுழற்சிக்கான பதிலாள்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">ஒவ்வொரு சுழற்சியிலும் சோதிக்க வேண்டிய ப்ராக்ஸிகளின் எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">வேலை செய்யும் குளத்தின் அளவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">பராமரிக்க, சரிபார்க்கப்பட்ட பணிப் பிரதிநிதிகளின் அதிகபட்ச எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">தாமத வரம்பு (மிவி)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">ப்ராக்ஸி செயல்படுவதாகக் கருதுவதற்கான அதிகபட்ச தாமதம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">தோல்வி மீண்டும் முயற்சி எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">ப்ராக்ஸி தோல்வியடைந்ததாகக் கருதுவதற்கு முன் மீண்டும் முயற்சி செய்த எண்ணிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
         <source>Test Target URL</source>
         <translation type="unfinished">சோதனை இலக்கு URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">ப்ராக்ஸிகளை சோதிக்க URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN பயன்முறை ப்ராக்ஸி தோல்வியடையும் போது தானாகவே மற்றொரு வேலை செய்யும் ப்ராக்ஸிக்கு மாறவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN தோல்வியை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466"/>
         <source>Startup</source>
         <translation type="unfinished">தொடக்கம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530"/>
         <source>Geometry</source>
         <translation type="unfinished">வடிவியல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">வடிவவியலைத் தானாகச் சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566"/>
         <source>Autosave position</source>
         <translation type="unfinished">தானாக சேமிக்கும் நிலை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586"/>
         <source>Apply now</source>
         <translation type="unfinished">இப்போதே விண்ணப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660"/>
         <source>Width</source>
         <translation type="unfinished">அகலம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747"/>
         <source>X</source>
         <translation type="unfinished">எக்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
         <source>Y</source>
         <translation type="unfinished">ஒய்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
         <source>Configs format</source>
         <translation type="unfinished">கட்டமைப்பு வடிவம்</translation>
     </message>
@@ -753,64 +754,64 @@ INI — 1980 களின் முற்பகுதி — பிரிவு�
 பைனரி — 2026 — NekoBox அமைப்புகளுக்கான தன்னிச்சையான பைட்-மதிப்பு வடிவமைப்பு LMDB மதிப்புகள் அல்லது தனித்த கோப்புகளாகப் பயன்படுத்தப்படுகிறது — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760"/>
         <source>Height</source>
         <translation type="unfinished">உயரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">கோர் இயங்கக்கூடிய பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075"/>
         <source>Use default</source>
         <translation type="unfinished">இயல்புநிலையைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893"/>
         <source>Remote Control</source>
         <translation type="unfinished">ரிமோட் கண்ட்ரோல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108"/>
         <source>Select</source>
         <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046"/>
         <source>Resources Directory</source>
         <translation type="unfinished">வளங்கள் அடைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082"/>
         <source>Resource Manager</source>
         <translation type="unfinished">வள மேலாளர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220"/>
         <source>Proxy type</source>
         <translation type="unfinished">ப்ராக்ஸி வகை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255"/>
         <source>Name of program</source>
         <translation type="unfinished">திட்டத்தின் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529"/>
         <source>Security Warning</source>
         <translation type="unfinished">பாதுகாப்பு எச்சரிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -827,12 +828,12 @@ Are you sure you want to disable TLS verification?</source>
 TLS சரிபார்ப்பை நிச்சயமாக முடக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">தனியுரிமை எச்சரிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -860,42 +861,42 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
         <source>Edit Group</source>
         <translation type="unfinished">குழுவைத் திருத்து</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
         <translation type="unfinished">பொதுவானது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
         <source>Url</source>
         <translation type="unfinished">Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
         <source>Paste URL</source>
         <translation type="unfinished">URL ஐ ஒட்டவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
         <source>Type</source>
         <translation type="unfinished">வகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
         <source>Basic</source>
         <translation type="unfinished">அடிப்படை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
         <source>Subscription</source>
         <translation type="unfinished">சந்தா</translation>
     </message>
@@ -904,58 +905,58 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
         <translation type="obsolete">கைமுறையாக நெடுவரிசை அகலம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
         <source>Archive</source>
         <translation type="unfinished">காப்பகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
         <source>Autoupdate</source>
         <translation type="unfinished">தானாகப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
         <source>Extra</source>
         <translation type="unfinished">கூடுதல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Proxy</source>
         <translation type="unfinished">பதிலாள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
         <source>None</source>
         <translation type="unfinished">இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
         <source>Front Proxy</source>
         <translation type="unfinished">முன் பதிலி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">லேண்டிங் ப்ராக்ஸி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
         <source>Share</source>
         <translation type="unfinished">பகிரவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">சுயவிவரப் பகிர்வு இணைப்புகளை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">சுயவிவரப் பகிர்வு இணைப்புகளை நகலெடு (தனிப்பயன் இணைப்புகள்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
         <source>Notes</source>
         <translation type="unfinished">குறிப்புகள்</translation>
     </message>
@@ -964,22 +965,22 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
         <translation type="obsolete">தானியங்கி புதுப்பிப்பைத் தவிர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">சந்தாவில் இருந்து சுயவிவரத் தலைப்பு காலியாக இருந்தால் பயன்படுத்தும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
         <source>Copied</source>
         <translation type="unfinished">நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Warning</source>
         <translation type="unfinished">எச்சரிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Please input URL</source>
         <translation type="unfinished">URL ஐ உள்ளிடவும்</translation>
     </message>
@@ -987,267 +988,267 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
         <source>Edit</source>
         <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
         <translation type="unfinished">பொதுவானது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
         <source>Type</source>
         <translation type="unfinished">வகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
         <translation type="unfinished">துறைமுகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
         <source>Address</source>
         <translation type="unfinished">முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
         <source>Settings</source>
         <translation type="unfinished">அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">அடிப்படை போக்குவரத்து முறை.இது சேவையகத்துடன் இணக்கமாக இருக்க வேண்டும், இல்லையெனில், இணைப்பை நிறுவ முடியாது.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
         <source>Network</source>
         <translation type="unfinished">நெட்வொர்க்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
         <source>Server support is required</source>
         <translation type="unfinished">சேவையக ஆதரவு தேவை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
         <source>Multiplex</source>
         <translation type="unfinished">மல்டிபிளக்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">போக்குவரத்து அடுக்கு பாதுகாப்பு.இது சேவையகத்துடன் இணக்கமாக இருக்க வேண்டும், இல்லையெனில், இணைப்பை நிறுவ முடியாது.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
         <source>Security</source>
         <translation type="unfinished">பாதுகாப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">UDP FullCone போன்ற அம்சங்களை செயல்படுத்துவதற்கான UDP FullCone பாக்கெட் குறியாக்கம்.சர்வர் ஆதரவு தேவை, தவறான தேர்வு செய்யப்பட்டால், இணைப்பை உருவாக்க முடியாது.தயவுசெய்து அதை காலியாக விடவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
         <source>Packet Encoding</source>
         <translation type="unfinished">பாக்கெட் என்கோடிங்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
         <source>Keep Default</source>
         <translation type="unfinished">இயல்புநிலையை வைத்திருங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
         <source>On</source>
         <translation type="unfinished">அன்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;மக்ஸை ஆன் செய்ய மேலெழுதுகிறது&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">TCP ப்ரூட்டலை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;சர்வர் டு கிளையன்ட் TCP மிருகத்தனமான வேகம்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCP மிருகத்தனமான வேகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">தனிப்பயன் வெளிச்செல்லும் அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
         <source>Custom Config Settings</source>
         <translation type="unfinished">தனிப்பயன் கட்டமைப்பு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="806" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="806"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">இந்தக் குழுவிற்கு அமைப்புகளைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
         <source>Network Settings (%1)</source>
         <translation type="unfinished">பிணைய அமைப்புகள் (% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http கோரிக்கையின் முறை, பெரிய எழுத்தாக மாற்றப்படும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
         <source>Method</source>
         <translation type="unfinished">முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
         <source>header type</source>
         <translation type="unfinished">தலைப்பு வகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
         <source>TLS Security Settings</source>
         <translation type="unfinished">TLS பாதுகாப்பு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="740" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="740"/>
         <source>Certificate</source>
         <translation type="unfinished">சான்றிதழ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">இயக்கப்படும் போது, ​​தொலைநிலை ஹோஸ்ட் வழங்கிய TLS சான்றிதழின் செல்லுபடியை V2Ray சரிபார்க்காது (பாதுகாப்பு எளிய உரைக்கு சமமானது)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
         <source>Allow insecure</source>
         <translation type="unfinished">பாதுகாப்பற்றதை அனுமதிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
         <source>Enable ECH</source>
         <translation type="unfinished">ECH ஐ இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="750" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="750"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH கட்டமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">சர்வர் பெயர் குறிப்பு, தெளிவான உரை.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">பயன்பாட்டு அடுக்கு நெறிமுறை பேச்சுவார்த்தை, தெளிவான உரை.காற்புள்ளிகளால் அவற்றைப் பிரிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS உருமறைப்பு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
         <source>Transport</source>
         <translation type="unfinished">போக்குவரத்து</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;செயல்திறனைக் குறைக்கலாம், முதலில் பதிவுப் பகுதியை முயற்சிக்கவும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
         <source>Enable TLS fragment</source>
         <translation type="unfinished">TLS பகுதியை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;நேர வடிவம், 500ms, 10ms போன்றவை&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
         <source>Fallback Delay</source>
         <translation type="unfinished">பின்னடைவு தாமதம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">TLS பதிவு பகுதியை இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">ரியாலிட்டி பொது விசை.காலியாக இல்லாவிட்டால், TLS ஐ ரியாலிட்டியாக மாற்றவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">ரியாலிட்டி ஷார்ட் ஐடி.ஒரே ஒரு மதிப்பை ஏற்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
         <source>Reality SID</source>
         <translation type="unfinished">ரியாலிட்டி SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="276" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="276"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">தனிப்பயன் (% 1 வெளிச்செல்லும்)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">தனிப்பயன் (% 1 கட்டமைப்பு)</translation>
     </message>
@@ -1270,130 +1271,130 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
         <translation type="obsolete">தனிப்பயன் (% 1 கட்டமைப்பு)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="120"/>
         <source>both</source>
         <translation type="unfinished">இரண்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="703" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="708" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="713" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="721" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="698"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="703"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="708"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="713"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="721"/>
         <source>Not set</source>
         <translation type="unfinished">அமைக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="700" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="723" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="700"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="723"/>
         <source>Already set</source>
         <translation type="unfinished">ஏற்கனவே அமைக்கப்பட்டுள்ளது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="780" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="780"/>
         <source>Confirm</source>
         <translation type="unfinished">உறுதிப்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
         <source>Network Settings</source>
         <translation type="unfinished">பிணைய அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
         <source>Max Post Bytes</source>
         <translation type="unfinished">அதிகபட்ச போஸ்ட் பைட்டுகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
         <source>Min Post Interval</source>
         <translation type="unfinished">குறைந்தபட்ச போஸ்ட் இடைவெளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
         <source>Max Reuse times</source>
         <translation type="unfinished">அதிகபட்ச மறுபயன்பாட்டு நேரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
         <source>X Padding Bytes</source>
         <translation type="unfinished">எக்ஸ் பேடிங் பைட்டுகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
         <source>Keep Alive Period</source>
         <translation type="unfinished">காலத்தை உயிருடன் வைத்திருங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
         <source>Max Concurrency</source>
         <translation type="unfinished">அதிகபட்ச ஒத்திசைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
         <source>Max Reusable Secs</source>
         <translation type="unfinished">அதிகபட்சம் மீண்டும் பயன்படுத்தக்கூடிய நொடிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
         <source>Headers</source>
         <translation type="unfinished">தலைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
         <source>Edit download settings</source>
         <translation type="unfinished">பதிவிறக்க அமைப்புகளைத் திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
         <source>Max Request Times</source>
         <translation type="unfinished">அதிகபட்ச கோரிக்கை நேரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
         <source>XPadding Header</source>
         <translation type="unfinished">எக்ஸ்பேடிங் தலைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
         <source>XPadding Method</source>
         <translation type="unfinished">எக்ஸ்பேடிங் முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
         <source>XPadding Key</source>
         <translation type="unfinished">எக்ஸ்பேடிங் விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
         <source>EarlyData Length</source>
         <translation type="unfinished">ஆரம்பகால தரவு நீளம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
         <source>Max Connections</source>
         <translation type="unfinished">அதிகபட்ச இணைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
         <source>XPadding Placement</source>
         <translation type="unfinished">எக்ஸ்பேடிங் வேலை வாய்ப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
         <source>Multi Mode</source>
         <translation type="unfinished">பல முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">XPadding Obfs பயன்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
         <source>No GRPC Headers</source>
         <translation type="unfinished">GRPC தலைப்புகள் இல்லை</translation>
     </message>
@@ -1401,37 +1402,37 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
         <source>Custom Headers</source>
         <translation type="unfinished">தனிப்பயன் தலைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">தனிப்பயன் HTTP தலைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
         <source>System Parameters</source>
         <translation type="unfinished">கணினி அளவுருக்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
         <source>Custom Payload</source>
         <translation type="unfinished">விருப்ப பேலோட்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
         <source>Text</source>
         <translation type="unfinished">உரை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
         <source>Javascript</source>
         <translation type="unfinished">ஜாவாஸ்கிரிப்ட்</translation>
     </message>
@@ -1439,95 +1440,95 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">குழு 2 க்கான லேண்டிங் ப்ராக்ஸி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
         <source>Proxy:</source>
         <translation type="unfinished">பதிலாள்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
         <source>Search:</source>
         <translation type="unfinished">தேடல்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
         <source>Group1</source>
         <translation type="unfinished">குழு1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
         <source>Group2</source>
         <translation type="unfinished">குழு2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">குழு% 1க்கான முன் பதிலி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
         <source>Front proxy: </source>
         <translation type="unfinished">முன் பதிலி:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">குழு% 1க்கான லேண்டிங் ப்ராக்ஸி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">தரையிறங்கும் ப்ராக்ஸி:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="141"/>
         <source>Proxy</source>
         <translation type="unfinished">பதிலாள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="143"/>
         <source>Direct</source>
         <translation type="unfinished">நேரடி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
         <source>None</source>
         <translation type="unfinished">இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">ப்ராக்ஸியைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">% 1 ப்ராக்ஸியை மாற்றவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="136" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="136"/>
         <source>Select outbound</source>
         <translation type="unfinished">வெளியே செல்வதைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="138" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="138"/>
         <source>Outbound: </source>
         <translation type="unfinished">வெளிச்செல்லும்:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="145"/>
         <source>Outbound</source>
         <translation type="unfinished">வெளியே செல்லும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="147"/>
         <source>Block</source>
         <translation type="unfinished">தடு</translation>
     </message>
@@ -1535,17 +1536,17 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">கணினி அளவுருக்களை அனுப்பவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid= custom_value,os= custom_os,osVersion= custom_version,model= custom_model</translation>
     </message>
@@ -1553,27 +1554,27 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
         <source>Value</source>
         <translation type="unfinished">மதிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
         <source>New</source>
         <translation type="unfinished">புதியது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
         <source>Header name</source>
         <translation type="unfinished">தலைப்பு பெயர்</translation>
     </message>
@@ -1581,75 +1582,75 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
         <source>Hotkey</source>
         <translation type="unfinished">ஹாட்கீ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
         <source>Global</source>
         <translation type="unfinished">உலகளாவிய</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
         <source>Trigger main window</source>
         <translation type="unfinished">முக்கிய சாளரத்தைத் தூண்டவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
         <source>Show groups</source>
         <translation type="unfinished">குழுக்களைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
         <source>Show routes</source>
         <translation type="unfinished">வழிகளைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
         <source>Proxy mode</source>
         <translation type="unfinished">ப்ராக்ஸி பயன்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
         <source>Toggle System Proxy</source>
         <translation type="unfinished">சிஸ்டம் ப்ராக்ஸியை நிலைமாற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
         <source>Shortcuts</source>
         <translation type="unfinished">குறுக்குவழிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
-        <source>Shortcut for '%s' action was cleared</source>
-        <translation type="unfinished">'%s' செயலுக்கான குறுக்குவழி அழிக்கப்பட்டது</translation>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
+        <source>Shortcut for &apos;%s&apos; action was cleared</source>
+        <translation type="unfinished">&apos;%s&apos; செயலுக்கான குறுக்குவழி அழிக்கப்பட்டது</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
         <source>Groups</source>
         <translation type="unfinished">குழுக்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
         <source>New group</source>
         <translation type="unfinished">புதிய குழு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
         <source>Update all subscriptions</source>
         <translation type="unfinished">அனைத்து சந்தாக்களையும் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Confirmation</source>
         <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">அனைத்து சந்தாக்களையும் புதுப்பிக்கவா?</translation>
     </message>
@@ -1657,380 +1658,380 @@ HWID அனுப்புதலை நிச்சயமாக இயக்க 
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
         <source>Routes</source>
         <translation type="unfinished">பாதைகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
         <translation type="unfinished">பொதுவானது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
         <translation type="unfinished">நெறிமுறை மற்றும் SNI ஐ அடையாளம் காண இணைப்புகளின் இன்ஷியல் பாக்கெட்(களை?) முகர்ந்து பார்க்கும்.இலக்குக்கான ஸ்னிஃப் முடிவு, ஸ்னிஃப் செய்யப்பட்ட SNI உடனான இணைப்பின் இலக்கை மீண்டும் எழுதுகிறது.ஸ்னிஃப்ட் புரோட்டோகால் பற்றிய கூடுதல் தகவலுக்கு, சிங்-பாக்ஸின் ஆவணங்களைப் பார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
         <source>Sniffing Mode</source>
         <translation type="unfinished">ஸ்னிஃபிங் பயன்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
         <source>Disable</source>
         <translation type="unfinished">முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
         <source>Sniff result for routing</source>
         <translation type="unfinished">ரூட்டிங் செய்வதற்கான ஸ்னிஃப் முடிவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
         <source>Routing Profile</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">உள்வரும் டொமைன் உத்தி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
         <source>GitHub</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">ரிமோட் ரூல்-செட் மிரர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;இணைப்பதற்கு முன் டொமைன்களை IP க்கு தீர்க்கவும், சர்வர் முகவரியையும் பாதிக்கிறது&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">வெளிச்செல்லும் டொமைன் உத்தி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
         <source>RuleSet download url</source>
         <translation type="unfinished">RuleSet பதிவிறக்க url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
         <source>Hijack</source>
         <translation type="unfinished">கடத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
         <source>DNS Server</source>
         <translation type="unfinished">DNS சர்வர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
         <source>Listen Port</source>
         <translation type="unfinished">லிசன் போர்ட்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
         <source>IPv4 Response</source>
         <translation type="unfinished">IPv4 பதில்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
         <source>IPv6 Response</source>
         <translation type="unfinished">IPv6 பதில்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;பின்வரும் வடிவமைப்பைப் பயன்படுத்த வேண்டும்:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
         <source>Rules</source>
         <translation type="unfinished">விதிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
         <source>Enable</source>
         <translation type="unfinished">இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LAN இல் உள்ள பிற சாதனங்கள் இந்த சேவையகத்தைப் பயன்படுத்த 0.0.0.0 இல் கேட்க வேண்டுமா&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">லானை இணைக்க அனுமதிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
         <source>Redirect Settings</source>
         <translation type="unfinished">அமைப்புகளைத் திருப்பிவிடவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
         <source>Listen Address</source>
         <translation type="unfinished">முகவரியைக் கேளுங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
         <source>DNS</source>
         <translation type="unfinished">டிஎன்எஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
         <source>Simple DNS Settings</source>
         <translation type="unfinished">எளிய DNS அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;எடுத்துக்காட்டுகள்:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
         <source>Remote DNS</source>
         <translation type="unfinished">தொலை DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
         <source>Default DNS server</source>
         <translation type="unfinished">இயல்புநிலை DNS சேவையகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
         <source>Query Strategy</source>
         <translation type="unfinished">வினவல் உத்தி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;சில உள்ளமைவுகளில் உள்ளூர் DNS ஐப் பயன்படுத்த முடியாது, அத்தகைய சூழ்நிலைகளில் உள்ளூர் dns ஆகப் பயன்படுத்த, நீங்கள் இங்கே ஐபியை அமைக்க வேண்டும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
         <source>Local Override</source>
         <translation type="unfinished">உள்ளூர் மேலெழுதல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
-        <source>This is especially important and it is recommended to use the default value of "localhost".
-If the default value does not work, try changing it to "223.5.5.5".
-For more information, see the document "Configuration/DNS".</source>
-        <translation type="unfinished">இது மிகவும் முக்கியமானது மற்றும் "லோக்கல் ஹோஸ்ட்" இன் இயல்புநிலை மதிப்பைப் பயன்படுத்த பரிந்துரைக்கப்படுகிறது.
-இயல்புநிலை மதிப்பு வேலை செய்யவில்லை என்றால், அதை "223.5.5.5" ஆக மாற்ற முயற்சிக்கவும்.
-மேலும் தகவலுக்கு, "உள்ளமைவு/DNS" ஆவணத்தைப் பார்க்கவும்.</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <translation type="unfinished">இது மிகவும் முக்கியமானது மற்றும் &quot;லோக்கல் ஹோஸ்ட்&quot; இன் இயல்புநிலை மதிப்பைப் பயன்படுத்த பரிந்துரைக்கப்படுகிறது.
+இயல்புநிலை மதிப்பு வேலை செய்யவில்லை என்றால், அதை &quot;223.5.5.5&quot; ஆக மாற்ற முயற்சிக்கவும்.
+மேலும் தகவலுக்கு, &quot;உள்ளமைவு/DNS&quot; ஆவணத்தைப் பார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
         <source>Direct DNS</source>
         <translation type="unfinished">நேரடி டிஎன்எஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
         <source>Enable FakeIP</source>
         <translation type="unfinished">FakeIP ஐ இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
         <source>DNS Object Settings</source>
         <translation type="unfinished">DNS ஆப்ஜெக்ட் அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
         <source>Use DNS Object</source>
         <translation type="unfinished">DNS பொருளைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
         <source>Format</source>
         <translation type="unfinished">வடிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
         <source>Document</source>
         <translation type="unfinished">ஆவணம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
         <source>Route</source>
         <translation type="unfinished">பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
         <source>New</source>
         <translation type="unfinished">புதியது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
         <source>Clone</source>
         <translation type="unfinished">குளோன்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
         <source>Export</source>
         <translation type="unfinished">ஏற்றுமதி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
         <source>Edit</source>
         <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
         <source>Delete</source>
         <translation type="unfinished">நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
         <source>Warp</source>
         <translation type="unfinished">வார்ப்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;பின்வரும் உள்ளமைவை எக்ரெஸ்ஸாகப் பயன்படுத்துவதை இயக்குகிறது, இது வார்ப் அல்லாத VPNகளைக் கட்டுப்படுத்தும் சேவைகளைத் தவிர்ப்பதற்குப் பயன்படுகிறது&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
         <source>Enable Warp</source>
         <translation type="unfinished">வார்ப்பை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
         <source>Auto Generate</source>
         <translation type="unfinished">தானாக உருவாக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cloudflare API இலிருந்து ஒரு புதிய கட்டமைப்பைப் பெறுகிறது&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735"/>
         <source>Generate Warp Config</source>
         <translation type="unfinished">வார்ப் கட்டமைப்பை உருவாக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754"/>
         <source>Endpoint</source>
         <translation type="unfinished">இறுதிப்புள்ளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
         <source>Public Key</source>
         <translation type="unfinished">பொது விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783"/>
         <source>Private Key</source>
         <translation type="unfinished">தனிப்பட்ட விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793"/>
         <source>Interface Addresses</source>
         <translation type="unfinished">இடைமுக முகவரிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30"/>
         <source>Invalid state</source>
         <translation type="unfinished">தவறான நிலை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்களின் பட்டியல் காலியாக உள்ளது, இது அணுக முடியாத நிலையாக இருக்க வேண்டும், இப்போது செயலிழப்புகள் ஏற்படலாம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193"/>
         <source>Getting keypair...</source>
         <translation type="unfinished">கீஜை பெறுகிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198"/>
         <source>Failed to get key pair</source>
         <translation type="unfinished">முக்கிய ஜோடியைப் பெறுவதில் தோல்வி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203"/>
         <source>Generating config...</source>
         <translation type="unfinished">கட்டமைப்பை உருவாக்குகிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208"/>
         <source>Failed to generate warp config</source>
         <translation type="unfinished">வார்ப் கட்டமைப்பை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217"/>
         <source>Success!</source>
         <translation type="unfinished">வெற்றி!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241"/>
         <source>Invalid settings</source>
         <translation type="unfinished">தவறான அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரம் காலியாக இருக்கக்கூடாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS விதிகள் செல்லாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280"/>
         <source>Security Warning</source>
         <translation type="unfinished">பாதுகாப்பு எச்சரிக்கை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281"/>
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -2047,12 +2048,12 @@ Are you sure?</source>
 நீங்கள் உறுதியாக இருக்கிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376"/>
         <source>Invalid operation</source>
         <translation type="unfinished">தவறான செயல்பாடு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள் காலியாக இருக்கக்கூடாது, மற்றொரு சுயவிவரத்தைச் சேர்க்க முயற்சிக்கவும் அல்லது இதைத் திருத்தவும்</translation>
     </message>
@@ -2060,7 +2061,7 @@ Are you sure?</source>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
         <source>Tun Settings</source>
         <translation type="unfinished">துன் அமைப்புகளை</translation>
     </message>
@@ -2069,52 +2070,52 @@ Are you sure?</source>
         <translation type="obsolete">IPv6 ஐ இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
         <source>Stack</source>
         <translation type="unfinished">அடுக்கி வைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Enable IPv6</source>
         <translation type="unfinished">IPv6 ஐ இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">கண்டிப்பான பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt; &lt;head/&gt;&lt;body&gt; &lt;p&gt;இயக்கப்படும்போது, ​​OS ரூட்டிங் நிலையில் விலக்கப்படுவதற்காக, நேரடி IP CIDRகள் மற்றும் விதித் தொகுப்புகளும் Tun அமைப்பில் சேர்க்கப்படும்.முக்கியமானது: பெரிய விதிகள் விண்டோஸில் அதிக CPU பயன்பாட்டை ஏற்படுத்துவதாகப் புகாரளிக்கப்பட்டுள்ளது, தயவுசெய்து இந்த விருப்பத்தை எச்சரிக்கையுடன் இயக்கவும்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">துன் ரூட்டிங் இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">தானியங்கு திசைதிருப்பல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">துன் முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">ipv6 முகவரியை துன் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR களை விலக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
         <source>Applications</source>
         <translation type="unfinished">விண்ணப்பங்கள்</translation>
     </message>
@@ -2122,22 +2123,22 @@ Are you sure?</source>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">செயலற்ற அமர்வு சோதனை இடைவெளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
         <source>Idle Session Timeout</source>
         <translation type="unfinished">செயலற்ற அமர்வு நேரம் முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
         <source>Min Idle Session</source>
         <translation type="unfinished">குறைந்தபட்ச செயலற்ற அமர்வு</translation>
     </message>
@@ -2145,17 +2146,17 @@ Are you sure?</source>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">போக்குவரத்து ஒழுங்கு மேலிருந்து கீழாக உள்ளது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
         <source>Select Profile</source>
         <translation type="unfinished">சுயவிவரத்தைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">பெயர் காலியாக இருக்கக்கூடாது.</translation>
     </message>
@@ -2163,27 +2164,27 @@ Are you sure?</source>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
         <translation type="unfinished">கோர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
         <source>Json Editor</source>
         <translation type="unfinished">Json ஆசிரியர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">வெளிச்செல்லும் JSON, ஆவணத்தைப் படிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">தயவுசெய்து முழுமையான கட்டமைப்பை நிரப்பவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">பெயர் காலியாக இருக்கக்கூடாது.</translation>
     </message>
@@ -2191,67 +2192,67 @@ Are you sure?</source>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
         <source>Socks address</source>
         <translation type="unfinished">சாக்ஸ் முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
         <source>Socks port</source>
         <translation type="unfinished">சாக்ஸ் போர்ட்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
         <source>Core path</source>
         <translation type="unfinished">முக்கிய பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
         <source>Choose from file</source>
         <translation type="unfinished">கோப்பிலிருந்து தேர்வு செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt; &lt;head/&gt;&lt;body&gt; &lt;p&gt;எக்ஸிகியூட்டபிள்க்கு அனுப்ப வாதிடுகிறார்.நீங்கள் ஒரு %s ஐச் செருகலாம், அது கீழே உள்ளிடப்பட்டுள்ள கட்டமைப்பைக் கொண்ட கோப்பிற்கான பாதையால் மாற்றப்படும்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
         <source>Args</source>
         <translation type="unfinished">ஆர்க்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
         <source>run -confPath %s</source>
         <translation type="unfinished">ரன் -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args இல் %s குறிப்பிடப்பட்டிருந்தால், கூடுதல் மையச் செயல்முறைக்கு அனுப்பப்படும் கட்டமைப்பு கோப்பின் உள்ளடக்கங்கள்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
         <source>Config</source>
         <translation type="unfinished">கட்டமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
         <source>No logs</source>
         <translation type="unfinished">பதிவுகள் இல்லை</translation>
     </message>
@@ -2259,12 +2260,12 @@ Are you sure?</source>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
@@ -2276,27 +2277,27 @@ Are you sure?</source>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
         <source>Port range</source>
         <translation type="unfinished">துறைமுக வரம்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Multiplexing</source>
         <translation type="unfinished">மல்டிபிளெக்சிங்</translation>
     </message>
@@ -2305,7 +2306,7 @@ Are you sure?</source>
         <translation type="obsolete">போக்குவரத்து</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
         <source>Traffic Pattern</source>
         <translation type="unfinished">போக்குவரத்து முறை</translation>
     </message>
@@ -2313,43 +2314,43 @@ Are you sure?</source>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - ஒரே நேரத்தில் சுரங்கப்பாதை இணைப்புகளின் எண்ணிக்கை.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - QUIC நெரிசல் கட்டுப்பாடு அல்காரிதம்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP நெறிமுறையில் UDP இன் பதிப்பு, சர்வர் ஆதரவு தேவை.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - HTTP கோரிக்கைகளில் அனுப்ப கூடுதல் தலைப்புகள்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
         <source>Headers</source>
         <translation type="unfinished">தலைப்புகள்</translation>
     </message>
@@ -2357,104 +2358,104 @@ Are you sure?</source>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
         <source>Heartbeat</source>
         <translation type="unfinished">இதயத்துடிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
         <source>Download (Mbps)</source>
         <translation type="unfinished">பதிவிறக்கம் (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
         <source>Upload (Mbps)</source>
         <translation type="unfinished">பதிவேற்றம் (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">ஜீரோ Rtt ஹேண்ட்ஷேக்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
         <source>UDP Relay Mode</source>
         <translation type="unfinished">UDP ரிலே பயன்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
         <source>Congestion Control</source>
         <translation type="unfinished">நெரிசல் கட்டுப்பாடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;கமாவால் பிரிக்கப்பட்ட வரம்புகள்: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
         <source>Obfs Password</source>
         <translation type="unfinished">Obfs கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">MTU கண்டுபிடிப்பை முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
         <source>Port range</source>
         <translation type="unfinished">துறைமுக வரம்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
         <source>Hop Interval</source>
         <translation type="unfinished">ஹாப் இடைவெளி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
         <source>Auth Type</source>
         <translation type="unfinished">அங்கீகார வகை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
         <source>Auth Payload</source>
         <translation type="unfinished">அங்கீகார பேலோட்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUID ஐ உருவாக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">சான்றிதழ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
         <source>Disable SNI</source>
         <translation type="unfinished">SNI ஐ முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
         <source>SNI</source>
         <translation type="unfinished">எஸ்.என்.ஐ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
         <source>Allow Insecure</source>
         <translation type="unfinished">பாதுகாப்பற்றதை அனுமதிக்கவும்</translation>
     </message>
@@ -2462,52 +2463,52 @@ Are you sure?</source>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
         <source>EditSSH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
         <source>User</source>
         <translation type="unfinished">பயனர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
         <source>Private Key</source>
         <translation type="unfinished">தனிப்பட்ட விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
         <source>Private Key Password</source>
         <translation type="unfinished">தனிப்பட்ட விசை கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
         <translation type="unfinished">ஹோஸ்ட் கீ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
         <translation type="unfinished">ஹோஸ்ட் கீ அல்காரிதம்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
         <source>Client Version</source>
         <translation type="unfinished">கிளையன்ட் பதிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
         <source>Private Key Path</source>
         <translation type="unfinished">தனிப்பட்ட விசை பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
         <source>Choose File</source>
         <translation type="unfinished">கோப்பைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
@@ -2515,22 +2516,22 @@ Are you sure?</source>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
         <source>Plugin</source>
         <translation type="unfinished">செருகுநிரல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
         <source>Encryption</source>
         <translation type="unfinished">குறியாக்கம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
         <source>Plugin Args</source>
         <translation type="unfinished">செருகுநிரல் ஆர்க்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
@@ -2539,12 +2540,12 @@ Are you sure?</source>
         <translation type="obsolete">நெட்வொர்க்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP நெறிமுறையில் UDP இன் பதிப்பு, சர்வர் ஆதரவு தேவை.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
@@ -2552,27 +2553,27 @@ Are you sure?</source>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
         <source>Version</source>
         <translation type="unfinished">பதிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2580,17 +2581,17 @@ Are you sure?</source>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
         <source>Version</source>
         <translation type="unfinished">பதிப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
@@ -2599,37 +2600,37 @@ Are you sure?</source>
         <translation type="obsolete">நெட்வொர்க்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
         <source>Path</source>
         <translation type="unfinished">பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
         <source>Headers</source>
         <translation type="unfinished">தலைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">TCP நெறிமுறையில் UDP இன் பதிப்பு, சர்வர் ஆதரவு தேவை.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
@@ -2637,72 +2638,72 @@ Are you sure?</source>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
         <source>State directory</source>
         <translation type="unfinished">மாநில அடைவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
         <translation type="unfinished">அங்கீகார விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
         <source>Control URL</source>
         <translation type="unfinished">URL ஐக் கட்டுப்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
         <source>Hostname</source>
         <translation type="unfinished">ஹோஸ்ட் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
         <translation type="unfinished">வழிகளை ஏற்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
         <source>Ephemeral</source>
         <translation type="unfinished">எபிமரல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
         <source>Exit node allow lan access</source>
         <translation type="unfinished">வெளியேறும் முனை லான் அணுகலை அனுமதிக்கிறது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
         <source>Advertise exit node</source>
         <translation type="unfinished">வெளியேறும் முனையை விளம்பரப்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
         <source>Exit node</source>
         <translation type="unfinished">வெளியேறு முனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;சப்நெட்களின் கமாவால் பிரிக்கப்பட்ட பட்டியல்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
         <source>Advertise routes</source>
         <translation type="unfinished">வழிகளை விளம்பரப்படுத்துங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;டெயில்ஸ்கேல் dns ஐ ரிமோட் dns ஆகப் பயன்படுத்தவும்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
         <source>Global DNS</source>
         <translation type="unfinished">உலகளாவிய டிஎன்எஸ்</translation>
     </message>
@@ -2710,27 +2711,27 @@ Are you sure?</source>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
         <translation type="unfinished">தனிப்பயன் பாதை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
         <translation type="unfinished">கூடுதல் ஆர்க்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
         <translation type="unfinished">டோர் கட்டமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
         <translation type="unfinished">தரவு டிஐஆர்</translation>
     </message>
@@ -2738,12 +2739,12 @@ Are you sure?</source>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
         <source>Encryption</source>
         <translation type="unfinished">குறியாக்கம்</translation>
     </message>
@@ -2751,17 +2752,17 @@ Are you sure?</source>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
@@ -2770,12 +2771,12 @@ Are you sure?</source>
         <translation type="obsolete">quic_congestion_control - QUIC நெரிசல் கட்டுப்பாடு அல்காரிதம்.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
         <source>Health Check</source>
         <translation type="unfinished">சுகாதார சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">ஆஃப்</translation>
     </message>
@@ -2783,22 +2784,22 @@ Are you sure?</source>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
         <translation type="unfinished">பாதுகாப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
         <source>Alter Id</source>
         <translation type="unfinished">மாற்று ஐடி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUID ஐ உருவாக்கவும்</translation>
     </message>
@@ -2806,142 +2807,142 @@ Are you sure?</source>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
         <source>EditWireguard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
         <source>Private Key</source>
         <translation type="unfinished">தனிப்பட்ட விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
         <source>Public Key</source>
         <translation type="unfinished">பொது விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">முன் பகிரப்பட்ட விசை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
         <source>Reserved</source>
         <translation type="unfinished">ஒதுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;secistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">நிரந்தர கீப்பலிவ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;சப்நெட்களின் கமாவால் பிரிக்கப்பட்ட பட்டியல்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
         <source>Local Address</source>
         <translation type="unfinished">உள்ளூர் முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149"/>
         <source>Init Packet Junk Size (S1)</source>
         <translation type="unfinished">Init பாக்கெட் குப்பை அளவு (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159"/>
         <source>Init Packet Magic Header (H1)</source>
         <translation type="unfinished">Init Packet Magic Header (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175"/>
         <source>Transport Packet Magic Header (H4)</source>
         <translation type="unfinished">டிரான்ஸ்போர்ட் பாக்கெட் மேஜிக் ஹெடர் (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185"/>
         <source>Cookie Reply Packet Junk Size (S3)</source>
         <translation type="unfinished">குக்கீ பதில் பாக்கெட் குப்பை அளவு (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201"/>
         <source>Signature Packet (I3)</source>
         <translation type="unfinished">சிக்னேச்சர் பாக்கெட் (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211"/>
         <source>Junk Packet Count (Jc)</source>
         <translation type="unfinished">குப்பை பாக்கெட் எண்ணிக்கை (Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221"/>
         <source>Response Packet Magic Header (H2)</source>
         <translation type="unfinished">ரெஸ்பான்ஸ் பேக்கெட் மேஜிக் ஹெடர் (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231"/>
         <source>Signature Packet (I1)</source>
         <translation type="unfinished">சிக்னேச்சர் பாக்கெட் (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241"/>
         <source>Junk Packet Max Size (Jmax)</source>
         <translation type="unfinished">குப்பை பாக்கெட் அதிகபட்ச அளவு (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251"/>
         <source>Junk Packet Min Size (Jmin)</source>
         <translation type="unfinished">குப்பை பாக்கெட் குறைந்தபட்ச அளவு (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267"/>
         <source>Cookie Reply Packet Magic Header (H3)</source>
         <translation type="unfinished">குக்கீ பதில் பாக்கெட் மேஜிக் ஹெடர் (H3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280"/>
         <source>Transport Packet Junk Size (S4)</source>
         <translation type="unfinished">டிரான்ஸ்போர்ட் பாக்கெட் குப்பை அளவு (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296"/>
         <source>Signature Packet (I2)</source>
         <translation type="unfinished">சிக்னேச்சர் பாக்கெட் (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312"/>
         <source>Response Packet Junk Size (S2)</source>
         <translation type="unfinished">பதில் பாக்கெட் குப்பை அளவு (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328"/>
         <source>Signature Packet (I4)</source>
         <translation type="unfinished">சிக்னேச்சர் பாக்கெட் (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341"/>
         <source>Signature Packet (I5)</source>
         <translation type="unfinished">சிக்னேச்சர் பாக்கெட் (I5)</translation>
     </message>
@@ -2950,12 +2951,12 @@ Are you sure?</source>
         <translation type="obsolete">தொழிலாளர்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
         <source>Use System Interface</source>
         <translation type="unfinished">கணினி இடைமுகத்தைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">நினைவாற்றல் அமைப்புகள்</translation>
     </message>
@@ -3003,7 +3004,7 @@ Are you sure?</source>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="199" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="199"/>
         <source>Filter</source>
         <translation type="unfinished">வடிகட்டி</translation>
     </message>
@@ -3015,37 +3016,37 @@ Are you sure?</source>
         <translation type="obsolete">சந்தாவைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
         <source>Update</source>
         <translation type="unfinished">புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
         <source>Edit</source>
         <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
         <source>Remove</source>
         <translation type="unfinished">அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Basic</source>
         <translation type="unfinished">அடிப்படை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Subscription</source>
         <translation type="unfinished">சந்தா</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
         <source>Archive</source>
         <translation type="unfinished">காப்பகம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
         <source>Updated: %1</source>
         <translation type="unfinished">புதுப்பிக்கப்பட்டது: % 1</translation>
     </message>
@@ -3054,12 +3055,12 @@ Are you sure?</source>
         <translation type="obsolete">கடைசி புதுப்பிப்பு: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Confirmation</source>
         <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Remove %1?</source>
         <translation type="unfinished">% 1ஐ அகற்றவா?</translation>
     </message>
@@ -3067,26 +3068,26 @@ Are you sure?</source>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
         <source>Usage Statistics</source>
         <translation type="unfinished">பயன்பாட்டு புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">போக்குவரத்து புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">மொத்த ப்ராக்ஸி ட்ராஃபிக்:</translation>
     </message>
@@ -3095,12 +3096,12 @@ Are you sure?</source>
         <translation type="obsolete">உரை லேபிள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">மொத்த நேரடி போக்குவரத்து:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">பாதுகாப்பு புள்ளிவிவரங்கள்</translation>
     </message>
@@ -3109,85 +3110,85 @@ Are you sure?</source>
         <translation type="obsolete">சுயவிவர புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">பயன்பாட்டு நேரம்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">கடைசி வெளியீட்டு நேரம்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">முதல் ஏவுதல் நேரம்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">தொடக்க எண்ணிக்கை:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">பதிவிறக்கம்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">பதிவேற்றம்:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">ப்ராக்ஸி சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">தரவுத்தள புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">நீக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">உள்ளது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">உருவாக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">குழுக்கள் மற்றும் சந்தாக்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">பாதை சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
         <source>Failed authentications count:</source>
         <translation type="unfinished">தோல்வியுற்ற அங்கீகாரங்களின் எண்ணிக்கை:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">பயனர்களின் எண்ணிக்கை:</translation>
     </message>
@@ -3203,58 +3204,58 @@ Are you sure?</source>
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
         <source>JSON Editor</source>
         <translation type="unfinished">JSON ஆசிரியர்</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
         <source>Format JSON</source>
         <translation type="unfinished">JSON வடிவமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
         <source>Remove All Comments</source>
         <translation type="unfinished">அனைத்து கருத்துகளையும் அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
         <source>Json Editor</source>
         <translation type="unfinished">Json ஆசிரியர்</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
         <source>Structure Preview</source>
         <translation type="unfinished">கட்டமைப்பு முன்னோட்டம்</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
         <source>OK</source>
         <translation type="unfinished">சரி</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
         <source>Json Contains Syntax Errors</source>
         <translation type="unfinished">Json தொடரியல் பிழைகளைக் கொண்டுள்ளது</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
         <translation type="unfinished">அசல் Json இல் தொடரியல் பிழைகள் இருக்கலாம்.Json மரம் முடக்கப்பட்டுள்ளது.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
         <source>You must correct these errors before continuing.</source>
         <translation type="unfinished">தொடர்வதற்கு முன் இந்த பிழைகளை நீங்கள் சரிசெய்ய வேண்டும்.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
         <source>Syntax Errors</source>
         <translation type="unfinished">தொடரியல் பிழைகள்</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation type="unfinished">JSON பிழைகளைச் சரிசெய்யவும் அல்லது தொடர்வதற்கு முன் கருத்துகளை அகற்றவும்</translation>
     </message>
@@ -3262,51 +3263,51 @@ Are you sure?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>NekoBox</source>
         <translation type="unfinished">நெகோபாக்ஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651"/>
         <source>Profiles</source>
         <translation type="unfinished">சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">ரூட்டிங்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
         <source>Update</source>
         <translation type="unfinished">புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
         <source>Tun Mode</source>
         <translation type="unfinished">துன் பயன்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
         <source>System DNS</source>
         <translation type="unfinished">சிஸ்டம் டிஎன்எஸ்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878"/>
         <source>System Proxy</source>
         <translation type="unfinished">சிஸ்டம் ப்ராக்ஸி</translation>
     </message>
@@ -3315,98 +3316,98 @@ Are you sure?</source>
         <translation type="obsolete">URL சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
         <source>Type</source>
         <translation type="unfinished">வகை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
         <source>Address</source>
         <translation type="unfinished">முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
         <source>Test Result</source>
         <translation type="unfinished">சோதனை முடிவு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521"/>
         <source>Traffic</source>
         <translation type="unfinished">போக்குவரத்து</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
         <source>Logs</source>
         <translation type="unfinished">பதிவுகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461"/>
         <source>Connections</source>
         <translation type="unfinished">இணைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">இலக்கு (டொமைன்)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">வரிசையாக்கத்தை முடக்க கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497"/>
         <source>Process</source>
         <translation type="unfinished">செயல்முறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">செயல்முறை மூலம் வரிசைப்படுத்த கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
         <source>Protocol</source>
         <translation type="unfinished">நெறிமுறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">நெறிமுறை மூலம் வரிசைப்படுத்த கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513"/>
         <source>Outbound</source>
         <translation type="unfinished">வெளியே செல்லும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">வெளிச்செல்லும் படி வரிசைப்படுத்த கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">போக்குவரத்தின்படி வரிசைப்படுத்துவதற்கு, கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">போக்குவரத்து வரைபடம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
         <source>Program</source>
         <translation type="unfinished">நிரல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640"/>
         <source>Preferences</source>
         <translation type="unfinished">விருப்பங்கள்</translation>
     </message>
@@ -3415,7 +3416,7 @@ Are you sure?</source>
         <translation type="obsolete">சேவையகம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665"/>
         <source>Share</source>
         <translation type="unfinished">பகிரவும்</translation>
     </message>
@@ -3424,203 +3425,203 @@ Are you sure?</source>
         <translation type="obsolete">தற்போதைய குழு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
         <source>Test</source>
         <translation type="unfinished">சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661"/>
         <source>Current Selected</source>
         <translation type="unfinished">தற்போதைய தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655"/>
         <source>Current Group</source>
         <translation type="unfinished">தற்போதைய குழு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">தகவல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
         <source>Hidden menu</source>
         <translation type="unfinished">மறைக்கப்பட்ட மெனு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
         <source>Routing Menu</source>
         <translation type="unfinished">ரூட்டிங் மெனு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
         <source>Context</source>
         <translation type="unfinished">சூழல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">சூழல் சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
         <source>Exit</source>
         <translation type="unfinished">வெளியேறு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769"/>
         <source>Toggle Window</source>
         <translation type="unfinished">சாளரத்தை மாற்றவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
         <source>Basic Settings</source>
         <translation type="unfinished">அடிப்படை அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
         <source>New profile</source>
         <translation type="unfinished">புதிய சுயவிவரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
         <source>Groups</source>
         <translation type="unfinished">குழுக்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
         <source>Start</source>
         <translation type="unfinished">தொடங்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
         <source>Stop</source>
         <translation type="unfinished">நிறுத்து</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
         <source>Edit</source>
         <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813"/>
         <source>Routing Settings</source>
         <translation type="unfinished">ரூட்டிங் அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">கிளிப்போர்டிலிருந்து சுயவிவரத்தைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
         <source>Delete</source>
         <translation type="unfinished">நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
         <source>Debug Info</source>
         <translation type="unfinished">பிழைத்திருத்த தகவல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR குறியீடு மற்றும் இணைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
         <source>Copy Link</source>
         <translation type="unfinished">இணைப்பை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">சோதனை முடிவை அழிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703"/>
         <source>Export %1 config</source>
         <translation type="unfinished">ஏற்றுமதி% 1 கட்டமைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">போக்குவரத்தை மீட்டமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QR குறியீட்டை ஸ்கேன் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">சிஸ்டம் ப்ராக்ஸியை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Disable</source>
         <translation type="unfinished">முடக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">நகல்களை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
         <source>fake</source>
         <translation type="unfinished">போலி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
         <source>Move</source>
         <translation type="unfinished">நகர்த்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
         <source>Start with system</source>
         <translation type="unfinished">அமைப்புடன் தொடங்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
         <source>Remember last profile</source>
         <translation type="unfinished">கடைசி சுயவிவரத்தை நினைவில் கொள்க</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">மற்ற சாதனங்களை இணைக்க அனுமதிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">கிடைக்கவில்லை என்பதை அகற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
         <source>Full Test</source>
         <translation type="unfinished">முழு சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">ஹாட்கி அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
         <source>Select All</source>
         <translation type="unfinished">அனைத்தையும் தேர்ந்தெடுக்கவும்</translation>
     </message>
@@ -3629,105 +3630,105 @@ Are you sure?</source>
         <translation type="obsolete">தனிப்பயன் இணைப்புகளை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
         <source>Copy links</source>
         <translation type="unfinished">இணைப்புகளை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
         <source>Url Test</source>
         <translation type="unfinished">Url சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">டொமைனைத் தீர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">விண்டோஸ் உயர்த்தப்பட்ட பணியை பதிவு செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
         <source>About</source>
         <translation type="unfinished">பற்றி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
         <source>Statistics</source>
         <translation type="unfinished">புள்ளிவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Check for updates</source>
         <translation type="unfinished">புதுப்பிப்புகளைச் சரிபார்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Toggle filter</source>
         <translation type="unfinished">வடிகட்டியை மாற்று</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254"/>
         <source>Unselect</source>
         <translation type="unfinished">தேர்வுநீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213"/>
         <source>Information</source>
         <translation type="unfinished">தகவல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Nekoray இணைப்புகளை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Tun ஐ இயக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395"/>
         <source>Clone</source>
         <translation type="unfinished">குளோன்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
         <source>Update subscription</source>
         <translation type="unfinished">சந்தாவைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
         <source>Resolve domain</source>
         <translation type="unfinished">டொமைனைத் தீர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
         <source>Tun Settings</source>
         <translation type="unfinished">துன் அமைப்புகளை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
         <source>Restart Program</source>
         <translation type="unfinished">மறுதொடக்கம் நிரல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">கட்டமைப்பு கோப்புறையைத் திறக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">ப்ராக்ஸியை மறுதொடக்கம் செய்யுங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
         <source>Stop Testing</source>
         <translation type="unfinished">சோதனையை நிறுத்து</translation>
     </message>
@@ -3736,7 +3737,7 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Url சோதனை குழு</translation>
     </message>
@@ -3745,7 +3746,7 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">செல்லாததை அகற்று</translation>
     </message>
@@ -3754,84 +3755,84 @@ Are you sure?</source>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">வேக சோதனை மின்னோட்டம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
         <source>Full test Selected</source>
         <translation type="unfinished">முழு சோதனை தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
         <source>Download test Selected</source>
         <translation type="unfinished">பதிவிறக்கம் தேர்வு தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">பதிவேற்ற சோதனை தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
         <source>Country test Selected</source>
         <translation type="unfinished">நாடு தேர்வு தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">எளிய பதிவிறக்க சோதனை தேர்ந்தெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">வேக சோதனை குழு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180"/>
         <source>Hide window</source>
         <translation type="unfinished">சாளரத்தை மறை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185"/>
         <source>Add profile from File</source>
         <translation type="unfinished">கோப்பிலிருந்து சுயவிவரத்தைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236"/>
         <source>Add new Group</source>
         <translation type="unfinished">புதிய குழுவைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
         <source>Security Settings</source>
         <translation type="unfinished">பாதுகாப்பு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
         <source>Unavailable</source>
         <translation type="unfinished">கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">தானாக உருட்டும் பதிவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
         <source>Select Proxy</source>
         <translation type="unfinished">ப்ராக்ஸியைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">உள்வரும் ப்ராக்ஸி வகை:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்களைத் திருத்தவும்</translation>
     </message>
@@ -3840,25 +3841,25 @@ Are you sure?</source>
         <translation type="obsolete">ரூட்டிங் சுயவிவரங்களைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
         <source>Update Response</source>
         <translation type="unfinished">பதிலைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள் எதுவும் புதுப்பிக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">% 1 ரூட்டிங் சுயவிவரங்கள் புதுப்பிக்கப்பட்டது</translation>
     </message>
@@ -3867,12 +3868,12 @@ Are you sure?</source>
         <translation type="obsolete">RuleSet வரைபடத்தைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">விதிகளை புதுப்பிக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">விதிகள் வெற்றிகரமாக புதுப்பிக்கப்பட்டன</translation>
     </message>
@@ -3881,370 +3882,370 @@ Are you sure?</source>
         <translation type="obsolete">RuleSet தற்காலிக சேமிப்பைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">தவறான JSON அணிவரிசை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">வழங்கப்பட்ட உள்ளீட்டை சரியான வழி விதி வரிசைக்கு பாகுபடுத்த முடியாது:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">MacOS இல் பயன்படுத்த அனுமதி இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரத்தை இறக்குமதி செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
         <source>From clipboard</source>
         <translation type="unfinished">கிளிப்போர்டில் இருந்து</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
         <source>From file</source>
         <translation type="unfinished">கோப்பிலிருந்து</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">கிளிப்போர்டிலிருந்து இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436"/>
         <source>Imported from %1</source>
         <translation type="unfinished">% 1 இலிருந்து இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">ரூட்டிங் சுயவிவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">ரூல்செட் வரைபடம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">ரூல்செட் கேச்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Rulesets தற்காலிக சேமிப்பு புதுப்பிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">RuleSet தற்காலிக சேமிப்பை அழிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">AdBlock ஐ இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
         <source>Error</source>
         <translation type="unfinished">பிழை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">துன் அமைப்புகள் மாற்றப்பட்டன</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">செயல்பாட்டிற்கு Tun ஐ மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286"/>
         <source>Confirmation</source>
         <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">அமைப்புகள் மாற்றப்பட்டன, ப்ராக்ஸியை மீண்டும் தொடங்கவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067"/>
         <source>Settings changed</source>
         <translation type="unfinished">அமைப்புகள் மாற்றப்பட்டன</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">செயல்பாட்டிற்கு நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">% 1 சுயவிவரம்(கள்) இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">பயனர் சிறப்புரிமைக் கோரிக்கையை தேர்வு செய்யவில்லை, சில அம்சங்கள் வேலை செய்யாமல் போகலாம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">தயவு செய்து அடிப்படை உரிமைகளை வழங்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842"/>
         <source>Not Running</source>
         <translation type="unfinished">ஓடவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">வரிசைப்படுத்த முடியாத அளவுக்கு குழு பெரிதாக உள்ளது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">குளோன்% 1 உருப்படி(கள்)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">நகல்களைக் கண்டறிய முடியாத அளவுக்கு குழு மிகப் பெரியது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451"/>
         <source> Confirmation </source>
         <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 உருப்படி(களை) அகற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 உருப்படி(களை) அகற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">% 1 உருப்படி(கள்) நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR குறியீடு கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">திரையைப் பிடிக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 கிடைக்காத உருப்படியை(களை) அகற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">% 1 செல்லாத உருப்படியை(களை) அகற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">டொமைன் சர்வர் முகவரிகளை அவற்றின் தீர்க்கப்பட்ட ஐபிகளுடன் மாற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204"/>
         <source>Clear</source>
         <translation type="unfinished">தெளிவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட குழுவை நீக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட குழுவைத் திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287"/>
         <source>Remove %1?</source>
         <translation type="unfinished">% 1ஐ அகற்றவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019"/>
         <source>Cannot start</source>
         <translation type="unfinished">தொடங்க முடியாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">கடைசிப் பதிவிறக்கக் கோரிக்கை இன்னும் முடிவடையவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">புதுப்பிப்பு சொத்துகளைப் பதிவிறக்குவதில் தோல்வி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">சுயவிவர சோதனை நிறுத்தப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] சோதனைப் பிழை: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">ஏதோ தவறாக உள்ளது, பொருள் கண்டுபிடிக்க முடியவில்லை!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">சுயவிவர மேலாளர் தரவு சிதைந்துள்ளது, மீண்டும் முயற்சிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">கடைசி url சோதனை முழுமையாக வெளியேறவில்லை, காத்திருக்கவும்.இது தொடர்ந்தால், நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">சோதனை கட்டமைப்பை உருவாக்க முடியவில்லை:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URL சோதனை முடிந்தது!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">சோதனைகளை நிறுத்த முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302"/>
         <source>Testing</source>
         <translation type="unfinished">சோதனை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">கடைசி வேக சோதனை முழுமையாக வெளியேறவில்லை, காத்திருக்கவும்.இது தொடர்ந்தால், நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">வேக சோதனை முடிந்தது!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">சுயவிவர வேக சோதனை நிறுத்தப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] வேக சோதனை பிழை: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">நீங்கள் முதலில் ஹைஜாக் DNS சர்வரை இயக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">சிஸ்டம் டிஎன்எஸ் அமைப்பதில் தோல்வி:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">சாதனம் தவறாக செயல்படும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">VPNஐத் தொடங்குவதில் சிக்கல் இருந்தால், இங்கே கோர் செயல்முறையை வலுக்கட்டாயமாக மீட்டமைக்கலாம், பின்னர் சுயவிவரத்தை மீண்டும் தொடங்க முயற்சிக்கவும்.பிழை% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Reset</source>
         <translation type="unfinished">மீட்டமை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663"/>
         <source>Cancel</source>
         <translation type="unfinished">ரத்து செய்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">மற்றொரு சுயவிவரம் தொடங்குகிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">மற்றொரு சுயவிவரம் நிறுத்தப்படுகிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">நீண்ட நேரம் பதில் இல்லை என்றால், மென்பொருளை மறுதொடக்கம் செய்ய பரிந்துரைக்கப்படுகிறது.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">சுயவிவரம் % 1ஐத் தொடங்குகிறது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">சுயவிவரம்% 1ஐத் தொடங்குவதில் தோல்வி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
         <source>Stop return error</source>
         <translation type="unfinished">ஸ்டாப் ரிட்டர்ன் பிழை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">சுயவிவரத்தை நிறுத்துகிறது% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">நிறுத்த முடியவில்லை, நிரலை மீண்டும் தொடங்கவும்.</translation>
     </message>
@@ -4256,27 +4257,27 @@ Are you sure?</source>
         <translation type="obsolete">செல்லாதது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="768"/>
         <source>Type</source>
         <translation type="unfinished">வகை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="770"/>
         <source>Address</source>
         <translation type="unfinished">முகவரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="772" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="772"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="774" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="774"/>
         <source>Test Result</source>
         <translation type="unfinished">சோதனை முடிவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="776" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="776"/>
         <source>Traffic</source>
         <translation type="unfinished">போக்குவரத்து</translation>
     </message>
@@ -4284,22 +4285,22 @@ Are you sure?</source>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">பயனர் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
         <translation type="unfinished">புதிய கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
         <translation type="unfinished">கடவுச்சொல்லை உறுதிப்படுத்தவும்</translation>
     </message>
@@ -4307,12 +4308,12 @@ Are you sure?</source>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">% 1ஐ அகற்றவா?</translation>
     </message>
@@ -4320,7 +4321,7 @@ Are you sure?</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
         <source>Security Settings</source>
         <translation type="unfinished">பாதுகாப்பு அமைப்புகள்</translation>
     </message>
@@ -4328,20 +4329,20 @@ Are you sure?</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="468" />
+        <location filename="../../src/gharqad/main.cpp" line="468"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
         <source>Failed to register %1. Error: %2</source>
         <translation type="unfinished">% 1ஐ பதிவு செய்ய முடியவில்லை.பிழை:% 2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
         <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished">% 1ஐப் பதிவுநீக்க முடியவில்லை.பிழை:% 2</translation>
     </message>
@@ -4353,60 +4354,60 @@ Are you sure?</source>
         <translation type="obsolete">தனிப்பயன் கட்டமைப்புகளுடன் துன் பயன்முறையைப் பயன்படுத்த முடியாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829"/>
         <source>Decrypted happ:// link</source>
         <translation type="unfinished">மறைகுறியாக்கப்பட்ட happ:// இணைப்பு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833"/>
         <source>Failed to decrypt happ:// link</source>
         <translation type="unfinished">happ:// இணைப்பை மறைகுறியாக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">சந்தாவைக் கோருகிறது: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">சந்தா % 1 பிழை:% 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">சந்தா சுயவிவர தலைப்பு: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">சந்தா கோரிக்கை முடிந்தது: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">சர்வர்களை அழிக்கிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">சந்தா தரவை செயலாக்குகிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">---% 1 ப்ராக்ஸிகளை கைவிடவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">செயல்முறை முடிந்தது, விண்ணப்பிக்கிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- % 1 ப்ராக்ஸிகள் சேர்க்கப்பட்டது</translation>
@@ -4426,13 +4427,13 @@ Deleted %3 Profiles:
         <translation type="obsolete">ஒன்றுமில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969"/>
         <source>Change of %1:</source>
         <translation type="unfinished">% 1 இன் மாற்றம்:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956"/>
         <source>Default</source>
         <translation type="unfinished">இயல்புநிலை</translation>
     </message>
@@ -4441,49 +4442,49 @@ Deleted %3 Profiles:
         <translation type="obsolete">கோப்பை திறக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214" />
+        <location filename="../../src/gharqad/main.cpp" line="214"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">செயின் ப்ராக்ஸி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="231" />
+        <location filename="../../src/gharqad/main.cpp" line="231"/>
         <source>Custom</source>
         <translation type="unfinished">தனிப்பயன்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232" />
+        <location filename="../../src/gharqad/main.cpp" line="232"/>
         <source>Extra Core</source>
         <translation type="unfinished">கூடுதல் கோர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="129"/>
         <source>Select</source>
         <translation type="unfinished">தேர்ந்தெடு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">பதிலாள்:% 1
 நேரடி:% 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">கோர் வெளியேறியது, சுத்தம் செய்கிறது...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">கோர் அடிக்கடி வெளியேறுகிறது, இந்த சுயவிவரத்தை தானாக மறுதொடக்கம் செய்வதை நிறுத்தவும்.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">மையத்தை மீண்டும் தொடங்குகிறது ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="372" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="372"/>
         <source>System</source>
         <translation type="unfinished">அமைப்பு</translation>
     </message>
@@ -4498,42 +4499,42 @@ How to update?</source>
 எப்படி மேம்படுத்துவது?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>Subscription URL Detected</source>
         <translation type="unfinished">சந்தா URL கண்டறியப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
         <source>How would you like to import this subscription?</source>
         <translation type="unfinished">இந்த சந்தாவை எப்படி இறக்குமதி செய்ய விரும்புகிறீர்கள்?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">புதிய சந்தா குழுவை உருவாக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
         <source>Update existing group</source>
         <translation type="unfinished">ஏற்கனவே உள்ள குழுவைப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
         <source>Import as proxy links</source>
         <translation type="unfinished">ப்ராக்ஸி இணைப்புகளாக இறக்குமதி செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
         <source>Group name:</source>
         <translation type="unfinished">குழுவின் பெயர்:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
         <source>Auto-detect from subscription</source>
         <translation type="unfinished">சந்தாவிலிருந்து தானாகக் கண்டறிதல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
         <source>Import</source>
         <translation type="unfinished">இறக்குமதி</translation>
     </message>
@@ -4554,45 +4555,45 @@ How to update?</source>
         <translation type="obsolete">குழுவின் பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">பயன்படுத்தப்பட்டது: % 1 மீதமுள்ளது: % 2 காலாவதியாகும்: % 3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383"/>
         <source>Download Profiles</source>
         <translation type="unfinished">சுயவிவரங்களைப் பதிவிறக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">சுயவிவரப் பிழையைக் கோருகிறது: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">% 1 பிரதிகள் நீக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">நீக்கப்பட்டது % 1 தவறானது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">நீக்கப்பட்டது % 1 கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">விதி தொகுப்புகளை சரிபார்க்கவும்:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">விதி-தொகுப்பு பட்டியல் பிழையை கோருகிறது: % 1</translation>
     </message>
@@ -4601,7 +4602,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">ஐபி முகவரி:% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">உள்வரும் ஐபி:% 1</translation>
     </message>
@@ -4610,69 +4611,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">உள்வரும்:% 2 % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">உள்வரும்: ஆஃப்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">சுயவிவரங்களை குழுவிற்கு நகர்த்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546"/>
         <source>Config copied</source>
         <translation type="unfinished">கட்டமைப்பு நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558"/>
         <source>Copy core config</source>
         <translation type="unfinished">மைய கட்டமைப்பை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
         <source>Copy test config</source>
         <translation type="unfinished">சோதனை கட்டமைப்பை நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">சரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
         <source>Update</source>
         <translation type="unfinished">புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920"/>
         <source>Not official support platform</source>
         <translation type="unfinished">அதிகாரப்பூர்வ ஆதரவு தளம் அல்ல</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">புதுப்பிப்பு பிழையை கோருகிறது: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
         <source>No update</source>
         <translation type="unfinished">புதுப்பிப்பு இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4681,42 +4682,42 @@ Release note:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005"/>
         <source>Close</source>
         <translation type="unfinished">மூடு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007"/>
         <source>Open in browser</source>
         <translation type="unfinished">உலாவியில் திறக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">புதுப்பிப்பு தயாராக உள்ளது, நிறுவ மீண்டும் தொடங்கவா?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">அணுகல் மறுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383"/>
         <source>Select a Folder</source>
         <translation type="unfinished">ஒரு கோப்புறையைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
         <source>Application Rules</source>
         <translation type="unfinished">விண்ணப்ப விதிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR களை விலக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
         <source>Cancel</source>
         <translation type="unfinished">ரத்து செய்</translation>
     </message>
@@ -4731,77 +4732,77 @@ Release note:
         <translation type="obsolete">கூடுதல் கோர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="160"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">பதிலாள்: ⚡%1 📦%3
 நேரடி: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="464" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="464"/>
         <source>Invalid</source>
         <translation type="unfinished">செல்லாதது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="50"/>
         <source>KCP Settings</source>
         <translation type="unfinished">KCP அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
         <source>TTI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
         <source>Uplink Capacity</source>
         <translation type="unfinished">அப்லிங்க் திறன்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
         <source>Downlink Capacity</source>
         <translation type="unfinished">டவுன்லிங்க் கொள்ளளவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
         <source>Congestion</source>
         <translation type="unfinished">நெரிசல்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
         <source>Read Buffer Size</source>
         <translation type="unfinished">பஃபர் அளவைப் படிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
         <source>Write Buffer Size</source>
         <translation type="unfinished">தாங்கல் அளவை எழுதவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83"/>
         <source>Header Type</source>
         <translation type="unfinished">தலைப்பு வகை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84"/>
         <source>Seed</source>
         <translation type="unfinished">விதை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">தவறான பதில் கிடைத்தது: % 1
 பேலோட் கோரிக்கை:% 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
         <source>Imported</source>
         <translation type="unfinished">இறக்குமதி செய்யப்பட்டது</translation>
     </message>
@@ -4809,92 +4810,92 @@ Request payload was: %2</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172" />
+        <location filename="../../src/gharqad/main.cpp" line="172"/>
         <source>Cancel</source>
         <translation type="unfinished">ரத்து செய்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173" />
+        <location filename="../../src/gharqad/main.cpp" line="173"/>
         <source>Apply</source>
         <translation type="unfinished">விண்ணப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174" />
+        <location filename="../../src/gharqad/main.cpp" line="174"/>
         <source>Yes</source>
         <translation type="unfinished">ஆம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175" />
+        <location filename="../../src/gharqad/main.cpp" line="175"/>
         <source>No</source>
         <translation type="unfinished">இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176" />
+        <location filename="../../src/gharqad/main.cpp" line="176"/>
         <source>OK</source>
         <translation type="unfinished">சரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177" />
+        <location filename="../../src/gharqad/main.cpp" line="177"/>
         <source>Defaults</source>
         <translation type="unfinished">இயல்புநிலைகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178" />
+        <location filename="../../src/gharqad/main.cpp" line="178"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">இயல்புநிலைகளை மீட்டமை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179" />
+        <location filename="../../src/gharqad/main.cpp" line="179"/>
         <source>Discard</source>
         <translation type="unfinished">நிராகரி</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181" />
+        <location filename="../../src/gharqad/main.cpp" line="181"/>
         <source>Undo</source>
         <translation type="unfinished">செயல்தவிர்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182" />
+        <location filename="../../src/gharqad/main.cpp" line="182"/>
         <source>Redo</source>
         <translation type="unfinished">மீண்டும் செய்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183" />
+        <location filename="../../src/gharqad/main.cpp" line="183"/>
         <source>Cut</source>
         <translation type="unfinished">வெட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184" />
+        <location filename="../../src/gharqad/main.cpp" line="184"/>
         <source>Copy</source>
         <translation type="unfinished">நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185" />
+        <location filename="../../src/gharqad/main.cpp" line="185"/>
         <source>Paste</source>
         <translation type="unfinished">ஒட்டவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186" />
+        <location filename="../../src/gharqad/main.cpp" line="186"/>
         <source>Delete</source>
         <translation type="unfinished">நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187" />
+        <location filename="../../src/gharqad/main.cpp" line="187"/>
         <source>Select All</source>
         <translation type="unfinished">அனைத்தையும் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188" />
+        <location filename="../../src/gharqad/main.cpp" line="188"/>
         <source>Stop</source>
         <translation type="unfinished">நிறுத்து</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189" />
+        <location filename="../../src/gharqad/main.cpp" line="189"/>
         <source>Clear</source>
         <translation type="unfinished">தெளிவு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190" />
+        <location filename="../../src/gharqad/main.cpp" line="190"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">இணைப்பு இருப்பிடத்தை நகலெடுக்கவும்</translation>
     </message>
@@ -4902,7 +4903,7 @@ Request payload was: %2</source>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
         <source>You can not input space characters here.</source>
         <translation type="unfinished">நீங்கள் இங்கு ஸ்பேஸ் எழுத்துக்களை உள்ளிட முடியாது.</translation>
     </message>
@@ -4910,164 +4911,164 @@ Request payload was: %2</source>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
         <source>Route Profile</source>
         <translation type="unfinished">பாதை சுயவிவரம்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
         <source>General</source>
         <translation type="unfinished">பொது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
         <source>Default outbound</source>
         <translation type="unfinished">இயல்புநிலை வெளிச்செல்லும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="319"/>
         <source>Name</source>
         <translation type="unfinished">பெயர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="187"/>
         <source>Proxy</source>
         <translation type="unfinished">பதிலாள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="217"/>
         <source>Direct</source>
         <translation type="unfinished">நேரடி</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="157"/>
         <source>Block</source>
         <translation type="unfinished">தடு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="96"/>
         <source>Update url</source>
         <translation type="unfinished">URL ஐப் புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="130"/>
         <source>Skip update</source>
         <translation type="unfinished">புதுப்பிப்பைத் தவிர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="137"/>
         <source>Update manually</source>
         <translation type="unfinished">கைமுறையாக புதுப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="151"/>
         <source>Basic</source>
         <translation type="unfinished">அடிப்படை</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="248"/>
         <source>Advanced</source>
         <translation type="unfinished">மேம்பட்டது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="257"/>
         <source>Import JSON</source>
         <translation type="unfinished">JSON ஐ இறக்குமதி செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="267"/>
         <source>Rules</source>
         <translation type="unfinished">விதிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="279"/>
         <source>New</source>
         <translation type="unfinished">புதியது</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="286"/>
         <source>Move Up</source>
         <translation type="unfinished">மேலே நகர்த்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="293"/>
         <source>Move Down</source>
         <translation type="unfinished">கீழே நகர்த்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="300"/>
         <source>Delete</source>
         <translation type="unfinished">நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="310"/>
         <source>Rule Attributes</source>
         <translation type="unfinished">விதி பண்புக்கூறுகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="329"/>
         <source>Attribute</source>
         <translation type="unfinished">பண்பு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
         <source>Name_Placeholder</source>
         <translation type="unfinished">பெயர்_இடம் வைத்திருப்பவர்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
         <source>Notes</source>
         <translation type="unfinished">குறிப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487"/>
         <source>Invalid rules</source>
         <translation type="unfinished">தவறான விதிகள்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="320"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">சில விதிகளைச் சேர்க்க முடியவில்லை:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">தவறான JSON அணிவரிசை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="376"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">வழங்கப்பட்ட உள்ளீட்டை சரியான வழி விதி வரிசைக்கு பாகுபடுத்த முடியாது:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459"/>
         <source>Invalid operation</source>
         <translation type="unfinished">தவறான செயல்பாடு</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="459"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">வெற்றுப் பெயருடன் ரூட் சுயவிவரத்தை உருவாக்க முடியாது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">காலியான பாதை சுயவிவரம்</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="475"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">சரியான விதிகள் எதுவும் சுயவிவரத்தில் இல்லை</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="487"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">சில விதிகளைச் சேர்க்க முடியவில்லை, சேமிப்பதற்கு முன் அவற்றைச் சரிசெய்யவும்:</translation>
@@ -5076,42 +5077,42 @@ Request payload was: %2</source>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
         <translation type="unfinished">பாதுகாப்பு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
         <source>Lock Actions</source>
         <translation type="unfinished">பூட்டு நடவடிக்கைகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
         <source>Lock Settings</source>
         <translation type="unfinished">பூட்டு அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
         <source>Lock Startup</source>
         <translation type="unfinished">துவக்கத்தை பூட்டு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
         <source>Delete Users</source>
         <translation type="unfinished">பயனர்களை நீக்கு</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
         <source>Edit User Roles</source>
         <translation type="unfinished">பயனர் பாத்திரங்களைத் திருத்தவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
         <source>Change UI Password</source>
         <translation type="unfinished">UI கடவுச்சொல்லை மாற்றவும்</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">பதிலாள் நற்சான்றிதழ்களை அமைக்கவும்</translation>
     </message>
@@ -5119,12 +5120,12 @@ Request payload was: %2</source>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
         <source>Exiting %1</source>
         <translation type="unfinished">வெளியேறுகிறது% 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
         <source>Starting %1</source>
         <translation type="unfinished">தொடக்கம்% 1</translation>
     </message>
@@ -5132,14 +5133,14 @@ Request payload was: %2</source>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
         <source>Proxy</source>
         <translation type="unfinished">பதிலாள்</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
         <source>Direct</source>
         <translation type="unfinished">நேரடி</translation>
     </message>
@@ -5156,13 +5157,13 @@ Request payload was: %2</source>
         <translation type="obsolete">வழங்கப்பட்ட உள்ளீட்டை சரியான வழி விதி வரிசைக்கு பாகுபடுத்த முடியாது:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458"/>
         <source>Fetching information</source>
         <translation type="unfinished">தகவலைப் பெறுகிறது</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583"/>
         <source>Download Profiles</source>
         <translation type="unfinished">சுயவிவரங்களைப் பதிவிறக்கவும்</translation>
     </message>
@@ -5170,7 +5171,7 @@ Request payload was: %2</source>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
