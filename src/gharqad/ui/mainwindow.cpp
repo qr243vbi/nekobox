@@ -790,9 +790,6 @@ MainWindow::MainWindow(QWidget *parent)
         move(x, y);
       }
     }
-    if (Configs::windowSettings->maximized) {
-      showMaximized();
-    }
     Configs::tableSettings.Load(Configs::windowSettings);
   }
 
@@ -1765,7 +1762,11 @@ skip_updater_hide:
 
   if ((!Configs::dataStore->flag_tray) &&
       (!Configs::windowSettings->auto_hide)) {
-    show();
+    if (Configs::windowSettings->maximized) {
+      showMaximized();
+    } else {
+      show();
+    }
   } else {
     hide();
   }
