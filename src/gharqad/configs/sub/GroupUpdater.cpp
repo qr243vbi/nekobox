@@ -707,6 +707,7 @@ void RawUpdater::update(const QString &str3) {
   QJsonDocument jsonDocument;
   bool json_ok;
   QJsonObject json;
+
   auto addFullJsonProxy = [&](const QJsonObject &json, const QString &remarks) {
     ent = Configs::ProfileManager::NewProxyEntity("custom");
     auto bean = ent->unlock(ent->CustomBean());
@@ -738,17 +739,6 @@ ret_loop:
     str = stack.takeFirst();
   } else {
     return;
-  }
-
-  if (str.startsWith("happ://")) {
-    auto decrypted = HappDecrypt::decryptLink(str);
-    if (!decrypted.isEmpty()) {
-      MW_show_log("<<<<<<<< " + QObject::tr("Decrypted happ:// link"));
-      str = decrypted;
-    } else {
-      MW_show_log("<<<<<<<< " + QObject::tr("Failed to decrypt happ:// link"));
-      goto ret_loop;
-    }
   }
 
   {
@@ -812,6 +802,7 @@ ret_loop:
     }
   }
 
+
   if (scheme_index == -1) {
   jsonDocument = QJsonDocument::fromJson(str.toUtf8(), &error);
   json_ok = error.error == error.NoError;
@@ -868,6 +859,9 @@ ret_loop:
     goto parse_json;
   }
 
+#ifdef DEBUG_MODE
+  qDebug() << "I am here?";
+#endif
 
   if (scheme_index == -1){
     // Clash
@@ -881,14 +875,26 @@ ret_loop:
     }
   }
 
+#ifdef DEBUG_MODE
+  qDebug() << "Multi Line here?";
+#endif
+
   // Multi line
   if (str.count("\n") > 0) {
+#ifdef DEBUG_MODE
+  qDebug() << "Yes, it is";
+#endif
     auto list = Disect(str);
     for (const auto &str2 : list) {
       stack << str2.trimmed();
     }
     goto ret_loop;
   }
+#ifdef DEBUG_MODE
+  else {
+    qDebug() << "No, it isn't";
+  }
+#endif
 
 parse_json:
 
@@ -915,6 +921,17 @@ parse_json:
   if (scheme_index > 0) {
     scheme = str.sliced(0, scheme_index).toLower();
   } else {
+    goto ret_loop;
+  }
+
+  if (scheme == "happ") {
+    auto decrypted = HappDecrypt::decryptLink(str);
+    if (!decrypted.isEmpty()) {
+      MW_show_log("<<<<<<<< " + QObject::tr("Decrypted happ:// link"));
+      stack << decrypted;
+    } else {
+      MW_show_log("<<<<<<<< " + QObject::tr("Failed to decrypt happ:// link"));
+    }
     goto ret_loop;
   }
 
@@ -1179,7 +1196,7 @@ void RawUpdater::updateSingBox(const QJsonObject &json, const QString &name) {
 
 bool RawUpdater::updateWireguardFileConfig(const QString &str) {
   auto ent = Configs::ProfileManager::NewProxyEntity("wireguard");
-  auto ok = ent->unlock(ent->WireguardBean())->TryParseLink(str);
+  auto ok = ent->unlock(ent->WireguardBean())->parseWgConfig(str);
   if (!ok)
     return false;
   AddProxy(ent);

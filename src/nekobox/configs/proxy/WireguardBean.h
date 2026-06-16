@@ -93,7 +93,6 @@ namespace Configs {
 
         virtual QString type() const override;
 
-    private:
         bool parseWgConfig(QString config);
     };
 } // namespace Configs
