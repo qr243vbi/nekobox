@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    
+        
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @font-face {
+            font-family: "Pretendard-Regular";
+            src: url('https://qr243vbi.github.io/nekobox/fonts/Pretendard-Regular.woff') format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+        body {
+            font-family: "Pretendard-Regular", sans-serif;
+        }
+    </style>
+
+    
+        <meta name="description" content="NekoBox" />
+    
+
+    <title>Introduction | NekoBox</title>
+
+    
+    
+
+      <!-- SEO: Open Graph / Twitter Card -->
+      <meta property="og:title" content="Introduction | NekoBox" />
+      <meta property="og:description" content="Introduction of NekoBox" />
+      <meta property="og:url" content="https://qr243vbi.github.io/nekobox" />
+      <meta property="og:type" content="website" />
+      
+      <meta property="og:image" content="https://qr243vbi.github.io/nekobox/images/NekoBox.png" />
+      
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="NekoBox" />
+      <meta name="twitter:description" content="Introduction of NekoBox" />
+      
+      
+      
+      <meta name="twitter:image" content="https://qr243vbi.github.io/nekobox/images/NekoBox.png" />
+      
+
+      <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://qr243vbi.github.io/nekobox/css/main.css">
+    <link rel="stylesheet" href="https://qr243vbi.github.io/nekobox/css/font-awesome.min.css">
+
+    <script src="https://qr243vbi.github.io/nekobox/js/mermaid.min.js"></script>
+    <script src="https://qr243vbi.github.io/nekobox/js/copy_code.js"></script>
+    <script src="https://qr243vbi.github.io/nekobox/js/copy_heading_link.js"></script>
+
+    
+    
+</head>
+<body>
+    
+
+<!-- Search Modal -->
+<input type="checkbox" id="search-modal" class="modal-toggle" />
+<div class="modal modal-top sm:modal-middle">
+    <div class="modal-box relative">
+        <label for="search-modal" class="btn btn-sm btn-ghost absolute right-2 top-2">✕</label>
+        <div class="search-container py-4 h-96">
+            <input id="search" type="search" placeholder="Search.." class="input input-bordered w-full bg-transparent focus:outline-none">
+            <div class="search-results overflow-y-auto h-full no-scrollbar">
+                <div class="search-results__header my-2 text-xs"></div>
+                <ul class="search-results__items menu p-2"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col pt-16">
+            
+<div class="navbar opacity-95 fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-500/15 backdrop-blur-3xl">
+    <!-- Mobile hamburger -->
+    <div class="flex-none lg:hidden">
+        <label for="my-drawer-2" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </label>
+    </div>
+    <!-- Logo -->
+    <div class="flex-1">
+        <a href="https://qr243vbi.github.io/nekobox" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
+            
+                <img src="https://qr243vbi.github.io/nekobox/images/NekoBox.png" alt="NekoBox" class="h-18 w-auto" />
+            
+        </a>
+    </div>
+    <!-- Desktop Menu -->
+    <div class="flex-none hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 items-center">
+            
+                
+                    
+                        <li>
+                            
+                                
+                            
+                            <a class="btn btn-ghost hover:no-underline" href="https://qr243vbi.github.io/nekobox/introduction">
+                                <i class="bi bi-book"></i>
+                                Documents
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            
+                                
+                            
+                            <a class="btn btn-ghost hover:no-underline" href="https://github.com/qr243vbi/NekoBox">
+                                <i class="bi bi-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                    
+                
+            
+            
+
+            
+            <li>
+                <label class="swap swap-rotate btn btn-ghost">
+                  <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color"/>
+                  <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" /></svg>
+                  <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
+                </label>
+            </li>
+            
+
+        </ul>
+    </div>
+</div>
+
+
+            
+            
+            <div class="p-8 w-full max-w-7xl mx-auto lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
+                <main class="prose w-full max-w-7xl mx-auto">
+            
+                    
+    <div class="mb-12 pb-4 border-b border-gray-500/15">
+        <h1>Introduction</h1>
+        <p class="text-gray-500">Introduction of NekoBox</p>
+    </div>
+    <h1 id="nyamebox-nekobox-for-pc"><a href="https://github.com/qr243vbi/nekobox">NyameBox</a> / <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> for PC</h1>
+<p>Sing-Box command line mode is available now! Just type for additional information: </br>
+<code>nekobox_core sing-box --help</code></p>
+<p>Qt based Desktop cross-platform GUI proxy utility, empowered by <a href="https://github.com/SagerNet/sing-box">Sing-box</a> <br/>
+Supports Windows 11/10 (arm64, x86_64, x86) / Linux  out of the box.</p>
+<img alt="image" src="https://raw.githubusercontent.com/qr243vbi/qr243vbi_images/refs/heads/nekobox/nekobox.png" />
+<h3 id="github-releases-portable-zips-windows-installers-appimages">GitHub Releases (Portable ZIPs, Windows installers, AppImages)</h3>
+<p><a href="https://github.com/qr243vbi/nekobox/releases">GitHub Release</a></p>
+<h3 id="winget-package">WinGet Package</h3>
+<p><a href="https://winget.ragerworks.com/package/qr243vbi.NekoBox">WinGet Page</a></p>
+<h3 id="chocolatey-package">Chocolatey Package</h3>
+<p><a href="https://community.chocolatey.org/packages/nekobox">Chocolatey Version</a></p>
+<h3 id="scoop-package">Scoop Package</h3>
+<p><a href="https://scoop.sh/#/apps?p=1&amp;q=nekobox">Scoop Version</a> <br/></p>
+<pre><code>scoop bucket add extras
+scoop install extras&#x2F;nekobox
+</code></pre>
+<h3 id="obs-repository">OBS repository</h3>
+<ul>
+<li><a href="https://software.opensuse.org//download.html?project=home%3Aqr243vbi&amp;package=nekobox">NekoBox repository</a> for various linux distributions (<a href="https://get.opensuse.org/">openSUSE</a>, <a href="https://www.mageia.org/">Mageia</a>, <a href="https://www.debian.org/">Debian</a>, <a href="https://www.raspberrypi.com/software/">Raspbian</a>, <a href="https://ubuntu.com/">Ubuntu</a>, <a href="https://www.openeuler.org/">openEuler</a>, <a href="https://archlinux.org/">Arch</a>).</li>
+</ul>
+<h3 id="copr-repository">COPR repository</h3>
+<ul>
+<li><a href="https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/">NekoBox repository</a> for various linux distributions (<a href="https://www.redhat.com">RedHat</a>, <a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.centos.org">Centos</a>, <a href="https://almalinux.org/">Almalinux</a>).</li>
+</ul>
+<h3 id="opensuse-package">openSUSE package</h3>
+<ul>
+<li><a href="https://build.opensuse.org/package/show/openSUSE:Factory/nekobox">source</a></li>
+</ul>
+<pre><code>sudo zypper install -y nekobox
+</code></pre>
+<h3 id="freebsd-package">FreeBSD package</h3>
+<ul>
+<li><a href="https://www.freshports.org/net/nekobox">freshport</a></li>
+</ul>
+<pre><code>sudo pkg install -y nekobox
+</code></pre>
+<h3 id="archlinuxcn-package">ArchlinuxCN package</h3>
+<ul>
+<li><a href="https://build.archlinuxcn.org/packages/#/nekobox">build logs</a></li>
+</ul>
+<pre><code># 1. Add archlinuxcn repo
+sudo tee -a &#x2F;etc&#x2F;pacman.conf &gt;&#x2F;dev&#x2F;null &lt;&lt;&#x27;EOF&#x27;
+
+[archlinuxcn]
+Server = https:&#x2F;&#x2F;repo.archlinuxcn.org&#x2F;$arch
+EOF
+
+# 2. Sync and install keyring
+sudo pacman -Syy archlinuxcn-keyring
+
+# 3. Install NekoBox
+sudo pacman -S nekobox
+</code></pre>
+<h3 id="ubuntu-ppa">Ubuntu PPA</h3>
+<ul>
+<li><a href="https://launchpad.net/~miamosagernaki/+archive/ubuntu/nekobox">nekobox</a></li>
+</ul>
+<pre><code>sudo add-apt-repository ppa:miamosagernaki&#x2F;nekobox
+sudo apt update
+sudo apt-get install -y nekobox
+</code></pre>
+<h3 id="aur-package">Aur package</h3>
+<ul>
+<li><a href="https://aur.archlinux.org/packages/nekobox">nekobox</a></li>
+<li><a href="https://aur.archlinux.org/packages/nekobox-git">nekobox-git</a></li>
+</ul>
+<h3 id="changelog-channel">Changelog Channel</h3>
+<p><a href="https://matrix.to/#/#NyameBox:matrix.org">Matrix Room</a>
+<a href="https://t.me/NyameBox">Telegram Group</a></p>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>Command line tools</li>
+<li><a href="https://openrc.run/">OpenRC</a>/<a href="https://smarden.org/runit/">runit</a>/<a href="https://systemd.io/">systemd</a> integration of nekobox_core</li>
+<li>Terminal UI</li>
+<li>Remote control</li>
+<li>Support for all platforms that supported by sing-box and Qt (except macos &amp; ios)</li>
+<li>Add more protocols that does not supported by upstream sing-box ( currently added: mieru, juicity, trusttunnel, vless encryption, xhttp transport, kcp transport, amnezia, snell (in <a href="https://github.com/qr243vbi/sing-box">core</a>))</li>
+<li>Replace static UI with declarative UI for editing proxies</li>
+<li>Find the best database storage in the world</li>
+</ul>
+<h2 id="supported-protocols">Supported protocols</h2>
+<ul>
+<li>SOCKS</li>
+<li>HTTP(S)</li>
+<li>Shadowsocks</li>
+<li>Trojan</li>
+<li>VMess</li>
+<li>VLESS</li>
+<li>Hysteria 1</li>
+<li>Hysteria 2</li>
+<li>TUIC</li>
+<li>AnyTLS</li>
+<li>ShadowTLS</li>
+<li>Mieru</li>
+<li>Juicity</li>
+<li>TrustTunnel</li>
+<li>Naive</li>
+<li>Wireguard</li>
+<li>AmneziaWG</li>
+<li>Tailscale</li>
+<li>SSH</li>
+<li>Tor</li>
+<li>Custom Outbound</li>
+<li>Custom Config</li>
+<li>Extra Core</li>
+<li>Chaining outbounds</li>
+</ul>
+<h2 id="subscription-formats">Subscription Formats</h2>
+<p>Various formats are supported, including share links, JSON array of outbounds and v2rayN link format as well as limited support for Shadowsocks and Clash formats.</p>
+<p>Full JSON subscriptions are supported for sing-box and v2rayN-style configurations. Imported JSON profiles keep their original routing and DNS rules, work with URL testing and auto testing, and can be used with TUN mode.</p>
+<p>Happ subscription links are supported, including encrypted <code>happ://</code> links. Subscription groups can also be added from browser deeplinks using <code>nekobox://</code> and <code>v2raytun://</code> URLs.</p>
+<p>Supported JSON subscription features include:</p>
+<ul>
+<li>Full sing-box configuration import with inbounds stripped and local application inbounds added at runtime</li>
+<li>V2Ray-style JSON conversion for VLESS, VMess, Trojan, Shadowsocks, Hysteria, Hysteria2, TUIC, direct and block outbounds</li>
+<li>Route rule preservation for full JSON profiles, including profile-specific direct rules in TUN mode</li>
+<li>DNS migration for newer sing-box versions, including fakeip server conversion</li>
+<li>Full JSON URL testing and auto testing</li>
+<li>Hysteria2 detection from v2rayN/Happ-style Hysteria v2 JSON</li>
+</ul>
+<h2 id="credits">Credits</h2>
+<ul>
+<li><a href="https://github.com/starifly/NekoBoxForAndroid">starifly/NekoBoxForAndroid</a></li>
+<li><a href="https://thrift.apache.org/">Thrift</a></li>
+<li><a href="https://github.com/enfein/mbox">enfein/mieru</a></li>
+<li><a href="https://github.com/SagerNet/sing-box">SagerNet/sing-box</a></li>
+<li><a href="https://github.com/Qv2ray/Qv2ray">Qv2ray</a></li>
+<li><a href="https://www.qt.io/">Qt</a></li>
+<li><a href="https://github.com/chai2010/protorpc">protorpc</a></li>
+<li><a href="https://github.com/fktn-k/fkYAML">fkYAML</a></li>
+<li><a href="https://github.com/dlbeer/quirc">quirc</a></li>
+<li><a href="https://github.com/Skycoder42/QHotkey">QHotkey</a></li>
+<li><a href="https://github.com/tonda-kriz/simple-protobuf">simple-protobuf</a></li>
+<li><a href="https://quickjs-ng.github.io/quickjs">quickjs</a></li>
+<li><a href="https://www.nayuki.io/page/qr-code-generator-library">qrcodegen</a></li>
+<li><a href="https://github.com/negrutiu/nsis-install">Install Nsis Github Action</a></li>
+<li><a href="https://github.com/ConorMacBride/install-package">Install Package Github Action</a></li>
+<li><a href="https://github.com/KSXGitHub/github-actions-deploy-aur">Publish Aur Github Action</a></li>
+<li><a href="https://github.com/bwoodsend/setup-winlibs-action">Setup MinGW Github Action</a></li>
+<li><a href="https://github.com/ethanjli/cached-download-action">Cached Download Github Action</a></li>
+<li><a href="https://github.com/ilammy/msvc-dev-cmd">Setup MSVC Github Action</a></li>
+<li><a href="https://github.com/qr243vbi/setup-go">Setup Go Github Action</a></li>
+<li><a href="https://github.com/qr243vbi/setup-ninja">Setup Ninja Github Action</a></li>
+<li><a href="https://github.com/awalsh128/cache-apt-pkgs-action">Cache Apt Pkgs Github Action</a></li>
+<li><a href="https://github.com/jurplel/install-qt-action">Setup Qt Github Action</a></li>
+<li><a href="https://github.com/marketplace/actions/setup-grpc">Setup gRPC Github Action</a></li>
+<li><a href="https://github.com/linuxdeploy/linuxdeploy">linuxdeploy</a></li>
+<li><a href="https://www.mingw-w64.org">MinGW</a></li>
+<li><a href="https://visualstudio.microsoft.com/">MSVC</a></li>
+<li><a href="https://go.dev/">go</a></li>
+<li><a href="https://github.com/ANightly/qt6windows7">qt6windows7</a></li>
+<li><a href="https://github.com/MatsuriDayo/nekoray">MatsuriDayo/nekoray</a></li>
+<li><a href="https://openbuildservice.org/">Open Build Service</a></li>
+<li><a href="https://github.com">Github</a></li>
+<li><a href="https://github.com/thongtech/go-legacy-win7">go-legacy-win7</a></li>
+<li><a href="https://github.com/rainers/cv2pdb">cv2pdb</a></li>
+<li><a href="https://gitlab.kitware.com/cmake/cmake">cmake</a></li>
+<li><a href="https://ninja-build.org/">ninja-build</a></li>
+<li><a href="https://github.com/codeclysm/extract">codeclysm/extract</a></li>
+<li><a href="https://github.com/google/shlex">shlex</a></li>
+<li><a href="https://github.com/dongbum/URLParser">URLParser</a></li>
+<li><a href="https://github.com/NullYing/npipe">npipe</a></li>
+<li><a href="https://copr.fedorainfracloud.org/">Fedora COPR</a></li>
+<li><a href="https://chocolatey.org/">Chocolatey Software</a></li>
+<li><a href="https://github.com/openssl/openssl">OpenSSL</a></li>
+<li><a href="https://appimage.org/">AppImage</a></li>
+<li><a href="https://github.com/VHSgunzo/sharun">sharun</a></li>
+<li><a href="https://aur.archlinux.org/">Aur</a></li>
+<li><a href="https://protobuf.dev/">Protobuf</a></li>
+<li><a href="https://grpc.io/">gRPC</a></li>
+<li><a href="https://github.com/GTRONICK/QSS">GTRONICK-QSS</a></li>
+<li><a href="https://github.com/getavalon/core/tree/master/avalon/style">avalon-qss</a></li>
+<li><a href="https://github.com/xakod/qt-stylesheets">qt-stylesheets</a></li>
+<li><a href="https://github.com/Ktiseos-Nyx/qss_themes.git">qss_themes</a></li>
+<li><a href="https://github.com/Timmifixedit/BidirectionalMap">Timmifixedit/BidirectionalMap</a></li>
+<li><a href="https://www.boost.org/">Boost</a></li>
+<li><a href="https://github.com/AllySummers/docker-cache">AllySummers/docker-cache</a></li>
+<li><a href="https://al.essio.dev/pkg/shellescape">shellescape</a></li>
+<li><a href="https://github.com/Microsoft/go-winio">go-winio</a></li>
+<li><a href="https://github.com/giert/taskmaster">taskmaster</a></li>
+<li><a href="https://github.com/qr243vbi/lmdbxx">lmdbxx</a></li>
+<li><a href="https://www.symas.com/mdb">lmdb</a></li>
+<li><a href="https://github.com/libcpr/cpr">cpr</a></li>
+<li><a href="https://github.com/mohaps/lrucache11">lrucache11</a></li>
+<li><a href="https://github.com/google/leveldb">leveldb</a></li>
+<li><a href="https://github.com/qr243vbi/iniqt.hpp">iniqt</a></li>
+<li><a href="https://github.com/hoaxisr/amnezia-box">amnezia-box</a></li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<p><strong>What is AppImage?</strong> <br/>
+AppImage is a reliable and straightforward method for running applications on a Linux computer without the traditional installation process. You download a single, self-contained file which includes everything the program needs to operate. To use it, you simply grant the file permission to run and double-click it. This approach ensures compatibility across various Linux systems and allows for easy removal—simply delete the file when you no longer need the application, with no residual files left behind on your system.</p>
+<p>AppImage files for the <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> proxy program are available now in the GitHub Release page. Support for the AppImage format begins from version 5.6.10 onwards, offering Linux users an installation-free and portable way to run the application. There are download links within the assets section of the specific release pages starting from that version.</p>
+<p><strong>What is <a href="https://throne.com/landing">Throne</a>?</strong> <br/>
+About Throne</p>
+<p>Throne powers the infrastructure that creators need to better engage and monetize their audiences. Over 1,000,000 creators from 89 countries use Throne's all-in-one wishlist builder to let their fans support them in a privacy-first way. Further, partnerships with 1,000+ brands allow Throne to offer creators and their fans an exceptional commerce experience.</p>
+<p>Started in 2021, Throne has revolutionized creator gifting through its Wishlist product. Today, Throne is leveraging the relationships it has built with creators and brands to give creators even more tools to engage with their fans in a safe, fun and enjoyable way. In this way, Throne is a three-sided marketplace connecting world-class brands with creators and their fans. Throne has offices in the US and Germany.</p>
+<p><strong>Tun mode does not work for me.</strong> <br/>
+If <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> does not work in tun mode, then issue might be with tun configurations. Try to open tun settings, set stack to gvisor or set different tun address (for example, 168.19.0.1/24)</p>
+<p><strong>I have computer with Windows 7, or Window 8, or Windows 8.1. Which version of <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> should I download?</strong> <br/>
+For Windows 7, Windows 8, and Windows 8.1, it is recommended to first install <a href="https://github.com/YuZhouRen86/VxKex-NEXT/releases">VxKex-NEXT</a> from the latest release available. After installing VxKex-NEXT, you should launch NekoBox using the VxVex mode to ensure proper functionality.</p>
+<p><strong>I got the msvcp140.dll not found error on windows</strong> <br/>
+The "msvcp140.dll not found" error usually means that the Microsoft Visual C++ Redistributable is missing or corrupted. To fix this, try install or reinstall the Microsoft Visual C++ Redistributable from the official Microsoft website
+<a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Official Microsoft website for Visual C++ Redistributable</a></p>
+<p><strong>Does <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> really need to be run in UAC mode on Windows?</strong> <br/>
+No, that is not necessary. <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> restarts nekobox_core in UAC mode if TUN mode is selected and <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> is not already running with administrator privileges. <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> requests UAC confirmation to restart the core.</p>
+<p><strong>Is setting the <code>SUID</code> bit really needed on Linux?</strong> <br/>
+No, it is not needed, but if <code>SUID</code> does not configured properly, the <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> will ask for administrator password to order to restart nekobox_core with administrator privilegies, if TUN mode is selected and <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> is not already running as root (or with special capabilities), <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> will ask for password for once, and will not configure <code>SUID</code>.</p>
+<p><strong>Why does my internet stop working after I force quit <a href="https://github.com/qr243vbi/nekobox">NekoBox</a>?</strong> <br/>
+If <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> of version below that 5.10.41 is force-quit while <code>System proxy</code> is enabled, the process ends immediately and <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> cannot reset the proxy. <br/></p>
+<p>Solution for version &lt; 5.10.40:</p>
+<ul>
+<li>Ensure that <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> closed manually.</li>
+<li>If you force quit by accident, open <a href="https://github.com/qr243vbi/nekobox">NekoBox</a> again, enable <code>System proxy</code>, then disable it - this will reset the settings. <br/></li>
+</ul>
+<p>Solution for version &gt;= 5.10.41:</p>
+<ul>
+<li>This won't happen, but if it does, please submit <a href="https://github.com/qr243vbi/nekobox/issues">issue</a>.</li>
+</ul>
+<p><strong>Where are the downloadable route profiles/rulesets coming from?</strong><br/>
+They are located at the <a href="https://github.com/qr243vbi/ruleset/tree/routeprofiles">ruleset</a> repository.</p>
+<h2 id="contact-us">Contact Us</h2>
+<ul>
+<li>Write GitHub issue.</li>
+<li>Or use Matrix <a href="https://matrix.to/#/@qr243vbi:matrix.org">@qr243vbi:matrix.org</a></li>
+</ul>
+<h2 id="license">License</h2>
+<p>Use of this software is subject to the GPL-3 license.</p>
+<h2 id="star-history">Star History</h2>
+<a href="https://www.star-history.com/?repos=qr243vbi%2Fnekobox&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left" />
+ </picture>
+</a>
+
+
+    
+
+
+                    
+
+
+
+                    <div class="flex justify-between mt-8">
+                        <div class="prev-link">
+                            
+    
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+
+                        </div>
+                        <div class="next-link">
+                            
+    
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+            
+                <a class="btn bg-base-100 border border-gray-500/15 shadow-lg rounded-xl transition-transform hover:scale-105 hover:shadow-2xl" href="https://qr243vbi.github.io/nekobox/get_started/">Get Started ›</a>
+                
+            
+            
+        
+    
+
+                        </div>
+                    </div>
+                </main>
+
+                
+                
+                    
+
+<div class="hidden lg:block">
+    <div class="sticky top-20 px-4 py-2  border-l  border-gray-500/15">
+        <h4 class="text-lg font-bold mb-1">ON THIS PAGE</h4>
+            <ul class="menu menu-sm toc-menu">
+            
+                <li>
+                    
+                    <details class="toc-details">
+                        <summary>
+                            <a href="https://qr243vbi.github.io/nekobox/introduction/#nyamebox-nekobox-for-pc" class="toc-link">NyameBox &#x2F; NekoBox for PC</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#github-releases-portable-zips-windows-installers-appimages" class="toc-link">GitHub Releases (Portable ZIPs, Windows installers, AppImages)</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#winget-package" class="toc-link">WinGet Package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#chocolatey-package" class="toc-link">Chocolatey Package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#scoop-package" class="toc-link">Scoop Package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#obs-repository" class="toc-link">OBS repository</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#copr-repository" class="toc-link">COPR repository</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#opensuse-package" class="toc-link">openSUSE package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#freebsd-package" class="toc-link">FreeBSD package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#archlinuxcn-package" class="toc-link">ArchlinuxCN package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#ubuntu-ppa" class="toc-link">Ubuntu PPA</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#aur-package" class="toc-link">Aur package</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#changelog-channel" class="toc-link">Changelog Channel</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#todo" class="toc-link">TODO</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#supported-protocols" class="toc-link">Supported protocols</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#subscription-formats" class="toc-link">Subscription Formats</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#credits" class="toc-link">Credits</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#faq" class="toc-link">FAQ</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#contact-us" class="toc-link">Contact Us</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#license" class="toc-link">License</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://qr243vbi.github.io/nekobox/introduction/#star-history" class="toc-link">Star History</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+            </ul>
+    </div>
+</div>
+
+
+                
+            </div>
+
+            <script>
+              // Determine theme: localStorage > extra.default_colorset > night
+              // Expose theme config for global use (e.g., goyo.js)
+              window.defaultColorset = "dark";
+              window.themeMap = { "dark": "night", "light": "lofi" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
+              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var mermaidTheme = "dark";
+              if(currentTheme == "lofi") {
+                mermaidTheme = "light";
+              }
+              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+              document.addEventListener('DOMContentLoaded', async () => {
+                const mermaidElements = document.querySelectorAll('.mermaid');
+
+                if (mermaidElements.length > 0) {
+                    await mermaid.run({
+                        nodes: mermaidElements
+                    });
+                }
+              });
+            </script>
+
+        </div>
+
+        
+        
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40  border-r  border-gray-500/15">
+        
+            
+                
+
+
+
+    
+
+<label for="my-drawer-2" class="drawer-overlay"></label>
+<div class="mt-4 w-68 h-[calc(100vh-4rem)] bg-base-100 text-base-content flex flex-col overflow-auto">
+    
+    <div class="px-2 pt-4 pb-0 flex flex-col items-center gap-2">
+        <div class="w-full flex items-center gap-2">
+            <label for="search-modal" class="input w-full flex items-center justify-between text-left bg-base-100 cursor-pointer border-gray-500/15 hover:border-gray-500/55 hover:border-1 transition" aria-label="검색">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span class="text-gray-400"><kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd></span>
+            </label>
+        </div>
+    </div>
+    
+    <ul class="menu w-full flex-grow">
+        
+            
+        
+        
+        
+        
+            
+            <li>
+                <a class="rounded bg-gray-500/15" href="https://qr243vbi.github.io/nekobox/introduction">Introduction</a>
+            </li>
+        
+            
+            <li>
+                
+                    <details open>
+                        <summary ><a class="hover:no-underline" href="https://qr243vbi.github.io/nekobox/get_started">Get Started</a></summary>
+                        <ul>
+                            
+                            
+                                <li ><a class="hover:no-underline" href="https://qr243vbi.github.io/nekobox/get_started/installation">Installation</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="https://qr243vbi.github.io/nekobox/get_started/configuration">Configuration</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="https://qr243vbi.github.io/nekobox/get_started/advanced">Advanced Configuration</a></li>
+                            
+                            
+                        </ul>
+                    </details>
+                
+            </li>
+        
+    </ul>
+
+    
+<footer class="footer text-xs pt-4 px-4 text-base-content border-t border-gray-500/15">
+    <aside>
+        <p>
+            Powered by <a href='https://www.getzola.org'>Zola</a>
+        </p>
+    </aside>
+</footer>
+
+</div>
+
+            
+        </div>
+    </div>
+
+    
+        
+        <script type="text/javascript" src="https://qr243vbi.github.io/nekobox/fuse.min.js"></script>
+        <script type="text/javascript" src="https://qr243vbi.github.io/nekobox/search_index.en.js"></script>
+        
+        <script type="text/javascript" src="https://qr243vbi.github.io/nekobox/goyo.js"></script>
+    
+</body>
+</html>

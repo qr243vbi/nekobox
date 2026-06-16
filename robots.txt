@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://qr243vbi.github.io/nekobox/sitemap.xml
