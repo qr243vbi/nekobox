@@ -448,7 +448,7 @@ jobs:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
-          token: $ secrets.GITHUB_TOKEN
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Download Artifacts
         if: matrix.allow == 'true'
