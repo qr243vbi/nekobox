@@ -373,7 +373,7 @@ jobs:
   build-cpp:
     name: Build windows binaries
     permissions:
-      contents: read
+      contents: write
     needs:
       - build-go
     strategy:
