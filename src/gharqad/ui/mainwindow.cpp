@@ -156,15 +156,15 @@ void MainWindow::changeEventTrigger(bool fontChange){
   if (
     fontChange
   ) {
-    font.setPointSize(settings->font_size);
-    font.setFamily(settings->font_family);
+    if (settings->font_size > 0) font.setPointSize(settings->font_size);
+    if (!settings->font_family.isEmpty()) font.setFamily(settings->font_family);
     qApp->setFont(font);
     this->setFont(font);
   }
   this->ui->label_inbound->setFont(font);
   this->ui->label_running->setFont(font);
   this->ui->label_speed->setFont(font);
-  this->qvLogDocument->setDefaultFont(font);
+  this->qvLogDocument->setDefaultFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
   this->ui->toolButton_program->setFont(font);
   this->ui->toolButton_preferences->setFont(font);
   this->ui->toolButton_routing->setFont(font);
