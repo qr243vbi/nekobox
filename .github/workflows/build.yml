@@ -168,7 +168,7 @@ jobs:
         env:
           INPUT_VERSION: ${{ github.event.inputs.tag }}
           MESSAGE: ${{ github.event.inputs.text }}
-          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
           PRE=""
@@ -277,7 +277,7 @@ jobs:
   #       if: github.event.inputs.publish  == 'true'
   #       shell: bash
   #       env:
-  #         GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+  #         GH_TOKEN: ${{ github.token }}
   #       run: |
   #         gh release upload "$INPUT_VERSION" ./srcpkgs/packages/hostdir/binpkgs/* --clobber
   #     # Upload build artifacts
@@ -312,7 +312,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          cache: 'pip'
 
       - name: Linux - Install apt dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
@@ -373,7 +372,7 @@ jobs:
   build-cpp:
     name: Build windows binaries
     permissions:
-      contents: read
+      contents: write
     needs:
       - build-go
     strategy:
@@ -448,7 +447,7 @@ jobs:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
-          token: ${{ secrets.UPLOAD_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Download Artifacts
         if: matrix.allow == 'true'
@@ -492,7 +491,7 @@ jobs:
         if: github.event.inputs.publish == 'true' && matrix.allow == 'true'
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "$INPUT_VERSION" ./deployment/* --clobber
           
@@ -626,7 +625,7 @@ jobs:
         if: github.event.inputs.publish  == 'true'
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "$INPUT_VERSION" ./deployment/* --clobber
 
@@ -721,7 +720,7 @@ jobs:
   #         if [[ "${{ github.event.inputs.publish }}" == "true" ]]
   #         then
   #           export UPLOAD_WITH_GH=yes
-  #           export GH_TOKEN='${{ secrets.UPLOAD_TOKEN }}'
+  #           export GH_TOKEN='${{ github.token }}'
   #         fi
   #         bash -x ./script/deploy_linux64.sh
   #
@@ -770,7 +769,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           UPLOAD_WITH_GH: yes
           CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
-          GH_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf

@@ -781,8 +781,8 @@ ret_loop:
           break;
         }
       }
-      // check if letter
-      if (QChar::isLetter(ch)){
+      // check if letter, digit, or scheme symbol (+ - .) per RFC 3986
+      if (QChar::isLetterOrNumber(ch) || ch == '+' || ch == '-' || ch == '.'){
           index ++;
           continue;
         } else {
