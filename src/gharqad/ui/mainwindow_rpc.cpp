@@ -33,7 +33,6 @@
 // rpc
 using namespace API;
 
-
 void MainWindow::setup_rpc() {
     // Setup Connection
     defaultClient = std::make_unique<Client>();
@@ -694,7 +693,6 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
     };
 
     if (!mu_starting.tryLock()) {
-        
         runOnUiThread([this](){
             QMessageBox::warning(this, software_name, tr("Another profile is starting..."));
         });
@@ -739,8 +737,10 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         delete mutex;
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->DisplayTypeAndName()));
+        this->ui->start_stop_button->setState(Icon::State::CONNECTING);
         if (!profile_start_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->DisplayTypeAndName()));
+            this->ui->start_stop_button->setState(Icon::State::IDLE);
         }
         mu_starting.unlock();
         if (!do_not_test) {
@@ -858,8 +858,10 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
     runOnNewThread([=, this, &blocker] {
         // do stop
         MW_show_log(">>>>>>>> " + tr("Stopping profile %1").arg(running->DisplayTypeAndName()));
+        this->ui->start_stop_button->setState(Icon::State::DISCONNECTING);
         if (!profile_stop_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to stop, please restart the program."));
+            this->ui->start_stop_button->setState(Icon::State::RUNNING);
         }
 
         if (manual) Configs::dataStore->UpdateStartedId(-1919);

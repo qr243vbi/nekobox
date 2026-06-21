@@ -515,6 +515,13 @@
              </widget>
             </item>
             <item>
+             <widget class="QCheckBox" name="auto_hide">
+              <property name="text">
+               <string>Hide window at startup</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QCheckBox" name="show_system_dns">
               <property name="text">
                <string>Show System DNS option</string>
@@ -553,16 +560,23 @@
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="auto_hide">
+             <widget class="QCheckBox" name="manually_column_width">
               <property name="text">
-               <string>Hide at startup</string>
+               <string>Manually column width</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="manually_column_width">
+             <widget class="QCheckBox" name="show_test_button">
               <property name="text">
-               <string>Manually column width</string>
+               <string>Show test button</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="show_start_stop_button">
+              <property name="text">
+               <string>Show start/stop button</string>
               </property>
              </widget>
             </item>

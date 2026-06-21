@@ -149,6 +149,9 @@ public:
   bool enable_indicator_borders = true;
   int indicator_border_width = 2;
   int indicator_border_radius = 8;
+
+  bool show_start_stop_button = true;
+  bool show_test_button = true;
 };
 
 }; // namespace Configs

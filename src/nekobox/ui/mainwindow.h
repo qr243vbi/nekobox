@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <nekobox/ui/setting/Icon.hpp>
 #include <QMainWindow>
 #include <nekobox/global/HTTPRequestHelperGui.hpp>
 
@@ -10,6 +11,7 @@
 #include <nekobox/api/RPC.h>
 #endif
 
+#include <QSystemTrayIcon>
 #include <QtConcurrent>
 #include <QSettings>
 #include <nekobox/dataStore/Configs.hpp>
@@ -136,6 +138,8 @@ public:
 #ifndef SKIP_JS_UPDATER
     JsUpdaterWindow* createJsUpdaterWindow();
 #endif
+    friend void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray,
+                    MainWindow *window);
 
     std::function<void(std::shared_ptr<Configs::Group>)> post_update_job;
     friend class SpinnerDialog;
@@ -236,6 +240,8 @@ private slots:
 
     void on_menu_basic_settings_triggered();
 
+    void on_start_stop_button_clicked();
+
     void on_menu_information_triggered();
 
     void on_menu_about_triggered();
@@ -243,6 +249,10 @@ private slots:
     void on_menu_routing_settings_triggered();
 
     void on_menu_vpn_settings_triggered();
+
+    void on_menu_start_triggered();
+
+    void on_menu_stop_triggered();
 
     void on_menu_hotkey_settings_triggered();
 
@@ -253,7 +263,6 @@ private slots:
     void on_menu_add_from_input_triggered();
 
     void on_menu_add_from_clipboard_triggered();
-
 
     void on_menu_move_profile_triggered();
 
@@ -468,6 +477,9 @@ protected:
 
 #endif // MW_INTERFACE
 };
+
+void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray,
+                MainWindow *window);
 
 
 extern QWidget *mainwindow;

@@ -140,9 +140,13 @@ if (grp != nullptr) {                                     \
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
 
-void setAppIcon(Icon::TrayIconStatus, QSystemTrayIcon *, MainWindow *window);
-
-void MainWindow::set_icons() { set_icons_from_settings(); }
+void MainWindow::set_icons() {
+    set_icons_from_settings();
+    bool hide_url_test = force_hide_text_under_buttons || (!Configs::windowSettings->show_test_button);
+    bool hide_start_button = force_hide_text_under_buttons || (!Configs::windowSettings->show_start_stop_button);
+    this->ui->url_test_button->setHidden(hide_url_test);
+    this->ui->start_stop_button->setHidden(hide_start_button);
+}
 
 SelectDialog::SelectDialog(QWidget *parent,
                            std::shared_ptr<QAbstractListModel> model)
@@ -168,9 +172,10 @@ void MainWindow::changeEventTrigger(bool fontChange){
   this->ui->toolButton_program->setFont(font);
   this->ui->toolButton_preferences->setFont(font);
   this->ui->toolButton_routing->setFont(font);
+  this->ui->start_stop_button->setFont(font);
+  this->ui->url_test_button->setFont(font);
   this->ui->toolButton_server->setFont(font);
   this->ui->toolButton_update->setFont(font);
-  this->ui->url_test_button->setFont(font);
   this->ui->tabWidget->setFont(font);
   this->ui->proxyListTable->setFont(font);
   this->ui->stats_widget->setFont(font);
@@ -518,6 +523,56 @@ SpinnerDialog::SpinnerDialog(MainWindow *window) {
   resize(300, 200);
 }
 
+void MainWindow::on_start_stop_button_clicked(){
+    typedef  Icon::State State;
+    auto mode = this->ui->start_stop_button->state();
+    if (mode == State::IDLE){
+        on_menu_start_triggered();
+    } else if (mode == State::RUNNING){
+        on_menu_stop_triggered();
+    }
+};
+
+void MainWindow::on_menu_start_triggered(){
+  CHECK_ACTION_ACCESS_W
+  auto & table = ui->proxyListTable;
+  if ( table->selectionModel()->selectedRows().count() <= 0 ){
+    int rowCount = table->model()->rowCount();
+
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle(tr("No Selection"));
+    msgBox.setText(tr("Select proxy profile to connect"));
+
+    QPushButton *okButton =
+        msgBox.addButton(QMessageBox::Ok);
+    QPushButton *randomButton = nullptr;
+    if (rowCount > 0)
+    {
+        randomButton =
+            msgBox.addButton("Choose random",
+                             QMessageBox::ActionRole);
+    }
+    msgBox.exec();
+    if (msgBox.clickedButton() == randomButton)
+    {
+        int randomRow =
+            QRandomGenerator::global()->bounded(rowCount);
+
+        table->selectRow(randomRow);
+
+        QModelIndex index =
+            table->model()->index(randomRow, 0);
+
+        table->scrollTo(index);
+    }
+  };
+  profile_start(-1, !Configs::windowSettings->test_after_start);
+};
+void MainWindow::on_menu_stop_triggered(){
+  CHECK_ACTION_ACCESS_W
+  profile_stop(false, false, true);
+};
+
 void MainWindow::set_icons_from_settings() {
   bool text_under_buttons = Configs::windowSettings->text_under_buttons;
   set_icons_from_flag(text_under_buttons);
@@ -544,10 +599,12 @@ void MainWindow::set_icons_from_flag(bool text_under_buttons) {
     button_style = Qt::ToolButtonStyle::ToolButtonIconOnly;
   }
 
+  QToolButton* button1 =  ui->start_stop_button;
   // styling
-  for (auto button :
+  for (QToolButton* button :
        {ui->toolButton_preferences, ui->toolButton_program,
-        ui->toolButton_routing, ui->toolButton_server, ui->toolButton_update}) {
+        ui->toolButton_routing, ui->toolButton_server,
+        ui->toolButton_update}) {
     button->setToolButtonStyle(button_style);
     button->setIconSize(button_size);
   }
@@ -971,15 +1028,7 @@ MainWindow::MainWindow(QWidget *parent)
       on_proxyListTable_itemDoubleClicked(item);
     }
   });
-  
-  connect(ui->menu_start, &QAction::triggered, this, [this]() {
-    CHECK_ACTION_ACCESS_W
-    profile_start(-1, !Configs::windowSettings->test_after_start);
-  });
-  connect(ui->menu_stop, &QAction::triggered, this, [this]() {
-    CHECK_ACTION_ACCESS_W
-    profile_stop(false, false, true);
-  });
+
   connect(ui->tabWidget->tabBar(), &QTabBar::tabMoved, this,
           [this](int from, int to) {
             // use tabData to track tab & gid
@@ -1205,7 +1254,7 @@ skip_updater_hide:
 
   // Setup Tray
   tray = new QSystemTrayIcon(nullptr);
-  setAppIcon(Icon::NONE, tray, this);
+  setAppIcon(Icon::TrayIconStatus::NONE, tray, this);
   auto *trayMenu = new QMenu();
 
   connect(trayMenu, &QMenu::aboutToShow, this, [this, trayMenu]() {
@@ -2803,33 +2852,7 @@ void MainWindow::UpdateConnectionListWithRecreate(
   }
   ui->connections->setUpdatesEnabled(true);
 }
-/*
-void MainWindow::setSearchState(bool enable) {
-  searchEnabled = enable;
-  if (enable) {
-    ui->data_view->hide();
-    ui->url_test_button->hide();
-    ui->search_input->show();
-  } else {
-    ui->search_input->blockSignals(true);
-    ui->search_input->clear();
-    ui->search_input->blockSignals(false);
 
-    ui->search_input->hide();
-    ui->data_view->show();
-    if (!searchString.isEmpty()) {
-      searchString.clear();
-      refresh_proxy_list(-1);
-    }
-
-    if (ui->data_view->toPlainText().trimmed().isEmpty()) {
-      ui->url_test_button->show();
-    } else {
-      ui->url_test_button->hide();
-    }
-  }
-}
-*/
 
 void MainWindow::refresh_status(const QString &traffic_update) {
   auto refresh_speed_label = [=, this] {
@@ -2922,27 +2945,27 @@ void MainWindow::refresh_status(const QString &traffic_update) {
     return tt.join(isTray ? "\n" : " ");
   };
 
-  auto icon_status_new = Icon::NONE;
+  auto icon_status_new = Icon::TrayIconStatus::NONE;
 
   if (running != nullptr) {
     if (Configs::dataStore->spmode_vpn) {
-      icon_status_new = Icon::VPN;
+      icon_status_new = Icon::TrayIconStatus::VPN;
     } else if (Configs::dataStore->system_dns_set &&
                Configs::dataStore->spmode_system_proxy) {
-      icon_status_new = Icon::SYSTEM_PROXY_DNS;
+      icon_status_new = Icon::TrayIconStatus::SYSTEM_PROXY_DNS;
     } else if (Configs::dataStore->system_dns_set) {
-      icon_status_new = Icon::DNS;
+      icon_status_new = Icon::TrayIconStatus::DNS;
     } else if (Configs::dataStore->spmode_system_proxy) {
-      icon_status_new = Icon::SYSTEM_PROXY;
+      icon_status_new = Icon::TrayIconStatus::SYSTEM_PROXY;
     } else {
-      icon_status_new = Icon::RUNNING;
+      icon_status_new = Icon::TrayIconStatus::PROXY;
     }
   }
 
   // refresh title & window icon
   setWindowTitle(make_title(false));
   if (icon_status_new != icon_status)
-    QApplication::setWindowIcon(GetTrayIcon(Icon::RUNNING));
+    QApplication::setWindowIcon(GetTrayIcon(Icon::TrayIconStatus::PROXY));
 
   // refresh tray
   if (tray != nullptr) {
@@ -2959,6 +2982,25 @@ void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray,
   auto icon = Icon::GetTrayIcon(icon_status_new);
   tray->setIcon(icon);
   window->setWindowIcon(icon);
+
+  Icon::State state;
+  const auto & mode = icon_status_new;
+  switch (icon_status_new){
+    case Icon::TrayIconStatus::PROXY:
+    case Icon::TrayIconStatus::SYSTEM_PROXY:
+    case Icon::TrayIconStatus::SYSTEM_PROXY_DNS:
+    case Icon::TrayIconStatus::DNS:
+    case Icon::TrayIconStatus::VPN:
+      state = Icon::State::RUNNING;
+      break;
+    case Icon::TrayIconStatus::NONE:
+    default:
+      state = Icon::State::IDLE;
+  }
+  window->ui->start_stop_button->setMode(mode);
+  window->ui->start_stop_button->setState(state);
+
+//  Icon::PaintIcon(window->ui->start_stop_button, icon_status_new);
   QApplication::setWindowIcon(icon);
 }
 

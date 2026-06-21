@@ -199,6 +199,44 @@ QToolButton::menu-indicator {
        </widget>
       </item>
       <item>
+       <widget class="StatusControlButton" name="start_stop_button">
+        <property name="minimumSize">
+         <size>
+          <width>35</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>35</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Start</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton::menu-indicator,
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Start</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="popupMode">
+         <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QCheckBox" name="checkBox_VPN">
@@ -301,6 +339,9 @@ QToolButton::menu-indicator {
       </item>
       <item>
        <widget class="QPushButton" name="url_test_button">
+        <property name="toolTip">
+         <string>Test</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton::menu-indicator,
 QToolButton::menu-indicator {
@@ -310,6 +351,12 @@ QToolButton::menu-indicator {
         </property>
         <property name="text">
          <string>Test</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>37</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -1255,6 +1302,13 @@ QToolButton::menu-indicator {
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StatusControlButton</class>
+   <extends>QToolButton</extends>
+   <header location="global">nekobox/ui/setting/Icon.hpp</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

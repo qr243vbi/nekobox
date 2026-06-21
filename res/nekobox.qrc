@@ -5,9 +5,12 @@
         <file alias="icon/b-preferences.png">icon/preferences.png</file>
         <file alias="icon/b-network-server.png">icon/network-server.png</file>
         <file alias="icon/b-filter.png">icon/filter.png</file>
+        <file alias="icon/b-speed.png">icon/speed.png</file>
         <file alias="icon/b-dialog-question.png">icon/dialog-question.png</file>
         <file alias="icon/b-system-software-update.png">icon/system-software-update.png</file>
         <file alias="icon/b-network-routing.png">icon/network-routing.png</file>
+        <file alias="icon/b-start.png">icon/start.png</file>
+        <file alias="icon/b-stop.png">icon/stop.png</file>
         <file>icon/material/lock-open-outline.png</file>
         <file>icon/material/lock-outline.png</file>
         <file>icon/material/cancel.png</file>

@@ -148,6 +148,10 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
     S_LOAD_SPIN(indicator_border_width)
     S_LOAD_SPIN(indicator_border_radius)
 
+    // Buttons
+    S_LOAD_BOOL(show_test_button)
+    S_LOAD_BOOL(show_start_stop_button)
+
     // Auto-testing
     D_LOAD_BOOL(auto_test_enable)
     ui->auto_test_interval_seconds->setValue(Configs::dataStore->auto_test_interval_seconds);
@@ -302,6 +306,22 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         S_SAVE_INT(indicator_border_radius)
         GetMainWindow()->changeEventTrigger(false);
     });
+
+    connect(ui->show_start_stop_button, STATE_CHANGED, this, [this](int state){
+        S_SAVE_BOOL(show_start_stop_button)
+        CACHE.updateIcon = true;
+    });
+
+    connect(ui->show_test_button, STATE_CHANGED, this, [this](int state){
+        S_SAVE_BOOL(show_test_button)
+        CACHE.updateIcon = true;
+    });
+
+    connect(ui->indicator_border_width, &QSpinBox::valueChanged, this, [this](int value){
+        S_SAVE_INT(indicator_border_width)
+        GetMainWindow()->changeEventTrigger(false);
+    });
+
     //
     ui->theme->addItems(QStyleFactory::keys());
     ui->theme->addItem("Dark");

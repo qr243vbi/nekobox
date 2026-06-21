@@ -176,7 +176,7 @@ std::map<Icon::TrayIconStatus, IndicatorRule> indicatorRuleMap = {
     {Icon::TrayIconStatus::DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
     {Icon::TrayIconStatus::SYSTEM_PROXY, {0.4, 0.04, 0.4, Qt::blue}},
     {Icon::TrayIconStatus::SYSTEM_PROXY_DNS, {0.4, 0.04, 0.4, Qt::darkMagenta}},
-    {Icon::TrayIconStatus::RUNNING, {0.4, 0.04, 0.4, Qt::darkGreen}}
+    {Icon::TrayIconStatus::PROXY, {0.4, 0.04, 0.4, Qt::darkGreen}}
 };
 
 Shortcuts::Shortcuts() : JsonStore()

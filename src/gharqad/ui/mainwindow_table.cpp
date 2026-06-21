@@ -778,3 +778,5 @@ QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int 
     }
     return QVariant();
 }
+
+

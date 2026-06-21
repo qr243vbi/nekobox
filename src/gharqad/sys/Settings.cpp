@@ -66,6 +66,8 @@ ADD_LIST(column_width)
 ADD_LIST(enable_indicator_borders)
 ADD_LIST(indicator_border_width)
 ADD_LIST(indicator_border_radius)
+ADD_LIST(show_start_stop_button)
+ADD_LIST(show_test_button)
 END_LIST
 
 #define KEY parent + name
