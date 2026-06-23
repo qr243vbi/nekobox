@@ -293,29 +293,28 @@
         <translation type="unfinished">Skryť informačný panel pri spustení</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">Zobraziť možnosť System DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
         <source>Show profile IDs</source>
         <translation type="unfinished">Zobraziť ID profilu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Disable tray</source>
         <translation type="unfinished">Zakázať zásobník</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">Nastavte text pod ikonami ponuky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Hide at startup</source>
-        <translation type="unfinished">Skryť pri spustení</translation>
+        <translation type="obsolete">Skryť pri spustení</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
@@ -323,68 +322,68 @@
         <translation type="unfinished">Manuálne šírka stĺpca</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>Max log lines</source>
         <translation type="unfinished">Maximálny počet riadkov denníka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Theme</source>
         <translation type="unfinished">Téma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>System</source>
         <translation type="unfinished">systém</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
         <source>Language</source>
         <translation type="unfinished">Jazyk</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
         <source>Icon</source>
         <translation type="unfinished">Ikona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Písmo Emoji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
         <source>Name</source>
         <translation type="unfinished">Meno</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Subscription</source>
         <translation type="unfinished">Predplatné</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
         <source>Interval:</source>
         <translation type="unfinished">Interval:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">Povoliť automatickú aktualizáciu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Pred aktualizáciou vymažte servery</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Test URL po aktualizácii</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
         <source>Enable</source>
         <translation type="unfinished">Povoliť</translation>
     </message>
@@ -393,27 +392,27 @@
         <translation type="obsolete">Interval (minúta, neplatný, ak je kratší ako 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Odstrániť duplikáty</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
         <source>User Agent</source>
         <translation type="unfinished">User Agent</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Verzia OS=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Odoslať systémové parametre</translation>
     </message>
@@ -422,32 +421,32 @@
         <translation type="obsolete">Automatická aktualizácia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formát: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Ak chcete použiť predvolené hodnoty, ponechajte prázdne.Zadajte iba parametre, ktoré chcete prepísať.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Vlastné systémové parametre (voliteľné)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Odstrániť neplatné</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Odstrániť nedostupné</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
         <source>Core</source>
         <translation type="unfinished">Core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -455,7 +454,7 @@
 Zlepšite ping a výkon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Zakázať štatistiku premávky</translation>
     </message>
@@ -464,37 +463,62 @@ Zlepšite ping a výkon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Použite TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
         <source>Loglevel</source>
         <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
         <source>concurrency</source>
         <translation type="unfinished">súbežnosť</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <source>Hide window at startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
+        <source>Show test button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
+        <source>Show start/stop button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
+        <source>Enable indicator borders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
+        <source>Radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
         <source>Padding</source>
         <translation type="unfinished">Výplň</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
         <source>Default On</source>
         <translation type="unfinished">Predvolene zapnuté</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
         <source>Core Options</source>
         <translation type="unfinished">Základné možnosti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -502,27 +526,27 @@ Zlepšite ping a výkon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 vstavaný klient NTP sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Nastavenia NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
         <source>server</source>
         <translation type="unfinished">server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
         <source>Port</source>
         <translation type="unfinished">Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>sync interval</source>
         <translation type="unfinished">synchronizačný interval</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -530,22 +554,22 @@ vstavaný klient NTP sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 minút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
         <source>Security</source>
         <translation type="unfinished">Bezpečnosť</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Zakázať žiadosť o privilégium</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Preskočiť overenie certifikátu TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Použite úložisko certifikátov Mozilla</translation>
     </message>
@@ -554,27 +578,27 @@ minút&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Predvolene preskočiť overenie certifikátu TLS (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Predvolený odtlačok prsta uTLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nepokúšajte sa začať ako správca, pokiaľ o to výslovne nepožiadate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Na komunikáciu medzi nekoboxom a nekobox_core použite Unix Domain Socket</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Použite UDS pre IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Vždy spustiť ako štandardný používateľ</translation>
     </message>
@@ -593,7 +617,7 @@ INI – začiatok 80. rokov – jednoduchý formát konfigurácie s čistým tex
 binárne — 2026 — ľubovoľný formát bajtových hodnôt pre nastavenia NekoBoxu používané ako hodnoty RocksDB alebo samostatné súbory — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -604,142 +628,143 @@ INI – začiatok 80. rokov – jednoduchý formát konfigurácie s čistým tex
 binárne — 2026 — ľubovoľný formát bajtových hodnôt pre nastavenia NekoBoxu používané ako hodnoty leveldb alebo samostatné súbory — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Požiadajte o vymazanie profilu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Automatické testovanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Automaticky testujte servery proxy na pozadí a udržiavajte skupinu pracovných serverov proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Povoliť automatické testovanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Testovací interval (sekundy)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Ako často spúšťať testovací cyklus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Proxy za cyklus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Počet serverov proxy na testovanie v každom cykle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Veľkosť pracovného bazéna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Maximálny počet overených pracovných proxy serverov, ktoré sa majú udržiavať</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Hranica latencie (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Maximálna latencia, aby sa server považoval za funkčný</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Počet opakovaných pokusov o zlyhanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Počet opakovaných pokusov, kým sa server proxy považuje za neúspešný</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Otestujte cieľovú webovú adresu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">Adresa URL na testovanie serverov proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Automaticky prepnúť na iný funkčný proxy server, keď proxy v režime TUN zlyhá</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Povoliť prepnutie pri zlyhaní TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
         <source>Startup</source>
         <translation type="unfinished">Spustenie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Automatické ukladanie geometrie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
         <source>Autosave position</source>
         <translation type="unfinished">Pozícia automatického ukladania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
         <source>Apply now</source>
         <translation type="unfinished">Prihláste sa teraz</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
         <source>Width</source>
         <translation type="unfinished">šírka</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
         <source>Configs format</source>
         <translation type="unfinished">Formát konfigurácií</translation>
     </message>
@@ -754,64 +779,64 @@ INI – začiatok 80. rokov – jednoduchý formát konfigurácie s čistým tex
 binárne — 2026 — ľubovoľný formát bajtových hodnôt pre nastavenia NekoBoxu používané ako hodnoty LMDB alebo samostatné súbory — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
         <source>Height</source>
         <translation type="unfinished">Výška</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Hlavná spustiteľná cesta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
         <source>Use default</source>
         <translation type="unfinished">Použiť predvolené</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
         <source>Remote Control</source>
         <translation type="unfinished">Diaľkové ovládanie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
         <source>Select</source>
         <translation type="unfinished">Vyberte</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Adresár zdrojov</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Správca zdrojov</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
         <source>Proxy type</source>
         <translation type="unfinished">Typ proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
         <source>Off</source>
         <translation type="unfinished">Vypnuté</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
         <source>Name of program</source>
         <translation type="unfinished">Názov programu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
         <source>Security Warning</source>
         <translation type="unfinished">Bezpečnostné varovanie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -828,12 +853,12 @@ Povoľte to iba vtedy, ak plne dôverujete každej sieti medzi vami a vaším pr
 Naozaj chcete zakázať overenie TLS?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Upozornenie na ochranu osobných údajov</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -3275,7 +3300,7 @@ si si istý?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="702"/>
         <source>Profiles</source>
         <translation type="unfinished">Profily</translation>
     </message>
@@ -3293,25 +3318,25 @@ si si istý?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1479"/>
         <source>Update</source>
         <translation type="unfinished">Aktualizovať</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
         <source>Tun Mode</source>
         <translation type="unfinished">Režim Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="278"/>
         <source>System DNS</source>
         <translation type="unfinished">Systém DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2931"/>
         <source>System Proxy</source>
         <translation type="unfinished">Systémový proxy</translation>
     </message>
@@ -3335,83 +3360,83 @@ si si istý?</translation>
         <translation type="unfinished">Meno</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
         <source>Test Result</source>
         <translation type="unfinished">Výsledok testu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="572"/>
         <source>Traffic</source>
         <translation type="unfinished">Doprava</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="477"/>
         <source>Logs</source>
         <translation type="unfinished">Denníky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="512"/>
         <source>Connections</source>
         <translation type="unfinished">Spojenia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="540"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">Cieľ (doména)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="543"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Kliknite na Zakázať triedenie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="548"/>
         <source>Process</source>
         <translation type="unfinished">Proces</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="551"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Kliknite na položku Zoradiť podľa procesu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="556"/>
         <source>Protocol</source>
         <translation type="unfinished">Protokol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="559"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Kliknite na položku Zoradiť podľa protokolu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="564"/>
         <source>Outbound</source>
         <translation type="unfinished">Odchádzajúci</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="567"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Kliknite na položku Zoradiť podľa odchádzajúce</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="575"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Kliknite na položku Prepnúť zoradenie podľa premávky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="584"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">Graf premávky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="667"/>
         <source>Program</source>
         <translation type="unfinished">Program</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="691"/>
         <source>Preferences</source>
         <translation type="unfinished">Predvoľby</translation>
     </message>
@@ -3420,7 +3445,7 @@ si si istý?</translation>
         <translation type="obsolete">Server</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716"/>
         <source>Share</source>
         <translation type="unfinished">zdieľať</translation>
     </message>
@@ -3429,19 +3454,20 @@ si si istý?</translation>
         <translation type="obsolete">Aktuálna skupina</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="347"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="357"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780"/>
         <source>Test</source>
         <translation type="unfinished">Test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
         <source>Current Selected</source>
         <translation type="unfinished">Aktuálne vybrané</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="706"/>
         <source>Current Group</source>
         <translation type="unfinished">Aktuálna skupina</translation>
     </message>
@@ -3451,181 +3477,183 @@ si si istý?</translation>
         <translation type="unfinished">Info</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763"/>
         <source>Hidden menu</source>
         <translation type="unfinished">Skryté menu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775"/>
         <source>Routing Menu</source>
         <translation type="unfinished">Ponuka smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="787"/>
         <source>Context</source>
         <translation type="unfinished">Kontext</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="791"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">Kontextové profily</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
         <source>Exit</source>
         <translation type="unfinished">VÝCHOD</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="820"/>
         <source>Toggle Window</source>
         <translation type="unfinished">Prepnúť okno</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Základné nastavenia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
         <source>New profile</source>
         <translation type="unfinished">Nový profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
         <source>Groups</source>
         <translation type="unfinished">skupiny</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4279"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4289"/>
         <source>Start</source>
         <translation type="unfinished">Štart</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4278"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4289"/>
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="856"/>
         <source>Edit</source>
         <translation type="unfinished">Upraviť</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="864"/>
         <source>Routing Settings</source>
         <translation type="unfinished">Nastavenia smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="869"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Pridať profil zo schránky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="877"/>
         <source>Delete</source>
         <translation type="unfinished">Odstrániť</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="885"/>
         <source>Debug Info</source>
         <translation type="unfinished">Informácie o ladení</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR kód a odkaz</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898"/>
         <source>Copy Link</source>
         <translation type="unfinished">Kopírovať odkaz</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">Vymazať výsledok testu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1771"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Exportovať konfiguráciu %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="935"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">Resetovať premávku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="943"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">Naskenujte QR kód</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="951"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">Povoliť server proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="959"/>
         <source>Disable</source>
         <translation type="unfinished">Zakázať</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Odstrániť duplikáty</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
         <source>fake</source>
         <translation type="unfinished">falošný</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
         <source>Move</source>
         <translation type="unfinished">Pohybujte sa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="991"/>
         <source>Start with system</source>
         <translation type="unfinished">Začnite systémom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999"/>
         <source>Remember last profile</source>
         <translation type="unfinished">Zapamätať si posledný profil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Umožnite ostatným zariadeniam pripojiť sa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Odstrániť nedostupné</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1020"/>
         <source>Full Test</source>
         <translation type="unfinished">Úplný test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1028"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Nastavenia klávesových skratiek</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1033"/>
         <source>Select All</source>
         <translation type="unfinished">Vyberte možnosť Všetky</translation>
     </message>
@@ -3634,105 +3662,105 @@ si si istý?</translation>
         <translation type="obsolete">Kopírovať vlastné odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1065"/>
         <source>Copy links</source>
         <translation type="unfinished">Skopírujte odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1149"/>
         <source>Url Test</source>
         <translation type="unfinished">Test webovej adresy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1182"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">Vyriešiť doménu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1272"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Zaregistrujte zvýšenú úlohu systému Windows</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
         <source>About</source>
         <translation type="unfinished">O</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
         <source>Statistics</source>
         <translation type="unfinished">Štatistiky</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
         <source>Check for updates</source>
         <translation type="unfinished">Skontrolujte aktualizácie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
         <source>Toggle filter</source>
         <translation type="unfinished">Prepnúť filter</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1305"/>
         <source>Unselect</source>
         <translation type="unfinished">Zrušte výber</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="798"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1264"/>
         <source>Information</source>
         <translation type="unfinished">Informácie</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1041"/>
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Skopírujte odkazy Nekoray</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1076"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Povoliť Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3467"/>
         <source>Clone</source>
         <translation type="unfinished">Klonovať</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Update subscription</source>
         <translation type="unfinished">Aktualizovať predplatné</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100"/>
         <source>Resolve domain</source>
         <translation type="unfinished">Vyriešiť doménu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1108"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Settings</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113"/>
         <source>Restart Program</source>
         <translation type="unfinished">Reštartujte program</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">Otvorte priečinok Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">Reštartujte proxy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1144"/>
         <source>Stop Testing</source>
         <translation type="unfinished">Zastaviť testovanie</translation>
     </message>
@@ -3741,7 +3769,7 @@ si si istý?</translation>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Testovacia skupina URL</translation>
     </message>
@@ -3750,7 +3778,7 @@ si si istý?</translation>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Odstrániť neplatné</translation>
     </message>
@@ -3759,84 +3787,84 @@ si si istý?</translation>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1259"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Current</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201"/>
         <source>Full test Selected</source>
         <translation type="unfinished">Vybraný úplný test</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206"/>
         <source>Download test Selected</source>
         <translation type="unfinished">Vybraný test sťahovania</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">Test nahrávania Vybratý</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
         <source>Country test Selected</source>
         <translation type="unfinished">Vybraný test krajiny</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">Jednoduchý test sťahovania Zvolený</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest Group</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
         <source>Hide window</source>
         <translation type="unfinished">Skryť okno</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Add profile from File</source>
         <translation type="unfinished">Pridajte profil zo súboru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4308"/>
         <source>Add new Group</source>
         <translation type="unfinished">Pridať novú skupinu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Security Settings</source>
         <translation type="unfinished">Nastavenia zabezpečenia</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
         <source>Unavailable</source>
         <translation type="unfinished">nedostupné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="899"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">Denník automatického posúvania</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1367"/>
         <source>Select Proxy</source>
         <translation type="unfinished">Vyberte Proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1368"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Typ prichádzajúcej proxy:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1452"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Upraviť profily smerovania</translation>
     </message>
@@ -3845,24 +3873,24 @@ si si istý?</translation>
         <translation type="obsolete">Aktualizujte profily smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1526"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1554"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1598"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
         <source>Update Response</source>
         <translation type="unfinished">Aktualizovať odpoveď</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1527"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Neaktualizujú sa žiadne profily smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Aktualizované profily smerovania %1</translation>
@@ -3872,12 +3900,12 @@ si si istý?</translation>
         <translation type="obsolete">Aktualizujte mapu sady pravidiel</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1552"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Nepodarilo sa aktualizovať sady pravidiel</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1555"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Sady pravidiel boli úspešne aktualizované</translation>
     </message>
@@ -3886,355 +3914,365 @@ si si istý?</translation>
         <translation type="obsolete">Aktualizujte vyrovnávaciu pamäť RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Neplatné pole JSON</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="361"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Zadaný vstup nemožno analyzovať na platné pole pravidiel trasy:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
+        <source>No Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="544"/>
+        <source>Select proxy profile to connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="754"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">Používanie v systéme macOS nie je povolené</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1477"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">Importovať profil smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1481"/>
         <source>From clipboard</source>
         <translation type="unfinished">Zo schránky</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1485"/>
         <source>From file</source>
         <translation type="unfinished">Zo súboru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1492"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">Importované zo schránky</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1504"/>
         <source>Imported from %1</source>
         <translation type="unfinished">Importované z %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Profily smerovania</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">Mapa súboru pravidiel</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">Vyrovnávacia pamäť pravidiel</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Vyrovnávacia pamäť pravidiel sa aktualizuje</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1613"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Vymazať vyrovnávaciu pamäť RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1627"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Povoliť AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2007"/>
         <source>Error</source>
         <translation type="unfinished">Chyba</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2104"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Nastavenia Tun sa zmenili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2105"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Reštartujte aplikáciu Tun, aby sa prejavila.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2116"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2171"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3543"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3990"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4052"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4105"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4358"/>
         <source>Confirmation</source>
         <translation type="unfinished">Potvrdenie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2117"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Zmenili sa nastavenia, reštartovať proxy?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2146"/>
         <source>Settings changed</source>
         <translation type="unfinished">Nastavenia zmenené</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2147"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Reštartujte program, aby sa prejavil.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2189"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Importované profily (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2523"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Používateľ sa rozhodol pre žiadne privilégiá, niektoré funkcie nemusia fungovať</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Udeľte základné oprávnenia root</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2895"/>
         <source>Not Running</source>
         <translation type="unfinished">Nie je spustený</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3110"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">Skupina je príliš veľká na triedenie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3468"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Klonovať %1 položiek</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3488"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Skupina je príliš veľká na nájdenie duplikátov</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3523"/>
         <source> Confirmation </source>
         <translation type="unfinished">Potvrdenie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Odstrániť %1 položiek?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3544"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Odstrániť %1 položiek?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3596"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Počet skopírovaných položiek: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QR kód sa nenašiel</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3862"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Nie je možné zachytiť obrazovku</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3991"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Odstrániť %1 nedostupné položky?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4053"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Odstrániť %1 neplatné položky?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4106"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Nahradiť adresy doménového servera ich vyriešenými adresami IP?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
         <source>Clear</source>
         <translation type="unfinished">Jasné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4348"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Odstrániť vybranú skupinu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4349"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Upraviť vybranú skupinu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4359"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Odstrániť %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5091"/>
         <source>Cannot start</source>
         <translation type="unfinished">Nedá sa spustiť</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5092"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Posledná požiadavka na stiahnutie ešte nebola dokončená</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5126"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Stiahnutie aktualizačných prvkov zlyhalo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">Test profilu bol prerušený</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] chyba testu: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Niečo je veľmi zle, predmet sa nedá nájsť!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Údaje správcu profilu sú poškodené, skúste to znova.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Posledný test webovej adresy sa úplne neukončil, počkajte.Ak to pretrváva, reštartujte program.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Nepodarilo sa vytvoriť testovaciu konfiguráciu:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Test adresy URL je dokončený!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Testy sa nepodarilo zastaviť</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
         <source>Testing</source>
         <translation type="unfinished">Testovanie</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Posledný test rýchlosti sa úplne neukončil, čakajte.Ak to pretrváva, reštartujte program.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest dokončený!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Test rýchlosti profilu bol prerušený</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] chyba testu rýchlosti: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Najprv musíte povoliť hijack server DNS</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Nepodarilo sa nastaviť DNS systému:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Nalaďte zariadenie nesprávne</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ak máte problémy so spustením VPN, môžete tu vynútiť reset základného procesu a potom skúsiť spustiť profil znova.Chyba je %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
         <source>Reset</source>
         <translation type="unfinished">Resetovať</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Cancel</source>
         <translation type="unfinished">Zrušiť</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Spúšťa sa ďalší profil...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Ďalší profil sa zastavuje...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ak dlho nereaguje, odporúča sa reštartovať softvér.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Spúšťa sa profil %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Nepodarilo sa spustiť profil %1</translation>
     </message>
@@ -4249,7 +4287,7 @@ si si istý?</translation>
         <translation type="unfinished">Zastavuje sa profil %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Nepodarilo sa zastaviť, reštartujte program.</translation>
     </message>
@@ -4358,60 +4396,60 @@ si si istý?</translation>
         <translation type="obsolete">Režim ladenia nie je možné použiť s vlastnými konfiguráciami</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
         <source>Decrypted happ:// link</source>
         <translation type="unfinished">Dešifrovaný odkaz happy://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
         <source>Failed to decrypt happ:// link</source>
         <translation type="unfinished">Nepodarilo sa dešifrovať odkaz happ://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Požaduje sa predplatné: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1870"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Chyba vyžiadania odberu %1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1894"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Názov profilu odberu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1903"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Žiadosť o odber bola dokončená: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1928"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Prebieha čistenie serverov...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1954"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Spracúvajú sa údaje o odbere...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1968"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Zrušte %1 serverov proxy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1970"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">Proces dokončený, aplikácia...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1984"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Pridané servery proxy: %1</translation>
@@ -4431,13 +4469,13 @@ Odstránené %3 profily:
         <translation type="obsolete">Nič</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1986"/>
         <source>Change of %1:</source>
         <translation type="unfinished">Zmena %1:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028"/>
         <source>Default</source>
         <translation type="unfinished">Predvolené</translation>
     </message>
@@ -4466,7 +4504,7 @@ Odstránené %3 profily:
         <translation type="unfinished">Vyberte</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2863"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Proxy: %1
@@ -4488,7 +4526,7 @@ Priame: %2</translation>
         <translation type="unfinished">Reštartovanie jadra...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="372"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="377"/>
         <source>System</source>
         <translation type="unfinished">systém</translation>
     </message>
@@ -4564,40 +4602,40 @@ Ako aktualizovať?</translation>
         <translation type="unfinished">Použité: %1 Zostáva: %2 Vyprší: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Stiahnite si profily</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="411"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Chyba vyžiadania profilu: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="657"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Odstránené %1 duplikáty</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="697"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Odstránené %1 Neplatné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="732"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Odstránené %1 Nedostupné</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Skontrolujte sady pravidiel: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1908"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Chyba vyžiadania zoznamu sady pravidiel: %1</translation>
     </message>
@@ -4606,7 +4644,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Adresa IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2901"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Prichádzajúca adresa IP: %1</translation>
     </message>
@@ -4619,69 +4657,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Vypnuté</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2905"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">Prichádzajúce: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2907"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">Prichádzajúce: Vyp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3431"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Presuňte profily do skupiny</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3618"/>
         <source>Config copied</source>
         <translation type="unfinished">Konfigurácia bola skopírovaná</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3630"/>
         <source>Copy core config</source>
         <translation type="unfinished">Skopírujte konfiguráciu jadra</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3632"/>
         <source>Copy test config</source>
         <translation type="unfinished">Skopírujte testovaciu konfiguráciu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3633"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4991"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5073"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5082"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5117"/>
         <source>Update</source>
         <translation type="unfinished">Aktualizovať</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4992"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Nie je to oficiálna platforma podpory</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Chyba vyžiadania aktualizácie: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
         <source>No update</source>
         <translation type="unfinished">Žiadna aktualizácia</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5074"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4690,17 +4728,17 @@ Poznámka k vydaniu:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5077"/>
         <source>Close</source>
         <translation type="unfinished">Zavrieť</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5079"/>
         <source>Open in browser</source>
         <translation type="unfinished">Otvoriť v prehliadači</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5118"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Aktualizácia je pripravená, reštartovať a nainštalovať?</translation>
     </message>
@@ -4710,7 +4748,7 @@ Poznámka k vydaniu:
         <translation type="unfinished">Prístup odmietnutý</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Vyberte priečinok</translation>
     </message>
@@ -5165,15 +5203,38 @@ Užitočné zaťaženie požiadavky bolo: %2</translation>
         <translation type="obsolete">Zadaný vstup nemožno analyzovať na platné pole pravidiel trasy:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="485"/>
         <source>Fetching information</source>
         <translation type="unfinished">Načítavanie informácií</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="501"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1651"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Stiahnite si profily</translation>
+    </message>
+</context>
+<context>
+    <name>StartStopButton</name>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
+        <source>Start</source>
+        <translation type="unfinished">Štart</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
+        <source>Connecting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
+        <source>Stop</source>
+        <translation type="unfinished">Stop</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
+        <source>Stopping…</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

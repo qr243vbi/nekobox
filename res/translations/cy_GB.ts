@@ -293,29 +293,28 @@
         <translation type="unfinished">Cuddio dangosfwrdd wrth gychwyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">Dangos opsiwn DNS System</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
         <source>Show profile IDs</source>
         <translation type="unfinished">Dangos IDau proffil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Disable tray</source>
         <translation type="unfinished">Analluogi hambwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">Gosod testun o dan eiconau dewislen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Hide at startup</source>
-        <translation type="unfinished">Cuddio wrth gychwyn</translation>
+        <translation type="obsolete">Cuddio wrth gychwyn</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
@@ -323,68 +322,68 @@
         <translation type="unfinished">Lled colofn â llaw</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>Max log lines</source>
         <translation type="unfinished">Llinellau log mwyaf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="614"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Theme</source>
         <translation type="unfinished">Thema</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="631"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>System</source>
         <translation type="unfinished">System</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="645"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
         <source>Language</source>
         <translation type="unfinished">Iaith</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
         <source>Icon</source>
         <translation type="unfinished">Eicon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="672"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Ffont Emoji</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="679"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
         <source>Name</source>
         <translation type="unfinished">Enw</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Subscription</source>
         <translation type="unfinished">Tanysgrifiad</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
         <source>Interval:</source>
         <translation type="unfinished">egwyl:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="761"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">Galluogi diweddariad awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="809"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Clirio gweinyddion cyn eu diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="711"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Prawf URL ar ôl diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
         <source>Enable</source>
         <translation type="unfinished">Galluogi</translation>
     </message>
@@ -393,27 +392,27 @@
         <translation type="obsolete">Cyfwng (munud, annilys os yw&apos;n llai na 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="748"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Dileu Dyblygiadau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="768"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=werth_custom,os=custom_os,osVersion=fersiwn_custom,model=model_custom</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="775"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
         <source>User Agent</source>
         <translation type="unfinished">Asiant Defnyddiwr</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;Fersiwn OS=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="788"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Anfon Paramedrau System</translation>
     </message>
@@ -422,32 +421,32 @@
         <translation type="obsolete">Diweddariad awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="698"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fformat: hwid=value,os=value,osVersion=gwerth, model=gwerth&lt;/p&gt;&lt;p&gt;Gadewch yn wag i ddefnyddio gwerthoedd rhagosodedig.Nodwch y paramedrau rydych am eu diystyru yn unig.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="701"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Paramedrau System Custom (dewisol)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="795"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Dileu Annilys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="802"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Dileu Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="817"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
         <source>Core</source>
         <translation type="unfinished">Craidd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="862"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -455,7 +454,7 @@
 Gwella Ping a Pherfformiad&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="867"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Analluogi Ystadegau Traffig</translation>
     </message>
@@ -464,37 +463,62 @@ Gwella Ping a Pherfformiad&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Defnyddiwch TCP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="917"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Amlblecs (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="927"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
         <source>Loglevel</source>
         <translation type="unfinished">Loglefel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="891"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
         <source>concurrency</source>
         <translation type="unfinished">arian cyfred</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="901"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <source>Hide window at startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
+        <source>Show test button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
+        <source>Show start/stop button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
+        <source>Enable indicator borders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
+        <source>Radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
         <source>Padding</source>
         <translation type="unfinished">Padin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
         <source>Default On</source>
         <translation type="unfinished">Rhagosodiad Ar</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
         <source>Core Options</source>
         <translation type="unfinished">Opsiynau Craidd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="950"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
@@ -502,27 +526,27 @@ Gwella Ping a Pherfformiad&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 cleient NTP integredig sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="955"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Gosodiadau NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="970"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
         <source>server</source>
         <translation type="unfinished">gweinydd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
         <source>Port</source>
         <translation type="unfinished">Porthladd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="997"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>sync interval</source>
         <translation type="unfinished">cyfwng cysoni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1004"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -530,22 +554,22 @@ cleient NTP integredig sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation
 munud&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1034"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
         <source>Security</source>
         <translation type="unfinished">Diogelwch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1074"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Analluogi cais Braint</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Hepgor dilysu tystysgrif TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Defnyddiwch Storfa Tystysgrif Mozilla</translation>
     </message>
@@ -554,27 +578,27 @@ munud&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Hepgor dilysiad tystysgrif TLS yn ddiofyn (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1158"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Olion Bysedd uTLS rhagosodedig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1064"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Peidiwch â cheisio dechrau fel Gweinyddwr oni bai y gwneir cais penodol amdano&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Defnyddiwch Unix Domain Socket ar gyfer cyfathrebu rhwng nekobox a nekobox_core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="877"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Defnyddiwch UDS ar gyfer IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Dechreuwch bob amser fel Defnyddiwr Safonol</translation>
     </message>
@@ -593,7 +617,7 @@ INI - 1980au cynnar - fformat ffurfweddu testun plaen syml gydag adrannau a phar
 deuaidd - 2026 - fformat gwerthoedd beit mympwyol ar gyfer gosodiadau NekoBox a ddefnyddir fel gwerthoedd RocksDB neu ffeiliau annibynnol - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -604,142 +628,143 @@ INI - 1980au cynnar - fformat ffurfweddu testun plaen syml gydag adrannau a phar
 deuaidd - 2026 - fformat gwerthoedd beit mympwyol ar gyfer gosodiadau NekoBox a ddefnyddir fel gwerthoedd leveldb neu ffeiliau annibynnol - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1284"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Gofynnwch am ddileu proffil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Auto-Profi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1310"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Profwch ddirprwyon yn y cefndir yn awtomatig a chynnal cronfa o ddirprwyon sy&apos;n gweithio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1313"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Galluogi Profi Awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1320"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Cyfnod Prawf (eiliadau)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Pa mor aml i redeg y cylch prawf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Dirprwyon Fesul Cylch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1350"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Nifer y dirprwyon i&apos;w profi ym mhob cylchred</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Maint Pwll Gweithio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1373"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Uchafswm nifer y dirprwyon gweithio wedi&apos;u dilysu i&apos;w cynnal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1389"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Trothwy Cudd (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Yr hwyrni mwyaf i ystyried bod dirprwy yn gweithio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1415"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Methiant Ailgeisio Cyfrif</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Nifer yr ymgeisiau eto cyn ystyried dirprwy wedi methu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1438"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Prawf URL Targed</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1445"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL i brofi dirprwyon yn ei erbyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1448"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
         <source>http://cp.cloudflare.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Newid yn awtomatig i ddirprwy gweithiol arall pan fydd dirprwy modd TUN yn methu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1458"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Galluogi TUN Methiant</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1466"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
         <source>Startup</source>
         <translation type="unfinished">Cychwyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1530"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometreg</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1559"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Geometreg arbed awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
         <source>Autosave position</source>
         <translation type="unfinished">Safle arbed yn awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1586"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
         <source>Apply now</source>
         <translation type="unfinished">Gwnewch gais nawr</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1660"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
         <source>Width</source>
         <translation type="unfinished">Lled</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1747"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1692"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1247"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
         <source>Configs format</source>
         <translation type="unfinished">Ffurfweddu</translation>
     </message>
@@ -754,64 +779,64 @@ INI - 1980au cynnar - fformat ffurfweddu testun plaen syml gydag adrannau a phar
 deuaidd - 2026 - fformat gwerthoedd beit mympwyol ar gyfer gosodiadau NekoBox a ddefnyddir fel gwerthoedd LMDB neu ffeiliau annibynnol - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1760"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
         <source>Height</source>
         <translation type="unfinished">Uchder</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1857"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Llwybr Gweithredadwy Craidd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1886"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2075"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
         <source>Use default</source>
         <translation type="unfinished">Defnyddiwch ddiofyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1893"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
         <source>Remote Control</source>
         <translation type="unfinished">Rheolaeth Anghysbell</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1919"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2108"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
         <source>Select</source>
         <translation type="unfinished">Dewiswch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2046"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Cyfeiriadur Adnoddau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Rheolwr Adnoddau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="220"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
         <source>Proxy type</source>
         <translation type="unfinished">Math o ddirprwy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
         <source>Off</source>
         <translation type="unfinished">I ffwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="255"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
         <source>Name of program</source>
         <translation type="unfinished">Enw&apos;r rhaglen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="529"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
         <source>Security Warning</source>
         <translation type="unfinished">Rhybudd Diogelwch</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="530"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -828,12 +853,12 @@ Galluogwch hwn dim ond os ydych chi&apos;n ymddiried yn llwyr ym mhob rhwydwaith
 Ydych chi&apos;n siŵr eich bod am analluogi dilysiad TLS?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="551"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Rhybudd Preifatrwydd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="552"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -3271,7 +3296,7 @@ Ydych chi&apos;n siŵr?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="651"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="702"/>
         <source>Profiles</source>
         <translation type="unfinished">Proffiliau</translation>
     </message>
@@ -3289,25 +3314,25 @@ Ydych chi&apos;n siŵr?</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1479"/>
         <source>Update</source>
         <translation type="unfinished">Diweddariad</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
         <source>Tun Mode</source>
         <translation type="unfinished">Modd Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="278"/>
         <source>System DNS</source>
         <translation type="unfinished">System DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="238"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="620"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2875"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2878"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="671"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2931"/>
         <source>System Proxy</source>
         <translation type="unfinished">Dirprwy System</translation>
     </message>
@@ -3331,83 +3356,83 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="unfinished">Enw</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="328"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
         <source>Test Result</source>
         <translation type="unfinished">Canlyniad Prawf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="521"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="572"/>
         <source>Traffic</source>
         <translation type="unfinished">Traffig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="426"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="477"/>
         <source>Logs</source>
         <translation type="unfinished">Logiau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="461"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="512"/>
         <source>Connections</source>
         <translation type="unfinished">Cysylltiadau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="540"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">Cyrchfan (Parth)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="492"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="543"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Cliciwch I Analluogi Trefnu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="497"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="548"/>
         <source>Process</source>
         <translation type="unfinished">Proses</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="551"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Cliciwch I Trefnu Yn ôl Proses</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="505"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="556"/>
         <source>Protocol</source>
         <translation type="unfinished">Protocol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="508"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="559"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Cliciwch i Trefnu Yn ôl Protocol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="564"/>
         <source>Outbound</source>
         <translation type="unfinished">Allan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="516"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="567"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Cliciwch i Drefnu Yn ôl Allan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="524"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="575"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Cliciwch I Toglo didoli yn ôl Traffig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="533"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="584"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">Graff Traffig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="667"/>
         <source>Program</source>
         <translation type="unfinished">Rhaglen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="640"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="691"/>
         <source>Preferences</source>
         <translation type="unfinished">Dewisiadau</translation>
     </message>
@@ -3416,7 +3441,7 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Gweinydd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="665"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716"/>
         <source>Share</source>
         <translation type="unfinished">Rhannu</translation>
     </message>
@@ -3425,19 +3450,20 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Grŵp cyfredol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="312"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="347"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="357"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="726"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="780"/>
         <source>Test</source>
         <translation type="unfinished">Prawf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
         <source>Current Selected</source>
         <translation type="unfinished">Dewiswyd Cyfredol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="706"/>
         <source>Current Group</source>
         <translation type="unfinished">Grŵp Cyfredol</translation>
     </message>
@@ -3447,181 +3473,183 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="unfinished">Gwybodaeth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="712"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="763"/>
         <source>Hidden menu</source>
         <translation type="unfinished">Dewislen cudd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="775"/>
         <source>Routing Menu</source>
         <translation type="unfinished">Dewislen Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="736"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="787"/>
         <source>Context</source>
         <translation type="unfinished">Cyd-destun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="740"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="791"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">Cyd-destunProffiliau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="815"/>
         <source>Exit</source>
         <translation type="unfinished">Ymadael</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="769"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="820"/>
         <source>Toggle Window</source>
         <translation type="unfinished">Toglo Ffenestr</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="774"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Gosodiadau Sylfaenol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="779"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
         <source>New profile</source>
         <translation type="unfinished">Proffil newydd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
         <source>Groups</source>
         <translation type="unfinished">Grwpiau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4207"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4279"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4289"/>
         <source>Start</source>
         <translation type="unfinished">Cychwyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4206"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4217"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4278"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4289"/>
         <source>Stop</source>
         <translation type="unfinished">Stopio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="805"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="856"/>
         <source>Edit</source>
         <translation type="unfinished">Golygu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="813"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="864"/>
         <source>Routing Settings</source>
         <translation type="unfinished">Gosodiadau Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="818"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="869"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Ychwanegu proffil o&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="877"/>
         <source>Delete</source>
         <translation type="unfinished">Dileu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="834"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="885"/>
         <source>Debug Info</source>
         <translation type="unfinished">Gwybodaeth Dadfygio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="890"/>
         <source>QR Code and link</source>
         <translation type="unfinished">Cod QR a dolen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="898"/>
         <source>Copy Link</source>
         <translation type="unfinished">Copïo Dolen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="919"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">Canlyniad Prawf Clirio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1703"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="927"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1771"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Allforio ffurfwedd % 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="884"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="935"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">Ailosod Traffig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="892"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="943"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">Sganiwch y Cod QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="951"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">Galluogi Proxy System</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="959"/>
         <source>Disable</source>
         <translation type="unfinished">Analluogi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="913"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="964"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Dileu Dyblygiadau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="921"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1006"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="972"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
         <source>fake</source>
         <translation type="unfinished">ffug</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="980"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
         <source>Move</source>
         <translation type="unfinished">Symud</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="940"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="991"/>
         <source>Start with system</source>
         <translation type="unfinished">Dechreuwch gyda&apos;r system</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="948"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="999"/>
         <source>Remember last profile</source>
         <translation type="unfinished">Cofiwch y proffil diwethaf</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="956"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1007"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Caniatáu i ddyfeisiau eraill gysylltu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1012"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Dileu Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1020"/>
         <source>Full Test</source>
         <translation type="unfinished">Prawf Llawn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="977"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1028"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Gosodiadau Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1033"/>
         <source>Select All</source>
         <translation type="unfinished">Dewiswch Pawb</translation>
     </message>
@@ -3630,105 +3658,105 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Copïo Dolenni Personol</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1014"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1065"/>
         <source>Copy links</source>
         <translation type="unfinished">Copïo dolenni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1098"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1149"/>
         <source>Url Test</source>
         <translation type="unfinished">Prawf Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1131"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1182"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">Datrys Parth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1272"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Cofrestru tasg uchel Windows</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1277"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
         <source>About</source>
         <translation type="unfinished">Ynghylch</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
         <source>Statistics</source>
         <translation type="unfinished">Ystadegau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
         <source>Check for updates</source>
         <translation type="unfinished">Gwiriwch am ddiweddariadau</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
         <source>Toggle filter</source>
         <translation type="unfinished">Toglo&apos;r hidlydd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1254"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1305"/>
         <source>Unselect</source>
         <translation type="unfinished">Dad-ddewis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="747"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1213"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="798"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1264"/>
         <source>Information</source>
         <translation type="unfinished">Gwybodaeth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1041"/>
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Copïwch gysylltiadau Nekoray</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1025"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1076"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Galluogi Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3395"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1081"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3467"/>
         <source>Clone</source>
         <translation type="unfinished">Clôn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1089"/>
         <source>Update subscription</source>
         <translation type="unfinished">Diweddaru tanysgrifiad</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1049"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1100"/>
         <source>Resolve domain</source>
         <translation type="unfinished">Datrys parth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1057"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1108"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Gosodiadau Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1062"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1113"/>
         <source>Restart Program</source>
         <translation type="unfinished">Rhaglen Ailgychwyn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1118"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">Agor Ffolder Ffurfwedd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1088"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">Ailgychwyn Dirprwy</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1093"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1144"/>
         <source>Stop Testing</source>
         <translation type="unfinished">Stopio Profi</translation>
     </message>
@@ -3737,7 +3765,7 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1171"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Grŵp Prawf Url</translation>
     </message>
@@ -3746,7 +3774,7 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1139"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Dileu Annilys</translation>
     </message>
@@ -3755,84 +3783,84 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1208"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1259"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">Cyfredol Cyflymder</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1150"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1201"/>
         <source>Full test Selected</source>
         <translation type="unfinished">Prawf llawn wedi&apos;i ddewis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1155"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1206"/>
         <source>Download test Selected</source>
         <translation type="unfinished">Dewiswyd y prawf lawrlwytho</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1160"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
         <source>Upload test Selected</source>
         <translation type="unfinished">Uwchlwytho prawf wedi&apos;i ddewis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1165"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
         <source>Country test Selected</source>
         <translation type="unfinished">Prawf gwlad wedi&apos;i ddewis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1170"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
         <source>Simple download test Selected</source>
         <translation type="unfinished">Prawf lawrlwytho syml wedi&apos;i ddewis</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1175"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">Grŵp Speedtest</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1180"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
         <source>Hide window</source>
         <translation type="unfinished">Cuddio ffenestr</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1185"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Add profile from File</source>
         <translation type="unfinished">Ychwanegu proffil o Ffeil</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1190"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4308"/>
         <source>Add new Group</source>
         <translation type="unfinished">Ychwanegu Grŵp newydd</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1195"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Security Settings</source>
         <translation type="unfinished">Gosodiadau Diogelwch</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="222"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="325"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
         <source>Unavailable</source>
         <translation type="unfinished">Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="823"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="899"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">Log sgrolio&apos;n awtomatig</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1299"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1367"/>
         <source>Select Proxy</source>
         <translation type="unfinished">Dewiswch Ddirprwy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1300"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1368"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Math o ddirprwy sy&apos;n dod i mewn:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1452"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Golygu Proffiliau Llwybro</translation>
     </message>
@@ -3841,24 +3869,24 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Diweddaru Proffiliau Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1458"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1483"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1486"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1526"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1530"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1554"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1598"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="96"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="105"/>
         <source>Update Response</source>
         <translation type="unfinished">Ymateb Diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1459"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1527"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="106"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Nid oes unrhyw broffiliau llwybro yn cael eu diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1463"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="97"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Proffiliau llwybro % 1 wedi&apos;u diweddaru</translation>
@@ -3868,12 +3896,12 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Diweddaru Map RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1552"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Wedi methu diweddaru setiau rheolau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1555"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Diweddarwyd y setiau rheolau yn llwyddiannus</translation>
     </message>
@@ -3882,355 +3910,365 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Diweddaru RuleSet Cache</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="333"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Array JSON annilys</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="334"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="361"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Ni ellir dosrannu&apos;r mewnbwn a ddarparwyd i arae rheolau llwybr dilys:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="675"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
+        <source>No Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="544"/>
+        <source>Select proxy profile to connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="754"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">Ni chaniateir defnyddio ar macOS</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1477"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">Proffil Llwybro Mewnforio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1413"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1481"/>
         <source>From clipboard</source>
         <translation type="unfinished">O&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1417"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1485"/>
         <source>From file</source>
         <translation type="unfinished">O ffeil</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1424"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1492"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">Wedi&apos;i fewnforio o&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1436"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1504"/>
         <source>Imported from %1</source>
         <translation type="unfinished">Mewnforiwyd o % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1446"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Proffiliau Llwybro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1473"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">Map Set Rule</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1496"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">Cache RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1531"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1599"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Mae storfa&apos;r setiau rheolau yn cael ei diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1545"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1613"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Clirio&apos;r Cache RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1559"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1627"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Galluogi AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2007"/>
         <source>Error</source>
         <translation type="unfinished">Gwall</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2030"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2104"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Newidiodd Gosodiadau Tun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2031"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2105"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Ailgychwyn Tun i ddod i rym.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2037"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2092"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3471"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3918"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3980"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4033"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4286"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2116"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2171"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3543"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3990"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4052"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4105"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4358"/>
         <source>Confirmation</source>
         <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2038"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2093"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2117"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2172"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Gosodiadau wedi newid, ailgychwyn dirprwy?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2067"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2146"/>
         <source>Settings changed</source>
         <translation type="unfinished">Gosodiadau wedi newid</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2068"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2147"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Ailgychwyn y rhaglen i ddod i rym.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2110"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2189"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Mewnforiwyd % 1 proffil(iau)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2444"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2523"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Dewisodd y defnyddiwr ddim hawl braint, efallai na fydd rhai nodweddion yn gweithio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2511"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2590"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Rhowch y breintiau gwraidd craidd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2842"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2895"/>
         <source>Not Running</source>
         <translation type="unfinished">Ddim yn Rhedeg</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3038"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3110"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">Mae&apos;r grŵp yn rhy fawr i&apos;w ddidoli</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3396"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3468"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Clonio % 1 eitem(au)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3416"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3488"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Mae&apos;r grŵp yn rhy fawr i ddod o hyd i gopïau dyblyg</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3451"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3523"/>
         <source> Confirmation </source>
         <translation type="unfinished">Cadarnhad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3452"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Dileu % 1 eitem(au) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3472"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3544"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Dileu % 1 eitem(au) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3524"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3596"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Wedi copïo % 1 eitem(au)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3768"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3840"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Heb ganfod y cod QR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3790"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3862"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Methu dal sgrin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3919"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3991"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Dileu % 1 Eitem(au) nad ydynt ar gael ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3981"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4053"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Dileu % 1 eitem(au) annilys ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4106"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Disodli cyfeiriadau gweinydd parth gyda&apos;u IPs sydd wedi&apos;u datrys?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4204"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
         <source>Clear</source>
         <translation type="unfinished">Clir</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4276"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4348"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Dileu&apos;r Grŵp a ddewiswyd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4277"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4349"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Golygu&apos;r Grŵp a ddewiswyd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4287"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4359"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Tynnu % 1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5019"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5091"/>
         <source>Cannot start</source>
         <translation type="unfinished">Methu dechrau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5020"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5092"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Nid yw&apos;r cais lawrlwytho diwethaf wedi gorffen eto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5054"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5126"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Wedi methu lawrlwytho asedau diweddaru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">Erthylu prawf proffil</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="129"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[% 1] gwall prawf: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="158"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="560"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Mae rhywbeth yn anghywir iawn, ni ellir dod o hyd i&apos;r pwnc!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="164"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="566"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Mae data rheolwr proffil wedi&apos;i lygru, ceisiwch eto.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="196"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Ni ddaeth y prawf url diwethaf i ben yn llwyr, arhoswch.Os bydd yn parhau, ailgychwynnwch y rhaglen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="208"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="378"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Wedi methu ag adeiladu ffurfwedd prawf:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="252"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Prawf URL wedi&apos;i orffen!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="296"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Wedi methu stopio profion</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="302"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
         <source>Testing</source>
         <translation type="unfinished">Profi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="347"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Ni adawodd y prawf cyflymder diwethaf yn llwyr, arhoswch.Os bydd yn parhau, ailgychwynnwch y rhaglen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="414"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">Speedtest wedi gorffen!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="497"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Erthylu prawf cyflymder proffil</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="585"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[% 1] gwall prawf cyflymder: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="594"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Mae angen i chi alluogi herwgipio gweinydd DNS yn gyntaf</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="608"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Wedi methu gosod dns system:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Camymddwyn dyfais tun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Os ydych chi&apos;n cael trafferth cychwyn VPN, gallwch chi orfodi proses ailosod Craidd yma ac yna ceisiwch ddechrau&apos;r proffil eto.Y gwall yw % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
         <source>Reset</source>
         <translation type="unfinished">Ailosod</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="663"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Cancel</source>
         <translation type="unfinished">Canslo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="699"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Mae proffil arall yn dechrau...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="706"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Mae proffil arall yn stopio ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Os nad oes ymateb am amser hir, argymhellir ailgychwyn y feddalwedd.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="741"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Wrthi&apos;n cychwyn proffil % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="743"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Methwyd cychwyn proffil % 1</translation>
     </message>
@@ -4245,7 +4283,7 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="unfinished">Atal proffil % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="862"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Wedi methu â stopio, ailgychwynnwch y rhaglen.</translation>
     </message>
@@ -4354,60 +4392,60 @@ Ydych chi&apos;n siŵr?</translation>
         <translation type="obsolete">Ni ellir defnyddio modd Tun gyda Custom configs</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="746"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1829"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
         <source>Decrypted happ:// link</source>
         <translation type="unfinished">Dolen hap:// wedi&apos;i dadgryptio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="749"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1833"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
         <source>Failed to decrypt happ:// link</source>
         <translation type="unfinished">Wedi methu â dadgryptio dolen hap://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1847"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Yn gofyn am danysgrifiad: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1853"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1870"/>
         <source>Requesting subscription %1 error: %2</source>
         <translation type="unfinished">Gofyn am danysgrifiad % 1 gwall: % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1894"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Teitl proffil tanysgrifiad: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1886"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1903"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Cais tanysgrifiad wedi ei orffen: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1911"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1928"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Wrthi&apos;n clirio gweinyddion...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1937"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1954"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Wrthi&apos;n prosesu data tanysgrifio...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1951"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1968"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Gollwng % 1 dirprwy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1953"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1970"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">Proses wedi&apos;i chwblhau, gwneud cais...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1967"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1984"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Ychwanegwyd % 1 dirprwy</translation>
@@ -4427,13 +4465,13 @@ Wedi dileu % 3 Proffil:
         <translation type="obsolete">Dim byd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1969"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1986"/>
         <source>Change of %1:</source>
         <translation type="unfinished">Newid % 1:</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2956"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3028"/>
         <source>Default</source>
         <translation type="unfinished">Diofyn</translation>
     </message>
@@ -4462,7 +4500,7 @@ Wedi dileu % 3 Proffil:
         <translation type="unfinished">Dewiswch</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2810"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2863"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Dirprwy: % 1
@@ -4484,7 +4522,7 @@ Uniongyrchol: % 2</translation>
         <translation type="unfinished">Wrthi&apos;n ailgychwyn y craidd ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="372"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="377"/>
         <source>System</source>
         <translation type="unfinished">System</translation>
     </message>
@@ -4560,40 +4598,40 @@ Sut i ddiweddaru?</translation>
         <translation type="unfinished">Defnyddiwyd: % 1 Aros: % 2 Dod i ben: % 3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Lawrlwythwch Proffiliau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="384"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="411"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Gwall proffil wrth wneud cais: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="578"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="657"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Wedi dileu % 1 Dyblyg</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="618"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="697"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Wedi dileu % 1 Annilys</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="653"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="732"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Wedi dileu % 1 Ddim ar gael</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1814"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1886"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Gwirio Setiau Rheolau: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1836"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1908"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Gofyn am wall rhestr set rheolau: % 1</translation>
     </message>
@@ -4602,7 +4640,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Cyfeiriad IP: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2848"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2901"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP Inbound: % 1</translation>
     </message>
@@ -4611,69 +4649,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">I ffwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2852"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2905"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">I mewn: % 2 % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2854"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2907"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">I mewn: I ffwrdd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3431"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Symud proffiliau i grŵp</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3546"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3618"/>
         <source>Config copied</source>
         <translation type="unfinished">Config wedi&apos;i gopïo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3558"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3630"/>
         <source>Copy core config</source>
         <translation type="unfinished">Copïo ffurfwedd craidd</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3560"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3632"/>
         <source>Copy test config</source>
         <translation type="unfinished">Copïo ffurfwedd prawf</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3561"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3633"/>
         <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">iawn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4919"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4929"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4991"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5001"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5010"/>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5073"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5082"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5117"/>
         <source>Update</source>
         <translation type="unfinished">Diweddariad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4920"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4992"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Ddim yn llwyfan cymorth swyddogol</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4930"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Gwall wrth ofyn am ddiweddariad: % 1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4973"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5045"/>
         <source>No update</source>
         <translation type="unfinished">Dim diweddariad</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5002"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5074"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4682,17 +4720,17 @@ Nodyn rhyddhau:
 % 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5005"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5077"/>
         <source>Close</source>
         <translation type="unfinished">Cau</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5007"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5079"/>
         <source>Open in browser</source>
         <translation type="unfinished">Agor yn y porwr</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5046"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5118"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Diweddariad yn barod, ailgychwyn i osod?</translation>
     </message>
@@ -4702,7 +4740,7 @@ Nodyn rhyddhau:
         <translation type="unfinished">Mynediad wedi&apos;i wrthod</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Dewiswch Ffolder</translation>
     </message>
@@ -5157,15 +5195,38 @@ Llwyth tâl y cais oedd: % 2</translation>
         <translation type="obsolete">Ni ellir dosrannu&apos;r mewnbwn a ddarparwyd i arae rheolau llwybr dilys:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="485"/>
         <source>Fetching information</source>
         <translation type="unfinished">Nôl gwybodaeth</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="474"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1583"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="501"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1651"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Lawrlwythwch Proffiliau</translation>
+    </message>
+</context>
+<context>
+    <name>StartStopButton</name>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
+        <source>Start</source>
+        <translation type="unfinished">Cychwyn</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
+        <source>Connecting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
+        <source>Stop</source>
+        <translation type="unfinished">Stopio</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
+        <source>Stopping…</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
