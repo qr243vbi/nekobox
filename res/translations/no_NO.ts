@@ -484,7 +484,7 @@ Forbedre Ping og ytelse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
         <source>Show test button</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vis testknapp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
