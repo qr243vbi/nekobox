@@ -499,7 +499,7 @@ Vylepšete ping a výkon&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
         <source>Radius</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Poloměr</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
