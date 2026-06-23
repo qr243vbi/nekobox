@@ -489,7 +489,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
         <source>Show start/stop button</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Прикажи го копчето за почеток/стоп</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
