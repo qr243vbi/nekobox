@@ -494,7 +494,7 @@ Paranna Pingiä ja suorituskykyä&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translati
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
         <source>Enable indicator borders</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ota ilmaisimen reunat käyttöön</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
