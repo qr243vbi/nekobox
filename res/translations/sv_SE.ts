@@ -5262,7 +5262,7 @@ Begärans nyttolast var: %2</translation>
     <message>
         <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
         <source>Stopping…</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stoppar...</translation>
     </message>
 </context>
 <context>
