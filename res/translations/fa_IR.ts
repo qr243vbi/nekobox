@@ -369,7 +369,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
         <source>Hide window at startup</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">پنهان کردن پنجره هنگام راه اندازی</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
