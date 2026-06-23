@@ -494,12 +494,12 @@ Forbedre ping og ydeevne&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
         <source>Enable indicator borders</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aktiver indikatorkanter</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
         <source>Radius</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Radius</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
@@ -3931,7 +3931,7 @@ Er du sikker?</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="544" />
         <source>Select proxy profile to connect</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vælg proxyprofil for at oprette forbindelse</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="754" />
