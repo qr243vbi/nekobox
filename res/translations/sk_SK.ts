@@ -5223,7 +5223,7 @@ Užitočné zaťaženie požiadavky bolo: %2</translation>
     <message>
         <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221" />
         <source>Connecting…</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pripája sa…</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222" />
