@@ -146,7 +146,7 @@ public:
   bool first_start = true;
   QString program_name = "NekoRay";
 
-  bool enable_indicator_borders = true;
+  bool enable_indicator_borders = false;
   int indicator_border_width = 2;
   int indicator_border_radius = 8;
 };
