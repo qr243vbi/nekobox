@@ -131,12 +131,9 @@ void TrafficLooper::Loop() {
         runOnUiThread([=, this] {
           auto m = GetMainWindow();
           m->refresh_status("STOP");
+          m->update_traffic_graph(0, 0, 0, 0);
         });
       }
-      runOnUiThread([=, this] {
-        auto m = GetMainWindow();
-        m->update_traffic_graph(0, 0, 0, 0);
-      });
       continue;
     } else {
       // 开始
