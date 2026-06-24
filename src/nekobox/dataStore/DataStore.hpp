@@ -239,9 +239,9 @@ namespace Configs {
         bool adblock_enable = false;
 
         // VPN
-        bool fake_dns = false;
+        bool fake_dns = true;
         bool enable_tun_routing = false;
-        QString vpn_implementation = "gvisor";
+        QString vpn_implementation = "system";
         int vpn_mtu = 1500;
         bool vpn_ipv6 = false;
         bool vpn_strict_route = true;
