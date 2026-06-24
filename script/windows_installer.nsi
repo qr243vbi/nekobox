@@ -960,9 +960,9 @@ SectionEnd
 
 Section "Uninstall"
 
-  Delete "$SMPROGRAMS\nekobox.lnk"
-  Delete "$desktop\nekobox.lnk"
-  RMDir "$SMPROGRAMS\nekobox"
+  Delete "$SMPROGRAMS\${SOFTWARE_NAME}.lnk"
+  Delete "$desktop\${SOFTWARE_NAME}.lnk"
+  RMDir "$SMPROGRAMS\${SOFTWARE_NAME}"
 
   RMDir /r "$INSTDIR"
 
