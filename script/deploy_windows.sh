@@ -59,12 +59,12 @@ cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
 rel="$BUILD"
-if [[ -f "$BUILD/Release/nekobox.exe" ]]
+if [[ -f "$BUILD/Release/nekoray.exe" ]]
 then
   rel="$BUILD/Release"
 fi
 
-cp "$rel/nekobox.exe" "$DEST"
+cp "$rel/nekoray.exe" "$DEST"
 #cp "$rel/elevated_launcher.exe" "$DEST"
 touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
@@ -89,7 +89,7 @@ cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
-windeployqt nekobox.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+windeployqt nekoray.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
 rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi
@@ -113,7 +113,7 @@ fi
 
 if [[ "$SKIP_NSIS" != "true" ]]
 then
-makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoRay" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
 fi
 
 pushd "$DEPLOYMENT"
