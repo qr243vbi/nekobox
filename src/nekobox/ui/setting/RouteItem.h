@@ -1,7 +1,3 @@
-
-
-
-
 #pragma once
 
 #include <QWidget>
@@ -57,15 +53,17 @@ private:
 
     QShortcut* deleteShortcut;
 
- //   QStringList outbounds;
+    AutoCompleteTextEdit* directIp;
 
- //   std::map<int,int> outboundMap;
+    AutoCompleteTextEdit* directDomain;
 
-    AutoCompleteTextEdit* simpleDirect;
+    AutoCompleteTextEdit* proxyIp;
 
-    AutoCompleteTextEdit* simpleBlock;
+    AutoCompleteTextEdit* proxyDomain;
 
-    AutoCompleteTextEdit* simpleProxy;
+    AutoCompleteTextEdit* blockIp;
+
+    AutoCompleteTextEdit* blockDomain;
 
     bool route_item_on_notes = false;
 
@@ -82,6 +80,10 @@ private:
     void updateRulePreview();
 
     void updateRouteItemsView();
+
+    void loadSimpleBoxes();
+
+    QString commitSimpleBoxes();
 private slots:
     void accept() override;
 
