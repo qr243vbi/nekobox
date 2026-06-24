@@ -83,8 +83,7 @@ namespace Stats
             newState.insert(c.id);
         }
 
-        state->clear();
-        for (const auto& id : newState) state->insert(id);
+        *state = std::move(newState);
 
         if (sort == Default)
         {

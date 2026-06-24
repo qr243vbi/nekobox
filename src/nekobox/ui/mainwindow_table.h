@@ -28,6 +28,7 @@ class ColumnFilterProxy : public QSortFilterProxyModel
 public:
     void setColumnFilter(int column, const QString& text);
     void setEnabled(bool enable);
+    void setGlobalFilter(const QString& text);
 
 protected:
     bool filterAcceptsRow(int row, const QModelIndex &parent) const override;
@@ -35,6 +36,7 @@ protected:
 private:
     QHash<int, QString> m_filters;
     bool enabled = false;
+    QString m_globalFilter;
 };
 
 class SelectionKeeper : public QObject

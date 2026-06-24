@@ -70,7 +70,6 @@ try{                                                                            
     reply = std::make_optional(resp);                                                   \
 } catch (TException e){                                                                 \
     status.ok = false;                                                                  \
-    qDebug() << "HI CRUEL WORLD";                                                       \
     status.what = e.what();                                                             \
     qDebug() << QString::fromUtf8(status.what.c_str());                                    \
 }

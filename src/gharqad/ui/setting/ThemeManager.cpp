@@ -52,37 +52,45 @@ void ThemeManager::ApplyTheme(const QString &theme, bool force) {
             return;
         }
     }
-    
-    QString lower_theme;
+
+    QString themePath;
     bool isFile;
-    std::tie(lower_theme, isFile) = getPath(theme);
+    std::tie(themePath, isFile) = getPath(theme);
 
     if (!isFile) {
         qApp->setStyleSheet("");
-        qApp->setStyle(lower_theme);
+        qApp->setStyle(themePath);
     } else {
-        QFile f(lower_theme);
+        QFile f(themePath);
         if (f.open(QFile::ReadOnly | QFile::Text)){
             QTextStream ts(&f);
-            qApp->setStyleSheet(ts.readAll());
+            QString qss = ts.readAll();
+            f.close();
+
+            // The feiyangqingyun themes (flatgray/lightblue/blacksoft) embed
+            // widget images via ":/qss/...", but in this project those resources
+            // are bundled under the "nekobox" resource prefix
+            // (see res/qss/feiyangqingyun/qss.qrc). Rewrite the paths the same
+            // way upstream nekoray does, so checkboxes, radio buttons, spinbox
+            // arrows, tree branches and calendar buttons render correctly.
+            auto lowerTheme = theme.toLower();
+            if (lowerTheme == "flatgray" || lowerTheme == "lightblue" || lowerTheme == "blacksoft") {
+                qss.replace(":/qss/", ":/nekobox/qss/");
+            }
+
+            qApp->setStyleSheet(qss);
         }
     }
-/*
-    {
-    QString style = qApp->styleSheet();
 
-  qApp->setStyleSheet(style + R"(
-    QGroupBox[flat="true"] {
-        border: none;
-        background: transparent;
-    }      
-    QGroupBox[rounded="true"] {
-        border-radius: 10px; border: 3px solid palette(midlight);
-        margin-top: 0px;
-    }
-  )");
-    }
-*/
+    // Always overlay nekoray's base stylesheet on top of the active theme,
+    // mirroring upstream nekoray (res/neko.css). This keeps QMessageBox text
+    // selectable regardless of the selected theme.
+    static const QString nekoCss = QStringLiteral(
+        "\nQMessageBox {\n"
+        "    messagebox-text-interaction-flags: 5;\n"
+        "}\n");
+    qApp->setStyleSheet(qApp->styleSheet() + nekoCss);
+
     current_theme = theme;
 
     emit themeChanged(theme);

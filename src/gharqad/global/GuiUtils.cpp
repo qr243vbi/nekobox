@@ -42,18 +42,11 @@ void ToggleWindow(QWidget *w) {
 }
 
 void runOnUiThread(const std::function<void()> &callback) {
-  // any thread
-  auto *timer = new QTimer();
-  auto thread = mainwindow->thread();
-  timer->moveToThread(thread);
-  timer->setSingleShot(true);
-  QObject::connect(timer, &QTimer::timeout, [=]() {
-    // main thread
-    callback();
-    timer->deleteLater();
-  });
-  QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection,
-                            Q_ARG(int, 0));
+  // Post the callback to mainwindow's thread event loop. Using mainwindow as
+  // the context object auto-cancels the call if it is destroyed, and avoids
+  // allocating a one-shot QTimer on every invocation (this runs many times
+  // per second from the stat loops).
+  QMetaObject::invokeMethod(mainwindow, callback, Qt::QueuedConnection);
 }
 
 void setTimeout(const std::function<void()> &callback, QObject *obj,
