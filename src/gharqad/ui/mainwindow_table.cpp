@@ -20,6 +20,12 @@
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
 #include <QScrollBar>
+#include <QTextBrowser>
+#include <QLineEdit>
+#include <QBoxLayout>
+#include <QLayout>
+#include <QWidget>
+#include <QSizePolicy>
 
 #define SELECTION_KEEPER_ROLE Qt::UserRole + 3
 
@@ -168,22 +174,50 @@ void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
         m_filters[column] = text;
 }
 
+void ColumnFilterProxy::setGlobalFilter(const QString& text)
+{
+    m_globalFilter = text;
+}
+
 bool ColumnFilterProxy::filterAcceptsRow(int row, const QModelIndex &parent) const
 {
-    if (!enabled || !sourceModel()){
+    auto src = sourceModel();
+    if (!src){
         return true;
     }
 
-    for (auto it = m_filters.begin(); it != m_filters.end(); ++it)
+    // Global search box: row matches if ANY column contains the needle.
+    if (!m_globalFilter.isEmpty())
     {
-        int col = it.key();
-        const QString &pattern = it.value();
-        
-        QModelIndex idx = sourceModel()->index(row, col, parent);
-        QString data = sourceModel()->data(idx).toString();
-
-        if (!data.contains(pattern, Qt::CaseInsensitive))
+        bool match = false;
+        int cols = src->columnCount(parent);
+        for (int col = 0; col < cols; ++col)
+        {
+            QModelIndex idx = src->index(row, col, parent);
+            QString data = src->data(idx).toString();
+            if (data.contains(m_globalFilter, Qt::CaseInsensitive)){
+                match = true;
+                break;
+            }
+        }
+        if (!match)
             return false;
+    }
+
+    // Per-column header filters.
+    if (enabled)
+    {
+        for (auto it = m_filters.begin(); it != m_filters.end(); ++it)
+        {
+            int col = it.key();
+            const QString &pattern = it.value();
+
+            QModelIndex idx = src->index(row, col, parent);
+            QString data = src->data(idx).toString();
+
+            if (!data.contains(pattern, Qt::CaseInsensitive))
+                return false;
+        }
     }
 
     return true;
@@ -413,6 +447,65 @@ void MyTableModel::capture(QTableView * view){
             this->proxy->setColumnFilter(id, text);
             this->refresh();
         });
+
+    // --- nekoray-like UI: hide the data_view strip and add an always-visible
+    // --- search box in its place.
+    if (QWidget *win = view->window()) {
+        QTextBrowser *dv = win->findChild<QTextBrowser *>("data_view");
+        if (dv) {
+            // Block signals so the textChanged handler in MainWindow can no
+            // longer resize the strip or toggle the toolbar button style.
+            dv->blockSignals(true);
+            dv->setMaximumHeight(0);
+            dv->hide();
+        }
+
+        QLineEdit *searchBox = new QLineEdit(win);
+        searchBox->setObjectName("searchBox");
+        searchBox->setPlaceholderText(tr("Search"));
+        searchBox->setClearButtonEnabled(true);
+        searchBox->setMinimumWidth(120);
+        searchBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+
+        // Find the layout that directly contains data_view and drop the search
+        // box into the same slot.
+        QLayout *targetLayout = nullptr;
+        if (dv) {
+            const auto layouts = win->findChildren<QLayout *>();
+            for (QLayout *l : layouts) {
+                if (l->indexOf(dv) >= 0) {
+                    targetLayout = l;
+                    break;
+                }
+            }
+        }
+        if (targetLayout) {
+            if (auto *box = qobject_cast<QBoxLayout *>(targetLayout)) {
+                box->insertWidget(box->indexOf(dv), searchBox);
+            } else {
+                targetLayout->replaceWidget(dv, searchBox);
+            }
+        } else {
+            searchBox->setParent(win);
+            searchBox->show();
+        }
+
+        QObject::connect(searchBox, &QLineEdit::textChanged, this,
+            [this](const QString &text) {
+                const QString needle = text.trimmed();
+                this->proxy->setGlobalFilter(needle);
+                const bool wantProxy =
+                    !needle.isEmpty() || this->filter->filtersVisible();
+                if (wantProxy) {
+                    if (this->m_view->model() != this->proxy.get())
+                        this->m_view->setModel(this->proxy.get());
+                } else {
+                    if (this->m_view->model() != this)
+                        this->m_view->setModel(this);
+                }
+                this->refresh();
+            });
+    }
 }
 
 MyTableModel::MyTableModel(QObject *parent): QAbstractTableModel(parent){
