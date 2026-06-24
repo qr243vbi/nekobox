@@ -346,6 +346,10 @@ set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
+if (WIN32)
+    set_target_properties(nekobox PROPERTIES OUTPUT_NAME nekoray)
+endif()
+
 add_custom_command(TARGET nekobox POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory
         "$<TARGET_FILE_DIR:nekobox>/public"
