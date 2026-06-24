@@ -697,6 +697,13 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
         return row;
     }
 
+    // Qt queries data() with many roles per cell during painting/layout.
+    // Only DisplayRole and ForegroundRole are handled below, so bail out for
+    // any other role before doing the (relatively expensive) profile lookup.
+    if (role != Qt::DisplayRole && role != Qt::ForegroundRole){
+        return QVariant();
+    }
+
     if (row < 0){
         return QVariant();
     }
