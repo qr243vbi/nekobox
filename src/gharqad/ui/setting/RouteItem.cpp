@@ -9,8 +9,31 @@
 #include <qnamespace.h>
 #include <nekobox/dataStore/HTTPRequestHelper.hpp>
 #include <QRadioButton>
+#include <QMenu>
 
 QList<QString> default_outbound_choose = {"proxy", "direct", "block"};
+
+// Split a block of prefixed simple rules into the IP / Domain / Process boxes.
+// Lines keep their original prefix so they round-trip cleanly through
+// UpdateSimpleRules, which re-parses by prefix.
+static void splitSimpleRules(const QString& content, QString* ipText, QString* domainText, QString* processText) {
+    QStringList ipLines, domainLines, processLines;
+    const auto lines = content.split('\n');
+    for (const auto& line : lines) {
+        const auto trimmed = line.trimmed();
+        if (trimmed.isEmpty()) continue;
+        if (trimmed.startsWith("ip:")) {
+            ipLines << line;
+        } else if (trimmed.startsWith("processName:") || trimmed.startsWith("processPath:")) {
+            processLines << line;
+        } else {
+            domainLines << line;
+        }
+    }
+    *ipText = ipLines.join('\n');
+    *domainText = domainLines.join('\n');
+    *processText = processLines.join('\n');
+}
 
 void adjustComboBoxWidth(const QComboBox *comboBox) {
     int maxWidth = 0;
@@ -253,15 +276,6 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         ui->route_items->addItem(item->name);
     }
 
-   // outbounds = {"proxy", "direct"};
-   // outbounds << get_all_outbounds();
-    // init outbound map
-   // outboundMap[0] = -1;
-   // outboundMap[1] = -2;
-   // for (const auto& item: Configs::profileManager->profiles) {
-   //     outboundMap[outboundMap.size()] = item.second->id;
-   // }
-
     ui->route_name->setText(chain->chain_name);
     ui->url->setText(chain->update_url);
     ui->rule_attr->addItems(Configs::RouteRule::get_attributes());
@@ -274,27 +288,69 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
     ui->def_out->setCurrentIndex(default_outbound_choose.indexOf(
         Configs::outboundIDToString(chain->defaultOutboundID)
     ));
-   // ui->def_out->setCurrentText(Configs::outboundIDToString(chain->defaultOutboundID));
 
-    // simple rules setup
+    // simple rules setup (nekoray-like grid: Direct/Proxy/Block x IP/Domain/Process)
     QStringList ruleItems = {"domain:", "suffix:", "regex:", "keyword:", "ip:", "processName:", "processPath:", "ruleset:"};
     for (const auto& item : ruleSetMap.keys()) {
         ruleItems.append("ruleset:" +item);
     }
-    simpleDirect = new AutoCompleteTextEdit("", ruleItems, this);
-    simpleBlock = new AutoCompleteTextEdit("", ruleItems, this);
-    simpleProxy = new AutoCompleteTextEdit("", ruleItems, this);
+    directIp = new AutoCompleteTextEdit("", ruleItems, this);
+    directDomain = new AutoCompleteTextEdit("", ruleItems, this);
+    directProcess = new AutoCompleteTextEdit("", ruleItems, this);
+    proxyIp = new AutoCompleteTextEdit("", ruleItems, this);
+    proxyDomain = new AutoCompleteTextEdit("", ruleItems, this);
+    proxyProcess = new AutoCompleteTextEdit("", ruleItems, this);
+    blockIp = new AutoCompleteTextEdit("", ruleItems, this);
+    blockDomain = new AutoCompleteTextEdit("", ruleItems, this);
+    blockProcess = new AutoCompleteTextEdit("", ruleItems, this);
 
-    ui->simple_direct_box->layout()->replaceWidget(ui->simple_direct, simpleDirect);
-    ui->simple_block_box->layout()->replaceWidget(ui->simple_block, simpleBlock);
-    ui->simple_proxy_box->layout()->replaceWidget(ui->simple_proxy, simpleProxy);
-    ui->simple_direct->hide();
-    ui->simple_block->hide();
-    ui->simple_proxy->hide();
+    ui->gridLayout_basic->replaceWidget(ui->direct_ip, directIp);
+    ui->gridLayout_basic->replaceWidget(ui->direct_domain, directDomain);
+    ui->gridLayout_basic->replaceWidget(ui->direct_process, directProcess);
+    ui->gridLayout_basic->replaceWidget(ui->proxy_ip, proxyIp);
+    ui->gridLayout_basic->replaceWidget(ui->proxy_domain, proxyDomain);
+    ui->gridLayout_basic->replaceWidget(ui->proxy_process, proxyProcess);
+    ui->gridLayout_basic->replaceWidget(ui->block_ip, blockIp);
+    ui->gridLayout_basic->replaceWidget(ui->block_domain, blockDomain);
+    ui->gridLayout_basic->replaceWidget(ui->block_process, blockProcess);
+    ui->direct_ip->hide();
+    ui->direct_domain->hide();
+    ui->direct_process->hide();
+    ui->proxy_ip->hide();
+    ui->proxy_domain->hide();
+    ui->proxy_process->hide();
+    ui->block_ip->hide();
+    ui->block_domain->hide();
+    ui->block_process->hide();
 
-    simpleDirect->setPlainText(chain->GetSimpleRules(Configs::direct));
-    simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
-    simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
+    loadSimpleBoxes();
+
+    connect(ui->custom_routes_button, &QPushButton::clicked, this, [this]{
+        ui->tabWidget->setCurrentWidget(ui->tab);
+    });
+
+    connect(ui->preset_button, &QPushButton::clicked, this, [this]{
+        QMenu menu(this);
+        auto* bypassLan = menu.addAction(tr("Bypass LAN / private IPs (Direct)"));
+        auto* clearAll = menu.addAction(tr("Clear all basic routes"));
+        connect(bypassLan, &QAction::triggered, this, [this]{
+            const QStringList privateCidrs = {
+                "ip:10.0.0.0/8", "ip:172.16.0.0/12", "ip:192.168.0.0/16",
+                "ip:127.0.0.0/8", "ip:fc00::/7", "ip:fe80::/10"
+            };
+            QStringList lines;
+            const auto existing = directIp->toPlainText().trimmed();
+            if (!existing.isEmpty()) lines << existing;
+            lines << privateCidrs;
+            directIp->setPlainText(lines.join('\n'));
+        });
+        connect(clearAll, &QAction::triggered, this, [this]{
+            directIp->clear(); directDomain->clear(); directProcess->clear();
+            proxyIp->clear(); proxyDomain->clear(); proxyProcess->clear();
+            blockIp->clear(); blockDomain->clear(); blockProcess->clear();
+        });
+        menu.exec(QCursor::pos());
+    });
 
     connect(ui->tabWidget->tabBar(), &QTabBar::currentChanged, this, [this]()
     {
@@ -309,10 +365,7 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
         }
         if (index == 2)
         {
-            QString res;
-            res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
-            res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), Configs::block);
-            res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
+            QString res = commitSimpleBoxes();
             if (!res.isEmpty())
             {
                 runOnUiThread([=,this]
@@ -328,20 +381,10 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             // reload
             updateRouteItemsView();
             updateRuleSection();
-            simpleDirect->setPlainText(chain->GetSimpleRules(Configs::direct));
-            simpleBlock->setPlainText(chain->GetSimpleRules(Configs::block));
-            simpleProxy->setPlainText(chain->GetSimpleRules(Configs::proxy));
+            loadSimpleBoxes();
         }
     });
-/*
-    connect(ui->howtouse_button, &QPushButton::clicked, this, [=,this]()
-    {
-        runOnUiThread([=,this]
-        {
-            MessageBoxInfo(tr("Simple rule manual"), Configs::Information::SimpleRuleInfo);
-        });
-    });
-*/
+
     connect(ui->route_import_json, &QPushButton::clicked, this, [=,this] {
         auto w = new QDialog(this);
         w->setWindowTitle("Import JSON Array");
@@ -399,12 +442,6 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     connect(ui->rule_attr_selector, &QComboBox::currentTextChanged, this, [=,this](const QString& text){
        if (currentIndex == -1) return;
-     /*  if (ui->rule_attr->currentText() == "outbound")
-       {
-           chain->Rules[currentIndex]->set_field_value("outbound", {QString::number(outboundMap[ui->rule_attr_selector->currentIndex()])});
-           updateRulePreview();
-           return;
-       }*/
        chain->Rules[currentIndex]->set_field_value(ui->rule_attr->currentText(), {QString(text)});
        updateRulePreview();
     });
@@ -446,6 +483,44 @@ RouteItem::~RouteItem() {
     delete ui;
 }
 
+void RouteItem::loadSimpleBoxes() {
+    QString ip, domain, process;
+
+    splitSimpleRules(chain->GetSimpleRules(Configs::direct), &ip, &domain, &process);
+    directIp->setPlainText(ip);
+    directDomain->setPlainText(domain);
+    directProcess->setPlainText(process);
+
+    splitSimpleRules(chain->GetSimpleRules(Configs::proxy), &ip, &domain, &process);
+    proxyIp->setPlainText(ip);
+    proxyDomain->setPlainText(domain);
+    proxyProcess->setPlainText(process);
+
+    splitSimpleRules(chain->GetSimpleRules(Configs::block), &ip, &domain, &process);
+    blockIp->setPlainText(ip);
+    blockDomain->setPlainText(domain);
+    blockProcess->setPlainText(process);
+}
+
+QString RouteItem::commitSimpleBoxes() {
+    auto joinBoxes = [](AutoCompleteTextEdit* ipBox, AutoCompleteTextEdit* domainBox, AutoCompleteTextEdit* processBox) -> QString {
+        QStringList parts;
+        const auto ipText = ipBox->toPlainText().trimmed();
+        const auto domainText = domainBox->toPlainText().trimmed();
+        const auto processText = processBox->toPlainText().trimmed();
+        if (!ipText.isEmpty()) parts << ipText;
+        if (!domainText.isEmpty()) parts << domainText;
+        if (!processText.isEmpty()) parts << processText;
+        return parts.join('\n');
+    };
+
+    QString res;
+    res += chain->UpdateSimpleRules(joinBoxes(directIp, directDomain, directProcess), Configs::direct);
+    res += chain->UpdateSimpleRules(joinBoxes(blockIp, blockDomain, blockProcess), Configs::block);
+    res += chain->UpdateSimpleRules(joinBoxes(proxyIp, proxyDomain, proxyProcess), Configs::proxy);
+    return res;
+}
+
 void RouteItem::accept() {
     chain->chain_name = ui->route_name->text();
     chain->update_url = ui->url->text();
@@ -476,10 +551,7 @@ void RouteItem::accept() {
         return;
     }
 
-    QString res;
-    res += chain->UpdateSimpleRules(simpleDirect->toPlainText(), Configs::direct);
-    res += chain->UpdateSimpleRules(simpleBlock->toPlainText(), Configs::block);
-    res += chain->UpdateSimpleRules(simpleProxy->toPlainText(), Configs::proxy);
+    QString res = commitSimpleBoxes();
     if (!res.isEmpty())
     {
         runOnUiThread([=,this]
@@ -528,7 +600,6 @@ void RouteItem::updateRuleSection() {
                 ui->rule_attr_text->hide();
                 ui->rule_attr_selector->hide();
                 rule_set_editor->hide();
-              //  showSelectItem(outbounds, get_outbound_name(ruleItem->outboundID));
                 break;
             }
             auto items = Configs::RouteRule::get_values_for_field(currentAttr);

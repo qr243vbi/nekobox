@@ -57,13 +57,19 @@ private:
 
     AutoCompleteTextEdit* directDomain;
 
+    AutoCompleteTextEdit* directProcess;
+
     AutoCompleteTextEdit* proxyIp;
 
     AutoCompleteTextEdit* proxyDomain;
 
+    AutoCompleteTextEdit* proxyProcess;
+
     AutoCompleteTextEdit* blockIp;
 
     AutoCompleteTextEdit* blockDomain;
+
+    AutoCompleteTextEdit* blockProcess;
 
     bool route_item_on_notes = false;
 
