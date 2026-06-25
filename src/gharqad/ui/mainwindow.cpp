@@ -7,7 +7,6 @@
 #include <qtoolbutton.h>
 
 #ifndef SKIP_JS_UPDATER
-#include <iostream>
 #include <nekobox/js/js_updater.h>
 #endif
 

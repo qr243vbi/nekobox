@@ -12,8 +12,8 @@ require (
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9
 	github.com/sagernet/quic-go v0.59.0-sing-box-mod.4
-	github.com/sagernet/sing v0.8.10
-	github.com/sagernet/sing-box v1.13.13
+	github.com/sagernet/sing v0.8.11
+	github.com/sagernet/sing-box v1.13.14
 	github.com/sagernet/sing-tun v0.8.11
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/crypto v0.53.0
@@ -175,9 +175,9 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.13-mod6
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.14-mod1
 
-replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.8.11-mod1
+replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.8.11-mod2
 
 replace github.com/sagernet/sing-vmess => github.com/starifly/sing-vmess v0.2.8-mod.1
 

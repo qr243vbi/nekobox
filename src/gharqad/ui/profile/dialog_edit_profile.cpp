@@ -26,6 +26,7 @@
 #include <nekobox/ui/profile/edit_trusttunnel.h>
 #include <nekobox/ui/profile/edit_vmess.h>
 #include <nekobox/ui/profile/edit_wireguard.h>
+#include <nekobox/ui/profile/edit_snell.h>
 
 #include <QApplication>
 #include <QDebug>
@@ -273,6 +274,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     LOAD_TYPE("tailscale")
     LOAD_TYPE("ssh")
     LOAD_TYPE("tor")
+    LOAD_TYPE("snell")
     ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name),
                       "internal");
     ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name),
@@ -308,7 +310,8 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   bool networkVisible = this->networkVisible =
       (type == "socks" || type == "shadowsocks" || type == "vmess" ||
        type == "trojan" || type == "hysteria" || type == "vless" ||
-       type == "tuic" || type == "hysteria2" || type == "mieru");
+       type == "tuic" || type == "hysteria2" || type == "mieru" ||
+       type == "snell" );
 
   ui->network_l_2->setVisible(networkVisible);
   ui->network_2->setVisible(networkVisible);
@@ -399,6 +402,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditTor(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
+  } else if (type == "snell") {
+      auto _innerWidget = new EditSnell(this);
+      innerWidget = _innerWidget;
+      innerEditor = _innerWidget;
   } else {
     validType = false;
   }

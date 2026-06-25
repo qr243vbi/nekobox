@@ -84,6 +84,8 @@ inline QString joinCommand(const QStringList &arguments) {
 
 #define SP_LOAD_INT(a)                    \
     ui->a->setValue(bean->a);
+
+#define P_LOAD_SPIN(a) SP_LOAD_INT(a)
 #define SP_SAVE_INT(a) bean->a = ui->a->value();
 
 #define D_LOAD_INT(a)                                  \

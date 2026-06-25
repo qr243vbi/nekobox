@@ -24,3 +24,4 @@
 #include "NaiveBean.hpp"
 #include "TrustTunnelBean.hpp"
 #include "JuicityBean.hpp"
+#include "SnellBean.hpp"

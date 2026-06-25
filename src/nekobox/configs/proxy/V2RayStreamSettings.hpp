@@ -18,6 +18,10 @@ namespace Configs {
         ADD_ENUM_LIST(Preset::SingBox::Network, 1);
     STOP_ENUM
 
+    INIT_ENUM(ObfsMode)
+        ADD_ENUM_LIST(Preset::SingBox::ObfsMode, 0);
+    STOP_ENUM
+
     INIT_ENUM(VmessPacketEncodings)
         ADD_ENUM_LIST(Preset::SingBox::VmessPacketEncodings, 0);
     STOP_ENUM
