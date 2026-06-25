@@ -786,16 +786,14 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = (Configs::windowSettings->program_name);
-    if (software_name.trimmed() == "") {
-      globalSettings.value("program_name", "Iblis").toString();
+    software_name = (Configs::windowSettings->program_name.trimmed());
+    if (software_name == "") {
+      software_name = globalSettings.value("program_name", "Iblis").toString();
     }
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
   }
-
-  setAcceptDrops(true);
-
+  this->setAcceptDrops(true);
   MW_dialog_message = [=, this](const QString &a, const QString &b) {
     runOnUiThread([=, this] { dialog_message_impl(a, b); });
   };

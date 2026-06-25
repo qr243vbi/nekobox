@@ -351,14 +351,14 @@ QByteArray hash = QCryptographicHash::hash(
 }
 
     int config_type = 
-    #ifdef DEBUG_MODE
+    #ifndef DEBUG_MODE
             #ifndef SKIP_LEVELDB
     DatabaseType::rocksdb_type
             #else
-    DatabaseType::json_type
+    DatabaseType::binary_type
             #endif
     #else
-    DatabaseType::binary_type
+    DatabaseType::json_type
     #endif
     ;
 

@@ -63,7 +63,7 @@ QToolButton::menu-indicator {
 }</string>
            </property>
            <property name="text">
-            <string>NekoRay</string>
+            <string>Box</string>
            </property>
            <property name="icon">
             <iconset theme="b-system-run"/>
