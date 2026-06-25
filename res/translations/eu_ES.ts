@@ -5139,12 +5139,12 @@ Eskaeraren zama hau izan zen: %2</translation>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
         <source>Bypass LAN / private IPs (Direct)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saihestu LAN / IP pribatuak (zuzena)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
         <source>Clear all basic routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Garbitu oinarrizko ibilbide guztiak</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
