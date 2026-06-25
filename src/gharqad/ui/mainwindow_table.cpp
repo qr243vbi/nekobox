@@ -454,58 +454,6 @@ void MyTableModel::capture(QTableView * view){
             this->keeper = std::make_shared<SelectionKeeper>(view);
             this->refresh();
         });
-/*
-    // --- nekoray-like UI: hide the data_view strip and add an always-visible
-    // --- search box in its place.
-    if (QWidget *win = view->window()) {
-        QLineEdit *searchBox = new QLineEdit(win);
-        searchBox->setObjectName("searchBox");
-        searchBox->setPlaceholderText(tr("Search"));
-        searchBox->setClearButtonEnabled(true);
-        searchBox->setMinimumWidth(120);
-        searchBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-
-        // Find the layout that directly contains data_view and drop the search
-        // box into the same slot.
-        QLayout *targetLayout = nullptr;
-        if (dv) {
-            const auto layouts = win->findChildren<QLayout *>();
-            for (QLayout *l : layouts) {
-                if (l->indexOf(dv) >= 0) {
-                    targetLayout = l;
-                    break;
-                }
-            }
-        }
-        if (targetLayout) {
-            if (auto *box = qobject_cast<QBoxLayout *>(targetLayout)) {
-                box->insertWidget(box->indexOf(dv), searchBox);
-            } else {
-                targetLayout->replaceWidget(dv, searchBox);
-            }
-        } else {
-            searchBox->setParent(win);
-            searchBox->show();
-        }
-
-        QObject::connect(searchBox, &QLineEdit::textChanged, this,
-            [this](const QString &text) {
-                const QString needle = text.trimmed();
-                this->proxy->setGlobalFilter(needle);
-                const bool wantProxy =
-                    !needle.isEmpty() || this->filter->filtersVisible();
-                if (wantProxy) {
-                    if (this->m_view->model() != this->proxy.get())
-                        this->m_view->setModel(this->proxy.get());
-                } else {
-                    if (this->m_view->model() != this)
-                        this->m_view->setModel(this);
-                }
-                this->refresh();
-            });
-
-    }
-    */
 }
 
 MyTableModel::MyTableModel(QObject *parent): QAbstractTableModel(parent){
@@ -810,7 +758,7 @@ bool MyTableModel::filterEnabled(){
 
 bool MyTableModel::setFilterEnabled(bool filter){
     auto m_view = this->m_view;
-    if (filter){
+    if (filter || !this->proxy->m_globalFilter.isEmpty()){
         m_view->setModel(this->proxy.get());
     } else {
         m_view->setModel(this);

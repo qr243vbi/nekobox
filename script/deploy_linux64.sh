@@ -2,7 +2,7 @@
 source script/env_deploy.sh
 export CURDIR="$SRC_ROOT"
 export PATH=$PATH:/usr/lib/qt6/bin:/usr/lib64/qt6/bin
-
+nekobox=$EXECUTABLE_NAME
 
 set -e
 
@@ -53,7 +53,7 @@ fi
 cp srslist.json "$DEST/srslist.json"
 
 #### copy binary ####
-cp "$BUILD/nekobox" "$DEST"
+cp "$BUILD/$nekobox" "$DEST"
 
 if [[ "$NAIVE" == true ]]
 then
@@ -110,7 +110,7 @@ export EXTRA_PLATFORM_PLUGINS
 
 (
 cd "$CURDIR"
-"./linuxdeploy-$ARCH2.AppImage" --appdir $DEST  --executable $DEST/nekobox --plugin qt
+"./linuxdeploy-$ARCH2.AppImage" --appdir "$DEST"  --executable "$DEST/$nekobox" --plugin qt
 )
 
 cd $DEST
@@ -144,7 +144,7 @@ cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 cd "$DEST"
-patchelf --set-rpath '$ORIGIN/usr/lib' ./nekobox
+patchelf --set-rpath '$ORIGIN/usr/lib' "./$nekobox"
 
 shopt -s extglob
 
@@ -168,11 +168,16 @@ cat << 'EOF' > nekobox_core
 #!/bin/sh
 exec "$(dirname $0)"/".nekobox_core_binary_file" -argv0 "${APPIMAGE}" "${@}"
 EOF
-cat << 'EOF' > AppRun
+
+cat << EOF > AppRun
 #!/bin/sh
-export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-nekobox}"
+EXECUTABLE_NAME="$EXECUTABLE_NAME"
+EOF
+cat << 'EOF' > AppRun
+export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-$EXECUTABLE_NAME}"
 exec "$(dirname $0)"/"${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "${@}"
 EOF
+
 cat << 'EOF' > updater
 #!/bin/sh -x
 while [[ "$1" != "--" ]]
@@ -210,7 +215,7 @@ Type=Application
 Name=NekoBox
 Categories=Network;
 Keywords=Internet;VPN;Proxy;sing-box;
-Exec=nekobox
+Exec=$nekobox
 Icon=Tun
 EOF
 rm -rfv *.old.* ||:

@@ -11,11 +11,11 @@ include(cmake/windows/generate_product_version.cmake)
 generate_product_version(
         QV2RAY_RC
         ICON "${CMAKE_SOURCE_DIR}/res/nekobox.ico"
-        NAME "nekoray"
-        BUNDLE "NekoRay"
-        COMPANY_NAME "NekoRay"
-        COMPANY_COPYRIGHT "NekoRay"
-        FILE_DESCRIPTION "NekoRay"
+        NAME "nekobox"
+        BUNDLE "Iblis"
+        COMPANY_NAME "Iblis Corporation"
+        COMPANY_COPYRIGHT "nekobox"
+        FILE_DESCRIPTION "nekobox"
 )
 set(GUI_TYPE WIN32)
 if (MINGW)

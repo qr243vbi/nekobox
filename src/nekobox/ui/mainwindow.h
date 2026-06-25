@@ -300,6 +300,8 @@ private slots:
 
     void on_menu_toggle_filter_triggered();
 
+    void on_menu_toggle_searchbox_triggered();
+
     void on_menu_remove_unavailable_triggered();
 
     void on_menu_remove_invalid_triggered();
@@ -320,6 +322,8 @@ private slots:
 
 
 private:
+    void set_searchBox();
+
     QFuture<bool> elevated_future;
     QMutex elevated_mutex;
  //   QDateTime lastElevated = lastUpdated, lastStarted = lastUpdated;
@@ -346,6 +350,7 @@ private:
     //
     QCheckBox *logAutoScrollCheckBox = nullptr;
     QToolButton * filterButton = nullptr;
+    QToolButton * searchButton = nullptr;
     QTextDocument *qvLogDocument = new QTextDocument(this);
     //
     QString title_error;

@@ -1,7 +1,5 @@
 # [NyameBox](https://github.com/qr243vbi/nekobox) / [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
 
-This fork is aimed to fix & optimize and also make NyameBox similar to (OG) Nekoray
-
 Sing-Box command line mode is available now! Just type for additional information: </br>
 `nekobox_core sing-box --help`
  

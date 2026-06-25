@@ -26,7 +26,7 @@
 class ColumnFilterProxy : public QSortFilterProxyModel
 {
     Q_OBJECT
-
+    friend class MyTableModel;
 public:
     void setColumnFilter(int column, const QString& text);
     void setEnabled(bool enable);
@@ -110,6 +110,7 @@ class MyTableModel : public QAbstractTableModel
     Q_OBJECT
 
 public:
+    friend class MainWindow;
     explicit MyTableModel(QObject *parent = nullptr);
 
     Qt::ItemFlags flags(const QModelIndex &index) const  override;

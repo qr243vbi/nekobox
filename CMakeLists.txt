@@ -366,9 +366,8 @@ set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
-if (WIN32)
-    set_target_properties(nekobox PROPERTIES OUTPUT_NAME nekoray)
-endif()
+set(EXECUTABLE_NAME "nekobox" CACHE STRING "Executable name")
+set_target_properties(nekobox PROPERTIES OUTPUT_NAME "${EXECUTABLE_NAME}")
 
 add_custom_command(TARGET nekobox POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory
@@ -544,7 +543,7 @@ endif()
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 
 get_filename_component(START "${CMAKE_INSTALL_BINDIR}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
-get_filename_component(MAIN "${PROGRAMPREFIX}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(MAIN "${PROGRAMPREFIX}/${EXECUTABLE_NAME}" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 get_filename_component(ICON "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 
 # Configure the desktop file
