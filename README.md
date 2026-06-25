@@ -113,6 +113,7 @@ sudo apt-get install -y nekobox
 - Tailscale
 - SSH
 - Tor
+- Snell
 - Custom Outbound
 - Custom Config
 - Extra Core
