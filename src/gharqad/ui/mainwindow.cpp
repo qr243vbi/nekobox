@@ -3921,18 +3921,18 @@ void MainWindow::on_menu_update_subscription_triggered() {
     return;
   }
 
-  QString runningProfileName;
-  int runningProfileGid = -1;
-  if (running != nullptr) {
+ // QString runningProfileName;
+ // int runningProfileGid = -1;
+  /*if (running != nullptr) {
     runningProfileName = running->name;
     runningProfileGid = running->gid;
     profile_stop(false, false, true);
-  }
+  }*/
 
   mw_sub_updating = true;
   Subscription::groupUpdater->AsyncUpdateGroup(
       group, this->post_update_job, &chooseUpdateGroup,
-      [this, group, runningProfileName, runningProfileGid] {
+      /*[this, group, runningProfileName, runningProfileGid] {
         mw_sub_updating = false;
         if (!runningProfileName.isEmpty() && runningProfileGid >= 0) {
           auto grp = Configs::profileManager->GetGroup(runningProfileGid);
@@ -3946,7 +3946,7 @@ void MainWindow::on_menu_update_subscription_triggered() {
             }
           }
         }
-      },
+      },*/[]{},
     [this] (std::shared_ptr<const Configs::GroupExtra> extra) -> std::shared_ptr<const Configs::GroupExtra> {
 #ifndef SKIP_JS_UPDATER
       auto window = createJsUpdaterWindow();
