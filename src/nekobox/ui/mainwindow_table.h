@@ -21,6 +21,8 @@
 #include <QSortFilterProxyModel>
 #include <QHash>
 
+#define SELECTION_KEEPER_ROLE Qt::UserRole + 3
+
 class ColumnFilterProxy : public QSortFilterProxyModel
 {
     Q_OBJECT
@@ -42,7 +44,8 @@ class SelectionKeeper : public QObject
     Q_OBJECT
 
 public:
-    SelectionKeeper(QTableView* view, QAbstractItemModel* model);
+    SelectionKeeper(QTableView* view);
+    void clearSelectionKeeper();
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected,
