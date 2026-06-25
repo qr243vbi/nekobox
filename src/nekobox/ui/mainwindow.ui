@@ -53,7 +53,7 @@
          <item>
           <widget class="QToolButton" name="toolButton_program">
            <property name="toolTip">
-            <string>NekoBox</string>
+            <string>NekoRay</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton::menu-indicator,
@@ -63,7 +63,7 @@ QToolButton::menu-indicator {
 }</string>
            </property>
            <property name="text">
-            <string>NekoBox</string>
+            <string>NekoRay</string>
            </property>
            <property name="icon">
             <iconset theme="b-system-run"/>
@@ -252,34 +252,30 @@ QToolButton::menu-indicator {
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_system">
-          <item>
-           <widget class="QCheckBox" name="checkBox_SystemProxy">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>System Proxy</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="system_dns">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>System DNS</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QCheckBox" name="checkBox_SystemProxy">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>System Proxy</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="system_dns">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>System DNS</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -338,6 +334,16 @@ QToolButton::menu-indicator {
         </property>
         <property name="textInteractionFlags">
          <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchBox">
+        <property name="placeholderText">
+         <string>Search</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -633,22 +639,6 @@ QToolButton::menu-indicator {
         </property>
        </widget>
       </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Policy::Maximum</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>0</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </item>
    </layout>
@@ -753,6 +743,7 @@ QToolButton::menu-indicator {
     <addaction name="menu_add_from_input"/>
     <addaction name="actionAdd_profile_from_File"/>
     <addaction name="menu_toggle_filter"/>
+    <addaction name="menu_toggle_searchbox"/>
     <addaction name="menu_scan_qr"/>
     <addaction name="separator"/>
     <addaction name="menu_server"/>
@@ -1303,6 +1294,11 @@ QToolButton::menu-indicator {
   <action name="menu_unselect_all">
    <property name="text">
     <string>Unselect</string>
+   </property>
+  </action>
+  <action name="menu_toggle_searchbox">
+   <property name="text">
+    <string>Toggle searchbox</string>
    </property>
   </action>
  </widget>

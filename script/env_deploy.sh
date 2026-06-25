@@ -10,9 +10,10 @@ fi
 [[ -f .ENV ]] && . .ENV ||: 
 SRC_ROOT="${SRC_ROOT:-$PWD}"
 DEPLOYMENT="${DEPLOYMENT:-$SRC_ROOT/deployment}"
+EXECUTABLE_NAME="${EXECUTABLE_NAME:-nekobox}"
 BUILD="${BUILD:-$SRC_ROOT/build}"
-version_standalone="nekobox-$INPUT_VERSION"
-archive_standalone="nekobox-unified-source-$INPUT_VERSION"
+version_standalone="$EXECUTABLE_NAME-$INPUT_VERSION"
+archive_standalone="$EXECUTABLE_NAME-unified-source-$INPUT_VERSION"
 GOCMD="${GOCMD:-go}"
 
 fi

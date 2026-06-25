@@ -20,6 +20,12 @@
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
 #include <QScrollBar>
+#include <QTextBrowser>
+#include <QLineEdit>
+#include <QBoxLayout>
+#include <QLayout>
+#include <QWidget>
+#include <QSizePolicy>
 
 
 SelectionKeeper::SelectionKeeper(QTableView* view)
@@ -174,22 +180,50 @@ void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
         m_filters[column] = text;
 }
 
+void ColumnFilterProxy::setGlobalFilter(const QString& text)
+{
+    m_globalFilter = text;
+}
+
 bool ColumnFilterProxy::filterAcceptsRow(int row, const QModelIndex &parent) const
 {
-    if (!enabled || !sourceModel()){
+    auto src = sourceModel();
+    if (!src){
         return true;
     }
 
-    for (auto it = m_filters.begin(); it != m_filters.end(); ++it)
+    // Global search box: row matches if ANY column contains the needle.
+    if (!m_globalFilter.isEmpty())
     {
-        int col = it.key();
-        const QString &pattern = it.value();
-        
-        QModelIndex idx = sourceModel()->index(row, col, parent);
-        QString data = sourceModel()->data(idx).toString();
-
-        if (!data.contains(pattern, Qt::CaseInsensitive))
+        bool match = false;
+        int cols = src->columnCount(parent);
+        for (int col = 0; col < cols; ++col)
+        {
+            QModelIndex idx = src->index(row, col, parent);
+            QString data = src->data(idx).toString();
+            if (data.contains(m_globalFilter, Qt::CaseInsensitive)){
+                match = true;
+                break;
+            }
+        }
+        if (!match)
             return false;
+    }
+
+    // Per-column header filters.
+    if (enabled)
+    {
+        for (auto it = m_filters.begin(); it != m_filters.end(); ++it)
+        {
+            int col = it.key();
+            const QString &pattern = it.value();
+
+            QModelIndex idx = src->index(row, col, parent);
+            QString data = src->data(idx).toString();
+
+            if (!data.contains(pattern, Qt::CaseInsensitive))
+                return false;
+        }
     }
 
     return true;
@@ -611,6 +645,13 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
         return row;
     }
 
+    // Qt queries data() with many roles per cell during painting/layout.
+    // Only DisplayRole and ForegroundRole are handled below, so bail out for
+    // any other role before doing the (relatively expensive) profile lookup.
+    if (role != Qt::DisplayRole && role != Qt::ForegroundRole){
+        return QVariant();
+    }
+
     if (row < 0){
         return QVariant();
     }
@@ -717,7 +758,7 @@ bool MyTableModel::filterEnabled(){
 
 bool MyTableModel::setFilterEnabled(bool filter){
     auto m_view = this->m_view;
-    if (filter){
+    if (filter || !this->proxy->m_globalFilter.isEmpty()){
         m_view->setModel(this->proxy.get());
     } else {
         m_view->setModel(this);

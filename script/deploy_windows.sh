@@ -3,6 +3,7 @@ set -e
 
 source script/env_deploy.sh
 export CURDIR="$SRC_ROOT"
+nekoray=$EXECUTABLE_NAME
 
 if [[ $1 == "x86_64" || -z $1 ]]; then
   ARCH="windows64"
@@ -59,12 +60,12 @@ cp srslist.json "$DEST/srslist.json"
 
 #### copy exe ####
 rel="$BUILD"
-if [[ -f "$BUILD/Release/nekobox.exe" ]]
+if [[ -f "$BUILD/Release/$nekoray.exe" ]]
 then
   rel="$BUILD/Release"
 fi
 
-cp "$rel/nekobox.exe" "$DEST"
+cp "$rel/$nekoray.exe" "$DEST"
 #cp "$rel/elevated_launcher.exe" "$DEST"
 touch "$rel/nekobox.dll"
 cp "$rel/"*.dll  "$DEST"
@@ -89,7 +90,7 @@ cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
-windeployqt nekobox.exe --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+windeployqt "$nekoray.exe" --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
 rm -rf dxcompiler.dll dxil.dll ||:
 popd
 fi

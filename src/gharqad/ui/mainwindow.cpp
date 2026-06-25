@@ -893,8 +893,18 @@ MainWindow::MainWindow(QWidget *parent)
       }
     }
   });
-  filterButton = new QToolButton(ui->tabWidget);
+
+  QWidget *corner = new QWidget(ui->tabWidget);
+  QHBoxLayout *layout = new QHBoxLayout(corner);
+  layout->setContentsMargins(0, 0, 0, 0);
+  layout->setSpacing(0);
+
+  filterButton = new QToolButton(corner);
   filterButton->setText("🔽");
+
+  searchButton = new QToolButton(corner);
+  searchButton->setText("🔍");
+
   logAutoScrollCheckBox =
       new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
   logAutoScrollCheckBox->setChecked(Configs::windowSettings->auto_scroll_log);
@@ -903,9 +913,12 @@ MainWindow::MainWindow(QWidget *parent)
     logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() ==
                                       ui->Logs);
   };
+  layout->addWidget(searchButton);
+  layout->addWidget(filterButton);
 
-  ui->tabWidget->setCornerWidget(filterButton);
+  ui->tabWidget->setCornerWidget(corner);
   connect(filterButton, &QPushButton::clicked, this, &MainWindow::on_menu_toggle_filter_triggered);
+  connect(searchButton, &QPushButton::clicked, this, &MainWindow::on_menu_toggle_searchbox_triggered);
 
   updateAutoScrollVisibility();
   connect(ui->stats_widget, &QTabWidget::currentChanged, this,
@@ -1825,6 +1838,23 @@ skip_updater_hide:
   }
 #endif
   ui->data_view->setStyleSheet("background: transparent; border: none;");
+  ui->searchBox->setHidden(true);
+
+  QObject::connect(ui->searchBox, &QLineEdit::textChanged, this,
+      [this](const QString &text) {
+          const QString needle = text.trimmed();
+          tableModel->proxy->setGlobalFilter(needle);
+          const bool wantProxy =
+              !needle.isEmpty() || tableModel->filter->filtersVisible();
+          if (wantProxy) {
+            tableModel->m_view->setModel(tableModel->proxy.get());
+          } else {
+            tableModel->m_view->setModel(tableModel.get());
+          }
+          tableModel->keeper = std::make_shared<SelectionKeeper>(tableModel->m_view);
+          tableModel->refresh();
+      });
+  set_searchBox();
 
   announcement_message(Configs::windowSettings->first_start);
   Configs::windowSettings->first_start = false;
@@ -3889,6 +3919,25 @@ void MainWindow::on_menu_clear_test_result_triggered(bool isSelected) {
   });
 }
 
+void MainWindow::set_searchBox(){
+    bool searchbox_enabled = Configs::windowSettings->show_searchbox;
+    auto dv = this->ui->data_view;
+    auto sb = this->ui->searchBox;
+    dv->blockSignals(searchbox_enabled);
+    dv->setHidden(searchbox_enabled);
+    sb->setVisible(searchbox_enabled);
+    if (!searchbox_enabled){
+        sb->setText("");
+        this->force_hide_text_under_buttons = false;
+        set_icons();
+    }
+}
+
+void MainWindow::on_menu_toggle_searchbox_triggered(){
+    Configs::windowSettings->show_searchbox = !Configs::windowSettings->show_searchbox;
+    set_searchBox();
+}
+
 void MainWindow::on_menu_toggle_filter_triggered(){
   auto &filter = this->tableModel;
   filter->setFilterEnabled(!filter->filterEnabled());
@@ -4560,6 +4609,7 @@ void MainWindow::setActionsData() {
   ui->menu_select_all->setData(QString("m34"));
   ui->actionSpeedtest_Current->setData(QString("m40"));
   ui->menu_toggle_filter->setData(QString("m41"));
+  ui->menu_toggle_searchbox->setData(QString("m42"));
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {

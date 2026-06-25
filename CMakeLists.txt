@@ -22,6 +22,14 @@ if(POLICY CMP0167)
 endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Default to an optimized Release build when no build type is specified.
+# Without this, a plain `cmake` configure compiles with no optimization (-O0),
+# which makes the resulting binary noticeably slower at runtime.
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
+    message(STATUS "No build type specified, defaulting to Release")
+endif()
+
 find_program(CCACHE_FOUND ccache)
 if(CCACHE_FOUND)
    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
@@ -31,7 +39,19 @@ endif()
 #if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND WIN32)
 #	if (NOT MSVC)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+# Enable Link-Time Optimization (IPO/LTO) for optimized builds when the
+# toolchain supports it. Pure runtime perf win with no behavior change; only
+# applied to Release / RelWithDebInfo so Debug builds stay fast to link.
+include(CheckIPOSupported)
+check_ipo_supported(RESULT NKR_IPO_SUPPORTED OUTPUT NKR_IPO_ERROR)
+if(NKR_IPO_SUPPORTED)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO ON)
+    message(STATUS "IPO/LTO enabled for optimized builds")
+else()
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+    message(STATUS "IPO/LTO not supported: ${NKR_IPO_ERROR}")
+endif()
 #	endif ()
 #endif ()
 
@@ -346,6 +366,9 @@ set_target_properties(nekobox PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
+set(EXECUTABLE_NAME "nekobox" CACHE STRING "Executable name")
+set_target_properties(nekobox PROPERTIES OUTPUT_NAME "${EXECUTABLE_NAME}")
+
 add_custom_command(TARGET nekobox POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory
         "$<TARGET_FILE_DIR:nekobox>/public"
@@ -520,7 +543,7 @@ endif()
 set(PROGRAMPREFIX "${CMAKE_INSTALL_LIBEXECDIR}/Iblis" CACHE STRING "Installation Directory")
 
 get_filename_component(START "${CMAKE_INSTALL_BINDIR}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
-get_filename_component(MAIN "${PROGRAMPREFIX}/nekobox" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
+get_filename_component(MAIN "${PROGRAMPREFIX}/${EXECUTABLE_NAME}" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 get_filename_component(ICON "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps/nekobox.png" REALPATH BASE_DIR "${CMAKE_INSTALL_PREFIX}")
 
 # Configure the desktop file

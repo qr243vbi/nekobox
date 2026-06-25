@@ -5,6 +5,11 @@
     Name "NekoBox"
 !endif
 
+!ifdef EXECUTABLE_NAME
+!else
+	!define EXECUTABLE_NAME nekobox
+!endif
+
 !ifdef OUTFILE
     OutFile "${OUTFILE}.exe"
 !else
@@ -800,7 +805,7 @@ FunctionEnd
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${SOFTWARE_NAME}."
 
 ; --- Finish Page Settings ---
-!define MUI_FINISHPAGE_RUN "$INSTDIR\nekobox.exe"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\${EXECUTABLE_NAME}.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Launch ${SOFTWARE_NAME}"
 ;!define MUI_FINISHPAGE_RUN_NOTCHECKED
 
@@ -941,12 +946,12 @@ Section "Install"
     FileWrite $0 "DeleteToUseThisDirectoryForConfig"
 	FileClose $0
 
-    CreateShortcut "$desktop\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
-    CreateShortcut "$SMPROGRAMS\${SOFTWARE_NAME}.lnk" "$INSTDIR\nekobox.exe" "" "$INSTDIR\nekobox.exe" 0
+    CreateShortcut "$desktop\${SOFTWARE_NAME}.lnk" "$INSTDIR\${EXECUTABLE_NAME}.exe" "" "$INSTDIR\${EXECUTABLE_NAME}.exe" 0
+    CreateShortcut "$SMPROGRAMS\${SOFTWARE_NAME}.lnk" "$INSTDIR\${EXECUTABLE_NAME}.exe" "" "$INSTDIR\${EXECUTABLE_NAME}.exe" 0
 
     !insertmacro RegString "Software\nekobox" "InstallPath" "$INSTDIR"
     !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayName" "${SOFTWARE_NAME}"
-	!insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayIcon" "$INSTDIR\nekobox.exe"
+	!insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "DisplayIcon" "$INSTDIR\${EXECUTABLE_NAME}.exe"
     !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "UninstallString" "$INSTDIR\uninstall.exe"
     !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "InstallLocation" "$INSTDIR"
     !insertmacro RegString "Software\Microsoft\Windows\CurrentVersion\Uninstall\nekobox" "Publisher" "qr243vbi"
@@ -960,9 +965,9 @@ SectionEnd
 
 Section "Uninstall"
 
-  Delete "$SMPROGRAMS\nekobox.lnk"
-  Delete "$desktop\nekobox.lnk"
-  RMDir "$SMPROGRAMS\nekobox"
+  Delete "$SMPROGRAMS\${SOFTWARE_NAME}.lnk"
+  Delete "$desktop\${SOFTWARE_NAME}.lnk"
+  RMDir "$SMPROGRAMS\${SOFTWARE_NAME}"
 
   RMDir /r "$INSTDIR"
 
