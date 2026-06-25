@@ -57,37 +57,11 @@
              <item row="1" column="1">
               <widget class="QLineEdit" name="route_name"/>
              </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="def_out_l">
-               <property name="text">
-                <string>Default outbound</string>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="0">
               <widget class="QLabel" name="route_name_l">
                <property name="text">
                 <string>Name</string>
                </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QComboBox" name="def_out">
-               <item>
-                <property name="text">
-                 <string>Proxy</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Direct</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Block</string>
-                </property>
-               </item>
               </widget>
              </item>
              <item row="3" column="0">
@@ -148,98 +122,156 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Basic</string>
+       <string>Basic routes</string>
       </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <layout class="QVBoxLayout" name="verticalLayout_basic">
        <item>
-        <widget class="QGroupBox" name="simple_block_box">
-         <property name="title">
-          <string>Block</string>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_8">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTextEdit" name="simple_block"/>
-          </item>
-         </layout>
-        </widget>
+        <layout class="QGridLayout" name="gridLayout_basic">
+         <item row="0" column="1">
+          <widget class="QLabel" name="direct_header">
+           <property name="text">
+            <string>Direct</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="proxy_header">
+           <property name="text">
+            <string>Proxy</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="block_header">
+           <property name="text">
+            <string>Block</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="ip_label">
+           <property name="text">
+            <string>IP</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QTextEdit" name="direct_ip"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QTextEdit" name="proxy_ip"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QTextEdit" name="block_ip"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="domain_label">
+           <property name="text">
+            <string>Domain</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QTextEdit" name="direct_domain"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QTextEdit" name="proxy_domain"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QTextEdit" name="block_domain"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="process_label">
+           <property name="text">
+            <string>Process</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QTextEdit" name="direct_process"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QTextEdit" name="proxy_process"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QTextEdit" name="block_process"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QGroupBox" name="simple_proxy_box">
-         <property name="title">
-          <string>Proxy</string>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTextEdit" name="simple_proxy"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="simple_direct_box">
-         <property name="title">
-          <string>Direct</string>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTextEdit" name="simple_direct"/>
-          </item>
-         </layout>
-        </widget>
+        <layout class="QHBoxLayout" name="basic_buttons_layout">
+         <item>
+          <widget class="QPushButton" name="preset_button">
+           <property name="text">
+            <string>Preset</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="custom_routes_button">
+           <property name="text">
+            <string>Custom routes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_basic">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="def_out_l">
+           <property name="text">
+            <string>Default outbound</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="def_out">
+           <item>
+            <property name="text">
+             <string>Proxy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Direct</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Block</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>

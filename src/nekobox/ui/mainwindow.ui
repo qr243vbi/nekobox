@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string notr="true">qr243vbi</string>
+   <string notr="true">NekoRay</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -53,7 +53,7 @@
          <item>
           <widget class="QToolButton" name="toolButton_program">
            <property name="toolTip">
-            <string>NekoBox</string>
+            <string>NekoRay</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton::menu-indicator,
@@ -63,7 +63,7 @@ QToolButton::menu-indicator {
 }</string>
            </property>
            <property name="text">
-            <string>NekoBox</string>
+            <string>NekoRay</string>
            </property>
            <property name="icon">
             <iconset theme="b-system-run"/>
@@ -639,7 +639,7 @@ QToolButton::menu-indicator {
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Policy::Maximum</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>

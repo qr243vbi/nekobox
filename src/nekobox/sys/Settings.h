@@ -144,9 +144,9 @@ public:
   QString language = "";
   bool show_system_dns = false;
   bool first_start = true;
-  QString program_name = "Iblis";
+  QString program_name = "NekoRay";
 
-  bool enable_indicator_borders = true;
+  bool enable_indicator_borders = false;
   int indicator_border_width = 2;
   int indicator_border_radius = 8;
 

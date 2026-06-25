@@ -4,6 +4,7 @@
 
 #include <nekobox/global/GuiUtils.hpp>
 #include <qnamespace.h>
+#include <QCoreApplication>
 #include <nekobox/ui/mainwindow_interface.h>
 
 QWidget *GetMessageBoxParent() {
@@ -42,18 +43,19 @@ void ToggleWindow(QWidget *w) {
 }
 
 void runOnUiThread(const std::function<void()> &callback) {
-  // any thread
-  auto *timer = new QTimer();
-  auto thread = mainwindow->thread();
-  timer->moveToThread(thread);
-  timer->setSingleShot(true);
-  QObject::connect(timer, &QTimer::timeout, [=]() {
-    // main thread
-    callback();
-    timer->deleteLater();
-  });
-  QMetaObject::invokeMethod(timer, "start", Qt::QueuedConnection,
-                            Q_ARG(int, 0));
+  // Post the callback to the GUI thread's event loop. We use qApp (the
+  // QApplication instance) as the context object: it always lives in the
+  // main/GUI thread and stays valid for the whole lifetime of the program
+  // after construction, while avoiding a one-shot QTimer allocation on every
+  // invocation (this runs many times per second from the stat loops).
+  //
+  // IMPORTANT: do NOT use `mainwindow` as the context here. The stat loops
+  // (e.g. TrafficLooper, which is initialized before UI_InitMainWindow()) can
+  // call this before the main window exists, when `mainwindow` is still null.
+  // Passing a null context to invokeMethod dereferences null and crashes the
+  // app at startup (access violation / c0000005).
+  if (qApp == nullptr) return;
+  QMetaObject::invokeMethod(qApp, callback, Qt::QueuedConnection);
 }
 
 void setTimeout(const std::function<void()> &callback, QObject *obj,
