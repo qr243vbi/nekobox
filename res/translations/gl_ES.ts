@@ -2607,7 +2607,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">PSK</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
@@ -2617,12 +2617,12 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Modo Obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
         <source>Obfs Host</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obfs Host</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
@@ -3554,17 +3554,17 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <source>NekoRay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">NekoRay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>Box</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Caixa</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="343" />
         <source>Search</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Busca</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
@@ -3696,7 +3696,7 @@ Estás seguro?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1301" />
         <source>Toggle searchbox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Alternar a caixa de busca</translation>
     </message>
     <message>
         <source>Copy Custom Links</source>
@@ -5006,7 +5006,7 @@ A carga útil da solicitude foi: % 2</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Rutas básicas</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
@@ -5016,7 +5016,7 @@ A carga útil da solicitude foi: % 2</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
         <source>Domain</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dominio</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
