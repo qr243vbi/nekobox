@@ -143,11 +143,11 @@ Supported JSON subscription features include:
 - [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - [Qt](https://www.qt.io/)
 - [protorpc](https://github.com/chai2010/protorpc)
-- [fkYAML](https://github.com/fktn-k/fkYAML)
+- [yaml-cpp](https://github.com/jbeder/yaml-cpp)
 - [quirc](https://github.com/dlbeer/quirc)
 - [QHotkey](https://github.com/Skycoder42/QHotkey)
 - [simple-protobuf](https://github.com/tonda-kriz/simple-protobuf)
-- [quickjs](https://quickjs-ng.github.io/quickjs)
+- [quickjs-ng](https://quickjs-ng.github.io/quickjs)
 - [qrcodegen](https://www.nayuki.io/page/qr-code-generator-library)
 - [Install Nsis Github Action](https://github.com/negrutiu/nsis-install)
 - [Install Package Github Action](https://github.com/ConorMacBride/install-package)
@@ -201,6 +201,7 @@ Supported JSON subscription features include:
 - [leveldb](https://github.com/google/leveldb)
 - [iniqt](https://github.com/qr243vbi/iniqt.hpp)
 - [amnezia-box](https://github.com/hoaxisr/amnezia-box)
+- [reF1nd/sing-box](https://github.com/reF1nd/sing-box)
 
 ## FAQ
 **What is AppImage?** <br/>
