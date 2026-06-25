@@ -5014,12 +5014,12 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Основне руте</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
         <source>IP</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ИП</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
