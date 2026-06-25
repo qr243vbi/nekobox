@@ -2607,7 +2607,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">PSK</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
@@ -2617,7 +2617,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Obfs 모드</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
@@ -3558,7 +3558,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <source>NekoRay</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">네코레이</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
@@ -3700,7 +3700,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1301" />
         <source>Toggle searchbox</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">검색창 전환</translation>
     </message>
     <message>
         <source>Copy Custom Links</source>
@@ -5043,7 +5043,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">기본 노선</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
@@ -5063,7 +5063,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224" />
         <source>Preset</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">프리셋</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
