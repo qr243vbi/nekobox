@@ -374,8 +374,23 @@ add_custom_command(TARGET nekobox POST_BUILD
         "$<TARGET_FILE_DIR:nekobox>/public"
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${CMAKE_SOURCE_DIR}/res/public/expanded_rsa_keys.json"
-        "$<TARGET_FILE_DIR:nekobox>/public/expanded_rsa_keys.json"
-    COMMENT "Copying happ crypt5 key data..."
+        "$<TARGET_FILE_DIR:nekobox>/expanded_rsa_keys.json"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/languages.txt"
+        "$<TARGET_FILE_DIR:nekobox>/languages.txt"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/about.html"
+        "$<TARGET_FILE_DIR:nekobox>/about.html"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/check_new_release.js"
+        "$<TARGET_FILE_DIR:nekobox>/check_new_release.js"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/announcement_message.js"
+        "$<TARGET_FILE_DIR:nekobox>/announcement_message.js"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/check_routeprofiles.js"
+        "$<TARGET_FILE_DIR:nekobox>/check_routeprofiles.js"
+    COMMENT "Copying happ crypt5 key data, scripts, about.html and languages.txt"
 )
 
 set(LUPDATE_OPTIONS

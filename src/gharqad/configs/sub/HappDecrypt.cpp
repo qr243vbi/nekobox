@@ -1,5 +1,6 @@
 #include <nekobox/configs/sub/HappDecrypt.hpp>
 #include <nekobox/dataStore/Utils.hpp>
+#include <nekobox/sys/Settings.h>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFile>
@@ -95,17 +96,13 @@ static QByteArray rsaDecrypt(EVP_PKEY *pkey, const QByteArray &cipher, bool noPa
 }
 
 static QJsonObject loadCrypt5Keys() {
-    QString paths[] = {
-        QCoreApplication::applicationDirPath() + "/expanded_rsa_keys.json",
-        QCoreApplication::applicationDirPath() + "/public/expanded_rsa_keys.json",
-    };
-    for (auto &path : paths) {
-        QFile f(path);
-        if (f.exists() && f.open(QIODevice::ReadOnly)) {
-            auto doc = QJsonDocument::fromJson(f.readAll());
-            return doc.object();
-        }
+    auto path = getResource("expanded_rsa_keys.json");
+    QFile f(path);
+    if (f.exists() && f.open(QIODevice::ReadOnly)) {
+        auto doc = QJsonDocument::fromJson(f.readAll());
+        return doc.object();
     }
+
     return QJsonObject();
 }
 
