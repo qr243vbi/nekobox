@@ -27,13 +27,12 @@
 #include <QWidget>
 #include <QSizePolicy>
 
-#define SELECTION_KEEPER_ROLE Qt::UserRole + 3
 
-SelectionKeeper::SelectionKeeper(QTableView* view, QAbstractItemModel* model)
+SelectionKeeper::SelectionKeeper(QTableView* view)
     : QObject(view),
-      m_view(view),
-      m_model(model)
+      m_view(view)
 {
+    m_model = view->model();
     auto sm = m_view->selectionModel();
 
     connect(sm, &QItemSelectionModel::selectionChanged,
@@ -42,10 +41,10 @@ SelectionKeeper::SelectionKeeper(QTableView* view, QAbstractItemModel* model)
     connect(sm, &QItemSelectionModel::currentChanged,
             this, &SelectionKeeper::onCurrentChanged);
 
-    connect(model, &QAbstractItemModel::modelReset,
+    connect(m_model, &QAbstractItemModel::modelReset,
             this, &SelectionKeeper::restoreSelection);
 
-    connect(model, &QAbstractItemModel::layoutChanged,
+    connect(m_model, &QAbstractItemModel::layoutChanged,
             this, &SelectionKeeper::restoreSelection);
 }
 
@@ -53,8 +52,8 @@ int SelectionKeeper::idFromIndex(const QModelIndex& idx) const
 {
     QModelIndex src = idx;
 
-    if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
-        src = proxy->mapToSource(idx);
+//    if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
+//        src = proxy->mapToSource(idx);
 
     return src.data(SELECTION_KEEPER_ROLE).toInt();
 }
@@ -69,8 +68,8 @@ QModelIndex SelectionKeeper::indexFromId(int id) const
 
         if (src.data(SELECTION_KEEPER_ROLE).toInt() == id)
         {
-            if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
-                return proxy->mapFromSource(src);
+      //      if (auto proxy = qobject_cast<const QSortFilterProxyModel*>(m_model))
+        //        return proxy->mapFromSource(src);
 
             return src;
         }
@@ -107,6 +106,13 @@ void SelectionKeeper::onCurrentChanged(const QModelIndex& current,
     if (!current.isValid()) return;
 
     m_currentId = idFromIndex(current);
+}
+
+void SelectionKeeper::clearSelectionKeeper()
+{
+    this->m_currentId = -1;
+    this->m_selectedIds.clear();
+
 }
 
 void SelectionKeeper::restoreSelection()
@@ -434,7 +440,7 @@ void MyTableModel::capture(QTableView * view){
     header->setFiltersVisible(false);
     header->setSortIndicatorShown(false);
     view->verticalHeader()->setSortIndicatorShown(false);
-    this->keeper = std::make_shared<SelectionKeeper>(view, this);
+    this->keeper = std::make_shared<SelectionKeeper>(view);
 
     view->setDragEnabled(true);
     view->setAcceptDrops(true);
@@ -443,8 +449,9 @@ void MyTableModel::capture(QTableView * view){
     view->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     QObject::connect(header, &FilterHeader::filterChanged,
-        proxy.get(), [this](int id, const QString &text)->void{
+        proxy.get(), [view, this](int id, const QString &text)->void{
             this->proxy->setColumnFilter(id, text);
+            this->keeper = std::make_shared<SelectionKeeper>(view);
             this->refresh();
         });
 /*
@@ -802,13 +809,15 @@ bool MyTableModel::filterEnabled(){
 };
 
 bool MyTableModel::setFilterEnabled(bool filter){
+    auto m_view = this->m_view;
     if (filter){
-        this->m_view->setModel(this->proxy.get());
+        m_view->setModel(this->proxy.get());
     } else {
-        this->m_view->setModel(this);
+        m_view->setModel(this);
     }
     auto ret = this->filter->setFiltersVisible(filter);
     this->proxy->setEnabled(filter);
+    this->keeper = std::make_shared<SelectionKeeper>(m_view);
     this->refresh();
     return ret;
 };

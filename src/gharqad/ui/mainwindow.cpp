@@ -3323,8 +3323,8 @@ void MainWindow::refresh_table_item(
   dialog->show();
 
 void MainWindow::on_proxyListTable_itemDoubleClicked(QModelIndex item) {
-  auto id = this->tableModel->data_id(item);
-  auto dialog = new DialogEditProfile("", id, this);
+  auto id = this->ui->proxyListTable->model()->data(item, SELECTION_KEEPER_ROLE);
+  auto dialog = new DialogEditProfile("", id.toInt(), this);
 
   SHOW_EDIT_DIALOG(dialog)
 }
@@ -4153,10 +4153,12 @@ void MainWindow::on_proxyListTable_customContextMenuRequested(
 
 QList<int>
 MainWindow::get_now_selected_list() {
-  auto items = ui->proxyListTable->selectionModel()->selectedRows();
+  auto proxytable = ui->proxyListTable;
+  auto proxymodel = proxytable->model();
+  auto items = proxytable->selectionModel()->selectedRows();
   QList<int> list;
   for (auto item : items) {
-    auto id = this->tableModel->data_id(item);
+    auto id = proxymodel->data(item, SELECTION_KEEPER_ROLE).toInt();
     list << id;
   }
   return list;
