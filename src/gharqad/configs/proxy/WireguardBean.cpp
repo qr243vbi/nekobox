@@ -352,7 +352,7 @@ CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBoxAwg() const {
             {"address", entity->serverAddress},
             {"port", entity->serverPort},
             {"public_key", publicKey},
-            {"preshared_key", preSharedKey},
+            {"pre_shared_key", preSharedKey},
             {"allowed_ips", QListStr2QJsonArray({"0.0.0.0/0", "::/0"})},
             {"persistent_keepalive_interval", persistentKeepalive},
         };
@@ -417,7 +417,7 @@ bool WireguardBean::TryParseJsonAwg(const QJsonObject &obj) {
     entity->serverAddress = peerObj["address"].toString();
     entity->serverPort = peerObj["port"].toInt();
     this->publicKey = peerObj["public_key"].toString();
-    this->preSharedKey = peerObj["preshared_key"].toString();
+    this->preSharedKey = peerObj["pre_shared_key"].toString();
     this->localAddress = QJsonArray2QListStr(peerObj["allowed_ips"].toArray());
     this->persistentKeepalive =
             peerObj["persistent_keepalive_interval"].toInt();
