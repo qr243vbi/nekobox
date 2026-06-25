@@ -447,19 +447,10 @@ void MyTableModel::capture(QTableView * view){
             this->proxy->setColumnFilter(id, text);
             this->refresh();
         });
-
+/*
     // --- nekoray-like UI: hide the data_view strip and add an always-visible
     // --- search box in its place.
     if (QWidget *win = view->window()) {
-        QTextBrowser *dv = win->findChild<QTextBrowser *>("data_view");
-        if (dv) {
-            // Block signals so the textChanged handler in MainWindow can no
-            // longer resize the strip or toggle the toolbar button style.
-            dv->blockSignals(true);
-            dv->setMaximumHeight(0);
-            dv->hide();
-        }
-
         QLineEdit *searchBox = new QLineEdit(win);
         searchBox->setObjectName("searchBox");
         searchBox->setPlaceholderText(tr("Search"));
@@ -505,7 +496,9 @@ void MyTableModel::capture(QTableView * view){
                 }
                 this->refresh();
             });
+
     }
+    */
 }
 
 MyTableModel::MyTableModel(QObject *parent): QAbstractTableModel(parent){
