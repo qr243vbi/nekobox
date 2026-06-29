@@ -1866,13 +1866,15 @@ void GroupUpdater::Update(
     auto resp = NetworkRequestHelper::HttpGet(
         content, Configs::dataStore->sub_send_hwid && (!no_hwid), headers, array);
 
+    qDebug() << "FINE";
+
     if (!resp.error.isEmpty()) {
-      MW_show_log("<<<<<<<< " +
-                  QObject::tr("Requesting subscription %1 error: %2")
-                      .arg(groupName, resp.error + "\n" + resp.data));
+      MW_show_log(QObject::tr("<<<<<<<< Requesting subscription %1 error").arg(groupName)); 
+      MW_show_log(QObject::tr("Request error is: %1").arg(resp.error));
+      MW_show_log(resp.data);
       return;
     } else {
-      MW_show_log("<<<<<<<< Subscription data fetched for %1").arg(groupName);
+      MW_show_log(QObject::tr("<<<<<<<< Subscription data fetched for %1").arg(groupName));
     }
 
     content = resp.data;
