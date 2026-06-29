@@ -99,9 +99,17 @@ static QJsonObject loadCrypt5Keys() {
     auto path = getResource("expanded_rsa_keys.json");
     QFile f(path);
     if (f.exists() && f.open(QIODevice::ReadOnly)) {
+    #ifdef DEBUG_MODE
+        qDebug() << "Right Crypt5 keys";
+    #endif
         auto doc = QJsonDocument::fromJson(f.readAll());
         return doc.object();
+    } 
+    #ifdef DEBUG_MODE
+    else {
+        qDebug() << "Wrong Crypt5 keys";
     }
+    #endif
 
     return QJsonObject();
 }
@@ -213,11 +221,34 @@ namespace HappDecrypt {
 
 QString decryptLink(const QString &link) {
     QString path = link.startsWith("happ://") ? link.mid(7) : link;
-    if (path.startsWith("crypt5/")) return decryptCrypt5(path.mid(7));
-    if (path.startsWith("crypt4/")) return decryptCrypt1to4(3, path.mid(7));
-    if (path.startsWith("crypt3/")) return decryptCrypt1to4(2, path.mid(7));
-    if (path.startsWith("crypt2/")) return decryptCrypt1to4(1, path.mid(7));
-    if (path.startsWith("crypt/"))  return decryptCrypt1to4(0, path.mid(6));
+    #ifdef DEBUG_MODE
+    qDebug() << "Decryption process begun" ;
+    #endif
+    char crypt_type = 0;
+
+
+    if (path.startsWith("crypt5/"))         crypt_type = 5;
+    else if (path.startsWith("crypt4/"))      crypt_type = 4;
+    else if (path.startsWith("crypt3/"))        crypt_type = 3;
+    else if (path.startsWith("crypt2/"))        crypt_type = 2;
+    else if (path.startsWith("crypt/"))         crypt_type = 1;
+
+    #ifdef DEBUG_MODE
+        qDebug() << "Crypt type is " << (int)crypt_type;
+    #endif
+
+    switch (crypt_type){
+        case 5: return decryptCrypt5(path.mid(7));
+        case 4: return decryptCrypt1to4(3, path.mid(7));
+        case 3: return decryptCrypt1to4(2, path.mid(7));
+        case 2: return decryptCrypt1to4(1, path.mid(7));
+        case 1: return decryptCrypt1to4(0, path.mid(6));
+        default:
+        #ifdef DEBUG_MODE
+            qDebug() << "Crypt is unknown";
+        #endif
+    }
+
     return QString();
 }
 
