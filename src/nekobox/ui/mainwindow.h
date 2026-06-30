@@ -272,7 +272,11 @@ private slots:
 
     void on_menu_delete_triggered();
 
+    void on_reset_traffic(bool checkSelected = false);
+
     void on_menu_reset_traffic_triggered();
+    
+    void on_menu_reset_traffic_group_triggered();
 
     void on_menu_copy_links_triggered();
 
@@ -305,6 +309,8 @@ private slots:
     void on_menu_remove_unavailable_triggered();
 
     void on_menu_remove_invalid_triggered();
+
+    void on_resolve_selected(bool checkSelected = false);
 
     void on_menu_resolve_selected_triggered();
 

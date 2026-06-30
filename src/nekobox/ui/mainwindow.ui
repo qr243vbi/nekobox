@@ -778,6 +778,7 @@ QToolButton::menu-indicator {
     <addaction name="menu_clear_test_result"/>
     <addaction name="menu_remove_duplicates"/>
     <addaction name="actionSpeedtest_Group"/>
+    <addaction name="menu_reset_traffic_group"/>
    </widget>
    <widget class="QMenu" name="menuRouting_Menu">
     <property name="title">
@@ -1106,10 +1107,7 @@ QToolButton::menu-indicator {
   </action>
   <action name="menu_resolve_domain">
    <property name="text">
-    <string>Resolve domain</string>
-   </property>
-   <property name="shortcut">
-    <string notr="true">Ctrl+Shift+I</string>
+    <string>Resolve Domain</string>
    </property>
   </action>
   <action name="menu_vpn_settings">
@@ -1190,6 +1188,9 @@ QToolButton::menu-indicator {
    <property name="text">
     <string>Resolve Domain</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+I</string>
+   </property>
    <property name="visible">
     <bool>true</bool>
    </property>
@@ -1207,27 +1208,27 @@ QToolButton::menu-indicator {
   </action>
   <action name="actionSpeedtest_Selected">
    <property name="text">
-    <string>Full test Selected</string>
+    <string>Full test</string>
    </property>
   </action>
   <action name="actionDownloadtest_Selected">
    <property name="text">
-    <string>Download test Selected</string>
+    <string>Download test</string>
    </property>
   </action>
   <action name="actionUploadtest_Selected">
    <property name="text">
-    <string>Upload test Selected</string>
+    <string>Upload test</string>
    </property>
   </action>
   <action name="actionCountrytest_Selected">
    <property name="text">
-    <string>Country test Selected</string>
+    <string>Country test</string>
    </property>
   </action>
   <action name="actionSimpledl_Selected">
    <property name="text">
-    <string>Simple download test Selected</string>
+    <string>Simple download test</string>
    </property>
   </action>
   <action name="actionSpeedtest_Group">
@@ -1317,6 +1318,11 @@ QToolButton::menu-indicator {
   <action name="menu_toggle_searchbox">
    <property name="text">
     <string>Toggle searchbox</string>
+   </property>
+  </action>
+  <action name="menu_reset_traffic_group">
+   <property name="text">
+    <string>Reset Traffic</string>
    </property>
   </action>
  </widget>

@@ -3579,11 +3579,35 @@ void MainWindow::on_menu_delete_triggered() {
   }
 }
 
+
 void MainWindow::on_menu_reset_traffic_triggered() {
+  on_reset_traffic(true);
+}
+
+void MainWindow::on_menu_reset_traffic_group_triggered() {
+  on_reset_traffic(false);
+}
+
+void MainWindow::on_reset_traffic(bool checkSelected) {
   CHECK_ACTION_ACCESS_W
-  auto ents = get_now_selected_list();
-  if (ents.count() == 0)
-    return;
+  QList<int> ents;
+  if (checkSelected){
+    ents = get_now_selected_list();
+    if (ents.isEmpty()){
+      goto checkCurrentGroup;
+    }
+  } else {    
+    checkCurrentGroup:
+    auto currGroup =
+    Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+    if (currGroup == nullptr)
+      return;
+
+    ents = currGroup->Profiles();
+    if (ents.isEmpty())
+      return;
+    
+  }
   runOnNewThread([ents, this](){
     Configs::profileManager->lock();
     for (const auto &entid : ents) {
@@ -4108,11 +4132,32 @@ void MainWindow::on_menu_remove_invalid_triggered() {
   });
 }
 
-void MainWindow::on_menu_resolve_selected_triggered() {
+void MainWindow::on_resolve_selected(bool checkSelected) {
   CHECK_ACTION_ACCESS_W
-  auto profiles = get_now_selected_list();
-  if (profiles.isEmpty())
-    return;
+  QList<int> profiles;
+  if (checkSelected){
+    profiles = get_now_selected_list();
+    if (profiles.isEmpty()){
+      goto checkCurrentGroup;
+    }
+  } else {
+    checkCurrentGroup:
+    auto currGroup =
+    Configs::profileManager->GetGroup(Configs::dataStore->current_group);
+    if (currGroup == nullptr)
+      return;
+
+    profiles = currGroup->Profiles();
+    if (profiles.isEmpty())
+      return;
+
+    if (QMessageBox::question(
+        this, tr("Confirmation"),
+        tr("Replace domain server addresses with their resolved IPs?")) !=
+      QMessageBox::StandardButton::Yes) {
+      return;
+    }
+  }
 
   if (mw_sub_updating)
     return;
@@ -4138,42 +4183,11 @@ void MainWindow::on_menu_resolve_selected_triggered() {
 }
 
 void MainWindow::on_menu_resolve_domain_triggered() {
-  auto currGroup =
-      Configs::profileManager->GetGroup(Configs::dataStore->current_group);
-  if (currGroup == nullptr)
-    return;
+  this->on_resolve_selected(false);
+}
 
-  auto profiles = currGroup->Profiles();
-  if (profiles.isEmpty())
-    return;
-
-  if (QMessageBox::question(
-          this, tr("Confirmation"),
-          tr("Replace domain server addresses with their resolved IPs?")) !=
-      QMessageBox::StandardButton::Yes) {
-    return;
-  }
-  if (mw_sub_updating)
-    return;
-  mw_sub_updating = true;
-  auto resolve_count = std::atomic<int>(0);
-  Configs::dataStore->resolve_count = profiles.count();
-
-  for (const auto id : profiles) {
-    auto profile = Configs::profileManager->GetProfile(id);
-    if (profile == nullptr){
-      continue;
-    }
-    std::shared_ptr<Configs::AbstractBean>  beanConst = profile->unlock(profile->bean());
-    beanConst->ResolveDomainToIP([this, beanConst] {
-      std::shared_ptr<Configs::AbstractBean>  bean = beanConst;
-      if (--Configs::dataStore->resolve_count != 0)
-        return;
-      refresh_proxy_list();
-      mw_sub_updating = false;
-      bean.reset();
-    });
-  }
+void MainWindow::on_menu_resolve_selected_triggered() {
+  this->on_resolve_selected(true);
 }
 
 #define LAST_CLICK                                                             \
@@ -4447,6 +4461,7 @@ void MainWindow::on_tabWidget_customContextMenuRequested(const QPoint &p) {
       menu->addAction(ui->actionSpeedtest_Group);
       menu->addAction(ui->menu_resolve_domain);
       menu->addAction(ui->menu_clear_test_result);
+      menu->addAction(ui->menu_reset_traffic_group);
       menu->addAction(ui->menu_remove_duplicates);
       menu->addAction(ui->menu_remove_unavailable);
       menu->addAction(ui->menu_remove_invalid);
@@ -4582,7 +4597,7 @@ void MainWindow::setActionsData() {
   ui->menu_remove_invalid->setData(QString("m9"));
   ui->menu_remove_unavailable->setData(QString("m10"));
   ui->menu_reset_traffic->setData(QString("m11"));
-  ui->menu_resolve_domain->setData(QString("m12"));
+ // ui->menu_resolve_domain->setData(QString("m12"));
   ui->menu_resolve_selected->setData(QString("m13"));
   ui->menu_scan_qr->setData(QString("m14"));
   ui->menu_stop_testing->setData(QString("m15"));
