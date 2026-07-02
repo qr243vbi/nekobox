@@ -2013,7 +2013,7 @@ Za više informacija pogledajte dokument "Konfiguracija/DNS".</translation>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Novi warp profil</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
@@ -4502,7 +4502,7 @@ Jeste li sigurni?</translation>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Greška traženja pretplate %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
