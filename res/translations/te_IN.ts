@@ -1978,7 +1978,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
@@ -3729,7 +3729,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">దేశ పరీక్ష</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
@@ -4522,7 +4522,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; సభ్యత్వాన్ని అభ్యర్థిస్తోంది %1 లోపం</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
