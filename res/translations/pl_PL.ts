@@ -1978,7 +1978,7 @@ Więcej informacji można znaleźć w dokumencie „Konfiguracja/DNS”.</transl
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ratować</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
@@ -3713,12 +3713,12 @@ Czy jesteś pewien?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pełny test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
@@ -4519,7 +4519,7 @@ Czy jesteś pewien?</translation>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
         <source>Request error is: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Błąd żądania to: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
