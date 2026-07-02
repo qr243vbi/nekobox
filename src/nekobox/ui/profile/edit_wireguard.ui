@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1257</width>
-    <height>447</height>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,6 +110,13 @@
        <widget class="QCheckBox" name="sys_ifc">
         <property name="text">
          <string>Use System Interface</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QPushButton" name="generate_warp_config">
+        <property name="text">
+         <string>Generate Warp Config</string>
         </property>
        </widget>
       </item>

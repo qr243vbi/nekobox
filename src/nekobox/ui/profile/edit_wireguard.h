@@ -16,7 +16,7 @@ QT_END_NAMESPACE
 
 class EditWireguard : public QWidget, public ProfileEditor {
     Q_OBJECT
-
+    friend class DialogEditProfile;
 public:
     explicit EditWireguard(QWidget *parent = nullptr);
 

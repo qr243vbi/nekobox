@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QDialog>
+#include <QMutex>
 #include <QMenu>
 
 #include "3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.hpp"
@@ -31,8 +32,28 @@ public:
 
     ~DialogManageRoutes() override;
 
+
+    static void GenerateWarpConfig(
+        QPushButton * warp_button, 
+        QLineEdit * warp_private_key, 
+        QLineEdit * warp_public_key,
+        QLineEdit * warp_endpoint,
+        QLineEdit * warp_addresses, 
+        QWidget * context,
+        QLineEdit * port = nullptr);
+
+    static void BindWarpGenerator(
+        QPushButton * warp_button, 
+        QLineEdit * warp_private_key, 
+        QLineEdit * warp_public_key,
+        QLineEdit * warp_endpoint,
+        QLineEdit * warp_addresses, 
+        QWidget * context,
+        QLineEdit * port = nullptr);
+
 private:
     Ui::DialogManageRoutes *ui;
+
 
     RouteItem* routeChainWidget;
 
@@ -49,6 +70,7 @@ private:
     static bool validate_dns_rules(const QString &rawString);
 
     QShortcut* deleteShortcut;
+    QMutex warp_save;
 
     AutoCompleteTextEdit* rule_editor;
 public slots:

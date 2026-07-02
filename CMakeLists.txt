@@ -112,7 +112,6 @@ else()
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT ON)
 endif()
 
-option(ENABLE_WARP_PROFILE_GENERATOR OFF)
 option(MIGRATE_LMDB "Migrate from lmdb" OFF)
 option(SKIP_LEVELDB "Do not use rocksdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
@@ -313,10 +312,6 @@ nkr_add_compile_definitions(_CRT_SECURE_NO_WARNINGS=yes)
 
 if(SKIP_UPDATER)
     nkr_add_compile_definitions(SKIP_UPDATE_BUTTON=yes)
-endif()
-
-if(ENABLE_WARP_PROFILE_GENERATOR)
-    nkr_add_compile_definitions(WARP_GENERATOR_ENABLED=yes)
 endif()
 
 

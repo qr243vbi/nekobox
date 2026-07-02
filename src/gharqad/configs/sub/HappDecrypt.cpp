@@ -247,6 +247,7 @@ QString decryptLink(const QString &link) {
         #ifdef DEBUG_MODE
             qDebug() << "Crypt is unknown";
         #endif
+        break;
     }
 
     return QString();

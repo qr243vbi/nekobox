@@ -1,7 +1,9 @@
 #include <nekobox/ui/setting/dialog_manage_routes.h>
 #include <nekobox/configs/warp/warp.hpp>
+#include <nekobox/configs/proxy/WireguardBean.h>
 
 #include <QClipboard>
+#include <memory>
 
 #include <nekobox/dataStore/Database.hpp>
 
@@ -145,6 +147,64 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
         on_delete_route_clicked();
     });
 
+    #define CHECK_LINE_EDIT_EMPTY(X) if (ui->X->text().isEmpty()) { goto generate_warp; }
+
+    connect(ui->save_wireguard, &QPushButton::clicked, this, [=, this]{
+        if (!warp_save.try_lock()){
+            return;
+        }
+
+        CHECK_LINE_EDIT_EMPTY(warp_ep)
+        CHECK_LINE_EDIT_EMPTY(warp_private_key)
+        CHECK_LINE_EDIT_EMPTY(warp_public_key)
+        CHECK_LINE_EDIT_EMPTY(warp_ifc_addrs)
+        goto skip_warp;
+        generate_warp:
+        GenerateWarpConfig(
+        ui->warp_autogen,
+        ui->warp_private_key,
+        ui->warp_public_key,
+        ui->warp_ep,
+        ui->warp_ifc_addrs,
+        this
+        );
+        skip_warp:
+        bool ok = false;
+        QString text = QInputDialog::getText(
+            this,
+            tr("New warp profile"),
+            ("Profile name"),
+            QLineEdit::Normal,
+            "",
+            &ok
+        );
+        if (ok){
+            std::shared_ptr<Configs::ProxyEntity> proxy = Configs::ProfileManager::NewProxyEntity("wireguard"); 
+            std::shared_ptr<Configs::WireguardBean> bean = proxy->unlock(proxy->WireguardBean());
+            bean->privateKey = ui->warp_private_key->text();
+            bean->publicKey = ui->warp_public_key->text();
+            bean->localAddress = ui->warp_ifc_addrs->text().replace(" ", "").split(",");
+            QString serverAddress = ui->warp_ep->text();
+            int index = serverAddress.lastIndexOf(':');
+            if (index != -1) {
+                QString lastPart = serverAddress.mid(index + 1);
+                bool ok = false;
+                int serverPort = lastPart.toInt(&ok);
+                if (ok){
+                    proxy->serverPort = serverPort;
+                    serverAddress = serverAddress.left(index);
+                }
+            }
+            proxy->serverAddress = serverAddress;
+            Configs::profileManager->AddProfile(proxy);
+            proxy->name = text;
+            proxy->Save();
+        }
+        warp_save.unlock();
+    });
+
+    #undef CHECK_LINE_EDIT_EMPTY
+
     // hijack
     ui->dnshijack_enable->setChecked(Configs::dataStore->enable_dns_server);
     set_dns_hijack_enability(Configs::dataStore->enable_dns_server);
@@ -182,47 +242,90 @@ DialogManageRoutes::DialogManageRoutes(QWidget *parent, bool EditRouteProfiles) 
         ui->redirect_listenport->setEnabled(state);
     });
 
-    if (EditRouteProfiles){
-        ui->routes_tab->setCurrentIndex(3);
-    }
+    ui->routes_tab->setCurrentIndex(EditRouteProfiles ? 3 : 0);
 
-    #ifdef WARP_GENERATOR_ENABLED
     // warp
-    connect(ui->warp_autogen, &QPushButton::clicked, this, [=,this] {
-        auto originalText = ui->warp_autogen->text();
-        ui->warp_autogen->setText(tr("Getting keypair..."));
-        bool ok;
-        auto keyPair = API::defaultClient->GenWgKeyPair(&ok);
-        if (!ok) {
-            runOnUiThread([this, keyPair] {
-               MessageBoxWarning(tr("Failed to get key pair"), keyPair->error.c_str());
-            });
-            ui->warp_autogen->setText(originalText);
-            return;
-        }
-        ui->warp_autogen->setText(tr("Generating config..."));
-        QString error;
-        auto conf = Configs_network::genWarpConfig(&error, keyPair->private_key.c_str(), keyPair->public_key.c_str());
-        if (!error.isEmpty()) {
-            runOnUiThread([this, error] {
-                MessageBoxWarning(tr("Failed to generate warp config"), error);
-            });
-            ui->warp_autogen->setText(originalText);
-            return;
-        }
-        ui->warp_private_key->setText(conf->privateKey);
-        ui->warp_public_key->setText(conf->publicKey);
-        ui->warp_ep->setText(conf->endpoint);
-        ui->warp_ifc_addrs->setText(conf->ipv4Address + "/32," + conf->ipv6Address + "/128");
-        ui->warp_autogen->setText(tr("Success!"));
-        setTimeout([=,this] { ui->warp_autogen->setText(originalText); }, this, 2000);
-    });
-    #else
-    ui->routes_tab->removeTab(4);
-    #endif
+    BindWarpGenerator(ui->warp_autogen,
+        ui->warp_private_key,
+        ui->warp_public_key,
+        ui->warp_ep,
+        ui->warp_ifc_addrs,
+        this
+    );
 
     ADD_ASTERISK(this)
 }
+
+void DialogManageRoutes::GenerateWarpConfig(
+        QPushButton * warp_button, 
+        QLineEdit * warp_private_key, 
+        QLineEdit * warp_public_key,
+        QLineEdit * warp_ep,
+        QLineEdit * warp_ifc_addrs, 
+        QWidget * context,
+        QLineEdit * port){
+    auto originalText = warp_button->text();
+    warp_button->setText(tr("Getting keypair..."));
+    bool ok;
+    auto keyPair = API::defaultClient->GenWgKeyPair(&ok);
+    if (!ok) {
+        runOnUiThread([context, keyPair] {
+            QMessageBox::warning(context, tr("Failed to get key pair"), keyPair->error.c_str());
+        });
+        warp_button->setText(originalText);
+        return;
+    }
+    warp_button->setText(tr("Generating config..."));
+    QString error;
+    auto conf = Configs_network::genWarpConfig(&error, keyPair->private_key.c_str(), keyPair->public_key.c_str());
+    if (!error.isEmpty()) {
+        runOnUiThread([context, error] {
+            QMessageBox::warning(context, tr("Failed to generate warp config"), error);
+        });
+        warp_button->setText(originalText);
+        return;
+    }
+    warp_private_key->setText(conf->privateKey);
+    warp_public_key->setText(conf->publicKey);
+    warp_ifc_addrs->setText(conf->ipv4Address + "/32," + conf->ipv6Address + "/128");
+    if (port == nullptr) {
+        warp_set_endpoint:
+        warp_ep->setText(conf->endpoint);
+    } else {
+        QString serverAddress = conf->endpoint;
+        int index = serverAddress.lastIndexOf(':');
+        if (index != -1) {
+            port->setText(serverAddress.mid(index + 1));
+            warp_ep->setText(serverAddress.left(index));
+        } else {
+            goto warp_set_endpoint;
+        }
+    }
+
+    warp_button->setText(tr("Success!"));
+    setTimeout([=] { warp_button->setText(originalText); }, context, 2000);
+}
+
+void DialogManageRoutes::BindWarpGenerator(
+        QPushButton * warp_button, 
+        QLineEdit * warp_private_key, 
+        QLineEdit * warp_public_key,
+        QLineEdit * warp_ep,
+        QLineEdit * warp_ifc_addrs, 
+        QWidget * context,
+        QLineEdit * port){
+  connect(warp_button, &QPushButton::clicked, context, [=](){
+    GenerateWarpConfig(
+        warp_button,
+        warp_private_key,
+        warp_public_key,
+        warp_ep, 
+        warp_ifc_addrs,
+        context,
+        port
+    );
+  });
+};
 
 void DialogManageRoutes::updateCurrentRouteProfile(int idx) {
     currentRoute = chainList[idx];

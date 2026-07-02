@@ -1,7 +1,4 @@
-
-
-
-
+#include <nekobox/ui/setting/dialog_manage_routes.h>
 #include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/includes.h>
@@ -358,6 +355,14 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     innerEditor = _innerWidget;
   } else if (type == "wireguard" || type == "awg") {
     auto _innerWidget = new EditWireguard(this);
+    DialogManageRoutes::BindWarpGenerator(
+      _innerWidget->ui->generate_warp_config,
+      _innerWidget->ui->private_key, 
+      _innerWidget->ui->public_key, 
+      this->ui->address, 
+      _innerWidget->ui->local_addr, 
+      this,
+      this->ui->port);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
   } else if (type == "tailscale") {
