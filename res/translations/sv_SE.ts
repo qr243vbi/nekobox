@@ -3728,7 +3728,7 @@ Aktivera endast detta om du tänker dela DNS med betrodda LAN-enheter.
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ladda upp test</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
