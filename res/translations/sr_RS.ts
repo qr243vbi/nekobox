@@ -3733,7 +3733,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Цоунтри тест</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
