@@ -3713,12 +3713,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">フルテスト</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
@@ -3738,7 +3738,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Simple download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">簡単なダウンロードテスト</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320" />
@@ -4514,7 +4514,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; サブスクリプション %1 の要求エラー</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
