@@ -3718,17 +3718,17 @@ Biztos vagy benne?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Teljes teszt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Letöltés teszt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Feltöltési teszt</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
