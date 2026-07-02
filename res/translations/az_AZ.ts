@@ -3715,7 +3715,7 @@ Bunu yalnız DNS-i etibarlı LAN cihazları ilə paylaşmaq niyyətindəsinizsə
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Testi yükləyin</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
