@@ -3558,7 +3558,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Елдік сынақ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
@@ -4462,7 +4462,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; % 1 үшін жазылым деректері алынды</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
