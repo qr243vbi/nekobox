@@ -3710,22 +3710,22 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ሙሉ ፈተና</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">የማውረድ ሙከራ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">የሰቀላ ሙከራ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">የሀገር ፈተና</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
@@ -4528,7 +4528,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; የደንበኝነት ምዝገባ ውሂብ ለ%1 ተገኝቷል</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
