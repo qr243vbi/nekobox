@@ -1974,7 +1974,7 @@ Qo'shimcha ma'lumot olish uchun "Konfiguratsiya/DNS" hujjatiga qarang.</translat
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Saqlash</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
