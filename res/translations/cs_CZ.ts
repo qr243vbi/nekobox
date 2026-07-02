@@ -4512,7 +4512,7 @@ jsi si jistý?</translation>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Data předplatného načtena pro %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
