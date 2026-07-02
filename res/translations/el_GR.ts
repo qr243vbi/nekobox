@@ -3715,7 +3715,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Λήψη δοκιμής</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
@@ -3730,7 +3730,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Simple download test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Απλή δοκιμή λήψης</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320" />
