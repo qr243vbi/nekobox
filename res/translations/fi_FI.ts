@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='UTF-8'?>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
@@ -12,37 +11,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
         <translation type="unfinished">Muistaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
         <translation type="unfinished">sekuntia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
         <translation type="unfinished">minuuttia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
         <translation type="unfinished">tuntia</translation>
     </message>
@@ -50,9 +49,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Custom Headers</source>
@@ -94,22 +93,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
         <source>Proxy</source>
         <translation type="unfinished">Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
         <source>Direct</source>
         <translation type="unfinished">Suoraan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
         <source>Block</source>
         <translation type="unfinished">Lohko</translation>
     </message>
@@ -117,18 +116,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
         <source>Basic Settings</source>
         <translation type="unfinished">Perusasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
         <translation type="unfinished">Yleistä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -136,179 +135,179 @@
 + HTTP-välityspalvelin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
         <source>Listen Port</source>
         <translation type="unfinished">Kuuntele Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
         <source>Edit</source>
         <translation type="unfinished">Muokata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
         <source>Custom Inbound</source>
         <translation type="unfinished">Mukautettu saapuva</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valitsee satunnaisen käytettävissä olevan portin joka ajon aikana&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
         <source>Random port</source>
         <translation type="unfinished">Satunnainen portti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
         <source>Proxy Format</source>
         <translation type="unfinished">Välityspalvelimen muoto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
         <source>Listen Address</source>
         <translation type="unfinished">Kuuntele osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
         <source>Network Settings</source>
         <translation type="unfinished">Verkkoasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
         <source>Use proxy when activated</source>
         <translation type="unfinished">Käytä välityspalvelinta, kun se on aktivoitu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
         <source>URL Test after profile start</source>
         <translation type="unfinished">URL-testi profiilin käynnistyksen jälkeen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Request update at startup</source>
         <translation type="unfinished">Pyydä päivitystä käynnistyksen yhteydessä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
         <source>Ignore TLS errors</source>
         <translation type="unfinished">Ohita TLS-virheet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
         <source>Test Settings</source>
         <translation type="unfinished">Testiasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
         <source>Simple Download URL</source>
         <translation type="unfinished">Yksinkertainen lataus-URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
         <source>Download + Upload</source>
         <translation type="unfinished">Lataa + Lataa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
         <source>Only Download</source>
         <translation type="unfinished">Vain lataus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
         <source>Only Upload</source>
         <translation type="unfinished">Vain lataus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
         <source>Simple Download</source>
         <translation type="unfinished">Yksinkertainen lataus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
         <source>Only Country</source>
         <translation type="unfinished">Ainoa Maa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
         <source>Latency Test URL</source>
         <translation type="unfinished">Latenssitestin URL-osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
         <source>Speedtest mode</source>
         <translation type="unfinished">Nopeustestitila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
         <source>Concurrent</source>
         <translation type="unfinished">Samanaikainen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;aikakatkaisu millisekunteina&lt;br/&gt;koskee kaikkia testejä yksitellen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
         <source>Timeout</source>
         <translation type="unfinished">Aikakatkaisu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
         <source>Download Retries</source>
         <translation type="unfinished">Lataa Uudelleenyritykset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URL-testin aikakatkaisu ms:ssä&lt;br/&gt;Huomaa, että sekoitettujen yhteyksien ensimmäinen pyyntö kestää paljon kauemmin. Jos tämä arvo asetetaan liian pieneksi, testi ilmoittaa virheellisesti, että kokoonpano ei toimi.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
         <source>Style</source>
         <translation type="unfinished">Tyyli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
         <source>Font</source>
         <translation type="unfinished">Fontti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
         <source>Font Size</source>
         <translation type="unfinished">Fonttikoko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
         <source>Connection statistics</source>
         <translation type="unfinished">Yhteystilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">Piilota kojelauta käynnistyksen yhteydessä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
         <source>Show System DNS option</source>
         <translation type="unfinished">Näytä System DNS -vaihtoehto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534" />
         <source>Show profile IDs</source>
         <translation type="unfinished">Näytä profiilitunnukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
         <source>Disable tray</source>
         <translation type="unfinished">Poista lokero käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Set text under menu icons</source>
         <translation type="unfinished">Aseta teksti valikkokuvakkeiden alle</translation>
     </message>
@@ -317,73 +316,73 @@
         <translation type="obsolete">Piilota käynnistyksen yhteydessä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>Manually column width</source>
         <translation type="unfinished">Manuaalinen sarakkeen leveys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
         <source>Max log lines</source>
         <translation type="unfinished">Max lokiviivat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
         <source>Theme</source>
         <translation type="unfinished">Teema</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
         <source>System</source>
         <translation type="unfinished">Järjestelmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757" />
         <source>Language</source>
         <translation type="unfinished">Kieli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777" />
         <source>Icon</source>
         <translation type="unfinished">Kuvake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784" />
         <source>Emoji Font</source>
         <translation type="unfinished">Emoji-fontti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
         <source>Subscription</source>
         <translation type="unfinished">Tilaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841" />
         <source>Interval:</source>
         <translation type="unfinished">Aikaväli:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
         <source>Enable automatic update</source>
         <translation type="unfinished">Ota automaattinen päivitys käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Clear servers before update</source>
         <translation type="unfinished">Tyhjennä palvelimet ennen päivitystä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
         <source>URL Test after update</source>
         <translation type="unfinished">URL-testi päivityksen jälkeen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073" />
         <source>Enable</source>
         <translation type="unfinished">Ota käyttöön</translation>
     </message>
@@ -392,27 +391,27 @@
         <translation type="obsolete">Intervalli (minuutti, ei kelpaa, jos alle 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Poista kaksoiskappaleet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887" />
         <source>User Agent</source>
         <translation type="unfinished">Käyttäjäagentti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Malli=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
         <source>Send System Parameters</source>
         <translation type="unfinished">Lähetä järjestelmäparametrit</translation>
     </message>
@@ -421,32 +420,32 @@
         <translation type="obsolete">Automaattinen päivitys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Muoto: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Jätä tyhjäksi, jos haluat käyttää oletusarvoja.Määritä vain parametrit, jotka haluat ohittaa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Mukautetut järjestelmäparametrit (valinnainen)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Poista virheellinen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Poista Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929" />
         <source>Core</source>
         <translation type="unfinished">Ydin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -454,7 +453,7 @@
 Paranna Pingiä ja suorituskykyä&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979" />
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Poista liikennetilastot käytöstä</translation>
     </message>
@@ -463,90 +462,90 @@ Paranna Pingiä ja suorituskykyä&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translati
         <translation type="obsolete">Käytä TCP:tä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029" />
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
         <source>Loglevel</source>
         <translation type="unfinished">Lokitaso</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003" />
         <source>concurrency</source>
         <translation type="unfinished">samanaikaisuus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
         <source>Hide window at startup</source>
         <translation type="unfinished">Piilota ikkuna käynnistyksen yhteydessä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
         <source>Show test button</source>
         <translation type="unfinished">Näytä testipainike</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
         <source>Show start/stop button</source>
         <translation type="unfinished">Näytä käynnistys/pysäytyspainike</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
         <source>Enable indicator borders</source>
         <translation type="unfinished">Ota ilmaisimen reunat käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
         <source>Radius</source>
         <translation type="unfinished">Säde</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
         <source>Padding</source>
         <translation type="unfinished">Pehmuste</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020" />
         <source>Default On</source>
         <translation type="unfinished">Oletus päällä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052" />
         <source>Core Options</source>
         <translation type="unfinished">Ydinvaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Asetukset
 sing-boxin sisäänrakennettu NTP-asiakas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
         <source>NTP Settings</source>
         <translation type="unfinished">NTP-asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082" />
         <source>server</source>
         <translation type="unfinished">palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092" />
         <source>Port</source>
         <translation type="unfinished">Portti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>sync interval</source>
         <translation type="unfinished">synkronointiväli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -554,22 +553,22 @@ sing-boxin sisäänrakennettu NTP-asiakas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</t
 minuuttia&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
         <source>Security</source>
         <translation type="unfinished">Turvallisuus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
         <source>Disable Privilege request</source>
         <translation type="unfinished">Poista etuoikeuspyyntö käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Ohita TLS-varmenteen todennus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Käytä Mozilla Certificate Storea</translation>
     </message>
@@ -578,27 +577,27 @@ minuuttia&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Ohita TLS-varmenteen todennus oletuksena (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270" />
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">OletusuTLS-sormenjälki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Älä yritä aloittaa järjestelmänvalvojana, ellei sitä ole erikseen pyydetty&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Käytä Unix Domain Socket -sovellusta viestintään nekoboxin ja nekobox_core:n välillä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Käytä UDS:ää IPC:lle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Aloita aina tavallisena käyttäjänä</translation>
     </message>
@@ -617,7 +616,7 @@ INI — 1980-luvun alku — yksinkertainen tekstimuotoinen konfigurointimuoto os
 binaarinen — 2026 — mielivaltainen tavuarvomuoto NekoBox-asetuksiin, joita käytetään RocksDB-arvoina tai itsenäisinä tiedostoina — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -628,143 +627,143 @@ INI — 1980-luvun alku — yksinkertainen tekstimuotoinen konfigurointimuoto os
 binaarinen — 2026 — mielivaltainen tavuarvomuoto NekoBox-asetuksille, joita käytetään leveldb-arvoina tai itsenäisinä tiedostoina — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Pyydä profiilin poistamista</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
         <source>Auto-Testing</source>
         <translation type="unfinished">Automaattinen testaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Testaa välityspalvelimet automaattisesti taustalla ja ylläpitää toimivaa välityspalvelinta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Ota automaattinen testaus käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Testiväli (sekuntia)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439" />
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Kuinka usein testisykli suoritetaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Välityspalvelimet sykliä kohti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462" />
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Testattavien välityspalvelinten lukumäärä kussakin jaksossa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478" />
         <source>Working Pool Size</source>
         <translation type="unfinished">Toimiva altaan koko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Ylläpidettävien vahvistettujen välityspalvelinten enimmäismäärä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501" />
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Latenssikynnys (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Suurin viive välityspalvelimen toimivaksi katsomiseksi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527" />
         <source>Failure Retry Count</source>
         <translation type="unfinished">Epäonnistuminen Uudelleenyritysten määrä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Uudelleenyritysten määrä ennen kuin välityspalvelin katsotaan epäonnistuneeksi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550" />
         <source>Test Target URL</source>
         <translation type="unfinished">Testaa kohde-URL-osoitetta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL-osoite välityspalvelimien testaamiseksi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560" />
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Vaihda automaattisesti toiseen toimivaan välityspalvelimeen, kun TUN-tilan välityspalvelin epäonnistuu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Ota TUN-virheenvaihto käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
         <source>Startup</source>
         <translation type="unfinished">Käynnistys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642" />
         <source>Geometry</source>
         <translation type="unfinished">Geometria</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671" />
         <source>Autosave geometry</source>
         <translation type="unfinished">Tallenna geometria automaattisesti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678" />
         <source>Autosave position</source>
         <translation type="unfinished">Tallenna sijainti automaattisesti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698" />
         <source>Apply now</source>
         <translation type="unfinished">Hae nyt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772" />
         <source>Width</source>
         <translation type="unfinished">Leveys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859" />
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804" />
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
         <source>Configs format</source>
         <translation type="unfinished">Konfigurointimuoto</translation>
     </message>
@@ -779,64 +778,64 @@ INI — 1980-luvun alku — yksinkertainen tekstimuotoinen konfigurointimuoto os
 binaarinen — 2026 — mielivaltainen tavuarvomuoto NekoBox-asetuksiin, joita käytetään LMDB-arvoina tai itsenäisinä tiedostoina — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872" />
         <source>Height</source>
         <translation type="unfinished">Korkeus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969" />
         <source>Core Executable Path</source>
         <translation type="unfinished">Suoritettava ydinpolku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187" />
         <source>Use default</source>
         <translation type="unfinished">Käytä oletusarvoa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
         <source>Remote Control</source>
         <translation type="unfinished">Kaukosäädin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220" />
         <source>Select</source>
         <translation type="unfinished">Valitse</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
         <source>Resources Directory</source>
         <translation type="unfinished">Resurssihakemisto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194" />
         <source>Resource Manager</source>
         <translation type="unfinished">Resurssienhallinta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229" />
         <source>Proxy type</source>
         <translation type="unfinished">Välityspalvelimen tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264" />
         <source>Name of program</source>
         <translation type="unfinished">Ohjelman nimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563" />
         <source>Security Warning</source>
         <translation type="unfinished">Turvallisuusvaroitus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564" />
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -853,12 +852,12 @@ Ota tämä käyttöön vain, jos luotat täysin kaikkiin sinun ja tilauspalvelim
 Haluatko varmasti poistaa TLS-vahvistuksen käytöstä?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585" />
         <source>Privacy Warning</source>
         <translation type="unfinished">Tietosuojavaroitus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586" />
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -886,42 +885,42 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
         <translation type="unfinished">Muokkaa ryhmää</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
         <translation type="unfinished">Yleistä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
         <source>Url</source>
         <translation type="unfinished">URL-osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
         <source>Paste URL</source>
         <translation type="unfinished">Liitä URL-osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Type</source>
         <translation type="unfinished">Tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
         <source>Basic</source>
         <translation type="unfinished">Perus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
         <source>Subscription</source>
         <translation type="unfinished">Tilaus</translation>
     </message>
@@ -930,58 +929,58 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
         <translation type="obsolete">Manuaalinen sarakkeen leveys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
         <source>Archive</source>
         <translation type="unfinished">Arkisto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
         <source>Autoupdate</source>
         <translation type="unfinished">Automaattinen päivitys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
         <source>Extra</source>
         <translation type="unfinished">ylimääräistä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Proxy</source>
         <translation type="unfinished">Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
         <source>None</source>
         <translation type="unfinished">Ei mitään</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
         <source>Front Proxy</source>
         <translation type="unfinished">Etuvälityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
         <source>Landing Proxy</source>
         <translation type="unfinished">Laskeutumisvälityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
         <source>Share</source>
         <translation type="unfinished">Jakaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
         <source>Copy profile share links</source>
         <translation type="unfinished">Kopioi profiilin jakamislinkit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">Kopioi profiilin jakamislinkit (muokatut linkit)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
         <source>Notes</source>
         <translation type="unfinished">Huomautuksia</translation>
     </message>
@@ -990,22 +989,22 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
         <translation type="obsolete">Ohita automaattinen päivitys</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">Käyttää tilauksen profiilinimeä, jos se on tyhjä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
         <source>Copied</source>
         <translation type="unfinished">Kopioitu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Warning</source>
         <translation type="unfinished">Varoitus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Please input URL</source>
         <translation type="unfinished">Syötä URL-osoite</translation>
     </message>
@@ -1013,267 +1012,267 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
         <source>Edit</source>
         <translation type="unfinished">Muokata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
         <translation type="unfinished">Yleistä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
         <translation type="unfinished">Tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
         <translation type="unfinished">Portti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Address</source>
         <translation type="unfinished">Osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
         <source>Settings</source>
         <translation type="unfinished">Asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Taustalla oleva kuljetustapa.Sen on oltava yhdenmukainen palvelimen kanssa, muuten yhteyttä ei voida muodostaa.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
         <translation type="unfinished">Verkko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
         <translation type="unfinished">Palvelintuki vaaditaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
         <translation type="unfinished">Multiplex</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Kuljetuskerroksen turvallisuus.Sen on oltava yhdenmukainen palvelimen kanssa, muuten yhteyttä ei voida muodostaa.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
         <translation type="unfinished">Turvallisuus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">UDP FullCone Pakettikoodaus ominaisuuksien, kuten UDP FullCone, toteuttamiseen.Palvelintuki vaaditaan, jos väärä valinta on tehty, yhteyttä ei voida muodostaa.Jätä se tyhjäksi.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
         <translation type="unfinished">Pakettikoodaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
         <source>Keep Default</source>
         <translation type="unfinished">Pidä oletusarvo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
         <source>On</source>
         <translation type="unfinished">Päällä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ohittaa muxin Päällä&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">Ota TCP Brutal käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Palvelimen ja asiakkaan välinen brutaali TCP-nopeus&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCP brutaali nopeus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">Mukautetut lähtevät asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
         <source>Custom Config Settings</source>
         <translation type="unfinished">Mukautetut konfigurointiasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818" />
         <source>Apply settings to this group</source>
         <translation type="unfinished">Ota asetukset käyttöön tässä ryhmässä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
         <source>Network Settings (%1)</source>
         <translation type="unfinished">Verkkoasetukset (% 1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http-pyynnön menetelmä, muunnetaan isoiksi kirjaimiksi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
         <source>Method</source>
         <translation type="unfinished">Menetelmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
         <translation type="unfinished">otsikkotyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
         <source>TLS Security Settings</source>
         <translation type="unfinished">TLS-suojausasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752" />
         <source>Certificate</source>
         <translation type="unfinished">Todistus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">Kun tämä on käytössä, V2Ray ei tarkista etäisännän toimittaman TLS-varmenteen voimassaoloa (suojaus vastaa tekstiä)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
         <translation type="unfinished">Salli epävarma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
         <translation type="unfinished">Ota ECH käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762" />
         <source>ECH Config</source>
         <translation type="unfinished">ECH Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">Palvelimen nimen ilmaisu, selkeä teksti.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">Sovelluskerroksen protokollaneuvottelut, selkeä teksti.Erottele ne pilkuilla.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS-naamiointiasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
         <translation type="unfinished">Kuljetus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Saattaa heikentää suorituskykyä, yritä ensin tallentaa fragmenttia&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
         <translation type="unfinished">Ota TLS-fragmentti käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;aikamuoto, kuten 500 ms, 10 ms jne.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
         <translation type="unfinished">Varaviive</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">Ota TLS Record Fragment käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">Todellisuuden julkinen avain.Jos se ei ole tyhjä, muuta TLS TODELLA.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">Todellisuuden lyhyt tunnus.Hyväksy vain yksi arvo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
         <source>Reality SID</source>
         <translation type="unfinished">Todellisuuden SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Muokattu (% 1 lähtevä)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Mukautettu (% 1 kokoonpano)</translation>
     </message>
@@ -1296,130 +1295,130 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
         <translation type="obsolete">Mukautettu (% 1 kokoonpano)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118" />
         <source>both</source>
         <translation type="unfinished">molemmat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733" />
         <source>Not set</source>
         <translation type="unfinished">Ei asetettu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735" />
         <source>Already set</source>
         <translation type="unfinished">Jo asetettu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792" />
         <source>Confirm</source>
         <translation type="unfinished">Vahvistaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
         <source>Network Settings</source>
         <translation type="unfinished">Verkkoasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
         <translation type="unfinished">Max Post Bytes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
         <translation type="unfinished">Vähimmäisviestiväli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
         <translation type="unfinished">Max uudelleenkäyttöajat</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
         <translation type="unfinished">X täytetavua</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
         <translation type="unfinished">Keep Alive -jakso</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
         <source>Max Concurrency</source>
         <translation type="unfinished">Max samanaikaisuus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
         <translation type="unfinished">Max uudelleenkäytettävät sekuntit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
         <source>Headers</source>
         <translation type="unfinished">Otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
         <source>Edit download settings</source>
         <translation type="unfinished">Muokkaa latausasetuksia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
         <translation type="unfinished">Pyyntöajat maksimissaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
         <translation type="unfinished">XP-otsikon lisääminen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
         <translation type="unfinished">XPadding menetelmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
         <translation type="unfinished">XPadding Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
         <translation type="unfinished">EarlyData pituus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
         <source>Max Connections</source>
         <translation type="unfinished">Max liitännät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
         <translation type="unfinished">XP-sijoittelun lisääminen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
         <source>Multi Mode</source>
         <translation type="unfinished">Monitila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">XPadding Obfs Mode</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
         <source>No GRPC Headers</source>
         <translation type="unfinished">Ei GRPC-otsikoita</translation>
     </message>
@@ -1427,37 +1426,37 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
         <source>Custom Headers</source>
         <translation type="unfinished">Mukautetut otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">Mukautetut HTTP-otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
         <source>System Parameters</source>
         <translation type="unfinished">Järjestelmän parametrit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
         <source>Custom Payload</source>
         <translation type="unfinished">Mukautettu hyötykuorma</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
         <source>Text</source>
         <translation type="unfinished">Teksti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
         <source>Javascript</source>
         <translation type="unfinished">Javascript</translation>
     </message>
@@ -1465,95 +1464,95 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">Laskeutumisvälityspalvelin ryhmälle Group2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
         <translation type="unfinished">Välityspalvelin:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
         <translation type="unfinished">Haku:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
         <translation type="unfinished">Ryhmä 1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
         <translation type="unfinished">Ryhmä 2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Etuvälityspalvelin ryhmälle %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
         <source>Front proxy: </source>
         <translation type="unfinished">Etuvälityspalvelin:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Laskeutumisvälityspalvelin ryhmälle %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
         <source>Landing proxy: </source>
         <translation type="unfinished">Laskeutumisvälityspalvelin:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164" />
         <source>Proxy</source>
         <translation type="unfinished">Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166" />
         <source>Direct</source>
         <translation type="unfinished">Suoraan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
         <source>None</source>
         <translation type="unfinished">Ei mitään</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
         <source>Add proxy</source>
         <translation type="unfinished">Lisää välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Korvaa %1 välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159" />
         <source>Select outbound</source>
         <translation type="unfinished">Valitse lähtevä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
         <source>Outbound: </source>
         <translation type="unfinished">Lähtevä:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168" />
         <source>Outbound</source>
         <translation type="unfinished">Lähtevä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170" />
         <source>Block</source>
         <translation type="unfinished">Lohko</translation>
     </message>
@@ -1561,17 +1560,17 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
         <source>Send System Parameters</source>
         <translation type="unfinished">Lähetä järjestelmäparametrit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
@@ -1579,27 +1578,27 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
         <source>Value</source>
         <translation type="unfinished">Arvo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
         <source>New</source>
         <translation type="unfinished">Uusi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
         <source>Header name</source>
         <translation type="unfinished">Otsikon nimi</translation>
     </message>
@@ -1607,75 +1606,75 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
         <translation type="unfinished">Pikanäppäin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
         <source>Global</source>
         <translation type="unfinished">Maailmanlaajuinen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
         <source>Trigger main window</source>
         <translation type="unfinished">Käynnistä pääikkuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
         <source>Show groups</source>
         <translation type="unfinished">Näytä ryhmät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
         <source>Show routes</source>
         <translation type="unfinished">Näytä reitit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
         <source>Proxy mode</source>
         <translation type="unfinished">Välityspalvelintila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
         <source>Toggle System Proxy</source>
         <translation type="unfinished">Vaihda järjestelmän välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Shortcuts</source>
         <translation type="unfinished">Pikanäppäimet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
-        <source>Shortcut for &apos;%s&apos; action was cleared</source>
-        <translation type="unfinished">Toiminnon &apos;%s&apos; pikakuvake tyhjennettiin</translation>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
+        <source>Shortcut for '%s' action was cleared</source>
+        <translation type="unfinished">Toiminnon '%s' pikakuvake tyhjennettiin</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
         <translation type="unfinished">ryhmät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
         <translation type="unfinished">Uusi ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
         <translation type="unfinished">Päivitä kaikki tilaukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Confirmation</source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Päivitetäänkö kaikki tilaukset?</translation>
     </message>
@@ -1683,274 +1682,274 @@ Haluatko varmasti ottaa HWID-lähetyksen käyttöön?</translation>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
         <translation type="unfinished">Reitit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
         <translation type="unfinished">Yleistä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
         <translation type="unfinished">Haistaa yhteyksien alkuperäiset paketit tunnistaakseen protokollan ja SNI:n.Kohteen haistelutulos kirjoittaa myös uudelleen haisteltuun SNI:hen liittyvän yhteyden määränpään.Lisätietoja nuuskitusta protokollasta on sing-boxin dokumentaatiossa.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
         <source>Sniffing Mode</source>
         <translation type="unfinished">Nuuskailutila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
         <source>Disable</source>
         <translation type="unfinished">Poista käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
         <source>Sniff result for routing</source>
         <translation type="unfinished">Haista tulos reititystä varten</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
         <source>Routing Profile</source>
         <translation type="unfinished">Reititysprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">Saapuvien verkkotunnusten strategia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
         <source>GitHub</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">Remote Rule-set Mirror</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ratkaise verkkotunnukset IP:ksi ennen yhteyden muodostamista, vaikuttaa myös palvelimen osoitteeseen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">Lähtevän verkkotunnuksen strategia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>RuleSet download url</source>
         <translation type="unfinished">RuleSet-lataus-url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <source>Hijack</source>
         <translation type="unfinished">Kaapata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
         <source>DNS Server</source>
         <translation type="unfinished">DNS-palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
         <source>Listen Port</source>
         <translation type="unfinished">Kuuntele Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
         <source>IPv4 Response</source>
         <translation type="unfinished">IPv4-vastaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
         <source>IPv6 Response</source>
         <translation type="unfinished">IPv6-vastaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Seuraavaa muotoa tulee käyttää:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
         <source>Rules</source>
         <translation type="unfinished">säännöt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
         <source>Enable</source>
         <translation type="unfinished">Ota käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Onko kuunnella 0.0.0.0:lla, jotta muut lähiverkon laitteet voivat käyttää tätä palvelinta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">Salli Lanin muodostaa yhteys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
         <source>Redirect Settings</source>
         <translation type="unfinished">Uudelleenohjausasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
         <source>Listen Address</source>
         <translation type="unfinished">Kuuntele osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
         <source>DNS</source>
         <translation type="unfinished">DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
         <source>Simple DNS Settings</source>
         <translation type="unfinished">Yksinkertaiset DNS-asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;esimerkkejä:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain/path&lt;/p&gt;&lt;p&gt;quic://domain/path/c/html&gt;&lt;p3&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
         <source>Remote DNS</source>
         <translation type="unfinished">Etä DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
         <source>Default DNS server</source>
         <translation type="unfinished">Oletus DNS-palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
         <source>Query Strategy</source>
         <translation type="unfinished">Kyselystrategia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Paikallista DNS:ää ei voi käyttää joissakin kokoonpanoissa, sinun on asetettava IP-osoite tähän, jotta sitä käytetään paikallisena dns:nä tällaisissa tilanteissa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
         <source>Local Override</source>
         <translation type="unfinished">Paikallinen ohitus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
-        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</source>
-        <translation type="unfinished">Tämä on erityisen tärkeää, ja on suositeltavaa käyttää oletusarvoa &quot;localhost&quot;.
-Jos oletusarvo ei toimi, yritä muuttaa se arvoon &quot;223.5.5.5&quot;.
-Katso lisätietoja asiakirjasta &quot;Configuration/DNS&quot;.</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
+        <source>This is especially important and it is recommended to use the default value of "localhost".
+If the default value does not work, try changing it to "223.5.5.5".
+For more information, see the document "Configuration/DNS".</source>
+        <translation type="unfinished">Tämä on erityisen tärkeää, ja on suositeltavaa käyttää oletusarvoa "localhost".
+Jos oletusarvo ei toimi, yritä muuttaa se arvoon "223.5.5.5".
+Katso lisätietoja asiakirjasta "Configuration/DNS".</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
         <source>Direct DNS</source>
         <translation type="unfinished">Suora DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
         <source>Enable FakeIP</source>
         <translation type="unfinished">Ota FakeIP käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
         <source>DNS Object Settings</source>
         <translation type="unfinished">DNS-objektin asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Use DNS Object</source>
         <translation type="unfinished">Käytä DNS-objektia</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
         <source>Format</source>
         <translation type="unfinished">Muoto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
         <source>Document</source>
         <translation type="unfinished">Asiakirja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
         <source>Route</source>
         <translation type="unfinished">Reitti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
         <source>Routing Profiles</source>
         <translation type="unfinished">Reititysprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
         <source>New</source>
         <translation type="unfinished">Uusi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
         <source>Clone</source>
         <translation type="unfinished">Klooni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
         <source>Export</source>
         <translation type="unfinished">Viedä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
         <source>Edit</source>
         <translation type="unfinished">Muokata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
         <source>Delete</source>
         <translation type="unfinished">Poistaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
         <translation type="unfinished">Loimi</translation>
     </message>
@@ -1967,103 +1966,103 @@ Katso lisätietoja asiakirjasta &quot;Configuration/DNS&quot;.</translation>
         <translation type="obsolete">Luo automaattisesti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hankii uuden konfiguraation cloudflare API:sta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Generate Warp Config</source>
         <translation type="unfinished">Luo Warp Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tallentaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
         <source>Endpoint</source>
         <translation type="unfinished">Päätepiste</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751" />
         <source>Public Key</source>
         <translation type="unfinished">Julkinen avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
         <source>Private Key</source>
         <translation type="unfinished">Yksityinen avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777" />
         <source>Interface Addresses</source>
         <translation type="unfinished">Käyttöliittymäosoitteet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32" />
         <source>Invalid state</source>
         <translation type="unfinished">Virheellinen tila</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Reititysprofiilien luettelo on tyhjä, tämän tilan pitäisi olla tavoittamaton, kaatumisia voi tapahtua nyt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uusi loimiprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
         <source>Getting keypair...</source>
         <translation type="unfinished">Haetaan avainparia...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273" />
         <source>Failed to get key pair</source>
         <translation type="unfinished">Avainparin saaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278" />
         <source>Generating config...</source>
         <translation type="unfinished">Luodaan asetuksia...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283" />
         <source>Failed to generate warp config</source>
         <translation type="unfinished">Warp-määrityksen luominen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305" />
         <source>Success!</source>
         <translation type="unfinished">Menestys!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344" />
         <source>Invalid settings</source>
         <translation type="unfinished">Virheelliset asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Reititysprofiili ei voi olla tyhjä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344" />
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS-säännöt eivät kelpaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383" />
         <source>Security Warning</source>
         <translation type="unfinished">Turvallisuusvaroitus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384" />
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -2080,12 +2079,12 @@ Ota tämä käyttöön vain, jos aiot jakaa DNS:n luotettujen LAN-laitteiden kan
 Oletko varma?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
         <source>Invalid operation</source>
         <translation type="unfinished">Virheellinen toiminto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Reititysprofiilit eivät voi olla tyhjiä. Yritä lisätä toinen profiili tai muokata tätä</translation>
     </message>
@@ -2093,7 +2092,7 @@ Oletko varma?</translation>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tun asetukset</translation>
     </message>
@@ -2102,52 +2101,52 @@ Oletko varma?</translation>
         <translation type="obsolete">Valitse Ota IPv6 käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
         <translation type="unfinished">Pino</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Enable IPv6</source>
         <translation type="unfinished">Ota IPv6 käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
         <translation type="unfinished">Tiukka reitti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kun tämä on käytössä, Direct IP CIDR:t ja sääntöjoukot lisätään myös Tun-asetukseen, jotta ne suljetaan pois käyttöjärjestelmän reititystasolla.TÄRKEÄÄ: suurten sääntöjoukkojen on raportoitu aiheuttavan massiivista suorittimen käyttöä Windowsissa. Ota tämä asetus käyttöön varoen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Ota Tun Routing käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
         <source>AutoRedirect</source>
         <translation type="unfinished">Automaattinen uudelleenohjaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
         <translation type="unfinished">Tun osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
         <translation type="unfinished">Tunnistele ipv6 osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">Sulje pois CIDR:t</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
         <source>Applications</source>
         <translation type="unfinished">Sovellukset</translation>
     </message>
@@ -2155,22 +2154,22 @@ Oletko varma?</translation>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">Idle Session Check Interval</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
         <translation type="unfinished">Idle Session Timeout</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
         <translation type="unfinished">Vähimmäiskäyttökerta</translation>
     </message>
@@ -2178,17 +2177,17 @@ Oletko varma?</translation>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">Liikennejärjestys on ylhäältä alas</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
         <translation type="unfinished">Valitse Profiili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Nimi ei voi olla tyhjä.</translation>
     </message>
@@ -2196,27 +2195,27 @@ Oletko varma?</translation>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
         <translation type="unfinished">Ydin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
         <translation type="unfinished">Json toimittaja</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">Lähtevä JSON, lue dokumentaatio.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Täytä koko kokoonpano.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Nimi ei voi olla tyhjä.</translation>
     </message>
@@ -2224,67 +2223,67 @@ Oletko varma?</translation>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
         <translation type="unfinished">Sukat osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
         <source>127.0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
         <translation type="unfinished">Sukat portti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
         <translation type="unfinished">Ydinpolku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
         <translation type="unfinished">Valitse tiedostosta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args siirtää suoritettavaan tiedostoon.Voit lisätä yhden %s:n ja se korvataan polulla tiedostoon, joka sisältää alla annetut asetukset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
         <translation type="unfinished">Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
         <translation type="unfinished">suorita -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;määritystiedoston sisältö, joka välitetään ylimääräiseen ydinprosessiin, jos %s on määritetty argissa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
         <translation type="unfinished">Konfig</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
         <translation type="unfinished">Ei lokeja</translation>
     </message>
@@ -2292,12 +2291,12 @@ Oletko varma?</translation>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
@@ -2309,27 +2308,27 @@ Oletko varma?</translation>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
         <source>Port range</source>
         <translation type="unfinished">Porttialue</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Multiplexing</source>
         <translation type="unfinished">Multipleksointi</translation>
     </message>
@@ -2338,7 +2337,7 @@ Oletko varma?</translation>
         <translation type="obsolete">Kuljetus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
         <translation type="unfinished">Liikennekuvio</translation>
     </message>
@@ -2346,43 +2345,43 @@ Oletko varma?</translation>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency – Samanaikaisten tunneliyhteyksien määrä.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - QUIC-ruuhkanhallintaalgoritmi.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP yli TCP-protokollan versio, palvelintuki vaaditaan.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - Ylimääräiset otsikot HTTP-pyyntöjen lähettämiseen.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>Headers</source>
         <translation type="unfinished">Otsikot</translation>
     </message>
@@ -2390,104 +2389,104 @@ Oletko varma?</translation>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
         <translation type="unfinished">Sydämen syke</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
         <translation type="unfinished">Lataa (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
         <translation type="unfinished">Lataa (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">Zero Rtt Handshake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
         <translation type="unfinished">UDP-välitystila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
         <translation type="unfinished">Ruuhkanhallinta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pilkuilla erotetut alueet: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
         <translation type="unfinished">Obfs-salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">Poista MTU Discovery käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
         <translation type="unfinished">Porttialue</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
         <translation type="unfinished">Hyppyväli</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 ms&lt;br/&gt;1 s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
         <translation type="unfinished">Todennustyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
         <translation type="unfinished">Auth Payload</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
         <translation type="unfinished">Luo UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
         <source>Certificate</source>
         <translation type="unfinished">Todistus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
         <translation type="unfinished">Poista SNI käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
         <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
         <translation type="unfinished">Salli epävarma</translation>
     </message>
@@ -2495,52 +2494,52 @@ Oletko varma?</translation>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
         <translation type="unfinished">Käyttäjä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
         <translation type="unfinished">Yksityinen avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
         <translation type="unfinished">Yksityisen avaimen salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
         <translation type="unfinished">Isäntäavain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
         <translation type="unfinished">Isäntäavainalgoritmit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
         <translation type="unfinished">Asiakasversio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
         <translation type="unfinished">Yksityinen avainpolku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
         <translation type="unfinished">Valitse Tiedosto</translation>
     </message>
@@ -2548,22 +2547,22 @@ Oletko varma?</translation>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
         <source>Plugin</source>
         <translation type="unfinished">Plugin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
         <source>Encryption</source>
         <translation type="unfinished">Salaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
         <source>Plugin Args</source>
         <translation type="unfinished">Plugin Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
@@ -2572,12 +2571,12 @@ Oletko varma?</translation>
         <translation type="obsolete">Verkko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP yli TCP-protokollan versio, palvelintuki vaaditaan.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
@@ -2585,27 +2584,27 @@ Oletko varma?</translation>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
         <translation type="unfinished">Versio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2613,27 +2612,27 @@ Oletko varma?</translation>
 <context>
     <name>EditSnell</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
         <translation type="unfinished">PSK</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
         <source>Version</source>
         <translation type="unfinished">Versio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
         <translation type="unfinished">Obfs-tila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
         <source>Obfs Host</source>
         <translation type="unfinished">Obfs-isäntä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
         <source>Reuse</source>
         <translation type="unfinished">Uudelleenkäyttö</translation>
     </message>
@@ -2641,17 +2640,17 @@ Oletko varma?</translation>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
         <source>Version</source>
         <translation type="unfinished">Versio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
@@ -2660,37 +2659,37 @@ Oletko varma?</translation>
         <translation type="obsolete">Verkko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
         <source>Path</source>
         <translation type="unfinished">Polku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
         <source>Headers</source>
         <translation type="unfinished">Otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP yli TCP-protokollan versio, palvelintuki vaaditaan.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
@@ -2698,72 +2697,72 @@ Oletko varma?</translation>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
         <translation type="unfinished">Osavaltion hakemisto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
         <translation type="unfinished">Auth-avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
         <translation type="unfinished">Hallinnoi URL-osoitetta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
         <translation type="unfinished">Isäntänimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
         <translation type="unfinished">Hyväksy reitit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
         <translation type="unfinished">Efemeraalinen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
         <translation type="unfinished">Poistumissolmu sallii lähiverkkoyhteyden</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
         <translation type="unfinished">Mainosta poistumissolmua</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
         <translation type="unfinished">Poistu solmusta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pilkuilla eroteltu aliverkkoluettelo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
         <translation type="unfinished">Mainosta reittejä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;käytä tailscale dns:tä etä-dns:nä&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
         <translation type="unfinished">Globaali DNS</translation>
     </message>
@@ -2771,27 +2770,27 @@ Oletko varma?</translation>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
         <translation type="unfinished">Mukautettu polku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
         <translation type="unfinished">Extra Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
         <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
         <translation type="unfinished">Data DIr</translation>
     </message>
@@ -2799,12 +2798,12 @@ Oletko varma?</translation>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
         <source>Encryption</source>
         <translation type="unfinished">Salaus</translation>
     </message>
@@ -2812,17 +2811,17 @@ Oletko varma?</translation>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Salasana</translation>
     </message>
@@ -2835,12 +2834,12 @@ Oletko varma?</translation>
         <translation type="obsolete">QUIC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
         <translation type="unfinished">Terveystarkastus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
         <source>Off</source>
         <translation type="unfinished">Pois</translation>
     </message>
@@ -2848,22 +2847,22 @@ Oletko varma?</translation>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
         <translation type="unfinished">Turvallisuus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
         <translation type="unfinished">Alter Id</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
         <translation type="unfinished">Luo UUID</translation>
     </message>
@@ -2871,147 +2870,147 @@ Oletko varma?</translation>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
         <source>Private Key</source>
         <translation type="unfinished">Yksityinen avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
         <source>Public Key</source>
         <translation type="unfinished">Julkinen avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
         <source>Pre Shared Key</source>
         <translation type="unfinished">Esijaettu avain</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
         <source>Reserved</source>
         <translation type="unfinished">Varattu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pysyvä_keepalive_interval sekunneissa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
         <source>Persistent Keepalive</source>
         <translation type="unfinished">Pysyvä ylläpito</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pilkuilla eroteltu aliverkkoluettelo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
         <source>Local Address</source>
         <translation type="unfinished">Paikallinen osoite</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
         <source>MTU</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119" />
         <source>Generate Warp Config</source>
         <translation type="unfinished">Luo Warp Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156" />
         <source>Init Packet Junk Size (S1)</source>
         <translation type="unfinished">Aloituspaketin roskapostikoko (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166" />
         <source>Init Packet Magic Header (H1)</source>
         <translation type="unfinished">Init Packet Magic Header (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182" />
         <source>Transport Packet Magic Header (H4)</source>
         <translation type="unfinished">Transport Packet Magic Header (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192" />
         <source>Cookie Reply Packet Junk Size (S3)</source>
         <translation type="unfinished">Evästevastauspaketin roskapostikoko (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208" />
         <source>Signature Packet (I3)</source>
         <translation type="unfinished">Allekirjoituspaketti (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218" />
         <source>Junk Packet Count (Jc)</source>
         <translation type="unfinished">Roskapostipakettien määrä (Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228" />
         <source>Response Packet Magic Header (H2)</source>
         <translation type="unfinished">Response Packet Magic Header (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238" />
         <source>Signature Packet (I1)</source>
         <translation type="unfinished">Allekirjoituspaketti (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248" />
         <source>Junk Packet Max Size (Jmax)</source>
         <translation type="unfinished">Roskapostin enimmäiskoko (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258" />
         <source>Junk Packet Min Size (Jmin)</source>
         <translation type="unfinished">Roskapostin minimikoko (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
         <translation type="unfinished">Cookie Reply Packet Magic Header (H3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287" />
         <source>Transport Packet Junk Size (S4)</source>
         <translation type="unfinished">Kuljetuspaketin roskakoko (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303" />
         <source>Signature Packet (I2)</source>
         <translation type="unfinished">Allekirjoituspaketti (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319" />
         <source>Response Packet Junk Size (S2)</source>
         <translation type="unfinished">Vastauspaketin roskapostikoko (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335" />
         <source>Signature Packet (I4)</source>
         <translation type="unfinished">Allekirjoituspaketti (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348" />
         <source>Signature Packet (I5)</source>
         <translation type="unfinished">Allekirjoituspaketti (I5)</translation>
     </message>
@@ -3020,12 +3019,12 @@ Oletko varma?</translation>
         <translation type="obsolete">Työntekijät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
         <source>Use System Interface</source>
         <translation type="unfinished">Käytä järjestelmäliittymää</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135" />
         <source>Amnezia Settings</source>
         <translation type="unfinished">Amnezia-asetukset</translation>
     </message>
@@ -3073,7 +3072,7 @@ Oletko varma?</translation>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239" />
         <source>Filter</source>
         <translation type="unfinished">Suodattaa</translation>
     </message>
@@ -3085,37 +3084,37 @@ Oletko varma?</translation>
         <translation type="obsolete">Päivitä tilaus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
         <source>Update</source>
         <translation type="unfinished">Päivittää</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
         <source>Edit</source>
         <translation type="unfinished">Muokata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
         <source>Remove</source>
         <translation type="unfinished">Poistaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Basic</source>
         <translation type="unfinished">Perus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Subscription</source>
         <translation type="unfinished">Tilaus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
         <source>Archive</source>
         <translation type="unfinished">Arkisto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
         <source>Updated: %1</source>
         <translation type="unfinished">Päivitetty: %1</translation>
     </message>
@@ -3124,12 +3123,12 @@ Oletko varma?</translation>
         <translation type="obsolete">Viimeisin päivitys: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Confirmation</source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Remove %1?</source>
         <translation type="unfinished">Poistetaanko %1?</translation>
     </message>
@@ -3137,26 +3136,26 @@ Oletko varma?</translation>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">Tilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
         <translation type="unfinished">Käyttötilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">Liikennetilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Välityspalvelimen kokonaisliikenne:</translation>
     </message>
@@ -3165,12 +3164,12 @@ Oletko varma?</translation>
         <translation type="obsolete">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Suora liikenne yhteensä:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
         <source>Security Statistics</source>
         <translation type="unfinished">Turvallisuustilastot</translation>
     </message>
@@ -3179,85 +3178,85 @@ Oletko varma?</translation>
         <translation type="obsolete">Profiilitilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
         <translation type="unfinished">Käyttöaika:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
         <translation type="unfinished">Viimeisin käynnistysaika:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
         <translation type="unfinished">Ensimmäinen käynnistysaika:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
         <translation type="unfinished">Aloituslaskenta:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
         <translation type="unfinished">Lataa:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
         <translation type="unfinished">Lataa:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Välityspalvelinprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
         <source>Database Statistics</source>
         <translation type="unfinished">Tietokannan tilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
         <source>Deleted</source>
         <translation type="unfinished">Poistettu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
         <translation type="unfinished">On olemassa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
         <translation type="unfinished">Luotu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Ryhmät ja tilaukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
         <translation type="unfinished">Reittiprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">Epäonnistuneiden todennusten määrä:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
         <source>Users count:</source>
         <translation type="unfinished">Käyttäjien määrä:</translation>
     </message>
@@ -3273,58 +3272,58 @@ Oletko varma?</translation>
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
         <source>JSON Editor</source>
         <translation type="unfinished">JSON-editori</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
         <source>Format JSON</source>
         <translation type="unfinished">Muotoile JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
         <source>Remove All Comments</source>
         <translation type="unfinished">Poista kaikki kommentit</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
         <source>Json Editor</source>
         <translation type="unfinished">Json toimittaja</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
         <source>Structure Preview</source>
         <translation type="unfinished">Rakenteen esikatselu</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
         <source>Json Contains Syntax Errors</source>
         <translation type="unfinished">Json sisältää syntaksivirheitä</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
         <translation type="unfinished">Alkuperäinen Json saattaa sisältää syntaksivirheitä.Json-puu on poistettu käytöstä.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
         <source>You must correct these errors before continuing.</source>
         <translation type="unfinished">Sinun on korjattava nämä virheet ennen kuin jatkat.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
         <translation type="unfinished">Syntaksivirheet</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation type="unfinished">Korjaa JSON-virheet tai poista kommentit ennen kuin jatkat</translation>
     </message>
@@ -3336,45 +3335,45 @@ Oletko varma?</translation>
         <translation type="obsolete">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710" />
         <source>Profiles</source>
         <translation type="unfinished">Profiilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
         <source>Settings</source>
         <translation type="unfinished">Asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
         <translation type="unfinished">Reititys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489" />
         <source>Update</source>
         <translation type="unfinished">Päivittää</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250" />
         <source>Tun Mode</source>
         <translation type="unfinished">Tun Mode</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276" />
         <source>System DNS</source>
         <translation type="unfinished">Järjestelmän DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958" />
         <source>System Proxy</source>
         <translation type="unfinished">Järjestelmän välityspalvelin</translation>
     </message>
@@ -3383,98 +3382,98 @@ Oletko varma?</translation>
         <translation type="obsolete">URL-testi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
         <source>Type</source>
         <translation type="unfinished">Tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
         <source>Address</source>
         <translation type="unfinished">Osoite</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327" />
         <source>Test Result</source>
         <translation type="unfinished">Testitulos</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578" />
         <source>Traffic</source>
         <translation type="unfinished">Liikenne</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483" />
         <source>Logs</source>
         <translation type="unfinished">Lokit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518" />
         <source>Connections</source>
         <translation type="unfinished">Liitännät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546" />
         <source>Destination (Domain)</source>
         <translation type="unfinished">Kohde (verkkotunnus)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Napsauta poistaaksesi lajittelun käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554" />
         <source>Process</source>
         <translation type="unfinished">Käsitellä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Lajittele prosessin mukaan napsauttamalla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562" />
         <source>Protocol</source>
         <translation type="unfinished">pöytäkirja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Lajittele protokollan mukaan napsauttamalla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570" />
         <source>Outbound</source>
         <translation type="unfinished">Lähtevä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573" />
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Lajittele lähtevän mukaan napsauttamalla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581" />
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Napsauta Vaihda lajittelu liikenteen mukaan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Traffic Graph</source>
         <translation type="unfinished">Liikennekaavio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Program</source>
         <translation type="unfinished">Ohjelmoida</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699" />
         <source>Preferences</source>
         <translation type="unfinished">Asetukset</translation>
     </message>
@@ -3483,7 +3482,7 @@ Oletko varma?</translation>
         <translation type="obsolete">Palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Share</source>
         <translation type="unfinished">Jakaa</translation>
     </message>
@@ -3492,257 +3491,257 @@ Oletko varma?</translation>
         <translation type="obsolete">Nykyinen ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790" />
         <source>Test</source>
         <translation type="unfinished">Testata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720" />
         <source>Current Selected</source>
         <translation type="unfinished">Nykyinen valittu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Current Group</source>
         <translation type="unfinished">Nykyinen ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
         <source>Info</source>
         <translation type="unfinished">Tiedot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772" />
         <source>Hidden menu</source>
         <translation type="unfinished">Piilotettu valikko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785" />
         <source>Routing Menu</source>
         <translation type="unfinished">Reititysvalikko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Context</source>
         <translation type="unfinished">Konteksti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>ContextProfiles</source>
         <translation type="unfinished">Kontekstiprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825" />
         <source>Exit</source>
         <translation type="unfinished">Poistu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <source>Toggle Window</source>
         <translation type="unfinished">Vaihda ikkunaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835" />
         <source>Basic Settings</source>
         <translation type="unfinished">Perusasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840" />
         <source>New profile</source>
         <translation type="unfinished">Uusi profiili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845" />
         <source>Groups</source>
         <translation type="unfinished">ryhmät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351" />
         <source>Start</source>
         <translation type="unfinished">Aloita</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <source>NekoRay</source>
         <translation type="unfinished">NekoRay</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>Box</source>
         <translation type="unfinished">Laatikko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343" />
         <source>Search</source>
         <translation type="unfinished">Haku</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351" />
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866" />
         <source>Edit</source>
         <translation type="unfinished">Muokata</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874" />
         <source>Routing Settings</source>
         <translation type="unfinished">Reititysasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Lisää profiili leikepöydältä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Delete</source>
         <translation type="unfinished">Poistaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Debug Info</source>
         <translation type="unfinished">Virheenkorjaustiedot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
         <source>QR Code and link</source>
         <translation type="unfinished">QR-koodi ja linkki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Copy Link</source>
         <translation type="unfinished">Kopioi linkki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Clear Test Result</source>
         <translation type="unfinished">Tyhjennä testitulos</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781" />
         <source>Export %1 config</source>
         <translation type="unfinished">Vie % 1 kokoonpano</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325" />
         <source>Reset Traffic</source>
         <translation type="unfinished">Nollaa liikenne</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>Scan QR Code</source>
         <translation type="unfinished">Skannaa QR-koodi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Enable System Proxy</source>
         <translation type="unfinished">Ota järjestelmän välityspalvelin käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
         <source>Disable</source>
         <translation type="unfinished">Poista käytöstä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Poista kaksoiskappaleet</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>fake</source>
         <translation type="unfinished">väärennös</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261" />
         <source>Move</source>
         <translation type="unfinished">Liikkua</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
         <source>Start with system</source>
         <translation type="unfinished">Aloita järjestelmästä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Remember last profile</source>
         <translation type="unfinished">Muista viimeisin profiili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Anna muiden laitteiden muodostaa yhteys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Poista Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
         <source>Full Test</source>
         <translation type="unfinished">Täysi testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Hotkey Settings</source>
         <translation type="unfinished">Pikanäppäinasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
         <source>Select All</source>
         <translation type="unfinished">Valitse Kaikki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Täysi testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lataa testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lataa testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maatesti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Simple download test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320" />
         <source>Toggle searchbox</source>
         <translation type="unfinished">Vaihda hakukenttää</translation>
     </message>
@@ -3751,76 +3750,76 @@ Oletko varma?</translation>
         <translation type="obsolete">Kopioi mukautettuja linkkejä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
         <source>Copy links</source>
         <translation type="unfinished">Kopioi linkit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Url Test</source>
         <translation type="unfinished">URL-testi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Ratkaise verkkotunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282" />
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Rekisteröi Windowsin korotettu tehtävä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302" />
         <source>About</source>
         <translation type="unfinished">Noin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292" />
         <source>Statistics</source>
         <translation type="unfinished">Tilastot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297" />
         <source>Check for updates</source>
         <translation type="unfinished">Tarkista päivitykset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307" />
         <source>Toggle filter</source>
         <translation type="unfinished">Vaihda suodatin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315" />
         <source>Unselect</source>
         <translation type="unfinished">Poista valinta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274" />
         <source>Information</source>
         <translation type="unfinished">Tiedot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Kopioi Nekorayn linkit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Enable Tun</source>
         <translation type="unfinished">Ota Tun käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494" />
         <source>Clone</source>
         <translation type="unfinished">Klooni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
         <source>Update subscription</source>
         <translation type="unfinished">Päivitä tilaus</translation>
     </message>
@@ -3829,27 +3828,27 @@ Oletko varma?</translation>
         <translation type="obsolete">Ratkaise verkkotunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Tun Settings</source>
         <translation type="unfinished">Tun asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Restart Program</source>
         <translation type="unfinished">Käynnistä ohjelma uudelleen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125" />
         <source>Open Config Folder</source>
         <translation type="unfinished">Avaa Config-kansio</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146" />
         <source>Restart Proxy</source>
         <translation type="unfinished">Käynnistä välityspalvelin uudelleen</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
         <source>Stop Testing</source>
         <translation type="unfinished">Lopeta testaus</translation>
     </message>
@@ -3858,7 +3857,7 @@ Oletko varma?</translation>
         <translation type="obsolete">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178" />
         <source>Url Test Group</source>
         <translation type="unfinished">URL-testiryhmä</translation>
     </message>
@@ -3867,7 +3866,7 @@ Oletko varma?</translation>
         <translation type="obsolete">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Poista virheellinen</translation>
     </message>
@@ -3876,7 +3875,7 @@ Oletko varma?</translation>
         <translation type="obsolete">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269" />
         <source>Speedtest Current</source>
         <translation type="unfinished">Nopeustestivirta</translation>
     </message>
@@ -3901,54 +3900,54 @@ Oletko varma?</translation>
         <translation type="obsolete">Yksinkertainen lataustesti valittu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
         <source>Hide window</source>
         <translation type="unfinished">Piilota ikkuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
         <source>Add profile from File</source>
         <translation type="unfinished">Lisää profiili tiedostosta</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370" />
         <source>Add new Group</source>
         <translation type="unfinished">Lisää uusi ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256" />
         <source>Security Settings</source>
         <translation type="unfinished">Suojausasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
         <source>Unavailable</source>
         <translation type="unfinished">Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906" />
         <source>Auto-scroll log</source>
         <translation type="unfinished">Automaattinen vieritysloki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
         <source>Select Proxy</source>
         <translation type="unfinished">Valitse Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378" />
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Saapuvan välityspalvelimen tyyppi:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Muokkaa reititysprofiileja</translation>
     </message>
@@ -3957,25 +3956,25 @@ Oletko varma?</translation>
         <translation type="obsolete">Päivitä reititysprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128" />
         <source>Update Response</source>
         <translation type="unfinished">Päivitä vastaus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Reititysprofiileja ei päivitetä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Päivitetty %1 reititysprofiilia</translation>
     </message>
@@ -3984,12 +3983,12 @@ Oletko varma?</translation>
         <translation type="obsolete">Päivitä RuleSet Map</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Sääntöjoukkojen päivittäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Sääntöjoukkojen päivitys onnistui</translation>
     </message>
@@ -3998,380 +3997,380 @@ Oletko varma?</translation>
         <translation type="obsolete">Päivitä RuleSet-välimuisti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Virheellinen JSON-taulukko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Annettua syötettä ei voida jäsentää kelvolliseen reittisääntötaulukkoon:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542" />
         <source>No Selection</source>
         <translation type="unfinished">Ei valintaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543" />
         <source>Select proxy profile to connect</source>
         <translation type="unfinished">Valitse yhteyden muodostava välityspalvelinprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">Käyttö macOS:ssä ei ole sallittua</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
         <source>Import Routing Profile</source>
         <translation type="unfinished">Tuo reititysprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491" />
         <source>From clipboard</source>
         <translation type="unfinished">Leikepöydältä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495" />
         <source>From file</source>
         <translation type="unfinished">Tiedostosta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502" />
         <source>Imported from clipboard</source>
         <translation type="unfinished">Tuotu leikepöydältä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514" />
         <source>Imported from %1</source>
         <translation type="unfinished">Tuotu osoitteesta %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524" />
         <source>Routing Profiles</source>
         <translation type="unfinished">Reititysprofiilit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551" />
         <source>RuleSet Map</source>
         <translation type="unfinished">RuleSet-kartta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
         <source>RuleSet Cache</source>
         <translation type="unfinished">RuleSet-välimuisti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Sääntöjoukkojen välimuisti päivitetään</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Tyhjennä RuleSet-välimuisti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637" />
         <source>Enable AdBlock</source>
         <translation type="unfinished">Ota AdBlock käyttöön</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
         <source>Error</source>
         <translation type="unfinished">Virhe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131" />
         <source>Tun Settings changed</source>
         <translation type="unfinished">Tun Asetukset muutettu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132" />
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Käynnistä Tun uudelleen, jotta se tulee voimaan.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420" />
         <source>Confirmation</source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199" />
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Asetuksia muutettu, käynnistää välityspalvelin uudelleen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173" />
         <source>Settings changed</source>
         <translation type="unfinished">Asetukset muutettu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174" />
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Käynnistä ohjelma uudelleen, jotta se tulee voimaan.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216" />
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Tuotu % 1 profiili(a)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Käyttäjä ei ole valinnut etuoikeuksia, jotkin ominaisuudet eivät ehkä toimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Anna pääkäyttäjän oikeudet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922" />
         <source>Not Running</source>
         <translation type="unfinished">Ei Juokse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
         <source>Group is too big to sort</source>
         <translation type="unfinished">Ryhmä on liian suuri lajiteltavaksi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495" />
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Kloonaa % 1 kohde(a)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Ryhmä on liian suuri kaksoiskappaleiden löytämiseksi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
         <source> Confirmation </source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551" />
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Poistetaanko %1 kohde(a) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571" />
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Poistetaanko %1 kohde(a) ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647" />
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Kopioitu % 1 kohde(a)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891" />
         <source>QR Code not found</source>
         <translation type="unfinished">QR-koodia ei löydy</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913" />
         <source>Unable to capture screen</source>
         <translation type="unfinished">Näyttöä ei voi kaapata</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Poistetaanko % 1 ei saatavilla?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Poista %1 virheelliset kohteet?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Korvataanko toimialueen palvelinosoitteet niiden ratkaistuilla IP-osoitteilla?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338" />
         <source>Clear</source>
         <translation type="unfinished">Selkeä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410" />
         <source>Delete selected Group</source>
         <translation type="unfinished">Poista valittu ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411" />
         <source>Edit selected Group</source>
         <translation type="unfinished">Muokkaa valittua ryhmää</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421" />
         <source>Remove %1?</source>
         <translation type="unfinished">Poistetaanko %1?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155" />
         <source>Cannot start</source>
         <translation type="unfinished">Ei voi aloittaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156" />
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Viimeisin latauspyyntö ei ole vielä päättynyt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190" />
         <source>Failed to download update assets</source>
         <translation type="unfinished">Päivityssisällön lataaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77" />
         <source>Profile test aborted</source>
         <translation type="unfinished">Profiilitesti keskeytetty</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174" />
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] testivirhe: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Jotain on pahasti vialla, aihetta ei löydy!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Profiilinhallintatiedot ovat vioittuneet, yritä uudelleen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Edellinen url-testi ei poistunut kokonaan, odota.Jos se jatkuu, käynnistä ohjelma uudelleen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377" />
         <source>Failed to build test config: </source>
         <translation type="unfinished">Testikokoonpanon rakentaminen epäonnistui:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251" />
         <source>URL test finished!</source>
         <translation type="unfinished">URL-testi valmis!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295" />
         <source>Failed to stop tests</source>
         <translation type="unfinished">Testien pysäyttäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301" />
         <source>Testing</source>
         <translation type="unfinished">Testaus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Edellinen nopeustesti ei päättynyt kokonaan, odota.Jos se jatkuu, käynnistä ohjelma uudelleen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413" />
         <source>Speedtest finished!</source>
         <translation type="unfinished">Nopeustesti valmis!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496" />
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Profiilin nopeustesti keskeytetty</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584" />
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] nopeustestivirhe: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">Sinun on ensin otettava käyttöön kaapattu DNS-palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607" />
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Järjestelmän dns:n asettaminen epäonnistui:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656" />
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Tun-laite toimii väärin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Jos sinulla on ongelmia VPN:n käynnistämisessä, voit pakottaa nollausprosessin tässä ja yrittää sitten käynnistää profiili uudelleen.Virhe on %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661" />
         <source>Reset</source>
         <translation type="unfinished">Nollaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
         <source>Cancel</source>
         <translation type="unfinished">Peruuttaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697" />
         <source>Another profile is starting...</source>
         <translation type="unfinished">Toinen profiili alkaa...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704" />
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Toinen profiili pysähtyy...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Jos vastausta ei tule pitkään aikaan, on suositeltavaa käynnistää ohjelmisto uudelleen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739" />
         <source>Starting profile %1</source>
         <translation type="unfinished">Aloitusprofiili %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Profiilin %1 käynnistäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
         <source>Stop return error</source>
         <translation type="unfinished">Pysäytä palautusvirhe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
         <source>Stopping profile %1</source>
         <translation type="unfinished">Lopetetaan profiili %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863" />
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Pysäytys epäonnistui, käynnistä ohjelma uudelleen.</translation>
     </message>
@@ -4383,27 +4382,27 @@ Oletko varma?</translation>
         <translation type="obsolete">Virheellinen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818" />
         <source>Type</source>
         <translation type="unfinished">Tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820" />
         <source>Address</source>
         <translation type="unfinished">Osoite</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824" />
         <source>Test Result</source>
         <translation type="unfinished">Testitulos</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826" />
         <source>Traffic</source>
         <translation type="unfinished">Liikenne</translation>
     </message>
@@ -4411,22 +4410,22 @@ Oletko varma?</translation>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Käyttäjätunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
         <translation type="unfinished">Uusi salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
         <translation type="unfinished">Vahvista salasana</translation>
     </message>
@@ -4434,12 +4433,12 @@ Oletko varma?</translation>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Confirmation</source>
         <translation type="unfinished">Vahvistus</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Remove %1?</source>
         <translation type="unfinished">Poistetaanko %1?</translation>
     </message>
@@ -4447,7 +4446,7 @@ Oletko varma?</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
         <translation type="unfinished">Suojausasetukset</translation>
     </message>
@@ -4455,20 +4454,20 @@ Oletko varma?</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="469"/>
+        <location filename="../../src/gharqad/main.cpp" line="469" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
         <translation type="unfinished">%1 rekisteröinti epäonnistui.Virhe: %2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished">%1:n rekisteröinnin poistaminen epäonnistui.Virhe: %2</translation>
     </message>
@@ -4480,19 +4479,19 @@ Oletko varma?</translation>
         <translation type="obsolete">Tun-tilaa ei voi käyttää mukautettujen asetusten kanssa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846" />
         <source>Decrypted happ:// link</source>
         <translation type="unfinished">Purettu happ:// linkki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850" />
         <source>Failed to decrypt happ:// link</source>
         <translation type="unfinished">happ://-linkin salauksen purkaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864" />
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Tilausta pyydetään: %1</translation>
     </message>
@@ -4501,53 +4500,53 @@ Oletko varma?</translation>
         <translation type="obsolete">Tilausta pyydetään %1 virhe: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Tilausta pyydetään %1 virhe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
         <source>Request error is: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pyyntövirhe on: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Tilaustiedot haettu kohteelle %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Tilausprofiilin otsikko: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908" />
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Tilauspyyntö päättynyt: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933" />
         <source>Clearing servers...</source>
         <translation type="unfinished">Tyhjennetään palvelimia...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959" />
         <source>Processing subscription data...</source>
         <translation type="unfinished">Käsitellään tilaustietoja...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973" />
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Pudota %1 välityspalvelinta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975" />
         <source>Process complete, applying...</source>
         <translation type="unfinished">Prosessi valmis, hakemus...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989" />
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Lisätty %1 välityspalvelinta</translation>
@@ -4567,13 +4566,13 @@ Poistettu %3 profiilia:
         <translation type="obsolete">Ei mitään</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991" />
         <source>Change of %1:</source>
         <translation type="unfinished">Muutos %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
         <source>Default</source>
         <translation type="unfinished">Oletus</translation>
     </message>
@@ -4582,49 +4581,49 @@ Poistettu %3 profiilia:
         <translation type="obsolete">Tiedostoa ei voitu avata.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214"/>
+        <location filename="../../src/gharqad/main.cpp" line="214" />
         <source>Chain Proxy</source>
         <translation type="unfinished">Ketju välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232"/>
+        <location filename="../../src/gharqad/main.cpp" line="232" />
         <source>Custom</source>
         <translation type="unfinished">Mukautettu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="233"/>
+        <location filename="../../src/gharqad/main.cpp" line="233" />
         <source>Extra Core</source>
         <translation type="unfinished">Ylimääräinen ydin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131" />
         <source>Select</source>
         <translation type="unfinished">Valitse</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Välityspalvelin: %1
 Suora: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Ydin poistui, siivotaan...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Ydin poistuu liian usein, lopeta automaattinen käynnistä tämä profiili uudelleen.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
         <source>Restarting the core ...</source>
         <translation type="unfinished">Ytimen uudelleenkäynnistys...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="378"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="378" />
         <source>System</source>
         <translation type="unfinished">Järjestelmä</translation>
     </message>
@@ -4639,42 +4638,42 @@ How to update?</source>
 Kuinka päivittää?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
         <translation type="unfinished">Tilauksen URL-osoite havaittu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
         <translation type="unfinished">Miten haluat tuoda tämän tilauksen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
         <source>Create new subscription group</source>
         <translation type="unfinished">Luo uusi tilausryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
         <translation type="unfinished">Päivitä olemassa oleva ryhmä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
         <translation type="unfinished">Tuo välityspalvelinlinkkeinä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
         <translation type="unfinished">Ryhmän nimi:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
         <translation type="unfinished">Automaattinen tunnistus tilauksesta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
         <translation type="unfinished">Tuoda</translation>
     </message>
@@ -4695,45 +4694,45 @@ Kuinka päivittää?</translation>
         <translation type="obsolete">Ryhmän nimi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Käytetty: %1 Jäljellä: %2 Vanhenee: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409" />
         <source>Download Profiles</source>
         <translation type="unfinished">Lataa profiilit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410" />
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Profiilivirhettä pyydetään: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Poistettu %1 kaksoiskappaletta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Poistettu %1 Virheellinen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Poistettu %1 Ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Tarkista sääntöjoukot: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Pyydetään sääntöjoukkoluettelovirhettä: %1</translation>
     </message>
@@ -4742,7 +4741,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP-osoite: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Saapuva IP: %1</translation>
     </message>
@@ -4755,69 +4754,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Pois</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932" />
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">Saapuva: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934" />
         <source>Inbound: Off</source>
         <translation type="unfinished">Saapuva: Pois</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Siirrä profiilit ryhmään</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669" />
         <source>Config copied</source>
         <translation type="unfinished">Konfig kopioitu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681" />
         <source>Copy core config</source>
         <translation type="unfinished">Kopioi ydinasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Copy test config</source>
         <translation type="unfinished">Kopioi testiasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684"/>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181" />
         <source>Update</source>
         <translation type="unfinished">Päivittää</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056" />
         <source>Not official support platform</source>
         <translation type="unfinished">Ei virallinen tukialusta</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066" />
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Päivitysvirhepyyntö: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109" />
         <source>No update</source>
         <translation type="unfinished">Ei päivitystä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4826,42 +4825,42 @@ Julkaisutiedote:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141" />
         <source>Close</source>
         <translation type="unfinished">Lähellä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143" />
         <source>Open in browser</source>
         <translation type="unfinished">Avaa selaimessa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182" />
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Päivitys on valmis, aloitetaanko asennus uudelleen?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
         <source>Access denied</source>
         <translation type="unfinished">Käyttö estetty</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417" />
         <source>Select a Folder</source>
         <translation type="unfinished">Valitse kansio</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
         <translation type="unfinished">Hakemussäännöt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">Sulje pois CIDR:t</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
         <source>Cancel</source>
         <translation type="unfinished">Peruuttaa</translation>
     </message>
@@ -4876,77 +4875,77 @@ Julkaisutiedote:
         <translation type="obsolete">Ylimääräinen ydin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Välityspalvelin: ⚡%1 📦%3
 Suora: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505" />
         <source>Invalid</source>
         <translation type="unfinished">Virheellinen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48" />
         <source>KCP Settings</source>
         <translation type="unfinished">KCP-asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74" />
         <source>MTU</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75" />
         <source>TTI</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>Uplink Capacity</source>
         <translation type="unfinished">Uplink-kapasiteetti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>Downlink Capacity</source>
         <translation type="unfinished">Downlinkin kapasiteetti</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
         <source>Congestion</source>
         <translation type="unfinished">Ruuhkat</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
         <source>Read Buffer Size</source>
         <translation type="unfinished">Lue Puskurin koko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
         <source>Write Buffer Size</source>
         <translation type="unfinished">Kirjoita puskurin koko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
         <source>Header Type</source>
         <translation type="unfinished">Otsikkotyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Seed</source>
         <translation type="unfinished">Siemen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">Vastaanotettu virheellinen vastaus: %1
 Pyynnön hyötykuorma oli: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
         <source>Imported</source>
         <translation type="unfinished">Tuotu</translation>
     </message>
@@ -4954,92 +4953,92 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172"/>
+        <location filename="../../src/gharqad/main.cpp" line="172" />
         <source>Cancel</source>
         <translation type="unfinished">Peruuttaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173"/>
+        <location filename="../../src/gharqad/main.cpp" line="173" />
         <source>Apply</source>
         <translation type="unfinished">Käytä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174"/>
+        <location filename="../../src/gharqad/main.cpp" line="174" />
         <source>Yes</source>
         <translation type="unfinished">Kyllä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175"/>
+        <location filename="../../src/gharqad/main.cpp" line="175" />
         <source>No</source>
         <translation type="unfinished">Ei</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176"/>
+        <location filename="../../src/gharqad/main.cpp" line="176" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177"/>
+        <location filename="../../src/gharqad/main.cpp" line="177" />
         <source>Defaults</source>
         <translation type="unfinished">Oletukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178"/>
+        <location filename="../../src/gharqad/main.cpp" line="178" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Palauta oletusasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179"/>
+        <location filename="../../src/gharqad/main.cpp" line="179" />
         <source>Discard</source>
         <translation type="unfinished">Hävitä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181"/>
+        <location filename="../../src/gharqad/main.cpp" line="181" />
         <source>Undo</source>
         <translation type="unfinished">Kumoa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182"/>
+        <location filename="../../src/gharqad/main.cpp" line="182" />
         <source>Redo</source>
         <translation type="unfinished">Toista</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183"/>
+        <location filename="../../src/gharqad/main.cpp" line="183" />
         <source>Cut</source>
         <translation type="unfinished">Leikata</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184"/>
+        <location filename="../../src/gharqad/main.cpp" line="184" />
         <source>Copy</source>
         <translation type="unfinished">Kopioida</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185"/>
+        <location filename="../../src/gharqad/main.cpp" line="185" />
         <source>Paste</source>
         <translation type="unfinished">Liitä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186"/>
+        <location filename="../../src/gharqad/main.cpp" line="186" />
         <source>Delete</source>
         <translation type="unfinished">Poistaa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187"/>
+        <location filename="../../src/gharqad/main.cpp" line="187" />
         <source>Select All</source>
         <translation type="unfinished">Valitse Kaikki</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188"/>
+        <location filename="../../src/gharqad/main.cpp" line="188" />
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189"/>
+        <location filename="../../src/gharqad/main.cpp" line="189" />
         <source>Clear</source>
         <translation type="unfinished">Selkeä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190"/>
+        <location filename="../../src/gharqad/main.cpp" line="190" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Kopioi linkin sijainti</translation>
     </message>
@@ -5047,7 +5046,7 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
         <translation type="unfinished">Et voi syöttää välilyöntejä tähän.</translation>
     </message>
@@ -5055,86 +5054,86 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
         <translation type="unfinished">Reittiprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
         <translation type="unfinished">Kenraali</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
         <translation type="unfinished">Perusreitit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
         <source>IP</source>
         <translation type="unfinished">IP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
         <source>Domain</source>
         <translation type="unfinished">Verkkotunnus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
         <source>Process</source>
         <translation type="unfinished">Käsitellä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224" />
         <source>Preset</source>
         <translation type="unfinished">Esiasetettu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
         <source>Custom routes</source>
         <translation type="unfinished">Mukautetut reitit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251" />
         <source>Default outbound</source>
         <translation type="unfinished">Oletus lähtevä</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351" />
         <source>Name</source>
         <translation type="unfinished">Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259" />
         <source>Proxy</source>
         <translation type="unfinished">Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264" />
         <source>Direct</source>
         <translation type="unfinished">Suoraan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269" />
         <source>Block</source>
         <translation type="unfinished">Lohko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <source>Update url</source>
         <translation type="unfinished">Päivitä url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104" />
         <source>Skip update</source>
         <translation type="unfinished">Ohita päivitys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111" />
         <source>Update manually</source>
         <translation type="unfinished">Päivitä manuaalisesti</translation>
     </message>
@@ -5143,115 +5142,115 @@ Pyynnön hyötykuorma oli: %2</translation>
         <translation type="obsolete">Perus</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280" />
         <source>Advanced</source>
         <translation type="unfinished">Edistynyt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289" />
         <source>Import JSON</source>
         <translation type="unfinished">Tuo JSON</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299" />
         <source>Rules</source>
         <translation type="unfinished">säännöt</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311" />
         <source>New</source>
         <translation type="unfinished">Uusi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318" />
         <source>Move Up</source>
         <translation type="unfinished">Siirrä ylös</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325" />
         <source>Move Down</source>
         <translation type="unfinished">Siirrä alas</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332" />
         <source>Delete</source>
         <translation type="unfinished">Poistaa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Rule Attributes</source>
         <translation type="unfinished">Säännön attribuutit</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361" />
         <source>Attribute</source>
         <translation type="unfinished">Attribuutti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Name_Placeholder</source>
         <translation type="unfinished">Nimi_paikkamerkki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406" />
         <source>Notes</source>
         <translation type="unfinished">Huomautuksia</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
         <source>Bypass LAN / private IPs (Direct)</source>
         <translation type="unfinished">Ohita LAN / yksityiset IP:t (suora)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
         <source>Clear all basic routes</source>
         <translation type="unfinished">Tyhjennä kaikki perusreitit</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
         <source>Invalid rules</source>
         <translation type="unfinished">Virheelliset säännöt</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Joitakin sääntöjä ei voitu lisätä:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Virheellinen JSON-taulukko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Annettua syötettä ei voida jäsentää kelvolliseen reittisääntötaulukkoon:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
         <source>Invalid operation</source>
         <translation type="unfinished">Virheellinen toiminto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Reittiprofiilia ei voi luoda tyhjällä nimellä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>Empty Route Profile</source>
         <translation type="unfinished">Tyhjä reittiprofiili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Profiilissa ei ole voimassa olevia sääntöjä</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Joitakin sääntöjä ei voitu lisätä, korjaa ne ennen tallentamista:</translation>
@@ -5260,42 +5259,42 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
         <translation type="unfinished">Suojausasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
         <translation type="unfinished">Lukitse toiminnot</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
         <translation type="unfinished">Lukitusasetukset</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
         <translation type="unfinished">Lukitse käynnistys</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
         <translation type="unfinished">Poista käyttäjät</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
         <translation type="unfinished">Muokkaa käyttäjärooleja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
         <translation type="unfinished">Vaihda käyttöliittymän salasana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Aseta välityspalvelimen tunnistetiedot</translation>
     </message>
@@ -5303,12 +5302,12 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
         <source>Exiting %1</source>
         <translation type="unfinished">Poistutaan %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
         <translation type="unfinished">Aloitetaan %1</translation>
     </message>
@@ -5316,14 +5315,14 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
         <source>Proxy</source>
         <translation type="unfinished">Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
         <source>Direct</source>
         <translation type="unfinished">Suoraan</translation>
     </message>
@@ -5340,13 +5339,13 @@ Pyynnön hyötykuorma oli: %2</translation>
         <translation type="obsolete">Annettua syötettä ei voida jäsentää kelvolliseen reittisääntötaulukkoon:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484" />
         <source>Fetching information</source>
         <translation type="unfinished">Tietojen hakeminen</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
         <source>Download Profiles</source>
         <translation type="unfinished">Lataa profiilit</translation>
     </message>
@@ -5354,22 +5353,22 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>StartStopButton</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220" />
         <source>Start</source>
         <translation type="unfinished">Aloita</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221" />
         <source>Connecting…</source>
         <translation type="unfinished">Yhdistetään…</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222" />
         <source>Stop</source>
         <translation type="unfinished">Stop</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
         <source>Stopping…</source>
         <translation type="unfinished">Pysäytetään…</translation>
     </message>
@@ -5377,7 +5376,7 @@ Pyynnön hyötykuorma oli: %2</translation>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Lomake</translation>
     </message>
