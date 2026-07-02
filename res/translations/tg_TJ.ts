@@ -1991,7 +1991,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Профили нави warp</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
