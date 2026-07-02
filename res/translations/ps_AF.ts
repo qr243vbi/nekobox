@@ -4457,7 +4457,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
         <source>Request error is: %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">د غوښتنې تېروتنه دا ده: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
