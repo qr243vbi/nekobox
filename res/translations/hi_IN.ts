@@ -1978,7 +1978,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">बचाना</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
@@ -3709,7 +3709,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
