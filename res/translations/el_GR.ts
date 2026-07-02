@@ -3705,12 +3705,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Πλήρης δοκιμή</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
@@ -3720,7 +3720,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Μεταφόρτωση δοκιμής</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
