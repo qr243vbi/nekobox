@@ -2088,7 +2088,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">ذخیره کنید</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
