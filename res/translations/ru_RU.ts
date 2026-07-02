@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='UTF-8'?>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Форма</translation>
     </message>
@@ -12,37 +11,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
         <translation type="unfinished">Помнить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
         <source>seconds</source>
         <translation type="unfinished">секунды</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
         <source>minutes</source>
         <translation type="unfinished">минуты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
         <source>hours</source>
         <translation type="unfinished">часы</translation>
     </message>
@@ -50,9 +49,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Custom Headers</source>
@@ -94,22 +93,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
         <source>Proxy</source>
         <translation type="unfinished">Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
         <source>Direct</source>
         <translation type="unfinished">Напрямую</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
         <source>Block</source>
         <translation type="unfinished">Блокировать</translation>
     </message>
@@ -117,13 +116,13 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
         <source>Basic Settings</source>
         <translation>Основные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -131,22 +130,22 @@
 + HTTP-прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
         <source>URL Test after profile start</source>
         <translation type="unfinished">Проверка URL-адреса после запуска профиля</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
         <source>Request update at startup</source>
         <translation type="unfinished">Запросить обновление при запуске</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534" />
         <source>Show profile IDs</source>
         <translation type="unfinished">Показать идентификаторы профилей</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Set text under menu icons</source>
         <translation type="unfinished">Установить текст под значками меню</translation>
     </message>
@@ -155,103 +154,103 @@
         <translation type="obsolete">Скрыть при запуске</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>Manually column width</source>
         <translation type="unfinished">Переменная ширина колонок</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777" />
         <source>Icon</source>
         <translation>Иконка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784" />
         <source>Emoji Font</source>
         <translation>Эмоджи шрифт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Формат: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Оставьте пустым, чтобы использовать значения по умолчанию.Укажите только те параметры, которые хотите переопределить.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Пользовательские параметры системы (необязательно)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
         <source>Download Retries</source>
         <translation type="unfinished">Загрузить повторы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Clear servers before update</source>
         <translation type="unfinished">Очистите серверы перед обновлением</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
         <source>URL Test after update</source>
         <translation type="unfinished">Проверка URL-адреса после обновления</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
         <source>Hide window at startup</source>
         <translation type="unfinished">Скрыть окно при запуске</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
         <source>Show test button</source>
         <translation type="unfinished">Показать кнопку проверки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
         <source>Show start/stop button</source>
         <translation type="unfinished">Показать кнопку старт/стоп</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
         <source>Enable indicator borders</source>
         <translation type="unfinished">Включить границы индикатора</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
         <source>Radius</source>
         <translation type="unfinished">Радиус</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
         <source>Remove Duplicates</source>
         <translation type="unfinished">Удалить дубликаты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
         <source>Send System Parameters</source>
         <translation type="unfinished">Отправить системные параметры</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907" />
         <source>Remove Invalid</source>
         <translation type="unfinished">Удалить недействительные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914" />
         <source>Remove Unavailable</source>
         <translation type="unfinished">Удалить недоступные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -259,40 +258,40 @@
 Улучшите пинг и производительность&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
         <source>Loglevel</source>
         <translation type="unfinished">Уровень журнала</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
         <source>Padding</source>
         <translation type="unfinished">Заполнение</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
         <source>Name</source>
         <translation type="unfinished">Название</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Используйте Unix Domain Socket для связи между nekobox и nekobox_core.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Используйте UDS для IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройки для
 встроенный NTP-клиент Sing-Box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -304,7 +303,7 @@
         <translation type="obsolete">Используйте Json вместо двоичного файла для конфигураций</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -315,153 +314,153 @@ INI — начало 1980-х — простой текстовый формат 
 двоичный — 2026 — произвольный формат байтовых значений для настроек NekoBox, используемых в виде значений leveldb или отдельных файлов — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Попросить удалить профиль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
         <source>Auto-Testing</source>
         <translation>Авто-Тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
         <source>Enable Auto-Testing</source>
         <translation>Включить Авто-Тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
         <source>Test Interval (seconds)</source>
         <translation>Интервал для проверки (в секундах)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439" />
         <source>How often to run the test cycle</source>
         <translation>Как часто следует проводить цикл тестирования?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
         <source>Proxies Per Cycle</source>
         <translation>Прокси в цикле</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462" />
         <source>Number of proxies to test in each cycle</source>
         <translation>Количество прокси, проверяемых за один цикл</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478" />
         <source>Working Pool Size</source>
         <translation>Размер рабочего пула</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485" />
         <source>Maximum number of verified working proxies to maintain</source>
         <translation>Максимальное количество рабочих прокси для сохранения в списке</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501" />
         <source>Latency Threshold (ms)</source>
         <translation>Порог задержки (мс)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508" />
         <source>Maximum latency to consider a proxy as working</source>
         <translation>Максимальная задержка, при которой прокси считается рабочим</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527" />
         <source>Failure Retry Count</source>
         <translation>Число неудачных попыток</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534" />
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation>Количество попыток повторного подключения до того, как прокси-сервер будет признан неисправным.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550" />
         <source>Test Target URL</source>
         <translation type="unfinished">Проверить целевой URL-адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557" />
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL для тестирования прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560" />
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567" />
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Автоматически переключаться на другой рабочий прокси-сервер при сбое прокси-сервера в режиме TUN.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570" />
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Включить аварийное переключение TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
         <source>Startup</source>
         <translation>Запуск</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642" />
         <source>Geometry</source>
         <translation>Геометрия</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671" />
         <source>Autosave geometry</source>
         <translation>Сохранить геометрию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678" />
         <source>Autosave position</source>
         <translation>Сохранить позицию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698" />
         <source>Apply now</source>
         <translation>Применить сейчас</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772" />
         <source>Width</source>
         <translation>Ширина</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859" />
         <source>X</source>
         <translation type="unfinished">Х</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804" />
         <source>Y</source>
         <translation type="unfinished">Да</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841" />
         <source>Interval:</source>
         <translation type="unfinished">Интервал:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
         <source>Enable automatic update</source>
         <translation type="unfinished">Включить автоматическое обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Пропустить аутентификацию сертификата TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
         <source>Configs format</source>
         <translation type="unfinished">Формат конфигов</translation>
     </message>
@@ -476,34 +475,34 @@ INI — начало 1980-х — простой текстовый формат 
 двоичный — 2026 — произвольный формат байтовых значений для настроек NekoBox, используемых в виде значений LMDB или отдельных файлов — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872" />
         <source>Height</source>
         <translation>Высота</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187" />
         <source>Use default</source>
         <translation>Использовать по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
         <source>Remote Control</source>
         <translation type="unfinished">Пульт дистанционного управления</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220" />
         <source>Select</source>
         <translation>Выбрать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194" />
         <source>Resource Manager</source>
         <translation type="unfinished">Менеджер ресурсов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969" />
         <source>Core Executable Path</source>
         <translation>Путь к ядру</translation>
     </message>
@@ -518,62 +517,62 @@ INI — начало 1980-х — простой текстовый формат 
 двоичный — 2026 — произвольный формат байтовых значений для настроек NekoBox, используемых в качестве значений RocksDB или отдельных файлов — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Автоматически тестируйте прокси в фоновом режиме и поддерживайте пул рабочих прокси.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
         <source>Resources Directory</source>
         <translation>Директория с ресурсами</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
         <source>Common</source>
         <translation>Общие</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
         <source>Listen Address</source>
         <translation>Прослушиваемый адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887" />
         <source>User Agent</source>
         <translation>Пользовательский агент</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
         <source>Custom Inbound</source>
         <translation>Кастомный inbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073" />
         <source>Enable</source>
         <translation>Включить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
         <source>Latency Test URL</source>
         <translation>URL теста задержки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
         <source>Simple Download URL</source>
         <translation>URL для простого теста загрузки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
         <source>Concurrent</source>
         <translation>Кол-во потоков</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
         <source>Disable tray</source>
         <translation>Откл. сворачивание в трей</translation>
     </message>
@@ -586,42 +585,42 @@ INI — начало 1980-х — простой текстовый формат 
         <translation type="vanished">Предотвращает сворачивание приложения в системный трей при закрытии окна. Вместо этого приложение завершит работу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
         <source>Style</source>
         <translation>Интерфейс</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
         <source>Theme</source>
         <translation>Тема</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
         <source>Connection statistics</source>
         <translation>Статистика подключения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
         <source>Hide dashboard at startup</source>
         <translation>Запускать приложение свёрнутым</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
         <source>Max log lines</source>
         <translation>Макс. кол-во строк в логах</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
         <source>Subscription</source>
         <translation>Подписка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
         <source>Use proxy when activated</source>
         <translation>Использовать прокси если активирован</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
         <source>Ignore TLS errors</source>
         <translation>Игнорировать ошибки TLS</translation>
     </message>
@@ -634,37 +633,37 @@ INI — начало 1980-х — простой текстовый формат 
         <translation type="vanished">Включить отправку HWID, модели устройства и версии ОС при обновлении подписки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;ОС=%2&lt;/p&gt;&lt;p&gt;Версия ОС=%3&lt;/p&gt;&lt;p&gt;Модель=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929" />
         <source>Core</source>
         <translation>Ядро</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029" />
         <source>Multiplex (mux)</source>
         <translation>Протокол мультиплексирования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003" />
         <source>concurrency</source>
         <translation>Кол-во потоков</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020" />
         <source>Default On</source>
         <translation>Вкл. по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052" />
         <source>Core Options</source>
         <translation>Параметры ядра</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
@@ -673,17 +672,17 @@ INI — начало 1980-х — простой текстовый формат 
         <translation type="vanished">Пропустить проверку подлинности TLS-сертификатов по умолчанию (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270" />
         <source>Default uTLS Fingerprint</source>
         <translation>Отпечаток uTLS по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
         <source>Always Start as Standard User</source>
         <translation>Всегда запускать NekoBox от имени обычного пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Не пытаться запускать приложение от имени администратора, если явно не запрошено&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -696,32 +695,32 @@ INI — начало 1980-х — простой текстовый формат 
         <translation type="vanished">Интервал (в минутах; неверно, если значение меньше 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979" />
         <source>Disable Traffic Stats</source>
         <translation>Отключить статистику трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
         <source>NTP Settings</source>
         <translation>Настройки NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082" />
         <source>server</source>
         <translation>Сервер</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092" />
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
         <source>sync interval</source>
         <translation>Интервал синхронизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
         <source>Listen Port</source>
         <translation>Прослушиваемый порт</translation>
     </message>
@@ -734,12 +733,12 @@ INI — начало 1980-х — простой текстовый формат 
             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
         <source>Font Size</source>
         <translation>Размер шрифта</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
         <source>Font</source>
         <translation>Шрифт</translation>
     </message>
@@ -753,7 +752,7 @@ INI — начало 1980-х — простой текстовый формат 
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
             </source>
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройки для встроенного в
                                             NTP-клиента sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -768,119 +767,119 @@ INI — начало 1980-х — простой текстовый формат 
             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
         <source>Proxy Format</source>
         <translation>Формат прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757" />
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
         <source>Speedtest mode</source>
         <translation>Режим проверки скорости</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
         <source>Download + Upload</source>
         <translation>Скачивание + загрузка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
         <source>Only Download</source>
         <translation>Только скачивание</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
         <source>Only Upload</source>
         <translation>Только загрузка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
         <source>Disable Privilege request</source>
         <translation>Откл. привилегированный запрос</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
         <source>Simple Download</source>
         <translation>Простая загрузка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выбирает случайный доступный порт при каждом запуске&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
         <source>Random port</source>
         <translation>Случайный порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Use Mozilla Certificate Store</source>
         <translation>Исп. хранилище сертификатов Mozilla</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
         <source>Network Settings</source>
         <translation>Настройки соединения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
         <source>Test Settings</source>
         <translation>Настройки тестирования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
         <source>Only Country</source>
         <translation>Только проверка страны</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Таймаут в миллисекундах&lt;br/&gt;Применяется ко всем тестам индивидуально&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
         <source>Timeout</source>
         <translation>Таймаут</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Таймаут для теста задержки в мс&lt;br/&gt;Обратите внимание, что мультиплексированным соединениям требуется намного больше времени для изначального запроса, отчего выбор слишком низкого значения в этом поле может привести к ложноотрицательным результатам тестирования такой конфигурации&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
         <source>Show System DNS option</source>
         <translation>Отображать режим «Системный DNS»</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229" />
         <source>Proxy type</source>
         <translation type="unfinished">Тип прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231" />
         <source>Off</source>
         <translation type="unfinished">Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264" />
         <source>Name of program</source>
         <translation type="unfinished">Название программы</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563" />
         <source>Security Warning</source>
         <translation type="unfinished">Предупреждение безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564" />
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -897,12 +896,12 @@ Are you sure you want to disable TLS verification?</source>
 Вы уверены, что хотите отключить проверку TLS?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585" />
         <source>Privacy Warning</source>
         <translation type="unfinished">Предупреждение о конфиденциальности</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586" />
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -930,48 +929,48 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
         <source>Edit Group</source>
         <translation>Изменить группу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
         <source>Url</source>
         <translation type="unfinished">URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
         <source>Paste URL</source>
         <translation type="unfinished">Вставить URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
         <source>Autoupdate</source>
         <translation type="unfinished">Автообновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
         <source>Extra</source>
         <translation type="unfinished">Дополнительный</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
         <source>Proxy</source>
         <translation>Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
         <source>None</source>
         <translation type="unfinished">Никто</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
         <source>Notes</source>
         <translation>Заметки</translation>
     </message>
@@ -980,27 +979,27 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">Переменная ширина колонок</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
         <source>Archive</source>
         <translation>Архив</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
         <source>Type</source>
         <translation>Тип</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
         <source>Basic</source>
         <translation>Стандартный</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
         <source>Subscription</source>
         <translation>Подписка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
         <source>Front Proxy</source>
         <translation>Фронт-прокси</translation>
     </message>
@@ -1009,27 +1008,27 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
         <source>Copy profile share links</source>
         <translation>Копировать ссылки профилей</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">Будет использовать заголовок профиля из подписки, если он пуст.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
         <source>Copied</source>
         <translation>Скопировано</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
         <source>Please input URL</source>
         <translation>Пожалуйста, введите URL</translation>
     </message>
@@ -1038,22 +1037,22 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="vanished">Пропустить автоматическое обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
         <source>Common</source>
         <translation>Основные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
         <source>Share</source>
         <translation>Поделиться</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
         <source>Landing Proxy</source>
         <translation>Выходной прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
         <source>Copy profile share links (Custom Links)</source>
         <translation>Копировать ссылки профилей (польз. ссылки)</translation>
     </message>
@@ -1061,171 +1060,171 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
         <source>Common</source>
         <translation>Основные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
         <source>Type</source>
         <translation>Тип</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
         <translation type="unfinished">Транспорт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
         <source>Custom Outbound Settings</source>
         <translation>Доп. настройки outbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
         <source>Custom Config Settings</source>
         <translation>Доп. настройки конфигурации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818" />
         <source>Apply settings to this group</source>
         <translation>Применить настройки к этой группе</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>Метод передачи данных. Должен соответствовать значению на сервере, в противном случае соединение не будет установлено.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
         <translation>Сеть</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation>TLS. Должно соответствовать значению на сервере, в противном случае соединение не будет установлено.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation>Кодирование пакетов UDP Full-Cone для реализации функций вроде UDP Full-Cone. Поддержка со стороны сервера обязательна — если выбрано неверное значение, соединение установить не удастся. Рекомендуется оставить пустым.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
         <translation>Кодирование пакетов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
         <source>Server support is required</source>
         <translation>Необходима поддержка со стороны сервера</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
         <source>Multiplex</source>
         <translation>Мультиплексирование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
         <source>Keep Default</source>
         <translation>По умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
         <source>On</source>
         <translation>Вкл.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
         <source>Off</source>
         <translation>Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
         <source>Network Settings (%1)</source>
         <translation>Настройки соединения (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
         <source>TLS Security Settings</source>
         <translation>Настройки безопасности TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation>Если включено, клиент не будет проверять валидность передаваемого сервером TLS-сертификата (безопасность будет идентична plaintext-протоколам)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
         <source>Allow insecure</source>
         <translation>Разрешить небезопасн.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752" />
         <source>Certificate</source>
         <translation>Сертификат</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
         <translation>SNI — идентификатор сервера, открытый текст.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation>ALPN — идентификатор протокола приложения, открытый текст. Используйте запятую в качестве разделителя.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
         <source>TLS Camouflage Settings</source>
         <translation>Настройки маскировки TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation>Публичный ключ Reality. Если задано значение, TLS будет превращён в REALITY.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
         <source>Custom (%1 outbound)</source>
         <translation>Польз. (%1 outbound)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277" />
         <source>Custom (%1 config)</source>
         <translation>Польз. (%1 конфигурация)</translation>
     </message>
@@ -1240,96 +1239,96 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">Польз. (%1 конфигурация)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118" />
         <source>both</source>
         <translation type="unfinished">оба</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733" />
         <source>Not set</source>
         <translation>Не задано</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735" />
         <source>Already set</source>
         <translation>Уже задано</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792" />
         <source>Confirm</source>
         <translation>Подтвердить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Принудительно включает мультиплексирование&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
         <source>Enable TCP Brutal</source>
         <translation>Включить TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скорость TCP Brutal от сервера к клиенту&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
         <translation>Скорость TCP Brutal</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
         <source>Mb/s</source>
         <translation>Мбит/с</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Метод HTTP-запроса, будет преобразован в верхний регистр&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
         <source>Method</source>
         <translation>Метод</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
         <translation type="unfinished">Включить ЭХХ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762" />
         <source>ECH Config</source>
         <translation type="unfinished">Конфигурация ЭХХ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
         <source>Reality SID</source>
         <translation>Reality SID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
         <translation>Тип заголовка</translation>
     </message>
@@ -1342,132 +1341,132 @@ Are you sure you want to enable HWID sending?</source>
         <translation type="obsolete">Цепочка прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Может снизить производительность, сначала попробуйте фрагментацию записи TLS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
         <translation>Вкл. фрагментацию TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;формат времени, например 500 мс, 10 мс и т.д.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
         <translation>Задержка отката (Fallback Delay)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
         <translation>Включить фрагментацию записи TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
         <translation>Reality short id. Принимает только одно значение.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
         <source>Network Settings</source>
         <translation type="unfinished">Настройки соединения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
         <translation type="unfinished">Макс. байт сообщения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
         <translation type="unfinished">Минимальный интервал публикации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
         <translation type="unfinished">Максимальное время повторного использования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
         <translation type="unfinished">X байтов заполнения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
         <translation type="unfinished">Период поддержания жизни</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
         <source>Max Concurrency</source>
         <translation type="unfinished">Макс. параллелизм</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
         <translation type="unfinished">Макс. многоразовые секунды</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
         <source>Headers</source>
         <translation type="unfinished">Заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
         <source>Edit download settings</source>
         <translation type="unfinished">Изменить настройки загрузки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
         <translation type="unfinished">Максимальное время запроса</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
         <translation type="unfinished">XPдобавление заголовка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
         <translation type="unfinished">Метод добавления XP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
         <translation type="unfinished">XPДобавление ключа</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
         <translation type="unfinished">Ранняя длина данных</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
         <source>Max Connections</source>
         <translation type="unfinished">Максимальное количество подключений</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
         <translation type="unfinished">XPдобавление места</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
         <source>Multi Mode</source>
         <translation type="unfinished">Мультирежим</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">XPдобавление режима Obfs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
         <source>No GRPC Headers</source>
         <translation type="unfinished">Нет заголовков GRPC</translation>
     </message>
@@ -1475,37 +1474,37 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
         <source>Custom Headers</source>
         <translation type="unfinished">Пользовательские заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">Пользовательские HTTP-заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
         <source>System Parameters</source>
         <translation type="unfinished">Параметры системы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
         <source>Custom Payload</source>
         <translation type="unfinished">Пользовательская полезная нагрузка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
         <source>Text</source>
         <translation type="unfinished">Текст</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
         <source>Javascript</source>
         <translation type="unfinished">Javascript</translation>
     </message>
@@ -1513,95 +1512,95 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">Лендинг прокси для группы Group2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
         <translation type="unfinished">Прокси:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
         <source>Search:</source>
         <translation type="unfinished">Поиск:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
         <translation type="unfinished">Группа1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
         <translation type="unfinished">Группа2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Передний прокси для группы %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
         <source>Front proxy: </source>
         <translation type="unfinished">Фронтальный прокси:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Целевой прокси для группы %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
         <source>Landing proxy: </source>
         <translation type="unfinished">Лендинг прокси:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164" />
         <source>Proxy</source>
         <translation type="unfinished">Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166" />
         <source>Direct</source>
         <translation type="unfinished">Напрямую</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
         <source>None</source>
         <translation type="unfinished">Никто</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159" />
         <source>Select outbound</source>
         <translation type="unfinished">Выберите исходящий</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
         <source>Outbound: </source>
         <translation type="unfinished">Исходящие:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168" />
         <source>Outbound</source>
         <translation type="unfinished">Outbound</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170" />
         <source>Block</source>
         <translation type="unfinished">Блокировать</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
         <source>Add proxy</source>
         <translation type="unfinished">Добавить прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Заменить %1 прокси</translation>
     </message>
@@ -1609,17 +1608,17 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
         <source>Send System Parameters</source>
         <translation type="unfinished">Отправить системные параметры</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
@@ -1627,27 +1626,27 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
         <source>Name</source>
         <translation type="unfinished">Название</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
         <source>Value</source>
         <translation type="unfinished">Ценить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
         <source>New</source>
         <translation type="unfinished">Новый</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
         <source>Header name</source>
         <translation type="unfinished">Название заголовка</translation>
     </message>
@@ -1655,75 +1654,75 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
         <source>Hotkey</source>
         <translation>Горячие клавиши</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
         <source>Show routes</source>
         <translation>Показать маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
         <source>Show groups</source>
         <translation>Показать группы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
         <source>Trigger main window</source>
         <translation>Показать главное окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
         <source>Proxy mode</source>
         <translation>Режим прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
         <source>Toggle System Proxy</source>
         <translation>Вкл. системный прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
         <source>Global</source>
         <translation>Глобальные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
         <source>Shortcuts</source>
         <translation>Горячие клавиши</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
-        <source>Shortcut for &apos;%s&apos; action was cleared</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
+        <source>Shortcut for '%s' action was cleared</source>
         <translation type="unfinished">Ярлык для действия «%s» удален.</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
         <source>Groups</source>
         <translation>Группы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
         <source>New group</source>
         <translation>Новая группа</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
         <source>Update all subscriptions</source>
         <translation>Обновить все подписки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
         <source>Update all subscriptions?</source>
         <translation>Обновить все подписки?</translation>
     </message>
@@ -1731,137 +1730,137 @@ Are you sure you want to enable HWID sending?</source>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
         <source>Routes</source>
         <translation>Маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
         <source>Common</source>
         <translation>Основные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
         <source>Disable</source>
         <translation>Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
         <source>Sniff result for routing</source>
         <translation>Проверка результата для маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
         <source>Sniffing Mode</source>
         <translation>Анализ трафика (сниффинг)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
         <source>DNS</source>
         <translation>DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
         <source>Simple DNS Settings</source>
         <translation>Основные настройки DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
         <source>Direct DNS</source>
         <translation>DNS для прямых запросов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
         <source>Query Strategy</source>
         <translation>Стратегия запросов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
         <source>Remote DNS</source>
         <translation>Удалённый DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
         <source>DNS Object Settings</source>
         <translation>Дополнительные настройки DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
         <source>Use DNS Object</source>
         <translation>Использовать DNS-объект</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
         <source>Format</source>
         <translation>Проверка форматирования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
         <source>Document</source>
         <translation>Документация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
-        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
-If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
-For more information, see the document &quot;Configuration/DNS&quot;.</source>
-        <translation>Это очень важно, рекомендуется использовать значение по умолчанию — &quot;localhost&quot;.
-Если значение по умолчанию не работает, попробуйте изменить его на &quot;223.5.5.5&quot;.
-Дополнительную информацию см. в документации &quot;Конфигурация/DNS&quot;.</translation>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
+        <source>This is especially important and it is recommended to use the default value of "localhost".
+If the default value does not work, try changing it to "223.5.5.5".
+For more information, see the document "Configuration/DNS".</source>
+        <translation>Это очень важно, рекомендуется использовать значение по умолчанию — "localhost".
+Если значение по умолчанию не работает, попробуйте изменить его на "223.5.5.5".
+Дополнительную информацию см. в документации "Конфигурация/DNS".</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
         <translation>Проверяет исходный пакет(ы) подключений, чтобы идентифицировать протокол и SNI. «Проверка трафика для пункта назначения» переписывает пункт назначения соединения на найденный SNI. Дополнительные сведения о протоколе проверки приведены в документации sing-box.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
         <source>Routing Profile</source>
         <translation>Профиль маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
         <source>Remote Rule-set Mirror</source>
         <translation>Источник профилей маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>RuleSet download url</source>
         <translation type="unfinished">URL-адрес загрузки набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
         <source>Default DNS server</source>
         <translation>DNS-сервер по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
         <source>Route</source>
         <translation>Маршрут</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
         <source>Routing Profiles</source>
         <translation>Профили маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
         <source>New</source>
         <translation>Новый</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
         <translation type="unfinished">Деформация</translation>
     </message>
@@ -1878,68 +1877,68 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="obsolete">Автоматическое создание</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Получает новую конфигурацию из Cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Generate Warp Config</source>
         <translation type="unfinished">Создать конфигурацию деформации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сохранять</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
         <source>Endpoint</source>
         <translation type="unfinished">Конечная точка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751" />
         <source>Public Key</source>
         <translation type="unfinished">Публичный ключ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
         <source>Private Key</source>
         <translation type="unfinished">Приватный ключ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777" />
         <source>Interface Addresses</source>
         <translation type="unfinished">Адреса интерфейсов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
         <source>Outbound Domain Strategy</source>
         <translation>Стратегия доменов (исходящая/outbound)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
         <source>Inbound Domain Strategy</source>
         <translation>Стратегия доменов (входящая/inbound)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
         <source>Enable FakeIP</source>
         <translation>Включить подделку IP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
         <source>Hijack</source>
         <translation>Перехват</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
         <source>DNS Server</source>
         <translation>DNS-сервер</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
         <source>Enable</source>
         <translation>Вкл.</translation>
     </message>
@@ -1948,114 +1947,114 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="vanished">Как это работает?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
         <source>Listen Address</source>
         <translation>Прослушиваемый адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
         <source>Listen Port</source>
         <translation>Прослушиваемый порт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Необходимо использовать следующий формат:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
         <source>Rules</source>
         <translation>Правила</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
         <source>IPv4 Response</source>
         <translation>Ответ IPv4</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
         <source>IPv6 Response</source>
         <translation>Ответ IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
         <source>Redirect Settings</source>
         <translation>Настройки перенаправления</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32" />
         <source>Invalid state</source>
         <translation>Неверный статус</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation>Список профилей маршрутизации пуст. Это состояние не должно быть достижимо, поэтому сейчас могут происходить сбои и вылеты приложения</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Новый профиль деформации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
         <source>Getting keypair...</source>
         <translation type="unfinished">Получение пары ключей...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273" />
         <source>Failed to get key pair</source>
         <translation type="unfinished">Не удалось получить пару ключей</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278" />
         <source>Generating config...</source>
         <translation type="unfinished">Генерация конфигурации...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283" />
         <source>Failed to generate warp config</source>
         <translation type="unfinished">Не удалось создать конфигурацию деформации.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305" />
         <source>Success!</source>
         <translation type="unfinished">Успех!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344" />
         <source>Invalid settings</source>
         <translation>Неверные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
         <source>Routing profile cannot be empty</source>
         <translation>Профиль маршрутизации не может быть пустым</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344" />
         <source>DNS Rules are not valid</source>
         <translation>Правила DNS недействительны</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383" />
         <source>Security Warning</source>
         <translation type="unfinished">Предупреждение безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384" />
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -2072,72 +2071,72 @@ Are you sure?</source>
 Вы уверены?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
         <source>Invalid operation</source>
         <translation>Неверная операция</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation>Профили маршрутизации не могут быть пустыми, попробуйте добавить другой профиль или отредактировать этот</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нужно ли прослушивать 0.0.0.0, чтобы другие устройства в локальной сети могли использовать этот сервер.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
         <source>Allow Lan to Connect</source>
         <translation>Разрешить подключения из локальной сети</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Преобразовывать домены в IP-адреса перед подключением, также затрагивает адреса серверов&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://домен/путь&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://домен/путь&lt;/p&gt;&lt;p&gt;quic://домен:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
         <source>GitHub</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
         <source>jsDelivr(Cloudflare)</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
         <source>jsDelivr(Gcore)</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
         <source>jsDelivr(Quantil)</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
         <source>jsDelivr(Fastly)</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
         <source>jsDelivr(CDN)</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Локальный DNS невозможно использовать в некоторых конфигурациях —&#xa0;в подобных ситуациях вам потребуется вручную ввести IP в этом поле для использования в качестве локального DNS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Локальный DNS невозможно использовать в некоторых конфигурациях — в подобных ситуациях вам потребуется вручную ввести IP в этом поле для использования в качестве локального DNS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
         <source>Local Override</source>
         <translation>Назначить локал. DNS</translation>
     </message>
@@ -2145,7 +2144,7 @@ Are you sure?</source>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
         <translation>Настройки TUN</translation>
     </message>
@@ -2154,37 +2153,37 @@ Are you sure?</source>
         <translation type="vanished">Вкл. IPv6 в TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
         <source>AutoRedirect</source>
         <translation type="unfinished">Автоперенаправление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">Исключить CIDR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
         <source>Applications</source>
         <translation type="unfinished">Приложения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
         <translation type="unfinished">Тун-адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
         <translation type="unfinished">Куча</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
         <source>Enable IPv6</source>
         <translation type="unfinished">Включить IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
         <translation type="unfinished">Настройка IPv6-адреса</translation>
     </message>
@@ -2211,17 +2210,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
         <translation>Строгий маршрут</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если включено, прямые IP CIDR и наборы правил также будут добавлены в настройки TUN, чтобы исключить их на уровне маршрутизации ОС. ВАЖНО: сообщалось, что крупные наборы правил могут вызвать повышенную нагрузку на процессор в Windows, поэтому включайте эту опцию с осторожностью.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
         <translation>Вкл. TUN-маршрутизацию</translation>
     </message>
@@ -2229,22 +2228,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
         <translation>Интервал проверки неактивной сессии</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
         <source>Idle Session Timeout</source>
         <translation>Таймаут неактивной сессии</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
         <translation>Мин. время неактивности сессии</translation>
     </message>
@@ -2252,17 +2251,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
         <translation>Порядок трафика — сверху вниз</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
         <translation>Выбор профиля</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
         <source>Name cannot be empty.</source>
         <translation>Название не может быть пустым.</translation>
     </message>
@@ -2270,27 +2269,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
         <source>Core</source>
         <translation>Ядро</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
         <source>Json Editor</source>
         <translation>Редактор JSON</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
         <source>Outbound JSON, please read the documentation.</source>
         <translation>Outbound JSON — пожалуйста, прочтите документацию.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
         <source>Please fill the complete config.</source>
         <translation>Пожалуйста, заполните конфигурацию полностью.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
         <source>Name cannot be empty.</source>
         <translation>Название не может быть пустым.</translation>
     </message>
@@ -2298,67 +2297,67 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
         <source>Form</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
         <source>Socks address</source>
         <translation>Адрес SOCKS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
         <source>127.0.0.1</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
         <source>Socks port</source>
         <translation>Порт SOCKS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
         <source>1080</source>
         <translation>1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
         <source>Core path</source>
         <translation>Путь к ядру</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
         <source>Choose from file</source>
         <translation>Выбрать файл</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Аргументы, которые будут переданы исполняемому файлу. Вы можете вставить один символ %s — он будет заменён на путь к файлу, содержащему нижеуказанную конфигурацию.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
         <source>Args</source>
         <translation>Аргументы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
         <source>run -confPath %s</source>
         <translation>run -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Содержимое конфигурационного файла, которое будет передано процессу дополнительного ядра, если %s указано в аргументах&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
         <source>Config</source>
         <translation>Конфигурация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
         <source>No logs</source>
         <translation>Не включать логирование</translation>
     </message>
@@ -2366,12 +2365,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Форма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
@@ -2383,27 +2382,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
         <source>EditMieru</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
         <source>Port range</source>
         <translation type="unfinished">Диапазон портов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
         <source>Multiplexing</source>
         <translation type="unfinished">Мультиплексирование</translation>
     </message>
@@ -2412,7 +2411,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Транспорт</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
         <translation type="unfinished">Структура трафика</translation>
     </message>
@@ -2420,43 +2419,43 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
         <source>Off</source>
         <translation type="unfinished">Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency — количество одновременных туннельных подключений.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control — алгоритм управления перегрузкой QUIC.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Версия протокола UDP over TCP, требуется поддержка со стороны сервера.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers — дополнительные заголовки для отправки в HTTP-запросах.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>Headers</source>
         <translation type="unfinished">Заголовки</translation>
     </message>
@@ -2464,104 +2463,104 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
         <source>Auth Type</source>
         <translation>Тип авторизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
         <source>Download (Mbps)</source>
         <translation>Скорость загрузки (Мбит/с)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
         <translation>Выкл. MTU Discovery</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
         <source>Certificate</source>
         <translation>Сертификат</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
         <source>Allow Insecure</source>
         <translation>Разрешить небезопасные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
         <source>Upload (Mbps)</source>
         <translation>Скорость загрузки (Мбит/с)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
         <translation>Пароль обфускации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
         <source>SNI</source>
         <translation>SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
         <translation>Payload для авторизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
         <translation>Отключить SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
         <source>Generate UUID</source>
         <translation>Сгенерировать UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
         <translation>Сердцебиение (Heartbeat)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
         <translation>Рукопожатие 0-RTT</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
         <source>Congestion Control</source>
         <translation>Контроль перегрузки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
         <source>UDP Relay Mode</source>
         <translation>Режим ретрансляции UDP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
         <source>Port range</source>
         <translation>Диапазон портов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
         <translation>Интервал узлов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 мс&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Диапазоны, разделенные запятыми: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -2569,52 +2568,52 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
         <source>EditSSH</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
         <source>User</source>
         <translation>Пользователь</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
         <source>Private Key</source>
         <translation>Приватный ключ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
         <source>Private Key Password</source>
         <translation>Пароль к приватному ключу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
         <source>Host Key</source>
         <translation>Ключ хоста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
         <source>Host Key Algorithms</source>
         <translation>Алгоритмы шифрования ключа</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
         <source>Client Version</source>
         <translation>Версия клиента</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
         <source>Private Key Path</source>
         <translation>Путь к приватному ключу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
         <source>Choose File</source>
         <translation>Выбрать файл</translation>
     </message>
@@ -2622,12 +2621,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
         <source>Encryption</source>
         <translation>Шифрование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
         <source>Plugin</source>
         <translation>Плагин</translation>
     </message>
@@ -2636,22 +2635,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Сеть</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
         <source>Plugin Args</source>
         <translation>Аргументы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation>Версия протокола UDP over TCP, требуется поддержка со стороны сервера.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
         <source>Off</source>
         <translation>Выкл.</translation>
     </message>
@@ -2659,27 +2658,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
         <source>Version</source>
         <translation type="unfinished">Версия</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2687,27 +2686,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditSnell</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
         <translation type="unfinished">ПСК</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
         <source>Version</source>
         <translation type="unfinished">Версия</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
         <translation type="unfinished">Режим ОБФ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
         <source>Obfs Host</source>
         <translation type="unfinished">Обфс-хост</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
         <source>Reuse</source>
         <translation type="unfinished">повторное использование</translation>
     </message>
@@ -2715,17 +2714,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
         <source>Version</source>
         <translation>Версия</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
         <source>Username</source>
         <translation>Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
@@ -2734,37 +2733,37 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Сеть</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
         <source>Path</source>
         <translation type="unfinished">Путь</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
         <source>Headers</source>
         <translation type="unfinished">Заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
         <source>Off</source>
         <translation type="unfinished">Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Версия протокола UDP over TCP, требуется поддержка со стороны сервера.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
         <source>UoT</source>
         <translation type="unfinished">УоТ</translation>
     </message>
@@ -2772,72 +2771,72 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
         <source>Form</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
         <source>State directory</source>
         <translation>Директория состояния</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
         <source>Auth key</source>
         <translation>Ключ авторизации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
         <source>Control URL</source>
         <translation>Контролирующий URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
         <source>Hostname</source>
         <translation>Имя хоста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
         <translation>Приём маршрутов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
         <translation>Эфемерный узел</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
         <translation>Выходной узел: разрешить доступ к LAN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
         <source>Advertise exit node</source>
         <translation>Объявлять выходной узел</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
         <source>Exit node</source>
         <translation>Выходной узел</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Список подсетей, разделенных запятыми&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
         <source>Advertise routes</source>
         <translation>Объявлять маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Использовать DNS Tailscale в качестве удалённого DNS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
         <source>Global DNS</source>
         <translation>Глобальный DNS</translation>
     </message>
@@ -2845,27 +2844,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
         <source>EditTor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
         <source>Custom Path</source>
         <translation type="unfinished">Пользовательский путь</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
         <source>Extra Args</source>
         <translation type="unfinished">Дополнительные аргументы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
         <translation type="unfinished">Конфигурация Тора</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
         <source>Data DIr</source>
         <translation type="unfinished">Каталог данных</translation>
     </message>
@@ -2873,12 +2872,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
         <source>Encryption</source>
         <translation type="unfinished">Шифрование</translation>
     </message>
@@ -2886,17 +2885,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Форма</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
         <source>Password</source>
         <translation type="unfinished">Пароль</translation>
     </message>
@@ -2905,12 +2904,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">quic_congestion_control — алгоритм управления перегрузкой QUIC.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
         <translation type="unfinished">Проверка здоровья</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
         <source>Off</source>
         <translation type="unfinished">Выкл.</translation>
     </message>
@@ -2918,22 +2917,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
         <translation>Шифрование</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
         <translation>Альт. ID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
         <translation>UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
         <source>Generate UUID</source>
         <translation>Сгенерировать UUID</translation>
     </message>
@@ -2941,156 +2940,156 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
         <source>EditWireguard</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
         <source>Reserved</source>
         <translation>Резервный (Reserved)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Список подсетей, разделенных запятыми&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
         <source>Local Address</source>
         <translation>Локальный адрес</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119" />
         <source>Generate Warp Config</source>
         <translation type="unfinished">Создать конфигурацию деформации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156" />
         <source>Init Packet Junk Size (S1)</source>
         <translation type="unfinished">Размер нежелательного пакета инициализации (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166" />
         <source>Init Packet Magic Header (H1)</source>
         <translation type="unfinished">Магический заголовок пакета инициализации (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182" />
         <source>Transport Packet Magic Header (H4)</source>
         <translation type="unfinished">Магический заголовок транспортного пакета (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192" />
         <source>Cookie Reply Packet Junk Size (S3)</source>
         <translation type="unfinished">Размер нежелательного пакета ответа cookie (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208" />
         <source>Signature Packet (I3)</source>
         <translation type="unfinished">Пакет подписи (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218" />
         <source>Junk Packet Count (Jc)</source>
         <translation type="unfinished">Количество нежелательных пакетов (Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228" />
         <source>Response Packet Magic Header (H2)</source>
         <translation type="unfinished">Волшебный заголовок пакета ответа (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238" />
         <source>Signature Packet (I1)</source>
         <translation type="unfinished">Пакет подписи (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248" />
         <source>Junk Packet Max Size (Jmax)</source>
         <translation type="unfinished">Максимальный размер нежелательного пакета (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258" />
         <source>Junk Packet Min Size (Jmin)</source>
         <translation type="unfinished">Минимальный размер нежелательного пакета (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
         <translation type="unfinished">Волшебный заголовок пакета ответа на файл cookie (H3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287" />
         <source>Transport Packet Junk Size (S4)</source>
         <translation type="unfinished">Размер нежелательного транспортного пакета (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303" />
         <source>Signature Packet (I2)</source>
         <translation type="unfinished">Пакет подписи (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319" />
         <source>Response Packet Junk Size (S2)</source>
         <translation type="unfinished">Размер нежелательного пакета ответа (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335" />
         <source>Signature Packet (I4)</source>
         <translation type="unfinished">Пакет подписи (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348" />
         <source>Signature Packet (I5)</source>
         <translation type="unfinished">Пакет подписи (I5)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
         <source>Pre Shared Key</source>
         <translation>Предв. раздел. ключ (Pre-shared Key, PSK)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
         <source>Use System Interface</source>
         <translation>Исп. системный интерфейс</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
         <source>Public Key</source>
         <translation>Публичный ключ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
         <source>Private Key</source>
         <translation>Приватный ключ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
         <source>1420</source>
         <translation>1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
         <source>MTU</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Workers</source>
         <translation type="vanished">Workers</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Интервал отправки Persistent Keepalive (поддержания активности) в секундах&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
         <source>Persistent Keepalive</source>
         <translation>Поддержание активности (Persistent Keepalive)</translation>
     </message>
@@ -3135,7 +3134,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Магический заголовок (Magic Header) транспортного заголовка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135"/>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135" />
         <source>Amnezia Settings</source>
         <translation>Настройки Amnezia</translation>
     </message>
@@ -3143,7 +3142,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239" />
         <source>Filter</source>
         <translation type="unfinished">Фильтр</translation>
     </message>
@@ -3155,37 +3154,37 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Обновить подписку</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
         <source>Update</source>
         <translation type="unfinished">Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Basic</source>
         <translation>Стандартный</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
         <source>Subscription</source>
         <translation>Подписка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
         <source>Archive</source>
         <translation>Архив</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
         <source>Updated: %1</source>
         <translation type="unfinished">Обновлено: %1</translation>
     </message>
@@ -3194,12 +3193,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Последнее обновление: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
@@ -3207,26 +3206,26 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">Статистика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
         <source>Usage Statistics</source>
         <translation type="unfinished">Статистика использования</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
         <source>Traffic Statistics</source>
         <translation type="unfinished">Статистика трафика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Общий трафик прокси:</translation>
     </message>
@@ -3235,12 +3234,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Текстовая метка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Общий объем прямого трафика:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
         <source>Security Statistics</source>
         <translation type="unfinished">Статистика безопасности</translation>
     </message>
@@ -3249,85 +3248,85 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Статистика профиля</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
         <translation type="unfinished">Время использования:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
         <source>Last launch time:</source>
         <translation type="unfinished">Время последнего запуска:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
         <translation type="unfinished">Время первого запуска:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
         <translation type="unfinished">Стартовый отсчет:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
         <translation type="unfinished">Скачать:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
         <translation type="unfinished">Загрузить:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
         <translation type="unfinished">Профили прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
         <source>Database Statistics</source>
         <translation type="unfinished">Статистика базы данных</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
         <source>Deleted</source>
         <translation type="unfinished">Удалено</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
         <translation type="unfinished">Существует</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
         <translation type="unfinished">Созданный</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Группы и подписки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
         <translation type="unfinished">Профили маршрутов</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
         <translation type="unfinished">Количество неудачных аутентификаций:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
         <source>Users count:</source>
         <translation type="unfinished">Количество пользователей:</translation>
     </message>
@@ -3343,58 +3342,58 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
         <source>JSON Editor</source>
         <translation>Редактор JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
         <source>Format JSON</source>
         <translation>Форматирование JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
         <source>Remove All Comments</source>
         <translation>Удалить все комментарии</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
         <source>Json Editor</source>
         <translation>Редактор JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
         <source>Structure Preview</source>
         <translation>Предпросмотр структуры</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
         <source>OK</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
         <source>Json Contains Syntax Errors</source>
         <translation>JSON содержит синтаксические ошибки</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
         <translation>Кажется, оригинальный JSON содержит синтаксические ошибки. Дерево JSON отключено.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
         <source>You must correct these errors before continuing.</source>
         <translation>Исправьте эти ошибки, прежде чем продолжить.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
         <source>Syntax Errors</source>
         <translation>Синтаксические ошибки</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation>Пожалуйста, исправьте ошибки JSON или удалите комментарии, прежде чем продолжить</translation>
     </message>
@@ -3402,17 +3401,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Program</source>
         <translation>Программа</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637" />
         <source>Enable AdBlock</source>
         <translation>Включить AdBlock</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699" />
         <source>Preferences</source>
         <translation>Настройки</translation>
     </message>
@@ -3421,57 +3420,57 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Сервер</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489" />
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250" />
         <source>Tun Mode</source>
         <translation>Режим TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958" />
         <source>System Proxy</source>
         <translation>Системный прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
         <source>Type</source>
         <translation>Протокол</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327" />
         <source>Test Result</source>
         <translation>Результат теста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578" />
         <source>Traffic</source>
         <translation>Трафик</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724" />
         <source>Share</source>
         <translation>Поделиться</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825" />
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -3480,43 +3479,43 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Показать окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <source>Toggle Window</source>
         <translation>Показать окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835" />
         <source>Basic Settings</source>
         <translation>Основные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840" />
         <source>New profile</source>
         <translation>Новый профиль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845" />
         <source>Groups</source>
         <translation>Группы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351" />
         <source>Start</source>
         <translation>Запустить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351" />
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874" />
         <source>Routing Settings</source>
         <translation>Настройки маршрутизации</translation>
     </message>
@@ -3545,12 +3544,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Простой тест загрузки Выбрано</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241" />
         <source>Hide window</source>
         <translation>Скрыть окно</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
         <source>Add profile from clipboard</source>
         <translation>Добавить профиль из буфера обмена</translation>
     </message>
@@ -3567,238 +3566,238 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Текущая группа</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790" />
         <source>Test</source>
         <translation type="unfinished">Тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720" />
         <source>Current Selected</source>
         <translation type="unfinished">Текущее выбранное</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Current Group</source>
         <translation type="unfinished">Текущая группа</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <source>NekoRay</source>
         <translation type="unfinished">НекоРэй</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>Box</source>
         <translation type="unfinished">Коробка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
         <source>Info</source>
         <translation type="unfinished">Информация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343" />
         <source>Search</source>
         <translation type="unfinished">Поиск</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Context</source>
         <translation type="unfinished">Контекст</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>ContextProfiles</source>
         <translation type="unfinished">Контекстные профили</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866" />
         <source>Edit</source>
         <translation type="unfinished">Редактировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887" />
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
         <source>Debug Info</source>
         <translation>Отладочная информация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
         <source>QR Code and link</source>
         <translation>QR-код и ссылка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908" />
         <source>Copy Link</source>
         <translation>Скопировать ссылку</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Clear Test Result</source>
         <translation>Очистить результат теста</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781" />
         <source>Export %1 config</source>
         <translation>Экспортировать конфигурацию %1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325" />
         <source>Reset Traffic</source>
         <translation>Сбросить трафик</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>Scan QR Code</source>
         <translation>Сканировать QR-код</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
         <source>Enable System Proxy</source>
         <translation>Активировать системный прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
         <source>Disable</source>
         <translation>Отключить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
         <source>Remove Duplicates</source>
         <translation>Удалить дубликаты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>fake</source>
         <translation>фейк</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261" />
         <source>Move</source>
         <translation>Переместить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
         <source>Start with system</source>
         <translation>Запускать вместе с системой</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Remember last profile</source>
         <translation>Запомнить последний профиль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
         <source>Allow other devices to connect</source>
         <translation>Разрешить подключаться другим устройствам</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022" />
         <source>Remove Unavailable</source>
         <translation>Удалить недоступные</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
         <source>Full Test</source>
         <translation>Полный тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
         <source>Hotkey Settings</source>
         <translation>Настройки горячих клавиш</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
         <source>Select All</source>
         <translation>Выбрать все</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Копировать ссылки Nekoray</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Ctrl+Shift+I</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Shift+I</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Полный тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скачать тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Загрузить тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Страновой тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
         <source>Simple download test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Простой тест загрузки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282" />
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Зарегистрировать задачу Windows с повышенными правами</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302" />
         <source>About</source>
         <translation type="unfinished">О</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292" />
         <source>Statistics</source>
         <translation type="unfinished">Статистика</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297" />
         <source>Check for updates</source>
         <translation type="unfinished">Проверьте наличие обновлений</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307" />
         <source>Toggle filter</source>
         <translation type="unfinished">Переключить фильтр</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315" />
         <source>Unselect</source>
         <translation type="unfinished">Отменить выбор</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320" />
         <source>Toggle searchbox</source>
         <translation type="unfinished">Переключить окно поиска</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274" />
         <source>Information</source>
         <translation type="unfinished">Информация</translation>
     </message>
@@ -3807,18 +3806,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Скопировать ссылки выбранных</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Enable Tun</source>
         <translation>Включить режим TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494" />
         <source>Clone</source>
         <translation>Клонировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
         <source>Update subscription</source>
         <translation>Обновить подписку</translation>
     </message>
@@ -3827,58 +3826,58 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Разрешить домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Tun Settings</source>
         <translation>Настройки режима TUN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
         <source>Restart Program</source>
         <translation>Перезапустить программу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125" />
         <source>Open Config Folder</source>
         <translation>Открыть папку конфигурации</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146" />
         <source>Restart Proxy</source>
         <translation>Перезапустить прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Url Test</source>
         <translation type="unfinished">URL-тест</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189" />
         <source>Resolve Domain</source>
         <translation type="unfinished">Разрешить домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256" />
         <source>Security Settings</source>
         <translation type="unfinished">Настройки безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906" />
         <source>Auto-scroll log</source>
         <translation type="unfinished">Журнал автопрокрутки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
         <source>Select Proxy</source>
         <translation type="unfinished">Выберите прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378" />
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Тип входящего прокси:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Редактировать профили маршрутизации</translation>
     </message>
@@ -3887,25 +3886,25 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Обновление профилей маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128" />
         <source>Update Response</source>
         <translation type="unfinished">Обновить ответ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Профили маршрутизации не обновляются.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Обновлены профили маршрутизации %1.</translation>
     </message>
@@ -3914,12 +3913,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Обновить карту набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562" />
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Не удалось обновить наборы правил.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565" />
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Наборы правил успешно обновлены.</translation>
     </message>
@@ -3928,125 +3927,125 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Обновить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Предоставленные входные данные невозможно преобразовать в действительный массив правил маршрутизации:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542" />
         <source>No Selection</source>
         <translation type="unfinished">Нет выбора</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543" />
         <source>Select proxy profile to connect</source>
         <translation type="unfinished">Выберите профиль прокси для подключения</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">Использование на macOS не разрешено</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
         <source>Import Routing Profile</source>
         <translation type="unfinished">Импортировать профиль маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491" />
         <source>From clipboard</source>
         <translation type="unfinished">Из буфера обмена</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495" />
         <source>From file</source>
         <translation type="unfinished">Из файла</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502" />
         <source>Imported from clipboard</source>
         <translation type="unfinished">Импортировано из буфера обмена</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514" />
         <source>Imported from %1</source>
         <translation type="unfinished">Импортировано из %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524" />
         <source>Routing Profiles</source>
         <translation type="unfinished">Профили маршрутизации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551" />
         <source>RuleSet Map</source>
         <translation type="unfinished">Карта набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
         <source>RuleSet Cache</source>
         <translation type="unfinished">Кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609" />
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Кэш наборов правил обновлен.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623" />
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Очистить кэш набора правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131" />
         <source>Tun Settings changed</source>
         <translation>Настройки TUN изменены</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132" />
         <source>Restart Tun to take effect.</source>
         <translation>Перезапустите TUN, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420" />
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199" />
         <source>Settings changed, restart proxy?</source>
         <translation>Настройки изменены, перезапустить прокси?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173" />
         <source>Settings changed</source>
         <translation>Настройки изменены</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174" />
         <source>Restart the program to take effect.</source>
         <translation>Перезапустите программу, чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216" />
         <source>Imported %1 profile(s)</source>
         <translation>Импортирован(ы) %1 профиль(ей)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922" />
         <source>Not Running</source>
         <translation>Не запущен</translation>
     </message>
@@ -4059,22 +4058,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Режим выбора: дважды кликните или нажмите Enter для выбора профиля, нажмите ESC для выхода.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495" />
         <source>Clone %1 item(s)</source>
         <translation>Клонировать %1 записей</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Группа слишком велика, чтобы найти дубликаты.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571" />
         <source>Remove %1 item(s) ?</source>
         <translation>Удалить %1 записей?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647" />
         <source>Copied %1 item(s)</source>
         <translation>Скопировано %1 записей</translation>
     </message>
@@ -4083,96 +4082,96 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891" />
         <source>QR Code not found</source>
         <translation>QR-код не найден</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338" />
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174" />
         <source>[%1] test error: %2</source>
         <translation>[%1] ошибка теста: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301" />
         <source>Testing</source>
         <translation>Проверка...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
         <source>Unavailable</source>
         <translation>Недоступен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation>Если нет ответа в течении долгого времени, рекомендуем перезапустить приложение.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739" />
         <source>Starting profile %1</source>
         <translation>Запуск профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
         <source>Failed to start profile %1</source>
         <translation>Не удалось запустить профиль %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
         <source>Stopping profile %1</source>
         <translation>Остановка профиля %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863" />
         <source>Failed to stop, please restart the program.</source>
         <translation>Не удалось остановить, пожалуйста, перезапустите приложение.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
         <source>Stop Testing</source>
         <translation>Остановить тестирование</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656" />
         <source>Tun device misbehaving</source>
         <translation>Некорректное поведение устройства TUN</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661" />
         <source>Reset</source>
         <translation>Сброс</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370" />
         <source>Add new Group</source>
         <translation>Добавить новую группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410" />
         <source>Delete selected Group</source>
         <translation>Удалить выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411" />
         <source>Edit selected Group</source>
         <translation>Редактировать выбранную группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421" />
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
@@ -4185,7 +4184,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178" />
         <source>Url Test Group</source>
         <translation>Тест задержки всей группы</translation>
     </message>
@@ -4194,7 +4193,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Shift+G</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772" />
         <source>Hidden menu</source>
         <translation>Скрытое меню</translation>
     </message>
@@ -4203,7 +4202,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Разрешить выбранный домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
         <source>Remove Invalid</source>
         <translation>Удалить недействительные</translation>
     </message>
@@ -4212,62 +4211,62 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation>Если у вас возникли проблемы с запуском режима TUN, можете принудительно сбросить процесс ядра здесь и попробовать перезапустить профиль. Ошибка: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
         <source> Confirmation </source>
         <translation> Подтверждение </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551" />
         <source> Remove %1 item(s) ? </source>
         <translation> Удалить %1 элемент(ов)? </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061" />
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation>Удалить %1 недоступных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123" />
         <source>Remove %1 Invalid item(s) ?</source>
         <translation>Удалить %1 неверных элемент(ов)?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156" />
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation>Заменить домены в адресах серверов на их разрешённые IP-адреса?</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276" />
         <source>System DNS</source>
         <translation>Системный DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518" />
         <source>Connections</source>
         <translation>Подключения</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
         <source>Click To Disable Sorting</source>
         <translation>Нажмите для отключения сортировки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562" />
         <source>Protocol</source>
         <translation>Протокол</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483" />
         <source>Logs</source>
         <translation>Логи</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>Please give the core root privileges</source>
         <translation>Пожалуйста, предоставьте ядру права root.</translation>
     </message>
@@ -4284,41 +4283,41 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Приложение</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710" />
         <source>Profiles</source>
         <translation>Профили</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
         <translation>Маршрутизация</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546" />
         <source>Destination (Domain)</source>
         <translation>Пункт назначения (Домен)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554" />
         <source>Process</source>
         <translation>Процесс</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
         <source>Click To Sort By Process</source>
         <translation>Нажмите для сортировки по процессу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785" />
         <source>Routing Menu</source>
         <translation>Меню маршрутизации</translation>
     </message>
@@ -4327,7 +4326,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Копировать пользовательские ссылки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
         <source>Copy links</source>
         <translation type="unfinished">Копировать ссылки</translation>
     </message>
@@ -4336,50 +4335,50 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Открыть менеджер</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77" />
         <source>Profile test aborted</source>
         <translation>Тест профиля прерван</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation>Что-то явно не так, объект ent не может быть найден!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565" />
         <source>Profile manager data is corrupted, try again.</source>
         <translation>Данные менеджера профилей повреждены, попробуйте еще раз.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346" />
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation>Последний тест скорости не завершился полностью, пожалуйста, подождите. Если проблема сохраняется, пожалуйста, перезапустите программу.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377" />
         <source>Failed to build test config: </source>
         <translation>Не удалось создать тестовую конфигурацию: </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413" />
         <source>Speedtest finished!</source>
         <translation>Тест скорости завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295" />
         <source>Failed to stop tests</source>
         <translation>Не удалось остановить тест</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
         <source>You need to enable hijack DNS server first</source>
         <translation>Сначала необходимо включить перехват DNS-сервера</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607" />
         <source>Failed to set system dns: </source>
         <translation>Не удалось установить системный DNS: </translation>
     </message>
@@ -4388,12 +4387,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Ошибка BuildConfig</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697" />
         <source>Another profile is starting...</source>
         <translation>Другой профиль запускается...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704" />
         <source>Another profile is stopping...</source>
         <translation>Другой профиль останавливается...</translation>
     </message>
@@ -4402,7 +4401,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Попытка запустить конфигурацию — ядро не прослушивает порт RPC, поэтому перезапустите его...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
         <source>Stop return error</source>
         <translation>Ошибка остановки</translation>
     </message>
@@ -4415,27 +4414,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155" />
         <source>Cannot start</source>
         <translation>Невозможно запустить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156" />
         <source>Last download request has not finished yet</source>
         <translation>Последний запрос на загрузку еще не завершён</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
         <source>Traffic Graph</source>
         <translation>График соединения</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190" />
         <source>Failed to download update assets</source>
         <translation>Не удалось загрузить обновлённые ресурсы</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269" />
         <source>Speedtest Current</source>
         <translation>Тест скорости текущего профиля</translation>
     </message>
@@ -4444,52 +4443,52 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Тест скорости выбранного профиля</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
         <source>Speedtest Group</source>
         <translation>Тест скорости всей группы</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195" />
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
-        <translation>Тест задержки не завершился до конца —&#xa0;пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
+        <translation>Тест задержки не завершился до конца — пожалуйста, подождите. Если такое поведение повторяется, перезапустите программу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251" />
         <source>URL test finished!</source>
         <translation>Тест задержки завершён!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496" />
         <source>Profile speed test aborted</source>
         <translation>Тест скорости профиля был отменён</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584" />
         <source>[%1] speed test error: %2</source>
         <translation>[%1] ошибка теста скорости: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550" />
         <source>User opted for no privilege req, some features may not work</source>
         <translation>Пользователь решил не запрашивать привилегии, некоторые функции могут не работать</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
         <source>Group is too big to sort</source>
         <translation type="unfinished">Группа слишком велика для сортировки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913" />
         <source>Unable to capture screen</source>
         <translation>Невозможно захватить экран</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570" />
         <source>Outbound</source>
         <translation>Outbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581" />
         <source>Click To Toggle sort by Traffic</source>
         <translation>Нажмите для сортировки по трафику</translation>
     </message>
@@ -4498,7 +4497,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Скопировать ссылки выбранных профилей (польз. ссылки)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359" />
         <source>Invalid JSON Array</source>
         <translation>Неверный массив JSON</translation>
     </message>
@@ -4513,17 +4512,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="vanished">Пожалуйста, запустите nekobox от имени администратора</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
         <source>Click To Sort By Protocol</source>
         <translation>Нажмите для сортировки по протоколу</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573" />
         <source>Click To Sort By Outbound</source>
         <translation>Нажмите для сортировки по Outbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
         <source>Add profile from File</source>
         <translation>Добавить профиль из файла</translation>
     </message>
@@ -4535,27 +4534,27 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation type="obsolete">Неверный</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818" />
         <source>Type</source>
         <translation type="unfinished">Тип</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820" />
         <source>Address</source>
         <translation type="unfinished">Адрес</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822" />
         <source>Name</source>
         <translation type="unfinished">Название</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824" />
         <source>Test Result</source>
         <translation type="unfinished">Результат теста</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826" />
         <source>Traffic</source>
         <translation type="unfinished">Трафик</translation>
     </message>
@@ -4563,22 +4562,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
         <source>Username</source>
         <translation type="unfinished">Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
         <source>New Password</source>
         <translation type="unfinished">Новый пароль</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
         <source>Confirm Password</source>
         <translation type="unfinished">Подтвердите пароль</translation>
     </message>
@@ -4586,12 +4585,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
         <source>Remove %1?</source>
         <translation>Удалить %1?</translation>
     </message>
@@ -4599,7 +4598,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
         <source>Security Settings</source>
         <translation type="unfinished">Настройки безопасности</translation>
     </message>
@@ -4607,20 +4606,20 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="469"/>
+        <location filename="../../src/gharqad/main.cpp" line="469" />
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
         <source>Failed to register %1. Error: %2</source>
         <translation type="unfinished">Не удалось зарегистрировать %1.Ошибка: %2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
         <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished">Не удалось отменить регистрацию %1.Ошибка: %2</translation>
     </message>
@@ -4628,24 +4627,24 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890" />
         <source>Proxy: %1
 Direct: %2</source>
         <translation>Прокси: %1
 Напрямую: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214"/>
+        <location filename="../../src/gharqad/main.cpp" line="214" />
         <source>Chain Proxy</source>
         <translation>Цепочка прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232"/>
+        <location filename="../../src/gharqad/main.cpp" line="232" />
         <source>Custom</source>
         <translation type="unfinished">Обычай</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="233"/>
+        <location filename="../../src/gharqad/main.cpp" line="233" />
         <source>Extra Core</source>
         <translation type="unfinished">Доп. ядро</translation>
     </message>
@@ -4676,7 +4675,7 @@ How to update?</source>
         <translation type="obsolete">Название группы</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864" />
         <source>Requesting subscription: %1</source>
         <translation>Запрос подписки: %1</translation>
     </message>
@@ -4685,37 +4684,37 @@ How to update?</source>
         <translation type="vanished">Ошибка запроса подписки %1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Ошибка запроса подписки %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
         <source>Request error is: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ошибка запроса: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Данные подписки получены для %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Название профиля подписки: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908" />
         <source>Subscription request fininshed: %1</source>
         <translation>Запрос подписки завершён: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933" />
         <source>Clearing servers...</source>
         <translation>Очистка серверов...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989" />
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Добавлен %1 прокси</translation>
@@ -4735,37 +4734,37 @@ Deleted %3 Profiles:
         <translation type="vanished">Ничего</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991" />
         <source>Change of %1:</source>
         <translation>Изменение %1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation>Ядро слишком часто останавливается, отмена автоматического перезапуска этого профиля.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131"/>
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131" />
         <source>Select</source>
         <translation>Выбор</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181" />
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109" />
         <source>No update</source>
         <translation>Обновлений нет</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138" />
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4774,50 +4773,50 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143" />
         <source>Open in browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141" />
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Удалены дубликаты: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Удалено %1 Недействительно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Удалено %1 Недоступно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Проверить наборы правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Ошибка запроса списка наборов правил: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932" />
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">Входящие: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934" />
         <source>Inbound: Off</source>
         <translation type="unfinished">Входящие: Выкл.</translation>
     </message>
@@ -4826,7 +4825,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Выкл.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928" />
         <source>Inbound IP: %1</source>
         <translation type="unfinished">Входящий IP: %1</translation>
     </message>
@@ -4835,38 +4834,38 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP-адрес: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458" />
         <source>Move profiles to group</source>
         <translation type="unfinished">Переместить профили в группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669" />
         <source>Config copied</source>
         <translation type="unfinished">Конфигурация скопирована</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681" />
         <source>Copy core config</source>
         <translation type="unfinished">Копировать конфигурацию ядра</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683" />
         <source>Copy test config</source>
         <translation type="unfinished">Копировать тестовую конфигурацию</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182" />
         <source>Update is ready, restart to install?</source>
         <translation>Обновление готово, перезапустить программу для установки?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>Использовано: %1, осталось: %2, истекает: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055"/>
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>
@@ -4875,54 +4874,54 @@ Deleted %1 Unavailable</source>
         <translation type="vanished">Добавить профили в эту группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
         <source>Subscription URL Detected</source>
         <translation>Обнаружена ссылка подписки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
         <source>How would you like to import this subscription?</source>
         <translation>Как вы хотите импортировать эту подписку?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
         <source>Update existing group</source>
         <translation>Обновить существующую группу</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
         <source>Import as proxy links</source>
         <translation>Импортировать как ссылки прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
         <source>Group name:</source>
         <translation>Имя группы:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
         <source>Auto-detect from subscription</source>
         <translation>Автоопределение из подписки</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
         <source>Import</source>
         <translation>Импортировать</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846" />
         <source>Decrypted happ:// link</source>
         <translation>Расшифрована ссылка happ://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850" />
         <source>Failed to decrypt happ:// link</source>
         <translation>Не удалось расшифровать ссылку happ://</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
         <source>Create new subscription group</source>
         <translation>Создать новую группу подписки</translation>
     </message>
@@ -4931,12 +4930,12 @@ Deleted %1 Unavailable</source>
         <translation type="vanished">Не удалось открыть файл.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056" />
         <source>Not official support platform</source>
         <translation>Платформа официально не поддерживается</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066" />
         <source>Requesting update error: %1</source>
         <translation>Ошибка запроса обновления: %1</translation>
     </message>
@@ -4945,28 +4944,28 @@ Deleted %1 Unavailable</source>
         <translation type="vanished">Режим TUN нельзя использовать с польз. конфигурациями</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959" />
         <source>Processing subscription data...</source>
         <translation>Идёт обработка данных подписки...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973" />
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Отбросить %1 прокси</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975" />
         <source>Process complete, applying...</source>
         <translation>Процесс завершён, применение...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409" />
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410" />
         <source>Requesting profile error: %1</source>
         <translation>Ошибка запроса профиля: %1</translation>
     </message>
@@ -4975,49 +4974,49 @@ Deleted %1 Unavailable</source>
         <translation type="vanished">Локальный DNS и режим TUN не могут работать вместе. Пожалуйста, введите IP для использования в качестве локального DNS в меню «Настройки маршрутизации» → «Назначить локал. DNS»</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
         <source>Core exited, cleaning up...</source>
         <translation>Ядро завершило работу, очистка...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
         <source>Restarting the core ...</source>
         <translation>Перезапуск ядра...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417" />
         <source>Select a Folder</source>
         <translation>Выбрать папку</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
         <source>Access denied</source>
         <translation type="unfinished">Доступ запрещен</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684"/>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
         <source>OK</source>
         <translation type="unfinished">ОК</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="378"/>
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="378" />
         <source>System</source>
         <translation type="unfinished">Система</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
         <translation type="unfinished">Правила применения</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
-        <source>Exclude CIDR&apos;s</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
+        <source>Exclude CIDR's</source>
         <translation type="unfinished">Исключить CIDR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
         <source>Cancel</source>
         <translation type="unfinished">Отмена</translation>
     </message>
@@ -5032,77 +5031,77 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Доп. ядро</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157"/>
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Прокси: ⚡%1 📦%3
 Директ: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505" />
         <source>Invalid</source>
         <translation type="unfinished">Неверный</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48" />
         <source>KCP Settings</source>
         <translation type="unfinished">Настройки ККП</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74" />
         <source>MTU</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75" />
         <source>TTI</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>Uplink Capacity</source>
         <translation type="unfinished">Емкость восходящей линии связи</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>Downlink Capacity</source>
         <translation type="unfinished">Пропускная способность нисходящей линии связи</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
         <source>Congestion</source>
         <translation type="unfinished">Скопление</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
         <source>Read Buffer Size</source>
         <translation type="unfinished">Чтение размера буфера</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
         <source>Write Buffer Size</source>
         <translation type="unfinished">Размер буфера записи</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
         <source>Header Type</source>
         <translation type="unfinished">Тип заголовка</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Seed</source>
         <translation type="unfinished">Семя</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">Получен неверный ответ: %1.
 Полезная нагрузка запроса: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
         <source>Imported</source>
         <translation type="unfinished">Импортировано</translation>
     </message>
@@ -5110,92 +5109,92 @@ Request payload was: %2</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172"/>
+        <location filename="../../src/gharqad/main.cpp" line="172" />
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173"/>
+        <location filename="../../src/gharqad/main.cpp" line="173" />
         <source>Apply</source>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174"/>
+        <location filename="../../src/gharqad/main.cpp" line="174" />
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175"/>
+        <location filename="../../src/gharqad/main.cpp" line="175" />
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176"/>
+        <location filename="../../src/gharqad/main.cpp" line="176" />
         <source>OK</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177"/>
+        <location filename="../../src/gharqad/main.cpp" line="177" />
         <source>Defaults</source>
         <translation type="unfinished">По умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178"/>
+        <location filename="../../src/gharqad/main.cpp" line="178" />
         <source>Restore Defaults</source>
         <translation type="unfinished">Восстановить настройки по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179"/>
+        <location filename="../../src/gharqad/main.cpp" line="179" />
         <source>Discard</source>
         <translation type="unfinished">Отказаться</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181"/>
+        <location filename="../../src/gharqad/main.cpp" line="181" />
         <source>Undo</source>
         <translation type="unfinished">Отменить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182"/>
+        <location filename="../../src/gharqad/main.cpp" line="182" />
         <source>Redo</source>
         <translation type="unfinished">Повторить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183"/>
+        <location filename="../../src/gharqad/main.cpp" line="183" />
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184"/>
+        <location filename="../../src/gharqad/main.cpp" line="184" />
         <source>Copy</source>
         <translation>Скопировать</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185"/>
+        <location filename="../../src/gharqad/main.cpp" line="185" />
         <source>Paste</source>
         <translation>Вставить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186"/>
+        <location filename="../../src/gharqad/main.cpp" line="186" />
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187"/>
+        <location filename="../../src/gharqad/main.cpp" line="187" />
         <source>Select All</source>
         <translation>Выбрать все</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188"/>
+        <location filename="../../src/gharqad/main.cpp" line="188" />
         <source>Stop</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189"/>
+        <location filename="../../src/gharqad/main.cpp" line="189" />
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190"/>
+        <location filename="../../src/gharqad/main.cpp" line="190" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Копировать расположение ссылки</translation>
     </message>
@@ -5203,7 +5202,7 @@ Request payload was: %2</source>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
         <source>You can not input space characters here.</source>
         <translation>Ввод символа пробела запрещён.</translation>
     </message>
@@ -5211,108 +5210,108 @@ Request payload was: %2</source>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
         <translation>Профиль маршрута</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351" />
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <source>Update url</source>
         <translation type="unfinished">Обновить URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104" />
         <source>Skip update</source>
         <translation type="unfinished">Пропустить обновление</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111" />
         <source>Update manually</source>
         <translation type="unfinished">Обновить вручную</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
         <translation type="unfinished">Основные маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
         <source>IP</source>
         <translation type="unfinished">ИП</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
         <source>Domain</source>
         <translation type="unfinished">Домен</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
         <source>Process</source>
         <translation type="unfinished">Процесс</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224" />
         <source>Preset</source>
         <translation type="unfinished">Предустановка</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
         <source>Custom routes</source>
         <translation type="unfinished">Пользовательские маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299" />
         <source>Rules</source>
         <translation>Правила</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311" />
         <source>New</source>
         <translation>Новый</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318" />
         <source>Move Up</source>
         <translation>Поднять выше</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325" />
         <source>Move Down</source>
         <translation>Опустить ниже</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332" />
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
         <source>Rule Attributes</source>
         <translation>Атрибуты правила</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361" />
         <source>Attribute</source>
         <translation>Атрибут</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Name_Placeholder</source>
         <translation>Пример_имени</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406" />
         <source>Notes</source>
         <translation>Заметки</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289" />
         <source>Import JSON</source>
         <translation>Импорт JSON</translation>
     </message>
@@ -5325,31 +5324,31 @@ Request payload was: %2</source>
         <translation type="vanished">Как пользоваться</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264" />
         <source>Direct</source>
         <translation>Напрямую</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259" />
         <source>Proxy</source>
         <translation>Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153"/>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269" />
         <source>Block</source>
         <translation>Блокировать</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280" />
         <source>Advanced</source>
         <translation>Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
         <source>Invalid rules</source>
         <translation>Некорректные правила</translation>
     </message>
@@ -5364,7 +5363,7 @@ Request payload was: %2</source>
         <translation type="vanished">Инструкция по простым правилам</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
         <source>Invalid JSON Array</source>
         <translation>Неверный массив JSON</translation>
     </message>
@@ -5375,49 +5374,49 @@ Request payload was: %2</source>
             </translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
         <source>Bypass LAN / private IPs (Direct)</source>
         <translation type="unfinished">Обход локальной сети/частных IP-адресов (прямой)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
         <source>Clear all basic routes</source>
         <translation type="unfinished">Очистить все основные маршруты</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Не удалось добавить некоторые правила:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Предоставленные входные данные невозможно преобразовать в действительный массив правил маршрутизации:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
         <source>Invalid operation</source>
         <translation>Неверная операция</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
         <source>Cannot create Route Profile with empty name</source>
         <translation>Невозможно создать профиль маршрута с пустым именем</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>Empty Route Profile</source>
         <translation>Пустой профиль маршрута</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>No valid rules are in the profile</source>
         <translation>В профиле нет доступных правил</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Некоторые правила не удалось добавить, исправьте их перед сохранением:</translation>
@@ -5429,12 +5428,12 @@ Request payload was: %2</source>
             </translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
         <source>General</source>
         <translation>Основное</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251" />
         <source>Default outbound</source>
         <translation>Outbound по умолчанию</translation>
     </message>
@@ -5442,42 +5441,42 @@ Request payload was: %2</source>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
         <source>Security Settings</source>
         <translation type="unfinished">Настройки безопасности</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
         <source>Lock Actions</source>
         <translation type="unfinished">Блокировка действий</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
         <source>Lock Settings</source>
         <translation type="unfinished">Блокировка настроек</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
         <source>Lock Startup</source>
         <translation type="unfinished">Блокировка запуска</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
         <source>Delete Users</source>
         <translation type="unfinished">Удаление пользователей</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
         <source>Edit User Roles</source>
         <translation type="unfinished">Редактировать роли пользователей</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
         <translation type="unfinished">Изменить пароль пользовательского интерфейса</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Установите учетные данные прокси-сервера</translation>
     </message>
@@ -5485,12 +5484,12 @@ Request payload was: %2</source>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
         <source>Exiting %1</source>
         <translation type="unfinished">Выход из %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
         <translation type="unfinished">Начиная %1</translation>
     </message>
@@ -5498,14 +5497,14 @@ Request payload was: %2</source>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
         <source>Proxy</source>
         <translation>Прокси</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
         <source>Direct</source>
         <translation>Напрямую</translation>
     </message>
@@ -5528,13 +5527,13 @@ Request payload was: %2</source>
         <translation type="obsolete">Предоставленные входные данные невозможно преобразовать в действительный массив правил маршрутизации:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484" />
         <source>Fetching information</source>
         <translation>Получение информации</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500"/>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
         <source>Download Profiles</source>
         <translation>Загрузка профилей</translation>
     </message>
@@ -5542,22 +5541,22 @@ Request payload was: %2</source>
 <context>
     <name>StartStopButton</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220" />
         <source>Start</source>
         <translation type="unfinished">Запустить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221" />
         <source>Connecting…</source>
         <translation type="unfinished">Подключение…</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222" />
         <source>Stop</source>
         <translation type="unfinished">Остановить</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
         <source>Stopping…</source>
         <translation type="unfinished">Остановка…</translation>
     </message>
@@ -5565,7 +5564,7 @@ Request payload was: %2</source>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
         <source>Form</source>
         <translation type="unfinished">Форма</translation>
     </message>
