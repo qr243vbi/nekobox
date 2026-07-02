@@ -3714,7 +3714,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">पूर्ण चाचणी</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
@@ -3729,7 +3729,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">देश चाचणी</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
