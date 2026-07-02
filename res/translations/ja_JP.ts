@@ -1,9 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>
@@ -11,37 +12,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
         <translation type="unfinished">覚えて</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished">秒</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished">分</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished">時間</translation>
     </message>
@@ -49,9 +50,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Custom Headers</source>
@@ -93,22 +94,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
         <source>Proxy</source>
         <translation type="unfinished">プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
         <source>Direct</source>
         <translation type="unfinished">直接</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
         <source>Block</source>
         <translation type="unfinished">ブロック</translation>
     </message>
@@ -116,18 +117,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
         <translation type="unfinished">基本設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
         <translation type="unfinished">一般</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -135,179 +136,179 @@
 + HTTP プロキシ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
         <translation type="unfinished">リッスンポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
         <source>Edit</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
         <source>Custom Inbound</source>
         <translation type="unfinished">カスタムインバウンド</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;実行ごとに使用可能なポートをランダムに選択します&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
         <source>Random port</source>
         <translation type="unfinished">ランダムポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
         <source>Proxy Format</source>
         <translation type="unfinished">プロキシ形式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
         <source>Listen Address</source>
         <translation type="unfinished">リッスンアドレス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
         <source>Network Settings</source>
         <translation type="unfinished">ネットワーク設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
         <source>Use proxy when activated</source>
         <translation type="unfinished">アクティベート時にプロキシを使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
         <source>URL Test after profile start</source>
         <translation type="unfinished">プロファイル開始後の URL テスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Request update at startup</source>
         <translation type="unfinished">起動時に更新を要求する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
         <source>Ignore TLS errors</source>
         <translation type="unfinished">TLSエラーを無視する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
         <source>Test Settings</source>
         <translation type="unfinished">テスト設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
         <source>Simple Download URL</source>
         <translation type="unfinished">簡易ダウンロードURL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
         <source>Download + Upload</source>
         <translation type="unfinished">ダウンロード + アップロード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
         <source>Only Download</source>
         <translation type="unfinished">ダウンロードのみ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
         <source>Only Upload</source>
         <translation type="unfinished">アップロードのみ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
         <source>Simple Download</source>
         <translation type="unfinished">簡単ダウンロード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
         <source>Only Country</source>
         <translation type="unfinished">唯一の国</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
         <source>Latency Test URL</source>
         <translation type="unfinished">レイテンシ テストの URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
         <source>Speedtest mode</source>
         <translation type="unfinished">スピードテストモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
         <source>Concurrent</source>
         <translation type="unfinished">同時</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ミリ秒単位のタイムアウト&lt;br/&gt;すべてのテストに個別に適用されます&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
         <source>Timeout</source>
         <translation type="unfinished">タイムアウト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
         <source>Download Retries</source>
         <translation type="unfinished">ダウンロードの再試行</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URLtest のタイムアウト (ミリ秒)&lt;br/&gt;多重化された接続は最初のリクエストに非常に長い時間がかかることに注意してください。この値の設定が低すぎると、テストで構成が機能していないという誤った報告が行われる可能性があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
         <source>Style</source>
         <translation type="unfinished">スタイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
         <source>Font</source>
         <translation type="unfinished">フォント</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
         <source>Font Size</source>
         <translation type="unfinished">フォントサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
         <source>Connection statistics</source>
         <translation type="unfinished">接続統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">起動時にダッシュボードを非表示にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">システムDNSオプションを表示</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
         <source>Show profile IDs</source>
         <translation type="unfinished">プロファイル ID を表示する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Disable tray</source>
         <translation type="unfinished">トレイを無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">メニューアイコンの下にテキストを設定する</translation>
     </message>
@@ -316,73 +317,73 @@
         <translation type="obsolete">起動時に隠す</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>Manually column width</source>
         <translation type="unfinished">手動での列幅</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>Max log lines</source>
         <translation type="unfinished">最大ログ行数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Theme</source>
         <translation type="unfinished">テーマ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>System</source>
         <translation type="unfinished">システム</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
         <source>Language</source>
         <translation type="unfinished">言語</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
         <source>Icon</source>
         <translation type="unfinished">アイコン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
         <source>Emoji Font</source>
         <translation type="unfinished">絵文字フォント</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Subscription</source>
         <translation type="unfinished">サブスクリプション</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
         <source>Interval:</source>
         <translation type="unfinished">間隔：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">自動更新を有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">更新前にサーバーをクリアする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>URL Test after update</source>
         <translation type="unfinished">アップデート後のURLテスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
         <source>Enable</source>
         <translation type="unfinished">有効にする</translation>
     </message>
@@ -391,27 +392,27 @@
         <translation type="obsolete">間隔（分、30未満の場合は無効）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">重複の削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=カスタム値、os=カスタムos、osVersion=カスタムバージョン、モデル=カスタムモデル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
         <source>User Agent</source>
         <translation type="unfinished">ユーザーエージェント</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS バージョン=%3&lt;/p&gt;&lt;p&gt;モデル=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">システムパラメータの送信</translation>
     </message>
@@ -420,32 +421,32 @@
         <translation type="obsolete">自動更新</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;形式: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;デフォルト値を使用するには空のままにします。オーバーライドするパラメータのみを指定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">カスタム システム パラメータ (オプション)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">無効を削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">使用不可を削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
         <source>Core</source>
         <translation type="unfinished">コア</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -453,7 +454,7 @@
 Ping とパフォーマンスの向上&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">トラフィック統計を無効にする</translation>
     </message>
@@ -462,90 +463,90 @@ Ping とパフォーマンスの向上&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tran
         <translation type="obsolete">TCPを使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">マルチプレックス（多重化）</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
         <source>Loglevel</source>
         <translation type="unfinished">ログレベル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
         <source>concurrency</source>
         <translation type="unfinished">同時実行性</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
         <source>Hide window at startup</source>
         <translation type="unfinished">起動時にウィンドウを非表示にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
         <source>Show test button</source>
         <translation type="unfinished">テストボタンを表示</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
         <source>Show start/stop button</source>
         <translation type="unfinished">スタート/ストップボタンを表示</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
         <source>Enable indicator borders</source>
         <translation type="unfinished">インジケーターの境界線を有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
         <source>Radius</source>
         <translation type="unfinished">半径</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
         <source>Padding</source>
         <translation type="unfinished">パディング</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
         <source>Default On</source>
         <translation type="unfinished">デフォルトでオン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
         <source>Core Options</source>
         <translation type="unfinished">コアオプション</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;の設定
 sing-box の組み込み NTP クライアント&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>NTP Settings</source>
         <translation type="unfinished">NTP設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
         <source>server</source>
         <translation type="unfinished">サーバ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
         <source>Port</source>
         <translation type="unfinished">ポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>sync interval</source>
         <translation type="unfinished">同期間隔</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -553,22 +554,22 @@ sing-box の組み込み NTP クライアント&lt;/p&gt;&lt;/body&gt;&lt;/html&
 分&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
         <source>Security</source>
         <translation type="unfinished">安全</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">特権リクエストを無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">TLS 証明書認証をスキップする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Mozilla 証明書ストアを使用する</translation>
     </message>
@@ -577,27 +578,27 @@ sing-box の組み込み NTP クライアント&lt;/p&gt;&lt;/body&gt;&lt;/html&
         <translation type="obsolete">デフォルトで TLS 証明書認証をスキップします (allowInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">デフォルトの uTLS フィンガープリント</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;明示的に要求されない限り、管理者として起動しないでください&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">ネコボックスとネコボックスコア間の通信にはUnixドメインソケットを使用します</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">IPC に UDS を使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">常に標準ユーザーとして開始する</translation>
     </message>
@@ -616,7 +617,7 @@ INI — 1980 年代初頭 — セクションと key=value ペアを含むシン
 バイナリ — 2026 — RocksDB 値またはスタンドアロン ファイルとして使用される猫ボックス設定の任意のバイト値形式 — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -627,143 +628,143 @@ INI — 1980 年代初頭 — セクションと key=value ペアを含むシン
 バイナリ — 2026 — leveldb 値またはスタンドアロン ファイルとして使用される猫ボックス設定の任意のバイト値形式 — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">プロフィールの削除を依頼する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">自動テスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">バックグラウンドでプロキシを自動的にテストし、動作するプロキシのプールを維持します</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">自動テストを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">テスト間隔 (秒)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">テストサイクルを実行する頻度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">サイクルごとのプロキシ数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">各サイクルでテストするプロキシの数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">ワーキングプールのサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">維持する検証済みの動作プロキシの最大数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">レイテンシーしきい値 (ミリ秒)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">プロキシが動作しているとみなされる最大遅延時間</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">失敗時のリトライ回数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">プロキシが失敗したとみなされるまでの再試行回数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
         <source>Test Target URL</source>
         <translation type="unfinished">テスト対象URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">プロキシをテストするための URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">TUN モード プロキシに障害が発生した場合に、別の動作しているプロキシに自動的に切り替える</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">TUN フェイルオーバーを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
         <source>Startup</source>
         <translation type="unfinished">起動する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
         <source>Geometry</source>
         <translation type="unfinished">ジオメトリ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">ジオメトリの自動保存</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
         <source>Autosave position</source>
         <translation type="unfinished">自動保存位置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
         <source>Apply now</source>
         <translation type="unfinished">今すぐお申し込みください</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
         <source>Width</source>
         <translation type="unfinished">幅</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
         <source>X</source>
         <translation type="unfinished">×</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
         <source>Configs format</source>
         <translation type="unfinished">構成フォーマット</translation>
     </message>
@@ -778,64 +779,64 @@ INI — 1980 年代初頭 — セクションと key=value ペアを含むシン
 バイナリ — 2026 — LMDB 値またはスタンドアロン ファイルとして使用される猫ボックス設定の任意のバイト値形式 — qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
         <source>Height</source>
         <translation type="unfinished">身長</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">コア実行可能パス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
         <source>Use default</source>
         <translation type="unfinished">デフォルトを使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
         <source>Remote Control</source>
         <translation type="unfinished">リモコン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
         <source>Select</source>
         <translation type="unfinished">選択</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
         <source>Resources Directory</source>
         <translation type="unfinished">リソースディレクトリ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
         <source>Resource Manager</source>
         <translation type="unfinished">リソースマネージャー</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
         <source>Proxy type</source>
         <translation type="unfinished">プロキシの種類</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
         <source>Name of program</source>
         <translation type="unfinished">番組名</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
         <source>Security Warning</source>
         <translation type="unfinished">セキュリティ警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -852,12 +853,12 @@ Are you sure you want to disable TLS verification?</source>
 TLS 検証を無効にしてもよろしいですか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">プライバシーに関する警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -885,42 +886,42 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
         <source>Edit Group</source>
         <translation type="unfinished">グループの編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
         <translation type="unfinished">一般</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
         <source>Url</source>
         <translation type="unfinished">URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
         <source>Paste URL</source>
         <translation type="unfinished">URLを貼り付け</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
         <source>Type</source>
         <translation type="unfinished">タイプ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
         <source>Basic</source>
         <translation type="unfinished">基本</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
         <source>Subscription</source>
         <translation type="unfinished">サブスクリプション</translation>
     </message>
@@ -929,58 +930,58 @@ HWID 送信を有効にしてもよろしいですか?</translation>
         <translation type="obsolete">手動での列幅</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
         <source>Archive</source>
         <translation type="unfinished">アーカイブ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
         <source>Autoupdate</source>
         <translation type="unfinished">自動更新</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
         <source>Extra</source>
         <translation type="unfinished">余分な</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Proxy</source>
         <translation type="unfinished">プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
         <source>None</source>
         <translation type="unfinished">なし</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
         <source>Front Proxy</source>
         <translation type="unfinished">フロントプロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">ランディングプロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
         <source>Share</source>
         <translation type="unfinished">共有</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">プロファイル共有リンクをコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">プロファイル共有リンクのコピー (カスタム リンク)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
         <source>Notes</source>
         <translation type="unfinished">注意事項</translation>
     </message>
@@ -989,22 +990,22 @@ HWID 送信を有効にしてもよろしいですか?</translation>
         <translation type="obsolete">自動更新をスキップする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">空の場合はサブスクリプションのプロファイルタイトルを使用します</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
         <source>Copied</source>
         <translation type="unfinished">コピーされました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Warning</source>
         <translation type="unfinished">警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Please input URL</source>
         <translation type="unfinished">URLを入力してください</translation>
     </message>
@@ -1012,267 +1013,267 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
         <source>Edit</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
         <translation type="unfinished">一般</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
         <source>Type</source>
         <translation type="unfinished">タイプ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
         <translation type="unfinished">ポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
         <source>Address</source>
         <translation type="unfinished">住所</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
         <source>Settings</source>
         <translation type="unfinished">設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">基礎となるトランスポート方法。サーバーと一致している必要があります。一致していないと接続を確立できません。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
         <source>Network</source>
         <translation type="unfinished">ネットワーク</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
         <source>Server support is required</source>
         <translation type="unfinished">サーバーのサポートが必要です</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
         <source>Multiplex</source>
         <translation type="unfinished">マルチプレックス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">トランスポート層セキュリティ。サーバーと一致している必要があります。一致していないと接続を確立できません。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
         <source>Security</source>
         <translation type="unfinished">安全</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">UDP FullCone などの機能を実装するための UDP FullCone パケット エンコーディング。サーバーのサポートが必要です。選択を誤ると接続できません。空白のままにしてください。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
         <source>Packet Encoding</source>
         <translation type="unfinished">パケットエンコーディング</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
         <source>Keep Default</source>
         <translation type="unfinished">デフォルトを維持する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
         <source>On</source>
         <translation type="unfinished">の上</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;マルチプレクサをオンにオーバーライドします&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">TCP ブルータルを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;サーバーからクライアントへの TCP のひどい速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCPの残忍な速度</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
         <source>Mb/s</source>
         <translation type="unfinished">MB/秒</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">カスタムアウトバウンド設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
         <source>Custom Config Settings</source>
         <translation type="unfinished">カスタム構成設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="813" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">このグループに設定を適用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
         <source>Network Settings (%1)</source>
         <translation type="unfinished">ネットワーク設定 (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;http リクエストのメソッド、大文字に変換されます&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
         <source>Method</source>
         <translation type="unfinished">方法</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
         <source>header type</source>
         <translation type="unfinished">ヘッダータイプ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
         <source>TLS Security Settings</source>
         <translation type="unfinished">TLSセキュリティ設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752"/>
         <source>Certificate</source>
         <translation type="unfinished">証明書</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">有効にすると、V2Ray はリモート ホストから提供された TLS 証明書の有効性をチェックしません (セキュリティはプレーンテキストと同等です)。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
         <source>Allow insecure</source>
         <translation type="unfinished">安全でないことを許可する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
         <source>Enable ECH</source>
         <translation type="unfinished">ECHを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="757" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH 構成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">サーバー名表示、クリアテキスト。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">アプリケーション層プロトコルネゴシエーション、クリアテキスト。カンマで区切って入力してください。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">TLS カモフラージュ設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
         <source>Transport</source>
         <translation type="unfinished">輸送</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パフォーマンスが低下する可能性があります。最初にレコードのフラグメントを試してください&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
         <source>Enable TLS fragment</source>
         <translation type="unfinished">TLS フラグメントを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;時間形式 (500 ミリ秒、10 ミリ秒など)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
         <source>Fallback Delay</source>
         <translation type="unfinished">フォールバック遅延</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">TLS レコード フラグメントを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">現実の公開鍵。空でない場合は、TLS を REALITY に変換します。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">現実の短いID。値を 1 つだけ受け入れます。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
         <source>Reality SID</source>
         <translation type="unfinished">リアリティ SID</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">カスタム (%1 送信)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="280" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">カスタム (%1 構成)</translation>
     </message>
@@ -1295,130 +1296,130 @@ HWID 送信を有効にしてもよろしいですか?</translation>
         <translation type="obsolete">カスタム (%1 構成)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="121" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118"/>
         <source>both</source>
         <translation type="unfinished">両方</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733"/>
         <source>Not set</source>
         <translation type="unfinished">未設定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="707" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="730" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735"/>
         <source>Already set</source>
         <translation type="unfinished">すでに設定されています</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="787" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792"/>
         <source>Confirm</source>
         <translation type="unfinished">確認する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
         <source>Network Settings</source>
         <translation type="unfinished">ネットワーク設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
         <source>Max Post Bytes</source>
         <translation type="unfinished">最大ポストバイト数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
         <source>Min Post Interval</source>
         <translation type="unfinished">最小ポスト間隔</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
         <source>Max Reuse times</source>
         <translation type="unfinished">最大再利用回数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
         <source>X Padding Bytes</source>
         <translation type="unfinished">X パディングバイト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
         <source>Keep Alive Period</source>
         <translation type="unfinished">キープアライブ期間</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
         <source>Max Concurrency</source>
         <translation type="unfinished">最大同時実行数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
         <source>Max Reusable Secs</source>
         <translation type="unfinished">再利用可能な最大秒数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
         <source>Headers</source>
         <translation type="unfinished">ヘッダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
         <source>Edit download settings</source>
         <translation type="unfinished">ダウンロード設定を編集する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
         <source>Max Request Times</source>
         <translation type="unfinished">最大リクエスト時間</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
         <source>XPadding Header</source>
         <translation type="unfinished">XPaddingヘッダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
         <source>XPadding Method</source>
         <translation type="unfinished">XPadd メソッド</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
         <source>XPadding Key</source>
         <translation type="unfinished">XPaddingキー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
         <source>EarlyData Length</source>
         <translation type="unfinished">初期データの長さ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
         <source>Max Connections</source>
         <translation type="unfinished">最大接続数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
         <source>XPadding Placement</source>
         <translation type="unfinished">XPadding 配置</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
         <source>Multi Mode</source>
         <translation type="unfinished">マルチモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">XPadding Obfs モード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
         <source>No GRPC Headers</source>
         <translation type="unfinished">GRPC ヘッダーなし</translation>
     </message>
@@ -1426,37 +1427,37 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
         <source>Custom Headers</source>
         <translation type="unfinished">カスタムヘッダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">カスタムHTTPヘッダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
         <source>System Parameters</source>
         <translation type="unfinished">システムパラメータ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
         <source>Custom Payload</source>
         <translation type="unfinished">カスタムペイロード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
         <source>Text</source>
         <translation type="unfinished">文章</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
         <source>Javascript</source>
         <translation type="unfinished">JavaScript</translation>
     </message>
@@ -1464,95 +1465,95 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">グループ Group2 のランディング プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
         <source>Proxy:</source>
         <translation type="unfinished">プロキシ：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
         <source>Search:</source>
         <translation type="unfinished">検索：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
         <source>Group1</source>
         <translation type="unfinished">グループ1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
         <source>Group2</source>
         <translation type="unfinished">グループ2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">グループ %1 のフロント プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
         <source>Front proxy: </source>
         <translation type="unfinished">フロントプロキシ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">グループ %1 のランディング プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">ランディングプロキシ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164"/>
         <source>Proxy</source>
         <translation type="unfinished">プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166"/>
         <source>Direct</source>
         <translation type="unfinished">直接</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
         <source>None</source>
         <translation type="unfinished">なし</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">プロキシの追加</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">%1 プロキシを置き換えます</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159"/>
         <source>Select outbound</source>
         <translation type="unfinished">アウトバウンドを選択</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161"/>
         <source>Outbound: </source>
         <translation type="unfinished">アウトバウンド:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168"/>
         <source>Outbound</source>
         <translation type="unfinished">アウトバウンド</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170"/>
         <source>Block</source>
         <translation type="unfinished">ブロック</translation>
     </message>
@@ -1560,17 +1561,17 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">システムパラメータの送信</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=カスタム値、os=カスタムos、osVersion=カスタムバージョン、モデル=カスタムモデル</translation>
     </message>
@@ -1578,27 +1579,27 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
         <source>Value</source>
         <translation type="unfinished">価値</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
         <source>New</source>
         <translation type="unfinished">新しい</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
         <source>Header name</source>
         <translation type="unfinished">ヘッダー名</translation>
     </message>
@@ -1606,75 +1607,75 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
         <source>Hotkey</source>
         <translation type="unfinished">ホットキー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
         <source>Global</source>
         <translation type="unfinished">グローバル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
         <source>Trigger main window</source>
         <translation type="unfinished">メインウィンドウをトリガーする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
         <source>Show groups</source>
         <translation type="unfinished">グループを表示</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
         <source>Show routes</source>
         <translation type="unfinished">ルートを表示</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
         <source>Proxy mode</source>
         <translation type="unfinished">プロキシモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
         <source>Toggle System Proxy</source>
         <translation type="unfinished">システムプロキシの切り替え</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
         <source>Shortcuts</source>
         <translation type="unfinished">ショートカット</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
-        <source>Shortcut for '%s' action was cleared</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
+        <source>Shortcut for &apos;%s&apos; action was cleared</source>
         <translation type="unfinished">「%s」アクションのショートカットがクリアされました</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
         <source>Groups</source>
         <translation type="unfinished">グループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
         <source>New group</source>
         <translation type="unfinished">新しいグループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
         <source>Update all subscriptions</source>
         <translation type="unfinished">すべてのサブスクリプションを更新する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Confirmation</source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">すべてのサブスクリプションを更新しますか?</translation>
     </message>
@@ -1682,380 +1683,387 @@ HWID 送信を有効にしてもよろしいですか?</translation>
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
         <source>Routes</source>
         <translation type="unfinished">ルート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
         <translation type="unfinished">一般</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
         <translation type="unfinished">接続の最初のパケットを盗聴して、プロトコルと SNI を識別します。宛先のスニフ結果も、スニッフィングされた SNI への接続の宛先を書き換えます。スニッフィングされたプロトコルの詳細については、sing-box のドキュメントを参照してください。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
         <source>Sniffing Mode</source>
         <translation type="unfinished">スニッフィングモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
         <source>Disable</source>
         <translation type="unfinished">無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
         <source>Sniff result for routing</source>
         <translation type="unfinished">ルーティングのスニフ結果</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
         <source>Routing Profile</source>
         <translation type="unfinished">ルーティングプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">インバウンドドメイン戦略</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
         <source>GitHub</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">リモートルールセットミラー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;接続前にドメインを IP に解決します。サーバー アドレスにも影響します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">アウトバウンドドメイン戦略</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
         <source>RuleSet download url</source>
         <translation type="unfinished">ルールセットのダウンロード URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
         <source>Hijack</source>
         <translation type="unfinished">ハイジャック</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
         <source>DNS Server</source>
         <translation type="unfinished">DNSサーバー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
         <source>Listen Port</source>
         <translation type="unfinished">リッスンポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
         <source>IPv4 Response</source>
         <translation type="unfinished">IPv4 応答</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
         <source>IPv6 Response</source>
         <translation type="unfinished">IPv6 応答</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;次の形式を使用する必要があります:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
         <source>Rules</source>
         <translation type="unfinished">ルール</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
         <source>Enable</source>
         <translation type="unfinished">有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LAN 上の他のデバイスがこのサーバーを使用できるように 0.0.0.0 でリッスンするかどうか&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">LANの接続を許可する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
         <source>Redirect Settings</source>
         <translation type="unfinished">リダイレクト設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
         <source>Listen Address</source>
         <translation type="unfinished">リッスンアドレス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
         <source>DNS</source>
         <translation type="unfinished">DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
         <source>Simple DNS Settings</source>
         <translation type="unfinished">簡単なDNS設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;例:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
         <source>Remote DNS</source>
         <translation type="unfinished">リモートDNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
         <source>Default DNS server</source>
         <translation type="unfinished">デフォルトのDNSサーバー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
         <source>Query Strategy</source>
         <translation type="unfinished">クエリ戦略</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;一部の構成ではローカル DNS を使用できません。そのような状況でローカル DNS として使用するには、ここで IP を設定する必要があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
         <source>Local Override</source>
         <translation type="unfinished">ローカルオーバーライド</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
-        <source>This is especially important and it is recommended to use the default value of "localhost".
-If the default value does not work, try changing it to "223.5.5.5".
-For more information, see the document "Configuration/DNS".</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">これは特に重要であり、デフォルト値の「localhost」を使用することをお勧めします。
 デフォルト値が機能しない場合は、「223.5.5.5」に変更してみてください。
 詳細については、ドキュメント「構成/DNS」を参照してください。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
         <source>Direct DNS</source>
         <translation type="unfinished">ダイレクトDNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
         <source>Enable FakeIP</source>
         <translation type="unfinished">FakeIPを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
         <source>DNS Object Settings</source>
         <translation type="unfinished">DNS オブジェクトの設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
         <source>Use DNS Object</source>
         <translation type="unfinished">DNS オブジェクトを使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
         <source>Format</source>
         <translation type="unfinished">形式</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
         <source>Document</source>
         <translation type="unfinished">書類</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
         <source>Route</source>
         <translation type="unfinished">ルート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">ルーティングプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
         <source>New</source>
         <translation type="unfinished">新しい</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
         <source>Clone</source>
         <translation type="unfinished">クローン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
         <source>Export</source>
         <translation type="unfinished">輸出</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
         <source>Edit</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
         <source>Delete</source>
         <translation type="unfinished">消去</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
         <source>Warp</source>
         <translation type="unfinished">ワープ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;次の構成を出力として使用できるようにします。非ワープ VPN を制限するサービスをバイパスするのに役立ちます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;次の構成を出力として使用できるようにします。非ワープ VPN を制限するサービスをバイパスするのに役立ちます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Enable Warp</source>
-        <translation type="unfinished">ワープを有効にする</translation>
+        <translation type="obsolete">ワープを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Auto Generate</source>
-        <translation type="unfinished">自動生成</translation>
+        <translation type="obsolete">自動生成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;cloudflare API から新しい設定を取得します&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
         <source>Generate Warp Config</source>
         <translation type="unfinished">ワープ構成の生成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738"/>
         <source>Endpoint</source>
         <translation type="unfinished">終点</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751"/>
         <source>Public Key</source>
         <translation type="unfinished">公開鍵</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
         <source>Private Key</source>
         <translation type="unfinished">秘密鍵</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777"/>
         <source>Interface Addresses</source>
         <translation type="unfinished">インターフェースアドレス</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
         <source>Invalid state</source>
         <translation type="unfinished">無効な状態</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">ルーティング プロファイルのリストが空です。これは到達不可能な状態であるはずです。現在クラッシュが発生する可能性があります。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175"/>
+        <source>New warp profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268"/>
         <source>Getting keypair...</source>
         <translation type="unfinished">キーペアを取得しています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273"/>
         <source>Failed to get key pair</source>
         <translation type="unfinished">キーペアの取得に失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278"/>
         <source>Generating config...</source>
         <translation type="unfinished">構成を生成中...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283"/>
         <source>Failed to generate warp config</source>
         <translation type="unfinished">ワープ構成の生成に失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305"/>
         <source>Success!</source>
         <translation type="unfinished">成功！</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
         <source>Invalid settings</source>
         <translation type="unfinished">無効な設定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">ルーティング プロファイルを空にすることはできません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">DNS ルールが無効です</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383"/>
         <source>Security Warning</source>
         <translation type="unfinished">セキュリティ警告</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384"/>
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -2072,12 +2080,12 @@ Are you sure?</source>
 本気ですか？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
         <source>Invalid operation</source>
         <translation type="unfinished">無効な操作</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">ルーティング プロファイルを空にすることはできません。別のプロファイルを追加するか、このプロファイルを編集してみてください</translation>
     </message>
@@ -2085,7 +2093,7 @@ Are you sure?</source>
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
         <source>Tun Settings</source>
         <translation type="unfinished">調整設定</translation>
     </message>
@@ -2094,52 +2102,52 @@ Are you sure?</source>
         <translation type="obsolete">IPv6 を有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
         <source>Stack</source>
         <translation type="unfinished">スタック</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Enable IPv6</source>
         <translation type="unfinished">IPv6を有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">厳格なルート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;有効にすると、ダイレクト IP CIDR とルール セットも Tun 設定に追加され、OS ルーティング レベルで除外されます。重要: 大規模なルール セットは、Windows で大量の CPU 使用率を引き起こすことが報告されています。このオプションは注意して有効にしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Tun ルーティングを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">自動リダイレクト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">屯の住所</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">IPv6 アドレスを調整する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR を除外する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
         <source>Applications</source>
         <translation type="unfinished">アプリケーション</translation>
     </message>
@@ -2147,22 +2155,22 @@ Are you sure?</source>
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">アイドルセッションチェック間隔</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
         <source>Idle Session Timeout</source>
         <translation type="unfinished">アイドルセッションタイムアウト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
         <source>Min Idle Session</source>
         <translation type="unfinished">最小アイドルセッション</translation>
     </message>
@@ -2170,17 +2178,17 @@ Are you sure?</source>
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">トラフィックの順序は上から下です</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
         <source>Select Profile</source>
         <translation type="unfinished">プロファイルの選択</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">名前を空にすることはできません。</translation>
     </message>
@@ -2188,27 +2196,27 @@ Are you sure?</source>
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
         <translation type="unfinished">コア</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
         <source>Json Editor</source>
         <translation type="unfinished">Jsonエディター</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">アウトバウンド JSON については、ドキュメントをお読みください。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">完全な設定を入力してください。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">名前を空にすることはできません。</translation>
     </message>
@@ -2216,67 +2224,67 @@ Are you sure?</source>
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
         <source>Socks address</source>
         <translation type="unfinished">靴下の住所</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
         <source>Socks port</source>
         <translation type="unfinished">ソックスポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
         <source>Core path</source>
         <translation type="unfinished">コアパス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
         <source>Choose from file</source>
         <translation type="unfinished">ファイルから選ぶ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;実行可能ファイルに渡す引数。単一の %s を挿入すると、以下に入力した構成を含むファイルへのパスに置き換えられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
         <source>Args</source>
         <translation type="unfinished">引数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
         <source>run -confPath %s</source>
         <translation type="unfinished">-confPath %s を実行します</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;引数に %s が指定されている場合に追加のコア プロセスに渡される設定ファイルの内容&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
         <source>Config</source>
         <translation type="unfinished">構成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
         <source>No logs</source>
         <translation type="unfinished">ログがありません</translation>
     </message>
@@ -2284,12 +2292,12 @@ Are you sure?</source>
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
@@ -2301,27 +2309,27 @@ Are you sure?</source>
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
         <source>Port range</source>
         <translation type="unfinished">ポート範囲</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Multiplexing</source>
         <translation type="unfinished">多重化</translation>
     </message>
@@ -2330,7 +2338,7 @@ Are you sure?</source>
         <translation type="obsolete">輸送</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
         <source>Traffic Pattern</source>
         <translation type="unfinished">トラフィックパターン</translation>
     </message>
@@ -2338,43 +2346,43 @@ Are you sure?</source>
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - 同時トンネル接続の数。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - QUIC 輻輳制御アルゴリズム。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP over TCP プロトコルのバージョン、サーバーのサポートが必要です。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - HTTP リクエストで送信する追加のヘッダー。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
         <source>Headers</source>
         <translation type="unfinished">ヘッダー</translation>
     </message>
@@ -2382,104 +2390,104 @@ Are you sure?</source>
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
         <source>Heartbeat</source>
         <translation type="unfinished">ハートビート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
         <source>Download (Mbps)</source>
         <translation type="unfinished">ダウンロード (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
         <source>Upload (Mbps)</source>
         <translation type="unfinished">アップロード (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">ゼロ Rtt ハンドシェイク</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
         <source>UDP Relay Mode</source>
         <translation type="unfinished">UDPリレーモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
         <source>Congestion Control</source>
         <translation type="unfinished">輻輳制御</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;カンマ区切りの範囲: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
         <source>Obfs Password</source>
         <translation type="unfinished">Obf パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">MTU 検出を無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
         <source>Port range</source>
         <translation type="unfinished">ポート範囲</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
         <source>Hop Interval</source>
         <translation type="unfinished">ホップ間隔</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100 ミリ秒&lt;br/&gt;1 秒&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
         <source>Auth Type</source>
         <translation type="unfinished">認証タイプ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
         <source>Auth Payload</source>
         <translation type="unfinished">認証ペイロード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUIDの生成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">証明書</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
         <source>Disable SNI</source>
         <translation type="unfinished">SNI を無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
         <source>SNI</source>
         <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
         <source>Allow Insecure</source>
         <translation type="unfinished">安全でないものを許可する</translation>
     </message>
@@ -2487,52 +2495,52 @@ Are you sure?</source>
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
         <source>EditSSH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
         <source>User</source>
         <translation type="unfinished">ユーザー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
         <source>Private Key</source>
         <translation type="unfinished">秘密鍵</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
         <source>Private Key Password</source>
         <translation type="unfinished">秘密鍵のパスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
         <translation type="unfinished">ホストキー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
         <translation type="unfinished">ホストキーアルゴリズム</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
         <source>Client Version</source>
         <translation type="unfinished">クライアントのバージョン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
         <source>Private Key Path</source>
         <translation type="unfinished">秘密鍵のパス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
         <source>Choose File</source>
         <translation type="unfinished">ファイルを選択</translation>
     </message>
@@ -2540,22 +2548,22 @@ Are you sure?</source>
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
         <source>Plugin</source>
         <translation type="unfinished">プラグイン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
         <source>Encryption</source>
         <translation type="unfinished">暗号化</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
         <source>Plugin Args</source>
         <translation type="unfinished">プラグインの引数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
@@ -2564,12 +2572,12 @@ Are you sure?</source>
         <translation type="obsolete">ネットワーク</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP over TCP プロトコルのバージョン、サーバーのサポートが必要です。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
@@ -2577,27 +2585,27 @@ Are you sure?</source>
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
         <source>Version</source>
         <translation type="unfinished">バージョン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2605,27 +2613,27 @@ Are you sure?</source>
 <context>
     <name>EditSnell</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25"/>
         <source>PSK</source>
         <translation type="unfinished">PSK</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38"/>
         <source>Version</source>
         <translation type="unfinished">バージョン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48"/>
         <source>Obfs Mode</source>
         <translation type="unfinished">オブフモード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58"/>
         <source>Obfs Host</source>
         <translation type="unfinished">オブフホスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79"/>
         <source>Reuse</source>
         <translation type="unfinished">再利用</translation>
     </message>
@@ -2633,17 +2641,17 @@ Are you sure?</source>
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
         <source>Version</source>
         <translation type="unfinished">バージョン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
@@ -2652,37 +2660,37 @@ Are you sure?</source>
         <translation type="obsolete">ネットワーク</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
         <source>Path</source>
         <translation type="unfinished">パス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
         <source>Headers</source>
         <translation type="unfinished">ヘッダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">UDP over TCP プロトコルのバージョン、サーバーのサポートが必要です。</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
@@ -2690,72 +2698,72 @@ Are you sure?</source>
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
         <source>State directory</source>
         <translation type="unfinished">状態ディレクトリ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
         <translation type="unfinished">認証キー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
         <source>Control URL</source>
         <translation type="unfinished">制御URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
         <source>Hostname</source>
         <translation type="unfinished">ホスト名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
         <translation type="unfinished">ルートを受け入れる</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
         <source>Ephemeral</source>
         <translation type="unfinished">一時的な</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
         <source>Exit node allow lan access</source>
         <translation type="unfinished">ノードを終了して LAN アクセスを許可する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
         <source>Advertise exit node</source>
         <translation type="unfinished">出口ノードをアドバタイズする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
         <source>Exit node</source>
         <translation type="unfinished">出口ノード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;サブネットのカンマ区切りリスト&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
         <source>Advertise routes</source>
         <translation type="unfinished">ルートをアドバタイズする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;テールスケール DNS をリモート DNS として使用する&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
         <source>Global DNS</source>
         <translation type="unfinished">グローバルDNS</translation>
     </message>
@@ -2763,27 +2771,27 @@ Are you sure?</source>
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
         <translation type="unfinished">カスタムパス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
         <translation type="unfinished">追加の引数</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
         <translation type="unfinished">Tor 構成</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
         <translation type="unfinished">データDIr</translation>
     </message>
@@ -2791,12 +2799,12 @@ Are you sure?</source>
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
         <source>Encryption</source>
         <translation type="unfinished">暗号化</translation>
     </message>
@@ -2804,17 +2812,17 @@ Are you sure?</source>
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">パスワード</translation>
     </message>
@@ -2827,12 +2835,12 @@ Are you sure?</source>
         <translation type="obsolete">クイック</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
         <source>Health Check</source>
         <translation type="unfinished">健康診断</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">オフ</translation>
     </message>
@@ -2840,22 +2848,22 @@ Are you sure?</source>
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
         <translation type="unfinished">安全</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
         <source>Alter Id</source>
         <translation type="unfinished">IDの変更</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
         <source>Generate UUID</source>
         <translation type="unfinished">UUIDの生成</translation>
     </message>
@@ -2863,142 +2871,147 @@ Are you sure?</source>
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
         <source>EditWireguard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
         <source>Private Key</source>
         <translation type="unfinished">秘密鍵</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
         <source>Public Key</source>
         <translation type="unfinished">公開鍵</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">事前共有キー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
         <source>Reserved</source>
         <translation type="unfinished">予約済み</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval (秒単位)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">永続的なキープアライブ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;サブネットのカンマ区切りリスト&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
         <source>Local Address</source>
         <translation type="unfinished">ローカルアドレス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119"/>
+        <source>Generate Warp Config</source>
+        <translation type="unfinished">ワープ構成の生成</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156"/>
         <source>Init Packet Junk Size (S1)</source>
         <translation type="unfinished">初期パケットのジャンク サイズ (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166"/>
         <source>Init Packet Magic Header (H1)</source>
         <translation type="unfinished">Init パケット マジック ヘッダー (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182"/>
         <source>Transport Packet Magic Header (H4)</source>
         <translation type="unfinished">トランスポート パケット マジック ヘッダー (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192"/>
         <source>Cookie Reply Packet Junk Size (S3)</source>
         <translation type="unfinished">Cookie 返信パケットのジャンク サイズ (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208"/>
         <source>Signature Packet (I3)</source>
         <translation type="unfinished">署名パケット (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218"/>
         <source>Junk Packet Count (Jc)</source>
         <translation type="unfinished">ジャンクパケット数(Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228"/>
         <source>Response Packet Magic Header (H2)</source>
         <translation type="unfinished">応答パケットのマジックヘッダー (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238"/>
         <source>Signature Packet (I1)</source>
         <translation type="unfinished">署名パケット (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248"/>
         <source>Junk Packet Max Size (Jmax)</source>
         <translation type="unfinished">ジャンクパケットの最大サイズ (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258"/>
         <source>Junk Packet Min Size (Jmin)</source>
         <translation type="unfinished">ジャンクパケットの最小サイズ (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274"/>
         <source>Cookie Reply Packet Magic Header (H3)</source>
         <translation type="unfinished">Cookie 応答パケットのマジック ヘッダー (H3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287"/>
         <source>Transport Packet Junk Size (S4)</source>
         <translation type="unfinished">トランスポートパケットのジャンクサイズ (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303"/>
         <source>Signature Packet (I2)</source>
         <translation type="unfinished">署名パケット (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319"/>
         <source>Response Packet Junk Size (S2)</source>
         <translation type="unfinished">応答パケットのジャンク サイズ (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335"/>
         <source>Signature Packet (I4)</source>
         <translation type="unfinished">署名パケット (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348"/>
         <source>Signature Packet (I5)</source>
         <translation type="unfinished">署名パケット (I5)</translation>
     </message>
@@ -3007,12 +3020,12 @@ Are you sure?</source>
         <translation type="obsolete">労働者</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
         <source>Use System Interface</source>
         <translation type="unfinished">システムインターフェースを使用する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">アムネジアの設定</translation>
     </message>
@@ -3060,7 +3073,7 @@ Are you sure?</source>
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239"/>
         <source>Filter</source>
         <translation type="unfinished">フィルター</translation>
     </message>
@@ -3072,37 +3085,37 @@ Are you sure?</source>
         <translation type="obsolete">サブスクリプションを更新する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
         <source>Update</source>
         <translation type="unfinished">アップデート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
         <source>Edit</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
         <source>Remove</source>
         <translation type="unfinished">取り除く</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Basic</source>
         <translation type="unfinished">基本</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Subscription</source>
         <translation type="unfinished">サブスクリプション</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
         <source>Archive</source>
         <translation type="unfinished">アーカイブ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
         <source>Updated: %1</source>
         <translation type="unfinished">更新日: %1</translation>
     </message>
@@ -3111,12 +3124,12 @@ Are you sure?</source>
         <translation type="obsolete">最終更新日: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Confirmation</source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1を削除しますか?</translation>
     </message>
@@ -3124,26 +3137,26 @@ Are you sure?</source>
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
         <source>Usage Statistics</source>
         <translation type="unfinished">使用統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">交通統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">総プロキシ トラフィック:</translation>
     </message>
@@ -3152,12 +3165,12 @@ Are you sure?</source>
         <translation type="obsolete">テキストラベル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">直接トラフィックの合計:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">セキュリティ統計</translation>
     </message>
@@ -3166,85 +3179,85 @@ Are you sure?</source>
         <translation type="obsolete">プロファイル統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">使用時間：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">最終起動時間:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">初回起動時間:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">開始回数:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">ダウンロード：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">アップロード：</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">プロキシプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">データベース統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">削除されました</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">存在する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">作成されました</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">グループとサブスクリプション</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">ルートプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
         <source>Failed authentications count:</source>
         <translation type="unfinished">失敗した認証数:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">ユーザー数:</translation>
     </message>
@@ -3260,58 +3273,58 @@ Are you sure?</source>
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
         <source>JSON Editor</source>
         <translation type="unfinished">JSONエディター</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
         <source>Format JSON</source>
         <translation type="unfinished">JSON形式</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
         <source>Remove All Comments</source>
         <translation type="unfinished">すべてのコメントを削除</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
         <source>Json Editor</source>
         <translation type="unfinished">Jsonエディター</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
         <source>Structure Preview</source>
         <translation type="unfinished">構造プレビュー</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
         <source>OK</source>
         <translation type="unfinished">わかりました</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
         <source>Json Contains Syntax Errors</source>
         <translation type="unfinished">Json に構文エラーが含まれている</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
         <translation type="unfinished">元の Json には構文エラーが含まれている可能性があります。Json ツリーが無効になっています。</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
         <source>You must correct these errors before continuing.</source>
         <translation type="unfinished">続行する前に、これらのエラーを修正する必要があります。</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
         <source>Syntax Errors</source>
         <translation type="unfinished">構文エラー</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation type="unfinished">続行する前に、JSON エラーを修正するかコメントを削除してください。</translation>
     </message>
@@ -3323,45 +3336,45 @@ Are you sure?</source>
         <translation type="obsolete">ネコボックス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="692" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
         <source>Profiles</source>
         <translation type="unfinished">プロフィール</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">ルーティング</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489"/>
         <source>Update</source>
         <translation type="unfinished">アップデート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
         <source>Tun Mode</source>
         <translation type="unfinished">調整モード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276"/>
         <source>System DNS</source>
         <translation type="unfinished">システムDNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958"/>
         <source>System Proxy</source>
         <translation type="unfinished">システムプロキシ</translation>
     </message>
@@ -3370,98 +3383,98 @@ Are you sure?</source>
         <translation type="obsolete">URLテスト</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
         <source>Type</source>
         <translation type="unfinished">タイプ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
         <source>Address</source>
         <translation type="unfinished">住所</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
         <source>Test Result</source>
         <translation type="unfinished">試験結果</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578"/>
         <source>Traffic</source>
         <translation type="unfinished">渋滞</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483"/>
         <source>Logs</source>
         <translation type="unfinished">ログ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518"/>
         <source>Connections</source>
         <translation type="unfinished">接続</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">宛先 (ドメイン)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">クリックして並べ替えを無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554"/>
         <source>Process</source>
         <translation type="unfinished">プロセス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">クリックしてプロセス別に並べ替えます</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562"/>
         <source>Protocol</source>
         <translation type="unfinished">プロトコル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">クリックしてプロトコル別に並べ替えます</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570"/>
         <source>Outbound</source>
         <translation type="unfinished">アウトバウンド</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">クリックしてアウトバウンド順に並べ替えます</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">クリックしてトラフィックによる並べ替えを切り替えます</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">トラフィックグラフ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="657" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
         <source>Program</source>
         <translation type="unfinished">プログラム</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="681" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
         <source>Preferences</source>
         <translation type="unfinished">設定</translation>
     </message>
@@ -3470,7 +3483,7 @@ Are you sure?</source>
         <translation type="obsolete">サーバ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="706" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
         <source>Share</source>
         <translation type="unfinished">共有</translation>
     </message>
@@ -3479,226 +3492,257 @@ Are you sure?</source>
         <translation type="obsolete">現在のグループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="771" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Test</source>
         <translation type="unfinished">テスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="702" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
         <source>Current Selected</source>
         <translation type="unfinished">現在選択されているもの</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714"/>
         <source>Current Group</source>
         <translation type="unfinished">現在のグループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">情報</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="754" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
         <source>Hidden menu</source>
         <translation type="unfinished">隠しメニュー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
         <source>Routing Menu</source>
         <translation type="unfinished">ルーティングメニュー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="778" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
         <source>Context</source>
         <translation type="unfinished">コンテクスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="782" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">コンテキストプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="806" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
         <source>Exit</source>
         <translation type="unfinished">出口</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="811" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
         <source>Toggle Window</source>
         <translation type="unfinished">ウィンドウを切り替えます</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
         <source>Basic Settings</source>
         <translation type="unfinished">基本設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="821" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
         <source>New profile</source>
         <translation type="unfinished">新しいプロフィール</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
         <source>Groups</source>
         <translation type="unfinished">グループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4327" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4337" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
         <source>Start</source>
         <translation type="unfinished">始める</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
         <source>NekoRay</source>
         <translation type="unfinished">ネコレイ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>Box</source>
         <translation type="unfinished">箱</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343"/>
         <source>Search</source>
         <translation type="unfinished">検索</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4326" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4337" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
         <source>Stop</source>
         <translation type="unfinished">停止</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
         <source>Edit</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874"/>
         <source>Routing Settings</source>
         <translation type="unfinished">ルーティング設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">クリップボードからプロファイルを追加</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
         <source>Delete</source>
         <translation type="unfinished">消去</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
         <source>Debug Info</source>
         <translation type="unfinished">デバッグ情報</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="881" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QRコードとリンク</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="889" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Copy Link</source>
         <translation type="unfinished">リンクをコピー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">テスト結果をクリア</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781"/>
         <source>Export %1 config</source>
         <translation type="unfinished">%1 構成をエクスポート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">トラフィックをリセットする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">QRコードをスキャン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="942" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">システムプロキシを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="950" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
         <source>Disable</source>
         <translation type="unfinished">無効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">重複の削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="963" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
         <source>fake</source>
         <translation type="unfinished">偽物</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="971" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1242" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261"/>
         <source>Move</source>
         <translation type="unfinished">動く</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
         <source>Start with system</source>
         <translation type="unfinished">システムから始める</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
         <source>Remember last profile</source>
         <translation type="unfinished">最後のプロフィールを記憶する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">他のデバイスの接続を許可する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">使用不可を削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
         <source>Full Test</source>
         <translation type="unfinished">完全なテスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">ホットキー設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
         <source>Select All</source>
         <translation type="unfinished">すべて選択</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1301" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <source>Ctrl+Shift+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
+        <source>Full test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <source>Download test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <source>Upload test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <source>Country test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <source>Simple download test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320"/>
         <source>Toggle searchbox</source>
         <translation type="unfinished">検索ボックスを切り替えます</translation>
     </message>
@@ -3707,54 +3751,55 @@ Are you sure?</source>
         <translation type="obsolete">カスタムリンクをコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
         <source>Copy links</source>
         <translation type="unfinished">リンクをコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156"/>
         <source>Url Test</source>
         <translation type="unfinished">URLテスト</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1173" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">ドメインの解決</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Windows の昇格されたタスクを登録する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1268" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1283" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302"/>
         <source>About</source>
         <translation type="unfinished">について</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1273" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
         <source>Statistics</source>
         <translation type="unfinished">統計</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1278" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
         <source>Check for updates</source>
         <translation type="unfinished">アップデートを確認する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1288" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307"/>
         <source>Toggle filter</source>
         <translation type="unfinished">フィルタの切り替え</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1296" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315"/>
         <source>Unselect</source>
         <translation type="unfinished">選択を解除します</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1255" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274"/>
         <source>Information</source>
         <translation type="unfinished">情報</translation>
     </message>
@@ -3767,48 +3812,47 @@ Are you sure?</source>
         <translation type="obsolete">選択したリンクをコピーします</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
         <source>Enable Tun</source>
         <translation type="unfinished">調整を有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1072" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494"/>
         <source>Clone</source>
         <translation type="unfinished">クローン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1080" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
         <source>Update subscription</source>
         <translation type="unfinished">サブスクリプションを更新する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091" />
         <source>Resolve domain</source>
-        <translation type="unfinished">ドメインを解決する</translation>
+        <translation type="obsolete">ドメインを解決する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115"/>
         <source>Tun Settings</source>
         <translation type="unfinished">調整設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1104" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
         <source>Restart Program</source>
         <translation type="unfinished">プログラムを再起動する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">設定フォルダーを開く</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">プロキシの再起動</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151"/>
         <source>Stop Testing</source>
         <translation type="unfinished">テストの停止</translation>
     </message>
@@ -3825,7 +3869,7 @@ Are you sure?</source>
         <translation type="obsolete">選択されたテスト結果をクリア</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178"/>
         <source>Url Test Group</source>
         <translation type="unfinished">URLテストグループ</translation>
     </message>
@@ -3838,7 +3882,7 @@ Are you sure?</source>
         <translation type="obsolete">選択したドメインを解決する</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">無効を削除</translation>
     </message>
@@ -3851,89 +3895,84 @@ Are you sure?</source>
         <translation type="obsolete">オープンマネージャー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1250" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">スピードテスト電流</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Full test Selected</source>
-        <translation type="unfinished">完全なテストが選択されました</translation>
+        <translation type="obsolete">完全なテストが選択されました</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>Copy Nekoray links</source>
         <translation type="unfinished">ネコレイのリンクをコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1197" />
         <source>Download test Selected</source>
-        <translation type="unfinished">ダウンロードテストが選択されました</translation>
+        <translation type="obsolete">ダウンロードテストが選択されました</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1202" />
         <source>Upload test Selected</source>
-        <translation type="unfinished">アップロードテストが選択されました</translation>
+        <translation type="obsolete">アップロードテストが選択されました</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1207" />
         <source>Country test Selected</source>
-        <translation type="unfinished">国別テスト 選択済み</translation>
+        <translation type="obsolete">国別テスト 選択済み</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1212" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished">簡易ダウンロードテスト 選択済み</translation>
+        <translation type="obsolete">簡易ダウンロードテスト 選択済み</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">スピードテストグループ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
         <source>Hide window</source>
         <translation type="unfinished">ウィンドウを隠す</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Add profile from File</source>
         <translation type="unfinished">ファイルからプロファイルを追加</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4356" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370"/>
         <source>Add new Group</source>
         <translation type="unfinished">新しいグループを追加</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1237" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256"/>
         <source>Security Settings</source>
         <translation type="unfinished">セキュリティ設定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
         <source>Unavailable</source>
         <translation type="unfinished">利用不可</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">自動スクロールログ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377"/>
         <source>Select Proxy</source>
         <translation type="unfinished">プロキシの選択</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">受信プロキシの種類:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">ルーティングプロファイルの編集</translation>
     </message>
@@ -3942,25 +3981,25 @@ Are you sure?</source>
         <translation type="obsolete">ルーティングプロファイルの更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128"/>
         <source>Update Response</source>
         <translation type="unfinished">更新応答</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">ルーティング プロファイルは更新されません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">%1 個のルーティング プロファイルが更新されました</translation>
     </message>
@@ -3969,12 +4008,12 @@ Are you sure?</source>
         <translation type="obsolete">ルールセットマップの更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">ルールセットの更新に失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">ルールセットが正常に更新されました</translation>
     </message>
@@ -3983,380 +4022,380 @@ Are you sure?</source>
         <translation type="obsolete">ルールセットキャッシュの更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">無効な JSON 配列</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">指定された入力を有効なルート ルール配列に解析できません:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542"/>
         <source>No Selection</source>
         <translation type="unfinished">選択なし</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
         <source>Select proxy profile to connect</source>
         <translation type="unfinished">接続するプロキシ プロファイルを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">macOSでの使用は許可されていません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">ルーティングプロファイルのインポート</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491"/>
         <source>From clipboard</source>
         <translation type="unfinished">クリップボードから</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495"/>
         <source>From file</source>
         <translation type="unfinished">ファイルから</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">クリップボードからインポートされました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
         <source>Imported from %1</source>
         <translation type="unfinished">%1からインポートされました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">ルーティングプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">ルールセットマップ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">ルールセットキャッシュ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">ルールセットキャッシュが更新されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">ルールセットキャッシュのクリア</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">広告ブロックを有効にする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">設定が変更されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Tun を再起動して有効にします。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4036" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4098" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4151" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420"/>
         <source>Confirmation</source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">設定が変更されました。プロキシを再起動しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173"/>
         <source>Settings changed</source>
         <translation type="unfinished">設定が変更されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">プログラムを再起動して有効にします。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">%1 個のプロファイルをインポートしました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">ユーザーは特権要求なしを選択しました。一部の機能が動作しない可能性があります</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">コアの root 権限を与えてください</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922"/>
         <source>Not Running</source>
         <translation type="unfinished">実行されていません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">グループが大きすぎて並べ替えることができません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">%1 アイテムのクローンを作成します</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">グループが大きすぎて重複を見つけることができません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550"/>
         <source> Confirmation </source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">%1 個のアイテムを削除しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">%1 個のアイテムを削除しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3623" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">%1 個のアイテムをコピーしました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3867" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891"/>
         <source>QR Code not found</source>
         <translation type="unfinished">QRコードが見つかりません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3889" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">画面をキャプチャできません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4037" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">%1 個の利用できないアイテムを削除しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4099" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">%1 無効な項目を削除しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4152" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">ドメイン サーバー アドレスを解決された IP に置き換えますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4324" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338"/>
         <source>Clear</source>
         <translation type="unfinished">クリア</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">選択したグループを削除します</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">選択したグループを編集する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1を削除しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5140" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155"/>
         <source>Cannot start</source>
         <translation type="unfinished">開始できません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">最後のダウンロード リクエストがまだ完了していません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5175" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">更新アセットのダウンロードに失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">プロファイルテストが中止されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] テスト エラー: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">何かが非常に間違っています。件名 ent が見つかりません。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">プロファイル マネージャーのデータが破損しています。もう一度お試しください。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">最後の URL テストが完全に終了しませんでした。お待ちください。問題が解決しない場合は、プログラムを再起動してください。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">テスト構成のビルドに失敗しました:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
         <source>URL test finished!</source>
         <translation type="unfinished">URLテスト終了！</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">テストの停止に失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
         <source>Testing</source>
         <translation type="unfinished">テスト</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">最後の速度テストが完全に終了しませんでした。お待ちください。問題が解決しない場合は、プログラムを再起動してください。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">スピードテスト終了！</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">プロファイル速度テストが中止されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] 速度テスト エラー: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">まずDNSサーバーのハイジャックを有効にする必要があります</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">システムDNSの設定に失敗しました:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">デバイスの誤動作</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">VPN の起動に問題がある場合は、ここでコア プロセスを強制的にリセットし、プロファイルの起動を再度試みることができます。エラーは %1 です</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
         <source>Reset</source>
         <translation type="unfinished">リセット</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">別のプロファイルが開始されています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">別のプロファイルが停止しています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">長時間応答がない場合は、ソフトウェアを再起動することをお勧めします。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">プロファイル %1 を開始します</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">プロファイル %1 の開始に失敗しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
         <source>Stop return error</source>
         <translation type="unfinished">ストップリターンエラー</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">プロファイル %1 を停止しています</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">停止に失敗しました。プログラムを再起動してください。</translation>
     </message>
@@ -4368,27 +4407,27 @@ Are you sure?</source>
         <translation type="obsolete">無効</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818"/>
         <source>Type</source>
         <translation type="unfinished">タイプ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820"/>
         <source>Address</source>
         <translation type="unfinished">住所</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824"/>
         <source>Test Result</source>
         <translation type="unfinished">試験結果</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826"/>
         <source>Traffic</source>
         <translation type="unfinished">渋滞</translation>
     </message>
@@ -4396,22 +4435,22 @@ Are you sure?</source>
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">ユーザー名</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
         <translation type="unfinished">新しいパスワード</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
         <translation type="unfinished">パスワードを認証する</translation>
     </message>
@@ -4419,12 +4458,12 @@ Are you sure?</source>
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">%1を削除しますか?</translation>
     </message>
@@ -4432,7 +4471,7 @@ Are you sure?</source>
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
         <source>Security Settings</source>
         <translation type="unfinished">セキュリティ設定</translation>
     </message>
@@ -4440,20 +4479,20 @@ Are you sure?</source>
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="469" />
+        <location filename="../../src/gharqad/main.cpp" line="469"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
         <source>Failed to register %1. Error: %2</source>
         <translation type="unfinished">%1の登録に失敗しました。エラー: %2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
         <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished">%1 の登録を解除できませんでした。エラー: %2</translation>
     </message>
@@ -4465,48 +4504,62 @@ Are you sure?</source>
         <translation type="obsolete">Tun モードはカスタム構成では使用できません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">サブスクリプションをリクエストしています: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1870" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished">サブスクリプション %1 の要求エラー: %2</translation>
+        <translation type="obsolete">サブスクリプション %1 の要求エラー: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1894" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872"/>
+        <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873"/>
+        <source>Request error is: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">サブスクリプション プロファイルのタイトル: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1903" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">購読リクエストが終了しました: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1928" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">サーバーをクリアしています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1954" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">サブスクリプション データを処理しています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1968" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- %1 プロキシを削除</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1970" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">プロセスが完了しました。適用しています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1984" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- %1 プロキシを追加しました</translation>
@@ -4526,13 +4579,13 @@ Deleted %3 Profiles:
         <translation type="obsolete">何もない</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1986" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991"/>
         <source>Change of %1:</source>
         <translation type="unfinished">%1の変更:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055"/>
         <source>Default</source>
         <translation type="unfinished">デフォルト</translation>
     </message>
@@ -4541,49 +4594,49 @@ Deleted %3 Profiles:
         <translation type="obsolete">ファイルを開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214" />
+        <location filename="../../src/gharqad/main.cpp" line="214"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">チェーンプロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232" />
+        <location filename="../../src/gharqad/main.cpp" line="232"/>
         <source>Custom</source>
         <translation type="unfinished">カスタム</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="233" />
+        <location filename="../../src/gharqad/main.cpp" line="233"/>
         <source>Extra Core</source>
         <translation type="unfinished">エクストラコア</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131"/>
         <source>Select</source>
         <translation type="unfinished">選択</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">プロキシ: %1
 直接: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">コアが終了しました。クリーンアップしています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">コアが頻繁に終了するため、このプロファイルの自動再起動を停止します。</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">コアを再起動しています...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="378" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="378"/>
         <source>System</source>
         <translation type="unfinished">システム</translation>
     </message>
@@ -4598,7 +4651,7 @@ How to update?</source>
 アップデート方法は？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">新しいサブスクリプション グループを作成する</translation>
     </message>
@@ -4607,49 +4660,49 @@ How to update?</source>
         <translation type="obsolete">このグループにプロフィールを追加する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>Subscription URL Detected</source>
         <translation>サブスクリプションURLを検出しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
         <source>How would you like to import this subscription?</source>
         <translation>このサブスクリプションをどうインポートしますか？</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
         <source>Update existing group</source>
         <translation>既存のグループを更新</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
         <source>Import as proxy links</source>
         <translation>プロキシリンクとしてインポート</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
         <source>Group name:</source>
         <translation>グループ名：</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
         <source>Auto-detect from subscription</source>
         <translation>サブスクリプションから自動検出</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
         <source>Import</source>
         <translation>インポート</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
         <source>Decrypted happ:// link</source>
         <translation>happ://リンクを復号しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
         <source>Failed to decrypt happ:// link</source>
         <translation>happ://リンクの復号に失敗しました</translation>
     </message>
@@ -4666,45 +4719,45 @@ How to update?</source>
         <translation type="obsolete">グループ名</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">使用済み: %1 残り: %2 期限切れ: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
         <source>Download Profiles</source>
         <translation type="unfinished">プロファイルをダウンロードする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">プロファイル要求エラー: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">%1 個の重複を削除しました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">%1 を削除しました 無効です</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">削除済み %1 は使用できません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">ルールセットを確認してください: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">ルールセット リストの要求エラー: %1</translation>
     </message>
@@ -4713,7 +4766,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">IP アドレス: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">受信IP: %1</translation>
     </message>
@@ -4726,69 +4779,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">オフ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">受信: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">インバウンド: オフ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">プロファイルをグループに移動する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3645" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669"/>
         <source>Config copied</source>
         <translation type="unfinished">設定がコピーされました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3657" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
         <source>Copy core config</source>
         <translation type="unfinished">コア構成をコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3659" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683"/>
         <source>Copy test config</source>
         <translation type="unfinished">テスト構成をコピーする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3660" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">わかりました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5040" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5050" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5094" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5122" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5131" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5166" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181"/>
         <source>Update</source>
         <translation type="unfinished">アップデート</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5041" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056"/>
         <source>Not official support platform</source>
         <translation type="unfinished">公式サポートプラットフォームではありません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5051" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">更新リクエストエラー: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5094" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
         <source>No update</source>
         <translation type="unfinished">更新なし</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5123" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4797,42 +4850,42 @@ Release note:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141"/>
         <source>Close</source>
         <translation type="unfinished">近い</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5128" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143"/>
         <source>Open in browser</source>
         <translation type="unfinished">ブラウザで開く</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5167" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">アップデートの準備ができました。再起動してインストールしますか?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">アクセスが拒否されました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
         <source>Select a Folder</source>
         <translation type="unfinished">フォルダーを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
         <source>Application Rules</source>
         <translation type="unfinished">応募規定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">CIDR を除外する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
@@ -4852,77 +4905,77 @@ Release note:
         <translation type="obsolete">エクストラコア</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">プロキシ: ⚡%1 📦%3
 直接: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505"/>
         <source>Invalid</source>
         <translation type="unfinished">無効</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="51" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48"/>
         <source>KCP Settings</source>
         <translation type="unfinished">KCP設定</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75"/>
         <source>TTI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
         <source>Uplink Capacity</source>
         <translation type="unfinished">アップリンク容量</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
         <source>Downlink Capacity</source>
         <translation type="unfinished">ダウンリンク容量</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
         <source>Congestion</source>
         <translation type="unfinished">渋滞</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
         <source>Read Buffer Size</source>
         <translation type="unfinished">読み取りバッファサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
         <source>Write Buffer Size</source>
         <translation type="unfinished">書き込みバッファサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
         <source>Header Type</source>
         <translation type="unfinished">ヘッダーの種類</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="85" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
         <source>Seed</source>
         <translation type="unfinished">シード</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">無効な応答を受信しました: %1
 リクエストのペイロード: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
         <source>Imported</source>
         <translation type="unfinished">輸入品</translation>
     </message>
@@ -4930,92 +4983,92 @@ Request payload was: %2</source>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172" />
+        <location filename="../../src/gharqad/main.cpp" line="172"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173" />
+        <location filename="../../src/gharqad/main.cpp" line="173"/>
         <source>Apply</source>
         <translation type="unfinished">適用する</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174" />
+        <location filename="../../src/gharqad/main.cpp" line="174"/>
         <source>Yes</source>
         <translation type="unfinished">はい</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175" />
+        <location filename="../../src/gharqad/main.cpp" line="175"/>
         <source>No</source>
         <translation type="unfinished">いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176" />
+        <location filename="../../src/gharqad/main.cpp" line="176"/>
         <source>OK</source>
         <translation type="unfinished">わかりました</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177" />
+        <location filename="../../src/gharqad/main.cpp" line="177"/>
         <source>Defaults</source>
         <translation type="unfinished">デフォルト</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178" />
+        <location filename="../../src/gharqad/main.cpp" line="178"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">デフォルトに戻す</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179" />
+        <location filename="../../src/gharqad/main.cpp" line="179"/>
         <source>Discard</source>
         <translation type="unfinished">破棄</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181" />
+        <location filename="../../src/gharqad/main.cpp" line="181"/>
         <source>Undo</source>
         <translation type="unfinished">元に戻す</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182" />
+        <location filename="../../src/gharqad/main.cpp" line="182"/>
         <source>Redo</source>
         <translation type="unfinished">やり直し</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183" />
+        <location filename="../../src/gharqad/main.cpp" line="183"/>
         <source>Cut</source>
         <translation type="unfinished">カット</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184" />
+        <location filename="../../src/gharqad/main.cpp" line="184"/>
         <source>Copy</source>
         <translation type="unfinished">コピー</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185" />
+        <location filename="../../src/gharqad/main.cpp" line="185"/>
         <source>Paste</source>
         <translation type="unfinished">ペースト</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186" />
+        <location filename="../../src/gharqad/main.cpp" line="186"/>
         <source>Delete</source>
         <translation type="unfinished">消去</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187" />
+        <location filename="../../src/gharqad/main.cpp" line="187"/>
         <source>Select All</source>
         <translation type="unfinished">すべて選択</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188" />
+        <location filename="../../src/gharqad/main.cpp" line="188"/>
         <source>Stop</source>
         <translation type="unfinished">停止</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189" />
+        <location filename="../../src/gharqad/main.cpp" line="189"/>
         <source>Clear</source>
         <translation type="unfinished">クリア</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190" />
+        <location filename="../../src/gharqad/main.cpp" line="190"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">リンクの場所をコピー</translation>
     </message>
@@ -5023,7 +5076,7 @@ Request payload was: %2</source>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
         <source>You can not input space characters here.</source>
         <translation type="unfinished">ここではスペース文字は入力できません。</translation>
     </message>
@@ -5031,86 +5084,86 @@ Request payload was: %2</source>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
         <source>Route Profile</source>
         <translation type="unfinished">ルートプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
         <source>General</source>
         <translation type="unfinished">一般的な</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125"/>
         <source>Basic routes</source>
         <translation type="unfinished">基本ルート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163"/>
         <source>IP</source>
         <translation type="unfinished">IP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182"/>
         <source>Domain</source>
         <translation type="unfinished">ドメイン</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201"/>
         <source>Process</source>
         <translation type="unfinished">プロセス</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224"/>
         <source>Preset</source>
         <translation type="unfinished">プリセット</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231"/>
         <source>Custom routes</source>
         <translation type="unfinished">カスタムルート</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251"/>
         <source>Default outbound</source>
         <translation type="unfinished">デフォルトのアウトバウンド</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351"/>
         <source>Name</source>
         <translation type="unfinished">名前</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259"/>
         <source>Proxy</source>
         <translation type="unfinished">プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264"/>
         <source>Direct</source>
         <translation type="unfinished">直接</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269"/>
         <source>Block</source>
         <translation type="unfinished">ブロック</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
         <source>Update url</source>
         <translation type="unfinished">URLを更新</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104"/>
         <source>Skip update</source>
         <translation type="unfinished">更新をスキップする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111"/>
         <source>Update manually</source>
         <translation type="unfinished">手動で更新する</translation>
     </message>
@@ -5119,115 +5172,115 @@ Request payload was: %2</source>
         <translation type="obsolete">基本</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280"/>
         <source>Advanced</source>
         <translation type="unfinished">高度な</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289"/>
         <source>Import JSON</source>
         <translation type="unfinished">JSONをインポートする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299"/>
         <source>Rules</source>
         <translation type="unfinished">ルール</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311"/>
         <source>New</source>
         <translation type="unfinished">新しい</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318"/>
         <source>Move Up</source>
         <translation type="unfinished">上に移動</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325"/>
         <source>Move Down</source>
         <translation type="unfinished">下に移動</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332"/>
         <source>Delete</source>
         <translation type="unfinished">消去</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
         <source>Rule Attributes</source>
         <translation type="unfinished">ルールの属性</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361"/>
         <source>Attribute</source>
         <translation type="unfinished">属性</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
         <source>Name_Placeholder</source>
         <translation type="unfinished">名前_プレースホルダー</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406"/>
         <source>Notes</source>
         <translation type="unfinished">注意事項</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334"/>
         <source>Bypass LAN / private IPs (Direct)</source>
         <translation type="unfinished">LAN / プライベート IP をバイパス (直接)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335"/>
         <source>Clear all basic routes</source>
         <translation type="unfinished">基本ルートをすべてクリアする</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
         <source>Invalid rules</source>
         <translation type="unfinished">無効なルール</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">いくつかのルールを追加できませんでした:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">無効な JSON 配列</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">指定された入力を有効なルート ルール配列に解析できません:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
         <source>Invalid operation</source>
         <translation type="unfinished">無効な操作</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">空の名前ではルート プロファイルを作成できません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">空のルートプロファイル</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">プロファイルに有効なルールがありません</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">いくつかのルールを追加できませんでした。保存する前に修正してください:</translation>
@@ -5236,42 +5289,42 @@ Request payload was: %2</source>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
         <translation type="unfinished">セキュリティ設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
         <source>Lock Actions</source>
         <translation type="unfinished">ロックアクション</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
         <source>Lock Settings</source>
         <translation type="unfinished">ロック設定</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
         <source>Lock Startup</source>
         <translation type="unfinished">起動をロックする</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
         <source>Delete Users</source>
         <translation type="unfinished">ユーザーの削除</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
         <source>Edit User Roles</source>
         <translation type="unfinished">ユーザー役割の編集</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
         <source>Change UI Password</source>
         <translation type="unfinished">UIパスワードの変更</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">プロキシ認証情報の設定</translation>
     </message>
@@ -5279,12 +5332,12 @@ Request payload was: %2</source>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
         <source>Exiting %1</source>
         <translation type="unfinished">%1を終了します</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
         <source>Starting %1</source>
         <translation type="unfinished">%1 を開始します</translation>
     </message>
@@ -5292,14 +5345,14 @@ Request payload was: %2</source>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
         <source>Proxy</source>
         <translation type="unfinished">プロキシ</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
         <source>Direct</source>
         <translation type="unfinished">直接</translation>
     </message>
@@ -5316,13 +5369,13 @@ Request payload was: %2</source>
         <translation type="obsolete">指定された入力を有効なルート ルール配列に解析できません:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484"/>
         <source>Fetching information</source>
         <translation type="unfinished">情報の取得</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661"/>
         <source>Download Profiles</source>
         <translation type="unfinished">プロファイルをダウンロードする</translation>
     </message>
@@ -5330,22 +5383,22 @@ Request payload was: %2</source>
 <context>
     <name>StartStopButton</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
         <source>Start</source>
         <translation type="unfinished">始める</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
         <source>Connecting…</source>
         <translation type="unfinished">接続中…</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
         <source>Stop</source>
         <translation type="unfinished">停止</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
         <source>Stopping…</source>
         <translation type="unfinished">停止中…</translation>
     </message>
@@ -5353,7 +5406,7 @@ Request payload was: %2</source>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">形状</translation>
     </message>

@@ -1,9 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="yo_NG">
 <context>
     <name>AboutMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/about.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/about.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
@@ -11,37 +12,37 @@
 <context>
     <name>ConfirmForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="37"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78"/>
         <source>Remember</source>
         <translation type="unfinished">Ranti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105"/>
         <source>seconds</source>
         <translation type="unfinished">iṣẹju-aaya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="110"/>
         <source>minutes</source>
         <translation type="unfinished">iseju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115" />
+        <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="115"/>
         <source>hours</source>
         <translation type="unfinished">wakati</translation>
     </message>
@@ -49,9 +50,9 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/resource_manager.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Custom Headers</source>
@@ -93,22 +94,22 @@
 <context>
     <name>DialogAppSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="38"/>
         <source>Proxy</source>
         <translation type="unfinished">Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="71"/>
         <source>Direct</source>
         <translation type="unfinished">Taara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104"/>
         <source>Block</source>
         <translation type="unfinished">Dina</translation>
     </message>
@@ -116,18 +117,18 @@
 <context>
     <name>DialogBasicSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="52"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Awọn Eto ipilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46"/>
         <source>Common</source>
         <translation type="unfinished">Wọpọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -135,179 +136,179 @@
 + HTTP aṣoju&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="103"/>
         <source>Listen Port</source>
         <translation type="unfinished">Gbo Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="113"/>
         <source>Edit</source>
         <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="120"/>
         <source>Custom Inbound</source>
         <translation type="unfinished">Aṣa Inbound</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects a random available port on every run&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Yan ibudo laileto ti o wa lori gbogbo ṣiṣe&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="136"/>
         <source>Random port</source>
         <translation type="unfinished">ibudo ID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="143"/>
         <source>Proxy Format</source>
         <translation type="unfinished">Aṣoju kika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="153"/>
         <source>Listen Address</source>
         <translation type="unfinished">Adirẹsi Gbọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="176"/>
         <source>Network Settings</source>
         <translation type="unfinished">Eto nẹtiwọki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264"/>
         <source>Use proxy when activated</source>
         <translation type="unfinished">Lo aṣoju nigba ti mu ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285"/>
         <source>URL Test after profile start</source>
         <translation type="unfinished">Idanwo URL lẹhin ibẹrẹ profaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271"/>
         <source>Request update at startup</source>
         <translation type="unfinished">Beere imudojuiwọn ni ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278"/>
         <source>Ignore TLS errors</source>
         <translation type="unfinished">Foju awọn aṣiṣe TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="298"/>
         <source>Test Settings</source>
         <translation type="unfinished">Idanwo Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="325"/>
         <source>Simple Download URL</source>
         <translation type="unfinished">Rọrun Gbigba URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336"/>
         <source>Download + Upload</source>
         <translation type="unfinished">Ṣe igbasilẹ + Ṣe igbasilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="341"/>
         <source>Only Download</source>
         <translation type="unfinished">Gbigba lati ayelujara nikan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="346"/>
         <source>Only Upload</source>
         <translation type="unfinished">Gbejade nikan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351"/>
         <source>Simple Download</source>
         <translation type="unfinished">Gbigbasilẹ ti o rọrun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356"/>
         <source>Only Country</source>
         <translation type="unfinished">Orilẹ-ede nikan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367"/>
         <source>Latency Test URL</source>
         <translation type="unfinished">URL Idanwo Lairi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377"/>
         <source>Speedtest mode</source>
         <translation type="unfinished">Ipo idanwo iyara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387"/>
         <source>Concurrent</source>
         <translation type="unfinished">Ni igbakanna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="397"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timeout in milliseconds&lt;br/&gt;applies to all tests individually&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;akoko ipari ni milliseconds&lt;br/&gt;kan si gbogbo awọn idanwo ni ẹyọkan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="235"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="400"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="413"/>
         <source>Timeout</source>
         <translation type="unfinished">Duro na</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212"/>
         <source>Download Retries</source>
         <translation type="unfinished">Ṣe igbasilẹ Awọn igbiyanju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aago fun URLtest ni ms&lt;br/&gt;Akiyesi pe awọn asopọ muxed gba akoko pipẹ pupọ fun ibeere akọkọ wọn, ati ṣeto iye yii kere ju yoo fa idanwo naa lati jabo eke pe atunto ko ṣiṣẹ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="457"/>
         <source>Style</source>
         <translation type="unfinished">Ara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="468"/>
         <source>Font</source>
         <translation type="unfinished">Font</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="481"/>
         <source>Font Size</source>
         <translation type="unfinished">Iwon Font</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="500"/>
         <source>Connection statistics</source>
         <translation type="unfinished">Awọn iṣiro asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="513"/>
         <source>Hide dashboard at startup</source>
         <translation type="unfinished">Tọju dasibodu ni ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527"/>
         <source>Show System DNS option</source>
         <translation type="unfinished">Ṣe afihan aṣayan DNS System</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534"/>
         <source>Show profile IDs</source>
         <translation type="unfinished">Ṣe afihan awọn ID profaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="551"/>
         <source>Disable tray</source>
         <translation type="unfinished">Pa atẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558"/>
         <source>Set text under menu icons</source>
         <translation type="unfinished">Ṣeto ọrọ labẹ awọn aami akojọ aṣayan</translation>
     </message>
@@ -316,73 +317,73 @@
         <translation type="obsolete">Tọju ni ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565"/>
         <source>Manually column width</source>
         <translation type="unfinished">Iwọn ọwọn pẹlu ọwọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687"/>
         <source>Max log lines</source>
         <translation type="unfinished">Max log ila</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="726"/>
         <source>Theme</source>
         <translation type="unfinished">Akori</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="764"/>
         <source>System</source>
         <translation type="unfinished">Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="757"/>
         <source>Language</source>
         <translation type="unfinished">Ede</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777"/>
         <source>Icon</source>
         <translation type="unfinished">Aami</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784"/>
         <source>Emoji Font</source>
         <translation type="unfinished">Emoji Font</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="804"/>
         <source>Subscription</source>
         <translation type="unfinished">Ṣiṣe alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841"/>
         <source>Interval:</source>
         <translation type="unfinished">Àárín:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="873"/>
         <source>Enable automatic update</source>
         <translation type="unfinished">Mu imudojuiwọn aifọwọyi ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921"/>
         <source>Clear servers before update</source>
         <translation type="unfinished">Ko awọn olupin kuro ṣaaju imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823"/>
         <source>URL Test after update</source>
         <translation type="unfinished">Idanwo URL lẹhin imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1073"/>
         <source>Enable</source>
         <translation type="unfinished">Mu ṣiṣẹ</translation>
     </message>
@@ -391,27 +392,27 @@
         <translation type="obsolete">Àárín (iṣẹju, aiṣedeede ti o ba kere ju 30)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Yọ Awọn ẹda-iwe kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=aṣa_iye,os=aṣa_os,osVersion=ẹya_aṣa, awoṣe=awoṣe_aṣa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887"/>
         <source>User Agent</source>
         <translation type="unfinished">Olumulo Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="897"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Model=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;HWID=%1&lt;/p&gt;&lt;p&gt;OS=%2&lt;/p&gt;&lt;p&gt;OS Version=%3&lt;/p&gt;&lt;p&gt;Awoṣe=%4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Firanṣẹ Eto paramita</translation>
     </message>
@@ -420,32 +421,32 @@
         <translation type="obsolete">Imudojuiwọn aifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Leave empty to use default values. Only specify the parameters you want to override.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Iyipada: hwid=value,os=value,osVersion=value,model=value&lt;/p&gt;&lt;p&gt;Fi silẹ ni ofo lati lo awọn iye aiyipada.Nikan pato awọn paramita ti o fẹ lati fagilee.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813"/>
         <source>Custom System Parameters (optional)</source>
         <translation type="unfinished">Awọn paramita Eto Aṣa (aṣayan)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Yọ aiṣedeede kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Yọ Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="929"/>
         <source>Core</source>
         <translation type="unfinished">Koju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="974"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
@@ -453,105 +454,105 @@
 Ṣe ilọsiwaju Ping ati Iṣe&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="979"/>
         <source>Disable Traffic Stats</source>
         <translation type="unfinished">Pa Traffic iṣiro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986"/>
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
         <translation type="unfinished">Lo Unix Domain Socket fun ibaraẹnisọrọ laarin nekobox ati nekobox_core</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989"/>
         <source>Use UDS for IPC</source>
         <translation type="unfinished">Lo UDS fun IPC</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029"/>
         <source>Multiplex (mux)</source>
         <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039"/>
         <source>Loglevel</source>
         <translation type="unfinished">Loglevel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003"/>
         <source>concurrency</source>
         <translation type="unfinished">concurrency</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520"/>
         <source>Hide window at startup</source>
         <translation type="unfinished">Tọju window ni ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572"/>
         <source>Show test button</source>
         <translation type="unfinished">Ṣe afihan bọtini idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579"/>
         <source>Show start/stop button</source>
         <translation type="unfinished">Ṣe afihan ibẹrẹ/bọtini iduro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592"/>
         <source>Enable indicator borders</source>
         <translation type="unfinished">Mu awọn aala atọka ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632"/>
         <source>Radius</source>
         <translation type="unfinished">rediosi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013"/>
         <source>Padding</source>
         <translation type="unfinished">Fifẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1020"/>
         <source>Default On</source>
         <translation type="unfinished">Aiyipada Tan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1052"/>
         <source>Core Options</source>
         <translation type="unfinished">Awọn aṣayan mojuto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
-                                            sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                            sing-box&apos;s built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Eto fun awọn
 Onibara NTP ti a ṣe sinu apoti orin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1067"/>
         <source>NTP Settings</source>
         <translation type="unfinished">Awọn Eto NTP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1082"/>
         <source>server</source>
         <translation type="unfinished">olupin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1092"/>
         <source>Port</source>
         <translation type="unfinished">Ibudo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1109"/>
         <source>sync interval</source>
         <translation type="unfinished">amuṣiṣẹpọ aarin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
@@ -559,22 +560,22 @@ Onibara NTP ti a ṣe sinu apoti orin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</trans
 iseju&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146"/>
         <source>Security</source>
         <translation type="unfinished">Aabo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186"/>
         <source>Disable Privilege request</source>
         <translation type="unfinished">Pa ìbéèrè Anfaani kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220"/>
         <source>Skip TLS certificate authentication</source>
         <translation type="unfinished">Rekọja ijẹrisi ijẹrisi TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227"/>
         <source>Use Mozilla Certificate Store</source>
         <translation type="unfinished">Lo Ile Itaja Iwe-ẹri Mozilla</translation>
     </message>
@@ -583,17 +584,17 @@ iseju&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <translation type="obsolete">Rekọja ijẹrisi ijẹrisi TLS nipasẹ aiyipada (aayeInsecure)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1270"/>
         <source>Default uTLS Fingerprint</source>
         <translation type="unfinished">Ika ika uTLS aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not attempt to start as Admin unless explicitly requested&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Maṣe gbiyanju lati bẹrẹ bi Abojuto ayafi ti o ba beere ni gbangba &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1179"/>
         <source>Always Start as Standard User</source>
         <translation type="unfinished">Bẹrẹ Nigbagbogbo bi Olumulo Didara</translation>
     </message>
@@ -612,7 +613,7 @@ INI — ibẹrẹ awọn ọdun 1980 — ọna kika atunto ọrọ pẹtẹlẹ 
 alakomeji - 2026 - ọna kika awọn iye-iye lainidii fun awọn eto NekoBox ti a lo gẹgẹbi awọn iye RocksDB tabi awọn faili adaduro - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366"/>
         <source>leveldb — 2011 — embedded persistent LSM-tree key–value store — Google
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
@@ -623,143 +624,143 @@ INI — ibẹrẹ awọn ọdun 1980 — ọna kika atunto ọrọ pẹtẹlẹ 
 alakomeji - 2026 - ọna kika awọn iye-iye lainidii fun awọn eto NekoBox ti a lo bi awọn iye leveldb tabi awọn faili adaduro - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396"/>
         <source>Ask for deleting profile</source>
         <translation type="unfinished">Beere fun piparẹ profaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416"/>
         <source>Auto-Testing</source>
         <translation type="unfinished">Idanwo Aifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422"/>
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
         <translation type="unfinished">Ṣe idanwo awọn aṣoju aifọwọyi ni abẹlẹ ati ṣetọju adagun ti awọn aṣoju iṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1425"/>
         <source>Enable Auto-Testing</source>
         <translation type="unfinished">Mu Idanwo Aifọwọyi ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432"/>
         <source>Test Interval (seconds)</source>
         <translation type="unfinished">Aarin Idanwo (aaya)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1439"/>
         <source>How often to run the test cycle</source>
         <translation type="unfinished">Igba melo ni lati ṣiṣẹ iyipo idanwo naa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1455"/>
         <source>Proxies Per Cycle</source>
         <translation type="unfinished">Awọn aṣoju fun Ayika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1462"/>
         <source>Number of proxies to test in each cycle</source>
         <translation type="unfinished">Nọmba awọn aṣoju lati ṣe idanwo ni akoko kọọkan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1478"/>
         <source>Working Pool Size</source>
         <translation type="unfinished">Ṣiṣẹ Pool Iwon</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1485"/>
         <source>Maximum number of verified working proxies to maintain</source>
         <translation type="unfinished">Nọmba ti o pọ julọ ti awọn aṣoju iṣẹ ṣiṣe ti a fọwọsi lati ṣetọju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1501"/>
         <source>Latency Threshold (ms)</source>
         <translation type="unfinished">Ipele Iduro (ms)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1508"/>
         <source>Maximum latency to consider a proxy as working</source>
         <translation type="unfinished">Lairi to pọju lati gbero aṣoju kan bi o ti n ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1527"/>
         <source>Failure Retry Count</source>
         <translation type="unfinished">Ikuna Tun gbiyanju Iṣiro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1534"/>
         <source>Number of retry attempts before considering a proxy as failed</source>
         <translation type="unfinished">Nọmba awọn igbiyanju igbiyanju ṣaaju ki o to gbero aṣoju kan bi kuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550"/>
         <source>Test Target URL</source>
         <translation type="unfinished">Idanwo Àkọlé URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557"/>
         <source>URL to test proxies against</source>
         <translation type="unfinished">URL lati ṣe idanwo awọn aṣoju lodi si</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1560"/>
         <source>http://cp.cloudflare.com/</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1567"/>
         <source>Automatically switch to another working proxy when TUN mode proxy fails</source>
         <translation type="unfinished">Yipada laifọwọyi si aṣoju iṣẹ miiran nigbati aṣoju ipo TUN kuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1570"/>
         <source>Enable TUN Failover</source>
         <translation type="unfinished">Mu TUN Ikuna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1578"/>
         <source>Startup</source>
         <translation type="unfinished">Ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642"/>
         <source>Geometry</source>
         <translation type="unfinished">Geometry</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671"/>
         <source>Autosave geometry</source>
         <translation type="unfinished">Ṣafipamọ geometry laifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678"/>
         <source>Autosave position</source>
         <translation type="unfinished">Fi ipo pamọ laifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698"/>
         <source>Apply now</source>
         <translation type="unfinished">Waye ni bayi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="616"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1772"/>
         <source>Width</source>
         <translation type="unfinished">Ìbú</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859"/>
         <source>X</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804"/>
         <source>Y</source>
         <translation type="unfinished">Y</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359"/>
         <source>Configs format</source>
         <translation type="unfinished">Awọn atunto kika</translation>
     </message>
@@ -774,64 +775,64 @@ INI — ibẹrẹ awọn ọdun 1980 — ọna kika atunto ọrọ pẹtẹlẹ 
 alakomeji - 2026 - ọna kika awọn iye-iye lainidii fun awọn eto NekoBox ti a lo gẹgẹbi awọn iye LMDB tabi awọn faili adaduro - qr243vbi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1872"/>
         <source>Height</source>
         <translation type="unfinished">Giga</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969"/>
         <source>Core Executable Path</source>
         <translation type="unfinished">Mojuto Executable Ona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1998"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2187"/>
         <source>Use default</source>
         <translation type="unfinished">Lo aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005"/>
         <source>Remote Control</source>
         <translation type="unfinished">Isakoṣo latọna jijin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2220"/>
         <source>Select</source>
         <translation type="unfinished">Yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158"/>
         <source>Resources Directory</source>
         <translation type="unfinished">Resources Directory</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194" />
+        <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2194"/>
         <source>Resource Manager</source>
         <translation type="unfinished">Awọn oluşewadi Manager</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229"/>
         <source>Proxy type</source>
         <translation type="unfinished">Aṣoju iru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="231"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264"/>
         <source>Name of program</source>
         <translation type="unfinished">Orukọ eto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563"/>
         <source>Security Warning</source>
         <translation type="unfinished">Aabo Ikilọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="564"/>
         <source>Disabling TLS certificate verification exposes you to man-in-the-middle attacks.
 
 An attacker on your network can silently replace subscription content with a malicious proxy configuration and intercept your traffic.
@@ -848,12 +849,12 @@ Mu eyi ṣiṣẹ nikan ti o ba gbẹkẹle gbogbo nẹtiwọọki ni kikun laar
 Ṣe o da ọ loju pe o fẹ mu ijẹrisi TLS kuro?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="585"/>
         <source>Privacy Warning</source>
         <translation type="unfinished">Ìkìlọ Ìpamọ́</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="586"/>
         <source>Enabling HWID sending will attach the following device identifiers to every subscription request:
 
   • Hardware ID (machine serial / machine-id)
@@ -881,42 +882,42 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogEditGroup</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="20"/>
         <source>Edit Group</source>
         <translation type="unfinished">Ẹgbẹ Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="36"/>
         <source>Common</source>
         <translation type="unfinished">Wọpọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108"/>
         <source>Url</source>
         <translation type="unfinished">Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123"/>
         <source>Paste URL</source>
         <translation type="unfinished">Lẹẹmọ URL</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155"/>
         <source>Type</source>
         <translation type="unfinished">Iru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="163"/>
         <source>Basic</source>
         <translation type="unfinished">Ipilẹṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168"/>
         <source>Subscription</source>
         <translation type="unfinished">Ṣiṣe alabapin</translation>
     </message>
@@ -925,58 +926,58 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
         <translation type="obsolete">Iwọn ọwọn pẹlu ọwọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202"/>
         <source>Archive</source>
         <translation type="unfinished">Ifipamọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="215"/>
         <source>Autoupdate</source>
         <translation type="unfinished">Imudojuiwọn laifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222"/>
         <source>Extra</source>
         <translation type="unfinished">Afikun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235"/>
         <source>Proxy</source>
         <translation type="unfinished">Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274"/>
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301"/>
         <source>None</source>
         <translation type="unfinished">Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="281"/>
         <source>Front Proxy</source>
         <translation type="unfinished">Aṣoju iwaju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="288"/>
         <source>Landing Proxy</source>
         <translation type="unfinished">Aṣoju ibalẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="312"/>
         <source>Share</source>
         <translation type="unfinished">Pinpin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318"/>
         <source>Copy profile share links</source>
         <translation type="unfinished">Daakọ awọn ọna asopọ pinpin profaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325"/>
         <source>Copy profile share links (Custom Links)</source>
         <translation type="unfinished">Daakọ awọn ọna asopọ pinpin profaili (Awọn ọna asopọ Aṣa)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333"/>
         <source>Notes</source>
         <translation type="unfinished">Awọn akọsilẹ</translation>
     </message>
@@ -985,22 +986,22 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
         <translation type="obsolete">Foju imudojuiwọn laifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112"/>
         <source>Will use profile-title from subscription if empty</source>
         <translation type="unfinished">Yoo lo akọle profaili lati ṣiṣe alabapin ti o ba ṣofo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176"/>
         <source>Copied</source>
         <translation type="unfinished">Ti daakọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Warning</source>
         <translation type="unfinished">Ikilo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588"/>
         <source>Please input URL</source>
         <translation type="unfinished">Jọwọ tẹ URL sii</translation>
     </message>
@@ -1008,395 +1009,395 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogEditProfile</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797" />
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="26"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="797"/>
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="26"/>
         <source>Edit</source>
         <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="56"/>
         <source>Common</source>
         <translation type="unfinished">Wọpọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="73"/>
         <source>Type</source>
         <translation type="unfinished">Iru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="80"/>
         <source>Port</source>
         <translation type="unfinished">Ibudo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="94"/>
         <source>Address</source>
         <translation type="unfinished">Adirẹsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="87"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149"/>
         <source>Settings</source>
         <translation type="unfinished">Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="160"/>
         <source>The underlying transport method. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Awọn abele gbigbe ọna.O gbọdọ wa ni ibamu pẹlu olupin, bibẹẹkọ, asopọ ko le fi idi mulẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104"/>
         <source>Network</source>
         <translation type="unfinished">Nẹtiwọọki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163"/>
         <source>Transport</source>
         <translation type="unfinished">Gbigbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="180"/>
         <source>Server support is required</source>
         <translation type="unfinished">Atilẹyin olupin ni a nilo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="183"/>
         <source>Multiplex</source>
         <translation type="unfinished">Multiplex</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190"/>
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
         <translation type="unfinished">Transport Layer Aabo.O gbọdọ wa ni ibamu pẹlu olupin, bibẹẹkọ, asopọ ko le fi idi mulẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193"/>
         <source>Security</source>
         <translation type="unfinished">Aabo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214"/>
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
         <translation type="unfinished">UDP FullCone Packet fifi koodu fun imuse awọn ẹya bii UDP FullCone.Atilẹyin olupin nilo, ti o ba ṣe yiyan ti ko tọ, asopọ ko le ṣe.Jọwọ fi silẹ ni ofifo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217"/>
         <source>Packet Encoding</source>
         <translation type="unfinished">Iṣakojọpọ apo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="225"/>
         <source>Keep Default</source>
         <translation type="unfinished">Jeki Aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="230"/>
         <source>On</source>
         <translation type="unfinished">Tan-an</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="235"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Yipo mux si Tan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251"/>
         <source>Enable TCP Brutal</source>
         <translation type="unfinished">Mu TCP Brutal ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Olupin si Onibara TCP Iyara Brutal&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268"/>
         <source>TCP Brutal Speed</source>
         <translation type="unfinished">TCP Brutal Iyara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278"/>
         <source>Mb/s</source>
         <translation type="unfinished">Mb/s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="299"/>
         <source>Custom Outbound Settings</source>
         <translation type="unfinished">Aṣa ti njade lo Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="315"/>
         <source>Custom Config Settings</source>
         <translation type="unfinished">Aṣa atunto Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="813" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="335"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="818"/>
         <source>Apply settings to this group</source>
         <translation type="unfinished">Wa awọn eto si ẹgbẹ yii</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390"/>
         <source>Network Settings (%1)</source>
         <translation type="unfinished">Eto nẹtiwọki (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="412"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Ọna ti ibeere http, yoo yipada si oke nla&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498"/>
         <source>Method</source>
         <translation type="unfinished">Ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532"/>
         <source>header type</source>
         <translation type="unfinished">akọsori iru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="572"/>
         <source>TLS Camouflage Settings</source>
         <translation type="unfinished">Awọn Eto Camouflage TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;O le ba iṣẹ ṣiṣe jẹ, gbiyanju igbasilẹ akọkọ &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629"/>
         <source>Enable TLS fragment</source>
         <translation type="unfinished">Mu ajẹkù TLS ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;time format, like 500ms, 10ms etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;ọna kika akoko, bii 500ms, 10ms ati bẹbẹ lọ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639"/>
         <source>Fallback Delay</source>
         <translation type="unfinished">Idaduro Fallback</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652"/>
         <source>Enable TLS Record Fragment</source>
         <translation type="unfinished">Mu Ajẹkù Igbasilẹ TLS ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691"/>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
         <translation type="unfinished">Otito gbangba bọtini.Ti ko ba ṣofo, yi TLS pada si OTITO.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704"/>
         <source>Reality short id. Accept only one value.</source>
         <translation type="unfinished">Otito kukuru id.Gba iye kan ṣoṣo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="707"/>
         <source>Reality SID</source>
         <translation type="unfinished">Otito SID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="729"/>
         <source>TLS Security Settings</source>
         <translation type="unfinished">Awọn Eto Aabo TLS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="747" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="746"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="752"/>
         <source>Certificate</source>
         <translation type="unfinished">Iwe-ẹri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773"/>
         <source>When enabled, V2Ray will not check the validity of the TLS certificate provided by the remote host (the security is equivalent to plaintext)</source>
         <translation type="unfinished">Nigbati o ba mu ṣiṣẹ, V2Ray kii yoo ṣayẹwo iwulo ti ijẹrisi TLS ti a pese nipasẹ agbalejo latọna jijin (aabo naa jẹ deede si ọrọ mimọ)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776"/>
         <source>Allow insecure</source>
         <translation type="unfinished">Gba ailewu laaye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783"/>
         <source>Enable ECH</source>
         <translation type="unfinished">Mu ECH ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="757" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762"/>
         <source>ECH Config</source>
         <translation type="unfinished">ECH iṣeto ni</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808"/>
         <source>QSN</source>
         <translation type="unfinished">QSN</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815"/>
         <source>Server name indication, clear text.</source>
         <translation type="unfinished">Itọkasi orukọ olupin, ọrọ ko o.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828"/>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
         <translation type="unfinished">Ohun elo Layer bèèrè idunadura, ko o ọrọ.Jọwọ ya wọn sọtọ pẹlu aami idẹsẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="121" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118"/>
         <source>both</source>
         <translation type="unfinished">mejeeji</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="278" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275"/>
         <source>Custom (%1 outbound)</source>
         <translation type="unfinished">Aṣa (%1 ti njade)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="280" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="277"/>
         <source>Custom (%1 config)</source>
         <translation type="unfinished">Aṣa (%1 atunto)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="705" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="728" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="715"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="720"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="725"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="733"/>
         <source>Not set</source>
         <translation type="unfinished">Ko ṣeto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="707" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722" />
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="730" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="712"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="717"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="722"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="727"/>
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="735"/>
         <source>Already set</source>
         <translation type="unfinished">Ti ṣeto tẹlẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="787" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="792"/>
         <source>Confirm</source>
         <translation type="unfinished">Jẹrisi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35"/>
         <source>Network Settings</source>
         <translation type="unfinished">Eto nẹtiwọki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44"/>
         <source>Max Post Bytes</source>
         <translation type="unfinished">Max Post Bytes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57"/>
         <source>Min Post Interval</source>
         <translation type="unfinished">Min Post Aarin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67"/>
         <source>Max Reuse times</source>
         <translation type="unfinished">Max Atunlo igba</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80"/>
         <source>X Padding Bytes</source>
         <translation type="unfinished">X Padding Bytes</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93"/>
         <source>Keep Alive Period</source>
         <translation type="unfinished">Jeki Akoko Wa laaye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106"/>
         <source>Max Concurrency</source>
         <translation type="unfinished">Max Concurrency</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119"/>
         <source>Max Reusable Secs</source>
         <translation type="unfinished">Max Reusable-aaya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129"/>
         <source>Headers</source>
         <translation type="unfinished">Awọn akọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152"/>
         <source>Edit download settings</source>
         <translation type="unfinished">Ṣatunkọ awọn eto igbasilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159"/>
         <source>Max Request Times</source>
         <translation type="unfinished">Max Ìbéèrè Times</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172"/>
         <source>XPadding Header</source>
         <translation type="unfinished">XPading akọsori</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182"/>
         <source>XPadding Method</source>
         <translation type="unfinished">XPadding Ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198"/>
         <source>XPadding Key</source>
         <translation type="unfinished">XPading Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211"/>
         <source>EarlyData Length</source>
         <translation type="unfinished">TeteData Ipari</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224"/>
         <source>Max Connections</source>
         <translation type="unfinished">Max Awọn isopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243"/>
         <source>XPadding Placement</source>
         <translation type="unfinished">Gbe XPadding</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253"/>
         <source>Multi Mode</source>
         <translation type="unfinished">Ipo pupọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260"/>
         <source>XPadding Obfs Mode</source>
         <translation type="unfinished">XPadding Obfs Ipo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267"/>
         <source>No GRPC Headers</source>
         <translation type="unfinished">Ko si awọn akọle GRPC</translation>
     </message>
@@ -1404,37 +1405,37 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogEditSubscription</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44"/>
         <source>Custom Headers</source>
         <translation type="unfinished">Aṣa Awọn akọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68"/>
         <source>Custom HTTP Headers</source>
         <translation type="unfinished">Aṣa HTTP Awọn akọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75"/>
         <source>System Parameters</source>
         <translation type="unfinished">Eto paramita</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88"/>
         <source>Custom Payload</source>
         <translation type="unfinished">Aṣa Isanwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122"/>
         <source>Text</source>
         <translation type="unfinished">Ọrọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="147"/>
         <source>Javascript</source>
         <translation type="unfinished">Javascript</translation>
     </message>
@@ -1442,95 +1443,95 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogGroupChooseProxy</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14"/>
         <source>Landing proxy for group Group2</source>
         <translation type="unfinished">Aṣoju ibalẹ fun ẹgbẹ Group2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50"/>
         <source>Proxy:</source>
         <translation type="unfinished">Aṣoju:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57"/>
         <source>Search:</source>
         <translation type="unfinished">Wa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77"/>
         <source>Group1</source>
         <translation type="unfinished">Ẹgbẹ1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
+        <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83"/>
         <source>Group2</source>
         <translation type="unfinished">Ẹgbẹ2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645"/>
         <source>Front proxy for group %1</source>
         <translation type="unfinished">Aṣoju iwaju fun ẹgbẹ%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647"/>
         <source>Front proxy: </source>
         <translation type="unfinished">Aṣoju iwaju:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658"/>
         <source>Landing proxy for group %1</source>
         <translation type="unfinished">Aṣoju ibalẹ fun ẹgbẹ %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660"/>
         <source>Landing proxy: </source>
         <translation type="unfinished">Aṣoju ibalẹ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="164"/>
         <source>Proxy</source>
         <translation type="unfinished">Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676" />
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="676"/>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="679"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="166"/>
         <source>Direct</source>
         <translation type="unfinished">Taara</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683"/>
         <source>None</source>
         <translation type="unfinished">Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="49"/>
         <source>Add proxy</source>
         <translation type="unfinished">Fi aṣoju kun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="69"/>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Rọpo %1 aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159"/>
         <source>Select outbound</source>
         <translation type="unfinished">Yan ti njade lo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161"/>
         <source>Outbound: </source>
         <translation type="unfinished">Ti njade:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168"/>
         <source>Outbound</source>
         <translation type="unfinished">Ti njade lo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170"/>
         <source>Block</source>
         <translation type="unfinished">Dina</translation>
     </message>
@@ -1538,17 +1539,17 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogHWID</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="20"/>
         <source>Send System Parameters</source>
         <translation type="unfinished">Firanṣẹ Eto paramita</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41"/>
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
         <translation type="unfinished">hwid=aṣa_iye,os=aṣa_os,osVersion=ẹya_aṣa, awoṣe=awoṣe_aṣa</translation>
     </message>
@@ -1556,27 +1557,27 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogHeaders</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="36"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
+        <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41"/>
         <source>Value</source>
         <translation type="unfinished">Iye</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47"/>
         <source>New</source>
         <translation type="unfinished">Tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83"/>
         <source>Header name</source>
         <translation type="unfinished">Orukọ akọsori</translation>
     </message>
@@ -1584,75 +1585,75 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogHotkey</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="14"/>
         <source>Hotkey</source>
         <translation type="unfinished">Hotkey</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="51"/>
         <source>Global</source>
         <translation type="unfinished">Agbaye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="57"/>
         <source>Trigger main window</source>
         <translation type="unfinished">Nfa window akọkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="67"/>
         <source>Show groups</source>
         <translation type="unfinished">Ṣe afihan awọn ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="77"/>
         <source>Show routes</source>
         <translation type="unfinished">Ṣe afihan awọn ipa-ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="87"/>
         <source>Proxy mode</source>
         <translation type="unfinished">Ipo aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="97"/>
         <source>Toggle System Proxy</source>
         <translation type="unfinished">Yipada System Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_hotkey.ui" line="24"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Awọn ọna abuja</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
-        <source>Shortcut for '%s' action was cleared</source>
-        <translation type="unfinished">Ọna abuja fun igbese '%s' ti parẹ</translation>
+        <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56"/>
+        <source>Shortcut for &apos;%s&apos; action was cleared</source>
+        <translation type="unfinished">Ọna abuja fun igbese &apos;%s&apos; ti parẹ</translation>
     </message>
 </context>
 <context>
     <name>DialogManageGroups</name>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="17"/>
         <source>Groups</source>
         <translation type="unfinished">Awọn ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="35"/>
         <source>New group</source>
         <translation type="unfinished">Ẹgbẹ tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45" />
+        <location filename="../../src/nekobox/ui/group/dialog_manage_groups.ui" line="45"/>
         <source>Update all subscriptions</source>
         <translation type="unfinished">Ṣe imudojuiwọn gbogbo awọn ṣiṣe alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Confirmation</source>
         <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/group/dialog_manage_groups.cpp" line="58"/>
         <source>Update all subscriptions?</source>
         <translation type="unfinished">Ṣe imudojuiwọn gbogbo awọn ṣiṣe alabapin?</translation>
     </message>
@@ -1660,380 +1661,387 @@ Eyi jẹ eewu ikọkọ pataki ti o ba wa ni orilẹ-ede kan pẹlu ihamon intan
 <context>
     <name>DialogManageRoutes</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="14"/>
         <source>Routes</source>
         <translation type="unfinished">Awọn ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="24"/>
         <source>Common</source>
         <translation type="unfinished">Wọpọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
-        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196"/>
+        <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box&apos;s documentation.</source>
         <translation type="unfinished">Sniffs awọn soso akọkọ awọn isopọ lati ṣe idanimọ ilana ati SNI.Abajade Sniff fun ibi-afẹde tun ṣe atunko ipadasẹhin asopọ si SNI ti nmi.Fun data diẹ sii lori ilana imunmi tọka si awọn iwe-ipamọ apoti orin.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202"/>
         <source>Sniffing Mode</source>
         <translation type="unfinished">Ipo imumi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="177"/>
         <source>Disable</source>
         <translation type="unfinished">Pa a</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182"/>
         <source>Sniff result for routing</source>
         <translation type="unfinished">Sniff esi fun afisona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152"/>
         <source>Routing Profile</source>
         <translation type="unfinished">Profaili ipasona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="136"/>
         <source>Inbound Domain Strategy</source>
         <translation type="unfinished">Inbound ase nwon.Mirza</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="37"/>
         <source>GitHub</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="42"/>
         <source>jsDelivr(Cloudflare)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="47"/>
         <source>jsDelivr(Gcore)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="52"/>
         <source>jsDelivr(Quantil)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="57"/>
         <source>jsDelivr(Fastly)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="62"/>
         <source>jsDelivr(CDN)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101"/>
         <source>Remote Rule-set Mirror</source>
         <translation type="unfinished">Latọna Ofin-ṣeto digi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="76"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resolve domains to IP before connect, also affects the server address as well&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Yanu awọn ibugbe si IP ṣaaju asopọ, tun kan adirẹsi olupin naa daradara &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="79"/>
         <source>Outbound Domain Strategy</source>
         <translation type="unfinished">Ti o njade lo Domain nwon.Mirza</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117"/>
         <source>RuleSet download url</source>
         <translation type="unfinished">RuleSet gbigba url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="216"/>
         <source>Hijack</source>
         <translation type="unfinished">Hijack</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="222"/>
         <source>DNS Server</source>
         <translation type="unfinished">Olupin DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="240"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="336"/>
         <source>Listen Port</source>
         <translation type="unfinished">Gbo Port</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="250"/>
         <source>IPv4 Response</source>
         <translation type="unfinished">Idahun IPv4</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="260"/>
         <source>IPv6 Response</source>
         <translation type="unfinished">Idahun IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Following format should be used:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;O yẹ ki o lo ọna kika atẹle:&lt;br/&gt;domain:a.com&lt;/p&gt;&lt;p&gt;suffix:a.com&lt;/p&gt;&lt;p&gt;regex:someregex&lt;/p&gt;&lt;p&gt;rule_set:nameOfRuleSet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="273"/>
         <source>Rules</source>
         <translation type="unfinished">Awọn ofin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="304"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="343"/>
         <source>Enable</source>
         <translation type="unfinished">Mu ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whether to listen on 0.0.0.0 so that other devices on LAN can use this server&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Boya lati gbọ lori 0.0.0.0 ki awọn ẹrọ miiran lori LAN le lo olupin yii&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="314"/>
         <source>Allow Lan to Connect</source>
         <translation type="unfinished">Gba Lan laaye lati Sopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="327"/>
         <source>Redirect Settings</source>
         <translation type="unfinished">Àtúnjúwe Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="353"/>
         <source>Listen Address</source>
         <translation type="unfinished">Adirẹsi Gbọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="364"/>
         <source>DNS</source>
         <translation type="unfinished">DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="370"/>
         <source>Simple DNS Settings</source>
         <translation type="unfinished">Awọn Eto DNS ti o rọrun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="376"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;examples:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/path&lt;/p&gt;&lt;p&gt;quic://domain:4632&lt;/p&gt;&lt;p&gt;etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;awọn apẹẹrẹ:&lt;br/&gt;tls://8.8.8.8&lt;br/&gt;https://domain/path&lt;/p&gt;&lt;p&gt;tcp://8.8.8.8:1234&lt;/p&gt;&lt;p&gt;dhcp://auto&lt;/p&gt;&lt;p&gt;h3://domain/pato&lt;/p&gt;&lt;p&gt;quic://domain&lt;/p&gt;&lt;p&gt;quic://domain&lt;/p&gt;&lt;p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="379"/>
         <source>Remote DNS</source>
         <translation type="unfinished">Latọna jijin DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400"/>
         <source>Default DNS server</source>
         <translation type="unfinished">Olupin DNS aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464" />
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="464"/>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="544"/>
         <source>Query Strategy</source>
         <translation type="unfinished">Ilana ibeere</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local DNS can not be used in some configurations, you will have to set an ip here to be used as local dns in such situations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;DNS agbegbe ko le ṣee lo ni diẹ ninu awọn atunto, iwọ yoo ni lati ṣeto ip kan nibi lati lo bi dns agbegbe ni iru awọn ipo &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="479"/>
         <source>Local Override</source>
         <translation type="unfinished">Idanu agbegbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489" />
-        <source>This is especially important and it is recommended to use the default value of "localhost".
-If the default value does not work, try changing it to "223.5.5.5".
-For more information, see the document "Configuration/DNS".</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="489"/>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
         <translation type="unfinished">Eyi ṣe pataki paapaa ati pe o gba ọ niyanju lati lo iye aiyipada ti “localhost”.
-Ti iye aiyipada ko ba ṣiṣẹ, gbiyanju yi pada si "223.5.5.5".
-Fun alaye diẹ sii, wo iwe-ipamọ "Atunto/DNS".</translation>
+Ti iye aiyipada ko ba ṣiṣẹ, gbiyanju yi pada si &quot;223.5.5.5&quot;.
+Fun alaye diẹ sii, wo iwe-ipamọ &quot;Atunto/DNS&quot;.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="494"/>
         <source>Direct DNS</source>
         <translation type="unfinished">DNS taara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556"/>
         <source>Enable FakeIP</source>
         <translation type="unfinished">Mu iro IP ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="566"/>
         <source>DNS Object Settings</source>
         <translation type="unfinished">Awọn Eto Nkan DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="574"/>
         <source>Use DNS Object</source>
         <translation type="unfinished">Lo Nkan DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="587"/>
         <source>Format</source>
         <translation type="unfinished">Ọna kika</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="600"/>
         <source>Document</source>
         <translation type="unfinished">Iwe aṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="616"/>
         <source>Route</source>
         <translation type="unfinished">Ona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Awọn profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634"/>
         <source>New</source>
         <translation type="unfinished">Tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641"/>
         <source>Clone</source>
         <translation type="unfinished">oniye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648"/>
         <source>Export</source>
         <translation type="unfinished">Si ilẹ okeere</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="655"/>
         <source>Edit</source>
         <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="662"/>
         <source>Delete</source>
         <translation type="unfinished">Paarẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676"/>
         <source>Warp</source>
         <translation type="unfinished">Ijagun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Nṣiṣẹ atunto atẹle yii lati ṣee lo bi ilọkuro, wulo fun awọn iṣẹ titaja ti o ni ihamọ awọn VPN ti kii ṣe warp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Nṣiṣẹ atunto atẹle yii lati ṣee lo bi ilọkuro, wulo fun awọn iṣẹ titaja ti o ni ihamọ awọn VPN ti kii ṣe warp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Enable Warp</source>
-        <translation type="unfinished">Mu Warp ṣiṣẹ</translation>
+        <translation type="obsolete">Mu Warp ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Auto Generate</source>
-        <translation type="unfinished">Ṣiṣẹda aifọwọyi</translation>
+        <translation type="obsolete">Ṣiṣẹda aifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="732" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Ngba atunto tuntun lati API cloudflare&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="735" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706"/>
         <source>Generate Warp Config</source>
         <translation type="unfinished">Ṣe ina Warp Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="754" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738"/>
         <source>Endpoint</source>
         <translation type="unfinished">Opin ipari</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751"/>
         <source>Public Key</source>
         <translation type="unfinished">Bọtini gbangba</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="783" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="767"/>
         <source>Private Key</source>
         <translation type="unfinished">Ikọkọ Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="793" />
+        <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="777"/>
         <source>Interface Addresses</source>
         <translation type="unfinished">Awọn adirẹsi wiwo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
         <source>Invalid state</source>
         <translation type="unfinished">Ipo ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="30" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32"/>
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
         <translation type="unfinished">Awọn atokọ ti awọn profaili ipa-ọna ti ṣofo, eyi yẹ ki o jẹ ipo ti ko le de ọdọ, awọn ipadanu le waye ni bayi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="193" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175"/>
+        <source>New warp profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268"/>
         <source>Getting keypair...</source>
         <translation type="unfinished">Ngba oriṣipair...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="198" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="273"/>
         <source>Failed to get key pair</source>
         <translation type="unfinished">Kuna lati gba bọtini bata</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="203" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="278"/>
         <source>Generating config...</source>
         <translation type="unfinished">Ṣiṣẹda atunto...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283"/>
         <source>Failed to generate warp config</source>
         <translation type="unfinished">Kuna lati ṣe ipilẹṣẹ warp konfigi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="217" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305"/>
         <source>Success!</source>
         <translation type="unfinished">Aseyori!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
         <source>Invalid settings</source>
         <translation type="unfinished">Eto ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="237" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340"/>
         <source>Routing profile cannot be empty</source>
         <translation type="unfinished">Profaili ipa ọna ko le jẹ ofo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="241" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344"/>
         <source>DNS Rules are not valid</source>
         <translation type="unfinished">Awọn ofin DNS ko wulo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="280" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="383"/>
         <source>Security Warning</source>
         <translation type="unfinished">Aabo Ikilọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="281" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="384"/>
         <source>Enabling LAN DNS server will listen on 0.0.0.0:%1.
 
 Any device on your local network will be able to query this DNS server, which may reveal your routing rules, blocked domains, and network topology.
@@ -2050,12 +2058,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 Ṣe o da ọ loju?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Iṣẹ ṣiṣe ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="376" />
+        <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479"/>
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
         <translation type="unfinished">Awọn profaili ipa ọna ko le jẹ ofo, gbiyanju fifi profaili miiran kun tabi ṣatunkọ eyi</translation>
     </message>
@@ -2063,7 +2071,7 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>DialogVPNSettings</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Eto</translation>
     </message>
@@ -2072,52 +2080,52 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Tun Jeki IPv6</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35"/>
         <source>Stack</source>
         <translation type="unfinished">Akopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85"/>
         <source>Enable IPv6</source>
         <translation type="unfinished">Mu IPv6 ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95"/>
         <source>Strict Route</source>
         <translation type="unfinished">Ipa ọna ti o muna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Nigbati o ba mu ṣiṣẹ, Taara IP CIDRs ati awọn eto ofin yoo tun ṣafikun si eto Tun lati yọkuro ni ipele ipa-ọna OS.PATAKI: A ti royin awọn eto ofin nla lati fa lilo Sipiyu nla ni awọn window, jọwọ mu aṣayan yii ṣiṣẹ pẹlu iṣọra.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105"/>
         <source>Enable Tun Routing</source>
         <translation type="unfinished">Mu Tun Routing ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112"/>
         <source>AutoRedirect</source>
         <translation type="unfinished">AutoRedirect</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128"/>
         <source>Tun address</source>
         <translation type="unfinished">Tun adirẹsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138"/>
         <source>Tun ipv6 address</source>
         <translation type="unfinished">Tun IPv6 adirẹsi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">Yọ awọn CID kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
+        <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160"/>
         <source>Applications</source>
         <translation type="unfinished">Awọn ohun elo</translation>
     </message>
@@ -2125,22 +2133,22 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditAnyTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30"/>
         <source>Idle Session Check Interval</source>
         <translation type="unfinished">Aarin Iṣayẹwo Ikoni Laiṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40"/>
         <source>Idle Session Timeout</source>
         <translation type="unfinished">Akoko Ikoni Aiṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50"/>
         <source>Min Idle Session</source>
         <translation type="unfinished">Ikoni Laiṣiṣẹ Min</translation>
     </message>
@@ -2148,17 +2156,17 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditChain</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20"/>
         <source>Traffic order is from top to bottom</source>
         <translation type="unfinished">Ibere ​​ijabọ jẹ lati oke de isalẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49"/>
         <source>Select Profile</source>
         <translation type="unfinished">Yan Profaili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Orukọ ko le jẹ ofo.</translation>
     </message>
@@ -2166,27 +2174,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditCustom</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="28"/>
         <source>Core</source>
         <translation type="unfinished">Koju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41" />
+        <location filename="../../src/nekobox/ui/profile/edit_custom.ui" line="41"/>
         <source>Json Editor</source>
         <translation type="unfinished">Json Olootu</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="56"/>
         <source>Outbound JSON, please read the documentation.</source>
         <translation type="unfinished">JSON ti njade, jọwọ ka iwe naa.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="58"/>
         <source>Please fill the complete config.</source>
         <translation type="unfinished">Jọwọ fọwọsi atunto pipe.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67" />
+        <location filename="../../src/gharqad/ui/profile/edit_custom.cpp" line="67"/>
         <source>Name cannot be empty.</source>
         <translation type="unfinished">Orukọ ko le jẹ ofo.</translation>
     </message>
@@ -2194,67 +2202,67 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditExtraCore</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="29"/>
         <source>Socks address</source>
         <translation type="unfinished">adirẹsi ibọsẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="36"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="43"/>
         <source>Socks port</source>
         <translation type="unfinished">ibudo ibọsẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="50"/>
         <source>1080</source>
         <translation type="unfinished">1080</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="78"/>
         <source>Core path</source>
         <translation type="unfinished">Ona mojuto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="95"/>
         <source>Choose from file</source>
         <translation type="unfinished">Yan lati faili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;args to pass to the executable. You can insert a single %s and it will be replaced with the path to a file containing the config entered below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;args lati kọja si iṣẹ ṣiṣe.O le fi %s ẹyọkan sii ati pe yoo rọpo pẹlu ọna si faili ti o ni atunto ti a tẹ si isalẹ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="117"/>
         <source>Args</source>
         <translation type="unfinished">Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="124"/>
         <source>run -confPath %s</source>
         <translation type="unfinished">run -confPath %s</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt; ori/&gt;&lt;body&gt;&lt;p&gt;awọn akoonu inu faili atunto ti yoo kọja si ilana mojuto afikun ti %s ba jẹ pato ninu args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134"/>
         <source>Config</source>
         <translation type="unfinished">Iṣeto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144" />
+        <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="144"/>
         <source>No logs</source>
         <translation type="unfinished">Ko si awọn akọọlẹ</translation>
     </message>
@@ -2262,12 +2270,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditJuicity</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_juicity.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
@@ -2279,27 +2287,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditMieru</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="14"/>
         <source>EditMieru</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="67"/>
         <source>Port range</source>
         <translation type="unfinished">Ibudo ibudo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="40"/>
         <source>Multiplexing</source>
         <translation type="unfinished">Multiplexing</translation>
     </message>
@@ -2308,7 +2316,7 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Gbigbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
+        <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57"/>
         <source>Traffic Pattern</source>
         <translation type="unfinished">Ilana Traffic</translation>
     </message>
@@ -2316,43 +2324,43 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditNaive</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83" />
-        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="83"/>
+        <location filename="../../src/gharqad/ui/profile/edit_naive.cpp" line="13"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="56"/>
         <source>insecure_concurrency - Number of concurrent tunnel connections. </source>
         <translation type="unfinished">insecure_concurrency - Nọmba awọn asopọ oju eefin nigbakanna.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="40"/>
         <source>quic_congestion_control - QUIC congestion control algorithm.</source>
         <translation type="unfinished">quic_congestion_control - QUIC iṣakoso go slo algorithm.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="69"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Ẹya ti UDP lori ilana TCP, atilẹyin olupin nilo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101"/>
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
         <translation type="unfinished">extra_headers - Awọn akọle afikun lati firanṣẹ ni awọn ibeere HTTP.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
+        <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104"/>
         <source>Headers</source>
         <translation type="unfinished">Awọn akọle</translation>
     </message>
@@ -2360,104 +2368,104 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditQUIC</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24"/>
         <source>Heartbeat</source>
         <translation type="unfinished">Okan lu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="45"/>
         <source>Download (Mbps)</source>
         <translation type="unfinished">Ṣe igbasilẹ (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="69"/>
         <source>Upload (Mbps)</source>
         <translation type="unfinished">Ṣe igbasilẹ (Mbps)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81"/>
         <source>Zero Rtt Handshake</source>
         <translation type="unfinished">Odo Rtt Handshake</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90"/>
         <source>UDP Relay Mode</source>
         <translation type="unfinished">Ipo Yiyi UDP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="115"/>
         <source>Congestion Control</source>
         <translation type="unfinished">Iṣakoso idiwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147" />
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="147"/>
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Comma seperated ranges: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;Koma ya awọn sakani: 100:200,500:600&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154"/>
         <source>Obfs Password</source>
         <translation type="unfinished">Obfs Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170"/>
         <source>Disable MTU Discovery</source>
         <translation type="unfinished">Pa Awari MTU</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180"/>
         <source>Port range</source>
         <translation type="unfinished">Ibudo ibudo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190"/>
         <source>Hop Interval</source>
         <translation type="unfinished">Hop Aarin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;100ms&lt;br/&gt;1s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="217"/>
         <source>Auth Type</source>
         <translation type="unfinished">Ijeri Iru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230"/>
         <source>Auth Payload</source>
         <translation type="unfinished">Isanwo auth</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="243"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257"/>
         <source>Generate UUID</source>
         <translation type="unfinished">Ṣẹda UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293" />
-        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="293"/>
+        <location filename="../../src/gharqad/ui/profile/edit_quic.cpp" line="152"/>
         <source>Certificate</source>
         <translation type="unfinished">Iwe-ẹri</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310"/>
         <source>Disable SNI</source>
         <translation type="unfinished">Pa SNI kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327"/>
         <source>SNI</source>
         <translation type="unfinished">SNI</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
+        <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334"/>
         <source>Allow Insecure</source>
         <translation type="unfinished">Gba Ailewu laaye</translation>
     </message>
@@ -2465,52 +2473,52 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditSSH</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="14"/>
         <source>EditSSH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="20"/>
         <source>User</source>
         <translation type="unfinished">Olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="40"/>
         <source>Private Key</source>
         <translation type="unfinished">Ikọkọ Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="50"/>
         <source>Private Key Password</source>
         <translation type="unfinished">Ikọkọ Ọrọigbaniwọle Ikọkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="60"/>
         <source>Host Key</source>
         <translation type="unfinished">Gbalejo Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="70"/>
         <source>Host Key Algorithms</source>
         <translation type="unfinished">Ogun Key alugoridimu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="80"/>
         <source>Client Version</source>
         <translation type="unfinished">Ẹya Onibara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="93"/>
         <source>Private Key Path</source>
         <translation type="unfinished">Ikọkọ Key Ona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103" />
+        <location filename="../../src/nekobox/ui/profile/edit_ssh.ui" line="103"/>
         <source>Choose File</source>
         <translation type="unfinished">Yan Faili</translation>
     </message>
@@ -2518,22 +2526,22 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditShadowSocks</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="105"/>
         <source>Plugin</source>
         <translation type="unfinished">Ohun itanna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="62"/>
         <source>Encryption</source>
         <translation type="unfinished">ìsekóòdù</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="69"/>
         <source>Plugin Args</source>
         <translation type="unfinished">ohun itanna Args</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="76"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
@@ -2542,12 +2550,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Nẹtiwọọki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="49"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Ẹya ti UDP lori ilana TCP, atilẹyin olupin nilo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowsocks.ui" line="87"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
@@ -2555,27 +2563,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditShadowTLS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="20"/>
         <source>Version</source>
         <translation type="unfinished">Ẹya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="27"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="38"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="43"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_shadowtls.ui" line="48"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
@@ -2583,27 +2591,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditSnell</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25"/>
         <source>PSK</source>
         <translation type="unfinished">PSK</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38"/>
         <source>Version</source>
         <translation type="unfinished">Ẹya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48"/>
         <source>Obfs Mode</source>
         <translation type="unfinished">Ipo Obfs</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58"/>
         <source>Obfs Host</source>
         <translation type="unfinished">Obfs Gbalejo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
+        <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79"/>
         <source>Reuse</source>
         <translation type="unfinished">Tun lo</translation>
     </message>
@@ -2611,17 +2619,17 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditSocksHttp</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="43"/>
         <source>Version</source>
         <translation type="unfinished">Ẹya</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="23"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="33"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
@@ -2630,37 +2638,37 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Nẹtiwọọki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99"/>
         <source>Path</source>
         <translation type="unfinished">Ona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115"/>
         <source>Headers</source>
         <translation type="unfinished">Awọn akọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="80"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="85"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="64"/>
         <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished">Ẹya ti UDP lori ilana TCP, atilẹyin olupin nilo.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67"/>
         <source>UoT</source>
         <translation type="unfinished">UoT</translation>
     </message>
@@ -2668,72 +2676,72 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditTailScale</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="20"/>
         <source>State directory</source>
         <translation type="unfinished">State liana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="30"/>
         <source>Auth key</source>
         <translation type="unfinished">Bọtini ijẹrisi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="40"/>
         <source>Control URL</source>
         <translation type="unfinished">URL Iṣakoso</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="50"/>
         <source>Hostname</source>
         <translation type="unfinished">Orukọ ogun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60"/>
         <source>Accept routes</source>
         <translation type="unfinished">Gba awọn ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67"/>
         <source>Ephemeral</source>
         <translation type="unfinished">Ephemeral</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74"/>
         <source>Exit node allow lan access</source>
         <translation type="unfinished">Jade ipade gba lan wiwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81"/>
         <source>Advertise exit node</source>
         <translation type="unfinished">Polowo ipade ijade</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="88"/>
         <source>Exit node</source>
         <translation type="unfinished">Jade ipade</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;akojọ ti awọn subnet ti o yapa aami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="101"/>
         <source>Advertise routes</source>
         <translation type="unfinished">Polowo awọn ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;lo dns tailscale bi awọn dns latọna jijin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
+        <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114"/>
         <source>Global DNS</source>
         <translation type="unfinished">DNS agbaye</translation>
     </message>
@@ -2741,27 +2749,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditTor</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="14"/>
         <source>EditTor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="20"/>
         <source>Custom Path</source>
         <translation type="unfinished">Ona Aṣa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="30"/>
         <source>Extra Args</source>
         <translation type="unfinished">Args afikun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40"/>
         <source>Tor Config</source>
         <translation type="unfinished">Tor Config</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
+        <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55"/>
         <source>Data DIr</source>
         <translation type="unfinished">Data DIr</translation>
     </message>
@@ -2769,12 +2777,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditTrojanVLESS</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="20"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65" />
+        <location filename="../../src/nekobox/ui/profile/edit_trojan_vless.ui" line="65"/>
         <source>Encryption</source>
         <translation type="unfinished">ìsekóòdù</translation>
     </message>
@@ -2782,17 +2790,17 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditTrustTunnel</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="30"/>
         <source>Password</source>
         <translation type="unfinished">Ọrọigbaniwọle</translation>
     </message>
@@ -2801,12 +2809,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">quic_congestion_control - QUIC iṣakoso go slo algorithm.</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
+        <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53"/>
         <source>Health Check</source>
         <translation type="unfinished">Ṣayẹwo Ilera</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
+        <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12"/>
         <source>Off</source>
         <translation type="unfinished">Paa</translation>
     </message>
@@ -2814,22 +2822,22 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditVMess</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52"/>
         <source>Security</source>
         <translation type="unfinished">Aabo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59"/>
         <source>Alter Id</source>
         <translation type="unfinished">Id iyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66"/>
         <source>UUID</source>
         <translation type="unfinished">UUID</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
+        <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100"/>
         <source>Generate UUID</source>
         <translation type="unfinished">Ṣẹda UUID</translation>
     </message>
@@ -2837,142 +2845,147 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>EditWireguard</name>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="14"/>
         <source>EditWireguard</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="29"/>
         <source>Private Key</source>
         <translation type="unfinished">Ikọkọ Key</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="39"/>
         <source>Public Key</source>
         <translation type="unfinished">Bọtini gbangba</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49"/>
         <source>Pre Shared Key</source>
         <translation type="unfinished">Bọtini Pipin Ṣaaju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59"/>
         <source>Reserved</source>
         <translation type="unfinished">Ni ipamọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;jurẹdarẹ_keepalive_interval ni iṣẹju-aaya&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75"/>
         <source>Persistent Keepalive</source>
         <translation type="unfinished">Itẹsiwaju Keepalive</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;ori/&gt;&lt;body&gt;&lt;p&gt;akojọ ti awọn subnet ti o yapa aami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="88"/>
         <source>Local Address</source>
         <translation type="unfinished">Adirẹsi agbegbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="98"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="105"/>
         <source>1420</source>
         <translation type="unfinished">1420</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="149" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119"/>
+        <source>Generate Warp Config</source>
+        <translation type="unfinished">Ṣe ina Warp Config</translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156"/>
         <source>Init Packet Junk Size (S1)</source>
         <translation type="unfinished">Iwon Ijekuje Paketi Init (S1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="159" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166"/>
         <source>Init Packet Magic Header (H1)</source>
         <translation type="unfinished">Init Packet Magic akọsori (H1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="175" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182"/>
         <source>Transport Packet Magic Header (H4)</source>
         <translation type="unfinished">Akọsori Magic Packet (H4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="185" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192"/>
         <source>Cookie Reply Packet Junk Size (S3)</source>
         <translation type="unfinished">Iwon Idahun Kukisi Junk (S3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="201" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208"/>
         <source>Signature Packet (I3)</source>
         <translation type="unfinished">Pakẹti Ibuwọlu (I3)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="211" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218"/>
         <source>Junk Packet Count (Jc)</source>
         <translation type="unfinished">Iṣiro Packet Junk (Jc)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="221" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228"/>
         <source>Response Packet Magic Header (H2)</source>
         <translation type="unfinished">Idahun Packet Magic Akọsori (H2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="231" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238"/>
         <source>Signature Packet (I1)</source>
         <translation type="unfinished">Pakẹti Ibuwọlu (I1)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="241" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248"/>
         <source>Junk Packet Max Size (Jmax)</source>
         <translation type="unfinished">Iwọn Junk Packet Max (Jmax)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="251" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258"/>
         <source>Junk Packet Min Size (Jmin)</source>
         <translation type="unfinished">Iwon Junk Packet Min (Jmin)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="267" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274"/>
         <source>Cookie Reply Packet Magic Header (H3)</source>
         <translation type="unfinished">Akọsori Idan (H3) Idahun Kuki</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="280" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287"/>
         <source>Transport Packet Junk Size (S4)</source>
         <translation type="unfinished">Ìwọ̀n Ìjákulẹ̀ Pakẹti (S4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="296" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303"/>
         <source>Signature Packet (I2)</source>
         <translation type="unfinished">Pakẹti Ibuwọlu (I2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="312" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319"/>
         <source>Response Packet Junk Size (S2)</source>
         <translation type="unfinished">Iwọn Idahun Packet Junk (S2)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="328" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335"/>
         <source>Signature Packet (I4)</source>
         <translation type="unfinished">Pakẹti Ibuwọlu (I4)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="341" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348"/>
         <source>Signature Packet (I5)</source>
         <translation type="unfinished">Pakẹti Ibuwọlu (I5)</translation>
     </message>
@@ -2981,12 +2994,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Awọn oṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="112"/>
         <source>Use System Interface</source>
         <translation type="unfinished">Lo System Interface</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="128" />
+        <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="135"/>
         <source>Amnezia Settings</source>
         <translation type="unfinished">Awọn Eto Amnezia</translation>
     </message>
@@ -3034,7 +3047,7 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>FilterHeader</name>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="239"/>
         <source>Filter</source>
         <translation type="unfinished">Àlẹmọ</translation>
     </message>
@@ -3046,37 +3059,37 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Ṣiṣe alabapin imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81"/>
         <source>Update</source>
         <translation type="unfinished">Imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100"/>
         <source>Edit</source>
         <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119" />
+        <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="119"/>
         <source>Remove</source>
         <translation type="unfinished">Yọ kuro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Basic</source>
         <translation type="unfinished">Ipilẹṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="157"/>
         <source>Subscription</source>
         <translation type="unfinished">Ṣiṣe alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158"/>
         <source>Archive</source>
         <translation type="unfinished">Ifipamọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176"/>
         <source>Updated: %1</source>
         <translation type="unfinished">Imudojuiwọn: %1</translation>
     </message>
@@ -3085,12 +3098,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Imudojuiwọn to kẹhin: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Confirmation</source>
         <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Yọ %1 kuro?</translation>
     </message>
@@ -3098,26 +3111,26 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>InfoMain</name>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="14" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Statistics</source>
         <translation type="obsolete">Awọn iṣiro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="37" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="37"/>
         <source>Usage Statistics</source>
         <translation type="unfinished">Awọn iṣiro lilo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="400" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="400"/>
         <source>Traffic Statistics</source>
         <translation type="unfinished">Traffic Statistics</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="455" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="455"/>
         <source>Total Proxy Traffic:</source>
         <translation type="unfinished">Lapapọ Ijabọ aṣoju:</translation>
     </message>
@@ -3126,12 +3139,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">TextLabel</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="491"/>
         <source>Total Direct Traffic:</source>
         <translation type="unfinished">Lapapọ Ijabọ Taara:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="132"/>
         <source>Security Statistics</source>
         <translation type="unfinished">Aabo Statistics</translation>
     </message>
@@ -3140,85 +3153,85 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Profaili Statistics</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="69"/>
         <source>Usage time:</source>
         <translation type="unfinished">Akoko lilo:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="46"/>
         <source>Last launch time:</source>
         <translation type="unfinished">Akoko ifilọlẹ kẹhin:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="109"/>
         <source>First launch time:</source>
         <translation type="unfinished">Akoko ifilọlẹ akọkọ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="99"/>
         <source>Start count:</source>
         <translation type="unfinished">Ibẹrẹ iṣiro:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="471"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="507"/>
         <source>Download:</source>
         <translation type="unfinished">Ṣe igbasilẹ:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="484"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="520"/>
         <source>Upload:</source>
         <translation type="unfinished">Gbee si:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="202"/>
         <source>Proxy Profiles</source>
         <translation type="unfinished">Awọn profaili aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="193"/>
         <source>Database Statistics</source>
         <translation type="unfinished">Data Statistics</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="211" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="298" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="357" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="211"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="298"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="357"/>
         <source>Deleted</source>
         <translation type="unfinished">Parẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="245" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="245"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="315"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="374"/>
         <source>Exists</source>
         <translation type="unfinished">O wa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
-        <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="228"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="288"/>
+        <location filename="../../src/nekobox/ui/info/main.ui" line="347"/>
         <source>Created</source>
         <translation type="unfinished">Ti ṣẹda</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="265"/>
         <source>Groups and Subscriptions</source>
         <translation type="unfinished">Awọn ẹgbẹ ati awọn alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="328"/>
         <source>Route Profiles</source>
         <translation type="unfinished">Awọn profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="154"/>
         <source>Failed authentications count:</source>
         <translation type="unfinished">Ti kuna iye awọn ijẹrisi:</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
+        <location filename="../../src/nekobox/ui/info/main.ui" line="177"/>
         <source>Users count:</source>
         <translation type="unfinished">Awọn olumulo ka:</translation>
     </message>
@@ -3234,58 +3247,58 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>JsonEditor</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="17"/>
         <source>JSON Editor</source>
         <translation type="unfinished">JSON Olootu</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="51"/>
         <source>Format JSON</source>
         <translation type="unfinished">Ṣe ọna kika JSON</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="58"/>
         <source>Remove All Comments</source>
         <translation type="unfinished">Yọ Gbogbo Comments</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="65"/>
         <source>Json Editor</source>
         <translation type="unfinished">Json Olootu</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="76"/>
         <source>Structure Preview</source>
         <translation type="unfinished">Awotẹlẹ igbekale</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.ui" line="115"/>
         <source>OK</source>
         <translation type="unfinished">O DARA</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="18"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="49"/>
         <source>Json Contains Syntax Errors</source>
         <translation type="unfinished">Json Ni Asise Sintasi ninu</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="19"/>
         <source>Original Json may contain syntax errors. Json tree is disabled.</source>
         <translation type="unfinished">Atilẹba Json le ni awọn aṣiṣe sintasi ninu.Json igi jẹ alaabo.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="50"/>
         <source>You must correct these errors before continuing.</source>
         <translation type="unfinished">O gbọdọ ṣatunṣe awọn aṣiṣe wọnyi ṣaaju ki o to tẹsiwaju.</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="91"/>
         <source>Syntax Errors</source>
         <translation type="unfinished">Awọn aṣiṣe Sintasi</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.cpp" line="92"/>
         <source>Please fix the JSON errors or remove the comments before continue</source>
         <translation type="unfinished">Jọwọ ṣatunṣe awọn aṣiṣe JSON tabi yọ awọn asọye kuro ṣaaju ki o to tẹsiwaju</translation>
     </message>
@@ -3297,370 +3310,401 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">NekoBox</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="692" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="85"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="95"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="710"/>
         <source>Profiles</source>
         <translation type="unfinished">Awọn profaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="114"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="124"/>
         <source>Settings</source>
         <translation type="unfinished">Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="153"/>
         <source>Routing</source>
         <translation type="unfinished">Ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="172"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1489"/>
         <source>Update</source>
         <translation type="unfinished">Imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="182"/>
         <source>Info</source>
         <translation type="unfinished">Alaye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="250"/>
         <source>Tun Mode</source>
         <translation type="unfinished">Ipo Tun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="276"/>
         <source>System DNS</source>
         <translation type="unfinished">Eto DNS</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="661" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="263"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="679"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2955"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2958"/>
         <source>System Proxy</source>
         <translation type="unfinished">Aṣoju eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="716" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="771" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="353"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="363"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="734"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="790"/>
         <source>Test</source>
         <translation type="unfinished">Idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="342"/>
         <source>Type</source>
         <translation type="unfinished">Iru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="345"/>
         <source>Address</source>
         <translation type="unfinished">Adirẹsi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="348"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="327"/>
         <source>Test Result</source>
         <translation type="unfinished">Abajade Idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="578"/>
         <source>Traffic</source>
         <translation type="unfinished">Ijabọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="483"/>
         <source>Logs</source>
         <translation type="unfinished">Awọn akọọlẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="56"/>
         <source>NekoRay</source>
         <translation type="unfinished">NekoRay</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="66"/>
         <source>Box</source>
         <translation type="unfinished">Apoti</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="343"/>
         <source>Search</source>
         <translation type="unfinished">Wa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="518"/>
         <source>Connections</source>
         <translation type="unfinished">Awọn isopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="546"/>
         <source>Destination (Domain)</source>
         <translation type="unfinished">Ibo (Agbegbe)</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="549"/>
         <source>Click To Disable Sorting</source>
         <translation type="unfinished">Tẹ Lati Mu tito lẹsẹsẹ ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="554"/>
         <source>Process</source>
         <translation type="unfinished">Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="557"/>
         <source>Click To Sort By Process</source>
         <translation type="unfinished">Tẹ Lati Too Nipa Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="562"/>
         <source>Protocol</source>
         <translation type="unfinished">Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="565"/>
         <source>Click To Sort By Protocol</source>
         <translation type="unfinished">Tẹ Lati Too Nipa Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="570"/>
         <source>Outbound</source>
         <translation type="unfinished">Ti njade lo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="573"/>
         <source>Click To Sort By Outbound</source>
         <translation type="unfinished">Tẹ Lati Too Nipa Ti njade</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="581"/>
         <source>Click To Toggle sort by Traffic</source>
         <translation type="unfinished">Tẹ Lati Balu too nipasẹ Traffic</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="590"/>
         <source>Traffic Graph</source>
         <translation type="unfinished">Traffic Aworan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="657" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="675"/>
         <source>Program</source>
         <translation type="unfinished">Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="681" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="699"/>
         <source>Preferences</source>
         <translation type="unfinished">Awọn ayanfẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="696" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="714"/>
         <source>Current Group</source>
         <translation type="unfinished">Ẹgbẹ lọwọlọwọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="702" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="720"/>
         <source>Current Selected</source>
         <translation type="unfinished">Ti yan lọwọlọwọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="706" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="724"/>
         <source>Share</source>
         <translation type="unfinished">Pinpin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="754" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="772"/>
         <source>Hidden menu</source>
         <translation type="unfinished">Farasin akojọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="766" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="785"/>
         <source>Routing Menu</source>
         <translation type="unfinished">Akojọ afisona</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="778" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="797"/>
         <source>Context</source>
         <translation type="unfinished">Atokọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="782" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="801"/>
         <source>ContextProfiles</source>
         <translation type="unfinished">ContextProfaili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="806" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="825"/>
         <source>Exit</source>
         <translation type="unfinished">Jade</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="811" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="830"/>
         <source>Toggle Window</source>
         <translation type="unfinished">Yi Ferese Yipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="816" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="835"/>
         <source>Basic Settings</source>
         <translation type="unfinished">Awọn Eto ipilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="821" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="840"/>
         <source>New profile</source>
         <translation type="unfinished">Profaili tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="826" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="845"/>
         <source>Groups</source>
         <translation type="unfinished">Awọn ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1301" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192"/>
+        <source>Ctrl+Shift+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211"/>
+        <source>Full test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216"/>
+        <source>Download test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221"/>
+        <source>Upload test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226"/>
+        <source>Country test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231"/>
+        <source>Simple download test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320"/>
         <source>Toggle searchbox</source>
         <translation type="unfinished">Yipada apoti wiwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="831" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4327" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4337" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="216"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="226"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="850"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4341"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
         <source>Start</source>
         <translation type="unfinished">Bẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="839" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4326" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4337" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="858"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4340"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4351"/>
         <source>Stop</source>
         <translation type="unfinished">Duro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="847" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="866"/>
         <source>Edit</source>
         <translation type="unfinished">Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="855" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="874"/>
         <source>Routing Settings</source>
         <translation type="unfinished">Eto ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="860" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="879"/>
         <source>Add profile from clipboard</source>
         <translation type="unfinished">Ṣafikun profaili lati agekuru agekuru</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="868" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="887"/>
         <source>Delete</source>
         <translation type="unfinished">Paarẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="876" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="895"/>
         <source>Debug Info</source>
         <translation type="unfinished">Alaye yokokoro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="881" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="900"/>
         <source>QR Code and link</source>
         <translation type="unfinished">QR Code ati ọna asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="889" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="908"/>
         <source>Copy Link</source>
         <translation type="unfinished">Daakọ Ọna asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="910" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="929"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167"/>
         <source>Clear Test Result</source>
         <translation type="unfinished">Ko Abajade Idanwo kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="918" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="937"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1781"/>
         <source>Export %1 config</source>
         <translation type="unfinished">Ṣe okeere %1 atunto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="926" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="945"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325"/>
         <source>Reset Traffic</source>
         <translation type="unfinished">Tun Traffic to</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="934" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="953"/>
         <source>Scan QR Code</source>
         <translation type="unfinished">Ṣayẹwo koodu QR</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="942" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="961"/>
         <source>Enable System Proxy</source>
         <translation type="unfinished">Mu Aṣoju System ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="950" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="969"/>
         <source>Disable</source>
         <translation type="unfinished">Pa a</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="955" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="974"/>
         <source>Remove Duplicates</source>
         <translation type="unfinished">Yọ Awọn ẹda-iwe kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="963" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1040" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1048" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067"/>
         <source>fake</source>
         <translation type="unfinished">iro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="971" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1242" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1261"/>
         <source>Move</source>
         <translation type="unfinished">Gbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="982" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001"/>
         <source>Start with system</source>
         <translation type="unfinished">Bẹrẹ pẹlu eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="990" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009"/>
         <source>Remember last profile</source>
         <translation type="unfinished">Ranti profaili to kẹhin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="998" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017"/>
         <source>Allow other devices to connect</source>
         <translation type="unfinished">Gba awọn ẹrọ miiran laaye lati sopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1003" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022"/>
         <source>Remove Unavailable</source>
         <translation type="unfinished">Yọ Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1011" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030"/>
         <source>Full Test</source>
         <translation type="unfinished">Idanwo ni kikun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1019" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038"/>
         <source>Hotkey Settings</source>
         <translation type="unfinished">Hotkey Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1024" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043"/>
         <source>Select All</source>
         <translation type="unfinished">Yan Gbogbo</translation>
     </message>
@@ -3669,197 +3713,192 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Da Aṣa Links</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1056" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075"/>
         <source>Copy links</source>
         <translation type="unfinished">Da awọn ọna asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086"/>
         <source>Enable Tun</source>
         <translation type="unfinished">Mu Tun ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1072" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494"/>
         <source>Clone</source>
         <translation type="unfinished">oniye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1080" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099"/>
         <source>Update subscription</source>
         <translation type="unfinished">Ṣe imudojuiwọn ṣiṣe alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091" />
         <source>Resolve domain</source>
-        <translation type="unfinished">Yanju ibugbe</translation>
+        <translation type="obsolete">Yanju ibugbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115"/>
         <source>Tun Settings</source>
         <translation type="unfinished">Tun Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1104" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120"/>
         <source>Restart Program</source>
         <translation type="unfinished">Tun Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1109" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1125"/>
         <source>Open Config Folder</source>
         <translation type="unfinished">Ṣii Folda atunto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1130" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1146"/>
         <source>Restart Proxy</source>
         <translation type="unfinished">Tun Aṣoju bẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1135" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1151"/>
         <source>Stop Testing</source>
         <translation type="unfinished">Duro Idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1140" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156"/>
         <source>Url Test</source>
         <translation type="unfinished">Idanwo Url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1162" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178"/>
         <source>Url Test Group</source>
         <translation type="unfinished">Url igbeyewo Ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1173" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189"/>
         <source>Resolve Domain</source>
         <translation type="unfinished">Yanju ase</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1181" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200"/>
         <source>Remove Invalid</source>
         <translation type="unfinished">Yọ aiṣedeede kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1250" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269"/>
         <source>Speedtest Current</source>
         <translation type="unfinished">Speedtest Lọwọlọwọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1263" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282"/>
         <source>Register Windows elevated task</source>
         <translation type="unfinished">Ṣe igbasilẹ iṣẹ ṣiṣe giga Windows</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1268" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1283" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302"/>
         <source>About</source>
         <translation type="unfinished">Nipa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1273" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292"/>
         <source>Statistics</source>
         <translation type="unfinished">Awọn iṣiro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1278" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297"/>
         <source>Check for updates</source>
         <translation type="unfinished">Ṣayẹwo fun awọn imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1288" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307"/>
         <source>Toggle filter</source>
         <translation type="unfinished">Yi àlẹmọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1296" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315"/>
         <source>Unselect</source>
         <translation type="unfinished">Yọọ kuro</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="789" />
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1255" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="808"/>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1274"/>
         <source>Information</source>
         <translation type="unfinished">Alaye</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1032" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051"/>
         <source>Copy Nekoray links</source>
         <translation type="unfinished">Da awọn ọna asopọ Nekoray</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1192" />
         <source>Full test Selected</source>
-        <translation type="unfinished">Idanwo ni kikun ti yan</translation>
+        <translation type="obsolete">Idanwo ni kikun ti yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1197" />
         <source>Download test Selected</source>
-        <translation type="unfinished">Ṣe igbasilẹ idanwo ti a ti yan</translation>
+        <translation type="obsolete">Ṣe igbasilẹ idanwo ti a ti yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1202" />
         <source>Upload test Selected</source>
-        <translation type="unfinished">Igbeyewo ikojọpọ Ti yan</translation>
+        <translation type="obsolete">Igbeyewo ikojọpọ Ti yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1207" />
         <source>Country test Selected</source>
-        <translation type="unfinished">Idanwo orilẹ-ede Ti yan</translation>
+        <translation type="obsolete">Idanwo orilẹ-ede Ti yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1212" />
         <source>Simple download test Selected</source>
-        <translation type="unfinished">Idanwo igbasilẹ ti o rọrun ti yan</translation>
+        <translation type="obsolete">Idanwo igbasilẹ ti o rọrun ti yan</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1217" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236"/>
         <source>Speedtest Group</source>
         <translation type="unfinished">Speedtest Ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1222" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1241"/>
         <source>Hide window</source>
         <translation type="unfinished">Fi ferese pamọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1227" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246"/>
         <source>Add profile from File</source>
         <translation type="unfinished">Ṣafikun profaili lati Faili</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1232" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4356" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1251"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4370"/>
         <source>Add new Group</source>
         <translation type="unfinished">Fi titun Ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1237" />
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256"/>
         <source>Security Settings</source>
         <translation type="unfinished">Aabo Eto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324" />
+        <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="324"/>
         <source>Unavailable</source>
         <translation type="unfinished">Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906"/>
         <source>Auto-scroll log</source>
         <translation type="unfinished">Iwe akọọlẹ yi lọ laifọwọyi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377"/>
         <source>Select Proxy</source>
         <translation type="unfinished">Yan Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1378"/>
         <source>Inbound proxy type:</source>
         <translation type="unfinished">Iru aṣoju ti nwọle:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462"/>
         <source>Edit Routing Profiles</source>
         <translation type="unfinished">Ṣatunkọ Awọn profaili ipa ọna</translation>
     </message>
@@ -3868,25 +3907,25 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Ṣe imudojuiwọn Awọn profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1536"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1540"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1561"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1564"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1608"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128"/>
         <source>Update Response</source>
         <translation type="unfinished">Idahun imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129"/>
         <source>No routing profiles are updated</source>
         <translation type="unfinished">Ko si awọn profaili afisona ti wa ni imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120"/>
         <source>Updated %1 routing profiles</source>
         <translation type="unfinished">Ṣe imudojuiwọn %1 awọn profaili ipa-ọna</translation>
     </message>
@@ -3895,12 +3934,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Ṣe imudojuiwọn Map RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1562"/>
         <source>Failed to update rulesets</source>
         <translation type="unfinished">Kuna lati ṣe imudojuiwọn awọn ofin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1565"/>
         <source>Rulesets updated successfully</source>
         <translation type="unfinished">Awọn ofin imudojuiwọn ni aṣeyọri</translation>
     </message>
@@ -3909,380 +3948,380 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Kaṣe RuleSet imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="359"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Ilana JSON ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="360"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Iṣagbewọle ti a pese ni a ko le ṣe atuntu si ọna ilana ipa ọna to wulo:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542"/>
         <source>No Selection</source>
         <translation type="unfinished">Ko si Aṣayan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543"/>
         <source>Select proxy profile to connect</source>
         <translation type="unfinished">Yan profaili aṣoju lati sopọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753"/>
         <source>Using on macOS is not permitted</source>
         <translation type="unfinished">Lilo lori macOS ko gba laaye</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487"/>
         <source>Import Routing Profile</source>
         <translation type="unfinished">Wọle Profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491"/>
         <source>From clipboard</source>
         <translation type="unfinished">Lati agekuru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495"/>
         <source>From file</source>
         <translation type="unfinished">Lati faili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502"/>
         <source>Imported from clipboard</source>
         <translation type="unfinished">Ti ko wọle lati agekuru agekuru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1514"/>
         <source>Imported from %1</source>
         <translation type="unfinished">Ti ko wọle lati %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524"/>
         <source>Routing Profiles</source>
         <translation type="unfinished">Awọn profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551"/>
         <source>RuleSet Map</source>
         <translation type="unfinished">Map Ṣeto Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1574"/>
         <source>RuleSet Cache</source>
         <translation type="unfinished">Kaṣe RuleSet</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1609"/>
         <source>Rulesets cache is updated</source>
         <translation type="unfinished">Kaṣe Ruleset ti ni imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1623"/>
         <source>Clear RuleSet Cache</source>
         <translation type="unfinished">Ko kaṣe RuleSet kuro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1637"/>
         <source>Enable AdBlock</source>
         <translation type="unfinished">Mu AdBlock ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2034"/>
         <source>Error</source>
         <translation type="unfinished">Asise</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131"/>
         <source>Tun Settings changed</source>
         <translation type="unfinished">Awọn Eto Tun yipada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132"/>
         <source>Restart Tun to take effect.</source>
         <translation type="unfinished">Tun Tun bẹrẹ lati mu ipa.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4036" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4098" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4151" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4406" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2143"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2198"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3570"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4060"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4122"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4155"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4420"/>
         <source>Confirmation</source>
         <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2144"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2199"/>
         <source>Settings changed, restart proxy?</source>
         <translation type="unfinished">Awọn eto yipada, tun bẹrẹ aṣoju bi?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173"/>
         <source>Settings changed</source>
         <translation type="unfinished">Awọn eto yipada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2174"/>
         <source>Restart the program to take effect.</source>
         <translation type="unfinished">Tun eto naa bẹrẹ lati mu ṣiṣẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216"/>
         <source>Imported %1 profile(s)</source>
         <translation type="unfinished">Ti ko wọle %1 profaili(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550"/>
         <source>User opted for no privilege req, some features may not work</source>
         <translation type="unfinished">Olumulo ti yọ kuro fun ko si anfani req, diẹ ninu awọn ẹya le ma ṣiṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617"/>
         <source>Please give the core root privileges</source>
         <translation type="unfinished">Jọwọ fun awọn anfani root mojuto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2922"/>
         <source>Not Running</source>
         <translation type="unfinished">Ko Ṣiṣe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137"/>
         <source>Group is too big to sort</source>
         <translation type="unfinished">Ẹgbẹ jẹ tobi ju lati to awọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495"/>
         <source>Clone %1 item(s)</source>
         <translation type="unfinished">Clone %1 ohun(awọn)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515"/>
         <source>Group is too big to find duplicates</source>
         <translation type="unfinished">Ẹgbẹ ti tobi ju lati wa awọn ẹda-ẹda</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550"/>
         <source> Confirmation </source>
         <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3551"/>
         <source> Remove %1 item(s) ? </source>
         <translation type="unfinished">Yọ %1 ohun(s) kuro?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571"/>
         <source>Remove %1 item(s) ?</source>
         <translation type="unfinished">Yọ %1 ohun(s) kuro?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3623" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647"/>
         <source>Copied %1 item(s)</source>
         <translation type="unfinished">Daakọ %1 nkan(s)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3867" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3891"/>
         <source>QR Code not found</source>
         <translation type="unfinished">Ko ri koodu QR</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3889" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913"/>
         <source>Unable to capture screen</source>
         <translation type="unfinished">Ko le gba iboju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4037" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4061"/>
         <source>Remove %1 Unavailable item(s) ?</source>
         <translation type="unfinished">Yọ %1 Awọn nkan(awọn) ti ko si bi?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4099" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4123"/>
         <source>Remove %1 Invalid item(s) ?</source>
         <translation type="unfinished">Yọ %1 Awọn nkan(awọn) ti ko wulo bi?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4152" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156"/>
         <source>Replace domain server addresses with their resolved IPs?</source>
         <translation type="unfinished">Rọpo awọn adirẹsi olupin agbegbe pẹlu IPs ti wọn yanju bi?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4324" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4338"/>
         <source>Clear</source>
         <translation type="unfinished">Ko o</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4396" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410"/>
         <source>Delete selected Group</source>
         <translation type="unfinished">Paarẹ Ẹgbẹ ti o yan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4397" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411"/>
         <source>Edit selected Group</source>
         <translation type="unfinished">Ṣatunkọ Ẹgbẹ ti o yan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4407" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Yọ %1 kuro?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5140" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5155"/>
         <source>Cannot start</source>
         <translation type="unfinished">Ko le bẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5156"/>
         <source>Last download request has not finished yet</source>
         <translation type="unfinished">Ibeere igbasilẹ kẹhin ko ti pari sibẹsibẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5175" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190"/>
         <source>Failed to download update assets</source>
         <translation type="unfinished">Kuna lati ṣe igbasilẹ awọn ohun-ini imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77"/>
         <source>Profile test aborted</source>
         <translation type="unfinished">Idanwo profaili aborged</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="128"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="174"/>
         <source>[%1] test error: %2</source>
         <translation type="unfinished">[%1] aṣiṣe idanwo: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559"/>
         <source>Something is very wrong, the subject ent cannot be found!</source>
         <translation type="unfinished">Nkankan jẹ aṣiṣe pupọ, koko-ọrọ ent ko le rii!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565"/>
         <source>Profile manager data is corrupted, try again.</source>
         <translation type="unfinished">Data oluṣakoso profaili ti bajẹ, gbiyanju lẹẹkansi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195"/>
         <source>The last url test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Idanwo url ti o kẹhin ko jade patapata, jọwọ duro.Ti o ba tẹsiwaju, jọwọ tun eto naa bẹrẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="207"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="377"/>
         <source>Failed to build test config: </source>
         <translation type="unfinished">Kuna lati kọ atunto idanwo:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="251"/>
         <source>URL test finished!</source>
         <translation type="unfinished">Idanwo URL ti pari!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="295"/>
         <source>Failed to stop tests</source>
         <translation type="unfinished">Kuna lati da awọn idanwo duro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301"/>
         <source>Testing</source>
         <translation type="unfinished">Idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346"/>
         <source>The last speed test did not exit completely, please wait. If it persists, please restart the program.</source>
         <translation type="unfinished">Idanwo iyara to kẹhin ko jade patapata, jọwọ duro.Ti o ba tẹsiwaju, jọwọ tun eto naa bẹrẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="413"/>
         <source>Speedtest finished!</source>
         <translation type="unfinished">Idanwo iyara ti pari!</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496"/>
         <source>Profile speed test aborted</source>
         <translation type="unfinished">Idanwo iyara profaili aborted</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584"/>
         <source>[%1] speed test error: %2</source>
         <translation type="unfinished">[%1] aṣiṣe igbeyewo iyara: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="593"/>
         <source>You need to enable hijack DNS server first</source>
         <translation type="unfinished">O nilo lati mu hijack DNS olupin ṣiṣẹ ni akọkọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="607"/>
         <source>Failed to set system dns: </source>
         <translation type="unfinished">Kuna lati ṣeto awọn DNS eto:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656"/>
         <source>Tun device misbehaving</source>
         <translation type="unfinished">Tun ẹrọ aiṣedeede</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657"/>
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
         <translation type="unfinished">Ti o ba ni wahala lati bẹrẹ VPN, o le fi ipa mu ilana Core tunto nibi ati lẹhinna gbiyanju tun bẹrẹ profaili lẹẹkansi.Aṣiṣe jẹ%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661"/>
         <source>Reset</source>
         <translation type="unfinished">Tunto</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="662"/>
         <source>Cancel</source>
         <translation type="unfinished">Fagilee</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697"/>
         <source>Another profile is starting...</source>
         <translation type="unfinished">Profaili miiran n bẹrẹ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704"/>
         <source>Another profile is stopping...</source>
         <translation type="unfinished">Profaili miiran n duro...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725" />
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="725"/>
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="837"/>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
         <translation type="unfinished">Ti ko ba si esi fun igba pipẹ, o niyanju lati tun software naa bẹrẹ.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739"/>
         <source>Starting profile %1</source>
         <translation type="unfinished">Ibẹrẹ profaili %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742"/>
         <source>Failed to start profile %1</source>
         <translation type="unfinished">Kuna lati bẹrẹ profaili %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820"/>
         <source>Stop return error</source>
         <translation type="unfinished">Duro aṣiṣe pada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860"/>
         <source>Stopping profile %1</source>
         <translation type="unfinished">Idaduro profaili%1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863" />
+        <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863"/>
         <source>Failed to stop, please restart the program.</source>
         <translation type="unfinished">Kuna lati da duro, jọwọ tun eto naa bẹrẹ.</translation>
     </message>
@@ -4294,27 +4333,27 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="818"/>
         <source>Type</source>
         <translation type="unfinished">Iru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="820"/>
         <source>Address</source>
         <translation type="unfinished">Adirẹsi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="822"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="824"/>
         <source>Test Result</source>
         <translation type="unfinished">Abajade Idanwo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826" />
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="826"/>
         <source>Traffic</source>
         <translation type="unfinished">Ijabọ</translation>
     </message>
@@ -4322,22 +4361,22 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>PasswordForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="20"/>
         <source>Username</source>
         <translation type="unfinished">Orukọ olumulo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="37"/>
         <source>New Password</source>
         <translation type="unfinished">Ọrọ aṣina Tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54" />
+        <location filename="../../src/nekobox/ui/security/change_password.ui" line="54"/>
         <source>Confirm Password</source>
         <translation type="unfinished">So ni pato orukoabawole re</translation>
     </message>
@@ -4345,12 +4384,12 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>ProxyItem</name>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Confirmation</source>
         <translation type="unfinished">Ìmúdájú</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42" />
+        <location filename="../../src/gharqad/ui/profile/ProxyItem.cpp" line="42"/>
         <source>Remove %1?</source>
         <translation type="unfinished">Yọ %1 kuro?</translation>
     </message>
@@ -4358,7 +4397,7 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>QAction</name>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="371"/>
         <source>Security Settings</source>
         <translation type="unfinished">Aabo Eto</translation>
     </message>
@@ -4366,20 +4405,20 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="469" />
+        <location filename="../../src/gharqad/main.cpp" line="469"/>
         <source>QT_LAYOUT_DIRECTION</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QHotkey</name>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="294"/>
         <source>Failed to register %1. Error: %2</source>
         <translation type="unfinished">Kuna lati forukọsilẹ %1.Aṣiṣe:%2</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314" />
+        <location filename="../../src/3rdparty/QHotkey/QHotkey/qhotkey.cpp" line="314"/>
         <source>Failed to unregister %1. Error: %2</source>
         <translation type="unfinished">Kuna lati yọkuro %1.Aṣiṣe:%2</translation>
     </message>
@@ -4391,60 +4430,74 @@ Mu eyi ṣiṣẹ nikan ti o ba pinnu lati pin DNS pẹlu awọn ẹrọ LAN ti 
         <translation type="obsolete">Ipo Tun ko le ṣee lo pẹlu Awọn atunto Aṣa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="930"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1846"/>
         <source>Decrypted happ:// link</source>
         <translation type="unfinished">Decrypted happ:// ọna asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933" />
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="933"/>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1850"/>
         <source>Failed to decrypt happ:// link</source>
         <translation type="unfinished">O kuna lati yọkuro happ:// ọna asopọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1864"/>
         <source>Requesting subscription: %1</source>
         <translation type="unfinished">Beere ṣiṣe alabapin: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1870" />
         <source>Requesting subscription %1 error: %2</source>
-        <translation type="unfinished">Beere ṣiṣe alabapin% 1 aṣiṣe: %2</translation>
+        <translation type="obsolete">Beere ṣiṣe alabapin% 1 aṣiṣe: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1894" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872"/>
+        <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873"/>
+        <source>Request error is: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877"/>
+        <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899"/>
         <source>Subscription profile title: %1</source>
         <translation type="unfinished">Orukọ profaili alabapin: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1903" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1908"/>
         <source>Subscription request fininshed: %1</source>
         <translation type="unfinished">Ibere ​​ṣiṣe alabapin ti pari: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1928" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1933"/>
         <source>Clearing servers...</source>
         <translation type="unfinished">Npa awọn olupin kuro...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1954" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959"/>
         <source>Processing subscription data...</source>
         <translation type="unfinished">Nṣiṣẹ data ṣiṣe alabapin...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1968" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973"/>
         <source>--- Dropt %1 proxies
 </source>
         <translation type="unfinished">--- Ju %1 awọn aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1970" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975"/>
         <source>Process complete, applying...</source>
         <translation type="unfinished">Ilana ti pari, lilo ...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1984" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989"/>
         <source>--- Added %1 proxies
 </source>
         <translation type="unfinished">--- Fi kun %1 awọn aṣoju</translation>
@@ -4464,13 +4517,13 @@ Parẹ %3 Awọn profaili:
         <translation type="obsolete">Ko si nkankan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1986" />
+        <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1991"/>
         <source>Change of %1:</source>
         <translation type="unfinished">Iyipada ti%1:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055" />
+        <location filename="../../src/gharqad/dataStore/Database.cpp" line="845"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3055"/>
         <source>Default</source>
         <translation type="unfinished">Aiyipada</translation>
     </message>
@@ -4479,49 +4532,49 @@ Parẹ %3 Awọn profaili:
         <translation type="obsolete">Ko le ṣi faili.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="214" />
+        <location filename="../../src/gharqad/main.cpp" line="214"/>
         <source>Chain Proxy</source>
         <translation type="unfinished">Aṣoju pq</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="232" />
+        <location filename="../../src/gharqad/main.cpp" line="232"/>
         <source>Custom</source>
         <translation type="unfinished">Aṣa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="233" />
+        <location filename="../../src/gharqad/main.cpp" line="233"/>
         <source>Extra Core</source>
         <translation type="unfinished">Afikun mojuto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131" />
+        <location filename="../../src/nekobox/global/GuiUtils.hpp" line="131"/>
         <source>Select</source>
         <translation type="unfinished">Yan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2890"/>
         <source>Proxy: %1
 Direct: %2</source>
         <translation type="unfinished">Aṣoju:%1
 Taara:%2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="122" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="122"/>
         <source>Core exited, cleaning up...</source>
         <translation type="unfinished">Mojuto jade, nu soke...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="129"/>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
         <translation type="unfinished">Mojuto jade nigbagbogbo nigbagbogbo, dawọ tun bẹrẹ profaili laifọwọyi.</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Process.cpp" line="138" />
+        <location filename="../../src/gharqad/sys/Process.cpp" line="138"/>
         <source>Restarting the core ...</source>
         <translation type="unfinished">Tun bẹrẹ mojuto...</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/sys/Settings.cpp" line="378" />
+        <location filename="../../src/gharqad/sys/Settings.cpp" line="378"/>
         <source>System</source>
         <translation type="unfinished">Eto</translation>
     </message>
@@ -4536,42 +4589,42 @@ How to update?</source>
 Bawo ni lati ṣe imudojuiwọn?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="26"/>
         <source>Subscription URL Detected</source>
         <translation type="unfinished">Ti ṣe awari URL alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="32"/>
         <source>How would you like to import this subscription?</source>
         <translation type="unfinished">Bawo ni o ṣe fẹ lati gbe ṣiṣe alabapin yii wọle?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="45"/>
         <source>Create new subscription group</source>
         <translation type="unfinished">Ṣẹda titun alabapin ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="46"/>
         <source>Update existing group</source>
         <translation type="unfinished">Ṣe imudojuiwọn ẹgbẹ ti o wa tẹlẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="47"/>
         <source>Import as proxy links</source>
         <translation type="unfinished">Gbe wọle bi awọn ọna asopọ aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="51"/>
         <source>Group name:</source>
         <translation type="unfinished">Orukọ ẹgbẹ:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="53"/>
         <source>Auto-detect from subscription</source>
         <translation type="unfinished">Ṣewadii aifọwọyi lati ṣiṣe alabapin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="60"/>
         <source>Import</source>
         <translation type="unfinished">gbe wọle</translation>
     </message>
@@ -4592,45 +4645,45 @@ Bawo ni lati ṣe imudojuiwọn?</translation>
         <translation type="obsolete">Orukọ ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
+        <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128"/>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation type="unfinished">Lo: %1 Ku: %2 Ipari: %3</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Ṣe igbasilẹ Awọn profaili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410"/>
         <source>Requesting profile error: %1</source>
         <translation type="unfinished">Nbeere aṣiṣe profaili: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656"/>
         <source>
 Deleted %1 Duplicates</source>
         <translation type="unfinished">Parẹ %1 Awọn ẹda-iwe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696"/>
         <source>
 Deleted %1 Invalid</source>
         <translation type="unfinished">Parẹ %1 Aiṣedeede</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731"/>
         <source>
 Deleted %1 Unavailable</source>
         <translation type="unfinished">Parẹ %1 Ko si</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913"/>
         <source>Check Rule Sets: %1</source>
         <translation type="unfinished">Ṣayẹwo Awọn Eto Ofin: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1935"/>
         <source>Requesting rule-set list error: %1</source>
         <translation type="unfinished">Nbeere aṣiṣe akojọ-ofin: %1</translation>
     </message>
@@ -4639,7 +4692,7 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Àdírẹ́sì IP: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2928"/>
         <source>Inbound IP: %1</source>
         <translation type="unfinished">IP ti nwọle: %1</translation>
     </message>
@@ -4648,69 +4701,69 @@ Deleted %1 Unavailable</source>
         <translation type="obsolete">Paa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932"/>
         <source>Inbound: %2 %1</source>
         <translation type="unfinished">Ti nwọle: %2 %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934"/>
         <source>Inbound: Off</source>
         <translation type="unfinished">Inbound: Paa</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458"/>
         <source>Move profiles to group</source>
         <translation type="unfinished">Gbe awọn profaili si ẹgbẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3645" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669"/>
         <source>Config copied</source>
         <translation type="unfinished">Tunto daakọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3657" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3681"/>
         <source>Copy core config</source>
         <translation type="unfinished">Da mojuto konfigi</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3659" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3683"/>
         <source>Copy test config</source>
         <translation type="unfinished">Daakọ atunto igbeyewo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3660" />
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35" />
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3684"/>
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="35"/>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="207"/>
         <source>OK</source>
         <translation type="unfinished">O DARA</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5040" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5050" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5094" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5122" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5131" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5166" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5065"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5137"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5146"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5181"/>
         <source>Update</source>
         <translation type="unfinished">Imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5041" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056"/>
         <source>Not official support platform</source>
         <translation type="unfinished">Ko osise support Syeed</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5051" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066"/>
         <source>Requesting update error: %1</source>
         <translation type="unfinished">Nbeere aṣiṣe imudojuiwọn: %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5094" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5109"/>
         <source>No update</source>
         <translation type="unfinished">Ko si imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5123" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5138"/>
         <source>Update found: %1
 Release note:
 %2</source>
@@ -4719,117 +4772,117 @@ Akọsilẹ itusilẹ:
 %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5126" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5141"/>
         <source>Close</source>
         <translation type="unfinished">Sunmọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5128" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5143"/>
         <source>Open in browser</source>
         <translation type="unfinished">Ṣii ni ẹrọ aṣawakiri</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5167" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5182"/>
         <source>Update is ready, restart to install?</source>
         <translation type="unfinished">Imudojuiwọn ti šetan, tun bẹrẹ lati fi sori ẹrọ?</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34" />
+        <location filename="../../src/gharqad/ui/security_addon.cpp" line="34"/>
         <source>Access denied</source>
         <translation type="unfinished">Ti kọ iraye si</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417" />
+        <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="417"/>
         <source>Select a Folder</source>
         <translation type="unfinished">Yan Folda kan</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175"/>
         <source>Application Rules</source>
         <translation type="unfinished">Ohun elo Ofin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
-        <source>Exclude CIDR's</source>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198"/>
+        <source>Exclude CIDR&apos;s</source>
         <translation type="unfinished">Yọ awọn CID kuro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208" />
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="208"/>
         <source>Cancel</source>
         <translation type="unfinished">Fagilee</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
+        <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157"/>
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
         <translation type="unfinished">Aṣoju: ⚡%1 📦%3
 Taara: ⚡%2 📦%4</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
-        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505" />
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359"/>
+        <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505"/>
         <source>Invalid</source>
         <translation type="unfinished">Ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="51" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48"/>
         <source>KCP Settings</source>
         <translation type="unfinished">Awọn eto KCP</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74"/>
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75"/>
         <source>TTI</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76"/>
         <source>Uplink Capacity</source>
         <translation type="unfinished">Uplink Agbara</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77"/>
         <source>Downlink Capacity</source>
         <translation type="unfinished">Downlink Agbara</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78"/>
         <source>Congestion</source>
         <translation type="unfinished">Idinku</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79"/>
         <source>Read Buffer Size</source>
         <translation type="unfinished">Ka Iwọn Buffer</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="83" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80"/>
         <source>Write Buffer Size</source>
         <translation type="unfinished">Kọ Iwon ifipamọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="84" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81"/>
         <source>Header Type</source>
         <translation type="unfinished">Akọsori Iru</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="85" />
+        <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82"/>
         <source>Seed</source>
         <translation type="unfinished">Irugbin</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
+        <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91"/>
         <source>Received invalid response: %1
 Request payload was: %2</source>
         <translation type="unfinished">Ti gba esi ti ko tọ: %1
 Ibere isanwo jẹ: %2</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
+        <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572"/>
         <source>Imported</source>
         <translation type="unfinished">Akowọle</translation>
     </message>
@@ -4837,92 +4890,92 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="172" />
+        <location filename="../../src/gharqad/main.cpp" line="172"/>
         <source>Cancel</source>
         <translation type="unfinished">Fagilee</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="173" />
+        <location filename="../../src/gharqad/main.cpp" line="173"/>
         <source>Apply</source>
         <translation type="unfinished">Waye</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="174" />
+        <location filename="../../src/gharqad/main.cpp" line="174"/>
         <source>Yes</source>
         <translation type="unfinished">Bẹẹni</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="175" />
+        <location filename="../../src/gharqad/main.cpp" line="175"/>
         <source>No</source>
         <translation type="unfinished">Rara</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="176" />
+        <location filename="../../src/gharqad/main.cpp" line="176"/>
         <source>OK</source>
         <translation type="unfinished">O DARA</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="177" />
+        <location filename="../../src/gharqad/main.cpp" line="177"/>
         <source>Defaults</source>
         <translation type="unfinished">Awọn aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="178" />
+        <location filename="../../src/gharqad/main.cpp" line="178"/>
         <source>Restore Defaults</source>
         <translation type="unfinished">Mu awọn aiyipada pada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="179" />
+        <location filename="../../src/gharqad/main.cpp" line="179"/>
         <source>Discard</source>
         <translation type="unfinished">Jabọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="181" />
+        <location filename="../../src/gharqad/main.cpp" line="181"/>
         <source>Undo</source>
         <translation type="unfinished">Yipada</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="182" />
+        <location filename="../../src/gharqad/main.cpp" line="182"/>
         <source>Redo</source>
         <translation type="unfinished">Tunṣe</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="183" />
+        <location filename="../../src/gharqad/main.cpp" line="183"/>
         <source>Cut</source>
         <translation type="unfinished">Ge</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="184" />
+        <location filename="../../src/gharqad/main.cpp" line="184"/>
         <source>Copy</source>
         <translation type="unfinished">Daakọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="185" />
+        <location filename="../../src/gharqad/main.cpp" line="185"/>
         <source>Paste</source>
         <translation type="unfinished">Lẹẹmọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="186" />
+        <location filename="../../src/gharqad/main.cpp" line="186"/>
         <source>Delete</source>
         <translation type="unfinished">Paarẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="187" />
+        <location filename="../../src/gharqad/main.cpp" line="187"/>
         <source>Select All</source>
         <translation type="unfinished">Yan Gbogbo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="188" />
+        <location filename="../../src/gharqad/main.cpp" line="188"/>
         <source>Stop</source>
         <translation type="unfinished">Duro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="189" />
+        <location filename="../../src/gharqad/main.cpp" line="189"/>
         <source>Clear</source>
         <translation type="unfinished">Ko o</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/main.cpp" line="190" />
+        <location filename="../../src/gharqad/main.cpp" line="190"/>
         <source>Copy Link Location</source>
         <translation type="unfinished">Daakọ Link Location</translation>
     </message>
@@ -4930,7 +4983,7 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>Qv2ray::ui::widgets::AutoCompleteTextEdit</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/QvAutoCompleteTextEdit.cpp" line="130"/>
         <source>You can not input space characters here.</source>
         <translation type="unfinished">O ko le tẹ awọn ohun kikọ aaye sii si ibi.</translation>
     </message>
@@ -4938,86 +4991,86 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>RouteItem</name>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14"/>
         <source>Route Profile</source>
         <translation type="unfinished">Profaili ipa ọna</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="24"/>
         <source>General</source>
         <translation type="unfinished">Gbogboogbo</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125"/>
         <source>Basic routes</source>
         <translation type="unfinished">Awọn ipa ọna ipilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163"/>
         <source>IP</source>
         <translation type="unfinished">IP</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182"/>
         <source>Domain</source>
         <translation type="unfinished">Ibugbe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201"/>
         <source>Process</source>
         <translation type="unfinished">Ilana</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="224"/>
         <source>Preset</source>
         <translation type="unfinished">Tito tẹlẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231"/>
         <source>Custom routes</source>
         <translation type="unfinished">Awọn ipa ọna aṣa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="251"/>
         <source>Default outbound</source>
         <translation type="unfinished">Ti o njade lo aiyipada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="351"/>
         <source>Name</source>
         <translation type="unfinished">Oruko</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="143"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="259"/>
         <source>Proxy</source>
         <translation type="unfinished">Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="133"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="264"/>
         <source>Direct</source>
         <translation type="unfinished">Taara</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153" />
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153"/>
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269"/>
         <source>Block</source>
         <translation type="unfinished">Dina</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70"/>
         <source>Update url</source>
         <translation type="unfinished">imudojuiwọn url</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="104"/>
         <source>Skip update</source>
         <translation type="unfinished">Foju imudojuiwọn</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111"/>
         <source>Update manually</source>
         <translation type="unfinished">Ṣe imudojuiwọn pẹlu ọwọ</translation>
     </message>
@@ -5026,115 +5079,115 @@ Ibere isanwo jẹ: %2</translation>
         <translation type="obsolete">Ipilẹṣẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280"/>
         <source>Advanced</source>
         <translation type="unfinished">To ti ni ilọsiwaju</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="289"/>
         <source>Import JSON</source>
         <translation type="unfinished">Gbe JSON wọle</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299"/>
         <source>Rules</source>
         <translation type="unfinished">Awọn ofin</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="311"/>
         <source>New</source>
         <translation type="unfinished">Tuntun</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="318"/>
         <source>Move Up</source>
         <translation type="unfinished">Gbe soke</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="325"/>
         <source>Move Down</source>
         <translation type="unfinished">Yi lọ si isalẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="332"/>
         <source>Delete</source>
         <translation type="unfinished">Paarẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="342"/>
         <source>Rule Attributes</source>
         <translation type="unfinished">Ofin eroja</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="361"/>
         <source>Attribute</source>
         <translation type="unfinished">Iwa</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374"/>
         <source>Name_Placeholder</source>
         <translation type="unfinished">Orukọ_Ibi</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406" />
+        <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406"/>
         <source>Notes</source>
         <translation type="unfinished">Awọn akọsilẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334"/>
         <source>Bypass LAN / private IPs (Direct)</source>
         <translation type="unfinished">Fori LAN / IPs ikọkọ (Taara)</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335"/>
         <source>Clear all basic routes</source>
         <translation type="unfinished">Pa gbogbo awọn ipa ọna ipilẹ kuro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
         <source>Invalid rules</source>
         <translation type="unfinished">Awọn ofin ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="373"/>
         <source>Some rules could not be added:
 </source>
         <translation type="unfinished">Diẹ ninu awọn ofin ko le ṣe afikun:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
         <source>Invalid JSON Array</source>
         <translation type="unfinished">Ilana JSON ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419"/>
         <source>The provided input cannot be parsed to a valid route rule array:
 </source>
         <translation type="unfinished">Iṣagbewọle ti a pese ni a ko le ṣe atuntu si ọna ilana ipa ọna to wulo:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
         <source>Invalid operation</source>
         <translation type="unfinished">Iṣẹ ṣiṣe ti ko tọ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534"/>
         <source>Cannot create Route Profile with empty name</source>
         <translation type="unfinished">Ko le ṣẹda Profaili Ipa ọna pẹlu orukọ ofo</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
         <source>Empty Route Profile</source>
         <translation type="unfinished">Ofo Route Profaili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550"/>
         <source>No valid rules are in the profile</source>
         <translation type="unfinished">Ko si awọn ofin to wulo ni profaili</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
+        <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559"/>
         <source>Some rules could not be added, fix them before saving:
 </source>
         <translation type="unfinished">Diẹ ninu awọn ofin ko le ṣafikun, ṣatunṣe wọn ṣaaju fifipamọ:</translation>
@@ -5143,42 +5196,42 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>SecurityForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="14"/>
         <source>Security Settings</source>
         <translation type="unfinished">Aabo Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="65" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="65"/>
         <source>Lock Actions</source>
         <translation type="unfinished">Titiipa Awọn iṣe</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="72" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="72"/>
         <source>Lock Settings</source>
         <translation type="unfinished">Titiipa Eto</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="79" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="79"/>
         <source>Lock Startup</source>
         <translation type="unfinished">Titiipa Ibẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="119" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="119"/>
         <source>Delete Users</source>
         <translation type="unfinished">Pa Awọn olumulo rẹ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="126" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="126"/>
         <source>Edit User Roles</source>
         <translation type="unfinished">Awọn ipa olumulo Ṣatunkọ</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="172"/>
         <source>Change UI Password</source>
         <translation type="unfinished">Yi UI Ọrọigbaniwọle pada</translation>
     </message>
     <message>
-        <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
+        <location filename="../../src/nekobox/ui/security/security.ui" line="179"/>
         <source>Set Proxy Credentials</source>
         <translation type="unfinished">Ṣeto Awọn iwe-ẹri Aṣoju</translation>
     </message>
@@ -5186,12 +5239,12 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>ShutdownOverlay</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29"/>
         <source>Exiting %1</source>
         <translation type="unfinished">Ti jade %1</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
+        <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31"/>
         <source>Starting %1</source>
         <translation type="unfinished">Bibẹrẹ%1</translation>
     </message>
@@ -5199,14 +5252,14 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>SpeedWidget</name>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="188"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="189"/>
         <source>Proxy</source>
         <translation type="unfinished">Aṣoju</translation>
     </message>
     <message>
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191" />
-        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192" />
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="191"/>
+        <location filename="../../src/3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.cpp" line="192"/>
         <source>Direct</source>
         <translation type="unfinished">Taara</translation>
     </message>
@@ -5223,13 +5276,13 @@ Ibere isanwo jẹ: %2</translation>
         <translation type="obsolete">Iṣagbewọle ti a pese ni a ko le ṣe atuntu si ọna ilana ipa ọna to wulo:</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484"/>
         <source>Fetching information</source>
         <translation type="unfinished">Gbigba alaye</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500" />
-        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500"/>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661"/>
         <source>Download Profiles</source>
         <translation type="unfinished">Ṣe igbasilẹ Awọn profaili</translation>
     </message>
@@ -5237,22 +5290,22 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>StartStopButton</name>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="220"/>
         <source>Start</source>
         <translation type="unfinished">Bẹrẹ</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="221"/>
         <source>Connecting…</source>
         <translation type="unfinished">Nsopọ…</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="222"/>
         <source>Stop</source>
         <translation type="unfinished">Duro</translation>
     </message>
     <message>
-        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
+        <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223"/>
         <source>Stopping…</source>
         <translation type="unfinished">Nduro…</translation>
     </message>
@@ -5260,7 +5313,7 @@ Ibere isanwo jẹ: %2</translation>
 <context>
     <name>UsersForm</name>
     <message>
-        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14" />
+        <location filename="../../src/nekobox/ui/security/delete_or_edit_users.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished">Fọọmu</translation>
     </message>
