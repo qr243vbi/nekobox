@@ -3728,7 +3728,7 @@ Weet je het zeker?</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Test uploaden</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
