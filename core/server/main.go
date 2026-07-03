@@ -1,4 +1,5 @@
 //go:build !darwin
+
 package main
 
 import (
@@ -94,14 +95,18 @@ func RunCore(addr net.Addr, _debug *bool) {
 }
 
 func main() {
+	skip_environment_lookup := false
 	{
 		len_os_args := len(os.Args)
 		if len_os_args > 1 {
 			first_arg := os.Args[1]
-			if first_arg == "sing-box" {
+			switch first_arg {
+			case "sing-box":
 				os.Args = os.Args[1:]
 				main_sing.MainFunc()
 				return
+			case "core":
+				skip_environment_lookup = true
 			}
 			switch runtime.GOOS {
 			case "windows":
@@ -120,14 +125,17 @@ func main() {
 			}
 		}
 	}
-
-	v, ok := os.LookupEnv("InTheNameOf")
-	if ok{
-		ok = (v == "Iblis")
-	}
-	if !ok {
-		main_sing.MainFunc()
-		return
+	if !skip_environment_lookup {
+		v, ok := os.LookupEnv("InTheNameOf")
+		if ok {
+			ok = (v == "Iblis")
+		}
+		if !ok {
+			main_sing.MainFunc()
+			return
+		}
+	} else {
+		os.Args = os.Args[1:]
 	}
 
 	var _admin *bool

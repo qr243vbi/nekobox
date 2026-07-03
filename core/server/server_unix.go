@@ -1,4 +1,5 @@
 //go:build linux || freebsd
+
 package main
 
 import (
@@ -97,7 +98,7 @@ func CreatePolkitRule() {
 func restartAsAdmin(save bool) {
 	elevated, err := isElevated()
 	if elevated {
-		checkFlags(save);
+		checkFlags(save)
 		return
 	}
 	var args []string
@@ -122,7 +123,7 @@ func restartAsAdmin(save bool) {
 	environ := os.Environ()
 	args = append(args, environ...)
 	args = append(args, "DISPLAY="+os.Getenv("DISPLAY"), "SUDO_USER="+u.Username,
-		"NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath,
+		"NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE=nekobox_core", executablePath, "core",
 		"-ruleset-cache-directory", internal.GetRulesetCachedir())
 
 	args = append(args, os.Args[1:]...)
@@ -138,5 +139,3 @@ func restartAsAdmin(save bool) {
 func InstallerMode() {
 
 }
-
-

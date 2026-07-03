@@ -1,4 +1,5 @@
 //go:build windows
+
 package main
 
 import (
@@ -260,8 +261,9 @@ func checkTaskScheduler(save bool) error {
 		var pid int
 		pid = os.Getpid()
 
-		other_args := os.Args[1:]
-		other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid))
+		other_args := []string{"core"}
+		other_args = append(other_args, os.Args[1:]...)
+		other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid), "-ruleset-cache-directory", internal.GetRulesetCachedir())
 		formattedString := cmdescape.QuoteCommand(other_args)
 		err = askRun(formattedString, cfg.Stdin, TaskName)
 		if err == nil {
@@ -459,8 +461,8 @@ func runAdmin() (int, error) {
 
 	var pid int
 	pid = os.Getpid()
-
-	other_args := os.Args[1:]
+	other_args := []string{"core"}
+	other_args = append(other_args, os.Args[1:]...)
 	other_args = append(other_args, "-redirect-output", stdout_pipe, "-redirect-error", stderr_pipe, "-waitpid", strconv.Itoa(pid), "-ruleset-cache-directory", internal.GetRulesetCachedir())
 	formattedString := cmdescape.QuoteCommand(other_args)
 
