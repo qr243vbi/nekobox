@@ -117,20 +117,20 @@ namespace Configs {
             None
         };
         class Node;
-        union Value {
-            bool flag;
-            QMap<EnumFieldName, Node> map;
-            QList<Node> array;
-            QString text;
-            long double number; 
-            Value(Tag tag);
-        };
+        using Value = std::variant<
+            bool,
+            QMap<EnumFieldName, Node>,
+            QList<Node>,
+            QString,
+            long double
+        >;
         class Node {
         private:
-            Node(Tag tag);
             Tag tag;
             std::shared_ptr<Value> value;
         public:
+            Node(Tag tag = Tag::None);
+            Node(const Node& node);
             static Node none();
             static Node string(const QString & value);
             static Node boolean(bool value);

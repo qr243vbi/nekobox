@@ -1149,48 +1149,56 @@ namespace Configs_ConfigItem {
 
 namespace Configs {
   namespace Data {
+    
     Node Node::none(){
       return Node(Tag::None);
     };
-    Value::Value(Tag tag){
-      switch (tag){
-        case Tag::Array:
-        this->array = {};
-        break;
-        case Tag::Map:
-        this->map = {};
-        break;
-        case Tag::String:
-        this->text = "";
-        break;
-        case Tag::Number:
-        this->number = 0;
-        break;
-        default:
-        this->flag = false;
-      }
+    Node::Node(const Node& node){
+      this->value = node.value;
+      this->tag = node.tag;
     }
     Node::Node(Tag tag){
-      if (tag == Tag::None){
+      switch (tag){
+        case Tag::String:
+        this->value = std::make_shared<Value>(QString(""));
+        break;
+        case Tag::Array:
+        {
+          QList<Node> list = {};
+          this->value = std::make_shared<Value>(list);
+        }
+        break;
+        case Tag::Boolean:
+        this->value = std::make_shared<Value>(false);
+        break;
+        case Tag::Map:
+        {
+          QMap<EnumFieldName, Node> map = {};
+          this->value = std::make_shared<Value>(map);
+        }
+        break;
+        case Tag::None:
         this->value = nullptr;
-      } else {
-        this->value = std::make_shared<Value>(tag);
+        break;
+        case Tag::Number:
+        this->value = std::make_shared<Value>(static_cast<long double>(0));
+        break;
       }
       this->tag = tag;
     }
     Node Node::string(const QString & value){
       Node node(Tag::String);
-      node.value->text = value;
+      node.value = std::make_shared<Value>(value);
       return node;
     };
     Node Node::boolean(bool value){
       Node node(Tag::Boolean);
-      node.value->flag = value;
+      node.value = std::make_shared<Value>(value);
       return node;
     };
     Node Node::number(long double value){
       Node node(Tag::Number);
-      node.value->number = value;
+      node.value = std::make_shared<Value>(value);
       return node;
     };
     Node Node::map(){
@@ -1223,15 +1231,15 @@ namespace Configs {
 
     long double Node::toNumber() const {
       if (isNumber()){
-        return this->value->number;
+        return std::get<long double>(*this->value);
       } else if (isString()){
-        auto & text = this->value->text;
+        auto & text = std::get<QString>(*this->value);
         if (text.compare("true", Qt::CaseInsensitive)){
           return 1;
         }
         return text.toDouble();
       } else if (isBoolean()){
-        return 0 + this->value->flag;
+        return 0 + std::get<bool>(*this->value);
       } else if (isArray() || isMap()){
         long double i = 0;
         for (Node node: values()){
@@ -1254,11 +1262,11 @@ namespace Configs {
    
     QString Node::toString() const {
       if (isNumber()){
-        return QString::number((double)this->value->number);
+        return QString::number((double)std::get<long double>(*this->value));
       } else if (isString()){
-        return this->value->text;
+        return std::get<QString>(*this->value);
       } else if (isBoolean()){
-        return this->value->flag ? "true" : "false";
+        return std::get<bool>(*this->value) ? "true" : "false";
       } else {
         return "";
       }  
@@ -1266,21 +1274,21 @@ namespace Configs {
 
     long double Node::getNumber(long double def) const {
       if (isNumber()){
-        return this->value->number;
+        return std::get<long double>(*this->value);
       } else {
         return def;
       }
     };
     bool Node::getBoolean(bool def) const{
       if (isBoolean()){
-        return this->value->flag;
+        return std::get<bool>(*this->value);
       } else {
         return def;
       }
     };
     QString Node::getString(const QString & def ) const {
       if (isString()){
-        return this->value->text;
+        return std::get<QString>(*this->value);
       } else {
         return def;
       }
@@ -1290,7 +1298,7 @@ namespace Configs {
       if (!isArray()){
         return def;
       }
-      auto & array = this->value->array;
+      auto & array = std::get<QList<Node>>(*this->value);
       if (array.count() <= index){
         return def;
       }
@@ -1305,7 +1313,7 @@ namespace Configs {
       if (!isArray()){
         return Node::none();
       }
-      auto & array = this->value->array;
+      auto & array = std::get<QList<Node>>(*this->value);
       if (array.count() <= index){
         return Node::none();
       }
@@ -1320,7 +1328,7 @@ namespace Configs {
       if (!isMap()){
         return def;
       }
-      auto & map = this->value->map;
+      auto & map = std::get<QMap<EnumFieldName, Node>>(*this->value);
       auto iter = map.find(index);
       if (iter == map.end()){
         return def;
@@ -1332,16 +1340,16 @@ namespace Configs {
       if (!isMap()){
         return Node::none();
       }
-      auto & map = this->value->map;
+      auto & map = std::get<QMap<EnumFieldName, Node>>(*this->value);
       map[index] = value;
       return value;
     };
     
     size_t Node::count() const {
       if (isArray()){
-        return this->value->array.count();
+        return std::get<QList<Node>>(*this->value).count();
       } else if (isMap()){
-        return this->value->map.count();
+        return std::get<QMap<EnumFieldName, Node>>(*this->value).count();
       } else {
         return 0;
       }
@@ -1351,12 +1359,12 @@ namespace Configs {
       if (!isMap()){
         return {};
       }
-      return this->value->map.keys();
+      return std::get<QMap<EnumFieldName, Node>>(*this->value).keys();
     }
 
     KeyValueRange<QMap<EnumFieldName, Configs::Data::Node> &> Node::asKeyValueRange() const {
       if (isMap()){
-        return ::asKeyValueRange(this->value->map);
+        return ::asKeyValueRange(std::get<QMap<EnumFieldName, Node>>(*this->value));
       } else {
         QMap<EnumFieldName, Configs::Data::Node> map;
         return ::asKeyValueRange(map);
@@ -1365,9 +1373,9 @@ namespace Configs {
 
     QList<Node> Node::values() const {
       if (isMap()){
-        return this->value->map.values();
+        return std::get<QMap<EnumFieldName, Node>>(*this->value).values();
       } else if (isArray()){
-        return this->value->array;
+        return std::get<QList<Node>>(*this->value);
       } else {
         return {};
       }
