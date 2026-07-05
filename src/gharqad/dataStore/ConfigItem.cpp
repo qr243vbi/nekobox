@@ -1,3 +1,4 @@
+#include <memory>
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include "libcore_types.h"
 #include <nekobox/dataStore/Configs.hpp>
@@ -1022,11 +1023,19 @@ const QString& EnumFieldName::get_name() const noexcept { return name; }
 // --- Relational operators ---
 // Default ordering: case-sensitive on original name. Swap to lower_name if you want case-insensitive ordering.
 bool EnumFieldName::operator<(EnumFieldName const& o) const noexcept {
-    return QString::compare(name, o.name, Qt::CaseInsensitive) < 0;
+  QString name = this->name;
+  QString o_name = o.name;
+  name.replace("_", "");
+  o_name.replace("_", "");
+  return QString::compare(name, o_name, Qt::CaseInsensitive) < 0;
 }
 
-bool EnumFieldName::operator==(EnumFieldName const& o) const noexcept {
-    return QString::compare(name, o.name, Qt::CaseInsensitive) == 0;
+bool EnumFieldName::operator==(EnumFieldName const& o) const noexcept {  
+  QString name = this->name;
+  QString o_name = o.name;
+  name.replace("_", "");
+  o_name.replace("_", "");
+  return QString::compare(name, o_name, Qt::CaseInsensitive) == 0;
 }
 
 bool EnumFieldName::operator!=(EnumFieldName const& o) const noexcept {
@@ -1135,5 +1144,233 @@ namespace Configs_ConfigItem {
       }
     }
     return 0;
+  }
+}
+
+namespace Configs {
+  namespace Data {
+    Node Node::none(){
+      return Node(Tag::None);
+    };
+    Value::Value(Tag tag){
+      switch (tag){
+        case Tag::Array:
+        this->array = {};
+        break;
+        case Tag::Map:
+        this->map = {};
+        break;
+        case Tag::String:
+        this->text = "";
+        break;
+        case Tag::Number:
+        this->number = 0;
+        break;
+        default:
+        this->flag = false;
+      }
+    }
+    Node::Node(Tag tag){
+      if (tag == Tag::None){
+        this->value = nullptr;
+      } else {
+        this->value = std::make_shared<Value>(tag);
+      }
+      this->tag = tag;
+    }
+    Node Node::string(const QString & value){
+      Node node(Tag::String);
+      node.value->text = value;
+      return node;
+    };
+    Node Node::boolean(bool value){
+      Node node(Tag::Boolean);
+      node.value->flag = value;
+      return node;
+    };
+    Node Node::number(long double value){
+      Node node(Tag::Number);
+      node.value->number = value;
+      return node;
+    };
+    Node Node::map(){
+      return Node(Tag::Map);
+    };
+    Node Node::array(){
+      return Node(Tag::Array);
+    };
+    Tag Node::type() const {
+      return this->tag;
+    };
+    bool Node::isNumber() const {
+      return this->tag == Tag::Number;
+    };
+    bool Node::isBoolean() const {
+      return this->tag == Tag::Boolean;
+    };
+    bool Node::isMap() const {
+      return this->tag == Tag::Map;
+    };
+    bool Node::isArray() const {
+      return this->tag == Tag::Array;
+    };
+    bool Node::isString() const {
+      return this->tag == Tag::String;
+    };
+    bool Node::isNone() const {
+      return this->tag == Tag::None;
+    };
+
+    long double Node::toNumber() const {
+      if (isNumber()){
+        return this->value->number;
+      } else if (isString()){
+        auto & text = this->value->text;
+        if (text.compare("true", Qt::CaseInsensitive)){
+          return 1;
+        }
+        return text.toDouble();
+      } else if (isBoolean()){
+        return 0 + this->value->flag;
+      } else if (isArray() || isMap()){
+        long double i = 0;
+        for (Node node: values()){
+          i += node.toNumber();
+        }
+        return i;
+      } else {
+        return 0;
+      }
+    };  
+    bool Node::toBoolean() const {
+      if (isNumber() || isString() || isBoolean()){
+        return this->isNumber() > 0;
+      } else if (isArray() || isMap()){
+        return count() > 0;
+      } else {
+        return false;
+      }
+    };  
+   
+    QString Node::toString() const {
+      if (isNumber()){
+        return QString::number((double)this->value->number);
+      } else if (isString()){
+        return this->value->text;
+      } else if (isBoolean()){
+        return this->value->flag ? "true" : "false";
+      } else {
+        return "";
+      }  
+    };
+
+    long double Node::getNumber(long double def) const {
+      if (isNumber()){
+        return this->value->number;
+      } else {
+        return def;
+      }
+    };
+    bool Node::getBoolean(bool def) const{
+      if (isBoolean()){
+        return this->value->flag;
+      } else {
+        return def;
+      }
+    };
+    QString Node::getString(const QString & def ) const {
+      if (isString()){
+        return this->value->text;
+      } else {
+        return def;
+      }
+    };
+
+    const Node Node::get(size_t index, const Node & def) const{
+      if (!isArray()){
+        return def;
+      }
+      auto & array = this->value->array;
+      if (array.count() <= index){
+        return def;
+      }
+      return array[index];
+    };
+    
+    Node Node::get(size_t index, const Node & def){
+      return get(index, def);
+    };
+            
+    Node Node::set(size_t index, const Node & value){
+      if (!isArray()){
+        return Node::none();
+      }
+      auto & array = this->value->array;
+      if (array.count() <= index){
+        return Node::none();
+      }
+      array[index] = value;
+      return value;
+    };
+
+    Node Node::get(const QString &index, const Node & def){
+      return get(index, def);
+    };
+    const Node Node::get(const QString &index, const Node & def) const {
+      if (!isMap()){
+        return def;
+      }
+      auto & map = this->value->map;
+      auto iter = map.find(index);
+      if (iter == map.end()){
+        return def;
+      }
+      return iter.value();
+    };
+            
+    Node Node::set(const QString &index, const Node & value){
+      if (!isMap()){
+        return Node::none();
+      }
+      auto & map = this->value->map;
+      map[index] = value;
+      return value;
+    };
+    
+    size_t Node::count() const {
+      if (isArray()){
+        return this->value->array.count();
+      } else if (isMap()){
+        return this->value->map.count();
+      } else {
+        return 0;
+      }
+    };
+
+    QList<EnumFieldName> Node::keys() const {
+      if (!isMap()){
+        return {};
+      }
+      return this->value->map.keys();
+    }
+
+    KeyValueRange<QMap<EnumFieldName, Configs::Data::Node> &> Node::asKeyValueRange() const {
+      if (isMap()){
+        return ::asKeyValueRange(this->value->map);
+      } else {
+        QMap<EnumFieldName, Configs::Data::Node> map;
+        return ::asKeyValueRange(map);
+      }
+    }
+
+    QList<Node> Node::values() const {
+      if (isMap()){
+        return this->value->map.values();
+      } else if (isArray()){
+        return this->value->array;
+      } else {
+        return {};
+      }
+    }
   }
 }

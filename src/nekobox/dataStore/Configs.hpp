@@ -5,6 +5,7 @@
 #pragma once
 #include "Const.hpp"
 #include "Utils.hpp"
+#include <memory>
 
 namespace Configs {
     QByteArray hash(const QString & str);
@@ -103,6 +104,72 @@ inline QMap<EnumFieldName, QString> QStdMapString2QMapEnumFieldName(const std::m
         vm.insert(QString::fromStdString(it->first), QString::fromStdString(it->second));
     }
     return vm;
+}
+
+namespace Configs {
+    namespace Data {
+        enum class Tag {
+            Boolean,
+            Map,
+            Array,
+            String,
+            Number,
+            None
+        };
+        class Node;
+        union Value {
+            bool flag;
+            QMap<EnumFieldName, Node> map;
+            QList<Node> array;
+            QString text;
+            long double number; 
+            Value(Tag tag);
+        };
+        class Node {
+        private:
+            Node(Tag tag);
+            Tag tag;
+            std::shared_ptr<Value> value;
+        public:
+            static Node none();
+            static Node string(const QString & value);
+            static Node boolean(bool value);
+            static Node number(long double value);
+            static Node map();
+            static Node array();
+            Tag type() const;
+            bool isNumber() const;
+            bool isBoolean() const;
+            bool isMap() const;
+            bool isArray() const;
+            bool isString() const;
+            bool isNone() const;
+
+            long double toNumber() const;  
+            bool toBoolean() const;
+            QString toString() const;
+
+            long double getNumber(long double def = 0) const;
+            bool getBoolean(bool def = 0) const;
+            QString getString(const QString & def = "") const;
+
+            Node get(size_t index, const Node & def = Node::none());
+            const Node get(size_t index, const Node & def = Node::none()) const;
+            
+            Node set(size_t index, const Node & value);
+
+            Node get(const QString &index, const Node & def = Node::none());
+            const Node get(const QString &index, const Node & def = Node::none()) const;
+            
+            Node set(const QString &index, const Node & value);
+            size_t count() const;
+
+            KeyValueRange<QMap<EnumFieldName, Configs::Data::Node> &> asKeyValueRange() const;
+
+            QList<EnumFieldName> keys() const;
+            QList<Node> values() const;
+        };
+    };
 }
 
 #endif // WIDGET_HPP_INCLUDED

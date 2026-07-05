@@ -47,6 +47,7 @@ namespace Configs {
         url.setQuery(query);
         return url.toString(QUrl::FullyEncoded);
     }
+    
     bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
     {
         using namespace Configs::From_Json;
@@ -58,6 +59,7 @@ namespace Configs {
         add_tls(stream, obj);
         return true;
     }
+
     CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
         using namespace To_CoreObj_box;
