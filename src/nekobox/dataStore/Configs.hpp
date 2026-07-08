@@ -152,6 +152,7 @@ namespace Configs {
             bool isObject() const;
             bool isNull() const;
             bool isNothing() const;
+            bool isScalar() const;
             bool isUndefined() const;
             bool isDouble() const;
             bool isBool() const;

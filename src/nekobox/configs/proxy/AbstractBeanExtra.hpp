@@ -107,6 +107,7 @@ namespace To_Link {
 
 };
 
+
 namespace From_Json {
     void add_default_fields(Configs::ProxyEntity * entity, const Data::Node & obj);
 
@@ -196,4 +197,27 @@ namespace To_CoreObj_box {
         }
     }
 };
+
+namespace From_Yaml {
+    using From_Json::add_username_password;
+
+    void add_default_fields(Configs::ProxyEntity * entity, const Data::Node & obj);
+    bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
+    
+    template<typename T>
+    static void add_network(T * t, const Data::Node &obj){
+        auto &network = obj.at("udp");
+        if (network.toBool()) *t->network = "udp";
+    }
+
+    int parseUOT(const Data::Node &obj);
+
+    template<typename T>
+    static void add_udp_over_tcp(T * bean, const Data::Node &obj){
+        bean->uot = parseUOT(obj);
+    }
+
+    void add_mux_state(AbstractBean * bean, const Data::Node &obj);
+}
+
 }

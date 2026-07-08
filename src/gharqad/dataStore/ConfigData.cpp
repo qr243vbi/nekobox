@@ -361,6 +361,9 @@ namespace Configs {
     const Node & Node::operator [](const EnumFieldName& index) const{
       return this->at(index);
     };
+    bool Node::isScalar() const {
+      return isBool() || isNumber() || isString();
+    }
     Node & Node::operator [](const EnumFieldName& index){
       return this->at(index);
     };

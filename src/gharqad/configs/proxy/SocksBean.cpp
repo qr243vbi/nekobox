@@ -21,6 +21,16 @@ bool SocksBean::TryParseJson(const Configs::Data::Node &obj) {
   return true;
 }
 
+bool SocksBean::TryParseYaml(const Configs::Data::Node &obj) {
+  using namespace Configs::From_Yaml;
+  add_default_fields(this->entity, obj);
+  this->socks_http_type = type_Socks5;
+  add_username_password(this, obj);
+ // add_udp_over_tcp(this, obj);
+  add_network(this, obj);
+  return true;
+}
+
 QString SocksBean::ToShareLink() const {
   using namespace Configs::To_Link;
 

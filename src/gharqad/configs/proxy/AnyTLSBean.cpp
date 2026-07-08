@@ -60,6 +60,18 @@ namespace Configs {
         return true;
     }
 
+    bool AnyTLSBean::TryParseYaml(const Configs::Data::Node &obj) {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        password = obj["password"].toString();
+        idle_session_check_interval = obj["idle_session_check_interval"].toString() + "s";
+        idle_session_timeout = obj["idle_session_timeout"].toString() + "s";
+        min_idle_session = obj["min_idle_session"].toInt();
+        add_tls(stream, obj);
+        return true;
+    }
+
+
     CoreObjOutboundBuildResult AnyTLSBean::BuildCoreObjSingBox() const {
         CoreObjOutboundBuildResult result;
         using namespace To_CoreObj_box;

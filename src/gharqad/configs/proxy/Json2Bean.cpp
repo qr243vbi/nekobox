@@ -79,7 +79,7 @@ namespace Configs
         int uot = 0;
         uot = obj["udp_over_tcp"].toBool();
         auto &uot_obj = obj["uot"];
-        if (uot_obj.isNothing()){
+        if (!uot_obj.isNothing()){
             if (uot_obj.isDouble()) uot = uot_obj.toInt();
             if (uot_obj.isBool()) uot = uot_obj.toBool();
             if (uot_obj.isObject()) {

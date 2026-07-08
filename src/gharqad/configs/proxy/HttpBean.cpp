@@ -37,6 +37,17 @@ namespace Configs {
         return true;
     }
 
+    bool HttpBean::TryParseYaml(const Configs::Data::Node & obj)
+    {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        path = obj["path"].toString();
+        headers = obj["headers"].toVariantMap();
+        add_tls(stream, obj);
+        return true;
+    }
+
     bool HttpBean::TryParseLink(const QString &link) {
         using namespace From_Link;
         auto url = QUrl(link);

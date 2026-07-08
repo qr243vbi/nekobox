@@ -54,6 +54,31 @@ namespace Configs {
         add_mux_state(this, obj);
         return true;
     }
+
+    bool ShadowSocksBean::TryParseYaml(const Configs::Data::Node &obj) {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        add_network(this, obj);
+        add_udp_over_tcp(this, obj);
+        auto & method = obj["method"];
+        auto & password = obj["password"];
+        auto & plugin = obj["plugin"];
+        auto & plugin_opts = obj["plugin_opts"];
+        if (method.isScalar()) this->method = method.toString();
+        if (password.isScalar()) this->password = password.toString();
+        if (plugin.isScalar()) this->plugin = plugin.toString();
+        if (plugin_opts.isMap()) {
+            QStringList list;
+            for (auto [key, value]: plugin_opts.asKeyValueRange()){
+                list << (key.get_name() + "=" + value.toString());
+            }
+            this->plugin_opts = list.join(";");
+        };
+        add_mux_state(this, obj);
+        return true;
+    };
+
+
     bool ShadowSocksBean::TryParseLink(const QString &link) {
         using namespace From_Link;
         if (SubStrBefore(link, "#").contains("@")) {

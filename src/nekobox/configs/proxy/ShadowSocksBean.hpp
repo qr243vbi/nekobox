@@ -45,6 +45,8 @@ namespace Configs {
         bool TryParseLink(const QString &link) override;
 
         bool TryParseJson(const Configs::Data::Node &obj) override;
+        
+        bool TryParseYaml(const Configs::Data::Node &obj) override;
 
         bool TryParseFromSIP008(const QJsonObject& object);
 
