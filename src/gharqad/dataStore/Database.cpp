@@ -912,9 +912,36 @@ QString ProfileManager::GetDisplayType(const QString &type) {
 }
 
 std::shared_ptr<ProxyEntity>
-ProfileManager::NewProxyEntity(const QString &type) {
-  //    Configs::AbstractBean *bean = nullptr;
-  auto ent = std::make_shared<ProxyEntity>(type);
+ProfileManager::NewProxyEntity(QString scheme, bool additional) {
+  if (additional){
+    scheme = scheme.toLower().replace("-", "").replace("_", "");
+    if (scheme == ("socks5") || scheme == ("socks4") ||
+           scheme == ("socks4a")){
+      scheme = "socks";
+    } else if (scheme == "https") {
+      scheme = "http";
+    } else if (scheme == "ss") {
+      scheme = "shadowsocks";
+    } else if (scheme == "mierus") {
+      scheme = "mieru";
+    } else if (scheme == ("naive+https") ||
+            scheme == ("naive+http") ||
+            scheme == ("naive+quic")) {
+      scheme = "naive";
+    } else if (scheme == "tt") {
+      scheme = "trusttunnel";
+    } else if (scheme == "hy") {
+      scheme = "hysteria"; 
+    } else if (scheme == "hy2") {
+      scheme = "hysteria2";
+    } else if (scheme == "wg") {
+      scheme = "wireguard";
+    } else if (scheme == "amneziawg"
+        || scheme == "amnezia"){
+      scheme = "awg";
+    }
+  }
+  auto ent = std::make_shared<ProxyEntity>(scheme);
   return ent;
 }
 

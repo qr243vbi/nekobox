@@ -1020,22 +1020,25 @@ void EnumFieldName::set_name(QString n) {
 // --- Accessors ---
 const QString& EnumFieldName::get_name() const noexcept { return name; }
 
+static inline QString ModifyEnumName(QString name){
+  name = name.toLower();
+  name.replace("_", "");
+  name.replace("-", "");
+  return name;
+}
+static inline std::tuple<QString, QString> ModifyEnumName(QString name, QString o_name){
+  return std::make_tuple<QString, QString>(ModifyEnumName(name), ModifyEnumName(o_name));
+}
 // --- Relational operators ---
 // Default ordering: case-sensitive on original name. Swap to lower_name if you want case-insensitive ordering.
 bool EnumFieldName::operator<(EnumFieldName const& o) const noexcept {
-  QString name = this->name;
-  QString o_name = o.name;
-  name.replace("_", "");
-  o_name.replace("_", "");
-  return QString::compare(name, o_name, Qt::CaseInsensitive) < 0;
+  auto [name, o_name] = ModifyEnumName(this->name, o.name);
+  return name < o_name;
 }
 
 bool EnumFieldName::operator==(EnumFieldName const& o) const noexcept {  
-  QString name = this->name;
-  QString o_name = o.name;
-  name.replace("_", "");
-  o_name.replace("_", "");
-  return QString::compare(name, o_name, Qt::CaseInsensitive) == 0;
+  auto [name, o_name] = ModifyEnumName(this->name, o.name);
+  return name == o_name;
 }
 
 bool EnumFieldName::operator!=(EnumFieldName const& o) const noexcept {

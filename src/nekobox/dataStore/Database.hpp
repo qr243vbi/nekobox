@@ -114,7 +114,7 @@ namespace Configs {
 
         [[nodiscard]] static QString GetDisplayType(const QString & type);
 
-        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(const QString &type);
+        [[nodiscard]] static std::shared_ptr<ProxyEntity> NewProxyEntity(QString type, bool additional = false);
 
         [[nodiscard]] static std::shared_ptr<Group> NewGroup();
 

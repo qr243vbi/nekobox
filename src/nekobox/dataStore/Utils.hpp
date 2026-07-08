@@ -6,7 +6,7 @@
 
 #include <boost/dll/runtime_symbol_info.hpp>
 
-#include "3rdparty/qv2ray/wrapper.hpp"
+#include <3rdparty/qv2ray/wrapper.hpp>
 #include <QDebug>
 #include <QFile>
 #include <QJsonArray>
@@ -17,7 +17,6 @@
 #include <functional>
 #include <QSettings>
 #include <QFileInfo>
-#include <memory>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
 #include <QStyleHints>
 #endif
@@ -514,3 +513,23 @@ QStringList VectorStr2QListStr(const std::vector<std::string> &list);
 std::vector<int> QListInt2VectorInt(const QList<int> &list);
 
 QList<int> VectorInt2QListInt(const std::vector<int> &list);
+
+
+#include <yaml-cpp/yaml.h>
+QString Node2QString(const YAML::Node &n, const QString &def = "");
+
+namespace Configs {
+  namespace Data {
+    class Node;
+  }
+}
+
+Configs::Data::Node Node2Custom(const YAML::Node &n);
+
+QStringList Node2QStringList(const YAML::Node &n);
+
+int Node2Int(const YAML::Node &n, int def = 0);
+
+bool Node2Bool(const YAML::Node &n, bool def = false);
+
+YAML::Node NodeChild(const YAML::Node &n, const std::list<std::string> &keys);

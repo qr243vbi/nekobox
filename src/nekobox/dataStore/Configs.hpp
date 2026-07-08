@@ -136,7 +136,7 @@ namespace Configs {
             Node(const Node& node);
             static Node null();
             static Node undefined();
-            static Node string(const QString & value);
+            static Node string(const EnumFieldName & value);
             static Node boolean(bool value);
             static Node number(long double value);
             static Node map();
@@ -165,7 +165,7 @@ namespace Configs {
 
             long double getNumber(long double def = 0) const;
             bool getBoolean(bool def = 0) const;
-            QString getString(const QString & def = "") const;
+            QString getString(const EnumFieldName & def = "") const;
 
             bool add( Node  value);
             bool addFirst( Node  value);
@@ -179,7 +179,7 @@ namespace Configs {
             QList<EnumFieldName> keys() const;
             QList<Node> values() const;
 
-            Node(const QString &);
+            Node(const EnumFieldName &);
             Node(bool);
             Node(double);
             Node(const QJsonObject&);
@@ -187,14 +187,21 @@ namespace Configs {
 
             const Node & operator [](size_t) const;
             Node & operator [](size_t);
+
             const Node & operator [](const EnumFieldName&) const;
             Node & operator [](const EnumFieldName&);
 
+            const Node & operator [](const QList<EnumFieldName>&) const;
+            Node & operator [](const QList<EnumFieldName>&);
 
             const Node & at(size_t) const;
             Node & at(size_t);
+
             const Node & at(const EnumFieldName&) const;
             Node & at(const EnumFieldName&);
+
+            const Node & at(const QList<EnumFieldName>&) const;
+            Node & at(const QList<EnumFieldName>&);
 
             static Node parseJsonValue(const QJsonValueConstRef & value);
             static Node fromVariantMap(const QVariantMap & map);

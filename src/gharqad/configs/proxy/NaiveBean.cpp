@@ -65,6 +65,11 @@ namespace Configs {
         using namespace From_Link;
         auto url = QUrl(link);
         if (!url.isValid()) return false;
+        bool quic_enabled = url.scheme() == ("naive+quic");
+        if (quic_enabled) {
+            this->quic = true;
+            *this->quic_congestion_control = 1;
+        }
         QUrlQuery query = GetQuery(url);
         add_default_fields(url, entity);
 

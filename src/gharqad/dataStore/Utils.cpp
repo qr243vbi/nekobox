@@ -8,9 +8,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #endif
-#include <iostream>
 #include <random>
-#include <ctime>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/sys/QThreadCreateThread.hpp>
@@ -701,4 +699,137 @@ QString QJsonType2QString(QJsonValue::Type type) {
     break;
   };
   return "Undefined";
+}
+
+
+
+QString Node2QString(const YAML::Node &n, const QString &def) {
+    try {
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+        return QString::fromStdString(n.as<std::string>());
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
+    }
+}
+QStringList Node2QStringList(const YAML::Node &n) {
+    try {
+        if (!n || !n.IsSequence()) {
+            return {};
+        }
+
+        QStringList list;
+        for (const auto &item : n) {
+            list << QString::fromStdString(item.as<std::string>());
+        }
+        return list;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return {};
+    }
+}
+
+
+int Node2Int(const YAML::Node &n, int def) {
+    try {
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+
+        if (n.IsScalar()) {
+            // yaml-cpp can convert directly if it's numeric
+            try {
+                return n.as<int>();
+            } catch (const YAML::BadConversion &) {
+                // fallback: parse string manually
+                return std::atoi(n.as<std::string>().c_str());
+            }
+        }
+
+        return def;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
+    }
+}
+bool Node2Bool(const YAML::Node &n, bool def) {
+    try {
+        if (!n || !n.IsDefined()) {
+            return def;
+        }
+
+        // First attempt: direct bool conversion
+        try {
+            return n.as<bool>();
+        } catch (const YAML::BadConversion &) {
+            // fall through to integer attempt
+        }
+
+        // Second attempt: interpret as integer
+        try {
+            return n.as<int>() != 0;
+        } catch (const YAML::BadConversion &) {
+            // fall through to default
+        }
+
+        return def;
+
+    } catch (const YAML::Exception &ex) {
+        qDebug() << ex.what();
+        return def;
+    }
+}
+
+YAML::Node NodeChild(const YAML::Node &n,
+                     const std::list<std::string> &keys) {
+    for (const auto &key : keys) {
+        YAML::Node child = n[key];
+        if (child && child.IsDefined()) {
+            return child;
+        }
+    }
+    return YAML::Node();  // null node
+}
+
+Configs::Data::Node Node2Custom(const YAML::Node &n){
+  using namespace Configs::Data;
+  if (!n.IsDefined()){
+    undefined_value:
+    return Node::undefined();
+  } else if (n.IsNull()){
+    return Node::null();
+  } else if (n.IsMap()){
+    Node ret = Node::map();
+    for (YAML::const_iterator it = n.begin(); it != n.end(); ++it) {
+      auto str = it->first.as<std::string>();
+      ret.at(str) = Node2Custom(it->second);
+    }
+    return ret;
+  } else if (n.IsSequence()){
+    Node ret = Node::array();
+    for (const auto& item : n) {
+      ret.add(Node2Custom(item));
+    }
+    return ret;
+  } else if (n.IsScalar()){
+    QString str = QString::fromStdString(n.as<std::string>());
+    bool ok = false;
+    double db = str.toDouble(&ok);
+    if (ok){
+      return Node(db);
+    } else {
+      if (str == "true"){
+        return Node(true);
+      } else if (str == "false"){
+        return Node(false);
+      }
+      return Node(str);
+    }
+  } else {
+    goto undefined_value;
+  }
 }

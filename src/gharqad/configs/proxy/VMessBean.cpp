@@ -8,6 +8,8 @@
 
 #include <qjsonobject.h>
 #include <QStandardPaths>
+#include <nekobox/dataStore/Utils.hpp>
+
 
 namespace Configs {
 

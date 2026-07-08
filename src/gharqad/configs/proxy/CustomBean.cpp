@@ -5,6 +5,7 @@
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/includes.h>
+#include <nekobox/dataStore/Utils.hpp>
 
 #include <qjsonobject.h>
 #include <QStandardPaths>

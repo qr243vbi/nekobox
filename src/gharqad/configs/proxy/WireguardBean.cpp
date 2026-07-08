@@ -109,6 +109,10 @@ namespace Configs {
                     || (init_packet_junk_size > 0 || response_packet_junk_size > 0)
                     || (cookie_reply_junk_size > 0 || transport_packet_junk_size > 0);
         }
+        if (!enable_amnezia){
+            auto scheme = url.scheme();
+            enable_amnezia = (scheme == "awg" || scheme == "amneziawg" || scheme == "amnezia");
+        }
         this->enableAmnezia(enable_amnezia);
         return true;
     }

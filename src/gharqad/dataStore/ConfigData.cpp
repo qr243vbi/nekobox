@@ -1,5 +1,6 @@
 
 #include <nekobox/dataStore/Configs.hpp>
+#include <QJsonObject>
 
 namespace Configs {
   namespace Data {
@@ -43,9 +44,9 @@ namespace Configs {
       }
       this->tag = tag;
     }
-    Node Node::string(const QString & value){
+    Node Node::string(const EnumFieldName & value){
       Node node(Tag::String);
-      node.value = value;
+      node.value = value.get_name();
       return node;
     };
     Node Node::boolean(bool value){
@@ -113,7 +114,7 @@ namespace Configs {
         return std::get<long double>(this->value);
       } else if (isString()){
         auto & text = std::get<QString>(this->value);
-        if (text.compare("true", Qt::CaseInsensitive)){
+        if (EnumFieldName("true") == EnumFieldName(text)){
           return 1;
         }
         return text.toDouble();
@@ -165,11 +166,11 @@ namespace Configs {
         return def;
       }
     };
-    QString Node::getString(const QString & def ) const {
+    QString Node::getString(const EnumFieldName & def ) const {
       if (isString()){
         return std::get<QString>(this->value);
       } else {
-        return def;
+        return def.get_name();
       }
     };
 
@@ -203,7 +204,7 @@ namespace Configs {
     bool Node::toBool() const { return toBoolean(); };
     bool Node::isObject() const { return isMap(); };
 
-    Node::Node(const QString & str){
+    Node::Node(const EnumFieldName & str){
       *this = Node::string(str);
     };
     Node::Node(bool val){
@@ -284,8 +285,12 @@ namespace Configs {
       static Node node;
       if (this->isArray()){
         auto &list = std::get<QList<Node>>(this->value);
+        if (list.count() <= index){
+          goto return_undefined;
+        }
         return list.at(index);
       } else {
+        return_undefined:
         node = Node::undefined();
         return node;
       }
@@ -303,30 +308,44 @@ namespace Configs {
         return node;
       }
     };
-    const Node & Node::at(const EnumFieldName& index) const {
+
+    const Node & Node::at(const QList<EnumFieldName>& index) const {
       static Node node;
       if (this->isMap()){
         auto &list = std::get<QMap<EnumFieldName, Node>>(this->value);
-        return list.find(index).value();
-      } else {
-        node = Node::undefined();
-        return node;
-      }
-    };
-    Node & Node::at(const EnumFieldName& index) {
-      static Node node;
-      if (this->isMap()){
-        auto &list = std::get<QMap<EnumFieldName, Node>>(this->value);
-        auto iter = list.find(index);
-        if (iter == list.end()){
-          return (list[index] = Node::null());
-        } else {
-          return iter.value();
+        for (auto str : index){
+          auto iter = list.find(str);
+          if (list.end() != iter){
+            return iter.value();
+          }
         }
-      } else {
-        node = Node::undefined();
-        return node;
       }
+      node = Node::undefined();
+      return node;
+    };
+
+    Node & Node::at(const QList<EnumFieldName>& index) {
+      static Node node;
+      if (this->isMap()){
+        auto &list = std::get<QMap<EnumFieldName, Node>>(this->value);
+        for (auto str : index){
+          auto iter = list.find(str);
+          if (list.end() != iter){
+            return iter.value();
+          }
+        }
+        return (list[index[0]] = Node::null());
+      }
+      node = Node::undefined();
+      return node;
+    };
+
+    const Node & Node::at(const EnumFieldName& t) const {
+      return this->at({t});
+    };
+
+    Node & Node::at(const EnumFieldName& t) {
+      return this->at({t});
     };
 
     bool Node::isNothing() const {
@@ -343,6 +362,12 @@ namespace Configs {
       return this->at(index);
     };
     Node & Node::operator [](const EnumFieldName& index){
+      return this->at(index);
+    };
+    const Node & Node::operator [](const QList<EnumFieldName>& index) const{
+      return this->at(index);
+    };
+    Node & Node::operator [](const QList<EnumFieldName>& index){
       return this->at(index);
     };
 
