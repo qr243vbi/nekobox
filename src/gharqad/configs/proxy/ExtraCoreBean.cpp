@@ -22,7 +22,7 @@ namespace Configs {
         result.outbound = outbound;
         return result;
     }
-    bool ExtraCoreBean::TryParseJson(const QJsonObject& obj)
+    bool ExtraCoreBean::TryParseJson(const Configs::Data::Node & obj)
     {
         return false;
     }

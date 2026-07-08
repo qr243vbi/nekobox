@@ -36,7 +36,7 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
-    bool TrustTunnelBean::TryParseJson(const QJsonObject& obj)
+    bool TrustTunnelBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);

@@ -1,7 +1,3 @@
-
-
-
-
 #pragma once
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
@@ -112,32 +108,33 @@ namespace To_Link {
 };
 
 namespace From_Json {
-    void add_default_fields(Configs::ProxyEntity * entity, const QJsonObject & obj);
+    void add_default_fields(Configs::ProxyEntity * entity, const Data::Node & obj);
 
     template<typename T>
-    static void add_network(T * t, const QJsonObject &obj){
-        if (obj.contains("network")) *t->network = obj["network"];
+    static void add_network(T * t, const Data::Node &obj){
+        auto &network = obj.at("network");
+        if (network.isString()) *t->network = network.toString();
     }
 
     template<typename B>
-    static void add_username_password(B * bean, const QJsonObject &obj){
-        bean->username = obj["username"].toString();
-        bean->password = obj["password"].toString();
+    static void add_username_password(B * bean, const Data::Node &obj){
+        bean->username = obj.at("username").toString();
+        bean->password = obj.at("password").toString();
     }
-    void add_mux_state(AbstractBean * bean, const QJsonObject &obj);
-    bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj);
-    bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const QJsonObject & obj);
-    int parseUOT(const QJsonObject &obj);
+    void add_mux_state(AbstractBean * bean, const Data::Node &obj);
+    bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
+    bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
+    int parseUOT(const Data::Node &obj);
 
     template<typename T>
-    static void add_udp_over_tcp(T * bean, const QJsonObject &obj){
+    static void add_udp_over_tcp(T * bean, const Data::Node &obj){
         bean->uot = parseUOT(obj);
     }
 
     template<typename T>
-    static void add_quic(T * bean, const QJsonObject &obj){
-        *bean->quic_congestion_control = obj["quic_congestion_control"].toString();
-        bean->quic = obj["quic"].toBool();    
+    static void add_quic(T * bean, const Data::Node &obj){
+        *bean->quic_congestion_control = obj.at("quic_congestion_control").toString();
+        bean->quic = obj.at("quic").toBool();    
     }
 };
 

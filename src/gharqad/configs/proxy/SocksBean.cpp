@@ -11,10 +11,10 @@
 
 namespace Configs {
 
-bool SocksBean::TryParseJson(const QJsonObject &obj) {
+bool SocksBean::TryParseJson(const Configs::Data::Node &obj) {
   using namespace Configs::From_Json;
   add_default_fields(this->entity, obj);
-  this->socks_http_type = obj["version"].toInt(type_Socks5);
+  this->socks_http_type = obj["version"].getNumber(type_Socks5);
   add_username_password(this, obj);
   add_udp_over_tcp(this, obj);
   add_network(this, obj);

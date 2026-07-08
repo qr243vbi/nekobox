@@ -212,5 +212,5 @@ void AbstractBean::ResolveDomainToIP(const std::function<void()> &onFinished)
 
         bool AbstractBean::TryParseLink(const QString &link) { return this->TryParseNekorayLink(link); };
 
-        bool AbstractBean::TryParseJson(const QJsonObject &obj) { return false; };
+        bool AbstractBean::TryParseJson(const Configs::Data::Node &obj) { return false; };
 } // namespace Configs

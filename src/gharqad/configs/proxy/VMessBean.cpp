@@ -30,7 +30,7 @@ namespace Configs {
         return result;
     }
 
-    bool VMessBean::TryParseJson(const QJsonObject& obj)
+    bool VMessBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);

@@ -38,7 +38,7 @@ namespace Configs {
         if (object.contains("remarks")) entity->name = object["remarks"].toString();
         return !( entity->serverAddress.isEmpty() || method.isEmpty() || password.isEmpty());
     }
-    bool ShadowSocksBean::TryParseJson(const QJsonObject& obj)
+    bool ShadowSocksBean::TryParseJson(const Configs::Data::Node& obj)
     {    
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);

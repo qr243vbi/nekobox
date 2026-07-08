@@ -12,7 +12,7 @@
 namespace Configs {
 
 
-    bool TrojanVLESSBean::TryParseJson(const QJsonObject& obj)
+    bool TrojanVLESSBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         proxy_type = obj["type"].toString() == "trojan" ? proxy_Trojan : proxy_VLESS;

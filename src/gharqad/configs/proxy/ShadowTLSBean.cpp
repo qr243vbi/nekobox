@@ -11,7 +11,7 @@
 
 namespace Configs {
 
-bool ShadowTLSBean::TryParseJson(const QJsonObject &obj) {
+bool ShadowTLSBean::TryParseJson(const Configs::Data::Node &obj) {
   using namespace Configs::From_Json;
   add_default_fields(this->entity, obj);
   password = obj["password"].toString();

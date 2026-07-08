@@ -30,7 +30,7 @@ namespace Configs {
 
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
-        bool TryParseJson(const QJsonObject &obj) override;
+        bool TryParseJson(const Configs::Data::Node &obj) override;
 
         virtual QString type()const override {
             return "extra";

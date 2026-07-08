@@ -68,7 +68,7 @@ namespace Configs {
         bool TryParseNekorayLink(const QString &link);
         bool TryParseNekorayLink(const QUrl &link);
 
-        virtual bool TryParseJson(const QJsonObject &obj);
+        virtual bool TryParseJson(const Configs::Data::Node &obj);
     };
 
 } // namespace Configs

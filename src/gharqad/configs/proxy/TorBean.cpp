@@ -47,12 +47,12 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
-    bool TorBean::TryParseJson(const QJsonObject &obj){
+    bool TorBean::TryParseJson(const Configs::Data::Node &obj){
         entity->name = obj["tag"].toString();
         executable_path = obj["executable_path"].toString();
-        extra_args = QJsonArray2QListStr(obj["extra_args"].toArray());
+        extra_args = obj["extra_args"].toStringList();
         data_directory = obj["data_directory"].toString();
-        torrc = obj["torrc"].toObject().toVariantMap();
+        torrc = obj["torrc"].toVariantMap();
         return true;
     };
     bool TorBean::TryParseLink(const QString &link){

@@ -187,7 +187,7 @@ namespace Configs {
     }
 
 
-    bool QUICBean::TryParseJson(const QJsonObject& obj)
+    bool QUICBean::TryParseJson(const Configs::Data::Node& obj)
     {
             using namespace Configs::From_Json;
         auto type = obj["type"].toString();
@@ -195,13 +195,15 @@ namespace Configs {
         if (type == "hysteria")
         {
             proxy_type = proxy_Hysteria;
-            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListStr(obj["server_ports"].toArray()) : QStringList();
+            auto & server_ports = obj["server_ports"];
+            serverPorts = server_ports.isArray() ? server_ports.toStringList() : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;
             obfsPassword = obj["obfs"].toString();
             authPayloadType = obj["auth"].isString() ? hysteria_auth_base64 : hysteria_auth_string;
-            authPayload = obj["auth"].isString() ? obj["auth"].toString() : obj["auth_str"].toString();
+            auto & obj_auth = obj["auth"];
+            authPayload = obj_auth.toString();
             disableMtuDiscovery = obj["disable_mtu_discovery"].toBool();
             connectionReceiveWindow = obj["recv_window_conn"].toInt();
             streamReceiveWindow = obj["recv_window"].toInt();
@@ -211,11 +213,12 @@ namespace Configs {
         if (type == "hysteria2")
         {
             proxy_type = proxy_Hysteria2;
-            serverPorts = obj["server_ports"].isArray() ? QJsonArray2QListStr(obj["server_ports"].toArray()) : QStringList();
+            auto & server_ports = obj["server_ports"];
+            serverPorts = server_ports.isArray() ? server_ports.toStringList() : QStringList();
             hop_interval = obj["hop_interval"].toString();
             uploadMbps = obj["up_mbps"].isDouble() ? obj["up_mbps"].toInt() : 0;
             downloadMbps = obj["down_mbps"].isDouble() ? obj["down_mbps"].toInt() : 0;
-            obfsPassword = obj["obfs"].toObject()["password"].toString();
+            obfsPassword = obj["obfs"]["password"].toString();
             password = obj["password"].toString();
 
 
@@ -234,10 +237,11 @@ namespace Configs {
 
             finalize:
             add_default_fields(this->entity, obj);
-            alpn = obj["tls"].toObject()["alpn"].isArray() ? QJsonArray2QListStr(obj["tls"].toObject()["alpn"].toArray()).join(",") : obj["tls"].toObject()["alpn"].toString();
-            sni = obj["tls"].toObject()["server_name"].toString();
-            disableSni = obj["tls"].toObject()["disable_sni"].toBool();
-            allowInsecure = obj["tls"].toObject()["insecure"].toBool();
+            auto &obj_tls = obj["tls"];
+            alpn = obj_tls["alpn"].isArray() ? obj_tls["alpn"].toStringList().join(",") : obj_tls["alpn"].toString();
+            sni = obj_tls["server_name"].toString();
+            disableSni = obj_tls["disable_sni"].toBool();
+            allowInsecure = obj_tls["insecure"].toBool();
             return true;
         }
         return false;

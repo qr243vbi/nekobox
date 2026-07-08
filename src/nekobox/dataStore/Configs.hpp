@@ -108,66 +108,99 @@ inline QMap<EnumFieldName, QString> QStdMapString2QMapEnumFieldName(const std::m
 
 namespace Configs {
     namespace Data {
+
         enum class Tag {
-            Boolean,
+            True,
+            False,
             Map,
             Array,
             String,
             Number,
-            None
+            Null,
+            Undefined
         };
         class Node;
         using Value = std::variant<
-            bool,
             QMap<EnumFieldName, Node>,
             QList<Node>,
             QString,
-            long double
+            long double,
+            bool
         >;
         class Node {
         private:
             Tag tag;
-            std::shared_ptr<Value> value;
+            Value value;
         public:
-            Node(Tag tag = Tag::None);
+            Node(Tag tag = Tag::Undefined);
             Node(const Node& node);
-            static Node none();
+            static Node null();
+            static Node undefined();
             static Node string(const QString & value);
             static Node boolean(bool value);
             static Node number(long double value);
             static Node map();
             static Node array();
             Tag type() const;
+            bool contains(const EnumFieldName &) const;
             bool isNumber() const;
             bool isBoolean() const;
             bool isMap() const;
             bool isArray() const;
             bool isString() const;
-            bool isNone() const;
 
+            bool isObject() const;
+            bool isNull() const;
+            bool isNothing() const;
+            bool isUndefined() const;
+            bool isDouble() const;
+            bool isBool() const;
+            int toInt() const;
+            bool toBool() const;
             long double toNumber() const;  
             bool toBoolean() const;
             QString toString() const;
+            QStringList toStringList() const;
+            QList<int> toIntList() const;
 
             long double getNumber(long double def = 0) const;
             bool getBoolean(bool def = 0) const;
             QString getString(const QString & def = "") const;
 
-            Node get(size_t index, const Node & def = Node::none());
-            const Node get(size_t index, const Node & def = Node::none()) const;
-            
-            Node set(size_t index, const Node & value);
+            bool add( Node  value);
+            bool addFirst( Node  value);
+            bool addLast( Node  value);
+            Node(const QJsonValueConstRef & value);
 
-            Node get(const QString &index, const Node & def = Node::none());
-            const Node get(const QString &index, const Node & def = Node::none()) const;
-            
-            Node set(const QString &index, const Node & value);
             size_t count() const;
 
             KeyValueRange<QMap<EnumFieldName, Configs::Data::Node> &> asKeyValueRange() const;
 
             QList<EnumFieldName> keys() const;
             QList<Node> values() const;
+
+            Node(const QString &);
+            Node(bool);
+            Node(double);
+            Node(const QJsonObject&);
+            Node(const QJsonArray&);
+
+            const Node & operator [](size_t) const;
+            Node & operator [](size_t);
+            const Node & operator [](const EnumFieldName&) const;
+            Node & operator [](const EnumFieldName&);
+
+
+            const Node & at(size_t) const;
+            Node & at(size_t);
+            const Node & at(const EnumFieldName&) const;
+            Node & at(const EnumFieldName&);
+
+            static Node parseJsonValue(const QJsonValueConstRef & value);
+            static Node fromVariantMap(const QVariantMap & map);
+            QVariantMap toVariantMap() const;
+            QVariant toVariant() const;
+            QVariantList toVariantList() const;
         };
     };
 }

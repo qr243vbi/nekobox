@@ -35,7 +35,7 @@ namespace Configs {
 
   //      bool TryParseLink(const QString &link) override;
 
-        bool TryParseJson(const QJsonObject &obj) override;
+        bool TryParseJson(const Configs::Data::Node &obj) override;
 
   //      QString ToShareLink() const override;
     };

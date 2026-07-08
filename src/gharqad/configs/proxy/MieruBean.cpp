@@ -60,7 +60,7 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 
-    bool MieruBean::TryParseJson(const QJsonObject& obj)
+    bool MieruBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);
@@ -69,13 +69,12 @@ namespace Configs {
         *multiplexing = obj["multiplexing"].toString();
         traffic_pattern = obj["traffic_pattern"].toString();
         auto & ports = serverPorts;
-        ports.clear();
         
-        auto json_ports = obj["server_ports"];
+        auto &json_ports = obj["server_ports"];
         if (json_ports.isArray()){
-            for (auto  val : obj["server_ports"].toArray()){
-                ports.append(val.toString());
-            };
+            ports = obj.toStringList();
+        } else {
+            ports.clear();
         }
 
         return true;

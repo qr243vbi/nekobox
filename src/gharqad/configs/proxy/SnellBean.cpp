@@ -45,7 +45,7 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
 */
-    bool SnellBean::TryParseJson(const QJsonObject& obj)
+    bool SnellBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);

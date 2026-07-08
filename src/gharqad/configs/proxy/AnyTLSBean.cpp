@@ -48,7 +48,7 @@ namespace Configs {
         return url.toString(QUrl::FullyEncoded);
     }
     
-    bool AnyTLSBean::TryParseJson(const QJsonObject& obj)
+    bool AnyTLSBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);

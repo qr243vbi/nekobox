@@ -19,6 +19,7 @@ namespace Configs {
                 {"enabled", true},
                 {"version", version}
             };
+            val = udp_over_tcp;
         }
         return val;
     }

@@ -26,13 +26,13 @@ namespace Configs {
         return result;
     }
 
-    bool HttpBean::TryParseJson(const QJsonObject& obj)
+    bool HttpBean::TryParseJson(const Configs::Data::Node & obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         path = obj["path"].toString();
-        headers = obj["headers"].toObject().toVariantMap();
+        headers = obj["headers"].toVariantMap();
         add_tls(stream, obj);
         return true;
     }

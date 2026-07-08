@@ -57,7 +57,7 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }    
-    bool TailscaleBean::TryParseJson(const QJsonObject& obj)
+    bool TailscaleBean::TryParseJson(const Configs::Data::Node& obj)
     {
         entity->name = obj["tag"].toString();
         state_directory = obj["state_directory"].toString();
@@ -68,7 +68,7 @@ namespace Configs {
         accept_routes = obj["accept_routes"].toBool();
         exit_node = obj["exit_node"].toString();
         exit_node_allow_lan_access = obj["exit_node_allow_lan_access"].toBool();
-        advertise_routes = QJsonArray2QListStr(obj["advertise_routes"].toArray());
+        advertise_routes = obj["advertise_routes"].toStringList();
         advertise_exit_node = obj["advertise_exit_node"].toBool();
 
         return true;

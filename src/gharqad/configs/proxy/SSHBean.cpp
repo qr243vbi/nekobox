@@ -59,7 +59,7 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
-    bool SSHBean::TryParseJson(const QJsonObject& obj)
+    bool SSHBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);
@@ -68,8 +68,8 @@ namespace Configs {
         privateKey = obj["private_key"].toString();
         privateKeyPath = obj["private_key_path"].toString();
         privateKeyPass = obj["private_key_passphrase"].toString();
-        hostKey = QJsonArray2QListStr(obj["host_key"].toArray());
-        hostKeyAlgs = QJsonArray2QListStr(obj["host_key_algorithms"].toArray());
+        hostKey = obj["host_key"].toStringList();
+        hostKeyAlgs = obj["host_key_algorithms"].toStringList();
         clientVersion = obj["client_version"].toString();
 
         return true;

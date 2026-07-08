@@ -113,7 +113,7 @@ namespace Configs {
         return true;
     }
 
-    bool WireguardBean::TryParseJson(const QJsonObject& obj)
+    bool WireguardBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         enableAmnezia(obj["type"].toString() == "awg");
@@ -121,13 +121,13 @@ namespace Configs {
             return TryParseJsonAwg(obj);
         }
         add_default_fields(this->entity, obj);
-        auto peers = obj["peers"].toArray();
-        if (peers.empty()) return false;
-        publicKey = peers[0].toObject()["public_key"].toString();
-        reserved = QJsonArray2QListInt(peers[0].toObject()["reserved"].toArray());
-        persistentKeepalive = peers[0].toObject()["persistent_keepalive_interval"].toInt();
+        auto & peers = obj["peers"];
+        if (!peers.isArray() || peers.count() == 0 ) return false;
+        publicKey = peers[0]["public_key"].toString();
+        reserved = peers[0]["reserved"].toIntList();
+        persistentKeepalive = peers[0]["persistent_keepalive_interval"].toInt();
         privateKey = obj["private_key"].toString();
-        localAddress = QJsonArray2QListStr(obj["address"].toArray());
+        localAddress = obj["address"].toStringList();
         MTU = obj["mtu"].toInt();
         useSystemInterface = obj["system"].toBool();
 
@@ -398,27 +398,27 @@ CoreObjOutboundBuildResult WireguardBean::BuildCoreObjSingBoxAwg() const {
 
 // -------------------- JSON PARSER --------------------
 
-bool WireguardBean::TryParseJsonAwg(const QJsonObject &obj) {
+bool WireguardBean::TryParseJsonAwg(const Configs::Data::Node &obj) {
     using namespace Configs::From_Json;
 
     // -------------------- Basic fields --------------------
     privateKey = obj["private_key"].toString();
 
-    localAddress = QJsonArray2QListStr(obj["address"].toArray());
+    localAddress = obj["address"].toStringList();
 
     MTU = obj["mtu"].toInt();
 
     useSystemInterface = obj["useIntegratedTun"].toBool();
 
     // -------------------- Peers --------------------
-    auto peersArray = obj["peers"].toArray();
-    auto peerObj = peersArray[0].toObject();
+    auto &peersArray = obj["peers"];
+    auto &peerObj = peersArray[0];
 
     entity->serverAddress = peerObj["address"].toString();
     entity->serverPort = peerObj["port"].toInt();
     this->publicKey = peerObj["public_key"].toString();
     this->preSharedKey = peerObj["pre_shared_key"].toString();
-    this->localAddress = QJsonArray2QListStr(peerObj["allowed_ips"].toArray());
+    this->localAddress = peerObj["allowed_ips"].toStringList();
     this->persistentKeepalive =
             peerObj["persistent_keepalive_interval"].toInt();
 

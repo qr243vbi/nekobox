@@ -37,7 +37,7 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
-    bool JuicityBean::TryParseJson(const QJsonObject& obj)
+    bool JuicityBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);
