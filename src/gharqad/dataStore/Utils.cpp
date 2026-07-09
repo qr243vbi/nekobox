@@ -227,6 +227,14 @@ QString QStringList2Command(const QStringList &list) {
   return new_list.join(" ");
 }
 
+QString Quote(QString quoted){
+  quoted.replace("\\", "\\\\");
+  quoted.replace("\"", "\\\"");
+  quoted.prepend('"');
+  quoted.append('"');
+  return quoted;
+}
+
 QString GetQueryValue(const QUrlQuery &q, const QString &key,
                       const QString &def) {
   auto a = q.queryItemValue(key);

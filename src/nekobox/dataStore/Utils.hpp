@@ -98,6 +98,8 @@ auto asKeyValueRange(T &iterable) {
   return KeyValueRange<T &>(iterable);
 }
 
+QString Quote(QString quoted);
+
 template <typename T,
           typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
 auto asKeyValueRange(const T &iterable) {

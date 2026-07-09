@@ -65,18 +65,22 @@ namespace Configs {
         using namespace Configs::From_Json;
         add_default_fields(this->entity, obj);
         add_username_password(this, obj);
-        *network = obj["transport"].toString().toLower();
+        *network = obj["transport"].toString();
         *multiplexing = obj["multiplexing"].toString();
         traffic_pattern = obj["traffic_pattern"].toString();
-        auto & ports = serverPorts;
-        
-        auto &json_ports = obj["server_ports"];
-        if (json_ports.isArray()){
-            ports = obj.toStringList();
-        } else {
-            ports.clear();
-        }
+        serverPorts = obj["server_ports"].toStringList();
+        return true;
+    }
 
+    bool MieruBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        *network = obj["transport"].toString();
+        *multiplexing = obj["multiplexing"].toString();
+        traffic_pattern = obj["traffic-pattern"].toString();
+        serverPorts = obj["port-range"].toStringList();
         return true;
     }
 }

@@ -1,4 +1,5 @@
 
+#include "nekobox/dataStore/ProxyEntity.hpp"
 #include <nekobox/dataStore/Configs.hpp>
 #include <QJsonObject>
 
@@ -139,6 +140,26 @@ namespace Configs {
         return false;
       }
     };  
+
+    QString Node::toQuoted() const {
+      if (isString()){
+        return ::Quote(this->toString());
+      } else if (isMap()){
+        QStringList list;
+        for (auto [key, value]: this->asKeyValueRange()){
+          list << (::Quote(key.get_name())+":"+value.toQuoted());
+        }
+        return "{"+list.join(",")+"}";
+      } else if (isArray()){
+        QStringList list;
+        for (auto value: this->values()){
+          list << value.toQuoted();
+        }
+        return "["+list.join(",")+"]";
+      } else {
+        return toString();
+      }
+    }
    
     QString Node::toString() const {
       if (isNumber()){
@@ -147,6 +168,8 @@ namespace Configs {
         return std::get<QString>(this->value);
       } else if (isBoolean()){
         return (this->tag == Tag::True) ? "true" : "false";
+      } else if (isMap() || isArray()){
+        return this->toQuoted();
       } else {
         return "";
       }  

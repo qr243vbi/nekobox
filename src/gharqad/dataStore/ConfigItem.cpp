@@ -1057,21 +1057,11 @@ bool EnumFieldName::operator>=(EnumFieldName const& o) const noexcept {
     return !(*this < o);
 }
 
-// Comparisons with std::string (case-sensitive against original name)
-bool EnumFieldName::operator==(QString const& s) const noexcept {
-    return QString::compare(name, s, Qt::CaseInsensitive) == 0;
-}
-
-bool EnumFieldName::operator!=(const QString& s) const noexcept {
-    return !(*this == s);
-}
-
 // --- Hasher and equality functors ---
 // Use lower_name to compute hash and equality (case-insensitive behavior).
 
 std::size_t EnumFieldNameHasher::operator()(EnumFieldName const& w) const noexcept {
-  QString key = w.name;  // best option
-  key = key.toCaseFolded();
+  QString key = ModifyEnumName(w.name);
   size_t hash = qHash(key);
   return hash;
 }

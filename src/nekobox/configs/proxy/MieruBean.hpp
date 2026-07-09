@@ -45,6 +45,8 @@ namespace Configs {
 
         bool TryParseJson(const Configs::Data::Node &obj) override;
 
+        bool TryParseYaml(const Configs::Data::Node &obj) override;
+
         virtual QString type()const override {
             return "mieru";
         };

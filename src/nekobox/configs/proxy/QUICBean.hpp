@@ -130,48 +130,18 @@ namespace Configs {
 
         #undef _add
 
-        explicit QUICBean(Configs::ProxyEntity * entity, int _proxy_type) : AbstractBean(entity, 0) {
-            proxy_type = _proxy_type;
-            if (proxy_type == proxy_Hysteria || proxy_type == proxy_Hysteria2) {
-                if (proxy_type == proxy_Hysteria) { // hy1
-                } else { // hy2
-                    uploadMbps = 0;
-                    downloadMbps = 0;
-                }
-            } else if (proxy_type == proxy_TUIC) {
-            }
-        };
-/*
-        QString DisplayAddress() override {
-            return ::DisplayAddress(serverAddress, serverPort);
-        }
+        explicit QUICBean(Configs::ProxyEntity * entity, int _proxy_type);
 
-        QString DisplayType() override {
-            if (proxy_type == proxy_TUIC) {
-                return "TUIC";
-            } else if (proxy_type == proxy_Hysteria) {
-                return "Hysteria1";
-            } else {
-                return "Hysteria2";
-            }
-        };
-*/
         CoreObjOutboundBuildResult BuildCoreObjSingBox() const override;
 
         bool TryParseLink(const QString &link) override;
 
         bool TryParseJson(const Configs::Data::Node &obj) override;
 
+        bool TryParseYaml(const Configs::Data::Node& obj) override;
+
         QString ToShareLink() const override;
 
-        virtual QString type()const override {
-            if (proxy_type == proxy_TUIC) {
-                return "tuic";
-            } else if (proxy_type == proxy_Hysteria) {
-                return "hysteria";
-            } else {
-                return "hysteria2";
-            }
-        };
+        virtual QString type() const override;
     };
 } // namespace Configs

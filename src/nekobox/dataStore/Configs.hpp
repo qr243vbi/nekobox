@@ -68,10 +68,6 @@ struct EnumFieldName {
     bool operator<=(EnumFieldName const& o) const noexcept;
     bool operator>=(EnumFieldName const& o) const noexcept; 
 
-    // convenience comparison with std::string (case-sensitive on original name)
-    bool operator==(const QString& s) const noexcept;
-    bool operator!=(const QString& s) const noexcept;
-
     friend struct EnumFieldNameHasher;
     friend struct EnumFieldNameEqual;
 
@@ -135,6 +131,7 @@ namespace Configs {
             Node(Tag tag = Tag::Undefined);
             Node(const Node& node);
             static Node null();
+            QString toQuoted() const;
             static Node undefined();
             static Node string(const EnumFieldName & value);
             static Node boolean(bool value);
