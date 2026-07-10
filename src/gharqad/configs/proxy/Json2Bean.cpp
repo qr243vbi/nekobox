@@ -70,6 +70,7 @@ namespace Configs
         } else if (network == "xhttp")
         {
             stream->xhttp_mode = transport["mode"].toString();
+            stream->xhttp_extra = transport.toString();
             goto finalize;
         }
         return false;

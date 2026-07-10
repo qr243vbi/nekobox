@@ -57,4 +57,17 @@ namespace Configs {
         this->obfs_host = obj["obfs_host"].toString();
         return true;
     }
+
+    bool SnellBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        add_network(this, obj);
+        this->psk = obj["psk"].toString();
+        this->version = obj["version"].toInt();
+        this->reuse = obj["reuse"].toBool();
+        *this->obfs_mode = obj["obfs_mode"].toString();
+        this->obfs_host = obj["obfs_host"].toString();
+        return true;
+    }
 }

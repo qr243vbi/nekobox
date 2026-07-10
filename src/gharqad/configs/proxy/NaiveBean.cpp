@@ -47,9 +47,23 @@ namespace Configs {
         url.setQuery(q);
         return url.toString(QUrl::FullyEncoded);
     }
+
     bool NaiveBean::TryParseJson(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        insecure_concurrency = obj["insecure_concurrency"].toInt();
+        extra_headers = obj["extra_headers"].toVariantMap();
+        add_udp_over_tcp(this, obj);
+        add_quic(this, obj);
+        add_tls(stream, obj);
+        return true;
+    }
+
+    bool NaiveBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
         add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         insecure_concurrency = obj["insecure_concurrency"].toInt();

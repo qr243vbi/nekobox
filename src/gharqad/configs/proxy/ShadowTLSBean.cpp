@@ -19,6 +19,16 @@ bool ShadowTLSBean::TryParseJson(const Configs::Data::Node &obj) {
   add_tls(stream, obj);
   return true;
 }
+
+bool ShadowTLSBean::TryParseYaml(const Configs::Data::Node &obj) {
+  using namespace Configs::From_Yaml;
+  add_default_fields(this->entity, obj);
+  password = obj["password"].toString();
+  shadowtls_version = obj["version"].toInt();
+  add_tls(stream, obj);
+  return true;
+}
+
 bool ShadowTLSBean::TryParseLink(const QString &link) {
   using namespace From_Link;
   auto url = QUrl(link);

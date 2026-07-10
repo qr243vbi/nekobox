@@ -38,6 +38,8 @@ namespace Configs {
 
         bool TryParseJson(const Configs::Data::Node &obj) override;
 
+    //    bool TryParseYaml(const Configs::Data::Node &obj) override;
+
         QString ToShareLink() const override;
 
         virtual QString type()const override {

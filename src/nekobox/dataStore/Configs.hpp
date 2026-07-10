@@ -210,4 +210,5 @@ namespace Configs {
     };
 }
 
+
 #endif // WIDGET_HPP_INCLUDED

@@ -1,10 +1,5 @@
-
-
-
 #include <nekobox/dataStore/Database.hpp>
-
 #include <qsettings.h>
-
 #include <nekobox/dataStore/ConfigItem.hpp>
 #include <nekobox/dataStore/Configs.hpp>
 #include <nekobox/dataStore/DataStore.hpp>
@@ -13,7 +8,6 @@
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/sys/Settings.h>
 #include <nekobox/global/keyvaluerange.h>
-
 #include <QApplication>
 #include <QDir>
 #include <QFile>
@@ -24,7 +18,6 @@
 #include <QKeySequence>
 #include <QStandardPaths>
 #include <memory>
-#include <utility>
 #include <nekobox/api/RPC.h>
 #include <QBuffer>
 #include <QVariantMap>
@@ -101,10 +94,11 @@ namespace Configs_ConfigItem {
         return (void*)((size_t)p + ptr);
     }
 
-    void JsonStore::SaveINI(const QFileInfo& info, const QString &path){
-        auto  _map = this->_map();
+    void JsonStore::SaveINI(const QFileInfo& info, const QString &path, const QStringList &without) const{
+        auto  _map = ((JsonStore*)this)->_map();
         QSettings settings = QSettingsFromFileInfo(info);
         for (auto value : _map.values()){
+            if (without.contains(value->name)) continue;
             value->SaveINI(this, info, path);
         }
     }
@@ -205,7 +199,7 @@ namespace Configs_ConfigItem {
     }
 
     QByteArray JsonStore::content(bool force_json_configs){
-        return (force_json_configs) ? this->ToJsonBytes() : this->ToBytes({}, true);
+        return (force_json_configs) ? this->ToJsonBytes() : "NekoBox" + this->ToBytes({});
     }
 
 
@@ -397,8 +391,6 @@ QByteArray hash = QCryptographicHash::hash(
         }
         return false;
     }
-
-
 
     // datastore
 

@@ -200,6 +200,7 @@ namespace To_CoreObj_box {
 
 namespace From_Yaml {
     using From_Json::add_username_password;
+    using From_Json::add_quic;
 
     void add_default_fields(Configs::ProxyEntity * entity, const Data::Node & obj);
     bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);

@@ -633,7 +633,7 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
 
 int JsonStore::Id() const { return 0; };
 
-QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
+QByteArray JsonStore::ToBytes(const QStringList &without) const {
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray
     buffer.open(QIODevice::WriteOnly);
@@ -667,9 +667,6 @@ QByteArray JsonStore::ToBytes(const QStringList &without, bool header) const {
         }
     }
     buffer.close();
-    if (header){
-      return "NekoBox" + byteArray;
-    }
     return byteArray;
 };
 
@@ -686,17 +683,24 @@ void JsonStore::FromBytes(const QByteArray &data) {
     stream >> key;
     unsigned char type;
     stream >> type;
-    auto iter = _map.find(key);
+
     std::shared_ptr<configItem> value = nullptr;
     JsonStore *store = this;
+    
+    auto iter = _map.find(key);
     if (iter != _map.end()) {
       value = iter.value();
-    } 
-    if (value == nullptr || value->type() != type) {
+      if (value->type() != type){
+        value = nullptr;
+      } 
+    }
+
+    if (value == nullptr) {
       value = getConfigItem(type);
       store = nullptr;
       fallback = true;
     }
+
     #ifdef DEBUG_MODE
     if (value == nullptr){
       qDebug() << "SOMETHING STRANGE HERE: JsonStore::FromBytes";
@@ -1093,12 +1097,14 @@ signed char configItem::compare(JsonStore * store, configItem * item, JsonStore 
 }
 
 namespace Configs_ConfigItem {
-  signed char JsonStore::compare(JsonStore * store, const QList<QString> &skip){
-    if (store == nullptr){
+  signed char JsonStore::compare(const JsonStore * store1, const QList<QString> &skip) const {
+    if (store1 == nullptr){
       return 1;
     }
     int ret = 0;
-    auto &_map1 = this->_map();
+    auto this1 = (JsonStore *) this;
+    auto store = (JsonStore *) store1;
+    auto &_map1 = this1->_map();
     auto &_map2 = store->_map();
     auto keys = _map1.keys();
     int _map1_size = _map1.count();
@@ -1128,7 +1134,7 @@ namespace Configs_ConfigItem {
           if (item2val == nullptr){
             return -1;
           } else {
-            ret = item1val->compare(this, item2val.get(), store);
+            ret = item1val->compare(this1, item2val.get(), store);
             if (ret != 0){
               return ret;
             }

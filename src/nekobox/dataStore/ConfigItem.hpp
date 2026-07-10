@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #ifndef CONFIG_ITEM_H
 #define CONFIG_ITEM_H
 
@@ -190,7 +191,7 @@ public:
 
   QByteArray content(bool is_json);
   bool content(const QByteArray &array);
-  signed char compare(JsonStore *, const QStringList &without = {});
+  virtual signed char compare(const JsonStore *, const QStringList &without = {}) const;
 
   // create fallback store if needed
   virtual std::shared_ptr<JsonStore> fallback() { return nullptr; }
@@ -238,22 +239,21 @@ public:
   std::shared_ptr<configItem> _get(const QString &name);
   std::shared_ptr<const configItem> _get_const(const QString &name) const;
 
-  QJsonObject ToJson(const QStringList &without = {}) const;
-
   QByteArray ToJsonBytes(const QStringList &without = {}) const;
-
-  void FromJson(const QJsonObject& object);
-
-  void LoadINI(const QFileInfo&  settings, const QString &path);
-
-  void SaveINI(const QFileInfo&  settings, const QString &path);
 
   bool FromJsonBytes(const QByteArray &data);
 
-  void FromBytes(const QByteArray &data);
+   QJsonObject ToJson(const QStringList &without = {}) const;
 
-  QByteArray ToBytes(const QStringList &without = {},
-                     bool header = false) const;
+   void FromJson(const QJsonObject& object);
+
+   void LoadINI(const QFileInfo&  settings, const QString &path);
+
+   void SaveINI(const QFileInfo&  settings, const QString &path, const QStringList &without = {}) const;
+
+   void FromBytes(const QByteArray &data);
+
+   QByteArray ToBytes(const QStringList &without = {}) const;
 
   virtual bool Save();
 
@@ -270,6 +270,83 @@ protected:
 };
 
 std::shared_ptr<configItem> getConfigItem(int i);
+
+struct VariantStoreCommon {
+  virtual size_t index() = 0;
+  virtual void create(size_t index, std::shared_ptr<JsonStore> store = nullptr) = 0;
+  virtual std::shared_ptr<JsonStore> get() = 0;
+  inline void create(std::shared_ptr<JsonEnum> en, std::shared_ptr<JsonStore> val = nullptr){
+    create(en->value, val);
+  }
+};
+
+template<typename... Classes>
+class VariantJson : public VariantStoreCommon {
+    static_assert((std::is_base_of_v<JsonStore, Classes> && ...));
+private:
+
+    std::shared_ptr<JsonStore> ptr;
+    size_t ind;
+public:
+    virtual inline size_t index() override {
+      return ind;
+    };
+    virtual inline void create(size_t index, std::shared_ptr<JsonStore> store) override {
+      _assign(index, store);
+    };
+    virtual inline std::shared_ptr<JsonStore> get() override {
+      return ptr;
+    };
+    
+    template<size_t I = 0, typename... Args>
+    inline void createNew(size_t index, Args&&... args) {
+      using T = std::tuple_element_t<I, std::tuple<Classes...>>;
+      if constexpr (I >= sizeof...(Classes)) {
+        return;
+      }
+      if (I == index) {
+        auto store = std::make_shared<T>(
+          std::forward<Args>(args)...
+        );
+        create(index, store);
+      } else {
+        create<I + 1, Args...>(index, 
+          std::forward<Args>(args)...
+        );
+      }
+    }
+
+    template<size_t I = 0, typename Cls>
+    inline void create(){
+      using T = std::tuple_element_t<I, std::tuple<Classes...>>;
+      if constexpr (I >= sizeof...(Classes)) {
+        return;
+      } else if constexpr (std::is_same_v<T, Cls>){
+        create(I);
+      } else {
+        create<I + 1, Cls>();
+      }
+    }
+
+private:
+    template<size_t I = 0>
+    inline void _assign(size_t index, std::shared_ptr<JsonStore> store) {
+      using T = std::tuple_element_t<I, std::tuple<Classes...>>;
+      if constexpr (I >= sizeof...(Classes)) {
+        return;
+      }
+      if (I == index) {
+        if (store == nullptr) {
+          store = std::make_shared<T>();
+        }
+        std::shared_ptr<T> a1 = std::dynamic_pointer_cast<T>(store);
+        ptr = a1;
+        ind = index;
+      } else {
+        _assign<I + 1>(index, store);
+      }
+    }
+};
 
 } // namespace Configs_ConfigItem
 

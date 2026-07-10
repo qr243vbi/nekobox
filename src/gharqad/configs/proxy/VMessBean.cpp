@@ -51,7 +51,27 @@ namespace Configs {
         add_network(this, obj);
         return true;
     }
+/*
+    bool VMessBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        uuid = obj["uuid"].toString();
+        security = obj["security"].toString();
+        aid = obj["alterId"].toInt();
+        add_mux_state(this, obj);
 
+        *stream->packet_encoding = obj["packet-encoding"].toString();
+
+        global_padding = obj["global-padding"].toBool();
+        authenticated_length = obj["authenticated-length"].toBool();
+
+        add_tls(stream, obj);
+        parse_transport(stream, obj);
+        add_network(this, obj);
+        return true;
+    }  
+*/
         bool VMessBean::TryParseLink(const QString &link) {
         using namespace From_Link;
         // V2RayN Format
