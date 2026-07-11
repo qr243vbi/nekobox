@@ -417,21 +417,21 @@ jobs:
         with:
           arch: ${{ matrix.target }}
 
-      - name: Install Customized Qt
-        if: matrix.allow == 'true' && matrix.target != 'arm64'
-        uses: qr243vbi/qt6windows7@main
-        with:
-          version: ${{ matrix.qt_version }}_${{ matrix.target }}
+#      - name: Install Customized Qt
+ #       if: matrix.allow == 'true' && matrix.target != 'arm64'
+  #      uses: qr243vbi/qt6windows7@main
+   #     with:
+    #      version: ${{ matrix.qt_version }}_${{ matrix.target }}
 
-      - name: Install Qt
-        if: matrix.allow == 'true' && matrix.target == 'arm64'
-        uses: jurplel/install-qt-action@v4.3.1
-        with:
-          version: ${{ matrix.qt_version }}
-          setup-python: true
-          cache: true
-          modules: qtcharts
-          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
+#      - name: Install Qt
+ #       if: matrix.allow == 'true' && matrix.target == 'arm64'
+  #      uses: jurplel/install-qt-action@v4.3.1
+   #     with:
+    #      version: ${{ matrix.qt_version }}
+     #     setup-python: true
+      #    cache: true
+       #   modules: qtcharts
+        #  cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
         if: matrix.allow == 'true'
@@ -444,7 +444,7 @@ jobs:
         if: matrix.allow == 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng qtbase
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -480,10 +480,11 @@ jobs:
         if: matrix.allow == 'true'
         shell: bash
         run: |
+          export PATH="$PATH:$(realpath '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-          cmake -DBUILD_GO_PARTS=ON -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
+          cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
           cmake --build build --config Release --verbose
           ./script/deploy_windows.sh "${{ matrix.target }}"
 

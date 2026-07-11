@@ -34,8 +34,9 @@ void VariantStoreCommon::ToBytes(QDataStream &data) const{
 void VariantStoreCommon::FromBytes(QDataStream &data){
     unsigned long long index;
     data >> index;
+    this->create(index);
     QByteArray arr;
-    data >> arr;   
+    data >> arr;
     this->getStore()->FromBytes(arr);
 };
 
@@ -67,4 +68,4 @@ void test(){
     store.create<One>();
     store.create<Two>();
 }
-    */
+*/
