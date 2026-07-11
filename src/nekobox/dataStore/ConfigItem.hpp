@@ -71,8 +71,10 @@ class JsonEnum {
 public:
   virtual const boost::bimap<EnumFieldName, int> &_map() const;
   JsonEnum &set(int);
+  JsonEnum &set(const EnumFieldName &);
   JsonEnum &set(const QString &);
   JsonEnum &set(const char *);
+  JsonEnum &set(const std::string &);
   JsonEnum &set(const QByteArray &);
   JsonEnum &set(const QJsonValue &);
   operator QJsonValue() const;
@@ -263,7 +265,7 @@ public:
 
   virtual bool LoadFromFile(const QString &file);
 
-  virtual char StoreType() const = 0;
+  virtual char StoreType() const ;
 
 protected:
   unsigned char flags = 0;
@@ -272,29 +274,40 @@ protected:
 std::shared_ptr<configItem> getConfigItem(int i);
 
 struct VariantStoreCommon {
-  virtual size_t index() = 0;
+  virtual size_t getIndex() const = 0;
   virtual void create(size_t index, std::shared_ptr<JsonStore> store = nullptr) = 0;
-  virtual std::shared_ptr<JsonStore> get() = 0;
-  inline void create(std::shared_ptr<JsonEnum> en, std::shared_ptr<JsonStore> val = nullptr){
-    create(en->value, val);
-  }
+  virtual std::shared_ptr<JsonStore> getStore() const = 0;
+  virtual std::shared_ptr<JsonEnum> getEnum() const = 0;
+  void create(std::shared_ptr<JsonEnum> en, std::shared_ptr<JsonStore> val = nullptr);
+  void create(const EnumFieldName& en, std::shared_ptr<JsonStore> val = nullptr);
+  QJsonObject ToJson() const;
+  void FromJson(const QJsonObject &);
+  void ToBytes(QDataStream &data) const;
+  void FromBytes(QDataStream &data);
 };
 
-template<typename... Classes>
-class VariantJson : public VariantStoreCommon {
+template<typename JE = JsonEnum, typename... Classes>
+class VariantStore : public VariantStoreCommon {
     static_assert((std::is_base_of_v<JsonStore, Classes> && ...));
 private:
 
     std::shared_ptr<JsonStore> ptr;
-    size_t ind;
+    std::shared_ptr<JE> ind;
 public:
-    virtual inline size_t index() override {
+    virtual inline std::shared_ptr<JsonEnum> getEnum() const override {
+      if (ind == nullptr){
+        ind = std::make_shared<JE>();
+        ind->value = 0;
+      }
       return ind;
+    }
+    virtual inline size_t getIndex() const override {
+      return ind->value;
     };
     virtual inline void create(size_t index, std::shared_ptr<JsonStore> store) override {
       _assign(index, store);
     };
-    virtual inline std::shared_ptr<JsonStore> get() override {
+    virtual inline std::shared_ptr<JsonStore> getStore() const override {
       return ptr;
     };
     
@@ -303,6 +316,12 @@ public:
       using T = std::tuple_element_t<I, std::tuple<Classes...>>;
       if constexpr (I >= sizeof...(Classes)) {
         return;
+      }
+      if (index == 0){
+        create(0, nullptr);
+        return;
+      } else {
+        index --;
       }
       if (I == index) {
         auto store = std::make_shared<T>(
@@ -316,15 +335,15 @@ public:
       }
     }
 
-    template<size_t I = 0, typename Cls>
+    template< typename Cls, size_t I = 0>
     inline void create(){
       using T = std::tuple_element_t<I, std::tuple<Classes...>>;
       if constexpr (I >= sizeof...(Classes)) {
         return;
       } else if constexpr (std::is_same_v<T, Cls>){
-        create(I);
+        create(I + 1);
       } else {
-        create<I + 1, Cls>();
+        create<Cls, I + 1>();
       }
     }
 
@@ -335,13 +354,22 @@ private:
       if constexpr (I >= sizeof...(Classes)) {
         return;
       }
+      size_t enum_index = index;
+      if (index == 0){
+        store = nullptr;
+        goto finaljob;
+      } else {
+        index --;
+      }
       if (I == index) {
         if (store == nullptr) {
           store = std::make_shared<T>();
         }
+        finaljob:
         std::shared_ptr<T> a1 = std::dynamic_pointer_cast<T>(store);
         ptr = a1;
-        ind = index;
+        ind = std::make_shared<JE>();
+        ind->value = enum_index;
       } else {
         _assign<I + 1>(index, store);
       }

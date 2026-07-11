@@ -633,6 +633,8 @@ std::shared_ptr<configItem> Configs_ConfigItem::getConfigItem(int i) {
 
 int JsonStore::Id() const { return 0; };
 
+char JsonStore::StoreType() const { return Configs::JsonStoreType::NoSave; }
+
 QByteArray JsonStore::ToBytes(const QStringList &without) const {
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // Create a buffer to write to QByteArray

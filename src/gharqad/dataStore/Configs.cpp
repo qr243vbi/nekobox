@@ -271,21 +271,26 @@ namespace Configs_ConfigItem {
         trigger(old, value);
         return *this;
     }
-    JsonEnum& JsonEnum::set(const QString& value){
+    JsonEnum& JsonEnum::set(const EnumFieldName& value){
 
         auto map = _map();
 
         try{
-            this->set(map.left.at(value.toStdString()));
+            this->set(map.left.at(value));
         } catch (std::out_of_range){
             this->set(0);
         }
         return *this;
     }
-    JsonEnum& JsonEnum::set(const char* value){
-        this->set(QString(value));
-        return *this;
-    }
+    JsonEnum& JsonEnum::set(const QString & str){
+        return this->set((EnumFieldName) str);
+    };
+    JsonEnum& JsonEnum::set(const char * str){
+        return this->set((EnumFieldName) str);
+    };
+    JsonEnum& JsonEnum::set(const std::string & str){
+        return this->set((EnumFieldName) str);
+    };
     JsonEnum& JsonEnum::set(const QByteArray& value){
         int val;
         if (value[0] == '\0'){
