@@ -444,7 +444,7 @@ jobs:
         if: matrix.allow == 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng qtbase
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng qtbase qttools
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.GITHUB_TOKEN }}
