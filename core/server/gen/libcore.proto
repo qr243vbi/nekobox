@@ -63,6 +63,7 @@ message Outbound {
     }
     message Multiplex {
         enum Protocol {
+            UNSPECIFIED = 0;
             SMUX = 1;
             YAMUX = 2;
             K2MUX = 3;
@@ -77,10 +78,12 @@ message Outbound {
     }
 
     message Tls {
-
     }
 
     message V2RayTransport {
+    }
+
+    message Duration {
     }
 
 }
@@ -110,10 +113,22 @@ message HttpBean {
 }
 
 message MieruBean {
+    enum Multiplexing {
+        OFF = 0;
+        lOW = 1;
+        MIDDLE = 2;
+        HIGH = 3;
+    }
+    StringList ports = 1;
+    Outbound.Network network = 2;
+    Credentials credentials = 3;
+    Multiplexing multiplexing = 4;
+    string traffic_pattern = 5;
 }
 
 message ShadowSocksBean {
-    enum Plugin plugin {
+    enum Plugin {
+        UNSPECIFIED = 0;
         OBFSLOCAL = 1;
         V2RAYPLUGIN = 2;
     }
@@ -123,33 +138,44 @@ message ShadowSocksBean {
     string plugin_opts = 4;
     Outbound.Network network = 5;
     Outbound.UdpOverTcp udp_over_tcp = 6;
-
 }
 
 message ChainBean {
-}
-
-message VlessBean {
+    repeated uint32 profiles = 1;
 }
 
 message TrojanBean {
     string password = 1;
-    Outboun.Network network = 2;
+    Outbound.Network network = 2;
     Outbound.Tls tls = 3;
     Outbound.Multiplex multiplex = 4;
     Outbound.V2RayTransport transport = 5;
 }
 
 message HysteriaBean {
+
 }
 
 message Hy2Bean {
 }
 
 message AnyTLSBean {
+    string password = 1;
+    Outbound.Tls tls = 2;
+    Outbound.Duration idle_session_check_interval = 3;
+    Outbound.Duration idle_session_timeout = 4;
+    uint32 min_idle_session = 5;
 }
 
 message ShadowTLSBean {
+    enum Version {
+        V1 = 0;
+        V2 = 1;
+        V3 = 2;
+    }
+    Version version = 1;
+    string password = 2;
+    Outbound.Tls tls = 3;
 }
 
 message WireguardBean {
@@ -169,7 +195,7 @@ message NaiveBean {
     int32 insecure_concurrency = 2;
     map<string, string> headers = 3;
     Outbound.UdpOverTcp udp_over_tcp = 4;
-    Outbound.Quic = 5;
+    Outbound.Quic quic = 5;
     Outbound.Tls tls = 6;
 }
 
@@ -216,6 +242,18 @@ message VmessBean {
     Outbound.Tls tls = 6;
     Outbound.Multiplex multiplex = 8;
     Outbound.V2RayTransport transport = 9;
+}
+
+
+message VlessBean {
+    string uuid = 1;
+    string flow = 2;
+    Outbound.Network network = 3;
+    VmessBean.PacketEncoding packet_encoding = 4;
+    Outbound.Tls tls = 5;
+    string encryption = 6;
+    Outbound.Multiplex multiplex = 8;
+    Outbound.V2RayTransport transport = 7;
 }
 
 message Bean {
