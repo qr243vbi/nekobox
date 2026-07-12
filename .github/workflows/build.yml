@@ -482,7 +482,7 @@ jobs:
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
           echo $PATH
-          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/)" -iname "windeployqt.exe")"
+          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
           windeployqt() { "$WINDEPLOYQT" "${@}" ; }
           declare -p windeployqt
           echo "$WINDEPLOYQT"
