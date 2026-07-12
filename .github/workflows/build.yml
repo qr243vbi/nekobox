@@ -380,17 +380,17 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-            qt_version: 6.12.0
+      #      qt_version: 6.12.0
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-2022
             target: x86_64
-            qt_version: 6.10.0
+      #      qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-2022
             target: x86
-            qt_version: 6.10.0
+      #      qt_version: 6.10.0
             triplet: x86-windows
             allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
@@ -480,7 +480,8 @@ jobs:
         if: matrix.allow == 'true'
         shell: bash
         run: |
-          export PATH="$PATH:$(realpath '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"
+          export PATH="$PATH:$(cygpath -w "$(realpath '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')")"
+          echo $PATH
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
