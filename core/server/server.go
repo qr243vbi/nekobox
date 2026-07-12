@@ -5,29 +5,15 @@ package main
 import (
 	"context"
 	"errors"
-	"fmt"
-	"log"
 	"nekobox_core/gen"
-	"nekobox_core/internal"
-	"nekobox_core/internal/boxbox"
-	"nekobox_core/internal/boxmain"
-	"nekobox_core/internal/process"
-	"nekobox_core/internal/wg"
 
 	//	"nekobox_core/internal/sys"
 	"os"
-	"strings"
-	"time"
-
-	"github.com/google/shlex"
-	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing-box/experimental/clashapi"
-	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/sing/service"
 )
 
 // server is used to implement myservice.MyServiceServer.
 type server struct {
+	gen.UnimplementedLibcoreServiceServer
 }
 
 // To returns a pointer to the given value.
@@ -46,6 +32,29 @@ func fileExists(path string) bool {
 	return !info.IsDir()
 }
 
+func (s *server) SaveRoute(context.Context, *gen.RoutingChain) (*gen.Saved, error) {
+	out := new(gen.Saved)
+
+	return out, nil
+}
+func (s *server) SaveGroup(context.Context, *gen.Group) (*gen.Saved, error) {
+	out := new(gen.Saved)
+
+	return out, nil
+}
+func (s *server) GetStats(context.Context, *gen.EmptyReq) (*gen.Stats, error) {
+	out := new(gen.Stats)
+
+	return out, nil
+}
+
+func (s *server) SaveProxy(context.Context, *gen.ProxyAndBean) (*gen.Saved, error) {
+	out := new(gen.Saved)
+
+	return out, nil
+}
+
+/*
 func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported, error) {
 	out := new(gen.Supported)
 	ok := true
@@ -546,3 +555,4 @@ func (s *server) QueryCountryTest(ctx context.Context, in *gen.EmptyReq) (*gen.Q
 	}
 	return out, nil
 }
+*/

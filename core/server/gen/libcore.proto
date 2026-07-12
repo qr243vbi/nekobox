@@ -32,7 +32,226 @@ message Group {
     repeated uint32 profiles = 3;
 }
 
+message InvalidBean {
+}
+
+message Outbound {
+    enum Network {
+        BOTH = 0;
+        UPD = 2;
+        TCP = 1;
+    }
+    message Quic {
+        bool enabled = 1;
+        enum Method {
+            BBR = 0;
+            BBR2 = 1;
+            CUBIC = 2;
+            RENO = 3;
+        }
+        Method method = 2;
+    }
+    message UdpOverTcp {
+        enum Version {
+            V2 = 0;
+            V1 = 1;
+        }
+        bool enabled = 1;
+        Version version = 2;
+    }
+    message Brutal {
+    }
+    message Multiplex {
+        enum Protocol {
+            SMUX = 1;
+            YAMUX = 2;
+            K2MUX = 3;
+        }
+        bool enabled = 1;
+        bool padding = 2;
+        Protocol protocol = 3;
+        int32 max_connections = 4;
+        int32 min_streams = 5;
+        int32 max_streams = 6;
+        Brutal brutal = 7;
+    }
+
+    message Tls {
+
+    }
+
+    message V2RayTransport {
+    }
+
+}
+
+message Credentials {
+    string username = 1;
+    string password = 2;
+}
+
+message SocksBean {
+    enum Version {
+        V5 = 0;
+        V4 = 1;
+    }
+
+    Version version = 1;
+    Credentials credentials = 2;
+    Outbound.Network network = 4;
+    Outbound.UdpOverTcp udp_over_tcp = 3;
+}
+
+message HttpBean {
+    Credentials credentials = 1;
+    string path = 2;
+    map<string, string> headers = 3;
+    Outbound.Tls tls = 4;
+}
+
+message MieruBean {
+}
+
+message ShadowSocksBean {
+    enum Plugin plugin {
+        OBFSLOCAL = 1;
+        V2RAYPLUGIN = 2;
+    }
+    string method = 1;
+    string password = 2;
+    Plugin plugin = 3;
+    string plugin_opts = 4;
+    Outbound.Network network = 5;
+    Outbound.UdpOverTcp udp_over_tcp = 6;
+
+}
+
+message ChainBean {
+}
+
+message VlessBean {
+}
+
+message TrojanBean {
+    string password = 1;
+    Outboun.Network network = 2;
+    Outbound.Tls tls = 3;
+    Outbound.Multiplex multiplex = 4;
+    Outbound.V2RayTransport transport = 5;
+}
+
+message HysteriaBean {
+}
+
+message Hy2Bean {
+}
+
+message AnyTLSBean {
+}
+
+message ShadowTLSBean {
+}
+
+message WireguardBean {
+}
+
+message TailscaleBean {
+}
+
+message SSHBean {
+}
+
+message TorBean {
+}
+
+message NaiveBean {
+    Credentials credentials = 1;
+    int32 insecure_concurrency = 2;
+    map<string, string> headers = 3;
+    Outbound.UdpOverTcp udp_over_tcp = 4;
+    Outbound.Quic = 5;
+    Outbound.Tls tls = 6;
+}
+
+message TrustTunnelBean {
+}
+
+message JuicityBean {
+}
+
+message ShellBean {
+}
+
+message CustomBean {
+}
+
+message ExtraBean {
+}
+
+message BalancerBean {
+}
+
+message TuicBean {
+}
+
+message AwgBean {
+    WireguardBean wireguard = 1;
+}
+
+message DialFields {
+}
+
+message VmessBean {
+    enum PacketEncoding {
+        UNSPECIFIED = 0;
+        PACKETADDR = 1;
+        XUDP = 2;
+    }
+    string uuid = 1;
+    int32 alter_id = 2;
+    bool global_padding = 3;
+    bool authentication_length = 4;
+    Outbound.Network network = 5;
+    PacketEncoding packet_encoding = 7;
+    Outbound.Tls tls = 6;
+    Outbound.Multiplex multiplex = 8;
+    Outbound.V2RayTransport transport = 9;
+}
+
 message Bean {
+    uint32 id = 1;
+    oneof bean {
+        InvalidBean invalid = 3;
+        HttpBean http = 4;
+        MieruBean mieru = 5;
+        ShadowSocksBean shadowsocks = 6;
+        ChainBean chain = 7;
+        VlessBean vless = 8;
+        TrojanBean trojan = 9;
+        HysteriaBean hysteria = 10;
+        Hy2Bean hysteria2 = 11;
+        TuicBean tuic = 12;
+        AnyTLSBean anytls = 13;
+        ShadowTLSBean shadowtls = 14;
+        WireguardBean wireguard = 15;
+        AwgBean amnezia = 16;
+        TailscaleBean tailscale = 17;
+        SSHBean ssh = 18;
+        TorBean tor = 19;
+        NaiveBean naive = 20;
+        TrustTunnelBean trusttunnel = 21;
+        JuicityBean juicity = 22;
+        ShellBean shell = 23;
+        CustomBean custom = 24;
+        ExtraBean extra = 25;
+        BalancerBean balancer = 26;
+        SocksBean socks = 27;
+        VmessBean vmess = 28;
+    };
+    DialFields dial_fields = 2;
+}
+
+/*
     enum Type {
         UNSPECIFIED = 0;
         SOCKS = 1;
@@ -59,14 +278,17 @@ message Bean {
         CUSTOM = 22;
         EXTRA = 23;
         BALANCER = 24;
-    }
-    Type type = 3;
-    bytes bean = 1;
-    uint32 id = 2;
+    }*/
+//    Type type = 3;
+
+message ServerAndPort {
+    string server = 1;
+    int32 port = 2;
 }
 
 message Proxy {
     string name = 1;
+    ServerAndPort address = 7;
     uint32 id = 2;
     uint32 gid = 3;
     uint32 latency = 4;
@@ -134,7 +356,6 @@ message RouteRuleLogical {
     AndOr.Type mode = 1;
     repeated RouteRule rules = 2;
     bool invert = 4;
-    uint32 outbound_id = 5;
 }
 
 message RouteRuleSimple {
@@ -181,6 +402,7 @@ message RouteRule {
         RouteRuleLogical logical = 1;
         RouteRuleSimple simple = 2;
     }
+    uint32 outbound_id = 3;
 }
 
 message RoutingChain {

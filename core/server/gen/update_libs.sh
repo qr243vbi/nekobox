@@ -9,7 +9,7 @@ rm -rf libcore_service-remote
 PROTO_COMPILER="${PROTO_COMPILER:-protoc}"
 
 pushd ..
-"${PROTO_COMPILER}" --go_out=. -I$OLDPWD libcore.proto 
+"${PROTO_COMPILER}" --go_out=. --go-grpc_out=. -I$OLDPWD libcore.proto 
 popd
 
 if [[ ! -d main_sing ]]

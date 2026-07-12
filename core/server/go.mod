@@ -4,7 +4,6 @@ go 1.25.0
 
 require (
 	github.com/Microsoft/go-winio v0.6.2
-	github.com/apache/thrift v0.23.1-0.20260502142354-26137ff89d41
 	github.com/dustin/go-humanize v1.0.1
 	github.com/giert/taskmaster v0.1.1
 	github.com/gofrs/uuid/v5 v5.4.0
@@ -19,6 +18,7 @@ require (
 	golang.org/x/crypto v0.53.0
 	golang.org/x/sys v0.46.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
+	google.golang.org/grpc v1.79.1
 	google.golang.org/protobuf v1.36.11
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.78
 )
@@ -169,7 +169,6 @@ require (
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
-	google.golang.org/grpc v1.79.1 // indirect
 	gvisor.dev/gvisor v0.0.0-20231202080848-1f7806d17489 // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.78 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect

@@ -7,7 +7,6 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"nekobox_core/gen"
 	main_sing "nekobox_core/gen/main_sing"
 	"nekobox_core/internal"
 	"nekobox_core/internal/boxmain"
@@ -21,7 +20,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/apache/thrift/lib/go/thrift"
+	pb "nekobox_core/gen"
+
+	"google.golang.org/grpc"
+
 	C "github.com/sagernet/sing-box/constant"
 )
 
@@ -71,26 +73,10 @@ func RunCore(addr net.Addr, _debug *bool) {
 		}
 	}()
 	{
-		transportFactory := thrift.NewTBufferedTransportFactory(8192)
-		config := &thrift.TConfiguration{
-			ConnectTimeout: time.Second * 2,  // 2 second connection timeout
-			SocketTimeout:  time.Second * 10, // 10 second socket read/write timeout
-			MaxMessageSize: 1024 * 1024 * 50, // 50 MB maximum message size
-		}
+		grpcServer := grpc.NewServer()
+		pb.RegisterLibcoreServiceServer(grpcServer, &server{})
 
-		// 2. Create the TBinaryProtocolFactory using the configuration
-		protocolFactory := thrift.NewTBinaryProtocolFactoryConf(config)
-		//	addr, err := net.ResolveTCPAddr("tcp", listenAddr)
-		//	if err != nil {
-		//		log.Println("error running thrift server: ", err)
-		//	}
 		wsainit()
-
-		transport := thrift.NewTServerSocketFromAddrTimeout(addr, 0)
-		handler := &server{}
-		processor := gen.NewLibcoreServiceProcessor(handler)
-		server := thrift.NewTSimpleServer4(processor, transport, transportFactory, protocolFactory)
-		server.Serve()
 	}
 }
 

@@ -3,10 +3,8 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
-	"nekobox_core/gen"
 	"nekobox_core/internal"
 	"os"
 	"os/exec"
@@ -16,11 +14,12 @@ import (
 	"time"
 )
 
-func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
-	out := new(gen.EmptyResp)
-	return out, nil
-}
-
+/*
+	func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
+		out := new(gen.EmptyResp)
+		return out, nil
+	}
+*/
 func runAdmin() (int, error) {
 	return 0, nil
 }
@@ -33,13 +32,14 @@ func doRun(_ string) error {
 	return nil
 }
 
-func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
-	out := new(gen.IsPrivilegedResponse)
-	priv, err := isElevated()
-	out.HasPrivilege = priv
-	return out, err
-}
-
+/*
+	func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+		out := new(gen.IsPrivilegedResponse)
+		priv, err := isElevated()
+		out.HasPrivilege = priv
+		return out, err
+	}
+*/
 func WaitForProcessExit(pid int) error {
 	// Wait for the process to terminate
 	for {
