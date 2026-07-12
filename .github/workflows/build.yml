@@ -480,7 +480,7 @@ jobs:
         if: matrix.allow == 'true'
         shell: bash
         run: |
-          export PATH="$PATH:$(cygpath -w "$(realpath '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')")"
+          export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
           echo $PATH
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
