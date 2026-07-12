@@ -482,12 +482,16 @@ jobs:
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
           echo $PATH
+          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/)" -iname "windeployqt.exe")"
+          windeployqt() { "$WINDEPLOYQT" "${@}" ; }
+          declare -p windeployqt
+          echo "$WINDEPLOYQT"
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
           cmake --build build --config Release --verbose
-          ./script/deploy_windows.sh "${{ matrix.target }}"
+          source ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Windows - Publish
         if: github.event.inputs.publish == 'true' && matrix.allow == 'true'
