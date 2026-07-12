@@ -6,10 +6,11 @@ cd `dirname "$(realpath $0)"`
 rm -rf *.go
 rm -rf libcore_service-remote
 
-THRIFT_COMPILER="${THRIFT_COMPILER:-thrift}"
+PROTO_COMPILER="${PROTO_COMPILER:-protoc}"
 
-"${THRIFT_COMPILER}" --gen go -out .. libcore.thrift
-
+pushd ..
+"${PROTO_COMPILER}" --go_out=. -I$OLDPWD libcore.proto 
+popd
 
 if [[ ! -d main_sing ]]
 then

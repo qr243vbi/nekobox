@@ -1,0 +1,217 @@
+syntax = "proto3";
+
+package libcore;
+option go_package = "/gen";
+
+message SpeedAndTraffic {
+    uint32 download_speed = 1;
+    uint32 upload_speed = 2;
+    uint32 download_amount = 3;
+    uint32 upload_amount = 4;
+}
+
+message Stats {
+    SpeedAndTraffic proxy_sat = 1;
+    SpeedAndTraffic direct_sat = 2;
+}
+
+message Subscription {
+    string url = 1;
+    map<string, string> headers = 2;
+    bool system_hwid = 3;
+    bool custom_headers = 7;
+    bool custom_body = 8;
+    string payload = 4;
+    string javascript = 5;
+    uint32 id = 9;
+}
+
+message Group {
+    uint32 id = 1;
+    string name = 2;
+    repeated uint32 profiles = 3;
+}
+
+message Bean {
+    enum Type {
+        UNSPECIFIED = 0;
+        SOCKS = 1;
+        HTTP = 2;
+        MIERU = 3;
+        SHADOWSOCKS = 4;
+        CHAIN = 5;
+        VMESS = 6;
+        TROJAN = 7;
+        HYSTERIA = 8;
+        HY2 = 9;
+        TUIC = 10;
+        ANYTLS = 11;
+        SHADOWTLS = 12;
+        WIREGUARD = 13;
+        AWG = 14;
+        TAILSCALE = 15;
+        SSH = 16;
+        TOR = 17;
+        NAIVE = 18;
+        TRUSTTUNNEL = 19;
+        JUICITY = 20;
+        SNELL = 21;
+        CUSTOM = 22;
+        EXTRA = 23;
+        BALANCER = 24;
+    }
+    Type type = 3;
+    bytes bean = 1;
+    uint32 id = 2;
+}
+
+message Proxy {
+    string name = 1;
+    uint32 id = 2;
+    uint32 gid = 3;
+    uint32 latency = 4;
+    uint32 country = 6;
+    SpeedAndTraffic sat = 5;
+}
+
+message IpVersion {
+  enum Type {
+    UNSPECIFIED = 0;
+    V4 = 1;
+    V6 = 2;
+  }
+};
+
+message Network {
+  enum Type {
+    UNSPECIFIED = 0;
+    TCP = 1;
+    UDP = 2;
+    ICMP = 3;
+  }
+};
+
+message Protocol {
+  enum Type {
+    UNSPECIFIED = 0;
+    HTTP = 1;
+    TLS = 2;
+    QUIC = 3;
+  }
+};
+
+message Client {
+  enum Type {
+    UNSPECIFIED = 0;
+    CHROMIUM = 1;
+    SAFARI = 2;
+    FIREFOX = 3;
+    QUICGO = 4;
+  }
+};
+
+message StringList {
+    repeated string items = 1;
+}
+
+message AndOr {
+    enum Type {
+        AND = 0;
+        OR = 1;
+    }
+}
+
+message Action {
+    enum Type {
+        ROUTE = 0;
+        REJECT = 1;
+        DROP = 2;
+    }
+}
+
+message RouteRuleLogical {
+    Action.Type action = 3;
+    AndOr.Type mode = 1;
+    repeated RouteRule rules = 2;
+    bool invert = 4;
+    uint32 outbound_id = 5;
+}
+
+message RouteRuleSimple {
+    IpVersion.Type ip_version = 1;
+    repeated Network.Type network = 2;
+    repeated Protocol.Type protocol = 3;
+    repeated Client.Type client = 4;
+    repeated string domain = 5;
+    repeated string domain_suffix = 6;
+    repeated string domain_keyword = 7;
+    repeated string domain_regex = 8;
+    repeated string source_ip_cidr = 9;
+    bool source_ip_is_private = 10;
+    repeated string ip_cidr = 11;
+    bool ip_is_private = 12;
+    repeated int32 source_port = 13;
+    repeated string source_port_range = 14;
+    repeated int32 port = 15;
+    repeated string port_range = 16;
+    repeated string process_name = 17;
+    repeated string process_path = 18;
+    repeated string process_path_regex = 19;
+    map<string, StringList> network_interface_address = 20;
+    repeated string user = 21;
+    repeated int32 user_id = 22;
+    repeated string package_name = 23;
+    repeated string package_name_regex = 24;
+    repeated string auth_user = 25;
+    repeated string network_type = 26;
+    bool network_is_expensive = 27;
+    bool network_is_constrained = 28;
+    repeated string rule_set = 29;
+    repeated string source_hostname = 30;
+    repeated string source_mac_address = 31;
+    repeated string preferred_by = 32;
+    repeated string wifi_bssid = 33;
+    repeated string wifi_ssid = 34;
+    repeated string default_interface_address = 35;
+    map<string, StringList> interface_address = 36;
+}
+
+message RouteRule {
+    oneof rule {
+        RouteRuleLogical logical = 1;
+        RouteRuleSimple simple = 2;
+    }
+}
+
+message RoutingChain {
+    uint32 id = 1;
+    string chain_name = 2;
+    string update_url = 3;
+    bool skip_update = 4;
+    repeated RouteRule rules = 5;
+}
+
+message ProxyAndBean {
+    optional Bean bean = 1;
+    optional Proxy proxy = 2;
+}
+
+message GroupAndSubscription {
+    optional Group group = 1;
+    optional Subscription subscription = 2;
+}
+
+message Saved {
+    bool ok = 1;
+    uint32 id = 2;
+}
+
+message EmptyReq {
+}
+
+service LibcoreService {
+    rpc SaveProxy(ProxyAndBean) returns (Saved);
+    rpc SaveRoute(RoutingChain) returns (Saved);
+    rpc SaveGroup(Group) returns (Saved);
+    rpc GetStats(EmptyReq) returns (Stats);
+};
