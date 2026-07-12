@@ -4,10 +4,10 @@ package libcore;
 option go_package = "/gen";
 
 message SpeedAndTraffic {
-    uint32 download_speed = 1;
-    uint32 upload_speed = 2;
-    uint32 download_amount = 3;
-    uint32 upload_amount = 4;
+    /*speed*/uint64 download_speed = 1;
+    /*speed*/uint64 upload_speed = 2;
+    /*speed*/uint64 download_amount = 3;
+    /*speed*/uint64 upload_amount = 4;
 }
 
 message Stats {
@@ -41,15 +41,12 @@ message Outbound {
         UPD = 2;
         TCP = 1;
     }
-    message Quic {
-        bool enabled = 1;
-        enum Method {
-            BBR = 0;
+    enum Quic {
+            DISABLED = 0;
+            BBR = 4;
             BBR2 = 1;
             CUBIC = 2;
             RENO = 3;
-        }
-        Method method = 2;
     }
     message UdpOverTcp {
         enum Version {
@@ -82,10 +79,6 @@ message Outbound {
 
     message V2RayTransport {
     }
-
-    message Duration {
-    }
-
 }
 
 message Credentials {
@@ -152,18 +145,35 @@ message TrojanBean {
     Outbound.V2RayTransport transport = 5;
 }
 
-message HysteriaBean {
+message HysteriaCommon {
+    StringList ports = 1;
+    /*duration*/ uint64 hop_interval = 2;
+    /*speed*/uint64 up_mbps = 3;
+    /*speed*/uint64 down_mbps = 4;
+    string obfs = 5;
+    Outbound.Network network = 6;
+    Outbound.Tls tls = 7;
+    string auth_str = 8;
+}
 
+message HysteriaBean {
+    HysteriaCommon common = 1;
+    /*speed*/ uint64 recv_window_conn = 3;
+    /*speed*/ uint64 recv_window = 4;
+    bool disable_mtu_discovery = 2;
 }
 
 message Hy2Bean {
+    // auth_str is password here
+    HysteriaCommon common = 1;
+    bool brutal_debug = 2;
 }
 
 message AnyTLSBean {
     string password = 1;
     Outbound.Tls tls = 2;
-    Outbound.Duration idle_session_check_interval = 3;
-    Outbound.Duration idle_session_timeout = 4;
+    /*duration*/ uint64 idle_session_check_interval = 3;
+    /*duration*/ uint64 idle_session_timeout = 4;
     uint32 min_idle_session = 5;
 }
 
@@ -214,10 +224,25 @@ message CustomBean {
 message ExtraBean {
 }
 
-message BalancerBean {
-}
-
 message TuicBean {
+    // uuid instead username
+    Credentials credentials = 1;
+    enum CongressionControl {
+        CUBIC = 0;
+        NEWRENO = 2;
+        BBR = 1;
+    }
+    CongressionControl congression_control = 2;
+    bool udp_over_stream = 3;
+    bool zero_rtt_handshake = 4;
+    enum UdpRelayMode {
+        NATIVE = 0;
+        QUIC = 1;
+    }
+    UdpRelayMode udp_relay_mode = 5;
+    Outbound.Network network = 6;
+    uint64 heartbeat = 7;
+    Outbound.Tls tls = 8;
 }
 
 message AwgBean {
@@ -282,9 +307,8 @@ message Bean {
         ShellBean shell = 23;
         CustomBean custom = 24;
         ExtraBean extra = 25;
-        BalancerBean balancer = 26;
+        VmessBean vmess = 26;
         SocksBean socks = 27;
-        VmessBean vmess = 28;
     };
     DialFields dial_fields = 2;
 }
@@ -329,7 +353,7 @@ message Proxy {
     ServerAndPort address = 7;
     uint32 id = 2;
     uint32 gid = 3;
-    uint32 latency = 4;
+    /*speed*/uint64 latency = 4;
     uint32 country = 6;
     SpeedAndTraffic sat = 5;
 }
