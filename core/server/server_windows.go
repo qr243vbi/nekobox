@@ -12,9 +12,7 @@ import (
 	"io"
 	"log"
 	"math/big"
-	"nekobox_core/gen"
 	"nekobox_core/internal"
-	"nekobox_core/internal/boxdns"
 	"net"
 	"net/http"
 	"os"
@@ -438,16 +436,17 @@ func RandString(n int) (string, error) {
 	return string(result), nil
 }
 
-func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
-	err := boxdns.DnsManagerInstance.SetSystemDNS(nil, in.Clear)
-	out := new(gen.EmptyResp)
-	if err != nil {
-		return out, err
+/*
+	func (s *server) SetSystemDNS(ctx context.Context, in *gen.SetSystemDNSRequest) (*gen.EmptyResp, error) {
+		err := boxdns.DnsManagerInstance.SetSystemDNS(nil, in.Clear)
+		out := new(gen.EmptyResp)
+		if err != nil {
+			return out, err
+		}
+
+		return out, nil
 	}
-
-	return out, nil
-}
-
+*/
 func runAdmin() (int, error) {
 	executablePath, err := os.Executable()
 	if err != nil {
@@ -542,17 +541,18 @@ func WaitForProcessExit(pid int) error {
 	return nil
 }
 
-func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
-	elevated, err := isElevated()
-	out := new(gen.IsPrivilegedResponse)
-	if err != nil {
-		out.HasPrivilege = (false)
-		return out, err
+/*
+	func (s *server) IsPrivileged(ctx context.Context, in *gen.EmptyReq) (*gen.IsPrivilegedResponse, error) {
+		elevated, err := isElevated()
+		out := new(gen.IsPrivilegedResponse)
+		if err != nil {
+			out.HasPrivilege = (false)
+			return out, err
+		}
+		out.HasPrivilege = (elevated)
+		return out, nil
 	}
-	out.HasPrivilege = (elevated)
-	return out, nil
-}
-
+*/
 func restartAsAdmin(save bool) {
 }
 
