@@ -23,11 +23,11 @@ message Subscription {
     bool custom_body = 8;
     string payload = 4;
     string javascript = 5;
-    uint32 id = 9;
+    uint64 id = 9;
 }
 
 message Group {
-    uint32 id = 1;
+    uint64 id = 1;
     string name = 2;
     repeated uint32 profiles = 3;
 }
@@ -392,7 +392,7 @@ message DirectBean {
 }
 
 message Bean {
-    uint32 id = 1;
+    uint64 id = 1;
     oneof bean {
         InvalidBean invalid = 3;
         HttpBean http = 4;
@@ -462,8 +462,8 @@ message ServerAndPort {
 message Proxy {
     string name = 1;
     ServerAndPort address = 7;
-    uint32 id = 2;
-    uint32 gid = 3;
+    uint64 id = 2;
+    uint64 gid = 3;
     /*speed*/uint64 latency = 4;
     uint32 country = 6;
     SpeedAndTraffic sat = 5;
@@ -575,11 +575,11 @@ message RouteRule {
         RouteRuleLogical logical = 1;
         RouteRuleSimple simple = 2;
     }
-    uint32 outbound_id = 3;
+    uint64 outbound_id = 3;
 }
 
 message RoutingChain {
-    uint32 id = 1;
+    uint64 id = 1;
     string chain_name = 2;
     string update_url = 3;
     bool skip_update = 4;
@@ -598,7 +598,7 @@ message GroupAndSubscription {
 
 message Saved {
     bool ok = 1;
-    uint32 id = 2;
+    uint64 id = 2;
 }
 
 message EmptyReq {
