@@ -58,11 +58,6 @@ on:
         type: boolean
         default: true
         required: false
- #     build_xbps:
-  #      description: "Build void linux packages"
-   #     type: boolean
-    #    default: true
-     #   required: false
       publish_chocolatey:
         description: "Publish chocolatey packages"
         type: boolean
@@ -190,103 +185,7 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
-  # build-xbps:
-  #   name: Build xbps packages
-  #   permissions:
-  #     contents: write
-  #     actions: read
-  #   needs:
-  #     - build-go
-  #
-  #   strategy:
-  #     # Allow all builds to complete even if one fails
-  #     fail-fast: false
-  #     max-parallel: 2
-  #     matrix:
-  #       include:
-  #         # Native builds (same arch for host and target)
-  #         - { runner: ubuntu-24.04-arm, target: aarch64, variant: musl, guest: arm64 }
-  #         - { runner: ubuntu-24.04, target: x86_64, variant: musl, guest: amd64 }
-  #         - { runner: ubuntu-24.04-arm, target: aarch64, variant: glibc, guest: arm64 }
-  #         - { runner: ubuntu-24.04, target: x86_64, variant: glibc, guest: amd64 }
-  #         - { runner: ubuntu-24.04-arm, target: armv7l, variant: musl, guest: 'arm/v7' }
-  #         - { runner: ubuntu-24.04, target: i686, variant: glibc, guest: "386" }
-  #         - { runner: ubuntu-24.04-arm, target: armv7l, variant: glibc, guest: 'arm/v7' }
-  #         - { runner: ubuntu-24.04-arm, target: armv6l, variant: musl, guest: 'arm/v6' }
-  #         - { runner: ubuntu-24.04-arm, target: armv6l, variant: glibc, guest: 'arm/v6' }
-  #   runs-on: ${{ matrix.runner }}
-  #   if: github.event.inputs.build_xbps == 'true' && github.event.inputs.source_only != 'true'
-  #   steps:
-  #    # Checkout this repository (nekobox-void)
-  #     - name: Checkout nekobox-void
-  #       uses: actions/checkout@main
-  #       with:
-  #         repository: qr243vbi/nekobox-void
-  #     - name: Download Artifacts
-  #       uses: actions/download-artifact@main
-  #       with:
-  #         path: download-artifact
-  #
-  #     - name: Cache Docker images.
-  #       uses: AllySummers/docker-cache@main
-  #       with:
-  #         key: VoidDockerCache-${{ matrix.runner }}-${{ matrix.target }}-${{ matrix.variant }}-${{ matrix.guest }}-${{ hashFiles('Dockerfile') }}
-  #
-  #     - name: Cache Builds
-  #       id: cache-common
-  #       uses: actions/cache@main
-  #       with:
-  #         path: srcpkgs/packages
-  #         key: VoidPkgCache-${{ matrix.runner }}-${{ matrix.target }}-${{ matrix.variant }}-${{ matrix.guest }}-${{ hashFiles('Dockerfile') }}
-  #
-  #     - name: Build NekoBox package
-  #       env:
-  #         PRIVATE_KEY: ${{ secrets.PRIV_KEY }}
-  #         XBPS_PASSPHRASE: ${{ secrets.SIGN_PASS }}
-  #         TARGET: ${{ matrix.target }}
-  #         XBPS_TARGET_VERSION: ${{ github.event.inputs.tag }}
-  #         GUEST_ARCH: ${{ matrix.guest }}
-  #         GUEST_VARIANT: ${{ matrix.variant }}
-  #       run: |
-  #         XBPS_TARGET_ARCH="${TARGET}"
-  #         if [[ "${GUEST_VARIANT}" == "musl" ]]
-  #         then
-  #           XBPS_TARGET_ARCH="${XBPS_TARGET_ARCH}-musl"
-  #         fi
-  #         ROOT_DIR=$PWD
-  #         (
-  #          cd download-artifact
-  #          cd *public-public ||:
-  #          tar xvzf artifacts.tgz -C .
-  #          mv deployment/*.tar.xz "$ROOT_DIR"
-  #         )
-  #         XBPS_TARGET_SOURCE="$(ls *$XBPS_TARGET_VERSION*.tar.xz)"
-  #         export GUEST_UID="$UID"
-  #         export GUEST_VARIANT
-  #         export GUEST_ARCH
-  #         declare -p XBPS_TARGET_ARCH      >> srcpkgs/.ENV
-  #         declare -p XBPS_PASSPHRASE       >> srcpkgs/.ENV
-  #         declare -p PRIVATE_KEY           >> srcpkgs/.ENV
-  #         declare -p XBPS_TARGET_SOURCE    >> srcpkgs/.ENV
-  #         declare -p XBPS_TARGET_VERSION   >> srcpkgs/.ENV
-  #         chmod -Rfv 777 srcpkgs
-  #         sudo echo 0 > /proc/sys/kernel/apparmor_restrict_unprivileged_userns
-  #         sudo -E docker compose up
-  #         sudo chown `whoami`:`whoami` -Rfv srcpkgs/packages
-  #     - name: Linux - Publish
-  #       if: github.event.inputs.publish  == 'true'
-  #       shell: bash
-  #       env:
-  #         GH_TOKEN: ${{ github.token }}
-  #       run: |
-  #         gh release upload "$INPUT_VERSION" ./srcpkgs/packages/hostdir/binpkgs/* --clobber
-  #     # Upload build artifacts
-  #     - name: Upload artifacts
-  #       uses: actions/upload-artifact@v6
-  #       with:
-  #         name: nekobox-${{ matrix.target }}
-  #         path: srcpkgs/packages/hostdir/binpkgs/*.xbps
-  #         retention-days: 7
+
   upload_aur:
     name: Upload to Open Build Service and Aur
     permissions:
@@ -343,7 +242,6 @@ jobs:
           if [[ "$PUBLISH_AUR" == "true" ]]; then . ./script/generate_pkgbuild.sh; fi
           if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
           if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi
-       #   . ./script/upload_aur.sh
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@master
@@ -380,17 +278,14 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-      #      qt_version: 6.12.0
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-2022
             target: x86_64
-      #      qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-2022
             target: x86
-      #      qt_version: 6.10.0
             triplet: x86-windows
             allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
@@ -416,22 +311,6 @@ jobs:
         uses: negrutiu/nsis-install@v2
         with:
           arch: ${{ matrix.target }}
-
-#      - name: Install Customized Qt
- #       if: matrix.allow == 'true' && matrix.target != 'arm64'
-  #      uses: qr243vbi/qt6windows7@main
-   #     with:
-    #      version: ${{ matrix.qt_version }}_${{ matrix.target }}
-
-#      - name: Install Qt
- #       if: matrix.allow == 'true' && matrix.target == 'arm64'
-  #      uses: jurplel/install-qt-action@v4.3.1
-   #     with:
-    #      version: ${{ matrix.qt_version }}
-     #     setup-python: true
-      #    cache: true
-       #   modules: qtcharts
-        #  cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
 
       - name: Install MSVC compiler
         if: matrix.allow == 'true'
@@ -481,6 +360,7 @@ jobs:
         shell: bash
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
+          export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/bin')"):$PATH"
           echo $PATH
           export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
           windeployqt() { "$WINDEPLOYQT" "${@}" ; }
@@ -574,21 +454,6 @@ jobs:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
 
- #     - name: Cache Containers
-  #      id: cache-common-containers
-   #     if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
-    #    uses: actions/cache@v4.2.3
-     #   with:
-      #    path: ~/.local/share/containers
-       #   key: CommonCachePodman-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
-
- #     - name: Linux - Install apt dependencies
-  #      if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-   #     uses: awalsh128/cache-apt-pkgs-action@latest
-    #    with:
-     #     packages: podman podman-compose
-      #    version: 1.0
-
       - name: Cache Docker images.
         uses: AllySummers/docker-cache@main
         with:
@@ -644,104 +509,6 @@ jobs:
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.goarch }}
           path: artifacts.tgz
-  #
-  # build-cpp-linux:
-  #   name: Build linux binaries
-  #   permissions:
-  #     contents: write
-  #     actions: read
-  #   needs:
-  #     - build-go
-  #   strategy:
-  #     matrix:
-  #       include:
-  #         - platform: ubuntu-24.04
-  #           qt_version: 6.10.2
-  #           target: amd64
-  #           allow: ${{ github.event.inputs.build_ubuntu }}
-  #         - platform: ubuntu-24.04-arm
-  #           qt_version: 6.10.2
-  #           target: arm64
-  #           allow: ${{ github.event.inputs.build_ubuntu_arm }}
-  #     fail-fast: false
-  #   runs-on: ${{ matrix.platform }}
-  #   env:
-  #     ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-  #     INPUT_VERSION: ${{ github.event.inputs.tag }}
-  #   steps:
-  #     - name: Checking out sources
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       uses: actions/checkout@main
-  #       with:
-  #         ref: 'main'
-  #         submodules: "false"
-  #
-  #     - name: Download Artifacts
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       uses: actions/download-artifact@v4.3.0
-  #       with:
-  #         path: download-artifact
-  #
-  #     - name: Install Qt
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       uses: jurplel/install-qt-action@v4.3.0
-  #       with:
-  #         version: ${{ matrix.qt_version }}
-  #         setup-python: true
-  #         cache: true
-  #         modules: qtcharts
-  #         cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
-  #
-  #     - name: Download Srslist
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       shell: bash
-  #       run: |
-  #         curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
-  #         mkdir build
-  #
-  #     - name: Linux - Install apt dependencies
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       uses: awalsh128/cache-apt-pkgs-action@latest
-  #       with:
-  #         packages: libfuse2 patchelf squashfs-tools openssl-dev openssl thrift-compiler libthrift-dev libboost-dev
-  #         version: 1.0
-  #
-  #     - name: Cache Builds
-  #       id: cache-common
-  #       if: github.event.inputs.source_only  != 'true' && matrix.allow == 'true'
-  #       uses: actions/cache@v4.2.3
-  #       with:
-  #         path: build
-  #         key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
-  #
-  #     - name: Linux - Generate MakeFile and Build
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       shell: bash
-  #       run: |
-  #         cd build
-  #         if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
-  #         cmake -GNinja -DSKIP_UPDATE_BUTTON="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" ..
-  #         ninja
-  #         cd ..
-  #         if [[ "${{ github.event.inputs.publish }}" == "true" ]]
-  #         then
-  #           export UPLOAD_WITH_GH=yes
-  #           export GH_TOKEN='${{ github.token }}'
-  #         fi
-  #         bash -x ./script/deploy_linux64.sh
-  #
-  #     - name: Tar files
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       shell: bash
-  #       run: tar czvf artifacts.tgz ./deployment
-  #
-  #     - name: Uploading Artifact
-  #       if: matrix.allow == 'true' && github.event.inputs.source_only != 'true'
-  #       uses: actions/upload-artifact@v4.6.2
-  #       with:
-  #         name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
-  #         path: artifacts.tgz
-
   publish:
     name: Pack & Publish Release
     runs-on: windows-latest
