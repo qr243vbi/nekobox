@@ -1,6 +1,4 @@
 #include <nekobox/global/HTTPRequestHelperGui.hpp>
-#include <cpr/proxyauth.h>
-#include <cpr/cpr.h>
 
 
 #include <QString>
@@ -17,6 +15,7 @@
 
 QString Configs_network::NetworkRequestHelperGui::DownloadAsset(const QString &url, const QString &fileName)
 {
+    /*
     QString result;
     QEventLoop loop;
 
@@ -169,6 +168,8 @@ QString Configs_network::NetworkRequestHelperGui::DownloadAsset(const QString &u
     future.waitForFinished();
 
     return result;
+    */
+    return "";
 }
 
 /*

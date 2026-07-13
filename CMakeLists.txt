@@ -17,10 +17,10 @@ set(CMAKE_SUPPRESS_REGENERATION ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 cmake_policy(SET CMP0069 NEW) #find package policy
-set(CMAKE_CXX_EXTENSIONS OFF)
 if(POLICY CMP0167)
     cmake_policy(SET CMP0167 NEW) #boost config policy
 endif()
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Default to an optimized Release build when no build type is specified.
 # Without this, a plain `cmake` configure compiles with no optimization (-O0),
@@ -77,7 +77,7 @@ foreach(TS_FILE ${TS_FILES})
     list(APPEND QM_FILENAMES ${QM_FILE})
 endforeach()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent Grpc Protobuf)
+find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -116,10 +116,10 @@ endif()
 
 option(MIGRATE_LMDB "Migrate from lmdb" OFF)
 option(SKIP_LEVELDB "Do not use rocksdb" OFF)
-option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
+option(SKIP_JS_UPDATER "Skip JS update checker" ON)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
-option(ENABLE_EMOJI_EMBEEDING "Enable profile filtering on subscription update" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
+option(ENABLE_EMOJI_EMBEEDING "Enable emoji font embeeded" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
 
 find_package(Threads)
 
@@ -296,6 +296,23 @@ else()
     nkr_add_compile_definitions(SKIP_LEVELDB=yes)
 endif()
 
+if(SKIP_JS_UPDATER)
+    nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
+else()
+    target_sources(nekobox
+            PRIVATE
+            ${GHARQAD}/js/js_updater.cpp
+            ${NYXARIA}/js/js_updater.h
+            ${NYXARIA}/js/blocking_queue.h
+            ${NYXARIA}/js/js_updater.h
+            ${NYXARIA}/js/message_queue.h
+            ${NYXARIA}/js/version.h
+
+            res/nekobox_updater.qrc
+    )
+endif()
+
+
 target_include_directories(nekobox PRIVATE
     ${Qt6Protobuf_PRIVATE_INCLUDE_DIRS}
 )
@@ -342,6 +359,7 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
 target_include_directories(nekobox PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
+
 find_package(Boost REQUIRED COMPONENTS filesystem)
 target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(nekobox PRIVATE Boost::filesystem)
@@ -369,7 +387,6 @@ endif()
 
 target_link_libraries(nekobox PRIVATE
         Qt6::Widgets Qt6::Concurrent
-        Qt6::Grpc Qt6::Protobuf
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

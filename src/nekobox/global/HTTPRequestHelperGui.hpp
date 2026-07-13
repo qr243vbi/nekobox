@@ -7,9 +7,6 @@
 #include <QObject>
 #include <functional>
 
-#include <cpr/proxyauth.h>
-#include <cpr/cpr.h>
-
 namespace Configs_network {
 
 

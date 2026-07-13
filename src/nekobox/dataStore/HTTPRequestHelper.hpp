@@ -7,8 +7,12 @@
 #include <QObject>
 #include <QString>
 #include <QMap>
-#include <cpr/proxyauth.h>
-#include <cpr/cpr.h>
+
+namespace cpr {
+    class Session {
+
+    };
+}
 
 namespace Configs_network {
     enum HTTPMethod {

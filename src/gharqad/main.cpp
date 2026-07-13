@@ -149,6 +149,7 @@ static bool sendDeeplink(const QString &serverName, const QString & deeplink){
     return false; // no server running
   } 
     */ 
+    return true;
 }
 
 static bool wakeExistingInstance(const QString &serverName) {
@@ -170,6 +171,7 @@ static bool wakeExistingInstance(const QString &serverName) {
     return false; // no server running
   }
     */
+    return true;
 }
 
 static void loadTranslate(QString locale) {

@@ -14,8 +14,8 @@
 #include <nekobox/ui/mainwindow.h>
 
 void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Session& session,
-                                   const QMap<QString, QString> &headerMap, const QByteArray& payload)
-{
+                                   const QMap<QString, QString> &headerMap, const QByteArray& payload) {
+/*
     auto s = Configs::dataStore;
 
     session.SetUrl(cpr::Url{url.toStdString()});
@@ -85,11 +85,13 @@ void Configs_network::BuildSession(const QString &url, bool sendHwid, cpr::Sessi
     session.SetBody(cpr::Body{payload.toStdString()});
 
     session.UpdateHeader(headers);
+*/
 }
 
 
 QMap<QString, QString> Configs_network::GetHWID(const QString & sub_custom_hwid_params){
-        auto d = GetDeviceDetails();
+/**
+    auto d = GetDeviceDetails();
         QMap<QString, QString> headers;
 
         QMap<QString, QString> custom;
@@ -125,6 +127,9 @@ QMap<QString, QString> Configs_network::GetHWID(const QString & sub_custom_hwid_
         if (!model.isEmpty())
             headers.insert("x-device-model", model);
         return headers;
+*/
+        QMap<QString, QString> headers;
+        return headers;
 }
 
 namespace Configs_network
@@ -132,6 +137,7 @@ namespace Configs_network
 template<HTTPMethod method>
 HTTPResponse NetworkRequestHelper::HttpJob(const QString &url, bool sendHwid, const QMap<QString, QString>& headers, const QByteArray& payload )
 {
+    /*
     cpr::Session session; 
     BuildSession(url, sendHwid, session, headers, payload);
     cpr::Response r ;
@@ -152,6 +158,9 @@ HTTPResponse NetworkRequestHelper::HttpJob(const QString &url, bool sendHwid, co
 
     resp.header = QStdMapString2QMapEnumFieldName(r.header);
 
+    return resp;
+    */
+    auto resp = HTTPResponse{ "", {}, {} };
     return resp;
 }
 
