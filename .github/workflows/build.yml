@@ -120,7 +120,7 @@ jobs:
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.ref_name }}
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
@@ -197,7 +197,7 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.ref_name }}
           submodules: 'true'
 
       - name: Create requirements.txt, add ssh key
@@ -302,7 +302,7 @@ jobs:
         if: matrix.allow == 'true'
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.ref_name }}
           submodules: "true"
 
       - name: Setup Ninja
@@ -435,7 +435,7 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.ref_name }}
           submodules: "true"
 
       - name: Download Artifacts
@@ -527,7 +527,7 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.ref_name }}
           submodules: "true"
       - name: Download Artifacts
         uses: actions/download-artifact@main
