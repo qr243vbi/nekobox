@@ -43,10 +43,12 @@ message Outbound {
     }
     enum Quic {
             DISABLED = 0;
-            BBR = 4;
-            BBR2 = 1;
-            CUBIC = 2;
-            RENO = 3;
+            BBR = 1;
+            BBR2 = 2;
+            CUBIC = 3;
+            RENO = 4;
+            BBRSTANDARD = 5;
+            BBRVARIANT = 6;
     }
     message UdpOverTcp {
         enum Version {
@@ -112,7 +114,7 @@ message MieruBean {
         MIDDLE = 2;
         HIGH = 3;
     }
-    StringList ports = 1;
+    repeated string ports = 1;
     Outbound.Network network = 2;
     Credentials credentials = 3;
     Multiplexing multiplexing = 4;
@@ -146,7 +148,7 @@ message TrojanBean {
 }
 
 message HysteriaCommon {
-    StringList ports = 1;
+    repeated string ports = 1;
     /*duration*/ uint64 hop_interval = 2;
     /*speed*/uint64 up_mbps = 3;
     /*speed*/uint64 down_mbps = 4;
@@ -189,15 +191,66 @@ message ShadowTLSBean {
 }
 
 message WireguardBean {
+    string private_key = 7;
+    string public_key = 6;
+    string pre_shared_key = 5;
+    bool persistent_keepalive = 4;
+    repeated string local_address = 3;
+    uint32 mtu = 1;
+    bool use_system_proxy = 2;
+}
+
+message AwgBean {
+    WireguardBean wireguard = 1;
+    int32 jc = 2;
+    int32 jmin = 3;
+    int32 jmax = 4;
+    int32 s1 = 5;
+    int32 s2 = 6;
+    int32 s3 = 7;
+    int32 s4 = 8;
+
+    string h1 = 9;
+    string h2 = 10;
+    string h3 = 11;
+    string h4 = 12;
+    
+    string i1 = 13;
+    string i2 = 14;
+    string i3 = 15;
+    string i4 = 16;
+    string i5 = 17;
 }
 
 message TailscaleBean {
+    string state_directory = 1;
+    string auth_key = 2;
+    string control_url = 3;
+    bool ephemeral = 4;
+    string hostname = 5;
+    bool accept_routes = 6;
+    string exit_node = 7;
+    bool exit_node_allow_lan_access = 8;
+    repeated string advertise_routes = 9;
+    bool advertise_exit_node = 10;
+    bool global_dns = 11;
 }
 
 message SSHBean {
+    Credentials credentials = 1;
+    string private_key = 2;
+    string private_key_path = 3; 
+    string private_key_passphrase = 4;
+    repeated host_key = 5;
+    repeated host_key_algorithms = 6;
+    string client_version = 7;
 }
 
 message TorBean {
+    string executable_path = 1;
+    repeated string extra_args = 2;
+    string data_directory = 3;
+    map<string, string> torrc = 4;
 }
 
 message NaiveBean {
@@ -210,18 +263,48 @@ message NaiveBean {
 }
 
 message TrustTunnelBean {
+    Credentials credentials = 1;
+    bool health_check = 2;
+    Outbound.Quic quic = 3;
+    Outbound.Tls tls = 4;
 }
 
 message JuicityBean {
+    // uuid used instead username
+    Credentials credentials = 1;
+    Outbound.Tls tls = 2;
 }
 
-message ShellBean {
+message SnellBean {
+    uint32 version = 1;
+    string psk = 2;
+    bool reuse = 3;
+    Outbound.Network network = 4;
+    enum ObfsMode {
+        UNSPECIFIED = 0;
+        HTTP = 1;
+        TLS = 2;
+    }
+    ObfsMode obfs_mode = 5;
+    string obfs_host = 6;
 }
 
 message CustomBean {
+    string core = 1;
+    repeated string cmd = 2;
+    string config_simple = 3;
+    string config_suffix = 4;
+    uint32 mapping_port = 5;
+    uint32 socks_port = 6;
 }
 
 message ExtraBean {
+    string socks_address = 1;
+    uint32 socks_port = 2;
+    string extra_core_path = 3;
+    repeated string extra_core_args = 4;
+    string extra_core_conf = 5;
+    bool no_logs = 6;
 }
 
 message TuicBean {
@@ -245,11 +328,34 @@ message TuicBean {
     Outbound.Tls tls = 8;
 }
 
-message AwgBean {
-    WireguardBean wireguard = 1;
-}
-
 message DialFields {
+    string bind_interface = 1;
+    string inet4_bind_address = 2;
+    string inet6_bind_address = 3;
+    bool reuse_addr = 4;
+    /*duration*/uint64 connect_timeout = 5;
+    bool tcp_fast_open = 6;
+    bool tcp_multi_path = 7;
+    bool disable_tcp_keep_alive = 8;
+    /*duration*/uint64 tcp_keep_alive = 9;
+    /*duration*/uint64 tcp_keep_alive_interval = 10;
+    bool udp_fragment = 11;
+    enum NetworkStrategy {
+        UNSPECIFIED = 0;
+        HYBRID = 1;
+        FALLBACK = 2;
+    }
+    enum NetworkType {
+        UNSPECIFIED = 0;
+        WIFI = 1;
+        CELLULAR = 2;
+        ETHERNET = 3;
+        OTHER = 4;
+    }
+    NetworkStrategy network_strategy = 12;
+    NetworkType network_type = 13;
+    NetworkType fallback_network_type = 14;
+    /*duration*/uint64 fallback_delay = 15;
 }
 
 message VmessBean {
@@ -281,6 +387,10 @@ message VlessBean {
     Outbound.V2RayTransport transport = 7;
 }
 
+message DirectBean {
+    bool block = 1;
+}
+
 message Bean {
     uint32 id = 1;
     oneof bean {
@@ -304,11 +414,12 @@ message Bean {
         NaiveBean naive = 20;
         TrustTunnelBean trusttunnel = 21;
         JuicityBean juicity = 22;
-        ShellBean shell = 23;
+        SnellBean snell = 23;
         CustomBean custom = 24;
         ExtraBean extra = 25;
         VmessBean vmess = 26;
         SocksBean socks = 27;
+        DirectBean direct = 28;
     };
     DialFields dial_fields = 2;
 }
