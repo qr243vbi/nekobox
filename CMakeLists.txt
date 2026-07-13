@@ -18,6 +18,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 cmake_policy(SET CMP0069 NEW) #find package policy
 set(CMAKE_CXX_EXTENSIONS OFF)
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW) #boost config policy
+endif()
 
 # Default to an optimized Release build when no build type is specified.
 # Without this, a plain `cmake` configure compiles with no optimization (-O0),
