@@ -32,8 +32,19 @@ message Group {
     repeated uint32 profiles = 3;
 }
 
+message Credentials {
+    string username = 1;
+    string password = 2;
+}
+
 message InvalidBean {
 }
+
+message ServerAndPort {
+    string server = 1;
+    int32 port = 2;
+}
+
 
 message Outbound {
     enum Network {
@@ -77,16 +88,136 @@ message Outbound {
     }
 
     message Tls {
+        bool enabled = 15;
+        bool disable_sni = 1;
+        string server_name = 2;
+        bool insecure = 3;
+        repeated string alpn = 4;
+        repeated string certificate = 5;
+        repeated string certificate_public_key_sha256 = 6;
+        repeated string client_certificate = 7;
+        repeated string client_key = 8;
+        uint64 handshake_timeout = 9;
+        bool fragment = 10;
+        uint64 fragment_fallback_delay = 11;
+        bool record_fragment = 12;
+        string spoof = 13;
+        string spoof_method = 14;
+        message Ech {
+            bool enabled = 1;
+            repeated string config = 2;
+            string query_server_name = 3;
+        }
+        message Utls {
+            bool enabled = 1;
+            string fingerprint = 2;
+        }
+        message Reality {
+            bool enabled = 1;
+            string public_key = 2;
+            string short_id = 3;
+        }
+        Ech ech = 16;
+        Utls utls = 17;
+        Reality reality = 18;
     }
 
     message V2RayTransport {
+        message Http {
+            repeated string host = 1;
+            string path = 2;
+            string method = 3;
+            map<string, string> headers = 4;
+            uint64 idle_timeout = 5;
+            uint64 ping_timeout = 6;
+        }
+        message WebSocket {
+            string path = 1;
+            map<string, string> headers = 2;
+            string early_data_header_name = 3;
+            uint32 max_early_data = 4;
+        }
+        message QUIC {
+        }
+        message gRPC {
+            string service_name = 1;
+            uint64 idle_timeout = 2;
+            uint64 ping_timeout = 3;
+            bool permit_without_stream = 4;
+        }
+        message HttpUpgrade {
+            string host = 1;
+            string path = 2;
+            map<string, string> headers = 3;
+        }
+        message XHttp {
+            message Range {
+                int32 from = 1;
+                int32 to = 2;
+            }
+            message XHTTPXmuxOptions {
+                Range max_concurrency = 1;   
+                Range max_connections = 2;   
+                Range c_max_reuse_times = 3;   
+                Range h_max_request_times = 4;   
+                Range h_max_reusable_secs = 5;
+                uint64 h_keep_alive_period = 6;
+            }
+            message XHTTPBaseOptions {
+                string mode = 1;
+                string host = 2;
+                string path = 3;
+                map<string, string> headers = 4;
+                uint32 domain_strategy = 5;
+                Range x_padding_bytes = 6;
+                bool no_grpc_header = 7;
+                bool no_sse_header = 8;
+                Range sc_max_each_post_bytes = 9;
+                Range sc_min_posts_interval_ms = 10;
+                int64 sc_max_buffered_posts = 11;
+                Range sc_stream_up_server_secs = 12;
+                int64 server_max_header_bytes = 13;
+                repeated string trusted_x_forwarded_for = 14;
+                XHTTPXmuxOptions xmux = 15;
+                bool x_padding_obfs_mode = 16;
+                string x_padding_key = 17;
+                string x_padding_header = 18;
+                string x_padding_placement = 19;
+                string x_padding_method = 20;
+                string uplink_http_method = 21;
+                string session_placement = 22;
+                string session_key = 23;
+                string seq_placement = 24;
+                string seq_key = 25;
+                string uplink_data_placement = 26;
+                string uplink_data_key = 27;
+                Range uplink_chunk_size = 28;
+            }
+            XHTTPBaseOptions base = 1;
+            message XHTTPDownloadOptions {
+                XHTTPBaseOptions base = 1;
+                ServerAndPort address = 2;
+                Outbound.Tls tls = 3;
+                uint64 detour_id = 4;
+            }
+            XHTTPDownloadOptions download = 2;
+        }
+        message Kcp {
+	        uint32 mtu = 1;
+	        uint32 tti = 2;
+	        uint32 uplink_capacity = 3;
+	        uint32 downlink_capacity = 4;
+	        bool   congestion = 5;
+	        uint32 read_buffer_size = 6;
+	        uint32 write_buffer_size = 7;
+	        string header_type = 8;
+	        string seed = 9;
+	        uint32 cwnd_multiplier = 10;
+	        uint32 max_sending_window = 11;
+        }
     }
 }
 
-message Credentials {
-    string username = 1;
-    string password = 2;
-}
 
 message SocksBean {
     enum Version {
@@ -356,6 +487,7 @@ message DialFields {
     NetworkType network_type = 13;
     NetworkType fallback_network_type = 14;
     /*duration*/uint64 fallback_delay = 15;
+    uint64 detour_id = 16;
 }
 
 message VmessBean {
@@ -454,19 +586,14 @@ message Bean {
     }*/
 //    Type type = 3;
 
-message ServerAndPort {
-    string server = 1;
-    int32 port = 2;
-}
-
 message Proxy {
     string name = 1;
-    ServerAndPort address = 7;
     uint64 id = 2;
     uint64 gid = 3;
     /*speed*/uint64 latency = 4;
-    uint32 country = 6;
     SpeedAndTraffic sat = 5;
+    uint32 country = 6;
+    ServerAndPort address = 7;
 }
 
 message IpVersion {
