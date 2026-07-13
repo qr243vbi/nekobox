@@ -241,8 +241,8 @@ message SSHBean {
     string private_key = 2;
     string private_key_path = 3; 
     string private_key_passphrase = 4;
-    repeated host_key = 5;
-    repeated host_key_algorithms = 6;
+    repeated string host_key = 5;
+    repeated string host_key_algorithms = 6;
     string client_version = 7;
 }
 
@@ -341,7 +341,7 @@ message DialFields {
     /*duration*/uint64 tcp_keep_alive_interval = 10;
     bool udp_fragment = 11;
     enum NetworkStrategy {
-        UNSPECIFIED = 0;
+        DEFAULT = 0;
         HYBRID = 1;
         FALLBACK = 2;
     }
