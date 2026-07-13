@@ -140,7 +140,7 @@ jobs:
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: protoc-compiler protoc-compiler-grpc
+          packages: protoc-compiler,protoc-compiler-grpc
           version: 1.0
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
