@@ -342,6 +342,10 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 
 target_include_directories(nekobox PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
+find_package(Boost REQUIRED COMPONENTS filesystem)
+target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(nekobox PRIVATE Boost::filesystem)
+
 find_package(OpenSSL REQUIRED)
 target_include_directories(nekobox PRIVATE ${OPENSSL_INCLUDE_DIR})
 target_link_libraries(nekobox PRIVATE OpenSSL::SSL OpenSSL::Crypto)
