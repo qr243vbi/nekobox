@@ -246,7 +246,6 @@ jobs:
           if [[ "$PUBLISH_AUR" == "true" ]]; then . ./script/generate_pkgbuild.sh; fi
           if [[ "$PUBLISH_OBS" == "true" ]]; then . ./script/trigger_open_build_service.sh; fi
           if [[ "$PUBLISH_COPR" == "true" ]]; then pip install copr; python3 ./script/trigger_community_projects.py; fi
-       #   . ./script/upload_aur.sh
 
       - name: Publish AUR package
         uses: KSXGitHub/github-actions-deploy-aur@master
@@ -283,17 +282,14 @@ jobs:
         include:
           - platform: windows-11-arm
             target: arm64
-      #      qt_version: 6.12.0
             triplet: arm64-windows
             allow: ${{ github.event.inputs.build_windows_arm64 }}
           - platform: windows-2022
             target: x86_64
-      #      qt_version: 6.10.0
             triplet: x64-windows
             allow: ${{ github.event.inputs.build_windows_x64 }}
           - platform: windows-2022
             target: x86
-      #      qt_version: 6.10.0
             triplet: x86-windows
             allow: ${{ github.event.inputs.build_windows_x86 }}
       fail-fast: false
@@ -368,6 +364,7 @@ jobs:
         shell: bash
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
+          export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/bin')"):$PATH"
           echo $PATH
           export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
           windeployqt() { "$WINDEPLOYQT" "${@}" ; }
@@ -460,7 +457,6 @@ jobs:
         with:
           path: build
           key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
-
 
       - name: Cache Docker images.
         uses: AllySummers/docker-cache@main
