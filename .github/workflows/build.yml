@@ -484,7 +484,7 @@ jobs:
           echo $PATH
           export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
           windeployqt() { "$WINDEPLOYQT" "${@}" ; }
-          declare -p windeployqt
+          declare -f windeployqt
           echo "$WINDEPLOYQT"
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
