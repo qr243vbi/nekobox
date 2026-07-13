@@ -393,7 +393,7 @@ private:
     bool showDownloadData = false;
     bool showRuleSetData = false;
 
-    libcore::SpeedTestResult currentTestResult;
+   // libcore::SpeedTestResult currentTestResult;
     DownloadProgressReport currentDownloadReport; // could use a list, but don't think can show more than one anyways
 
     // shortcuts

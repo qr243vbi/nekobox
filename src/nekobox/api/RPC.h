@@ -1,4 +1,8 @@
 #pragma once
+#ifdef FORCE_USE_RPC
+#undef FORCE_USE_RPC
+#endif
+#ifdef FORCE_USE_RPC
 #include <QString>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #ifndef Q_MOC_RUN
@@ -87,3 +91,5 @@ private:
 
 inline std::unique_ptr<Client> defaultClient;
 } // namespace API
+
+#endif

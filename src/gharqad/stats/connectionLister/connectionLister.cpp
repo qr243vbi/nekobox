@@ -42,6 +42,7 @@ namespace Stats
 
     void ConnectionLister::update()
     {
+        /**
         bool ok;
         std::optional<libcore::ListConnectionsResp> resp = API::defaultClient->ListConnections(&ok);
         if (!ok)
@@ -138,6 +139,7 @@ namespace Stats
                 m->UpdateConnectionListWithRecreate(sorted);
             });
         }
+            */
     }
 
     void ConnectionLister::stopLoop()
@@ -147,6 +149,7 @@ namespace Stats
 
     void ConnectionLister::setSort(const ConnectionSort newSort)
     {
+        
         if (newSort == ByTraffic)
         {
             if (sort == ByDownload && asc)

@@ -596,6 +596,7 @@ QByteArray hash = QCryptographicHash::hash(
     signed char isAdminCache = -1;
 
     bool IsAdmin(bool forceRenew) {
+        /*
         if (isAdminCache >= 0 && !forceRenew) return isAdminCache;
 
         bool admin = false;
@@ -614,6 +615,9 @@ QByteArray hash = QCryptographicHash::hash(
 #endif
         isAdminCache = admin;
         return admin;
+
+        */
+        return true;
     };
     QString GetBasePath() {
         return QDir::currentPath();

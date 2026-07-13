@@ -2662,6 +2662,7 @@ void MainWindow::set_spmode_vpn(bool enable, bool save, bool requestAdmin) {
 }
 
 void MainWindow::UpdateDataView(bool force) {
+  /*
   if (!force && lastUpdated.msecsTo(QDateTime::currentDateTime()) < 100) {
     return;
   }
@@ -2721,6 +2722,7 @@ void MainWindow::UpdateDataView(bool force) {
 
   ui->data_view->setHtml(html);
   lastUpdated = QDateTime::currentDateTime();
+  */
 }
 
 void MainWindow::setDownloadReport(const DownloadProgressReport &report,

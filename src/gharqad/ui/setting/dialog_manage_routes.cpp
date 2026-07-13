@@ -264,6 +264,8 @@ void DialogManageRoutes::GenerateWarpConfig(
         QLineEdit * warp_ifc_addrs, 
         QWidget * context,
         QLineEdit * port){
+
+            /*
     auto originalText = warp_button->text();
     warp_button->setText(tr("Getting keypair..."));
     bool ok;
@@ -304,6 +306,7 @@ void DialogManageRoutes::GenerateWarpConfig(
 
     warp_button->setText(tr("Success!"));
     setTimeout([=] { warp_button->setText(originalText); }, context, 2000);
+    */
 }
 
 void DialogManageRoutes::BindWarpGenerator(

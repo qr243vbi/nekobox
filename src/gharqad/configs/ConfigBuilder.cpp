@@ -533,7 +533,7 @@ bool IsValid(std::shared_ptr<ProxyEntity> ent) {
         {key, outArr},
     };
   }
-  bool ok;
+  bool ok;/*
   auto resp =
       API::defaultClient->CheckConfig(&ok, QJsonObject2QString(conf, true));
   if (!ok) {
@@ -544,6 +544,7 @@ bool IsValid(std::shared_ptr<ProxyEntity> ent) {
     return true;
   // else
   MW_show_log("Invalid ent " + ent->name + ": " + resp);
+  */
   return false;
 }
 

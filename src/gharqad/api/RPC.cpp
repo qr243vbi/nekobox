@@ -1,5 +1,7 @@
-
-
+#ifdef FORCE_USE_RPC
+#undef FORCE_USE_RPC
+#endif
+#ifdef FORCE_USE_RPC
 #include <nekobox/api/RPC.h>
 #include <nekobox/dataStore/Configs.hpp>
 #include <QDebug>
@@ -443,3 +445,5 @@ try{                                                                            
     };
 
 } // namespace API
+
+#endif

@@ -117,6 +117,7 @@ void ProxyAutoTester::RunTestCycle() {
 }
 
 void ProxyAutoTester::CheckActiveProxyHealth() {
+    /**
     if (!Configs::dataStore->core_running) {
         return; // Core not running
     }
@@ -181,11 +182,12 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
             }
         }
     });
+    */
 }
 
 void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
     logStatus(QString("Handling failure for proxy %1 after %2 attempts").arg(proxyId).arg(attemptCount));
-
+/**
     // Mark proxy as not working
     auto proxy = Configs::profileManager->GetProfile(proxyId);
     if (proxy) {
@@ -225,6 +227,7 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
             });
         }
     }
+*/
 }
 
 int ProxyAutoTester::GetNextWorkingProxy() {
@@ -290,7 +293,7 @@ bool ProxyAutoTester::isTunFailoverEnabled() const {
 // Helper methods
 QList<std::shared_ptr<Configs::ProxyEntity>> ProxyAutoTester::getProxiesToTest() {
     QList<std::shared_ptr<Configs::ProxyEntity>> result;
-
+/*
     // Get all proxies from the current group
     int currentGroupId = Configs::dataStore->current_group;
     auto group = Configs::profileManager->GetGroup(currentGroupId);
@@ -331,11 +334,12 @@ QList<std::shared_ptr<Configs::ProxyEntity>> ProxyAutoTester::getProxiesToTest()
 
     // Update offset for next cycle
     currentTestOffset = (startIdx + count) % allProxies.size();
-
+*/
     return result;
 }
 
 bool ProxyAutoTester::shouldTestProxy(std::shared_ptr<Configs::ProxyEntity> proxy) {
+ /*
     if (!proxy) {
         return false;
     }
@@ -348,11 +352,12 @@ bool ProxyAutoTester::shouldTestProxy(std::shared_ptr<Configs::ProxyEntity> prox
         auto bean = proxy->CustomBean();
         return bean != nullptr && bean->core == "internal-full";
     }
-
+*/
     return true;
 }
 
 void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
+    /**
     if (proxyIds.isEmpty()) {
         isTestingInProgress = false;
         emit testCycleCompleted(0, workingProxyPool.size());
@@ -553,9 +558,11 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
             if (mw) mw->refresh_proxy_list();
         });
     });
+    */
 }
 
 void ProxyAutoTester::updateWorkingPool(int proxyId, bool isWorking) {
+   /**
     if (isWorking) {
         // Add to pool if not already present
         if (!workingProxyPool.contains(proxyId)) {
@@ -569,9 +576,11 @@ void ProxyAutoTester::updateWorkingPool(int proxyId, bool isWorking) {
         // Remove from pool
         workingProxyPool.removeAll(proxyId);
     }
+        */
 }
 
 void ProxyAutoTester::pruneWorkingPool() {
+ /**
     int maxPoolSize = getPoolSize();
 
     // Remove excess entries
@@ -591,9 +600,11 @@ void ProxyAutoTester::pruneWorkingPool() {
     for (int proxyId : toRemove) {
         workingProxyPool.removeAll(proxyId);
     }
+        */
 }
 
 void ProxyAutoTester::logStatus(const QString &message) {
+    /**
     qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
 
     // Rate limit logging to once per 5 seconds
@@ -606,6 +617,7 @@ void ProxyAutoTester::logStatus(const QString &message) {
     runOnUiThread([=] {
         MW_show_log("[Auto-Test] " + message);
     });
+    */
 }
 
 } // namespace Stats

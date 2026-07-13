@@ -17,9 +17,6 @@ set(CMAKE_SUPPRESS_REGENERATION ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 cmake_policy(SET CMP0069 NEW) #find package policy
-if(POLICY CMP0167)
-    cmake_policy(SET CMP0167 NEW) #boost config policy
-endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Default to an optimized Release build when no build type is specified.
@@ -77,7 +74,7 @@ foreach(TS_FILE ${TS_FILES})
     list(APPEND QM_FILENAMES ${QM_FILE})
 endforeach()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
+find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent Grpc Protobuf)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -119,10 +116,7 @@ option(SKIP_LEVELDB "Do not use rocksdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" OFF)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
-option(CPR_USE_SYSTEM_CURL "Use system cpr" ON)
-option(CPR_ENABLE_INSTALL "Use cpr as bundled dependency" OFF)
 option(ENABLE_EMOJI_EMBEEDING "Enable profile filtering on subscription update" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
-set(QJS_ENABLE_INSTALL OFF CACHE BOOL "Enable quickjs-ng install")
 
 find_package(Threads)
 
@@ -148,34 +142,6 @@ if (USE_HOTKEYS)
   list(APPEND NKR_EXTERNAL_TARGETS qhotkey)
 endif()
 
-
-find_program(THRIFT_COMPILER thrift REQUIRED)
-
-if(EXISTS "${THRIFT_COMPILER}/tools/thrift/thrift.exe" AND NOT IS_DIRECTORY "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
-     set(THRIFT_COMPILER "${THRIFT_COMPILER}/tools/thrift/thrift.exe")
-     set(ENV{THRIFT_COMPILER} "${THRIFT_COMPILER}")
-endif()
-
-message(STATUS "Found Thrift " ${THRIFT_COMPILER})
-
-set(THRIFT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/core/server/gen/libcore.thrift")
-set(THRIFT_GEN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen-cpp")
-file(MAKE_DIRECTORY "${THRIFT_GEN_DIR}")
-
-execute_process(
-#    OUTPUT "${THRIFT_GEN_DIR}/LibcoreService.h" "${THRIFT_GEN_DIR}/LibcoreService.cpp"
-    COMMAND ${THRIFT_COMPILER} --gen cpp --out "${THRIFT_GEN_DIR}" "${THRIFT_FILE}"
-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-)
-
-# Add a custom target to ensure the code generation runs
-add_custom_target(generate_thrift_code ALL DEPENDS "${THRIFT_GEN_DIR}/LibcoreService.h")
-
-# Include the generated files in your project
-include_directories("${THRIFT_GEN_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/src")
-set(THRIFT_GENERATED_SOURCES
-    "${GHARQAD}/libcore.cpp"
-)
 
 # Check if the directory exists
 if(EXISTS "${CMAKE_SOURCE_DIR}/core/server/vendor")
@@ -225,7 +191,6 @@ file(GLOB_RECURSE PROJECT_SOURCES_GLOB
 # Sources
 set(PROJECT_SOURCES
         ${PLATFORM_SOURCES}
-        ${THRIFT_GENERATED_SOURCES}
         ${SECURITY_SOURCES}
         ${PROJECT_SOURCES_GLOB}
         ${GHARQAD}/main.cpp
@@ -328,33 +293,6 @@ else()
     nkr_add_compile_definitions(SKIP_LEVELDB=yes)
 endif()
 
-if(SKIP_JS_UPDATER)
-    nkr_add_compile_definitions(SKIP_JS_UPDATER=yes)
-else()
-    find_package(qjs CONFIG QUIET)
-    if(qjs_FOUND)
-        message(STATUS "Using system QuickJS-NG")
-    else()
-        message(STATUS "System QuickJS-NG not found, using bundled version")
-        add_subdirectory("${ONPARTY}/qjs")
-    endif()
-
-    target_link_libraries(nekobox PRIVATE qjs)
-
-    target_sources(nekobox
-            PRIVATE
-            ${GHARQAD}/js/js_updater.cpp
-            ${NYXARIA}/js/js_updater.h
-            ${NYXARIA}/js/blocking_queue.h
-            ${NYXARIA}/js/js_updater.h
-            ${NYXARIA}/js/message_queue.h
-            ${NYXARIA}/js/version.h
-
-            res/nekobox_updater.qrc
-    )
-endif()
-
-
 target_include_directories(nekobox PRIVATE
     ${Qt6Protobuf_PRIVATE_INCLUDE_DIRS}
 )
@@ -399,41 +337,7 @@ qt_add_lrelease(nekobox TS_FILES ${TS_FILES} QM_FILES_OUTPUT_VARIABLE QM_FILES)
 # configure_file(res/translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
 # target_sources(nekobox PRIVATE ${CMAKE_BINARY_DIR}/translations.qrc)
 
-find_package(Thrift QUIET)
-
-if (Thrift_FOUND)
-    set(THRIFT_LIBRARIES thrift::thrift)
-else()
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(THRIFT thrift REQUIRED)
-endif()
-
-target_include_directories(nekobox PRIVATE ${THRIFT_INCLUDE_DIRS})
-target_link_libraries(nekobox PRIVATE ${THRIFT_LIBRARIES})
-
-
-# Try system-installed CPR first
-find_package(cpr CONFIG QUIET)
-
-if(cpr_FOUND)
-    message(STATUS "Using system CPR")
-else()
-    message(STATUS "System CPR not found, using bundled version")
-    add_subdirectory("${ONPARTY}/cpr")
-endif()
-
-target_link_libraries(nekobox PRIVATE cpr::cpr)
-
-#if (MSVC)
-#    include(FindBoost)
-#    set(Boost_USE_STATIC_LIBS ON)
-#    set(Boost_USE_MULTITHREADED ON)
-#    set(Boost_USE_STATIC_RUNTIME ON)
-#endif()
-
-find_package(Boost REQUIRED COMPONENTS filesystem)
-target_include_directories(nekobox PRIVATE ${Boost_INCLUDE_DIRS})
-target_link_libraries(nekobox PRIVATE Boost::filesystem)
+target_include_directories(nekobox PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 find_package(OpenSSL REQUIRED)
 target_include_directories(nekobox PRIVATE ${OPENSSL_INCLUDE_DIR})
@@ -458,6 +362,7 @@ endif()
 
 target_link_libraries(nekobox PRIVATE
         Qt6::Widgets Qt6::Concurrent
+        Qt6::Grpc Qt6::Protobuf
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

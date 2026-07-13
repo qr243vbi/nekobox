@@ -1,6 +1,3 @@
-
-
-#include "libcore_types.h"
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/ui/mainwindow.h>
 #include <nekobox/dataStore/Database.hpp>
@@ -31,9 +28,10 @@
 
 
 // rpc
-using namespace API;
+//using namespace API;
 
 void MainWindow::setup_rpc() {
+    /*
     // Setup Connection
     defaultClient = std::make_unique<Client>();
 
@@ -48,9 +46,11 @@ void MainWindow::setup_rpc() {
         MW_show_log("[Auto-Test] Started with interval of " +
                     QString::number(Configs::dataStore->auto_test_interval_seconds) + " seconds");
     }
+                    */
 }
 
 void MainWindow::clear_ruleset_cache(){
+    /**
     bool isok;
     libcore::CacheURLRequest req;
     req.filepath = false;
@@ -58,10 +58,12 @@ void MainWindow::clear_ruleset_cache(){
     req.use_default_outbound = false;
     req.http_url = "";
     defaultClient->CacheHTTP(&isok, req);
+    */
 }
 
 
 bool MainWindow::fetch_ruleset_cache(const QString & url){
+    /**
     bool isok;
     libcore::CacheURLRequest req;
     req.clear = false;
@@ -70,9 +72,12 @@ bool MainWindow::fetch_ruleset_cache(const QString & url){
     req.http_url = url.toStdString();
     defaultClient->CacheHTTP(&isok, req);
     return isok;
+    */
+    return true;
 }
 
 void MainWindow::runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {
+    /**
     if (stopSpeedtest.load()) {
         MW_show_log(tr("Profile test aborted"));
         return;
@@ -177,6 +182,7 @@ void MainWindow::runURLTest(const QString& config, bool useDefault, const QStrin
         }
         ent->Save();
     }
+        */
 }
 
 void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,  
@@ -186,6 +192,7 @@ void MainWindow::urltest_profile(std::shared_ptr<Configs::ProxyEntity> entity,
 
 void MainWindow::urltest_current_group(const QList<int>& profiles,  
         bool skip_last_url_test_warning, const std::function<void(const QList<int>&)> &finish) {
+            /**
     if (profiles.isEmpty()) {
         return;
     }
@@ -284,9 +291,11 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
             finish(profiles_ids);
         }
     });
+    */
 }
 
 void MainWindow::stopTests() {
+    /**
     stopSpeedtest.store(true);
     bool ok;
     defaultClient->StopTests(&ok);
@@ -294,9 +303,11 @@ void MainWindow::stopTests() {
     if (!ok) {
         MW_show_log(tr("Failed to stop tests"));
     }
+        */
 }
 
 void MainWindow::url_test_current() {
+    /**
     last_test_time = QDateTime::currentSecsSinceEpoch();
     ui->label_running->setText(tr("Testing"));
 
@@ -333,11 +344,13 @@ void MainWindow::url_test_current() {
             }
         });
     });
+    */
 }
 
 void MainWindow::speedtest_current_group(const QList<int>& profiles_ids, 
     bool testCurrent, int testmode)
 {
+    /**
     if (profiles_ids.isEmpty() && !testCurrent) {
         return;
     }
@@ -413,10 +426,12 @@ void MainWindow::speedtest_current_group(const QList<int>& profiles_ids,
             MW_show_log(tr("Speedtest finished!"));
         });
     });
+    */
 }
 
 void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QString, int>& tag2entID, bool testCurrent)
 {
+    /**
     bool ok;
     auto res = defaultClient->QueryCurrentSpeedTests(&ok);
     if (!ok || !res->is_running)
@@ -453,10 +468,12 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
             lastProxyListUpdate = QDateTime::currentDateTime();
         }
     });
+    */
 }
 
 void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool testCurrent)
 {
+    /**
     bool ok;
     auto res = defaultClient->QueryCountryTestResults(&ok);
     if (!ok || res->results.empty())
@@ -486,12 +503,14 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
             }
         });
     }
+        */
 }
 
 
 void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testCurrent, 
     const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID, const int testmode)
 {
+    /**
     if (stopSpeedtest.load()) {
         MW_show_log(tr("Profile speed test aborted"));
         return;
@@ -586,9 +605,11 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
         }
         ent->Save();
     }
+        */
 }
 
 bool MainWindow::set_system_dns(bool set, bool save_set) {
+    /*
     if (!Configs::dataStore->enable_dns_server) {
         MW_show_log(tr("You need to enable hijack DNS server first"));
         return false;
@@ -608,11 +629,12 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
         return false;
     }
     if (save_set) Configs::dataStore->system_dns_set = set;
+    */
     return true;
 }
 
 void MainWindow::profile_start(int _id, bool do_not_test) {
-    
+    /**
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX
     if (Configs::dataStore->enable_dns_server && Configs::dataStore->dns_server_listen_port <= 1024) {
@@ -635,7 +657,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         });
         return;
     }
-*/
+
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
@@ -753,9 +775,11 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
             restartMsgbox->deleteLater();
         });
     });
+    */
 }
 
 bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
+    /**
     #ifndef USE_CPP_PROXY_CONFIGURATOR
     bool isok = true;
     int inbound_proxy_type = Configs::dataStore->inbound_proxy_type->value;
@@ -803,9 +827,12 @@ bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     Configs::dataStore->spmode_system_proxy = enable;
     refresh_status();
     return enable;
+    */
+    return true;
 }
 
 void MainWindow::profile_stop(bool crash, bool block, bool manual) {
+    /**
     if (running == nullptr) {
         return;
     }
@@ -883,4 +910,5 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
         blocker.lock();
         blocker.unlock();
     }
+        */
 }

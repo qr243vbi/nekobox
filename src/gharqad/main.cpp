@@ -128,6 +128,7 @@ getLocalServerTransport(const QString &serverName) {
 
 
 static bool sendDeeplink(const QString &serverName, const QString & deeplink){
+  /*
   if (deeplink.isEmpty()){
     return false;
   }
@@ -146,10 +147,12 @@ static bool sendDeeplink(const QString &serverName, const QString & deeplink){
     return true; // instance exists
   } catch (...) {
     return false; // no server running
-  }  
+  } 
+    */ 
 }
 
 static bool wakeExistingInstance(const QString &serverName) {
+  /*
   try {
     auto transport = (getLocalTransport(serverName));
     transport->open();
@@ -166,6 +169,7 @@ static bool wakeExistingInstance(const QString &serverName) {
   } catch (...) {
     return false; // no server running
   }
+    */
 }
 
 static void loadTranslate(QString locale) {
@@ -468,7 +472,7 @@ int main(int argc, char **argv) {
 #endif
   QGuiApplication::tr("QT_LAYOUT_DIRECTION");
   loadTranslate(locale);
-
+/*
   // QLocalServer
   auto handler = std::make_shared<API::InstanceHandler>();
   
@@ -503,7 +507,7 @@ int main(int argc, char **argv) {
       std::make_shared<apache::thrift::protocol::TBinaryProtocolFactory>());
 
   QFuture future = QtConcurrent::run([server] { server->serve(); });
-
+*/
 #ifdef Q_OS_UNIX
   signal(SIGTERM, signal_handler);
   signal(SIGINT, signal_handler);
@@ -555,8 +559,8 @@ int main(int argc, char **argv) {
   UrlScheme_RegisterIfNeeded();
 
   auto ret = QApplication::exec();
-  server->stop();
-  future.waitForFinished();
+//  server->stop();
+//  future.waitForFinished();
 #ifdef Q_OS_UNIX
   QFile file(getSocketPath(serverName));
 

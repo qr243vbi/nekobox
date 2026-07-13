@@ -57,6 +57,7 @@ int TrafficLooper::total_proxy_upload(){
 }
 
 void TrafficLooper::UpdateAll() {
+  /*
   if (Configs::dataStore->disable_traffic_stats) {
     return;
   }
@@ -112,6 +113,7 @@ void TrafficLooper::UpdateAll() {
       }
     }
   }
+    */
 }
 
 void TrafficLooper::Loop() {
