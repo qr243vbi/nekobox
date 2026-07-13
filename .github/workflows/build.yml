@@ -331,7 +331,7 @@ jobs:
         if: matrix.allow == 'true'
         id: vcpkg
         with:
-          pkgs: boost-filesystem boost-dll boost-headers boost-bimap qtdeclarative gtgrpc qtbase[windeployqt] qttools
+          pkgs: boost-filesystem boost-dll boost-headers boost-bimap qtgrpc qtbase[windeployqt] qttools
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.GITHUB_TOKEN }}
