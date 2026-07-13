@@ -136,12 +136,17 @@ jobs:
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
             core/server/go.sum
-      - name: Linux - Install apt dependencies
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: awalsh128/cache-apt-pkgs-action@latest
+      - name: Install Protoc
+        if: steps.cache-common.outputs.cache-hit != 'true'
+        uses: arduino/setup-protoc@v3
         with:
-          packages: protobuf-compiler golang-goprotobuf-dev golang-google-grpc-dev protobuf-compiler-grpc
-          version: 1.0
+          version: "31.1"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Installing protoc-gen-go
+        if: steps.cache-common.outputs.cache-hit != 'true'
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.11
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.2
       - name: Build golang parts
         if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         shell: bash
