@@ -249,6 +249,7 @@ static rocksdb::ReadOptions ReadOptions(){
   read_options.snapshot = nullptr;
   return read_options;
 } 
+  
 static rocksdb::WriteOptions WriteOptions() {
   rocksdb::WriteOptions write_options;
   // Force durability before returning success

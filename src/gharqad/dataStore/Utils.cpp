@@ -709,7 +709,7 @@ QString QJsonType2QString(QJsonValue::Type type) {
   return "Undefined";
 }
 
-
+/**
 
 QString Node2QString(const YAML::Node &n, const QString &def) {
     try {
@@ -739,7 +739,6 @@ QStringList Node2QStringList(const YAML::Node &n) {
         return {};
     }
 }
-
 
 int Node2Int(const YAML::Node &n, int def) {
     try {
@@ -841,3 +840,4 @@ Configs::Data::Node Node2Custom(const YAML::Node &n){
     goto undefined_value;
   }
 }
+  */

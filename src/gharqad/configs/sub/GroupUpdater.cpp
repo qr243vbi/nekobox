@@ -1,5 +1,4 @@
 #include <nekobox/dataStore/Database.hpp>
-#include <yaml-cpp/yaml.h>
 #include <QMutex>
 #include <QThreadPool>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -1059,6 +1058,7 @@ bool RawUpdater::updateWireguardFileConfig(const QString &str) {
 
 // https://wiki.metacubex.one/en/config/proxies
 bool RawUpdater::updateClash(const QString &str) {
+  /*
   try {
     YAML::Node yaml_node = YAML::Load(str.toStdString());
     YAML::Node proxies   = yaml_node["proxies"];
@@ -1098,6 +1098,7 @@ bool RawUpdater::updateClash(const QString &str) {
     //       });
     return false;
   }
+    */
   return true;
 }
 

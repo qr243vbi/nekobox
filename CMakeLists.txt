@@ -114,11 +114,10 @@ else()
 set(ENABLE_EMOJI_EMBEEDING_DEFAULT ON)
 endif()
 
-option(MIGRATE_LMDB "Migrate from lmdb" OFF)
-option(SKIP_LEVELDB "Do not use rocksdb" OFF)
 option(SKIP_JS_UPDATER "Skip JS update checker" ON)
 option(USE_HOTKEYS "Skip HotKeys" ON)
 option(BUILD_GO_PARTS "Build go parts" ON)
+option(SKIP_LEVELDB "Skip leveldb" ON)
 option(ENABLE_EMOJI_EMBEEDING "Enable emoji font embeeded" ${ENABLE_EMOJI_EMBEEDING_DEFAULT})
 
 find_package(Threads)
@@ -284,7 +283,6 @@ if(SKIP_UPDATER)
     nkr_add_compile_definitions(SKIP_UPDATE_BUTTON=yes)
 endif()
 
-
 if (NOT SKIP_LEVELDB)
     find_package(leveldb)
     if (leveldb_FOUND)
@@ -414,8 +412,6 @@ endif()
 if (BUILD_GO_PARTS)
     find_program(GO_EXECUTABLE go)
 
-
-# Check if the vendor directory exists
     if(EXISTS "${CMAKE_SOURCE_DIR}/core/server/vendor")
         message(STATUS "Directory core/server/vendor exists.")
         set(GO_MOD_TIDY_FLAG OFF CACHE STRING "Run go mod tidy before build")
@@ -434,60 +430,6 @@ if (BUILD_GO_PARTS)
 endif()
 
 
-
-if (MIGRATE_LMDB)
-    # Track if dependency resolution succeeds
-    set(LMDB_SUCCESS FALSE)
-
-    if (MSVC)
-        # Find package with REQUIRED omitted to simulate "try"
-        find_package(unofficial-lmdb CONFIG)
-        if(unofficial-lmdb_FOUND)
-            target_link_libraries(nekobox PRIVATE unofficial::lmdb::lmdb)
-            set(LMDB_SUCCESS TRUE)
-        endif()
-    else()
-        pkg_check_modules(LMDB lmdb)
-        if(LMDB_FOUND)
-            message(STATUS "LMDB found via pkg-config")
-            target_include_directories(nekobox PRIVATE ${LMDB_INCLUDE_DIRS})
-            target_link_libraries(nekobox PRIVATE ${LMDB_LIBRARIES})
-            target_compile_options(nekobox PRIVATE ${LMDB_CFLAGS_OTHER})
-            set(LMDB_SUCCESS TRUE)
-        else()
-            message(STATUS "LMDB not found via pkg-config, trying manual search")
-            find_path(LMDB_INCLUDE_DIR lmdb.h)
-            find_library(LMDB_LIBRARY lmdb)
-            if(LMDB_INCLUDE_DIR AND LMDB_LIBRARY)
-                target_include_directories(nekobox PRIVATE ${LMDB_INCLUDE_DIR})
-                target_link_libraries(nekobox PRIVATE ${LMDB_LIBRARY})
-                set(LMDB_SUCCESS TRUE)
-            endif()
-        endif()
-    endif()
-    # The "catch" block behavior: executes only if search succeeded
-    if(LMDB_SUCCESS)
-        nkr_add_compile_definitions(MIGRATE_LMDB=yes)
-        nkr_add_compile_definitions(LMDB_ENABLE_MUTEX=yes)
-        nkr_add_compile_definitions(LMDB_ENABLE_MAPSIZE_METRICS=yes)
-    else()
-        # Handle failure gracefully here
-        message(WARNING "LMDB was requested but could not be found. Disabling MIGRATE_LMDB.")
-    endif()
-endif()
-
-find_package(yaml-cpp CONFIG QUIET)
-
-if (TARGET yaml-cpp::yaml-cpp)
-    set(YAML_CPP_TARGET yaml-cpp::yaml-cpp)
-else()
-    find_package(yaml-cpp REQUIRED)
-    set(YAML_CPP_TARGET yaml-cpp)
-endif()
-
-target_link_libraries(nekobox PRIVATE ${YAML_CPP_TARGET})
-
-#qt_finalize_executable(nekobox)
 if (UNIX)
 download_srslist()
 
@@ -553,7 +495,6 @@ install(FILES
     "${CMAKE_SOURCE_DIR}/res/languages.txt" DESTINATION "${PROGRAMPREFIX}/public"
     COMPONENT gui)
 
-#install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
 install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")
 
 endif()

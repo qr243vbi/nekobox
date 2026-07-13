@@ -517,6 +517,7 @@ std::vector<int> QListInt2VectorInt(const QList<int> &list);
 QList<int> VectorInt2QListInt(const std::vector<int> &list);
 
 
+/*
 #include <yaml-cpp/yaml.h>
 QString Node2QString(const YAML::Node &n, const QString &def = "");
 
@@ -535,3 +536,4 @@ int Node2Int(const YAML::Node &n, int def = 0);
 bool Node2Bool(const YAML::Node &n, bool def = false);
 
 YAML::Node NodeChild(const YAML::Node &n, const std::list<std::string> &keys);
+*/
