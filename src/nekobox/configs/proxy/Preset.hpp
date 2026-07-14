@@ -46,7 +46,7 @@ namespace Preset::SingBox {
     "xchacha20"
   };
   inline QStringList V2RAYTransports = {"tcp", "http", "grpc", "quic", "httpupgrade", "ws", "xhttp", "kcp"};
-  inline QStringList Flows = {"xtls-rprx-vision"};
+  inline QStringList Flows = {"xtls-rprx-vision", "xtls-rprx-vision-udp443"};
   inline QStringList SniffProtocols = {"http", "tls", "quic", "stun", "dns", "bittorrent", "dtls", "ssh", "rdp"};
   inline QStringList ActionTypes = {"route", "reject", "hijack-dns", "route-options", "sniff", "resolve"};
   inline QStringList rejectMethods = {"default", "drop"};

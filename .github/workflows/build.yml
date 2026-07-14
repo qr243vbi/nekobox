@@ -323,7 +323,8 @@ jobs:
         if: matrix.allow == 'true'
         id: vcpkg
         with:
-          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng qtbase[windeployqt] qttools
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng 
+          #qtbase[windeployqt] qttools
           triplet: ${{ matrix.triplet }}
           vcpkg-subdir: ..\..\src
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -354,6 +355,22 @@ jobs:
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq
+
+      - name: Install Customized Qt
+        if: matrix.allow == 'true' && matrix.target != 'arm64'
+        uses: qr243vbi/qt6windows7@main
+        with:
+          version: 6.10.0_${{ matrix.target }}
+
+      - name: Install Qt
+        if: matrix.allow == 'true' && matrix.target == 'arm64'
+        uses: jurplel/install-qt-action@v4.3.1
+        with:
+          version: 6.12.0
+          setup-python: true
+          cache: true
+          modules: qtcharts
+          cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
           
       - name: Windows - Generate MakeFile and Build
         if: matrix.allow == 'true'

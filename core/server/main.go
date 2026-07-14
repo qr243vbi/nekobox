@@ -135,7 +135,10 @@ func main() {
 			return
 		}
 	} else {
-		os.Args = os.Args[1:]
+		var args []string
+		args = append(args, os.Args[0])
+		args = append(args, os.Args[2:]...)
+		os.Args = args
 	}
 
 	var _admin *bool
