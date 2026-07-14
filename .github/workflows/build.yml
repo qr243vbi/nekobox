@@ -379,10 +379,13 @@ jobs:
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/bin')"):$PATH"
           echo $PATH
-          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
-          windeployqt() { "$WINDEPLOYQT" "${@}" ; }
-          declare -f windeployqt
-          echo "$WINDEPLOYQT"
+          if ! command -v windeployqt
+          then
+            export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
+            windeployqt() { "$WINDEPLOYQT" "${@}" ; }
+            declare -f windeployqt
+            echo "$WINDEPLOYQT"
+          fi
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
