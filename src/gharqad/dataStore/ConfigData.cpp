@@ -262,8 +262,10 @@ namespace Configs {
 
     Node::Node(const QJsonObject& obj){
       *this = Node::map();
-      for (auto [key, value]: ::asKeyValueRange(obj)){
-        this->at(key.toString()) = Node::parseJsonValue(value);
+      for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+        const QString &key = it.key();
+        QJsonValue value = it.value();
+        this->at(key) = Node::parseJsonValue(value);
       }
     };
 
@@ -274,11 +276,20 @@ namespace Configs {
         }
     }
 
-    Node::Node(const QJsonValueConstRef & value){
+    Node::Node(QJsonValueConstRef value){
       *this = Node::parseJsonValue(value);
     };
 
-    Node Node::parseJsonValue(const QJsonValueConstRef &value){
+    Node::Node(const QJsonValue & value){
+      *this = Node::parseJsonValue(value);
+    };
+
+
+    Node::Node(const QString & value){
+      *this = Node::string(value);
+    };
+
+    Node Node::parseJsonValue(const QJsonValue &value){
         if (value.isArray()){
           return Node(value.toArray());
         } else if (value.isBool()){

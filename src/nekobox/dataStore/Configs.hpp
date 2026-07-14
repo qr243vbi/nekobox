@@ -168,7 +168,8 @@ namespace Configs {
             bool add( Node  value);
             bool addFirst( Node  value);
             bool addLast( Node  value);
-            Node(const QJsonValueConstRef & value);
+            Node(const QJsonValue & value);
+            Node(QJsonValueConstRef value);
 
             size_t count() const;
 
@@ -181,6 +182,7 @@ namespace Configs {
             Node(bool);
             Node(double);
             Node(const QJsonObject&);
+            Node(const QString&);
             Node(const QJsonArray&);
 
             const Node & operator [](size_t) const;
@@ -201,7 +203,7 @@ namespace Configs {
             const Node & at(const QList<EnumFieldName>&) const;
             Node & at(const QList<EnumFieldName>&);
 
-            static Node parseJsonValue(const QJsonValueConstRef & value);
+            static Node parseJsonValue(const QJsonValue & value);
             static Node fromVariantMap(const QVariantMap & map);
             QVariantMap toVariantMap() const;
             QVariant toVariant() const;

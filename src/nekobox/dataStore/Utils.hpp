@@ -93,24 +93,25 @@ public:
 };
 
 template <typename T,
-          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+          typename = std::enable_if_t<!std::is_same_v<std::remove_cvref_t<T>, QJsonObject>>>
 auto asKeyValueRange(T &iterable) {
   return KeyValueRange<T &>(iterable);
 }
 
-QString Quote(QString quoted);
-
 template <typename T,
-          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+          typename = std::enable_if_t<!std::is_same_v<std::remove_cvref_t<T>, QJsonObject>>>
 auto asKeyValueRange(const T &iterable) {
   return KeyValueRange<const T &>(iterable);
 }
 
 template <typename T,
-          typename = std::enable_if_t<!std::is_same_v<T, QJsonObject>>>
+          typename = std::enable_if_t<!std::is_same_v<std::remove_cvref_t<T>, QJsonObject>>>
 auto asKeyValueRange(T &&iterable) noexcept {
   return KeyValueRange<T>(std::move(iterable));
 }
+
+
+QString Quote(QString quoted);
 
 #include <QList>
 #include <cstddef>
