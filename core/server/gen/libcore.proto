@@ -3,6 +3,8 @@ syntax = "proto3";
 package libcore;
 option go_package = "/gen";
 
+import "google/protobuf/empty.proto";
+
 message SpeedAndTraffic {
     /*speed*/uint64 download_speed = 1;
     /*speed*/uint64 upload_speed = 2;
@@ -11,8 +13,8 @@ message SpeedAndTraffic {
 }
 
 message Stats {
-    SpeedAndTraffic proxy_sat = 1;
-    SpeedAndTraffic direct_sat = 2;
+    uint64 id = 1;
+    SpeedAndTraffiic stats = 2;
 }
 
 message Subscription {
@@ -590,9 +592,9 @@ message Proxy {
     string name = 1;
     uint64 id = 2;
     uint64 gid = 3;
-    /*speed*/uint64 latency = 4;
-    SpeedAndTraffic sat = 5;
-    uint32 country = 6;
+ //   /*speed*/uint64 latency = 4;
+ //   SpeedAndTraffic sat = 5;
+ //   uint32 country = 6;
     ServerAndPort address = 7;
 }
 
@@ -728,12 +730,22 @@ message Saved {
     uint64 id = 2;
 }
 
-message EmptyReq {
+message Status {
+    string text = 1;
+    uint64 code = 2;
 }
 
 service LibcoreService {
     rpc SaveProxy(ProxyAndBean) returns (Saved);
     rpc SaveRoute(RoutingChain) returns (Saved);
     rpc SaveGroup(Group) returns (Saved);
-    rpc GetStats(EmptyReq) returns (Stats);
+
+    rpc GetStats(google.protobuf.Empty) returns (Stats);
+
+    rpc SetFinalOutbound(google.protobuf.UInt64Value) returns (Status);
+    rpc Start(google.protobuf.Empty) returns (Status);
+    rpc Stop(google.protobuf.Empty) returns (Status);
+
+    rpc SetTun(google.protobuf.BoolValue) returns (Status);
+    rpc SetSystemProxy(google.protobuf.BoolValue) returns (Status);
 };
