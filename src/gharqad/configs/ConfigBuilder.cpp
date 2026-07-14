@@ -902,7 +902,7 @@ static QJsonArray BuildNekoboxTunRulesForFullConfig(
   outboundMap[directID] = "direct";
   outboundMap[blockID] = "block";
 
-  for (const auto &item : *routeChain->get_used_outbounds()) {
+  for (auto item : *routeChain->get_used_outbounds()) {
     if (item < 0) {
       continue;
     }
