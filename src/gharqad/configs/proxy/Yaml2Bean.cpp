@@ -19,6 +19,10 @@ namespace Configs
         return uot;
     }
 
+    bool From_Yaml::parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj){
+        return From_Json::parse_transport(true, stream, obj);
+    }
+
     void From_Yaml::add_mux_state(AbstractBean * bean, const Data::Node &obj){
         bean->mux_state = obj["smux"].isObject() ? (obj["smux"]["enabled"].toBool() ? 1 : 2) : 0;
     }

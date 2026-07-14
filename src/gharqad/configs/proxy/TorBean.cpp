@@ -55,6 +55,14 @@ namespace Configs {
         torrc = obj["torrc"].toVariantMap();
         return true;
     };
+    bool TorBean::TryParseYaml(const Configs::Data::Node &obj){
+        entity->name = obj["name"].toString();
+        executable_path = obj["executable-path"].toString();
+        extra_args = obj["extra-args"].toStringList();
+        data_directory = obj["data-directory"].toString();
+        torrc = obj["torrc"].toVariantMap();
+        return true;
+    };
     bool TorBean::TryParseLink(const QString &link){
         using namespace From_Link;
         auto url = QUrl(link);

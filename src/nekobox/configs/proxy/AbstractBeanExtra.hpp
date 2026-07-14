@@ -125,6 +125,7 @@ namespace From_Json {
     void add_mux_state(AbstractBean * bean, const Data::Node &obj);
     bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
     bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
+    bool parse_transport(bool isYaml, std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
     int parseUOT(const Data::Node &obj);
 
     template<typename T>
@@ -134,7 +135,7 @@ namespace From_Json {
 
     template<typename T>
     static void add_quic(T * bean, const Data::Node &obj){
-        *bean->quic_congestion_control = obj.at("quic_congestion_control").toString();
+        *bean->quic_congestion_control = obj.at({"quic_congestion_control", "congression-controller"}).toString();
         bean->quic = obj.at("quic").toBool();    
     }
 };
@@ -204,7 +205,8 @@ namespace From_Yaml {
 
     void add_default_fields(Configs::ProxyEntity * entity, const Data::Node & obj);
     bool add_tls(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
-    
+    bool parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj);
+
     template<typename T>
     static void add_network(T * t, const Data::Node &obj){
         auto &network = obj.at("udp");

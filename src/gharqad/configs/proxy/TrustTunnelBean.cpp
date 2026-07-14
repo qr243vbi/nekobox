@@ -46,6 +46,16 @@ namespace Configs {
         health_check = obj["health_check"].toBool();
         return true;
     }    
+    bool TrustTunnelBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Json;
+        add_default_fields(this->entity, obj);
+        add_username_password(this, obj);
+        add_quic(this, obj);
+        add_tls(stream, obj);
+        health_check = obj["health_check"].toBool();
+        return true;
+    }    
     bool TrustTunnelBean::TryParseLink(const QString& link)
     {
         using namespace From_Link;

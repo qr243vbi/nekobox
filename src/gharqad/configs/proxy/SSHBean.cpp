@@ -75,6 +75,20 @@ namespace Configs {
         return true;
     }
 
+    bool SSHBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        user = obj["user"].toString();
+        password = obj["password"].toString();
+        privateKey = obj["private-key"].toString();
+        privateKeyPass = obj["private-key-passphrase"].toString();
+        hostKey = obj["host-key"].toStringList();
+        hostKeyAlgs = obj["host-key-algorithms"].toStringList();
+
+        return true;
+    }
+
 
     bool SSHBean::TryParseLink(const QString &link) {
         using namespace From_Link;

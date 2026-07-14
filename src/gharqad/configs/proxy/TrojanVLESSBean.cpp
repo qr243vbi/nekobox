@@ -31,6 +31,25 @@ namespace Configs {
         return true;
     }
 
+    bool TrojanVLESSBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
+        proxy_type = obj["type"].toString() == "trojan" ? proxy_Trojan : proxy_VLESS;
+        add_default_fields(this->entity, obj);
+        password = obj["password"].toString();
+        if (proxy_type == proxy_VLESS) password = obj["uuid"].toString();
+        flow = obj["flow"].toString();
+        encryption = obj["encryption"].toString();
+        add_mux_state(this, obj);
+
+        *stream->packet_encoding = obj["packet-encoding"].toString();
+
+        add_tls(stream, obj);
+        parse_transport(stream, obj);
+        add_network(this, obj);
+        return true;
+    }
+
     bool TrojanVLESSBean::TryParseLink(const QString &link) {
         using namespace From_Link;
         auto url = QUrl(link);

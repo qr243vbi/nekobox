@@ -72,6 +72,20 @@ namespace Configs {
         advertise_exit_node = obj["advertise_exit_node"].toBool();
 
         return true;
+    }  
+    bool TailscaleBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        entity->name = obj["name"].toString();
+        state_directory = obj["state-dir"].toString();
+        auth_key = obj["auth-key"].toString();
+        control_url = obj["control-url"].toString();
+        ephemeral = obj["ephemeral"].toBool();
+        hostname = obj["hostname"].toString();
+        accept_routes = obj["accept-routes"].toBool();
+        exit_node = obj["exit-node"].toString();
+        exit_node_allow_lan_access = obj["exit-node-allow-lan-access"].toBool();
+
+        return true;
     }
         bool TailscaleBean::TryParseLink(const QString &link)
     {

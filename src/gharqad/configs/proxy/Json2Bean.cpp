@@ -48,9 +48,20 @@ namespace Configs
     }
 
     bool From_Json::parse_transport(std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj){
-        auto &transport = obj["transport"];
+        return parse_transport(false, stream, obj);
+    }
+
+    bool From_Json::parse_transport(bool isYaml, std::shared_ptr<V2rayStreamSettings> stream, const Data::Node & obj){
+        const Data::Node * transport1;
         QString network;
-        *stream->network = network = transport["type"].toString();
+        if (!isYaml){
+            transport1 = &obj["transport"];
+            *stream->network = network = transport1->at("type").toString();
+        } else {
+            *stream->network = network = obj.at("network").toString();
+            transport1 = &obj[network + "-opts"];
+        }
+        const Data::Node & transport = *transport1;
         if (network == "ws" || network == "httpupgrade")
         {
             finalize:
@@ -65,7 +76,7 @@ namespace Configs
             goto finalize;
         } else if (network == "grpc")
         {
-            stream->path = transport["service_name"].toString();
+            stream->path = transport[{"service_name", "grpc-service-name"}].toString();
             goto finalize2;
         } else if (network == "xhttp")
         {

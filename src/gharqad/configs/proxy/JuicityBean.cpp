@@ -46,6 +46,15 @@ namespace Configs {
         add_tls(stream, obj);
         return true;
     }
+    bool JuicityBean::TryParseYaml(const Configs::Data::Node& obj)
+    {
+        using namespace Configs::From_Yaml;
+        add_default_fields(this->entity, obj);
+        this->username = obj["uuid"].toString();
+        this->password = obj["password"].toString();
+        add_tls(stream, obj);
+        return true;
+    }
     bool JuicityBean::TryParseLink(const QString& link)
     {
         using namespace From_Link;

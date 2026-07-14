@@ -51,7 +51,7 @@ namespace Configs {
         add_network(this, obj);
         return true;
     }
-/*
+
     bool VMessBean::TryParseYaml(const Configs::Data::Node& obj)
     {
         using namespace Configs::From_Yaml;
@@ -71,7 +71,7 @@ namespace Configs {
         add_network(this, obj);
         return true;
     }  
-*/
+
         bool VMessBean::TryParseLink(const QString &link) {
         using namespace From_Link;
         // V2RayN Format
