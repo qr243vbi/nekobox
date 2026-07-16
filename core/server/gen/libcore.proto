@@ -5,6 +5,10 @@ option go_package = "/gen";
 
 import "google/protobuf/empty.proto";
 
+message Id {
+    uint64 id = 1;
+}
+
 message SpeedAndTraffic {
     /*speed*/uint64 download_speed = 1;
     /*speed*/uint64 upload_speed = 2;
@@ -13,8 +17,8 @@ message SpeedAndTraffic {
 }
 
 message Stats {
-    uint64 id = 1;
-    SpeedAndTraffiic stats = 2;
+    Id id = 1;
+    SpeedAndTraffic stats = 2;
 }
 
 message Subscription {
@@ -25,11 +29,11 @@ message Subscription {
     bool custom_body = 8;
     string payload = 4;
     string javascript = 5;
-    uint64 id = 9;
+    Id id = 9;
 }
 
 message Group {
-    uint64 id = 1;
+    Id id = 1;
     string name = 2;
     repeated uint32 profiles = 3;
 }
@@ -200,7 +204,7 @@ message Outbound {
                 XHTTPBaseOptions base = 1;
                 ServerAndPort address = 2;
                 Outbound.Tls tls = 3;
-                uint64 detour_id = 4;
+                Id detour_id = 4;
             }
             XHTTPDownloadOptions download = 2;
         }
@@ -236,7 +240,7 @@ message SocksBean {
 message HttpBean {
     Credentials credentials = 1;
     string path = 2;
-    map<string, string> headers = 3;
+    map<string, StringList> headers = 3;
     Outbound.Tls tls = 4;
 }
 
@@ -461,10 +465,15 @@ message TuicBean {
     Outbound.Tls tls = 8;
 }
 
+message IpAddr {
+    bool if_ip4 = 2;
+    bytes addr = 1;
+}
+
 message DialFields {
     string bind_interface = 1;
-    string inet4_bind_address = 2;
-    string inet6_bind_address = 3;
+    IpAddr inet4_bind_address = 2;
+    IpAddr inet6_bind_address = 3;
     bool reuse_addr = 4;
     /*duration*/uint64 connect_timeout = 5;
     bool tcp_fast_open = 6;
@@ -489,7 +498,7 @@ message DialFields {
     NetworkType network_type = 13;
     NetworkType fallback_network_type = 14;
     /*duration*/uint64 fallback_delay = 15;
-    uint64 detour_id = 16;
+    Id detour_id = 16;
 }
 
 message VmessBean {
@@ -526,10 +535,9 @@ message DirectBean {
 }
 
 message Bean {
-    uint64 id = 1;
+    Id id = 1;
     oneof bean {
-        InvalidBean invalid = 3;
-        HttpBean http = 4;
+        InvalidBean invalid = 4;
         MieruBean mieru = 5;
         ShadowSocksBean shadowsocks = 6;
         ChainBean chain = 7;
@@ -554,8 +562,10 @@ message Bean {
         VmessBean vmess = 26;
         SocksBean socks = 27;
         DirectBean direct = 28;
+        HttpBean http = 29;
     };
     DialFields dial_fields = 2;
+    ServerAndPort address = 3;
 }
 
 /*
@@ -590,8 +600,8 @@ message Bean {
 
 message Proxy {
     string name = 1;
-    uint64 id = 2;
-    uint64 gid = 3;
+    Id id = 2;
+    Id gid = 3;
  //   /*speed*/uint64 latency = 4;
  //   SpeedAndTraffic sat = 5;
  //   uint32 country = 6;
@@ -637,6 +647,7 @@ message Client {
 message StringList {
     repeated string items = 1;
 }
+
 
 message AndOr {
     enum Type {
@@ -704,11 +715,11 @@ message RouteRule {
         RouteRuleLogical logical = 1;
         RouteRuleSimple simple = 2;
     }
-    uint64 outbound_id = 3;
+    Id detour_id = 3;
 }
 
 message RoutingChain {
-    uint64 id = 1;
+    Id id = 1;
     string chain_name = 2;
     string update_url = 3;
     bool skip_update = 4;
@@ -727,7 +738,7 @@ message GroupAndSubscription {
 
 message Saved {
     bool ok = 1;
-    uint64 id = 2;
+    Id id = 2;
 }
 
 message Status {
@@ -735,17 +746,25 @@ message Status {
     uint64 code = 2;
 }
 
+message VpnMode {
+    enum Type {
+        UNSPECIFIED = 0;
+        TUN = 1;
+        SYSPROXY = 2;
+        DNS = 3;
+    }
+    repeated Type type = 1;
+}
+
 service LibcoreService {
     rpc SaveProxy(ProxyAndBean) returns (Saved);
     rpc SaveRoute(RoutingChain) returns (Saved);
     rpc SaveGroup(Group) returns (Saved);
 
-    rpc GetStats(google.protobuf.Empty) returns (Stats);
+    rpc GetStats(google.protobuf.Empty) returns (stream Stats);
 
-    rpc SetFinalOutbound(google.protobuf.UInt64Value) returns (Status);
     rpc Start(google.protobuf.Empty) returns (Status);
     rpc Stop(google.protobuf.Empty) returns (Status);
 
-    rpc SetTun(google.protobuf.BoolValue) returns (Status);
-    rpc SetSystemProxy(google.protobuf.BoolValue) returns (Status);
+    rpc SetVpnMode(VpnMode) returns (Status);
 };

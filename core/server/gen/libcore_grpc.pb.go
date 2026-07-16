@@ -11,6 +11,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -19,10 +20,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LibcoreService_SaveProxy_FullMethodName = "/libcore.LibcoreService/SaveProxy"
-	LibcoreService_SaveRoute_FullMethodName = "/libcore.LibcoreService/SaveRoute"
-	LibcoreService_SaveGroup_FullMethodName = "/libcore.LibcoreService/SaveGroup"
-	LibcoreService_GetStats_FullMethodName  = "/libcore.LibcoreService/GetStats"
+	LibcoreService_SaveProxy_FullMethodName  = "/libcore.LibcoreService/SaveProxy"
+	LibcoreService_SaveRoute_FullMethodName  = "/libcore.LibcoreService/SaveRoute"
+	LibcoreService_SaveGroup_FullMethodName  = "/libcore.LibcoreService/SaveGroup"
+	LibcoreService_GetStats_FullMethodName   = "/libcore.LibcoreService/GetStats"
+	LibcoreService_Start_FullMethodName      = "/libcore.LibcoreService/Start"
+	LibcoreService_Stop_FullMethodName       = "/libcore.LibcoreService/Stop"
+	LibcoreService_SetVpnMode_FullMethodName = "/libcore.LibcoreService/SetVpnMode"
 )
 
 // LibcoreServiceClient is the client API for LibcoreService service.
@@ -32,7 +36,10 @@ type LibcoreServiceClient interface {
 	SaveProxy(ctx context.Context, in *ProxyAndBean, opts ...grpc.CallOption) (*Saved, error)
 	SaveRoute(ctx context.Context, in *RoutingChain, opts ...grpc.CallOption) (*Saved, error)
 	SaveGroup(ctx context.Context, in *Group, opts ...grpc.CallOption) (*Saved, error)
-	GetStats(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*Stats, error)
+	GetStats(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Stats], error)
+	Start(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Status, error)
+	Stop(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Status, error)
+	SetVpnMode(ctx context.Context, in *VpnMode, opts ...grpc.CallOption) (*Status, error)
 }
 
 type libcoreServiceClient struct {
@@ -73,10 +80,49 @@ func (c *libcoreServiceClient) SaveGroup(ctx context.Context, in *Group, opts ..
 	return out, nil
 }
 
-func (c *libcoreServiceClient) GetStats(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*Stats, error) {
+func (c *libcoreServiceClient) GetStats(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Stats], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Stats)
-	err := c.cc.Invoke(ctx, LibcoreService_GetStats_FullMethodName, in, out, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LibcoreService_ServiceDesc.Streams[0], LibcoreService_GetStats_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[emptypb.Empty, Stats]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type LibcoreService_GetStatsClient = grpc.ServerStreamingClient[Stats]
+
+func (c *libcoreServiceClient) Start(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Status, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Status)
+	err := c.cc.Invoke(ctx, LibcoreService_Start_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) Stop(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Status, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Status)
+	err := c.cc.Invoke(ctx, LibcoreService_Stop_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *libcoreServiceClient) SetVpnMode(ctx context.Context, in *VpnMode, opts ...grpc.CallOption) (*Status, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Status)
+	err := c.cc.Invoke(ctx, LibcoreService_SetVpnMode_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +136,10 @@ type LibcoreServiceServer interface {
 	SaveProxy(context.Context, *ProxyAndBean) (*Saved, error)
 	SaveRoute(context.Context, *RoutingChain) (*Saved, error)
 	SaveGroup(context.Context, *Group) (*Saved, error)
-	GetStats(context.Context, *EmptyReq) (*Stats, error)
+	GetStats(*emptypb.Empty, grpc.ServerStreamingServer[Stats]) error
+	Start(context.Context, *emptypb.Empty) (*Status, error)
+	Stop(context.Context, *emptypb.Empty) (*Status, error)
+	SetVpnMode(context.Context, *VpnMode) (*Status, error)
 	mustEmbedUnimplementedLibcoreServiceServer()
 }
 
@@ -110,8 +159,17 @@ func (UnimplementedLibcoreServiceServer) SaveRoute(context.Context, *RoutingChai
 func (UnimplementedLibcoreServiceServer) SaveGroup(context.Context, *Group) (*Saved, error) {
 	return nil, status.Error(codes.Unimplemented, "method SaveGroup not implemented")
 }
-func (UnimplementedLibcoreServiceServer) GetStats(context.Context, *EmptyReq) (*Stats, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetStats not implemented")
+func (UnimplementedLibcoreServiceServer) GetStats(*emptypb.Empty, grpc.ServerStreamingServer[Stats]) error {
+	return status.Error(codes.Unimplemented, "method GetStats not implemented")
+}
+func (UnimplementedLibcoreServiceServer) Start(context.Context, *emptypb.Empty) (*Status, error) {
+	return nil, status.Error(codes.Unimplemented, "method Start not implemented")
+}
+func (UnimplementedLibcoreServiceServer) Stop(context.Context, *emptypb.Empty) (*Status, error) {
+	return nil, status.Error(codes.Unimplemented, "method Stop not implemented")
+}
+func (UnimplementedLibcoreServiceServer) SetVpnMode(context.Context, *VpnMode) (*Status, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetVpnMode not implemented")
 }
 func (UnimplementedLibcoreServiceServer) mustEmbedUnimplementedLibcoreServiceServer() {}
 func (UnimplementedLibcoreServiceServer) testEmbeddedByValue()                        {}
@@ -188,20 +246,67 @@ func _LibcoreService_SaveGroup_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibcoreService_GetStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EmptyReq)
+func _LibcoreService_GetStats_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(emptypb.Empty)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(LibcoreServiceServer).GetStats(m, &grpc.GenericServerStream[emptypb.Empty, Stats]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type LibcoreService_GetStatsServer = grpc.ServerStreamingServer[Stats]
+
+func _LibcoreService_Start_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibcoreServiceServer).GetStats(ctx, in)
+		return srv.(LibcoreServiceServer).Start(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibcoreService_GetStats_FullMethodName,
+		FullMethod: LibcoreService_Start_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibcoreServiceServer).GetStats(ctx, req.(*EmptyReq))
+		return srv.(LibcoreServiceServer).Start(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_Stop_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).Stop(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_Stop_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).Stop(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibcoreService_SetVpnMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VpnMode)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibcoreServiceServer).SetVpnMode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibcoreService_SetVpnMode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibcoreServiceServer).SetVpnMode(ctx, req.(*VpnMode))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -226,10 +331,24 @@ var LibcoreService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibcoreService_SaveGroup_Handler,
 		},
 		{
-			MethodName: "GetStats",
-			Handler:    _LibcoreService_GetStats_Handler,
+			MethodName: "Start",
+			Handler:    _LibcoreService_Start_Handler,
+		},
+		{
+			MethodName: "Stop",
+			Handler:    _LibcoreService_Stop_Handler,
+		},
+		{
+			MethodName: "SetVpnMode",
+			Handler:    _LibcoreService_SetVpnMode_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "GetStats",
+			Handler:       _LibcoreService_GetStats_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "libcore.proto",
 }
