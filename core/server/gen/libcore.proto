@@ -67,6 +67,14 @@ message Outbound {
             BBRSTANDARD = 5;
             BBRVARIANT = 6;
     }
+    enum DomainStrategy {
+        DEFAULT = 0;
+        PREFERIPV4 = 1;
+        PREFERIPV6 = 2;
+        IPV4ONLY = 3;
+        IPV6ONLY = 4;
+    }
+
     message UdpOverTcp {
         enum Version {
             V2 = 0;
@@ -174,7 +182,7 @@ message Outbound {
                 string host = 2;
                 string path = 3;
                 map<string, string> headers = 4;
-                uint32 domain_strategy = 5;
+                DomainStrategy domain_strategy = 5;
                 Range x_padding_bytes = 6;
                 bool no_grpc_header = 7;
                 bool no_sse_header = 8;
@@ -495,10 +503,12 @@ message DialFields {
         OTHER = 4;
     }
     NetworkStrategy network_strategy = 12;
-    NetworkType network_type = 13;
-    NetworkType fallback_network_type = 14;
+    repeated NetworkType network_type = 13;
+    repeated NetworkType fallback_network_type = 14;
     /*duration*/uint64 fallback_delay = 15;
     Id detour_id = 16;
+    bool bind_address_no_port = 17;
+    string DomainResolver = 18; 
 }
 
 message VmessBean {

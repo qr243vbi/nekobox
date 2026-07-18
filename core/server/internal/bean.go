@@ -20,7 +20,9 @@ func ConvertHeaders(lsit map[string]*gen.StringList) badoption.HTTPHeader {
 	return headers
 }
 
-func SetTls(Any *option.OutboundTLSOptions, tls *gen.Outbound_Tls)
+func SetTls(Any *option.OutboundTLSOptions, tls *gen.Outbound_Tls) {
+
+}
 
 func DetourId(Id *gen.Id) string {
 	if Id == nil {
@@ -61,6 +63,14 @@ func SetDialer(Any *option.DialerOptions, dialer *gen.DialFields) {
 	Any.Detour = DetourId(dialer.GetDetourId())
 	Any.Inet4BindAddress = ConvertAddr(dialer.GetInet4BindAddress())
 	Any.Inet6BindAddress = ConvertAddr(dialer.GetInet6BindAddress())
+	Any.BindAddressNoPort = dialer.GetBindAddressNoPort()
+	Any.BindInterface = dialer.GetBindInterface()
+	Any.ConnectTimeout = badoption.Duration(dialer.GetConnectTimeout())
+	Any.DisableTCPKeepAlive = dialer.GetDisableTcpKeepAlive()
+	Any.DomainResolver = new(option.DomainResolveOptions)
+	Any.DomainResolver.Server = dialer.GetDomainResolver()
+	Any.FallbackDelay = badoption.Duration(dialer.GetFallbackDelay())
+
 }
 
 func SetServerAndPort(Any *option.ServerOptions, addr *gen.ServerAndPort) {
