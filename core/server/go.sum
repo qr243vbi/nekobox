@@ -2,6 +2,8 @@ code.pfad.fr/check v1.1.0 h1:GWvjdzhSEgHvEHe2uJujDcpmZoySKuHQNrZMfzfO0bE=
 code.pfad.fr/check v1.1.0/go.mod h1:NiUH13DtYsb7xp5wll0U4SXx7KhXQVCtRgdC96IPfoM=
 filippo.io/edwards25519 v1.1.0 h1:FNf4tywRC1HmFuKW5xopWpigGjJKiJSV0Cqo0cJWDaA=
 filippo.io/edwards25519 v1.1.0/go.mod h1:BxyFTGdWcka3PhytdK4V28tE5sGfRvvvRV7EaN4VDT4=
+github.com/Errorovich/sing-box v1.13.14-mod2.0.20260721200650-6692adcb1fe4 h1:yWRCermCCNc/RwlCVepS6WFVp+Jyg3f6XlNiC4JWX0k=
+github.com/Errorovich/sing-box v1.13.14-mod2.0.20260721200650-6692adcb1fe4/go.mod h1:gu+c+YU6vu72Ou+F1bYVIsEqHQnDu6k0N9IXIqXbXes=
 github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
 github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
 github.com/ajg/form v1.5.1 h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=
@@ -167,8 +169,6 @@ github.com/prometheus-community/pro-bing v0.4.0 h1:YMbv+i08gQz97OZZBwLyvmmQEEzyf
 github.com/prometheus-community/pro-bing v0.4.0/go.mod h1:b7wRYZtCcPmt4Sz319BykUU241rWLe1VFXyiyWK/dH4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9 h1:dndt3WAPKpr3m7yA6IOmOXVX4XIUvyixELQW5tBTkM4=
 github.com/qr243vbi/cmdescape v0.0.0-20260403201713-ba83a3d191f9/go.mod h1:xBrewWRKDk9jPLnQfQXLI+v11v5juBRRhXMhKfj2jfc=
-github.com/qr243vbi/sing-box v1.13.14-mod2.0.20260712192718-784d19bcd031 h1:jCSlbAQhxPcJNr5L2xI0MIZdOobgO1GLpBSgbJ3CnLM=
-github.com/qr243vbi/sing-box v1.13.14-mod2.0.20260712192718-784d19bcd031/go.mod h1:gu+c+YU6vu72Ou+F1bYVIsEqHQnDu6k0N9IXIqXbXes=
 github.com/qr243vbi/sing-tun v0.8.11-mod2 h1:o4rMIw5BW8z09uCZQpWUKvy5ZPc7yAxDVlg1D9KbLvw=
 github.com/qr243vbi/sing-tun v0.8.11-mod2/go.mod h1:QvarqUtHfj1ULaRR+6kZOS/OoCE+pYGq67A5tyIy+dQ=
 github.com/quic-go/qpack v0.6.0 h1:g7W+BMYynC1LbYLSqRt8PBg5Tgwxn214ZZR34VIOjz8=
