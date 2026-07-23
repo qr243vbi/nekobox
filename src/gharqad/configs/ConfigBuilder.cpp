@@ -527,7 +527,16 @@ bool IsValid(std::shared_ptr<ProxyEntity> ent) {
     conf = QString2QJsonObject(ent->CustomBean()->config_simple);
   } else {
     auto out = bean->BuildCoreObjSingBox();
-    auto outArr = QJsonArray{out.outbound};
+    auto outbound = out.outbound;
+    // Validation must never touch the system: with useIntegratedTun/system on,
+    // box.New() creates a real Wintun adapter and assigns the profile's
+    // address; force netstack so CheckConfig stays side-effect free.
+    if (outbound["type"] == "awg") {
+      outbound["useIntegratedTun"] = false;
+    } else if (outbound["type"] == "wireguard") {
+      outbound["system"] = false;
+    }
+    auto outArr = QJsonArray{outbound};
     auto key = bean->IsEndpoint() ? "endpoints" : "outbounds";
     conf = {
         {key, outArr},
@@ -646,6 +655,13 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
     auto endpoints = res->coreConfig["endpoints"].toArray();
     for (auto endpoint : endpoints)
       outbounds.append(endpoint);
+    // Endpoint types must land in "endpoints", no matter whether they are the
+    // exit ("proxy") or an intermediate chain hop (e.g. "c-1-26-1"); the core
+    // rejects them inside "outbounds" ("unknown outbound type: awg").
+    auto isEndpointType = [](const QJsonObject &ob) {
+      const auto type = ob["type"].toString();
+      return type == "wireguard" || type == "tailscale" || type == "awg";
+    };
     for (const auto &outboundRef : outbounds) {
       auto outbound = outboundRef.toObject();
       QString outboundTag = outbound["tag"].toString();
@@ -658,21 +674,14 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
         if (index > 1)
           outboundTag += QString::number(index);
         outbound.insert("tag", outboundTag);
-        if (
-            QString outboundType = outbound.value("type").toString();
-            outboundType == "wireguard" ||
-            outboundType == "tailscale" ||
-            outboundType == "awg"
-        ) {
-          endpointArray.append(outbound);
-        } else {
-          outboundArray.append(outbound);
-        }
+        (isEndpointType(outbound) ? endpointArray : outboundArray)
+            .append(outbound);
         results->outboundTags << outboundTag;
         results->tag2entID.insert(outboundTag, item->id);
         continue;
       }
-      outboundArray.append(outbound);
+      (isEndpointType(outbound) ? endpointArray : outboundArray)
+          .append(outbound);
     }
   }
 
@@ -978,7 +987,9 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     return;
   }
   if (ent->type == "wireguard" || ent->type == "awg") {
-    if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
+    // Tests run through netstack (see below), so no elevation is needed there.
+    if (!status->forTest && ent->WireguardBean()->useSystemInterface &&
+        !IsAdmin()) {
       MW_dialog_message("configBuilder", "NeedAdmin");
       status->result->error =
           "using wireguard system interface requires elevated permissions";
@@ -996,6 +1007,17 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     return;
   }
   outbound = coreR.outbound;
+
+  // URL tests must not create real system tunnels: a Wintun adapter grabs the
+  // profile's address, and if it leaks (or the test overlaps a start) the next
+  // instance fails with "set ipv4 address: The object already exists".
+  if (status->forTest) {
+    if (outbound["type"] == "awg") {
+      outbound["useIntegratedTun"] = false;
+    } else if (outbound["type"] == "wireguard") {
+      outbound["system"] = false;
+    }
+  }
 
   // outbound misc
   outbound["tag"] = tag;
