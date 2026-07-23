@@ -744,7 +744,10 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         }
         mu_starting.unlock();
         if (!do_not_test) {
-            urltest_profile(ent, true);
+            // test via the live instance: a second one steals the wg/awg session
+            runOnUiThread([this] {
+                if (running != nullptr) url_test_current();
+            });
         }
         // cancel timeout
         runOnUiThread([=,this] {
