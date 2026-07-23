@@ -810,6 +810,28 @@ QString BuildChainInternal(int chainId,
     chainTag = "r-" + QString::number(route_suffix) + "-" + chainTag;
   }
 
+  auto wgBean = [](const std::shared_ptr<ProxyEntity> &e)
+      -> std::shared_ptr<const Configs::WireguardBean> {
+    if (e == nullptr || (e->type != "wireguard" && e->type != "awg"))
+      return nullptr;
+    return e->WireguardBean();
+  };
+
+  // Nested WG/AWG: the inner packet is MTU + 32 + s4 and must fit the carrier's
+  // MTU, else large packets are dropped. ents[i + 1] carries ents[i].
+  QMap<int, int> nestedMtu;
+  for (int i = ents.length() - 2; i >= 0; i--) {
+    auto inner = wgBean(ents.at(i));
+    if (inner == nullptr) continue;
+    auto carrierEnt = ents.at(i + 1);
+    auto carrier = wgBean(carrierEnt);
+    if (carrier == nullptr) continue;
+    int carrierMtu = nestedMtu.value(carrierEnt->id, carrier->MTU);
+    int s4 = ents.at(i)->type == "awg" ? inner->transport_packet_junk_size : 0;
+    int cap = carrierMtu - 32 - s4;
+    if (inner->MTU > cap) nestedMtu.insert(ents.at(i)->id, cap);
+  }
+
   for (int index = 0; index < ents.length(); index++) {
     auto ent = ents.at(index);
     if (ent == nullptr) {
@@ -851,6 +873,27 @@ QString BuildChainInternal(int chainId,
     QJsonObject outbound;
 
     BuildOutbound(ent, status, outbound, tagOut);
+
+    if (auto wg = wgBean(ent); wg != nullptr) {
+      if (nestedMtu.contains(ent->id)) outbound["mtu"] = nestedMtu.value(ent->id);
+      // the core's WG bind also opens an IPv6 socket, which fails on an
+      // IPv4-only carrier; a throwaway ULA lets it bind and carries no data
+      if (index > 0 && wgBean(ents.at(index - 1)) != nullptr) {
+        auto addresses = outbound["address"].toArray();
+        bool hasV6 = false;
+        for (const auto &address : addresses) {
+          if (address.toString().contains(":")) {
+            hasV6 = true;
+            break;
+          }
+        }
+        if (!hasV6) {
+          addresses.append("fdfe:dcba:9876::1/128");
+          outbound["address"] = addresses;
+        }
+      }
+    }
+
     // apply custom outbound settings
     MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
 
