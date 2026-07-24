@@ -6,7 +6,7 @@ if(DEFINED ENV{INPUT_VERSION} AND NOT "$ENV{INPUT_VERSION}" STREQUAL "")
     set(NKR_DEFAULT_VERSION "$ENV{INPUT_VERSION}" CACHE STRING
         "A custom default version string for application")
 else()
-    set(NKR_DEFAULT_VERSION "1.0.0" CACHE STRING
+    set(NKR_DEFAULT_VERSION "5.11.28.1" CACHE STRING
         "A custom default version string for application")
 endif()
 
