@@ -181,7 +181,7 @@ jobs:
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
           path: artifacts.tgz
@@ -331,7 +331,7 @@ jobs:
           
       - name: Download Artifacts
         if: matrix.allow == 'true'
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v4
         with:
           path: download-artifact
 
@@ -408,7 +408,7 @@ jobs:
 
       - name: Uploading Artifact
         if: matrix.allow == 'true'
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
           path: artifacts.tgz
@@ -457,7 +457,7 @@ jobs:
           submodules: "true"
 
       - name: Download Artifacts
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v4
         with:
           path: download-artifact
 
@@ -525,7 +525,7 @@ jobs:
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.goarch }}
           path: artifacts.tgz
@@ -547,7 +547,7 @@ jobs:
           ref: 'main'
           submodules: "true"
       - name: Download Artifacts
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v4
         with:
           path: download-artifact
       - name: Install Zip, Curl, Jq
