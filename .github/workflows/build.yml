@@ -2,9 +2,9 @@ name: NyameBox build matrix
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: "Release Tag and version"
-        required: true
+#      tag:
+ #       description: "Release Tag and version"
+  #      required: true
       publish:
         description: "Publish Release"
         type: boolean
@@ -15,9 +15,9 @@ on:
         type: boolean
         default: false
         required: false
-      text:
-        description: "Release Description"
-        required: false
+#      text:
+ #       description: "Release Description"
+  #      required: false
       source_only:
         description: "Skip building binaries, distribute only unified source"
         type: boolean
@@ -89,12 +89,44 @@ on:
         default: true
         required: false
 jobs:
+  get-tag-and-changelog:
+    permissions:
+      contents: write
+      actions: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@main
+        with:
+          ref: 'main'
+          submodules: 'false'
+      - name: Run cmake tools
+        id: inputs
+        run: |
+          set_output_file() {
+            local name="$1"
+            local file="$2"
+            local eofer=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 36)
+            {
+              echo "$name<<$eofer"
+              cat "$file"
+              echo "$eofer"
+            } >> "$GITHUB_OUTPUT"
+          }
+
+          cmake -S . -B build -DGENERATE_VERSION_AND_CHANGELOG=ON
+          cmake --build build -j 16
+          set_github_file tag "$(build/version.txt)"
+          set_github_file text "$(cat build/changelog.txt)"
+
   build-go:
     permissions:
       contents: write
       actions: read
+    needs:
+      - get-tag-and-changelog
     env:
-      INPUT_VERSION: ${{ github.event.inputs.tag }}
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     strategy:
       matrix:
         include:
@@ -157,12 +189,12 @@ jobs:
         if: matrix.cross_os == 'public'
         shell: bash
         run: |
-          env INPUT_VERSION=${{ github.event.inputs.tag }} bash -x ./script/deploy_vendor.sh
+          env INPUT_VERSION=${{ needs.get-tag-and-changelog.outputs.tag }} bash -x ./script/deploy_vendor.sh
       - name: Publish sources
         if: matrix.cross_os == 'public' && github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false'
         env:
-          INPUT_VERSION: ${{ github.event.inputs.tag }}
-          MESSAGE: ${{ github.event.inputs.text }}
+          INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
+          MESSAGE: ${{ needs.get-tag-and-changelog.outputs.text }}
           GH_TOKEN: ${{ github.token }}
         run: |
           export MESSAGE="$(echo -e "${MESSAGE}")"
@@ -192,6 +224,7 @@ jobs:
       contents: read
     needs:
       - build-go
+      - get-tag-and-changelog
     runs-on: ubuntu-latest
     if: github.event.inputs.publish == 'true' && github.event.inputs.binary_only == 'false' && github.event.inputs.pre_release == 'false'
     steps:
@@ -221,7 +254,7 @@ jobs:
       - name: Trigger Open Build Service and Copr
         shell: bash
         env:
-          MESSAGE: ${{ github.event.inputs.text }}
+          MESSAGE: ${{ needs.get-tag-and-changelog.outputs.text }}
           SUBMIT_FACTORY: ${{ github.event.inputs.publish_suse }}
           PUBLISH_OBS: ${{ github.event.inputs.publish_obs }}
           PUBLISH_COPR: ${{ github.event.inputs.publish_copr }}
@@ -232,7 +265,7 @@ jobs:
           OBS_PASSWORD: ${{ secrets.OBS_PASSWORD }}
           COPR_LOGIN: ${{ secrets.COPR_LOGIN }}
           COPR_TOKEN: ${{ secrets.COPR_TOKEN }}
-          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
           PUBLISH_PPA: ${{ github.event.inputs.publish_ppa }}
           PPA_SSH_KEY: ${{ secrets.PPA_SSH_PRIVATE_KEY }}
         run: |
@@ -273,6 +306,7 @@ jobs:
       contents: write
     needs:
       - build-go
+      - get-tag-and-changelog
     strategy:
       matrix:
         include:
@@ -293,7 +327,7 @@ jobs:
     if: github.event.inputs.source_only != 'true'
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      INPUT_VERSION: ${{ github.event.inputs.tag }}
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     steps:
       - name: Checking out sources
         if: matrix.allow == 'true'
@@ -348,7 +382,7 @@ jobs:
         uses: actions/cache@main
         with:
           path: build
-          key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ needs.get-tag-and-changelog.outputs.tag }}
 
       - name: Install Zip, Curl, Jq, UPX
         if: matrix.allow == 'true'
@@ -421,6 +455,7 @@ jobs:
       actions: read
     needs:
       - build-go
+      - get-tag-and-changelog
     strategy:
       matrix:
         include:
@@ -448,7 +483,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      INPUT_VERSION: ${{ github.event.inputs.tag }}
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
@@ -472,7 +507,7 @@ jobs:
         uses: actions/cache@main
         with:
           path: build
-          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ github.event.inputs.tag }}
+          key: CommonCache-${{ matrix.platform }}-${{ matrix.target }}-${{ needs.get-tag-and-changelog.outputs.tag }}
 
       - name: Cache Docker images.
         uses: AllySummers/docker-cache@main
@@ -534,11 +569,12 @@ jobs:
     runs-on: windows-latest
     needs:
       - build-cpp
+      - get-tag-and-changelog
     permissions:
       contents: write
       actions: read
     env:
-      INPUT_VERSION: ${{ github.event.inputs.tag }}
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     if: github.event.inputs.publish == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.pre_release != 'true'
     steps:
       - name: Checking out sources
@@ -558,7 +594,7 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.WINGET_TOKEN }}
-          INPUT_VERSION: ${{ github.event.inputs.tag }}
+          INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
           EMAIL: ${{ secrets.EMAIL }}
           UPLOAD_WITH_GH: yes
           CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
