@@ -18,58 +18,31 @@ var keep_running = false;
 
 log("Checking new version", "Info");
 
-function isNewerVersion(curver, version) {
-    const parts = version.replace('-', '.').split('.'); // [1, 2, 3, beta, 13]
-    const currentParts = curver.replace("-", ".").split('.');
-
-    if (parts.length < 3 || currentParts.length < 3) {
-        //  log("1. Version strings seem to be invalid: " + curver + " and " + version);
-        return false;
-    }
-
-    const verNums = [];
-    const currNums = [];
-
-    // Add base version first
-    verNums.push(parseInt(parts[0], 10), parseInt(parts[1], 10), parseInt(parts[2], 10));
-    if (parts.length > 3) {
-        if (parts[3] === "alpha") verNums.push(1);
-        if (parts[3] === "beta") verNums.push(2);
-        if (parts[3] === "rc") verNums.push(3);
-        if (parts.length > 4) verNums.push(parseInt(parts[4], 10));
-    }
-
-    currNums.push(parseInt(currentParts[0], 10), parseInt(currentParts[1], 10), parseInt(currentParts[2], 10));
-    if (currentParts.length > 3) {
-        if (currentParts[3] === "alpha") currNums.push(1);
-        if (currentParts[3] === "beta") currNums.push(2);
-        if (currentParts[3] === "rc") currNums.push(3);
-        if (currentParts.length > 4) currNums.push(parseInt(currentParts[4], 10));
-    }
-
-    if (verNums.length < 3 || currNums.length < 3) {
-        //  log("2. Version strings seem to be invalid: " + curver + " and " + version);
-        return false;
-    }
-
-    for (let i = 0; i < 3; i++) {
-        if (verNums[i] > currNums[i]) return true;
-        if (verNums[i] < currNums[i]) return false;
-    }
-
-    // Equal base version, check beta-ness
-    if (verNums.length === 5 && currNums.length === 3) return false;
-    if (verNums.length === 3 && currNums.length === 5) return true;
-
-    if (verNums.length === 5 && currNums.length === 5) {
-        for (let i = 3; i < 5; i++) {
-            if (verNums[i] > currNums[i]) return true;
-            if (verNums[i] < currNums[i]) return false;
+// [major, minor, patch, stage, stageNum, revision]; stable stage = 4 so X.Y.Z > X.Y.Z-beta.
+// A numeric 4th field is the mod revision (X.Y.Z.W), compared after the base.
+function parseVer(str) {
+    const p = str.trim().replace('-', '.').split('.');
+    if (p.length < 3) return null;
+    const v = [parseInt(p[0], 10), parseInt(p[1], 10), parseInt(p[2], 10), 4, 0, 0];
+    if (p.length > 3) {
+        if (p[3] === "alpha" || p[3] === "beta" || p[3] === "rc") {
+            v[3] = p[3] === "alpha" ? 1 : (p[3] === "beta" ? 2 : 3);
+            if (p.length > 4) v[4] = parseInt(p[4], 10) || 0;
+        } else {
+            v[5] = parseInt(p[3], 10) || 0;
         }
-    } else {
-        return false;
     }
+    return v;
+}
 
+function isNewerVersion(curver, version) {
+    const ver = parseVer(version);
+    const cur = parseVer(curver);
+    if (!ver || !cur) return false;
+    for (let i = 0; i < ver.length; i++) {
+        if (ver[i] > cur[i]) return true;
+        if (ver[i] < cur[i]) return false;
+    }
     return false;
 }
 
@@ -178,7 +151,7 @@ function isNewerAsset(assetName, curver) {
 }
 
 
-var resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
+var resp = new HTTPResponse("https://api.github.com/repos/Errorovich/nekobox/releases");
 var data;
 var resp_error;
 if (!resp.error) {
@@ -294,7 +267,7 @@ if (resp_error) {
                 errors = download(release_download_url, archive_name, true);
                 if (chocolatey_package) {
                     let nupkg_errors = download(
-                        "https://github.com/qr243vbi/nekobox/releases/download/" +
+                        "https://github.com/Errorovich/nekobox/releases/download/" +
                         latest_tag_name + "/nekobox." + latest_tag_name + ".nupkg",
                         "downloads/nekobox." + latest_tag_name + ".nupkg", true);
                     if (nupkg_errors == '') {

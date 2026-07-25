@@ -527,7 +527,16 @@ bool IsValid(std::shared_ptr<ProxyEntity> ent) {
     conf = QString2QJsonObject(ent->CustomBean()->config_simple);
   } else {
     auto out = bean->BuildCoreObjSingBox();
-    auto outArr = QJsonArray{out.outbound};
+    auto outbound = out.outbound;
+    // Validation must never touch the system: with useIntegratedTun/system on,
+    // box.New() creates a real Wintun adapter and assigns the profile's
+    // address; force netstack so CheckConfig stays side-effect free.
+    if (outbound["type"] == "awg") {
+      outbound["useIntegratedTun"] = false;
+    } else if (outbound["type"] == "wireguard") {
+      outbound["system"] = false;
+    }
+    auto outArr = QJsonArray{outbound};
     auto key = bean->IsEndpoint() ? "endpoints" : "outbounds";
     conf = {
         {key, outArr},
@@ -646,6 +655,13 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
     auto endpoints = res->coreConfig["endpoints"].toArray();
     for (auto endpoint : endpoints)
       outbounds.append(endpoint);
+    // Endpoint types must land in "endpoints", no matter whether they are the
+    // exit ("proxy") or an intermediate chain hop (e.g. "c-1-26-1"); the core
+    // rejects them inside "outbounds" ("unknown outbound type: awg").
+    auto isEndpointType = [](const QJsonObject &ob) {
+      const auto type = ob["type"].toString();
+      return type == "wireguard" || type == "tailscale" || type == "awg";
+    };
     for (const auto &outboundRef : outbounds) {
       auto outbound = outboundRef.toObject();
       QString outboundTag = outbound["tag"].toString();
@@ -658,21 +674,14 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
         if (index > 1)
           outboundTag += QString::number(index);
         outbound.insert("tag", outboundTag);
-        if (
-            QString outboundType = outbound.value("type").toString();
-            outboundType == "wireguard" ||
-            outboundType == "tailscale" ||
-            outboundType == "awg"
-        ) {
-          endpointArray.append(outbound);
-        } else {
-          outboundArray.append(outbound);
-        }
+        (isEndpointType(outbound) ? endpointArray : outboundArray)
+            .append(outbound);
         results->outboundTags << outboundTag;
         results->tag2entID.insert(outboundTag, item->id);
         continue;
       }
-      outboundArray.append(outbound);
+      (isEndpointType(outbound) ? endpointArray : outboundArray)
+          .append(outbound);
     }
   }
 
@@ -801,6 +810,28 @@ QString BuildChainInternal(int chainId,
     chainTag = "r-" + QString::number(route_suffix) + "-" + chainTag;
   }
 
+  auto wgBean = [](const std::shared_ptr<ProxyEntity> &e)
+      -> std::shared_ptr<const Configs::WireguardBean> {
+    if (e == nullptr || (e->type != "wireguard" && e->type != "awg"))
+      return nullptr;
+    return e->WireguardBean();
+  };
+
+  // Nested WG/AWG: the inner packet is MTU + 32 + s4 and must fit the carrier's
+  // MTU, else large packets are dropped. ents[i + 1] carries ents[i].
+  QMap<int, int> nestedMtu;
+  for (int i = ents.length() - 2; i >= 0; i--) {
+    auto inner = wgBean(ents.at(i));
+    if (inner == nullptr) continue;
+    auto carrierEnt = ents.at(i + 1);
+    auto carrier = wgBean(carrierEnt);
+    if (carrier == nullptr) continue;
+    int carrierMtu = nestedMtu.value(carrierEnt->id, carrier->MTU);
+    int s4 = ents.at(i)->type == "awg" ? inner->transport_packet_junk_size : 0;
+    int cap = carrierMtu - 32 - s4;
+    if (inner->MTU > cap) nestedMtu.insert(ents.at(i)->id, cap);
+  }
+
   for (int index = 0; index < ents.length(); index++) {
     auto ent = ents.at(index);
     if (ent == nullptr) {
@@ -842,6 +873,27 @@ QString BuildChainInternal(int chainId,
     QJsonObject outbound;
 
     BuildOutbound(ent, status, outbound, tagOut);
+
+    if (auto wg = wgBean(ent); wg != nullptr) {
+      if (nestedMtu.contains(ent->id)) outbound["mtu"] = nestedMtu.value(ent->id);
+      // the core's WG bind also opens an IPv6 socket, which fails on an
+      // IPv4-only carrier; a throwaway ULA lets it bind and carries no data
+      if (index > 0 && wgBean(ents.at(index - 1)) != nullptr) {
+        auto addresses = outbound["address"].toArray();
+        bool hasV6 = false;
+        for (const auto &address : addresses) {
+          if (address.toString().contains(":")) {
+            hasV6 = true;
+            break;
+          }
+        }
+        if (!hasV6) {
+          addresses.append("fdfe:dcba:9876::1/128");
+          outbound["address"] = addresses;
+        }
+      }
+    }
+
     // apply custom outbound settings
     MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
 
@@ -978,7 +1030,9 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     return;
   }
   if (ent->type == "wireguard" || ent->type == "awg") {
-    if (ent->WireguardBean()->useSystemInterface && !IsAdmin()) {
+    // Tests run through netstack (see below), so no elevation is needed there.
+    if (!status->forTest && ent->WireguardBean()->useSystemInterface &&
+        !IsAdmin()) {
       MW_dialog_message("configBuilder", "NeedAdmin");
       status->result->error =
           "using wireguard system interface requires elevated permissions";
@@ -996,6 +1050,17 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     return;
   }
   outbound = coreR.outbound;
+
+  // URL tests must not create real system tunnels: a Wintun adapter grabs the
+  // profile's address, and if it leaks (or the test overlaps a start) the next
+  // instance fails with "set ipv4 address: The object already exists".
+  if (status->forTest) {
+    if (outbound["type"] == "awg") {
+      outbound["useIntegratedTun"] = false;
+    } else if (outbound["type"] == "wireguard") {
+      outbound["system"] = false;
+    }
+  }
 
   // outbound misc
   outbound["tag"] = tag;

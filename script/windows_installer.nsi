@@ -595,8 +595,8 @@ FunctionEnd
  
 	FunctionEnd
 
-; Optional: version info for Windows file properties 
-VIProductVersion "${SOFTWARE_VERSION}.0"
+; Optional: version info for Windows file properties
+VIProductVersion "${SOFTWARE_VERSION}"
 VIAddVersionKey "ProductName" "${SOFTWARE_NAME}"
 VIAddVersionKey "ProductVersion" "${SOFTWARE_VERSION}"
 VIAddVersionKey "CompanyName" "qr243vbi"
