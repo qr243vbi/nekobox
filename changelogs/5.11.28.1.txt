@@ -1,0 +1,3 @@
+- fix: measure the started profile through the live instance
+- fix: cap MTU of nested WG/AWG hops, let their IPv6 socket bind
+- fix: sort endpoint-type chain hops into "endpoints" when testing

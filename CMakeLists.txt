@@ -1,6 +1,19 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(nekobox VERSION 6.0.0)
+project(nekobox VERSION 5.11.28.1)
+
+option(GENERATE_VERSION_AND_CHANGELOG "Generate only changelog and version" OFF)
+
+if (GENERATE_VERSION_AND_CHANGELOG)
+
+# Write current version to version.txt
+configure_file("${CMAKE_SOURCE_DIR}/res/version.txt.in" "${CMAKE_BINARY_DIR}/version.txt" @ONLY)
+
+# Write current changelog to changelog.txt
+configure_file("${CMAKE_SOURCE_DIR}/changelogs/${PROJECT_VERSION}.txt" "${CMAKE_BINARY_DIR}/changelog.txt" @ONLY)
+
+else()
+
 # Use this snippet *after* PROJECT(xxx):
 if(UNIX)
     if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -629,3 +642,6 @@ install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/pu
 
 endif()
 
+
+
+endif()

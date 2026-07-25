@@ -151,7 +151,7 @@ function isNewerAsset(assetName, curver) {
 }
 
 
-var resp = new HTTPResponse("https://api.github.com/repos/Errorovich/nekobox/releases");
+var resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
 var data;
 var resp_error;
 if (!resp.error) {
@@ -267,7 +267,7 @@ if (resp_error) {
                 errors = download(release_download_url, archive_name, true);
                 if (chocolatey_package) {
                     let nupkg_errors = download(
-                        "https://github.com/Errorovich/nekobox/releases/download/" +
+                        "https://github.com/qr243vbi/nekobox/releases/download/" +
                         latest_tag_name + "/nekobox." + latest_tag_name + ".nupkg",
                         "downloads/nekobox." + latest_tag_name + ".nupkg", true);
                     if (nupkg_errors == '') {

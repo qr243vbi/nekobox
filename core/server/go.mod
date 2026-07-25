@@ -30,7 +30,7 @@ require (
 	github.com/amnezia-vpn/amneziawg-go v0.2.17-0.20251219021448-449d7cffd4ad // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/anthropics/anthropic-sdk-go v1.26.0 // indirect
-	github.com/anytls/sing-anytls v0.0.11 // indirect
+	github.com/anytls/sing-anytls v0.0.13 // indirect
 	github.com/caddyserver/certmagic v0.25.2 // indirect
 	github.com/caddyserver/zerossl v0.1.5 // indirect
 	github.com/coder/websocket v1.8.14 // indirect
@@ -175,7 +175,7 @@ require (
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/Errorovich/sing-box v1.13.14-mod2.0.20260721200650-6692adcb1fe4
+replace github.com/sagernet/sing-box => github.com/qr243vbi/sing-box v1.13.14-mod3
 
 replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.8.11-mod2
 
