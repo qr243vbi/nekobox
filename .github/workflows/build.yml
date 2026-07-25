@@ -116,8 +116,8 @@ jobs:
 
           cmake -S . -B build -DGENERATE_VERSION_AND_CHANGELOG=ON
           cmake --build build -j 16
-          set_github_file tag "$(build/version.txt)"
-          set_github_file text "$(cat build/changelog.txt)"
+          set_output_file tag build/version.txt
+          set_output_file text build/changelog.txt
 
   build-go:
     permissions:
