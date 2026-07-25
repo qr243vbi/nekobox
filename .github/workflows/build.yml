@@ -94,6 +94,9 @@ jobs:
       contents: write
       actions: read
     runs-on: windows-latest
+    outputs:
+      tag: ${{ steps.inputs.outputs.tag }}
+      text: ${{ steps.inputs.outputs.text }}
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
