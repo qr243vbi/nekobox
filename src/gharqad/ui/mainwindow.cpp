@@ -15,6 +15,7 @@
 #include <QtConcurrent>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <nekobox/configs/sub/GroupUpdater.hpp>
+#include <nekobox/configs/sub/HappDecrypt.hpp>
 #include <nekobox/dataStore/Const.hpp>
 #include <nekobox/dataStore/ProfileFilter.hpp>
 #include <nekobox/dataStore/ResourceEntity.hpp>
@@ -265,6 +266,7 @@ void MainWindow::menu_server_about_to_show(QMenu *menu_server) {
   ui->menu_delete->setEnabled(selected_profile);
   ui->menu_move_profile->setEnabled(selected_profile);
   ui->menu_clone->setEnabled(selected_profile);
+  ui->menu_update_profile->setEnabled(selected_profile);
   ui->menu_reset_traffic->setEnabled(selected_profile);
 
   if (!speedtestRunning.tryLock()) {
@@ -3436,6 +3438,110 @@ void MainWindow::add_from_deeplink(const QString & clipboard){
                                           &chooseUpdateGroup);
 }
 
+void MainWindow::on_menu_update_profile_clipboard_triggered() {
+  CHECK_SETTINGS_ACCESS_W
+  update_selected_profiles(QApplication::clipboard()->text());
+}
+
+void MainWindow::on_menu_update_profile_file_triggered() {
+  CHECK_SETTINGS_ACCESS_W
+  auto path = OPEN_FILENAME;
+  if (path.isEmpty()) {
+    return;
+  }
+  auto file = QFile(path);
+  if (!file.exists())
+    return;
+  if (file.size() > 50 * 1024 * 1024) {
+    MW_show_log("File too large, will not process it");
+    return;
+  }
+  if (file.open(QIODevice::ReadOnly)) {
+    auto contents = file.readAll();
+    file.close();
+    SAVE_LATEST(path);
+    update_selected_profiles(contents);
+  }
+}
+
+void MainWindow::update_selected_profiles(const QString &content) {
+  auto text = content.trimmed();
+  if (text.isEmpty()) {
+    return;
+  }
+
+  // visual order, so that "the first selected" is the topmost row
+  auto items = ui->proxyListTable->selectionModel()->selectedRows();
+  std::sort(items.begin(), items.end(),
+            [](const QModelIndex &a, const QModelIndex &b) {
+              return a.row() < b.row();
+            });
+  QList<int> targets;
+  for (const auto &item : items) {
+    targets << ui->proxyListTable->model()
+                   ->data(item, SELECTION_KEEPER_ROLE)
+                   .toInt();
+  }
+  if (targets.isEmpty()) {
+    return;
+  }
+
+  runOnNewThread([=, this] {
+    auto data = text;
+    if (data.startsWith("happ://")) {
+      auto decrypted = HappDecrypt::decryptLink(data);
+      if (decrypted.isEmpty()) {
+        MW_show_log("<<<<<<<< " + QObject::tr("Failed to decrypt happ:// link"));
+        return;
+      }
+      data = decrypted;
+    }
+    if (data.startsWith("http://") || data.startsWith("https://")) {
+      auto resp = NetworkRequestHelper::HttpGet(
+          data, Configs::dataStore->sub_send_hwid);
+      if (!resp.error.isEmpty()) {
+        MW_show_log(QObject::tr("Request error is: %1").arg(resp.error));
+        return;
+      }
+      data = resp.data;
+    }
+
+    auto rawUpdater = std::make_unique<Subscription::RawUpdater>();
+    rawUpdater->update(data);
+    auto &proxies = rawUpdater->proxies;
+    if (proxies.isEmpty()) {
+      MW_show_log(tr("No profile found to update from"));
+      return;
+    }
+
+    int count = qMin(targets.count(), proxies.count());
+    // parsed leftovers are thrown away, they must not reach the database
+    for (int i = count; i < proxies.count(); i++) {
+      proxies[i]->save_control_no_save(true);
+    }
+
+    bool restart = false;
+    QString change_text;
+    int updated = 0;
+    for (int i = 0; i < count; i++) {
+      auto id = targets[i];
+      if (!Configs::profileManager->ReplaceProfile(id, proxies[i])) {
+        proxies[i]->save_control_no_save(true);
+        continue;
+      }
+      change_text += "[~] " + proxies[i]->DisplayTypeAndName() + "\n";
+      updated++;
+      if (Configs::dataStore->started_id == id)
+        restart = true;
+    }
+
+    MW_show_log("<<<<<<<< " + tr("Updated %1 profile(s)").arg(updated) + "\n" +
+                change_text);
+    MW_dialog_message(Dialog_DialogEditProfile,
+                      restart ? "accept,restart" : "accept");
+  });
+}
+
 void MainWindow::move_selected_profiles(int group_id) {
   Configs::profileManager->MoveProfileBatch(get_now_selected_list(), group_id);
   refresh_proxy_list();
@@ -4622,6 +4728,8 @@ void MainWindow::setActionsData() {
   ui->actionSpeedtest_Current->setData(QString("m40"));
   ui->menu_toggle_filter->setData(QString("m41"));
   ui->menu_toggle_searchbox->setData(QString("m42"));
+  ui->menu_update_profile_clipboard->setData(QString("m43"));
+  ui->menu_update_profile_file->setData(QString("m44"));
 }
 
 QList<QAction *> MainWindow::getActionsForShortcut() {

@@ -138,7 +138,16 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 				defer wg.Done()
 				outbound, found := outbounds.Outbound(t)
 				if !found {
-					panic("no outbound with tag " + t + " found")
+					resAccess.Lock()
+					u := &URLTestResult{
+						Tag:   t,
+						Error: errors.New("no outbound with tag " + t + " found"),
+					}
+					resMap[t] = u
+					URLReporter.AddResult(u)
+					resAccess.Unlock()
+					<-limiter
+					return
 				}
 				client := &http.Client{
 					Transport: &http.Transport{
@@ -221,13 +230,15 @@ loop_tags:
 			break loop_tags
 		default:
 		}
-		outbound, exists := outbounds.Outbound(tag)
-		if !exists {
-			panic("no outbound with tag " + tag + " found")
-		}
 		res := new(SpeedTestResult)
 		res.Tag = tag
 		results = append(results, res)
+
+		outbound, exists := outbounds.Outbound(tag)
+		if !exists {
+			res.Error = errors.New("no outbound with tag " + tag + " found")
+			continue
+		}
 
 		var err error
 		if countryOnly {
@@ -484,7 +495,16 @@ func BatchIPTest(ctx context.Context, i *boxbox.Box, outboundTags []string, maxC
 				defer wg.Done()
 				outbound, found := outbounds.Outbound(t)
 				if !found {
-					panic("no outbound with tag " + t + " found")
+					resAccess.Lock()
+					u := &IPTestResult{
+						Tag:   t,
+						Error: errors.New("no outbound with tag " + t + " found"),
+					}
+					resMap[t] = u
+					IPReporter.AddResult(u)
+					resAccess.Unlock()
+					<-limiter
+					return
 				}
 				client := &http.Client{
 					Transport: &http.Transport{

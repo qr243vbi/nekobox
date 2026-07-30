@@ -124,6 +124,9 @@ namespace Configs {
 
         bool AddProfileBatch(const QList<std::shared_ptr<ProxyEntity>> &ents, int gid = -1);
 
+        // overwrites the profile with the given id, so chains keep pointing at it
+        bool ReplaceProfile(int id, const std::shared_ptr<ProxyEntity> &ent);
+
         bool MoveProfile(int id, int gid);
         void CacheProfile(std::shared_ptr<ProxyEntity> ent);
         void UncacheProfile(int id, bool force = false);

@@ -141,9 +141,8 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
         req.test_timeout_ms = Configs::dataStore->url_test_timeout_ms;
         req.test_current = true;
 
-        // Add the active proxy tag
-        QString tag = QString("out-%1-%2").arg(proxy->type, proxy->name);
-        req.outbound_tags.push_back(tag.toStdString());
+        // untagged the core would measure route.final, not the profile
+        if (!proxy->IsFullConfig()) req.outbound_tags.push_back("proxy");
 
         bool rpcOK;
         auto result = API::defaultClient->Test(&rpcOK, req);

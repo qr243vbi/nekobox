@@ -3817,6 +3817,21 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>Клонировать</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="733" />
+        <source>Update profile</source>
+        <translation>Обновить</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3510" />
+        <source>No profile found to update from</source>
+        <translation>В источнике не найдено профилей для обновления</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3534" />
+        <source>Updated %1 profile(s)</source>
+        <translation>Обновлено профилей: %1</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
         <source>Update subscription</source>
         <translation>Обновить подписку</translation>
