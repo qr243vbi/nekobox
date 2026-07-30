@@ -937,7 +937,8 @@ ProfileManager::NewProxyEntity(QString scheme, bool additional) {
     } else if (scheme == "wg") {
       scheme = "wireguard";
     } else if (scheme == "amneziawg"
-        || scheme == "amnezia"){
+        || scheme == "amnezia"
+        || scheme == "vpn"){
       scheme = "awg";
     }
   }

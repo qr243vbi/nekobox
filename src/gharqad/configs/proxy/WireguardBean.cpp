@@ -1,4 +1,5 @@
 #include <QString>
+#include <QJsonDocument>
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/configs/proxy/AbstractBeanExtra.hpp>
 #include <nekobox/configs/proxy/includes.h>
@@ -58,6 +59,7 @@ namespace Configs {
 
     bool WireguardBean::TryParseLink(const QString &link) {
         using namespace From_Link;
+        if (link.startsWith("vpn://", Qt::CaseInsensitive)) return parseAmneziaVpnLink(link);
         if (parseWgConfig(link)) return true;
 
         auto url = QUrl(link);
@@ -447,6 +449,134 @@ bool WireguardBean::TryParseJsonAwg(const Configs::Data::Node &obj) {
     i5 = obj["i5"].toString();
 
     return true;
+}
+
+// -------------------- AMNEZIA vpn:// LINK --------------------
+
+// a header spec is "5" or a "5-10" range; blank means the standard message type
+static bool parseMagicHeader(const QString &spec, qint64 standard, qint64 &begin, qint64 &end) {
+    const auto trimmed = spec.trimmed();
+    if (trimmed.isEmpty()) {
+        begin = end = standard;
+        return true;
+    }
+    const auto parts = trimmed.split("-");
+    if (parts.size() > 2) return false;
+    bool ok = false;
+    begin = parts[0].trimmed().toLongLong(&ok);
+    if (!ok) return false;
+    end = begin;
+    if (parts.size() == 2) {
+        end = parts[1].trimmed().toLongLong(&ok);
+        if (!ok) return false;
+    }
+    return begin >= 0 && end <= 0xFFFFFFFFLL && end >= begin;
+}
+
+// the core draws junk sizes with rand.Int(jmax - jmin + 1) and panics on a non-positive argument
+bool WireguardBean::ValidateAmnezia() const {
+    if (junk_packet_count > 0 && (junk_packet_min_size <= 0 || junk_packet_max_size <= 0)) return false;
+    if (junk_packet_min_size > 0 && junk_packet_max_size > 0
+        && junk_packet_min_size > junk_packet_max_size) return false;
+
+    // unset headers fall back to standard message types, so one custom header can still collide
+    const QString specs[4] = {init_packet_magic_header, response_packet_magic_header,
+                              cookie_reply_magic_header, transport_packet_magic_header};
+    qint64 begin[4], end[4];
+    for (int i = 0; i < 4; i++) {
+        if (!parseMagicHeader(specs[i], i + 1, begin[i], end[i])) return false;
+    }
+    for (int i = 0; i < 4; i++) {
+        for (int j = i + 1; j < 4; j++) {
+            if (begin[i] <= end[j] && begin[j] <= end[i]) return false;
+        }
+    }
+    return true;
+}
+
+// vpn:// + base64url(4-byte BE length + zlib(JSON)), the framing of Qt's own qCompress
+bool WireguardBean::parseAmneziaVpnLink(const QString &link) {
+    auto payload = SubStrBefore(SubStrAfter(link, "://"), "#").trimmed();
+    payload.replace('-', '+').replace('_', '/');
+    const auto plain = qUncompress(QByteArray::fromBase64(payload.toUtf8()));
+    if (plain.isEmpty()) return false;
+
+    const auto root = QJsonDocument::fromJson(plain).object();
+    QJsonObject awg;
+    for (const auto &container : root["containers"].toArray()) {
+        auto obj = container.toObject()["awg"].toObject();
+        if (!obj.isEmpty()) {
+            awg = obj;
+            break;
+        }
+    }
+    if (awg.isEmpty()) return false;
+
+    const auto last = QJsonDocument::fromJson(awg["last_config"].toString().toUtf8()).object();
+
+    // numbers travel as strings in some Amnezia versions and as ints in others
+    auto jsonStr = [&](const char *key) {
+        auto value = last[key];
+        if (value.isUndefined() || value.isNull()) value = awg[key];
+        return value.isDouble() ? QString::number(value.toInt()) : value.toString();
+    };
+    auto jsonInt = [&](const char *key) {
+        auto value = last[key];
+        if (value.isUndefined() || value.isNull()) value = awg[key];
+        return value.isString() ? value.toString().trimmed().toInt() : value.toInt();
+    };
+
+    // the .conf is the source of truth, the JSON fields only fill what it omits
+    MTU = 0;
+    parseWgConfig(last["config"].toString());
+
+    if (entity->serverAddress.isEmpty()) {
+        entity->serverAddress = jsonStr("hostName");
+        if (entity->serverAddress.isEmpty()) entity->serverAddress = root["hostName"].toString();
+    }
+    if (entity->serverPort <= 0) entity->serverPort = jsonInt("port");
+    if (entity->serverPort <= 0) entity->serverPort = 51820;
+    if (localAddress.isEmpty()) {
+        const auto client_ip = jsonStr("client_ip");
+        if (!client_ip.isEmpty()) localAddress << client_ip;
+    }
+    if (privateKey.isEmpty()) privateKey = jsonStr("client_priv_key");
+    if (publicKey.isEmpty()) publicKey = jsonStr("server_pub_key");
+    if (preSharedKey.isEmpty()) preSharedKey = jsonStr("psk_key");
+    if (MTU <= 0) MTU = jsonInt("mtu");
+    if (MTU <= 0) MTU = 1420;
+    if (persistentKeepalive <= 0) persistentKeepalive = jsonInt("persistent_keep_alive");
+
+    if (junk_packet_count <= 0) junk_packet_count = jsonInt("Jc");
+    if (junk_packet_min_size <= 0) junk_packet_min_size = jsonInt("Jmin");
+    if (junk_packet_max_size <= 0) junk_packet_max_size = jsonInt("Jmax");
+    if (init_packet_junk_size <= 0) init_packet_junk_size = jsonInt("S1");
+    if (response_packet_junk_size <= 0) response_packet_junk_size = jsonInt("S2");
+    if (cookie_reply_junk_size <= 0) cookie_reply_junk_size = jsonInt("S3");
+    if (transport_packet_junk_size <= 0) transport_packet_junk_size = jsonInt("S4");
+
+    if (init_packet_magic_header.isEmpty()) init_packet_magic_header = jsonStr("H1");
+    if (response_packet_magic_header.isEmpty()) response_packet_magic_header = jsonStr("H2");
+    if (cookie_reply_magic_header.isEmpty()) cookie_reply_magic_header = jsonStr("H3");
+    if (transport_packet_magic_header.isEmpty()) transport_packet_magic_header = jsonStr("H4");
+
+    if (i1.isEmpty()) i1 = jsonStr("I1");
+    if (i2.isEmpty()) i2 = jsonStr("I2");
+    if (i3.isEmpty()) i3 = jsonStr("I3");
+    if (i4.isEmpty()) i4 = jsonStr("I4");
+    if (i5.isEmpty()) i5 = jsonStr("I5");
+
+    if (privateKey.isEmpty() || publicKey.isEmpty() || entity->serverAddress.isEmpty()) return false;
+
+    auto name = root["description"].toString();
+    if (name.isEmpty() && link.contains("#")) {
+        name = QUrl::fromPercentEncoding(SubStrAfter(link, "#").toUtf8());
+    }
+    entity->name = name.isEmpty() ? "AmneziaWG" : name;
+
+    // an awg container is always AmneziaWG, even with no obfuscation knobs to detect
+    enableAmnezia(true);
+    return ValidateAmnezia();
 }
 
 }

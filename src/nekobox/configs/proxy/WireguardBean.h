@@ -87,6 +87,10 @@ namespace Configs {
 
         bool TryParseJson(const Configs::Data::Node &obj) override;
 
+        bool parseAmneziaVpnLink(const QString &link);
+
+        bool ValidateAmnezia() const;
+
         QString ToShareLink() const override;
 
         bool IsEndpoint() const override {return true;}
