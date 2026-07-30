@@ -411,7 +411,13 @@ void MainWindow::speedtest_current_group(const QList<int>& profiles_ids,
         } else
         {
             stopSpeedtest.store(false);
-            runSpeedTest("", true, true, {}, {}, -1, 
+            // untagged the core would measure route.final, not the profile
+            QStringList tags;
+            if (running != nullptr) {
+                auto profile = Configs::profileManager->GetProfile(running->id);
+                if (profile != nullptr && !profile->IsFullConfig()) tags << "proxy";
+            }
+            runSpeedTest("", true, true, tags, {}, -1,
                 testmode);
         }
 

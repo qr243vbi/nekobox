@@ -477,7 +477,9 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 		defer testInstance.Close()
 	}
 
-	if in.UseDefaultOutbound || in.TestCurrent {
+	if in.TestCurrent {
+		outboundTags = resolveLiveTags(testInstance, in.OutboundTags)
+	} else if in.UseDefaultOutbound {
 		outbound := testInstance.Outbound().Default()
 		outboundTags = []string{outbound.Tag()}
 	}
