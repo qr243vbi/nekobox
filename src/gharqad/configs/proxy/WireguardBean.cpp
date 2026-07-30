@@ -173,8 +173,8 @@ namespace Configs {
 
             add_query_int("init_packet_junk_size", query, (init_packet_junk_size));
             add_query_int("response_packet_junk_size", query, (response_packet_junk_size));
-            add_query_int("cookie_reply_junk_size", query, (init_packet_junk_size));
-            add_query_int("transport_packet_junk_size", query, (response_packet_junk_size));
+            add_query_int("underload_packet_junk_size", query, (cookie_reply_junk_size));
+            add_query_int("transport_packet_junk_size", query, (transport_packet_junk_size));
 
             add_query_nonempty("init_packet_magic_header", query, (init_packet_magic_header));
             add_query_nonempty("response_packet_magic_header", query, (response_packet_magic_header));
@@ -422,7 +422,6 @@ bool WireguardBean::TryParseJsonAwg(const Configs::Data::Node &obj) {
     entity->serverPort = peerObj["port"].toInt();
     this->publicKey = peerObj["public_key"].toString();
     this->preSharedKey = peerObj["pre_shared_key"].toString();
-    this->localAddress = peerObj["allowed_ips"].toStringList();
     this->persistentKeepalive =
             peerObj["persistent_keepalive_interval"].toInt();
 
