@@ -1,5 +1,7 @@
 - feat: update a profile in place from a link or file, keeping its id and chains
 - feat: import AmneziaWG profiles from Amnezia's vpn:// links
+- feat: update sing-box to 1.13.15
 - fix: export AWG s3/s4 with their own values, keep the AWG local address
 - fix: aim the live speed test at the profile too, drop the test panics
 - fix: aim the live URL test at the profile, not route.final
+- fix: AppRun missing shebang in Linux AppImage builds
