@@ -254,12 +254,3 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 
 Use of this software is subject to the GPL-3 license.
 
-## Star History
-
-<a href="https://www.star-history.com/?repos=qr243vbi%2Fnekobox&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&theme=dark&legend=top-left&sealed_token=Mq2X2tmDsCvnV3NFdGhVSmMU7wis_8pdOfPFA8dlSC4p50Kn9noVtVZ712AifPDLGcEnrKtQoq9CsX3xgtdD1JtIUgBv1jhs2c2KWdaT1v4knZNVahIjMUGFMWHBMVMkO2DIR9OIHeXTXRv6neAbyWgM3sIcZY0UjlwSF6nhqexxTbp-Cb7Y7UUTd17v" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left&sealed_token=Mq2X2tmDsCvnV3NFdGhVSmMU7wis_8pdOfPFA8dlSC4p50Kn9noVtVZ712AifPDLGcEnrKtQoq9CsX3xgtdD1JtIUgBv1jhs2c2KWdaT1v4knZNVahIjMUGFMWHBMVMkO2DIR9OIHeXTXRv6neAbyWgM3sIcZY0UjlwSF6nhqexxTbp-Cb7Y7UUTd17v" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=qr243vbi/nekobox&type=date&legend=top-left&sealed_token=Mq2X2tmDsCvnV3NFdGhVSmMU7wis_8pdOfPFA8dlSC4p50Kn9noVtVZ712AifPDLGcEnrKtQoq9CsX3xgtdD1JtIUgBv1jhs2c2KWdaT1v4knZNVahIjMUGFMWHBMVMkO2DIR9OIHeXTXRv6neAbyWgM3sIcZY0UjlwSF6nhqexxTbp-Cb7Y7UUTd17v" />
- </picture>
-</a>
