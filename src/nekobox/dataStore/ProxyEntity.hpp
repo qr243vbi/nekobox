@@ -72,6 +72,9 @@ public:
 
   bool isValid() const;
 
+  // brings its own outbounds and route.final
+  [[nodiscard]] bool IsFullConfig() const;
+
   QString type;
   QString display_type;
 

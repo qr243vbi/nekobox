@@ -138,7 +138,16 @@ func BatchURLTest(ctx context.Context, i *boxbox.Box, outboundTags []string, url
 				defer wg.Done()
 				outbound, found := outbounds.Outbound(t)
 				if !found {
-					panic("no outbound with tag " + t + " found")
+					resAccess.Lock()
+					u := &URLTestResult{
+						Tag:   t,
+						Error: errors.New("no outbound with tag " + t + " found"),
+					}
+					resMap[t] = u
+					URLReporter.AddResult(u)
+					resAccess.Unlock()
+					<-limiter
+					return
 				}
 				client := &http.Client{
 					Transport: &http.Transport{

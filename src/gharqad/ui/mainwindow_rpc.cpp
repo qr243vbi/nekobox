@@ -300,9 +300,17 @@ void MainWindow::url_test_current() {
     last_test_time = QDateTime::currentSecsSinceEpoch();
     ui->label_running->setText(tr("Testing"));
 
+    // untagged the core would measure route.final, not the profile
+    bool useProxyTag = false;
+    if (running != nullptr) {
+        auto profile = Configs::profileManager->GetProfile(running->id);
+        useProxyTag = profile != nullptr && !profile->IsFullConfig();
+    }
+
     runOnNewThread([=,this] {
         libcore::TestReq req;
         req.test_current = (true);
+        if (useProxyTag) req.outbound_tags.push_back("proxy");
         req.url = (Configs::dataStore->test_latency_url.toStdString());
 
         bool rpcOK;

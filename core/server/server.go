@@ -276,6 +276,21 @@ func (s *server) IPTest(ctx context.Context, in *gen.IPTestRequest) (*gen.QueryI
 	return out, nil
 }
 
+// prefer the requested tags, the default one follows route.final
+func resolveLiveTags(i *boxbox.Box, tags []string) []string {
+	outbounds := service.FromContext[adapter.OutboundManager](i.Context())
+	known := make([]string, 0, len(tags))
+	for _, tag := range tags {
+		if _, found := outbounds.Outbound(tag); found {
+			known = append(known, tag)
+		}
+	}
+	if len(known) == 0 {
+		return []string{i.Outbound().Default().Tag()}
+	}
+	return known
+}
+
 func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, error) {
 	out := new(gen.TestResp)
 	var testInstance *boxbox.Box
@@ -302,7 +317,9 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 	}
 
 	outboundTags := in.OutboundTags
-	if in.UseDefaultOutbound || in.TestCurrent {
+	if in.TestCurrent {
+		outboundTags = resolveLiveTags(testInstance, in.OutboundTags)
+	} else if in.UseDefaultOutbound {
 		outbound := testInstance.Outbound().Default()
 		outboundTags = []string{outbound.Tag()}
 	}
