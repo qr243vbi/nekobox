@@ -1008,6 +1008,34 @@ bool ProfileManager::AddProfileBatch(
   return true;
 }
 
+bool ProfileManager::ReplaceProfile(int id,
+                                    const std::shared_ptr<ProxyEntity> &ent) {
+  if (id < 0 || ent == nullptr || ent->id >= 0)
+    return false;
+  auto old = GetProfile(id);
+  if (old == nullptr)
+    return false;
+
+  ent->id = id;
+  ent->gid = old->gid;
+  if (ent->name.isEmpty())
+    ent->name = old->name;
+  ent->traffic_data->downlink = old->traffic_data->downlink;
+  ent->traffic_data->uplink = old->traffic_data->uplink;
+
+  // the replaced entity may still be referenced, it must not write itself back
+  old->save_control_no_save(true);
+  UncacheProfile(id, true);
+  CacheProfile(ent);
+
+  lock();
+  ent->Save();
+  // anything cached while the record was being written is stale
+  UncacheProfile(id, true);
+  unlock();
+  return true;
+}
+
 bool ProfileManager::MoveProfile(int id, int gid) {
   QList<int> list;
   list << id;

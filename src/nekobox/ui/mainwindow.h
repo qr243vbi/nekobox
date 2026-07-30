@@ -164,6 +164,9 @@ public:
 
     void move_selected_profiles(int profile_id);
 
+    // replaces selected profiles in place, keeping their ids
+    void update_selected_profiles(const QString &content);
+
     void refresh_table_columns();
 
     bool context_menu_locked();
@@ -263,6 +266,10 @@ private slots:
     void on_menu_add_from_input_triggered();
 
     void on_menu_add_from_clipboard_triggered();
+
+    void on_menu_update_profile_clipboard_triggered();
+
+    void on_menu_update_profile_file_triggered();
 
     void on_menu_move_profile_triggered();
 

@@ -729,6 +729,13 @@ QToolButton::menu-indicator {
       <addaction name="menu_copy_links"/>
       <addaction name="menu_copy_links_nkr"/>
      </widget>
+     <widget class="QMenu" name="menu_update_profile">
+      <property name="title">
+       <string>Update profile</string>
+      </property>
+      <addaction name="menu_update_profile_clipboard"/>
+      <addaction name="menu_update_profile_file"/>
+     </widget>
      <widget class="QMenu" name="menu_test">
       <property name="title">
        <string>Test</string>
@@ -748,6 +755,7 @@ QToolButton::menu-indicator {
      <addaction name="menu_unselect_all"/>
      <addaction name="separator"/>
      <addaction name="menu_share_item"/>
+     <addaction name="menu_update_profile"/>
      <addaction name="menu_clone"/>
      <addaction name="menu_move_profile"/>
      <addaction name="menu_delete"/>
@@ -1084,6 +1092,16 @@ QToolButton::menu-indicator {
    </property>
    <property name="text">
     <string>Enable Tun</string>
+   </property>
+  </action>
+  <action name="menu_update_profile_clipboard">
+   <property name="text">
+    <string>From clipboard</string>
+   </property>
+  </action>
+  <action name="menu_update_profile_file">
+   <property name="text">
+    <string>From file</string>
    </property>
   </action>
   <action name="menu_clone">
