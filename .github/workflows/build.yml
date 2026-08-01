@@ -602,7 +602,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           UPLOAD_WITH_GH: yes
           CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.WINGET_TOKEN }}
         run: |
           source script/env_deploy.sh
           find . -name artifacts.tgz | xargs -n1 tar xvzf
