@@ -332,8 +332,7 @@ namespace Configs {
     Node & Node::at(size_t index) {
       static Node node;
       if (this->isArray()){
-        auto count = this->count();
-        while (count <= index){
+        while (this->count() <= index){
           this->addLast(Node::null());
         }
         return std::get<QList<Node>>(this->value)[index];
