@@ -1,0 +1,21 @@
+[package]
+name = "nui"
+version = "0.1.0"
+edition = "2021"
+description = "ratatui front-end for NekoBox"
+license = "GPL-3.0-only"
+[[bin]]
+name = "nekobox-tui"
+path = "src/main.rs"
+
+[dependencies]
+ncore.workspace = true
+nrpc.workspace = true
+
+ratatui.workspace = true
+crossterm.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+clap.workspace = true
+crossbeam.workspace = true

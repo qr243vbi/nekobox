@@ -1,0 +1,11 @@
+[package]
+name = "nrpc"
+version = "0.1.0"
+edition = "2021"
+description = "Thrift RPC client for nekobox_core"
+license = "GPL-3.0-only"
+
+[dependencies]
+thrift.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

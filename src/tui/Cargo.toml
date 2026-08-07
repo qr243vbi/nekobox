@@ -1,0 +1,68 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/nrpc",
+    "crates/ncore",
+    "crates/nui",
+]
+
+[workspace.dependencies]
+# Internal crates
+nrpc = { path = "crates/nrpc" }
+ncore = { path = "crates/ncore" }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+
+# TUI
+ratatui = "0.29"
+crossterm = "0.28"
+
+# RPC (Apache Thrift)
+thrift = "0.17"
+
+# Networking
+reqwest = { version = "0.12", features = ["stream", "json", "cookies"] }
+bytes = "1"
+
+# Error handling
+anyhow = "1"
+thiserror = "2"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# CLI
+clap = { version = "4", features = ["derive", "env"] }
+
+# Crypto / encoding
+base64 = "0.22"
+sha2 = "0.10"
+uuid = { version = "1", features = ["v4"] }
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# String handling
+regex = "1"
+url = "2"
+percent-encoding = "2"
+
+# Clipboard
+arboard = "3"
+
+# Random
+rand = "0.8"
+
+# File watching
+notify = "7"
+
+# Crossbeam for concurrent channels
+crossbeam = "0.8"

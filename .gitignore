@@ -141,6 +141,7 @@ srslist
 
 /nekobox
 /build
+/go
 /temp
 CMakeLists.txt.user*
 /cmake-build-*
@@ -167,3 +168,9 @@ deployment
 srslist.json
 runtime-*
 *.tar.xz
+
+# Local AI assistant notes
+CLAUDE.md
+
+# Rust build artifacts
+/src/tui/target/
