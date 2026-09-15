@@ -174,3 +174,8 @@ CLAUDE.md
 
 # Rust build artifacts
 /src/tui/target/
+
+# Yacd bundle the core unpacks into its working directory when the
+# Clash API is configured with external_ui
+/src/tui/dashboard/
+/dashboard/

@@ -10,7 +10,9 @@
 pub mod model;
 pub mod store;
 pub mod config;
+pub mod log;
 pub mod sub;
+pub mod window;
 
 pub use model::*;
 pub use store::*;

@@ -7,6 +7,7 @@
 use std::io;
 
 mod app;
+mod menu;
 mod rpc_worker;
 
 fn main() -> anyhow::Result<()> {
@@ -18,7 +19,11 @@ fn main() -> anyhow::Result<()> {
     // Set up terminal
     crossterm::terminal::enable_raw_mode()?;
     let mut stdout = io::stdout();
-    crossterm::execute!(stdout, crossterm::terminal::EnterAlternateScreen)?;
+    crossterm::execute!(
+        stdout,
+        crossterm::terminal::EnterAlternateScreen,
+        crossterm::event::EnableMouseCapture
+    )?;
     let backend = ratatui::backend::CrosstermBackend::new(stdout);
     let mut terminal = ratatui::Terminal::new(backend)?;
     terminal.clear()?;
@@ -29,6 +34,7 @@ fn main() -> anyhow::Result<()> {
         let _ = crossterm::terminal::disable_raw_mode();
         let _ = crossterm::execute!(
             io::stdout(),
+            crossterm::event::DisableMouseCapture,
             crossterm::terminal::LeaveAlternateScreen
         );
         original_hook(info);
@@ -41,6 +47,7 @@ fn main() -> anyhow::Result<()> {
     let _ = crossterm::terminal::disable_raw_mode();
     let _ = crossterm::execute!(
         terminal.backend_mut(),
+        crossterm::event::DisableMouseCapture,
         crossterm::terminal::LeaveAlternateScreen
     );
     let _ = terminal.show_cursor();

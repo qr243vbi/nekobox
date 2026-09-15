@@ -45,6 +45,26 @@ pub struct DataStore {
     #[serde(default = "default_active_routing")]
     pub active_routing: String,
 
+    /// Active routing chain id (`current_route_id` in `default_route_profile.cfg`).
+    ///
+    /// This — not [`Self::active_routing`] — is what the GUI reads when it
+    /// builds a config, so it is the field the TUI must keep in sync.
+    #[serde(default = "default_current_route_id")]
+    pub current_route_id: i32,
+
+    /// `imported_group` in `default_route_profile.cfg`: the group that
+    /// outbounds referenced by routing rules get imported into.
+    #[serde(default = "default_imported_group")]
+    pub imported_group: i32,
+
+    /// Sniffing mode (`sniffing_mode`): 0=disabled, 1=for routing, 2=full.
+    #[serde(default = "default_sniffing_mode")]
+    pub sniffing_mode: i32,
+
+    /// Remembered special-proxy modes (`spmode2`): any of "vpn", "system_proxy".
+    #[serde(default)]
+    pub remember_spmode: Vec<String>,
+
     /// Current group ID
     #[serde(default)]
     pub current_group: i32,
@@ -285,8 +305,10 @@ pub struct DataStore {
     #[serde(default = "default_download_timeout")]
     pub download_timeout: i32,
 
-    /// Connection statistics
-    #[serde(default)]
+    /// Connection statistics (`enable_stats` on disk). Enables the Clash API
+    /// in the generated config, without which the core cannot list
+    /// connections. Defaults to true, as in the C++ `DataStore`.
+    #[serde(default = "default_true")]
     pub connection_statistics: bool,
 
     /// Stats tab index
@@ -428,6 +450,10 @@ fn default_download_retries() -> i32 { 25 }
 fn default_download_timeout() -> i32 { 10000 }
 fn default_custom_inbound() -> String { "{\"inbounds\": []}".into() }
 fn default_active_routing() -> String { "Default".into() }
+fn default_true() -> bool { true }
+fn default_current_route_id() -> i32 { 1 }
+fn default_imported_group() -> i32 { -1 }
+fn default_sniffing_mode() -> i32 { 1 }
 fn default_custom_route_global() -> String { "{\"rules\": []}".into() }
 fn default_route_exclude_addrs() -> Vec<String> {
     vec![
@@ -460,6 +486,10 @@ impl Default for DataStore {
             groups: std::collections::HashMap::new(),
             routes: std::collections::HashMap::new(),
             active_routing: default_active_routing(),
+            current_route_id: default_current_route_id(),
+            imported_group: default_imported_group(),
+            sniffing_mode: default_sniffing_mode(),
+            remember_spmode: Vec::new(),
             current_group: 0,
             inbound_address: default_inbound_address(),
             inbound_socks_port: default_inbound_port(),

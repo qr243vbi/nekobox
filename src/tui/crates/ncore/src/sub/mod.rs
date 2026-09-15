@@ -84,8 +84,8 @@ fn parse_vmess_link(encoded: &str) -> anyhow::Result<ProxyEntity> {
 
     // Bean config
     let stream = filter_empty(serde_json::json!({
-        "network": vmess["net"].as_str().unwrap_or("tcp"),
-        "tls": if vmess["tls"].as_str().unwrap_or("") == "tls" { "tls" } else { "" },
+        "net": vmess["net"].as_str().unwrap_or("tcp"),
+        "sec": if vmess["tls"].as_str().unwrap_or("") == "tls" { "tls" } else { "" },
         "sni": vmess["sni"].as_str().unwrap_or(""),
         "host": vmess["host"].as_str().unwrap_or(""),
         "path": vmess["path"].as_str().unwrap_or(""),
@@ -94,7 +94,6 @@ fn parse_vmess_link(encoded: &str) -> anyhow::Result<ProxyEntity> {
         "id": vmess["id"],
         "aid": vmess["aid"].as_u64().unwrap_or(0),
         "sec": vmess["sec"].as_str().unwrap_or("auto"),
-        "network": vmess["net"].as_str().unwrap_or("tcp"),
         "stream": stream,
     });
 
@@ -117,15 +116,14 @@ fn parse_vless_link(url_str: &str) -> anyhow::Result<ProxyEntity> {
 
     let query: HashMap<_, _> = url.query_pairs().collect();
     let stream = filter_empty(serde_json::json!({
-        "tls": if query.get("security").map(|s| s.as_ref()) == Some("tls") { "tls" } else { "" },
+        "sec": if query.get("security").map(|s| s.as_ref()) == Some("tls") { "tls" } else { "" },
         "sni": query.get("sni").map(|s| s.as_ref()).unwrap_or(""),
         "host": query.get("host").map(|s| s.as_ref()).unwrap_or(""),
         "path": query.get("path").map(|s| s.as_ref()).unwrap_or(""),
-        "type": query.get("type").map(|s| s.as_ref()).unwrap_or(""),
+        "net": query.get("type").map(|s| s.as_ref()).unwrap_or(""),
     }));
     entity.bean_cfg = Some(serde_json::json!({
         "id": url.username(),
-        "network": query.get("type").map(|s| s.as_ref()).unwrap_or("tcp"),
         "stream": stream,
     }));
 
@@ -336,6 +334,135 @@ pub fn parse_subscription(content: &str) -> anyhow::Result<Vec<ParsedProxy>> {
     ))
 }
 
+// ============================================================================
+// Share link export
+// ============================================================================
+
+/// Export a profile as a share link (`ss://`, `vmess://`, `vless://`,
+/// `trojan://`). Inverse of [`parse_share_link`].
+pub fn to_share_link(entity: &ProxyEntity) -> anyhow::Result<String> {
+    use base64::Engine;
+    let bean = entity.bean_cfg.clone().unwrap_or_else(|| serde_json::json!({}));
+    let b = &bean;
+    let name = entity.display_name_str();
+
+    let b64 = |s: &str| base64::engine::general_purpose::STANDARD.encode(s);
+    let b64url =
+        |s: &str| base64::engine::general_purpose::URL_SAFE_NO_PAD.encode(s);
+    let enc = |s: &str| {
+        percent_encoding::percent_encode(s.as_bytes(), percent_encoding::NON_ALPHANUMERIC)
+            .to_string()
+    };
+
+    match entity.r#type.as_str() {
+        "shadowsocks" => {
+            let method = b["method"].as_str().unwrap_or("aes-128-gcm");
+            let password = b["pass"].as_str().or(b["password"].as_str()).unwrap_or("");
+            let userinfo = b64url(&format!("{method}:{password}"));
+            Ok(format!(
+                "ss://{}@{}:{}#{}",
+                userinfo,
+                entity.server_address,
+                entity.server_port,
+                enc(&name)
+            ))
+        }
+        "vmess" => {
+            let stream = &b["stream"];
+            let payload = serde_json::json!({
+                "v": "2",
+                "ps": name,
+                "add": entity.server_address,
+                "port": entity.server_port.to_string(),
+                "id": b["id"].as_str().unwrap_or(""),
+                "aid": b["aid"].as_i64().unwrap_or(0),
+                "scy": b["sec"].as_str().unwrap_or("auto"),
+                "net": stream["net"].as_str().unwrap_or("tcp"),
+                "type": "none",
+                "host": stream["host"].as_str().unwrap_or(""),
+                "path": stream["path"].as_str().unwrap_or(""),
+                "tls": if stream["sec"].as_str().unwrap_or("") == "tls" { "tls" } else { "" },
+                "sni": stream["sni"].as_str().unwrap_or(""),
+            });
+            Ok(format!("vmess://{}", b64(&payload.to_string())))
+        }
+        "vless" | "trojan" => {
+            let password = b["pass"]
+                .as_str()
+                .or(b["id"].as_str())
+                .or(b["password"].as_str())
+                .unwrap_or("");
+            let stream = &b["stream"];
+            let mut query: Vec<(&str, String)> = Vec::new();
+            let sec = stream["sec"].as_str().unwrap_or("");
+            if sec == "tls" {
+                query.push(("security", "tls".into()));
+            }
+            let net = stream["net"].as_str().unwrap_or("");
+            if !net.is_empty() && net != "tcp" {
+                query.push(("type", net.into()));
+            }
+            for (k, field) in [("sni", "sni"), ("host", "host"), ("path", "path")] {
+                let v = stream[field].as_str().unwrap_or("");
+                if !v.is_empty() {
+                    query.push((k, enc(v)));
+                }
+            }
+            if entity.r#type == "vless" {
+                if let Some(flow) = b["flow"].as_str() {
+                    if !flow.is_empty() && flow != "none" {
+                        query.push(("flow", flow.into()));
+                    }
+                }
+            }
+            let qs = query
+                .iter()
+                .map(|(k, v)| format!("{k}={v}"))
+                .collect::<Vec<_>>()
+                .join("&");
+            let scheme = entity.r#type.as_str();
+            Ok(format!(
+                "{scheme}://{}@{}:{}?{}#{}",
+                enc(password),
+                entity.server_address,
+                entity.server_port,
+                qs,
+                enc(&name)
+            ))
+        }
+        other => Err(anyhow::anyhow!("share link export not supported for {other}")),
+    }
+}
+
+// ============================================================================
+// Subscription fetching
+// ============================================================================
+
+/// Fetch a subscription URL and return its body (blocking — call from a
+/// worker thread).
+pub fn fetch_subscription(url: &str, user_agent: Option<&str>) -> anyhow::Result<String> {
+    let mut req = reqwest::blocking::Client::builder()
+        .timeout(std::time::Duration::from_secs(30))
+        .build()?
+        .get(url);
+    if let Some(ua) = user_agent {
+        if !ua.is_empty() {
+            req = req.header(reqwest::header::USER_AGENT, ua);
+        }
+    }
+    let resp = req.send()?;
+    if !resp.status().is_success() {
+        anyhow::bail!("subscription fetch failed: HTTP {}", resp.status());
+    }
+    Ok(resp.text()?)
+}
+
+/// Fetch and parse a subscription into proxy entities.
+pub fn update_subscription(url: &str, user_agent: Option<&str>) -> anyhow::Result<Vec<ParsedProxy>> {
+    let body = fetch_subscription(url, user_agent)?;
+    parse_subscription(&body)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -360,6 +487,21 @@ mod tests {
         assert_eq!(entity.server_address, "example.com");
         assert_eq!(entity.server_port, 443);
         assert_eq!(entity.name, "Test");
+    }
+
+    #[test]
+    fn test_share_link_roundtrip() {
+        let link = "ss://YWVzLTEyOC1nY206dGVzdHBhc3NAZXhhbXBsZS5jb206NDQzLw==#Test";
+        let e = parse_share_link(link).unwrap();
+        let exported = to_share_link(&e).unwrap();
+        let e2 = parse_share_link(&exported).unwrap();
+        assert_eq!(e2.server_address, "example.com");
+        assert_eq!(e2.server_port, 443);
+        assert_eq!(e2.name, "Test");
+        assert_eq!(
+            e2.bean_cfg.unwrap()["pass"],
+            serde_json::json!("testpass")
+        );
     }
 
     #[test]

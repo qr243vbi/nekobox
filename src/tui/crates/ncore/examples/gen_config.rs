@@ -15,8 +15,20 @@ fn main() {
     if bean_path.exists() {
         proxy.bean_cfg = store::load_bean_cfg(&bean_path).ok();
     }
-    let ds = store::load_datastore(&base.join("nekobox.cfg")).unwrap_or_default();
+    // Both halves of the GUI's settings, then the routing chain it has active.
+    let ds = store::load_settings(&base);
+    let chain = store::list_store_files(&base, "route_profiles")
+        .unwrap_or_default()
+        .into_iter()
+        .filter_map(|(_, path)| store::load_route_chain(&path).ok())
+        .find(|c| c.base.id == ds.current_route_id);
+    eprintln!(
+        "routing profile: {} ({} rules)",
+        chain.as_ref().map_or("<none>", |c| c.chain_name.as_str()),
+        chain.as_ref().map_or(0, |c| c.rules.len()),
+    );
 
-    let config = ncore::config::build_config(&proxy, &ds).expect("build config");
+    let config = ncore::config::build_config_with_route(&proxy, &ds, chain.as_ref())
+        .expect("build config");
     println!("{}", serde_json::to_string_pretty(&config).unwrap());
 }

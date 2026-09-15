@@ -28,7 +28,7 @@ crossterm = "0.28"
 thrift = "0.17"
 
 # Networking
-reqwest = { version = "0.12", features = ["stream", "json", "cookies"] }
+reqwest = { version = "0.12", features = ["stream", "json", "cookies", "blocking"] }
 bytes = "1"
 
 # Error handling

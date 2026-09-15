@@ -87,7 +87,7 @@ impl BinValue {
     }
 
     /// Like [`BinValue::to_json`], but resolves enums using the field name.
-    fn to_json_named(&self, field: &str) -> serde_json::Value {
+    pub(crate) fn to_json_named(&self, field: &str) -> serde_json::Value {
         if let Self::Enum(v) = self {
             if let Some(name) = resolve_enum(field, *v) {
                 return name.into();
@@ -159,6 +159,15 @@ const KNOWN_NAMES: &[&str] = &[
     "lastup", "min_idle_session", "obfsPassword", "server_ports",
     "session_idle_check_interval", "session_idle_timeout", "streamReceiveWindow",
     "uploadMbps",
+    // RouteRule / RoutingChain (src/gharqad/dataStore/RouteEntity.cpp)
+    "update_url", "skip_update", "default_outbound", "rules", "ip_version",
+    "inbound", "outbound", "domain", "domain_suffix", "domain_keyword",
+    "domain_regex", "source_ip_cidr", "source_ip_is_private", "ip_cidr",
+    "ip_is_private", "source_port", "source_port_range", "process_path",
+    "process_path_regex", "process_name", "process_name_regex", "rule_set",
+    "invert", "outboundID", "actionType", "rejectMethod", "noDrop",
+    "override_address", "override_port", "sniffers", "sniffOverrideDest",
+    "strategy", "simple_action", "balancers", "dns", "rawJson", "port_range",
     // TrafficData (src/nekobox/dataStore/TrafficData.hpp)
     // ("dl"/"ul" already listed above)
     // DataStore (src/gharqad/dataStore/Configs.cpp)
@@ -198,6 +207,15 @@ const KNOWN_NAMES: &[&str] = &[
 ];
 
 pub const MAGIC: &[u8] = b"NekoBox";
+
+/// Convert a record list back into a JSON object, resolving enum fields to
+/// their string names (which the C++ `JsonEnum` accepts on load).
+pub fn records_to_json(records: &[(String, BinValue)]) -> serde_json::Map<String, serde_json::Value> {
+    records
+        .iter()
+        .map(|(k, v)| (k.clone(), v.to_json_named(k)))
+        .collect()
+}
 
 /// Check whether the file content is the binary format (vs JSON).
 pub fn is_binary(data: &[u8]) -> bool {

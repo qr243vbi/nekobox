@@ -24,6 +24,22 @@ pub enum Command {
     QueryStats,
     /// Poll active connections.
     ListConnections,
+    /// Run a speed test on the given outbound.
+    SpeedTest {
+        config_json: String,
+        tag: String,
+        download_addr: String,
+        timeout_ms: i32,
+        mode: SpeedTestMode,
+        /// Test the currently running outbound instead of `config_json`.
+        test_current: bool,
+    },
+    /// Abort a running URL/speed test.
+    StopTest,
+    /// Enable or disable the system DNS override.
+    SetSystemDns { enable: bool },
+    /// Fetch and parse a subscription URL (blocking HTTP in the worker).
+    UpdateSubscription { url: String, user_agent: Option<String> },
     /// Enable/disable the system proxy (address/port of the local inbound).
     SetSystemProxy {
         enable: bool,
@@ -44,6 +60,36 @@ pub enum Command {
     Shutdown,
 }
 
+/// Which speed test the GUI's Test menu entries map to.
+///
+/// Mirrors the `SpeedTestRequest` flag combinations used by
+/// `MainWindow::speedtest_current_group` for each menu action.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum SpeedTestMode {
+    /// "Full test" — download + upload.
+    Full,
+    /// "Download test"
+    Download,
+    /// "Upload test"
+    Upload,
+    /// "Country test" — resolve the exit country only.
+    Country,
+    /// "Simple download test" — fetch `simple_dl_url`.
+    SimpleDownload,
+}
+
+impl SpeedTestMode {
+    pub fn label(&self) -> &'static str {
+        match self {
+            Self::Full => "full test",
+            Self::Download => "download test",
+            Self::Upload => "upload test",
+            Self::Country => "country test",
+            Self::SimpleDownload => "simple download test",
+        }
+    }
+}
+
 /// Events from the worker to the UI.
 #[derive(Debug)]
 pub enum Event {
@@ -60,6 +106,17 @@ pub enum Event {
     },
     /// Active connections snapshot.
     Connections(Vec<ConnectionInfo>),
+    /// Speed test finished (or failed).
+    SpeedTestDone {
+        tag: String,
+        dl_speed: String,
+        ul_speed: String,
+        latency: i32,
+        country: String,
+        error: String,
+    },
+    /// Subscription fetched and parsed.
+    SubProfiles(Vec<ncore::model::ProxyEntity>),
     /// URL test results: (outbound_tag, latency_ms, error).
     UrlTestResults(Vec<(String, i32, String)>),
     /// A log line for the Logs pane.
@@ -277,6 +334,105 @@ impl Worker {
                         self.send(Event::Connections(conns));
                     }
                     Err(e) => self.error(format!("list connections failed: {e:#}")),
+                }
+            }
+            Command::SetSystemDns { enable } => {
+                let Some(core) = self.core.as_mut() else {
+                    self.error("system dns: core not connected".to_string());
+                    return;
+                };
+                // The RPC takes `clear`: true tears the override down.
+                match core.set_system_dns(!enable) {
+                    Ok(()) => self.log(format!(
+                        "system dns {}",
+                        if enable { "set" } else { "cleared" }
+                    )),
+                    Err(e) => self.error(format!("system dns failed: {e:#}")),
+                }
+            }
+            Command::StopTest => {
+                let Some(core) = self.core.as_mut() else {
+                    return;
+                };
+                match core.stop_test() {
+                    Ok(()) => self.log("testing stopped".to_string()),
+                    Err(e) => self.error(format!("stop test failed: {e:#}")),
+                }
+            }
+            Command::SpeedTest {
+                config_json,
+                tag,
+                download_addr,
+                timeout_ms,
+                mode,
+                test_current,
+            } => {
+                let Some(core) = self.core.as_mut() else {
+                    self.error("speed test: core not connected".to_string());
+                    return;
+                };
+                let req = nrpc::SpeedTestRequest {
+                    config: Some(config_json),
+                    outbound_tags: Some(vec![tag.clone()]),
+                    test_current: Some(test_current),
+                    use_default_outbound: Some(test_current),
+                    test_download: Some(matches!(
+                        mode,
+                        SpeedTestMode::Full | SpeedTestMode::Download | SpeedTestMode::SimpleDownload
+                    )),
+                    test_upload: Some(matches!(
+                        mode,
+                        SpeedTestMode::Full | SpeedTestMode::Upload
+                    )),
+                    simple_download: Some(mode == SpeedTestMode::SimpleDownload),
+                    simple_download_addr: Some(download_addr),
+                    timeout_ms: Some(timeout_ms),
+                    only_country: Some(mode == SpeedTestMode::Country),
+                    country_concurrency: Some(if mode == SpeedTestMode::Country { 1 } else { 0 }),
+                };
+                if let Err(e) = core.speed_test(req) {
+                    self.error(format!("speed test failed: {e:#}"));
+                    return;
+                }
+                // Poll until the core reports the test is done.
+                let deadline = std::time::Instant::now()
+                    + std::time::Duration::from_millis(timeout_ms as u64 + 10_000);
+                loop {
+                    std::thread::sleep(std::time::Duration::from_millis(500));
+                    match core.query_speed_test() {
+                        Ok(resp) if !resp.is_running.unwrap_or(true) => {
+                            let r = resp.result.unwrap_or_default();
+                            self.send(Event::SpeedTestDone {
+                                tag: tag.clone(),
+                                dl_speed: r.dl_speed.unwrap_or_default(),
+                                ul_speed: r.ul_speed.unwrap_or_default(),
+                                latency: r.latency.unwrap_or(0),
+                                country: r.server_country.unwrap_or_default(),
+                                error: r.error.unwrap_or_default(),
+                            });
+                            break;
+                        }
+                        Ok(_) => {
+                            if std::time::Instant::now() > deadline {
+                                self.error("speed test timed out".to_string());
+                                break;
+                            }
+                        }
+                        Err(e) => {
+                            self.error(format!("speed test query failed: {e:#}"));
+                            break;
+                        }
+                    }
+                }
+            }
+            Command::UpdateSubscription { url, user_agent } => {
+                match ncore::sub::update_subscription(&url, user_agent.as_deref()) {
+                    Ok(parsed) => {
+                        let entities =
+                            parsed.into_iter().map(|p| p.entity).collect::<Vec<_>>();
+                        self.send(Event::SubProfiles(entities));
+                    }
+                    Err(e) => self.error(format!("subscription update failed: {e:#}")),
                 }
             }
             Command::SetSystemProxy {

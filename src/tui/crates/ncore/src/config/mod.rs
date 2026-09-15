@@ -276,10 +276,12 @@ fn set_non_empty(out: &mut Value, key: &str, value: Option<&str>) {
     }
 }
 
-/// `add_network`: non-tcp network goes to the outbound top level (hysteria etc.)
+/// `add_network`: sing-box `network` only accepts tcp/udp (the C++
+/// NetworkEnum is exactly {tcp, udp}); anything else is a transport and
+/// belongs to the stream settings, not here.
 fn add_network(out: &mut Value, bean: &Value) {
     if let Some(net) = get_str(bean, &["network"]) {
-        if !net.is_empty() && net != "tcp" {
+        if net == "udp" {
             out["network"] = json!(net);
         }
     }
@@ -354,6 +356,20 @@ fn add_stream_settings(out: &mut Value, bean: &Value) {
 /// MVP version: SOCKS inbound from `DataStore`, the proxy's outbound,
 /// a direct outbound, and optional DNS object.
 pub fn build_config(proxy: &ProxyEntity, data_store: &DataStore) -> anyhow::Result<Value> {
+    build_config_with_route(proxy, data_store, None)
+}
+
+/// Build a full sing-box config, applying `chain` as the routing section.
+///
+/// Passing `None` yields a bare "everything through the proxy" route, which is
+/// what [`build_config`] does. The GUI always has a chain selected
+/// (`current_route_id`), so the TUI should pass one too — otherwise routing
+/// rules the user configured in the GUI are silently ignored.
+pub fn build_config_with_route(
+    proxy: &ProxyEntity,
+    data_store: &DataStore,
+    chain: Option<&crate::model::RoutingChain>,
+) -> anyhow::Result<Value> {
     let mut outbound = build_outbound(proxy);
     outbound["tag"] = json!("proxy");
 
@@ -379,12 +395,10 @@ pub fn build_config(proxy: &ProxyEntity, data_store: &DataStore) -> anyhow::Resu
         "inbounds": inbounds,
         "outbounds": [
             outbound,
-            { "tag": "direct", "type": "direct" }
+            { "tag": "direct", "type": "direct" },
+            { "tag": "block", "type": "block" },
         ],
-        "route": {
-            "rules": [],
-            "final": "proxy"
-        }
+        "route": build_route(data_store, chain),
     });
 
     // Add DNS config from DataStore if enabled
@@ -392,7 +406,116 @@ pub fn build_config(proxy: &ProxyEntity, data_store: &DataStore) -> anyhow::Resu
         config["dns"] = build_dns_object(&data_store.remote_dns, data_store.enable_tun_routing);
     }
 
+    if let Some(experimental) = build_experimental(data_store) {
+        config["experimental"] = experimental;
+    }
+
     Ok(config)
+}
+
+/// Build the `experimental` object.
+///
+/// `clash_api` is what makes `ListConnections` work: the core looks up a
+/// `ClashServer` in the box context and errors with "no clash server found"
+/// without it. The GUI emits the section whenever the Clash API port is set
+/// *or* connection statistics are enabled (`BuildConfig` in ConfigBuilder.cpp),
+/// using a `default_mode` placeholder in the latter case so the server is
+/// still constructed.
+fn build_experimental(data_store: &DataStore) -> Option<Value> {
+    let api_enabled = data_store.core_box_clash_api > 0;
+    if !api_enabled && !data_store.connection_statistics {
+        return None;
+    }
+    let clash_api = if api_enabled {
+        json!({
+            "external_controller": format!(
+                "{}:{}",
+                data_store.core_box_clash_listen_addr, data_store.core_box_clash_api
+            ),
+            "secret": data_store.core_box_clash_api_secret.clone().unwrap_or_default(),
+            "external_ui": "dashboard",
+        })
+    } else {
+        json!({ "default_mode": "" })
+    };
+    Some(json!({ "clash_api": clash_api }))
+}
+
+/// Build the `route` object: the active chain's rules, its rule sets, the
+/// tun-split process rules and the chain's default outbound.
+fn build_route(data_store: &DataStore, chain: Option<&crate::model::RoutingChain>) -> Value {
+    use crate::model::{
+        rule_set_json, ADBLOCK_RULE_SET, ADBLOCK_TAG, OUTBOUND_BLOCK, OUTBOUND_DIRECT,
+        OUTBOUND_PROXY,
+    };
+
+    let mut outbound_map = std::collections::HashMap::new();
+    outbound_map.insert(OUTBOUND_PROXY, "proxy".to_string());
+    outbound_map.insert(OUTBOUND_DIRECT, "direct".to_string());
+    outbound_map.insert(OUTBOUND_BLOCK, "block".to_string());
+
+    let mut rules: Vec<Value> = Vec::new();
+    let mut rule_sets: Vec<Value> = Vec::new();
+
+    if let Some(chain) = chain {
+        for rs in chain.used_rule_sets() {
+            if let Some(json) = rule_set_json(&rs) {
+                rule_sets.push(json);
+            }
+        }
+        rules.extend(chain.to_route_rules(&outbound_map, data_store.adblock_enable));
+    }
+    if data_store.adblock_enable
+        && !rule_sets
+            .iter()
+            .any(|rs| rs["tag"] == json!(ADBLOCK_TAG))
+    {
+        if let Some(mut json) = rule_set_json(ADBLOCK_RULE_SET) {
+            json["tag"] = json!(ADBLOCK_TAG);
+            rule_sets.push(json);
+        }
+    }
+
+    // Per-process routing only applies to the TUN inbound.
+    if data_store.enable_tun_routing {
+        let split = &data_store.tun_split;
+        if !split.proxy.is_empty() {
+            rules.push(json!({
+                "action": "route", "outbound": "proxy", "process_path": split.proxy
+            }));
+        }
+        if !split.direct.is_empty() {
+            rules.push(json!({
+                "action": "route", "outbound": "direct", "process_path": split.direct
+            }));
+        }
+        if !split.block.is_empty() {
+            rules.push(json!({ "action": "reject", "process_path": split.block }));
+        }
+    }
+
+    let final_tag = match chain.map(|c| c.default_outbound_id) {
+        Some(OUTBOUND_DIRECT) => "direct",
+        Some(OUTBOUND_BLOCK) => "block",
+        _ => "proxy",
+    };
+
+    let mut route = json!({
+        "rules": rules,
+        "final": final_tag,
+    });
+    // The GUI only auto-detects the interface in TUN mode.
+    if data_store.enable_tun_routing {
+        route["auto_detect_interface"] = json!(true);
+    }
+    // Needed for the Process column of the connections view.
+    if data_store.connection_statistics {
+        route["find_process"] = json!(true);
+    }
+    if !rule_sets.is_empty() {
+        route["rule_set"] = json!(rule_sets);
+    }
+    route
 }
 
 /// Build the TUN inbound (port of `BuildTunInbound` in ConfigBuilder.cpp).
