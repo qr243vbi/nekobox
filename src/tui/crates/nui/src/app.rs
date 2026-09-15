@@ -266,6 +266,10 @@ pub struct App {
     url_test_started: Option<Instant>,
 
     last_stats_poll: Instant,
+    /// When the stats sample currently in flight was requested — the core
+    /// reports deltas, so the rate needs the real interval between samples,
+    /// not the nominal `STATS_INTERVAL`.
+    last_stats_at: Option<Instant>,
     worker: WorkerHandle,
 }
 
@@ -401,6 +405,7 @@ impl App {
             url_test_expected: 0,
             url_test_started: None,
             last_stats_poll: Instant::now(),
+            last_stats_at: None,
             worker,
         };
         app.system_dns = app.datastore.system_dns_set;
@@ -640,29 +645,14 @@ impl App {
                 Event::Started => self.core_status = CoreStatus::Running,
                 Event::Stopped => {
                     self.core_status = CoreStatus::Stopped;
+                    self.persist_active_traffic();
                     self.active_profile_id = None;
                     self.traffic_proxy = TrafficData::new("proxy");
                     self.traffic_direct = TrafficData::new("direct");
+                    self.last_stats_at = None;
                     self.connections.clear();
                 }
-                Event::Stats { ups, downs } => {
-                    let sum = |map: &[(String, i64)], tag: &str| {
-                        map.iter().filter(|(k, _)| k == tag).map(|(_, v)| *v).sum()
-                    };
-                    let prev_up = self.traffic_proxy.up;
-                    let prev_down = self.traffic_proxy.down;
-                    self.traffic_proxy
-                        .update(sum(&ups, "proxy"), sum(&downs, "proxy"));
-                    self.traffic_direct
-                        .update(sum(&ups, "direct"), sum(&downs, "direct"));
-                    let dt = STATS_INTERVAL.as_secs_f64();
-                    let up_bps = ((self.traffic_proxy.up - prev_up) as f64 / dt) as u64;
-                    let down_bps = ((self.traffic_proxy.down - prev_down) as f64 / dt) as u64;
-                    if self.speed_history.len() >= SPEED_HISTORY_CAP {
-                        self.speed_history.pop_front();
-                    }
-                    self.speed_history.push_back((up_bps, down_bps));
-                }
+                Event::Stats { ups, downs } => self.apply_stats(&ups, &downs),
                 Event::Connections(conns) => self.connections = conns,
                 Event::SpeedTestDone {
                     tag,
@@ -745,6 +735,65 @@ impl App {
         self.start_profile(id);
     }
 
+    /// Fold one `QueryStats` sample into the session counters.
+    ///
+    /// The core's `TotalOutbound(tag)` swaps the counter to zero as it reads
+    /// it, so `ups`/`downs` are the bytes moved since the previous poll, not
+    /// running totals. `TrafficLooper::UpdateAll` in the GUI accumulates them
+    /// and divides by the measured interval for the rate; so do we.
+    fn apply_stats(&mut self, ups: &[(String, i64)], downs: &[(String, i64)]) {
+        let now = Instant::now();
+        let interval_ms = self
+            .last_stats_at
+            .map(|t| now.duration_since(t).as_millis() as i64)
+            .unwrap_or(0);
+        self.last_stats_at = Some(now);
+
+        let sum = |map: &[(String, i64)], tag: &str| -> i64 {
+            map.iter().filter(|(k, _)| k == tag).map(|(_, v)| *v).sum()
+        };
+        let (proxy_up, proxy_down) = (sum(ups, "proxy"), sum(downs, "proxy"));
+        self.traffic_proxy.add_delta(proxy_up, proxy_down, interval_ms);
+        self.traffic_direct
+            .add_delta(sum(ups, "direct"), sum(downs, "direct"), interval_ms);
+
+        // The running profile owns the "proxy" tag, so its lifetime counters
+        // (the table's Traffic column) grow by the same delta. The GUI keeps
+        // these on `ProxyEntity::traffic_data` and flushes them to disk when
+        // the profile stops; `persist_active_traffic` does that here.
+        if proxy_up != 0 || proxy_down != 0 {
+            if let Some(p) = self
+                .active_profile_id
+                .and_then(|id| self.profiles.get_mut(&id))
+            {
+                p.traffic_ul += proxy_up;
+                p.traffic_dl += proxy_down;
+            }
+        }
+
+        if self.speed_history.len() >= SPEED_HISTORY_CAP {
+            self.speed_history.pop_front();
+        }
+        self.speed_history.push_back((
+            self.traffic_proxy.up_rate.max(0.0) as u64,
+            self.traffic_proxy.down_rate.max(0.0) as u64,
+        ));
+    }
+
+    /// Write the running profile's accumulated traffic back to its `.json`,
+    /// mirroring the `profile->Save()` loop the GUI runs when stopping.
+    fn persist_active_traffic(&mut self) {
+        if let Some(p) = self
+            .active_profile_id
+            .and_then(|id| self.profiles.get(&id))
+            .cloned()
+        {
+            if let Err(e) = ncore::store::save_proxy_entity(&self.config_dir, &p) {
+                self.log(format!("failed to save traffic for profile {}: {e}", p.id));
+            }
+        }
+    }
+
     /// Periodic work: stats polling, URL test polling, transient expiry.
     pub fn maybe_tick(&mut self) {
         let now = Instant::now();
@@ -763,6 +812,13 @@ impl App {
         if self.core_status == CoreStatus::Running {
             if !self.datastore.disable_traffic_stats {
                 let _ = self.worker.tx.send(Command::QueryStats);
+            } else {
+                // Nothing will refresh the rates, so don't leave the status
+                // line frozen at whatever speed was showing when stats were
+                // switched off.
+                self.traffic_proxy.clear_rates();
+                self.traffic_direct.clear_rates();
+                self.last_stats_at = None;
             }
             // Listing connections needs the Clash API, which is only in the
             // config when connection statistics are on; polling it otherwise
@@ -947,6 +1003,12 @@ impl App {
                 }
             }
             Action::Stop => {
+                // Drain the counters one last time before the core goes away,
+                // like the GUI's final `UpdateAll()` on stop. The worker is a
+                // single thread, so this sample is delivered before `Stopped`.
+                if !self.datastore.disable_traffic_stats {
+                    let _ = self.worker.tx.send(Command::QueryStats);
+                }
                 let _ = self.worker.tx.send(Command::Stop);
             }
             Action::SelectAll => {
@@ -2242,6 +2304,11 @@ impl App {
     }
 
     fn quit(&mut self) {
+        // Traffic accumulated this session only lives in memory until the
+        // profile stops; flush it so quitting while running does not lose it.
+        if self.core_status == CoreStatus::Running {
+            self.persist_active_traffic();
+        }
         let _ = self.worker.tx.send(Command::Shutdown);
         self.running = false;
     }
@@ -2991,7 +3058,7 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
 
     let fmt_speeds = |t: &TrafficData| {
         let (up, down) = t.speeds();
-        format!("▲{} ▼{}", up.unwrap_or("0 B/s"), down.unwrap_or("0 B/s"))
+        format!("▲{up} ▼{down}")
     };
     let fmt_total = |t: &TrafficData| {
         format!(

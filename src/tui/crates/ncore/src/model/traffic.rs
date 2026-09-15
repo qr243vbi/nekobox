@@ -1,46 +1,43 @@
 //! `TrafficData.hpp` — traffic statistics tracking.
 //!
-//! Mirrors `TrafficData` from `src/nekobox/dataStore/TrafficData.hpp`.
+//! Mirrors `TrafficData` from `src/nekobox/dataStore/TrafficData.hpp` and the
+//! accumulation loop in `src/gharqad/stats/traffic/TrafficLooper.cpp`.
+//!
+//! **The core reports deltas, not totals.** `QueryStats` walks the clash
+//! traffic manager's per-outbound counters via `TotalOutbound(tag)`, which is
+//! `uploadMap[tag].Swap(0)` — reading drains the counter. So every poll
+//! returns the bytes moved *since the previous poll*, and a second poll with
+//! no traffic in between returns zero. `TrafficLooper::UpdateAll` accumulates
+//! (`item->uplink += up`) and derives the rate from the poll interval; this
+//! type does the same.
 
 use serde::{Deserialize, Serialize};
 
-/// Traffic data for a single proxy or the aggregate.
+/// Traffic data for a single outbound tag.
 ///
-/// Tracks cumulative upload/download bytes and provides formatted
-/// speed display strings.
+/// Accumulates the per-poll deltas the core hands out and keeps the last
+/// measured rate for display.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TrafficData {
     /// Traffic data name (e.g., "proxy", "direct", or proxy name)
     #[serde(default)]
     pub name: String,
 
-    /// Upload bytes (cumulative)
+    /// Upload bytes (cumulative over the session)
     #[serde(default)]
     pub up: i64,
 
-    /// Download bytes (cumulative)
+    /// Download bytes (cumulative over the session)
     #[serde(default)]
     pub down: i64,
 
-    /// Previous up value for delta calculation
+    /// Upload rate in bytes per second, from the last poll interval
     #[serde(default)]
-    prev_up: i64,
+    pub up_rate: f64,
 
-    /// Previous down value for delta calculation
+    /// Download rate in bytes per second, from the last poll interval
     #[serde(default)]
-    prev_down: i64,
-
-    /// Timestamp of last update (Unix epoch seconds)
-    #[serde(default)]
-    last_update: i64,
-
-    /// Formatted upload speed string (e.g., "1.2 MB/s")
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub up_speed: Option<String>,
-
-    /// Formatted download speed string
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub down_speed: Option<String>,
+    pub down_rate: f64,
 }
 
 impl TrafficData {
@@ -50,46 +47,47 @@ impl TrafficData {
             name: name.into(),
             up: 0,
             down: 0,
-            prev_up: 0,
-            prev_down: 0,
-            last_update: 0,
-            up_speed: None,
-            down_speed: None,
+            up_rate: 0.0,
+            down_rate: 0.0,
         }
     }
 
-    /// Update with new cumulative values.
-    pub fn update(&mut self, up: i64, down: i64) {
-        let now = chrono::Utc::now().timestamp();
-        let elapsed = if self.last_update > 0 {
-            (now - self.last_update) as f64
-        } else {
-            1.0
-        };
-
-        self.up_speed = Some(format_bytes_per_sec(up - self.prev_up, elapsed));
-        self.down_speed = Some(format_bytes_per_sec(down - self.prev_down, elapsed));
-
-        self.prev_up = up;
-        self.prev_down = down;
-        self.up = up;
-        self.down = down;
-        self.last_update = now;
+    /// Fold in one `QueryStats` sample.
+    ///
+    /// `up`/`down` are the deltas the core reported for this tag and
+    /// `interval_ms` is the time since the previous sample. A non-positive
+    /// interval only updates the totals — matching `TrafficLooper::UpdateAll`,
+    /// which skips the rate when the elapsed timer has not moved.
+    pub fn add_delta(&mut self, up: i64, down: i64, interval_ms: i64) {
+        self.up += up;
+        self.down += down;
+        if interval_ms > 0 {
+            self.up_rate = up as f64 * 1000.0 / interval_ms as f64;
+            self.down_rate = down as f64 * 1000.0 / interval_ms as f64;
+        }
     }
 
-    /// Get the current speed strings.
-    pub fn speeds(&self) -> (Option<&str>, Option<&str>) {
-        (self.up_speed.as_deref(), self.down_speed.as_deref())
+    /// Zero the rates without touching the totals (used when the core stops
+    /// reporting, so the status line does not freeze at the last speed).
+    pub fn clear_rates(&mut self) {
+        self.up_rate = 0.0;
+        self.down_rate = 0.0;
     }
-}
 
-/// Format bytes per second into a human-readable string.
-fn format_bytes_per_sec(bytes: i64, elapsed: f64) -> String {
-    if elapsed <= 0.0 {
-        return "0 B/s".into();
+    /// Formatted upload speed (e.g. `"1.2 MB/s"`).
+    pub fn up_speed(&self) -> String {
+        format_bytes(self.up_rate.max(0.0) as u64, true)
     }
-    let bps = (bytes as f64) / elapsed;
-    format_bytes(bps as u64, true)
+
+    /// Formatted download speed.
+    pub fn down_speed(&self) -> String {
+        format_bytes(self.down_rate.max(0.0) as u64, true)
+    }
+
+    /// Get both formatted speed strings.
+    pub fn speeds(&self) -> (String, String) {
+        (self.up_speed(), self.down_speed())
+    }
 }
 
 /// Format bytes into a human-readable string.
@@ -123,5 +121,40 @@ mod tests {
         assert_eq!(format_bytes(1024, false), "1.0 KB");
         assert_eq!(format_bytes(1_048_576, false), "1.0 MB");
         assert!(format_bytes(1_048_576, true).contains("MB/s"));
+    }
+
+    /// `QueryStats` hands out deltas that are drained on read, so repeated
+    /// samples must add up rather than overwrite.
+    #[test]
+    fn test_deltas_accumulate() {
+        let mut t = TrafficData::new("proxy");
+        t.add_delta(75, 870, 1000);
+        t.add_delta(75, 870, 1000);
+        assert_eq!(t.up, 150);
+        assert_eq!(t.down, 1740);
+    }
+
+    #[test]
+    fn test_rate_from_interval() {
+        let mut t = TrafficData::new("proxy");
+        // 2048 bytes over half a second is 4096 B/s.
+        t.add_delta(0, 2048, 500);
+        assert_eq!(t.down_rate, 4096.0);
+        assert_eq!(t.down_speed(), "4.0 KB/s");
+
+        // An idle interval drops the rate back to zero but keeps the total.
+        t.add_delta(0, 0, 1000);
+        assert_eq!(t.down_rate, 0.0);
+        assert_eq!(t.down, 2048);
+    }
+
+    /// A zero interval must not divide by zero or wipe the last known rate.
+    #[test]
+    fn test_zero_interval_keeps_rate() {
+        let mut t = TrafficData::new("proxy");
+        t.add_delta(0, 1000, 1000);
+        t.add_delta(0, 500, 0);
+        assert_eq!(t.down_rate, 1000.0);
+        assert_eq!(t.down, 1500);
     }
 }
