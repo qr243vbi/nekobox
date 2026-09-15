@@ -139,7 +139,7 @@ Supported JSON subscription features include:
 
 - [starifly/NekoBoxForAndroid](https://github.com/starifly/NekoBoxForAndroid)
 - [Thrift](https://thrift.apache.org/)
-- [enfein/mieru](https://github.com/enfein/mbox)
+- [enfein/mieru](https://github.com/enfein/mieru)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - [Qt](https://www.qt.io/)

@@ -117,6 +117,7 @@ public:
 #endif
       ;
   bool auto_scroll_log = true;
+  bool errors_only = false;
   bool no_symlinks = true;
   bool logs_enabled = true;
   bool test_after_start = true;

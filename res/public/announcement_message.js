@@ -1,3 +1,5 @@
+
+/*
 if (first_start){
     let array = [translate("OK"), translate("Open homepage"), translate("Open support channel")];
     let index = ask(
@@ -12,3 +14,4 @@ if (first_start){
         open_url("https://matrix.to/#/#NyameBox:matrix.org");
     }
 }
+*/

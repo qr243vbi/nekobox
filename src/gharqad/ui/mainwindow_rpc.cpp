@@ -863,7 +863,9 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
     Stats::trafficLooper->UpdateAll();
     for (const auto &item: Stats::trafficLooper->items) {
         if (item->id < 0) continue;
-        Configs::profileManager->GetProfile(item->id)->Save();
+        auto profile = Configs::profileManager->GetProfile(item->id);
+        if (profile == nullptr) continue;
+        profile->Save();
         refresh_proxy_list(item->id);
     }
     Stats::trafficLooper->loop_mutex.unlock();

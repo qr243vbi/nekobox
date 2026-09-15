@@ -21,6 +21,7 @@
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/global/LogRouteHelper.hpp>
 #include <nekobox/global/keyvaluerange.h>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
 #include <nekobox/sys/AutoRun.hpp>
@@ -84,6 +85,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QInputDialog>
+#include <QSignalBlocker>
 #include <QLabel>
 #include <QMessageBox>
 #include <QScreen>
@@ -139,6 +141,7 @@ if (grp != nullptr) {                                     \
 #else
 #define STATE_CHANGED &QCheckBox::stateChanged
 #endif
+#define logErrorsOnlyFilter Configs::windowSettings->errors_only
 
 void MainWindow::set_icons() {
     set_icons_from_settings();
@@ -907,10 +910,22 @@ MainWindow::MainWindow(QWidget *parent)
   logAutoScrollCheckBox =
       new QCheckBox(tr("Auto-scroll log"), ui->stats_widget);
   logAutoScrollCheckBox->setChecked(Configs::windowSettings->auto_scroll_log);
-  ui->stats_widget->setCornerWidget(logAutoScrollCheckBox, Qt::TopRightCorner);
-  auto updateAutoScrollVisibility = [=, this]() {
-    logAutoScrollCheckBox->setVisible(ui->stats_widget->currentWidget() ==
-                                      ui->Logs);
+
+  logErrorsOnlyCheckBox = new QCheckBox(tr("Errors only"), ui->stats_widget);
+  logErrorsOnlyCheckBox->setChecked(logErrorsOnlyFilter);
+
+  auto *logCorner = new QWidget(ui->stats_widget);
+  auto *logCornerLayout = new QHBoxLayout(logCorner);
+  logCornerLayout->setContentsMargins(0, 0, 4, 0);
+  logCornerLayout->setSpacing(8);
+  logCornerLayout->addWidget(logErrorsOnlyCheckBox);
+  logCornerLayout->addWidget(logAutoScrollCheckBox);
+  ui->stats_widget->setCornerWidget(logCorner, Qt::TopRightCorner);
+
+  auto updateLogCornerVisibility = [=, this]() {
+    const bool onLogs = ui->stats_widget->currentWidget() == ui->Logs;
+    logAutoScrollCheckBox->setVisible(onLogs);
+    logErrorsOnlyCheckBox->setVisible(onLogs);
   };
   layout->addWidget(searchButton);
   layout->addWidget(filterButton);
@@ -919,9 +934,9 @@ MainWindow::MainWindow(QWidget *parent)
   connect(filterButton, &QPushButton::clicked, this, &MainWindow::on_menu_toggle_filter_triggered);
   connect(searchButton, &QPushButton::clicked, this, &MainWindow::on_menu_toggle_searchbox_triggered);
 
-  updateAutoScrollVisibility();
+  updateLogCornerVisibility();
   connect(ui->stats_widget, &QTabWidget::currentChanged, this,
-          [=](int) { updateAutoScrollVisibility(); });
+          [=](int) { updateLogCornerVisibility(); });
   connect(logAutoScrollCheckBox, &QCheckBox::toggled, this,
           [=, this](bool checked) {
             Configs::windowSettings->auto_scroll_log = checked;
@@ -929,6 +944,11 @@ MainWindow::MainWindow(QWidget *parent)
               auto bar = ui->masterLogBrowser->verticalScrollBar();
               bar->setValue(bar->maximum());
             }
+          });
+  connect(logErrorsOnlyCheckBox, &QCheckBox::toggled, this,
+          [=, this](bool checked) {
+            logErrorsOnlyFilter = checked;
+            rebuildLogView();
           });
   MW_show_log = [=, this](const QString &log) {
     runOnUiThread([=, this] { show_log_impl(log); });
@@ -4370,6 +4390,46 @@ inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
   cursor.endEditBlock();
 }
 
+void MainWindow::rebuildLogView() {
+  logLock.lock();
+  qvLogDocument->clear();
+  QStringList visibleLines;
+  for (const auto &entry : logLineBuffer) {
+    if (!logErrorsOnlyFilter || entry.isError) {
+      visibleLines << entry.text;
+    }
+  }
+  if (!visibleLines.isEmpty()) {
+    FastAppendTextDocument(visibleLines.join('\n'), qvLogDocument);
+    if (Configs::windowSettings->auto_scroll_log) {
+      auto bar = ui->masterLogBrowser->verticalScrollBar();
+      bar->setValue(bar->maximum());
+    }
+  }
+  logLock.unlock();
+}
+
+void MainWindow::addLogDomainToRoute(const QString &domain,
+                                     Configs::simpleAction action,
+                                     const QString &matchType) {
+  const QString err = LogRoute::addDomainToRoute(domain, action, matchType);
+  if (!err.isEmpty()) {
+    MessageBoxWarning(tr("Route"), err);
+    return;
+  }
+
+  QString matchLabel = tr("suffix");
+  if (matchType == "domain") {
+    matchLabel = tr("domain");
+  } else if (matchType == "keyword") {
+    matchLabel = tr("keyword");
+  }
+
+  MW_show_log(tr("[Route] Added %1:%2 → %3")
+                  .arg(matchLabel, domain, LogRoute::simpleActionLabel(action)));
+  MW_dialog_message("", "UpdateDataStore,RouteChanged");
+}
+
 void MainWindow::show_log_impl(const QString &log) {
   if (!Configs::windowSettings->logs_enabled) {
     return;
@@ -4383,8 +4443,13 @@ void MainWindow::show_log_impl(const QString &log) {
   } else {
     trimmed = sanitizeLog(log).trimmed();
   }
+
+  if (trimmed.isEmpty()) {
+    logLock.unlock();
+    return;
+  }
+
   int blockCount = qvLogDocument->blockCount();
-  // Check the number of blocks
   if (logClear) {
     if (blockCount > 300) {
       QTextBlock currentBlock = qvLogDocument->begin();
@@ -4404,18 +4469,37 @@ void MainWindow::show_log_impl(const QString &log) {
     }
   }
 
-  if (!trimmed.isEmpty()) {
-    runOnUiThread([trimmedBatch = std::move(trimmed), this] {
+  QStringList linesToShow;
+  const auto lines = trimmed.split('\n');
+  for (const QString &line : lines) {
+    const QString cleanLine = line.trimmed();
+    if (cleanLine.isEmpty()) {
+      continue;
+    }
+
+    LogLineEntry entry;
+    entry.text = cleanLine;
+    entry.isError = LogRoute::isErrorLine(cleanLine);
+    logLineBuffer.append(entry);
+    while (logLineBuffer.size() > kMaxLogBufferLines) {
+      logLineBuffer.removeFirst();
+    }
+
+    if (!logErrorsOnlyFilter || entry.isError) {
+      linesToShow << cleanLine;
+    }
+  }
+
+  if (!linesToShow.isEmpty()) {
+    runOnUiThread([linesToShow = std::move(linesToShow), this] {
       auto bar = ui->masterLogBrowser->verticalScrollBar();
       auto layout = qvLogDocument->documentLayout();
-      // Anchor to the block at the top of the viewport; if trim shifts its
-      // document-Y afterwards, we replay the original sub-block offset.
       QTextBlock anchorBlock =
           ui->masterLogBrowser->cursorForPosition(QPoint(0, 0)).block();
       int viewportOffset =
           bar->value() -
           static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
-      FastAppendTextDocument(trimmedBatch, qvLogDocument);
+      FastAppendTextDocument(linesToShow.join('\n'), qvLogDocument);
       if (Configs::windowSettings->auto_scroll_log) {
         bar->setValue(bar->maximum());
       } else if (anchorBlock.isValid()) {
@@ -4435,9 +4519,64 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 
   QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
 
+  auto cursor = ui->masterLogBrowser->textCursor();
+  QString contextText = cursor.selectedText();
+  contextText.replace(QChar(0x2029), '\n');
+  if (contextText.trimmed().isEmpty()) {
+    contextText = cursor.block().text();
+  }
+
+  const QStringList domains = LogRoute::extractDomains(contextText);
+  if (!domains.isEmpty()) {
+    auto sepRoute = new QAction(this);
+    sepRoute->setSeparator(true);
+    menu->addAction(sepRoute);
+
+    auto *addMenu = menu->addMenu(tr("Add to route"));
+    for (const QString &domain : domains) {
+      auto *domainMenu = addMenu->addMenu(domain);
+      const auto addAction = [=, this](Configs::simpleAction action,
+                                       const QString &matchType,
+                                       const QString &label) {
+        auto *act = domainMenu->addAction(label);
+        connect(act, &QAction::triggered, this, [=, this]() {
+          addLogDomainToRoute(domain, action, matchType);
+        });
+      };
+      addAction(Configs::direct, "suffix",
+                tr("Direct (suffix)"));
+      addAction(Configs::proxy, "suffix",
+                tr("Proxy (suffix)"));
+      addAction(Configs::block, "suffix",
+                tr("Block (suffix)"));
+      addAction(Configs::direct, "domain",
+                tr("Direct (exact domain)"));
+      addAction(Configs::proxy, "domain",
+                tr("Proxy (exact domain)"));
+    }
+  }
+
   auto sep = new QAction(this);
   sep->setSeparator(true);
   menu->addAction(sep);
+
+  auto *enableAutoScroll = menu->addAction(tr("Enable auto-scroll"));
+  enableAutoScroll->setCheckable(true);
+  enableAutoScroll->setChecked(Configs::windowSettings->auto_scroll_log);
+  connect(enableAutoScroll, &QAction::triggered, this, [=, this](bool checked) {
+    if (logAutoScrollCheckBox != nullptr){
+      logAutoScrollCheckBox->setChecked(checked);
+    }
+  });
+
+  auto *errorsOnlyAction = menu->addAction(tr("Show errors only"));
+  errorsOnlyAction->setCheckable(true);
+  errorsOnlyAction->setChecked(logErrorsOnlyFilter);
+  connect(errorsOnlyAction, &QAction::triggered, this, [=, this](bool checked) {
+    if (logErrorsOnlyCheckBox != nullptr) {
+      logErrorsOnlyCheckBox->setChecked(checked);
+    }
+  });
 
   auto action_clear = new QAction(this);
   auto action_stop = new QAction(this);
@@ -4448,6 +4587,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 
   connect(action_clear, &QAction::triggered, this, [=, this] {
     CHECK_ACTION_ACCESS_W
+    logLineBuffer.clear();
     qvLogDocument->clear();
     ui->masterLogBrowser->clear();
   });

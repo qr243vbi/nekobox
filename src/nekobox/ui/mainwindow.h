@@ -209,6 +209,11 @@ public:
 
     void show_log_impl(const QString &log);
 
+    void rebuildLogView();
+
+    void addLogDomainToRoute(const QString &domain, Configs::simpleAction action,
+                             const QString &matchType);
+
     void menu_server_about_to_show(QMenu * menu);
 
  //   void start_select_mode(QObject *context, const std::function<void(int)> &callback);
@@ -362,9 +367,16 @@ private:
     qint64 vpn_pid = 0;
     //
     QCheckBox *logAutoScrollCheckBox = nullptr;
+    QCheckBox *logErrorsOnlyCheckBox = nullptr;
     QToolButton * filterButton = nullptr;
     QToolButton * searchButton = nullptr;
     QTextDocument *qvLogDocument = new QTextDocument(this);
+    struct LogLineEntry {
+        QString text;
+        bool isError = false;
+    };
+    QList<LogLineEntry> logLineBuffer;
+    static constexpr int kMaxLogBufferLines = 2000;
     //
     QString title_error;
     int icon_status = -1;

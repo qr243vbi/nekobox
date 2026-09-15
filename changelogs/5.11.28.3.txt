@@ -1,0 +1,4 @@
+- fix: avoid crash when traffic profile is missing
+- feat: update sing-box to 1.13.19
+- feat: update mieru to 3.36.0
+- feat: add log error filter and quick route add from log

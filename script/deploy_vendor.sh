@@ -3,9 +3,7 @@ source script/env_deploy.sh
 pushd "$SRC_ROOT"
 
 pushd core/server
-pushd gen
- ./update_libs.sh
-popd
+./go_init.sh
 
 if [[ ! -f srslist.json ]]
 then

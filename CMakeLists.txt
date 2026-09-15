@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(nekobox VERSION 5.11.28.2)
+project(nekobox VERSION 5.11.28.3)
 
 option(GENERATE_VERSION_AND_CHANGELOG "Generate only changelog and version" OFF)
 

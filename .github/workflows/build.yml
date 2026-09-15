@@ -136,19 +136,19 @@ jobs:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.25.9"
+            go_version: "1.26.0"
           - cross_os: windows
             cross_arch: amd64
             allow: ${{ github.event.inputs.build_windows_x64 }}
-            go_version: "1.25.9"
+            go_version: "1.26.0"
           - cross_os: windows
             cross_arch: arm64
             allow: ${{ github.event.inputs.build_windows_arm64 }}
-            go_version: "1.25.9"
+            go_version: "1.26.0"
           - cross_os: windows
             cross_arch: 386
             allow: ${{ github.event.inputs.build_windows_x86 }}
-            go_version: "1.25.9"
+            go_version: "1.26.0"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
