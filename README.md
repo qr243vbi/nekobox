@@ -93,31 +93,32 @@ sudo apt-get install -y nekobox
 
 ## Supported protocols
  
-- SOCKS
+- AmneziaWG
+- AnyTLS
+- Chaining outbounds
+- Custom Config
+- Custom Outbound
+- Extra Core
 - HTTP(S)
-- Shadowsocks
-- Trojan
-- VMess
-- VLESS
 - Hysteria 1
 - Hysteria 2
-- TUIC 
-- AnyTLS
-- ShadowTLS
-- Mieru
 - Juicity
-- TrustTunnel
+- Mieru
 - Naive
-- Wireguard
-- AmneziaWG
-- Tailscale
-- SSH
-- Tor
+- Reality
+- Shadowsocks
+- ShadowTLS
 - Snell
-- Custom Outbound
-- Custom Config
-- Extra Core
-- Chaining outbounds
+- SOCKS
+- SSH
+- Tailscale
+- Tor
+- Trojan
+- TrustTunnel
+- TUIC 
+- VLESS
+- VMess
+- Wireguard
 
 ## Subscription Formats
 
