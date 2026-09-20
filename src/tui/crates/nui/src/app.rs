@@ -1148,7 +1148,7 @@ impl App {
         }
         self.datastore.enable_tun_routing = self.spmode.is_tun();
         let chain = self.active_chain().cloned();
-        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref()) {
+        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref(), Some(&self.profiles)) {
             Ok(config) => {
                 self.notify(format!("starting: {}", profile.display_type_and_name()));
                 self.active_profile_id = Some(id);
@@ -1334,7 +1334,7 @@ impl App {
             return;
         };
         let chain = self.active_chain().cloned();
-        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref()) {
+        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref(), Some(&self.profiles)) {
             Ok(config) => {
                 let body = serde_json::to_string_pretty(&config).unwrap_or_else(|_| config.to_string());
                 let _ = clipboard_set(body.clone());
@@ -1457,7 +1457,7 @@ impl App {
                 self.profiles.get(id).is_none_or(|p| {
                     p.server_address.trim().is_empty()
                         || p.server_port <= 0
-                        || ncore::config::build_outbound(p).get("type").is_none()
+                        || ncore::config::build_outbound(p, false, None).get("type").is_none()
                 })
             })
             .collect();
@@ -1758,7 +1758,7 @@ impl App {
             self.notify("url test: nothing to test");
             return;
         }
-        let (config_json, tags) = ncore::config::build_test_config(&profiles);
+        let (config_json, tags) = ncore::config::build_test_config(&profiles, &self.datastore);
         self.url_test_running = true;
         self.url_test_expected = tags.len();
         self.url_test_done.clear();
@@ -1785,7 +1785,7 @@ impl App {
             return;
         };
         let name = p.display_type_and_name();
-        let (config_json, tags) = ncore::config::build_test_config(&[p]);
+        let (config_json, tags) = ncore::config::build_test_config(&[p], &self.datastore);
         let Some(tag) = tags.into_iter().next() else {
             return;
         };

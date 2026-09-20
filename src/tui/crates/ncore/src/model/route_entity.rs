@@ -393,9 +393,53 @@ fn str_hash(s: &str) -> u32 {
     h
 }
 
-/// Build the `route.rule_set[]` entry for a rule-set reference, or `None` when
-/// it is not a downloadable rule set. Port of `get_rule_set_json`.
-pub fn rule_set_json(rule_set: &str) -> Option<Value> {
+/// `ruleset_mirror` values (mirrors `Configs::Mirrors` in Const.hpp).
+pub mod mirror {
+    pub const GITHUB: i32 = 0;
+    pub const CLOUDFLARE: i32 = 1;
+    pub const GCORE: i32 = 2;
+    pub const QUANTIL: i32 = 3;
+    pub const FASTLY: i32 = 4;
+    pub const CDN: i32 = 5;
+}
+
+/// Port of `get_jsdelivr_link`: rewrite `raw.githubusercontent.com` URLs to
+/// the configured jsDelivr mirror; everything else passes through unchanged.
+fn apply_ruleset_mirror(link: &str, mirror_value: i32) -> String {
+    if mirror_value == mirror::GITHUB {
+        return link.to_string();
+    }
+    let host_prefix = match mirror_value {
+        mirror::GCORE => "https://gcore.jsdelivr.net/gh",
+        mirror::QUANTIL => "https://quantil.jsdelivr.net/gh",
+        mirror::FASTLY => "https://fastly.jsdelivr.net/gh",
+        mirror::CDN => "https://cdn.jsdelivr.net/gh",
+        // CLOUDFLARE and anything unknown
+        _ => "https://testingcf.jsdelivr.net/gh",
+    };
+    let Ok(url) = url::Url::parse(link) else {
+        return link.to_string();
+    };
+    if url.host_str() != Some("raw.githubusercontent.com") {
+        return link.to_string();
+    }
+    // /owner/repo/branch/path... → /owner/repo@branch/path...
+    let mut out = String::from(host_prefix);
+    for (i, seg) in url.path().split('/').filter(|s| !s.is_empty()).enumerate() {
+        if i == 2 {
+            out.push('@');
+        } else {
+            out.push('/');
+        }
+        out.push_str(seg);
+    }
+    out
+}
+
+/// Build the `route.rule_set[]` entry for a rule-set reference, or `None`
+/// when it is not a downloadable rule set (named sets resolved by the GUI's
+/// downloaded ruleSetMap are out of scope here). Port of `get_rule_set_json`.
+pub fn rule_set_json(rule_set: &str, mirror_value: i32) -> Option<Value> {
     let file_name = rule_set_file_name(rule_set)?;
     let format = if file_name.ends_with(".srs") {
         "binary"
@@ -406,7 +450,7 @@ pub fn rule_set_json(rule_set: &str) -> Option<Value> {
         "type": "remote",
         "format": format,
         "tag": rule_set_tag(rule_set),
-        "url": rule_set,
+        "url": apply_ruleset_mirror(rule_set, mirror_value),
     }))
 }
 
@@ -430,7 +474,7 @@ impl RouteRule {
             && self.process_name.is_empty()
             && self.process_path.is_empty()
             && self.process_path_regex.is_empty()
-            && self.protocol.as_deref() == Some("")
+            && self.protocol.as_deref().unwrap_or("").is_empty()
             && self.rule_set.is_empty()
     }
 }

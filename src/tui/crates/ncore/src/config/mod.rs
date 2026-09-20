@@ -16,7 +16,8 @@ use serde_json::{json, Value};
 /// Port of `BuildCoreObjSingBox` from the per-protocol beans
 /// (`ShadowSocksBean`, `VMessBean`, `TrojanVLESSBean`, ...).
 /// `add_default_fields` always contributes `type`/`server`/`server_port`.
-pub fn build_outbound(proxy: &ProxyEntity) -> Value {
+/// `skip_cert` and `default_utls` come from the DataStore.
+pub fn build_outbound(proxy: &ProxyEntity, skip_cert: bool, default_utls: Option<&str>) -> Value {
     let bean = proxy.bean_cfg.clone().unwrap_or_else(|| json!({}));
 
     let mut out = json!({
@@ -45,7 +46,7 @@ pub fn build_outbound(proxy: &ProxyEntity) -> Value {
                 str_or(&bean, &["sec", "security"], "auto"),
             );
             add_network(&mut out, &bean);
-            add_stream_settings(&mut out, &bean);
+            add_stream_settings(&mut out, &bean, skip_cert, default_utls);
         }
         "vless" | "trojan" => {
             // On-disk bean: {"network", "pass", "flow", "stream", "enc"}
@@ -61,7 +62,16 @@ pub fn build_outbound(proxy: &ProxyEntity) -> Value {
                 set(&mut out, "password", str_or(&bean, &["pass", "password"], ""));
             }
             add_network(&mut out, &bean);
-            add_stream_settings(&mut out, &bean);
+            add_stream_settings(&mut out, &bean, skip_cert, default_utls);
+            // Trojan is always TLS: the GUI defaults security to "tls" on
+            // import, but a hand-written bean without it must still get one.
+            if proxy.r#type == "trojan" && out.get("tls").is_none() {
+                let empty = json!({});
+                let stream = bean.get("stream").unwrap_or(&empty);
+                let mut tls = json!({ "enabled": true });
+                set_non_empty(&mut tls, "server_name", get_str(stream, &["sni"]));
+                out["tls"] = tls;
+            }
         }
         "socks" => {
             set(&mut out, "version", "5");
@@ -81,7 +91,7 @@ pub fn build_outbound(proxy: &ProxyEntity) -> Value {
                 "password",
                 get_str(&bean, &["pass", "password"]),
             );
-            add_stream_settings(&mut out, &bean);
+            add_stream_settings(&mut out, &bean, skip_cert, default_utls);
         }
         "direct" | "block" | "dns" => {
             // Type-only outbounds; nothing else needed.
@@ -198,7 +208,7 @@ pub fn build_outbound(proxy: &ProxyEntity) -> Value {
                 str_or(&bean, &["session_idle_timeout"], "30s"),
             );
             out["min_idle_session"] = json!(get_i64(&bean, &["min_idle_session"], 0));
-            add_stream_settings(&mut out, &bean);
+            add_stream_settings(&mut out, &bean, skip_cert, default_utls);
         }
         _ => {
             // Best effort for the remaining protocols (wireguard, custom,
@@ -215,7 +225,7 @@ pub fn build_outbound(proxy: &ProxyEntity) -> Value {
                     }
                 }
             }
-            add_stream_settings(&mut out, &bean);
+            add_stream_settings(&mut out, &bean, skip_cert, default_utls);
         }
     }
 
@@ -297,12 +307,14 @@ fn add_udp_over_tcp(out: &mut Value, bean: &Value) {
     };
 }
 
-/// Port of `V2rayStreamSettings::BuildStreamSettingsSingBox` (MVP subset):
-/// ws/grpc/http/httpupgrade transports and TLS (sni/alpn/insecure).
+/// Port of `V2rayStreamSettings::BuildStreamSettingsSingBox`:
+/// ws/http/grpc/httpupgrade/xhttp transports, TCP+headerType-http, and TLS
+/// with insecure/certificate/alpn/reality/utls/fragment. `skip_cert` and
+/// `default_utls` come from the DataStore.
 ///
 /// Tolerates both key spellings: on-disk GUI beans use `net`/`sec`,
 /// our share-link parser writes `network`/`tls`.
-fn add_stream_settings(out: &mut Value, bean: &Value) {
+fn add_stream_settings(out: &mut Value, bean: &Value, skip_cert: bool, default_utls: Option<&str>) {
     let empty = json!({});
     let stream = bean.get("stream").unwrap_or(&empty);
 
@@ -314,7 +326,22 @@ fn add_stream_settings(out: &mut Value, bean: &Value) {
         let mut transport = json!({ "type": network });
         match network {
             "ws" => {
-                set_non_empty(&mut transport, "path", Some(path));
+                // "?ed=N" in the path means early data.
+                let (path_no_ed, ed) = match path.split_once("?ed=") {
+                    Some((p, n)) => (p, n.parse::<i64>().unwrap_or(0)),
+                    None => (path, 0),
+                };
+                set_non_empty(&mut transport, "path", Some(path_no_ed));
+                let ed_len = get_i64(stream, &["ed_len"], 0);
+                let (ed, ed_name) = if ed > 0 {
+                    (ed, "Sec-WebSocket-Protocol".to_string())
+                } else {
+                    (ed_len, str_or(stream, &["ed_name"], "").to_string())
+                };
+                if ed > 0 {
+                    transport["max_early_data"] = json!(ed);
+                    transport["early_data_header_name"] = json!(ed_name);
+                }
                 if !host.is_empty() {
                     transport["headers"] = json!({ "Host": host });
                 }
@@ -322,24 +349,48 @@ fn add_stream_settings(out: &mut Value, bean: &Value) {
             "grpc" => {
                 set_non_empty(&mut transport, "service_name", Some(path));
             }
-            "http" | "httpupgrade" => {
+            "http" => {
+                set_non_empty(&mut transport, "path", Some(path));
+                let method = str_or(stream, &["method"], "").to_uppercase();
+                set_non_empty(&mut transport, "method", Some(&method));
+                if !host.is_empty() {
+                    transport["host"] = json!(host.split(',').collect::<Vec<_>>());
+                }
+            }
+            "httpupgrade" | "xhttp" => {
                 set_non_empty(&mut transport, "path", Some(path));
                 set_non_empty(&mut transport, "host", Some(host));
+                if network == "xhttp" {
+                    if let Some(mode) = get_str(stream, &["xhttp_mode"]) {
+                        if !mode.is_empty() {
+                            transport["mode"] = json!(mode);
+                        }
+                    }
+                }
             }
             _ => {}
         }
         out["transport"] = transport;
+    } else if get_str(stream, &["h_type"]) == Some("http") {
+        // TCP with headerType=http masquerading.
+        out["transport"] = json!({
+            "type": "http",
+            "method": "GET",
+            "path": path,
+            "headers": { "Host": host.split(',').collect::<Vec<_>>() },
+        });
     }
 
     let security = get_str(stream, &["sec", "tls"]).unwrap_or("");
     if security == "tls" {
         let mut tls = json!({ "enabled": true });
         set_non_empty(&mut tls, "server_name", get_str(stream, &["sni"]));
+        set_non_empty(&mut tls, "certificate", get_str(stream, &["cert"]));
         let insecure = stream
             .get("insecure")
             .and_then(Value::as_bool)
             .unwrap_or(false);
-        if insecure {
+        if insecure || skip_cert {
             tls["insecure"] = json!(true);
         }
         if let Some(alpn) = get_str(stream, &["alpn"]) {
@@ -347,7 +398,39 @@ fn add_stream_settings(out: &mut Value, bean: &Value) {
                 tls["alpn"] = json!(alpn.split(',').collect::<Vec<_>>());
             }
         }
+        let pbk = get_str(stream, &["pbk"]).unwrap_or("");
+        let mut fp = get_str(stream, &["utls"]).unwrap_or("");
+        if !pbk.is_empty() {
+            let sid = str_or(stream, &["sid"], "");
+            tls["reality"] = json!({
+                "enabled": true,
+                "public_key": pbk,
+                "short_id": sid.split(',').next().unwrap_or(""),
+            });
+            if fp.is_empty() {
+                fp = default_utls.unwrap_or("random");
+            }
+        }
+        if !fp.is_empty() {
+            tls["utls"] = json!({ "enabled": true, "fingerprint": fp });
+        }
+        if get_bool(stream, &["tls_frag"], false) {
+            tls["fragment"] = json!(true);
+            set_non_empty(
+                &mut tls,
+                "fragment_fallback_delay",
+                get_str(stream, &["tls_frag_fall_delay"]),
+            );
+        }
+        if get_bool(stream, &["tls_record_frag"], false) {
+            tls["record_fragment"] = json!(true);
+        }
         out["tls"] = tls;
+    }
+
+    // vmess/vless carry packet_encoding next to the transport.
+    if matches!(out["type"].as_str(), Some("vmess") | Some("vless")) {
+        set_non_empty(out, "packet_encoding", get_str(stream, &["pac_enc"]));
     }
 }
 
@@ -356,7 +439,7 @@ fn add_stream_settings(out: &mut Value, bean: &Value) {
 /// MVP version: SOCKS inbound from `DataStore`, the proxy's outbound,
 /// a direct outbound, and optional DNS object.
 pub fn build_config(proxy: &ProxyEntity, data_store: &DataStore) -> anyhow::Result<Value> {
-    build_config_with_route(proxy, data_store, None)
+    build_config_with_route(proxy, data_store, None, None)
 }
 
 /// Build a full sing-box config, applying `chain` as the routing section.
@@ -365,16 +448,23 @@ pub fn build_config(proxy: &ProxyEntity, data_store: &DataStore) -> anyhow::Resu
 /// what [`build_config`] does. The GUI always has a chain selected
 /// (`current_route_id`), so the TUI should pass one too — otherwise routing
 /// rules the user configured in the GUI are silently ignored.
+///
+/// `profiles` is consulted for rules that route through a *specific profile*
+/// (outbound id >= 0); those outbounds are appended with `r-N-c-<id>` tags,
+/// mirroring `BuildChainInternal` in ConfigBuilder.cpp.
 pub fn build_config_with_route(
     proxy: &ProxyEntity,
     data_store: &DataStore,
     chain: Option<&crate::model::RoutingChain>,
+    profiles: Option<&std::collections::HashMap<i32, ProxyEntity>>,
 ) -> anyhow::Result<Value> {
-    let mut outbound = build_outbound(proxy);
+    let skip_cert = data_store.skip_cert;
+    let default_utls = data_store.utls_fingerprint.as_deref();
+    let mut outbound = build_outbound(proxy, skip_cert, default_utls);
     outbound["tag"] = json!("proxy");
 
     let inbounds = if data_store.enable_tun_routing {
-        json!([build_tun_inbound(data_store)])
+        json!([build_tun_inbound(data_store, chain)])
     } else {
         let mut inbound = json!({
             "tag": "mixed-in",
@@ -390,15 +480,40 @@ pub fn build_config_with_route(
         json!([inbound])
     };
 
+    let mut outbounds = vec![
+        outbound,
+        json!({ "tag": "direct", "type": "direct" }),
+        json!({ "tag": "block", "type": "block" }),
+    ];
+
+    // Rules may route some traffic through other profiles (outbound id >= 0).
+    // Resolve those into real outbounds and map the ids to their tags.
+    let mut outbound_map = std::collections::HashMap::new();
+    outbound_map.insert(crate::model::OUTBOUND_PROXY, "proxy".to_string());
+    outbound_map.insert(crate::model::OUTBOUND_DIRECT, "direct".to_string());
+    outbound_map.insert(crate::model::OUTBOUND_BLOCK, "block".to_string());
+    if let Some(chain) = chain {
+        for (n, id) in chain.used_profile_outbounds().into_iter().enumerate() {
+            let ent = profiles.and_then(|ps| ps.get(&id));
+            let Some(ent) = ent else {
+                anyhow::bail!(
+                    "The routing profile is referencing outbounds that no longer exists, \
+                     consider revising your settings"
+                );
+            };
+            let tag = format!("r-{n}-c-{id}");
+            let mut o = build_outbound(ent, skip_cert, default_utls);
+            o["tag"] = json!(tag.clone());
+            outbounds.push(o);
+            outbound_map.insert(id, tag);
+        }
+    }
+
     let mut config = json!({
         "log": { "level": data_store.log_level },
         "inbounds": inbounds,
-        "outbounds": [
-            outbound,
-            { "tag": "direct", "type": "direct" },
-            { "tag": "block", "type": "block" },
-        ],
-        "route": build_route(data_store, chain),
+        "outbounds": outbounds,
+        "route": build_route(data_store, chain, &outbound_map),
     });
 
     // Add DNS config from DataStore if enabled
@@ -442,35 +557,48 @@ fn build_experimental(data_store: &DataStore) -> Option<Value> {
 }
 
 /// Build the `route` object: the active chain's rules, its rule sets, the
-/// tun-split process rules and the chain's default outbound.
-fn build_route(data_store: &DataStore, chain: Option<&crate::model::RoutingChain>) -> Value {
-    use crate::model::{
-        rule_set_json, ADBLOCK_RULE_SET, ADBLOCK_TAG, OUTBOUND_BLOCK, OUTBOUND_DIRECT,
-        OUTBOUND_PROXY,
-    };
-
-    let mut outbound_map = std::collections::HashMap::new();
-    outbound_map.insert(OUTBOUND_PROXY, "proxy".to_string());
-    outbound_map.insert(OUTBOUND_DIRECT, "direct".to_string());
-    outbound_map.insert(OUTBOUND_BLOCK, "block".to_string());
+/// sniff/resolve prelude rules, the tun-split process rules and the chain's
+/// default outbound.
+fn build_route(
+    data_store: &DataStore,
+    chain: Option<&crate::model::RoutingChain>,
+    outbound_map: &std::collections::HashMap<i32, String>,
+) -> Value {
+    use crate::model::{rule_set_json, ADBLOCK_RULE_SET, ADBLOCK_TAG};
 
     let mut rules: Vec<Value> = Vec::new();
     let mut rule_sets: Vec<Value> = Vec::new();
 
+    // The prelude rules the GUI prepends to the active chain
+    // (BuildConfigSingBox): resolve by domain strategy, then sniffing.
+    if !data_store.domain_strategy.is_empty() {
+        rules.push(json!({
+            "action": "resolve",
+            "inbound": ["mixed-in", "tun-in"],
+            "strategy": data_store.domain_strategy,
+        }));
+    }
+    if data_store.sniffing_mode != 0 {
+        rules.push(json!({
+            "action": "sniff",
+            "inbound": ["mixed-in", "tun-in"],
+        }));
+    }
+
     if let Some(chain) = chain {
         for rs in chain.used_rule_sets() {
-            if let Some(json) = rule_set_json(&rs) {
+            if let Some(json) = rule_set_json(&rs, data_store.ruleset_mirror) {
                 rule_sets.push(json);
             }
         }
-        rules.extend(chain.to_route_rules(&outbound_map, data_store.adblock_enable));
+        rules.extend(chain.to_route_rules(outbound_map, data_store.adblock_enable));
     }
     if data_store.adblock_enable
         && !rule_sets
             .iter()
             .any(|rs| rs["tag"] == json!(ADBLOCK_TAG))
     {
-        if let Some(mut json) = rule_set_json(ADBLOCK_RULE_SET) {
+        if let Some(mut json) = rule_set_json(ADBLOCK_RULE_SET, data_store.ruleset_mirror) {
             json["tag"] = json!(ADBLOCK_TAG);
             rule_sets.push(json);
         }
@@ -495,8 +623,8 @@ fn build_route(data_store: &DataStore, chain: Option<&crate::model::RoutingChain
     }
 
     let final_tag = match chain.map(|c| c.default_outbound_id) {
-        Some(OUTBOUND_DIRECT) => "direct",
-        Some(OUTBOUND_BLOCK) => "block",
+        Some(crate::model::OUTBOUND_DIRECT) => "direct",
+        Some(crate::model::OUTBOUND_BLOCK) => "block",
         _ => "proxy",
     };
 
@@ -519,7 +647,7 @@ fn build_route(data_store: &DataStore, chain: Option<&crate::model::RoutingChain
 }
 
 /// Build the TUN inbound (port of `BuildTunInbound` in ConfigBuilder.cpp).
-fn build_tun_inbound(data_store: &DataStore) -> Value {
+fn build_tun_inbound(data_store: &DataStore, chain: Option<&crate::model::RoutingChain>) -> Value {
     let interface_name = format!("tun_{}", random_suffix(9));
     let mut addresses = vec![if data_store.tun_address.is_empty() {
         "172.19.0.1/24".to_string()
@@ -533,7 +661,32 @@ fn build_tun_inbound(data_store: &DataStore) -> Value {
             data_store.tun_address_6.clone()
         });
     }
-    json!({
+    // The GUI excludes the configured addresses plus the chain's direct
+    // destinations from the tun routes.
+    let mut exclude: Vec<String> = data_store.route_exclude_addrs.clone();
+    if let Some(chain) = chain {
+        for rule in &chain.rules {
+            if rule.outbound_id != crate::model::OUTBOUND_DIRECT {
+                continue;
+            }
+            for cidr in &rule.ip_cidr {
+                if !cidr.trim().is_empty() {
+                    exclude.push(cidr.clone());
+                }
+            }
+        }
+    }
+    let exclude_sets: Vec<String> = chain
+        .map(|c| {
+            c.rules
+                .iter()
+                .filter(|r| r.outbound_id == crate::model::OUTBOUND_DIRECT)
+                .flat_map(|r| r.rule_set.iter().cloned())
+                .filter(|s| s.starts_with("geoip-"))
+                .collect()
+        })
+        .unwrap_or_default();
+    let mut inbound = json!({
         "tag": "tun-in",
         "type": "tun",
         "interface_name": interface_name,
@@ -542,7 +695,14 @@ fn build_tun_inbound(data_store: &DataStore) -> Value {
         "stack": data_store.vpn_implementation,
         "strict_route": data_store.vpn_strict_route,
         "address": addresses,
-    })
+    });
+    if !exclude.is_empty() {
+        inbound["route_exclude_address"] = json!(exclude);
+    }
+    if !exclude_sets.is_empty() {
+        inbound["route_exclude_address_set"] = json!(exclude_sets);
+    }
+    inbound
 }
 
 /// Random lowercase suffix for the tun interface name
@@ -588,12 +748,14 @@ pub fn build_dns_object(address: &str, _tun_enabled: bool) -> Value {
 ///
 /// Each outbound is tagged with the profile's ID as a string, so test
 /// results can be mapped back to profiles.
-pub fn build_test_config(profiles: &[&ProxyEntity]) -> (String, Vec<String>) {
+pub fn build_test_config(profiles: &[&ProxyEntity], data_store: &DataStore) -> (String, Vec<String>) {
+    let skip_cert = data_store.skip_cert;
+    let default_utls = data_store.utls_fingerprint.as_deref();
     let mut outbounds = Vec::new();
     let mut tags = Vec::new();
     for p in profiles {
         let tag = p.id.to_string();
-        let mut out = build_outbound(p);
+        let mut out = build_outbound(p, skip_cert, default_utls);
         out["tag"] = json!(tag);
         outbounds.push(out);
         tags.push(tag);
@@ -628,7 +790,7 @@ mod tests {
             "method": "aes-256-gcm",
             "pass": "secret",
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["type"], "shadowsocks");
         assert_eq!(out["server"], "example.com");
         assert_eq!(out["server_port"], 443);
@@ -652,7 +814,7 @@ mod tests {
                 "path": "/ws",
             }
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["uuid"], "00000000-0000-4000-8000-000000000000");
         assert_eq!(out["transport"]["type"], "ws");
         assert_eq!(out["transport"]["path"], "/ws");
@@ -665,7 +827,7 @@ mod tests {
     fn test_build_test_config_tags() {
         let mut p1 = crate::model::ProxyEntity::new("direct");
         p1.id = 7;
-        let (config, tags) = build_test_config(&[&p1]);
+        let (config, tags) = build_test_config(&[&p1], &crate::model::DataStore::default());
         assert_eq!(tags, vec!["7".to_string()]);
         assert!(config.contains("\"tag\":\"7\""));
     }
@@ -683,7 +845,7 @@ mod tests {
             "downloadMbps": 3000,
             "obfsPassword": "obfs-pass",
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["type"], "hysteria2");
         assert_eq!(out["password"], "secret-uuid");
         assert_eq!(out["up_mbps"], 3000);
@@ -707,7 +869,7 @@ mod tests {
             "server_ports": ["443", "500:600"],
             "hop_interval": "30s",
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["server_ports"], json!(["443:443", "500:600"]));
         assert!(out.get("server_port").is_none());
         assert_eq!(out["hop_interval"], "30s");
@@ -725,7 +887,7 @@ mod tests {
             "heartbeat": "10s",
             "sni": "tuic.example.com",
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["type"], "tuic");
         assert_eq!(out["uuid"], "00000000-0000-4000-8000-000000000000");
         assert_eq!(out["congestion_control"], "bbr");
@@ -745,10 +907,125 @@ mod tests {
             "min_idle_session": 0,
             "stream": { "sec": "tls", "sni": "a.example.com" },
         }));
-        let out = build_outbound(&proxy);
+        let out = build_outbound(&proxy, false, None);
         assert_eq!(out["type"], "anytls");
         assert_eq!(out["password"], "p");
         assert_eq!(out["idle_session_check_interval"], "30s");
         assert_eq!(out["tls"]["server_name"], "a.example.com");
+    }
+
+    #[test]
+    fn test_build_outbound_vless_reality() {
+        let mut proxy = crate::model::ProxyEntity::new("vless");
+        proxy.bean_cfg = Some(json!({
+            "pass": "00000000-0000-4000-8000-000000000000",
+            "flow": "xtls-rprx-vision",
+            "stream": {
+                "net": "tcp",
+                "sec": "tls",
+                "sni": "www.microsoft.com",
+                "pbk": "PUBKEY",
+                "sid": "ab,cd",
+                "utls": "chrome",
+                "pac_enc": "xudp",
+            },
+        }));
+        let out = build_outbound(&proxy, false, None);
+        assert_eq!(out["tls"]["reality"]["enabled"], true);
+        assert_eq!(out["tls"]["reality"]["public_key"], "PUBKEY");
+        // Only the first sid entry is used (C++ behaviour).
+        assert_eq!(out["tls"]["reality"]["short_id"], "ab");
+        assert_eq!(out["tls"]["utls"]["fingerprint"], "chrome");
+        assert_eq!(out["packet_encoding"], "xudp");
+
+        // Without an explicit fingerprint, reality falls back to the
+        // datastore default, then "random".
+        proxy.bean_cfg = Some(json!({
+            "pass": "id",
+            "stream": { "sec": "tls", "pbk": "PUBKEY" },
+        }));
+        let out = build_outbound(&proxy, false, Some("firefox"));
+        assert_eq!(out["tls"]["utls"]["fingerprint"], "firefox");
+        let out = build_outbound(&proxy, false, None);
+        assert_eq!(out["tls"]["utls"]["fingerprint"], "random");
+    }
+
+    #[test]
+    fn test_skip_cert_forces_insecure() {
+        let mut proxy = crate::model::ProxyEntity::new("vmess");
+        proxy.bean_cfg = Some(json!({
+            "id": "id",
+            "stream": { "sec": "tls", "sni": "a.example.com" },
+        }));
+        let out = build_outbound(&proxy, true, None);
+        assert_eq!(out["tls"]["insecure"], true);
+        let out = build_outbound(&proxy, false, None);
+        assert!(out["tls"].get("insecure").is_none());
+    }
+
+    #[test]
+    fn test_trojan_always_has_tls() {
+        let mut proxy = crate::model::ProxyEntity::new("trojan");
+        proxy.bean_cfg = Some(json!({ "pass": "p" }));
+        let out = build_outbound(&proxy, false, None);
+        assert_eq!(out["tls"]["enabled"], true);
+    }
+
+    /// A chain rule that routes through another profile (outbound id >= 0)
+    /// must produce a real outbound and a tag reference, not a raw number.
+    #[test]
+    fn test_route_via_profile_outbound() {
+        use crate::model::{RouteRule, RoutingChain};
+
+        let mut other = crate::model::ProxyEntity::new("shadowsocks");
+        other.id = 42;
+        other.server_address = "other.example.com".into();
+        other.server_port = 8388;
+        other.bean_cfg = Some(json!({ "method": "aes-256-gcm", "pass": "pw" }));
+        let profiles = std::collections::HashMap::from([(42, other)]);
+
+        let mut chain = RoutingChain::new();
+        chain.rules = vec![RouteRule {
+            name: "special".into(),
+            domain_suffix: vec!["special.example.com".into()],
+            outbound_id: 42,
+            action: "route".into(),
+            ..Default::default()
+        }];
+
+        let proxy = crate::model::ProxyEntity::new("shadowsocks");
+        let ds = crate::model::DataStore::default();
+        let config =
+            build_config_with_route(&proxy, &ds, Some(&chain), Some(&profiles)).unwrap();
+        let rules = config["route"]["rules"].as_array().unwrap();
+        let rule = rules.iter().find(|r| r["domain_suffix"][0] == "special.example.com").unwrap();
+        assert_eq!(rule["outbound"], "r-0-c-42");
+        let tags: Vec<&str> = config["outbounds"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .filter_map(|o| o["tag"].as_str())
+            .collect();
+        assert!(tags.contains(&"r-0-c-42"), "profile outbound added: {tags:?}");
+
+        // Referencing a profile nobody has must fail loudly, like the GUI.
+        assert!(build_config_with_route(&proxy, &ds, Some(&chain), None).is_err());
+    }
+
+    /// The GUI's jsdelivr mirrors must apply to remote rule sets.
+    #[test]
+    fn test_ruleset_mirror_rewrite() {
+        let url = "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingbox.srs";
+        let json = crate::model::rule_set_json(url, crate::model::mirror::GITHUB).unwrap();
+        assert_eq!(json["url"], url);
+        let json = crate::model::rule_set_json(url, crate::model::mirror::CLOUDFLARE).unwrap();
+        assert_eq!(
+            json["url"],
+            "https://testingcf.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblocksingbox.srs"
+        );
+        // Non-raw hosts pass through untouched.
+        let other = "https://github.com/x/y/raw/main/z.srs";
+        let json = crate::model::rule_set_json(other, crate::model::mirror::CLOUDFLARE).unwrap();
+        assert_eq!(json["url"], other);
     }
 }

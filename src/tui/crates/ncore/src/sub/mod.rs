@@ -117,9 +117,13 @@ fn qflag(map: &HashMap<String, String>, keys: &[&str]) -> bool {
 
 /// Build the `stream` sub-store from query parameters, using the GUI's
 /// V2RayStreamSettings key names. Shared by vless/trojan-style links.
+///
+/// Note: the GUI maps `security=reality` to `sec: "tls"` + `pbk`/`sid` —
+/// reality is detected by a non-empty `pbk` at build time
+/// (`TryParseLink` in TrojanVLESSBean.cpp does `.replace("reality", "tls")`).
 fn stream_from_query(q: &HashMap<String, String>) -> serde_json::Value {
     let sec = match q.get("security").map(String::as_str) {
-        Some("tls") | Some("reality") => q.get("security").cloned().unwrap(),
+        Some("tls") | Some("reality") | Some("xtls") => "tls".to_string(),
         _ => String::new(),
     };
     filter_empty(serde_json::json!({
@@ -618,7 +622,11 @@ pub fn to_share_link(entity: &ProxyEntity) -> anyhow::Result<String> {
     let stream_query = || -> Vec<(&'static str, String)> {
         let mut q = Vec::new();
         let sec = stream["sec"].as_str().unwrap_or("");
-        if !sec.is_empty() {
+        let pbk = stream["pbk"].as_str().unwrap_or("");
+        // Reality is stored as sec=tls + pbk; export it back as such.
+        if sec == "tls" && !pbk.is_empty() {
+            q.push(("security", "reality".into()));
+        } else if !sec.is_empty() {
             q.push(("security", sec.into()));
         }
         let net = stream["net"].as_str().unwrap_or("");
@@ -921,16 +929,19 @@ mod tests {
         let bean = e.bean_cfg.as_ref().unwrap();
         assert_eq!(bean["pass"], "00000000-0000-4000-8000-000000000000");
         assert_eq!(bean["flow"], "xtls-rprx-vision");
-        assert_eq!(bean["stream"]["sec"], "reality");
+        // The GUI convention: reality is sec=tls + pbk/sid/utls.
+        assert_eq!(bean["stream"]["sec"], "tls");
         assert_eq!(bean["stream"]["pbk"], "PUBKEY");
         assert_eq!(bean["stream"]["sid"], "ab");
         assert_eq!(bean["stream"]["utls"], "chrome");
 
+        // And the export turns it back into security=reality.
         let e2 = parse_share_link(&to_share_link(&e).unwrap()).unwrap();
         let bean2 = e2.bean_cfg.as_ref().unwrap();
-        assert_eq!(bean2["stream"]["sec"], "reality");
+        assert_eq!(bean2["stream"]["sec"], "tls");
         assert_eq!(bean2["stream"]["pbk"], "PUBKEY");
         assert_eq!(bean2["flow"], "xtls-rprx-vision");
+        assert!(to_share_link(&e).unwrap().contains("security=reality"));
     }
 
     #[test]

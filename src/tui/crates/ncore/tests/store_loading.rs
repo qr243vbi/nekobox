@@ -30,7 +30,7 @@ fn test_write_read_roundtrip() {
         let mut p2 = loaded.clone();
         p2.bean_cfg = Some(bean);
         p2
-    });
+    }, false, None);
     assert_eq!(outbound["password"], "pw");
 
     // Group
@@ -147,19 +147,19 @@ fn test_routing_chain_reaches_config() {
     let ds = ncore::model::DataStore::default();
 
     let without = ncore::config::build_config(&proxy, &ds).unwrap();
-    assert_eq!(
-        without["route"]["rules"].as_array().unwrap().len(),
-        0,
-        "no chain means no rules"
-    );
-
-    let with = ncore::config::build_config_with_route(&proxy, &ds, Some(&chain)).unwrap();
-    let rules = with["route"]["rules"].as_array().unwrap();
+    // No chain: only the GUI's prelude rules (resolve by strategy + sniff).
+    let rules = without["route"]["rules"].as_array().unwrap();
     assert_eq!(rules.len(), 2);
-    assert_eq!(rules[0]["domain_suffix"][0], "cn");
-    assert_eq!(rules[0]["outbound"], "direct");
+    assert_eq!(rules[0]["action"], "resolve");
+    assert_eq!(rules[1]["action"], "sniff");
+
+    let with = ncore::config::build_config_with_route(&proxy, &ds, Some(&chain), None).unwrap();
+    let rules = with["route"]["rules"].as_array().unwrap();
+    assert_eq!(rules.len(), 4, "prelude + two chain rules");
+    assert_eq!(rules[2]["domain_suffix"][0], "cn");
+    assert_eq!(rules[2]["outbound"], "direct");
     // outbound_id -3 turns action "route" into "reject".
-    assert_eq!(rules[1]["action"], "reject");
+    assert_eq!(rules[3]["action"], "reject");
     // The block outbound the rules refer to must exist.
     let tags: Vec<&str> = with["outbounds"]
         .as_array()
@@ -216,7 +216,7 @@ fn test_load_gui_cfg_files() {
     assert_eq!(group.name, "testgroup");
     assert_eq!(group.profiles, vec![7]);
 
-    let outbound = ncore::config::build_outbound(&profile);
+    let outbound = ncore::config::build_outbound(&profile, false, None);
     assert_eq!(outbound["type"], "shadowsocks");
     assert_eq!(outbound["password"], "secret");
 }
