@@ -54,37 +54,37 @@ on:
         default: true
         required: false
       publish_ppa:
-        description: "Publish to PPA (upstream maintainer only)"
+        description: "Publish to PPA "
         type: boolean
         default: false
         required: false
       publish_chocolatey:
-        description: "Publish chocolatey packages (upstream maintainer only)"
+        description: "Publish chocolatey packages "
         type: boolean
         default: false
         required: false
       publish_winget:
-        description: "Publish WinGet manifest (upstream maintainer only)"
+        description: "Publish WinGet manifest "
         type: boolean
         default: false
         required: false
       publish_suse:
-        description: "Publish to openSUSE Factory (upstream maintainer only)"
+        description: "Publish to openSUSE Factory "
         type: boolean
         default: false
         required: false
       publish_copr:
-        description: "Publish to COPR (upstream maintainer only)"
+        description: "Publish to COPR "
         type: boolean
         default: false
         required: false
       publish_obs:
-        description: "Publish to OBS (upstream maintainer only)"
+        description: "Publish to OBS "
         type: boolean
         default: false
         required: false
       publish_aur:
-        description: "Publish to AUR (upstream maintainer only)"
+        description: "Publish to AUR "
         type: boolean
         default: false
         required: false
