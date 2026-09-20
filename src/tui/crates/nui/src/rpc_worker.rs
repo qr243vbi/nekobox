@@ -39,7 +39,13 @@ pub enum Command {
     /// Enable or disable the system DNS override.
     SetSystemDns { enable: bool },
     /// Fetch and parse a subscription URL (blocking HTTP in the worker).
-    UpdateSubscription { url: String, user_agent: Option<String> },
+    /// `gid` identifies the group so the result lands in the group the update
+    /// was started for, even if the user has switched tabs since.
+    UpdateSubscription {
+        gid: i32,
+        url: String,
+        user_agent: Option<String>,
+    },
     /// Enable/disable the system proxy (address/port of the local inbound).
     SetSystemProxy {
         enable: bool,
@@ -115,8 +121,11 @@ pub enum Event {
         country: String,
         error: String,
     },
-    /// Subscription fetched and parsed.
-    SubProfiles(Vec<ncore::model::ProxyEntity>),
+    /// Subscription fetched and parsed (carries the target group id).
+    SubProfiles {
+        gid: i32,
+        entities: Vec<ncore::model::ProxyEntity>,
+    },
     /// URL test results: (outbound_tag, latency_ms, error).
     UrlTestResults(Vec<(String, i32, String)>),
     /// A log line for the Logs pane.
@@ -425,12 +434,12 @@ impl Worker {
                     }
                 }
             }
-            Command::UpdateSubscription { url, user_agent } => {
+            Command::UpdateSubscription { gid, url, user_agent } => {
                 match ncore::sub::update_subscription(&url, user_agent.as_deref()) {
                     Ok(parsed) => {
                         let entities =
                             parsed.into_iter().map(|p| p.entity).collect::<Vec<_>>();
-                        self.send(Event::SubProfiles(entities));
+                        self.send(Event::SubProfiles { gid, entities });
                     }
                     Err(e) => self.error(format!("subscription update failed: {e:#}")),
                 }

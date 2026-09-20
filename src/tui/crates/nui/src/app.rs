@@ -690,7 +690,7 @@ impl App {
                         self.notify(format!("speed test failed: {error}"));
                     }
                 }
-                Event::SubProfiles(entities) => self.apply_subscription(entities),
+                Event::SubProfiles { gid, entities } => self.apply_subscription(gid, entities),
                 Event::UrlTestResults(results) => {
                     for (tag, latency, error) in results {
                         if !self.url_test_done.insert(tag.clone()) {
@@ -1165,12 +1165,8 @@ impl App {
 
     // --- profile operations ---
 
-    /// Persist new profiles into the current group and reload.
-    fn add_profiles(&mut self, mut entities: Vec<ProxyEntity>) -> usize {
-        let Some(gid) = self.current_group_id() else {
-            self.notify("no group selected");
-            return 0;
-        };
+    /// Persist new profiles into a group and reload.
+    fn add_profiles_to(&mut self, gid: i32, mut entities: Vec<ProxyEntity>) -> usize {
         let base = self.config_dir.clone();
         let start_id = ncore::store::next_store_id(&base, "profiles");
         let mut added = 0;
@@ -1194,6 +1190,15 @@ impl App {
         }
         self.reload();
         added
+    }
+
+    /// Persist new profiles into the current group and reload.
+    fn add_profiles(&mut self, entities: Vec<ProxyEntity>) -> usize {
+        let Some(gid) = self.current_group_id() else {
+            self.notify("no group selected");
+            return 0;
+        };
+        self.add_profiles_to(gid, entities)
     }
 
     fn import_clipboard(&mut self) {
@@ -1445,13 +1450,7 @@ impl App {
             let Some(p) = self.profiles.get(&id) else {
                 continue;
             };
-            let key = (
-                p.r#type.clone(),
-                p.server_address.clone(),
-                p.server_port,
-                p.serialize_bean(),
-            );
-            if !seen.insert(key) {
+            if !seen.insert(Self::profile_key(p)) {
                 dupes.push(id);
             }
         }
@@ -1550,7 +1549,9 @@ impl App {
     }
 
     fn ask_delete_group(&mut self) {
-        let Some(g) = self.groups.get(self.groups_sel.min(self.current_group)) else {
+        // The menu entry is "Delete current Group"; `groups_sel` belongs to the
+        // Groups dialog and is stale here (the dialog has its own `d` binding).
+        let Some(g) = self.groups.get(self.current_group) else {
             return;
         };
         let (id, name, count) = (g.base.id, g.name.clone(), g.profiles.len());
@@ -1602,37 +1603,49 @@ impl App {
     }
 
     fn update_subscription(&mut self) {
-        let Some(g) = self.groups.get(self.current_group) else {
-            return;
-        };
-        let Some(url) = g
-            .extra
-            .as_ref()
-            .and_then(|e| e.url.clone())
-            .filter(|u| !u.is_empty())
-        else {
+        let Some((gid, name, url)) = self.groups.get(self.current_group).and_then(|g| {
+            let url = g
+                .extra
+                .as_ref()
+                .and_then(|e| e.url.clone())
+                .filter(|u| !u.is_empty())?;
+            Some((g.base.id, g.name.clone(), url))
+        }) else {
             self.notify("current group has no subscription URL");
             return;
         };
-        self.notify(format!("updating subscription: {}", g.name));
+        self.notify(format!("updating subscription: {name}"));
         let _ = self.worker.tx.send(Command::UpdateSubscription {
+            gid,
             url,
             user_agent: self.datastore.user_agent.clone(),
         });
     }
 
-    /// Replace the current group's profiles with freshly fetched ones,
+    /// A key matching `ProfileFilterKey`: two profiles are "the same" when
+    /// type, address, port and bean all match.
+    fn profile_key(p: &ProxyEntity) -> (String, String, i32, String) {
+        (
+            p.r#type.clone(),
+            p.server_address.clone(),
+            p.server_port,
+            p.serialize_bean(),
+        )
+    }
+
+    /// Merge freshly fetched profiles into the group the update was started
+    /// for (tracked by `gid` — the user may have switched groups since),
     /// applying the subscription post-processing flags the GUI honours.
-    fn apply_subscription(&mut self, entities: Vec<ProxyEntity>) {
-        let Some(g) = self.groups.get(self.current_group).cloned() else {
+    ///
+    /// Like `GroupUpdater`, unchanged profiles (same key) keep their entries —
+    /// with traffic counters and test results — while removed ones are deleted
+    /// and new ones appended. A full wipe happens only with `sub_clear` (or
+    /// over 1000 profiles, the GUI's own escape hatch).
+    fn apply_subscription(&mut self, gid: i32, entities: Vec<ProxyEntity>) {
+        let Some(g) = self.groups.iter().find(|x| x.base.id == gid).cloned() else {
+            self.notify("subscription update: group no longer exists");
             return;
         };
-        for id in &g.profiles {
-            let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
-        }
-        if let Some(g) = self.groups.get_mut(self.current_group) {
-            g.profiles.clear();
-        }
 
         let mut entities = entities;
         if self.datastore.sub_rm_invalid {
@@ -1641,26 +1654,71 @@ impl App {
         if self.datastore.sub_rm_duplicates {
             let mut seen = HashSet::new();
             entities.retain(|e| {
-                seen.insert((
-                    e.r#type.clone(),
-                    e.server_address.clone(),
-                    e.server_port,
-                    e.serialize_bean(),
-                ))
+                seen.insert(Self::profile_key(e))
             });
         }
 
-        let count = self.add_profiles(entities);
-        if let Some(g) = self.groups.iter_mut().find(|x| x.base.id == g.base.id) {
-            if let Some(extra) = g.extra.as_mut() {
+        let clear = self.datastore.sub_clear || g.profiles.len() > 1000;
+        let mut dropped: Vec<i32> = Vec::new();
+        let mut kept: Vec<i32> = Vec::new();
+        let mut fresh: Vec<ProxyEntity> = Vec::new();
+        if clear {
+            dropped = g.profiles.clone();
+            fresh = entities;
+        } else {
+            let new_keys: HashSet<_> = entities.iter().map(Self::profile_key).collect();
+            let mut kept_keys = HashSet::new();
+            for id in &g.profiles {
+                match self.profiles.get(id) {
+                    Some(p) if new_keys.contains(&Self::profile_key(p)) => {
+                        kept.push(*id);
+                        kept_keys.insert(Self::profile_key(p));
+                    }
+                    _ => dropped.push(*id),
+                }
+            }
+            for e in entities {
+                if !kept_keys.contains(&Self::profile_key(&e)) {
+                    fresh.push(e);
+                }
+            }
+        }
+
+        for id in &dropped {
+            if self.active_profile_id == Some(*id) {
+                self.notify("subscription removed the running profile; still running until restart");
+            }
+            let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
+            self.latencies.remove(id);
+        }
+        if let Some(g) = self.groups.iter_mut().find(|x| x.base.id == gid) {
+            g.profiles = kept.clone();
+            let g = g.clone();
+            let _ = ncore::store::save_group(&self.config_dir, &g);
+        }
+
+        let added = self.add_profiles_to(gid, fresh);
+
+        if let Some(g) = self.groups.iter().find(|x| x.base.id == gid) {
+            if let Some(extra) = g.extra.as_ref() {
+                let mut extra = extra.clone();
                 extra.sub_last_update = Some(chrono_now());
-                let extra = extra.clone();
                 let _ = ncore::store::save_group_extra(&self.config_dir, &extra);
             }
         }
-        self.notify(format!("subscription updated: {count} profiles"));
+        self.notify(format!(
+            "subscription updated: {added} new, {} kept, {} removed",
+            kept.len(),
+            dropped.len()
+        ));
         if self.datastore.sub_url_test {
-            self.url_test(self.visible_ids());
+            let ids: Vec<i32> = self
+                .groups
+                .iter()
+                .find(|x| x.base.id == gid)
+                .map(|g| g.profiles.clone())
+                .unwrap_or_default();
+            self.url_test(ids);
         }
     }
 
