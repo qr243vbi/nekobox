@@ -245,6 +245,7 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
 
     // Style
     D_LOAD_BOOL(connection_statistics)
+    D_LOAD_BOOL(hide_core_connections)
 
     S_LOAD_BOOL(show_system_dns)
     connect(ui->show_system_dns, STATE_CHANGED, this, [=,this]
@@ -513,6 +514,7 @@ void DialogBasicSettings::accept() {
     // Style
 
     D_SAVE_BOOL(connection_statistics);
+    D_SAVE_BOOL(hide_core_connections);
     QString locale = "";
     D_SAVE_BOOL(start_minimal)
     S_SAVE_INT(max_log_line)

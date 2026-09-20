@@ -4444,6 +4444,11 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <translation>График соединения</translation>
     </message>
     <message>
+        <location filename="../../src/nekobox/ui/mainwindow.ui" line="615" />
+        <source>Routes</source>
+        <translation>Маршруты</translation>
+    </message>
+    <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5190" />
         <source>Failed to download update assets</source>
         <translation>Не удалось загрузить обновлённые ресурсы</translation>
@@ -5212,6 +5217,99 @@ Request payload was: %2</source>
         <location filename="../../src/gharqad/main.cpp" line="190" />
         <source>Copy Link Location</source>
         <translation type="unfinished">Копировать расположение ссылки</translation>
+    </message>
+</context>
+<context>
+    <name>QuickRoutesWidget</name>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="33" />
+        <source>Applications</source>
+        <translation>Приложения</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="33" />
+        <source>Application</source>
+        <translation>Приложение</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="34" />
+        <source>Domains</source>
+        <translation>Домены</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="34" />
+        <source>Domain</source>
+        <translation>Домен</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="40" />
+        <source>Saved routes are applied after the core restarts.</source>
+        <translation>Сохранённые маршруты применяются после перезапуска ядра.</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="44" />
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="63" />
+        <source>Add</source>
+        <translation>Добавить</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="64" />
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="94" />
+        <source>Outbound</source>
+        <translation>Outbound</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="108" />
+        <source>proxy</source>
+        <translation>proxy</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="109" />
+        <source>direct</source>
+        <translation>direct</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="110" />
+        <source>block</source>
+        <translation>block</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="148" />
+        <source>Missing outbound (%1)</source>
+        <translation>Недоступный outbound (%1)</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="163" />
+        <source>Select an application</source>
+        <translation>Выберите приложение</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="165" />
+        <source>Applications (*.exe);;All files (*.*)</source>
+        <translation>Приложения (*.exe);;Все файлы (*.*)</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="186" />
+        <source>Full path to an .exe, or just its file name</source>
+        <translation>Полный путь к .exe или только имя файла</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="226" />
+        <source>Domain keyword, for example: example.com</source>
+        <translation>Ключевое слово домена, например: example.com</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/QuickRoutesWidget.cpp" line="296" />
+        <source>[Routes] Saved %1 application and %2 domain routes</source>
+        <translation>[Маршруты] Сохранено маршрутов: приложений — %1, доменов — %2</translation>
     </message>
 </context>
 <context>

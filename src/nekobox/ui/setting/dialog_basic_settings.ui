@@ -502,6 +502,16 @@
              </widget>
             </item>
             <item>
+             <widget class="QCheckBox" name="hide_core_connections">
+              <property name="toolTip">
+               <string>Hides the connections the core opens for itself, such as latency tests, subscription and rule set downloads.</string>
+              </property>
+              <property name="text">
+               <string>Hide the core's own connections</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QCheckBox" name="start_minimal">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">

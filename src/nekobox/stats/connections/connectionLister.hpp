@@ -5,6 +5,7 @@
 #pragma once
 #include <QMutex>
 #include <QString>
+#include <atomic>
 
 namespace Stats
 {
@@ -42,6 +43,10 @@ namespace Stats
         ConnectionLister();
 
         bool suspend = true;
+
+        // Rebuilding the table costs more than the data is worth while the user
+        // is looking at another tab, so the loop idles until it is shown again.
+        std::atomic<bool> tab_visible = false;
 
         void Loop();
 

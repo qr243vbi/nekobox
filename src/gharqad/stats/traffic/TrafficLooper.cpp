@@ -162,7 +162,7 @@ void TrafficLooper::Loop() {
       for (const auto &item : items) {
         if (item->id < 0)
           continue;
-        m->refresh_proxy_list(item->id);
+        m->refresh_proxy_traffic(item->id);
       }
     });
   }

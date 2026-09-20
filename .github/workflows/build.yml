@@ -54,39 +54,39 @@ on:
         default: true
         required: false
       publish_ppa:
-        description: "Publish to PPA"
+        description: "Publish to PPA (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_chocolatey:
-        description: "Publish chocolatey packages"
+        description: "Publish chocolatey packages (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_winget:
-        description: "Publish WinGet manifest"
+        description: "Publish WinGet manifest (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_suse:
-        description: "Publish to openSUSE Factory"
+        description: "Publish to openSUSE Factory (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_copr:
-        description: "Publish to COPR"
+        description: "Publish to COPR (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_obs:
-        description: "Publish to OBS"
+        description: "Publish to OBS (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
       publish_aur:
-        description: "Publish to AUR"
+        description: "Publish to AUR (upstream maintainer only)"
         type: boolean
-        default: true
+        default: false
         required: false
 jobs:
   get-tag-and-changelog:
@@ -165,8 +165,32 @@ jobs:
         with:
           path: ./deployment
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
+      - name: Check cached golang parts
+        id: check-common
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        shell: bash
+        run: |
+          case "${{ matrix.cross_os }}-${{ matrix.cross_arch }}" in
+            windows-amd64) dest="deployment/windows64" ;;
+            windows-arm64) dest="deployment/windows-arm64" ;;
+            windows-386)   dest="deployment/windows32" ;;
+            *)             dest="deployment/${{ matrix.cross_os }}-${{ matrix.cross_arch }}" ;;
+          esac
+          core="$dest/nekobox_core"
+          if [[ "${{ matrix.cross_os }}" == "windows" ]]
+          then
+            core="$core.exe"
+          fi
+          if [[ -s "$core" ]]
+          then
+            echo "needs_build=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::$core is missing, rebuilding the golang parts instead of trusting the cache"
+            rm -rf deployment
+            echo "needs_build=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.cache-common.outputs.cache-hit != 'true'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.check-common.outputs.needs_build != 'false'
         uses: actions/setup-go@main
         with:            
           go-version: ${{ matrix.go_version }}
@@ -179,7 +203,7 @@ jobs:
           packages: thrift-compiler
           version: 1.0
       - name: Build golang parts
-        if: steps.cache-common.outputs.cache-hit != 'true' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then

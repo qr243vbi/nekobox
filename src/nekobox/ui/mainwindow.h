@@ -18,6 +18,7 @@
 #include <nekobox/stats/connections/connectionLister.hpp>
 #include <nekobox/stats/autotester/ProxyAutoTester.hpp>
 #include <3rdparty/qv2ray/v2/ui/widgets/speedchart/SpeedWidget.hpp>
+#include <nekobox/ui/setting/QuickRoutesWidget.h>
 
 #ifdef Q_OS_UNIX
 #include <QtDBus>
@@ -172,6 +173,9 @@ public:
     bool context_menu_locked();
 
     void refresh_proxy_list(const int &id = -1);
+
+    // Repaint one profile row without relayouting the whole table.
+    void refresh_proxy_traffic(const int &id);
 
     void show_group(int gid);
 
@@ -397,6 +401,7 @@ private:
     int toolTipID;
     //
     SpeedWidget *speedChartWidget;
+    QuickRoutesWidget *quickRoutesWidget;
     //
     // for data view
     QString softwarePath;

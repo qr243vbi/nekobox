@@ -27,6 +27,23 @@ namespace Configs {
         QStringList proxy, direct, block;
     };
 
+    // Per-application and per-domain routes edited from the "Routes" tab of the main window.
+    // Outbound values are RouteRule outbound ids: negative sentinels or a profile id.
+    class QuickRoutes: public JsonStore {
+        public:
+
+        DECLARE_STORE_TYPE(NoSave)
+        virtual ConfJsMap _map() override;
+
+        QStringList process_match;
+        QList<int> process_outbound;
+        QStringList domain_match;
+        QList<int> domain_outbound;
+
+        // Keeps every match list and its outbound list the same length.
+        void normalize();
+    };
+
     enum DatabaseType {
         json_type = 1,
         binary_type = 2,
@@ -78,6 +95,7 @@ namespace Configs {
         int ruleset_mirror = Configs::Mirrors::CLOUDFLARE;
 
         std::shared_ptr<TunSplit> tun_split = std::make_shared<TunSplit>();
+        std::shared_ptr<QuickRoutes> quick_routes = std::make_shared<QuickRoutes>();
 
         explicit Routing(int preset = 0);
 
@@ -182,6 +200,9 @@ namespace Configs {
         QStringList log_ignore = {};
         bool start_minimal = false;
         bool connection_statistics = true;
+        // The core dials its own connections (url tests, subscription fetches,
+        // ruleset downloads), they only add noise to the connection table.
+        bool hide_core_connections = true;
         int stats_tab = 0; // either connection or log
         int speed_test_mode = TestConfig::FULL;
         int speed_test_timeout_ms = 5000;

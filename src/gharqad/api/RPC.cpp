@@ -45,13 +45,26 @@ if (!Configs::dataStore->core_running) {                                        
 } else {    \
 }
 
+// Without these a call blocks forever when the core stops answering, and since
+// some calls are made from the GUI thread that shows up as a hung window.
+// The read budget has to outlast the slowest handler (url and speed tests),
+// the core itself gives up on a socket after 10s.
+constexpr int kRpcConnectTimeoutMs = 2000;
+constexpr int kRpcSendTimeoutMs = 5000;
+constexpr int kRpcRecvTimeoutMs = 20000;
+
 static std::shared_ptr<TTransport> getThriftTransport(){
     int port = Configs::dataStore->core_port;
+    std::shared_ptr<TSocket> socket;
     if (port > 0){
-        return std::shared_ptr<TTransport> (new TSocket(Configs::dataStore->core_domain, port));
+        socket = std::make_shared<TSocket>(Configs::dataStore->core_domain, port);
     } else {
-        return std::shared_ptr<TTransport> (new TSocket(Configs::dataStore->core_domain));
+        socket = std::make_shared<TSocket>(Configs::dataStore->core_domain);
     }
+    socket->setConnTimeout(kRpcConnectTimeoutMs);
+    socket->setSendTimeout(kRpcSendTimeoutMs);
+    socket->setRecvTimeout(kRpcRecvTimeoutMs);
+    return socket;
 }
 
 #define CHANNEL(X, VAL)                                                                 \
@@ -313,9 +326,9 @@ try{                                                                            
             *rpcOK = true;
             return reply;
         } else {
-            NOT_OK
-            MW_show_log(QString("Failed to list connections: ") + 
-                (status.message()));
+            // Listing connections fails whenever the core is busy; logging
+            // that every second floods the UI and can freeze the window.
+            *rpcOK = false;
             return std::nullopt;
         }
     }

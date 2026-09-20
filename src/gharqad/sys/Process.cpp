@@ -95,6 +95,7 @@ namespace Configs_sys {
         });
         connect(&process, &QProcess::readyReadStandardError, this, [&]() {
             auto log = process.readAllStandardError();
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::windowSettings->max_log_line) return;
             MW_show_log(log);
         });
         connect(&process, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {

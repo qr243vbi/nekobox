@@ -408,6 +408,22 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("block", block, stringlist);
     STOP_MAP
 
+    DECL_MAP(QuickRoutes)
+        ADD_MAP("process_match", process_match, stringlist);
+        ADD_MAP("process_outbound", process_outbound, intList);
+        ADD_MAP("domain_match", domain_match, stringlist);
+        ADD_MAP("domain_outbound", domain_outbound, intList);
+    STOP_MAP
+
+    void QuickRoutes::normalize() {
+        auto fit = [](const QStringList &match, QList<int> &outbound) {
+            while (outbound.size() < match.size()) outbound.append(Configs::proxyID);
+            while (outbound.size() > match.size()) outbound.removeLast();
+        };
+        fit(process_match, process_outbound);
+        fit(domain_match, domain_outbound);
+    }
+
     DECL_MAP(DataStore)
         ADD_MAP("sub_custom_hwid_params", sub_custom_hwid_params, string);
         ADD_MAP("user_agent2", user_agent, string);
@@ -487,6 +503,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("windows_set_admin", windows_set_admin, boolean);
         ADD_MAP("disable_win_admin", windows_no_admin, boolean);
         ADD_MAP("enable_stats", connection_statistics, boolean);
+        ADD_MAP("hide_core_connections", hide_core_connections, boolean);
         ADD_MAP("stats_tab", stats_tab, integer);
         #ifdef USE_CPP_PROXY_CONFIGURATOR
         ADD_MAP("proxy_scheme", proxy_scheme, string);
@@ -558,6 +575,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("dns_final_out_direct", dns_final_out_direct, boolean);
 
         ADD_MAP("tun_split", tun_split, jsonStore);
+        ADD_MAP("quick_routes", quick_routes, jsonStore);
     STOP_MAP
 
     #undef d_add

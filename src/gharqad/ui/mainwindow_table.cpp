@@ -771,12 +771,43 @@ bool MyTableModel::setFilterEnabled(bool filter){
 };
 
 void MyTableModel::refresh(){
-    if (this->count() != this->old_count){
+    const int rows = this->count();
+    if (rows != this->old_count){
         this->beginResetModel();
+        this->old_count = rows;
         this->endResetModel();
     }
     filter->refresh();
     this->m_view->doItemsLayout();
+}
+
+void MyTableModel::notifyProfileChanged(int id) {
+    // Traffic ticks used to call refresh(), which relayouts the whole table
+    // every second and freezes the window once a group has more than a few
+    // hundred profiles. data() already reads live stats, so tell the view
+    // which rows changed and let it repaint those cells.
+    const int rows = rowCount();
+    const int cols = columnCount();
+    if (rows <= 0 || cols <= 0 || m_view == nullptr) {
+        return;
+    }
+    if (id < 0) {
+        emit dataChanged(index(0, 0), index(rows - 1, cols - 1),
+                         {Qt::DisplayRole, Qt::ForegroundRole});
+        emit headerDataChanged(Qt::Vertical, 0, rows - 1);
+        return;
+    }
+    auto group = m_data();
+    if (group == nullptr) {
+        return;
+    }
+    const int row = group->profiles.indexOf(id);
+    if (row < 0 || row >= rows) {
+        return;
+    }
+    emit dataChanged(index(row, 0), index(row, cols - 1),
+                     {Qt::DisplayRole, Qt::ForegroundRole});
+    emit headerDataChanged(Qt::Vertical, row, row);
 }
 
 void FilterHeader::refresh(){

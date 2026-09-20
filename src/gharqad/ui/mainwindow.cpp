@@ -143,6 +143,36 @@ if (grp != nullptr) {                                     \
 #endif
 #define logErrorsOnlyFilter Configs::windowSettings->errors_only
 
+namespace {
+QMutex g_pendingLogMu;
+QStringList g_pendingLogs;
+QTimer *g_logFlushTimer = nullptr;
+
+void flushPendingLogs() {
+  QString chunk;
+  {
+    QMutexLocker lock(&g_pendingLogMu);
+    if (g_pendingLogs.isEmpty()) {
+      return;
+    }
+    chunk = g_pendingLogs.join(QLatin1Char('\n'));
+    g_pendingLogs.clear();
+  }
+  auto *m = GetMainWindow();
+  if (m != nullptr) {
+    m->show_log_impl(chunk);
+  }
+}
+
+void enqueueLog(const QString &log) {
+  QMutexLocker lock(&g_pendingLogMu);
+  g_pendingLogs.append(log);
+  while (g_pendingLogs.size() > 400) {
+    g_pendingLogs.removeFirst();
+  }
+}
+} // namespace
+
 void MainWindow::set_icons() {
     set_icons_from_settings();
     bool hide_url_test = force_hide_text_under_buttons || (!Configs::windowSettings->show_test_button);
@@ -936,7 +966,12 @@ MainWindow::MainWindow(QWidget *parent)
 
   updateLogCornerVisibility();
   connect(ui->stats_widget, &QTabWidget::currentChanged, this,
-          [=](int) { updateLogCornerVisibility(); });
+          [=, this](int) {
+            updateLogCornerVisibility();
+            if (ui->stats_widget->currentWidget() == ui->Logs) {
+              rebuildLogView();
+            }
+          });
   connect(logAutoScrollCheckBox, &QCheckBox::toggled, this,
           [=, this](bool checked) {
             Configs::windowSettings->auto_scroll_log = checked;
@@ -950,9 +985,11 @@ MainWindow::MainWindow(QWidget *parent)
             logErrorsOnlyFilter = checked;
             rebuildLogView();
           });
-  MW_show_log = [=, this](const QString &log) {
-    runOnUiThread([=, this] { show_log_impl(log); });
-  };
+  MW_show_log = [](const QString &log) { enqueueLog(log); };
+  g_logFlushTimer = new QTimer(this);
+  g_logFlushTimer->setInterval(100);
+  connect(g_logFlushTimer, &QTimer::timeout, this, [] { flushPendingLogs(); });
+  g_logFlushTimer->start();
 
   // Listen port if random
   if (Configs::dataStore->random_inbound_port) {
@@ -1162,10 +1199,16 @@ skip_updater_hide:
   // setup connection UI
   setupConnectionList();
   ui->stats_widget->tabBar()->setCurrentIndex(Configs::dataStore->stats_tab);
+  auto trackConnectionsTab = [=, this] {
+    Stats::connection_lister->tab_visible =
+        ui->stats_widget->currentWidget() == ui->connections_tab;
+  };
+  trackConnectionsTab();
   connect(ui->stats_widget->tabBar(), &QTabBar::currentChanged, this,
           [=, this](int index) {
             Configs::dataStore->stats_tab =
                 ui->stats_widget->tabBar()->currentIndex();
+            trackConnectionsTab();
           });
   connect(ui->connections->horizontalHeader(), &QHeaderView::sectionClicked,
           this, [=, this](int index) {
@@ -1190,12 +1233,18 @@ skip_updater_hide:
             }
 
             Stats::connection_lister->setSort(sortType);
-            Stats::connection_lister->ForceUpdate();
+            // Asks the core for the connection list, which must not happen on
+            // the GUI thread or a busy core freezes the window on a click.
+            runOnNewThread([] { Stats::connection_lister->ForceUpdate(); });
           });
 
   // setup Speed Chart
   speedChartWidget = new SpeedWidget(this);
   ui->graph_tab->layout()->addWidget(speedChartWidget);
+
+  // setup Routes tab
+  quickRoutesWidget = new QuickRoutesWidget(this);
+  ui->routes_tab->layout()->addWidget(quickRoutesWidget);
 /*
   // table UI
   ui->proxyListTable->rowsSwapped = [=, this](int row1, int row2) {
@@ -2758,12 +2807,16 @@ void MainWindow::setupConnectionList() {
       0, QHeaderView::Stretch);
   ui->connections->horizontalHeader()->setSectionResizeMode(
       1, QHeaderView::Stretch);
-  ui->connections->horizontalHeader()->setSectionResizeMode(
-      2, QHeaderView::ResizeToContents);
-  ui->connections->horizontalHeader()->setSectionResizeMode(
-      3, QHeaderView::ResizeToContents);
-  ui->connections->horizontalHeader()->setSectionResizeMode(
-      4, QHeaderView::ResizeToContents);
+  // ResizeToContents re-measures every row of a column on every cell change,
+  // which turns the once-a-second refresh into O(rows^2) work on the UI thread
+  // and freezes the window once a few hundred connections are live.
+  for (int column = 2; column < ui->connections->columnCount(); column++) {
+    ui->connections->horizontalHeader()->setSectionResizeMode(
+        column, QHeaderView::Interactive);
+  }
+  ui->connections->setColumnWidth(2, 140);
+  ui->connections->setColumnWidth(3, 140);
+  ui->connections->setColumnWidth(4, 160);
   ui->connections->verticalHeader()->hide();
   connect(ui->connections, &QTableWidget::cellClicked, this,
           [=, this](int row, int column) {
@@ -2784,75 +2837,74 @@ void MainWindow::setupConnectionList() {
           });
 }
 
+// Writes one connection into an existing row, creating the cells the first time
+// that row is used. Reusing the cells keeps the refresh free of the allocation
+// storm that rebuilding the whole table caused.
+static void WriteConnectionRow(QTableWidget *table, int row,
+                               const Stats::ConnectionMetadata &conn) {
+  static constexpr int usedColumns = 5;
+  if (table->columnCount() < usedColumns) {
+    return;
+  }
+  for (int column = 0; column < usedColumns; column++) {
+    if (table->item(row, column) == nullptr) {
+      table->setItem(row, column, new QTableWidgetItem());
+    }
+  }
+
+  // C0: Dest (Domain), also carries the id used to match rows on the next tick
+  auto *cell = table->item(row, 0);
+  cell->setData(Stats::IDKEY, conn.id);
+  cell->setText(DisplayDest(conn.dest, conn.domain));
+
+  // C1: Process
+  table->item(row, 1)->setText(conn.process);
+
+  // C2: Protocol
+  auto prot = conn.network;
+  if (!conn.protocol.isEmpty())
+    prot += " (" + conn.protocol + ")";
+  table->item(row, 2)->setText(prot);
+
+  // C3: Outbound
+  table->item(row, 3)->setText(conn.outbound);
+
+  // C4: Traffic
+  table->item(row, 4)->setText(ReadableSize(conn.upload) + "↑" + " " +
+                               ReadableSize(conn.download) + "↓");
+}
+
 void MainWindow::UpdateConnectionList(
     const QMap<QString, Stats::ConnectionMetadata> &toUpdate,
     const QMap<QString, Stats::ConnectionMetadata> &toAdd) {
 
   ui->connections->setUpdatesEnabled(false);
+
+  // Closed connections are dropped as whole ranges: removing them one by one
+  // shifted every following row each time, which is quadratic in the row count.
+  QList<int> stale;
   for (int row = 0; row < ui->connections->rowCount(); row++) {
-    auto key = ui->connections->item(row, 0)->data(Stats::IDKEY).toString();
-    if (!toUpdate.contains(key)) {
-      ui->connections->removeRow(row);
-      row--;
+    auto *cell = ui->connections->item(row, 0);
+    const auto key =
+        cell != nullptr ? cell->data(Stats::IDKEY).toString() : QString();
+    const auto conn = toUpdate.constFind(key);
+    if (cell == nullptr || conn == toUpdate.constEnd()) {
+      stale.append(row);
       continue;
     }
-
-    auto conn = toUpdate[key];
-    // C0: Dest (Domain)
-    ui->connections->item(row, 0)->setText(DisplayDest(conn.dest, conn.domain));
-
-    // C1: Process
-    ui->connections->item(row, 1)->setText(conn.process);
-
-    // C2: Protocol
-    auto prot = conn.network;
-    if (!conn.protocol.isEmpty())
-      prot += " (" + conn.protocol + ")";
-    ui->connections->item(row, 2)->setText(prot);
-
-    // C3: Outbound
-    ui->connections->item(row, 3)->setText(conn.outbound);
-
-    // C4: Traffic
-    ui->connections->item(row, 4)->setText(ReadableSize(conn.upload) + "↑" +
-                                           " " + ReadableSize(conn.download) +
-                                           "↓");
+    WriteConnectionRow(ui->connections, row, *conn);
   }
+  for (int i = stale.size() - 1; i >= 0;) {
+    int last = i;
+    while (i > 0 && stale[i - 1] == stale[i] - 1) i--;
+    ui->connections->model()->removeRows(stale[i], last - i + 1);
+    i--;
+  }
+
   int row = ui->connections->rowCount();
+  ui->connections->setRowCount(row + static_cast<int>(toAdd.size()));
   for (const auto &conn : toAdd) {
-    ui->connections->insertRow(row);
-    auto f0 = std::make_unique<QTableWidgetItem>();
-    f0->setData(Stats::IDKEY, conn.id);
-
-    // C0: Dest (Domain)
-    auto f = f0->clone();
-    f->setText(DisplayDest(conn.dest, conn.domain));
-    ui->connections->setItem(row, 0, f);
-
-    // C1: Process
-    f = f0->clone();
-    f->setText(conn.process);
-    ui->connections->setItem(row, 1, f);
-
-    // C2: Protocol
-    f = f0->clone();
-    auto prot = conn.network;
-    if (!conn.protocol.isEmpty())
-      prot += " (" + conn.protocol + ")";
-    f->setText(prot);
-    ui->connections->setItem(row, 2, f);
-
-    // C3: Outbound
-    f = f0->clone();
-    f->setText(conn.outbound);
-    ui->connections->setItem(row, 3, f);
-
-    // C4: Traffic
-    f = f0->clone();
-    f->setText(ReadableSize(conn.upload) + "↑" + " " +
-               ReadableSize(conn.download) + "↓");
-    ui->connections->setItem(row, 4, f);
-
+    WriteConnectionRow(ui->connections, row, conn);
     row++;
   }
   ui->connections->setUpdatesEnabled(true);
@@ -2861,43 +2913,12 @@ void MainWindow::UpdateConnectionList(
 void MainWindow::UpdateConnectionListWithRecreate(
     const QList<Stats::ConnectionMetadata> &connections) {
   ui->connections->setUpdatesEnabled(false);
-  ui->connections->setRowCount(0);
-  int row = 0;
-  for (const auto &conn : connections) {
-    ui->connections->insertRow(row);
-    auto f0 = std::make_unique<QTableWidgetItem>();
-    f0->setData(Stats::IDKEY, conn.id);
-
-    // C0: Dest (Domain)
-    auto f = f0->clone();
-    f->setText(DisplayDest(conn.dest, conn.domain));
-    ui->connections->setItem(row, 0, f);
-
-    // C1: Process
-    f = f0->clone();
-    f->setText(conn.process);
-    ui->connections->setItem(row, 1, f);
-
-    // C2: Protocol
-    f = f0->clone();
-    auto prot = conn.network;
-    if (!conn.protocol.isEmpty())
-      prot += " (" + conn.protocol + ")";
-    f->setText(prot);
-    ui->connections->setItem(row, 2, f);
-
-    // C3: Outbound
-    f = f0->clone();
-    f->setText(conn.outbound);
-    ui->connections->setItem(row, 3, f);
-
-    // C4: Traffic
-    f = f0->clone();
-    f->setText(ReadableSize(conn.upload) + "↑" + " " +
-               ReadableSize(conn.download) + "↓");
-    ui->connections->setItem(row, 4, f);
-
-    row++;
+  // Resize once and overwrite in place instead of tearing the table down, so a
+  // sorted view does not reallocate every cell on every refresh.
+  const int rows = static_cast<int>(connections.size());
+  ui->connections->setRowCount(rows);
+  for (int row = 0; row < rows; row++) {
+    WriteConnectionRow(ui->connections, row, connections[row]);
   }
   ui->connections->setUpdatesEnabled(true);
 }
@@ -3055,7 +3076,8 @@ void setAppIcon(Icon::TrayIconStatus icon_status_new, QSystemTrayIcon *tray,
 
 void MainWindow::update_traffic_graph(int proxyDl, int proxyUp, int directDl,
                                       int directUp) {
-  if (speedChartWidget) {
+  if (speedChartWidget &&
+      ui->stats_widget->currentWidget() == ui->graph_tab) {
     QMap<SpeedWidget::GraphType, long> pointData;
     pointData[SpeedWidget::OUTBOUND_PROXY_UP] = proxyUp;
     pointData[SpeedWidget::OUTBOUND_PROXY_DOWN] = proxyDl;
@@ -3130,6 +3152,12 @@ void MainWindow::refresh_groups() {
 
 void MainWindow::refresh_proxy_list(const int &id) {
   refresh_proxy_list_impl(id, {});
+}
+
+void MainWindow::refresh_proxy_traffic(const int &id) {
+  if (tableModel) {
+    tableModel->notifyProfileChanged(id);
+  }
 }
 
 void MainWindow::refresh_proxy_list_impl(const int &id,
@@ -4481,32 +4509,45 @@ void MainWindow::show_log_impl(const QString &log) {
     entry.text = cleanLine;
     entry.isError = LogRoute::isErrorLine(cleanLine);
     logLineBuffer.append(entry);
-    while (logLineBuffer.size() > kMaxLogBufferLines) {
-      logLineBuffer.removeFirst();
-    }
 
     if (!logErrorsOnlyFilter || entry.isError) {
       linesToShow << cleanLine;
     }
   }
+  const int overflow = logLineBuffer.size() - kMaxLogBufferLines;
+  if (overflow > 0) {
+    logLineBuffer.erase(logLineBuffer.begin(),
+                        logLineBuffer.begin() + overflow);
+  }
 
-  if (!linesToShow.isEmpty()) {
-    runOnUiThread([linesToShow = std::move(linesToShow), this] {
-      auto bar = ui->masterLogBrowser->verticalScrollBar();
-      auto layout = qvLogDocument->documentLayout();
-      QTextBlock anchorBlock =
+  // Laying the log document out on every core line is what turns a busy
+  // profile into a "Not Responding" window. Keep the buffer, paint later.
+  const bool logsVisible = ui->stats_widget->currentWidget() == ui->Logs;
+  if (logsVisible && !linesToShow.isEmpty()) {
+    // This already runs on the GUI thread, posting again only doubled the
+    // number of queued events and let the queue outrun the event loop while
+    // the core was logging heavily.
+    auto bar = ui->masterLogBrowser->verticalScrollBar();
+    auto layout = qvLogDocument->documentLayout();
+    const bool autoScroll = Configs::windowSettings->auto_scroll_log;
+    // Locating the anchor block lays the whole document out, so it is only
+    // measured when the scroll position actually has to be kept.
+    QTextBlock anchorBlock;
+    int viewportOffset = 0;
+    if (!autoScroll) {
+      anchorBlock =
           ui->masterLogBrowser->cursorForPosition(QPoint(0, 0)).block();
-      int viewportOffset =
+      viewportOffset =
           bar->value() -
           static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
-      FastAppendTextDocument(linesToShow.join('\n'), qvLogDocument);
-      if (Configs::windowSettings->auto_scroll_log) {
-        bar->setValue(bar->maximum());
-      } else if (anchorBlock.isValid()) {
-        int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
-        bar->setValue(newY + viewportOffset);
-      }
-    });
+    }
+    FastAppendTextDocument(linesToShow.join('\n'), qvLogDocument);
+    if (autoScroll) {
+      bar->setValue(bar->maximum());
+    } else if (anchorBlock.isValid()) {
+      int newY = static_cast<int>(layout->blockBoundingRect(anchorBlock).y());
+      bar->setValue(newY + viewportOffset);
+    }
   }
 
   logLock.unlock();

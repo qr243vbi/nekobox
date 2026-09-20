@@ -86,6 +86,8 @@ namespace Configs {
     QString getTunName();
     QString getTunAddress();
     QString getTunAddress6();
+    QString getTunDnsAddress();
+    QString getTunDnsAddress6();
 
     QString get_jsdelivr_link(QString link);
 
