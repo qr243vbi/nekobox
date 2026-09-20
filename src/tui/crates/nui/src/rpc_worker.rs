@@ -103,6 +103,8 @@ pub enum Event {
     Connected { privileged: bool },
     /// Core was started with a config.
     Started,
+    /// The core rejected a config on start.
+    StartFailed(String),
     /// Core was stopped.
     Stopped,
     /// Traffic per outbound tag (cumulative bytes since core start).
@@ -285,7 +287,7 @@ impl Worker {
                         self.log("core started".to_string());
                         self.send(Event::Started);
                     }
-                    Err(e) => self.error(format!("{e:#}")),
+                    Err(e) => self.send(Event::StartFailed(format!("{e:#}"))),
                 }
             }
             Command::Stop => {

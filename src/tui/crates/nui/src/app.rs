@@ -642,7 +642,20 @@ impl App {
                     self.log(format!("core connected (privileged: {privileged})"));
                     self.restore_last_profile();
                 }
-                Event::Started => self.core_status = CoreStatus::Running,
+                Event::Started => {
+                    self.core_status = CoreStatus::Running;
+                    // The GUI re-applies the system DNS override on every
+                    // (re)start — the core drops it with the old config.
+                    if self.system_dns {
+                        let _ = self.worker.tx.send(Command::SetSystemDns { enable: false });
+                        let _ = self.worker.tx.send(Command::SetSystemDns { enable: true });
+                    }
+                }
+                Event::StartFailed(msg) => {
+                    self.core_status = CoreStatus::Error(msg.clone());
+                    self.active_profile_id = None;
+                    self.notify(format!("start failed: {msg}"));
+                }
                 Event::Stopped => {
                     self.core_status = CoreStatus::Stopped;
                     self.persist_active_traffic();
@@ -780,17 +793,20 @@ impl App {
         ));
     }
 
-    /// Write the running profile's accumulated traffic back to its `.json`,
+    /// Write a profile's accumulated traffic back to its `.cfg`.
+    fn persist_profile_traffic(&mut self, id: i32) {
+        if let Some(p) = self.profiles.get(&id).cloned() {
+            if let Err(e) = ncore::store::save_proxy_entity(&self.config_dir, &p) {
+                self.log(format!("failed to save traffic for profile {id}: {e}"));
+            }
+        }
+    }
+
+    /// Write the running profile's accumulated traffic back to disk,
     /// mirroring the `profile->Save()` loop the GUI runs when stopping.
     fn persist_active_traffic(&mut self) {
-        if let Some(p) = self
-            .active_profile_id
-            .and_then(|id| self.profiles.get(&id))
-            .cloned()
-        {
-            if let Err(e) = ncore::store::save_proxy_entity(&self.config_dir, &p) {
-                self.log(format!("failed to save traffic for profile {}: {e}", p.id));
-            }
+        if let Some(id) = self.active_profile_id {
+            self.persist_profile_traffic(id);
         }
     }
 
@@ -1123,6 +1139,13 @@ impl App {
         let Some(profile) = self.profiles.get(&id).cloned() else {
             return;
         };
+        // Switching while running: the previous profile's session traffic is
+        // only in memory — flush it before it is attributed to someone else.
+        if let Some(old) = self.active_profile_id {
+            if old != id {
+                self.persist_profile_traffic(old);
+            }
+        }
         self.datastore.enable_tun_routing = self.spmode.is_tun();
         let chain = self.active_chain().cloned();
         match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref()) {
