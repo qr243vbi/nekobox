@@ -241,6 +241,10 @@ pub struct App {
     groups_sel: usize,
 
     speed_test_running: bool,
+    /// When the running speed test was started and the tag it runs on —
+    /// the UI polls `QuerySpeedTest` for it instead of blocking the worker.
+    speed_test_started: Option<Instant>,
+    speed_test_tag: String,
 
     table_rows_area: Rect,
     group_tab_xranges: Vec<(u16, u16)>,
@@ -389,6 +393,8 @@ impl App {
             routes_sel: 0,
             groups_sel: 0,
             speed_test_running: false,
+            speed_test_started: None,
+            speed_test_tag: String::new(),
             table_rows_area: Rect::default(),
             group_tab_xranges: Vec::new(),
             bottom_tab_xranges: Vec::new(),
@@ -857,6 +863,24 @@ impl App {
                 let _ = self.worker.tx.send(Command::QueryUrlTest);
             }
         }
+
+        if self.speed_test_running {
+            let timeout = Duration::from_millis(self.datastore.speed_test_timeout_ms.max(0) as u64)
+                + Duration::from_secs(10);
+            if self
+                .speed_test_started
+                .map(|t| t.elapsed() > timeout)
+                .unwrap_or(false)
+            {
+                let _ = self.worker.tx.send(Command::StopTest);
+                self.speed_test_running = false;
+                self.notify("speed test timed out");
+            } else {
+                let _ = self.worker.tx.send(Command::QuerySpeedTest {
+                    tag: self.speed_test_tag.clone(),
+                });
+            }
+        }
     }
 
     // ------------------------------------------------------------------
@@ -1080,6 +1104,7 @@ impl App {
                 let _ = self.worker.tx.send(Command::StopTest);
                 self.url_test_running = false;
                 self.speed_test_running = false;
+                self.speed_test_started = None;
             }
 
             // --- Information ---
@@ -1752,6 +1777,11 @@ impl App {
             self.notify("a url test is already running");
             return;
         }
+        if self.speed_test_running {
+            // The core has a single test instance; wait for the speed test.
+            self.notify("a speed test is already running");
+            return;
+        }
         let profiles: Vec<&ProxyEntity> =
             ids.iter().filter_map(|id| self.profiles.get(id)).collect();
         if profiles.is_empty() {
@@ -1778,6 +1808,11 @@ impl App {
             self.notify("a speed test is already running");
             return;
         }
+        if self.url_test_running {
+            // The core has a single test instance; wait for the url test.
+            self.notify("a url test is already running");
+            return;
+        }
         let Some(id) = self.target_ids().first().copied() else {
             return;
         };
@@ -1790,6 +1825,8 @@ impl App {
             return;
         };
         self.speed_test_running = true;
+        self.speed_test_started = Some(Instant::now());
+        self.speed_test_tag = tag.clone();
         self.notify(format!("{}: {name}", mode.label()));
         let _ = self.worker.tx.send(Command::SpeedTest {
             config_json,
@@ -1807,10 +1844,13 @@ impl App {
             self.notify("speedtest current: core is not running");
             return;
         }
-        if self.speed_test_running {
+        if self.speed_test_running || self.url_test_running {
+            self.notify("a test is already running");
             return;
         }
         self.speed_test_running = true;
+        self.speed_test_started = Some(Instant::now());
+        self.speed_test_tag = "proxy".into();
         self.notify("speedtest current");
         let _ = self.worker.tx.send(Command::SpeedTest {
             config_json: String::new(),

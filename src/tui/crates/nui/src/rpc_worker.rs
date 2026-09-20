@@ -24,7 +24,8 @@ pub enum Command {
     QueryStats,
     /// Poll active connections.
     ListConnections,
-    /// Run a speed test on the given outbound.
+    /// Start a speed test on the given outbound (async on the core side —
+    /// poll with `QuerySpeedTest`, exactly like the URL test flow).
     SpeedTest {
         config_json: String,
         tag: String,
@@ -34,6 +35,9 @@ pub enum Command {
         /// Test the currently running outbound instead of `config_json`.
         test_current: bool,
     },
+    /// Poll the running speed test once; `tag` is echoed back in
+    /// `SpeedTestDone` so the UI can match the result.
+    QuerySpeedTest { tag: String },
     /// Abort a running URL/speed test.
     StopTest,
     /// Enable or disable the system DNS override.
@@ -402,38 +406,45 @@ impl Worker {
                     country_concurrency: Some(if mode == SpeedTestMode::Country { 1 } else { 0 }),
                 };
                 if let Err(e) = core.speed_test(req) {
-                    self.error(format!("speed test failed: {e:#}"));
+                    self.send(Event::SpeedTestDone {
+                        tag,
+                        dl_speed: String::new(),
+                        ul_speed: String::new(),
+                        latency: 0,
+                        country: String::new(),
+                        error: format!("speed test failed: {e:#}"),
+                    });
                     return;
                 }
-                // Poll until the core reports the test is done.
-                let deadline = std::time::Instant::now()
-                    + std::time::Duration::from_millis(timeout_ms as u64 + 10_000);
-                loop {
-                    std::thread::sleep(std::time::Duration::from_millis(500));
-                    match core.query_speed_test() {
-                        Ok(resp) if !resp.is_running.unwrap_or(true) => {
-                            let r = resp.result.unwrap_or_default();
-                            self.send(Event::SpeedTestDone {
-                                tag: tag.clone(),
-                                dl_speed: r.dl_speed.unwrap_or_default(),
-                                ul_speed: r.ul_speed.unwrap_or_default(),
-                                latency: r.latency.unwrap_or(0),
-                                country: r.server_country.unwrap_or_default(),
-                                error: r.error.unwrap_or_default(),
-                            });
-                            break;
+                self.log(format!("{} started", mode.label()));
+            }
+            Command::QuerySpeedTest { tag } => {
+                let Some(core) = self.core.as_mut() else {
+                    return;
+                };
+                match core.query_speed_test() {
+                    Ok(resp) => {
+                        if resp.is_running.unwrap_or(true) {
+                            return;
                         }
-                        Ok(_) => {
-                            if std::time::Instant::now() > deadline {
-                                self.error("speed test timed out".to_string());
-                                break;
-                            }
-                        }
-                        Err(e) => {
-                            self.error(format!("speed test query failed: {e:#}"));
-                            break;
-                        }
+                        let r = resp.result.unwrap_or_default();
+                        self.send(Event::SpeedTestDone {
+                            tag,
+                            dl_speed: r.dl_speed.unwrap_or_default(),
+                            ul_speed: r.ul_speed.unwrap_or_default(),
+                            latency: r.latency.unwrap_or(0),
+                            country: r.server_country.unwrap_or_default(),
+                            error: r.error.unwrap_or_default(),
+                        });
                     }
+                    Err(e) => self.send(Event::SpeedTestDone {
+                        tag,
+                        dl_speed: String::new(),
+                        ul_speed: String::new(),
+                        latency: 0,
+                        country: String::new(),
+                        error: format!("speed test query failed: {e:#}"),
+                    }),
                 }
             }
             Command::UpdateSubscription { gid, url, user_agent } => {
