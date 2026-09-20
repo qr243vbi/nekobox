@@ -43,9 +43,11 @@ fn test_write_read_roundtrip() {
     assert_eq!(loaded_g.profiles, vec![p.id]);
 
     // DataStore
-    let mut ds = ncore::model::DataStore::default();
-    ds.inbound_socks_port = 12345;
-    ds.test_latency_url = "http://example.com/".into();
+    let ds = ncore::model::DataStore {
+        inbound_socks_port: 12345,
+        test_latency_url: "http://example.com/".into(),
+        ..Default::default()
+    };
     ncore::store::save_datastore(&dir, &ds).unwrap();
     let loaded_ds = ncore::store::load_datastore(&dir.join("nekobox.cfg")).unwrap();
     assert_eq!(loaded_ds.inbound_socks_port, 12345);

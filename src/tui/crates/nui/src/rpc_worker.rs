@@ -111,7 +111,8 @@ pub enum Event {
     StartFailed(String),
     /// Core was stopped.
     Stopped,
-    /// Traffic per outbound tag (cumulative bytes since core start).
+    /// Traffic per outbound tag, as deltas since the previous poll (the
+    /// core's counters are drained on read).
     Stats {
         ups: Vec<(String, i64)>,
         downs: Vec<(String, i64)>,

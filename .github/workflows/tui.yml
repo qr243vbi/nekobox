@@ -1,0 +1,39 @@
+name: TUI checks
+
+on:
+  push:
+    paths:
+      - "src/tui/**"
+      - "core/server/gen/libcore.thrift"
+      - ".github/workflows/tui.yml"
+  pull_request:
+    paths:
+      - "src/tui/**"
+      - "core/server/gen/libcore.thrift"
+      - ".github/workflows/tui.yml"
+
+jobs:
+  cargo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v4
+      - name: Install Apache Thrift compiler (for nrpc codegen)
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: thrift-compiler
+          version: 1.0
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain_file: src/tui/rust-toolchain.toml
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src/tui
+      - name: cargo test
+        working-directory: src/tui
+        run: cargo test --workspace --all-targets
+      - name: cargo clippy
+        working-directory: src/tui
+        run: cargo clippy --workspace --all-targets -- -D warnings

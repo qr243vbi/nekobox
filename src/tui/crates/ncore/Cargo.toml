@@ -6,22 +6,12 @@ description = "Ported proxy logic layer (data model, store, config builder, subs
 license = "GPL-3.0-only"
 
 [dependencies]
-nrpc = { path = "../nrpc" }
-
 serde.workspace = true
 serde_json.workspace = true
-serde_yaml.workspace = true
 anyhow.workspace = true
-thiserror.workspace = true
-tracing.workspace = true
-tokio.workspace = true
 reqwest.workspace = true
 base64.workspace = true
 url.workspace = true
 percent-encoding.workspace = true
 regex.workspace = true
-chrono.workspace = true
-uuid.workspace = true
-bytes.workspace = true
-futures.workspace = true
 md-5 = "0.11.0"
