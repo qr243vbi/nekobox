@@ -129,6 +129,10 @@ pub struct DataStore {
     #[serde(default = "default_outbound_domain_strategy")]
     pub outbound_domain_strategy: String,
 
+    /// TUN interface name
+    #[serde(default)]
+    pub tun_name: String,
+
     /// TUN interface address (IPv4)
     #[serde(default = "default_tun_address")]
     pub tun_address: String,

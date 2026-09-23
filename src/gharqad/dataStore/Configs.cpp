@@ -530,6 +530,7 @@ QByteArray hash = QCryptographicHash::hash(
         ADD_MAP("auto_test_tun_failover", auto_test_tun_failover, boolean);
   //      ADD_MAP("auto_redirect", auto_redirect, boolean);
         ADD_MAP("route_exclude_addrs", route_exclude_addrs, stringList);
+        ADD_MAP("tun_name", tun_name, string);
         ADD_MAP("tun_address", tun_address, string);
         ADD_MAP("tun_address_6", tun_address_6, string);
     STOP_MAP

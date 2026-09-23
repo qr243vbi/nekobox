@@ -203,7 +203,7 @@ const KNOWN_NAMES: &[&str] = &[
     "remote_dns", "remote_dns_strategy", "direct_dns", "direct_dns_strategy",
     "domain_strategy", "outbound_domain_strategy", "sniffing_mode",
     "ruleset_mirror", "use_dns_object", "dns_object", "dns_final_out_direct",
-    "tun_split",
+    "tun_split", "tun_name",
 ];
 
 pub const MAGIC: &[u8] = b"NekoBox";

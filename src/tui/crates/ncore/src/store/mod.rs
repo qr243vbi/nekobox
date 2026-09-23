@@ -200,6 +200,7 @@ pub fn save_datastore(base: &Path, ds: &DataStore) -> anyhow::Result<()> {
     put("vpn_strict_route", ds.vpn_strict_route.into());
     put("fakedns", ds.fake_dns.into());
     put("enable_tun_routing", ds.enable_tun_routing.into());
+    put("tun_name", ds.tun_name.clone().into());
     put("tun_address", ds.tun_address.clone().into());
     put("tun_address_6", ds.tun_address_6.clone().into());
     put("remote_dns", ds.remote_dns.clone().into());
@@ -753,6 +754,7 @@ fn apply_datastore(ds: &mut DataStore, records: &[(String, BinValue)]) {
             "vpn_strict_route" => ds.vpn_strict_route = b().unwrap_or(ds.vpn_strict_route),
             "fakedns" => ds.fake_dns = b().unwrap_or(false),
             "enable_tun_routing" => ds.enable_tun_routing = b().unwrap_or(false),
+            "tun_name" => ds.tun_name = s().unwrap_or(ds.tun_name.clone()),
             "tun_address" => ds.tun_address = s().unwrap_or(ds.tun_address.clone()),
             "tun_address_6" => ds.tun_address_6 = s().unwrap_or(ds.tun_address_6.clone()),
             "remote_dns" => ds.remote_dns = s().unwrap_or(ds.remote_dns.clone()),

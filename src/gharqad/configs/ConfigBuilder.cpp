@@ -403,6 +403,9 @@ QString getTunDnsAddress6() {
 }
 
 QString getTunName() {
+  if (!Configs::dataStore->tun_name.isEmpty()) {
+    return Configs::dataStore->tun_name;
+  }
   return "tun_" + GetRandomString(9, ExcludeUppercase | ExcludeDigits);
 }
 

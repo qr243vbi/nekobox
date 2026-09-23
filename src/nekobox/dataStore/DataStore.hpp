@@ -151,6 +151,7 @@ namespace Configs {
             "224.0.0.0/4",
             "255.255.255.255/32"
         };
+        QString tun_name = "";
         QString tun_address = "172.19.0.1/24";
         QString tun_address_6 = "fdfe:dcba:9876::1/96";
         #ifdef USE_CPP_PROXY_CONFIGURATOR

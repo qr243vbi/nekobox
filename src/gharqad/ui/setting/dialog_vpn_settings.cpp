@@ -271,6 +271,7 @@ DialogVPNSettings::DialogVPNSettings(QWidget *parent)
   ui->tun_routing->setChecked(Configs::dataStore->enable_tun_routing);
   ui->auto_redirect->hide();
   //   ui->auto_redirect->setChecked(Configs::dataStore->auto_redirect);
+  ui->tun_name->setText(Configs::dataStore->tun_name);
   ui->tun_address->setText(Configs::getTunAddress());
   ui->tun_address_6->setText(Configs::getTunAddress6());
   ADJUST_SIZE
@@ -298,8 +299,7 @@ void DialogVPNSettings::accept() {
   }
   Configs::dataStore->tun_address = ui->tun_address->text();
   //   Configs::dataStore->auto_redirect = ui->auto_redirect->isChecked();
-  //   Configs::dataStore->tun_name = ui->tun_name->text();
-  //
+  Configs::dataStore->tun_name = ui->tun_name->text().trimmed();
   QStringList msg{"UpdateDataStore"};
   msg << "VPNChanged";
   MW_dialog_message("", msg.join(","));

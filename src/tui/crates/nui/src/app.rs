@@ -2444,6 +2444,7 @@ const SETTINGS: &[SettingDef] = &[
     sdef!("outbound_domain_strategy", str, outbound_domain_strategy),
     sdef!("sniffing_mode", int, sniffing_mode),
     sdef!("adblock_enable", bool, adblock_enable),
+    sdef!("tun_name", str, tun_name),
     sdef!("tun_address", str, tun_address),
     sdef!("tun_address_6", str, tun_address_6),
     sdef!("vpn_mtu", int, vpn_mtu),

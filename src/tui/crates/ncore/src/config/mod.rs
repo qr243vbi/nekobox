@@ -520,7 +520,11 @@ fn build_route(data_store: &DataStore, chain: Option<&crate::model::RoutingChain
 
 /// Build the TUN inbound (port of `BuildTunInbound` in ConfigBuilder.cpp).
 fn build_tun_inbound(data_store: &DataStore) -> Value {
-    let interface_name = format!("tun_{}", random_suffix(9));
+    let interface_name = if data_store.tun_name.is_empty() {
+        format!("tun_{}", random_suffix(9))
+    } else {
+        data_store.tun_name.clone()
+    };
     let mut addresses = vec![if data_store.tun_address.is_empty() {
         "172.19.0.1/24".to_string()
     } else {

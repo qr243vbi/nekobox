@@ -122,6 +122,20 @@
       <string/>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_tun_name">
+        <property name="text">
+         <string>Tun name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="tun_name">
+        <property name="placeholderText">
+         <string>Auto (randomized tun_xxxxxxxxx)</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
