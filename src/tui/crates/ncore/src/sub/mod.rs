@@ -142,14 +142,7 @@ fn stream_from_query(q: &HashMap<String, String>) -> serde_json::Value {
 
 /// Parse a vmess share link (base64 JSON payload).
 fn parse_vmess_link(encoded: &str) -> anyhow::Result<ProxyEntity> {
-    let decoded = base64::Engine::decode(&base64::engine::general_purpose::STANDARD, encoded.trim())
-        .or_else(|_| {
-            base64::Engine::decode(
-                &base64::engine::general_purpose::URL_SAFE_NO_PAD,
-                encoded.trim(),
-            )
-        })
-        .context("invalid base64 in vmess link")?;
+    let decoded = b64_decode(encoded).context("invalid base64 in vmess link")?;
     let json_str = String::from_utf8(decoded).context("invalid UTF-8 in vmess payload")?;
     let vmess: serde_json::Value = serde_json::from_str(&json_str)
         .context("invalid JSON in vmess payload")?;
@@ -209,13 +202,20 @@ fn parse_vless_link(url_str: &str) -> anyhow::Result<ProxyEntity> {
     Ok(entity)
 }
 
-/// Decode base64, trying URL-safe (no padding) first, then standard.
+/// Decode base64 the way real-world subscriptions and links use it: standard
+/// or URL-safe alphabet, with or without padding, possibly wrapped across
+/// lines (Qt's `fromBase64` in the GUI is just as forgiving).
 fn b64_decode(s: &str) -> anyhow::Result<Vec<u8>> {
-    use base64::Engine;
-    let s = s.trim();
-    base64::engine::general_purpose::URL_SAFE_NO_PAD
-        .decode(s)
-        .or_else(|_| base64::engine::general_purpose::STANDARD.decode(s))
+    use base64::engine::{general_purpose::GeneralPurpose, DecodePaddingMode, GeneralPurposeConfig};
+    use base64::{alphabet, Engine};
+    const CONFIG: GeneralPurposeConfig =
+        GeneralPurposeConfig::new().with_decode_padding_mode(DecodePaddingMode::Indifferent);
+    const STANDARD: GeneralPurpose = GeneralPurpose::new(&alphabet::STANDARD, CONFIG);
+    const URL_SAFE: GeneralPurpose = GeneralPurpose::new(&alphabet::URL_SAFE, CONFIG);
+    let s: String = s.chars().filter(|c| !c.is_whitespace()).collect();
+    STANDARD
+        .decode(&s)
+        .or_else(|_| URL_SAFE.decode(&s))
         .context("invalid base64")
 }
 
@@ -538,6 +538,30 @@ fn parse_anytls_link(url_str: &str) -> anyhow::Result<ProxyEntity> {
     Ok(entity)
 }
 
+/// Give an imported profile the global uTLS fingerprint when its link named
+/// none — `Link2Bean`/`TrojanVLESSBean`/`VMessBean` do this on import, so the
+/// setting affects new profiles only, never ones already stored.
+pub fn apply_default_utls(entity: &mut ProxyEntity, fingerprint: &str) {
+    if fingerprint.is_empty() {
+        return;
+    }
+    let Some(stream) = entity
+        .bean_cfg
+        .as_mut()
+        .and_then(|b| b.get_mut("stream"))
+        .and_then(serde_json::Value::as_object_mut)
+    else {
+        return;
+    };
+    let unset = stream
+        .get("utls")
+        .and_then(serde_json::Value::as_str)
+        .is_none_or(str::is_empty);
+    if unset {
+        stream.insert("utls".into(), fingerprint.into());
+    }
+}
+
 /// Parse a subscription string (raw links, one per line, or base64 thereof).
 pub fn parse_subscription(content: &str) -> anyhow::Result<Vec<ParsedProxy>> {
     parse_subscription_depth(content.trim(), 0)
@@ -577,10 +601,7 @@ fn parse_subscription_depth(content: &str, depth: u8) -> anyhow::Result<Vec<Pars
 
     // Try base64 decode (a whole link list encoded as one blob).
     if depth == 0 && content.len() > 10 && content.len() < 10_000_000 {
-        if let Ok(decoded) = base64::Engine::decode(
-            &base64::engine::general_purpose::STANDARD,
-            content.trim(),
-        ) {
+        if let Ok(decoded) = b64_decode(content) {
             if let Ok(text) = String::from_utf8(decoded) {
                 if text != content {
                     return parse_subscription_depth(text.trim(), depth + 1);
@@ -822,34 +843,230 @@ pub fn to_share_link(entity: &ProxyEntity) -> anyhow::Result<String> {
 // Subscription fetching
 // ============================================================================
 
-/// Fetch a subscription URL and return its body (blocking — call from a
-/// worker thread).
-pub fn fetch_subscription(url: &str, user_agent: Option<&str>) -> anyhow::Result<String> {
-    let mut req = reqwest::blocking::Client::builder()
-        .timeout(std::time::Duration::from_secs(30))
-        .build()?
-        .get(url);
-    if let Some(ua) = user_agent {
-        if !ua.is_empty() {
-            req = req.header(reqwest::header::USER_AGENT, ua);
+/// How to fetch a subscription — port of `Configs_network::BuildSession`.
+#[derive(Debug, Clone)]
+pub struct FetchOptions {
+    /// `User-Agent` header.
+    pub user_agent: String,
+    /// Whole-request timeout (`download_timeout`).
+    pub timeout: std::time::Duration,
+    /// Accept invalid TLS certificates (`net_insecure`).
+    pub insecure: bool,
+    /// Fetch through the local inbound (`network_use_proxy` while a
+    /// profile is running).
+    pub proxy: Option<FetchProxy>,
+    /// Extra headers: HWID and the group's custom headers.
+    pub headers: Vec<(String, String)>,
+    /// Request body (the group's custom text payload).
+    pub body: Option<String>,
+}
+
+impl Default for FetchOptions {
+    fn default() -> Self {
+        Self {
+            user_agent: default_user_agent(),
+            timeout: std::time::Duration::from_secs(10),
+            insecure: false,
+            proxy: None,
+            headers: Vec::new(),
+            body: None,
         }
+    }
+}
+
+/// The local HTTP/mixed inbound a fetch goes through.
+#[derive(Debug, Clone)]
+pub struct FetchProxy {
+    /// `host:port`
+    pub address: String,
+    pub username: String,
+    pub password: String,
+}
+
+/// `User-Agent` when none is configured. The GUI's default asks providers
+/// for Clash format ("Prefer ClashMeta Format"), which this port cannot
+/// parse yet, so it announces a plain link-list client instead.
+pub fn default_user_agent() -> String {
+    format!("nekobox-tui/{}", env!("CARGO_PKG_VERSION"))
+}
+
+/// HWID headers (`Configs_network::GetHWID`): the device id and OS details,
+/// each overridable by `key=value` pairs in `custom_params`
+/// (`sub_custom_hwid_params`, or the group's `custom_hwid`).
+pub fn hwid_headers(custom_params: &str) -> Vec<(String, String)> {
+    let custom: HashMap<String, String> = custom_params
+        .split(',')
+        .filter_map(|pair| {
+            let (k, v) = pair.trim().split_once('=')?;
+            (!k.is_empty()).then(|| (k.to_lowercase(), v.trim().to_string()))
+        })
+        .collect();
+    let device = device_details();
+    let pick = |key: &str, fallback: &str| {
+        custom
+            .get(key)
+            .cloned()
+            .unwrap_or_else(|| fallback.to_string())
+    };
+    [
+        ("x-hwid", pick("hwid", &device.hwid)),
+        ("x-device-os", pick("os", &device.os)),
+        ("x-ver-os", pick("osversion", &device.os_version)),
+        ("x-device-model", pick("model", &device.model)),
+    ]
+    .into_iter()
+    .filter(|(_, v)| !v.is_empty())
+    .map(|(k, v)| (k.to_string(), v))
+    .collect()
+}
+
+/// `DeviceDetails` as the GUI computes it on Linux, so a provider that
+/// limits devices sees the GUI and the TUI as the same machine.
+struct DeviceDetails {
+    hwid: String,
+    os: String,
+    os_version: String,
+    model: String,
+}
+
+fn device_details() -> DeviceDetails {
+    let read = |path: &str| {
+        std::fs::read_to_string(path)
+            .map(|s| s.trim().to_string())
+            .unwrap_or_default()
+    };
+    if cfg!(target_os = "linux") {
+        let mut hwid = read("/etc/machine-id");
+        if hwid.is_empty() {
+            hwid = read("/var/lib/dbus/machine-id");
+        }
+        // QSysInfo::prettyProductName: PRETTY_NAME from os-release.
+        let model = std::fs::read_to_string("/etc/os-release")
+            .or_else(|_| std::fs::read_to_string("/usr/lib/os-release"))
+            .ok()
+            .and_then(|text| {
+                text.lines().find_map(|l| {
+                    l.strip_prefix("PRETTY_NAME=")
+                        .map(|v| v.trim().trim_matches('"').to_string())
+                })
+            })
+            .unwrap_or_default();
+        DeviceDetails {
+            hwid,
+            os: "Linux".into(),
+            os_version: read("/proc/sys/kernel/osrelease"),
+            model,
+        }
+    } else {
+        DeviceDetails {
+            hwid: String::new(),
+            os: std::env::consts::OS.into(),
+            os_version: String::new(),
+            model: String::new(),
+        }
+    }
+}
+
+/// A fetched subscription body.
+pub struct Fetched {
+    pub body: String,
+    /// The `Subscription-UserInfo` header (traffic/expiry), if any.
+    pub user_info: Option<String>,
+}
+
+/// Fetch a subscription URL (blocking — call from a worker thread).
+pub fn fetch_subscription(url: &str, opts: &FetchOptions) -> anyhow::Result<Fetched> {
+    let mut builder = reqwest::blocking::Client::builder()
+        .timeout(opts.timeout)
+        .danger_accept_invalid_certs(opts.insecure);
+    if let Some(p) = &opts.proxy {
+        let mut proxy = reqwest::Proxy::all(format!("http://{}", p.address))?;
+        if !p.username.is_empty() && !p.password.is_empty() {
+            proxy = proxy.basic_auth(&p.username, &p.password);
+        }
+        builder = builder.proxy(proxy);
+    }
+    let mut req = builder
+        .build()?
+        .get(url)
+        .header(reqwest::header::USER_AGENT, &opts.user_agent);
+    for (k, v) in &opts.headers {
+        req = req.header(k, v);
+    }
+    if let Some(body) = &opts.body {
+        req = req.body(body.clone());
     }
     let resp = req.send()?;
     if !resp.status().is_success() {
         anyhow::bail!("subscription fetch failed: HTTP {}", resp.status());
     }
-    Ok(resp.text()?)
+    let user_info = resp
+        .headers()
+        .get("subscription-userinfo")
+        .and_then(|v| v.to_str().ok())
+        .map(str::to_string);
+    Ok(Fetched {
+        body: resp.text()?,
+        user_info,
+    })
+}
+
+/// A fetched and parsed subscription.
+pub struct SubscriptionUpdate {
+    pub proxies: Vec<ParsedProxy>,
+    /// The `Subscription-UserInfo` header, stored as the group's `info`.
+    pub user_info: Option<String>,
 }
 
 /// Fetch and parse a subscription into proxy entities.
-pub fn update_subscription(url: &str, user_agent: Option<&str>) -> anyhow::Result<Vec<ParsedProxy>> {
-    let body = fetch_subscription(url, user_agent)?;
-    parse_subscription(&body)
+pub fn update_subscription(url: &str, opts: &FetchOptions) -> anyhow::Result<SubscriptionUpdate> {
+    let fetched = fetch_subscription(url, opts)?;
+    Ok(SubscriptionUpdate {
+        proxies: parse_subscription(&fetched.body)?,
+        user_info: fetched.user_info,
+    })
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Providers send base64 without padding, and some wrap it in lines.
+    #[test]
+    fn test_subscription_base64_lenient() {
+        use base64::Engine;
+        let links = "trojan://pw@t.example.com:443#a\nsocks://127.0.0.1:1080#b";
+        let unpadded = base64::engine::general_purpose::STANDARD_NO_PAD.encode(links);
+        assert_eq!(parse_subscription(&unpadded).unwrap().len(), 2);
+        let wrapped = base64::engine::general_purpose::STANDARD
+            .encode(links)
+            .as_bytes()
+            .chunks(20)
+            .map(|c| std::str::from_utf8(c).unwrap())
+            .collect::<Vec<_>>()
+            .join("\n");
+        assert_eq!(parse_subscription(&wrapped).unwrap().len(), 2);
+    }
+
+    #[test]
+    fn test_apply_default_utls() {
+        let mut e = parse_share_link("vless://id@v.example.com:443?security=tls&sni=a#v").unwrap();
+        apply_default_utls(&mut e, "chrome");
+        assert_eq!(e.bean_cfg.as_ref().unwrap()["stream"]["utls"], "chrome");
+        // A fingerprint from the link wins.
+        let mut e =
+            parse_share_link("vless://id@v.example.com:443?security=tls&fp=firefox#v").unwrap();
+        apply_default_utls(&mut e, "chrome");
+        assert_eq!(e.bean_cfg.as_ref().unwrap()["stream"]["utls"], "firefox");
+    }
+
+    #[test]
+    fn test_hwid_header_overrides() {
+        let headers: HashMap<String, String> =
+            hwid_headers("model=Test Model, OS=MyOS").into_iter().collect();
+        assert_eq!(headers.get("x-device-model").map(String::as_str), Some("Test Model"));
+        assert_eq!(headers.get("x-device-os").map(String::as_str), Some("MyOS"));
+    }
 
     #[test]
     fn test_parse_ss_link_basic() {

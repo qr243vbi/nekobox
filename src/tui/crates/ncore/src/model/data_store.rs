@@ -276,6 +276,11 @@ pub struct DataStore {
     #[serde(default)]
     pub sub_send_hwid: bool,
 
+    /// `key=value,...` overrides for the HWID headers
+    /// (`sub_custom_hwid_params`: hwid, os, osversion, model).
+    #[serde(default)]
+    pub sub_custom_hwid_params: String,
+
     /// Subscriptions: remove unavailable after URL test
     #[serde(default)]
     pub sub_rm_unavailable: bool,
@@ -598,6 +603,7 @@ impl Default for DataStore {
             sub_auto_update: default_sub_auto_update(),
             sub_clear: false,
             sub_send_hwid: false,
+            sub_custom_hwid_params: String::new(),
             sub_rm_unavailable: false,
             sub_rm_duplicates: false,
             sub_url_test: false,

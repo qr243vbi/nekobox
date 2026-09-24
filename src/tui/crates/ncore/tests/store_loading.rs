@@ -228,3 +228,43 @@ fn test_load_gui_cfg_files() {
     assert_eq!(outbound["password"], "secret");
 }
 
+/// Subscription extras keep their custom headers across a TUI save, and the
+/// settings the GUI names differently (`user_agent2`, `inbound_proxy_scheme`)
+/// round-trip.
+#[test]
+fn test_group_extra_and_settings_roundtrip() {
+    let dir = std::env::temp_dir().join(format!("ncore_extra_test_{}", std::process::id()));
+    std::fs::create_dir_all(&dir).unwrap();
+
+    let extra = ncore::model::GroupExtra {
+        id: 5,
+        url: Some("https://sub.example.com/x".into()),
+        enable_custom_headers: true,
+        custom_headers: Some([("X-Token".to_string(), "abc".to_string())].into()),
+        ..Default::default()
+    };
+    ncore::store::save_group_extra(&dir, &extra).unwrap();
+    let loaded = ncore::store::load_group_extra(
+        &ncore::store::get_file_path(&dir, "subscriptions", 5),
+        5,
+    )
+    .unwrap();
+    assert_eq!(
+        loaded.custom_headers.unwrap().get("X-Token").map(String::as_str),
+        Some("abc")
+    );
+
+    let ds = ncore::model::DataStore {
+        user_agent: Some("my-agent/1.0".into()),
+        inbound_proxy_type: ncore::model::INBOUND_HTTP,
+        domain_strategy: "AsIs".into(),
+        ..Default::default()
+    };
+    ncore::store::save_settings(&dir, &ds).unwrap();
+    let loaded = ncore::store::load_settings(&dir);
+    assert_eq!(loaded.user_agent.as_deref(), Some("my-agent/1.0"));
+    assert_eq!(loaded.inbound_proxy_type, ncore::model::INBOUND_HTTP);
+    assert_eq!(loaded.domain_strategy, "", "normalized on load");
+
+    std::fs::remove_dir_all(&dir).ok();
+}

@@ -70,6 +70,8 @@ Press `?` inside for the full key map.
   (WireGuard/AmneziaWG, chains, custom configs, SSH, …) are reported as
   unsupported instead of producing a config the core rejects.
 - SIP008 / Clash YAML / sing-box JSON subscription wire formats are not
-  parsed; raw link lists (plain or base64) are.
+  parsed; raw link lists (plain or base64) are. Without a configured user
+  agent, subscriptions are fetched as `nekobox-tui/<version>` rather than the
+  GUI's default, which asks providers for Clash format.
 - TUN mode needs a privileged core (root or `CAP_NET_ADMIN`); unlike the GUI,
   the TUI does not elevate the core itself.

@@ -48,7 +48,7 @@ pub enum Command {
     UpdateSubscription {
         gid: i32,
         url: String,
-        user_agent: Option<String>,
+        options: ncore::sub::FetchOptions,
     },
     /// Run a URL test over `batches`, one after another.
     UrlTest {
@@ -196,7 +196,11 @@ pub enum Event {
     SubProfiles {
         gid: i32,
         entities: Vec<ncore::model::ProxyEntity>,
+        /// The `Subscription-UserInfo` header (traffic/expiry), if sent.
+        info: Option<String>,
     },
+    /// Subscription fetch or parse failed.
+    SubFailed { gid: i32, error: String },
     /// URL test results — polled while the batch runs, then the batch's
     /// final list. The same tag may arrive twice; the values agree.
     UrlTestResults {
@@ -348,19 +352,19 @@ impl Router {
                     });
                 }
                 Command::StopTest => self.stop_tests(false),
-                Command::UpdateSubscription {
-                    gid,
-                    url,
-                    user_agent,
-                } => {
+                Command::UpdateSubscription { gid, url, options } => {
                     let tx = self.tx.clone();
                     std::thread::spawn(move || {
-                        let ev = match ncore::sub::update_subscription(&url, user_agent.as_deref()) {
-                            Ok(parsed) => Event::SubProfiles {
+                        let ev = match ncore::sub::update_subscription(&url, &options) {
+                            Ok(update) => Event::SubProfiles {
                                 gid,
-                                entities: parsed.into_iter().map(|p| p.entity).collect(),
+                                entities: update.proxies.into_iter().map(|p| p.entity).collect(),
+                                info: update.user_info,
                             },
-                            Err(e) => Event::Error(format!("subscription update failed: {e:#}")),
+                            Err(e) => Event::SubFailed {
+                                gid,
+                                error: format!("{e:#}"),
+                            },
                         };
                         let _ = tx.send(ev);
                     });
