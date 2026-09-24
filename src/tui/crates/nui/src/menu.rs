@@ -165,7 +165,8 @@ impl MenuItem {
         }
         let marker = if self.submenu.is_empty() { 0 } else { 2 };
         let check = if self.checked.is_some() { 4 } else { 0 };
-        self.label.chars().count() as u16 + marker + check
+        // Display width, not chars: group names may be CJK.
+        ratatui::text::Span::raw(self.label.as_str()).width() as u16 + marker + check
     }
 }
 

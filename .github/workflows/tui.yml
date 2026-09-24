@@ -23,10 +23,12 @@ jobs:
         with:
           packages: thrift-compiler
           version: 1.0
+      # src/tui/rust-toolchain.toml pins the stable channel; the action takes
+      # the toolchain from its ref and has no toolchain-file input.
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@master
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain_file: src/tui/rust-toolchain.toml
+          components: clippy
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
         with:

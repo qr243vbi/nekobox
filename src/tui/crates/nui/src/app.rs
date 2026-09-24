@@ -36,6 +36,8 @@ const SPEED_HISTORY_CAP: usize = 240;
 /// Profiles per test config — the GUI's batch size, so one broken profile
 /// only fails its own batch.
 const TEST_BATCH: usize = 25;
+/// `started_id` after a manual stop: nothing to restore on the next launch.
+const NO_PROFILE: i32 = -1919;
 const TUN_NEEDS_PRIVILEGES: &str = "TUN mode needs a privileged core: run nekobox_core as root, \
      or grant it CAP_NET_ADMIN (setcap cap_net_admin,cap_net_raw,cap_net_bind_service+ep)";
 /// How long a transient message stays in the `data_view` line.
@@ -306,7 +308,8 @@ pub struct App {
     group_tab_xranges: Vec<(u16, u16)>,
     bottom_tab_xranges: Vec<(u16, u16, u16)>,
     control_row_hits: Vec<(u16, u16, Action)>,
-    last_click: Option<(Instant, u16, u16)>,
+    /// Time and item index of the last click on a profile row.
+    last_click: Option<(Instant, usize)>,
 
     logs: VecDeque<LogEntry>,
     /// Cursor into the *filtered* log view when the bottom panel has focus
@@ -534,11 +537,23 @@ impl App {
     }
 
     fn reload(&mut self) {
+        // The running profile's traffic of this session only lives in memory
+        // until it stops; the copy on disk is older.
+        let session = self
+            .active_profile_id
+            .and_then(|id| self.profiles.get(&id))
+            .map(|p| (p.id, p.traffic_dl, p.traffic_ul));
         self.datastore = ncore::store::load_settings(&self.config_dir);
         self.sync_spmode();
         self.window = WindowSettings::load(&self.config_dir);
         self.groups = Self::load_groups(&self.config_dir);
         self.profiles = Self::load_profiles(&self.config_dir);
+        if let Some((id, dl, ul)) = session {
+            if let Some(p) = self.profiles.get_mut(&id) {
+                p.traffic_dl = dl;
+                p.traffic_ul = ul;
+            }
+        }
         self.chains = Self::load_chains(&self.config_dir);
         self.current_group = self.current_group.min(self.groups.len().saturating_sub(1));
         self.selected = 0;
@@ -638,13 +653,6 @@ impl App {
             .get(self.current_group)
             .map(|g| g.name.clone())
             .unwrap_or_else(|| "(no groups)".into())
-    }
-
-    fn active_profile_name(&self) -> String {
-        self.active_profile_id
-            .and_then(|id| self.profiles.get(&id))
-            .map(|p| p.display_type_and_name())
-            .unwrap_or_default()
     }
 
     /// The routing chain the config builder should apply (`current_route_id`).
@@ -1134,11 +1142,16 @@ impl App {
             Action::SpModeTun => self.set_spmode(SpMode::Tun),
             Action::SpModeDisabled => self.set_spmode(SpMode::Disabled),
             Action::ToggleSystemDns => {
-                self.system_dns = !self.system_dns;
-                let _ = self.worker.tx.send(Command::SetSystemDns {
-                    enable: self.system_dns,
-                });
-                self.save_settings("system dns");
+                // The override points the system at the hijack DNS server.
+                if !self.system_dns && !self.datastore.enable_dns_server {
+                    self.notify("You need to enable hijack DNS server first");
+                } else {
+                    self.system_dns = !self.system_dns;
+                    let _ = self.worker.tx.send(Command::SetSystemDns {
+                        enable: self.system_dns,
+                    });
+                    self.save_settings("system dns");
+                }
             }
             Action::ToggleRememberLastProfile => {
                 self.window.remember_last_profile = !self.window.remember_last_profile;
@@ -1201,6 +1214,13 @@ impl App {
                     let _ = self.worker.tx.send(Command::QueryStats);
                 }
                 let _ = self.worker.tx.send(Command::Stop);
+                // A manual stop means "nothing running" on the next launch
+                // too (`UpdateStartedId(-1919)` in `profile_stop`, which does
+                // nothing when no profile runs).
+                if self.active_profile_id.is_some() {
+                    self.datastore.started_id = NO_PROFILE;
+                    let _ = ncore::store::save_datastore(&self.config_dir, &self.datastore);
+                }
             }
             Action::SelectAll => {
                 self.checked = self.visible_ids().into_iter().collect();
@@ -1576,12 +1596,19 @@ impl App {
         }));
     }
 
-    fn delete_profiles(&mut self, ids: Vec<i32>) {
+    fn delete_profiles(&mut self, mut ids: Vec<i32>) {
+        // Like `BatchDeleteProfiles`, the running profile stays.
+        if let Some(running) = self.running_profile_id() {
+            if ids.contains(&running) {
+                ids.retain(|id| *id != running);
+                self.log("the running profile was not deleted; stop it first".to_string());
+            }
+        }
+        if ids.is_empty() {
+            return;
+        }
         for id in &ids {
             let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
-            if self.active_profile_id == Some(*id) {
-                self.active_profile_id = None;
-            }
         }
         for g in self.groups.iter_mut() {
             let before = g.profiles.len();
@@ -2831,15 +2858,19 @@ impl App {
                     && me.row >= area.y
                     && me.row < area.y + area.height
                 {
-                    let idx = (me.row - area.y) as usize;
+                    // The table may be scrolled: screen row 0 shows item
+                    // `offset`, not item 0.
+                    let idx = (me.row - area.y) as usize + self.table_state.offset();
+                    if idx >= self.visible_ids().len() {
+                        return;
+                    }
                     let now = Instant::now();
                     let double = self
                         .last_click
-                        .map(|(t, _, r)| r == me.row && now.duration_since(t).as_millis() < 500)
-                        .unwrap_or(false);
+                        .is_some_and(|(t, i)| i == idx && now.duration_since(t).as_millis() < 500);
                     self.focus = Focus::Table;
                     self.selected = idx;
-                    self.last_click = Some((now, me.column, me.row));
+                    self.last_click = Some((now, idx));
                     if double {
                         self.dispatch(Action::Start);
                         self.last_click = None;
@@ -2869,6 +2900,11 @@ impl App {
 // ============================================================================
 // Small helpers
 // ============================================================================
+
+/// Display width in terminal columns (CJK and emoji take two).
+fn text_width(s: &str) -> u16 {
+    Span::raw(s).width() as u16
+}
 
 fn clipboard_get() -> Result<String, arboard::Error> {
     arboard::Clipboard::new().and_then(|mut c| c.get_text())
@@ -3028,12 +3064,6 @@ pub fn render(frame: &mut Frame<'_>, app: &mut App) {
 
     render_status_bar(frame, status, app);
 
-    if app.filter_mode {
-        frame.set_cursor_position((
-            control.x + control.width.saturating_sub(24) + 8 + app.filter.chars().count() as u16,
-            control.y,
-        ));
-    }
     if app.menu.is_some() {
         render_menu_overlay(frame, app);
     }
@@ -3052,7 +3082,7 @@ fn render_menu_bar(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.menu_bar_xranges.clear();
     for (i, m) in app.menu_bar.iter().enumerate() {
         let label = format!(" {} ", m.title);
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if open_root == Some(i) {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -3096,8 +3126,8 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     };
     spans.push(Span::styled(btn_label, btn_style));
     app.control_row_hits
-        .push((x, x + btn_label.chars().count() as u16, btn_action));
-    x += btn_label.chars().count() as u16;
+        .push((x, x + text_width(btn_label), btn_action));
+    x += text_width(btn_label);
 
     let checkbox = |spans: &mut Vec<Span<'static>>,
                         x: &mut u16,
@@ -3106,7 +3136,7 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
                         action: Action,
                         hits: &mut Vec<(u16, u16, Action)>| {
         let text = format!("  [{}] {}", if checked { "x" } else { " " }, label);
-        let width = text.chars().count() as u16;
+        let width = text_width(&text);
         spans.push(Span::styled(
             text,
             if checked {
@@ -3156,21 +3186,32 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.control_row_hits = hits;
 
     // Right side: either the search box or the transient `data_view` text.
-    let used: u16 = spans.iter().map(|s| s.content.chars().count() as u16).sum();
+    let used: u16 = spans.iter().map(|s| s.width() as u16).sum();
     let right_width = area.width.saturating_sub(used).saturating_sub(1);
     if app.search_visible {
-        let label = format!(
-            "  Search: {}{}",
-            app.filter,
-            if app.filter_mode { "▌" } else { "" }
-        );
-        spans.push(Span::styled(label, Style::default().fg(ACCENT)));
-    } else if let Some((msg, _)) = &app.transient {
-        let mut msg = msg.clone();
-        let budget = right_width.saturating_sub(2) as usize;
-        if msg.chars().count() > budget {
-            msg = msg.chars().take(budget).collect();
+        let prefix = "  Search: ";
+        if app.filter_mode {
+            frame.set_cursor_position((
+                area.x + used + text_width(prefix) + text_width(&app.filter),
+                area.y,
+            ));
         }
+        spans.push(Span::styled(
+            format!("{prefix}{}", app.filter),
+            Style::default().fg(ACCENT),
+        ));
+    } else if let Some((msg, _)) = &app.transient {
+        // Cut to the display width left over (not chars: CJK names are
+        // two columns each).
+        let budget = right_width.saturating_sub(2) as usize;
+        let mut msg_width = 0;
+        let msg: String = msg
+            .chars()
+            .take_while(|c| {
+                msg_width += Span::raw(c.to_string()).width();
+                msg_width <= budget
+            })
+            .collect();
         spans.push(Span::styled(
             format!("  {msg}"),
             Style::default().fg(Color::Yellow),
@@ -3192,7 +3233,7 @@ fn render_group_tabs(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     }
     for (i, g) in app.groups.iter().enumerate() {
         let label = format!(" {} ({}) ", g.name, g.profiles.len());
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if i == app.current_group {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -3343,7 +3384,7 @@ fn render_bottom_panel(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.bottom_tab_xranges.clear();
     for tab in BottomTab::ALL {
         let label = format!(" {} ", tab.label());
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if tab == app.bottom_tab {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -3584,8 +3625,15 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
         .active_chain()
         .map(|c| c.chain_name.clone())
         .unwrap_or_else(|| "-".into());
-    let running = if app.active_profile_id.is_some() {
-        format!("[{}] {}", app.current_group_name(), app.active_profile_name())
+    let running = if let Some(p) = app.active_profile_id.and_then(|id| app.profiles.get(&id)) {
+        // The running profile's own group, not the tab being viewed.
+        let group = app
+            .groups
+            .iter()
+            .find(|g| g.base.id == p.gid)
+            .map(|g| g.name.as_str())
+            .unwrap_or("");
+        format!("[{group}] {}", p.display_type_and_name())
     } else {
         "Not Running".to_string()
     };
