@@ -30,7 +30,8 @@ fn test_write_read_roundtrip() {
         let mut p2 = loaded.clone();
         p2.bean_cfg = Some(bean);
         p2
-    }, false, None);
+    }, false)
+    .unwrap();
     assert_eq!(outbound["password"], "pw");
 
     // Group
@@ -146,14 +147,18 @@ fn test_routing_chain_reaches_config() {
     ];
 
     let proxy = ProxyEntity::new("shadowsocks");
-    let ds = ncore::model::DataStore::default();
+    let ds = ncore::model::DataStore {
+        domain_strategy: "prefer_ipv4".into(),
+        ..Default::default()
+    };
 
     let without = ncore::config::build_config(&proxy, &ds).unwrap();
-    // No chain: only the GUI's prelude rules (resolve by strategy + sniff).
+    // No chain: only the GUI's prelude rules, sniff first, then resolve.
     let rules = without["route"]["rules"].as_array().unwrap();
     assert_eq!(rules.len(), 2);
-    assert_eq!(rules[0]["action"], "resolve");
-    assert_eq!(rules[1]["action"], "sniff");
+    assert_eq!(rules[0]["action"], "sniff");
+    assert_eq!(rules[1]["action"], "resolve");
+    assert_eq!(rules[1]["strategy"], "prefer_ipv4");
 
     let with = ncore::config::build_config_with_route(&proxy, &ds, Some(&chain), None).unwrap();
     let rules = with["route"]["rules"].as_array().unwrap();
@@ -218,7 +223,8 @@ fn test_load_gui_cfg_files() {
     assert_eq!(group.name, "testgroup");
     assert_eq!(group.profiles, vec![7]);
 
-    let outbound = ncore::config::build_outbound(&profile, false, None);
+    let outbound = ncore::config::build_outbound(&profile, false).unwrap();
     assert_eq!(outbound["type"], "shadowsocks");
     assert_eq!(outbound["password"], "secret");
 }
+

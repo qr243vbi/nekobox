@@ -160,6 +160,7 @@ pub fn save_datastore(base: &Path, ds: &DataStore) -> anyhow::Result<()> {
     };
     put("core_use_uds", ds.core_use_uds.into());
     put("current_group", ds.current_group.into());
+    put("inbound_proxy_scheme", ds.inbound_proxy_type.into());
     put("inbound_address", ds.inbound_address.clone().into());
     put("inbound_socks_port", ds.inbound_socks_port.into());
     put(
@@ -563,6 +564,7 @@ pub fn load_routing_into(base: &Path, ds: &mut DataStore) -> anyhow::Result<()> 
 pub fn load_settings(base: &Path) -> DataStore {
     let mut ds = load_datastore(&base.join(DATASTORE_FILE)).unwrap_or_default();
     let _ = load_routing_into(base, &mut ds);
+    ds.normalize();
     ds
 }
 
@@ -700,6 +702,16 @@ fn apply_datastore(ds: &mut DataStore, records: &[(String, BinValue)]) {
             "inbound_address" => ds.inbound_address = s().unwrap_or(ds.inbound_address.clone()),
             "inbound_socks_port" => {
                 ds.inbound_socks_port = i().unwrap_or(ds.inbound_socks_port)
+            }
+            "inbound_proxy_scheme" => {
+                ds.inbound_proxy_type = match v {
+                    BinValue::Str(name) => match name.as_str() {
+                        "http" => crate::model::INBOUND_HTTP,
+                        "mixed" => crate::model::INBOUND_MIXED,
+                        _ => crate::model::INBOUND_NONE,
+                    },
+                    _ => i().unwrap_or(ds.inbound_proxy_type),
+                }
             }
             "inbound_username" => ds.inbound_username = s(),
             "inbound_password" => ds.inbound_password = s(),

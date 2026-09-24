@@ -36,6 +36,8 @@ const SPEED_HISTORY_CAP: usize = 240;
 /// Profiles per test config — the GUI's batch size, so one broken profile
 /// only fails its own batch.
 const TEST_BATCH: usize = 25;
+const TUN_NEEDS_PRIVILEGES: &str = "TUN mode needs a privileged core: run nekobox_core as root, \
+     or grant it CAP_NET_ADMIN (setcap cap_net_admin,cap_net_raw,cap_net_bind_service+ep)";
 /// How long a transient message stays in the `data_view` line.
 const TRANSIENT_TTL: Duration = Duration::from_secs(8);
 
@@ -263,6 +265,9 @@ pub struct App {
 
     core_status: CoreStatus,
     active_profile_id: Option<i32>,
+    /// Whether the core answered yet, and with the privileges TUN mode needs.
+    core_connected: bool,
+    privileged: bool,
 
     traffic_proxy: TrafficData,
     traffic_direct: TrafficData,
@@ -358,22 +363,24 @@ impl App {
             .map(PathBuf::from)
             .unwrap_or_else(ncore::store::get_base_path);
 
-        let datastore = ncore::store::load_settings(&config_dir);
+        let mut datastore = ncore::store::load_settings(&config_dir);
         let window = WindowSettings::load(&config_dir);
         let groups = Self::load_groups(&config_dir);
         let profiles = Self::load_profiles(&config_dir);
         let chains = Self::load_chains(&config_dir);
+        let rule_set_list = ncore::model::load_rule_set_map(&config_dir);
 
-        // Restore the mode the GUI last persisted (`spmode2`).
+        // Restore the mode the GUI last persisted (`spmode2`). Note that
+        // `enable_tun_routing` is a routing option, not the TUN switch.
         let spmode = if datastore.remember_spmode.iter().any(|s| s == "system_proxy") {
             SpMode::SystemProxy
-        } else if datastore.remember_spmode.iter().any(|s| s == "vpn")
-            || datastore.enable_tun_routing
-        {
+        } else if datastore.remember_spmode.iter().any(|s| s == "vpn") {
             SpMode::Tun
         } else {
             SpMode::Disabled
         };
+        datastore.spmode_vpn = spmode.is_tun();
+        datastore.spmode_system_proxy = spmode.is_system_proxy();
 
         let core_port = args.core_port.unwrap_or(datastore.core_port as u16);
         let launch = args.launch.then(|| nrpc::CoreConfig {
@@ -423,6 +430,8 @@ impl App {
             checked: HashSet::new(),
             core_status: CoreStatus::Connecting,
             active_profile_id: None,
+            core_connected: false,
+            privileged: false,
             traffic_proxy: TrafficData::new("proxy"),
             traffic_direct: TrafficData::new("direct"),
             speed_history: VecDeque::with_capacity(SPEED_HISTORY_CAP),
@@ -465,6 +474,12 @@ impl App {
             app.profiles.len(),
             app.chains.len()
         ));
+        match rule_set_list {
+            Some(path) => app.log(format!("rule set list: {}", path.display())),
+            None => app.log(
+                "srslist.json not found; named rule sets resolve to MetaCubeX URLs".to_string(),
+            ),
+        }
         app
     }
 
@@ -520,6 +535,7 @@ impl App {
 
     fn reload(&mut self) {
         self.datastore = ncore::store::load_settings(&self.config_dir);
+        self.sync_spmode();
         self.window = WindowSettings::load(&self.config_dir);
         self.groups = Self::load_groups(&self.config_dir);
         self.profiles = Self::load_profiles(&self.config_dir);
@@ -534,15 +550,27 @@ impl App {
         ));
     }
 
+    /// Mirror the special-proxy mode into the runtime flags the config
+    /// builder reads.
+    fn sync_spmode(&mut self) {
+        self.datastore.spmode_vpn = self.spmode.is_tun();
+        self.datastore.spmode_system_proxy = self.spmode.is_system_proxy();
+    }
+
     /// Persist both settings files and the window INI.
     fn save_settings(&mut self, what: &str) {
-        self.datastore.enable_tun_routing = self.spmode.is_tun();
+        // `spmode2`: the GUI only remembers the system proxy when "remember
+        // last profile" is on (`set_spmode_system_proxy`).
         self.datastore.remember_spmode = match self.spmode {
-            SpMode::SystemProxy => vec!["system_proxy".to_string()],
+            SpMode::SystemProxy if self.window.remember_last_profile => {
+                vec!["system_proxy".to_string()]
+            }
             SpMode::Tun => vec!["vpn".to_string()],
-            SpMode::Disabled => Vec::new(),
+            _ => Vec::new(),
         };
         self.datastore.system_dns_set = self.system_dns;
+        // A strategy sing-box does not know would fail every start.
+        self.datastore.normalize();
         if let Some(g) = self.groups.get(self.current_group) {
             self.datastore.current_group = g.base.id;
         }
@@ -675,7 +703,16 @@ impl App {
                     if matches!(self.core_status, CoreStatus::Connecting | CoreStatus::Error(_)) {
                         self.core_status = CoreStatus::Stopped;
                     }
+                    self.core_connected = true;
+                    self.privileged = privileged;
                     self.log(format!("core connected (privileged: {privileged})"));
+                    // A remembered TUN mode cannot work on this core; say so
+                    // instead of failing the profile start below.
+                    if self.spmode.is_tun() && !privileged {
+                        self.spmode = SpMode::Disabled;
+                        self.sync_spmode();
+                        self.notify(TUN_NEEDS_PRIVILEGES);
+                    }
                     self.restore_last_profile();
                 }
                 Event::Started => {
@@ -1217,31 +1254,29 @@ impl App {
         if self.spmode == mode {
             return;
         }
-        let was_system_proxy = self.spmode.is_system_proxy();
+        // Checked before anything changes: a refused mode must not tear
+        // down the proxy that is running now.
+        // Before the core answers, a remembered TUN mode is re-checked on
+        // `Connected`.
+        if mode.is_tun() && self.core_connected && !self.privileged {
+            self.notify(TUN_NEEDS_PRIVILEGES);
+            return;
+        }
+        if mode.is_system_proxy() && !self.datastore.proxy_inbound_enabled() {
+            self.notify("System proxy needs the local inbound (http or mixed) enabled");
+            return;
+        }
         self.spmode = mode;
-        self.datastore.enable_tun_routing = mode.is_tun();
-
-        // Tear the old system proxy down / bring the new one up.
-        if was_system_proxy && !mode.is_system_proxy() {
-            let _ = self.worker.tx.send(Command::SetSystemProxy {
-                enable: false,
-                address: self.datastore.inbound_address.clone(),
-                port: self.datastore.inbound_socks_port,
-            });
-        }
-        if mode.is_system_proxy() {
-            let _ = self.worker.tx.send(Command::SetSystemProxy {
-                enable: true,
-                address: self.datastore.inbound_address.clone(),
-                port: self.datastore.inbound_socks_port,
-            });
-        }
+        self.sync_spmode();
         self.save_settings(match mode {
             SpMode::Disabled => "special proxy: disabled",
             SpMode::SystemProxy => "special proxy: system proxy",
             SpMode::Tun => "special proxy: tun",
         });
-        // TUN changes the inbound, so the core needs a new config.
+        // Both modes live in the generated config — the TUN inbound, or
+        // `set_system_proxy` on the local inbound, which sets the system
+        // proxy when the core starts and clears it when it stops — so the
+        // core needs the new config.
         self.restart_proxy();
     }
 
@@ -1270,7 +1305,7 @@ impl App {
                 self.persist_profile_traffic(old);
             }
         }
-        self.datastore.enable_tun_routing = self.spmode.is_tun();
+        self.sync_spmode();
         let chain = self.active_chain().cloned();
         match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref(), Some(&self.profiles)) {
             Ok(config) => {
@@ -1580,7 +1615,7 @@ impl App {
                 self.profiles.get(id).is_none_or(|p| {
                     p.server_address.trim().is_empty()
                         || p.server_port <= 0
-                        || ncore::config::build_outbound(p, false, None).get("type").is_none()
+                        || ncore::config::build_outbound(p, false).is_err()
                 })
             })
             .collect();
@@ -1874,20 +1909,41 @@ impl App {
 
     // --- tests ---
 
-    /// Split `ids` into test configs of [`TEST_BATCH`] profiles, as the GUI
-    /// does, so one broken profile only fails its own batch.
-    fn test_batches(&self, ids: &[i32]) -> (Vec<TestBatch>, HashMap<String, i32>) {
-        let profiles: Vec<&ProxyEntity> = ids.iter().filter_map(|id| self.profiles.get(id)).collect();
+    /// Split `ids` into test configs of [`TEST_BATCH`] profiles. Profiles no
+    /// outbound can be built for are marked unavailable and logged, as
+    /// `BuildTestConfig` does, instead of failing their whole batch.
+    fn test_batches(&mut self, ids: &[i32]) -> (Vec<TestBatch>, HashMap<String, i32>) {
+        let profiles: Vec<ProxyEntity> = ids
+            .iter()
+            .filter_map(|id| self.profiles.get(id).cloned())
+            .collect();
         let mut batches = Vec::new();
         let mut targets = HashMap::new();
+        let mut invalid = Vec::new();
         for chunk in profiles.chunks(TEST_BATCH) {
-            let (config_json, tags) = ncore::config::build_test_config(chunk, &self.datastore);
-            for tag in &tags {
+            let refs: Vec<&ProxyEntity> = chunk.iter().collect();
+            let tc = ncore::config::build_test_config(&refs, &self.datastore);
+            invalid.extend(tc.invalid);
+            if tc.tags.is_empty() {
+                continue;
+            }
+            for tag in &tc.tags {
                 if let Ok(id) = tag.parse::<i32>() {
                     targets.insert(tag.clone(), id);
                 }
             }
-            batches.push(TestBatch { config_json, tags });
+            batches.push(TestBatch {
+                config_json: tc.json,
+                tags: tc.tags,
+            });
+        }
+        for (id, error) in invalid {
+            if let Some(p) = self.profiles.get_mut(&id) {
+                p.latency_int = -1;
+                let p = p.clone();
+                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+                self.log(format!("skipping {}: {error}", p.display_type_and_name()));
+            }
         }
         (batches, targets)
     }
@@ -2761,6 +2817,8 @@ macro_rules! sdef {
 }
 
 const SETTINGS: &[SettingDef] = &[
+    // 0 = none, 1 = http, 2 = mixed
+    sdef!("inbound_proxy_scheme", int, inbound_proxy_type),
     sdef!("inbound_address", str, inbound_address),
     sdef!("inbound_socks_port", int, inbound_socks_port),
     sdef!("test_url", str, test_latency_url),
@@ -2776,6 +2834,9 @@ const SETTINGS: &[SettingDef] = &[
     sdef!("remote_dns", str, remote_dns),
     sdef!("direct_dns", str, direct_dns),
     sdef!("use_dns_object", bool, use_dns_object),
+    sdef!("dns_final_out_direct", bool, dns_final_out_direct),
+    sdef!("fakedns", bool, fake_dns),
+    sdef!("enable_dns_server", bool, enable_dns_server),
     sdef!("domain_strategy", str, domain_strategy),
     sdef!("outbound_domain_strategy", str, outbound_domain_strategy),
     sdef!("sniffing_mode", int, sniffing_mode),

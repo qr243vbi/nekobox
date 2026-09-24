@@ -61,8 +61,15 @@ Press `?` inside for the full key map.
 
 ## Notes / known limitations
 
-- Routing rules referencing **named** rule sets (resolved by the GUI from the
-  downloaded `srslist.json` ruleSetMap) are not resolved yet; URL-referenced
-  rule sets work, including the jsdelivr mirrors.
+- Named rule sets (`geoip-cn`, `geosite-google`, …) resolve through the
+  GUI's `srslist.json`, looked up in the config directory, next to the binary
+  and in the usual GUI install locations. Without one, `geoip-*`/`geosite-*`
+  fall back to the MetaCubeX URLs almost every entry of that list uses.
+- Only Shadowsocks, VMess, VLESS, Trojan, SOCKS, HTTP, Hysteria 1/2, TUIC and
+  AnyTLS profiles can be started or tested; the other GUI protocols
+  (WireGuard/AmneziaWG, chains, custom configs, SSH, …) are reported as
+  unsupported instead of producing a config the core rejects.
 - SIP008 / Clash YAML / sing-box JSON subscription wire formats are not
   parsed; raw link lists (plain or base64) are.
+- TUN mode needs a privileged core (root or `CAP_NET_ADMIN`); unlike the GUI,
+  the TUI does not elevate the core itself.

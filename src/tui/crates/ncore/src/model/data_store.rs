@@ -69,6 +69,21 @@ pub struct DataStore {
     #[serde(default)]
     pub current_group: i32,
 
+    /// TUN mode is on (`spmode_vpn`). Runtime state, persisted only through
+    /// `spmode2` — not to be confused with [`Self::enable_tun_routing`].
+    #[serde(skip)]
+    pub spmode_vpn: bool,
+
+    /// The system proxy is on (`spmode_system_proxy`): the local inbound is
+    /// generated with `set_system_proxy`. Runtime state, like `spmode_vpn`.
+    #[serde(skip)]
+    pub spmode_system_proxy: bool,
+
+    /// Local proxy inbound (`inbound_proxy_scheme`, `SimpleProxyInboundEnum`):
+    /// 0 = none, 1 = http, 2 = mixed (HTTP + SOCKS).
+    #[serde(default = "default_inbound_proxy_type")]
+    pub inbound_proxy_type: i32,
+
     /// Inbound listen address
     #[serde(default = "default_inbound_address")]
     pub inbound_address: String,
@@ -121,13 +136,20 @@ pub struct DataStore {
     #[serde(default)]
     pub dns_final_out_direct: bool,
 
-    /// Domain strategy: "AsIs", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"
-    #[serde(default = "default_domain_strategy")]
+    /// Domain strategy of the inbound `resolve` rule: one of
+    /// [`DOMAIN_STRATEGIES`]; "" (as is) adds no rule.
+    #[serde(default)]
     pub domain_strategy: String,
 
-    /// Outbound domain strategy
-    #[serde(default = "default_outbound_domain_strategy")]
+    /// Strategy of `route.default_domain_resolver` (same values).
+    #[serde(default)]
     pub outbound_domain_strategy: String,
+
+    /// Enable TUN routing (`enable_tun_routing`): IPs the routing profile
+    /// sends direct are excluded from the TUN routes. *Not* the TUN mode
+    /// switch — that is [`Self::spmode_vpn`].
+    #[serde(default)]
+    pub enable_tun_routing: bool,
 
     /// TUN interface address (IPv4)
     #[serde(default = "default_tun_address")]
@@ -136,10 +158,6 @@ pub struct DataStore {
     /// TUN interface address (IPv6)
     #[serde(default = "default_tun_address_6")]
     pub tun_address_6: String,
-
-    /// Enable TUN routing
-    #[serde(default)]
-    pub enable_tun_routing: bool,
 
     /// VPN implementation: "system", "gvisor", "mixed"
     #[serde(default = "default_vpn_implementation")]
@@ -201,7 +219,8 @@ pub struct DataStore {
     #[serde(default = "default_speed_test_timeout_ms")]
     pub speed_test_timeout_ms: i32,
 
-    /// Speed test mode: 0=full, 1=download, 2=upload, 3=latency
+    /// Speed test mode (`TestConfig::SpeedTestMode`): 0=full, 1=download,
+    /// 2=upload, 3=simple download, 4=country
     #[serde(default)]
     pub speed_test_mode: i32,
 
@@ -406,6 +425,43 @@ pub struct DataStore {
     pub core_box_underlying_dns: Option<String>,
 }
 
+/// `inbound_proxy_type` values (`SimpleProxyInboundEnum`).
+pub const INBOUND_NONE: i32 = 0;
+pub const INBOUND_HTTP: i32 = 1;
+pub const INBOUND_MIXED: i32 = 2;
+
+/// Valid sing-box domain strategies (`Preset::SingBox::DomainStrategy`);
+/// "" means as is.
+pub const DOMAIN_STRATEGIES: &[&str] =
+    &["", "ipv4_only", "ipv6_only", "prefer_ipv4", "prefer_ipv6"];
+
+impl DataStore {
+    /// Whether a local proxy inbound is configured (`proxyInboundEnabled`).
+    pub fn proxy_inbound_enabled(&self) -> bool {
+        matches!(self.inbound_proxy_type, INBOUND_HTTP | INBOUND_MIXED)
+    }
+
+    /// The sing-box type of the local inbound: "http" or "mixed".
+    pub fn inbound_type_name(&self) -> &'static str {
+        if self.inbound_proxy_type == INBOUND_HTTP {
+            "http"
+        } else {
+            "mixed"
+        }
+    }
+
+    /// Drop domain strategies sing-box would reject, the way the GUI's
+    /// `Routing` constructor does — older versions stored "AsIs", which the
+    /// core refuses with "unknown domain strategy".
+    pub fn normalize(&mut self) {
+        for s in [&mut self.domain_strategy, &mut self.outbound_domain_strategy] {
+            if !DOMAIN_STRATEGIES.contains(&s.as_str()) {
+                s.clear();
+            }
+        }
+    }
+}
+
 // --- TunSplit ---
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
@@ -425,10 +481,11 @@ fn default_core_port() -> i32 { 19810 }
 fn default_core_domain() -> String { "127.0.0.1".into() }
 fn default_inbound_address() -> String { "127.0.0.1".into() }
 fn default_inbound_port() -> i32 { 2080 }
+// The GUI's own default is 0 (no inbound) until the user picks one; a TUI
+// user without a GUI-written config would be left with no proxy at all.
+fn default_inbound_proxy_type() -> i32 { INBOUND_MIXED }
 fn default_remote_dns() -> String { "tls://8.8.8.8".into() }
 fn default_direct_dns() -> String { "localhost".into() }
-fn default_domain_strategy() -> String { "AsIs".into() }
-fn default_outbound_domain_strategy() -> String { "AsIs".into() }
 fn default_tun_address() -> String { "172.19.0.1/24".into() }
 fn default_tun_address_6() -> String { "fdfe:dcba:9876::1/96".into() }
 fn default_vpn_implementation() -> String { "gvisor".into() }
@@ -491,6 +548,9 @@ impl Default for DataStore {
             sniffing_mode: default_sniffing_mode(),
             remember_spmode: Vec::new(),
             current_group: 0,
+            spmode_vpn: false,
+            spmode_system_proxy: false,
+            inbound_proxy_type: default_inbound_proxy_type(),
             inbound_address: default_inbound_address(),
             inbound_socks_port: default_inbound_port(),
             inbound_username: None,
@@ -504,11 +564,11 @@ impl Default for DataStore {
             use_dns_object: false,
             dns_object: None,
             dns_final_out_direct: false,
-            domain_strategy: default_domain_strategy(),
-            outbound_domain_strategy: default_outbound_domain_strategy(),
+            domain_strategy: String::new(),
+            outbound_domain_strategy: String::new(),
+            enable_tun_routing: false,
             tun_address: default_tun_address(),
             tun_address_6: default_tun_address_6(),
-            enable_tun_routing: false,
             vpn_implementation: default_vpn_implementation(),
             vpn_mtu: default_vpn_mtu(),
             vpn_ipv6: false,
@@ -582,5 +642,25 @@ impl Default for DataStore {
             core_box_clash_api_secret: None,
             core_box_underlying_dns: None,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// "AsIs" (older GUI versions) is not a sing-box strategy: the core
+    /// refuses the whole config with "unknown domain strategy".
+    #[test]
+    fn test_normalize_domain_strategy() {
+        let mut ds = DataStore {
+            domain_strategy: "AsIs".into(),
+            outbound_domain_strategy: "prefer_ipv4".into(),
+            ..Default::default()
+        };
+        ds.normalize();
+        assert_eq!(ds.domain_strategy, "");
+        assert_eq!(ds.outbound_domain_strategy, "prefer_ipv4");
+        assert!(DataStore::default().domain_strategy.is_empty());
     }
 }

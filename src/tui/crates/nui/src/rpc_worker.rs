@@ -50,12 +50,6 @@ pub enum Command {
         url: String,
         user_agent: Option<String>,
     },
-    /// Enable/disable the system proxy (address/port of the local inbound).
-    SetSystemProxy {
-        enable: bool,
-        address: String,
-        port: i32,
-    },
     /// Run a URL test over `batches`, one after another.
     UrlTest {
         /// Echoed back in every event of this test.
@@ -811,32 +805,6 @@ impl Executor {
                         if enable { "set" } else { "cleared" }
                     )),
                     Err(e) => self.error(format!("system dns failed: {e:#}")),
-                }
-            }
-            Command::SetSystemProxy {
-                enable,
-                address,
-                port,
-            } => {
-                let Some(core) = self.core.as_mut() else {
-                    self.error("system proxy: core not connected".to_string());
-                    return;
-                };
-                let result = if enable {
-                    core.enable_system_proxy(nrpc::SystemProxy::new(
-                        address,
-                        port,
-                        true, // support_socks
-                    ))
-                } else {
-                    core.disable_system_proxy()
-                };
-                match result {
-                    Ok(()) => self.log(format!(
-                        "system proxy {}",
-                        if enable { "enabled" } else { "disabled" }
-                    )),
-                    Err(e) => self.error(format!("system proxy failed: {e:#}")),
                 }
             }
             Command::Shutdown => {
