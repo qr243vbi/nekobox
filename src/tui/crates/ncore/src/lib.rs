@@ -10,6 +10,7 @@
 pub mod model;
 pub mod store;
 pub mod config;
+pub mod country;
 pub mod log;
 pub mod sub;
 pub mod window;

@@ -17,7 +17,9 @@
 
 use crate::cli::Args;
 use crate::menu::{self, Action, Menu, MenuContext, MenuState};
-use crate::rpc_worker::{Command, Event, SpeedTestMode, WorkerHandle};
+use crate::rpc_worker::{
+    Command, Event, SpeedTestMode, SpeedTestResult, TestBatch, UrlTestResult, WorkerHandle,
+};
 use crossterm::event::{self, KeyCode, KeyEventKind, KeyModifiers};
 use ncore::model::{DataStore, Group, ProxyEntity, RoutingChain, TrafficData};
 use ncore::window::WindowSettings;
@@ -30,8 +32,10 @@ use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
 const STATS_INTERVAL: Duration = Duration::from_secs(1);
-const URL_TEST_TIMEOUT: Duration = Duration::from_secs(45);
 const SPEED_HISTORY_CAP: usize = 240;
+/// Profiles per test config — the GUI's batch size, so one broken profile
+/// only fails its own batch.
+const TEST_BATCH: usize = 25;
 /// How long a transient message stays in the `data_view` line.
 const TRANSIENT_TTL: Duration = Duration::from_secs(8);
 
@@ -123,6 +127,56 @@ impl LogEntry {
     }
 }
 
+/// What a running test measures.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum TestKind {
+    Url,
+    Speed(SpeedTestMode),
+}
+
+/// A URL/speed test in flight. It ends with the worker's `TestFinished`;
+/// there is no UI timeout, since a large group legitimately takes minutes.
+struct RunningTest {
+    /// Matches this test's worker events; events of an older test that is
+    /// still winding down are ignored.
+    seq: u64,
+    kind: TestKind,
+    /// Result tag → profile id (the tags are profile ids).
+    targets: HashMap<String, i32>,
+    /// "Speedtest Current": every result belongs to the running profile,
+    /// whatever tag the core reports it under.
+    current: Option<i32>,
+    /// Tags with a result so far.
+    done: HashSet<String>,
+    /// "Stop testing" was pressed; waiting for the worker to wind down.
+    stopping: bool,
+    /// Live progress of the outbound being speed-tested (the GUI's
+    /// `data_view` while a speed test runs).
+    live: Option<(i32, SpeedTestResult)>,
+}
+
+impl RunningTest {
+    fn new(seq: u64, kind: TestKind, targets: HashMap<String, i32>, current: Option<i32>) -> Self {
+        Self {
+            seq,
+            kind,
+            targets,
+            current,
+            done: HashSet::new(),
+            stopping: false,
+            live: None,
+        }
+    }
+
+    fn profile_for(&self, tag: &str) -> Option<i32> {
+        self.current.or_else(|| self.targets.get(tag).copied())
+    }
+
+    fn total(&self) -> usize {
+        self.targets.len().max(usize::from(self.current.is_some()))
+    }
+}
+
 /// Modal overlays. The GUI shows these as dialogs, so only one is open at a
 /// time and it captures all input.
 pub enum Dialog {
@@ -207,8 +261,6 @@ pub struct App {
     /// Explicitly checked profile ids (the GUI's multi-row selection)
     checked: HashSet<i32>,
 
-    latencies: HashMap<i32, i32>,
-
     core_status: CoreStatus,
     active_profile_id: Option<i32>,
 
@@ -240,11 +292,10 @@ pub struct App {
     routes_sel: usize,
     groups_sel: usize,
 
-    speed_test_running: bool,
-    /// When the running speed test was started and the tag it runs on —
-    /// the UI polls `QuerySpeedTest` for it instead of blocking the worker.
-    speed_test_started: Option<Instant>,
-    speed_test_tag: String,
+    /// The URL/speed test in flight, if any.
+    test: Option<RunningTest>,
+    /// Sequence number of the last test started.
+    test_seq: u64,
 
     table_rows_area: Rect,
     group_tab_xranges: Vec<(u16, u16)>,
@@ -263,11 +314,6 @@ pub struct App {
 
     /// Transient status line (the GUI's `data_view`)
     transient: Option<(String, Instant)>,
-
-    url_test_running: bool,
-    url_test_done: HashSet<String>,
-    url_test_expected: usize,
-    url_test_started: Option<Instant>,
 
     last_stats_poll: Instant,
     /// When the stats sample currently in flight was requested — the core
@@ -329,31 +375,33 @@ impl App {
             SpMode::Disabled
         };
 
-        let worker = crate::rpc_worker::spawn();
-
-        if args.launch {
-            let cfg = nrpc::CoreConfig {
-                binary: resolve_core_binary(args.core_binary.clone()),
-                port: args.core_port.unwrap_or(datastore.core_port as u16),
+        let core_port = args.core_port.unwrap_or(datastore.core_port as u16);
+        let launch = args.launch.then(|| nrpc::CoreConfig {
+            binary: resolve_core_binary(args.core_binary.clone()),
+            port: core_port,
+            address: args.core_address.clone(),
+            use_uds: args.core_uds_path.is_some(),
+            uds_path: args
+                .core_uds_path
+                .clone()
+                .unwrap_or_else(|| "/tmp/nekobox_tui_core.sock".into()),
+            ..Default::default()
+        });
+        let endpoint = match (&launch, &args.core_uds_path) {
+            (Some(cfg), _) => cfg.endpoint(),
+            (None, Some(path)) => nrpc::Endpoint::Uds(path.clone()),
+            (None, None) => nrpc::Endpoint::Tcp {
                 address: args.core_address.clone(),
-                use_uds: args.core_uds_path.is_some(),
-                uds_path: args
-                    .core_uds_path
-                    .clone()
-                    .unwrap_or_else(|| "/tmp/nekobox_tui_core.sock".into()),
-                ..Default::default()
-            };
-            let _ = worker.tx.send(Command::Launch {
+                port: core_port,
+            },
+        };
+        let worker = crate::rpc_worker::spawn(endpoint);
+        let _ = worker.tx.send(match launch {
+            Some(cfg) => Command::Launch {
                 config: Box::new(cfg),
-            });
-        } else if let Some(path) = args.core_uds_path.clone() {
-            let _ = worker.tx.send(Command::ConnectUds { path });
-        } else {
-            let _ = worker.tx.send(Command::Connect {
-                address: args.core_address.clone(),
-                port: args.core_port.unwrap_or(datastore.core_port as u16),
-            });
-        }
+            },
+            None => Command::Connect,
+        });
 
         // Follow the group the GUI left selected.
         let current_group = groups
@@ -373,7 +421,6 @@ impl App {
             selected: 0,
             table_state: TableState::default(),
             checked: HashSet::new(),
-            latencies: HashMap::new(),
             core_status: CoreStatus::Connecting,
             active_profile_id: None,
             traffic_proxy: TrafficData::new("proxy"),
@@ -392,9 +439,8 @@ impl App {
             settings_edit: None,
             routes_sel: 0,
             groups_sel: 0,
-            speed_test_running: false,
-            speed_test_started: None,
-            speed_test_tag: String::new(),
+            test: None,
+            test_seq: 0,
             table_rows_area: Rect::default(),
             group_tab_xranges: Vec::new(),
             bottom_tab_xranges: Vec::new(),
@@ -406,10 +452,6 @@ impl App {
             filter_mode: false,
             filter: String::new(),
             transient: None,
-            url_test_running: false,
-            url_test_done: HashSet::new(),
-            url_test_expected: 0,
-            url_test_started: None,
             last_stats_poll: Instant::now(),
             last_stats_at: None,
             worker,
@@ -423,18 +465,7 @@ impl App {
             app.profiles.len(),
             app.chains.len()
         ));
-        app.seed_latencies();
         app
-    }
-
-    /// Seed the latency column from persisted test results (`yc` in .cfg).
-    fn seed_latencies(&mut self) {
-        self.latencies = self
-            .profiles
-            .values()
-            .filter(|p| p.latency_int != 0)
-            .map(|p| (p.id, p.latency_int))
-            .collect();
     }
 
     // ------------------------------------------------------------------
@@ -496,7 +527,6 @@ impl App {
         self.current_group = self.current_group.min(self.groups.len().saturating_sub(1));
         self.selected = 0;
         self.checked.clear();
-        self.seed_latencies();
         self.log(format!(
             "reloaded: {} groups, {} profiles",
             self.groups.len(),
@@ -673,61 +703,41 @@ impl App {
                 }
                 Event::Stats { ups, downs } => self.apply_stats(&ups, &downs),
                 Event::Connections(conns) => self.connections = conns,
-                Event::SpeedTestDone {
-                    tag,
-                    dl_speed,
-                    ul_speed,
-                    latency,
-                    country,
-                    error,
-                } => {
-                    self.speed_test_running = false;
-                    if error.is_empty() {
-                        if let Ok(id) = tag.parse::<i32>() {
-                            if latency > 0 {
-                                self.latencies.insert(id, latency);
-                            }
-                            if let Some(p) = self.profiles.get_mut(&id) {
-                                p.dl_speed = Some(dl_speed.clone());
-                                p.ul_speed = Some(ul_speed.clone());
-                                if !country.is_empty() {
-                                    p.test_country = Some(country.clone());
-                                }
-                                let p = p.clone();
-                                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
-                            }
+                Event::SubProfiles { gid, entities } => self.apply_subscription(gid, entities),
+                Event::UrlTestResults { seq, results } => {
+                    if self.is_current_test(seq) {
+                        for r in results {
+                            self.apply_url_test_result(r);
                         }
-                        let where_ = if country.is_empty() {
-                            String::new()
-                        } else {
-                            format!(" [{country}]")
-                        };
-                        self.notify(format!(
-                            "speed test: ▼{dl_speed} ▲{ul_speed} {latency} ms{where_}"
-                        ));
-                    } else {
-                        self.notify(format!("speed test failed: {error}"));
                     }
                 }
-                Event::SubProfiles { gid, entities } => self.apply_subscription(gid, entities),
-                Event::UrlTestResults(results) => {
-                    for (tag, latency, error) in results {
-                        if !self.url_test_done.insert(tag.clone()) {
-                            continue;
-                        }
-                        if let Ok(id) = tag.parse::<i32>() {
-                            let value = if error.is_empty() { latency } else { -1 };
-                            self.latencies.insert(id, value);
-                            if let Some(p) = self.profiles.get_mut(&id) {
-                                p.latency_int = value;
-                                let p = p.clone();
-                                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+                Event::SpeedTestProgress { seq, result } => {
+                    if self.is_current_test(seq) {
+                        if let Some(test) = self.test.as_mut() {
+                            if let Some(id) = test.profile_for(&result.tag) {
+                                test.live = Some((id, result));
                             }
                         }
                     }
-                    if self.url_test_done.len() >= self.url_test_expected {
-                        self.url_test_running = false;
-                        self.notify("url test finished");
+                }
+                Event::SpeedTestResults { seq, results } => {
+                    if self.is_current_test(seq) {
+                        for r in results {
+                            self.apply_speed_test_result(r);
+                        }
+                    }
+                }
+                Event::TestBatchFailed { seq, tags, error } => {
+                    if self.is_current_test(seq) {
+                        if let Some(test) = self.test.as_mut() {
+                            test.done.extend(tags.iter().cloned());
+                        }
+                        self.log(format!("test of {} profile(s) failed: {error}", tags.len()));
+                    }
+                }
+                Event::TestFinished { seq } => {
+                    if self.is_current_test(seq) {
+                        self.finish_test();
                     }
                 }
                 Event::Log(msg) => self.log(msg),
@@ -738,6 +748,120 @@ impl App {
                     self.log(format!("error: {msg}"));
                 }
             }
+        }
+    }
+
+    fn is_current_test(&self, seq: u64) -> bool {
+        self.test.as_ref().is_some_and(|t| t.seq == seq)
+    }
+
+    /// Apply one URL test result like `runURLTest`: an aborted test means
+    /// "not tested" (0), any other error "unavailable" (-1).
+    fn apply_url_test_result(&mut self, r: UrlTestResult) {
+        let Some(test) = self.test.as_mut() else {
+            return;
+        };
+        let Some(id) = test.profile_for(&r.tag) else {
+            return;
+        };
+        // Results arrive twice (polled, then in the final list): log once.
+        let first = test.done.insert(r.tag.clone());
+        let aborted = r.error.contains("test aborted") || r.error.contains("context canceled");
+        let latency = if r.error.is_empty() {
+            r.latency_ms
+        } else if aborted {
+            0
+        } else {
+            -1
+        };
+        let Some(p) = self.profiles.get_mut(&id) else {
+            return;
+        };
+        let name = p.display_type_and_name();
+        if p.latency_int != latency {
+            p.latency_int = latency;
+            let p = p.clone();
+            let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+        }
+        if first && latency < 0 {
+            self.log(format!("[{name}] test error: {}", r.error));
+        }
+    }
+
+    /// Apply one speed/country test result like `runSpeedTest` and
+    /// `queryCountryTest`: a failure marks the profile unavailable ("N/A"
+    /// speeds), a success stores the speeds, the exit country's code and —
+    /// if the profile has none yet — the latency.
+    fn apply_speed_test_result(&mut self, r: SpeedTestResult) {
+        let Some(test) = self.test.as_mut() else {
+            return;
+        };
+        let Some(id) = test.profile_for(&r.tag) else {
+            return;
+        };
+        let first = test.done.insert(r.tag.clone());
+        if test.live.as_ref().is_some_and(|(live, _)| *live == id) {
+            test.live = None;
+        }
+        if r.cancelled {
+            return;
+        }
+        let Some(p) = self.profiles.get_mut(&id) else {
+            return;
+        };
+        if r.error.is_empty() {
+            p.dl_speed = Some(r.dl_speed);
+            p.ul_speed = Some(r.ul_speed);
+            if p.latency_int <= 0 && r.latency > 0 {
+                p.latency_int = r.latency;
+            }
+            if !r.server_country.is_empty() {
+                p.test_country =
+                    Some(ncore::country::country_name_to_code(&r.server_country).to_string());
+            }
+        } else {
+            p.dl_speed = Some("N/A".into());
+            p.ul_speed = Some("N/A".into());
+            p.latency_int = -1;
+            p.test_country = Some(String::new());
+        }
+        let p = p.clone();
+        let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+        if first && !r.error.is_empty() {
+            self.log(format!(
+                "[{}] speed test error: {}",
+                p.display_type_and_name(),
+                r.error
+            ));
+        }
+    }
+
+    /// The worker reported the end of the current test.
+    fn finish_test(&mut self) {
+        let Some(test) = self.test.take() else {
+            return;
+        };
+        let what = match test.kind {
+            TestKind::Url => "URL test".to_string(),
+            TestKind::Speed(mode) => mode.label().to_string(),
+        };
+        if test.stopping {
+            self.notify(format!("{what} stopped"));
+            return;
+        }
+        // For a single profile, show its result right away.
+        let single = test.current.or_else(|| {
+            (test.targets.len() == 1)
+                .then(|| test.targets.values().next().copied())
+                .flatten()
+        });
+        match single.and_then(|id| self.profiles.get(&id)) {
+            Some(p) => {
+                let result = p.display_test_result();
+                let name = p.display_type_and_name();
+                self.notify(format!("{what} finished: {name}: {result}"));
+            }
+            None => self.notify(format!("{what} finished")),
         }
     }
 
@@ -816,7 +940,8 @@ impl App {
         }
     }
 
-    /// Periodic work: stats polling, URL test polling, transient expiry.
+    /// Periodic work: stats polling and transient expiry. Tests report on
+    /// their own; the worker polls the core for them.
     pub fn maybe_tick(&mut self) {
         let now = Instant::now();
         if self
@@ -851,36 +976,6 @@ impl App {
             }
         }
 
-        if self.url_test_running {
-            if self
-                .url_test_started
-                .map(|t| t.elapsed() > URL_TEST_TIMEOUT)
-                .unwrap_or(false)
-            {
-                self.url_test_running = false;
-                self.notify("url test timed out");
-            } else {
-                let _ = self.worker.tx.send(Command::QueryUrlTest);
-            }
-        }
-
-        if self.speed_test_running {
-            let timeout = Duration::from_millis(self.datastore.speed_test_timeout_ms.max(0) as u64)
-                + Duration::from_secs(10);
-            if self
-                .speed_test_started
-                .map(|t| t.elapsed() > timeout)
-                .unwrap_or(false)
-            {
-                let _ = self.worker.tx.send(Command::StopTest);
-                self.speed_test_running = false;
-                self.notify("speed test timed out");
-            } else {
-                let _ = self.worker.tx.send(Command::QuerySpeedTest {
-                    tag: self.speed_test_tag.clone(),
-                });
-            }
-        }
     }
 
     // ------------------------------------------------------------------
@@ -924,7 +1019,7 @@ impl App {
                 .and_then(|e| e.url.as_ref())
                 .is_some_and(|u| !u.is_empty()),
             running: self.core_status == CoreStatus::Running,
-            testing: self.url_test_running || self.speed_test_running,
+            testing: self.test.is_some(),
         };
         self.menu_bar = menu::build_menu_bar(&ctx);
     }
@@ -1032,11 +1127,17 @@ impl App {
             }
             Action::UrlTestSelected => self.url_test(self.target_ids()),
             Action::ClearTestResultSelected => self.clear_test_results(self.target_ids()),
-            Action::SpeedTestSelected => self.speed_test(SpeedTestMode::Full),
-            Action::DownloadTestSelected => self.speed_test(SpeedTestMode::Download),
-            Action::UploadTestSelected => self.speed_test(SpeedTestMode::Upload),
-            Action::CountryTestSelected => self.speed_test(SpeedTestMode::Country),
-            Action::SimpleDlSelected => self.speed_test(SpeedTestMode::SimpleDownload),
+            Action::SpeedTestSelected => self.speed_test(self.target_ids(), SpeedTestMode::Full),
+            Action::DownloadTestSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::Download)
+            }
+            Action::UploadTestSelected => self.speed_test(self.target_ids(), SpeedTestMode::Upload),
+            Action::CountryTestSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::Country)
+            }
+            Action::SimpleDlSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::SimpleDownload)
+            }
             Action::Start => {
                 if let Some(id) = self.cursor_id() {
                     self.start_profile(id);
@@ -1044,8 +1145,8 @@ impl App {
             }
             Action::Stop => {
                 // Drain the counters one last time before the core goes away,
-                // like the GUI's final `UpdateAll()` on stop. The worker is a
-                // single thread, so this sample is delivered before `Stopped`.
+                // like the GUI's final `UpdateAll()` on stop. Core commands
+                // run in order, so this sample is delivered before `Stopped`.
                 if !self.datastore.disable_traffic_stats {
                     let _ = self.worker.tx.send(Command::QueryStats);
                 }
@@ -1080,7 +1181,10 @@ impl App {
             Action::RemoveUnavailable => self.remove_unavailable(),
             Action::ClearTestResultGroup => self.clear_test_results(self.visible_ids()),
             Action::RemoveDuplicates => self.remove_duplicates(),
-            Action::SpeedTestGroup => self.speed_test_group(),
+            Action::SpeedTestGroup => self.speed_test(
+                self.visible_ids(),
+                SpeedTestMode::from_setting(self.datastore.speed_test_mode),
+            ),
             Action::ResetTrafficGroup => self.reset_traffic(self.visible_ids()),
 
             // --- Routing ---
@@ -1100,12 +1204,7 @@ impl App {
             // --- Test ---
             Action::UrlTestGroup => self.url_test(self.visible_ids()),
             Action::SpeedTestCurrent => self.speed_test_current(),
-            Action::StopTesting => {
-                let _ = self.worker.tx.send(Command::StopTest);
-                self.url_test_running = false;
-                self.speed_test_running = false;
-                self.speed_test_started = None;
-            }
+            Action::StopTesting => self.stop_testing(),
 
             // --- Information ---
             Action::ShowStats => self.show_statistics(),
@@ -1447,7 +1546,6 @@ impl App {
 
     fn clear_test_results(&mut self, ids: Vec<i32>) {
         for id in &ids {
-            self.latencies.remove(id);
             if let Some(p) = self.profiles.get_mut(id) {
                 p.latency_int = 0;
                 p.dl_speed = None;
@@ -1467,7 +1565,7 @@ impl App {
         let ids: Vec<i32> = self
             .visible_ids()
             .into_iter()
-            .filter(|id| self.latencies.get(id).is_some_and(|l| *l < 0))
+            .filter(|id| self.profiles.get(id).is_some_and(|p| p.latency_int < 0))
             .collect();
         self.confirm_removal(ids, "Unavailable");
     }
@@ -1737,7 +1835,6 @@ impl App {
                 self.notify("subscription removed the running profile; still running until restart");
             }
             let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
-            self.latencies.remove(id);
         }
         if let Some(g) = self.groups.iter_mut().find(|x| x.base.id == gid) {
             g.profiles = kept.clone();
@@ -1770,110 +1867,149 @@ impl App {
         }
     }
 
+    /// The profile the core is running (or starting), if any.
+    fn running_profile_id(&self) -> Option<i32> {
+        self.active_profile_id
+    }
+
     // --- tests ---
 
+    /// Split `ids` into test configs of [`TEST_BATCH`] profiles, as the GUI
+    /// does, so one broken profile only fails its own batch.
+    fn test_batches(&self, ids: &[i32]) -> (Vec<TestBatch>, HashMap<String, i32>) {
+        let profiles: Vec<&ProxyEntity> = ids.iter().filter_map(|id| self.profiles.get(id)).collect();
+        let mut batches = Vec::new();
+        let mut targets = HashMap::new();
+        for chunk in profiles.chunks(TEST_BATCH) {
+            let (config_json, tags) = ncore::config::build_test_config(chunk, &self.datastore);
+            for tag in &tags {
+                if let Ok(id) = tag.parse::<i32>() {
+                    targets.insert(tag.clone(), id);
+                }
+            }
+            batches.push(TestBatch { config_json, tags });
+        }
+        (batches, targets)
+    }
+
+    /// Start a test unless one is still running — the core has a single test
+    /// context, and the GUI refuses too ("The last url test did not exit
+    /// completely").
+    fn begin_test(&mut self, kind: TestKind, targets: HashMap<String, i32>, current: Option<i32>) -> Option<u64> {
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
+            return None;
+        }
+        self.test_seq += 1;
+        self.test = Some(RunningTest::new(self.test_seq, kind, targets, current));
+        Some(self.test_seq)
+    }
+
+    /// URL test (`urltest_current_group`).
     fn url_test(&mut self, ids: Vec<i32>) {
-        if self.url_test_running {
-            self.notify("a url test is already running");
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
             return;
         }
-        if self.speed_test_running {
-            // The core has a single test instance; wait for the speed test.
-            self.notify("a speed test is already running");
-            return;
-        }
-        let profiles: Vec<&ProxyEntity> =
-            ids.iter().filter_map(|id| self.profiles.get(id)).collect();
-        if profiles.is_empty() {
+        let (batches, targets) = self.test_batches(&ids);
+        if batches.is_empty() {
             self.notify("url test: nothing to test");
             return;
         }
-        let (config_json, tags) = ncore::config::build_test_config(&profiles, &self.datastore);
-        self.url_test_running = true;
-        self.url_test_expected = tags.len();
-        self.url_test_done.clear();
-        self.url_test_started = Some(Instant::now());
-        self.notify(format!("url test: {} profiles", tags.len()));
+        let n = targets.len();
+        let Some(seq) = self.begin_test(TestKind::Url, targets, None) else {
+            return;
+        };
+        self.notify(format!("url test: {n} profile(s)"));
         let _ = self.worker.tx.send(Command::UrlTest {
-            config_json,
-            tags,
+            seq,
+            batches,
             url: self.datastore.test_latency_url.clone(),
             max_concurrency: self.datastore.test_concurrent,
             timeout_ms: self.datastore.url_test_timeout_ms,
         });
     }
 
-    fn speed_test(&mut self, mode: SpeedTestMode) {
-        if self.speed_test_running {
-            self.notify("a speed test is already running");
+    /// Speed test of the given profiles (`speedtest_current_group`); the
+    /// core measures them one after another.
+    fn speed_test(&mut self, ids: Vec<i32>, mode: SpeedTestMode) {
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
             return;
         }
-        if self.url_test_running {
-            // The core has a single test instance; wait for the url test.
-            self.notify("a url test is already running");
+        let (batches, targets) = self.test_batches(&ids);
+        if batches.is_empty() {
+            self.notify(format!("{}: nothing to test", mode.label()));
             return;
         }
-        let Some(id) = self.target_ids().first().copied() else {
+        let n = targets.len();
+        let Some(seq) = self.begin_test(TestKind::Speed(mode), targets, None) else {
             return;
         };
-        let Some(p) = self.profiles.get(&id) else {
-            return;
-        };
-        let name = p.display_type_and_name();
-        let (config_json, tags) = ncore::config::build_test_config(&[p], &self.datastore);
-        let Some(tag) = tags.into_iter().next() else {
-            return;
-        };
-        self.speed_test_running = true;
-        self.speed_test_started = Some(Instant::now());
-        self.speed_test_tag = tag.clone();
-        self.notify(format!("{}: {name}", mode.label()));
-        let _ = self.worker.tx.send(Command::SpeedTest {
-            config_json,
-            tag,
-            download_addr: self.datastore.simple_dl_url.clone(),
-            timeout_ms: self.datastore.speed_test_timeout_ms,
-            mode,
-            test_current: false,
-        });
+        self.notify(format!("{}: {n} profile(s)", mode.label()));
+        self.send_speed_test(seq, batches, mode, false);
     }
 
-    /// "Speedtest Current" — test the outbound the core is actually running.
+    /// "Speedtest Current" — test the outbound the core is actually running,
+    /// with the configured test mode.
     fn speed_test_current(&mut self) {
-        if self.core_status != CoreStatus::Running {
+        let Some(id) = self.running_profile_id().filter(|_| self.core_status == CoreStatus::Running)
+        else {
             self.notify("speedtest current: core is not running");
             return;
-        }
-        if self.speed_test_running || self.url_test_running {
-            self.notify("a test is already running");
+        };
+        let mode = SpeedTestMode::from_setting(self.datastore.speed_test_mode);
+        let Some(seq) = self.begin_test(TestKind::Speed(mode), HashMap::new(), Some(id)) else {
             return;
-        }
-        self.speed_test_running = true;
-        self.speed_test_started = Some(Instant::now());
-        self.speed_test_tag = "proxy".into();
-        self.notify("speedtest current");
-        let _ = self.worker.tx.send(Command::SpeedTest {
+        };
+        self.notify(format!("{}: running profile", mode.label()));
+        // Untagged, the core would measure route.final rather than the
+        // profile (`speedtest_current_group`).
+        let batches = vec![TestBatch {
             config_json: String::new(),
-            tag: "proxy".into(),
+            tags: vec!["proxy".into()],
+        }];
+        self.send_speed_test(seq, batches, mode, true);
+    }
+
+    fn send_speed_test(&mut self, seq: u64, batches: Vec<TestBatch>, mode: SpeedTestMode, test_current: bool) {
+        let _ = self.worker.tx.send(Command::SpeedTest {
+            seq,
+            batches,
+            mode,
             download_addr: self.datastore.simple_dl_url.clone(),
             timeout_ms: self.datastore.speed_test_timeout_ms,
-            mode: SpeedTestMode::Full,
-            test_current: true,
+            country_concurrency: self.datastore.test_concurrent,
+            test_current,
         });
     }
 
-    /// "Speedtest Group" — the GUI runs a full test across the group; the
-    /// core takes one outbound at a time, so this queues the group's profiles
-    /// through the URL test and then speed-tests the cursor row.
-    fn speed_test_group(&mut self) {
-        self.url_test(self.visible_ids());
+    /// "Stop testing": ask the core to abort, then wait for the worker to
+    /// report the test over. Pressing it again while waiting gives up on
+    /// the old test, so a wedged core cannot block testing for good.
+    fn stop_testing(&mut self) {
+        match self.test.as_mut() {
+            Some(test) if !test.stopping => {
+                test.stopping = true;
+                test.live = None;
+                let _ = self.worker.tx.send(Command::StopTest);
+                self.notify("stopping tests…");
+            }
+            Some(_) => {
+                self.test = None;
+                self.notify("stopped waiting for the test to finish");
+            }
+            None => {
+                let _ = self.worker.tx.send(Command::StopTest);
+            }
+        }
     }
 
     fn show_statistics(&mut self) {
         let group_count = self.groups.len();
         let profile_count = self.profiles.len();
-        let tested = self.latencies.len();
-        let working = self.latencies.values().filter(|l| **l > 0).count();
+        let tested = self.profiles.values().filter(|p| p.latency_int != 0).count();
+        let working = self.profiles.values().filter(|p| p.latency_int > 0).count();
         let total_dl: i64 = self.profiles.values().map(|p| p.traffic_dl).sum();
         let total_ul: i64 = self.profiles.values().map(|p| p.traffic_ul).sum();
         let body = format!(
@@ -2430,8 +2566,18 @@ impl App {
         if self.core_status == CoreStatus::Running {
             self.persist_active_traffic();
         }
-        let _ = self.worker.tx.send(Command::Shutdown);
         self.running = false;
+    }
+
+    /// `prepare_exit`: undo the system-wide changes (the DNS override here,
+    /// the system proxy with the core's instance), then stop the core and
+    /// wait for it. `started_id` is left alone so the profile comes back on
+    /// the next launch — only a manual stop clears it.
+    fn shutdown(&mut self) {
+        if self.system_dns {
+            let _ = self.worker.tx.send(Command::SetSystemDns { enable: false });
+        }
+        self.worker.shutdown(Duration::from_secs(5));
     }
 
     // ------------------------------------------------------------------
@@ -2621,6 +2767,8 @@ const SETTINGS: &[SettingDef] = &[
     sdef!("urltest_timeout_ms", int, url_test_timeout_ms),
     sdef!("speedtest_timeout_ms", int, speed_test_timeout_ms),
     sdef!("test_concurrent", int, test_concurrent),
+    // 0 full, 1 download, 2 upload, 3 simple download, 4 country
+    sdef!("speed_test_mode", int, speed_test_mode),
     sdef!("simple_dl_url", str, simple_dl_url),
     sdef!("log_level", str, log_level),
     sdef!("mux_protocol", str, mux_protocol),
@@ -2891,21 +3039,14 @@ fn render_proxy_table(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
             };
             let mark = if app.checked.contains(id) { "✓" } else { " " };
 
-            let (latency, latency_color) = match app.latencies.get(id) {
-                Some(&l) if l < 0 => ("Unavailable".to_string(), Color::Red),
-                Some(&l) if l > 0 => (
-                    format!("{l} ms"),
-                    if l <= 200 { Color::Green } else { Color::Yellow },
-                ),
-                _ => (String::new(), Color::DarkGray),
-            };
-            // A finished speed test replaces the latency column with speeds,
-            // like the GUI's "Test Result" column does.
-            let result = match (&p.dl_speed, &p.ul_speed) {
-                (Some(dl), Some(ul)) if !dl.is_empty() || !ul.is_empty() => {
-                    format!("▼{dl} ▲{ul}")
-                }
-                _ => latency,
+            // The GUI's "Test Result" column: latency with the exit
+            // country, then any measured speeds.
+            let result = p.display_test_result();
+            let latency_color = match p.latency_int {
+                l if l < 0 => Color::Red,
+                l if l > 0 && l <= 200 => Color::Green,
+                l if l > 200 => Color::Yellow,
+                _ => Color::DarkGray,
             };
 
             let traffic = if p.traffic_ul > 0 || p.traffic_dl > 0 {
@@ -3189,16 +3330,28 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
         )
     };
 
-    let testing = if app.url_test_running {
-        format!(
-            "  Testing {}/{}",
-            app.url_test_done.len(),
-            app.url_test_expected
-        )
-    } else if app.speed_test_running {
-        "  Speed testing".to_string()
-    } else {
-        String::new()
+    let testing = match &app.test {
+        Some(t) if t.stopping => "  Stopping tests…".to_string(),
+        Some(t) => match (&t.live, t.kind) {
+            // The GUI's data_view while a speed test runs.
+            (Some((id, r)), _) => {
+                let name = app
+                    .profiles
+                    .get(id)
+                    .map(|p| p.display_name_str())
+                    .unwrap_or_default();
+                let server = match (r.server_country.as_str(), r.server_name.as_str()) {
+                    ("", "") => String::new(),
+                    (country, server) => format!(" · {country} {server}"),
+                };
+                format!("  Speedtest {name}: ↓{} ↑{}{server}", r.dl_speed, r.ul_speed)
+            }
+            (None, TestKind::Url) => format!("  Testing {}/{}", t.done.len(), t.total()),
+            (None, TestKind::Speed(mode)) => {
+                format!("  {} {}/{}", mode.label(), t.done.len(), t.total())
+            }
+        },
+        None => String::new(),
     };
 
     // label_speed
@@ -3693,8 +3846,9 @@ pub fn run(
         app.maybe_tick();
     }
 
-    let _ = app.worker.tx.send(Command::Shutdown);
-    std::thread::sleep(Duration::from_millis(100));
+    app.transient = Some(("stopping the core…".into(), Instant::now()));
+    terminal.draw(|f| render(f, &mut app))?;
+    app.shutdown();
 
     Ok(())
 }

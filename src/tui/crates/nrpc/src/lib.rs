@@ -6,7 +6,11 @@
 //! an ergonomic synchronous [`Core`] client on top of them.
 //!
 //! The client is synchronous — run it on a dedicated worker thread (the TUI
-//! does exactly that).
+//! does exactly that). Some calls (`Test`, `SpeedTest`) only return once the
+//! whole batch has finished, so anything that must stay responsive meanwhile
+//! (polling results, `StopTest`) needs its own connection: the Go server
+//! serves every connection on its own goroutine, and the GUI likewise opens
+//! a fresh socket per call. [`Endpoint`] makes that cheap.
 //!
 //! ## Usage
 //!
@@ -42,6 +46,24 @@ type Client = LibcoreServiceSyncClient<
     TBinaryOutputProtocol<TBufferedWriteTransport<Box<dyn Write + Send>>>,
 >;
 
+/// Where the core's RPC server listens.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum Endpoint {
+    /// TCP `address:port`.
+    Tcp { address: String, port: u16 },
+    /// Unix domain socket path (the GUI's Linux default).
+    Uds(String),
+}
+
+impl std::fmt::Display for Endpoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Tcp { address, port } => write!(f, "{address}:{port}"),
+            Self::Uds(path) => f.write_str(path),
+        }
+    }
+}
+
 /// Connection to nekobox_core.
 ///
 /// Wraps the generated `LibcoreServiceSyncClient` and turns `ErrorResp.error`
@@ -51,6 +73,19 @@ pub struct Core {
 }
 
 impl Core {
+    /// Open a new connection to `endpoint`.
+    pub fn connect(endpoint: &Endpoint) -> anyhow::Result<Self> {
+        match endpoint {
+            Endpoint::Tcp { address, port } => Self::connect_tcp(address, *port),
+            #[cfg(unix)]
+            Endpoint::Uds(path) => Self::connect_uds(path),
+            #[cfg(not(unix))]
+            Endpoint::Uds(path) => {
+                anyhow::bail!("unix sockets are not supported on this platform ({path})")
+            }
+        }
+    }
+
     fn new_client(
         read: Box<dyn Read + Send>,
         write: Box<dyn Write + Send>,
@@ -107,8 +142,12 @@ impl Core {
         check_error(self.client.check_config(req)?, "config check")
     }
 
-    /// URL test for proxy latency measurement (async on the core side —
-    /// poll [`Core::query_url_test`] for results).
+    /// URL test for proxy latency measurement.
+    ///
+    /// Blocks until every outbound in the batch has been tested (or the test
+    /// is stopped) and returns all results. Results also trickle into
+    /// [`Core::query_url_test`] as they arrive — poll that from a *second*
+    /// connection for live progress.
     pub fn test(&mut self, req: TestReq) -> anyhow::Result<TestResp> {
         Ok(self.client.test(req)?)
     }
@@ -152,13 +191,21 @@ impl Core {
         )
     }
 
-    /// Run a speed test (async on the core side — poll
-    /// [`Core::query_speed_test`] for results).
+    /// Run a speed test.
+    ///
+    /// Blocks until the batch has finished and returns every result,
+    /// including errors — which is the only place errors such as a failed
+    /// server lookup are reported. While it runs, poll
+    /// [`Core::query_speed_test`] (download/upload progress) or
+    /// [`Core::query_country_test`] (country tests) from a second connection.
     pub fn speed_test(&mut self, req: SpeedTestRequest) -> anyhow::Result<SpeedTestResponse> {
         Ok(self.client.speed_test(req)?)
     }
 
-    /// Query pending speed test results.
+    /// Progress of the running speed test.
+    ///
+    /// Only meaningful while `is_running` is set: otherwise `result` is
+    /// whatever the *previous* test stored last.
     pub fn query_speed_test(&mut self) -> anyhow::Result<QuerySpeedTestResponse> {
         Ok(self.client.query_speed_test(EmptyReq::new(None))?)
     }
@@ -332,7 +379,7 @@ impl CoreConfig {
         }
 
         use anyhow::Context as _;
-        let child = cmd
+        let mut child = cmd
             .spawn()
             .with_context(|| format!("failed to spawn core binary `{}`", self.binary))?;
 
@@ -345,18 +392,33 @@ impl CoreConfig {
                     return Ok((child, core));
                 }
             }
+            // No point waiting out the timeout for a core that already died
+            // (bad flags, port in use, …).
+            if let Ok(Some(status)) = child.try_wait() {
+                anyhow::bail!("core exited during startup ({status})");
+            }
         }
 
+        let _ = child.kill();
+        let _ = child.wait();
         Err(anyhow::anyhow!("core failed to start within 10 seconds"))
+    }
+
+    /// The RPC endpoint the launched core will listen on.
+    pub fn endpoint(&self) -> Endpoint {
+        if self.use_uds {
+            Endpoint::Uds(self.uds_path.clone())
+        } else {
+            Endpoint::Tcp {
+                address: self.address.clone(),
+                port: self.port,
+            }
+        }
     }
 
     /// Try to connect to the core's RPC endpoint (TCP or UDS).
     fn probe(&self) -> anyhow::Result<Core> {
-        #[cfg(unix)]
-        if self.use_uds {
-            return Core::connect_uds(&self.uds_path);
-        }
-        Core::connect_tcp(&self.address, self.port)
+        Core::connect(&self.endpoint())
     }
 }
 
