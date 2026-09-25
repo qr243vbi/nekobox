@@ -190,6 +190,31 @@ impl ProxyEntity {
         format!("{} {}", self.display_core_type(), self.display_name_str())
     }
 
+    /// The "Test Result" column. Port of `ProxyEntity::DisplayTestResult`
+    /// (a full test report, when there is one, takes its place): latency
+    /// with the exit country, then whatever speeds were measured — a failed
+    /// speed test stores "N/A", which is not shown.
+    pub fn display_test_result(&self) -> String {
+        if let Some(report) = self.full_test_report.as_deref().filter(|r| !r.is_empty()) {
+            return report.to_string();
+        }
+        let mut parts: Vec<String> = Vec::new();
+        if self.latency_int < 0 {
+            parts.push("Unavailable".into());
+        } else if self.latency_int > 0 {
+            if let Some(country) = self.test_country.as_deref().filter(|c| !c.is_empty()) {
+                parts.push(country.to_string());
+            }
+            parts.push(format!("{} ms", self.latency_int));
+        }
+        for (arrow, speed) in [("↓", &self.dl_speed), ("↑", &self.ul_speed)] {
+            if let Some(s) = speed.as_deref().filter(|s| !s.is_empty() && *s != "N/A") {
+                parts.push(format!("{arrow}{s}"));
+            }
+        }
+        parts.join(" ")
+    }
+
     /// Set the bean config from a protocol-specific value.
     pub fn set_bean<T: Serialize>(&mut self, bean: &T) {
         self.bean_cfg = Some(serde_json::to_value(bean).unwrap_or_default());
@@ -206,5 +231,24 @@ impl ProxyEntity {
             .as_ref()
             .map(|v| v.to_string())
             .unwrap_or_default()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_display_test_result() {
+        let mut p = ProxyEntity::new("vmess");
+        assert_eq!(p.display_test_result(), "");
+        p.latency_int = 120;
+        p.test_country = Some("JP".into());
+        p.dl_speed = Some("12.3 MB/s".into());
+        p.ul_speed = Some("N/A".into());
+        assert_eq!(p.display_test_result(), "JP 120 ms ↓12.3 MB/s");
+        p.latency_int = -1;
+        p.dl_speed = Some("N/A".into());
+        assert_eq!(p.display_test_result(), "Unavailable");
     }
 }

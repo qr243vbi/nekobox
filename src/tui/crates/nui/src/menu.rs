@@ -165,7 +165,8 @@ impl MenuItem {
         }
         let marker = if self.submenu.is_empty() { 0 } else { 2 };
         let check = if self.checked.is_some() { 4 } else { 0 };
-        self.label.chars().count() as u16 + marker + check
+        // Display width, not chars: group names may be CJK.
+        ratatui::text::Span::raw(self.label.as_str()).width() as u16 + marker + check
     }
 }
 
@@ -381,11 +382,12 @@ fn current_selected_menu(ctx: &MenuContext<'_>) -> Vec<MenuItem> {
                 MenuItem::new("Url Test", Action::UrlTestSelected).enabled(sel),
                 MenuItem::new("Clear Test Result", Action::ClearTestResultSelected).enabled(sel),
                 MenuItem::sep(),
-                MenuItem::new("Full test", Action::SpeedTestSelected).enabled(one),
-                MenuItem::new("Download test", Action::DownloadTestSelected).enabled(one),
-                MenuItem::new("Upload test", Action::UploadTestSelected).enabled(one),
-                MenuItem::new("Country test", Action::CountryTestSelected).enabled(one),
-                MenuItem::new("Simple download test", Action::SimpleDlSelected).enabled(one),
+                // Like the GUI, speed tests run over the whole selection.
+                MenuItem::new("Full test", Action::SpeedTestSelected).enabled(sel),
+                MenuItem::new("Download test", Action::DownloadTestSelected).enabled(sel),
+                MenuItem::new("Upload test", Action::UploadTestSelected).enabled(sel),
+                MenuItem::new("Country test", Action::CountryTestSelected).enabled(sel),
+                MenuItem::new("Simple download test", Action::SimpleDlSelected).enabled(sel),
             ],
         ),
         MenuItem::sep(),

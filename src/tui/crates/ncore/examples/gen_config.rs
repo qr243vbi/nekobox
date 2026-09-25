@@ -28,7 +28,7 @@ fn main() {
         chain.as_ref().map_or(0, |c| c.rules.len()),
     );
 
-    let config = ncore::config::build_config_with_route(&proxy, &ds, chain.as_ref())
+    let config = ncore::config::build_config_with_route(&proxy, &ds, chain.as_ref(), None)
         .expect("build config");
     println!("{}", serde_json::to_string_pretty(&config).unwrap());
 }

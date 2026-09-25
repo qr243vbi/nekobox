@@ -393,10 +393,60 @@ fn str_hash(s: &str) -> u32 {
     h
 }
 
-/// Build the `route.rule_set[]` entry for a rule-set reference, or `None` when
-/// it is not a downloadable rule set. Port of `get_rule_set_json`.
-pub fn rule_set_json(rule_set: &str) -> Option<Value> {
-    let file_name = rule_set_file_name(rule_set)?;
+/// `ruleset_mirror` values (mirrors `Configs::Mirrors` in Const.hpp).
+pub mod mirror {
+    pub const GITHUB: i32 = 0;
+    pub const CLOUDFLARE: i32 = 1;
+    pub const GCORE: i32 = 2;
+    pub const QUANTIL: i32 = 3;
+    pub const FASTLY: i32 = 4;
+    pub const CDN: i32 = 5;
+}
+
+/// Port of `get_jsdelivr_link`: rewrite `raw.githubusercontent.com` URLs to
+/// the configured jsDelivr mirror; everything else passes through unchanged.
+fn apply_ruleset_mirror(link: &str, mirror_value: i32) -> String {
+    if mirror_value == mirror::GITHUB {
+        return link.to_string();
+    }
+    let host_prefix = match mirror_value {
+        mirror::GCORE => "https://gcore.jsdelivr.net/gh",
+        mirror::QUANTIL => "https://quantil.jsdelivr.net/gh",
+        mirror::FASTLY => "https://fastly.jsdelivr.net/gh",
+        mirror::CDN => "https://cdn.jsdelivr.net/gh",
+        // CLOUDFLARE and anything unknown
+        _ => "https://testingcf.jsdelivr.net/gh",
+    };
+    let Ok(url) = url::Url::parse(link) else {
+        return link.to_string();
+    };
+    if url.host_str() != Some("raw.githubusercontent.com") {
+        return link.to_string();
+    }
+    // /owner/repo/branch/path... → /owner/repo@branch/path...
+    let mut out = String::from(host_prefix);
+    for (i, seg) in url.path().split('/').filter(|s| !s.is_empty()).enumerate() {
+        if i == 2 {
+            out.push('@');
+        } else {
+            out.push('/');
+        }
+        out.push_str(seg);
+    }
+    out
+}
+
+/// Build the `route.rule_set[]` entry for a rule-set reference: a URL, or a
+/// named set (`geoip-cn`, `geosite-google`, …) looked up in the rule-set
+/// list. `None` when the name is unknown. Port of `get_rule_set_json`.
+pub fn rule_set_json(rule_set: &str, mirror_value: i32) -> Option<Value> {
+    let (url, tag) = match rule_set_file_name(rule_set) {
+        Some(_) => (rule_set.to_string(), rule_set_tag(rule_set)),
+        // A named set keeps its name as the tag, which is what the route
+        // rules refer to.
+        None => (named_rule_set_url(rule_set)?, rule_set.to_string()),
+    };
+    let file_name = rule_set_file_name(&url)?;
     let format = if file_name.ends_with(".srs") {
         "binary"
     } else {
@@ -405,9 +455,82 @@ pub fn rule_set_json(rule_set: &str) -> Option<Value> {
     Some(json!({
         "type": "remote",
         "format": format,
-        "tag": rule_set_tag(rule_set),
-        "url": rule_set,
+        "tag": tag,
+        "url": apply_ruleset_mirror(&url, mirror_value),
     }))
+}
+
+/// The GUI's `ruleSetMap`: named rule set → download URL, from `srslist.json`.
+static RULE_SET_MAP: std::sync::RwLock<Option<std::collections::HashMap<String, String>>> =
+    std::sync::RwLock::new(None);
+
+/// Install the named rule set list (the contents of `srslist.json`).
+pub fn set_rule_set_map(map: std::collections::HashMap<String, String>) {
+    if let Ok(mut guard) = RULE_SET_MAP.write() {
+        *guard = Some(map);
+    }
+}
+
+/// Find and load `srslist.json` — from the config directory (where the GUI
+/// saves a downloaded copy), next to the executable, or from a GUI install —
+/// and install it with [`set_rule_set_map`]. Returns the file used.
+pub fn load_rule_set_map(config_dir: &std::path::Path) -> Option<std::path::PathBuf> {
+    let mut candidates = vec![
+        config_dir.join("srslist.json"),
+        config_dir.join("resources").join("srslist.json"),
+    ];
+    if let Some(exe_dir) = std::env::current_exe().ok().and_then(|e| e.parent().map(|p| p.to_path_buf())) {
+        candidates.push(exe_dir.join("srslist.json"));
+        candidates.push(exe_dir.join("public").join("srslist.json"));
+        // Development layout: the binary lives in src/tui/target/<profile>/.
+        candidates.push(exe_dir.join("../../../../srslist.json"));
+    }
+    for dir in [
+        "/usr/share/nekobox/public",
+        "/usr/lib/nekobox/public",
+        "/opt/nekobox/public",
+        "/usr/libexec/Iblis/public",
+    ] {
+        candidates.push(std::path::Path::new(dir).join("srslist.json"));
+    }
+    for path in candidates {
+        let Ok(text) = std::fs::read_to_string(&path) else {
+            continue;
+        };
+        let Ok(map) = serde_json::from_str::<std::collections::HashMap<String, String>>(&text) else {
+            continue;
+        };
+        set_rule_set_map(map);
+        return Some(path);
+    }
+    None
+}
+
+/// Download URL of a named rule set: the rule-set list, the adblock set the
+/// GUI special-cases, or — without a list — the MetaCubeX layout that almost
+/// every `geoip-*`/`geosite-*` entry in it follows.
+fn named_rule_set_url(name: &str) -> Option<String> {
+    if let Ok(guard) = RULE_SET_MAP.read() {
+        if let Some(url) = guard.as_ref().and_then(|m| m.get(name)) {
+            return Some(url.clone());
+        }
+    }
+    if name == ADBLOCK_TAG {
+        return Some(ADBLOCK_RULE_SET.to_string());
+    }
+    const META: &str = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo";
+    let valid = |s: &str| {
+        !s.is_empty()
+            && s.chars()
+                .all(|c| c.is_ascii_alphanumeric() || matches!(c, '-' | '_' | '!' | '@' | '.'))
+    };
+    if let Some(code) = name.strip_prefix("geoip-").filter(|s| valid(s)) {
+        return Some(format!("{META}/geoip/{code}.srs"));
+    }
+    if let Some(site) = name.strip_prefix("geosite-").filter(|s| valid(s)) {
+        return Some(format!("{META}/geosite/{site}.srs"));
+    }
+    None
 }
 
 /// The rule set the GUI injects when `adblock_enable` is on.
@@ -430,7 +553,7 @@ impl RouteRule {
             && self.process_name.is_empty()
             && self.process_path.is_empty()
             && self.process_path_regex.is_empty()
-            && self.protocol.as_deref() == Some("")
+            && self.protocol.as_deref().unwrap_or("").is_empty()
             && self.rule_set.is_empty()
     }
 }
@@ -592,54 +715,45 @@ impl RoutingChain {
         true
     }
 
-    /// Get the default "direct" routing chain.
-    pub fn get_default_chain() -> Self {
-        Self {
-            rules: vec![
-                RouteRule {
-                    name: "geoip_private".into(),
-                    ip_cidr: vec!["geoip:private".into()],
-                    ip_is_private: true,
-                    outbound_id: -2,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-                RouteRule {
-                    name: "geosite_private".into(),
-                    domain: vec!["geosite:private".into()],
-                    outbound_id: -2,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-                RouteRule {
-                    name: "geoip_cn".into(),
-                    ip_cidr: vec!["geoip:cn".into()],
-                    outbound_id: -2,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-                RouteRule {
-                    name: "geosite_cn".into(),
-                    domain: vec!["geosite:cn".into()],
-                    outbound_id: -2,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-                RouteRule {
-                    name: "bypass".into(),
-                    outbound_id: -2,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-                RouteRule {
-                    name: "block".into(),
-                    outbound_id: -3,
-                    action: "route".into(),
-                    ..Default::default()
-                },
-            ],
-            default_outbound_id: -1, // proxy
-            ..Default::default()
+    /// Domain matchers of the rules that go direct, as `kind:value` entries
+    /// (`ruleset:`, `domain:`, `suffix:`, `keyword:`, `regex:`). Port of
+    /// `RoutingChain::get_direct_sites`: these must resolve through the
+    /// direct DNS server.
+    pub fn direct_sites(&self) -> Vec<String> {
+        let mut out = Vec::new();
+        for rule in self.rules.iter().filter(|r| r.outbound_id == OUTBOUND_DIRECT) {
+            out.extend(
+                rule.rule_set
+                    .iter()
+                    .filter(|s| s.starts_with("geosite-"))
+                    .map(|s| format!("ruleset:{s}")),
+            );
+            for (kind, list) in [
+                ("domain", &rule.domain),
+                ("suffix", &rule.domain_suffix),
+                ("keyword", &rule.domain_keyword),
+                ("regex", &rule.domain_regex),
+            ] {
+                out.extend(list.iter().map(|v| format!("{kind}:{v}")));
+            }
         }
+        out
+    }
+
+    /// IP matchers of the rules that go direct: `ruleset:` (geoip sets) and
+    /// `ip:` entries. Port of `RoutingChain::get_direct_ips`; with
+    /// `enable_tun_routing` these bypass the TUN device entirely.
+    pub fn direct_ips(&self) -> Vec<String> {
+        let mut out = Vec::new();
+        for rule in self.rules.iter().filter(|r| r.outbound_id == OUTBOUND_DIRECT) {
+            out.extend(
+                rule.rule_set
+                    .iter()
+                    .filter(|s| s.starts_with("geoip-"))
+                    .map(|s| format!("ruleset:{s}")),
+            );
+            out.extend(rule.ip_cidr.iter().map(|c| format!("ip:{c}")));
+        }
+        out
     }
 }

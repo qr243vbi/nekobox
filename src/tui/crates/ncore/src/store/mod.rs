@@ -160,6 +160,7 @@ pub fn save_datastore(base: &Path, ds: &DataStore) -> anyhow::Result<()> {
     };
     put("core_use_uds", ds.core_use_uds.into());
     put("current_group", ds.current_group.into());
+    put("inbound_proxy_scheme", ds.inbound_proxy_type.into());
     put("inbound_address", ds.inbound_address.clone().into());
     put("inbound_socks_port", ds.inbound_socks_port.into());
     put(
@@ -231,6 +232,14 @@ pub fn save_datastore(base: &Path, ds: &DataStore) -> anyhow::Result<()> {
     put("sub_auto_update", ds.sub_auto_update.into());
     put("sub_clear", ds.sub_clear.into());
     put("sub_send_hwid", ds.sub_send_hwid.into());
+    put(
+        "sub_custom_hwid_params",
+        ds.sub_custom_hwid_params.clone().into(),
+    );
+    put(
+        "user_agent2",
+        ds.user_agent.clone().unwrap_or_default().into(),
+    );
     put("sub_rm_invalid", ds.sub_rm_invalid.into());
     put("sub_url_test", ds.sub_url_test.into());
     put("sub_rm_duplicates", ds.sub_rm_duplicates.into());
@@ -437,8 +446,10 @@ pub fn load_group_extra(path: &Path, id: i32) -> anyhow::Result<GroupExtra> {
             "javascript_payload" => {
                 extra.javascript_payload = v.as_str().map(str::to_string)
             }
-            "custom_headers" => {
-                if let BinValue::StrMap(entries) = v {
+            // A QVariantMap: `StrMap` in the binary format, an object
+            // (read back as a `Store`) in JSON-written files.
+            "custom_headers" => match v {
+                BinValue::StrMap(entries) | BinValue::Store(entries) => {
                     extra.custom_headers = Some(
                         entries
                             .iter()
@@ -446,7 +457,8 @@ pub fn load_group_extra(path: &Path, id: i32) -> anyhow::Result<GroupExtra> {
                             .collect(),
                     );
                 }
-            }
+                _ => {}
+            },
             _ => {}
         }
     }
@@ -563,6 +575,7 @@ pub fn load_routing_into(base: &Path, ds: &mut DataStore) -> anyhow::Result<()> 
 pub fn load_settings(base: &Path) -> DataStore {
     let mut ds = load_datastore(&base.join(DATASTORE_FILE)).unwrap_or_default();
     let _ = load_routing_into(base, &mut ds);
+    ds.normalize();
     ds
 }
 
@@ -659,9 +672,12 @@ fn rule_to_store_json(r: &crate::model::RouteRule) -> serde_json::Value {
     })
 }
 
-/// Serialize a group's subscription extras (`subscriptions/<id>.cfg`).
+/// Serialize a group's subscription extras (`subscriptions/<id>.cfg`),
+/// overlaid onto the existing file like [`save_datastore`].
 pub fn save_group_extra(base: &Path, extra: &crate::model::GroupExtra) -> anyhow::Result<()> {
-    let value = serde_json::json!({
+    let path = get_file_path(base, "subscriptions", extra.id);
+    let mut m = read_existing_object(&path);
+    let known = serde_json::json!({
         "id": extra.id,
         "enable_custom_headers": extra.enable_custom_headers,
         "enable_custom_payload": extra.enable_custom_payload,
@@ -673,8 +689,12 @@ pub fn save_group_extra(base: &Path, extra: &crate::model::GroupExtra) -> anyhow
         "info": extra.info.clone().unwrap_or_default(),
         "sub_last_update": extra.sub_last_update.unwrap_or(0),
         "skip_auto_update": extra.skip_auto_update,
+        "custom_headers": extra.custom_headers.clone().unwrap_or_default(),
     });
-    save_json(&get_file_path(base, "subscriptions", extra.id), &value)
+    if let serde_json::Value::Object(known) = known {
+        m.extend(known);
+    }
+    save_json(&path, &serde_json::Value::Object(m))
 }
 
 /// Delete a group's files (`groups/`, `subscriptions/`).
@@ -700,6 +720,16 @@ fn apply_datastore(ds: &mut DataStore, records: &[(String, BinValue)]) {
             "inbound_address" => ds.inbound_address = s().unwrap_or(ds.inbound_address.clone()),
             "inbound_socks_port" => {
                 ds.inbound_socks_port = i().unwrap_or(ds.inbound_socks_port)
+            }
+            "inbound_proxy_scheme" => {
+                ds.inbound_proxy_type = match v {
+                    BinValue::Str(name) => match name.as_str() {
+                        "http" => crate::model::INBOUND_HTTP,
+                        "mixed" => crate::model::INBOUND_MIXED,
+                        _ => crate::model::INBOUND_NONE,
+                    },
+                    _ => i().unwrap_or(ds.inbound_proxy_type),
+                }
             }
             "inbound_username" => ds.inbound_username = s(),
             "inbound_password" => ds.inbound_password = s(),
@@ -781,6 +811,8 @@ fn apply_datastore(ds: &mut DataStore, records: &[(String, BinValue)]) {
             "sub_auto_update" => ds.sub_auto_update = i().unwrap_or(ds.sub_auto_update),
             "sub_clear" => ds.sub_clear = b().unwrap_or(false),
             "sub_send_hwid" => ds.sub_send_hwid = b().unwrap_or(false),
+            "sub_custom_hwid_params" => ds.sub_custom_hwid_params = s().unwrap_or_default(),
+            "user_agent2" => ds.user_agent = s(),
             "sub_rm_invalid" => ds.sub_rm_invalid = b().unwrap_or(false),
             "sub_url_test" => ds.sub_url_test = b().unwrap_or(false),
             "sub_rm_duplicates" => ds.sub_rm_duplicates = b().unwrap_or(false),

@@ -17,7 +17,9 @@
 
 use crate::cli::Args;
 use crate::menu::{self, Action, Menu, MenuContext, MenuState};
-use crate::rpc_worker::{Command, Event, SpeedTestMode, WorkerHandle};
+use crate::rpc_worker::{
+    Command, Event, SpeedTestMode, SpeedTestResult, TestBatch, UrlTestResult, WorkerHandle,
+};
 use crossterm::event::{self, KeyCode, KeyEventKind, KeyModifiers};
 use ncore::model::{DataStore, Group, ProxyEntity, RoutingChain, TrafficData};
 use ncore::window::WindowSettings;
@@ -30,8 +32,14 @@ use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
 const STATS_INTERVAL: Duration = Duration::from_secs(1);
-const URL_TEST_TIMEOUT: Duration = Duration::from_secs(45);
 const SPEED_HISTORY_CAP: usize = 240;
+/// Profiles per test config — the GUI's batch size, so one broken profile
+/// only fails its own batch.
+const TEST_BATCH: usize = 25;
+/// `started_id` after a manual stop: nothing to restore on the next launch.
+const NO_PROFILE: i32 = -1919;
+const TUN_NEEDS_PRIVILEGES: &str = "TUN mode needs a privileged core: run nekobox_core as root, \
+     or grant it CAP_NET_ADMIN (setcap cap_net_admin,cap_net_raw,cap_net_bind_service+ep)";
 /// How long a transient message stays in the `data_view` line.
 const TRANSIENT_TTL: Duration = Duration::from_secs(8);
 
@@ -123,6 +131,56 @@ impl LogEntry {
     }
 }
 
+/// What a running test measures.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum TestKind {
+    Url,
+    Speed(SpeedTestMode),
+}
+
+/// A URL/speed test in flight. It ends with the worker's `TestFinished`;
+/// there is no UI timeout, since a large group legitimately takes minutes.
+struct RunningTest {
+    /// Matches this test's worker events; events of an older test that is
+    /// still winding down are ignored.
+    seq: u64,
+    kind: TestKind,
+    /// Result tag → profile id (the tags are profile ids).
+    targets: HashMap<String, i32>,
+    /// "Speedtest Current": every result belongs to the running profile,
+    /// whatever tag the core reports it under.
+    current: Option<i32>,
+    /// Tags with a result so far.
+    done: HashSet<String>,
+    /// "Stop testing" was pressed; waiting for the worker to wind down.
+    stopping: bool,
+    /// Live progress of the outbound being speed-tested (the GUI's
+    /// `data_view` while a speed test runs).
+    live: Option<(i32, SpeedTestResult)>,
+}
+
+impl RunningTest {
+    fn new(seq: u64, kind: TestKind, targets: HashMap<String, i32>, current: Option<i32>) -> Self {
+        Self {
+            seq,
+            kind,
+            targets,
+            current,
+            done: HashSet::new(),
+            stopping: false,
+            live: None,
+        }
+    }
+
+    fn profile_for(&self, tag: &str) -> Option<i32> {
+        self.current.or_else(|| self.targets.get(tag).copied())
+    }
+
+    fn total(&self) -> usize {
+        self.targets.len().max(usize::from(self.current.is_some()))
+    }
+}
+
 /// Modal overlays. The GUI shows these as dialogs, so only one is open at a
 /// time and it captures all input.
 pub enum Dialog {
@@ -207,10 +265,11 @@ pub struct App {
     /// Explicitly checked profile ids (the GUI's multi-row selection)
     checked: HashSet<i32>,
 
-    latencies: HashMap<i32, i32>,
-
     core_status: CoreStatus,
     active_profile_id: Option<i32>,
+    /// Whether the core answered yet, and with the privileges TUN mode needs.
+    core_connected: bool,
+    privileged: bool,
 
     traffic_proxy: TrafficData,
     traffic_direct: TrafficData,
@@ -240,13 +299,17 @@ pub struct App {
     routes_sel: usize,
     groups_sel: usize,
 
-    speed_test_running: bool,
+    /// The URL/speed test in flight, if any.
+    test: Option<RunningTest>,
+    /// Sequence number of the last test started.
+    test_seq: u64,
 
     table_rows_area: Rect,
     group_tab_xranges: Vec<(u16, u16)>,
     bottom_tab_xranges: Vec<(u16, u16, u16)>,
     control_row_hits: Vec<(u16, u16, Action)>,
-    last_click: Option<(Instant, u16, u16)>,
+    /// Time and item index of the last click on a profile row.
+    last_click: Option<(Instant, usize)>,
 
     logs: VecDeque<LogEntry>,
     /// Cursor into the *filtered* log view when the bottom panel has focus
@@ -260,12 +323,11 @@ pub struct App {
     /// Transient status line (the GUI's `data_view`)
     transient: Option<(String, Instant)>,
 
-    url_test_running: bool,
-    url_test_done: HashSet<String>,
-    url_test_expected: usize,
-    url_test_started: Option<Instant>,
-
     last_stats_poll: Instant,
+    /// When the stats sample currently in flight was requested — the core
+    /// reports deltas, so the rate needs the real interval between samples,
+    /// not the nominal `STATS_INTERVAL`.
+    last_stats_at: Option<Instant>,
     worker: WorkerHandle,
 }
 
@@ -304,48 +366,52 @@ impl App {
             .map(PathBuf::from)
             .unwrap_or_else(ncore::store::get_base_path);
 
-        let datastore = ncore::store::load_settings(&config_dir);
+        let mut datastore = ncore::store::load_settings(&config_dir);
         let window = WindowSettings::load(&config_dir);
         let groups = Self::load_groups(&config_dir);
         let profiles = Self::load_profiles(&config_dir);
         let chains = Self::load_chains(&config_dir);
+        let rule_set_list = ncore::model::load_rule_set_map(&config_dir);
 
-        // Restore the mode the GUI last persisted (`spmode2`).
+        // Restore the mode the GUI last persisted (`spmode2`). Note that
+        // `enable_tun_routing` is a routing option, not the TUN switch.
         let spmode = if datastore.remember_spmode.iter().any(|s| s == "system_proxy") {
             SpMode::SystemProxy
-        } else if datastore.remember_spmode.iter().any(|s| s == "vpn")
-            || datastore.enable_tun_routing
-        {
+        } else if datastore.remember_spmode.iter().any(|s| s == "vpn") {
             SpMode::Tun
         } else {
             SpMode::Disabled
         };
+        datastore.spmode_vpn = spmode.is_tun();
+        datastore.spmode_system_proxy = spmode.is_system_proxy();
 
-        let worker = crate::rpc_worker::spawn();
-
-        if args.launch {
-            let cfg = nrpc::CoreConfig {
-                binary: resolve_core_binary(args.core_binary.clone()),
-                port: args.core_port.unwrap_or(datastore.core_port as u16),
+        let core_port = args.core_port.unwrap_or(datastore.core_port as u16);
+        let launch = args.launch.then(|| nrpc::CoreConfig {
+            binary: resolve_core_binary(args.core_binary.clone()),
+            port: core_port,
+            address: args.core_address.clone(),
+            use_uds: args.core_uds_path.is_some(),
+            uds_path: args
+                .core_uds_path
+                .clone()
+                .unwrap_or_else(|| "/tmp/nekobox_tui_core.sock".into()),
+            ..Default::default()
+        });
+        let endpoint = match (&launch, &args.core_uds_path) {
+            (Some(cfg), _) => cfg.endpoint(),
+            (None, Some(path)) => nrpc::Endpoint::Uds(path.clone()),
+            (None, None) => nrpc::Endpoint::Tcp {
                 address: args.core_address.clone(),
-                use_uds: args.core_uds_path.is_some(),
-                uds_path: args
-                    .core_uds_path
-                    .clone()
-                    .unwrap_or_else(|| "/tmp/nekobox_tui_core.sock".into()),
-                ..Default::default()
-            };
-            let _ = worker.tx.send(Command::Launch {
+                port: core_port,
+            },
+        };
+        let worker = crate::rpc_worker::spawn(endpoint);
+        let _ = worker.tx.send(match launch {
+            Some(cfg) => Command::Launch {
                 config: Box::new(cfg),
-            });
-        } else if let Some(path) = args.core_uds_path.clone() {
-            let _ = worker.tx.send(Command::ConnectUds { path });
-        } else {
-            let _ = worker.tx.send(Command::Connect {
-                address: args.core_address.clone(),
-                port: args.core_port.unwrap_or(datastore.core_port as u16),
-            });
-        }
+            },
+            None => Command::Connect,
+        });
 
         // Follow the group the GUI left selected.
         let current_group = groups
@@ -365,9 +431,10 @@ impl App {
             selected: 0,
             table_state: TableState::default(),
             checked: HashSet::new(),
-            latencies: HashMap::new(),
             core_status: CoreStatus::Connecting,
             active_profile_id: None,
+            core_connected: false,
+            privileged: false,
             traffic_proxy: TrafficData::new("proxy"),
             traffic_direct: TrafficData::new("direct"),
             speed_history: VecDeque::with_capacity(SPEED_HISTORY_CAP),
@@ -384,7 +451,8 @@ impl App {
             settings_edit: None,
             routes_sel: 0,
             groups_sel: 0,
-            speed_test_running: false,
+            test: None,
+            test_seq: 0,
             table_rows_area: Rect::default(),
             group_tab_xranges: Vec::new(),
             bottom_tab_xranges: Vec::new(),
@@ -396,11 +464,8 @@ impl App {
             filter_mode: false,
             filter: String::new(),
             transient: None,
-            url_test_running: false,
-            url_test_done: HashSet::new(),
-            url_test_expected: 0,
-            url_test_started: None,
             last_stats_poll: Instant::now(),
+            last_stats_at: None,
             worker,
         };
         app.system_dns = app.datastore.system_dns_set;
@@ -412,18 +477,13 @@ impl App {
             app.profiles.len(),
             app.chains.len()
         ));
-        app.seed_latencies();
+        match rule_set_list {
+            Some(path) => app.log(format!("rule set list: {}", path.display())),
+            None => app.log(
+                "srslist.json not found; named rule sets resolve to MetaCubeX URLs".to_string(),
+            ),
+        }
         app
-    }
-
-    /// Seed the latency column from persisted test results (`yc` in .cfg).
-    fn seed_latencies(&mut self) {
-        self.latencies = self
-            .profiles
-            .values()
-            .filter(|p| p.latency_int != 0)
-            .map(|p| (p.id, p.latency_int))
-            .collect();
     }
 
     // ------------------------------------------------------------------
@@ -477,15 +537,27 @@ impl App {
     }
 
     fn reload(&mut self) {
+        // The running profile's traffic of this session only lives in memory
+        // until it stops; the copy on disk is older.
+        let session = self
+            .active_profile_id
+            .and_then(|id| self.profiles.get(&id))
+            .map(|p| (p.id, p.traffic_dl, p.traffic_ul));
         self.datastore = ncore::store::load_settings(&self.config_dir);
+        self.sync_spmode();
         self.window = WindowSettings::load(&self.config_dir);
         self.groups = Self::load_groups(&self.config_dir);
         self.profiles = Self::load_profiles(&self.config_dir);
+        if let Some((id, dl, ul)) = session {
+            if let Some(p) = self.profiles.get_mut(&id) {
+                p.traffic_dl = dl;
+                p.traffic_ul = ul;
+            }
+        }
         self.chains = Self::load_chains(&self.config_dir);
         self.current_group = self.current_group.min(self.groups.len().saturating_sub(1));
         self.selected = 0;
         self.checked.clear();
-        self.seed_latencies();
         self.log(format!(
             "reloaded: {} groups, {} profiles",
             self.groups.len(),
@@ -493,15 +565,27 @@ impl App {
         ));
     }
 
+    /// Mirror the special-proxy mode into the runtime flags the config
+    /// builder reads.
+    fn sync_spmode(&mut self) {
+        self.datastore.spmode_vpn = self.spmode.is_tun();
+        self.datastore.spmode_system_proxy = self.spmode.is_system_proxy();
+    }
+
     /// Persist both settings files and the window INI.
     fn save_settings(&mut self, what: &str) {
-        self.datastore.enable_tun_routing = self.spmode.is_tun();
+        // `spmode2`: the GUI only remembers the system proxy when "remember
+        // last profile" is on (`set_spmode_system_proxy`).
         self.datastore.remember_spmode = match self.spmode {
-            SpMode::SystemProxy => vec!["system_proxy".to_string()],
+            SpMode::SystemProxy if self.window.remember_last_profile => {
+                vec!["system_proxy".to_string()]
+            }
             SpMode::Tun => vec!["vpn".to_string()],
-            SpMode::Disabled => Vec::new(),
+            _ => Vec::new(),
         };
         self.datastore.system_dns_set = self.system_dns;
+        // A strategy sing-box does not know would fail every start.
+        self.datastore.normalize();
         if let Some(g) = self.groups.get(self.current_group) {
             self.datastore.current_group = g.base.id;
         }
@@ -571,13 +655,6 @@ impl App {
             .unwrap_or_else(|| "(no groups)".into())
     }
 
-    fn active_profile_name(&self) -> String {
-        self.active_profile_id
-            .and_then(|id| self.profiles.get(&id))
-            .map(|p| p.display_type_and_name())
-            .unwrap_or_default()
-    }
-
     /// The routing chain the config builder should apply (`current_route_id`).
     fn active_chain(&self) -> Option<&RoutingChain> {
         self.chains
@@ -634,91 +711,91 @@ impl App {
                     if matches!(self.core_status, CoreStatus::Connecting | CoreStatus::Error(_)) {
                         self.core_status = CoreStatus::Stopped;
                     }
+                    self.core_connected = true;
+                    self.privileged = privileged;
                     self.log(format!("core connected (privileged: {privileged})"));
+                    // A remembered TUN mode cannot work on this core; say so
+                    // instead of failing the profile start below.
+                    if self.spmode.is_tun() && !privileged {
+                        self.spmode = SpMode::Disabled;
+                        self.sync_spmode();
+                        self.notify(TUN_NEEDS_PRIVILEGES);
+                    }
                     self.restore_last_profile();
                 }
-                Event::Started => self.core_status = CoreStatus::Running,
+                Event::Started => {
+                    self.core_status = CoreStatus::Running;
+                    // The GUI re-applies the system DNS override on every
+                    // (re)start — the core drops it with the old config.
+                    if self.system_dns {
+                        let _ = self.worker.tx.send(Command::SetSystemDns { enable: false });
+                        let _ = self.worker.tx.send(Command::SetSystemDns { enable: true });
+                    }
+                }
+                Event::StartFailed(msg) => {
+                    self.core_status = CoreStatus::Error(msg.clone());
+                    self.active_profile_id = None;
+                    self.notify(format!("start failed: {msg}"));
+                }
                 Event::Stopped => {
                     self.core_status = CoreStatus::Stopped;
+                    self.persist_active_traffic();
                     self.active_profile_id = None;
                     self.traffic_proxy = TrafficData::new("proxy");
                     self.traffic_direct = TrafficData::new("direct");
+                    self.last_stats_at = None;
                     self.connections.clear();
                 }
-                Event::Stats { ups, downs } => {
-                    let sum = |map: &[(String, i64)], tag: &str| {
-                        map.iter().filter(|(k, _)| k == tag).map(|(_, v)| *v).sum()
-                    };
-                    let prev_up = self.traffic_proxy.up;
-                    let prev_down = self.traffic_proxy.down;
-                    self.traffic_proxy
-                        .update(sum(&ups, "proxy"), sum(&downs, "proxy"));
-                    self.traffic_direct
-                        .update(sum(&ups, "direct"), sum(&downs, "direct"));
-                    let dt = STATS_INTERVAL.as_secs_f64();
-                    let up_bps = ((self.traffic_proxy.up - prev_up) as f64 / dt) as u64;
-                    let down_bps = ((self.traffic_proxy.down - prev_down) as f64 / dt) as u64;
-                    if self.speed_history.len() >= SPEED_HISTORY_CAP {
-                        self.speed_history.pop_front();
-                    }
-                    self.speed_history.push_back((up_bps, down_bps));
-                }
+                Event::Stats { ups, downs } => self.apply_stats(&ups, &downs),
                 Event::Connections(conns) => self.connections = conns,
-                Event::SpeedTestDone {
-                    tag,
-                    dl_speed,
-                    ul_speed,
-                    latency,
-                    country,
-                    error,
-                } => {
-                    self.speed_test_running = false;
-                    if error.is_empty() {
-                        if let Ok(id) = tag.parse::<i32>() {
-                            if latency > 0 {
-                                self.latencies.insert(id, latency);
-                            }
-                            if let Some(p) = self.profiles.get_mut(&id) {
-                                p.dl_speed = Some(dl_speed.clone());
-                                p.ul_speed = Some(ul_speed.clone());
-                                if !country.is_empty() {
-                                    p.test_country = Some(country.clone());
-                                }
-                                let p = p.clone();
-                                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
-                            }
+                Event::SubProfiles {
+                    gid,
+                    entities,
+                    info,
+                } => self.apply_subscription(gid, entities, info),
+                Event::SubFailed { gid, error } => {
+                    let name = self
+                        .groups
+                        .iter()
+                        .find(|g| g.base.id == gid)
+                        .map(|g| g.name.clone())
+                        .unwrap_or_default();
+                    self.notify(format!("subscription update failed ({name}): {error}"));
+                }
+                Event::UrlTestResults { seq, results } => {
+                    if self.is_current_test(seq) {
+                        for r in results {
+                            self.apply_url_test_result(r);
                         }
-                        let where_ = if country.is_empty() {
-                            String::new()
-                        } else {
-                            format!(" [{country}]")
-                        };
-                        self.notify(format!(
-                            "speed test: ▼{dl_speed} ▲{ul_speed} {latency} ms{where_}"
-                        ));
-                    } else {
-                        self.notify(format!("speed test failed: {error}"));
                     }
                 }
-                Event::SubProfiles(entities) => self.apply_subscription(entities),
-                Event::UrlTestResults(results) => {
-                    for (tag, latency, error) in results {
-                        if !self.url_test_done.insert(tag.clone()) {
-                            continue;
-                        }
-                        if let Ok(id) = tag.parse::<i32>() {
-                            let value = if error.is_empty() { latency } else { -1 };
-                            self.latencies.insert(id, value);
-                            if let Some(p) = self.profiles.get_mut(&id) {
-                                p.latency_int = value;
-                                let p = p.clone();
-                                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+                Event::SpeedTestProgress { seq, result } => {
+                    if self.is_current_test(seq) {
+                        if let Some(test) = self.test.as_mut() {
+                            if let Some(id) = test.profile_for(&result.tag) {
+                                test.live = Some((id, result));
                             }
                         }
                     }
-                    if self.url_test_done.len() >= self.url_test_expected {
-                        self.url_test_running = false;
-                        self.notify("url test finished");
+                }
+                Event::SpeedTestResults { seq, results } => {
+                    if self.is_current_test(seq) {
+                        for r in results {
+                            self.apply_speed_test_result(r);
+                        }
+                    }
+                }
+                Event::TestBatchFailed { seq, tags, error } => {
+                    if self.is_current_test(seq) {
+                        if let Some(test) = self.test.as_mut() {
+                            test.done.extend(tags.iter().cloned());
+                        }
+                        self.log(format!("test of {} profile(s) failed: {error}", tags.len()));
+                    }
+                }
+                Event::TestFinished { seq } => {
+                    if self.is_current_test(seq) {
+                        self.finish_test();
                     }
                 }
                 Event::Log(msg) => self.log(msg),
@@ -729,6 +806,120 @@ impl App {
                     self.log(format!("error: {msg}"));
                 }
             }
+        }
+    }
+
+    fn is_current_test(&self, seq: u64) -> bool {
+        self.test.as_ref().is_some_and(|t| t.seq == seq)
+    }
+
+    /// Apply one URL test result like `runURLTest`: an aborted test means
+    /// "not tested" (0), any other error "unavailable" (-1).
+    fn apply_url_test_result(&mut self, r: UrlTestResult) {
+        let Some(test) = self.test.as_mut() else {
+            return;
+        };
+        let Some(id) = test.profile_for(&r.tag) else {
+            return;
+        };
+        // Results arrive twice (polled, then in the final list): log once.
+        let first = test.done.insert(r.tag.clone());
+        let aborted = r.error.contains("test aborted") || r.error.contains("context canceled");
+        let latency = if r.error.is_empty() {
+            r.latency_ms
+        } else if aborted {
+            0
+        } else {
+            -1
+        };
+        let Some(p) = self.profiles.get_mut(&id) else {
+            return;
+        };
+        let name = p.display_type_and_name();
+        if p.latency_int != latency {
+            p.latency_int = latency;
+            let p = p.clone();
+            let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+        }
+        if first && latency < 0 {
+            self.log(format!("[{name}] test error: {}", r.error));
+        }
+    }
+
+    /// Apply one speed/country test result like `runSpeedTest` and
+    /// `queryCountryTest`: a failure marks the profile unavailable ("N/A"
+    /// speeds), a success stores the speeds, the exit country's code and —
+    /// if the profile has none yet — the latency.
+    fn apply_speed_test_result(&mut self, r: SpeedTestResult) {
+        let Some(test) = self.test.as_mut() else {
+            return;
+        };
+        let Some(id) = test.profile_for(&r.tag) else {
+            return;
+        };
+        let first = test.done.insert(r.tag.clone());
+        if test.live.as_ref().is_some_and(|(live, _)| *live == id) {
+            test.live = None;
+        }
+        if r.cancelled {
+            return;
+        }
+        let Some(p) = self.profiles.get_mut(&id) else {
+            return;
+        };
+        if r.error.is_empty() {
+            p.dl_speed = Some(r.dl_speed);
+            p.ul_speed = Some(r.ul_speed);
+            if p.latency_int <= 0 && r.latency > 0 {
+                p.latency_int = r.latency;
+            }
+            if !r.server_country.is_empty() {
+                p.test_country =
+                    Some(ncore::country::country_name_to_code(&r.server_country).to_string());
+            }
+        } else {
+            p.dl_speed = Some("N/A".into());
+            p.ul_speed = Some("N/A".into());
+            p.latency_int = -1;
+            p.test_country = Some(String::new());
+        }
+        let p = p.clone();
+        let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+        if first && !r.error.is_empty() {
+            self.log(format!(
+                "[{}] speed test error: {}",
+                p.display_type_and_name(),
+                r.error
+            ));
+        }
+    }
+
+    /// The worker reported the end of the current test.
+    fn finish_test(&mut self) {
+        let Some(test) = self.test.take() else {
+            return;
+        };
+        let what = match test.kind {
+            TestKind::Url => "URL test".to_string(),
+            TestKind::Speed(mode) => mode.label().to_string(),
+        };
+        if test.stopping {
+            self.notify(format!("{what} stopped"));
+            return;
+        }
+        // For a single profile, show its result right away.
+        let single = test.current.or_else(|| {
+            (test.targets.len() == 1)
+                .then(|| test.targets.values().next().copied())
+                .flatten()
+        });
+        match single.and_then(|id| self.profiles.get(&id)) {
+            Some(p) => {
+                let result = p.display_test_result();
+                let name = p.display_type_and_name();
+                self.notify(format!("{what} finished: {name}: {result}"));
+            }
+            None => self.notify(format!("{what} finished")),
         }
     }
 
@@ -745,7 +936,70 @@ impl App {
         self.start_profile(id);
     }
 
-    /// Periodic work: stats polling, URL test polling, transient expiry.
+    /// Fold one `QueryStats` sample into the session counters.
+    ///
+    /// The core's `TotalOutbound(tag)` swaps the counter to zero as it reads
+    /// it, so `ups`/`downs` are the bytes moved since the previous poll, not
+    /// running totals. `TrafficLooper::UpdateAll` in the GUI accumulates them
+    /// and divides by the measured interval for the rate; so do we.
+    fn apply_stats(&mut self, ups: &[(String, i64)], downs: &[(String, i64)]) {
+        let now = Instant::now();
+        let interval_ms = self
+            .last_stats_at
+            .map(|t| now.duration_since(t).as_millis() as i64)
+            .unwrap_or(0);
+        self.last_stats_at = Some(now);
+
+        let sum = |map: &[(String, i64)], tag: &str| -> i64 {
+            map.iter().filter(|(k, _)| k == tag).map(|(_, v)| *v).sum()
+        };
+        let (proxy_up, proxy_down) = (sum(ups, "proxy"), sum(downs, "proxy"));
+        self.traffic_proxy.add_delta(proxy_up, proxy_down, interval_ms);
+        self.traffic_direct
+            .add_delta(sum(ups, "direct"), sum(downs, "direct"), interval_ms);
+
+        // The running profile owns the "proxy" tag, so its lifetime counters
+        // (the table's Traffic column) grow by the same delta. The GUI keeps
+        // these on `ProxyEntity::traffic_data` and flushes them to disk when
+        // the profile stops; `persist_active_traffic` does that here.
+        if proxy_up != 0 || proxy_down != 0 {
+            if let Some(p) = self
+                .active_profile_id
+                .and_then(|id| self.profiles.get_mut(&id))
+            {
+                p.traffic_ul += proxy_up;
+                p.traffic_dl += proxy_down;
+            }
+        }
+
+        if self.speed_history.len() >= SPEED_HISTORY_CAP {
+            self.speed_history.pop_front();
+        }
+        self.speed_history.push_back((
+            self.traffic_proxy.up_rate.max(0.0) as u64,
+            self.traffic_proxy.down_rate.max(0.0) as u64,
+        ));
+    }
+
+    /// Write a profile's accumulated traffic back to its `.cfg`.
+    fn persist_profile_traffic(&mut self, id: i32) {
+        if let Some(p) = self.profiles.get(&id).cloned() {
+            if let Err(e) = ncore::store::save_proxy_entity(&self.config_dir, &p) {
+                self.log(format!("failed to save traffic for profile {id}: {e}"));
+            }
+        }
+    }
+
+    /// Write the running profile's accumulated traffic back to disk,
+    /// mirroring the `profile->Save()` loop the GUI runs when stopping.
+    fn persist_active_traffic(&mut self) {
+        if let Some(id) = self.active_profile_id {
+            self.persist_profile_traffic(id);
+        }
+    }
+
+    /// Periodic work: stats polling and transient expiry. Tests report on
+    /// their own; the worker polls the core for them.
     pub fn maybe_tick(&mut self) {
         let now = Instant::now();
         if self
@@ -763,6 +1017,13 @@ impl App {
         if self.core_status == CoreStatus::Running {
             if !self.datastore.disable_traffic_stats {
                 let _ = self.worker.tx.send(Command::QueryStats);
+            } else {
+                // Nothing will refresh the rates, so don't leave the status
+                // line frozen at whatever speed was showing when stats were
+                // switched off.
+                self.traffic_proxy.clear_rates();
+                self.traffic_direct.clear_rates();
+                self.last_stats_at = None;
             }
             // Listing connections needs the Clash API, which is only in the
             // config when connection statistics are on; polling it otherwise
@@ -773,18 +1034,6 @@ impl App {
             }
         }
 
-        if self.url_test_running {
-            if self
-                .url_test_started
-                .map(|t| t.elapsed() > URL_TEST_TIMEOUT)
-                .unwrap_or(false)
-            {
-                self.url_test_running = false;
-                self.notify("url test timed out");
-            } else {
-                let _ = self.worker.tx.send(Command::QueryUrlTest);
-            }
-        }
     }
 
     // ------------------------------------------------------------------
@@ -828,7 +1077,7 @@ impl App {
                 .and_then(|e| e.url.as_ref())
                 .is_some_and(|u| !u.is_empty()),
             running: self.core_status == CoreStatus::Running,
-            testing: self.url_test_running || self.speed_test_running,
+            testing: self.test.is_some(),
         };
         self.menu_bar = menu::build_menu_bar(&ctx);
     }
@@ -893,11 +1142,16 @@ impl App {
             Action::SpModeTun => self.set_spmode(SpMode::Tun),
             Action::SpModeDisabled => self.set_spmode(SpMode::Disabled),
             Action::ToggleSystemDns => {
-                self.system_dns = !self.system_dns;
-                let _ = self.worker.tx.send(Command::SetSystemDns {
-                    enable: self.system_dns,
-                });
-                self.save_settings("system dns");
+                // The override points the system at the hijack DNS server.
+                if !self.system_dns && !self.datastore.enable_dns_server {
+                    self.notify("You need to enable hijack DNS server first");
+                } else {
+                    self.system_dns = !self.system_dns;
+                    let _ = self.worker.tx.send(Command::SetSystemDns {
+                        enable: self.system_dns,
+                    });
+                    self.save_settings("system dns");
+                }
             }
             Action::ToggleRememberLastProfile => {
                 self.window.remember_last_profile = !self.window.remember_last_profile;
@@ -936,18 +1190,37 @@ impl App {
             }
             Action::UrlTestSelected => self.url_test(self.target_ids()),
             Action::ClearTestResultSelected => self.clear_test_results(self.target_ids()),
-            Action::SpeedTestSelected => self.speed_test(SpeedTestMode::Full),
-            Action::DownloadTestSelected => self.speed_test(SpeedTestMode::Download),
-            Action::UploadTestSelected => self.speed_test(SpeedTestMode::Upload),
-            Action::CountryTestSelected => self.speed_test(SpeedTestMode::Country),
-            Action::SimpleDlSelected => self.speed_test(SpeedTestMode::SimpleDownload),
+            Action::SpeedTestSelected => self.speed_test(self.target_ids(), SpeedTestMode::Full),
+            Action::DownloadTestSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::Download)
+            }
+            Action::UploadTestSelected => self.speed_test(self.target_ids(), SpeedTestMode::Upload),
+            Action::CountryTestSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::Country)
+            }
+            Action::SimpleDlSelected => {
+                self.speed_test(self.target_ids(), SpeedTestMode::SimpleDownload)
+            }
             Action::Start => {
                 if let Some(id) = self.cursor_id() {
                     self.start_profile(id);
                 }
             }
             Action::Stop => {
+                // Drain the counters one last time before the core goes away,
+                // like the GUI's final `UpdateAll()` on stop. Core commands
+                // run in order, so this sample is delivered before `Stopped`.
+                if !self.datastore.disable_traffic_stats {
+                    let _ = self.worker.tx.send(Command::QueryStats);
+                }
                 let _ = self.worker.tx.send(Command::Stop);
+                // A manual stop means "nothing running" on the next launch
+                // too (`UpdateStartedId(-1919)` in `profile_stop`, which does
+                // nothing when no profile runs).
+                if self.active_profile_id.is_some() {
+                    self.datastore.started_id = NO_PROFILE;
+                    let _ = ncore::store::save_datastore(&self.config_dir, &self.datastore);
+                }
             }
             Action::SelectAll => {
                 self.checked = self.visible_ids().into_iter().collect();
@@ -978,7 +1251,10 @@ impl App {
             Action::RemoveUnavailable => self.remove_unavailable(),
             Action::ClearTestResultGroup => self.clear_test_results(self.visible_ids()),
             Action::RemoveDuplicates => self.remove_duplicates(),
-            Action::SpeedTestGroup => self.speed_test_group(),
+            Action::SpeedTestGroup => self.speed_test(
+                self.visible_ids(),
+                SpeedTestMode::from_setting(self.datastore.speed_test_mode),
+            ),
             Action::ResetTrafficGroup => self.reset_traffic(self.visible_ids()),
 
             // --- Routing ---
@@ -998,11 +1274,7 @@ impl App {
             // --- Test ---
             Action::UrlTestGroup => self.url_test(self.visible_ids()),
             Action::SpeedTestCurrent => self.speed_test_current(),
-            Action::StopTesting => {
-                let _ = self.worker.tx.send(Command::StopTest);
-                self.url_test_running = false;
-                self.speed_test_running = false;
-            }
+            Action::StopTesting => self.stop_testing(),
 
             // --- Information ---
             Action::ShowStats => self.show_statistics(),
@@ -1015,31 +1287,29 @@ impl App {
         if self.spmode == mode {
             return;
         }
-        let was_system_proxy = self.spmode.is_system_proxy();
+        // Checked before anything changes: a refused mode must not tear
+        // down the proxy that is running now.
+        // Before the core answers, a remembered TUN mode is re-checked on
+        // `Connected`.
+        if mode.is_tun() && self.core_connected && !self.privileged {
+            self.notify(TUN_NEEDS_PRIVILEGES);
+            return;
+        }
+        if mode.is_system_proxy() && !self.datastore.proxy_inbound_enabled() {
+            self.notify("System proxy needs the local inbound (http or mixed) enabled");
+            return;
+        }
         self.spmode = mode;
-        self.datastore.enable_tun_routing = mode.is_tun();
-
-        // Tear the old system proxy down / bring the new one up.
-        if was_system_proxy && !mode.is_system_proxy() {
-            let _ = self.worker.tx.send(Command::SetSystemProxy {
-                enable: false,
-                address: self.datastore.inbound_address.clone(),
-                port: self.datastore.inbound_socks_port,
-            });
-        }
-        if mode.is_system_proxy() {
-            let _ = self.worker.tx.send(Command::SetSystemProxy {
-                enable: true,
-                address: self.datastore.inbound_address.clone(),
-                port: self.datastore.inbound_socks_port,
-            });
-        }
+        self.sync_spmode();
         self.save_settings(match mode {
             SpMode::Disabled => "special proxy: disabled",
             SpMode::SystemProxy => "special proxy: system proxy",
             SpMode::Tun => "special proxy: tun",
         });
-        // TUN changes the inbound, so the core needs a new config.
+        // Both modes live in the generated config — the TUN inbound, or
+        // `set_system_proxy` on the local inbound, which sets the system
+        // proxy when the core starts and clears it when it stops — so the
+        // core needs the new config.
         self.restart_proxy();
     }
 
@@ -1061,9 +1331,16 @@ impl App {
         let Some(profile) = self.profiles.get(&id).cloned() else {
             return;
         };
-        self.datastore.enable_tun_routing = self.spmode.is_tun();
+        // Switching while running: the previous profile's session traffic is
+        // only in memory — flush it before it is attributed to someone else.
+        if let Some(old) = self.active_profile_id {
+            if old != id {
+                self.persist_profile_traffic(old);
+            }
+        }
+        self.sync_spmode();
         let chain = self.active_chain().cloned();
-        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref()) {
+        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref(), Some(&self.profiles)) {
             Ok(config) => {
                 self.notify(format!("starting: {}", profile.display_type_and_name()));
                 self.active_profile_id = Some(id);
@@ -1103,12 +1380,8 @@ impl App {
 
     // --- profile operations ---
 
-    /// Persist new profiles into the current group and reload.
-    fn add_profiles(&mut self, mut entities: Vec<ProxyEntity>) -> usize {
-        let Some(gid) = self.current_group_id() else {
-            self.notify("no group selected");
-            return 0;
-        };
+    /// Persist new profiles into a group and reload.
+    fn add_profiles_to(&mut self, gid: i32, mut entities: Vec<ProxyEntity>) -> usize {
         let base = self.config_dir.clone();
         let start_id = ncore::store::next_store_id(&base, "profiles");
         let mut added = 0;
@@ -1134,6 +1407,15 @@ impl App {
         added
     }
 
+    /// Persist new profiles into the current group and reload.
+    fn add_profiles(&mut self, entities: Vec<ProxyEntity>) -> usize {
+        let Some(gid) = self.current_group_id() else {
+            self.notify("no group selected");
+            return 0;
+        };
+        self.add_profiles_to(gid, entities)
+    }
+
     fn import_clipboard(&mut self) {
         let text = match clipboard_get() {
             Ok(t) => t,
@@ -1144,7 +1426,7 @@ impl App {
         };
         match ncore::sub::parse_subscription(&text) {
             Ok(parsed) => {
-                let entities: Vec<ProxyEntity> = parsed.into_iter().map(|p| p.entity).collect();
+                let entities = self.imported(parsed);
                 let n = self.add_profiles(entities);
                 self.notify(format!("imported {n} profile(s)"));
             }
@@ -1152,11 +1434,25 @@ impl App {
         }
     }
 
+    /// Profiles parsed from links, with the import-time defaults the GUI
+    /// applies (the global uTLS fingerprint, see `Link2Bean`).
+    fn imported(&self, parsed: Vec<ncore::sub::ParsedProxy>) -> Vec<ProxyEntity> {
+        let fp = self.datastore.utls_fingerprint.clone().unwrap_or_default();
+        parsed
+            .into_iter()
+            .map(|p| {
+                let mut e = p.entity;
+                ncore::sub::apply_default_utls(&mut e, &fp);
+                e
+            })
+            .collect()
+    }
+
     fn import_file(&mut self, path: &str) {
         match std::fs::read_to_string(shellexpand(path)) {
             Ok(text) => match ncore::sub::parse_subscription(&text) {
                 Ok(parsed) => {
-                    let entities: Vec<ProxyEntity> = parsed.into_iter().map(|p| p.entity).collect();
+                    let entities = self.imported(parsed);
                     let n = self.add_profiles(entities);
                     self.notify(format!("imported {n} profile(s)"));
                 }
@@ -1175,14 +1471,14 @@ impl App {
                 return;
             }
         };
-        let Some(first) = parsed.into_iter().next() else {
+        let Some(first) = self.imported(parsed).into_iter().next() else {
             self.notify("no profile found in input");
             return;
         };
         let Some(old) = self.profiles.get(&id) else {
             return;
         };
-        let mut new = first.entity;
+        let mut new = first;
         new.id = id;
         new.gid = old.gid;
         new.traffic_dl = old.traffic_dl;
@@ -1244,7 +1540,7 @@ impl App {
             return;
         };
         let chain = self.active_chain().cloned();
-        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref()) {
+        match ncore::config::build_config_with_route(&profile, &self.datastore, chain.as_ref(), Some(&self.profiles)) {
             Ok(config) => {
                 let body = serde_json::to_string_pretty(&config).unwrap_or_else(|_| config.to_string());
                 let _ = clipboard_set(body.clone());
@@ -1300,12 +1596,19 @@ impl App {
         }));
     }
 
-    fn delete_profiles(&mut self, ids: Vec<i32>) {
+    fn delete_profiles(&mut self, mut ids: Vec<i32>) {
+        // Like `BatchDeleteProfiles`, the running profile stays.
+        if let Some(running) = self.running_profile_id() {
+            if ids.contains(&running) {
+                ids.retain(|id| *id != running);
+                self.log("the running profile was not deleted; stop it first".to_string());
+            }
+        }
+        if ids.is_empty() {
+            return;
+        }
         for id in &ids {
             let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
-            if self.active_profile_id == Some(*id) {
-                self.active_profile_id = None;
-            }
         }
         for g in self.groups.iter_mut() {
             let before = g.profiles.len();
@@ -1332,7 +1635,6 @@ impl App {
 
     fn clear_test_results(&mut self, ids: Vec<i32>) {
         for id in &ids {
-            self.latencies.remove(id);
             if let Some(p) = self.profiles.get_mut(id) {
                 p.latency_int = 0;
                 p.dl_speed = None;
@@ -1352,7 +1654,7 @@ impl App {
         let ids: Vec<i32> = self
             .visible_ids()
             .into_iter()
-            .filter(|id| self.latencies.get(id).is_some_and(|l| *l < 0))
+            .filter(|id| self.profiles.get(id).is_some_and(|p| p.latency_int < 0))
             .collect();
         self.confirm_removal(ids, "Unavailable");
     }
@@ -1367,7 +1669,7 @@ impl App {
                 self.profiles.get(id).is_none_or(|p| {
                     p.server_address.trim().is_empty()
                         || p.server_port <= 0
-                        || ncore::config::build_outbound(p).get("type").is_none()
+                        || ncore::config::build_outbound(p, false).is_err()
                 })
             })
             .collect();
@@ -1383,13 +1685,7 @@ impl App {
             let Some(p) = self.profiles.get(&id) else {
                 continue;
             };
-            let key = (
-                p.r#type.clone(),
-                p.server_address.clone(),
-                p.server_port,
-                p.serialize_bean(),
-            );
-            if !seen.insert(key) {
+            if !seen.insert(Self::profile_key(p)) {
                 dupes.push(id);
             }
         }
@@ -1488,7 +1784,9 @@ impl App {
     }
 
     fn ask_delete_group(&mut self) {
-        let Some(g) = self.groups.get(self.groups_sel.min(self.current_group)) else {
+        // The menu entry is "Delete current Group"; `groups_sel` belongs to the
+        // Groups dialog and is stale here (the dialog has its own `d` binding).
+        let Some(g) = self.groups.get(self.current_group) else {
             return;
         };
         let (id, name, count) = (g.base.id, g.name.clone(), g.profiles.len());
@@ -1540,157 +1838,395 @@ impl App {
     }
 
     fn update_subscription(&mut self) {
-        let Some(g) = self.groups.get(self.current_group) else {
-            return;
-        };
-        let Some(url) = g
-            .extra
-            .as_ref()
-            .and_then(|e| e.url.clone())
-            .filter(|u| !u.is_empty())
-        else {
+        let Some((gid, name, url, extra)) = self.groups.get(self.current_group).and_then(|g| {
+            let extra = g.extra.clone()?;
+            let url = extra.url.clone().filter(|u| !u.is_empty())?;
+            Some((g.base.id, g.name.clone(), url, extra))
+        }) else {
             self.notify("current group has no subscription URL");
             return;
         };
-        self.notify(format!("updating subscription: {}", g.name));
-        let _ = self.worker.tx.send(Command::UpdateSubscription {
-            url,
-            user_agent: self.datastore.user_agent.clone(),
-        });
+        self.notify(format!("updating subscription: {name}"));
+        let options = self.fetch_options(&extra);
+        let _ = self.worker.tx.send(Command::UpdateSubscription { gid, url, options });
     }
 
-    /// Replace the current group's profiles with freshly fetched ones,
+    /// How to fetch a group's subscription (`AsyncUpdateGroup` +
+    /// `BuildSession`): the group's own headers/HWID settings when it has
+    /// custom headers enabled, the global ones otherwise, and through the
+    /// local inbound when "use proxy" is on and a profile is running.
+    fn fetch_options(&self, extra: &ncore::model::GroupExtra) -> ncore::sub::FetchOptions {
+        let ds = &self.datastore;
+        let (send_hwid, hwid_params) = if extra.enable_custom_headers {
+            (extra.enable_hwid, extra.custom_hwid.clone().unwrap_or_default())
+        } else {
+            (ds.sub_send_hwid, ds.sub_custom_hwid_params.clone())
+        };
+        let mut headers = if send_hwid {
+            ncore::sub::hwid_headers(&hwid_params)
+        } else {
+            Vec::new()
+        };
+        if extra.enable_custom_headers {
+            if let Some(custom) = &extra.custom_headers {
+                headers.extend(custom.iter().map(|(k, v)| (k.clone(), v.clone())));
+            }
+        }
+        let use_proxy = (ds.network_use_proxy && ds.proxy_inbound_enabled())
+            || self.spmode.is_system_proxy();
+        let proxy = (use_proxy && self.core_status == CoreStatus::Running).then(|| {
+            let host = match ds.inbound_address.as_str() {
+                "::" | "0.0.0.0" => "127.0.0.1",
+                other => other,
+            };
+            ncore::sub::FetchProxy {
+                address: format!("{host}:{}", ds.inbound_socks_port),
+                username: ds.inbound_username.clone().unwrap_or_default(),
+                password: ds.inbound_password.clone().unwrap_or_default(),
+            }
+        });
+        ncore::sub::FetchOptions {
+            user_agent: ds
+                .user_agent
+                .clone()
+                .filter(|ua| !ua.is_empty())
+                .unwrap_or_else(ncore::sub::default_user_agent),
+            // The GUI stores `download_retries` under the "download_timeout"
+            // key (its ADD_MAP points at the wrong field), so the file holds
+            // a retry count like 25; the GUI itself keeps its 10 s default.
+            timeout: Duration::from_millis(if ds.download_timeout >= 1000 {
+                ds.download_timeout.min(600_000) as u64
+            } else {
+                10_000
+            }),
+            insecure: ds.net_insecure,
+            proxy,
+            headers,
+            body: extra
+                .enable_custom_payload
+                .then(|| extra.text_payload.clone().unwrap_or_default())
+                .filter(|b| !b.is_empty()),
+        }
+    }
+
+    /// Exact duplicates for "Remove Duplicates" (`ProfileFilter::Uniq`):
+    /// type, address, port and the outbound they build. The GUI compares
+    /// beans, but a bean the GUI saved and one parsed from the same share
+    /// link carry different bookkeeping keys; the outbound is what matters.
+    fn profile_key(p: &ProxyEntity) -> (String, String, i32, String) {
+        let outbound = ncore::config::build_outbound(p, false)
+            .map(|o| o.to_string())
+            .unwrap_or_else(|_| p.serialize_bean());
+        (p.r#type.clone(), p.server_address.clone(), p.server_port, outbound)
+    }
+
+    /// Which server account a subscription node is: type, address, port and
+    /// its secret (uuid/password). Tuning a provider varies between list
+    /// formats (bandwidth hints, ALPN, fingerprints) does not count, so a
+    /// node keeps its entry — id, traffic, test results — across updates.
+    fn node_identity(p: &ProxyEntity) -> (String, String, i32, String) {
+        let secret = ["id", "uuid", "pass", "password", "authPayload", "username"]
+            .iter()
+            .find_map(|k| {
+                p.bean_cfg
+                    .as_ref()
+                    .and_then(|b| b.get(*k))
+                    .and_then(serde_json::Value::as_str)
+                    .filter(|s| !s.is_empty())
+            })
+            .unwrap_or_default();
+        (
+            p.r#type.clone(),
+            p.server_address.to_lowercase(),
+            p.server_port,
+            secret.to_string(),
+        )
+    }
+
+    /// Merge freshly fetched profiles into the group the update was started
+    /// for (tracked by `gid` — the user may have switched groups since),
     /// applying the subscription post-processing flags the GUI honours.
-    fn apply_subscription(&mut self, entities: Vec<ProxyEntity>) {
-        let Some(g) = self.groups.get(self.current_group).cloned() else {
+    ///
+    /// Like `GroupUpdater`, nodes still in the list keep their entries —
+    /// traffic counters and test results — while removed ones are deleted and
+    /// new ones appended; a kept node takes the new list's name and settings.
+    /// A full wipe happens only with `sub_clear` (or over 1000 profiles, the
+    /// GUI's own escape hatch). The running profile is never deleted.
+    fn apply_subscription(&mut self, gid: i32, entities: Vec<ProxyEntity>, info: Option<String>) {
+        let Some(g) = self.groups.iter().find(|x| x.base.id == gid).cloned() else {
+            self.notify("subscription update: group no longer exists");
             return;
         };
-        for id in &g.profiles {
-            let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
-        }
-        if let Some(g) = self.groups.get_mut(self.current_group) {
-            g.profiles.clear();
-        }
 
         let mut entities = entities;
+        // `Link2Bean`: a link without a fingerprint gets the global one.
+        let fp = self.datastore.utls_fingerprint.clone().unwrap_or_default();
+        for e in &mut entities {
+            ncore::sub::apply_default_utls(e, &fp);
+        }
         if self.datastore.sub_rm_invalid {
             entities.retain(|e| !e.server_address.trim().is_empty() && e.server_port > 0);
         }
         if self.datastore.sub_rm_duplicates {
             let mut seen = HashSet::new();
-            entities.retain(|e| {
-                seen.insert((
-                    e.r#type.clone(),
-                    e.server_address.clone(),
-                    e.server_port,
-                    e.serialize_bean(),
-                ))
-            });
+            entities.retain(|e| seen.insert(Self::profile_key(e)));
         }
 
-        let count = self.add_profiles(entities);
-        if let Some(g) = self.groups.iter_mut().find(|x| x.base.id == g.base.id) {
-            if let Some(extra) = g.extra.as_mut() {
-                extra.sub_last_update = Some(chrono_now());
-                let extra = extra.clone();
-                let _ = ncore::store::save_group_extra(&self.config_dir, &extra);
+        let running = self.running_profile_id();
+        let clear = self.datastore.sub_clear || g.profiles.len() > 1000;
+        let mut dropped: Vec<i32> = Vec::new();
+        let mut kept: Vec<i32> = Vec::new();
+        let fresh: Vec<ProxyEntity> = if clear {
+            dropped = g.profiles.clone();
+            entities
+        } else {
+            // First entry per identity; later ones are added as new nodes.
+            let mut incoming: HashMap<_, usize> = HashMap::new();
+            for (i, e) in entities.iter().enumerate() {
+                incoming.entry(Self::node_identity(e)).or_insert(i);
+            }
+            let mut matched = vec![false; entities.len()];
+            for id in &g.profiles {
+                let Some(p) = self.profiles.get_mut(id) else {
+                    dropped.push(*id);
+                    continue;
+                };
+                match incoming.get(&Self::node_identity(p)).copied() {
+                    Some(i) if !matched[i] => {
+                        matched[i] = true;
+                        kept.push(*id);
+                        let new = &entities[i];
+                        if p.name != new.name || p.bean_cfg != new.bean_cfg {
+                            p.name = new.name.clone();
+                            p.bean_cfg = new.bean_cfg.clone();
+                            let p = p.clone();
+                            let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+                            if let Some(bean) = &p.bean_cfg {
+                                let _ = ncore::store::save_bean_cfg(&self.config_dir, p.id, bean);
+                            }
+                        }
+                    }
+                    // Gone from the list, or a duplicate of a kept node.
+                    _ => dropped.push(*id),
+                }
+            }
+            entities
+                .into_iter()
+                .zip(matched)
+                .filter(|(_, m)| !m)
+                .map(|(e, _)| e)
+                .collect()
+        };
+        // `BatchDeleteProfiles` never deletes the running profile.
+        if let Some(id) = running {
+            if let Some(pos) = dropped.iter().position(|d| *d == id) {
+                dropped.remove(pos);
+                kept.push(id);
+                self.log("subscription update kept the running profile".to_string());
             }
         }
-        self.notify(format!("subscription updated: {count} profiles"));
-        if self.datastore.sub_url_test {
-            self.url_test(self.visible_ids());
+
+        for id in &dropped {
+            let _ = ncore::store::delete_profile_files(&self.config_dir, *id);
         }
+        if let Some(g) = self.groups.iter_mut().find(|x| x.base.id == gid) {
+            g.profiles.retain(|id| kept.contains(id));
+            let g = g.clone();
+            let _ = ncore::store::save_group(&self.config_dir, &g);
+        }
+
+        let added = self.add_profiles_to(gid, fresh);
+
+        if let Some(g) = self.groups.iter().find(|x| x.base.id == gid) {
+            let mut extra = g.extra.clone().unwrap_or_default();
+            extra.id = gid;
+            extra.sub_last_update = Some(chrono_now());
+            if info.is_some() {
+                extra.info = info;
+            }
+            let _ = ncore::store::save_group_extra(&self.config_dir, &extra);
+        }
+        self.reload();
+        self.notify(format!(
+            "subscription updated: {added} new, {} kept, {} removed",
+            kept.len(),
+            dropped.len()
+        ));
+        if self.datastore.sub_url_test {
+            let ids: Vec<i32> = self
+                .groups
+                .iter()
+                .find(|x| x.base.id == gid)
+                .map(|g| g.profiles.clone())
+                .unwrap_or_default();
+            self.url_test(ids);
+        }
+    }
+
+    /// The profile the core is running (or starting), if any.
+    fn running_profile_id(&self) -> Option<i32> {
+        self.active_profile_id
     }
 
     // --- tests ---
 
+    /// Split `ids` into test configs of [`TEST_BATCH`] profiles. Profiles no
+    /// outbound can be built for are marked unavailable and logged, as
+    /// `BuildTestConfig` does, instead of failing their whole batch.
+    fn test_batches(&mut self, ids: &[i32]) -> (Vec<TestBatch>, HashMap<String, i32>) {
+        let profiles: Vec<ProxyEntity> = ids
+            .iter()
+            .filter_map(|id| self.profiles.get(id).cloned())
+            .collect();
+        let mut batches = Vec::new();
+        let mut targets = HashMap::new();
+        let mut invalid = Vec::new();
+        for chunk in profiles.chunks(TEST_BATCH) {
+            let refs: Vec<&ProxyEntity> = chunk.iter().collect();
+            let tc = ncore::config::build_test_config(&refs, &self.datastore);
+            invalid.extend(tc.invalid);
+            if tc.tags.is_empty() {
+                continue;
+            }
+            for tag in &tc.tags {
+                if let Ok(id) = tag.parse::<i32>() {
+                    targets.insert(tag.clone(), id);
+                }
+            }
+            batches.push(TestBatch {
+                config_json: tc.json,
+                tags: tc.tags,
+            });
+        }
+        for (id, error) in invalid {
+            if let Some(p) = self.profiles.get_mut(&id) {
+                p.latency_int = -1;
+                let p = p.clone();
+                let _ = ncore::store::save_proxy_entity(&self.config_dir, &p);
+                self.log(format!("skipping {}: {error}", p.display_type_and_name()));
+            }
+        }
+        (batches, targets)
+    }
+
+    /// Start a test unless one is still running — the core has a single test
+    /// context, and the GUI refuses too ("The last url test did not exit
+    /// completely").
+    fn begin_test(&mut self, kind: TestKind, targets: HashMap<String, i32>, current: Option<i32>) -> Option<u64> {
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
+            return None;
+        }
+        self.test_seq += 1;
+        self.test = Some(RunningTest::new(self.test_seq, kind, targets, current));
+        Some(self.test_seq)
+    }
+
+    /// URL test (`urltest_current_group`).
     fn url_test(&mut self, ids: Vec<i32>) {
-        if self.url_test_running {
-            self.notify("a url test is already running");
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
             return;
         }
-        let profiles: Vec<&ProxyEntity> =
-            ids.iter().filter_map(|id| self.profiles.get(id)).collect();
-        if profiles.is_empty() {
+        let (batches, targets) = self.test_batches(&ids);
+        if batches.is_empty() {
             self.notify("url test: nothing to test");
             return;
         }
-        let (config_json, tags) = ncore::config::build_test_config(&profiles);
-        self.url_test_running = true;
-        self.url_test_expected = tags.len();
-        self.url_test_done.clear();
-        self.url_test_started = Some(Instant::now());
-        self.notify(format!("url test: {} profiles", tags.len()));
+        let n = targets.len();
+        let Some(seq) = self.begin_test(TestKind::Url, targets, None) else {
+            return;
+        };
+        self.notify(format!("url test: {n} profile(s)"));
         let _ = self.worker.tx.send(Command::UrlTest {
-            config_json,
-            tags,
+            seq,
+            batches,
             url: self.datastore.test_latency_url.clone(),
             max_concurrency: self.datastore.test_concurrent,
             timeout_ms: self.datastore.url_test_timeout_ms,
         });
     }
 
-    fn speed_test(&mut self, mode: SpeedTestMode) {
-        if self.speed_test_running {
-            self.notify("a speed test is already running");
+    /// Speed test of the given profiles (`speedtest_current_group`); the
+    /// core measures them one after another.
+    fn speed_test(&mut self, ids: Vec<i32>, mode: SpeedTestMode) {
+        if self.test.is_some() {
+            self.notify("the last test has not finished yet");
             return;
         }
-        let Some(id) = self.target_ids().first().copied() else {
+        let (batches, targets) = self.test_batches(&ids);
+        if batches.is_empty() {
+            self.notify(format!("{}: nothing to test", mode.label()));
+            return;
+        }
+        let n = targets.len();
+        let Some(seq) = self.begin_test(TestKind::Speed(mode), targets, None) else {
             return;
         };
-        let Some(p) = self.profiles.get(&id) else {
-            return;
-        };
-        let name = p.display_type_and_name();
-        let (config_json, tags) = ncore::config::build_test_config(&[p]);
-        let Some(tag) = tags.into_iter().next() else {
-            return;
-        };
-        self.speed_test_running = true;
-        self.notify(format!("{}: {name}", mode.label()));
-        let _ = self.worker.tx.send(Command::SpeedTest {
-            config_json,
-            tag,
-            download_addr: self.datastore.simple_dl_url.clone(),
-            timeout_ms: self.datastore.speed_test_timeout_ms,
-            mode,
-            test_current: false,
-        });
+        self.notify(format!("{}: {n} profile(s)", mode.label()));
+        self.send_speed_test(seq, batches, mode, false);
     }
 
-    /// "Speedtest Current" — test the outbound the core is actually running.
+    /// "Speedtest Current" — test the outbound the core is actually running,
+    /// with the configured test mode.
     fn speed_test_current(&mut self) {
-        if self.core_status != CoreStatus::Running {
+        let Some(id) = self.running_profile_id().filter(|_| self.core_status == CoreStatus::Running)
+        else {
             self.notify("speedtest current: core is not running");
             return;
-        }
-        if self.speed_test_running {
+        };
+        let mode = SpeedTestMode::from_setting(self.datastore.speed_test_mode);
+        let Some(seq) = self.begin_test(TestKind::Speed(mode), HashMap::new(), Some(id)) else {
             return;
-        }
-        self.speed_test_running = true;
-        self.notify("speedtest current");
-        let _ = self.worker.tx.send(Command::SpeedTest {
+        };
+        self.notify(format!("{}: running profile", mode.label()));
+        // Untagged, the core would measure route.final rather than the
+        // profile (`speedtest_current_group`).
+        let batches = vec![TestBatch {
             config_json: String::new(),
-            tag: "proxy".into(),
+            tags: vec!["proxy".into()],
+        }];
+        self.send_speed_test(seq, batches, mode, true);
+    }
+
+    fn send_speed_test(&mut self, seq: u64, batches: Vec<TestBatch>, mode: SpeedTestMode, test_current: bool) {
+        let _ = self.worker.tx.send(Command::SpeedTest {
+            seq,
+            batches,
+            mode,
             download_addr: self.datastore.simple_dl_url.clone(),
             timeout_ms: self.datastore.speed_test_timeout_ms,
-            mode: SpeedTestMode::Full,
-            test_current: true,
+            country_concurrency: self.datastore.test_concurrent,
+            test_current,
         });
     }
 
-    /// "Speedtest Group" — the GUI runs a full test across the group; the
-    /// core takes one outbound at a time, so this queues the group's profiles
-    /// through the URL test and then speed-tests the cursor row.
-    fn speed_test_group(&mut self) {
-        self.url_test(self.visible_ids());
+    /// "Stop testing": ask the core to abort, then wait for the worker to
+    /// report the test over. Pressing it again while waiting gives up on
+    /// the old test, so a wedged core cannot block testing for good.
+    fn stop_testing(&mut self) {
+        match self.test.as_mut() {
+            Some(test) if !test.stopping => {
+                test.stopping = true;
+                test.live = None;
+                let _ = self.worker.tx.send(Command::StopTest);
+                self.notify("stopping tests…");
+            }
+            Some(_) => {
+                self.test = None;
+                self.notify("stopped waiting for the test to finish");
+            }
+            None => {
+                let _ = self.worker.tx.send(Command::StopTest);
+            }
+        }
     }
 
     fn show_statistics(&mut self) {
         let group_count = self.groups.len();
         let profile_count = self.profiles.len();
-        let tested = self.latencies.len();
-        let working = self.latencies.values().filter(|l| **l > 0).count();
+        let tested = self.profiles.values().filter(|p| p.latency_int != 0).count();
+        let working = self.profiles.values().filter(|p| p.latency_int > 0).count();
         let total_dl: i64 = self.profiles.values().map(|p| p.traffic_dl).sum();
         let total_ul: i64 = self.profiles.values().map(|p| p.traffic_ul).sum();
         let body = format!(
@@ -2242,8 +2778,23 @@ impl App {
     }
 
     fn quit(&mut self) {
-        let _ = self.worker.tx.send(Command::Shutdown);
+        // Traffic accumulated this session only lives in memory until the
+        // profile stops; flush it so quitting while running does not lose it.
+        if self.core_status == CoreStatus::Running {
+            self.persist_active_traffic();
+        }
         self.running = false;
+    }
+
+    /// `prepare_exit`: undo the system-wide changes (the DNS override here,
+    /// the system proxy with the core's instance), then stop the core and
+    /// wait for it. `started_id` is left alone so the profile comes back on
+    /// the next launch — only a manual stop clears it.
+    fn shutdown(&mut self) {
+        if self.system_dns {
+            let _ = self.worker.tx.send(Command::SetSystemDns { enable: false });
+        }
+        self.worker.shutdown(Duration::from_secs(5));
     }
 
     // ------------------------------------------------------------------
@@ -2307,15 +2858,19 @@ impl App {
                     && me.row >= area.y
                     && me.row < area.y + area.height
                 {
-                    let idx = (me.row - area.y) as usize;
+                    // The table may be scrolled: screen row 0 shows item
+                    // `offset`, not item 0.
+                    let idx = (me.row - area.y) as usize + self.table_state.offset();
+                    if idx >= self.visible_ids().len() {
+                        return;
+                    }
                     let now = Instant::now();
                     let double = self
                         .last_click
-                        .map(|(t, _, r)| r == me.row && now.duration_since(t).as_millis() < 500)
-                        .unwrap_or(false);
+                        .is_some_and(|(t, i)| i == idx && now.duration_since(t).as_millis() < 500);
                     self.focus = Focus::Table;
                     self.selected = idx;
-                    self.last_click = Some((now, me.column, me.row));
+                    self.last_click = Some((now, idx));
                     if double {
                         self.dispatch(Action::Start);
                         self.last_click = None;
@@ -2345,6 +2900,11 @@ impl App {
 // ============================================================================
 // Small helpers
 // ============================================================================
+
+/// Display width in terminal columns (CJK and emoji take two).
+fn text_width(s: &str) -> u16 {
+    Span::raw(s).width() as u16
+}
 
 fn clipboard_get() -> Result<String, arboard::Error> {
     arboard::Clipboard::new().and_then(|mut c| c.get_text())
@@ -2427,12 +2987,16 @@ macro_rules! sdef {
 }
 
 const SETTINGS: &[SettingDef] = &[
+    // 0 = none, 1 = http, 2 = mixed
+    sdef!("inbound_proxy_scheme", int, inbound_proxy_type),
     sdef!("inbound_address", str, inbound_address),
     sdef!("inbound_socks_port", int, inbound_socks_port),
     sdef!("test_url", str, test_latency_url),
     sdef!("urltest_timeout_ms", int, url_test_timeout_ms),
     sdef!("speedtest_timeout_ms", int, speed_test_timeout_ms),
     sdef!("test_concurrent", int, test_concurrent),
+    // 0 full, 1 download, 2 upload, 3 simple download, 4 country
+    sdef!("speed_test_mode", int, speed_test_mode),
     sdef!("simple_dl_url", str, simple_dl_url),
     sdef!("log_level", str, log_level),
     sdef!("mux_protocol", str, mux_protocol),
@@ -2440,6 +3004,9 @@ const SETTINGS: &[SettingDef] = &[
     sdef!("remote_dns", str, remote_dns),
     sdef!("direct_dns", str, direct_dns),
     sdef!("use_dns_object", bool, use_dns_object),
+    sdef!("dns_final_out_direct", bool, dns_final_out_direct),
+    sdef!("fakedns", bool, fake_dns),
+    sdef!("enable_dns_server", bool, enable_dns_server),
     sdef!("domain_strategy", str, domain_strategy),
     sdef!("outbound_domain_strategy", str, outbound_domain_strategy),
     sdef!("sniffing_mode", int, sniffing_mode),
@@ -2451,8 +3018,17 @@ const SETTINGS: &[SettingDef] = &[
     sdef!("vpn_strict_route", bool, vpn_strict_route),
     sdef!("vpn_implementation", str, vpn_implementation),
     sdef!("network_use_proxy", bool, network_use_proxy),
+    sdef!("net_insecure", bool, net_insecure),
+    SettingDef {
+        label: "user_agent",
+        kind: SettingKind::Str,
+        get: |ds| ds.user_agent.clone().unwrap_or_default(),
+        set: |ds, v| ds.user_agent = Some(v.trim().to_string()).filter(|s| !s.is_empty()),
+    },
     sdef!("skip_cert", bool, skip_cert),
     sdef!("enable_tun_routing", bool, enable_tun_routing),
+    sdef!("sub_clear", bool, sub_clear),
+    sdef!("sub_send_hwid", bool, sub_send_hwid),
     sdef!("sub_rm_invalid", bool, sub_rm_invalid),
     sdef!("sub_rm_duplicates", bool, sub_rm_duplicates),
     sdef!("sub_url_test", bool, sub_url_test),
@@ -2488,12 +3064,6 @@ pub fn render(frame: &mut Frame<'_>, app: &mut App) {
 
     render_status_bar(frame, status, app);
 
-    if app.filter_mode {
-        frame.set_cursor_position((
-            control.x + control.width.saturating_sub(24) + 8 + app.filter.chars().count() as u16,
-            control.y,
-        ));
-    }
     if app.menu.is_some() {
         render_menu_overlay(frame, app);
     }
@@ -2512,7 +3082,7 @@ fn render_menu_bar(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.menu_bar_xranges.clear();
     for (i, m) in app.menu_bar.iter().enumerate() {
         let label = format!(" {} ", m.title);
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if open_root == Some(i) {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -2556,8 +3126,8 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     };
     spans.push(Span::styled(btn_label, btn_style));
     app.control_row_hits
-        .push((x, x + btn_label.chars().count() as u16, btn_action));
-    x += btn_label.chars().count() as u16;
+        .push((x, x + text_width(btn_label), btn_action));
+    x += text_width(btn_label);
 
     let checkbox = |spans: &mut Vec<Span<'static>>,
                         x: &mut u16,
@@ -2566,7 +3136,7 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
                         action: Action,
                         hits: &mut Vec<(u16, u16, Action)>| {
         let text = format!("  [{}] {}", if checked { "x" } else { " " }, label);
-        let width = text.chars().count() as u16;
+        let width = text_width(&text);
         spans.push(Span::styled(
             text,
             if checked {
@@ -2616,21 +3186,32 @@ fn render_control_row(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.control_row_hits = hits;
 
     // Right side: either the search box or the transient `data_view` text.
-    let used: u16 = spans.iter().map(|s| s.content.chars().count() as u16).sum();
+    let used: u16 = spans.iter().map(|s| s.width() as u16).sum();
     let right_width = area.width.saturating_sub(used).saturating_sub(1);
     if app.search_visible {
-        let label = format!(
-            "  Search: {}{}",
-            app.filter,
-            if app.filter_mode { "▌" } else { "" }
-        );
-        spans.push(Span::styled(label, Style::default().fg(ACCENT)));
-    } else if let Some((msg, _)) = &app.transient {
-        let mut msg = msg.clone();
-        let budget = right_width.saturating_sub(2) as usize;
-        if msg.chars().count() > budget {
-            msg = msg.chars().take(budget).collect();
+        let prefix = "  Search: ";
+        if app.filter_mode {
+            frame.set_cursor_position((
+                area.x + used + text_width(prefix) + text_width(&app.filter),
+                area.y,
+            ));
         }
+        spans.push(Span::styled(
+            format!("{prefix}{}", app.filter),
+            Style::default().fg(ACCENT),
+        ));
+    } else if let Some((msg, _)) = &app.transient {
+        // Cut to the display width left over (not chars: CJK names are
+        // two columns each).
+        let budget = right_width.saturating_sub(2) as usize;
+        let mut msg_width = 0;
+        let msg: String = msg
+            .chars()
+            .take_while(|c| {
+                msg_width += Span::raw(c.to_string()).width();
+                msg_width <= budget
+            })
+            .collect();
         spans.push(Span::styled(
             format!("  {msg}"),
             Style::default().fg(Color::Yellow),
@@ -2652,7 +3233,7 @@ fn render_group_tabs(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     }
     for (i, g) in app.groups.iter().enumerate() {
         let label = format!(" {} ({}) ", g.name, g.profiles.len());
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if i == app.current_group {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -2703,21 +3284,14 @@ fn render_proxy_table(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
             };
             let mark = if app.checked.contains(id) { "✓" } else { " " };
 
-            let (latency, latency_color) = match app.latencies.get(id) {
-                Some(&l) if l < 0 => ("Unavailable".to_string(), Color::Red),
-                Some(&l) if l > 0 => (
-                    format!("{l} ms"),
-                    if l <= 200 { Color::Green } else { Color::Yellow },
-                ),
-                _ => (String::new(), Color::DarkGray),
-            };
-            // A finished speed test replaces the latency column with speeds,
-            // like the GUI's "Test Result" column does.
-            let result = match (&p.dl_speed, &p.ul_speed) {
-                (Some(dl), Some(ul)) if !dl.is_empty() || !ul.is_empty() => {
-                    format!("▼{dl} ▲{ul}")
-                }
-                _ => latency,
+            // The GUI's "Test Result" column: latency with the exit
+            // country, then any measured speeds.
+            let result = p.display_test_result();
+            let latency_color = match p.latency_int {
+                l if l < 0 => Color::Red,
+                l if l > 0 && l <= 200 => Color::Green,
+                l if l > 200 => Color::Yellow,
+                _ => Color::DarkGray,
             };
 
             let traffic = if p.traffic_ul > 0 || p.traffic_dl > 0 {
@@ -2810,7 +3384,7 @@ fn render_bottom_panel(frame: &mut Frame<'_>, area: Rect, app: &mut App) {
     app.bottom_tab_xranges.clear();
     for tab in BottomTab::ALL {
         let label = format!(" {} ", tab.label());
-        let width = label.chars().count() as u16;
+        let width = text_width(&label);
         let style = if tab == app.bottom_tab {
             Style::default().fg(Color::Black).bg(ACCENT).bold()
         } else {
@@ -2991,7 +3565,7 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
 
     let fmt_speeds = |t: &TrafficData| {
         let (up, down) = t.speeds();
-        format!("▲{} ▼{}", up.unwrap_or("0 B/s"), down.unwrap_or("0 B/s"))
+        format!("▲{up} ▼{down}")
     };
     let fmt_total = |t: &TrafficData| {
         format!(
@@ -3001,16 +3575,28 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
         )
     };
 
-    let testing = if app.url_test_running {
-        format!(
-            "  Testing {}/{}",
-            app.url_test_done.len(),
-            app.url_test_expected
-        )
-    } else if app.speed_test_running {
-        "  Speed testing".to_string()
-    } else {
-        String::new()
+    let testing = match &app.test {
+        Some(t) if t.stopping => "  Stopping tests…".to_string(),
+        Some(t) => match (&t.live, t.kind) {
+            // The GUI's data_view while a speed test runs.
+            (Some((id, r)), _) => {
+                let name = app
+                    .profiles
+                    .get(id)
+                    .map(|p| p.display_name_str())
+                    .unwrap_or_default();
+                let server = match (r.server_country.as_str(), r.server_name.as_str()) {
+                    ("", "") => String::new(),
+                    (country, server) => format!(" · {country} {server}"),
+                };
+                format!("  Speedtest {name}: ↓{} ↑{}{server}", r.dl_speed, r.ul_speed)
+            }
+            (None, TestKind::Url) => format!("  Testing {}/{}", t.done.len(), t.total()),
+            (None, TestKind::Speed(mode)) => {
+                format!("  {} {}/{}", mode.label(), t.done.len(), t.total())
+            }
+        },
+        None => String::new(),
     };
 
     // label_speed
@@ -3039,8 +3625,15 @@ fn render_status_bar(frame: &mut Frame<'_>, area: Rect, app: &App) {
         .active_chain()
         .map(|c| c.chain_name.clone())
         .unwrap_or_else(|| "-".into());
-    let running = if app.active_profile_id.is_some() {
-        format!("[{}] {}", app.current_group_name(), app.active_profile_name())
+    let running = if let Some(p) = app.active_profile_id.and_then(|id| app.profiles.get(&id)) {
+        // The running profile's own group, not the tab being viewed.
+        let group = app
+            .groups
+            .iter()
+            .find(|g| g.base.id == p.gid)
+            .map(|g| g.name.as_str())
+            .unwrap_or("");
+        format!("[{group}] {}", p.display_type_and_name())
     } else {
         "Not Running".to_string()
     };
@@ -3505,8 +4098,9 @@ pub fn run(
         app.maybe_tick();
     }
 
-    let _ = app.worker.tx.send(Command::Shutdown);
-    std::thread::sleep(Duration::from_millis(100));
+    app.transient = Some(("stopping the core…".into(), Instant::now()));
+    terminal.draw(|f| render(f, &mut app))?;
+    app.shutdown();
 
     Ok(())
 }

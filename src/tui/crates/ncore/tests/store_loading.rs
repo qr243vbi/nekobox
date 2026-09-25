@@ -30,7 +30,8 @@ fn test_write_read_roundtrip() {
         let mut p2 = loaded.clone();
         p2.bean_cfg = Some(bean);
         p2
-    });
+    }, false)
+    .unwrap();
     assert_eq!(outbound["password"], "pw");
 
     // Group
@@ -43,9 +44,11 @@ fn test_write_read_roundtrip() {
     assert_eq!(loaded_g.profiles, vec![p.id]);
 
     // DataStore
-    let mut ds = ncore::model::DataStore::default();
-    ds.inbound_socks_port = 12345;
-    ds.test_latency_url = "http://example.com/".into();
+    let ds = ncore::model::DataStore {
+        inbound_socks_port: 12345,
+        test_latency_url: "http://example.com/".into(),
+        ..Default::default()
+    };
     ncore::store::save_datastore(&dir, &ds).unwrap();
     let loaded_ds = ncore::store::load_datastore(&dir.join("nekobox.cfg")).unwrap();
     assert_eq!(loaded_ds.inbound_socks_port, 12345);
@@ -144,22 +147,26 @@ fn test_routing_chain_reaches_config() {
     ];
 
     let proxy = ProxyEntity::new("shadowsocks");
-    let ds = ncore::model::DataStore::default();
+    let ds = ncore::model::DataStore {
+        domain_strategy: "prefer_ipv4".into(),
+        ..Default::default()
+    };
 
     let without = ncore::config::build_config(&proxy, &ds).unwrap();
-    assert_eq!(
-        without["route"]["rules"].as_array().unwrap().len(),
-        0,
-        "no chain means no rules"
-    );
-
-    let with = ncore::config::build_config_with_route(&proxy, &ds, Some(&chain)).unwrap();
-    let rules = with["route"]["rules"].as_array().unwrap();
+    // No chain: only the GUI's prelude rules, sniff first, then resolve.
+    let rules = without["route"]["rules"].as_array().unwrap();
     assert_eq!(rules.len(), 2);
-    assert_eq!(rules[0]["domain_suffix"][0], "cn");
-    assert_eq!(rules[0]["outbound"], "direct");
+    assert_eq!(rules[0]["action"], "sniff");
+    assert_eq!(rules[1]["action"], "resolve");
+    assert_eq!(rules[1]["strategy"], "prefer_ipv4");
+
+    let with = ncore::config::build_config_with_route(&proxy, &ds, Some(&chain), None).unwrap();
+    let rules = with["route"]["rules"].as_array().unwrap();
+    assert_eq!(rules.len(), 4, "prelude + two chain rules");
+    assert_eq!(rules[2]["domain_suffix"][0], "cn");
+    assert_eq!(rules[2]["outbound"], "direct");
     // outbound_id -3 turns action "route" into "reject".
-    assert_eq!(rules[1]["action"], "reject");
+    assert_eq!(rules[3]["action"], "reject");
     // The block outbound the rules refer to must exist.
     let tags: Vec<&str> = with["outbounds"]
         .as_array()
@@ -216,7 +223,48 @@ fn test_load_gui_cfg_files() {
     assert_eq!(group.name, "testgroup");
     assert_eq!(group.profiles, vec![7]);
 
-    let outbound = ncore::config::build_outbound(&profile);
+    let outbound = ncore::config::build_outbound(&profile, false).unwrap();
     assert_eq!(outbound["type"], "shadowsocks");
     assert_eq!(outbound["password"], "secret");
+}
+
+/// Subscription extras keep their custom headers across a TUI save, and the
+/// settings the GUI names differently (`user_agent2`, `inbound_proxy_scheme`)
+/// round-trip.
+#[test]
+fn test_group_extra_and_settings_roundtrip() {
+    let dir = std::env::temp_dir().join(format!("ncore_extra_test_{}", std::process::id()));
+    std::fs::create_dir_all(&dir).unwrap();
+
+    let extra = ncore::model::GroupExtra {
+        id: 5,
+        url: Some("https://sub.example.com/x".into()),
+        enable_custom_headers: true,
+        custom_headers: Some([("X-Token".to_string(), "abc".to_string())].into()),
+        ..Default::default()
+    };
+    ncore::store::save_group_extra(&dir, &extra).unwrap();
+    let loaded = ncore::store::load_group_extra(
+        &ncore::store::get_file_path(&dir, "subscriptions", 5),
+        5,
+    )
+    .unwrap();
+    assert_eq!(
+        loaded.custom_headers.unwrap().get("X-Token").map(String::as_str),
+        Some("abc")
+    );
+
+    let ds = ncore::model::DataStore {
+        user_agent: Some("my-agent/1.0".into()),
+        inbound_proxy_type: ncore::model::INBOUND_HTTP,
+        domain_strategy: "AsIs".into(),
+        ..Default::default()
+    };
+    ncore::store::save_settings(&dir, &ds).unwrap();
+    let loaded = ncore::store::load_settings(&dir);
+    assert_eq!(loaded.user_agent.as_deref(), Some("my-agent/1.0"));
+    assert_eq!(loaded.inbound_proxy_type, ncore::model::INBOUND_HTTP);
+    assert_eq!(loaded.domain_strategy, "", "normalized on load");
+
+    std::fs::remove_dir_all(&dir).ok();
 }
