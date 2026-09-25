@@ -38,7 +38,7 @@ scoop install extras/nekobox
 - [NekoBox repository](https://software.opensuse.org//download.html?project=home%3Aqr243vbi&package=nekobox) for various linux distributions ([openSUSE](https://get.opensuse.org/), [Mageia](https://www.mageia.org/), [Debian](https://www.debian.org/), [Raspbian](https://www.raspberrypi.com/software/), [Ubuntu](https://ubuntu.com/), [openEuler](https://www.openeuler.org/), [Arch](https://archlinux.org/)).
 
 ### COPR repository
-- [NekoBox repository](https://copr.fedorainfracloud.org/coprs/qr243vbi/NekoBox/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
+- [NekoBox repository](https://copr.fedorainfracloud.org/coprs/moordjin/packages/) for various linux distributions ([RedHat](https://www.redhat.com), [Fedora](https://fedoraproject.org/), [Centos](https://www.centos.org), [Almalinux](https://almalinux.org/)).
 
 ### openSUSE package
 - [source](https://build.opensuse.org/package/show/openSUSE:Factory/nekobox)
