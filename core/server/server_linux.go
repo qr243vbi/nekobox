@@ -1,21 +1,23 @@
 //go:build linux
+
 package main
+
 import (
-	"kernel.org/pub/linux/libs/security/libcap/cap"
 	"strconv"
-	tun "github.com/sagernet/sing-tun"
+
+	"kernel.org/pub/linux/libs/security/libcap/cap"
+
+	_ "embed"
+	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"os/user"
+	"path/filepath"
+	"syscall"
 
 	"github.com/sagernet/sing/common/shell"
-	"os/exec"
-	"fmt"
-	"os"
-	"os/user"
-	"syscall"
-	_ "embed"
-	"log"
-	"path/filepath"
 )
-
 
 func RunResolvectl(args ...string) error {
 	path, err := exec.LookPath("resolvectl")
@@ -46,7 +48,6 @@ func RunResolvectl(args ...string) error {
 }
 
 func CheckResolvectl() {
-	tun.ResolveCtl = RunResolvectl
 }
 
 //go:embed elevated_resolvctl
@@ -138,7 +139,6 @@ func ensureGroupAndSetOwnership(programPath string, groupName string) error {
 	return nil
 }
 
-
 func isElevated() (bool, error) {
 	if os.Geteuid() == 0 {
 		return true, nil
@@ -151,93 +151,91 @@ func isElevated() (bool, error) {
 const elevatedLauncherDir = "/usr/local/sbin/"
 const elevatedLauncherFile = "nekobox_core_elevated_resolvectl"
 
-func checkFlags(save bool){
-		caps := cap.NewSet()
-		cap_value := []cap.Value{
-			cap.NET_ADMIN,
-			cap.NET_RAW,
-			cap.NET_BIND_SERVICE,
-			cap.SYS_PTRACE,
-			cap.DAC_READ_SEARCH,
-		}
-		err := caps.SetFlag(cap.Inheritable, true, cap_value...)
+func checkFlags(save bool) {
+	caps := cap.NewSet()
+	cap_value := []cap.Value{
+		cap.NET_ADMIN,
+		cap.NET_RAW,
+		cap.NET_BIND_SERVICE,
+		cap.SYS_PTRACE,
+		cap.DAC_READ_SEARCH,
+	}
+	err := caps.SetFlag(cap.Inheritable, true, cap_value...)
+	if err != nil {
+		panic(err)
+	}
+	err = caps.SetFlag(cap.Effective, true, cap_value...)
+	if err != nil {
+		panic(err)
+	}
+	err = caps.SetFlag(cap.Permitted, true, cap_value...)
+	if err != nil {
+		panic(err)
+	}
+	if save {
+		file, err := filepath.Abs(os.Args[0])
 		if err != nil {
 			panic(err)
 		}
-		err = caps.SetFlag(cap.Effective, true, cap_value...)
+
+		resolvectl := elevatedLauncherDir + elevatedLauncherFile
+		os.MkdirAll(elevatedLauncherDir, 0755)
+		file1, err := os.Create(resolvectl)
+		if err != nil {
+			log.Fatalf("Error creating elevated file: %v", err)
+		}
+		defer file1.Close()
+
+		_, err = file1.Write(resolvectlContent)
+		if err != nil {
+			log.Fatalf("Error writing to resolvectl file: %v", err)
+		}
+
+		err = ensureGroupAndSetOwnership(file, "sing-box")
 		if err != nil {
 			panic(err)
 		}
-		err = caps.SetFlag(cap.Permitted, true, cap_value...)
+		// Step 4: Set the setgid bit on the program file
+		err = setSetGidBit(resolvectl, "sing-box")
+		if err != nil {
+			log.Fatalf("failed to set setgid bit: %v", err)
+		}
+		err = caps.SetFile(file)
 		if err != nil {
 			panic(err)
 		}
-		if save {
-			file, err := filepath.Abs(os.Args[0])
-			if err != nil {
-				panic(err)
+		//	CreatePolkitRule()
+	}
+	/*
+			if gid > 0 {
+				syscall.Setgid(gid)
 			}
 
-			resolvectl := elevatedLauncherDir + elevatedLauncherFile
-			os.MkdirAll(elevatedLauncherDir, 0755)
-			file1, err := os.Create(resolvectl)
-			if err != nil {
-				log.Fatalf("Error creating elevated file: %v", err)
-			}
-			defer file1.Close()
-
-			_, err = file1.Write(resolvectlContent)
-			if err != nil {
-				log.Fatalf("Error writing to resolvectl file: %v", err)
+			if uid > 0 {
+				syscall.Seteuid(uid)
 			}
 
-			err = ensureGroupAndSetOwnership(file, "sing-box")
-			if err != nil {
-				panic(err)
-			}
-			// Step 4: Set the setgid bit on the program file
-			err = setSetGidBit(resolvectl, "sing-box")
-			if err != nil {
-				log.Fatalf("failed to set setgid bit: %v", err)
-			}
-			err = caps.SetFile(file)
-			if err != nil {
-				panic(err)
-			}
-			//	CreatePolkitRule()
+		// 1. Get the capability set for the current process
+		// This captures Permitted, Effective, and Inheritable sets.
+		c := cap.GetProc()
+
+		// 2. Define the capability we want to enable
+		netAdmin := cap.NET_ADMIN
+
+		// 3. Set the NET_ADMIN bit in the Effective set
+		// Since we are root, it is already in our Permitted set.
+		if err := c.SetFlag(cap.Effective, true, netAdmin); err != nil {
+			log.Fatalf("failed to set flag: %v", err)
 		}
-		/*
-				if gid > 0 {
-					syscall.Setgid(gid)
-				}
 
-				if uid > 0 {
-					syscall.Seteuid(uid)
-				}
+		if err := c.SetFlag(cap.Permitted, true, netAdmin); err != nil {
+			log.Fatalf("failed to set flag: %v", err)
+		}
 
-			// 1. Get the capability set for the current process
-			// This captures Permitted, Effective, and Inheritable sets.
-			c := cap.GetProc()
-
-			// 2. Define the capability we want to enable
-			netAdmin := cap.NET_ADMIN
-
-			// 3. Set the NET_ADMIN bit in the Effective set
-			// Since we are root, it is already in our Permitted set.
-			if err := c.SetFlag(cap.Effective, true, netAdmin); err != nil {
-				log.Fatalf("failed to set flag: %v", err)
-			}
-
-			if err := c.SetFlag(cap.Permitted, true, netAdmin); err != nil {
-				log.Fatalf("failed to set flag: %v", err)
-			}
-
-			// 4. Apply these capabilities to EVERY thread in the Go process
-			// The libcap wrapper uses the nptl:setxid mechanism to sync threads.
-			if err := c.SetProc(); err != nil {
-				log.Fatalf("failed to apply capabilities: %v (Are you root?)", err)
-			}
-		*/
+		// 4. Apply these capabilities to EVERY thread in the Go process
+		// The libcap wrapper uses the nptl:setxid mechanism to sync threads.
+		if err := c.SetProc(); err != nil {
+			log.Fatalf("failed to apply capabilities: %v (Are you root?)", err)
+		}
+	*/
 }
-
-

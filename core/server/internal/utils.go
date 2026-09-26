@@ -19,6 +19,7 @@ import (
 	"github.com/sagernet/sing-box/common/settings"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/option"
+	"github.com/sagernet/sing/common/json/badoption"
 	"github.com/sagernet/sing/common/metadata"
 )
 
@@ -54,22 +55,37 @@ func ResetSystemProxy() error {
 }
 
 func SetSystemProxy(ctx context.Context, serverAddr string, serverPort uint16, supportSOCKS bool) error {
-	if BoxInstance == nil {
+	if serverAddr == "" {
 		return nil
 	}
-	if serverAddr == SystemProxyAddr && serverPort == SystemProxyPort && supportSOCKS == SystemProxySupportSOCKS {
-		if IsSystemProxyEnabled() {
-			return nil
+
+	if SystemProxyController != nil {
+		if serverAddr == SystemProxyAddr && serverPort == SystemProxyPort && supportSOCKS == SystemProxySupportSOCKS {
+			if SystemProxyController.IsEnabled() {
+				return nil
+			}
 		}
-	} else {
-		ResetSystemProxy()
+
+		if err := SystemProxyController.Disable(); err != nil {
+			return fmt.Errorf("disable previous system proxy: %w", err)
+		}
 	}
+
 	SystemProxyAddr = serverAddr
 	SystemProxyPort = serverPort
 	SystemProxySupportSOCKS = supportSOCKS
+
 	addr := metadata.ParseSocksaddrHostPort(serverAddr, serverPort)
-	SystemProxyController, _ = settings.NewSystemProxy(ctx, addr, supportSOCKS)
-	return SystemProxyController.Enable()
+	proxy, err := settings.NewSystemProxy(ctx, addr, supportSOCKS, nil)
+	if err != nil {
+		return fmt.Errorf("create system proxy: %w", err)
+	}
+
+	SystemProxyController = proxy
+	if err := SystemProxyController.Enable(); err != nil {
+		return fmt.Errorf("enable system proxy: %w", err)
+	}
+	return nil
 }
 
 func SetRulesetCachedir(v string) bool {
@@ -81,82 +97,72 @@ func BoxCreateHttpClient(instance *boxbox.Box) *http.Client {
 	if instance == nil {
 		return &http.Client{}
 	}
-	outbound := BoxInstance.Outbound().Default()
-	client := &http.Client{
+
+	outbound := instance.Outbound()
+	if outbound == nil || outbound.Default() == nil {
+		return &http.Client{}
+	}
+
+	return &http.Client{
 		Transport: &http.Transport{
 			DialContext: func(ctx context.Context, network string, addr string) (net.Conn, error) {
-				return outbound.DialContext(ctx, "tcp", metadata.ParseSocksaddr(addr))
+				return outbound.Default().DialContext(ctx, "tcp", metadata.ParseSocksaddr(addr))
 			},
 		},
 	}
-	return client
 }
 
 func DownloadFile(originalURL, targetPath string, use_default_outbound bool) error {
-	// Create all necessary directories for the target path
 	dir := filepath.Dir(targetPath)
-	err := os.MkdirAll(dir, 0755)
-	// Open the file for writing
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return fmt.Errorf("failed to create destination directory %q: %w", dir, err)
+	}
+
 	outFile, err := os.Create(targetPath)
 	if err != nil {
-		return fmt.Errorf("failed to create file: %v", err)
+		return fmt.Errorf("failed to create file: %w", err)
 	}
 	defer outFile.Close()
-	// Download the file
-	var client *http.Client
 
-	if use_default_outbound {
-		goto def_cli
-	} else {
-		if BoxInstance == nil {
-			goto def_cli
-		} else {
-			client = BoxCreateHttpClient(BoxInstance)
-			goto skip_def_cli
-		}
+	client := &http.Client{}
+	if !use_default_outbound && BoxInstance != nil {
+		client = BoxCreateHttpClient(BoxInstance)
 	}
-def_cli:
-
-	client = &http.Client{}
-skip_def_cli:
 
 	parsedURL, err := url.Parse(originalURL)
 	if err != nil {
-		return fmt.Errorf("error parsing URL: %v", err)
+		return fmt.Errorf("error parsing URL: %w", err)
 	}
 
-	// Extract credentials (if available)
 	var username, password string
 	if parsedURL.User != nil {
 		username = parsedURL.User.Username()
 		password, _ = parsedURL.User.Password()
-		// Remove the credentials from the URL (we don't need them in the URL anymore)
 		parsedURL.User = nil
 	}
 
-	// Rebuild the cleaned URL without credentials
 	cleanedURL := parsedURL.String()
 
-	// Create a new GET request with the cleaned URL
 	req, err := http.NewRequest("GET", cleanedURL, nil)
 	if err != nil {
-		return fmt.Errorf("error creating request: %v", err)
+		return fmt.Errorf("error creating request: %w", err)
 	}
-
-	// If credentials were found, set Basic Authentication header
 	if username != "" && password != "" {
 		req.SetBasicAuth(username, password)
 	}
 
 	resp, err := client.Do(req)
 	if err != nil {
-		return fmt.Errorf("failed to download file: %v", err)
+		return fmt.Errorf("failed to download file: %w", err)
 	}
 	defer resp.Body.Close()
-	// Copy the downloaded content to the file
-	_, err = io.Copy(outFile, resp.Body)
-	if err != nil {
-		return fmt.Errorf("failed to save file: %v", err)
+
+	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusMultipleChoices {
+		return fmt.Errorf("download failed: %s", resp.Status)
+	}
+
+	if _, err = io.Copy(outFile, resp.Body); err != nil {
+		return fmt.Errorf("failed to save file: %w", err)
 	}
 	return nil
 }
@@ -184,9 +190,12 @@ func fileExists(path string) bool {
 
 func CacheHttpBool(url string, use_default_outbound bool, s *bool) string {
 	if url == "" {
-		*s = false
+		if s != nil {
+			*s = false
+		}
 		return ""
 	}
+
 	path := urlToPath(url)
 	if !fileExists(path) {
 		log.Printf("Downloading %s %s", url, func() string {
@@ -195,10 +204,15 @@ func CacheHttpBool(url string, use_default_outbound bool, s *bool) string {
 			}
 			return "without proxy"
 		}())
-		err := DownloadFile(url, path, use_default_outbound)
-		if err != nil {
-			log.Fatalf("Error while downloading: %s", err.Error())
+
+		if err := DownloadFile(url, path, use_default_outbound); err != nil {
+			log.Printf("Error while downloading %s: %v", url, err)
+			if s != nil {
+				*s = false
+			}
+			return ""
 		}
+
 		if s != nil {
 			*s = true
 		}
@@ -213,7 +227,7 @@ func CacheHttp(url string, use_default_outbound bool) string {
 	return CacheHttpBool(url, use_default_outbound, nil)
 }
 
-func cacheRuleSet(url string, format string, tag string) option.RuleSet {
+func cacheRuleSet(url string, format string, tag badoption.Listable[string]) option.RuleSet {
 	var ruleset option.RuleSet
 	ruleset.Tag = tag
 	ruleset.Type = C.RuleSetTypeLocal
@@ -223,6 +237,9 @@ func cacheRuleSet(url string, format string, tag string) option.RuleSet {
 }
 
 func ClearRulesets() {
+	if ruleset_cachedir == "" {
+		return
+	}
 	paths := []string{
 		"ftps",
 		"ftp",
@@ -231,20 +248,19 @@ func ClearRulesets() {
 	}
 
 	for _, path := range paths {
-		os.RemoveAll(filepath.Clean(filepath.Join(ruleset_cachedir, path)))
+		_ = os.RemoveAll(filepath.Clean(filepath.Join(ruleset_cachedir, path)))
 	}
 }
 
 func ModifyRulesets(opt *option.Options) {
-	if ruleset_cachedir == "" {
+	if ruleset_cachedir == "" || opt == nil || opt.Route == nil {
 		return
 	}
-	if opt.Route != nil {
-		for u, i := range opt.Route.RuleSet {
-			if i.Type == C.RuleSetTypeRemote {
-				url := i.RemoteOptions.URL
-				opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format, i.Tag)
-			}
+
+	for u, i := range opt.Route.RuleSet {
+		if i.Type == C.RuleSetTypeRemote && i.RemoteOptions.URL != "" {
+			url := i.RemoteOptions.URL
+			opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format, i.Tag)
 		}
 	}
 }
@@ -266,5 +282,8 @@ func BrateToStr(brate float64) string {
 
 func CalculateBRate(bytes float64, startTime time.Time) float64 {
 	elapsed := time.Since(startTime).Seconds()
+	if elapsed <= 0 {
+		return 0
+	}
 	return bytes / elapsed
 }

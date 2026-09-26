@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/sagernet/sing-box"
+	boxbox "nekobox_core/internal/boxbox"
 	"github.com/sagernet/sing-box/experimental/deprecated"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/log"
@@ -53,15 +53,16 @@ func preRun(cmd *cobra.Command, args []string) {
 		globalCtx = filemanager.WithDefault(globalCtx, "", "", sudoUID, sudoGID)
 	}
 	if disableColor {
-		log.SetStdLogger(log.NewDefaultFactory(context.Background(), log.Formatter{BaseTime: time.Now(), DisableColors: true}, os.Stderr, "", nil, false).Logger())
+		log.SetStdLogger(log.NewDefaultFactory(context.Background(), log.Formatter{
+			BaseTime:      time.Now(),
+			DisableColors: true,
+		}, os.Stderr, "", nil, false).Logger())
 	}
 	if workingDir != "" {
-		_, err := os.Stat(workingDir)
-		if err != nil {
-			filemanager.MkdirAll(globalCtx, workingDir, 0o777)
+		if _, err := os.Stat(workingDir); err != nil {
+			_ = filemanager.MkdirAll(globalCtx, workingDir, 0o777)
 		}
-		err = os.Chdir(workingDir)
-		if err != nil {
+		if err := os.Chdir(workingDir); err != nil {
 			log.Fatal(err)
 		}
 	}
@@ -69,5 +70,5 @@ func preRun(cmd *cobra.Command, args []string) {
 		configPaths = append(configPaths, "config.json")
 	}
 	globalCtx = service.ContextWith(globalCtx, deprecated.NewStderrManager(log.StdLogger()))
-	globalCtx = box.Context(globalCtx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry())
+	globalCtx = boxbox.Context(globalCtx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry())
 }

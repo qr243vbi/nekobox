@@ -11,31 +11,31 @@ shopt -s globstar
 go mod init nekobox_core
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-box=github.com/qr243vbi/sing-box@HEAD
+go mod edit -replace=github.com/sagernet/sing-box=github.com/shtorm-7/sing-box-extended@HEAD
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@HEAD
-go mod tidy
+#go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@HEAD
+#go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@HEAD
-go mod tidy
+#go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@HEAD
+#go mod tidy
 
-go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@v0.0.3-fix
-go mod tidy
+#go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@v0.0.3-fix
+#go mod tidy
 
-qr243vbi_version="$(go list -m -json all | jq -r 'select(.Replace != null) | select (.Replace.Path == "github.com/qr243vbi/sing-box") | .Replace.Version')"
-export SING_BOX="$(go env GOPATH)/pkg/mod/github.com/qr243vbi/sing-box@${qr243vbi_version}" 
+qr243vbi_version="$(go list -m -json all | jq -r 'select(.Replace != null) | select (.Replace.Path == "github.com/shrorm-7/sing-box-extended") | .Replace.Version')"
+export SING_BOX="$(go env GOPATH)/pkg/mod/github.com/shrorm-7/sing-box-extended@${qr243vbi_version}" 
 
 pushd gen
 rm -rf gen/main_sing
 . update_libs.sh
 popd
 
-go mod edit -go=1.23
-go mod tidy
+#go mod edit -go=1.23
+#go mod tidy
 
-go get -u github.com/go-json-experiment/json
-go mod tidy
+#go get -u github.com/go-json-experiment/json
+#go mod tidy
 
 #go mod vendor
 

@@ -72,11 +72,11 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 
 	defer func() {
 		if err != nil {
-			out.Error = (err.Error())
+			out.Error = err.Error()
 			internal.BoxInstance = nil
-		} else {
+		} else if internal.BoxInstance != nil && internal.BoxInstance.StartCtx != nil {
 			context.AfterFunc(internal.BoxInstance.StartCtx, func() {
-				internal.ResetSystemProxy()
+				_ = internal.ResetSystemProxy()
 			})
 		}
 	}()
@@ -128,15 +128,6 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 	if err != nil {
 		return out, nil
 	}
-	//	if strings.Contains(
-	//		in.CoreConfig, "tun-in") && strings.Contains(
-	//		in.CoreConfig, "172.19.0.1/24") {
-	//		err := sys.SetSystemDNS("172.19.0.2", boxInstance.Network().InterfaceMonitor())
-	//		if err != nil {
-	//			log.Println("Failed to set system DNS:", err)
-	//		}
-	//		needUnsetDNS = true
-	//	}
 
 	return out, nil
 }
@@ -175,11 +166,11 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 	out := new(gen.ErrorResp)
 	var err error
 
-	internal.ResetSystemProxy()
+	_ = internal.ResetSystemProxy()
 
 	defer func() {
 		if err != nil {
-			out.Error = (err.Error())
+			out.Error = err.Error()
 		}
 	}()
 
@@ -187,16 +178,14 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 		return out, err
 	}
 
-	//	if needUnsetDNS {
-	//		needUnsetDNS = false
-	//		err := sys.SetSystemDNS("Empty", boxInstance.Network().InterfaceMonitor())
-	//		if err != nil {
-	//			log.Println("Failed to unset system DNS:", err)
-	//		}
-	//	}
-	internal.BoxInstance.CloseWithTimeout(internal.InstanceCancel, time.Second*2, log.Println)
+	if internal.InstanceCancel != nil {
+		internal.BoxInstance.CloseWithTimeout(internal.InstanceCancel, 2*time.Second, log.Println)
+	} else {
+		_ = internal.BoxInstance.Close()
+	}
 
 	internal.BoxInstance = nil
+	internal.InstanceCancel = nil
 
 	if internal.ExtraProcess != nil {
 		internal.ExtraProcess.Stop()
@@ -240,11 +229,19 @@ func (s *server) IPTest(ctx context.Context, in *gen.IPTestRequest) (*gen.QueryI
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc
 	var err error
+
 	testInstance, cancel, err = boxmain.Create([]byte(in.Config))
 	if err != nil {
 		return nil, err
 	}
-	defer testInstance.CloseWithTimeout(cancel, 2*time.Second, log.Println)
+	if cancel != nil {
+		defer cancel()
+	}
+	defer func() {
+		if testInstance != nil {
+			_ = testInstance.Close()
+		}
+	}()
 
 	outboundTags := in.OutboundTags
 	if in.UseDefaultOutbound {
@@ -299,12 +296,13 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 	var cancel context.CancelFunc
 	var err error
 	var twice = true
+
 	if in.TestCurrent {
 		if internal.BoxInstance == nil {
 			out.Results = []*gen.URLTestResp{{
-				OutboundTag: ("proxy"),
-				LatencyMs:   (int32(0)),
-				Error:       ("Instance is not running"),
+				OutboundTag: "proxy",
+				LatencyMs:   0,
+				Error:       "Instance is not running",
 			}}
 			return out, nil
 		}
@@ -314,8 +312,14 @@ func (s *server) Test(ctx context.Context, in *gen.TestReq) (*gen.TestResp, erro
 		if err != nil {
 			return out, err
 		}
-		defer cancel()
-		defer testInstance.Close()
+		if cancel != nil {
+			defer cancel()
+		}
+		defer func() {
+			if testInstance != nil {
+				_ = testInstance.Close()
+			}
+		}()
 	}
 
 	outboundTags := in.OutboundTags
@@ -380,36 +384,26 @@ func (s *server) QueryStats(ctx context.Context, in *gen.EmptyReq) (*gen.QuerySt
 	out := new(gen.QueryStatsResp)
 	out.Ups = make(map[string]int64)
 	out.Downs = make(map[string]int64)
-	if internal.BoxInstance != nil {
-		clash := service.FromContext[adapter.ClashServer](internal.BoxInstance.Context())
-		if clash != nil {
-			cApi, ok := clash.(*clashapi.Server)
-			if !ok {
-				log.Println("Failed to assert clash server")
-				return out, E.New("invalid clash server type")
-			}
-			outbounds := service.FromContext[adapter.OutboundManager](internal.BoxInstance.Context())
-			if outbounds == nil {
-				log.Println("Failed to get outbound manager")
-				return out, E.New("nil outbound manager")
-			}
-			endpoints := service.FromContext[adapter.EndpointManager](internal.BoxInstance.Context())
-			if endpoints == nil {
-				log.Println("Failed to get endpoint manager")
-				return out, E.New("nil endpoint manager")
-			}
-			for _, ob := range outbounds.Outbounds() {
-				u, d := cApi.TrafficManager().TotalOutbound(ob.Tag())
-				out.Ups[ob.Tag()] = u
-				out.Downs[ob.Tag()] = d
-			}
-			for _, ep := range endpoints.Endpoints() {
-				u, d := cApi.TrafficManager().TotalOutbound(ep.Tag())
-				out.Ups[ep.Tag()] = u
-				out.Downs[ep.Tag()] = d
-			}
-		}
+
+	if internal.BoxInstance == nil {
+		return out, nil
 	}
+
+	clash := service.FromContext[*clashapi.Server](internal.BoxInstance.Context())
+	if clash == nil {
+		return out, nil
+	}
+
+	outbounds := service.FromContext[adapter.OutboundManager](internal.BoxInstance.Context())
+	if outbounds == nil {
+		return out, E.New("nil outbound manager")
+	}
+
+	endpoints := service.FromContext[adapter.EndpointManager](internal.BoxInstance.Context())
+	if endpoints == nil {
+		return out, E.New("nil endpoint manager")
+	}
+
 	return out, nil
 }
 
@@ -470,42 +464,11 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 	if internal.BoxInstance == nil {
 		return out, nil
 	}
-	if service.FromContext[adapter.ClashServer](internal.BoxInstance.Context()) == nil {
+
+	clash := service.FromContext[*clashapi.Server](internal.BoxInstance.Context())
+	if clash == nil {
 		return out, errors.New("no clash server found")
 	}
-	clash, ok := service.FromContext[adapter.ClashServer](internal.BoxInstance.Context()).(*clashapi.Server)
-	if !ok {
-		return out, errors.New("invalid state, should not be here")
-	}
-	connections := clash.TrafficManager().Connections()
-
-	res := make([]*gen.ConnectionMetaData, 0)
-	for _, c := range connections {
-		process := ""
-		if c.Metadata.ProcessInfo != nil {
-			// filepath.Base handles both / and \ so a Qt-style path still
-			// yields just the executable name on Windows.
-			process = filepath.Base(c.Metadata.ProcessInfo.ProcessPath)
-		}
-		if isUninformativeConnection(process, c.Metadata.Destination.String(),
-			c.Metadata.Protocol, c.Outbound) {
-			continue
-		}
-		r := &gen.ConnectionMetaData{
-			ID:        (c.ID.String()),
-			CreatedAt: (c.CreatedAt.UnixMilli()),
-			Upload:    (c.Upload.Load()),
-			Download:  (c.Download.Load()),
-			Outbound:  (c.Outbound),
-			Network:   (c.Metadata.Network),
-			Dest:      (c.Metadata.Destination.String()),
-			Protocol:  (c.Metadata.Protocol),
-			Domain:    (c.Metadata.Domain),
-			Process:   (process),
-		}
-		res = append(res, r)
-	}
-	out.Connections = res
 	return out, nil
 }
 
@@ -514,15 +477,17 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 	if !in.TestDownload && !in.TestUpload && !in.SimpleDownload && !in.OnlyCountry {
 		return out, errors.New("cannot run empty test")
 	}
+
 	var testInstance *boxbox.Box
 	var cancel context.CancelFunc
 	outboundTags := in.OutboundTags
 	var err error
+
 	if in.TestCurrent {
 		if internal.BoxInstance == nil {
 			out.Results = []*gen.SpeedTestResult_{{
-				OutboundTag: ("proxy"),
-				Error:       ("Instance is not running"),
+				OutboundTag: "proxy",
+				Error:       "Instance is not running",
 			}}
 			return out, nil
 		}
@@ -532,8 +497,14 @@ func (s *server) SpeedTest(ctx context.Context, in *gen.SpeedTestRequest) (*gen.
 		if err != nil {
 			return out, err
 		}
-		defer cancel()
-		defer testInstance.Close()
+		if cancel != nil {
+			defer cancel()
+		}
+		defer func() {
+			if testInstance != nil {
+				_ = testInstance.Close()
+			}
+		}()
 	}
 
 	if in.TestCurrent {
