@@ -10,6 +10,7 @@ import (
 	"github.com/sagernet/sing-box/experimental/deprecated"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/log"
+	"github.com/sagernet/sing/service"
 	"github.com/sagernet/sing/service/filemanager"
 
 	"github.com/spf13/cobra"
