@@ -6,3 +6,5 @@ Extraction fix: 7-Zip
 Version propagation fix: 5b5b50b
 
 Final CI routing fix: b76418d
+
+Xray v26.9.30 pin + runtime verification: 06fe552
