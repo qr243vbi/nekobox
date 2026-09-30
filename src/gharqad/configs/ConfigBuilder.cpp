@@ -120,9 +120,11 @@ QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
     streamSettings["realitySettings"] = reality;
   } else if (stream->security.compare("tls", Qt::CaseInsensitive) == 0) {
     QJsonObject tls{
-        {"serverName", stream->sni.trimmed()},
-        {"fingerprint", stream->utlsFingerprint.trimmed()}
+        {"serverName", stream->sni.trimmed()}
     };
+    if (!stream->utlsFingerprint.trimmed().isEmpty()) {
+      tls["fingerprint"] = stream->utlsFingerprint.trimmed();
+    }
     if (!stream->alpn.trimmed().isEmpty()) {
       QJsonArray alpn;
       for (const auto &item : stream->alpn.split(',', Qt::SkipEmptyParts)) {
