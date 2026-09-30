@@ -1,0 +1,157 @@
+name: First Windows x64 build
+
+on:
+  push:
+    paths:
+      - ".ci/force-windows-build"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build-go:
+    name: Build Go core (windows amd64)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          ref: main
+          submodules: true
+
+      - name: Install Golang
+        uses: actions/setup-go@main
+        with:
+          go-version: "1.26.0"
+          cache-dependency-path: core/server/go.sum
+
+      - name: Install thrift compiler
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: thrift-compiler
+          version: 1.0
+
+      - name: Build Go parts
+        shell: bash
+        run: |
+          GO_MOD_TIDY=ON GOOS=windows GOARCH=amd64 ./script/build_go.sh
+
+      - name: Archive Go deployment
+        shell: bash
+        run: tar czvf go-deployment.tgz ./deployment
+
+      - name: Upload Go deployment
+        uses: actions/upload-artifact@main
+        with:
+          name: first-build-go-windows-amd64
+          path: go-deployment.tgz
+
+  build-windows:
+    name: Build NekoBox Windows x64 + bundled Xray
+    needs: build-go
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          ref: main
+          submodules: true
+
+      - name: Setup Ninja
+        uses: qr243vbi/setup-ninja@master
+
+      - name: Install NSIS
+        uses: negrutiu/nsis-install@v2
+        with:
+          arch: x86_64
+
+      - name: Install MSVC compiler
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86_64
+
+      - name: Install vcpkg dependencies
+        uses: qr243vbi/vcpkg-action@master
+        with:
+          pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
+          triplet: x64-windows
+          vcpkg-subdir: ..\..\src
+          token: ${ secrets.GITHUB_TOKEN }
+
+      - name: Download Go deployment
+        uses: actions/download-artifact@main
+        with:
+          name: first-build-go-windows-amd64
+          path: go-artifact
+
+      - name: Restore Go deployment
+        shell: bash
+        run: |
+          tar xvzf go-artifact/go-deployment.tgz
+
+      - name: Download Srslist
+        shell: bash
+        run: |
+          curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+          mkdir -p build
+
+      - name: Install Zip, Curl, Jq, UPX
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: zip curl jq
+
+      - name: Install customized Qt
+        uses: qr243vbi/qt6windows7@main
+        with:
+          version: 6.10.0_x86_64
+
+      - name: Configure and build
+        shell: bash
+        run: |
+          export PATH="$(realpath "$(cygpath -u '${ github.workspace }/../../src/installed/x64-windows/tools/Qt6/bin')"):$PATH"
+          export PATH="$(realpath "$(cygpath -u '${ github.workspace }/../../src/installed/x64-windows/bin')"):$PATH"
+
+          if ! command -v windeployqt
+          then
+            export WINDEPLOYQT="$(find "$(cygpath -u '${ github.workspace }/../../src/installed/')" -iname "windeployqt.exe" | head -n 1)"
+            windeployqt() { "$WINDEPLOYQT" "${@}" ; }
+          fi
+
+          TOOLCHAIN="$(realpath '${ github.workspace }/../../src/scripts/buildsystems/vcpkg.cmake')"
+          TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
+
+          export SKIP_UPDATE_BUTTON=OFF
+
+          cmake -DBUILD_GO_PARTS=OFF -GNinja \
+            -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" \
+            -DVCPKG_TARGET_TRIPLET=x64-windows \
+            -DVCPKG_MANIFEST_MODE=OFF \
+            -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DNKR_DEFAULT_VERSION=5.11.28.3 \
+            -S . -B build
+
+          cmake --build build --config Release --verbose
+
+      - name: Deploy Windows package
+        shell: bash
+        run: source ./script/deploy_windows.sh x86_64
+
+      - name: Verify bundled Xray
+        shell: bash
+        run: |
+          test -s deployment/xray.exe
+          deployment/xray.exe version
+          echo "Bundled Xray binary:"
+          ls -lh deployment/xray.exe
+
+      - name: Archive final package
+        shell: bash
+        run: tar czvf artifacts.tgz ./deployment
+
+      - name: Upload final package
+        uses: actions/upload-artifact@main
+        with:
+          name: first-build-windows-x64
+          path: artifacts.tgz
