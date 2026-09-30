@@ -105,7 +105,7 @@ esac
 XRAY_URL="https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
 XRAY_TMP="$DEST/.${XRAY_ASSET}"
 curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" "$XRAY_URL"
-tar -xf "$XRAY_TMP" -C "$DEST" xray.exe
+7z e -y "$XRAY_TMP" "xray.exe" -o"$DEST"
 rm -f "$XRAY_TMP"
 if [[ ! -s "$DEST/xray.exe" ]]
 then
