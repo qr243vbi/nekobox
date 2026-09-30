@@ -2,3 +2,5 @@ one-time first Windows x64 build trigger
 Go toolchain: 1.27.1
 CI expression fix: 02d4aa8
 Extraction fix: 7-Zip
+
+Version propagation fix: 5b5b50b
