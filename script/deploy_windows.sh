@@ -119,6 +119,60 @@ then
   echo "$XRAY_VERSION_OUTPUT" >&2
   exit 1
 fi
+echo "Bundled Xray-core verified: ${XRAY_VERSION_OUTPUT//
+if [[ "$COMPILER" != "MinGW" ]]
+then
+pushd $DEST
+windeployqt "$nekoray.exe" --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+rm -rf dxcompiler.dll dxil.dll ||:
+popd
+fi
+
+(
+cd "$CURDIR"
+pwd
+
+rm "$DEST/icu"*.dll ||:
+
+if [[ "$SKIP_UPX" == "false" ]]
+then
+if command -v upx
+then
+#upx -9 "$DEST/nekobox.exe"         ||:
+pushd "$DEST"
+upx *.dll *.exe ||:
+popd
+fi
+fi
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
+makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
+fi
+
+pushd "$DEPLOYMENT"
+
+if [[ "$SKIP_NSIS" != "true" ]]
+then
+mv "$INST" "$version_standalone-$ARCH-installer.exe"
+fi
+
+
+if [[ "$SKIP_ZIP" == 'true' ]]
+then
+mv "$ARCH" "$version_standalone-$ARCH"
+else
+mv "$ARCH" nekobox
+zip -9 -r "$version_standalone-$ARCH.zip" nekobox
+rm -rf nekobox
+fi
+
+popd
+
+)
+
+popd
+\n'/ | }"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
