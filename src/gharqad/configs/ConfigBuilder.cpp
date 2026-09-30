@@ -66,7 +66,7 @@ QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
     return root;
   }
 
-  const QString network = stream->network != nullptr ? stream->network->toString().toLower() : "tcp";
+  const QString network = stream->network != nullptr ? QString(*stream->network).toLower() : "tcp";
   if (network != "tcp" && network != "xhttp") {
     if (error) *error = "Xray Extra Core supports only TCP and XHTTP transports";
     return root;
