@@ -258,4 +258,8 @@ They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/route
 ## License
 
 Use of this software is subject to the GPL-3 license.
+## Built-in Xray-core
 
+This fork includes an optional **VLESS (Xray)** profile backed by a bundled Xray-core Extra Core runtime. The Windows and Linux packages currently bundle **Xray-core v26.9.9**. The application verifies the bundled executable with `xray version` before starting an Xray profile and requires **>= 26.3.27**.
+
+The Xray profile uses the existing NekoBox VLESS editor and supports TCP and XHTTP transports, including the raw XHTTP `extra` JSON from VLESS share links and REALITY parameters including `pbk`, `sid`, and `spx`.
