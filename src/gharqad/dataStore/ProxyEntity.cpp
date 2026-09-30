@@ -26,6 +26,7 @@ namespace Configs
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayCoreType(){
+    if (type == "xray") return "Xray";
     return software_core_name;
 }
 
