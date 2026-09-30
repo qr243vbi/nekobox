@@ -343,15 +343,15 @@ jobs:
           - platform: windows-11-arm
             target: arm64
             triplet: arm64-windows
-            allow: ${{ github.event.inputs.build_windows_arm64 }}
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_arm64 == 'true' }}
           - platform: windows-2022
             target: x86_64
             triplet: x64-windows
-            allow: ${{ github.event.inputs.build_windows_x64 }}
+            allow: ${{ github.event_name == 'push' || github.event.inputs.build_windows_x64 == 'true' }}
           - platform: windows-2022
             target: x86
             triplet: x86-windows
-            allow: ${{ github.event.inputs.build_windows_x86 }}
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_x86 == 'true' }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     if: (github.event_name == 'push' || github.event.inputs.source_only != 'true')
