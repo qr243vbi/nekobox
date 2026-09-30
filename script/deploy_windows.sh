@@ -94,7 +94,7 @@ cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 # Bundle the pinned Xray-core runtime used by the built-in Xray profile.
-XRAY_VERSION="26.9.9"
+XRAY_VERSION="26.9.30"
 case "$1" in
   x86_64) XRAY_ASSET="Xray-windows-64.zip" ;;
   arm64)  XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
@@ -110,6 +110,13 @@ rm -f "$XRAY_TMP"
 if [[ ! -s "$DEST/xray.exe" ]]
 then
   echo "Bundled Xray-core binary is missing in $DEST" >&2
+  exit 1
+fi
+XRAY_VERSION_OUTPUT="$("$DEST/xray.exe" version 2>&1)"
+if ! grep -Eq "Xray[ -]+${XRAY_VERSION}([[:space:]]|$)" <<< "$XRAY_VERSION_OUTPUT"
+then
+  echo "Bundled Xray version check failed. Expected ${XRAY_VERSION}, got:" >&2
+  echo "$XRAY_VERSION_OUTPUT" >&2
   exit 1
 fi
 
