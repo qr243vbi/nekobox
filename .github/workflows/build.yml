@@ -155,21 +155,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/cache@main
         with:
           path: ./deployment
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Check cached golang parts
         id: check-common
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         shell: bash
         run: |
           case "${{ matrix.cross_os }}-${{ matrix.cross_arch }}" in
@@ -192,20 +192,20 @@ jobs:
             echo "needs_build=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.check-common.outputs.needs_build != 'false'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') ) ) && steps.check-common.outputs.needs_build != 'false'
         uses: actions/setup-go@main
         with:            
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
             core/server/go.sum
       - name: Linux - Install apt dependencies
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: thrift-compiler
           version: 1.0
       - name: Build golang parts
-        if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         shell: bash
         run: |
           if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
@@ -239,10 +239,10 @@ jobs:
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
       - name: Tar files
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
@@ -360,31 +360,31 @@ jobs:
       INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: "true"
 
       - name: Setup Ninja
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: qr243vbi/setup-ninja@master
 
       - name: Install NSIS
-        if: matrix.allow == 'true' && matrix.target != 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target != 'arm64'
         uses: negrutiu/nsis-install@v2
         with:
           arch: ${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
 
       - name: vcpkg build
         uses: qr243vbi/vcpkg-action@master
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         id: vcpkg
         with:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng 
@@ -394,13 +394,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Download Artifacts
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/download-artifact@main
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
@@ -408,26 +408,26 @@ jobs:
 
       - name: Cache Builds
         id: cache-common
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/cache@main
         with:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ needs.get-tag-and-changelog.outputs.tag }}
 
       - name: Install Zip, Curl, Jq, UPX
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq
 
       - name: Install Customized Qt
-        if: matrix.allow == 'true' && matrix.target != 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target != 'arm64'
         uses: qr243vbi/qt6windows7@main
         with:
           version: 6.10.0_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && matrix.target == 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target == 'arm64'
         uses: jurplel/install-qt-action@v4.3.1
         with:
           version: 6.12.0
@@ -437,7 +437,7 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
           
       - name: Windows - Generate MakeFile and Build
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
@@ -458,7 +458,7 @@ jobs:
           source ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Windows - Publish
-        if: github.event.inputs.publish == 'true' && matrix.allow == 'true'
+        if: github.event.inputs.publish == 'true' && (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -467,11 +467,11 @@ jobs:
           
       - name: Tar files
         shell: bash
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
