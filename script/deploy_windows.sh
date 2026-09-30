@@ -93,6 +93,26 @@ fi
 cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
+# Bundle the pinned Xray-core runtime used by the built-in Xray profile.
+XRAY_VERSION="26.9.9"
+case "$1" in
+  x86_64) XRAY_ASSET="Xray-windows-64.zip" ;;
+  arm64)  XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
+  i686|x86) XRAY_ASSET="Xray-windows-32.zip" ;;
+  *)      echo "Unsupported Xray architecture: $1" >&2; exit 1 ;;
+esac
+
+XRAY_URL="https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
+XRAY_TMP="$DEST/.${XRAY_ASSET}"
+curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" "$XRAY_URL"
+tar -xf "$XRAY_TMP" -C "$DEST" xray.exe
+rm -f "$XRAY_TMP"
+if [[ ! -s "$DEST/xray.exe" ]]
+then
+  echo "Bundled Xray-core binary is missing in $DEST" >&2
+  exit 1
+fi
+
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
