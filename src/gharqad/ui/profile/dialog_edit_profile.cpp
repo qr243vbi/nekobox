@@ -257,6 +257,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
     LOAD_TYPE("trojan")
     LOAD_TYPE("vmess")
     LOAD_TYPE("vless")
+    LOAD_TYPE("xray")
     LOAD_TYPE("hysteria")
     LOAD_TYPE("hysteria2")
     LOAD_TYPE("tuic")
@@ -306,7 +307,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
 
   bool networkVisible = this->networkVisible =
       (type == "socks" || type == "shadowsocks" || type == "vmess" ||
-       type == "trojan" || type == "hysteria" || type == "vless" ||
+       type == "trojan" || type == "hysteria" || type == "vless" || type == "xray" ||
        type == "tuic" || type == "hysteria2" || type == "mieru" ||
        type == "snell" );
 
@@ -329,7 +330,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     auto _innerWidget = new EditVMess(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
-  } else if (type == "trojan" || type == "vless") {
+  } else if (type == "trojan" || type == "vless" || type == "xray") {
     auto _innerWidget = new EditTrojanVLESS(this);
     innerWidget = _innerWidget;
     innerEditor = _innerWidget;
@@ -557,18 +558,18 @@ void DialogEditProfile::typeSelected(const QString &newType) {
   // 星号
   ADD_ASTERISK(this)
 
-  auto packet_encoding_visible = (type == "vmess" || type == "vless");
+  auto packet_encoding_visible = (type == "vmess" || type == "vless" || type == "xray");
   ui->packet_encoding->setVisible(packet_encoding_visible);
   ui->packet_encoding_l->setVisible(packet_encoding_visible);
 
   auto network_visible =
-      (type == "vmess" || type == "vless" || type == "trojan");
+      (type == "vmess" || type == "vless" || type == "xray" || type == "trojan");
   ui->network_l->setVisible(network_visible);
   ui->network->setVisible(network_visible);
   ui->network_box->setVisible(network_visible);
 
   auto security_visible =
-      (type == "vmess" || type == "vless" || type == "trojan" ||
+      (type == "vmess" || type == "vless" || type == "xray" || type == "trojan" ||
        type == "http" || type == "anytls" || type == "shadowtls" ||
        type == "naive" || type == "trusttunnel" || type == "juicity");
   ui->security->setVisible(security_visible);
@@ -584,7 +585,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->label_alpn->setVisible(is_not_naive);
   }
 
-  auto brutal_visible = (type == "vmess" || type == "vless" ||
+  auto brutal_visible = (type == "vmess" || type == "vless" || type == "xray" ||
                          type == "trojan" || type == "shadowsocks");
   ui->multiplex->setVisible(brutal_visible);
   ui->multiplex_l->setVisible(brutal_visible);
