@@ -143,10 +143,10 @@ jobs:
       - name: Verify bundled Xray
         shell: bash
         run: |
-          test -s deployment/xray.exe
-          deployment/xray.exe version
+          test -s deployment/nekobox/xray.exe
+          deployment/nekobox/xray.exe version
           echo "Bundled Xray binary:"
-          ls -lh deployment/xray.exe
+          ls -lh deployment/nekobox/xray.exe
 
       - name: Archive final package
         shell: bash
