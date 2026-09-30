@@ -67,7 +67,7 @@ esac
 XRAY_TMP="$DEST/.${XRAY_ASSET}"
 curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" \
   "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
-tar -xf "$XRAY_TMP" -C "$DEST" xray
+unzip -q "$XRAY_TMP" xray -d "$DEST"
 rm -f "$XRAY_TMP"
 chmod +x "$DEST/xray"
 [[ -s "$DEST/xray" ]] || { echo "Bundled Xray-core binary is missing in $DEST" >&2; exit 1; }
