@@ -208,7 +208,7 @@ jobs:
         if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then
             export SKIP_UPDATER=ON
           else
             export SKIP_UPDATER=OFF
@@ -452,7 +452,7 @@ jobs:
           fi
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
           cmake --build build --config Release --verbose
           source ./script/deploy_windows.sh "${{ matrix.target }}"
@@ -569,7 +569,7 @@ jobs:
           GOOS: linux
           GOARCH: ${{ matrix.goarch }}
         run: |
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           echo "UNAME=${GOARCH}" >> .ENV
           echo "GOARCH=${GOARCH}" >> .ENV
           echo "GOOS=${GOOS}" >> .ENV
