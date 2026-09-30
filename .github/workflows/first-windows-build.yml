@@ -140,13 +140,16 @@ jobs:
         shell: bash
         run: source ./script/deploy_windows.sh x86_64
 
-      - name: Verify bundled Xray
+      - name: Verify packaged Xray
         shell: bash
         run: |
-          test -s deployment/nekobox/xray.exe
-          deployment/nekobox/xray.exe version
-          echo "Bundled Xray binary:"
-          ls -lh deployment/nekobox/xray.exe
+          PACKAGE="deployment/nekobox-${INPUT_VERSION}-windows64.zip"
+          test -s "$PACKAGE"
+          echo "Final package:"
+          ls -lh "$PACKAGE"
+          echo "Checking bundled Xray entry:"
+          7z l "$PACKAGE" | grep -Eq 'nekobox/xray\.exe'
+          echo "Packaged Xray entry found."
 
       - name: Archive final package
         shell: bash
