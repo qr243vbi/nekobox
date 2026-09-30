@@ -215,6 +215,7 @@ static void loadTranslate(QString locale) {
       {"vmess", "VMess"},
       {"trojan", "Trojan"},
       {"vless", "VLESS"},
+      {"xray", "VLESS (Xray)"},
       {"hysteria", "Hysteria 1"},
       {"hysteria2", "Hysteria 2"},
       {"tuic", "TUIC"},
