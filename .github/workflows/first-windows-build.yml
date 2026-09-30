@@ -77,7 +77,7 @@ jobs:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
           triplet: x64-windows
           vcpkg-subdir: ..\..\src
-          token: ${ secrets.GITHUB_TOKEN }
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download Go deployment
         uses: actions/download-artifact@main
@@ -109,16 +109,16 @@ jobs:
       - name: Configure and build
         shell: bash
         run: |
-          export PATH="$(realpath "$(cygpath -u '${ github.workspace }/../../src/installed/x64-windows/tools/Qt6/bin')"):$PATH"
-          export PATH="$(realpath "$(cygpath -u '${ github.workspace }/../../src/installed/x64-windows/bin')"):$PATH"
+          export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/x64-windows/tools/Qt6/bin')"):$PATH"
+          export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/x64-windows/bin')"):$PATH"
 
           if ! command -v windeployqt
           then
-            export WINDEPLOYQT="$(find "$(cygpath -u '${ github.workspace }/../../src/installed/')" -iname "windeployqt.exe" | head -n 1)"
+            export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe" | head -n 1)"
             windeployqt() { "$WINDEPLOYQT" "${@}" ; }
           fi
 
-          TOOLCHAIN="$(realpath '${ github.workspace }/../../src/scripts/buildsystems/vcpkg.cmake')"
+          TOOLCHAIN="$(realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake')"
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
 
           export SKIP_UPDATE_BUTTON=OFF
