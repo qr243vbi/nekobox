@@ -112,6 +112,8 @@ namespace Configs
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_Trojan);
         cast(vless)
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_VLESS);
+        cast(xray)
+            bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_VLESS);
         cast(hysteria)
             bean = new Configs::QUICBean(ent, Configs::QUICBean::proxy_Hysteria);
         cast(hysteria2)
