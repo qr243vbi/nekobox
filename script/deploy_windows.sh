@@ -37,28 +37,12 @@ fi
 
 pushd "$SRC_ROOT"
 
-#### get the pdb ####
-#if [[ "$COMPILER" == "MinGW" ]]
-#then
-#curl -fLJO https://github.com/rainers/cv2pdb/releases/download/v0.53/cv2pdb-0.53.zip
-#7z x cv2pdb-0.53.zip -ocv2pdb
-#./cv2pdb/cv2pdb64.exe ./build/nekobox.exe ./tmp.exe ./nekobox.pdb
-#rm -rf cv2pdb-0.53.zip cv2pdb
-#cd build
-#strip -s nekobox.exe
-#cd ..
-#rm tmp.exe ||:
-#mv nekobox.pdb $DEST
-#fi
-
-#### copy srslist ####
 if [[ ! -f srslist.json ]]
 then
 curl -fLso srslist.json "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
 fi
 cp srslist.json "$DEST/srslist.json"
 
-#### copy exe ####
 rel="$BUILD"
 if [[ -f "$BUILD/Release/$nekoray.exe" ]]
 then
@@ -66,11 +50,10 @@ then
 fi
 
 cp "$rel/$nekoray.exe" "$DEST"
-#cp "$rel/elevated_launcher.exe" "$DEST"
 touch "$rel/nekobox.dll"
-cp "$rel/"*.dll  "$DEST"
+cp "$rel/"*.dll "$DEST"
 
-[[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST" 
+[[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST"
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
 
 if [[ ! -s "$DEST/nekobox_core.exe" ]]
@@ -81,25 +64,22 @@ fi
 
 if [[ "$NAIVE" != "false" ]]
 then
-
 if [[ ! -f "libcronet-windows-${NAIVE}.dll" ]]
 then
 curl -L -o "libcronet-windows-${NAIVE}.dll" "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-windows-${NAIVE}.dll"
 fi
-cp "libcronet-windows-${NAIVE}.dll"  "$DEST/libcronet.dll"
-
+cp "libcronet-windows-${NAIVE}.dll" "$DEST/libcronet.dll"
 fi
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
-# Bundle the pinned Xray-core runtime used by the built-in Xray profile.
 XRAY_VERSION="26.9.9"
 case "$1" in
   x86_64) XRAY_ASSET="Xray-windows-64.zip" ;;
-  arm64)  XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
+  arm64) XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
   i686|x86) XRAY_ASSET="Xray-windows-32.zip" ;;
-  *)      echo "Unsupported Xray architecture: $1" >&2; exit 1 ;;
+  *) echo "Unsupported Xray architecture: $1" >&2; exit 1 ;;
 esac
 
 XRAY_URL="https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
@@ -107,11 +87,13 @@ XRAY_TMP="$DEST/.${XRAY_ASSET}"
 curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" "$XRAY_URL"
 7z e -y "$XRAY_TMP" "xray.exe" -o"$DEST"
 rm -f "$XRAY_TMP"
+
 if [[ ! -s "$DEST/xray.exe" ]]
 then
   echo "Bundled Xray-core binary is missing in $DEST" >&2
   exit 1
 fi
+
 XRAY_VERSION_OUTPUT="$("$DEST/xray.exe" version 2>&1)"
 if ! grep -Eq "Xray[ -]+${XRAY_VERSION}([[:space:]]|$)" <<< "$XRAY_VERSION_OUTPUT"
 then
@@ -119,60 +101,8 @@ then
   echo "$XRAY_VERSION_OUTPUT" >&2
   exit 1
 fi
+
 echo "Bundled Xray-core verified: ${XRAY_VERSION_OUTPUT}"
-if [[ "$COMPILER" != "MinGW" ]]
-then
-pushd $DEST
-windeployqt "$nekoray.exe" --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
-rm -rf dxcompiler.dll dxil.dll ||:
-popd
-fi
-
-(
-cd "$CURDIR"
-pwd
-
-rm "$DEST/icu"*.dll ||:
-
-if [[ "$SKIP_UPX" == "false" ]]
-then
-if command -v upx
-then
-#upx -9 "$DEST/nekobox.exe"         ||:
-pushd "$DEST"
-upx *.dll *.exe ||:
-popd
-fi
-fi
-
-if [[ "$SKIP_NSIS" != "true" ]]
-then
-makensis.exe "-DSOFTWARE_VERSION=$INPUT_VERSION" "-DSOFTWARE_NAME=NekoBox" "-DDIRECTORY=$DEST" "-DOUTFILE=$INST" "-NOCD" 'script/windows_installer.nsi'
-fi
-
-pushd "$DEPLOYMENT"
-
-if [[ "$SKIP_NSIS" != "true" ]]
-then
-mv "$INST" "$version_standalone-$ARCH-installer.exe"
-fi
-
-
-if [[ "$SKIP_ZIP" == 'true' ]]
-then
-mv "$ARCH" "$version_standalone-$ARCH"
-else
-mv "$ARCH" nekobox
-zip -9 -r "$version_standalone-$ARCH.zip" nekobox
-rm -rf nekobox
-fi
-
-popd
-
-)
-
-popd
-\n'/ | }"
 
 if [[ "$COMPILER" != "MinGW" ]]
 then
@@ -192,7 +122,6 @@ if [[ "$SKIP_UPX" == "false" ]]
 then
 if command -v upx
 then
-#upx -9 "$DEST/nekobox.exe"         ||:
 pushd "$DEST"
 upx *.dll *.exe ||:
 popd
@@ -211,7 +140,6 @@ then
 mv "$INST" "$version_standalone-$ARCH-installer.exe"
 fi
 
-
 if [[ "$SKIP_ZIP" == 'true' ]]
 then
 mv "$ARCH" "$version_standalone-$ARCH"
@@ -222,7 +150,6 @@ rm -rf nekobox
 fi
 
 popd
-
 )
 
 popd
