@@ -53,6 +53,8 @@ jobs:
     runs-on: windows-2022
     env:
       INPUT_VERSION: 5.11.28.3
+    env:
+      INPUT_VERSION: 5.11.28.3
     steps:
       - name: Checkout
         uses: actions/checkout@main
