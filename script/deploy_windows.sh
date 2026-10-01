@@ -94,7 +94,7 @@ cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
 # Bundle the pinned Xray-core runtime used by the built-in Xray profile.
-XRAY_VERSION="26.9.30"
+XRAY_VERSION="26.9.9"
 case "$1" in
   x86_64) XRAY_ASSET="Xray-windows-64.zip" ;;
   arm64)  XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
