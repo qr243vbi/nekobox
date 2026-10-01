@@ -119,7 +119,7 @@ then
   echo "$XRAY_VERSION_OUTPUT" >&2
   exit 1
 fi
-echo "Bundled Xray-core verified: ${XRAY_VERSION_OUTPUT//
+echo "Bundled Xray-core verified: ${XRAY_VERSION_OUTPUT}"
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
