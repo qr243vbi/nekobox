@@ -1631,8 +1631,6 @@ QJsonObject BuildDnsObject(QString address, bool tunEnabled) {
     res["server_port"] = port;
   if (!path.isEmpty())
     res["path"] = path;
-  if (type == "tls" || type == "https" || type == "h3")
-    res["tls"] = QJsonObject{};
   return res;
 }
 
