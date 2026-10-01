@@ -258,6 +258,8 @@ namespace Configs {
                         {"enabled", true},
                         {"public_key", reality_pbk},
                         {"short_id", reality_sid.split(",")[0]},
+                        // Xray-core 26.9.8+ requires X25519MLKEM768 in ClientHello.
+                        {"support_x25519mlkem768", true},
                     };
                     if (fp.isEmpty()) fp = "random";
                 }
