@@ -1769,7 +1769,7 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
       return;
     }
     status->result->extraCoreData->path = GetBuiltinXrayPath();
-    status->result->extraCoreData->args = "run -c %s";
+    status->result->extraCoreData->args = "run -format json -c %s";
     status->result->extraCoreData->config =
         QJsonDocument(xrayConfig).toJson(QJsonDocument::Compact);
     status->result->extraCoreData->configDir = GetBasePath();
