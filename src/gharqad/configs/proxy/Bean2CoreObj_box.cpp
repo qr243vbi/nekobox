@@ -254,26 +254,10 @@ namespace Configs {
                 }
                 QString fp = utlsFingerprint;
                 if (!reality_pbk.trimmed().isEmpty()) {
-                    // Xray-core 26.9.8+ requires X25519MLKEM768 in REALITY ClientHello.
-                    // The bundled metacubex/utls v1.8.7 Firefox/Safari fingerprints do not
-                    // advertise ML-KEM, so use the ML-KEM-capable Chrome fingerprint.
-                    if (fp.compare("firefox", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("safari", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("ios", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("android", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("edge", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("360", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("qq", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("random", Qt::CaseInsensitive) == 0 ||
-                        fp.compare("randomized", Qt::CaseInsensitive) == 0) {
-                        fp = "chrome";
-                    }
                     tls["reality"] = QJsonObject{
                         {"enabled", true},
                         {"public_key", reality_pbk},
                         {"short_id", reality_sid.split(",")[0]},
-                        // Xray-core 26.9.8+ requires X25519MLKEM768 in ClientHello.
-                        {"support_x25519mlkem768", true},
                     };
                     if (fp.isEmpty()) fp = "random";
                 }
