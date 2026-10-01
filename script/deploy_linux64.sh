@@ -56,7 +56,7 @@ cp srslist.json "$DEST/srslist.json"
 cp "$BUILD/$nekobox" "$DEST"
 
 # Bundle the same Xray-core runtime used by the built-in Xray profile.
-XRAY_VERSION="26.9.30"
+XRAY_VERSION="26.9.9"
 case "$UNAME" in
   amd64|x86_64) XRAY_ASSET="Xray-linux-64.zip" ;;
   arm64|aarch64) XRAY_ASSET="Xray-linux-arm64-v8a.zip" ;;
