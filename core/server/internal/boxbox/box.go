@@ -13,7 +13,6 @@ import (
 	"github.com/sagernet/sing-box/adapter/inbound"
 	"github.com/sagernet/sing-box/adapter/outbound"
 	boxService "github.com/sagernet/sing-box/adapter/service"
-	"github.com/sagernet/sing-box/common/httpclient"
 	"github.com/sagernet/sing-box/common/taskmonitor"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/dns"
@@ -41,7 +40,6 @@ type Box struct {
 	inbound         *inbound.Manager
 	outbound        *outbound.Manager
 	service         *boxService.Manager
-	httpClient      adapter.LifecycleService
 	dnsTransport    *dns.TransportManager
 	dnsRouter       *dns.Router
 	connection      *route.ConnectionManager
@@ -65,34 +63,21 @@ func Context(
 	endpointRegistry adapter.EndpointRegistry,
 	dnsTransportRegistry adapter.DNSTransportRegistry,
 	serviceRegistry adapter.ServiceRegistry,
-	certificateProviderRegistry adapter.CertificateProviderRegistry,
 ) context.Context {
-	if service.FromContext[option.InboundOptionsRegistry](ctx) == nil ||
-		service.FromContext[adapter.InboundRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.InboundOptionsRegistry](ctx, inboundRegistry)
+	if service.FromContext[adapter.InboundRegistry](ctx) == nil {
 		ctx = service.ContextWith[adapter.InboundRegistry](ctx, inboundRegistry)
 	}
-	if service.FromContext[option.OutboundOptionsRegistry](ctx) == nil ||
-		service.FromContext[adapter.OutboundRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.OutboundOptionsRegistry](ctx, outboundRegistry)
+	if service.FromContext[adapter.OutboundRegistry](ctx) == nil {
 		ctx = service.ContextWith[adapter.OutboundRegistry](ctx, outboundRegistry)
 	}
-	if service.FromContext[option.EndpointOptionsRegistry](ctx) == nil ||
-		service.FromContext[adapter.EndpointRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.EndpointOptionsRegistry](ctx, endpointRegistry)
+	if service.FromContext[adapter.EndpointRegistry](ctx) == nil {
 		ctx = service.ContextWith[adapter.EndpointRegistry](ctx, endpointRegistry)
 	}
 	if service.FromContext[adapter.DNSTransportRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.DNSTransportOptionsRegistry](ctx, dnsTransportRegistry)
 		ctx = service.ContextWith[adapter.DNSTransportRegistry](ctx, dnsTransportRegistry)
 	}
 	if service.FromContext[adapter.ServiceRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.ServiceOptionsRegistry](ctx, serviceRegistry)
 		ctx = service.ContextWith[adapter.ServiceRegistry](ctx, serviceRegistry)
-	}
-	if service.FromContext[adapter.CertificateProviderRegistry](ctx) == nil {
-		ctx = service.ContextWith[option.CertificateProviderOptionsRegistry](ctx, certificateProviderRegistry)
-		ctx = service.ContextWith[adapter.CertificateProviderRegistry](ctx, certificateProviderRegistry)
 	}
 	return ctx
 }
@@ -153,15 +138,12 @@ func New(options Options) (*Box, error) {
 	outboundManager := outbound.NewManager(logFactory.NewLogger("outbound"), outboundRegistry, endpointManager, routeOptions.Final)
 	dnsTransportManager := dns.NewTransportManager(logFactory.NewLogger("dns/transport"), dnsTransportRegistry, outboundManager, dnsOptions.Final)
 	serviceManager := boxService.NewManager(logFactory.NewLogger("service"), serviceRegistry)
-	httpClientManager := httpclient.NewManager(ctx, logFactory.NewLogger("httpclient"), options.HTTPClients, routeOptions.DefaultHTTPClient)
-	httpClientService := adapter.LifecycleService(httpClientManager)
 
 	service.MustRegister[adapter.EndpointManager](ctx, endpointManager)
 	service.MustRegister[adapter.InboundManager](ctx, inboundManager)
 	service.MustRegister[adapter.OutboundManager](ctx, outboundManager)
 	service.MustRegister[adapter.DNSTransportManager](ctx, dnsTransportManager)
 	service.MustRegister[adapter.ServiceManager](ctx, serviceManager)
-	service.MustRegister[adapter.HTTPClientManager](ctx, httpClientManager)
 
 	dnsRouter, err := dns.NewRouter(ctx, logFactory, dnsOptions)
 	if err != nil {
@@ -304,7 +286,6 @@ func New(options Options) (*Box, error) {
 		outbound:     outboundManager,
 		dnsTransport: dnsTransportManager,
 		service:      serviceManager,
-		httpClient:   httpClientService,
 		dnsRouter:    dnsRouter,
 		connection:   connectionManager,
 		router:       router,
@@ -367,15 +348,7 @@ func (s *Box) preStart() error {
 	if err != nil {
 		return err
 	}
-	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.outbound, s.dnsTransport, s.network, s.connection)
-	if err != nil {
-		return err
-	}
-	err = adapter.StartNamed(s.ctx, s.logger, adapter.StartStateStart, []adapter.LifecycleService{s.httpClient})
-	if err != nil {
-		return err
-	}
-	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.router, s.dnsRouter)
+	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.outbound, s.dnsTransport, s.dnsRouter, s.network, s.connection, s.router)
 	if err != nil {
 		return err
 	}
