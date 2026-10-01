@@ -13,6 +13,7 @@ import (
 	"github.com/sagernet/sing-box/adapter/inbound"
 	"github.com/sagernet/sing-box/adapter/outbound"
 	boxService "github.com/sagernet/sing-box/adapter/service"
+	"github.com/sagernet/sing-box/common/httpclient"
 	"github.com/sagernet/sing-box/common/taskmonitor"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/dns"
@@ -40,6 +41,7 @@ type Box struct {
 	inbound         *inbound.Manager
 	outbound        *outbound.Manager
 	service         *boxService.Manager
+	httpClient      adapter.LifecycleService
 	dnsTransport    *dns.TransportManager
 	dnsRouter       *dns.Router
 	connection      *route.ConnectionManager
@@ -151,12 +153,15 @@ func New(options Options) (*Box, error) {
 	outboundManager := outbound.NewManager(logFactory.NewLogger("outbound"), outboundRegistry, endpointManager, routeOptions.Final)
 	dnsTransportManager := dns.NewTransportManager(logFactory.NewLogger("dns/transport"), dnsTransportRegistry, outboundManager, dnsOptions.Final)
 	serviceManager := boxService.NewManager(logFactory.NewLogger("service"), serviceRegistry)
+	httpClientManager := httpclient.NewManager(ctx, logFactory.NewLogger("httpclient"), options.HTTPClients, routeOptions.DefaultHTTPClient)
+	httpClientService := adapter.LifecycleService(httpClientManager)
 
 	service.MustRegister[adapter.EndpointManager](ctx, endpointManager)
 	service.MustRegister[adapter.InboundManager](ctx, inboundManager)
 	service.MustRegister[adapter.OutboundManager](ctx, outboundManager)
 	service.MustRegister[adapter.DNSTransportManager](ctx, dnsTransportManager)
 	service.MustRegister[adapter.ServiceManager](ctx, serviceManager)
+	service.MustRegister[adapter.HTTPClientManager](ctx, httpClientManager)
 
 	dnsRouter, err := dns.NewRouter(ctx, logFactory, dnsOptions)
 	if err != nil {
@@ -299,6 +304,7 @@ func New(options Options) (*Box, error) {
 		outbound:     outboundManager,
 		dnsTransport: dnsTransportManager,
 		service:      serviceManager,
+		httpClient:   httpClientService,
 		dnsRouter:    dnsRouter,
 		connection:   connectionManager,
 		router:       router,
@@ -361,7 +367,15 @@ func (s *Box) preStart() error {
 	if err != nil {
 		return err
 	}
-	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.outbound, s.dnsTransport, s.dnsRouter, s.network, s.connection, s.router)
+	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.outbound, s.dnsTransport, s.network, s.connection)
+	if err != nil {
+		return err
+	}
+	err = adapter.StartNamed(s.ctx, s.logger, adapter.StartStateStart, []adapter.LifecycleService{s.httpClient})
+	if err != nil {
+		return err
+	}
+	err = adapter.Start(s.ctx, s.logger, adapter.StartStateStart, s.router, s.dnsRouter)
 	if err != nil {
 		return err
 	}
