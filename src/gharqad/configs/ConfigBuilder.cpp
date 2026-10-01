@@ -43,6 +43,19 @@ int BuiltinXraySocksPort(const std::shared_ptr<ProxyEntity> &ent) {
   return kBuiltinXrayPortBase + (id % kBuiltinXrayPortSpan);
 }
 
+bool IsBuiltinXrayProfile(const std::shared_ptr<ProxyEntity> &ent) {
+  if (ent == nullptr) return false;
+  if (ent->type == "xray") return true;
+  if (ent->type != "vless") return false;
+
+  const auto bean = ent->TrojanVLESSBean();
+  const auto stream = bean != nullptr ? GetStreamSettingsConst(bean.get()) : nullptr;
+  return bean != nullptr && bean->proxy_type == TrojanVLESSBean::proxy_VLESS &&
+         stream != nullptr &&
+         stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
+         !stream->reality_pbk.trimmed().isEmpty();
+}
+
 QString BuiltinXrayBinaryName() {
 #ifdef Q_OS_WIN
   return "xray.exe";
@@ -54,7 +67,7 @@ QString BuiltinXrayBinaryName() {
 QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
                                    int socksPort, QString *error) {
   QJsonObject root;
-  if (ent == nullptr || ent->type != "xray") {
+  if (!IsBuiltinXrayProfile(ent)) {
     if (error) *error = "Invalid Xray profile";
     return root;
   }
@@ -1461,7 +1474,7 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     }
   }
 
-  if (ent->type == "xray") {
+  if (IsBuiltinXrayProfile(ent)) {
     const int socksPort = BuiltinXraySocksPort(ent);
     outbound = QJsonObject{
         {"type", "socks"},
@@ -1747,7 +1760,7 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
     status->result->error = "NullPointer ProxyEntity";
     return;
   }
-  if (status->ent->type == "xray") {
+  if (IsBuiltinXrayProfile(status->ent)) {
     const int socksPort = BuiltinXraySocksPort(status->ent);
     QString xrayError;
     const auto xrayConfig = BuildBuiltinXrayConfig(status->ent, socksPort, &xrayError);
