@@ -444,7 +444,7 @@ try{                                                                            
         req.core_config =
         (QJsonObject2QString(result->coreConfig, true)).toStdString();
         req.disable_stats = (Configs::dataStore->disable_traffic_stats);
-        if (ent->type == "extracore") {
+        if (ent->type == "extracore" || ent->type == "xray") {
             req.need_extra_process = (true);
             req.extra_process_path = (result->extraCoreData->path).toStdString();
             req.extra_process_args = (result->extraCoreData->args).toStdString();
