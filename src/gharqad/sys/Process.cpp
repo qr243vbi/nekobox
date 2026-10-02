@@ -64,6 +64,10 @@ namespace Configs_sys {
         qDebug() << "CORE START WITH PATH" << program << "AND ARGS" << arguments ;
         #endif
 
+        auto maxLogLines = []() {
+            return Configs::windowSettings ? maxLogLines() : 200;
+        };
+
         connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
             auto log = process.readAllStandardOutput();
             if (start_profile_when_core_is_up >= 0) {
@@ -90,12 +94,12 @@ namespace Configs_sys {
                 goto show_log;
             }
             show_log:
-            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::windowSettings->max_log_line) return;
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
             MW_show_log(log);
         });
         connect(&process, &QProcess::readyReadStandardError, this, [&]() {
             auto log = process.readAllStandardError();
-            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > Configs::windowSettings->max_log_line) return;
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
             MW_show_log(log);
         });
         connect(&process, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {
@@ -106,22 +110,34 @@ namespace Configs_sys {
         });
         connect(&process, &QProcess::stateChanged, this, [&](QProcess::ProcessState state) {
             if (state == QProcess::Running){
-                Configs::dataStore->core_running = true;
+                if (Configs::dataStore) {
+                    Configs::dataStore->core_running = true;
+                }
             }
 
             if (state == QProcess::NotRunning) {
-                Configs::dataStore->core_running = false;
-                qWarning() << "Core stated changed to not running";
+                if (Configs::dataStore) {
+                    Configs::dataStore->core_running = false;
+                }
+                qWarning() << "Core state changed to not running";
             }
 
-            if (!Configs::dataStore->prepare_exit && state == QProcess::NotRunning) {
+            if (!Configs::dataStore || state != QProcess::NotRunning ||
+                Configs::dataStore->prepare_exit) {
+                return;
+            }
+
+            if (state == QProcess::NotRunning) {
                 if (failed_to_start) return; // no retry
                 bool restarting = !this->restarting.tryLock();
 
                 if (restarting) return;
 
                 MW_show_log("[Fatal] " + QObject::tr("Core exited, cleaning up..."));
-                GetMainWindow()->profile_stop(true, true);
+                auto *mainWindow = GetMainWindow();
+                if (mainWindow) {
+                    mainWindow->profile_stop(true, true);
+                }
 
                 // Retry rate limit
                 if (coreRestartTimer.isValid()) {
@@ -135,7 +151,9 @@ namespace Configs_sys {
                 }
 
                 // Restart
-                start_profile_when_core_is_up = Configs::dataStore->started_id;
+                start_profile_when_core_is_up = Configs::dataStore
+                    ? Configs::dataStore->started_id
+                    : -1;
                 MW_show_log("[Warn] " + QObject::tr("Restarting the core ..."));
                 this->restarting.unlock();
                 setTimeout([=,this] { Restart(); }, this, 200);
