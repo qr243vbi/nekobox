@@ -25,7 +25,7 @@ pub struct ProxyEntity {
     /// Protocol type: "vmess", "shadowsocks", "trojan", "socks", "http", "vless",
     /// "hysteria", "hysteria2", "tuic", "wireguard", "anytls", "shadowtls",
     /// "naive", "mieru", "juicity", "trusttunnel", "ssh", "tor", "tailscale",
-    /// "custom", "extracore", "chain"
+    /// "custom", "extracore", "xray", "chain"
     pub r#type: String,
 
     /// Display type (e.g. "VMess", "Shadowsocks")
@@ -161,6 +161,7 @@ impl ProxyEntity {
         match self.r#type.as_str() {
             "vmess" => "VMess".into(),
             "vless" => "VLESS".into(),
+            "xray" => "VLESS (Xray)".into(),
             "shadowsocks" => "Shadowsocks".into(),
             "trojan" => "Trojan".into(),
             "socks" => "SOCKS".into(),

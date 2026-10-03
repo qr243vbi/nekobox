@@ -64,6 +64,7 @@ namespace To_Link {
         if (security == "reality") {
             add_query_nonempty("pbk", query, stream->reality_pbk);
             add_query_nonempty("sid", query, stream->reality_sid);
+            add_query_nonempty("spx", query, stream->reality_spx);
         }
         QString network = (QString)*stream->network;
 

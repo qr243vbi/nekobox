@@ -94,6 +94,7 @@ namespace Configs {
         // reality
         QString reality_pbk = "";
         QString reality_sid = "";
+        QString reality_spx = "";
                 
         V2rayStreamSettings() : JsonStore() {
         }
@@ -120,6 +121,7 @@ namespace Configs {
             ADD_MAP("tls_record_frag", enable_tls_record_fragment, boolean);
             ADD_MAP("pbk", reality_pbk, string);
             ADD_MAP("sid", reality_sid, string);
+            ADD_MAP("spx", reality_spx, string);
         STOP_MAP
 
         void BuildStreamSettingsSingBox(QJsonObject *outbound);

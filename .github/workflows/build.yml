@@ -1,5 +1,7 @@
 name: NyameBox build matrix
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
 #      tag:
@@ -136,38 +138,38 @@ jobs:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.26.0"
+            go_version: "1.27.1"
           - cross_os: windows
             cross_arch: amd64
-            allow: ${{ github.event.inputs.build_windows_x64 }}
-            go_version: "1.26.0"
+            allow: ${{ github.event_name == 'push' || github.event.inputs.build_windows_x64 == 'true' }}
+            go_version: "1.27.1"
           - cross_os: windows
             cross_arch: arm64
-            allow: ${{ github.event.inputs.build_windows_arm64 }}
-            go_version: "1.26.0"
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_arm64 == 'true' }}
+            go_version: "1.27.1"
           - cross_os: windows
             cross_arch: 386
-            allow: ${{ github.event.inputs.build_windows_x86 }}
-            go_version: "1.26.0"
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_x86 == 'true' }}
+            go_version: "1.27.1"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - name: Checking out sources
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/cache@main
         with:
           path: ./deployment
           key: CommonCache-${{ matrix.cross_os }}-${{ matrix.cross_arch }}-${{ hashFiles('script/build_go.sh', 'core/*') }}-${{ matrix.go_version }}
       - name: Check cached golang parts
         id: check-common
-        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         shell: bash
         run: |
           case "${{ matrix.cross_os }}-${{ matrix.cross_arch }}" in
@@ -190,23 +192,23 @@ jobs:
             echo "needs_build=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Install Golang
-        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' ) ) && steps.check-common.outputs.needs_build != 'false'
+        if: ( matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') ) ) && steps.check-common.outputs.needs_build != 'false'
         uses: actions/setup-go@main
         with:            
           go-version: ${{ matrix.go_version }}
           cache-dependency-path: |
             core/server/go.sum
       - name: Linux - Install apt dependencies
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: thrift-compiler
           version: 1.0
       - name: Build golang parts
-        if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: steps.check-common.outputs.needs_build != 'false' && matrix.cross_os != 'public' && ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         shell: bash
         run: |
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then
             export SKIP_UPDATER=ON
           else
             export SKIP_UPDATER=OFF
@@ -237,10 +239,10 @@ jobs:
           fi
           gh release upload "${INPUT_VERSION}" deployment/* --clobber
       - name: Tar files
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         run: tar czvf artifacts.tgz ./deployment
       - name: Uploading Artifact
-        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
+        if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && (matrix.allow == true || matrix.allow == 'true') )
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
@@ -341,48 +343,48 @@ jobs:
           - platform: windows-11-arm
             target: arm64
             triplet: arm64-windows
-            allow: ${{ github.event.inputs.build_windows_arm64 }}
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_arm64 == 'true' }}
           - platform: windows-2022
             target: x86_64
             triplet: x64-windows
-            allow: ${{ github.event.inputs.build_windows_x64 }}
+            allow: ${{ github.event_name == 'push' || github.event.inputs.build_windows_x64 == 'true' }}
           - platform: windows-2022
             target: x86
             triplet: x86-windows
-            allow: ${{ github.event.inputs.build_windows_x86 }}
+            allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_x86 == 'true' }}
       fail-fast: false
     runs-on: ${{ matrix.platform }}
-    if: github.event.inputs.source_only != 'true'
+    if: (github.event_name == 'push' || github.event.inputs.source_only != 'true')
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
     steps:
       - name: Checking out sources
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/checkout@main
         with:
           ref: 'main'
           submodules: "true"
 
       - name: Setup Ninja
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: qr243vbi/setup-ninja@master
 
       - name: Install NSIS
-        if: matrix.allow == 'true' && matrix.target != 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target != 'arm64'
         uses: negrutiu/nsis-install@v2
         with:
           arch: ${{ matrix.target }}
 
       - name: Install MSVC compiler
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.target }}
 
       - name: vcpkg build
         uses: qr243vbi/vcpkg-action@master
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         id: vcpkg
         with:
           pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng 
@@ -392,13 +394,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Download Artifacts
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/download-artifact@main
         with:
           path: download-artifact
 
       - name: Download Srslist
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         run: |
           curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
@@ -406,26 +408,26 @@ jobs:
 
       - name: Cache Builds
         id: cache-common
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/cache@main
         with:
           path: build
           key: NinjaCache-${{ matrix.platform }}-${{ matrix.target }}-${{ needs.get-tag-and-changelog.outputs.tag }}
 
       - name: Install Zip, Curl, Jq, UPX
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: ConorMacBride/install-package@v1
         with:
           choco: zip curl jq
 
       - name: Install Customized Qt
-        if: matrix.allow == 'true' && matrix.target != 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target != 'arm64'
         uses: qr243vbi/qt6windows7@main
         with:
           version: 6.10.0_${{ matrix.target }}
 
       - name: Install Qt
-        if: matrix.allow == 'true' && matrix.target == 'arm64'
+        if: (matrix.allow == true || matrix.allow == 'true') && matrix.target == 'arm64'
         uses: jurplel/install-qt-action@v4.3.1
         with:
           version: 6.12.0
@@ -435,7 +437,7 @@ jobs:
           cache-key-prefix: QtCache-${{ matrix.platform }}-${{ matrix.target }}
           
       - name: Windows - Generate MakeFile and Build
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         run: |
           export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
@@ -450,13 +452,13 @@ jobs:
           fi
           TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
           TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
           cmake --build build --config Release --verbose
           source ./script/deploy_windows.sh "${{ matrix.target }}"
 
       - name: Windows - Publish
-        if: github.event.inputs.publish == 'true' && matrix.allow == 'true'
+        if: github.event.inputs.publish == 'true' && (matrix.allow == true || matrix.allow == 'true')
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -465,11 +467,11 @@ jobs:
           
       - name: Tar files
         shell: bash
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         run: tar czvf artifacts.tgz ./deployment
 
       - name: Uploading Artifact
-        if: matrix.allow == 'true'
+        if: (matrix.allow == true || matrix.allow == 'true')
         uses: actions/upload-artifact@main
         with:
           name: nekobox-${{ github.sha }}-${{ matrix.platform }}-${{ matrix.target }}-Qt${{ matrix.qt_version }}
@@ -477,7 +479,7 @@ jobs:
 
   build-ubuntu:
     name: Build linux binaries
-    if: github.event.inputs.build_ubuntu == 'true' && github.event.inputs.source_only != 'true'
+    if: github.event.inputs.build_ubuntu == 'true' && (github.event_name == 'push' || github.event.inputs.source_only != 'true')
     permissions:
       contents: write
       actions: read
@@ -567,7 +569,7 @@ jobs:
           GOOS: linux
           GOARCH: ${{ matrix.goarch }}
         run: |
-          if [[ ${{ github.event.inputs.skip_updater }} == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+          if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
           echo "UNAME=${GOARCH}" >> .ENV
           echo "GOARCH=${GOARCH}" >> .ENV
           echo "GOOS=${GOOS}" >> .ENV
@@ -603,7 +605,7 @@ jobs:
       actions: read
     env:
       INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
-    if: github.event.inputs.publish == 'true' && github.event.inputs.source_only != 'true' && github.event.inputs.pre_release != 'true'
+    if: github.event.inputs.publish == 'true' && (github.event_name == 'push' || github.event.inputs.source_only != 'true') && github.event.inputs.pre_release != 'true'
     steps:
       - name: Checking out sources
         uses: actions/checkout@main
