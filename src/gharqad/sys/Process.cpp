@@ -65,10 +65,10 @@ namespace Configs_sys {
         #endif
 
         auto maxLogLines = []() {
-            return Configs::windowSettings ? maxLogLines() : 200;
+            return Configs::windowSettings ? Configs::windowSettings->max_log_line : 200;
         };
 
-        connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
+        connect(&process, &QProcess::readyReadStandardOutput, this, [this, maxLogLines]() {
             auto log = process.readAllStandardOutput();
             if (start_profile_when_core_is_up >= 0) {
                 if (log.contains("Core listening")) {
@@ -97,7 +97,7 @@ namespace Configs_sys {
             if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
             MW_show_log(log);
         });
-        connect(&process, &QProcess::readyReadStandardError, this, [&]() {
+        connect(&process, &QProcess::readyReadStandardError, this, [this, maxLogLines]() {
             auto log = process.readAllStandardError();
             if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
             MW_show_log(log);
