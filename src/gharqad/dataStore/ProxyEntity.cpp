@@ -26,6 +26,7 @@ namespace Configs
 }
 
 [[nodiscard]]  QString ProxyEntity::DisplayCoreType(){
+    if (type == "xray") return "Xray";
     return software_core_name;
 }
 
@@ -111,6 +112,8 @@ namespace Configs
         cast(trojan)
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_Trojan);
         cast(vless)
+            bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_VLESS);
+        cast(xray)
             bean = new Configs::TrojanVLESSBean(ent, Configs::TrojanVLESSBean::proxy_VLESS);
         cast(hysteria)
             bean = new Configs::QUICBean(ent, Configs::QUICBean::proxy_Hysteria);

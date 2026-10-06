@@ -82,6 +82,7 @@ namespace Configs {
         if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
+        stream->reality_spx = GetQueryValue(query, "spx", "/");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
         if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
         stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");

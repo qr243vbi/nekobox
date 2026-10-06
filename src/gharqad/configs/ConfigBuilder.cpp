@@ -17,6 +17,7 @@
 #include <QFileInfo>
 #include <QRegularExpression>
 #include <QStandardPaths>
+#include <QProcess>
 
 #ifdef _WIN32
 #include <winsock2.h>
@@ -29,6 +30,227 @@
 #endif
 
 namespace Configs {
+
+namespace {
+constexpr int kBuiltinXrayMinMajor = 26;
+constexpr int kBuiltinXrayMinMinor = 3;
+constexpr int kBuiltinXrayMinPatch = 27;
+constexpr int kBuiltinXrayPortBase = 30000;
+constexpr int kBuiltinXrayPortSpan = 20000;
+
+int BuiltinXraySocksPort(const std::shared_ptr<ProxyEntity> &ent) {
+  const int id = ent != nullptr && ent->id >= 0 ? ent->id : 0;
+  return kBuiltinXrayPortBase + (id % kBuiltinXrayPortSpan);
+}
+
+bool IsBuiltinXrayProfile(const std::shared_ptr<ProxyEntity> &ent) {
+  if (ent == nullptr) return false;
+  if (ent->type == "xray") return true;
+  if (ent->type != "vless") return false;
+
+  const auto bean = ent->TrojanVLESSBean();
+  const auto stream = bean != nullptr ? GetStreamSettingsConst(bean.get()) : nullptr;
+  return bean != nullptr && bean->proxy_type == TrojanVLESSBean::proxy_VLESS &&
+         stream != nullptr &&
+         stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
+         !stream->reality_pbk.trimmed().isEmpty();
+}
+
+QString BuiltinXrayBinaryName() {
+#ifdef Q_OS_WIN
+  return "xray.exe";
+#else
+  return "xray";
+#endif
+}
+
+QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
+                                   int socksPort, QString *error) {
+  QJsonObject root;
+  if (!IsBuiltinXrayProfile(ent)) {
+    if (error) *error = "Invalid Xray profile";
+    return root;
+  }
+
+  const auto bean = ent->TrojanVLESSBean();
+  const auto stream = bean != nullptr ? GetStreamSettingsConst(bean.get()) : nullptr;
+  if (bean == nullptr || stream == nullptr) {
+    if (error) *error = "Xray profile has no VLESS stream settings";
+    return root;
+  }
+
+  const QString network = stream->network != nullptr ? QString(*stream->network).toLower() : "tcp";
+  if (network != "tcp" && network != "xhttp") {
+    if (error) *error = "Xray Extra Core supports only TCP and XHTTP transports";
+    return root;
+  }
+
+  if (ent->serverAddress.isEmpty() || ent->serverPort <= 0 ||
+      bean->password.trimmed().isEmpty()) {
+    if (error) *error = "Xray VLESS profile is incomplete";
+    return root;
+  }
+
+  QJsonObject user{
+      {"id", bean->password.trimmed()},
+      {"encryption", bean->encryption.trimmed().isEmpty() ? "none" : bean->encryption.trimmed()}
+  };
+  if (!bean->flow.trimmed().isEmpty() && bean->flow.trimmed() != "none") {
+    user["flow"] = bean->flow.trimmed();
+  }
+
+  QJsonObject vnext{
+      {"address", ent->serverAddress},
+      {"port", ent->serverPort},
+      {"users", QJsonArray{user}}
+  };
+
+  QJsonObject outbound{
+      {"tag", "proxy"},
+      {"protocol", "vless"},
+      {"settings", QJsonObject{{"vnext", QJsonArray{vnext}}}}
+  };
+
+  QJsonObject streamSettings{
+      {"network", network}
+  };
+
+  if (stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
+      !stream->reality_pbk.trimmed().isEmpty()) {
+    QJsonObject reality{
+        {"show", false},
+        {"fingerprint", stream->utlsFingerprint.trimmed().isEmpty()
+                             ? "chrome"
+                             : stream->utlsFingerprint.trimmed()},
+        {"serverName", stream->sni.trimmed()},
+        {"publicKey", stream->reality_pbk.trimmed()},
+        {"shortId", stream->reality_sid.trimmed()},
+        {"spiderX", stream->reality_spx.trimmed().isEmpty()
+                       ? "/"
+                       : stream->reality_spx.trimmed()}
+    };
+    streamSettings["security"] = "reality";
+    streamSettings["realitySettings"] = reality;
+  } else if (stream->security.compare("tls", Qt::CaseInsensitive) == 0) {
+    QJsonObject tls{
+        {"serverName", stream->sni.trimmed()}
+    };
+    if (!stream->utlsFingerprint.trimmed().isEmpty()) {
+      tls["fingerprint"] = stream->utlsFingerprint.trimmed();
+    }
+    if (!stream->alpn.trimmed().isEmpty()) {
+      QJsonArray alpn;
+      for (const auto &item : stream->alpn.split(',', Qt::SkipEmptyParts)) {
+        alpn.append(item.trimmed());
+      }
+      tls["alpn"] = alpn;
+    }
+    streamSettings["security"] = "tls";
+    streamSettings["tlsSettings"] = tls;
+  } else {
+    streamSettings["security"] = "none";
+  }
+
+  if (network == "tcp" && stream->header_type.compare("http", Qt::CaseInsensitive) == 0) {
+    QJsonObject request;
+    if (!stream->path.trimmed().isEmpty())
+      request["path"] = QJsonArray{stream->path};
+    if (!stream->host.trimmed().isEmpty())
+      request["headers"] = QJsonObject{{"Host", QJsonArray{stream->host}}};
+    streamSettings["tcpSettings"] = QJsonObject{
+        {"header", QJsonObject{{"type", "http"}, {"request", request}}}
+    };
+  }
+
+  if (network == "xhttp") {
+    QJsonObject xhttp{
+        {"host", stream->host},
+        {"path", stream->path},
+        {"mode", stream->xhttp_mode.trimmed().isEmpty() ? "auto" : stream->xhttp_mode.trimmed()}
+    };
+    if (!stream->xhttp_extra.trimmed().isEmpty()) {
+      QJsonParseError parseError{};
+      const auto extraDoc = QJsonDocument::fromJson(stream->xhttp_extra.toUtf8(), &parseError);
+      if (parseError.error != QJsonParseError::NoError || !extraDoc.isObject()) {
+        if (error) *error = "Invalid XHTTP extra JSON: " + parseError.errorString();
+        return root;
+      }
+      xhttp["extra"] = extraDoc.object();
+    }
+    streamSettings["xhttpSettings"] = xhttp;
+  }
+
+  outbound["streamSettings"] = streamSettings;
+
+  QJsonObject inbound{
+      {"tag", "socks-in"},
+      {"listen", "127.0.0.1"},
+      {"port", socksPort},
+      {"protocol", "socks"},
+      {"settings", QJsonObject{{"udp", true}}}
+  };
+
+  root["log"] = QJsonObject{{"loglevel", dataStore->log_level}};
+  root["inbounds"] = QJsonArray{inbound};
+  root["outbounds"] = QJsonArray{
+      outbound,
+      QJsonObject{{"tag", "direct"}, {"protocol", "freedom"}}
+  };
+  root["routing"] = QJsonObject{
+      {"domainStrategy", "AsIs"}
+  };
+  return root;
+}
+} // namespace
+
+QString GetBuiltinXrayPath() {
+  return QDir(QCoreApplication::applicationDirPath()).filePath(BuiltinXrayBinaryName());
+}
+
+QString ValidateBuiltinXrayVersion() {
+  const QString path = GetBuiltinXrayPath();
+  if (!QFileInfo::exists(path)) {
+    return "Built-in Xray-core was not found: " + QDir::toNativeSeparators(path);
+  }
+
+  QProcess process;
+  process.setProgram(path);
+  process.setArguments({"version"});
+  process.setWorkingDirectory(QCoreApplication::applicationDirPath());
+  process.start();
+
+  if (!process.waitForStarted(3000)) {
+    return "Failed to start Xray-core: " + process.errorString();
+  }
+  if (!process.waitForFinished(5000)) {
+    process.kill();
+    process.waitForFinished(1000);
+    return "Timed out while checking Xray-core version.";
+  }
+
+  const QString output = QString::fromLocal8Bit(process.readAllStandardOutput() +
+                                                 process.readAllStandardError());
+  const QRegularExpression re(R"(Xray(?:-core)?\s+(\d+)\.(\d+)\.(\d+))",
+                               QRegularExpression::CaseInsensitiveOption);
+  const auto match = re.match(output);
+  if (!match.hasMatch()) {
+    return "Unable to determine Xray-core version. Output: " + output.trimmed();
+  }
+
+  const int major = match.captured(1).toInt();
+  const int minor = match.captured(2).toInt();
+  const int patch = match.captured(3).toInt();
+  if (major < kBuiltinXrayMinMajor ||
+      (major == kBuiltinXrayMinMajor && minor < kBuiltinXrayMinMinor) ||
+      (major == kBuiltinXrayMinMajor && minor == kBuiltinXrayMinMinor &&
+       patch < kBuiltinXrayMinPatch)) {
+    return QString("Xray-core %1.%2.%3 is too old. Required: >= %4.%5.%6.")
+        .arg(major).arg(minor).arg(patch)
+        .arg(kBuiltinXrayMinMajor).arg(kBuiltinXrayMinMinor).arg(kBuiltinXrayMinPatch);
+  }
+
+  return {};
+}
 
 static QString ResolveDomainForTestConfig(const QString &server) {
   if (server.isEmpty() || IsIpAddress(server)) {
@@ -600,8 +822,8 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
     if (bean == nullptr) {
       continue;
     }
-    if (item->type == "extracore") {
-      MW_show_log("Skipping ExtraCore conf");
+    if (item->type == "extracore" || item->type == "xray") {
+      MW_show_log("Skipping external-core profile from batch test: " + item->DisplayName());
       continue;
     }
     if (!IsValid(item)) {
@@ -1252,6 +1474,21 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
     }
   }
 
+  if (IsBuiltinXrayProfile(ent)) {
+    const int socksPort = BuiltinXraySocksPort(ent);
+    outbound = QJsonObject{
+        {"type", "socks"},
+        {"server", "127.0.0.1"},
+        {"server_port", socksPort},
+        {"version", "5"}
+    };
+    outbound["tag"] = tag;
+    ent->traffic_data->id = ent->id;
+    ent->traffic_data->tag = tag.toStdString();
+    status->result->outboundStats += ent->traffic_data;
+    return;
+  }
+
   const auto coreR = bean->BuildCoreObjSingBox();
   if (coreR.outbound.isEmpty()) {
     status->result->error = "unsupported outbound";
@@ -1407,6 +1644,8 @@ QJsonObject BuildDnsObject(QString address, bool tunEnabled) {
     res["server_port"] = port;
   if (!path.isEmpty())
     res["path"] = path;
+  if (type == "tls" || type == "https" || type == "h3")
+    res["tls"] = QJsonObject{};
   return res;
 }
 
@@ -1521,7 +1760,23 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
     status->result->error = "NullPointer ProxyEntity";
     return;
   }
-  if (status->ent->type == "extracore") {
+  if (IsBuiltinXrayProfile(status->ent)) {
+    const int socksPort = BuiltinXraySocksPort(status->ent);
+    QString xrayError;
+    const auto xrayConfig = BuildBuiltinXrayConfig(status->ent, socksPort, &xrayError);
+    if (!xrayError.isEmpty()) {
+      status->result->error = xrayError;
+      return;
+    }
+    status->result->extraCoreData->path = GetBuiltinXrayPath();
+    status->result->extraCoreData->args = "run -format json -c %s";
+    status->result->extraCoreData->config =
+        QJsonDocument(xrayConfig).toJson(QJsonDocument::Compact);
+    status->result->extraCoreData->configDir = GetBasePath();
+    status->result->extraCoreData->noLog = false;
+    routeChain->Rules << RouteRule::get_processPath_direct_rule(
+        status->result->extraCoreData->path);
+  } else if (status->ent->type == "extracore") {
     auto bean = status->ent->ExtraCoreBean();
     if (bean == nullptr) {
       status->result->error = "Bean is null";

@@ -93,4 +93,7 @@ namespace Configs {
 
     QJsonObject BuildTunInbound(const QStringList &directIPSets, const QStringList &directIPCIDRs);
 
+    QString GetBuiltinXrayPath();
+    QString ValidateBuiltinXrayVersion();
+
 } // namespace Configs

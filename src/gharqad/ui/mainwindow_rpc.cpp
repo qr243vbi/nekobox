@@ -659,6 +659,17 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
 
     auto profile_start_stage2 = [=, this] {
         //
+        if (ent->type == "xray") {
+            const auto xrayError = Configs::ValidateBuiltinXrayVersion();
+            if (!xrayError.isEmpty()) {
+                MW_show_log("[Xray] " + xrayError);
+                runOnUiThread([xrayError, this] {
+                    QMessageBox::warning(this, tr("Xray-core"), xrayError);
+                });
+                return false;
+            }
+        }
+
         bool rpcOK;
         auto [error, result] = defaultClient->StartEntity(&rpcOK, ent);
         if (!rpcOK) {
