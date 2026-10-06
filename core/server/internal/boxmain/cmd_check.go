@@ -10,8 +10,7 @@ import (
 var ruleset_cachedir string
 
 func Check(content []byte) error {
-	ctx := context.Background()
-	ctx = boxbox.Context(ctx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry())
+	ctx := include.Context(context.Background())
 	options, err := parseConfig(ctx, content)
 	if err != nil {
 		return err

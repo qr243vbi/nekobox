@@ -7,7 +7,6 @@ import (
 	"strconv"
 	"time"
 
-	boxbox "nekobox_core/internal/boxbox"
 	"github.com/sagernet/sing-box/experimental/deprecated"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/log"
@@ -69,6 +68,5 @@ func preRun(cmd *cobra.Command, args []string) {
 	if len(configPaths) == 0 && len(configDirectories) == 0 {
 		configPaths = append(configPaths, "config.json")
 	}
-	globalCtx = service.ContextWith(globalCtx, deprecated.NewStderrManager(log.StdLogger()))
-	globalCtx = boxbox.Context(globalCtx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry())
+	globalCtx = include.Context(service.ContextWith(globalCtx, deprecated.NewStderrManager(log.StdLogger())))
 }
