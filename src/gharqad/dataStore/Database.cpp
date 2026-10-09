@@ -152,7 +152,9 @@ bool FileDatabaseManager::Save(JsonStore *store) {
   }
   bool ret;
 #ifndef SKIP_LEVELDB
-  if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
+  // The handle is null when DB::Open failed at construction time (locked or
+  // corrupted store dir). Fall back to the file store instead of derefing it.
+  if (Configs::config_type == Configs::DatabaseType::rocksdb_type && this->database) {
     ret = Configs::write_rocksdb(this->database, store);
     if (ret){
       DropFromDirectory(store->StoreType(), store->Id());
@@ -162,7 +164,7 @@ bool FileDatabaseManager::Save(JsonStore *store) {
 #endif
   ret = SaveToFile(store);
 #ifndef SKIP_LEVELDB
-  if (ret) {
+  if (ret && this->database) {
     Configs::clear_rocksdb(this->database, store);
   }
 #endif
@@ -302,6 +304,9 @@ QList<int> FileDatabaseManager::Query(char type) {
 #ifdef SKIP_LEVELDB
   return FileDatabaseManager::QueryFromDirectory(type);
 #else
+  if (!this->database) {
+    return FileDatabaseManager::QueryFromDirectory(type);
+  }
   return Configs::query_rocksdb(this->database, type);
 #endif
 }
@@ -335,6 +340,10 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   QList<int> result;
   QSet<uint32_t> result_set;
+
+  if (!db) {
+    return result;
+  }
 
   std::unique_ptr<rocksdb::Iterator> it(
       db->NewIterator(ReadOptions()));
@@ -453,6 +462,9 @@ bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x)
 
 bool Configs::drop_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 // std::lock_guard<std::mutex> lock(env.env_mutex);
+  if (!env) {
+    return false;
+  }
 #ifdef DEBUG_MODE
   qDebug() << "Drop RocksDB ";
 #endif
@@ -474,6 +486,9 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem
 
 bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
                          const std::string &view) {
+      if (!env) {
+        return false;
+      }
       auto key = pack_char_int(c, x);
       rocksdb::WriteBatch batch;
       batch.Put(key, view);
@@ -491,6 +506,12 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
 
 std::tuple<bool, bool>
 Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
+
+  // No handle is not a read error: report "nothing stored here" so the caller
+  // falls back to loading the file copy.
+  if (!env) {
+    return std::make_tuple(true, false);
+  }
 
 #ifdef DEBUG_MODE
   qDebug() << "READING RocksDB FILE";
@@ -525,6 +546,9 @@ Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::Json
 
 bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
                         std::string &view) {
+  if (!db) {
+    return false;
+  }
   auto key_data = pack_char_int(c, x);
   rocksdb::Slice slice(key_data.data(), 5);
   rocksdb::Status status =
@@ -642,7 +666,7 @@ cleanup:
 #endif
 
 void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
-	rocksdb::DB * db1;
+	rocksdb::DB * db1 = nullptr;
   rocksdb::Status status =
     rocksdb::DB::Open(
         Options(),
@@ -652,7 +676,10 @@ void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
   db = std::unique_ptr<rocksdb::DB>(db1);
 
   if (!status.ok()) {
+    // db1 is null on failure, so the handle stays empty and this store runs on
+    // the file backend; every user of the handle checks it before derefing.
     qWarning() << QString::fromStdString(status.ToString());
+    qWarning() << "leveldb store unavailable, falling back to files in settings/";
     return;
   }
   rocksdb::WriteBatch dbi; 
