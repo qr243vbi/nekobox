@@ -384,7 +384,13 @@ private:
     //
     QString title_error;
     int icon_status = -1;
-    std::shared_ptr<Configs::ProxyEntity> running;
+    std::shared_ptr<Configs::ProxyEntity> running;   // guarded by runningMutex
+    mutable QMutex runningMutex;
+    // profile start/stop assign `running` on a worker thread while the UI thread
+    // and the test threads read it, so nobody touches the member directly
+    std::shared_ptr<Configs::ProxyEntity> runningCopy();
+    int runningId();                                 // -1 when nothing is running
+    void setRunning(const std::shared_ptr<Configs::ProxyEntity> &next);
     QString traffic_update_cache;
     qint64 last_test_time = 0;
     //
