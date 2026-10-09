@@ -346,6 +346,12 @@ void MainWindow::url_test_current() {
         last_test_time = QDateTime::currentSecsSinceEpoch();
 
         runOnUiThread([=,this] {
+            // The profile was stopped or swapped while this test was in flight.
+            // Writing the latency now would attribute it to whichever profile is
+            // running, so drop the result instead.
+            if (runningId() != testId) {
+                return;
+            }
             if (!results_0.error.empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(
                     QString::fromUtf8(results_0.error.c_str())));
