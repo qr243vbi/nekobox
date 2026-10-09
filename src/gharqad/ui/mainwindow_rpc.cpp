@@ -316,15 +316,20 @@ void MainWindow::setRunning(const std::shared_ptr<Configs::ProxyEntity> &next) {
 }
 
 void MainWindow::url_test_current() {
+    // Snapshot the id here, on the UI thread. The result handler below is posted
+    // through runOnUiThread and runs after the core RPC returns; by then the
+    // profile may have been stopped or swapped, so it must not touch `running`.
+    const int testId = runningId();
+    if (testId < 0) {
+        return;
+    }
+
     last_test_time = QDateTime::currentSecsSinceEpoch();
     ui->label_running->setText(tr("Testing"));
 
     // untagged the core would measure route.final, not the profile
-    bool useProxyTag = false;
-    if (running != nullptr) {
-        auto profile = Configs::profileManager->GetProfile(running->id);
-        useProxyTag = profile != nullptr && !profile->IsFullConfig();
-    }
+    auto entryProfile = Configs::profileManager->GetProfile(testId);
+    bool useProxyTag = entryProfile != nullptr && !entryProfile->IsFullConfig();
 
     runOnNewThread([=,this] {
         libcore::TestReq req;
@@ -345,7 +350,7 @@ void MainWindow::url_test_current() {
                 MW_show_log(QString("UrlTest error: %1").arg(
                     QString::fromUtf8(results_0.error.c_str())));
             }
-            auto profile = Configs::profileManager->GetProfile(running->id);
+            auto profile = Configs::profileManager->GetProfile(testId);
             if (profile != nullptr){
                 if (latency <= 0) {
                     ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
@@ -356,7 +361,7 @@ void MainWindow::url_test_current() {
                     profile->latencyInt = latency;
                 }
                 profile->Save();
-                refresh_proxy_list(running->id);
+                refresh_proxy_list(testId);
             }
         });
     });
@@ -795,7 +800,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         if (!do_not_test) {
             // test via the live instance: a second one steals the wg/awg session
             runOnUiThread([this] {
-                if (running != nullptr) url_test_current();
+                if (runningId() >= 0) url_test_current();
             });
         }
         // cancel timeout
