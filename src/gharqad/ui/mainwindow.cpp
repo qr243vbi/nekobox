@@ -706,27 +706,19 @@ MainWindow::MainWindow(QWidget *parent)
         Configs::profileManager->FillProfileEnts(out_all, out_all_ids);
       }
       QList<std::shared_ptr<Configs::ProxyEntity>> out_del;
-      QThreadPool *parallelCoreCallPool = new QThreadPool(this);
-
-      std::atomic counter(0);
-      QMutex mu;
       QMutex access;
-      int profileSize = out_all.size();
-      mu.lock();
+      QThreadPool parallelCoreCallPool;
       for (const auto &profile : out_all) {
-        parallelCoreCallPool->start(
-            [&out_del, profile, &counter, &mu, profileSize, &access] {
+        parallelCoreCallPool.start(
+            [&out_del, profile, &access] {
               if (!Configs::IsValid(profile)) {
                 access.lock();
                 out_del += profile;
                 access.unlock();
               }
-              if (++counter == profileSize)
-                mu.unlock();
             });
       }
-      mu.lock();
-      mu.unlock();
+      parallelCoreCallPool.waitForDone();
 
       change_text += QObject::tr("\nDeleted %1 Invalid").arg(out_del.length());
       if (!out_del.empty()) {
