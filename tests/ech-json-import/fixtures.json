@@ -1,0 +1,12 @@
+[
+  {"name": "escaped multiline PEM", "outbound": {"type": "vless", "tls": {"ech": {"enabled": true, "config": "-----BEGIN ECH CONFIGS-----\nSYNTHETIC-ONLY\n-----END ECH CONFIGS-----", "query_server_name": "ech.example.invalid"}}}, "accepted": true, "enabled": true, "config": "-----BEGIN ECH CONFIGS-----\nSYNTHETIC-ONLY\n-----END ECH CONFIGS-----", "query": "ech.example.invalid"},
+  {"name": "array preserving blank lines", "outbound": {"type": "trojan", "tls": {"ech": {"enabled": true, "config": [" first ", "", "last"], "query_server_name": ""}}}, "accepted": true, "enabled": true, "config": " first \n\nlast", "query": ""},
+  {"name": "disabled takes precedence", "outbound": {"type": "vmess", "tls": {"ech": {"enabled": false, "config": "nested", "query_server_name": "nested.invalid"}, "ech_config": "legacy", "query_server_name": "legacy.invalid"}}, "accepted": true, "enabled": false, "config": "nested", "query": "nested.invalid"},
+  {"name": "omitted enabled remains false", "outbound": {"type": "anytls", "tls": {"ech": {"config": "nested"}}}, "accepted": true, "enabled": false, "config": "nested", "query": ""},
+  {"name": "query only", "outbound": {"type": "http", "tls": {"ech": {"enabled": true, "query_server_name": "query.invalid"}}}, "accepted": true, "enabled": true, "config": "", "query": "query.invalid"},
+  {"name": "legacy string array", "outbound": {"type": "vless", "tls": {"ech_config": ["one", "two"], "query_server_name": "legacy.invalid"}}, "accepted": true, "enabled": true, "config": "one\ntwo", "query": "legacy.invalid"},
+  {"name": "nested null blocks legacy", "outbound": {"type": "vless", "tls": {"ech": null, "ech_config": "legacy"}}, "accepted": false, "enabled": false, "config": "", "query": ""},
+  {"name": "string true rejected", "outbound": {"type": "vless", "tls": {"ech": {"enabled": "true", "config": "nested"}}}, "accepted": false, "enabled": false, "config": "", "query": ""},
+  {"name": "mixed config rejected", "outbound": {"type": "vless", "tls": {"ech": {"enabled": true, "config": ["one", false]}}}, "accepted": false, "enabled": false, "config": "", "query": ""},
+  {"name": "invalid query rejected", "outbound": {"type": "vless", "tls": {"ech": {"enabled": true, "query_server_name": []}}}, "accepted": false, "enabled": false, "config": "", "query": ""}
+]

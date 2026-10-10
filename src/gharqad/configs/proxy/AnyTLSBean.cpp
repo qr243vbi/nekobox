@@ -56,7 +56,7 @@ namespace Configs {
         idle_session_check_interval = obj["idle_session_check_interval"].toString();
         idle_session_timeout = obj["idle_session_timeout"].toString();
         min_idle_session = obj["min_idle_session"].toInt();
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         return true;
     }
 

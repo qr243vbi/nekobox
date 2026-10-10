@@ -25,11 +25,37 @@ namespace Configs
             auto &tls = obj["tls"];
             auto &reality = tls["reality"];
             auto &alpn = tls["alpn"];
-            auto &ech_config = tls["ech_config"];
-            if (!ech_config.isNothing()){
-                stream->enable_ech = true;
-                stream->ech_config = ech_config.isArray() ? ech_config.toStringList().join("\n") : ech_config.toString();
-                stream->query_server_name = tls["query_server_name"].toString();
+            if (tls.contains("ech")) {
+                // A present nested object takes precedence over legacy flat fields.
+                const auto &ech = tls["ech"];
+                if (!ech.isObject()) return false;
+                const auto &enabled = ech["enabled"];
+                if (!enabled.isUndefined() && !enabled.isBool()) return false;
+                const bool enable_ech = enabled.getBoolean();
+                const auto &config = ech["config"];
+                QString ech_config;
+                if (config.isArray()) {
+                    for (const auto &line : config.values()) {
+                        if (!line.isString()) return false;
+                    }
+                    ech_config = config.toStringList().join("\n");
+                } else {
+                    if (!config.isUndefined() && !config.isString()) return false;
+                    ech_config = config.getString();
+                }
+                const auto &query_server_name = ech["query_server_name"];
+                if (!query_server_name.isUndefined() && !query_server_name.isString()) return false;
+                // Commit only validated fields; malformed ECH must reject the profile.
+                stream->enable_ech = enable_ech;
+                stream->ech_config = ech_config;
+                stream->query_server_name = query_server_name.getString();
+            } else {
+                auto &ech_config = tls["ech_config"];
+                if (!ech_config.isNothing()){
+                    stream->enable_ech = true;
+                    stream->ech_config = ech_config.isArray() ? ech_config.toStringList().join("\n") : ech_config.toString();
+                    stream->query_server_name = tls["query_server_name"].toString();
+                }
             }
             stream->security = "tls";
             stream->reality_pbk = reality["public_key"].toString();
