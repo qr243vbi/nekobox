@@ -888,6 +888,22 @@ Section "Install"
   ${Else}
     nsExec::ExecToLog '"$INSTDIR\$RandomGUID\nekobox_core.exe" -installer-mode -kill-processes "$INSTDIR" -vcredist-install -ignore-pid "$PID" -ignore-pid "$PPID" -ignore-pid "$PPPID" '
   ${EndIf}
+  Pop $0
+  ${If} "$VCRedistNeeded" == "1"
+    ${If} $0 != "0"
+      DetailPrint "Visual C++ Redistributable installation failed (helper result: $0)."
+      MessageBox MB_OK|MB_ICONSTOP "Microsoft Visual C++ Redistributable could not be installed (helper result: $0).$\r$\n\
+        ${SOFTWARE_NAME} requires it to run. See the installation details for the error.$\r$\n$\r$\n\
+        Install the matching package from:$\r$\n\
+        https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist$\r$\n\
+        Then run this installer again." /SD IDOK
+      SetOutPath "$INSTDIR"
+      Delete "$INSTDIR\$RandomGUID\nekobox_core.exe"
+      RMDir "$INSTDIR\$RandomGUID"
+      SetErrorLevel 1
+      Abort
+    ${EndIf}
+  ${EndIf}
   
   !insertmacro MoveFile "$INSTDIR\$RandomGUID\nekobox_core.exe" "$INSTDIR\nekobox_core.exe" 
 ;  ${PowerShellExec} "\
