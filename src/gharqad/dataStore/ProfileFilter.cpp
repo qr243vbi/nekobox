@@ -20,7 +20,7 @@ bool ProfileFilterKey::operator==(const ProfileFilterKey &other) const noexcept
         && key->serverAddress == other.key->serverAddress
         && key->serverPort == other.key->serverPort
         && this->skip_compare_beans == other.skip_compare_beans
-        && (this->skip_compare_beans || key->compare(other.key.get(), {"c_cfg", "c_out"}) == 0);
+        && (this->skip_compare_beans || key->bean()->compare(other.key->bean().get(), {"c_cfg", "c_out"}) == 0);
 }
 
 bool ProfileFilterKey::operator!=(const ProfileFilterKey &other) const noexcept
@@ -36,14 +36,23 @@ bool ProfileFilterKey::operator<(const ProfileFilterKey &other) const noexcept
   if (other_key_nullptr){
     return false;
   }
-    return (this_key_nullptr)
-        || key->type < other.key->type
-        || key->serverAddress < other.key->serverAddress
-        || key->serverPort < other.key->serverPort
-        || ( this->skip_compare_beans && !other.skip_compare_beans )
-        || (     (!other.skip_compare_beans) 
-              && (!this->skip_compare_beans) 
-              && key->compare(other.key.get(), {"c_cfg", "c_out"}) < 0 );
+  if (this_key_nullptr){
+    return true;
+  }
+  if (key->type != other.key->type) {
+    return key->type < other.key->type;
+  }
+  if (key->serverAddress != other.key->serverAddress) {
+    return key->serverAddress < other.key->serverAddress;
+  }
+  if (key->serverPort != other.key->serverPort) {
+    return key->serverPort < other.key->serverPort;
+  }
+  if (skip_compare_beans != other.skip_compare_beans) {
+    return skip_compare_beans;
+  }
+  return !skip_compare_beans
+      && key->bean()->compare(other.key->bean().get(), {"c_cfg", "c_out"}) < 0;
 }
 
 bool ProfileFilterKey::operator>(const ProfileFilterKey &other) const noexcept
@@ -68,7 +77,7 @@ ProfileFilterKey ProfileFilter_ent_key(
     bool by_address)
 {
     const bool useAddressOnly = by_address && ent->type != "custom";
-    return ProfileFilterKey(ent, !useAddressOnly);
+    return ProfileFilterKey(ent, useAddressOnly);
 }
 
     ProfileFilterKey::ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,
