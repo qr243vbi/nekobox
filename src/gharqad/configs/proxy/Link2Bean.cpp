@@ -15,9 +15,9 @@ void From_Link::set_boolean(const char *name, bool &value,
                             const QUrlQuery &obj) {
   auto qval = obj.queryItemValue(name);
   if (value) {
-    value = !(qval.localeAwareCompare("false"));
+    value = qval.localeAwareCompare("false") != 0;
   } else {
-    value = (qval.localeAwareCompare("true"));
+    value = qval.localeAwareCompare("true") == 0;
   }
 }
 
