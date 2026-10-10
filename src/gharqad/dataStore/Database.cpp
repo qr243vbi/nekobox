@@ -190,8 +190,14 @@ bool FileDatabaseManager::Load(JsonStore *store) {
 #ifndef SKIP_LEVELDB
   if (readed) {
     if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
-      Configs::write_rocksdb(this->database, store);
-      DropFromDirectory(store->StoreType(), store->Id());
+      // Only drop the file copy once the value really is in rocksdb.
+      // write_rocksdb() returns false when the handle is empty (DB::Open failed),
+      // and dropping the file regardless leaves the record in **neither** store:
+      // this launch still shows it from memory, but the next one finds no .cfg
+      // and no rocksdb entry, so the profile silently disappears.
+      if (Configs::write_rocksdb(this->database, store)) {
+        DropFromDirectory(store->StoreType(), store->Id());
+      }
     }
   }
 #endif
