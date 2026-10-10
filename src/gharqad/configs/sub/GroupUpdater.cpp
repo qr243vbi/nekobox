@@ -1697,7 +1697,13 @@ void GroupUpdater::Update(
       group->profiles.clear();
     } else {
       for (auto id : group->profiles){
-        auto key = Configs::ProfileFilterKey(Configs::profileManager->GetProfile(id), false);
+        auto profile = Configs::profileManager->GetProfile(id);
+        // A failed lookup need not mean the stored profile is gone. Keep its ID
+        // for a later retry, but never insert a null key into the matching map.
+        if (profile == nullptr) {
+          continue;
+        }
+        auto key = Configs::ProfileFilterKey(profile, false);
         // found duplicate profile
         if (rawUpdater->ignore_map.contains(key)){
           ProfilesToDrop << key.key->Id();
