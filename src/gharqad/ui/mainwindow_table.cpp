@@ -170,6 +170,7 @@ void ColumnFilterProxy::setEnabled(bool enable){
     if (!enable){
         this->m_filters.clear();
     }
+    invalidateFilter();
 }
 
 void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
@@ -178,11 +179,13 @@ void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
         m_filters.remove(column);
     else
         m_filters[column] = text;
+    invalidateFilter();
 }
 
 void ColumnFilterProxy::setGlobalFilter(const QString& text)
 {
     m_globalFilter = text;
+    invalidateFilter();
 }
 
 bool ColumnFilterProxy::filterAcceptsRow(int row, const QModelIndex &parent) const
