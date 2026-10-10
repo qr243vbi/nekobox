@@ -1780,7 +1780,7 @@ skip_updater_hide:
           url_test_group_action);
 
   connect(ui->actionSpeedtest_Current, &QAction::triggered, this, [=, this]() {
-    if (running != nullptr) {
+    if (runningId() >= 0) {
       CHECK_ACTION_ACCESS_W
       speedtest_current_group({}, true);
     }
@@ -2405,8 +2405,8 @@ void MainWindow::on_commitDataRequest() {
   if (Configs::windowSettings->remember_last_profile && last_id >= 0) {
     Configs::dataStore->remember_id = last_id;
   }
-  if (running)
-    running->Save();
+  if (auto r = runningCopy())
+    r->Save();
   //
   Configs::dataStore->Save();
   Configs::windowSettings->Save();
@@ -2925,6 +2925,9 @@ void MainWindow::UpdateConnectionListWithRecreate(
 
 
 void MainWindow::refresh_status(const QString &traffic_update) {
+  // one snapshot for the whole function: `running` is reassigned on the profile
+  // start/stop thread, and several lambdas below read it
+  auto runningNow = runningCopy();
   auto refresh_speed_label = [=, this] {
     if (Configs::dataStore->disable_traffic_stats) {
       ui->label_speed->setText("");
@@ -2951,18 +2954,18 @@ void MainWindow::refresh_status(const QString &traffic_update) {
 
   // From UI
   QString group_name;
-  if (running != nullptr) {
-    auto group = Configs::profileManager->GetGroup(running->gid);
+  if (runningNow != nullptr) {
+    auto group = Configs::profileManager->GetGroup(runningNow->gid);
     if (group != nullptr)
       group_name = group->name;
   }
 
   if (QDateTime::currentSecsSinceEpoch() - last_test_time > 2) {
     ui->label_running->setText(
-        running ? QString("[%1] %2")
-                      .arg(group_name, running->DisplayName())
-                      .left(30)
-                : tr("Not Running"));
+        runningNow ? QString("[%1] %2")
+                        .arg(group_name, runningNow->DisplayName())
+                        .left(30)
+                   : tr("Not Running"));
   }
   //
   auto display_socks = DisplayAddress(Configs::dataStore->inbound_address,
@@ -3010,14 +3013,14 @@ void MainWindow::refresh_status(const QString &traffic_update) {
         Configs::dataStore->active_routing != "Default") {
       tt << "[" + Configs::dataStore->active_routing + "]";
     }
-    if (running != nullptr)
-      tt << running->DisplayTypeAndName() + "@" + group_name;
+    if (runningNow != nullptr)
+      tt << runningNow->DisplayTypeAndName() + "@" + group_name;
     return tt.join(isTray ? "\n" : " ");
   };
 
   auto icon_status_new = Icon::TrayIconStatus::NONE;
 
-  if (running != nullptr) {
+  if (runningNow != nullptr) {
     if (Configs::dataStore->spmode_vpn) {
       icon_status_new = Icon::TrayIconStatus::VPN;
     } else if (Configs::dataStore->system_dns_set &&
@@ -4779,7 +4782,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
   if (event->type() == QEvent::MouseButtonPress) {
     auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
     if (obj == ui->label_running && mouseEvent->button() == Qt::LeftButton &&
-        running != nullptr) {
+        runningId() >= 0) {
       url_test_current();
       return true;
     } else if (obj == ui->label_inbound &&

@@ -56,7 +56,7 @@ public:
   static bool SaveToFile(JsonStore *);
   static bool LoadFromFile(JsonStore *);
   static bool DropFromDirectory(char, int);
-  static QList<int> QueryFromDirectory(char type);
+  static QList<int> QueryFromDirectory(char type, bool include_backup = false);
 private:
 #ifndef SKIP_LEVELDB
   std::unique_ptr<rocksdb::DB> database;

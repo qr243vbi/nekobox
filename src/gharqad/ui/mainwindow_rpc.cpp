@@ -300,16 +300,36 @@ void MainWindow::stopTests() {
     }
 }
 
+std::shared_ptr<Configs::ProxyEntity> MainWindow::runningCopy() {
+    QMutexLocker lock(&runningMutex);
+    return running;
+}
+
+int MainWindow::runningId() {
+    QMutexLocker lock(&runningMutex);
+    return running ? running->id : -1;
+}
+
+void MainWindow::setRunning(const std::shared_ptr<Configs::ProxyEntity> &next) {
+    QMutexLocker lock(&runningMutex);
+    running = next;
+}
+
 void MainWindow::url_test_current() {
+    // Snapshot the id here, on the UI thread. The result handler below is posted
+    // through runOnUiThread and runs after the core RPC returns; by then the
+    // profile may have been stopped or swapped, so it must not touch `running`.
+    const int testId = runningId();
+    if (testId < 0) {
+        return;
+    }
+
     last_test_time = QDateTime::currentSecsSinceEpoch();
     ui->label_running->setText(tr("Testing"));
 
     // untagged the core would measure route.final, not the profile
-    bool useProxyTag = false;
-    if (running != nullptr) {
-        auto profile = Configs::profileManager->GetProfile(running->id);
-        useProxyTag = profile != nullptr && !profile->IsFullConfig();
-    }
+    auto entryProfile = Configs::profileManager->GetProfile(testId);
+    bool useProxyTag = entryProfile != nullptr && !entryProfile->IsFullConfig();
 
     runOnNewThread([=,this] {
         libcore::TestReq req;
@@ -326,11 +346,17 @@ void MainWindow::url_test_current() {
         last_test_time = QDateTime::currentSecsSinceEpoch();
 
         runOnUiThread([=,this] {
+            // The profile was stopped or swapped while this test was in flight.
+            // Writing the latency now would attribute it to whichever profile is
+            // running, so drop the result instead.
+            if (runningId() != testId) {
+                return;
+            }
             if (!results_0.error.empty()) {
                 MW_show_log(QString("UrlTest error: %1").arg(
                     QString::fromUtf8(results_0.error.c_str())));
             }
-            auto profile = Configs::profileManager->GetProfile(running->id);
+            auto profile = Configs::profileManager->GetProfile(testId);
             if (profile != nullptr){
                 if (latency <= 0) {
                     ui->label_running->setText(tr("Test Result") + ": " + tr("Unavailable"));
@@ -341,7 +367,7 @@ void MainWindow::url_test_current() {
                     profile->latencyInt = latency;
                 }
                 profile->Save();
-                refresh_proxy_list(running->id);
+                refresh_proxy_list(testId);
             }
         });
     });
@@ -417,8 +443,9 @@ void MainWindow::speedtest_current_group(const QList<int>& profiles_ids,
             stopSpeedtest.store(false);
             // untagged the core would measure route.final, not the profile
             QStringList tags;
-            if (running != nullptr) {
-                auto profile = Configs::profileManager->GetProfile(running->id);
+            const int currentId = runningId();
+            if (currentId >= 0) {
+                auto profile = Configs::profileManager->GetProfile(currentId);
                 if (profile != nullptr && !profile->IsFullConfig()) tags << "proxy";
             }
             runSpeedTest("", true, true, tags, {}, -1,
@@ -441,7 +468,7 @@ void MainWindow::querySpeedtest(QDateTime lastProxyListUpdate, const QMap<QStrin
     {
         return;
     }
-    auto profile = testCurrent ? running : 
+    auto profile = testCurrent ? Configs::profileManager->GetProfile(runningId()) : 
         Configs::profileManager->GetProfile(
             tag2entID[QString::fromUtf8(res->result.outbound_tag.c_str())]);
     if (profile == nullptr)
@@ -483,7 +510,7 @@ void MainWindow::queryCountryTest(const QMap<QString, int>& tag2entID, bool test
     }
     for (const auto& result : res->results)
     {
-        auto profile = testCurrent ? running : 
+        auto profile = testCurrent ? Configs::profileManager->GetProfile(runningId()) : 
         Configs::profileManager->GetProfile(tag2entID[
             (QString::fromUtf8(result.outbound_tag.c_str()))]);
         if (profile == nullptr)
@@ -568,7 +595,7 @@ void MainWindow::runSpeedTest(const QString& config, bool useDefault, bool testC
     if (!rpcOK || result->results.empty() ) return;
 
     for (const auto &res: result->results) {
-        if (testCurrent) entID = running ? running->id : -1;
+        if (testCurrent) entID = runningId();
         else {
             auto tag = QString::fromUtf8(res.outbound_tag.c_str());
             entID = tag2entID.count(tag) == 0 ? -1 : tag2entID[tag];
@@ -711,7 +738,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         Stats::trafficLooper->loop_enabled = true;
         Stats::connection_lister->suspend = false;
         Configs::dataStore->UpdateStartedId(ent->id);
-        running = ent;
+        setRunning(ent);
 
         runOnUiThread([=, this] {
             refresh_status();
@@ -779,13 +806,19 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
         if (!do_not_test) {
             // test via the live instance: a second one steals the wg/awg session
             runOnUiThread([this] {
-                if (running != nullptr) url_test_current();
+                if (runningId() >= 0) url_test_current();
             });
         }
         // cancel timeout
         runOnUiThread([=,this] {
             restartMsgboxTimer->cancel();
-            restartMsgboxTimer->deleteLater();
+            // Deliberately NOT deleteLater()'d. A queued timeoutFunc can still be
+            // sitting in the event queue, and disconnect() does not remove a posted
+            // QMetaCallEvent - deleting the timer here left sendTimerEvent() with a
+            // dangling receiver (AV read of a garbage QObject, see the crashes at
+            // nekobox+0x2490b3 / QEventDispatcherWin32Private::sendTimerEvent).
+            // It is a child of `this`, so it is freed with the window; cancel() has
+            // already stopped it and detached it from the box.
             restartMsgbox->deleteLater();
         });
     });
@@ -842,10 +875,14 @@ bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
 }
 
 void MainWindow::profile_stop(bool crash, bool block, bool manual) {
-    if (running == nullptr) {
+    auto stopping = runningCopy();
+    if (stopping == nullptr) {
         return;
     }
-    auto id = running->id;
+    auto id = stopping->id;
+    // snapshot here: the stop body runs on a worker thread, where `running` may
+    // already point at a different profile by the time it is read
+    const auto stoppingName = stopping->DisplayTypeAndName();
 
     auto profile_stop_stage2 = [=,this] {
         if (!crash) {
@@ -892,7 +929,9 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
     Stats::trafficLooper->loop_mutex.unlock();
 
     restartMsgboxTimer->cancel();
-    restartMsgboxTimer->deleteLater();
+    // Same reason as in profile_start(): keep the timer alive so a timeout that is
+    // already queued cannot be delivered to a freed QObject. Child of `this`, freed
+    // with the window; cancel() stopped it and detached it from the box.
     restartMsgbox->deleteLater();
 
     const auto stoppingName = running->DisplayTypeAndName();
@@ -910,7 +949,7 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
 
         if (manual) Configs::dataStore->UpdateStartedId(-1919);
         Configs::dataStore->need_keep_vpn_off = false;
-        running = nullptr;
+        setRunning(nullptr);
 
         if (block) blocker.release();
 

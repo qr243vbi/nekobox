@@ -14,6 +14,7 @@
 #include <QDir>
 #include <QMutex>
 #include <chrono>
+#include <thread>
 #include <nekobox/configs/proxy/AbstractBean.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
 #include <nekobox/configs/proxy/includes.h>
@@ -152,7 +153,9 @@ bool FileDatabaseManager::Save(JsonStore *store) {
   }
   bool ret;
 #ifndef SKIP_LEVELDB
-  if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
+  // The handle is null when DB::Open failed at construction time (locked or
+  // corrupted store dir). Fall back to the file store instead of derefing it.
+  if (Configs::config_type == Configs::DatabaseType::rocksdb_type && this->database) {
     ret = Configs::write_rocksdb(this->database, store);
     if (ret){
       DropFromDirectory(store->StoreType(), store->Id());
@@ -162,7 +165,7 @@ bool FileDatabaseManager::Save(JsonStore *store) {
 #endif
   ret = SaveToFile(store);
 #ifndef SKIP_LEVELDB
-  if (ret) {
+  if (ret && this->database) {
     Configs::clear_rocksdb(this->database, store);
   }
 #endif
@@ -171,9 +174,7 @@ bool FileDatabaseManager::Save(JsonStore *store) {
 bool FileDatabaseManager::Load(JsonStore *store) {
 #ifndef SKIP_LEVELDB
   auto [ok, readed] = Configs::read_rocksdb(this->database, store);
-  if (!ok) {
-    return false;
-  } else if (readed) {
+  if (ok && readed) {
     if (Configs::config_type != Configs::DatabaseType::rocksdb_type) {
       if (SaveToFile(store)) {
         Configs::clear_rocksdb(this->database, store);
@@ -181,6 +182,11 @@ bool FileDatabaseManager::Load(JsonStore *store) {
     }
     return true;
   }
+  // Either leveldb holds nothing for this record (ok && !readed) or the read
+  // failed outright (!ok). Both have to fall through to the file copy; the old
+  // `if (!ok) return false;` turned a read error into "this record is gone" and
+  // the file copy was never consulted, so the record could not be recovered
+  // even though .cfg / .cfg.bak were still on disk.
 #else
   bool readed;
 #endif
@@ -188,8 +194,14 @@ bool FileDatabaseManager::Load(JsonStore *store) {
 #ifndef SKIP_LEVELDB
   if (readed) {
     if (Configs::config_type == Configs::DatabaseType::rocksdb_type) {
-      Configs::write_rocksdb(this->database, store);
-      DropFromDirectory(store->StoreType(), store->Id());
+      // Only drop the file copy once the value really is in rocksdb.
+      // write_rocksdb() returns false when the handle is empty (DB::Open failed),
+      // and dropping the file regardless leaves the record in **neither** store:
+      // this launch still shows it from memory, but the next one finds no .cfg
+      // and no rocksdb entry, so the profile silently disappears.
+      if (Configs::write_rocksdb(this->database, store)) {
+        DropFromDirectory(store->StoreType(), store->Id());
+      }
     }
   }
 #endif
@@ -285,28 +297,56 @@ bool FileDatabaseManager::LoadFromFile(JsonStore *store) {
   if (path == "") {
     return false;
   }
+  if (!QFile::exists(path)) {
+    // The .cfg was moved aside when the record was migrated into leveldb; the
+    // .bak keeps the last file copy, which is the only source left when leveldb
+    // cannot be opened.
+    QString bak = path + ".bak";
+    if (QFile::exists(bak)) {
+      path = bak;
+    }
+  }
   auto ret = store->LoadFromFile(path);
   return true;
 }
 
 bool FileDatabaseManager::DropFromDirectory(char chr, int id) {
   QString fn = getJsonStoreFileName(chr, id);
-  if (fn != "") {
-    QFile file(fn);
-    return file.remove();
+  if (fn == "") {
+    return false;
   }
-  return false;
+  QFile file(fn);
+  if (!file.exists()) {
+    return true;
+  }
+  // Keep the file copy as <name>.cfg.bak instead of unlinking it.
+  //
+  // The leveldb handle is a single point of failure: when DB::Open fails the
+  // whole store silently falls back to the file backend, and if the .cfg has
+  // already been removed at that point the record lives in neither store, so
+  // the profile just disappears. The .bak suffix deliberately does not match
+  // the ".cfg" filter in QueryFromDirectory(), so leveldb-backed operation
+  // keeps ignoring it and only the degraded path picks it up.
+  QString bak = fn + ".bak";
+  QFile::remove(bak);
+  return file.rename(bak);
 }
 
 QList<int> FileDatabaseManager::Query(char type) {
 #ifdef SKIP_LEVELDB
-  return FileDatabaseManager::QueryFromDirectory(type);
+  return FileDatabaseManager::QueryFromDirectory(type, true);
 #else
+  if (!this->database) {
+    // leveldb could not be opened. The .cfg copies were renamed to .cfg.bak
+    // when they were migrated, so they have to be included here or the list
+    // comes back empty and every profile looks deleted.
+    return FileDatabaseManager::QueryFromDirectory(type, true);
+  }
   return Configs::query_rocksdb(this->database, type);
 #endif
 }
 
-QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
+QList<int> FileDatabaseManager::QueryFromDirectory(char type, bool include_backup) {
   QList<int> result;
   QString fn = getJsonStorePathName(type);
   if (fn == "") {
@@ -316,12 +356,20 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
   auto entryList = dr.entryList(QDir::Files);
   for (auto e : entryList) {
     e = e.toLower();
-    if (!e.endsWith(".cfg", Qt::CaseInsensitive))
+    QString base = e;
+    if (base.endsWith(".cfg.bak", Qt::CaseInsensitive)) {
+      // Only the degraded path may use the backup copies; initialize_rocksdb()
+      // also calls this and must not mistake a stale .bak for a live record.
+      if (!include_backup) continue;
+      base.chop(8);
+    } else if (base.endsWith(".cfg", Qt::CaseInsensitive)) {
+      base.chop(4);
+    } else {
       continue;
-    e = e.remove(".cfg", Qt::CaseInsensitive);
+    }
     bool ok;
-    auto id = e.toInt(&ok);
-    if (ok) {
+    auto id = base.toInt(&ok);
+    if (ok && !result.contains(id)) {
       result << id;
     }
   }
@@ -335,6 +383,10 @@ QList<int> FileDatabaseManager::QueryFromDirectory(char type) {
 QList<int> Configs::query_rocksdb(std::unique_ptr<rocksdb::DB>& db, char c) {
   QList<int> result;
   QSet<uint32_t> result_set;
+
+  if (!db) {
+    return result;
+  }
 
   std::unique_ptr<rocksdb::Iterator> it(
       db->NewIterator(ReadOptions()));
@@ -453,6 +505,9 @@ bool Configs::clear_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x)
 
 bool Configs::drop_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x) {
 // std::lock_guard<std::mutex> lock(env.env_mutex);
+  if (!env) {
+    return false;
+  }
 #ifdef DEBUG_MODE
   qDebug() << "Drop RocksDB ";
 #endif
@@ -474,6 +529,9 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem
 
 bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
                          const std::string &view) {
+      if (!env) {
+        return false;
+      }
       auto key = pack_char_int(c, x);
       rocksdb::WriteBatch batch;
       batch.Put(key, view);
@@ -491,6 +549,12 @@ bool Configs::write_rocksdb(std::unique_ptr<rocksdb::DB>&env, char c, int32_t x,
 
 std::tuple<bool, bool>
 Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::JsonStore *store) {
+
+  // No handle is not a read error: report "nothing stored here" so the caller
+  // falls back to loading the file copy.
+  if (!env) {
+    return std::make_tuple(true, false);
+  }
 
 #ifdef DEBUG_MODE
   qDebug() << "READING RocksDB FILE";
@@ -525,6 +589,9 @@ Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&env, Configs_ConfigItem::Json
 
 bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
                         std::string &view) {
+  if (!db) {
+    return false;
+  }
   auto key_data = pack_char_int(c, x);
   rocksdb::Slice slice(key_data.data(), 5);
   rocksdb::Status status =
@@ -534,6 +601,14 @@ bool Configs::read_rocksdb(std::unique_ptr<rocksdb::DB>&db, char c, int32_t x,
         &view
     );
 
+  if (status.IsNotFound()) {
+    // "no such key" is not a read failure. Reporting it as one made Load()
+    // bail out before ever consulting the file copy, so a record that was only
+    // present on disk (or only as the .bak kept by DropFromDirectory()) could
+    // not be read back at all. An empty value means the same thing to callers.
+    view.clear();
+    return true;
+  }
   return status.ok();
 }
 
@@ -642,17 +717,71 @@ cleanup:
 #endif
 
 void Configs::initialize_rocksdb(std::unique_ptr<rocksdb::DB>& db) {
-	rocksdb::DB * db1;
+	rocksdb::DB * db1 = nullptr;
   rocksdb::Status status =
     rocksdb::DB::Open(
         Options(),
         DATABASE_NAME,
         &db1
   );
+
+  if (!status.ok()) {
+    // A failed Open used to be an immediate, silent drop to the file backend.
+    // Combined with DropFromDirectory() having moved the .cfg copies aside that
+    // is exactly how a profile ends up in neither store, so recover first.
+    qWarning() << QString::fromStdString(status.ToString());
+
+    const std::string msg = status.ToString();
+    const bool locked =
+        msg.find("lock") != std::string::npos ||
+        msg.find("Resource temporarily unavailable") != std::string::npos;
+
+    if (locked) {
+      // Another instance still owns the store. That is the normal case when the
+      // program is restarted before the previous process finished shutting
+      // down, and right after a hard kill. Wait for the lock to clear instead
+      // of degrading: repairing a store that someone else is writing to would
+      // be worse than failing.
+      for (int attempt = 0; attempt < 24 && !status.ok(); attempt++) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
+        db1 = nullptr;
+        status = rocksdb::DB::Open(Options(), DATABASE_NAME, &db1);
+      }
+      if (status.ok()) {
+        qWarning() << "leveldb store acquired after waiting for the previous instance";
+      }
+    }
+
+    if (!status.ok() && !locked) {
+      if (rocksdb::RepairDB(DATABASE_NAME, Options()).ok()) {
+        db1 = nullptr;
+        status = rocksdb::DB::Open(Options(), DATABASE_NAME, &db1);
+        if (status.ok()) {
+          qWarning() << "leveldb store repaired";
+        }
+      }
+    }
+
+    if (!status.ok()) {
+      // Last resort before degrading: paranoid_checks is what turns a
+      // recoverable store into a hard failure.
+      auto relaxed = Options();
+      relaxed.paranoid_checks = false;
+      db1 = nullptr;
+      status = rocksdb::DB::Open(relaxed, DATABASE_NAME, &db1);
+      if (status.ok()) {
+        qWarning() << "leveldb store opened with paranoid_checks disabled";
+      }
+    }
+  }
+
   db = std::unique_ptr<rocksdb::DB>(db1);
 
   if (!status.ok()) {
+    // db1 is null on failure, so the handle stays empty and this store runs on
+    // the file backend; every user of the handle checks it before derefing.
     qWarning() << QString::fromStdString(status.ToString());
+    qWarning() << "leveldb store unavailable, falling back to files in settings/";
     return;
   }
   rocksdb::WriteBatch dbi; 
