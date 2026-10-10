@@ -62,13 +62,17 @@ func main() {
 
 	time.Sleep(1 * time.Second)
 	// 1. update files
-	LaunchInstaller(box, wd, *version, *chocolatey_source, *winget_install, *verbose, *name)
+	if err := LaunchInstaller(box, wd, *version, *chocolatey_source, *winget_install, *verbose, *name); err != nil {
+		log.Printf("Update failed: %v", err)
+		MessageBoxPlain("NekoBox Updater", "Update failed.\n\n"+err.Error())
+		os.Exit(1)
+	}
 	// 2. start
 	os.Chdir(wd)
 	exec.Command("./nekobox.exe", args[2:]...).Start()
 }
 
-func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) {
+func LaunchInstaller(updatePackagePath string, installPath string, version string, chocolatey_source string, winget_install bool, verbose bool, name string) error {
 	fmt.Printf("package %s install %s version %s name %s", updatePackagePath, installPath, version, name)
 
 	if winget_install {
@@ -82,17 +86,16 @@ func LaunchInstaller(updatePackagePath string, installPath string, version strin
 	if winget_install {
 		Launch("winget", "install", "--version", version, updatePackagePath, "--override", "/S /WINGET=1 /UNPACK=1 /D="+filepath.Clean(installPath))
 	} else {
-		var chocolatey_flag string
+		command, err := newNSISCommand(updatePackagePath, installPath, chocolatey_source != "")
+		if err != nil {
+			return err
+		}
 		if chocolatey_source != "" {
 			run_chocolatey(version, chocolatey_source, name)
-			chocolatey_flag = "/CHOCOLATEY=1"
-		} else {
-			chocolatey_flag = "/CHOCOLATEY=0"
 		}
-		if updatePackagePath != "" && installPath != "" {
-			Launch(updatePackagePath, "/S", "/UNPACK=1", chocolatey_flag, "/D="+filepath.Clean(installPath))
-		}
+		return LaunchCmd(command)
 	}
+	return nil
 }
 
 func run_chocolatey(version string, source string, name string) {
