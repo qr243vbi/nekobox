@@ -144,6 +144,7 @@ namespace Configs_sys {
                     if (coreRestartTimer.restart() < 10 * 1000) {
                         coreRestartTimer = QElapsedTimer();
                         MW_show_log("[ERROR] " + QObject::tr("Core exits too frequently, stop automatic restart this profile."));
+                        this->restarting.unlock();
                         return;
                     }
                 } else {
