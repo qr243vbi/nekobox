@@ -1635,6 +1635,37 @@ QJsonObject BuildDnsObject(QString address, bool tunEnabled) {
       port = parsed_port;
       addr.truncate(colon_index); 
     }
+  } else if (colon_index < 0) {
+    // Keep legacy host;port parsing above. A bare IPv6 address is not host:port.
+    QString host;
+    QString portText;
+    if (addr.startsWith("[")) {
+      const int closingBracket = addr.indexOf(u']');
+      if (closingBracket > 1 && addr.left(closingBracket).contains(":")) {
+        host = addr.mid(1, closingBracket - 1);
+        if (closingBracket == addr.size() - 1) {
+          addr = host;
+        } else if (addr.mid(closingBracket + 1, 1) == ":") {
+          portText = addr.sliced(closingBracket + 2);
+        }
+      }
+    } else if (addr.count(u':') == 1) {
+      const int separator = addr.indexOf(u':');
+      host = addr.left(separator);
+      portText = addr.sliced(separator + 1);
+    }
+    bool decimalPort = !portText.isEmpty();
+    for (const auto ch : portText)
+      decimalPort &= ch >= u'0' && ch <= u'9';
+    bool ok = false;
+    const int parsedPort = portText.toInt(&ok);
+    // Leave malformed ports intact for core validation; never silently discard
+    // an invalid port and connect to the transport's default port instead.
+    if (!host.isEmpty() && decimalPort && ok && parsedPort > 0 &&
+        parsedPort <= 65535) {
+      addr = host;
+      port = parsedPort;
+    }
   }
   QJsonObject res = {
       {"type", type},
