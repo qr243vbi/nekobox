@@ -64,11 +64,38 @@ fi
 
 if [[ "$NAIVE" != "false" ]]
 then
-if [[ ! -f "libcronet-windows-${NAIVE}.dll" ]]
-then
-curl -L -o "libcronet-windows-${NAIVE}.dll" "https://github.com/SagerNet/cronet-go/releases/download/$(curl -s -L https://api.github.com/repos/SagerNet/cronet-go/releases/latest | jq -r .tag_name)/libcronet-windows-${NAIVE}.dll"
-fi
-cp "libcronet-windows-${NAIVE}.dll" "$DEST/libcronet.dll"
+(
+  CRONET_DLL="libcronet-windows-${NAIVE}.dll"
+  # Check the DOS magic to reject empty files and cached HTTP error bodies.
+  # This is a basic sanity check, not a full PE or authenticity check.
+  if [[ ! -f "$CRONET_DLL" || "$(head -c 2 "$CRONET_DLL")" != "MZ" ]]
+  then
+    if ! CRONET_RELEASE="$(curl -fLsS https://api.github.com/repos/SagerNet/cronet-go/releases/latest)"
+    then
+      echo "Failed to fetch Cronet release metadata" >&2
+      exit 1
+    fi
+    if ! CRONET_TAG="$(jq -ej '.tag_name | select(type == "string" and length > 0) | @uri' <<< "$CRONET_RELEASE")"
+    then
+      echo "Cronet release metadata has no valid tag_name" >&2
+      exit 1
+    fi
+    CRONET_TMP="$(mktemp "${CRONET_DLL}.XXXXXX")"
+    trap 'rm -f "$CRONET_TMP"' EXIT
+    if ! curl -fLSs -o "$CRONET_TMP" "https://github.com/SagerNet/cronet-go/releases/download/${CRONET_TAG}/${CRONET_DLL}"
+    then
+      echo "Failed to download $CRONET_DLL" >&2
+      exit 1
+    fi
+    if [[ "$(head -c 2 "$CRONET_TMP")" != "MZ" ]]
+    then
+      echo "Downloaded $CRONET_DLL has no DOS header" >&2
+      exit 1
+    fi
+    mv -f "$CRONET_TMP" "$CRONET_DLL"
+  fi
+  cp "$CRONET_DLL" "$DEST/libcronet.dll"
+)
 fi
 
 cp -RT "$CURDIR/res/public" "$DEST/public"
