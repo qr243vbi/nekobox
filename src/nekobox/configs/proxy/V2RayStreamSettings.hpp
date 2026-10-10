@@ -101,6 +101,9 @@ namespace Configs {
         NEW_MAP
             ADD_MAP("net", network, string);
             ADD_MAP("sec", security, string);
+            ADD_MAP("ech_config", ech_config, string);
+            ADD_MAP("enable_ech", enable_ech, boolean);
+            ADD_MAP("query_server_name", query_server_name, string);
             ADD_MAP("pac_enc", packet_encoding, string);
             ADD_MAP("path", path, string);
             ADD_MAP("host", host, string);
