@@ -20,6 +20,7 @@
 
 #include <QSortFilterProxyModel>
 #include <QHash>
+#include <functional>
 
 #define SELECTION_KEEPER_ROLE Qt::UserRole + 3
 
@@ -122,6 +123,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     void refresh();
+    void sortProfiles(const std::function<bool(int, int)> &lessThan);
     void notifyProfileChanged(int id);
     void capture(QTableView*view);
     bool filterEnabled();
