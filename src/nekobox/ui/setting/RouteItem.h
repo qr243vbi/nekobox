@@ -73,6 +73,8 @@ private:
 
     bool route_item_on_notes = false;
 
+    bool simpleBoxesDirty = false;
+
     [[nodiscard]] int getIndexOf(const QString& name) const;
 
     void showSelectItem(const QStringList& items, const QString& currentItem);

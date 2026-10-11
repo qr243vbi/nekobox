@@ -325,6 +325,14 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
 
     loadSimpleBoxes();
 
+    for (auto* editor : {directIp, directDomain, directProcess,
+                         proxyIp, proxyDomain, proxyProcess,
+                         blockIp, blockDomain, blockProcess}) {
+        connect(editor, &QPlainTextEdit::textChanged, this, [this] {
+            simpleBoxesDirty = true;
+        });
+    }
+
     connect(ui->custom_routes_button, &QPushButton::clicked, this, [this]{
         ui->tabWidget->setCurrentWidget(ui->tab);
     });
@@ -381,7 +389,9 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
             // reload
             updateRouteItemsView();
             updateRuleSection();
-            loadSimpleBoxes();
+            // Basic text is a draft until committed. Other tabs must not
+            // replace it with the older model contents.
+            if (!simpleBoxesDirty) loadSimpleBoxes();
         }
     });
 
@@ -500,9 +510,15 @@ void RouteItem::loadSimpleBoxes() {
     blockIp->setPlainText(ip);
     blockDomain->setPlainText(domain);
     blockProcess->setPlainText(process);
+
+    simpleBoxesDirty = false;
 }
 
 QString RouteItem::commitSimpleBoxes() {
+    // An untouched Basic view may be stale after Advanced edits, and cannot
+    // represent every advanced field. Only rebuild rules for an edited draft.
+    if (!simpleBoxesDirty) return {};
+
     auto joinBoxes = [](AutoCompleteTextEdit* ipBox, AutoCompleteTextEdit* domainBox, AutoCompleteTextEdit* processBox) -> QString {
         QStringList parts;
         const auto ipText = ipBox->toPlainText().trimmed();
@@ -518,6 +534,7 @@ QString RouteItem::commitSimpleBoxes() {
     res += chain->UpdateSimpleRules(joinBoxes(directIp, directDomain, directProcess), Configs::direct);
     res += chain->UpdateSimpleRules(joinBoxes(blockIp, blockDomain, blockProcess), Configs::block);
     res += chain->UpdateSimpleRules(joinBoxes(proxyIp, proxyDomain, proxyProcess), Configs::proxy);
+    if (res.isEmpty()) simpleBoxesDirty = false;
     return res;
 }
 
