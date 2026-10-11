@@ -374,11 +374,11 @@ namespace Configs {
     };
 
     const Node & Node::at(const EnumFieldName& t) const {
-      return this->at({t});
+      return this->at(QList<EnumFieldName>{t});
     };
 
     Node & Node::at(const EnumFieldName& t) {
-      return this->at({t});
+      return this->at(QList<EnumFieldName>{t});
     };
 
     bool Node::isNothing() const {
