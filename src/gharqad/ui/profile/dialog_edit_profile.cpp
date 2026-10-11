@@ -488,6 +488,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
     ui->tls_rec_frag->setChecked(stream->enable_tls_record_fragment);
     ui->insecure->setChecked(stream->allow_insecure);
     ui->enable_ech->setChecked(stream->enable_ech);
+    ui->query_server_name->setText(stream->query_server_name);
     ui->header_type->setCurrentText(stream->header_type);
     ui->headers->setText(stream->headers);
     ui->ws_early_data_name->setText(stream->ws_early_data_name);
@@ -631,6 +632,7 @@ bool DialogEditProfile::onEnd() {
     stream->enable_tls_record_fragment = ui->tls_rec_frag->isChecked();
     stream->allow_insecure = ui->insecure->isChecked();
     stream->enable_ech = ui->enable_ech->isChecked();
+    stream->query_server_name = ui->query_server_name->text();
     stream->headers = ui->headers->text();
     stream->header_type = ui->header_type->currentText();
     stream->method = ui->method->text();
@@ -761,7 +763,7 @@ void DialogEditProfile::on_certificate_edit_clicked() {
 void DialogEditProfile::on_ech_config_edit_clicked() {
   bool ok;
   auto txt = QInputDialog::getMultiLineText(this, tr("ECH Config"), "",
-                                            CACHE.certificate, &ok);
+                                            CACHE.ech_config, &ok);
   if (ok) {
     CACHE.ech_config = txt;
     editor_cache_updated_impl();
