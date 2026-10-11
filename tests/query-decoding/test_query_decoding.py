@@ -23,6 +23,9 @@ BEANS = ('AnyTLS', 'Http', 'Juicity', 'Mieru', 'Naive', 'SSH', 'ShadowSocks',
 PROXY = 'src/gharqad/configs/proxy/'
 HEADER = 'src/nekobox/configs/proxy/'
 MUTATIONS = {
+    'http-default-443': (PROXY + 'HttpBean.cpp', 'entity->serverPort = isHttps ? 443 : 80;', 'entity->serverPort = 443;'),
+    'http-raw-prefix': (PROXY + 'HttpBean.cpp', 'if (isHttps) {', 'if (link.startsWith("https")) {'),
+    'http-no-scheme-guard': (PROXY + 'HttpBean.cpp', 'if (scheme != "http" && scheme != "https") return false;', ''),
     'decode-before-split': ('src/nekobox/dataStore/Utils.hpp', '#define GetQuery(url) QUrlQuery(url)', '#define GetQuery(url) QUrlQuery(url.query(QUrl::FullyDecoded))'),
     'pretty-getter': ('src/gharqad/dataStore/Utils.cpp', 'q.queryItemValue(key, QUrl::FullyDecoded)', 'q.queryItemValue(key)'),
     'unprotected-percent': ('src/gharqad/dataStore/Utils.cpp', 'QString(value).replace("%", "%25")', 'value'),

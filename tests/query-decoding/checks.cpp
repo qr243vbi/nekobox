@@ -230,6 +230,54 @@ int main() {
     QString vmBody = QString::fromUtf8(QJsonDocument(QJsonObject{{"id", "fixture"}, {"add", "example.invalid"}, {"port", 443}, {"path", "/literal%26&value"}}).toJson(QJsonDocument::Compact));
     check(legacyVM.TryParseLink("vmess://" + vmBody.toUtf8().toBase64()), "VMess legacy Base64 JSON form");
     same(legacyVM.stream->path, "/literal%26&value", "VMess JSON text unaffected");
+    // HTTP's scheme determines both the implicit port and TLS. Exercise real
+    // QUrl normalization, then reimport the production export (issue #68).
+    for (const QString scheme : {"http", "HTTP", "HtTp", "https", "HTTPS", "HtTpS"}) {
+        const bool tls = scheme.compare("https", Qt::CaseInsensitive) == 0;
+        for (const QString authority : {"example.invalid", "[2001:db8::1]"}) {
+            for (int port : {-1, 80, 443, 8080}) {
+                for (bool insecure : {false, true}) {
+                    const QString label = scheme + " " + authority + " port=" + QString::number(port)
+                        + " insecure=" + QString::number(insecure);
+                    const QString input = scheme + "://fixture:secret@" + authority
+                        + (port == -1 ? "" : ":" + QString::number(port))
+                        + "/proxy/path?insecure=" + (insecure ? "1" : "0")
+                        + "&sni=sni.invalid&headers=" + encoded("{\"X-Fixture\":\"literal%26&value\"}")
+                        + "#HTTP%20fixture";
+                    auto httpEntity = entity(); HttpBean bean(&httpEntity);
+                    check(bean.TryParseLink(input), label + " parses");
+                    const int expectedPort = port == -1 ? (tls ? 443 : 80) : port;
+                    check(httpEntity.serverPort == expectedPort, label + " scheme default/explicit port");
+                    same(httpEntity.serverAddress, QUrl(input).host(), label + " destination");
+                    same(bean.stream->security, tls ? "tls" : "", label + " TLS follows scheme");
+                    check(bean.stream->allow_insecure == (tls && insecure), label + " TLS certificate option");
+                    same(bean.username, "fixture", label + " username");
+                    same(bean.password, "secret", label + " password");
+                    same(bean.path, "/proxy/path", label + " path");
+                    same(bean.headers.value("X-Fixture").toString(), "literal%26&value", label + " headers");
+                    same(httpEntity.name, "HTTP fixture", label + " name");
+                    const QString exported = bean.ToShareLink();
+                    same(QUrl(exported).scheme(), tls ? "https" : "http", label + " export scheme");
+                    auto copyEntity = entity(); HttpBean copy(&copyEntity);
+                    check(copy.TryParseLink(exported), label + " reimports");
+                    check(copyEntity.serverPort == expectedPort, label + " roundtrip port");
+                    same(copyEntity.serverAddress, httpEntity.serverAddress, label + " roundtrip destination");
+                    same(copy.stream->security, bean.stream->security, label + " roundtrip TLS");
+                    check(copy.stream->allow_insecure == bean.stream->allow_insecure, label + " roundtrip certificate option");
+                    if (tls) same(copy.stream->sni, "sni.invalid", label + " roundtrip SNI");
+                    same(copy.username, bean.username, label + " roundtrip username");
+                    same(copy.password, bean.password, label + " roundtrip password");
+                    same(copy.path, bean.path, label + " roundtrip path");
+                    check(copy.headers == bean.headers, label + " roundtrip headers");
+                }
+            }
+        }
+    }
+    for (const QString input : {"ftp://example.invalid", "https-proxy://example.invalid",
+                               "example.invalid", "https:///", "https://example.invalid:invalid"}) {
+        auto httpEntity = entity(); HttpBean bean(&httpEntity);
+        check(!bean.TryParseLink(input), input + " HTTP parser rejects invalid/unsupported URI");
+    }
     std::cout << "SUMMARY checks=" << total << " failures=" << failed << '\n';
     return failed ? 1 : 0;
 }
