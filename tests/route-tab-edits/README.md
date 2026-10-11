@@ -1,6 +1,8 @@
 # Route editor tab-state regression
 
-Baseline: `a536846c9c74dd8fb104dce3319cbd9672920bb3`.
+Original tab-state baseline: `a536846c9c74dd8fb104dce3319cbd9672920bb3`.
+Validation-state follow-up baseline: `1c35d5fed1f167dcdb4c549bc2079dc5dd0a1da4`
+(tree `36053b0d4e227eb767aaf22b09ed2324518246e3`).
 
 ## Production change
 
@@ -11,8 +13,19 @@ rebuild stale Basic values over newer Advanced changes. Loading the model and
 successfully committing a draft clear the dirty flag; validation errors retain
 it so the text remains available for correction.
 
-This is a dialog-state change in `RouteItem.cpp` and `RouteItem.h`. It does not
-change routing execution, networking, parsers, storage, or update behavior.
+The follow-up validates all three actions on a copied routing chain before
+replacing any live dialog rules. Invalid drafts remain dirty and retain their
+text and the prior model. An attempted Advanced transition returns to Basic
+until the draft is valid, preventing two simultaneous editable sources of
+truth. Save commits the draft before checking for an empty profile, so it
+validates the prospective rules and corrected drafts can recover. Empty-profile
+rejection restores the old rules and dirty flag so the Advanced selection stays
+valid and the rejected Basic text remains available for correction.
+
+This is a dialog-state change. The original change touched `RouteItem.cpp` and
+`RouteItem.h`; the validation follow-up changes only `RouteItem.cpp` in
+production. It does not change routing execution, networking, parsers,
+storage, or update behavior.
 A deliberate Basic edit retains the existing `UpdateSimpleRules` rebuilding
 semantics. Custom rules are not rewritten by that method.
 
@@ -66,8 +79,9 @@ lists, signal delivery, JSON/containers, dialog acceptance/rejection, and the
 Qt container/widget substitute is used.
 
 The constructor is a focused assembly, not the complete application
-constructor. `updateRuleSection` and `updateRulePreview` are no-op display
-boundaries. Network updates, profile lookup, rule-set name resolution, warning
+constructor. `updateRuleSection` executes the production selection lookup behind a
+test-only bounds-checking recorder; the rest of its display work and
+`updateRulePreview` are no-op boundaries. Network updates, profile lookup, rule-set name resolution, warning
 presentation, and note-file storage are synthetic or excluded. Advanced test
 edits use the production text-change connection and `set_field_value`, but do
 not validate the complete Advanced display/selection pipeline. Tests invoke
@@ -79,16 +93,41 @@ a new fixture dialog from the emitted in-memory chain. Disk persistence and
 the outer route-manager integration are not tested. Cancel cases verify that
 the original chain/rules remain unchanged and no Save signal is emitted.
 
-The 27 cases cover each editor signal independently; all nine boxes across
+The original 27 cases cover each editor signal independently; all nine boxes across
 General, Notes, and Advanced; repeated transitions; Notes text retention;
 Save/reopen from all four tabs; Advanced edits and Advanced-only fields when
 Basic is untouched; later intentional Basic edits; ownership after successful
 commit; two Cancel paths; clearing Basic rules; and invalid-text retention and
 correction on a chain that also contains a valid custom rule.
 
+The 21 additional validation-state cases cover an invalid line in each editor,
+atomicity across different actions, valid commit → invalid Save → corrected
+Save with a sole simple rule through every tab, rejected Advanced transitions
+from General/Basic/Notes, valid Advanced edits after correction, repeated
+invalid Save followed by Cancel, clear-only-rule rejection and recovery, and
+a new valid Basic rule after the previous model is empty. The last case uses
+a synthetic boundary for Advanced deletion; it does not execute the deletion
+button handler. Another case retains an actual Advanced rule selection across
+empty-profile rejection, General/Notes/Basic navigation, and corrected Save;
+the fixture records any stale selection before an unsafe access can occur.
+
 ## Observed results
 
-Native Qt 6.8.2, g++ 14.2.0, Linux/offscreen:
+Validation-state follow-up, native Qt 6.8.2, g++ 14.2.0, Linux/offscreen:
+
+- Current-main baseline with original suite: 27 cases, 0 failures, exit 0
+- Same baseline with expanded suite: 48 cases, 20 assertion failures, exit 1
+- Candidate with expanded suite: 48 cases, 0 failures, exit 0
+- Production-source mutations: 21/21 caught
+
+The 20 failures are overlapping behavioral cases, not 20 distinct defects.
+The six added mutations reintroduce a partial commit, permit Advanced while
+a draft is invalid, omit application of a valid candidate, or move the
+empty-profile check before the draft commit, or omit restoring the model or
+dirty flag after empty-profile rejection. Every mutation must compile and
+produce a failed native test assertion to count as caught.
+
+Original tab-state verification, native Qt 6.8.2, g++ 14.2.0, Linux/offscreen:
 
 - Immutable baseline: 27 cases, 22 assertion failures, exit 1
 - Candidate: 27 cases, 0 failures, exit 0
@@ -115,16 +154,22 @@ existing unrelated limitations were recorded rather than reported as green:
 - `tests/refresh-painting/test_refresh_painting.py` uses an existing synthetic
   `Model` without the newly required `sortProfiles` member
 
-Review reproduced the following pre-existing behavior on both baseline and
-candidate, outside this bounded fix:
+The original tab-state review reproduced partial mutation during invalid
+Basic parsing and blocked recovery after that mutation emptied the model.
+This follow-up covers those invalid-draft paths. It also rejects an empty
+profile created by clearing its only Basic rule; the earlier ordering could
+accept that empty result because the check ran before the commit.
 
-- Any intentional Basic edit still rebuilds all simple actions, so an
-  Advanced-only field can be dropped even when its own action was not edited
-- Invalid Basic parsing partially replaces the model and still permits entering
-  Advanced, where simultaneous edits can later be replaced by a Basic commit
-- If invalid parsing removed a chain's only simple rule, the existing empty-chain
-  check runs before committing corrected Basic text and blocks immediate Save
+Intentional successful Basic edits still rebuild all simple actions. Whether
+to preserve Advanced-only fields after an intentional Basic edit is unchanged
+product policy and outside this patch. The `UpdateSimpleRules` parser itself
+still has its previous behavior; atomicity is implemented at the dialog's
+whole-draft commit boundary.
 
-Do not interpret this patch as transactional validation, comprehensive invalid
-input recovery, or preservation of Advanced-only fields after an intentional
-Basic edit.
+Save metadata and note-file timing, rule syntax policy, full Advanced display
+helpers, outer route-manager persistence, and the full application are not
+validated by this fixture. No real application, core, network request,
+settings store, lifecycle test, or memory diagnostic is run. No tools are
+installed. The full suite is deliberately not run for this follow-up's bounded
+inert route-editor scope; the broader historical results above are not a new
+full-suite pass. CMake remains unavailable in this verification environment.

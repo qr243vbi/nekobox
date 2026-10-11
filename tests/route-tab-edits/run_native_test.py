@@ -56,6 +56,8 @@ def generate(root, build):
     chunks['tab_connection'] = between(editor, '    connect(ui->tabWidget', '    connect(ui->route_import_json')
     chunks['edit_connections'] = between(editor, '    connect(ui->rule_name,', '    deleteShortcut =')
     chunks['chain_copy'] = function(model, 'RoutingChain::RoutingChain(const RoutingChain& other)')
+    chunks['rule_selection'] = between(function(editor, 'void RouteItem::updateRuleSection()'),
+                                       '    if (currentIndex == -1) return;', '    auto currentAttr =')
     model_functions = [
         'QJsonArray get_as_array(', 'bool isValidStrArray(',
         'RouteRule::RouteRule()', 'RouteRule::RouteRule(const RouteRule& other)',
@@ -86,7 +88,7 @@ def generate(root, build):
         'source_root': str(root),
         'source_sha256': {key: hashlib.sha256(path.read_bytes()).hexdigest() for key, path in paths.items()},
         'segment_sha256': {key: hashlib.sha256(value.encode()).hexdigest() for key, value in chunks.items()},
-        'boundary': 'Verbatim production bodies/fields/selected constructor blocks; focused constructor orchestration, synthetic application services, and no-op Advanced display helpers. Production autocomplete class compiled unchanged. Real Qt6 UI, signals, model data types, JSON, and dialogs; emitted in-memory chain reopen, not disk persistence.',
+        'boundary': 'Verbatim production bodies/fields/selected constructor blocks; focused constructor orchestration, synthetic application services, a bounds-checked production selection lookup, and no-op remaining Advanced display helpers. Production autocomplete class compiled unchanged. Real Qt6 UI, signals, model data types, JSON, and dialogs; emitted in-memory chain reopen, not disk persistence.',
     }
     (build / 'source-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     return paths
