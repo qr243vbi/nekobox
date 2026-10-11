@@ -131,8 +131,11 @@ namespace Configs {
             auto sni2 = GetQueryValue(query, "peer");
             if (!sni1.isEmpty()) stream->sni = sni1;
             if (!sni2.isEmpty()) stream->sni = sni2;
+            // Preserve the primary key; only honor its alias in a valid raw URL.
             stream->allow_insecure =
-                QStringList{"1", "true"}.contains(query.queryItemValue("allowInsecure"));
+                (query.hasQueryItem("allowInsecure") || QUrl(link, QUrl::StrictMode).isValid()) &&
+                QStringList{"1", "true"}.contains(
+                    query.queryItemValue(query.hasQueryItem("allowInsecure") ? "allowInsecure" : "insecure"));
             stream->reality_pbk = GetQueryValue(query, "pbk", "");
             stream->reality_sid = GetQueryValue(query, "sid", "");
             stream->utlsFingerprint = GetQueryValue(query, "fp", "");

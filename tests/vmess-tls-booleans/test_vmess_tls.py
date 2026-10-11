@@ -59,6 +59,22 @@ def main():
         if args.mutation:
             target, before, after = MUTATIONS[args.mutation]
             if path == target:
+                if source.count(before) != 1 and before == FIXED:
+                    # The later URL-alias compatibility change keeps this
+                    # strict rule but supplies a presence-selected key.
+                    primary = 'query.queryItemValue("allowInsecure")'
+                    selected = 'query.queryItemValue(query.hasQueryItem("allowInsecure") ? "allowInsecure" : "insecure")'
+                    gate = '(query.hasQueryItem("allowInsecure") || QUrl(link, QUrl::StrictMode).isValid())'
+                    pattern = (r'stream->allow_insecure\s*=\s*' +
+                               '(?:' + re.escape(gate) + r'\s*&&\s*)?' +
+                               re.escape('QStringList{"1", "true"}.contains(') +
+                               r'\s*' + re.escape(selected + ');'))
+                    matches = re.findall(pattern, source)
+                    if len(matches) == 1:
+                        before = matches[0]
+                        after = after.replace(primary, selected)
+                        if gate in before:
+                            after = f'if ({gate}) {{ {after} }} else {{ stream->allow_insecure = false; }}'
                 if source.count(before) != 1:
                     raise ValueError('Mutation anchor changed: ' + args.mutation)
                 source = source.replace(before, after)

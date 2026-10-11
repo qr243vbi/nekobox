@@ -84,8 +84,11 @@ namespace Configs {
             stream->ech_config = ech_config;
             stream->query_server_name = GetQueryValue(query, "query_server_name");
         }
+        // Preserve the primary key; only honor its alias in a valid raw URL.
         stream->allow_insecure =
-            QStringList{"1", "true"}.contains(query.queryItemValue("allowInsecure"));
+            (query.hasQueryItem("allowInsecure") || QUrl(link, QUrl::StrictMode).isValid()) &&
+            QStringList{"1", "true"}.contains(
+                query.queryItemValue(query.hasQueryItem("allowInsecure") ? "allowInsecure" : "insecure"));
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->reality_spx = GetQueryValue(query, "spx", "/");
