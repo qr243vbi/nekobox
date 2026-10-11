@@ -827,6 +827,7 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
 bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
     #ifndef USE_CPP_PROXY_CONFIGURATOR
     bool isok = true;
+    QString error;
     int inbound_proxy_type = Configs::dataStore->inbound_proxy_type->value;
     bool socks_supported = inbound_proxy_type == 2;
     if (!socks_supported){
@@ -841,23 +842,27 @@ bool MainWindow::set_spmode_system_proxy(bool enable, bool save) {
             #ifdef USE_CPP_PROXY_CONFIGURATOR
             SetSystemProxy(socks_port, socks_port, Configs::dataStore->proxy_scheme);
             #else
-            defaultClient->EnableSystemProxy(Configs::dataStore->inbound_address, 
+            error = defaultClient->EnableSystemProxy(Configs::dataStore->inbound_address,
                 socks_port, socks_supported, &isok);
             #endif
         } else {
             #ifdef USE_CPP_PROXY_CONFIGURATOR
             ClearSystemProxy();
             #else
-            defaultClient->DisableSystemProxy(&isok);
+            error = defaultClient->DisableSystemProxy(&isok);
             #endif
         }
     }
     #ifndef USE_CPP_PROXY_CONFIGURATOR
+    if (isok && !error.isEmpty()) {
+        MW_show_log(tr("Failed to set system proxy: ") + error);
+        isok = false;
+    }
     #ifdef DEBUG_MODE
     qDebug() << "System proxy set to " << enable << " with status " << isok;
     #endif 
     if (!isok){
-        enable = !enable;
+        enable = Configs::dataStore->spmode_system_proxy;
     }
     #endif
 

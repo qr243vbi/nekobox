@@ -1,0 +1,241 @@
+#include <QDebug>
+#include <QString>
+#include <QStringList>
+#include <iostream>
+#include <optional>
+#include <string>
+#include <utility>
+
+QStringList logs;
+void MW_show_log(const QString &message) { logs.append(message); }
+namespace Configs {
+struct ProxyType { int value = 2; };
+struct DataStore {
+    ProxyType selected;
+    ProxyType *inbound_proxy_type = &selected;
+    bool core_running = true;
+    bool spmode_system_proxy = false;
+    QString inbound_address = "127.0.0.1";
+    int inbound_socks_port = 1080;
+    QString proxy_scheme = "http";
+    QStringList remember_spmode;
+    int saves = 0;
+    QStringList saved_modes;
+    void Save() { ++saves; saved_modes = remember_spmode; }
+} storage;
+DataStore *dataStore = &storage;
+struct WindowSettings { bool remember_last_profile = true; } windowStorage;
+WindowSettings *windowSettings = &windowStorage;
+}
+namespace libcore {
+struct SystemProxy { std::string address; int port; bool support_socks; };
+struct EmptyReq {};
+struct ErrorResp { std::string error; };
+}
+@STATUS@
+// Synthetic service/transport boundary. There is no real Thrift or OS API here.
+struct FakeTransport {
+    bool ok = true;
+    QString service_error;
+    QString transport_error = "synthetic transport failure";
+    int enables = 0, disables = 0;
+    libcore::SystemProxy last_request{};
+    auto response() const {
+        Status status;
+        status.ok = ok;
+        status.what = transport_error.toStdString();
+        std::optional<libcore::ErrorResp> reply;
+        if (ok) reply = libcore::ErrorResp{service_error.toStdString()};
+        return std::make_pair(status, reply);
+    }
+    auto EnableSystemProxy(const libcore::SystemProxy &request) {
+        ++enables;
+        last_request = request;
+        return response();
+    }
+    auto DisableSystemProxy(const libcore::EmptyReq &) {
+        ++disables;
+        return response();
+    }
+} transport;
+#define CHANNEL(X, VAL) auto [status, reply] = transport.X(request);
+@CHECK@
+@NOT_OK@
+namespace API {
+struct Client {
+    void onError(const QString &);
+    QString EnableSystemProxy(const QString &, int, bool, bool *);
+    QString DisableSystemProxy(bool *);
+};
+Client client;
+Client *defaultClient = &client;
+@RPC@
+}
+using namespace API;
+int legacy_enables = 0, legacy_disables = 0;
+void SetSystemProxy(int, int, const QString &) { ++legacy_enables; }
+void ClearSystemProxy() { ++legacy_disables; }
+struct MainWindow {
+    int refreshes = 0;
+    bool displayed_proxy_state = false;
+    QString tr(const char *text) { return QString::fromUtf8(text); }
+    void refresh_status() {
+        ++refreshes;
+        displayed_proxy_state = Configs::dataStore->spmode_system_proxy;
+    }
+    bool set_spmode_system_proxy(bool, bool = true);
+} window;
+@MAINWINDOW@
+
+int checks = 0, failures = 0;
+std::string context;
+void check(bool value, const char *label) {
+    ++checks;
+    if (!value) {
+        ++failures;
+        std::cout << "FAIL " << context << ": " << label << '\n';
+    }
+}
+void reset(bool enabled) {
+    Configs::storage = {};
+    Configs::storage.inbound_proxy_type = &Configs::storage.selected;
+    Configs::storage.spmode_system_proxy = enabled;
+    Configs::storage.remember_spmode = {"tun"};
+    if (enabled) Configs::storage.remember_spmode.append("system_proxy");
+    Configs::windowStorage = {};
+    transport = {};
+    logs.clear();
+    window = {};
+    window.displayed_proxy_state = enabled;
+    legacy_enables = legacy_disables = 0;
+}
+void check_state(bool expected, bool result, bool save, bool remember) {
+    const auto &ds = Configs::storage;
+    check(result == expected, "returned checkbox state");
+    check(ds.spmode_system_proxy == expected, "stored enabled state");
+    check(window.refreshes == 1 && window.displayed_proxy_state == expected,
+          "refresh observes retained/accepted state");
+    check(ds.saves == (save ? 1 : 0), "save flag respected");
+    check(ds.remember_spmode.contains("tun"), "unrelated mode preserved");
+    if (save) {
+        check(ds.saved_modes == ds.remember_spmode, "saved modes match result");
+        check(ds.saved_modes.contains("system_proxy") == (expected && remember),
+              "remembered mode reflects accepted state");
+    }
+}
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+void check_calls(bool enabling) {
+    check(transport.enables == (enabling ? 1 : 0) &&
+          transport.disables == (enabling ? 0 : 1), "correct RPC called exactly once");
+    if (enabling) {
+        check(transport.last_request.address == "127.0.0.1" &&
+              transport.last_request.port == 1080 &&
+              transport.last_request.support_socks == (Configs::storage.selected.value == 2),
+              "inbound arguments forwarded");
+    }
+    check(legacy_enables == 0 && legacy_disables == 0, "no legacy call");
+}
+#endif
+int main() {
+    // Verify the transport success flag and service error are distinct contracts.
+    for (bool enabling : {false, true}) {
+        reset(!enabling);
+        context = enabling ? "enable wrapper" : "disable wrapper";
+        transport.service_error = QString::fromUtf8("synthetic service denied: 代理");
+        bool rpcOK = false;
+        QString error = enabling ? client.EnableSystemProxy("127.0.0.1", 1080, true, &rpcOK)
+                                 : client.DisableSystemProxy(&rpcOK);
+        check(rpcOK && error == transport.service_error,
+              "successful transport retains service error");
+    }
+    for (bool initial : {false, true}) {
+        for (bool save : {false, true}) {
+            for (bool remember : {false, true}) {
+#ifdef USE_CPP_PROXY_CONFIGURATOR
+                reset(initial);
+                context = initial ? "legacy disable" : "legacy enable";
+                Configs::windowStorage.remember_last_profile = remember;
+                const auto before = Configs::storage.remember_spmode;
+                const bool result = window.set_spmode_system_proxy(!initial, save);
+                check_state(!initial, result, save, remember);
+                check(legacy_enables == (!initial ? 1 : 0) &&
+                      legacy_disables == (initial ? 1 : 0), "legacy configurator used once");
+                check(transport.enables == 0 && transport.disables == 0, "no RPC in legacy mode");
+                check(logs.isEmpty(), "no failure log on success");
+                if (!save) check(before == Configs::storage.remember_spmode, "save=false preserves modes");
+#else
+                for (int response = 0; response < 4; ++response) {
+                    reset(initial);
+                    context = std::string(initial ? "disable" : "enable") +
+                        " response=" + std::to_string(response) +
+                        " save=" + std::to_string(save) + " remember=" + std::to_string(remember);
+                    Configs::windowStorage.remember_last_profile = remember;
+                    const auto before = Configs::storage.remember_spmode;
+                    if (response == 1) transport.service_error = QString::fromUtf8("synthetic service denied: 代理");
+                    if (response == 2) transport.ok = false;
+                    if (response == 3) Configs::storage.core_running = false;
+                    const bool expected = response == 0 ? !initial : initial;
+                    const bool result = window.set_spmode_system_proxy(!initial, save);
+                    check_state(expected, result, save, remember);
+                    if (response != 3) check_calls(!initial);
+                    else check(transport.enables == 0 && transport.disables == 0, "stopped core skips transport");
+                    if (!save) check(before == Configs::storage.remember_spmode, "save=false preserves modes");
+                    check(logs.size() == (response == 0 ? 0 : 1), "one useful failure log, no duplicate");
+                    if (response == 1) check(logs.join('\n').contains(transport.service_error), "service error reported verbatim");
+                    if (response == 2) check(logs.join('\n').contains(transport.transport_error), "transport error retained");
+                }
+#endif
+            }
+        }
+        reset(initial);
+        context = initial ? "enabled no-op" : "disabled no-op";
+        transport.service_error = "unused synthetic failure";
+        const bool result = window.set_spmode_system_proxy(initial, false);
+        check_state(initial, result, false, true);
+        check(transport.enables == 0 && transport.disables == 0 &&
+              legacy_enables == 0 && legacy_disables == 0, "no redundant RPC or legacy call");
+        check(logs.isEmpty(), "no error on no-op");
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+        reset(initial);
+        context = initial ? "disable retry" : "enable retry";
+        transport.service_error = "synthetic service failure";
+        check(window.set_spmode_system_proxy(!initial) == initial, "failed attempt retains state");
+        transport.service_error.clear();
+        check(window.set_spmode_system_proxy(!initial) == !initial, "next successful attempt changes state");
+        check(transport.enables + transport.disables == 2, "failure does not suppress retry");
+#endif
+    }
+#ifndef USE_CPP_PROXY_CONFIGURATOR
+    reset(false);
+    context = "startup remembered proxy failure";
+    Configs::storage.remember_spmode.append("system_proxy");
+    const auto startup_modes = Configs::storage.remember_spmode;
+    transport.service_error = "synthetic startup enable denied";
+    const bool startup_result = window.set_spmode_system_proxy(true, false);
+    check_state(false, startup_result, false, true);
+    check_calls(true);
+    check(Configs::storage.remember_spmode == startup_modes,
+          "startup save=false preserves remembered mode despite runtime failure");
+    check(logs.size() == 1 && logs.first().contains(transport.service_error),
+          "startup failure reports service error once");
+    for (int type : {0, 1, 2}) {
+        reset(false);
+        context = "inbound type=" + std::to_string(type);
+        Configs::storage.selected.value = type;
+        const bool expected = type != 0;
+        const bool result = window.set_spmode_system_proxy(true, false);
+        check_state(expected, result, false, true);
+        if (expected) check_calls(true);
+        else check(transport.enables == 0 && transport.disables == 0, "unsupported inbound stays disabled");
+    }
+    reset(true);
+    context = "unsupported inbound disable failure";
+    Configs::storage.selected.value = 0;
+    transport.service_error = "synthetic disable denied";
+    const bool result = window.set_spmode_system_proxy(true, false);
+    check_state(true, result, false, true);
+    check_calls(false);
+#endif
+    std::cout << "SUMMARY checks=" << checks << " failures=" << failures << '\n';
+    return failures ? 1 : 0;
+}
