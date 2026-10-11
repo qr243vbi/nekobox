@@ -133,7 +133,7 @@ namespace Configs {
     };  
     bool Node::toBoolean() const {
       if (isNumber() || isString() || isBoolean()){
-        return this->isNumber() > 0;
+        return this->toNumber() > 0;
       } else if (isArray() || isMap()){
         return count() > 0;
       } else {
