@@ -1,0 +1,69 @@
+package main
+
+import (
+    "context"
+    "os"
+    "path/filepath"
+    "testing"
+    "nekobox_core/gen"
+    "nekobox_core/internal"
+)
+
+func setup(t *testing.T, root string) {
+    t.Helper()
+    internal.SetRulesetCachedir(root)
+    internal.Calls = 0
+    t.Cleanup(func() { internal.SetRulesetCachedir("") })
+}
+
+func TestClearCommandRemovesOnlyProtocolCaches(t *testing.T) {
+    root := t.TempDir()
+    setup(t, root)
+    for _, path := range []string{"http/a", "https/a", "ftp/a", "ftps/a", "other/keep"} {
+        target := filepath.Join(root, path)
+        if err := os.MkdirAll(filepath.Dir(target), 0700); err != nil { t.Fatal(err) }
+        if err := os.WriteFile(target, []byte("synthetic"), 0600); err != nil { t.Fatal(err) }
+    }
+    if err := os.WriteFile(filepath.Join(root, "keep"), []byte("synthetic"), 0600); err != nil { t.Fatal(err) }
+    reply, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{Clear:true})
+    if err != nil || reply == nil { t.Fatalf("clear failed: reply=%v err=%v", reply, err) }
+    for _, path := range []string{"http", "https", "ftp", "ftps"} {
+        if _, err := os.Stat(filepath.Join(root, path)); !os.IsNotExist(err) { t.Errorf("clear left protocol cache %s: %v", path, err) }
+    }
+    for _, path := range []string{"keep", "other/keep"} {
+        if _, err := os.Stat(filepath.Join(root, path)); err != nil { t.Errorf("unrelated file changed: %s: %v", path, err) }
+    }
+    if internal.Calls != 0 { t.Errorf("clear invoked download/cache lookup %d times", internal.Calls) }
+}
+
+func TestClearCommandReportsFilesystemFailure(t *testing.T) {
+    root := t.TempDir()
+    blocker := filepath.Join(root, "not-a-directory")
+    if err := os.WriteFile(blocker, []byte("keep"), 0600); err != nil { t.Fatal(err) }
+    setup(t, blocker)
+    _, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{Clear:true})
+    if err == nil { t.Fatal("filesystem failure reported as successful clear") }
+    if data, err := os.ReadFile(blocker); err != nil || string(data) != "keep" { t.Fatalf("blocker changed: %q %v", data, err) }
+}
+
+func TestClearWithoutConfiguredDirectoryFailsSafely(t *testing.T) {
+    setup(t, "")
+    _, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{Clear:true})
+    if err == nil { t.Fatal("unconfigured cache reported as successfully cleared") }
+    if internal.Calls != 0 { t.Fatal("clear attempted cache lookup") }
+}
+
+func TestClearMissingDirectoriesIsIdempotent(t *testing.T) {
+    setup(t, filepath.Join(t.TempDir(), "absent"))
+    for i := 0; i < 2; i++ {
+        reply, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{Clear:true})
+        if err != nil || reply == nil { t.Fatalf("missing cache clear failed: %v", err) }
+    }
+    if internal.Calls != 0 { t.Fatal("clear attempted cache lookup") }
+}
+
+func TestOrdinaryCacheCommandStillDelegates(t *testing.T) {
+    setup(t, t.TempDir())
+    reply, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{HTTPURL:"https://example.invalid/synthetic", UseDefaultOutbound:true})
+    if err != nil || reply == nil || reply.FilePath != "synthetic-cache-path" || !reply.Exists || internal.Calls != 1 { t.Fatalf("ordinary fetch changed: reply=%v err=%v calls=%d", reply, err, internal.Calls) }
+}

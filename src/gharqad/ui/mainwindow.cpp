@@ -1689,7 +1689,10 @@ skip_updater_hide:
         actionClearRuleSetCache, &QAction::triggered, this,
         [this]() {
           CHECK_SETTINGS_ACCESS_W
-          clear_ruleset_cache();
+          if (!clear_ruleset_cache()) {
+            QMessageBox::warning(this, tr("Update Response"),
+                                 tr("Failed to clear ruleset cache"));
+          }
         },
         Qt::SingleShotConnection);
 

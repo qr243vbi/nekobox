@@ -54,14 +54,15 @@ void MainWindow::setup_rpc() {
     }
 }
 
-void MainWindow::clear_ruleset_cache(){
-    bool isok;
+bool MainWindow::clear_ruleset_cache(){
+    bool isok = false;
     libcore::CacheURLRequest req;
     req.filepath = false;
     req.clear = true;
     req.use_default_outbound = false;
     req.http_url = "";
-    defaultClient->CacheHTTP(&isok, req);
+    auto result = defaultClient->CacheHTTP(&isok, req);
+    return isok && result.has_value();
 }
 
 

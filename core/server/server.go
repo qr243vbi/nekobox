@@ -60,6 +60,12 @@ func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported,
 
 func (s *server) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
 	out := new(gen.CacheURLResult_)
+	if in.Clear {
+		if err := internal.ClearRulesets(); err != nil {
+			return nil, err
+		}
+		return out, nil
+	}
 	var exists bool
 	out.FilePath = internal.CacheHttpBool(in.HTTPURL, in.UseDefaultOutbound, &exists)
 	out.Exists = exists

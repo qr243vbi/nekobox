@@ -236,9 +236,9 @@ func cacheRuleSet(url string, format string, tag badoption.Listable[string]) opt
 	return ruleset
 }
 
-func ClearRulesets() {
+func ClearRulesets() error {
 	if ruleset_cachedir == "" {
-		return
+		return fmt.Errorf("ruleset cache directory is not configured")
 	}
 	paths := []string{
 		"ftps",
@@ -248,8 +248,11 @@ func ClearRulesets() {
 	}
 
 	for _, path := range paths {
-		_ = os.RemoveAll(filepath.Clean(filepath.Join(ruleset_cachedir, path)))
+		if err := os.RemoveAll(filepath.Clean(filepath.Join(ruleset_cachedir, path))); err != nil {
+			return fmt.Errorf("clear %s ruleset cache: %w", path, err)
+		}
 	}
+	return nil
 }
 
 func ModifyRulesets(opt *option.Options) {
