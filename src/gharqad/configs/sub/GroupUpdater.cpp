@@ -905,12 +905,14 @@ parse_json:
         (json_contains_inbounds || json_contains_endpoints)) {
       bean->core = "internal-full";
       bean->config_simple = str;
-    } else if (json.contains("type")) {
+    } else if (json["type"].isString() && !json["type"].toString().isEmpty()) {
       bean->core = "internal";
       bean->config_simple = str;
     } else {
       goto ret_loop;
     }
+    AddProxy(ent);
+    goto ret_loop;
   }
 
   if (str.startsWith("//") || str.startsWith("#") || str.length() < 2) {
