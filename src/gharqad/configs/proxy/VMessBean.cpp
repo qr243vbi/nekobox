@@ -131,7 +131,8 @@ namespace Configs {
             auto sni2 = GetQueryValue(query, "peer");
             if (!sni1.isEmpty()) stream->sni = sni1;
             if (!sni2.isEmpty()) stream->sni = sni2;
-            if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
+            stream->allow_insecure =
+                QStringList{"1", "true"}.contains(query.queryItemValue("allowInsecure"));
             stream->reality_pbk = GetQueryValue(query, "pbk", "");
             stream->reality_sid = GetQueryValue(query, "sid", "");
             stream->utlsFingerprint = GetQueryValue(query, "fp", "");
