@@ -258,6 +258,19 @@ func CacheHttpBool(url string, use_default_outbound bool, s *bool) string {
 	return path
 }
 
+// RefreshHttp replaces one cached URL only after its new download succeeds.
+func RefreshHttp(url string, use_default_outbound bool) string {
+	if url == "" {
+		return ""
+	}
+	path := urlToPath(url)
+	if err := DownloadFile(url, path, use_default_outbound); err != nil {
+		log.Printf("Error while refreshing %s: %v", url, err)
+		return ""
+	}
+	return path
+}
+
 func CacheHttp(url string, use_default_outbound bool) string {
 	return CacheHttpBool(url, use_default_outbound, nil)
 }

@@ -1644,6 +1644,7 @@ skip_updater_hide:
             if (mu_download_update.try_lock()) {
               QMutex mut;
               showRuleSetData = true;
+              bool cacheUpdated = !ruleSetMap.isEmpty();
               for (auto &item : ruleSetMap.values()) {
                 if (!showRuleSetData) {
                   break;
@@ -1660,7 +1661,9 @@ skip_updater_hide:
                 });
                 mut.lock();
                 mut.unlock();
-                this->fetch_ruleset_cache(url);
+                if (!this->fetch_ruleset_cache(url)) {
+                  cacheUpdated = false;
+                }
                 //           NetworkRequestHelper::DownloadAsset(
                 //               Configs::get_jsdelivr_link(url), str);
               }
@@ -1668,8 +1671,13 @@ skip_updater_hide:
               if (showRuleSetData) {
                 showRuleSetData = false;
                 runOnUiThread([=, this] {
-                  QMessageBox::information(this, tr("Update Response"),
-                                           tr("Rulesets cache is updated"));
+                  if (cacheUpdated) {
+                    QMessageBox::information(this, tr("Update Response"),
+                                             tr("Rulesets cache is updated"));
+                  } else {
+                    QMessageBox::warning(this, tr("Update Response"),
+                                         tr("Failed to update ruleset cache"));
+                  }
 
                   this->setDownloadReport({}, false);
                   this->UpdateDataView(true);

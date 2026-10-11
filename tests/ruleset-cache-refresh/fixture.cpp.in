@@ -1,0 +1,109 @@
+#include <QApplication>
+#include <QAction>
+#include <QMenu>
+#include <QObject>
+#include <QString>
+#include <QCoreApplication>
+#include <QMutex>
+#include <QVariant>
+#include <QMap>
+#include <iostream>
+#include <memory>
+#include <optional>
+#include <vector>
+#include <string>
+#include <functional>
+
+#define CHECK_SETTINGS_ACCESS_W
+namespace libcore {
+struct CacheURLRequest { bool filepath=false, clear=false, use_default_outbound=false; std::string http_url; bool refresh=false, refresh_set=false; void __set_refresh(bool value) {refresh=value;refresh_set=true;} };
+struct CacheURLResult { std::string file_path; bool exists=false; };
+}
+struct Reply { bool rpcOK=true; std::optional<libcore::CacheURLResult> result=libcore::CacheURLResult{"cache",true}; };
+struct FakeClient {
+    std::vector<Reply> replies;
+    std::vector<libcore::CacheURLRequest> requests;
+    std::function<void()> afterRequest;
+    std::optional<libcore::CacheURLResult> CacheHTTP(bool *ok, const libcore::CacheURLRequest &req) {
+        const auto reply=replies.at(requests.size());
+        requests.push_back(req); *ok=reply.rpcOK;
+        if (afterRequest) afterRequest();
+        return reply.result;
+    }
+};
+std::unique_ptr<FakeClient> defaultClient;
+namespace Configs {
+struct Store { bool network_use_proxy=true; };
+Store backing;
+Store *dataStore=&backing;
+QString get_jsdelivr_link(const QString &value) { return value; }
+}
+struct QMessageBox {
+    static inline int warnings=0, successes=0;
+    static void warning(QObject*, const QString&, const QString&) { ++warnings; }
+    static void information(QObject*, const QString&, const QString&) { ++successes; }
+};
+struct DownloadProgressReport {QString fileName; int downloadedSize=0, totalSize=0;};
+template<class F> void runOnNewThread(F f) { f(); }
+template<class F> void runOnUiThread(F f) { f(); }
+class MainWindow : public QObject {
+public:
+    QMenu menu;
+    QMutex mu_download_update;
+    QMap<QString,QVariant> ruleSetMap;
+    bool showRuleSetData=false, reportVisible=false;
+    int redraws=0;
+    void setDownloadReport(const DownloadProgressReport&,bool visible) {reportVisible=visible;}
+    void UpdateDataView(bool) {++redraws;}
+    @DECLARATION@
+    void setup() { auto *updateMenu=&menu; @ACTION@ }
+};
+@METHOD@
+
+int main(int argc,char **argv) {
+    QApplication app(argc,argv);
+    int failures=0,assertions=0;
+    auto check=[&](bool ok,const char*name){++assertions;if(!ok){++failures;std::cerr<<"FAIL "<<name<<'\n';}};
+    const std::vector<Reply> cases={
+        {false,std::nullopt}, {false,libcore::CacheURLResult{"cached",true}},
+        {true,std::nullopt}, {true,libcore::CacheURLResult{"",false}},
+        {true,libcore::CacheURLResult{"",true}},
+        {true,libcore::CacheURLResult{"cached",false}}, {true,libcore::CacheURLResult{"new",true}}
+    };
+    for(size_t i=0;i<cases.size();++i){
+        defaultClient=std::make_unique<FakeClient>();defaultClient->replies={cases[i]};
+        MainWindow window;
+        const bool result=window.fetch_ruleset_cache("https://cache.invalid/rules.srs");
+        check(result==(i>=6),"helper requires transport, reply and nonempty path");
+        const auto &req=defaultClient->requests.at(0);
+        check(!req.clear && req.refresh && req.refresh_set && !req.filepath && req.use_default_outbound && req.http_url=="https://cache.invalid/rules.srs","helper requests refresh of exact URL");
+    }
+    {
+        defaultClient=std::make_unique<FakeClient>();defaultClient->replies={Reply{}};
+        MainWindow window;
+        check(!window.fetch_ruleset_cache(""),"empty URL rejected before RPC");
+        check(defaultClient->requests.empty(),"empty URL causes no RPC");
+    }
+    for(int scenario=0;scenario<7;++scenario){
+        defaultClient=std::make_unique<FakeClient>();
+        QMessageBox::warnings=QMessageBox::successes=0;
+        MainWindow window;
+        if(scenario!=3){window.ruleSetMap.insert("first","https://cache.invalid/a");window.ruleSetMap.insert("second","https://cache.invalid/b");}
+        defaultClient->replies={Reply{},Reply{},Reply{}};
+        if(scenario==6)window.ruleSetMap.insert("empty",QVariant{});
+        if(scenario==1)defaultClient->replies[0]={true,libcore::CacheURLResult{"",false}};
+        if(scenario==2)defaultClient->replies[1]={false,std::nullopt};
+        if(scenario==4)defaultClient->afterRequest=[&]{window.showRuleSetData=false;};
+        if(scenario==5)window.mu_download_update.lock();
+        window.setup(); window.menu.actions().front()->trigger();
+        check(defaultClient->requests.size()==size_t(scenario==3 || scenario==5 ? 0 : scenario==4 ? 1 : 2),"batch attempts all URLs despite early failure, skips busy/cancelled work");
+        for(const auto &req:defaultClient->requests)check(!req.clear && req.refresh && !req.http_url.empty(),"batch never sends destructive clear, including empty map values");
+        check(QMessageBox::successes==(scenario==0 ? 1 : 0),"only successful nonempty completed batch claims success");
+        check(QMessageBox::warnings==(scenario==1 || scenario==2 || scenario==3 || scenario==6 ? 1 : 0),"failed or empty batch displays warning");
+        if(scenario!=4 && scenario!=5)check(!window.showRuleSetData && !window.reportVisible,"completed batch clears progress visibility");
+        if(scenario==5)window.mu_download_update.unlock();
+        check(window.mu_download_update.try_lock(),"batch releases download lock");window.mu_download_update.unlock();
+    }
+    std::cout<<assertions-failures<<'/'<<assertions<<" assertions passed\n";
+    return failures ? 1 : 0;
+}

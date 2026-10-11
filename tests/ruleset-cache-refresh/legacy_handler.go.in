@@ -1,0 +1,29 @@
+package main
+
+import ("context"; "nekobox_core/gen"; "nekobox_core/internal")
+
+// Historical handler bodies, unchanged apart from receiver type names.
+// Original a536846 and the clear-only command candidate respectively.
+type originalServer struct{}
+type clearOnlyServer struct{}
+func (s *originalServer) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
+	out := new(gen.CacheURLResult_)
+	var exists bool
+	out.FilePath = internal.CacheHttpBool(in.HTTPURL, in.UseDefaultOutbound, &exists)
+	out.Exists = exists
+	return out, nil
+}
+
+func (s *clearOnlyServer) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
+	out := new(gen.CacheURLResult_)
+	if in.Clear {
+		if err := internal.ClearRulesets(); err != nil {
+			return nil, err
+		}
+		return out, nil
+	}
+	var exists bool
+	out.FilePath = internal.CacheHttpBool(in.HTTPURL, in.UseDefaultOutbound, &exists)
+	out.Exists = exists
+	return out, nil
+}
