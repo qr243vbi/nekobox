@@ -1,0 +1,132 @@
+package main
+
+import (
+	"context"
+	stdjson "encoding/json"
+	"fmt"
+	"github.com/sagernet/sing-box/option"
+	"github.com/sagernet/sing/common/json"
+	sHTTP "github.com/sagernet/sing/protocol/http"
+	"github.com/sagernet/sing/service"
+	"net/url"
+	"os"
+)
+
+// This options-only registry constructs option structs, never transports.
+// It follows the same mechanism as the pinned core's option/dns_test.go.
+type optionsRegistry struct{}
+
+func (optionsRegistry) OptionTypes() []string { return []string{"https", "h3"} }
+func (optionsRegistry) CreateOptions(kind string) (any, bool) {
+	if kind == "https" || kind == "h3" {
+		return new(option.RemoteHTTPSDNSServerOptions), true
+	}
+	return nil, false
+}
+
+type fixture struct {
+	Address  string             `json:"address"`
+	Actual   stdjson.RawMessage `json:"actual"`
+	Expected struct {
+		Type       string `json:"type"`
+		Server     string `json:"server"`
+		ServerPort uint16 `json:"server_port"`
+		Path       string `json:"path"`
+	} `json:"expected"`
+	URI         string `json:"uri"`
+	PathError   bool   `json:"path_error"`
+	Category    string `json:"category"`
+	StandardURL bool   `json:"standard_url"`
+}
+
+func main() {
+	var rows []fixture
+	if err := stdjson.NewDecoder(os.Stdin).Decode(&rows); err != nil {
+		panic(err)
+	}
+	ctx := service.ContextWith[option.DNSTransportOptionsRegistry](context.Background(), optionsRegistry{})
+	failed := 0
+	for _, row := range rows {
+		var server option.DNSServerOptions
+		if err := json.UnmarshalContext(ctx, row.Actual, &server); err != nil {
+			fmt.Printf("FAIL options %s: %v\n", row.Address, err)
+			failed++
+			continue
+		}
+		opts, ok := server.Options.(*option.RemoteHTTPSDNSServerOptions)
+		if !ok {
+			panic("wrong options registry type")
+		}
+		if server.Type != row.Expected.Type || opts.Server != row.Expected.Server || opts.ServerPort != row.Expected.ServerPort || opts.Path != row.Expected.Path {
+			fmt.Printf("FAIL decoded fields %s\n", row.Address)
+			failed++
+		}
+		// Both pinned HTTPS and H3 constructors use this exact helper and
+		// default; their constructors are intentionally never called here.
+		path := opts.Path
+		if path == "" {
+			path = "/dns-query"
+		}
+		dest := url.URL{Scheme: "https", Host: "dns.example"}
+		err := sHTTP.URLSetPath(&dest, path)
+		if row.PathError {
+			if err == nil {
+				fmt.Printf("FAIL accepted invalid escape %s\n", row.Address)
+				failed++
+			}
+			continue
+		}
+		if err != nil {
+			fmt.Printf("FAIL path %s: %v\n", row.Address, err)
+			failed++
+			continue
+		}
+		// Exchange serializes destination.String() before constructing its
+		// request. A pure URL parse models that serialization boundary without
+		// creating or sending any HTTP request (String adds a missing slash).
+		outbound, err := url.Parse(dest.String())
+		if err != nil {
+			panic(err)
+		}
+		if outbound.RequestURI() != row.URI || outbound.RawQuery != "" || outbound.Fragment != "" {
+			fmt.Printf("FAIL URI %s: got %q want %q\n", row.Address, outbound.RequestURI(), row.URI)
+			failed++
+		}
+		if row.StandardURL {
+			// Independent standard URL parser control (semicolon host-port
+			// syntax is an app extension, handled separately in Qt tests).
+			parsed, err := url.Parse(row.Address)
+			if err != nil {
+				panic(err)
+			}
+			expected := parsed.EscapedPath()
+			if expected == "" {
+				expected = "/dns-query"
+			}
+			if outbound.RequestURI() != expected {
+				fmt.Printf("FAIL standard URL path %s\n", row.Address)
+				failed++
+			}
+		}
+	}
+	// The decoder must reject malformed option shapes, independently of
+	// transport construction or network reachability.
+	invalid := []string{
+		`{"type":"https","server":"dns.example","path":true}`,
+		`{"type":"h3","server":"dns.example","path":{"url":"/a/b"}}`,
+		`{"type":"https","server":"dns.example","server_port":65536}`,
+		`{"type":"h3","server":"dns.example","raw_query":"x=1"}`,
+	}
+	for _, input := range invalid {
+		var value option.DNSServerOptions
+		if err := json.UnmarshalContext(ctx, []byte(input), &value); err == nil {
+			fmt.Printf("FAIL accepted malformed DNS options %s\n", input)
+			failed++
+		}
+	}
+	fmt.Printf("SUMMARY schema rejection controls=%d\n", len(invalid))
+	fmt.Printf("SUMMARY core options/URL helper checks=%d failures=%d; no transport constructed\n", len(rows), failed)
+	if failed != 0 {
+		os.Exit(1)
+	}
+}
