@@ -688,11 +688,12 @@ func wsainit() {
 	}
 }
 
-func InstallVcRedist() {
+func InstallVcRedist() error {
 	var download string = getDownloadDir()
 	var VCRedistDownload string = ""
 	var VCRedistFile string = ""
 	if download == "" {
+		return fmt.Errorf("could not find the Downloads folder")
 	} else {
 		if runtime.GOARCH == "amd64" {
 			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x64.exe"
@@ -703,18 +704,28 @@ func InstallVcRedist() {
 		} else if runtime.GOARCH == "386" {
 			VCRedistDownload = "https://aka.ms/vc14/vc_redist.x86.exe"
 			VCRedistFile = "vc14_redist.x86.exe"
+		} else {
+			return fmt.Errorf("unsupported Visual C++ Redistributable architecture: %s", runtime.GOARCH)
 		}
-		VCRedistFile = filepath.Join(getDownloadDir(), VCRedistFile)
+		VCRedistFile = filepath.Join(download, VCRedistFile)
 		if !fileExists(VCRedistFile) {
 			var err error = DownloadWithProgress(VCRedistDownload, VCRedistFile)
 			if err != nil {
-				fmt.Printf("Download failed: %s", err.Error())
-				os.Exit(1)
+				return fmt.Errorf("download Visual C++ Redistributable: %w", err)
 			}
 		}
 		cmd := exec.Command(VCRedistFile)
-		cmd.Run()
+		if err := cmd.Run(); err != nil {
+			// Windows Installer also reports success when a reboot is needed.
+			if exitErr, ok := err.(*exec.ExitError); ok {
+				if code := exitErr.ExitCode(); code == 1641 || code == 3010 {
+					return nil
+				}
+			}
+			return fmt.Errorf("install Visual C++ Redistributable: %w", err)
+		}
 	}
+	return nil
 }
 
 func mustAtoi(s string) uint32 {
@@ -756,7 +767,10 @@ func InstallerMode() {
 	//	tagmap[ppid] = true
 
 	if *install_vcpkg {
-		InstallVcRedist()
+		if err := InstallVcRedist(); err != nil {
+			fmt.Printf("Visual C++ Redistributable installation failed: %s\n", err)
+			os.Exit(1)
+		}
 	}
 
 	if *kill_processes != "" {
