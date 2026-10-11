@@ -105,11 +105,14 @@ QString QUICBean::ToShareLink() const {
   if (!query.isEmpty())
     url.setQuery(query);
 
-  if (portRange.isEmpty())
-    return url.toString(QUrl::FullyEncoded);
-  else
-    return url.toString(QUrl::FullyEncoded)
-        .replace(":0?", ":" + portRange + "?");
+  auto link = url.toString(QUrl::FullyEncoded);
+  if (!portRange.isEmpty()) {
+    // Replace only the authority's :0 placeholder, regardless of query/fragment.
+    const auto authorityEnd =
+        url.scheme().size() + 3 + url.authority(QUrl::FullyEncoded).size();
+    link.replace(authorityEnd - 2, 2, ":" + portRange);
+  }
+  return link;
 }
 
 CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() const {
