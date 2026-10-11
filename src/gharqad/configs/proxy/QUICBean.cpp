@@ -396,6 +396,8 @@ bool QUICBean::TryParseLink(const QString &link) {
     hop_interval = GetQueryValue(query, "hop_interval");
 
     sni = GetQueryValue(query, "sni");
+  } else {
+    return false;
   }
 
   return true;
