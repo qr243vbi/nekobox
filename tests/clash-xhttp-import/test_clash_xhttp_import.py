@@ -24,6 +24,11 @@ PRODUCTION = (
     'src/gharqad/configs/proxy/Bean2CoreObj_box.cpp',
     'src/nekobox/configs/proxy/AbstractBeanExtra.hpp',
     'src/gharqad/dataStore/base64.cpp',
+    'src/nekobox/dataStore/Configs.hpp',
+    'src/nekobox/dataStore/ConfigItem.hpp',
+    'src/gharqad/dataStore/Configs.cpp',
+    'src/gharqad/dataStore/ConfigItem.cpp',
+    'src/nekobox/configs/proxy/Preset.hpp',
 )
 
 
@@ -38,10 +43,25 @@ def main():
         source = subprocess.check_output(['git', '-C', str(args.repo), 'show', f'{args.ref}:{path}'], text=True) if args.ref else (args.repo / path).read_text()
         hashes[path] = hashlib.sha256(source.encode()).hexdigest()
         return source
-    utils, utils_h, stream, updater, core, extra, base64 = map(read, PRODUCTION)
+    utils, utils_h, stream, updater, core, extra, base64, configs_h, item_h, configs, item, preset = map(read, PRODUCTION)
     fields = section(stream, 'class V2rayStreamSettings : public JsonStore {', 'V2rayStreamSettings() : JsonStore()')
     kcp = section(stream, 'class KCPExtra: public JsonStore {', 'KCPExtra(){};')
-    code = (HERE / 'support.hpp').read_text().replace('STREAM_FIELDS', fields).replace('KCP_FIELDS', kcp).replace('HEADER_PAIRS', function(stream, 'QMap<QString, QString> GetHeaderPairs('))
+    # Keep the real enum declarations, macros, lookup map and conversions. A
+    # QString stand-in accepts comparisons rejected by the production class.
+    enums = section(configs_h, '#define WIDGET_HPP_INCLUDED\n', '\ntemplate<typename B, typename C>')
+    enums += '\nnamespace Configs_ConfigItem {\n' + function(item_h, 'class JsonEnum {') + ';\n}\n'
+    enums += section(utils_h, '#define INIT_BEAN_MAP INIT_MAP(Configs::AbstractBean)', '#define ADD_MAP(X, Y, B)')
+    enums += '\nnamespace Preset::SingBox {' + section(preset, 'namespace Preset::SingBox {', '} // namespace Preset::SingBox') + '}\n'
+    enums += '\nnamespace Configs {\nusing Configs_ConfigItem::JsonEnum;\n'
+    enums += section(stream, 'namespace Configs {', '    class KCPExtra: public JsonStore {') + '}\n'
+    # These warnings are in unchanged production enum implementations. Limit
+    # suppression to those bodies; updater/emitter/fixtures remain -Werror.
+    enums += '\n#pragma GCC diagnostic push\n#pragma GCC diagnostic ignored "-Wunused-parameter"\n#pragma GCC diagnostic ignored "-Wunused-variable"\n#if defined(__GNUC__) && !defined(__clang__)\n#pragma GCC diagnostic ignored "-Wcatch-value"\n#endif\n'
+    enums += section(item, '// --- Constructors ---', 'signed char configItem::compare(JsonStore * store, configItem * item, JsonStore * other_store)')
+    enums += '\nnamespace Configs_ConfigItem {\nvoid JsonEnum::trigger'
+    enums += section(configs, '    void JsonEnum::trigger', '} // namespace Configs_ConfigItem') + '}\n'
+    enums += '#pragma GCC diagnostic pop\n'
+    code = (HERE / 'support.hpp').read_text().replace('ENUM_SUPPORT', enums).replace('STREAM_FIELDS', fields).replace('KCP_FIELDS', kcp).replace('HEADER_PAIRS', function(stream, 'QMap<QString, QString> GetHeaderPairs('))
     code += '\n' + section(utils_h, '#include <utility>\n', '\n\nQString Quote(')
     for signature in ('QString Node2QString(', 'QStringList Node2QStringList(', 'int Node2Int(', 'bool Node2Bool(', 'YAML::Node NodeChild(', 'QString SubStrBefore(', 'QString SubStrAfter(', 'QJsonArray QListStr2QJsonArray(', 'QJsonObject QMapString2QJsonObject('):
         code += '\n' + function(utils, signature)

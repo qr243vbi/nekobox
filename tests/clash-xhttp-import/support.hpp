@@ -12,10 +12,13 @@
 #include <memory>
 #include <list>
 #include <cstdlib>
+#include <boost/bimap.hpp>
+#include <type_traits>
 // Bean storage/reflection and application output are test-only boundaries.
 // The complete updater and conversion helpers below are inserted verbatim.
-using V2RAYTransportsEnum = QString;
-struct VmessPacketEncodingsEnum : QString { using QString::operator=; explicit VmessPacketEncodingsEnum(int) {} };
+ENUM_SUPPORT
+static_assert(std::is_base_of_v<Configs_ConfigItem::JsonEnum, Configs::V2RAYTransportsEnum>);
+static_assert(!std::is_base_of_v<QString, Configs::V2RAYTransportsEnum>);
 #define DECLARE_STORE_TYPE(...)
 struct KCPExtra { KCP_FIELDS };
 #define FIRST_OR_SECOND(a,b) ((a).isEmpty() ? (b) : (a))
