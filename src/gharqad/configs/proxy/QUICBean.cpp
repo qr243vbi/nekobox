@@ -297,16 +297,48 @@ bool QUICBean::TryParseLink(const QString &link) {
   using namespace From_Link;
   auto url = QUrl(link);
   if (!url.isValid()) {
-    if (!url.errorString().startsWith("Invalid port"))
+    if (!url.errorString().startsWith("Invalid port") ||
+        !QStringList{"hysteria", "hy2", "hysteria2"}.contains(url.scheme()))
+      return false;
+    // QUrl only accepts a scalar port. Hysteria share links also support
+    // comma-separated ports and closed ranges in the authority.
+    const auto authorityStart = link.indexOf("://") + 3;
+    const auto authority = link.mid(authorityStart)
+                               .section('/', 0, 0)
+                               .section('?', 0, 0)
+                               .section('#', 0, 0);
+    const auto portStart = authority.lastIndexOf(':') + 1;
+    const auto portText = authority.mid(portStart);
+    auto ranges = portText.split(',');
+    for (auto &range : ranges) {
+      const auto bounds = range.split('-');
+      if (bounds.size() > 2)
+        return false;
+      uint previous = 0;
+      for (const auto &bound : bounds) {
+        if (bound.isEmpty())
+          return false;
+        for (const auto ch : bound) {
+          if (ch < QLatin1Char('0') || ch > QLatin1Char('9'))
+            return false;
+        }
+        bool ok;
+        const auto port = bound.toUInt(&ok);
+        if (!ok || port > 65535 || port < previous)
+          return false;
+        previous = port;
+      }
+      range.replace('-', ':');
+    }
+    // Reparse the original link with only the validated port union replaced.
+    // setPort() alone could clear a separate invalid-host error in QUrl.
+    auto scalarLink = link;
+    scalarLink.replace(authorityStart + portStart, portText.size(), "0");
+    url = QUrl(scalarLink);
+    if (!url.isValid() || url.host().isEmpty())
       return false;
     entity->serverPort = 0;
-    serverPorts =
-        QString::fromStdString(
-            URLParser::Parse((link.split("?")[0] + "/").toStdString()).port)
-            .split(",");
-    for (int i = 0; i < serverPorts.size(); i++) {
-      serverPorts[i].replace("-", ":");
-    }
+    serverPorts = ranges;
   }
   auto query = GetQuery(url);
 
