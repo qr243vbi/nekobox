@@ -281,8 +281,10 @@ int main(int argc, char **argv) {
     int appdataIndex = Configs::dataStore->argv.lastIndexOf("-appdata") + 1;
     if (Configs::dataStore->argv.size() > appdataIndex &&
         !Configs::dataStore->argv.at(appdataIndex).startsWith("-")) {
-      Configs::dataStore->appdataDir =
-          Configs::dataStore->argv.at(appdataIndex);
+      const auto appdataDir = Configs::dataStore->argv.at(appdataIndex);
+      if (!appdataDir.isEmpty()) {
+        Configs::dataStore->appdataDir = QDir(appdataDir).absolutePath();
+      }
     }
   } if (Configs::dataStore->argv.contains("-deeplink")) {
     int appdataIndex = Configs::dataStore->argv.lastIndexOf("-deeplink") + 1;

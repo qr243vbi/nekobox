@@ -10,15 +10,47 @@
 #include <nekobox/sys/Settings.h>
 #include <nekobox/dataStore/Configs.hpp>
 
+static QStringList AutoRun_Arguments() {
+    QStringList arguments{"-tray"};
+    if (Configs::dataStore->flag_use_appdata) {
+        arguments << "-appdata";
+        if (!Configs::dataStore->appdataDir.isEmpty()) {
+            arguments << Configs::dataStore->appdataDir;
+        }
+    }
+    return arguments;
+}
 
 #ifdef Q_OS_WIN
 
 #include <QSettings>
 
+static QString Windows_QuoteArgument(const QString &argument) {
+    if (!argument.isEmpty() && !argument.contains(' ') &&
+        !argument.contains('\t') && !argument.contains('"')) {
+        return argument;
+    }
+    QString quoted = "\"";
+    int backslashes = 0;
+    for (const auto ch : argument) {
+        if (ch == '\\') {
+            ++backslashes;
+        } else {
+            quoted += QString(ch == '"' ? backslashes * 2 + 1 : backslashes, '\\');
+            quoted += ch;
+            backslashes = 0;
+        }
+    }
+    quoted += QString(backslashes * 2, '\\');
+    return quoted + '"';
+}
+
 QString Windows_GenAutoRunString() {
     auto appPath = getApplicationPath();
     appPath = "\"" + QDir::toNativeSeparators(appPath) + "\"";
-    appPath += " -tray";
+    for (const auto &argument : AutoRun_Arguments()) {
+        appPath += " " + Windows_QuoteArgument(argument);
+    }
     return appPath;
 }
 
@@ -56,6 +88,30 @@ bool AutoRun_IsEnabled() {
 
 #define NEWLINE "\n"
 
+static QString DesktopEntry_QuoteArgument(QString argument) {
+    // Exec quoting is decoded after the desktop-entry string-value escapes.
+    argument.replace("\\", "\\\\");
+    argument.replace("\"", "\\\"");
+    argument.replace("`", "\\`");
+    argument.replace("$", "\\$");
+    argument.replace("%", "%%");
+    argument = "\"" + argument + "\"";
+    argument.replace("\\", "\\\\");
+    argument.replace("\n", "\\n");
+    argument.replace("\r", "\\r");
+    argument.replace("\t", "\\t");
+    return argument;
+}
+
+QString Unix_GenAutoRunString() {
+    QStringList arguments{getApplicationPath()};
+    arguments.append(AutoRun_Arguments());
+    for (auto &argument : arguments) {
+        argument = DesktopEntry_QuoteArgument(argument);
+    }
+    return arguments.join(" ");
+}
+
 //  launchatlogin.cpp
 //  ShadowClash
 //
@@ -73,15 +129,6 @@ void AutoRun_SetEnabled(bool enable) {
     QString appName = QCoreApplication::applicationName();
     QString userAutoStartPath = getUserAutostartDir_private();
     QString desktopFileLocation = userAutoStartPath + appName + QLatin1String(".desktop");
-    QStringList appCmdList;
-
-    appCmdList << getApplicationPath();
-
-    appCmdList << "-tray";
-
-    if (Configs::dataStore->flag_use_appdata) {
-        appCmdList << "-appdata";
-    }
 
     if (enable) {
         if (!QDir().exists(userAutoStartPath) && !QDir().mkpath(userAutoStartPath)) {
@@ -104,7 +151,7 @@ void AutoRun_SetEnabled(bool enable) {
 #endif
         ts << QLatin1String("[Desktop Entry]") << NEWLINE
            << QLatin1String("Name=") << appName << NEWLINE
-           << QLatin1String("Exec=") << appCmdList.join(" ") << NEWLINE
+           << QLatin1String("Exec=") << Unix_GenAutoRunString() << NEWLINE
            << QLatin1String("Terminal=") << "false" << NEWLINE
            << QLatin1String("Categories=") << "Network" << NEWLINE
            << QLatin1String("Type=") << "Application" << NEWLINE
