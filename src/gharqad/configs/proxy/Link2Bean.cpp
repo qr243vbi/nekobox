@@ -43,7 +43,7 @@ void From_Link::add_tls(std::shared_ptr<V2rayStreamSettings> stream,
     stream->sni = sni2;
   stream->alpn = GetQueryValue(query, "alpn");
   stream->allow_insecure =
-      !QStringList{"0", "false"}.contains(query.queryItemValue("insecure"));
+      QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
   auto ech_config = GetQueryValue(query, "ech_config");
   if ((stream->enable_ech = (!ech_config.isEmpty()))) {
     stream->ech_config = ech_config;
