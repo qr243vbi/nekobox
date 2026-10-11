@@ -1401,7 +1401,7 @@ skip_updater_hide:
             CHECK_SETTINGS_ACCESS_W
             Configs::windowSettings->remember_last_profile = checked;
             ui->actionRemember_last_proxy->setChecked(checked);
-            Configs::dataStore->Save();
+            Configs::windowSettings->Save();
           });
   connect(ui->actionStart_with_system, &QAction::triggered, this,
           [=, this](bool checked) {
