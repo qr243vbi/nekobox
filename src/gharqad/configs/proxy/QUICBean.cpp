@@ -412,7 +412,7 @@ bool QUICBean::TryParseLink(const QString &link) {
     entity->name = url.fragment(QUrl::FullyDecoded);
     entity->serverAddress = url.host();
     if (entity->serverPort > 0)
-      entity->serverPort = url.port();
+      entity->serverPort = url.port(443);
     obfsPassword = GetQueryValue(query, "obfs-password");
     allowInsecure =
         QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
