@@ -814,7 +814,7 @@ MainWindow::MainWindow(QWidget *parent)
 #endif
     software_name = (Configs::windowSettings->program_name.trimmed());
     if (software_name == "") {
-      software_name = globalSettings.value("program_name", "Iblis").toString();
+      software_name = globalSettings.value("program_name", "NyameBox").toString();
     }
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
