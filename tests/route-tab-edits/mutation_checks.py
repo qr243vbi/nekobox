@@ -35,11 +35,30 @@ def main():
     mutations = [
         ('reload-dirty-draft', CPP, 'if (!simpleBoxesDirty) loadSimpleBoxes();', 'loadSimpleBoxes();'),
         ('rebuild-untouched-basic', CPP, '    if (!simpleBoxesDirty) return {};\n', ''),
-        ('forget-success-reset', CPP, '    if (res.isEmpty()) simpleBoxesDirty = false;\n', ''),
-        ('accept-invalid-draft', CPP, '    if (res.isEmpty()) simpleBoxesDirty = false;', '    simpleBoxesDirty = false;'),
+        ('forget-success-reset', CPP, '        simpleBoxesDirty = false;\n', ''),
+        ('accept-invalid-draft', CPP, '    if (res.isEmpty()) {', '    if (true) {'),
         ('forget-load-reset', CPP, '    simpleBoxesDirty = false;\n}', '}'),
         ('cancel-shallow-copy', MODEL, 'Rules.push_back(std::make_shared<RouteRule>(*item));', 'Rules.push_back(item);'),
     ]
+    mutations += [
+        ('apply-invalid-before-validation', CPP, '    if (res.isEmpty()) {',
+         '    chain->Rules = candidate.Rules;\n    if (res.isEmpty()) {'),
+        ('allow-invalid-advanced', CPP, '                ui->tabWidget->setCurrentIndex(1);\n', ''),
+        ('omit-valid-candidate-commit', CPP, '        chain->Rules = std::move(candidate.Rules);\n', ''),
+        ('omit-empty-rejection-rollback', CPP, '        chain->Rules = previousRules;\n', ''),
+        ('omit-empty-draft-restore', CPP, '        simpleBoxesDirty = previousDirty;\n', ''),
+    ]
+    # Moving the commit after the empty-profile check recreates both the stale
+    # empty-model rejection and the newly-empty-profile acceptance.
+    editor_source = (ROOT / CPP).read_text()
+    commit_start = editor_source.index('    QString res = commitSimpleBoxes();',
+                                       editor_source.index('void RouteItem::accept()'))
+    commit_end = editor_source.index('    QList<std::shared_ptr<Configs::RouteRule>> tmpChain;', commit_start)
+    empty_end = editor_source.index('    chain->defaultOutboundID =', commit_end)
+    commit_block = editor_source[commit_start:commit_end]
+    empty_block = editor_source[commit_end:empty_end]
+    mutations.append(('check-empty-before-commit', CPP,
+                      commit_block + empty_block, empty_block + commit_block))
     # Each editor is also tested in isolation; editing the other eight must not
     # hide a missing textChanged connection for this one.
     loop = re.search(r'    for \(auto\* editor : \{[^}]+\}\) \{', (ROOT / CPP).read_text())
