@@ -12,6 +12,7 @@
 #include <nekobox/api/RPC.h>
 
 #include <QDebug>
+#include <QPointer>
 #include <QThread>
 #include <algorithm>
 
@@ -68,6 +69,7 @@ void ProxyAutoTester::Start() {
 }
 
 void ProxyAutoTester::Stop() {
+    ++runGeneration;
     testTimer->stop();
     healthCheckTimer->stop();
     isTestingInProgress = false;
@@ -76,12 +78,15 @@ void ProxyAutoTester::Stop() {
 
 void ProxyAutoTester::Reset() {
     Stop();
+    QMutexLocker poolLock(&workingPoolMutex);
     workingProxyPool.clear();
     lastTestTime.clear();
     failureCount.clear();
     currentTestOffset = 0;
     activeProxyFailureCount = 0;
-    emit workingPoolUpdated(workingProxyPool);
+    const auto pool = workingProxyPool;
+    poolLock.unlock();
+    emit workingPoolUpdated(pool);
     logStatus("Auto-testing state reset");
 }
 
@@ -111,7 +116,7 @@ void ProxyAutoTester::RunTestCycle() {
     if (proxiesToTest.isEmpty()) {
         logStatus("No proxies available to test");
         isTestingInProgress = false;
-        emit testCycleCompleted(0, workingProxyPool.size());
+        emit testCycleCompleted(0, GetWorkingProxies().size());
         return;
     }
 
@@ -173,6 +178,7 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
 
         if (isHealthy) {
             activeProxyFailureCount = 0; // Reset failure count on success
+            QMutexLocker poolLock(&workingPoolMutex);
             proxy->is_working = (true);
             proxy->last_auto_test_time = QDateTime::currentSecsSinceEpoch();
             proxy->Save();
@@ -193,6 +199,8 @@ void ProxyAutoTester::CheckActiveProxyHealth() {
 void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
     logStatus(QString("Handling failure for proxy %1 after %2 attempts").arg(proxyId).arg(attemptCount));
 
+    QMutexLocker poolLock(&workingPoolMutex);
+
     // Mark proxy as not working
     auto proxy = Configs::profileManager->GetProfile(proxyId);
     if (proxy) {
@@ -202,7 +210,9 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
 
     // Remove from working pool
     workingProxyPool.removeAll(proxyId);
-    emit workingPoolUpdated(workingProxyPool);
+    const auto pool = workingProxyPool;
+    poolLock.unlock();
+    emit workingPoolUpdated(pool);
 
     // The TUN failover setting does not change proxy-mode behavior.
     if (Configs::dataStore->started_id == proxyId &&
@@ -217,7 +227,10 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
             QString proxyName = nextProxy ? nextProxy->DisplayTypeAndName() : QString::number(nextProxyId);
 
             // Trigger the switch in the main window
-            runOnUiThread([=] {
+            runOnUiThread([guard = QPointer<ProxyAutoTester>(this), generation = runGeneration.load(),
+                           proxyId, nextProxyId, proxyName] {
+                if (!guard || !guard->canDeliverFailover(proxyId, generation)) return;
+                if (!guard->isBackupAvailable(nextProxyId)) return;
                 MW_show_log(QString("[Auto-Test] Active proxy failed, switching to: %1").arg(proxyName));
                 auto mw = GetMainWindow();
                 if (mw) mw->profile_start(nextProxyId, true);
@@ -228,14 +241,29 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
             logStatus("No working proxies available for failover");
             emit noWorkingProxiesAvailable();
 
-            runOnUiThread([] {
+            runOnUiThread([guard = QPointer<ProxyAutoTester>(this), generation = runGeneration.load(), proxyId] {
+                if (!guard || !guard->canDeliverFailover(proxyId, generation)) return;
                 MW_show_log("[Auto-Test] Active proxy failed but no backup proxy available!");
             });
         }
     }
 }
 
+bool ProxyAutoTester::canDeliverFailover(int proxyId, quint64 generation) const {
+    return generation == runGeneration.load() && isEnabled() &&
+           !Configs::dataStore->prepare_exit && Configs::dataStore->core_running &&
+           proxyId == Configs::dataStore->started_id &&
+           (Configs::dataStore->spmode_vpn ? isTunFailoverEnabled() : true);
+}
+
+bool ProxyAutoTester::isBackupAvailable(int proxyId) const {
+    QMutexLocker poolLock(&workingPoolMutex);
+    const auto backup = Configs::profileManager->GetProfile(proxyId);
+    return backup && backup->is_working && workingProxyPool.contains(proxyId);
+}
+
 int ProxyAutoTester::GetNextWorkingProxy() {
+    QMutexLocker poolLock(&workingPoolMutex);
     pruneWorkingPool();
 
     if (workingProxyPool.isEmpty()) {
@@ -247,10 +275,12 @@ int ProxyAutoTester::GetNextWorkingProxy() {
 }
 
 QList<int> ProxyAutoTester::GetWorkingProxies() const {
+    QMutexLocker poolLock(&workingPoolMutex);
     return workingProxyPool;
 }
 
 bool ProxyAutoTester::IsProxyWorking(int proxyId) const {
+    QMutexLocker poolLock(&workingPoolMutex);
     return workingProxyPool.contains(proxyId);
 }
 
@@ -363,7 +393,7 @@ bool ProxyAutoTester::shouldTestProxy(std::shared_ptr<Configs::ProxyEntity> prox
 void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
     if (proxyIds.isEmpty()) {
         isTestingInProgress = false;
-        emit testCycleCompleted(0, workingProxyPool.size());
+        emit testCycleCompleted(0, GetWorkingProxies().size());
         return;
     }
 
@@ -380,7 +410,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
         if (proxies.isEmpty()) {
             logStatus("No valid proxies to test");
             isTestingInProgress = false;
-            emit testCycleCompleted(0, workingProxyPool.size());
+            emit testCycleCompleted(0, GetWorkingProxies().size());
             return;
         }
 
@@ -389,7 +419,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
         if (!buildObject->error.isEmpty()) {
             logStatus("Failed to build test config: " + buildObject->error);
             isTestingInProgress = false;
-            emit testCycleCompleted(0, workingProxyPool.size());
+            emit testCycleCompleted(0, GetWorkingProxies().size());
             return;
         }
 
@@ -397,7 +427,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
         if (buildObject->outboundTags.empty() && buildObject->fullConfigs.empty()) {
             logStatus("No testable configs generated");
             isTestingInProgress = false;
-            emit testCycleCompleted(0, workingProxyPool.size());
+            emit testCycleCompleted(0, GetWorkingProxies().size());
             return;
         }
 
@@ -424,7 +454,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
             if (!rpcOK || !result.has_value()) {
                 logStatus("RPC test call failed");
                 isTestingInProgress = false;
-                emit testCycleCompleted(0, workingProxyPool.size());
+                emit testCycleCompleted(0, GetWorkingProxies().size());
                 return;
             }
 
@@ -444,6 +474,8 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
 
                 bool isWorking = res.error.empty() && res.latency_ms > 0
                                 && res.latency_ms < getLatencyThreshold();
+
+                QMutexLocker poolLock(&workingPoolMutex);
 
                 // Update proxy status
                 proxy->is_working = (isWorking);
@@ -482,6 +514,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
 
             bool rpcOK;
             auto result = API::defaultClient->Test(&rpcOK, req);
+            QMutexLocker poolLock(&workingPoolMutex);
             bool isWorking = false;
             if (rpcOK && result.has_value() && !result->results.empty()) {
                 const auto &res = result->results.front();
@@ -504,18 +537,19 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
         }
 
         pruneWorkingPool();
+        const auto pool = GetWorkingProxies();
 
         logStatus(QString("Test cycle completed: %1 proxies tested, %2 working, pool size: %3")
-            .arg(testedCount).arg(workingCount).arg(workingProxyPool.size()));
+            .arg(testedCount).arg(workingCount).arg(pool.size()));
 
         isTestingInProgress = false;
-        emit testCycleCompleted(testedCount, workingProxyPool.size());
-        emit workingPoolUpdated(workingProxyPool);
+        emit testCycleCompleted(testedCount, pool.size());
+        emit workingPoolUpdated(pool);
 
         // Auto-start a working proxy if none is running
         int currentStartedId = Configs::dataStore->started_id;
-        int workingPoolSize = workingProxyPool.size();
-        bool hasWorkingProxies = !workingProxyPool.isEmpty();
+        int workingPoolSize = pool.size();
+        bool hasWorkingProxies = !pool.isEmpty();
 
         runOnUiThread([=] {
             MW_show_log(QString("[Auto-Test] Current status - started_id: %1, working proxies: %2")
@@ -564,6 +598,7 @@ void ProxyAutoTester::performTest(const QList<int> &proxyIds) {
 }
 
 void ProxyAutoTester::updateWorkingPool(int proxyId, bool isWorking) {
+    QMutexLocker poolLock(&workingPoolMutex);
     if (isWorking) {
         // Add to pool if not already present
         if (!workingProxyPool.contains(proxyId)) {
@@ -580,6 +615,7 @@ void ProxyAutoTester::updateWorkingPool(int proxyId, bool isWorking) {
 }
 
 void ProxyAutoTester::pruneWorkingPool() {
+    QMutexLocker poolLock(&workingPoolMutex);
     int maxPoolSize = getPoolSize();
 
     // Remove excess entries

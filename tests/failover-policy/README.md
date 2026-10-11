@@ -1,114 +1,72 @@
-# TUN failover checkbox policy regression
+# Failover policy and queued-switch regression tests
 
-This is a **local source-level candidate** related to
-[issue #279](https://github.com/qr243vbi/nekobox/issues/279), against
-`a536846c9c74dd8fb104dce3319cbd9672920bb3`. It does not establish end-to-end
-failover behavior or fulfill the entire feature request.
+Related to [issue #279](https://github.com/qr243vbi/nekobox/issues/279).
+These tests cover the TUN checkbox and cancellation of queued failover requests;
+they do not fulfill lowest-latency selection or establish real TUN connectivity.
 
-## Policy and source evidence
+The TUN checkbox gates TUN failover while proxy-mode behavior stays unchanged.
+Failure marking, persistence requests and removal from the working pool still
+occur when switching is disabled. Before a queued switch executes, production
+checks the tester lifetime/generation, auto-test setting, core/shutdown state,
+active profile ID, current TUN policy and backup existence/health/pool membership.
+`Stop()` invalidates pending requests. Pool accesses and health-status accesses
+inside the tester use a shared recursive mutex; RPC and profile-start calls run
+outside that mutex.
 
-`auto_test_tun_failover` is present in the settings model, serialized setting
-mapping, and basic-settings load/save bindings. Its UI label is **Enable TUN
-Failover** and its tooltip says it automatically switches when a **TUN mode**
-proxy fails. `ProxyAutoTester::isTunFailoverEnabled()` reads this setting, but
-baseline `HandleProxyFailure()` never consults it.
+## What executes
 
-The candidate preserves failure marking and pool removal, then permits the
-existing active-proxy failover branch only when:
+The runner extracts production definitions verbatim: `Stop`, `isEnabled`,
+`canDeliverFailover`, `isBackupAvailable`, `GetWorkingProxies`, `IsProxyWorking`,
+`updateWorkingPool`, `HandleProxyFailure`, `GetNextWorkingProxy`,
+`isTunFailoverEnabled`, `getPoolSize`, and `pruneWorkingPool`. New helpers are
+optional when testing older revisions. It also extracts production
+`runOnUiThread` (renaming only its function declaration to avoid the test post
+counter wrapper).
 
-- Proxy mode is active, preserving existing behavior regardless of this checkbox;
-  or
-- TUN mode is active and the TUN failover checkbox is checked.
+The generated C++20 executable uses real Qt6Core, QCoreApplication, QObject
+lifetime, QPointer, QTimer, posted MetaCall events, QRecursiveMutex and worker
+threads. Application boundaries are inert: settings/profiles are in-memory,
+`Save` is a counter with an optional synchronization hook, window starts record
+arguments, and signals/logs are recorders. No application headers or native
+MainWindow are linked; no real profile/configuration store is loaded.
 
-An inactive failed profile never initiates failover. With TUN failover unchecked,
-this branch does not select a replacement, emit a failover/no-backup signal, queue
-a switching/no-backup UI notification, or reset the active failure count.
-Failure bookkeeping still occurs.
+## Coverage and limits
 
-Source anchors:
+The candidate runs 51 scenarios / 416 assertions:
 
-- `src/gharqad/stats/autotester/ProxyAutoTester.cpp`: failure handler, setting
-  getter, pool selection and pruning
-- `src/nekobox/ui/setting/dialog_basic_settings.ui`: checkbox label and tooltip
-- `src/gharqad/ui/setting/dialog_basic_settings.cpp`: checkbox load/save bindings
-- `src/nekobox/dataStore/DataStore.hpp`: default setting value
-- `src/gharqad/dataStore/Configs.cpp`: serialized setting mapping
+- All 32 combinations of TUN/proxy mode, checkbox value, active/inactive failed
+  profile, backup/empty pool, and present/missing failed profile.
+- Failure bookkeeping, pruning, changed settings, and absent main window.
+- Pending switches cancelled after manual switch/stop, settings changes,
+  shutdown/core stop, backup deletion/illness/removal, tester Stop/destruction.
+- Only the later generation delivers after Stop; stale no-backup log suppressed.
+- Real concurrent pool updates and snapshots (20,000 iterations per thread).
+- Backup validation waits for a worker's in-flight failure-status/pool update.
 
-Issue #279 requests optional automatic switching and lowest-latency selection
-within the active group. It had no comments when checked on 2026-10-11. This
-candidate addresses only the ignored TUN-specific checkbox. The existing
-separate no-active-profile auto-start path and pool selection order are unchanged.
+Nine behavioral mutations must fail through assertions, including removal of
+policy, backup validity, and generation checks. Historical baseline
+`a536846c9c74dd8fb104dce3319cbd9672920bb3` also must fail. Baselines lack the
+new backup-validation helper and therefore skip the two concurrency scenarios (their unsynchronized pool
+access can crash instead of producing a policy assertion failure).
 
-## What the test executes
+The surrounding health/RPC workers, profile manager, serialization outside the
+tester, native signal delivery, and real tunnel switching remain outside this
+harness. This is not a complete concurrency audit. Late worker results and
+queued no-active-profile auto-start are separate paths. The native GUI build and
+startup-thread regression tests are verified separately. No installed application
+or running VPN is changed by these tests.
 
-The runner extracts these **five actual production definitions verbatim** from
-the working source or `git show --ref` source:
-
-1. `HandleProxyFailure`
-2. `GetNextWorkingProxy`
-3. `isTunFailoverEnabled`
-4. `getPoolSize`
-5. `pruneWorkingPool`
-
-They are compiled as C++20 with real Qt6Core containers/strings and
-`-Wall -Wextra -Werror`. Test-only boundaries replace all application effects:
-settings and profiles are plain in-memory structs; `Save()` increments a counter;
-`profile_start()` appends arguments to an in-memory vector; UI callbacks are kept
-in a vector and later invoked against that inert window; signals and logs are
-in-memory recorders. No actual application headers are included or linked.
-
-No NekoBox constructor, timer/event loop, core, RPC client, profile manager,
-settings store, health request, real profile start, or network operation runs.
-Qt's actual signal delivery, application settings persistence, thread safety,
-queued-callback races, and real failover are **unverified**. A change of checkbox
-between separate decisions is tested only by assigning an in-memory boolean.
-
-## Coverage
-
-36 scenarios / 377 assertions:
-
-- All 32 combinations of TUN/proxy mode, checked/unchecked, active/inactive
-  failed ID, backup/empty pool, and present/missing failed profile
-- Duplicate failed IDs removed, failure bookkeeping and signal contents retained
-- UI callback is initially queued, then invokes only the inert switch recorder
-- Current checkbox value read on the next decision
-- Missing/unhealthy backup pruned by the extracted production code
-- Null main-window boundary remains safe
-
-The baseline produces 19 failed assertions. Candidate produces zero.
-Six mutations prove the tests reject:
-
-- Ignoring the checkbox (19 failed assertions)
-- Accidentally gating proxy mode too (20)
-- Reversing checkbox polarity (42)
-- Ignoring the active-profile condition (48)
-- Skipping failure bookkeeping when TUN failover is off (24)
-- Ignoring the setting getter's actual value (19)
-
-Mutation results must be clean assertion failures, not compiler errors or crashes.
-
-## Run without installing anything
-
-With an already extracted Qt6 development root:
+## Run
 
 ```sh
-python3 tests/failover-policy/test_failover_policy.py --qt-root /path/to/qt-root
-python3 tests/failover-policy/mutation_checks.py --qt-root /path/to/qt-root
+CXX=clang++ python3 tests/failover-policy/test_failover_policy.py
+CXX=clang++ python3 tests/failover-policy/mutation_checks.py
+CXX='clang++ -fsanitize=undefined -fno-sanitize-recover=all' \
+  python3 tests/failover-policy/test_failover_policy.py
 ```
 
-Or omit `--qt-root` if Qt6Core development files are already available through
-`pkg-config`. The runner prints source SHA256 and Qt compile/runtime versions.
-It does not install packages. `--keep-generated /path/policy.cpp` saves the exact
-assembled test translation unit for inspection.
-
-For an explicit baseline check (exit status 1 expected):
-
-```sh
-python3 tests/failover-policy/test_failover_policy.py \
-  --qt-root /path/to/qt-root \
-  --ref a536846c9c74dd8fb104dce3319cbd9672920bb3
-```
-
-Only these inert policy tests were run for this candidate. The full application
-build and repository-wide tests were not run, because this audit explicitly
-excludes real lifecycle/persistence/network diagnostics and unrelated execution.
+Qt6Core development files must be available through pkg-config. `--qt-root`
+allows an extracted Qt development root; `--keep-generated /path/policy.cpp`
+saves the assembled translation unit. `--ref REVISION` tests committed source.
+The runner prints source SHA256 and Qt compile/runtime versions. It never
+installs packages or accesses the network.

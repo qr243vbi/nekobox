@@ -16,6 +16,13 @@ HERE = Path(__file__).resolve().parent
 SOURCE = 'src/gharqad/stats/autotester/ProxyAutoTester.cpp'
 BASELINE = 'a536846c9c74dd8fb104dce3319cbd9672920bb3'
 SIGNATURES = (
+    'void ProxyAutoTester::Stop()',
+    'bool ProxyAutoTester::isEnabled() const',
+    'bool ProxyAutoTester::canDeliverFailover(',
+    'bool ProxyAutoTester::isBackupAvailable(',
+    'QList<int> ProxyAutoTester::GetWorkingProxies(',
+    'bool ProxyAutoTester::IsProxyWorking(',
+    'void ProxyAutoTester::updateWorkingPool(',
     'void ProxyAutoTester::HandleProxyFailure(',
     'int ProxyAutoTester::GetNextWorkingProxy(',
     'bool ProxyAutoTester::isTunFailoverEnabled(',
@@ -52,6 +59,14 @@ def mutate(source, name):
         new = old + '\n    if (Configs::dataStore->spmode_vpn && !isTunFailoverEnabled()) return;'
     elif name == 'ignore-setting-value':
         old, new = 'return Configs::dataStore->auto_test_tun_failover;', 'return true;'
+    elif name == 'ignore-delivery-policy':
+        old = extract_function(source, 'bool ProxyAutoTester::canDeliverFailover(')
+        new = 'bool ProxyAutoTester::canDeliverFailover(int, quint64) const { return true; }'
+    elif name == 'ignore-backup-validity':
+        old = 'if (!guard->isBackupAvailable(nextProxyId)) return;'
+        new = '/* backup checks removed */'
+    elif name == 'stop-keeps-generation':
+        old, new = '++runGeneration;', '/* no generation change */'
     else:
         raise ValueError(name)
     if source.count(old) != 1:
@@ -67,18 +82,24 @@ def main():
     parser.add_argument('--keep-generated', type=Path)
     parser.add_argument('--mutation', choices=(
         'ignore-checkbox', 'gate-proxy-too', 'invert-checkbox', 'ignore-active-id',
-        'skip-failure-bookkeeping', 'ignore-setting-value'))
+        'skip-failure-bookkeeping', 'ignore-setting-value', 'ignore-delivery-policy',
+        'ignore-backup-validity', 'stop-keeps-generation'))
     args = parser.parse_args()
     source = subprocess.check_output(
         ['git', '-C', str(args.repo), 'show', f'{args.ref}:{SOURCE}'], text=True
     ) if args.ref else (args.repo / SOURCE).read_text()
     print('Source:', args.ref or 'working tree', flush=True)
     print('SHA256:', hashlib.sha256(source.encode()).hexdigest(), SOURCE, flush=True)
-    bodies = '\n\n'.join(extract_function(source, signature) for signature in SIGNATURES)
+    bodies = '\n\n'.join(extract_function(source, signature) for signature in SIGNATURES
+                         if signature in source)
     if args.mutation:
         bodies = mutate(bodies, args.mutation)
         print('MUTATION:', args.mutation, flush=True)
-    code = (HERE / 'support.hpp').read_text() + '\nnamespace Stats {\n' + bodies + '\n}\n' + (HERE / 'checks.cpp').read_text()
+    gui_path = 'src/gharqad/global/GuiUtils.cpp'
+    gui = subprocess.check_output(['git', '-C', str(args.repo), 'show', f'{args.ref}:{gui_path}'], text=True) if args.ref else (args.repo / gui_path).read_text()
+    post = extract_function(gui, 'void runOnUiThread(').replace('void runOnUiThread(', 'void postProductionUiThread(', 1)
+    feature = '#define HAS_BACKUP_VALIDATION\n' if 'bool ProxyAutoTester::isBackupAvailable(' in source else ''
+    code = feature + (HERE / 'support.hpp').read_text() + '\n' + post + '\nnamespace Stats {\n' + bodies + '\n}\n' + (HERE / 'checks.cpp').read_text()
     if args.keep_generated:
         args.keep_generated.write_text(code)
     environment = os.environ.copy()
