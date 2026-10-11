@@ -1,0 +1,140 @@
+package main
+
+import (
+    "context"
+    "errors"
+    "io"
+    "net/http"
+    "os"
+    "strings"
+    "testing"
+    "nekobox_core/gen"
+    "nekobox_core/internal"
+)
+
+type transport func(*http.Request) (*http.Response, error)
+func (f transport) RoundTrip(req *http.Request) (*http.Response, error) { return f(req) }
+func setup(t *testing.T, f transport) {
+    t.Helper()
+    previous := http.DefaultTransport
+    http.DefaultTransport = f
+    internal.SetRulesetCachedir(t.TempDir())
+    t.Cleanup(func() { http.DefaultTransport = previous; internal.SetRulesetCachedir("") })
+}
+func response(body string) *http.Response { return &http.Response{StatusCode:200, Status:"OK", Body:io.NopCloser(strings.NewReader(body))} }
+func command(t *testing.T, url string, refresh bool) *gen.CacheURLResult_ {
+    t.Helper()
+    out, err := (&server{}).CacheHTTP(context.Background(), &gen.CacheURLRequest{HTTPURL:url, Refresh:&refresh, UseDefaultOutbound:true})
+    if err != nil || out == nil { t.Fatalf("RPC failed: %v", err) }
+    return out
+}
+func contents(t *testing.T, path, want string) {
+    t.Helper()
+    got, err := os.ReadFile(path)
+    if err != nil || string(got) != want { t.Fatalf("cache content=%q err=%v want=%q",got,err,want) }
+}
+
+func TestOrdinaryCacheHitDoesNotFetch(t *testing.T) {
+    count:=0
+    setup(t,func(*http.Request)(*http.Response,error){ count++; return response("old"),nil })
+    first:=command(t,"https://cache.invalid/rules.srs",false)
+    second:=command(t,"https://cache.invalid/rules.srs",false)
+    if first.FilePath=="" || !first.Exists || second.FilePath!=first.FilePath || second.Exists || count!=1 { t.Fatalf("hit contract changed: first=%v second=%v count=%d",first,second,count) }
+    contents(t,first.FilePath,"old")
+}
+
+func TestRefreshReplacesExistingFileAndPreservesOtherRulesets(t *testing.T) {
+    count:=0
+    setup(t,func(*http.Request)(*http.Response,error){ count++; if count<3 {return response("old"),nil}; return response("new"),nil })
+    original:=command(t,"https://cache.invalid/rules.srs",false)
+    other:=command(t,"https://cache.invalid/other.srs",false)
+    refreshed:=command(t,"https://cache.invalid/rules.srs",true)
+    if refreshed.FilePath!=original.FilePath || !refreshed.Exists || count!=3 { t.Errorf("refresh reused/deleted cache: result=%v requests=%d",refreshed,count) }
+    contents(t,original.FilePath,"new")
+    contents(t,other.FilePath,"old")
+}
+
+type brokenBody struct{}
+func (*brokenBody) Read([]byte)(int,error) {return 0,io.ErrUnexpectedEOF}
+func (*brokenBody) Close()error{return nil}
+
+func TestFailedRefreshPreservesOldFileAndCanRetry(t *testing.T) {
+    for _, mode:=range []string{"transport","status","body"} { t.Run(mode,func(t *testing.T){
+        count:=0
+        setup(t,func(*http.Request)(*http.Response,error){
+            count++
+            if count==2 {
+                switch mode {case "transport":return nil,errors.New("synthetic offline"); case "status":r:=response("bad");r.StatusCode=503;r.Status="Unavailable";return r,nil;case "body":r:=response("");r.Body=&brokenBody{};return r,nil}
+            }
+            return response(map[bool]string{true:"old",false:"new"}[count==1]),nil
+        })
+        old:=command(t,"https://cache.invalid/rules.srs",false)
+        failed:=command(t,"https://cache.invalid/rules.srs",true)
+        if failed.FilePath!="" || failed.Exists || count!=2 {t.Errorf("failed refresh reported success/no request: result=%v count=%d",failed,count)}
+        contents(t,old.FilePath,"old")
+        retry:=command(t,"https://cache.invalid/rules.srs",true)
+        if retry.FilePath!=old.FilePath || !retry.Exists || count!=3 {t.Fatalf("refresh retry failed: result=%v count=%d",retry,count)}
+        contents(t,retry.FilePath,"new")
+    })}
+}
+
+func TestRefreshMissingEntryFetches(t *testing.T) {
+    count:=0
+    setup(t,func(*http.Request)(*http.Response,error){count++;return response("new"),nil})
+    result:=command(t,"https://cache.invalid/new.srs",true)
+    if result.FilePath=="" || !result.Exists || count!=1 {t.Fatalf("missing-entry refresh failed: result=%v requests=%d",result,count)}
+    contents(t,result.FilePath,"new")
+}
+
+func TestEmptyURLStillMeansClearOnly(t *testing.T) {
+    count:=0
+    setup(t,func(*http.Request)(*http.Response,error){count++;return response("old"),nil})
+    old:=command(t,"https://cache.invalid/rules.srs",false)
+    cleared,err:=(&server{}).CacheHTTP(context.Background(),&gen.CacheURLRequest{Clear:true})
+    if err!=nil {t.Fatal(err)}
+    if cleared.FilePath!="" || count!=1 {t.Fatalf("clear attempted HTTP: %v, %d",cleared,count)}
+    if _,err:=os.Stat(old.FilePath);!os.IsNotExist(err){t.Fatalf("clear left cached file: %v",err)}
+}
+
+func TestEmptyRefreshDoesNotClearExistingCache(t *testing.T) {
+    count:=0
+    setup(t,func(*http.Request)(*http.Response,error){count++;return response("old"),nil})
+    old:=command(t,"https://cache.invalid/rules.srs",false)
+    result:=command(t,"",true)
+    if result.FilePath!="" || result.Exists || count!=1 {t.Fatalf("empty refresh did not safely fail: %v %d",result,count)}
+    contents(t,old.FilePath,"old")
+}
+
+func TestContradictoryClearRefreshIsRejectedWithoutDeletion(t *testing.T) {
+    for _,url:=range []string{"", "https://cache.invalid/rules.srs"} {t.Run(url,func(t *testing.T){
+        count:=0
+        setup(t,func(*http.Request)(*http.Response,error){count++;return response("old"),nil})
+        old:=command(t,"https://cache.invalid/rules.srs",false)
+        refresh:=true
+        _,err:=(&server{}).CacheHTTP(context.Background(),&gen.CacheURLRequest{HTTPURL:url,Clear:true,Refresh:&refresh})
+        if err==nil {t.Error("contradictory command did not return error")}
+        if count!=1 {t.Errorf("contradictory command invoked HTTP: %d",count)}
+        contents(t,old.FilePath,"old")
+    })}
+}
+
+func TestRefreshRequestIsSafeWithLegacyCores(t *testing.T) {
+    cores:=map[string]interface {CacheHTTP(context.Context,*gen.CacheURLRequest)(*gen.CacheURLResult_,error)}{
+        "original":&originalServer{}, "clear-only":&clearOnlyServer{},
+    }
+    for name,core:=range cores {t.Run(name,func(t *testing.T){
+        count:=0
+        setup(t,func(*http.Request)(*http.Response,error){count++;return response("payload"),nil})
+        old:=command(t,"https://cache.invalid/old.srs",false)
+        refresh:=true
+        for _,url:=range []string{"https://cache.invalid/old.srs","https://cache.invalid/new.srs",""} {
+            reply,err:=core.CacheHTTP(context.Background(),&gen.CacheURLRequest{HTTPURL:url,Refresh:&refresh})
+            if err!=nil || reply==nil {t.Fatalf("legacy request rejected: %v",err)}
+            if url=="https://cache.invalid/new.srs" {
+                if !reply.Exists || reply.FilePath=="" {t.Fatalf("legacy fresh fetch not marked downloaded: %v",reply)}
+            } else if reply.Exists {t.Fatalf("legacy hit/empty URL marked freshly downloaded: %v",reply)}
+            contents(t,old.FilePath,"payload")
+        }
+        if count!=2 {t.Fatalf("legacy requests=%d want=2",count)}
+    })}
+}

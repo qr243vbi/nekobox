@@ -67,14 +67,18 @@ bool MainWindow::clear_ruleset_cache(){
 
 
 bool MainWindow::fetch_ruleset_cache(const QString & url){
-    bool isok;
+    if (url.isEmpty()) {
+        return false;
+    }
+    bool isok = false;
     libcore::CacheURLRequest req;
     req.clear = false;
+    req.__set_refresh(true);
     req.filepath = false;
     req.use_default_outbound = Configs::dataStore->network_use_proxy;
     req.http_url = url.toStdString();
-    defaultClient->CacheHTTP(&isok, req);
-    return isok;
+    auto result = defaultClient->CacheHTTP(&isok, req);
+    return isok && result.has_value() && !result->file_path.empty() && result->exists;
 }
 
 void MainWindow::runURLTest(const QString& config, bool useDefault, const QStringList& outboundTags, const QMap<QString, int>& tag2entID, int entID) {

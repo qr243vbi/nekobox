@@ -1,0 +1,33 @@
+package gen
+
+import (
+    "context"
+    "testing"
+    legacy "cache_refresh_wire/legacy"
+    "github.com/apache/thrift/lib/go/thrift"
+)
+
+func TestNewRefreshRequestLegacyReaderKeepsClearFalse(t *testing.T) {
+    request:=NewCacheURLRequest()
+    request.HTTPURL="https://cache.invalid/rules.srs"
+    request.UseDefaultOutbound=true
+    setRefresh(t,request,true)
+    buffer:=thrift.NewTMemoryBuffer()
+    buffer.Write(requestBytes(t,request))
+    old:=legacy.NewCacheURLRequest()
+    if err:=old.Read(context.Background(),thrift.NewTBinaryProtocolConf(buffer,nil));err!=nil {t.Fatal(err)}
+    if old.Clear || old.HTTPURL!=request.HTTPURL || !old.UseDefaultOutbound {t.Fatalf("new refresh changed legacy fields: %v",old)}
+}
+
+func TestLegacyRequestCurrentReaderDefaultsRefreshFalse(t *testing.T) {
+    for _,clear:=range []bool{false,true} {t.Run(map[bool]string{false:"cache",true:"clear"}[clear],func(t *testing.T){
+        old:=legacy.NewCacheURLRequest()
+        old.HTTPURL="https://cache.invalid/rules.srs"
+        old.Clear=clear
+        buffer:=thrift.NewTMemoryBuffer()
+        if err:=old.Write(context.Background(),thrift.NewTBinaryProtocolConf(buffer,nil));err!=nil {t.Fatal(err)}
+        current:=readRequest(t,buffer.Bytes())
+        value,set:=refreshValue(t,current)
+        if value || set || current.Clear!=clear || current.HTTPURL!=old.HTTPURL {t.Fatalf("legacy request defaults changed: %v",current)}
+    })}
+}

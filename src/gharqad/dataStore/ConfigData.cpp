@@ -133,7 +133,7 @@ namespace Configs {
     };  
     bool Node::toBoolean() const {
       if (isNumber() || isString() || isBoolean()){
-        return this->isNumber() > 0;
+        return this->toNumber() > 0;
       } else if (isArray() || isMap()){
         return count() > 0;
       } else {
@@ -374,11 +374,11 @@ namespace Configs {
     };
 
     const Node & Node::at(const EnumFieldName& t) const {
-      return this->at({t});
+      return this->at(QList<EnumFieldName>{t});
     };
 
     Node & Node::at(const EnumFieldName& t) {
-      return this->at({t});
+      return this->at(QList<EnumFieldName>{t});
     };
 
     bool Node::isNothing() const {

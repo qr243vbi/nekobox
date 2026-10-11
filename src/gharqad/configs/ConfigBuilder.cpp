@@ -18,6 +18,7 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QProcess>
+#include <QSet>
 
 #ifdef _WIN32
 #include <winsock2.h>
@@ -309,6 +310,16 @@ static void ResolveOutboundServerForTestConfig(QJsonObject &outbound) {
 static void NormalizeFullConfigDnsForRuntime(QJsonObject &config) {
   auto dns = config["dns"].toObject();
   auto servers = dns["servers"].toArray();
+  // Imported tags belong to the user, including dns-local. Reserve a separate
+  // bootstrap before replacing servers so it cannot resolve through itself.
+  QSet<QString> dnsTags;
+  for (const auto &serverRef : servers) {
+    dnsTags.insert(serverRef.toObject()["tag"].toString());
+  }
+  QString localDnsTag = "dns-local";
+  for (int suffix = 1; dnsTags.contains(localDnsTag); ++suffix) {
+    localDnsTag = "dns-local-" + QString::number(suffix);
+  }
   QJsonArray cleanServers;
   QString firstDnsTag;
   auto remoteDnsAddress = dataStore->routing->remote_dns;
@@ -340,26 +351,16 @@ static void NormalizeFullConfigDnsForRuntime(QJsonObject &config) {
       server["tag"] = tag;
       server["detour"] = "proxy";
       if (!IsIpAddress(server["server"].toString())) {
-        server["domain_resolver"] = "dns-local";
+        server["domain_resolver"] = localDnsTag;
       }
       if (firstDnsTag.isEmpty()) firstDnsTag = tag;
     }
     cleanServers.append(server);
   }
   {
-    bool hasLocal = false;
-    for (const auto &serverRef : cleanServers) {
-      const auto server = serverRef.toObject();
-      if (server["tag"].toString() == "dns-local") {
-        hasLocal = true;
-        break;
-      }
-    }
-    if (!hasLocal) {
-      QJsonObject dnsLocalObj = BuildDnsObject("local", true);
-      dnsLocalObj["tag"] = "dns-local";
-      cleanServers.append(dnsLocalObj);
-    }
+    QJsonObject dnsLocalObj = BuildDnsObject("local", true);
+    dnsLocalObj["tag"] = localDnsTag;
+    cleanServers.append(dnsLocalObj);
     if (!firstDnsTag.isEmpty()) {
       dns["final"] = firstDnsTag;
       auto route = config["route"].toObject();
@@ -1610,17 +1611,18 @@ QJsonObject BuildDnsObject(QString address, bool tunEnabled) {
     type = "quic";
     addr = addr.replace("quic://", "");
   } else if (address.startsWith("https://")) {
+    // Keep the complete escaped path; the core preserves encoded delimiters.
     type = "https";
-    addr = addr.replace("https://", "");
+    addr = addr.sliced(8);
     if (addr.contains("/")) {
-      path = addr.split("/").last();
+      path = addr.mid(addr.indexOf("/"));
       addr = addr.left(addr.indexOf("/"));
     }
   } else if (address.startsWith("h3://")) {
     type = "h3";
-    addr = addr.replace("h3://", "");
+    addr = addr.sliced(5);
     if (addr.contains("/")) {
-      path = addr.split("/").last();
+      path = addr.mid(addr.indexOf("/"));
       addr = addr.left(addr.indexOf("/"));
     }
   }

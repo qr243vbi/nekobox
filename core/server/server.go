@@ -60,10 +60,18 @@ func (s *server) IsSupported(ctx context.Context, in *gen.Type) (*gen.Supported,
 
 func (s *server) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.CacheURLResult_, error) {
 	out := new(gen.CacheURLResult_)
+	if in.Clear && in.GetRefresh() {
+		return nil, errors.New("cannot clear and refresh ruleset cache simultaneously")
+	}
 	if in.Clear {
 		if err := internal.ClearRulesets(); err != nil {
 			return nil, err
 		}
+		return out, nil
+	}
+	if in.GetRefresh() {
+		out.FilePath = internal.RefreshHttp(in.HTTPURL, in.UseDefaultOutbound)
+		out.Exists = out.FilePath != ""
 		return out, nil
 	}
 	var exists bool

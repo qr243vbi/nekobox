@@ -21,9 +21,10 @@ resolve every report in that issue.
 - Only when `tls.ech` is absent does the previous flat
   `tls.ech_config`/`tls.query_server_name` behavior apply, unchanged.
 
-The helper uses `Data::Node::getBoolean()` for the new field. The current
-`toBool()`/`toBoolean()` implementation does not correctly read boolean tags;
-changing that shared conversion or other existing TLS fields is outside this fix.
+The helper uses strict `Data::Node::getBoolean()` for the new field. The shared
+`toBool()`/`toBoolean()` conversion is covered separately by `tests/node-boolean`.
+After the existing type guard, `getBoolean()` and the corrected `toBool()` are
+equivalent for this field; its strict validation remains unchanged.
 
 Rejection is propagated by eight existing JSON bean callers: AnyTLS, Http,
 Juicity, Naive, ShadowTLS, TrojanVLESS (both protocols), TrustTunnel and VMess.
@@ -105,10 +106,13 @@ a native Qt5 application. Optional Qt6 mode uses real Qt JSON parsing for the
 JSON fixtures and exporter roundtrips but still has the following boundaries:
 
 - `Data::Node` construction and lookups are adapters. Actual conversion and type
-  predicate bodies are compiled, including the existing `toBoolean` behavior.
+  predicate bodies are compiled, including `toNumber` and `toBoolean`.
 - `EnumFieldName` compares literal keys. Production normalizes case, underscores
   and hyphens; normalization/collision behavior is not tested. All fixtures use
   canonical keys.
+- In adapter mode, numeric-string `QString::toDouble` conversion throws if
+  reached. Numeric-string behavior is tested separately with actual Qt and
+  production `EnumFieldName` in `tests/node-boolean`.
 - Composite `Node::toQuoted` conversion is an unexercised stub. These tests do
   not claim general malformed-legacy coercion coverage.
 - Unrelated bean field helpers, numeric/header access, entity factory, database,
@@ -126,9 +130,16 @@ before broader compatibility or connection-success claims.
 
 ## Recorded verification
 
+The Node-conversion companion update passed 1,248 checks in both adapter and
+Qt6 Core modes and detected all 16 ECH mutations. The prior accessor mutation
+(`getBoolean()` to `toBool()`) became equivalent after the validated boolean
+conversion was fixed; an inverted-value mutation now checks that regression.
+The notes below describe the earlier ECH-only verification environment.
+
+
 On the supplied environment, current adapter checks and Qt5 JSON-fixture checks
 pass; the immutable baseline fails. The mutation runner verifies that removing
-any propagation guard, using the broken bool accessor, changing default/false
+any propagation guard, inverting the enabled boolean, changing default/false
 semantics, losing either text field, accepting mixed config arrays, or falling
 back on malformed nested ECH is detected by runtime assertions.
 

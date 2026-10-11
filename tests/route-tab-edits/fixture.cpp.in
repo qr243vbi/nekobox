@@ -91,9 +91,18 @@ public:
     QString commitSimpleBoxes();
     void accept() override;
     void updateRouteItemsView();
-    // Advanced display formatting is excluded; production input signal handlers
-    // still edit real RoutingChain/RouteRule data via set_field_value.
-    void updateRuleSection() {}
+    // Keep the production selection read, but record a stale index before it
+    // can cause an unsafe access. Remaining Advanced display work is excluded.
+    int invalidRuleSectionSelections = 0;
+    std::shared_ptr<Configs::RouteRule> displayedRule;
+    void updateRuleSection() {
+        if (currentIndex != -1 && (currentIndex < 0 || currentIndex >= chain->Rules.size())) {
+            ++invalidRuleSectionSelections;
+            return;
+        }
+@rule_selection@
+        displayedRule = ruleItem;
+    }
     void updateRulePreview() {}
     QList<AutoCompleteTextEdit*> boxes() const {
         return {directIp, directDomain, directProcess, proxyIp, proxyDomain,
@@ -166,6 +175,25 @@ static void checkSaved(RouteItem& dialog, const QStringList& expected) {
     RouteItem reopened(dialog.saved);
     reopened.go(1);
     require(reopened.texts() == expected, "Saved/reopened Basic values differ");
+}
+// Snapshot only in-memory route data; no persistence or live configuration.
+static QJsonArray snapshot(const std::shared_ptr<Configs::RoutingChain>& chain) {
+    QJsonArray result;
+    for (const auto& rule : chain->Rules) {
+        auto json = rule->get_rule_json(false, true, {});
+        json["name"] = rule->name;
+        json["type"] = int(rule->type);
+        json["simpleAction"] = int(rule->simpleAction);
+        result.append(json);
+    }
+    return result;
+}
+static std::shared_ptr<Configs::RoutingChain> allActions() {
+    auto chain = initial();
+    chain->UpdateSimpleRules(edits[0] + "\n" + edits[1] + "\n" + edits[2], Configs::direct);
+    chain->UpdateSimpleRules(edits[3] + "\n" + edits[4] + "\n" + edits[5], Configs::proxy);
+    chain->UpdateSimpleRules(edits[6] + "\n" + edits[7] + "\n" + edits[8], Configs::block);
+    return chain;
 }
 int main(int argc, char **argv) {
     QApplication app(argc, argv);
@@ -278,6 +306,122 @@ int main(int argc, char **argv) {
         d.directDomain->setPlainText("domain:corrected.example"); d.clickSave();
         require(bool(d.saved), "Corrected Basic text could not save");
         require(directRule(d.saved)->domain == QStringList{"corrected.example"}, "Correction was not committed");
+    });
+    for (int field = 0; field < edits.size(); ++field) {
+        auto label = QString("invalid field %1 leaves every model rule unchanged").arg(field).toStdString();
+        test(label.c_str(), [field] {
+            auto source = allActions();
+            directRule(source)->port = {"8443"};
+            RouteItem d(source); d.go(1);
+            const auto before = snapshot(d.chain);
+            const auto rulePointers = d.chain->Rules;
+            d.boxes()[field]->setPlainText(edits[field] + "\ninvalid-unprefixed-rule");
+            const auto draft = d.texts();
+            d.clickSave();
+            require(!d.saved, "Invalid draft emitted settingsChanged");
+            require(warnings.join('\n').contains("invalid-unprefixed-rule"), "Invalid line was not reported");
+            require(snapshot(d.chain) == before, "Failed validation partially changed rule data");
+            require(d.chain->Rules == rulePointers, "Failed validation replaced existing rule objects");
+            require(d.texts() == draft && d.simpleBoxesDirty, "Failed validation discarded the Basic draft");
+            require(snapshot(source) == before, "Failed validation modified the caller's chain");
+        });
+    }
+    test("valid action edits remain uncommitted if a later action is invalid", [] {
+        RouteItem d(allActions()); d.go(1);
+        const auto before = snapshot(d.chain);
+        d.directDomain->setPlainText("domain:new-direct.example");
+        d.blockDomain->setPlainText("domain:new-block.example");
+        d.proxyDomain->setPlainText("invalid-proxy-rule");
+        d.clickSave();
+        require(!d.saved, "Invalid later action was accepted");
+        require(snapshot(d.chain) == before, "Earlier valid actions committed before later validation failed");
+        d.proxyDomain->setPlainText("domain:new-proxy.example");
+        d.clickSave();
+        require(bool(d.saved), "Corrected multi-action draft could not Save");
+        require(d.saved->GetSimpleRules(Configs::direct).contains("domain:new-direct.example"), "Corrected Save lost the direct edit");
+        require(d.saved->GetSimpleRules(Configs::block).contains("domain:new-block.example"), "Corrected Save lost the block edit");
+        require(d.saved->GetSimpleRules(Configs::proxy).contains("domain:new-proxy.example"), "Corrected Save lost the proxy edit");
+    });
+    for (int destination : {0, 1, 2, 3}) {
+        auto label = QString("sole simple rule recovers after invalid Save through tab %1").arg(destination).toStdString();
+        test(label.c_str(), [destination] {
+            auto source = std::make_shared<Configs::RoutingChain>();
+            source->UpdateSimpleRules("domain:only.example", Configs::direct);
+            RouteItem d(source); d.go(1);
+            d.directDomain->setPlainText("domain:first-valid.example"); d.go(2); d.go(1);
+            d.directDomain->setPlainText("invalid-only-rule"); d.go(destination); d.clickSave();
+            require(!d.saved, "Invalid sole rule was accepted");
+            d.go(1); d.directDomain->setPlainText("domain:corrected.example"); d.clickSave();
+            require(bool(d.saved), "Corrected sole rule was blocked by the stale empty-model check");
+            require(directRule(d.saved)->domain == QStringList{"corrected.example"}, "Corrected Save used stale data");
+            require(source->GetSimpleRules(Configs::direct) == "domain:only.example\n", "Dialog modified source before settingsChanged was handled");
+        });
+    }
+    for (int origin : {0, 1, 3}) {
+        auto label = QString("invalid Advanced transition from tab %1 returns to Basic").arg(origin).toStdString();
+        test(label.c_str(), [origin] {
+            RouteItem d(initial()); d.go(1);
+            d.directDomain->setPlainText("invalid-unprefixed-rule");
+            const auto before = snapshot(d.chain);
+            const auto draft = d.texts();
+            d.go(origin); d.go(2);
+            require(d.ui->tabWidget->currentIndex() == 1, "Invalid Basic draft remained editable in Advanced");
+            require(d.ui->tabWidget->currentWidget() == d.ui->tabWidget->widget(1), "Tab page and tab selection disagree");
+            require(snapshot(d.chain) == before && d.texts() == draft, "Rejected Advanced transition changed model or draft");
+            require(warnings.size() == 1, "Rejected tab switch did not report exactly one validation warning");
+            d.directDomain->setPlainText("domain:corrected.example"); d.go(2);
+            require(d.ui->tabWidget->currentIndex() == 2, "Corrected draft could not enter Advanced");
+            d.editDirectRule("domain", "advanced-after-correction.example"); d.clickSave();
+            require(bool(d.saved), "Corrected Advanced Save failed");
+            require(directRule(d.saved)->domain == QStringList{"advanced-after-correction.example"}, "Old Basic draft replaced later Advanced edit");
+        });
+    }
+    test("Cancel after valid commit and repeated invalid Save preserves source", [] {
+        auto source = allActions(); const auto before = snapshot(source);
+        RouteItem d(source); d.go(1);
+        d.directDomain->setPlainText("domain:valid-intermediate.example"); d.go(2); d.go(1);
+        d.directDomain->setPlainText("invalid-unprefixed-rule");
+        for (int i = 0; i < 3; ++i) { d.clickSave(); d.go(3); d.go(2); }
+        d.clickCancel();
+        require(!d.saved && d.result() == QDialog::Rejected, "Cancel after validation emitted a save");
+        require(snapshot(source) == before, "Cancel leaked prior commits or validation mutations to input chain");
+    });
+    test("clearing the only simple rule rejects an empty profile", [] {
+        auto source = std::make_shared<Configs::RoutingChain>();
+        source->UpdateSimpleRules("domain:only.example", Configs::direct);
+        RouteItem d(source); d.go(1); d.directDomain->clear(); d.clickSave();
+        require(!d.saved, "Empty profile was saved because emptiness was checked before the draft commit");
+        require(warnings.join('\n').contains("No valid rules"), "Empty committed profile was not reported");
+        d.directDomain->setPlainText("domain:restored.example"); d.clickSave();
+        require(bool(d.saved), "Adding a rule after an empty-profile rejection could not recover");
+        require(directRule(d.saved)->domain == QStringList{"restored.example"}, "Restored rule was not saved");
+    });
+    test("new valid Basic rule recovers a model emptied by Advanced", [] {
+        auto source = std::make_shared<Configs::RoutingChain>();
+        source->UpdateSimpleRules("domain:only.example", Configs::direct);
+        RouteItem d(source); d.go(2);
+        d.chain->Rules.clear(); // Synthetic boundary for Advanced deletion.
+        d.currentIndex = -1;
+        d.go(1); d.directDomain->setPlainText("domain:new.example"); d.clickSave();
+        require(bool(d.saved), "Empty previous model blocked the new valid Basic draft");
+        require(directRule(d.saved)->domain == QStringList{"new.example"}, "New Basic rule was not committed");
+    });
+    test("empty-profile rejection preserves selected model and navigation", [] {
+        auto source = std::make_shared<Configs::RoutingChain>();
+        source->UpdateSimpleRules("domain:only.example", Configs::direct);
+        RouteItem d(source); d.go(2); d.ui->route_items->setCurrentRow(0);
+        require(d.currentIndex == 0 && bool(d.displayedRule), "Advanced selection was not exercised");
+        d.go(1);
+        const auto before = d.chain->Rules;
+        d.directDomain->clear(); d.clickSave();
+        require(!d.saved, "Empty draft was accepted");
+        for (int tab : {0, 3, 1}) d.go(tab);
+        require(d.invalidRuleSectionSelections == 0, "Failed Save left an out-of-range Advanced rule selection");
+        require(d.chain->Rules == before && d.simpleBoxesDirty, "Empty-profile rejection discarded previous model or draft ownership");
+        require(d.currentIndex == 0 && d.displayedRule == before[0], "Failed Save lost the original selection");
+        require(d.directDomain->toPlainText().isEmpty(), "Navigation discarded the rejected empty draft");
+        d.directDomain->setPlainText("domain:recovered.example"); d.clickSave();
+        require(bool(d.saved), "Corrected selected model could not Save");
     });
     std::cout << "SUMMARY cases=" << total << " failures=" << failed << " Qt=" << qVersion() << '\n';
     return failed ? 1 : 0;

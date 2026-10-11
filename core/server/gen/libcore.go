@@ -4670,11 +4670,13 @@ func (p *QueryURLTestResponse) Validate() error {
 //   - Clear
 //   - Filepath
 //   - UseDefaultOutbound
+//   - Refresh
 type CacheURLRequest struct {
 	HTTPURL            string `thrift:"http_url,1" db:"http_url" json:"http_url"`
 	Clear              bool   `thrift:"clear,2" db:"clear" json:"clear"`
 	Filepath           bool   `thrift:"filepath,3" db:"filepath" json:"filepath"`
 	UseDefaultOutbound bool   `thrift:"use_default_outbound,4" db:"use_default_outbound" json:"use_default_outbound"`
+	Refresh            *bool  `thrift:"refresh,5" db:"refresh" json:"refresh,omitempty"`
 }
 
 func NewCacheURLRequest() *CacheURLRequest {
@@ -4695,6 +4697,19 @@ func (p *CacheURLRequest) GetFilepath() bool {
 
 func (p *CacheURLRequest) GetUseDefaultOutbound() bool {
 	return p.UseDefaultOutbound
+}
+
+var CacheURLRequest_Refresh_DEFAULT bool
+
+func (p *CacheURLRequest) GetRefresh() bool {
+	if !p.IsSetRefresh() {
+		return CacheURLRequest_Refresh_DEFAULT
+	}
+	return *p.Refresh
+}
+
+func (p *CacheURLRequest) IsSetRefresh() bool {
+	return p.Refresh != nil
 }
 
 func (p *CacheURLRequest) Read(ctx context.Context, iprot thrift.TProtocol) error {
@@ -4755,6 +4770,16 @@ func (p *CacheURLRequest) Read(ctx context.Context, iprot thrift.TProtocol) erro
 					return err
 				}
 			}
+		case 5:
+			if fieldTypeId == thrift.BOOL {
+				if err := p.ReadField5(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
 		default:
 			if err := iprot.Skip(ctx, fieldTypeId); err != nil {
 				return err
@@ -4806,6 +4831,15 @@ func (p *CacheURLRequest) ReadField4(ctx context.Context, iprot thrift.TProtocol
 	return nil
 }
 
+func (p *CacheURLRequest) ReadField5(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadBool(ctx); err != nil {
+		return thrift.PrependError("error reading field 5: ", err)
+	} else {
+		p.Refresh = &v
+	}
+	return nil
+}
+
 func (p *CacheURLRequest) Write(ctx context.Context, oprot thrift.TProtocol) error {
 	ctx, err := thrift.CheckRecursionDepth(ctx)
 	if err != nil {
@@ -4826,6 +4860,9 @@ func (p *CacheURLRequest) Write(ctx context.Context, oprot thrift.TProtocol) err
 			return err
 		}
 		if err := p.writeField4(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField5(ctx, oprot); err != nil {
 			return err
 		}
 	}
@@ -4890,6 +4927,21 @@ func (p *CacheURLRequest) writeField4(ctx context.Context, oprot thrift.TProtoco
 	return err
 }
 
+func (p *CacheURLRequest) writeField5(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if p.IsSetRefresh() {
+		if err := oprot.WriteFieldBegin(ctx, "refresh", thrift.BOOL, 5); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T write field begin error 5:refresh: ", p), err)
+		}
+		if err := oprot.WriteBool(ctx, bool(*p.Refresh)); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T.refresh (5) field write error: ", p), err)
+		}
+		if err := oprot.WriteFieldEnd(ctx); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T write field end error 5:refresh: ", p), err)
+		}
+	}
+	return err
+}
+
 func (p *CacheURLRequest) Equals(other *CacheURLRequest) bool {
 	if p == other {
 		return true
@@ -4907,6 +4959,14 @@ func (p *CacheURLRequest) Equals(other *CacheURLRequest) bool {
 	}
 	if p.UseDefaultOutbound != other.UseDefaultOutbound {
 		return false
+	}
+	if p.Refresh != other.Refresh {
+		if p.Refresh == nil || other.Refresh == nil {
+			return false
+		}
+		if *p.Refresh != *other.Refresh {
+			return false
+		}
 	}
 	return true
 }

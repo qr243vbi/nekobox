@@ -380,6 +380,10 @@ RouteItem::RouteItem(QWidget *parent, const std::shared_ptr<Configs::RoutingChai
                 {
                     MessageBoxWarning(tr("Invalid rules"), tr("Some rules could not be added:\n") + res);
                 });
+                // Keep one editable source of truth until the draft is valid.
+                currentIndex = -1;
+                ui->tabWidget->setCurrentIndex(1);
+                return;
             }
             currentIndex  = -1;
             updateRouteItemsView();
@@ -530,11 +534,17 @@ QString RouteItem::commitSimpleBoxes() {
         return parts.join('\n');
     };
 
+    // UpdateSimpleRules can partially apply invalid input. Validate the entire
+    // Basic draft on a copy so a failed commit leaves every action unchanged.
+    Configs::RoutingChain candidate(*chain);
     QString res;
-    res += chain->UpdateSimpleRules(joinBoxes(directIp, directDomain, directProcess), Configs::direct);
-    res += chain->UpdateSimpleRules(joinBoxes(blockIp, blockDomain, blockProcess), Configs::block);
-    res += chain->UpdateSimpleRules(joinBoxes(proxyIp, proxyDomain, proxyProcess), Configs::proxy);
-    if (res.isEmpty()) simpleBoxesDirty = false;
+    res += candidate.UpdateSimpleRules(joinBoxes(directIp, directDomain, directProcess), Configs::direct);
+    res += candidate.UpdateSimpleRules(joinBoxes(blockIp, blockDomain, blockProcess), Configs::block);
+    res += candidate.UpdateSimpleRules(joinBoxes(proxyIp, proxyDomain, proxyProcess), Configs::proxy);
+    if (res.isEmpty()) {
+        chain->Rules = std::move(candidate.Rules);
+        simpleBoxesDirty = false;
+    }
     return res;
 }
 
@@ -552,22 +562,8 @@ void RouteItem::accept() {
         return;
     }
 
-    QList<std::shared_ptr<Configs::RouteRule>> tmpChain;
-    for (const auto& item: chain->Rules) {
-        if (!item->isEmpty()) {
-            tmpChain << item;
-        }
-    }
-    chain->Rules.clear();
-    for (const auto& item: tmpChain) {
-        chain->Rules << item;
-    }
-
-    if (chain->Rules.empty()) {
-        MessageBoxInfo(tr("Empty Route Profile"), tr("No valid rules are in the profile"));
-        return;
-    }
-
+    const auto previousRules = chain->Rules;
+    const bool previousDirty = simpleBoxesDirty;
     QString res = commitSimpleBoxes();
     if (!res.isEmpty())
     {
@@ -577,6 +573,23 @@ void RouteItem::accept() {
         });
         return;
     }
+
+    QList<std::shared_ptr<Configs::RouteRule>> tmpChain;
+    for (const auto& item: chain->Rules) {
+        if (!item->isEmpty()) {
+            tmpChain << item;
+        }
+    }
+    if (tmpChain.empty()) {
+        // A rejected Save must not invalidate the Advanced selection or lose
+        // ownership of the Basic draft needed for correction.
+        chain->Rules = previousRules;
+        simpleBoxesDirty = previousDirty;
+        MessageBoxInfo(tr("Empty Route Profile"), tr("No valid rules are in the profile"));
+        return;
+    }
+    chain->Rules = std::move(tmpChain);
+
     chain->defaultOutboundID = Configs::stringToOutboundID(
         default_outbound_choose[ui->def_out->currentIndex()]
     );
