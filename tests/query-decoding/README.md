@@ -69,6 +69,23 @@ The optional existing TLS ASCII adapter is only a helper-logic fallback; it is
 not query-parsing evidence. Its signature adapter is updated for FullyDecoded.
 The primary regression suite has no adapter mode.
 
+### HTTP scheme regression (issue #68)
+
+HTTP(S) fixtures additionally cover lowercase, uppercase and mixed-case schemes,
+implicit ports (80 for HTTP, 443 for HTTPS), explicit ports, IPv6 authorities,
+TLS and `insecure` preservation through share-link export/reimport. Credentials,
+paths, names, SNI and JSON headers are checked alongside those fields. Unsupported
+schemes and invalid URLs are rejected. This is an in-memory parser/exporter test;
+no proxy connection is made.
+
+The ports and case-insensitive scheme semantics follow
+[RFC 9110, section 4.2](https://www.rfc-editor.org/rfc/rfc9110.html#section-4.2).
+Three independent `--mutation` cases exercise these regressions:
+`http-default-443`, `http-raw-prefix`, and `http-no-scheme-guard`.
+For GCC 16 with Qt 6.11.2, `EXTRA_CXXFLAGS=-Wno-error=sfinae-incomplete`
+keeps Qt's header diagnostic as a warning while retaining `-Werror` for other
+diagnostics. This is a compiler/header compatibility workaround, not a parser fix.
+
 ## Caller audit
 
 - AnyTLS, HTTP(S), Juicity, Naive, ShadowTLS and TrustTunnel use shared TLS import.

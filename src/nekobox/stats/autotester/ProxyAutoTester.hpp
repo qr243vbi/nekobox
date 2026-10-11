@@ -9,8 +9,10 @@
 #include <QTimer>
 #include <QList>
 #include <QMap>
+#include <QMutex>
 #include <QDateTime>
 #include <memory>
+#include <atomic>
 
 namespace Configs {
     class ProxyEntity;
@@ -63,6 +65,8 @@ namespace Stats {
         int getRetryCount() const;
         QString getTargetUrl() const;
         bool isTunFailoverEnabled() const;
+        bool canDeliverFailover(int proxyId, quint64 generation) const;
+        bool isBackupAvailable(int proxyId) const;
 
         // Helper methods
         QList<std::shared_ptr<Configs::ProxyEntity>> getProxiesToTest();
@@ -77,12 +81,15 @@ namespace Stats {
         QTimer *healthCheckTimer;
 
         // State tracking
+        // Protect pool storage and health-status access by this tester.
+        mutable QRecursiveMutex workingPoolMutex;
         QList<int> workingProxyPool;
         QMap<int, qint64> lastTestTime;
         QMap<int, int> failureCount;
         int currentTestOffset;
         int activeProxyFailureCount;
         bool isTestingInProgress;
+        std::atomic<quint64> runGeneration{0};
         qint64 lastLogTime;
     };
 } // namespace Stats

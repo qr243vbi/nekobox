@@ -52,14 +52,17 @@ namespace Configs {
         using namespace From_Link;
         auto url = QUrl(link);
         if (!url.isValid()) return false;
+        const auto scheme = url.scheme();
+        if (scheme != "http" && scheme != "https") return false;
+        const bool isHttps = scheme == "https";
         auto query = GetQuery(url);
 
         add_default_fields(url, entity);
-        if (entity->serverPort == -1) entity->serverPort = 443;
+        if (entity->serverPort == -1) entity->serverPort = isHttps ? 443 : 80;
         add_username_password(this, url);
         path = url.path();
         headers = GetQueryMapValue(query, "headers");
-        if (link.startsWith("https")) {
+        if (isHttps) {
             add_tls(stream, query);
         };
         return !entity->serverAddress.isEmpty();

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify candidate, known baseline failures, and six behavioral mutations."""
+"""Verify candidate, known baseline failures, and behavioral mutations."""
 import argparse
 from pathlib import Path
 import re
@@ -11,6 +11,7 @@ BASELINE = 'a536846c9c74dd8fb104dce3319cbd9672920bb3'
 MUTATIONS = (
     'ignore-checkbox', 'gate-proxy-too', 'invert-checkbox', 'ignore-active-id',
     'skip-failure-bookkeeping', 'ignore-setting-value',
+    'ignore-delivery-policy', 'ignore-backup-validity', 'stop-keeps-generation',
 )
 
 
@@ -27,7 +28,7 @@ def main():
     for name, extra, expected_failure in cases:
         result = subprocess.run(base + extra, capture_output=True, text=True, timeout=100)
         combined = result.stdout + result.stderr
-        summary = re.search(r'36 scenarios, 377 assertions, (\d+) failures', combined)
+        summary = re.search(r'\d+ scenarios, \d+ assertions, (\d+) failures', combined)
         expected_exit = 1 if expected_failure else 0
         valid = (result.returncode == expected_exit and summary is not None and
                  (int(summary.group(1)) > 0) == expected_failure and
@@ -37,7 +38,7 @@ def main():
             print(f'UNEXPECTED {name}: exit {result.returncode}\n{combined}')
             return 1
         print(f'{name}: {summary.group(0)}', flush=True)
-    print('Candidate passes; baseline and all six mutations fail with assertions.')
+    print('Candidate passes; baseline and all nine mutations fail with assertions.')
     return 0
 
 
