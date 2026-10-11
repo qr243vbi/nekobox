@@ -3447,7 +3447,8 @@ static QString subscriptionUrlFromInternalDeeplink(const QString &input) {
     if (!query.hasQueryItem(key)) {
       continue;
     }
-    auto value = decodeMaybeBase64Url(query.queryItemValue(key));
+    auto value =
+        decodeMaybeBase64Url(query.queryItemValue(key, QUrl::FullyDecoded));
     if (value.startsWith("http://") || value.startsWith("https://") ||
         value.startsWith("happ://")) {
       return value;
