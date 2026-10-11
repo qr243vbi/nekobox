@@ -1,0 +1,176 @@
+// Real Qt byte/string operations. Only process I/O and GUI side effects are
+// synthetic. No QProcess, core, socket, settings store, or lifecycle is run.
+#include <QAtomicInt>
+#include <QByteArray>
+#include <QString>
+#include <functional>
+#include <iostream>
+#include <vector>
+
+struct QProcess {
+    QByteArray stdoutChunk, stderrChunk;
+    std::function<void()> onStdout, onStderr;
+    int kills = 0;
+    void readyReadStandardOutput() {}
+    void readyReadStandardError() {}
+    QByteArray readAllStandardOutput() { auto result = stdoutChunk; stdoutChunk.clear(); return result; }
+    QByteArray readAllStandardError() { auto result = stderrChunk; stderrChunk.clear(); return result; }
+    void kill() { ++kills; }
+};
+template <typename Context, typename Callback>
+void connect(QProcess *process, void (QProcess::*signal)(), Context *, Callback callback) {
+    if (signal == &QProcess::readyReadStandardOutput) process->onStdout = callback;
+    else process->onStderr = callback;
+}
+namespace Configs {
+struct WindowSettings { int max_log_line = 200; };
+WindowSettings *windowSettings = nullptr;
+}
+std::vector<QString> messages, logs;
+void MW_dialog_message(const QString &sender, const QString &message) {
+    if (sender != "ExternalProcess") std::abort();
+    messages.push_back(message);
+}
+void MW_show_log(const QString &message) { logs.push_back(message); }
+namespace Configs_sys {
+QAtomicInt logCounter;
+class CoreProcess {
+public:
+    QProcess process;
+@STATE@
+    CoreProcess() {
+@CONNECTIONS@
+    }
+};
+}
+
+int assertions = 0, failures = 0;
+void check(bool condition, const char *label) {
+    ++assertions;
+    if (!condition) {
+        ++failures;
+        if (failures <= 35) std::cerr << "FAIL " << label << '\n';
+    }
+}
+struct Fixture {
+    Configs_sys::CoreProcess core;
+    Fixture(int profile = 42) {
+        messages.clear(); logs.clear();
+        Configs_sys::logCounter.storeRelaxed(0);
+        core.start_profile_when_core_is_up = profile;
+    }
+    void out(const QByteArray &chunk) { core.process.stdoutChunk = chunk; core.process.onStdout(); }
+    void err(const QByteArray &chunk) { core.process.stderrChunk = chunk; core.process.onStderr(); }
+};
+void checkReady(const std::vector<QByteArray> &chunks, int profile) {
+    Fixture f(profile);
+    std::vector<QString> expectedLogs;
+    for (const auto &chunk : chunks) {
+        f.out(chunk);
+        expectedLogs.push_back(QString::fromUtf8(chunk));
+    }
+    const auto expected = "CoreStarted," + QString::number(profile >= 0 ? profile : -1);
+    check(messages == std::vector<QString>{expected}, "one readiness event for complete marker across chunks");
+    check(f.core.start_profile_when_core_is_up == (profile >= 0 ? -1 : profile), "remembered profile consumed exactly once");
+    check(logs == expectedLogs, "original stdout chunks logged unchanged");
+    f.out(" address suffix\n");
+    f.out("");
+    check(messages == std::vector<QString>{expected}, "later bytes and empty chunk do not duplicate readiness");
+}
+int main() {
+    const QByteArray marker("Core listening");
+    for (int profile : {42, 0, -1}) {
+        checkReady({marker}, profile); // No newline is needed to retain legacy behavior.
+        for (qsizetype split = 1; split < marker.size(); ++split) {
+            checkReady({"noise\n" + marker.left(split), marker.mid(split) + " at example\n"}, profile);
+        }
+        std::vector<QByteArray> bytes;
+        for (const auto byte : marker) bytes.push_back(QByteArray(1, byte));
+        checkReady(bytes, profile);
+    }
+    // Every possible partition of the 14-byte marker, not just two chunks.
+    for (unsigned mask = 0; mask < (1u << (marker.size() - 1)); ++mask) {
+        std::vector<QByteArray> chunks;
+        qsizetype begin = 0;
+        for (qsizetype i = 0; i < marker.size() - 1; ++i) {
+            if (mask & (1u << i)) { chunks.push_back(marker.mid(begin, i + 1 - begin)); begin = i + 1; }
+        }
+        chunks.push_back(marker.mid(begin));
+        checkReady(chunks, 42);
+    }
+    for (const auto &input : std::vector<QByteArray>{"", "Core", "Core listenin", "core listening", "Core Listening", "Core\n listening", "Core listening?"}) {
+        Fixture f;
+        f.out(input);
+        const bool complete = input.contains(marker);
+        check(messages.size() == (complete ? 1u : 0u), "absence, partials, case sensitivity, and substring semantics");
+    }
+    {
+        Fixture f;
+        f.err("Core listening at stderr\n");
+        check(messages.empty(), "whole stderr marker cannot signal readiness");
+        f.out("Core listening\nCore listening\n");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "coalesced markers retain one notification per callback");
+    }
+    {
+        Fixture f;
+        f.out("Core "); f.err("listening"); f.out("unrelated\n"); f.out("listening");
+        check(messages.empty(), "stderr and intervening stdout cannot complete a false marker");
+    }
+    {
+        Fixture f;
+        f.out("Core "); f.out(""); f.out("listening");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "empty chunks preserve partial readiness");
+        f.out("Core listening");
+        check(messages == std::vector<QString>{"CoreStarted,42", "CoreStarted,-1"}, "second genuine marker does not start remembered profile twice");
+    }
+    {
+        Fixture f;
+        f.out("Core listen"); f.err("diagnostic\n"); f.out("ing");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "interleaved stderr preserves valid stdout overlap");
+    }
+    for (int profile : {42, -1}) {
+        Fixture f(profile);
+        f.out("failed to serve\nCore listening\nExtra process exited unexpectedly\n");
+        check(messages == std::vector<QString>{"CoreStarted," + QString::number(profile)}, "readiness retains precedence over other whole markers in one callback");
+        check(f.core.process.kills == 0, "readiness precedence does not request a synthetic kill");
+    }
+    {
+        Fixture f;
+        f.out("Core listeninXCore listen"); f.out("ing");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "near-match prefix cannot hide a later complete marker");
+    }
+    {
+        Fixture f;
+        f.out(QByteArray(1024 * 1024, 'x') + "Core listen");
+@BOUNDED_CHECK@
+        f.out("ing");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "large chunk followed by split marker");
+@BOUNDED_CHECK@
+    }
+    {
+        Fixture f;
+        Configs_sys::logCounter.storeRelaxed(1000);
+        f.out("Core listen"); f.out("ing");
+        check(messages == std::vector<QString>{"CoreStarted,42"}, "readiness still checked after display log limit");
+        check(logs.empty(), "display log limit retained");
+    }
+    {
+        Fixture f;
+        f.out("failed to serve");
+        check(f.core.process.kills == 1 && messages.empty(), "whole failure marker retains synthetic kill decision");
+    }
+    {
+        Fixture f(-1);
+        f.out("failed to serve");
+        check(f.core.process.kills == 0 && messages.empty(), "failure without pending profile retains original decision");
+        f.out("Extra process exited unexpectedly");
+        check(messages == std::vector<QString>{"Crashed"}, "whole extra-process marker retains original notification");
+    }
+    {
+        Fixture first; first.out("Core listen");
+        Fixture second; second.out("ing");
+        check(messages.empty(), "separate CoreProcess objects cannot share partial marker");
+    }
+    std::cout << "SUMMARY assertions=" << assertions << " failures=" << failures << '\n';
+    return failures ? 1 : 0;
+}

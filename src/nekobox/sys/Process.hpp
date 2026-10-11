@@ -5,6 +5,7 @@
 #pragma once
 
 #include <memory>
+#include <QByteArray>
 #include <QElapsedTimer>
 #include <QProcess>
 #include <QMutex>
@@ -52,6 +53,7 @@ namespace Configs_sys {
         int start_profile_when_core_is_up = -1;
 
     private:
+        QByteArray core_readiness_tail;
         bool show_stderr = false;
         bool failed_to_start = false;
         QMutex restarting;

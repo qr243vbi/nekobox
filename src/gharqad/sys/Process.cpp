@@ -70,8 +70,13 @@ namespace Configs_sys {
 
         connect(&process, &QProcess::readyReadStandardOutput, this, [this, maxLogLines]() {
             auto log = process.readAllStandardOutput();
+            // QProcess reads may split the readiness marker between chunks.
+            static const QByteArray readyMarker("Core listening");
+            const auto readinessLog = core_readiness_tail + log;
+            const bool coreIsListening = readinessLog.contains(readyMarker);
+            core_readiness_tail = readinessLog.right(readyMarker.size() - 1);
             if (start_profile_when_core_is_up >= 0) {
-                if (log.contains("Core listening")) {
+                if (coreIsListening) {
                     // The core really started
                     MW_dialog_message("ExternalProcess", "CoreStarted," + QString::number(start_profile_when_core_is_up));
                     start_profile_when_core_is_up = -1;
@@ -82,7 +87,7 @@ namespace Configs_sys {
                     goto show_log;
                 }
             } else {
-                if (log.contains("Core listening")) {
+                if (coreIsListening) {
                     MW_dialog_message("ExternalProcess", "CoreStarted,-1");
                     goto show_log;
                 }
@@ -167,6 +172,7 @@ namespace Configs_sys {
             core_pre_start();
         }
         if (started) return;
+        core_readiness_tail.clear();
         started = true;
         QStringList list = QProcessEnvironment::systemEnvironment().toStringList();
 
