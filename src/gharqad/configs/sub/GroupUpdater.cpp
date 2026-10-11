@@ -658,7 +658,8 @@ static QJsonObject sanitizeSingBoxConfig(const QJsonObject &json) {
   routing["rules"] = cleanRules;
   routing.remove("domainMatcher");
   routing.remove("domainStrategy");
-  if (!defaultOutboundTag.isEmpty())
+  // Full configs own their final outbound; only synthesize a missing default.
+  if (!defaultOutboundTag.isEmpty() && routing["final"].toString().isEmpty())
     routing["final"] = defaultOutboundTag;
   routing["auto_detect_interface"] = true;
   if (!fallbackDnsTag.isEmpty()) {
