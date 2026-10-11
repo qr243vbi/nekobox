@@ -934,7 +934,6 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
     // with the window; cancel() stopped it and detached it from the box.
     restartMsgbox->deleteLater();
 
-    const auto stoppingName = running->DisplayTypeAndName();
     ui->start_stop_button->setState(Icon::State::DISCONNECTING);
 
     runOnNewThread([=, this, &blocker] {
