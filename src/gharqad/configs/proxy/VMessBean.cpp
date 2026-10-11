@@ -46,7 +46,7 @@ namespace Configs {
         global_padding = obj["global_padding"].toBool();
         authenticated_length = obj["authenticated_length"].toBool();
 
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         parse_transport(stream, obj);
         add_network(this, obj);
         return true;

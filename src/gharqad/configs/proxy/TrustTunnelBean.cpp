@@ -42,7 +42,7 @@ namespace Configs {
         add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         add_quic(this, obj);
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         health_check = obj["health_check"].toBool();
         return true;
     }    
@@ -52,7 +52,7 @@ namespace Configs {
         add_default_fields(this->entity, obj);
         add_username_password(this, obj);
         add_quic(this, obj);
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         health_check = obj["health_check"].toBool();
         return true;
     }    

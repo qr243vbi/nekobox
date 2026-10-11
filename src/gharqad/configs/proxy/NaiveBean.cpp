@@ -57,7 +57,7 @@ namespace Configs {
         extra_headers = obj["extra_headers"].toVariantMap();
         add_udp_over_tcp(this, obj);
         add_quic(this, obj);
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         return true;
     }
 

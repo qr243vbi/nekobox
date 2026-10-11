@@ -16,7 +16,7 @@ bool ShadowTLSBean::TryParseJson(const Configs::Data::Node &obj) {
   add_default_fields(this->entity, obj);
   password = obj["password"].toString();
   shadowtls_version = obj["version"].toInt();
-  add_tls(stream, obj);
+  if (!add_tls(stream, obj)) return false;
   return true;
 }
 

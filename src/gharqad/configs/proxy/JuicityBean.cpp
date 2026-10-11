@@ -43,7 +43,7 @@ namespace Configs {
         add_default_fields(this->entity, obj);
         this->username = obj["uuid"].toString();
         this->password = obj["password"].toString();
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         return true;
     }
     bool JuicityBean::TryParseYaml(const Configs::Data::Node& obj)

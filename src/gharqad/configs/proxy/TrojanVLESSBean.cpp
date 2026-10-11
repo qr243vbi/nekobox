@@ -25,7 +25,7 @@ namespace Configs {
 
         *stream->packet_encoding = obj["packet_encoding"].toString();
 
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         parse_transport(stream, obj);
         add_network(this, obj);
         return true;

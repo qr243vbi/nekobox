@@ -33,7 +33,7 @@ namespace Configs {
         add_username_password(this, obj);
         path = obj["path"].toString();
         headers = obj["headers"].toVariantMap();
-        add_tls(stream, obj);
+        if (!add_tls(stream, obj)) return false;
         return true;
     }
 
