@@ -79,6 +79,11 @@ namespace Configs {
         if (!sni1.isEmpty()) stream->sni = sni1;
         if (!sni2.isEmpty()) stream->sni = sni2;
         stream->alpn = GetQueryValue(query, "alpn");
+        auto ech_config = GetQueryValue(query, "ech_config");
+        if ((stream->enable_ech = !ech_config.isEmpty())) {
+            stream->ech_config = ech_config;
+            stream->query_server_name = GetQueryValue(query, "query_server_name");
+        }
         if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
