@@ -217,6 +217,11 @@ namespace Configs {
                 add_non_empty(transport, "host", host);
                 transport["mode"] = xhttp_mode;
                 parseExtraXhttp(transport, xhttp_extra);
+                // The core validates padding before applying its 100-1000 default.
+                // Preserve explicit values, including invalid ones, for validation.
+                if (!transport.contains("x_padding_bytes")) {
+                    transport["x_padding_bytes"] = QJsonObject{{"from", 100}, {"to", 1000}};
+                }
             } else if (network == "kcp") {
                 parseExtraKCP(transport, kcp_extra);
             }
