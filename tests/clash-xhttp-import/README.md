@@ -27,7 +27,7 @@ beyond YAML and is not changed by this field-preservation patch.
 
 ## Run
 
-Requires Python 3, C++20, Qt6 Core and yaml-cpp development files:
+Requires Python 3, C++20, Qt6 Core, yaml-cpp development files and Boost headers:
 
 ```sh
 python3 tests/clash-xhttp-import/test_clash_xhttp_import.py
@@ -41,10 +41,31 @@ set `YAML_CPP_ROOT` to the package root: the runner uses `usr/include` and
 `EXTRA_CXXFLAGS` supports sanitizer options; `--keep-generated FILE` saves the
 translation unit; `--repo PATH` selects a separate source snapshot.
 
-Expected results on the audited snapshots: 273 checks, 30 failures at the
-baseline; 273 checks, zero failures with this patch. Seven independent mutations
-must fail assertions: path, host, mode, missing-mode fallback, network guard,
-protocol guard and mode JSON emission.
+Expected results: 273 checks, zero failures with the fix. Seven independent
+behavior mutations must fail assertions: path, host, mode, missing-mode fallback,
+network guard, protocol guard and mode JSON emission. An eighth mutation restores
+the invalid direct enum/string comparison and must fail compilation at that
+comparison before any assertion runs. Dependency errors cannot count as a caught
+mutation. `EXTRA_CXXFLAGS=-I/path/to/boost/include` supports non-system headers.
+
+## Actual enum compile regression
+
+The original fixture replaced `V2RAYTransportsEnum` with `QString`. That adapter
+masked the invalid `*bean->stream->network == "xhttp"` comparison introduced by
+this import change: the fixture passed while the native application did not
+compile. The production wrapper derives from `JsonEnum`, not `QString`.
+
+The runner now uses the verbatim production `JsonEnum` and `EnumFieldName`
+declarations and implementations, enum macros, preset lists and stream enum
+declarations with real Boost maps. Static assertions reject a QString-based
+transport substitute. The pre-fix main source fails compilation with this runner;
+the one-line explicit QString conversion fixes the comparison and preserves all
+273 behavior checks. Unchanged enum implementations have narrowly scoped warning
+suppressions for unused parameters/variables and catch-by-value. Import and
+emission bodies still compile with `-Wall -Wextra -Werror`.
+
+This is a focused production-type regression, not a full native application
+build. Windows/MSVC verification remains the separate CI build.
 
 ## Evidence boundaries
 
@@ -58,8 +79,9 @@ be tested together. The combined-source run passes both XHTTP (273 checks) and
 ECH (593 checks). It does not replace the XHTTP mapping or emission logic
 with a test reimplementation.
 
-The profile factory, storage locks, reflection accessor, enum storage,
-`AddProxy` and log destination are explicit inert test adapters. Reserved
+The profile factory, storage locks, reflection accessor, bean-level network,
+`AddProxy` and log destination are explicit inert test adapters. Stream transport
+and packet-encoding enum storage and conversions are production code. Reserved
 `.invalid` domains keep IP detection out of scope. The stream and KCP fields
 come from production declarations; this is not a full bean/database build.
 

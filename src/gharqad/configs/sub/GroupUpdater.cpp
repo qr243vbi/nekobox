@@ -1288,7 +1288,7 @@ bool RawUpdater::updateClash(const QString &str) {
           bean->stream->path = Node2QString(grpc["grpc-service-name"]);
         }
 
-        if (type == "vless" && *bean->stream->network == "xhttp") {
+        if (type == "vless" && static_cast<QString>(*bean->stream->network) == "xhttp") {
           auto xhttp = NodeChild(proxy, {"xhttp-opts"});
           if (xhttp.IsMap()) {
             bean->stream->path = Node2QString(xhttp["path"]);

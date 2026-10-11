@@ -32,7 +32,7 @@ int main() {
         check(updater.proxies.size() == 1, "one VLESS profile imported");
         if (updater.proxies.size() != 1) continue;
         auto entity = updater.proxies[0]; auto stream = entity->value->stream;
-        check(*stream->network == "xhttp", "network remains xhttp");
+        check(stream->network->toString() == "xhttp", "network remains xhttp");
         check(stream->path == item.path, "YAML path reaches bean");
         check(stream->host == item.host, "YAML host reaches bean");
         check(stream->xhttp_mode == item.mode, "YAML mode reaches bean, absent keeps auto");
