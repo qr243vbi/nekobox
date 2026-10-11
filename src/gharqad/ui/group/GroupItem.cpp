@@ -9,6 +9,7 @@
 #include <nekobox/configs/sub/GroupUpdater.hpp>
 
 #include <QMessageBox>
+#include <limits>
 
 #include <QInputDialog>
 #include <QUrlQuery>
@@ -98,37 +99,55 @@ QString getGroupName(bool * ok, bool * createNewGroup, const QString& content){
 }
 
 QString ParseSubInfo(const QString &info) {
-    if (info.trimmed().isEmpty()) return "";
+    struct Field {
+        qint64 value = 0;
+        bool present = false;
+        bool valid = false;
+    };
+    const auto readField = [&info](const QString &name) {
+        Field field;
+        const auto match = QRegularExpression(
+            "(?:^|;)\\s*" + name + "\\s*=([^;]*)").match(info);
+        field.present = match.hasMatch();
+        if (field.present) {
+            const auto text = match.captured(1).trimmed();
+            if (QRegularExpression("^[0-9]+$").match(text).hasMatch()) {
+                field.value = text.toLongLong(&field.valid);
+            }
+        }
+        return field;
+    };
 
-    QString result;
+    const auto upload = readField("upload");
+    const auto download = readField("download");
+    const auto total = readField("total");
+    const auto expire = readField("expire");
+    if (!upload.valid && !download.valid && !total.valid && !expire.valid) return "";
 
-    long long used = 0;
-    long long total = 0;
-    long long expire = 0;
-
-    auto re0m = QRegularExpression("total=([0-9]+)").match(info);
-    if (re0m.lastCapturedIndex() >= 1) {
-        total = re0m.captured(1).toLongLong();
-    } else {
-        return "";
+    QString usedText = "-";
+    QString remainingText = "-";
+    QString expiryText = "-";
+    const auto maximum = (std::numeric_limits<qint64>::max)();
+    // An omitted counter keeps the existing zero fallback; an invalid counter
+    // must not make the displayed usage or remaining quota look trustworthy.
+    const bool hasUsage = (upload.valid || download.valid)
+        && (!upload.present || upload.valid) && (!download.present || download.valid)
+        && upload.value <= maximum - download.value;
+    if (hasUsage) {
+        const auto used = upload.value + download.value;
+        usedText = ReadableSize(used);
+        if (total.valid && total.value > 0) remainingText = ReadableSize(total.value - used);
     }
-    auto re1m = QRegularExpression("upload=([0-9]+)").match(info);
-    if (re1m.lastCapturedIndex() >= 1) {
-        used += re1m.captured(1).toLongLong();
-    }
-    auto re2m = QRegularExpression("download=([0-9]+)").match(info);
-    if (re2m.lastCapturedIndex() >= 1) {
-        used += re2m.captured(1).toLongLong();
-    }
-    auto re3m = QRegularExpression("expire=([0-9]+)").match(info);
-    if (re3m.lastCapturedIndex() >= 1) {
-        expire = re3m.captured(1).toLongLong();
+    if (total.valid && total.value == 0) remainingText = QString::fromUtf8("\u221E");
+    // Zero means no expiry. Do not turn absent/invalid expiry into Unix epoch,
+    // or overflow DisplayTime's seconds-to-milliseconds conversion.
+    if (expire.valid && expire.value > 0 && expire.value <= maximum / 1000) {
+        const auto formatted = DisplayTime(expire.value, QLocale::ShortFormat);
+        if (!formatted.isEmpty()) expiryText = formatted;
     }
 
-    result = QObject::tr("Used: %1 Remain: %2 Expire: %3")
-                         .arg(ReadableSize(used), (total == 0) ? QString::fromUtf8("\u221E") : ReadableSize(total - used), DisplayTime(expire, QLocale::ShortFormat));
-
-    return result;
+    return QObject::tr("Used: %1 Remain: %2 Expire: %3")
+        .arg(usedText, remainingText, expiryText);
 }
 
 GroupItem::GroupItem(QWidget *parent, const std::shared_ptr<Configs::Group> &ent, QListWidgetItem *item) : QWidget(parent), ui(new Ui::GroupItem) {
