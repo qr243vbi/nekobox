@@ -63,20 +63,20 @@ def cases():
     add("[2001:db8::1];5335", "[2001:db8::1]", 5335)
 
     # The shared authority parsing works after HTTPS/H3 path extraction;
-    # existing last-segment-only path semantics and TLS shape are unchanged.
+    # complete escaped paths and the TLS shape are preserved.
     for scheme in ("https", "h3"):
-        add(scheme + "://dns.example/dns-query", "dns.example", kind=scheme, path="dns-query")
-        add(scheme + "://dns.example:8443/dns-query", "dns.example", 8443, scheme, "dns-query")
-        add(scheme + "://[2001:db8::1]:8443/dns-query", "2001:db8::1", 8443, scheme, "dns-query")
-        add(scheme + "://dns.example;8443/a/b?x=1", "dns.example", 8443, scheme, "b?x=1")
-        add(scheme + "://dns.example/a/b", "dns.example", kind=scheme, path="b")
-        add(scheme + "://dns.example/", "dns.example", kind=scheme)
+        add(scheme + "://dns.example/dns-query", "dns.example", kind=scheme, path="/dns-query")
+        add(scheme + "://dns.example:8443/dns-query", "dns.example", 8443, scheme, "/dns-query")
+        add(scheme + "://[2001:db8::1]:8443/dns-query", "2001:db8::1", 8443, scheme, "/dns-query")
+        add(scheme + "://dns.example;8443/a/b?x=1", "dns.example", 8443, scheme, "/a/b?x=1")
+        add(scheme + "://dns.example/a/b", "dns.example", kind=scheme, path="/a/b")
+        add(scheme + "://dns.example/", "dns.example", kind=scheme, path="/")
         add(scheme + "://[2001:db8::1]", "2001:db8::1", kind=scheme)
-        add(scheme + "://[2001:db8::1]/dns-query", "2001:db8::1", kind=scheme, path="dns-query")
+        add(scheme + "://[2001:db8::1]/dns-query", "2001:db8::1", kind=scheme, path="/dns-query")
         for host in ("dns.example", "[2001:db8::1]"):
             for port in ("", "abc", "0", "65536", "2147483648", "+53"):
                 authority = host + ":" + port
-                add(scheme + "://" + authority + "/dns-query", authority, kind=scheme, path="dns-query")
+                add(scheme + "://" + authority + "/dns-query", authority, kind=scheme, path="/dns-query")
     for value in ("local", "local:anything", "localhost"):
         add(value, expected={"type": "local"})
     for value, interface in (("dhcp://auto", ""), ("dhcp://eth0", "eth0"), ("dhcp://", "")):
