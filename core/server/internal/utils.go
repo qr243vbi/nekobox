@@ -118,12 +118,6 @@ func DownloadFile(originalURL, targetPath string, use_default_outbound bool) err
 		return fmt.Errorf("failed to create destination directory %q: %w", dir, err)
 	}
 
-	outFile, err := os.Create(targetPath)
-	if err != nil {
-		return fmt.Errorf("failed to create file: %w", err)
-	}
-	defer outFile.Close()
-
 	client := &http.Client{}
 	if !use_default_outbound && BoxInstance != nil {
 		client = BoxCreateHttpClient(BoxInstance)
@@ -161,8 +155,49 @@ func DownloadFile(originalURL, targetPath string, use_default_outbound bool) err
 		return fmt.Errorf("download failed: %s", resp.Status)
 	}
 
-	if _, err = io.Copy(outFile, resp.Body); err != nil {
-		return fmt.Errorf("failed to save file: %w", err)
+	// A private sibling directory keeps concurrent downloads separate and the
+	// eventual rename on the same filesystem. Use Create inside it to retain
+	// normal file permissions (0666 filtered by umask), including for caches
+	// downloaded by an elevated core and later read without elevation.
+	tempDir, err := os.MkdirTemp(dir, ".download-*")
+	if err != nil {
+		return fmt.Errorf("failed to create temporary directory: %w", err)
+	}
+	defer os.Remove(tempDir)
+	outFile, err := os.Create(filepath.Join(tempDir, "download"))
+	if err != nil {
+		return fmt.Errorf("failed to create temporary file: %w", err)
+	}
+	defer os.Remove(outFile.Name())
+
+	if err := copyAndCloseDownload(outFile, resp.Body); err != nil {
+		return err
+	}
+	if info, err := os.Stat(targetPath); err == nil {
+		if info.Mode().IsRegular() {
+			if err := os.Chmod(outFile.Name(), info.Mode().Perm()); err != nil {
+				return fmt.Errorf("failed to preserve destination permissions: %w", err)
+			}
+		}
+	} else if !os.IsNotExist(err) {
+		return fmt.Errorf("failed to check destination file: %w", err)
+	}
+	// Do not remove the destination first: a failed replacement must leave a
+	// previously completed download intact. Close before renaming for Windows.
+	if err := os.Rename(outFile.Name(), targetPath); err != nil {
+		return fmt.Errorf("failed to replace destination file: %w", err)
+	}
+	return nil
+}
+
+func copyAndCloseDownload(outFile io.WriteCloser, body io.Reader) error {
+	_, copyErr := io.Copy(outFile, body)
+	closeErr := outFile.Close()
+	if copyErr != nil {
+		return fmt.Errorf("failed to save file: %w", copyErr)
+	}
+	if closeErr != nil {
+		return fmt.Errorf("failed to close file: %w", closeErr)
 	}
 	return nil
 }
