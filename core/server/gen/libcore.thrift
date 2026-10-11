@@ -122,6 +122,8 @@ struct CacheURLRequest{
   2: bool clear;
   3: bool filepath;
   4: bool use_default_outbound;
+  // Refresh one URL without clearing other cached files. Cannot be combined with clear.
+  5: optional bool refresh;
 }
 
 struct CacheURLResult{

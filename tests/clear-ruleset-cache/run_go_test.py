@@ -43,6 +43,7 @@ with tempfile.TemporaryDirectory(prefix='nekobox-clear-command-') as directory:
 var ruleset_cachedir string
 func SetRulesetCachedir(path string) { ruleset_cachedir = path }
 var Calls int
+func RefreshHttp(string, bool) string { panic("unexpected per-URL refresh in clear-only fixture") }
 func CacheHttpBool(url string, proxy bool, exists *bool) string {
     Calls++
     if url == "" { *exists = false; return "" }
@@ -51,10 +52,11 @@ func CacheHttpBool(url string, proxy bool, exists *bool) string {
 }
 ''' + clear)
     (root / 'gen/types.go').write_text('''package gen
- type CacheURLRequest struct { HTTPURL string; Clear, Filepath, UseDefaultOutbound bool }
+ type CacheURLRequest struct { HTTPURL string; Clear, Filepath, UseDefaultOutbound bool; Refresh *bool }
+func (p *CacheURLRequest) GetRefresh() bool { return p.Refresh != nil && *p.Refresh }
  type CacheURLResult_ struct { FilePath string; Exists bool }
 ''')
-    (root / 'server.go').write_text('package main\nimport ("context"; "nekobox_core/gen"; "nekobox_core/internal")\ntype server struct {}\n' + handler)
+    (root / 'server.go').write_text('package main\nimport ("context"; "nekobox_core/gen"; "nekobox_core/internal"' + ('; "errors"' if 'errors.' in handler else '') + ')\ntype server struct {}\n' + handler)
     (root / 'server_test.go').write_text((HERE / 'server_test.go.in').read_text())
     env = dict(os.environ, GOTOOLCHAIN='local', GOPROXY='off', GOSUMDB='off', GOWORK='off', GOCACHE=os.environ.get('GOCACHE', str(root / 'go-build')))
     result = subprocess.run([args.go, 'test', *args.go_args], cwd=root, env=env, timeout=180)
