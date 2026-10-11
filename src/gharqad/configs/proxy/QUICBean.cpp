@@ -24,7 +24,7 @@ QString QUICBean::ToShareLink() const {
       query.addQueryItem("obfsParam", QUrl::toPercentEncoding(obfsPassword));
     }
     if (authPayloadType == hysteria_auth_string)
-      query.addQueryItem("auth", authPayload);
+      query.addQueryItem("auth", QUrl::toPercentEncoding(authPayload));
     if (hyProtocol == hysteria_protocol_facktcp)
       query.addQueryItem("protocol", "faketcp");
     if (hyProtocol == hysteria_protocol_wechat_video)
@@ -46,7 +46,7 @@ QString QUICBean::ToShareLink() const {
     } else
       url.setPort(entity->serverPort);
     if (!hop_interval.isEmpty())
-      query.addQueryItem("hop_interval", hop_interval);
+      add_query_nonempty("hop_interval", query, hop_interval);
     if (!entity->name.isEmpty())
       url.setFragment(entity->name);
   } else if (proxy_type == proxy_TUIC) {
@@ -56,13 +56,13 @@ QString QUICBean::ToShareLink() const {
     add_default_fields(url, this);
 
     if (!congestionControl.isEmpty())
-      query.addQueryItem("congestion_control", congestionControl);
+      add_query_nonempty("congestion_control", query, congestionControl);
     if (!alpn.isEmpty())
-      query.addQueryItem("alpn", alpn);
+      add_query_nonempty("alpn", query, alpn);
     if (!sni.isEmpty())
-      query.addQueryItem("sni", sni);
+      add_query_nonempty("sni", query, sni);
     if (!udpRelayMode.isEmpty())
-      query.addQueryItem("udp_relay_mode", udpRelayMode);
+      add_query_nonempty("udp_relay_mode", query, udpRelayMode);
     if (allowInsecure)
       query.addQueryItem("allow_insecure", "1");
     if (disableSni)
@@ -85,7 +85,7 @@ QString QUICBean::ToShareLink() const {
     if (allowInsecure)
       query.addQueryItem("insecure", "1");
     if (!sni.isEmpty())
-      query.addQueryItem("sni", sni);
+      add_query_nonempty("sni", query, sni);
     if (!serverPorts.empty()) {
       QStringList portList;
       for (const auto &range : serverPorts) {
@@ -97,7 +97,7 @@ QString QUICBean::ToShareLink() const {
     } else
       url.setPort(entity->serverPort);
     if (!hop_interval.isEmpty())
-      query.addQueryItem("hop_interval", hop_interval);
+      add_query_nonempty("hop_interval", query, hop_interval);
     if (!entity->name.isEmpty())
       url.setFragment(entity->name);
   }
@@ -308,7 +308,7 @@ bool QUICBean::TryParseLink(const QString &link) {
       serverPorts[i].replace("-", ":");
     }
   }
-  auto query = QUrlQuery(url.query());
+  auto query = GetQuery(url);
 
   add_network(this, query);
   if (url.scheme() == "hysteria") {
@@ -321,14 +321,14 @@ bool QUICBean::TryParseLink(const QString &link) {
     if (entity->serverPort > 0)
       entity->serverPort = url.port();
     obfsPassword =
-        QUrl::fromPercentEncoding(query.queryItemValue("obfsParam").toUtf8());
+        GetQueryValue(query, "obfsParam");
     allowInsecure =
         QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
     uploadMbps = GetQueryIntValue(query, "upmbps");
     downloadMbps = GetQueryIntValue(query, "downmbps");
 
     auto protocolStr =
-        (query.hasQueryItem("protocol") ? query.queryItemValue("protocol")
+        (query.hasQueryItem("protocol") ? GetQueryValue(query, "protocol")
                                         : "udp")
             .toLower();
     if (protocolStr == "faketcp") {
@@ -338,24 +338,24 @@ bool QUICBean::TryParseLink(const QString &link) {
     }
 
     if (query.hasQueryItem("auth")) {
-      authPayload = query.queryItemValue("auth");
+      authPayload = GetQueryValue(query, "auth");
       authPayloadType = Configs::QUICBean::hysteria_auth_string;
     }
 
-    alpn = query.queryItemValue("alpn");
-    sni = FIRST_OR_SECOND(query.queryItemValue("peer"),
-                          query.queryItemValue("sni"));
+    alpn = GetQueryValue(query, "alpn");
+    sni = FIRST_OR_SECOND(GetQueryValue(query, "peer"),
+                          GetQueryValue(query, "sni"));
 
     connectionReceiveWindow = GetQueryIntValue(query, "recv_window");
     streamReceiveWindow = GetQueryIntValue(query, "recv_window_conn");
 
     if (query.hasQueryItem("mport")) {
-      serverPorts = query.queryItemValue("mport").split(",");
+      serverPorts = GetQueryValue(query, "mport").split(",");
       for (int i = 0; i < serverPorts.size(); i++) {
         serverPorts[i].replace("-", ":");
       }
     }
-    hop_interval = query.queryItemValue("hop_interval");
+    hop_interval = GetQueryValue(query, "hop_interval");
   } else if (url.scheme() == "tuic") {
     // by daeuniverse
     // https://github.com/daeuniverse/dae/discussions/182
@@ -367,10 +367,10 @@ bool QUICBean::TryParseLink(const QString &link) {
     uuid = url.userName();
     password = url.password();
 
-    congestionControl = query.queryItemValue("congestion_control");
-    alpn = query.queryItemValue("alpn");
-    sni = query.queryItemValue("sni");
-    udpRelayMode = query.queryItemValue("udp_relay_mode");
+    congestionControl = GetQueryValue(query, "congestion_control");
+    alpn = GetQueryValue(query, "alpn");
+    sni = GetQueryValue(query, "sni");
+    udpRelayMode = GetQueryValue(query, "udp_relay_mode");
     allowInsecure = query.queryItemValue("allow_insecure") == "1";
     disableSni = query.queryItemValue("disable_sni") == "1";
   } else if (QStringList{"hy2", "hysteria2"}.contains(url.scheme())) {
@@ -378,8 +378,7 @@ bool QUICBean::TryParseLink(const QString &link) {
     entity->serverAddress = url.host();
     if (entity->serverPort > 0)
       entity->serverPort = url.port();
-    obfsPassword = QUrl::fromPercentEncoding(
-        query.queryItemValue("obfs-password").toUtf8());
+    obfsPassword = GetQueryValue(query, "obfs-password");
     allowInsecure =
         QStringList{"1", "true"}.contains(query.queryItemValue("insecure"));
 
@@ -389,14 +388,14 @@ bool QUICBean::TryParseLink(const QString &link) {
       password = url.userName() + ":" + url.password();
     }
     if (query.hasQueryItem("mport")) {
-      serverPorts = query.queryItemValue("mport").split(",");
+      serverPorts = GetQueryValue(query, "mport").split(",");
       for (int i = 0; i < serverPorts.size(); i++) {
         serverPorts[i].replace("-", ":");
       }
     }
-    hop_interval = query.queryItemValue("hop_interval");
+    hop_interval = GetQueryValue(query, "hop_interval");
 
-    sni = query.queryItemValue("sni");
+    sni = GetQueryValue(query, "sni");
   }
 
   return true;

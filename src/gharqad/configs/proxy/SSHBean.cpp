@@ -97,22 +97,22 @@ namespace Configs {
         auto query = GetQuery(url);
         add_default_fields(url, entity);
 
-        user = query.queryItemValue("user");
-        password = query.queryItemValue("password");
-        privateKey = QByteArray::fromBase64(query.queryItemValue("private_key").toUtf8(), QByteArray::OmitTrailingEquals);
-        privateKeyPath = query.queryItemValue("private_key_path");
-        privateKeyPass = query.queryItemValue("private_key_passphrase");
-        auto hostKeysRaw = query.queryItemValue("host_key");
+        user = GetQueryValue(query, "user");
+        password = GetQueryValue(query, "password");
+        privateKey = QByteArray::fromBase64(GetQueryValue(query, "private_key").toUtf8(), QByteArray::OmitTrailingEquals);
+        privateKeyPath = GetQueryValue(query, "private_key_path");
+        privateKeyPass = GetQueryValue(query, "private_key_passphrase");
+        auto hostKeysRaw = GetQueryValue(query, "host_key");
         for (const auto &item: hostKeysRaw.split("-")) {
             auto b64hostKey = QByteArray::fromBase64(item.toUtf8(), QByteArray::OmitTrailingEquals);
             if (!b64hostKey.isEmpty()) hostKey << QString(b64hostKey);
         }
-        auto hostKeyAlgsRaw = query.queryItemValue("host_key_algorithms");
+        auto hostKeyAlgsRaw = GetQueryValue(query, "host_key_algorithms");
         for (const auto &item: hostKeyAlgsRaw.split("-")) {
             auto b64hostKeyAlg = QByteArray::fromBase64(item.toUtf8(), QByteArray::OmitTrailingEquals);
             if (!b64hostKeyAlg.isEmpty()) hostKeyAlgs << QString(b64hostKeyAlg);
         }
-        clientVersion = query.queryItemValue("client_version");
+        clientVersion = GetQueryValue(query, "client_version");
 
         return true;
     }

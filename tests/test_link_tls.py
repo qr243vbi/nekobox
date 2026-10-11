@@ -56,10 +56,16 @@ SUPPORT = r'''
 #include <QUrlQuery>
 #else
 // Deliberately ASCII-only boundaries; these do not reproduce Qt URL parsing.
+struct QUrl { enum { FullyDecoded }; };
 struct QString : std::string {
     using std::string::string;
     QString(const std::string &value) : std::string(value) {}
     bool isEmpty() const { return empty(); }
+    QString &replace(const QString &from, const QString &to) {
+        for (size_t pos = 0; (pos = find(from, pos)) != npos; pos += to.size())
+            std::string::replace(pos, from.size(), to);
+        return *this;
+    }
     QString trimmed() const {
         auto first = find_first_not_of(" \t\n\r");
         return first == npos ? "" : substr(first, find_last_not_of(" \t\n\r") - first + 1);
@@ -75,7 +81,7 @@ class QUrlQuery {
     std::vector<std::pair<QString, QString>> items;
 public:
     void addQueryItem(const QString &name, const QString &value) { items.emplace_back(name, value); }
-    QString queryItemValue(const QString &name) const {
+    QString queryItemValue(const QString &name, int = QUrl::FullyDecoded) const {
         for (const auto &[key, value] : items) if (key == name) return value;
         return "";
     }
@@ -139,7 +145,7 @@ int main() {
                 QUrl url("https://example.invalid:443");
                 url.setQuery(query);
                 QUrl importedUrl(url.toString(QUrl::FullyEncoded));
-                query = QUrlQuery(importedUrl.query(QUrl::FullyDecoded));
+                query = QUrlQuery(importedUrl);
 #endif
                 auto imported = std::make_shared<V2rayStreamSettings>();
                 imported->allow_insecure = initial;

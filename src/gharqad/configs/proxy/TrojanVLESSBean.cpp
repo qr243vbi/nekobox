@@ -79,13 +79,18 @@ namespace Configs {
         if (!sni1.isEmpty()) stream->sni = sni1;
         if (!sni2.isEmpty()) stream->sni = sni2;
         stream->alpn = GetQueryValue(query, "alpn");
+        auto ech_config = GetQueryValue(query, "ech_config");
+        if ((stream->enable_ech = !ech_config.isEmpty())) {
+            stream->ech_config = ech_config;
+            stream->query_server_name = GetQueryValue(query, "query_server_name");
+        }
         if (!query.queryItemValue("allowInsecure").isEmpty()) stream->allow_insecure = true;
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->reality_spx = GetQueryValue(query, "spx", "/");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
         if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
-        stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+        stream->tls_fragment_fallback_delay = GetQueryValue(query, "fragment_fallback_delay");
         if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = dataStore->utlsFingerprint;
@@ -180,7 +185,7 @@ namespace Configs {
         if (proxy_type == proxy_VLESS) {
             add_query_nonempty("flow", query, flow);
             add_query_nonempty("packetEncoding", query, *stream->packet_encoding);
-            query.addQueryItem("encryption", (encryption == "" ) ? "none" : encryption);
+            add_query_nonempty("encryption", query, (encryption == "" ) ? "none" : encryption);
         }
 
         url.setQuery(query);

@@ -237,7 +237,7 @@ QString Quote(QString quoted){
 
 QString GetQueryValue(const QUrlQuery &q, const QString &key,
                       const QString &def) {
-  auto a = q.queryItemValue(key);
+  auto a = q.queryItemValue(key, QUrl::FullyDecoded);
   if (a.isEmpty()) {
     return def;
   }
@@ -630,7 +630,8 @@ bool IsValidPort(int port) { return InRange(port, 1, 65535); }
 void AddQueryString(QUrlQuery &query, const QString &name,
                     const QString &value) {
   if (!value.isEmpty()) {
-    query.addQueryItem(name, value);
+    // QUrlQuery accepts encoded input. Protect literal percent escapes in text.
+    query.addQueryItem(name, QString(value).replace("%", "%25"));
   }
 }
 
