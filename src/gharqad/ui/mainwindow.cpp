@@ -3191,8 +3191,7 @@ void MainWindow::refresh_proxy_list_impl(const int &id,
             return;
           }
       }
-      std::sort(
-          currentGroup->profiles.begin(), currentGroup->profiles.end(),
+      tableModel->sortProfiles(
           [=, this](int a, int b) {
             QString ms_a = "";
             QString ms_b = "";

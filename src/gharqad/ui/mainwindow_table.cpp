@@ -26,6 +26,7 @@
 #include <QLayout>
 #include <QWidget>
 #include <QSizePolicy>
+#include <algorithm>
 
 
 SelectionKeeper::SelectionKeeper(QTableView* view)
@@ -772,6 +773,47 @@ bool MyTableModel::setFilterEnabled(bool filter){
     this->refresh();
     return ret;
 };
+
+void MyTableModel::sortProfiles(const std::function<bool(int, int)> &lessThan) {
+    auto group = m_data();
+    if (group == nullptr) {
+        return;
+    }
+    auto &profiles = group->profiles;
+    const int rows = profiles.size();
+    QList<int> order;
+    order.reserve(rows);
+    for (int row = 0; row < rows; ++row) {
+        order.append(row);
+    }
+    // Sort a permutation first so the live model stays unchanged until notified.
+    std::sort(order.begin(), order.end(), [&](int a, int b) {
+        return lessThan(profiles.at(a), profiles.at(b));
+    });
+    QList<int> sortedProfiles;
+    sortedProfiles.reserve(rows);
+    QVector<int> newRows(rows);
+    for (int row = 0; row < rows; ++row) {
+        const int oldRow = order.at(row);
+        sortedProfiles.append(profiles.at(oldRow));
+        newRows[oldRow] = row;
+    }
+    if (sortedProfiles == profiles) {
+        return;
+    }
+
+    emit layoutAboutToBeChanged();
+    // Views/proxies can create persistent indexes in the about-to-change slot.
+    const auto oldIndexes = persistentIndexList();
+    profiles = std::move(sortedProfiles);
+    QModelIndexList newIndexes;
+    newIndexes.reserve(oldIndexes.size());
+    for (const auto &oldIndex : oldIndexes) {
+        newIndexes.append(index(newRows.at(oldIndex.row()), oldIndex.column()));
+    }
+    changePersistentIndexList(oldIndexes, newIndexes);
+    emit layoutChanged();
+}
 
 void MyTableModel::refresh(){
     const int rows = this->count();
