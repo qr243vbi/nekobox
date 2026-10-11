@@ -190,13 +190,13 @@ cd AppDir
 mv nekobox_core .nekobox_core_binary_file
 cat << 'EOF' > nekobox_core
 #!/bin/sh
-exec "$(dirname $0)"/".nekobox_core_binary_file" -argv0 "${APPIMAGE}" "${@}"
+exec "$(dirname "$0")"/".nekobox_core_binary_file" -argv0 "${APPIMAGE}" "${@}"
 EOF
 
 cat << EOF > AppRun
 #!/bin/sh
 export NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE="\${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE:-$EXECUTABLE_NAME}"
-exec "\$(dirname \$0)"/"\${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "\${@}"
+exec "\$(dirname "\$0")"/"\${NEKOBOX_APPIMAGE_CUSTOM_EXECUTABLE}" "\${@}"
 EOF
 
 cat << 'EOF' > updater
