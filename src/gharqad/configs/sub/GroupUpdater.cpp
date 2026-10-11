@@ -1288,6 +1288,16 @@ bool RawUpdater::updateClash(const QString &str) {
           bean->stream->path = Node2QString(grpc["grpc-service-name"]);
         }
 
+        if (type == "vless" && *bean->stream->network == "xhttp") {
+          auto xhttp = NodeChild(proxy, {"xhttp-opts"});
+          if (xhttp.IsMap()) {
+            bean->stream->path = Node2QString(xhttp["path"]);
+            bean->stream->host = Node2QString(xhttp["host"]);
+            bean->stream->xhttp_mode =
+                Node2QString(xhttp["mode"], bean->stream->xhttp_mode);
+          }
+        }
+
         auto reality = NodeChild(proxy, {"reality-opts"});
         if (reality.IsMap()) {
           bean->stream->reality_pbk = Node2QString(reality["public-key"]);
