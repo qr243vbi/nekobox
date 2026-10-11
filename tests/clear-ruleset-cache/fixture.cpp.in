@@ -1,0 +1,60 @@
+#include <QApplication>
+#include <QAction>
+#include <QMenu>
+#include <QObject>
+#include <QString>
+#include <QCoreApplication>
+#include <iostream>
+#include <memory>
+#include <optional>
+#include <vector>
+#include <string>
+
+#define CHECK_SETTINGS_ACCESS_W
+
+namespace libcore {
+struct CacheURLRequest { bool filepath=false, clear=false, use_default_outbound=false; std::string http_url; };
+struct CacheURLResult { std::string file_path; bool exists=false; };
+}
+struct FakeClient {
+    bool rpcOK=true;
+    std::optional<libcore::CacheURLResult> reply=libcore::CacheURLResult{};
+    std::vector<libcore::CacheURLRequest> requests;
+    std::optional<libcore::CacheURLResult> CacheHTTP(bool *ok, const libcore::CacheURLRequest &req) { *ok=rpcOK; requests.push_back(req); return reply; }
+};
+std::unique_ptr<FakeClient> defaultClient;
+struct QMessageBox {
+    static inline int warnings=0;
+    static void warning(QObject*, const QString&, const QString&) { ++warnings; }
+};
+class MainWindow : public QObject {
+public:
+    struct Ui { QMenu *menuRouting_Menu; };
+    QMenu menu;
+    Ui backing{&menu};
+    Ui *ui=&backing;
+    @DECLARATION@
+    void setup() { @ACTION@ }
+};
+@METHOD@
+
+int main(int argc, char **argv) {
+    QApplication app(argc, argv);
+    int failures=0, assertions=0;
+    auto check=[&](bool ok, const char *name) { ++assertions; if (!ok) { ++failures; std::cerr << "FAIL " << name << '\n'; } };
+    for (int scenario=0; scenario<3; ++scenario) {
+        defaultClient=std::make_unique<FakeClient>();
+        QMessageBox::warnings=0;
+        if (scenario==1) { defaultClient->rpcOK=false; defaultClient->reply=std::nullopt; }
+        if (scenario==2) defaultClient->reply=std::nullopt;
+        MainWindow window;
+        window.setup();
+        window.menu.actions().front()->trigger();
+        check(defaultClient->requests.size()==1, "one RPC request per clear action");
+        const auto &req=defaultClient->requests.front();
+        check(req.clear && req.http_url.empty() && !req.filepath && !req.use_default_outbound, "clear-only request contract");
+        check(QMessageBox::warnings==(scenario==0 ? 0 : 1), "failed clear produces warning, success does not");
+    }
+    std::cout << assertions-failures << '/' << assertions << " assertions passed\n";
+    return failures ? 1 : 0;
+}
