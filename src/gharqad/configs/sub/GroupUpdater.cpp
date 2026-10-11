@@ -1059,6 +1059,48 @@ bool RawUpdater::updateWireguardFileConfig(const QString &str) {
 }
 
 
+// Mihomo stores a base64 ECHConfigList; sing-box expects ECH CONFIGS PEM.
+static bool ParseClashEch(Configs::V2rayStreamSettings *stream,
+                          const YAML::Node &ech) {
+  if (!ech.IsDefined()) return true;
+  if (!ech.IsMap()) return false;
+  try {
+    const auto enabled = ech["enable"];
+    const bool enable_ech = enabled.IsDefined() ? enabled.as<bool>() : false;
+    const auto config = ech["config"];
+    if (config.IsDefined() && !config.IsScalar()) return false;
+    const QString encoded = config.IsDefined()
+                                ? QString::fromStdString(config.as<std::string>())
+                                : QString();
+    QString ech_config;
+    if (!encoded.isEmpty()) {
+      // Go's standard base64 decoder permits CR/LF, but requires padding.
+      QString normalized = encoded;
+      normalized.remove('\r').remove('\n');
+      const auto decoded = DecodeB64IfValid(normalized);
+      const bool valid_config = normalized.size() % 4 == 0 && !decoded.isEmpty();
+      if (enable_ech && !valid_config) return false;
+      // Mihomo ignores config while ECH is disabled. Retain invalid disabled
+      // text without silently changing it into DNS-only ECH.
+      ech_config = "-----BEGIN ECH CONFIGS-----\n" +
+                   (valid_config ? QString::fromLatin1(decoded.toBase64()) : encoded) +
+                   "\n-----END ECH CONFIGS-----\n";
+    }
+    const auto query = ech["query-server-name"];
+    if (query.IsDefined() && !query.IsScalar()) return false;
+    const QString query_server_name = query.IsDefined()
+                                          ? QString::fromStdString(query.as<std::string>())
+                                          : QString();
+    // Keep disabled and DNS-only ECH distinct; commit only validated fields.
+    stream->enable_ech = enable_ech;
+    stream->ech_config = ech_config;
+    stream->query_server_name = query_server_name;
+    return true;
+  } catch (const YAML::Exception &) {
+    return false;
+  }
+}
+
 // https://wiki.metacubex.one/en/config/proxies
 bool RawUpdater::updateClash(const QString &str) {
   try {
@@ -1468,6 +1510,16 @@ bool RawUpdater::updateClash(const QString &str) {
         bean.reset();
       } else {
         continue;
+      }
+
+      {
+        auto bean = ent->unlock(ent->bean());
+        auto stream = Configs::GetStreamSettings(bean.get());
+        if (stream && stream->security == "tls" &&
+            !ParseClashEch(stream, proxy["ech-opts"])) {
+          MW_show_log("invalid Clash ECH options");
+          continue;
+        }
       }
 
       if (needFix)
