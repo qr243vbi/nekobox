@@ -196,8 +196,9 @@ void ProxyAutoTester::HandleProxyFailure(int proxyId, int attemptCount) {
     workingProxyPool.removeAll(proxyId);
     emit workingPoolUpdated(workingProxyPool);
 
-    // Try to failover if this is the active proxy
-    if (Configs::dataStore->started_id == proxyId) {
+    // The TUN failover setting does not change proxy-mode behavior.
+    if (Configs::dataStore->started_id == proxyId &&
+        (!Configs::dataStore->spmode_vpn || isTunFailoverEnabled())) {
         int nextProxyId = GetNextWorkingProxy();
 
         if (nextProxyId >= 0) {
