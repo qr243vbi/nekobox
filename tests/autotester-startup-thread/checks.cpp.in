@@ -1,0 +1,119 @@
+#include "ProxyAutoTester.hpp"
+#include <QCoreApplication>
+#include <QEventLoop>
+#include <QThread>
+#include <atomic>
+#include <iostream>
+
+namespace Configs {
+struct Settings {
+    bool auto_test_enable = true;
+    bool spmode_vpn = true;
+    int auto_test_interval_seconds = 1;
+} settings;
+auto dataStore = &settings;
+}
+namespace API { struct Client {}; std::unique_ptr<Client> defaultClient; }
+using namespace API;
+namespace Stats {
+struct Looper { void Loop() {} } looper;
+auto trafficLooper = &looper;
+auto connection_lister = &looper;
+}
+void MW_show_log(const QString &) {}
+// Only the unrelated traffic/connection loops in setup_rpc use this boundary.
+void runOnNewThread(const std::function<void()> &callback) { callback(); }
+std::atomic<int> threadWarnings = 0;
+std::atomic<int> cycles = 0, healthChecks = 0, wrongThreadCallbacks = 0;
+namespace Stats {
+@BODIES@
+void ProxyAutoTester::logStatus(const QString &) {}
+void ProxyAutoTester::RunTestCycle() {
+    ++cycles;
+    if (QThread::currentThread() != thread()) ++wrongThreadCallbacks;
+}
+void ProxyAutoTester::CheckActiveProxyHealth() {
+    ++healthChecks;
+    if (QThread::currentThread() != thread()) ++wrongThreadCallbacks;
+}
+}
+struct MainWindow : QObject {
+    std::unique_ptr<Stats::ProxyAutoTester> proxyAutoTester =
+        std::make_unique<Stats::ProxyAutoTester>(this);
+    static void setup_rpc();
+};
+MainWindow *window = nullptr;
+MainWindow *GetMainWindow() { return window; }
+@SETUP_RPC@
+
+void pump(int milliseconds) {
+    QEventLoop loop;
+    QTimer::singleShot(milliseconds, &loop, &QEventLoop::quit);
+    loop.exec();
+}
+int main(int argc, char **argv) {
+    QCoreApplication app(argc, argv);
+    qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
+        if (message.contains("thread", Qt::CaseInsensitive)) {
+            ++threadWarnings;
+            std::cerr << message.toStdString() << '\n';
+        }
+    });
+    const QString scenario = argv[1];
+    Configs::settings.spmode_vpn = scenario != "worker-proxy";
+    Configs::settings.auto_test_enable = scenario != "disabled";
+    auto owner = std::make_unique<MainWindow>();
+    window = owner.get();
+    if (scenario == "gui") {
+        MainWindow::setup_rpc();
+    } else {
+        // Match the core-thread caller in the production constructor.
+        auto worker = std::unique_ptr<QThread>(QThread::create([] { MainWindow::setup_rpc(); }));
+        worker->start();
+        if (!worker->wait(1000)) return 2;
+    }
+    if (scenario == "disable-pending") Configs::settings.auto_test_enable = false;
+    if (scenario == "destroy-pending") { window = nullptr; owner.reset(); }
+    pump(10);
+    int failures = 0;
+    auto check = [&](bool ok, const char *label) {
+        if (!ok) { ++failures; std::cerr << "FAIL " << scenario.toStdString() << ": " << label << '\n'; }
+    };
+    const bool enabled = Configs::settings.auto_test_enable && owner;
+    check(cycles == (enabled ? 1 : 0), "initial test count");
+    check(wrongThreadCallbacks == 0, "initial test stays on owner thread");
+    if (owner) {
+        const auto timers = owner->proxyAutoTester->findChildren<QTimer *>();
+        check(timers.size() == 2, "production timer pair exists");
+        bool testInterval = false, healthInterval = false;
+        for (auto timer : timers) {
+            check(timer->thread() == app.thread(), "timer belongs to GUI thread");
+            check(timer->isActive() == enabled, "timer starts only when enabled");
+            testInterval |= timer->interval() == 1000;
+            healthInterval |= timer->interval() == 30000;
+        }
+        if (enabled) {
+            check(testInterval && healthInterval, "production intervals retained");
+            // Accelerate timer delivery after checking production intervals.
+            for (auto timer : timers) timer->setInterval(5);
+            pump(40);
+            check(cycles > 1, "periodic backup testing fires");
+            check(healthChecks > 0, "periodic active health checking fires");
+            if (scenario == "stop") {
+                owner->proxyAutoTester->Stop();
+                const int oldCycles = cycles, oldHealth = healthChecks;
+                pump(25);
+                check(cycles == oldCycles && healthChecks == oldHealth, "stop prevents periodic work");
+                for (auto timer : timers) check(!timer->isActive(), "stop deactivates timers");
+            }
+        } else {
+            check(healthChecks == 0, "disabled health checks stay idle");
+        }
+    }
+    check(wrongThreadCallbacks == 0, "timer callbacks stay on owner thread");
+    owner.reset();
+    window = nullptr;
+    check(threadWarnings == 0, "no Qt thread-affinity warnings");
+    std::cout << "failures=" << failures << '\n';
+    return failures ? 1 : 0;
+}

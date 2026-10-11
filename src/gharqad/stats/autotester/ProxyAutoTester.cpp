@@ -12,6 +12,7 @@
 #include <nekobox/api/RPC.h>
 
 #include <QDebug>
+#include <QThread>
 #include <algorithm>
 
 namespace Stats {
@@ -34,6 +35,13 @@ ProxyAutoTester::~ProxyAutoTester() {
 }
 
 void ProxyAutoTester::Start() {
+    // RPC setup calls this from the core thread; both timers belong to this
+    // object on the GUI thread. Bind the queued call to the tester's lifetime.
+    if (QThread::currentThread() != thread()) {
+        QMetaObject::invokeMethod(this, [this] { Start(); }, Qt::QueuedConnection);
+        return;
+    }
+
     if (!isEnabled()) {
         logStatus("Auto-testing is disabled in settings");
         return;
