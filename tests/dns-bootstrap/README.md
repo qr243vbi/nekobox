@@ -96,6 +96,11 @@ and UBSan passed. Independent review included 103 additional edge cases, includi
 references, ignored collisions, one-suffix allocation, missing bootstrap, local
 policy expansion, tag renaming and final-policy changes.
 
+The publication candidate incorporates main `a4fb2ec` (including the separate
+HTTPS/H3 path correction in #333). The two hostname transport expectations use
+the exact `/dns-query` path now emitted by that builder; complete-object
+assertions remain in place.
+
 The repository-wide discovery command has an existing unrelated import-time
 argument-parser error in `test_subscription_update_guard.py`; its standalone
 regression passes. Full application configuration remains untested where CMake

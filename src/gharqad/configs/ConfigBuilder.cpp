@@ -1611,17 +1611,18 @@ QJsonObject BuildDnsObject(QString address, bool tunEnabled) {
     type = "quic";
     addr = addr.replace("quic://", "");
   } else if (address.startsWith("https://")) {
+    // Keep the complete escaped path; the core preserves encoded delimiters.
     type = "https";
-    addr = addr.replace("https://", "");
+    addr = addr.sliced(8);
     if (addr.contains("/")) {
-      path = addr.split("/").last();
+      path = addr.mid(addr.indexOf("/"));
       addr = addr.left(addr.indexOf("/"));
     }
   } else if (address.startsWith("h3://")) {
     type = "h3";
-    addr = addr.replace("h3://", "");
+    addr = addr.sliced(5);
     if (addr.contains("/")) {
-      path = addr.split("/").last();
+      path = addr.mid(addr.indexOf("/"));
       addr = addr.left(addr.indexOf("/"));
     }
   }

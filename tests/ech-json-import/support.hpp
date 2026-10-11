@@ -5,6 +5,7 @@
 #include <map>
 #include <memory>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <variant>
 #include <vector>
@@ -25,6 +26,7 @@ struct QString : std::string {
         return first == npos ? QString() : QString(substr(first, find_last_not_of(" \t\r\n") - first + 1));
     }
     QStringList split(const QString &) const;
+    double toDouble() const { throw std::logic_error("Numeric string conversion requires real Qt mode"); }
     static QString number(double n) { std::ostringstream s; s << n; return s.str(); }
 };
 template<class T> struct QList : std::vector<T> {
@@ -136,6 +138,7 @@ public:
     bool isMap() const; bool isObject() const; bool isArray() const;
     bool isString() const; bool isNumber() const; bool isBoolean() const;
     bool isBool() const; bool isNull() const; bool isUndefined() const; bool isNothing() const;
+    long double toNumber() const;
     bool toBoolean() const; bool toBool() const; bool getBoolean(bool def = false) const;
     QString getString(const EnumFieldName &def = "") const;
     QString toString() const; QStringList toStringList() const;

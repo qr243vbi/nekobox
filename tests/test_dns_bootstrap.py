@@ -75,11 +75,11 @@ VARIANTS = [
 ]
 REMOTES = [
     ("tls://resolver.invalid", {"type": "tls", "server": "resolver.invalid", "tls": {}}, True),
-    ("https://resolver.invalid/dns-query", {"type": "https", "server": "resolver.invalid", "path": "dns-query", "tls": {}}, True),
+    ("https://resolver.invalid/dns-query", {"type": "https", "server": "resolver.invalid", "path": "/dns-query", "tls": {}}, True),
     ("udp://resolver.invalid:5353", {"type": "udp", "server": "resolver.invalid", "server_port": 5353}, True),
     ("tcp://resolver.invalid", {"type": "tcp", "server": "resolver.invalid"}, True),
     ("quic://resolver.invalid", {"type": "quic", "server": "resolver.invalid"}, True),
-    ("h3://resolver.invalid/dns-query", {"type": "h3", "server": "resolver.invalid", "path": "dns-query", "tls": {}}, True),
+    ("h3://resolver.invalid/dns-query", {"type": "h3", "server": "resolver.invalid", "path": "/dns-query", "tls": {}}, True),
     ("tls://192.0.2.53", {"type": "tls", "server": "192.0.2.53", "tls": {}}, False),
     ("[2001:db8::53]:5353", {"type": "udp", "server": "2001:db8::53", "server_port": 5353}, False),
     ("", {"type": "tls", "server": "8.8.8.8", "tls": {}}, False),

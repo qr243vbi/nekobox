@@ -10,7 +10,8 @@ ROOT = HERE.parents[1]
 PROXY = "src/gharqad/configs/proxy/"
 IMPORT = PROXY + "Json2Bean.cpp"
 mutations = [
-    ("wrong boolean accessor", IMPORT, "enabled.getBoolean()", "enabled.toBool()"),
+    # toBool() is equivalent after the isBool() guard now that Node conversion is fixed.
+    ("invert boolean value", IMPORT, "enabled.getBoolean()", "!enabled.getBoolean()"),
     ("legacy overrides malformed nested", IMPORT, 'tls.contains("ech")', 'tls["ech"].isObject()'),
     ("enable when omitted", IMPORT, "enabled.getBoolean()", "enabled.getBoolean(true)"),
     ("ignore explicit false", IMPORT, "stream->enable_ech = enable_ech;", "stream->enable_ech = true; (void)enable_ech;"),
