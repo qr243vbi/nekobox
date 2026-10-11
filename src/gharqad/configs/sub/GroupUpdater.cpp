@@ -41,7 +41,22 @@ void RawUpdater_FixEnt(const std::shared_ptr<Configs::ProxyEntity> &ent) {
 int JsonEndIdx(const QString &str, int begin) {
   int sz = str.length();
   int counter = 1;
+  bool inString = false;
+  bool escaped = false;
   for (int i = begin + 1; i < sz; i++) {
+    if (inString) {
+      if (escaped)
+        escaped = false;
+      else if (str[i] == '\\')
+        escaped = true;
+      else if (str[i] == '"')
+        inString = false;
+      continue;
+    }
+    if (str[i] == '"') {
+      inString = true;
+      continue;
+    }
     if (str[i] == '{')
       counter++;
     if (str[i] == '}')
@@ -885,6 +900,9 @@ ret_loop:
   qDebug() << "Yes, it is";
 #endif
     auto list = Disect(str);
+    // Do not keep retrying an invalid multiline object without making progress.
+    if (list.size() == 1 && list[0].trimmed() == str)
+      goto ret_loop;
     for (const auto &str2 : list) {
       stack << str2.trimmed();
     }
