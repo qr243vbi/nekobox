@@ -1,0 +1,133 @@
+#include <QApplication>
+#include <QMainWindow>
+#include <QPointer>
+#include <QThread>
+#include <QTimer>
+#include <QEventLoop>
+#include <QPixmap>
+#include <atomic>
+#include <functional>
+#include <iostream>
+#include <memory>
+#include <thread>
+#include <vector>
+#include "shutdownoverlay.hpp"
+
+QString software_name = "Shutdown test";
+namespace Icon { QPixmap GetTrayIcon() { return {}; } }
+@OVERLAY@
+
+// Only the slow/application-specific cleanup entry is substituted. Its thread
+// is observable here; real QDialog/QTimer operations are never substituted.
+static std::atomic<int> cleanupCalls{0}, normalCalls{0}, wrongThread{0}, qtThreadWarnings{0};
+static bool decline = false, reenter = false, dismiss = false;
+static bool signalReentry = false;
+void signal_handler(int signum);
+static std::vector<std::thread> workers;
+void runOnNewThread(const std::function<void()> &callback) { workers.emplace_back(callback); }
+void runOnUiThread(const std::function<void()> &callback) {
+    QMetaObject::invokeMethod(qApp, callback, Qt::QueuedConnection);
+}
+
+class MainWindow : public QMainWindow {
+public:
+    @FIELDS@
+    void on_menu_exit_triggered(bool faster = false);
+    void prepare_exit() {
+        ++cleanupCalls;
+        if (QThread::currentThread() != qApp->thread()) ++wrongThread;
+        // Simulate profile_stop's GUI-thread wait while an RPC worker runs.
+        // Processing events here also permits a second exit request.
+        if (reenter && cleanupCalls == 1) {
+            QTimer::singleShot(0, this, [this] {
+                if (signalReentry) signal_handler(15);
+                else on_menu_exit_triggered();
+            });
+        }
+        if (dismiss) {
+            QTimer::singleShot(0, this, [] {
+                for (auto widget : QApplication::topLevelWidgets()) {
+                    if (auto overlay = qobject_cast<ShutdownOverlay *>(widget)) overlay->reject();
+                }
+            });
+        }
+        QEventLoop wait;
+        QTimer::singleShot(30, &wait, &QEventLoop::quit);
+        wait.exec(QEventLoop::ExcludeUserInputEvents);
+    }
+    bool on_menu_exit_triggered_func() {
+        ++normalCalls;
+        prepare_exit();
+        return !decline;
+    }
+};
+#define CHECK_ACTION_ACCESS_R
+@HANDLER@
+static MainWindow *mainWindow = nullptr;
+MainWindow *GetMainWindow() { return mainWindow; }
+@SIGNAL_HANDLER@
+
+void logMessage(QtMsgType, const QMessageLogContext &, const QString &message) {
+    if (message.contains("another thread") || message.contains("different thread")) {
+        ++qtThreadWarnings;
+        std::cerr << message.toStdString() << '\n';
+    }
+}
+
+int main(int argc, char **argv) {
+    QApplication app(argc, argv);
+    app.setQuitOnLastWindowClosed(false);
+    qInstallMessageHandler(logMessage);
+    const QString mode = argc > 1 ? argv[1] : "normal";
+    auto window = std::make_unique<MainWindow>();
+    mainWindow = window.get();
+    bool timeout = false, returned = false, cleanupBeforeReturn = false;
+    decline = mode == "declined";
+    dismiss = mode == "dismissed";
+    reenter = mode.startsWith("reentrant");
+    signalReentry = mode == "reentrant-signal";
+    const bool fast = mode.startsWith("fast") || mode == "worker-fast" || mode.startsWith("signal") || mode == "worker-signal";
+    QTimer::singleShot(1500, &app, [&] { timeout = true; app.quit(); });
+    QTimer::singleShot(0, &app, [&] {
+        if (mode == "destroyed") {
+            // Queue a real worker request, then destroy its QObject context
+            // before the GUI loop can deliver that request.
+            std::thread pending([&] { window->on_menu_exit_triggered(); });
+            pending.join();
+            window.reset();
+            returned = true;
+            QTimer::singleShot(100, &app, &QCoreApplication::quit);
+            return;
+        }
+        if (mode.startsWith("worker")) {
+            workers.emplace_back([&] {
+                if (mode == "worker-signal") signal_handler(15);
+                else window->on_menu_exit_triggered(fast);
+            });
+        } else {
+            if (mode.startsWith("signal")) signal_handler(15);
+            else window->on_menu_exit_triggered(fast);
+            if (mode == "pending-signal") signal_handler(15);
+            returned = true;
+            cleanupBeforeReturn = cleanupCalls == 1;
+            if (decline) {
+                QTimer::singleShot(100, &app, &QCoreApplication::quit);
+            }
+        }
+    });
+    app.exec();
+    for (auto &worker : workers) worker.join();
+    const int expectedCleanup = mode == "destroyed" ? 0 : 1;
+    bool ok = !timeout && cleanupCalls == expectedCleanup && wrongThread == 0 && qtThreadWarnings == 0;
+    if (mode == "destroyed") ok = ok && returned;
+    else ok = ok && normalCalls == (fast ? 0 : 1);
+    if (decline) ok = ok && !window->force_hide_tray;
+    if (mode.endsWith("completed") || mode == "pending-signal") ok = ok && cleanupBeforeReturn;
+    for (auto widget : QApplication::topLevelWidgets()) {
+        if (qobject_cast<ShutdownOverlay *>(widget)) ok = false; // No surviving overlay/timer.
+    }
+    std::cout << mode.toStdString() << ": cleanup=" << cleanupCalls
+              << " normal=" << normalCalls << " wrong-thread=" << wrongThread
+              << " Qt-thread-warnings=" << qtThreadWarnings << " timeout=" << timeout << '\n';
+    return ok ? 0 : 1;
+}

@@ -366,6 +366,7 @@ private:
     bool logClear = false;
     bool force_hide_text_under_buttons = false;
     bool force_hide_tray = false;
+    bool exit_in_progress = false;
     //
     Configs_sys::CoreProcess *core_process;
     qint64 vpn_pid = 0;

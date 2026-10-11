@@ -2519,26 +2519,37 @@ void MainWindow::call_updater() {
 }
 
 void MainWindow::on_menu_exit_triggered(bool faster){
+  // The updater can request exit from a worker. All shutdown UI, including
+  // prepare_exit() and the overlay's timer, belongs to the window's thread.
+  if (QThread::currentThread() != thread()) {
+    QMetaObject::invokeMethod(this, [this, faster] {
+      on_menu_exit_triggered(faster);
+    }, Qt::QueuedConnection);
+    return;
+  }
   CHECK_ACTION_ACCESS_R
+  if (exit_in_progress) return;
+  exit_in_progress = true;
 
   auto overlay = std::make_shared<ShutdownOverlay>(nullptr, true); 
   overlay->start();
   this->force_hide_tray = true;
-  bool quit = false;
 
-  runOnNewThread([overlay, this, &quit, faster]()-> void {
-    quit = !faster ? this->on_menu_exit_triggered_func() : true;
-    if (faster){
-      hide();
-      prepare_exit();
-    } else {
-      this->force_hide_tray = false;
-    }
-    overlay->finish();
-  });
-  overlay->exec();
-  if (quit){
+  // Keep cleanup synchronous on the GUI thread: a Windows session-end
+  // callback must not return with cleanup merely queued. profile_stop's
+  // blocking mode processes GUI events while waiting for its RPC worker.
+  const bool quit = !faster ? this->on_menu_exit_triggered_func() : true;
+  if (faster){
+    hide();
+    prepare_exit();
+  } else {
+    this->force_hide_tray = false;
+  }
+  overlay->finish();
+  if (quit) {
     QApplication::quit();
+  } else {
+    exit_in_progress = false;
   }
 }
 
