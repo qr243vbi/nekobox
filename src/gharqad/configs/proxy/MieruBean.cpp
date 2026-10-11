@@ -20,10 +20,10 @@ namespace Configs {
 
         add_username_password(this, url);
 
-        *network = query.queryItemValue("transport").toLower();
+        *network = GetQueryValue(query, "transport").toLower();
         traffic_pattern = GetQueryValue(query, "traffic_pattern");
-        *multiplexing = query.queryItemValue("multiplexing");
-        serverPorts = query.queryItemValue("server_ports").split(",");
+        *multiplexing = GetQueryValue(query, "multiplexing");
+        serverPorts = GetQueryValue(query, "server_ports").split(",");
         return true;
     }
     CoreObjOutboundBuildResult MieruBean::BuildCoreObjSingBox() const

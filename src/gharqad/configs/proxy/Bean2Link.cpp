@@ -43,7 +43,7 @@ namespace To_Link {
     void add_tls(std::shared_ptr<V2rayStreamSettings> stream, QUrlQuery & query){
         auto security = stream->security;
         if (security == "tls" && !stream->reality_pbk.trimmed().isEmpty()) security = "reality";
-        query.addQueryItem("security", security == "" ? "none" : security);
+        add_query_nonempty("security", query, security == "" ? "none" : security);
 
         add_query_nonempty("sni", query, stream->sni);
         add_query_nonempty("alpn", query, stream->alpn);
@@ -53,9 +53,9 @@ namespace To_Link {
         }
         if (stream->allow_insecure) query.addQueryItem("insecure", "1");
         if (stream->utlsFingerprint.isEmpty()) {
-            query.addQueryItem("fp", Configs::dataStore->utlsFingerprint);
+            add_query_nonempty("fp", query, Configs::dataStore->utlsFingerprint);
         } else {
-            query.addQueryItem("fp", stream->utlsFingerprint);
+            add_query_nonempty("fp", query, stream->utlsFingerprint);
         }
         if (stream->enable_tls_fragment) query.addQueryItem("fragment", "1");
         add_query_nonempty("fragment_fallback_delay", query, stream->tls_fragment_fallback_delay);

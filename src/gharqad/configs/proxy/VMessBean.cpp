@@ -139,7 +139,7 @@ namespace Configs {
                 stream->utlsFingerprint = Configs::dataStore->utlsFingerprint;
             }
             if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
-            stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+            stream->tls_fragment_fallback_delay = GetQueryValue(query, "fragment_fallback_delay");
             if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
 
             // mux

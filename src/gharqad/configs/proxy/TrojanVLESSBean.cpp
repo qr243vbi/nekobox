@@ -85,7 +85,7 @@ namespace Configs {
         stream->reality_spx = GetQueryValue(query, "spx", "/");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
         if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
-        stream->tls_fragment_fallback_delay = query.queryItemValue("fragment_fallback_delay");
+        stream->tls_fragment_fallback_delay = GetQueryValue(query, "fragment_fallback_delay");
         if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;
         if (stream->utlsFingerprint.isEmpty()) {
             stream->utlsFingerprint = dataStore->utlsFingerprint;
@@ -180,7 +180,7 @@ namespace Configs {
         if (proxy_type == proxy_VLESS) {
             add_query_nonempty("flow", query, flow);
             add_query_nonempty("packetEncoding", query, *stream->packet_encoding);
-            query.addQueryItem("encryption", (encryption == "" ) ? "none" : encryption);
+            add_query_nonempty("encryption", query, (encryption == "" ) ? "none" : encryption);
         }
 
         url.setQuery(query);

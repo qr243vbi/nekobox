@@ -100,7 +100,7 @@ namespace Configs {
             }
 
             auto query = GetQuery(url);
-            plugin = query.queryItemValue("plugin").replace("simple-obfs;", "obfs-local;");
+            plugin = GetQueryValue(query, "plugin").replace("simple-obfs;", "obfs-local;");
             
             add_mux_state(this, query);
             add_network(this, query);

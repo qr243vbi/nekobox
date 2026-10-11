@@ -67,14 +67,14 @@ namespace Configs {
         auto query = GetQuery(url);
         add_default_fields(url, entity);
 
-        privateKey = query.queryItemValue("private_key");
-        publicKey = query.queryItemValue("peer_public_key");
-        preSharedKey = query.queryItemValue("pre_shared_key");
-        auto rawReserved = query.queryItemValue("reserved");
+        privateKey = GetQueryValue(query, "private_key");
+        publicKey = GetQueryValue(query, "peer_public_key");
+        preSharedKey = GetQueryValue(query, "pre_shared_key");
+        auto rawReserved = GetQueryValue(query, "reserved");
         if (!rawReserved.isEmpty()) {
             for (const auto &item: rawReserved.split("-")) reserved += item.toInt();
         }
-        auto rawLocalAddr = query.queryItemValue("local_address");
+        auto rawLocalAddr = GetQueryValue(query, "local_address");
         if (!rawLocalAddr.isEmpty()) {
             for (const auto &item: rawLocalAddr.split("-")) localAddress += item;
         }
