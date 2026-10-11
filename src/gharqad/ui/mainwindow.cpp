@@ -3166,7 +3166,6 @@ void MainWindow::refresh_proxy_traffic(const int &id) {
 void MainWindow::refresh_proxy_list_impl(const int &id,
                                          GroupSortAction groupSortAction) {
 
-  ui->proxyListTable->setUpdatesEnabled(false);
   if (id < 0) {
     auto currentGroup = Configs::profileManager->CurrentGroup();
     if (currentGroup == nullptr) {
