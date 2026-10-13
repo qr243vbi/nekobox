@@ -262,7 +262,10 @@ namespace Configs {
                     // Xray-core 26.9.8+ requires X25519MLKEM768 in REALITY ClientHello.
                     // The bundled metacubex/utls v1.8.7 Firefox/Safari fingerprints do not
                     // advertise ML-KEM, so use the ML-KEM-capable Chrome fingerprint.
-                    if (fp.compare("firefox", Qt::CaseInsensitive) == 0 ||
+                    // An empty fingerprint used to fall back to "random", which picks
+                    // Chrome only 1 time in 5 and makes the handshake fail at random.
+                    if (fp.trimmed().isEmpty() ||
+                        fp.compare("firefox", Qt::CaseInsensitive) == 0 ||
                         fp.compare("safari", Qt::CaseInsensitive) == 0 ||
                         fp.compare("ios", Qt::CaseInsensitive) == 0 ||
                         fp.compare("android", Qt::CaseInsensitive) == 0 ||
@@ -280,7 +283,6 @@ namespace Configs {
                         // Xray-core 26.9.8+ requires X25519MLKEM768 in ClientHello.
                         {"support_x25519mlkem768", true},
                     };
-                    if (fp.isEmpty()) fp = "random";
                 }
                 if (!fp.isEmpty()) {
                     tls["utls"] = QJsonObject{
