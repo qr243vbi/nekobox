@@ -136,6 +136,11 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		if err != nil {
 			return out, nil
 		}
+		if addrs := process.LocalInboundAddrs(in.ExtraProcessConf); len(addrs) > 0 {
+			if e := internal.ExtraProcess.WaitListening(addrs, 10*time.Second); e != nil {
+				log.Println(e)
+			}
+		}
 	}
 
 	internal.BoxInstance, internal.InstanceCancel, err = boxmain.Create([]byte(in.CoreConfig))
