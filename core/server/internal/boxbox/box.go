@@ -13,6 +13,7 @@ import (
 	"github.com/sagernet/sing-box/adapter/inbound"
 	"github.com/sagernet/sing-box/adapter/outbound"
 	boxService "github.com/sagernet/sing-box/adapter/service"
+	"github.com/sagernet/sing-box/common/httpclient"
 	"github.com/sagernet/sing-box/common/taskmonitor"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/dns"
@@ -160,6 +161,12 @@ func New(options Options) (*Box, error) {
 	connectionManager := route.NewConnectionManager(logFactory.NewLogger("connection"))
 	service.MustRegister[adapter.ConnectionManager](ctx, connectionManager)
 
+	// sing-box 1.14: the router resets the HTTP client manager on every network
+	// change. Without it registered, Router.ResetNetwork dereferences nil and the
+	// core panics as soon as Windows reports an interface update.
+	httpClientManager := httpclient.NewManager(ctx, logFactory.NewLogger("httpclient"), options.HTTPClients, routeOptions.DefaultHTTPClient)
+	service.MustRegister[adapter.HTTPClientManager](ctx, httpClientManager)
+
 	router := route.NewRouter(ctx, logFactory, "router", routeOptions, dnsOptions)
 	service.MustRegister[adapter.Router](ctx, router)
 
@@ -269,6 +276,12 @@ func New(options Options) (*Box, error) {
 		)
 	})
 
+	httpClientManager.Initialize(func() (*httpclient.ManagedTransport, error) {
+		var httpClientOptions option.HTTPClientOptions
+		httpClientOptions.DefaultOutbound = true
+		return httpclient.NewTransport(ctx, logFactory.NewLogger("httpclient"), "", httpClientOptions)
+	})
+
 	dnsTransportManager.Initialize(func() (adapter.DNSTransport, error) {
 		return local.NewTransport(
 			ctx,
@@ -279,20 +292,21 @@ func New(options Options) (*Box, error) {
 	})
 
 	return &Box{
-		ctx:          ctx,
-		network:      networkManager,
-		endpoint:     endpointManager,
-		inbound:      inboundManager,
-		outbound:     outboundManager,
-		dnsTransport: dnsTransportManager,
-		service:      serviceManager,
-		dnsRouter:    dnsRouter,
-		connection:   connectionManager,
-		router:       router,
-		createdAt:    createdAt,
-		logFactory:   logFactory,
-		logger:       logFactory.Logger(),
-		done:         make(chan struct{}),
+		ctx:             ctx,
+		network:         networkManager,
+		endpoint:        endpointManager,
+		inbound:         inboundManager,
+		outbound:        outboundManager,
+		dnsTransport:    dnsTransportManager,
+		service:         serviceManager,
+		dnsRouter:       dnsRouter,
+		connection:      connectionManager,
+		router:          router,
+		createdAt:       createdAt,
+		logFactory:      logFactory,
+		logger:          logFactory.Logger(),
+		done:            make(chan struct{}),
+		internalService: []adapter.LifecycleService{httpClientManager},
 	}, nil
 }
 
