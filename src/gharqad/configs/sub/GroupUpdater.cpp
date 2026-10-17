@@ -1010,6 +1010,205 @@ void RawUpdater::updateSIP008(const QJsonObject &json) {
   }
 }
 
+namespace {
+
+// One outbound of a sing-box json that turned into a profile.
+struct SingBoxItem {
+  std::shared_ptr<Configs::ProxyEntity> ent;
+  QString tag;
+  QString detour;
+  // index of the item this one is dialed through, -1 for none
+  int next = -1;
+  // some other item is dialed through this one
+  bool referenced = false;
+};
+
+std::shared_ptr<Configs::ProxyEntity> ParseSingBoxOutbound(QJsonObject &out) {
+  QString out_type = out["type"].toString();
+
+  if (out_type.isEmpty() && !out["protocol"].toString().isEmpty()) {
+    out = convertV2RayNToSingBox(out);
+    out_type = out["type"].toString();
+  }
+
+  auto ent = Configs::ProfileManager::NewProxyEntity(out_type, true);
+  if (!ent->isValid()) {
+    return nullptr;
+  }
+  auto bean = ent->unlock(ent->bean());
+  if (!bean->TryParseJson(out)) {
+    return nullptr;
+  }
+  RawUpdater_FixEnt(ent);
+  return ent;
+}
+
+// Fills next/referenced from "detour". A detour that leads nowhere we can
+// follow (another tag that is not a profile, direct, itself, a loop) is
+// dropped, the outbound then stays a plain profile like it always was.
+// Returns true when at least one outbound is dialed through another one.
+bool ResolveSingBoxDetours(QList<SingBoxItem> &items) {
+  QMap<QString, int> byTag;
+  for (int i = 0; i < items.size(); i++) {
+    if (items[i].tag.isEmpty() || byTag.contains(items[i].tag)) continue;
+    byTag.insert(items[i].tag, i);
+  }
+
+  for (int i = 0; i < items.size(); i++) {
+    const QString detour = items[i].detour;
+    if (detour.isEmpty()) continue;
+    auto it = byTag.constFind(detour);
+    if (it == byTag.constEnd()) {
+      if (detour != "direct") {
+        MW_show_log("[Chain] " + items[i].tag + ": detour \"" + detour +
+                    "\" is not a profile of this config, ignored");
+      }
+    } else if (it.value() == i) {
+      MW_show_log("[Chain] " + items[i].tag +
+                  ": detour points at itself, ignored");
+    } else {
+      items[i].next = it.value();
+    }
+  }
+
+  for (int i = 0; i < items.size(); i++) {
+    QList<int> path;
+    for (int cur = i; cur >= 0; cur = items[cur].next) {
+      if (path.contains(cur)) {
+        QStringList tags;
+        for (int k : path) tags << items[k].tag;
+        MW_show_log("[Chain] detour loop " + tags.join(" -> ") + ", ignored");
+        for (int k : path) items[k].next = -1;
+        break;
+      }
+      path << cur;
+    }
+  }
+
+  bool any = false;
+  for (int i = 0; i < items.size(); i++) {
+    if (items[i].next < 0) continue;
+    items[items[i].next].referenced = true;
+    any = true;
+  }
+  return any;
+}
+
+} // namespace
+
+// Imports outbounds that are dialed through each other as hops plus chains.
+// Returns false, having stored nothing, when the input has no such outbounds;
+// the plain import of every outbound then takes over.
+bool RawUpdater::updateSingBoxChains(const QJsonArray &items,
+                                     const QJsonObject &json,
+                                     const QString &name) {
+  bool has_detour = false;
+  for (auto o : items) {
+    const auto detour = o.toObject()["detour"].toString();
+    if (!detour.isEmpty() && detour != "direct") {
+      has_detour = true;
+      break;
+    }
+  }
+  if (!has_detour) {
+    return false;
+  }
+
+  QList<SingBoxItem> parsed;
+  for (auto o : items) {
+    auto out = o.toObject();
+    if (out.isEmpty()) {
+      continue;
+    }
+
+    auto ent = ParseSingBoxOutbound(out);
+    if (ent == nullptr) {
+      continue;
+    }
+    SingBoxItem item;
+    item.ent = ent;
+    item.tag = out["tag"].toString();
+    item.detour = out["detour"].toString();
+    parsed << item;
+  }
+
+  if (!ResolveSingBoxDetours(parsed)) {
+    return false;
+  }
+
+  // Outbounds nobody is dialed through are what the user picks: either a
+  // plain profile, or the end of a chain. Everything on the way to the end of
+  // a chain is a hop. The first of them is the main entry: sing-box's default
+  // (the first outbound when route.final is unset), except that hops are
+  // skipped.
+  QList<int> exits;
+  for (int i = 0; i < parsed.size(); i++) {
+    if (!parsed[i].referenced) exits << i;
+  }
+  if (exits.isEmpty()) {
+    return false;
+  }
+  const int main_exit = exits.first();
+
+  const QString remarks = name.isEmpty() ? json["remarks"].toString() : name;
+  ChainImport unit;
+  QList<std::shared_ptr<Configs::ProxyEntity>> plain;
+  QList<std::shared_ptr<Configs::ProxyEntity>> hops;
+  QSet<int> hop_done;
+
+  for (int exit : exits) {
+    const bool is_main = exit == main_exit;
+    const auto &tag = parsed[exit].tag;
+    QString title = remarks.isEmpty() ? tag : remarks;
+    if (!is_main && !remarks.isEmpty() && !tag.isEmpty()) {
+      title += " / " + tag;
+    }
+
+    if (parsed[exit].next < 0) {
+      parsed[exit].ent->name = title;
+      plain << parsed[exit].ent;
+      unit.order << parsed[exit].ent;
+      continue;
+    }
+
+    // in to out: the hop the client dials first, then the ones behind it
+    QList<int> path;
+    for (int cur = exit; cur >= 0; cur = parsed[cur].next) path.prepend(cur);
+
+    QMap<QString, int> type_count;
+    for (int i : path) type_count[parsed[i].ent->type]++;
+
+    ChainImport::Chain chain;
+    if (title.isEmpty()) title = QObject::tr("Chain Proxy");
+    chain.ent = Configs::ProfileManager::NewProxyEntity("chain");
+    chain.ent->name = title;
+    if (is_main) {
+      chain.ent->display_type = QObject::tr("Chain Proxy") + " (main)";
+    }
+    for (int i : path) {
+      auto &hop = parsed[i];
+      chain.hops << hop.ent;
+      if (hop_done.contains(i)) continue;
+      hop_done.insert(i);
+      QString label = hop.ent->type;
+      if (type_count[label] > 1 && !hop.tag.isEmpty()) label += " " + hop.tag;
+      hop.ent->name = title + " / " + label;
+      hop.ent->chain_link = true;
+      hops << hop.ent;
+    }
+    unit.chains << chain;
+    unit.order << chain.ent;
+  }
+
+  for (const auto &ent : plain) AddProxy(ent);
+  for (const auto &ent : hops) {
+    AddProxy(ent);
+    unit.order << ent;
+  }
+  chain_imports << unit;
+  return true;
+}
+
 void RawUpdater::updateSingBox(const QJsonObject &json, const QString &name) {
   auto outbounds = json["outbounds"].toArray();
   auto endpoints = json["endpoints"].toArray();
@@ -1023,6 +1222,10 @@ void RawUpdater::updateSingBox(const QJsonObject &json, const QString &name) {
     if (!endpoint.isObject())
       continue;
     items.append(endpoint.toObject());
+  }
+
+  if (allow_chains && updateSingBoxChains(items, json, name)) {
+    return;
   }
 
   for (auto o : items) {
@@ -1066,6 +1269,92 @@ void RawUpdater::updateSingBox(const QJsonObject &json, const QString &name) {
 
     AddProxy(ent);
   }
+}
+
+int RawUpdater::ProfileId(
+    const std::shared_ptr<Configs::ProxyEntity> &ent) const {
+  if (ent->id >= 0) return ent->id;
+  auto it = ignore_map.constFind(Configs::ProfileFilterKey(ent, false));
+  if (it == ignore_map.constEnd() || it.key().key == nullptr) return -1;
+  return it.key().key->id;
+}
+
+void RawUpdater::FinalizeChains() {
+  const int gid =
+      gid_add_to < 0 ? Configs::dataStore->current_group : gid_add_to;
+  auto group = Configs::profileManager->GetGroup(gid);
+
+  for (const auto &unit : chain_imports) {
+    // what this run stores, to leave the place of older profiles alone
+    QSet<std::shared_ptr<Configs::ProxyEntity>> fresh;
+
+    for (const auto &chain : unit.chains) {
+      QList<int> ids;
+      for (const auto &hop : chain.hops) {
+        const int id = ProfileId(hop);
+        if (id < 0) break;
+        ids << id;
+      }
+      if (ids.size() != chain.hops.size()) {
+        MW_show_log("[Chain] " + chain.ent->name +
+                    ": a hop was not stored, the chain is skipped");
+        continue;
+      }
+      chain.ent->unlock(chain.ent->ChainBean())->list = ids;
+
+      // Same hops again: the chain is already there.
+      if (!AddProxy(chain.ent)) continue;
+
+      // Hops changed under a chain of the same name: keep its id, routing
+      // rules and the running profile point at it.
+      bool replaced = false;
+      for (auto it = ignore_map.begin(); it != ignore_map.end(); ++it) {
+        const auto &old = it.key().key;
+        if (it.value() || old == nullptr || old->type != "chain" ||
+            old->gid != gid || old->name != chain.ent->name) {
+          continue;
+        }
+        if (Configs::profileManager->ReplaceProfile(old->id, chain.ent)) {
+          it.value() = true;
+          replaced = true;
+          MW_show_log("[Chain] " + chain.ent->name + ": hops updated");
+        }
+        break;
+      }
+      if (replaced) {
+        proxies.removeOne(chain.ent);
+      } else {
+        Configs::profileManager->AddProfile(chain.ent, gid);
+        fresh << chain.ent;
+      }
+    }
+    for (const auto &ent : unit.order) {
+      if (ent->type != "chain" && proxies.contains(ent)) fresh << ent;
+    }
+
+    // chain first, then the other entries, the hops last
+    if (group == nullptr || fresh.isEmpty()) continue;
+    QList<int> want;
+    for (const auto &ent : unit.order) {
+      if (fresh.contains(ent) && ent->id >= 0) want << ent->id;
+    }
+    Configs::profileManager->lock();
+    auto &profiles = group->profiles;
+    QList<qsizetype> positions;
+    for (int id : want) {
+      auto at = profiles.indexOf(id);
+      if (at >= 0) positions << at;
+    }
+    if (positions.size() == want.size()) {
+      std::sort(positions.begin(), positions.end());
+      for (qsizetype k = 0; k < positions.size(); k++) {
+        profiles[positions[k]] = want[k];
+      }
+      group->Save();
+    }
+    Configs::profileManager->unlock();
+  }
+  chain_imports.clear();
 }
 
 bool RawUpdater::updateWireguardFileConfig(const QString &str) {
@@ -1811,6 +2100,7 @@ void GroupUpdater::Update(
   rawUpdater->update(content);
   Configs::profileManager->AddProfileBatch(rawUpdater->proxies,
                                            rawUpdater->gid_add_to);
+  rawUpdater->FinalizeChains();
 
   if (count > 0){
     for ( auto [key, save] : asKeyValueRange(rawUpdater->ignore_map) ){

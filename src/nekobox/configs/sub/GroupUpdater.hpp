@@ -17,6 +17,9 @@ namespace Subscription {
 
         void updateSingBox(const QJsonObject &str, const QString &name = QString());
 
+        bool updateSingBoxChains(const QJsonArray &items, const QJsonObject &json,
+                                 const QString &name);
+
         bool updateWireguardFileConfig(const QString &str);
 
         int gid_add_to = -1;
@@ -26,6 +29,32 @@ namespace Subscription {
         QList<std::shared_ptr<Configs::ProxyEntity>> proxies;
 
         bool AddProxy(std::shared_ptr<Configs::ProxyEntity>);
+
+        // Sing-box outbounds linked by "detour" become hop profiles plus a
+        // chain over them. Callers that map the parsed profiles onto existing
+        // ones one by one switch this off to get independent profiles.
+        bool allow_chains = true;
+
+        // Chains found by update(). They need the ids of their hops, so they
+        // are only created by FinalizeChains() once the hops are stored.
+        struct ChainImport {
+            struct Chain {
+                std::shared_ptr<Configs::ProxyEntity> ent;
+                // in to out, same as ChainBean::list
+                QList<std::shared_ptr<Configs::ProxyEntity>> hops;
+            };
+            QList<Chain> chains;
+            // wanted order of everything one input created, chains included
+            QList<std::shared_ptr<Configs::ProxyEntity>> order;
+        };
+        QList<ChainImport> chain_imports;
+
+        // Call after the profiles in `proxies` got their ids.
+        void FinalizeChains();
+
+        // id of a profile that was either stored by this run or matched an
+        // existing one through ignore_map, -1 if neither
+        int ProfileId(const std::shared_ptr<Configs::ProxyEntity> &ent) const;
     };
 
     class GroupUpdater : public QObject {

@@ -230,6 +230,9 @@ int fixed_entities = 0;
 void RawUpdater_FixEnt(const std::shared_ptr<Configs::ProxyEntity> &) { ++fixed_entities; }
 struct RawUpdater {
     QList<std::shared_ptr<Configs::ProxyEntity>> proxies;
+    bool allow_chains = true;
+    // chains from "detour" are not under test here
+    bool updateSingBoxChains(const QJsonArray &, const QJsonObject &, const QString &) { return false; }
     void updateSingBox(const QJsonObject &, const QString &);
     void AddProxy(const std::shared_ptr<Configs::ProxyEntity> &ent) { proxies.push_back(ent); }
 };
