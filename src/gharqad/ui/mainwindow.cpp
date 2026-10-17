@@ -3571,6 +3571,8 @@ void MainWindow::update_selected_profiles(const QString &content) {
     }
 
     auto rawUpdater = std::make_unique<Subscription::RawUpdater>();
+    // the parsed profiles replace the selected ones one by one
+    rawUpdater->allow_chains = false;
     rawUpdater->update(data);
     auto &proxies = rawUpdater->proxies;
     if (proxies.isEmpty()) {
