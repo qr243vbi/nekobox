@@ -689,6 +689,19 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
     auto group = Configs::profileManager->GetGroup(ent->gid);
     if (group == nullptr || group->archive) return;
 
+    // A hop of an imported chain does not work on its own; keep the user from
+    // picking it by accident, but let a deliberate choice through.
+    if (ent->chain_link && ent->id != Configs::dataStore->started_id &&
+        QMessageBox::question(
+            this, software_name,
+            tr("\"%1\" is only a hop of a chain and does not work on its own. "
+               "Select the chain instead.\n\nStart it anyway?")
+                .arg(ent->name),
+            QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::No) != QMessageBox::Yes) {
+        return;
+    }
+
     auto profile_start_stage2 = [=, this] {
         //
         if (ent->type == "xray") {

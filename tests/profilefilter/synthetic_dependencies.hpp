@@ -45,6 +45,7 @@ struct ProxyEntity {
     int serverPort = 443;
     int id = 0;
     std::string name = "Synthetic profile";
+    bool chain_link = false;
     std::shared_ptr<SyntheticBean> contents = std::make_shared<SyntheticBean>();
 
     std::shared_ptr<const SyntheticBean> bean() const { return contents; }

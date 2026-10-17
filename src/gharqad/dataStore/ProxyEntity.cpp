@@ -194,6 +194,7 @@ qDebug() << "Type Unknown" << make_strong_bean;
             _add(map1, "report", full_test_report, string);
             _add(map1, "country", test_country, string);
             _add(map1, "is_working", is_working, boolean);
+            _add(map1, "chain_link", chain_link, boolean);
             _add(map1, "last_auto_test_time", last_auto_test_time, integer64);
             _add(map1, "name", name, string);
             _add(map1, "dtype", display_type, string);

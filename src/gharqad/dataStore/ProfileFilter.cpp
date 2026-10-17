@@ -76,7 +76,11 @@ ProfileFilterKey ProfileFilter_ent_key(
     const std::shared_ptr<Configs::ProxyEntity> &ent,
     bool by_address)
 {
-    const bool useAddressOnly = by_address && ent->type != "custom";
+    // A chain has no address of its own, and the hops of an imported chain
+    // often share one (the inner proxy sits on a loopback port), so only the
+    // whole bean tells two of them apart.
+    const bool useAddressOnly = by_address && ent->type != "custom" &&
+                                ent->type != "chain" && !ent->chain_link;
     return ProfileFilterKey(ent, useAddressOnly);
 }
 

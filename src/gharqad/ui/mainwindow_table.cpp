@@ -685,6 +685,9 @@ QVariant MyTableModel::data(const QModelIndex &index, int role) const
                     QColor green(0x32, 0xCD, 0x32);
                     return QBrush(green);
                 }
+                if (person->chain_link){
+                    return QBrush(Qt::gray);
+                }
                 default:
                 break;
             }

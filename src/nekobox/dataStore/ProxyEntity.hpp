@@ -87,6 +87,8 @@ public:
   int latencyInt = 0;
   int latencyOrder = 0;
   bool is_working = false;
+  // hop of an imported chain, only meant to be used through that chain
+  bool chain_link = false;
 
   //        QString bean_cfg;
   QString dl_speed;

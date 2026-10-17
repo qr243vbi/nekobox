@@ -827,6 +827,11 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
       MW_show_log("Skipping external-core profile from batch test: " + item->DisplayName());
       continue;
     }
+    if (item->chain_link) {
+      // a hop is not reachable on its own, so a result for it would only mislead
+      MW_show_log("Skipping chain link from batch test: " + item->DisplayName());
+      continue;
+    }
     if (!IsValid(item)) {
       MW_show_log("Skipping invalid config: " + item->name);
       item->latencyInt = -1;

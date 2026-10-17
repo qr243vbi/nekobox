@@ -379,6 +379,9 @@ bool ProxyAutoTester::shouldTestProxy(std::shared_ptr<Configs::ProxyEntity> prox
     }
 
     // Skip certain proxy types that shouldn't be auto-tested
+    if (proxy->chain_link) {
+        return false;
+    }
     if (proxy->type == "chain") {
         return false;
     }

@@ -101,6 +101,16 @@ static void by_address_ignores_bean() {
     b->contents->transport = "ws";
     expect_profiles(unique({a,b},true), {a}, "address-only mode compared bean/metadata");
 }
+static void chains_and_hops_compare_bean() {
+    // hops of an imported chain share loopback addresses and chains have none
+    auto a = make_profile(1), b = make_profile(2);
+    b->contents->credential = "synthetic-B";
+    a->chain_link = b->chain_link = true;
+    expect_profiles(unique({a,b},true), {a,b}, "hops were merged by address");
+    a->chain_link = b->chain_link = false;
+    a->type = b->type = "chain";
+    expect_profiles(unique({a,b},true), {a,b}, "chains were merged by address");
+}
 static void custom_compares_bean() {
     auto a = make_profile(), b = make_profile();
     a->type = b->type = "custom";
@@ -168,6 +178,7 @@ int main(int argc, char **argv) {
         {"ordering_cross_fields",ordering_cross_fields}, {"ordering_laws",ordering_laws},
         {"credentials_retained",credentials_retained}, {"transport_retained",transport_retained},
         {"metadata_ignored",metadata_ignored}, {"by_address_ignores_bean",by_address_ignores_bean},
+        {"chains_and_hops_compare_bean",chains_and_hops_compare_bean},
         {"custom_compares_bean",custom_compares_bean}, {"endpoint_fields_retained",endpoint_fields_retained},
         {"keep_first_and_last",keep_first_and_last}, {"exclusions_preserved",exclusions_preserved},
         {"common_matches_by_bean",common_matches_by_bean}, {"permutation_invariance",permutation_invariance}
