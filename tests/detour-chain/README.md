@@ -20,6 +20,8 @@ development files. No application, core, profile storage or network is used.
 ```sh
 python3 tests/detour-chain/test_detour_chain.py
 python3 tests/detour-chain/test_detour_chain.py --ref <commit>
+python3 tests/detour-chain/test_import_compat.py
+python3 tests/detour-chain/test_import_compat.py --ref a83f27fc
 python3 tests/detour-chain/mutation_checks.py
 ```
 
@@ -27,8 +29,29 @@ On Windows, run from a developer prompt with `CXX=cl` and `QT_DIR` set to the
 Qt kit root (for example `D:/Qt/6.10.3/msvc2022_64`) instead of pkg-config.
 
 `--ref` reads immutable source through `git show`; `--keep-generated PATH` saves
-the compiled translation unit. Ten mutations must compile, run, and fail a
+the compiled translation unit. Thirteen mutations (ten of the chain import,
+three of the dispatch) must compile, run, and fail a
 runtime check; compilation failure never counts as a killed mutation.
+
+## Imports that existed before
+
+`test_import_compat.py` feeds whole input texts to `RawUpdater::update()`, with
+the production base64 decoder, splitter, full-config sanitizer and the
+sing-box and SIP008 importers, and checks the profiles that come out:
+
+- a full config with `dns` and `route` (plain and as base64) stays one
+  `internal-full` profile with its outbounds, `detour` and `route.final`
+- outbounds without `detour` (plain and as base64) stay separate profiles
+  named by their tags
+- share links, also as single and nested base64 with CRLF and empty lines
+- a JSON array subscription mixing an outbounds object and a link
+- a single outbound object (`custom`/`internal`) and SIP008
+
+The same inputs and expectations pass against a revision without chain import
+(`--ref a83f27fc`, 23 checks) and against this branch, which adds three
+checks for a chain through the same dispatch (26 checks). Three mutations of
+the dispatch must fail it. Clash YAML and WireGuard files are not among its
+inputs.
 
 ## What is real and what is a boundary
 
