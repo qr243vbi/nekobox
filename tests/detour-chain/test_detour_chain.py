@@ -43,20 +43,20 @@ MUTATIONS = {
 }
 
 
-def compile_command(cpp, exe, extra):
+def compile_command(cpp, exe, defines=()):
     cxx = os.environ.get('CXX')
     qt_dir = os.environ.get('QT_DIR')
     if (cxx and Path(cxx).name.lower().startswith('cl')) or (not cxx and qt_dir and not shutil.which('pkg-config')):
         # MSVC, from a developer prompt; QT_DIR is the Qt kit root
         qt = Path(qt_dir)
         return [cxx or 'cl', '/nologo', '/std:c++20', '/EHsc', '/permissive-', '/Zc:__cplusplus', '/utf-8',
-                '/W3', '/wd4244', '/wd4267', '/DUSE_REAL_QT', f'/I{qt / "include"}', f'/I{qt / "include" / "QtCore"}',
+                '/W3', '/wd4244', '/wd4267', '/DUSE_REAL_QT', *[f'/D{d}' for d in defines], f'/I{qt / "include"}', f'/I{qt / "include" / "QtCore"}',
                 str(cpp), f'/Fe{exe}', f'/Fo{Path(cpp).parent}\\', '/link', f'/LIBPATH:{qt / "lib"}', 'Qt6Core.lib']
     probe = subprocess.run(['pkg-config', '--cflags', '--libs', 'Qt6Core'], text=True, capture_output=True)
     if probe.returncode:
         raise SystemExit('BLOCKED: Qt6 Core development headers/pkg-config metadata unavailable.')
     return (shlex.split(cxx or 'c++') + ['-std=c++20', '-Wall', '-Wextra', '-Werror', '-Wno-unused-variable',
-            '-Wno-unused-function', '-O0', '-fPIC', '-DUSE_REAL_QT'] + shlex.split(os.environ.get('EXTRA_CXXFLAGS', ''))
+            '-Wno-unused-function', '-O0', '-fPIC', '-DUSE_REAL_QT'] + [f'-D{d}' for d in defines] + shlex.split(os.environ.get('EXTRA_CXXFLAGS', ''))
             + [str(cpp), '-o', str(exe)] + shlex.split(probe.stdout))
 
 
@@ -117,7 +117,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='nekobox-detour-chain-') as td:
         cpp, exe = Path(td) / 'test.cpp', Path(td) / ('test.exe' if os.name == 'nt' else 'test')
         cpp.write_text(code)
-        subprocess.run(compile_command(cpp, exe, None), check=True, timeout=240, cwd=td)
+        subprocess.run(compile_command(cpp, exe), check=True, timeout=240, cwd=td)
         return subprocess.run([str(exe)], timeout=30).returncode
 
 

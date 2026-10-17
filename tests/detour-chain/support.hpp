@@ -11,6 +11,7 @@
 #include <QSet>
 #include <QString>
 #include <QStringList>
+#include <QUrl>
 #include <algorithm>
 #include <functional>
 #include <iostream>
@@ -21,8 +22,15 @@
 QStringList logLines;
 inline std::function<void(const QString &)> MW_show_log = [](const QString &m) { logLines << m; };
 QString QJsonType2QString(QJsonValue::Type) { return "other"; }
+#ifdef REAL_IMPORT_HELPERS
+// the whole import path is extracted: base64, splitter, sanitizer, dispatch
+QByteArray DecodeB64IfValid(const QString &input,
+                            QByteArray::Base64Options options = QByteArray::Base64Encoding);
+#else
 // v2rayN conversion is not under test: the fixtures are already sing-box.
 QJsonObject convertV2RayNToSingBox(const QJsonObject &o) { return o; }
+#endif
+namespace HappDecrypt { QString decryptLink(const QString &) { return {}; } }
 
 namespace Configs {
 
@@ -36,6 +44,10 @@ struct AbstractBean {
     explicit AbstractBean(ProxyEntity *e) : entity(e) {}
     virtual ~AbstractBean() = default;
     virtual bool TryParseJson(const QJsonObject &obj);
+    // share links: only what tells two profiles apart, the real parsers are
+    // covered by their own tests
+    virtual bool TryParseLink(const QString &link);
+    bool TryParseNekorayLink(const QUrl &) { return false; }
     virtual QString fingerprint() const { return QJsonDocument(json).toJson(QJsonDocument::Compact); }
     int compare(const AbstractBean *other, const QStringList &) const {
         return fingerprint().compare(other->fingerprint());
@@ -52,6 +64,17 @@ struct ChainBean : AbstractBean {
     }
 };
 
+struct CustomBean : AbstractBean {
+    QString core, config_simple;
+    using AbstractBean::AbstractBean;
+    QString fingerprint() const override { return "custom:" + core + ":" + config_simple; }
+};
+
+struct ShadowSocksBean : AbstractBean {
+    using AbstractBean::AbstractBean;
+    bool TryParseFromSIP008(const QJsonObject &obj);
+};
+
 struct ProxyEntity {
     QString type, display_type, name;
     QString serverAddress = "127.0.0.1";
@@ -62,15 +85,24 @@ struct ProxyEntity {
     std::shared_ptr<AbstractBean> storage;
     explicit ProxyEntity(QString t) : type(std::move(t)) {
         if (type == "chain") storage = std::make_shared<Configs::ChainBean>(this);
+        else if (type == "custom") storage = std::make_shared<Configs::CustomBean>(this);
+        else if (type == "shadowsocks") storage = std::make_shared<Configs::ShadowSocksBean>(this);
         else storage = std::make_shared<AbstractBean>(this);
     }
     bool isValid() const {
         // direct, block, selector... are not profiles
-        return type == "vless" || type == "ssh" || type == "trojan" || type == "chain";
+        return type == "vless" || type == "ssh" || type == "trojan" || type == "chain" ||
+               type == "custom" || type == "shadowsocks";
     }
     std::shared_ptr<const AbstractBean> bean() const { return storage; }
     std::shared_ptr<const Configs::ChainBean> ChainBean() const {
         return std::dynamic_pointer_cast<const Configs::ChainBean>(storage);
+    }
+    std::shared_ptr<const Configs::CustomBean> CustomBean() const {
+        return std::dynamic_pointer_cast<const Configs::CustomBean>(storage);
+    }
+    std::shared_ptr<const Configs::ShadowSocksBean> ShadowSocksBean() const {
+        return std::dynamic_pointer_cast<const Configs::ShadowSocksBean>(storage);
     }
     template <class A> std::shared_ptr<A> unlock(std::shared_ptr<const A> b) {
         return std::const_pointer_cast<A>(b);
@@ -81,6 +113,24 @@ bool AbstractBean::TryParseJson(const QJsonObject &obj) {
     if (obj["unparsable"].toBool()) return false;
     json = obj;
     entity->name = obj["tag"].toString();
+    entity->serverAddress = obj["server"].toString();
+    entity->serverPort = obj["server_port"].toInt();
+    return true;
+}
+
+bool AbstractBean::TryParseLink(const QString &link) {
+    QUrl url(link);
+    if (!url.isValid() || url.host().isEmpty()) return false;
+    json = QJsonObject{{"link", link}};
+    entity->name = url.fragment(QUrl::FullyDecoded);
+    entity->serverAddress = url.host();
+    entity->serverPort = url.port(443);
+    return true;
+}
+
+bool ShadowSocksBean::TryParseFromSIP008(const QJsonObject &obj) {
+    json = obj;
+    entity->name = obj["remarks"].toString();
     entity->serverAddress = obj["server"].toString();
     entity->serverPort = obj["server_port"].toInt();
     return true;
@@ -97,6 +147,9 @@ struct Group {
 
 struct DataStore {
     int current_group = 1;
+    int core_box_clash_api = 0;
+    QString core_box_clash_listen_addr = "127.0.0.1";
+    QString core_box_clash_api_secret;
 } dataStoreValue;
 DataStore *dataStore = &dataStoreValue;
 
