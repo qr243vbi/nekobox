@@ -140,6 +140,36 @@ Supported JSON subscription features include:
 - Full JSON URL testing and auto testing
 - Hysteria2 detection from v2rayN/Happ-style Hysteria v2 JSON
 
+### Chains in one string
+
+A sing-box JSON that has `outbounds` (or `endpoints`) but no `route`, `dns` or `inbounds` is imported as one profile per outbound. When an outbound names another outbound of the same JSON in `detour`, the outbounds are imported as a chain instead:
+
+- every outbound on the way becomes a profile of its own, named `<remarks> / <type>` and marked as a hop of a chain: it is grayed out in the list, left out of URL tests, speed tests, auto tests and failover, and asks for confirmation before it is started on its own
+- a `Chain Proxy` profile named `<remarks>` is created over them; the outbound with the `detour` is the end of the chain, the one it points at is dialed first
+- an outbound that has no `detour` and that no other outbound points at stays a normal profile, named `<remarks> / <tag>`
+- the main entry is the first outbound of the JSON that is not a hop: sing-box's default (the first outbound when `route.final` is unset), except that hops are skipped; it comes first in the list and is labelled `(main)` when it is a chain; the others follow in the order of the JSON, hops last
+
+Because the result consists of ordinary profiles, routing profiles and the Routes tab apply to them in system proxy mode and in TUN mode alike. A `detour` that points at `direct`, at a tag that is not an importable outbound, at itself, or into a loop is ignored. Subscription updates keep unchanged profiles, and a chain whose hops changed keeps its profile id.
+
+```json
+{
+  "remarks": "client",
+  "outbounds": [
+    {"type": "vless", "tag": "proxy", "server": "127.0.0.1", "server_port": 10085,
+     "uuid": "<UUID>", "packet_encoding": "xudp", "detour": "ssh-hop"},
+    {"type": "ssh", "tag": "ssh-hop", "server": "<HOST>", "server_port": 22,
+     "user": "<USER>", "private_key": "<KEY>", "host_key": ["<HOST KEY>"]},
+    {"type": "vless", "tag": "reality", "server": "<HOST>", "server_port": 443,
+     "uuid": "<UUID>", "flow": "xtls-rprx-vision",
+     "tls": {"enabled": true, "server_name": "<SNI>",
+             "utls": {"enabled": true, "fingerprint": "chrome"},
+             "reality": {"enabled": true, "public_key": "<PBK>", "short_id": "<SID>"}}}
+  ]
+}
+```
+
+This gives `client` (a chain: SSH, then the inner VLESS), `client / reality` and the two hops `client / ssh` and `client / vless`.
+
 ## Credits
 
 - [starifly/NekoBoxForAndroid](https://github.com/starifly/NekoBoxForAndroid)
