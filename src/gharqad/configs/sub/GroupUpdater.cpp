@@ -1182,6 +1182,12 @@ bool RawUpdater::updateSingBoxChains(const QJsonArray &items,
     if (title.isEmpty()) title = QObject::tr("Chain Proxy");
     chain.ent = Configs::ProfileManager::NewProxyEntity("chain");
     chain.ent->name = title;
+    // The name follows the order of the input, the entry does not: an update
+    // finds the chain it replaces by the remarks and the tag of its end.
+    if (!tag.isEmpty()) {
+      chain.ent->unlock(chain.ent->ChainBean())->import_key =
+          QJsonDocument(QJsonArray{remarks, tag}).toJson(QJsonDocument::Compact);
+    }
     if (is_main) {
       chain.ent->display_type = QObject::tr("Chain Proxy") + " (main)";
     }
@@ -1307,24 +1313,41 @@ void RawUpdater::FinalizeChains() {
       chain.ent->unlock(chain.ent->ChainBean())->list = ids;
       for (int id : ids) hop_ids.insert(id);
 
-      // Same hops again: the chain is already there.
-      if (!AddProxy(chain.ent)) continue;
+      // Same hops again: the chain is already there, only its place in the
+      // input may have moved.
+      if (!AddProxy(chain.ent)) {
+        auto kept = ignore_map.constFind(Configs::ProfileFilterKey(chain.ent, false));
+        const auto &old = kept != ignore_map.constEnd() ? kept.key().key : nullptr;
+        if (old != nullptr && (old->name != chain.ent->name ||
+                               old->display_type != chain.ent->display_type)) {
+          old->name = chain.ent->name;
+          old->display_type = chain.ent->display_type;
+          changed << old;
+        }
+        continue;
+      }
 
-      // Hops changed under a chain of the same name: keep its id, routing
-      // rules and the running profile point at it.
-      bool replaced = false;
-      for (auto it = ignore_map.begin(); it != ignore_map.end(); ++it) {
+      // Hops changed under the chain of the same entry: keep its id, routing
+      // rules and the running profile point at it. Two candidates leave it
+      // open which one is meant, so neither is taken.
+      const auto key = chain.ent->ChainBean()->import_key;
+      QList<QMap<Configs::ProfileFilterKey, bool>::iterator> candidates;
+      for (auto it = ignore_map.begin(); !key.isEmpty() && it != ignore_map.end(); ++it) {
         const auto &old = it.key().key;
         if (it.value() || old == nullptr || old->type != "chain" ||
-            old->gid != gid || old->name != chain.ent->name) {
+            old->gid != gid || old->ChainBean() == nullptr ||
+            old->ChainBean()->import_key != key) {
           continue;
         }
-        if (Configs::profileManager->ReplaceProfile(old->id, chain.ent)) {
-          it.value() = true;
-          replaced = true;
-          MW_show_log("[Chain] " + chain.ent->name + ": hops updated");
-        }
-        break;
+        candidates << it;
+      }
+      bool replaced = false;
+      if (candidates.size() == 1 &&
+          Configs::profileManager->ReplaceProfile(candidates.first().key().key->id,
+                                                  chain.ent)) {
+        candidates.first().value() = true;
+        replaced = true;
+        MW_show_log("[Chain] " + chain.ent->name + ": hops updated");
       }
       if (replaced) {
         proxies.removeOne(chain.ent);

@@ -517,6 +517,46 @@ static void testReusedProfilesTakeTheirNewRole() {
     if (ent(2)) CHECK_EQ(ent(2)->chain_link, false);
 }
 
+static void testChainIdFollowsItsExitWhenReordered() {
+    resetWorld();
+    { SubscriptionRun first; first.run(2, R"j({"remarks":"r","outbounds":[
+        {"type":"vless","tag":"a","server":"a.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"vless","tag":"b","server":"b.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"ssh","tag":"h","server":"h.invalid","server_port":22,"user":"x"}]})j"); }
+    const int a = chainEndingAt("a.invalid", 2), b = chainEndingAt("b.invalid", 2);
+    CHECK(a > 0 && b > 0 && a != b);
+    if (a <= 0 || b <= 0) return;
+    CHECK_EQ(ent(a)->name, QString("r"));
+
+    // b moves first, and the shared hop changes
+    SubscriptionRun update;
+    update.run(2, R"j({"remarks":"r","outbounds":[
+        {"type":"vless","tag":"b","server":"b.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"vless","tag":"a","server":"a.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"ssh","tag":"h","server":"h.invalid","server_port":22,"user":"x","host_key":["new"]}]})j");
+    CHECK_EQ(chainEndingAt("a.invalid", 2), a);
+    CHECK_EQ(chainEndingAt("b.invalid", 2), b);
+    if (ent(b)) {
+        CHECK_EQ(ent(b)->name, QString("r")); // b is the main entry now
+        CHECK(ent(b)->display_type.contains("(main)"));
+    }
+    if (ent(a)) {
+        CHECK_EQ(ent(a)->name, QString("r / a"));
+        CHECK(!ent(a)->display_type.contains("(main)"));
+    }
+
+    // only the order changes: the chains are kept and relabelled
+    SubscriptionRun back;
+    back.run(2, R"j({"remarks":"r","outbounds":[
+        {"type":"vless","tag":"a","server":"a.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"vless","tag":"b","server":"b.invalid","server_port":443,"uuid":"u","detour":"h"},
+        {"type":"ssh","tag":"h","server":"h.invalid","server_port":22,"user":"x","host_key":["new"]}]})j");
+    CHECK_EQ(chainEndingAt("a.invalid", 2), a);
+    CHECK_EQ(chainEndingAt("b.invalid", 2), b);
+    if (ent(a)) CHECK_EQ(ent(a)->name, QString("r"));
+    if (ent(b)) CHECK(!ent(b)->display_type.contains("(main)"));
+}
+
 int main() {
     Configs::profileManager->groups[1] = std::make_shared<Configs::Group>();
     testChainAndReality();
@@ -536,6 +576,7 @@ int main() {
     testTwoClientsInOneGroupStayApart();
     testHopsAndChainsAreNotKeyedByAddress();
     testReusedProfilesTakeTheirNewRole();
+    testChainIdFollowsItsExitWhenReordered();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }
