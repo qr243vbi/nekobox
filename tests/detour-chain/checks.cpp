@@ -346,8 +346,9 @@ static void testNoTagsStillWorks() {
 struct SubscriptionRun {
     RawUpdater u;
     QList<int> dropped;
-    void run(int gid, const char *text) {
+    void run(int gid, const char *text, bool chains = true) {
         u.gid_add_to = gid;
+        u.allow_chains = chains;
         for (int id : Configs::profileManager->GetGroup(gid)->profiles) {
             auto profile = Configs::profileManager->GetProfile(id);
             u.ignore_map[Configs::ProfileFilterKey(profile, false)] = false;
@@ -478,6 +479,44 @@ static void testHopsAndChainsAreNotKeyedByAddress() {
     CHECK(Configs::ProfileFilter_ent_key(h1, true) != Configs::ProfileFilter_ent_key(h2, true));
 }
 
+// ---- review of the first version ---------------------------------------
+
+static int chainEndingAt(const QString &server, int gid = 1) {
+    for (int id : groupOf(gid)) {
+        if (ent(id)->type != "chain") continue;
+        auto list = chainList(id);
+        if (!list.isEmpty() && ent(list.last()) && ent(list.last())->serverAddress == server) return id;
+    }
+    return -1;
+}
+
+static void testReusedProfilesTakeTheirNewRole() {
+    // a subscription imported before chains existed, then updated
+    resetWorld();
+    { SubscriptionRun old; old.run(2, kChainOnly, false); }
+    CHECK_EQ(groupOf(2), (QList<int>{1, 2}));
+    CHECK_EQ(ent(1)->chain_link, false);
+    CHECK_EQ(ent(2)->chain_link, false);
+
+    SubscriptionRun update;
+    update.run(2, kChainOnly);
+    int chain = chainEndingAt("127.0.0.1", 2);
+    CHECK(chain > 0);
+    if (chain <= 0) return;
+    CHECK_EQ(chainList(chain), (QList<int>{2, 1})); // the old profiles are reused
+    CHECK_EQ(ent(1)->chain_link, true);
+    CHECK_EQ(ent(2)->chain_link, true);
+    CHECK(ent(1)->saves > 0); // and stored with their new role
+    CHECK(ent(2)->saves > 0);
+
+    // the ssh hop is now offered on its own: it is no hop any more
+    SubscriptionRun standalone;
+    standalone.run(2, R"j({"remarks":"client","outbounds":[
+        {"type":"ssh","tag":"ssh-hop","server":"h.invalid","server_port":4422,"user":"tunnel"}]})j");
+    CHECK_EQ(groupOf(2), (QList<int>{2}));
+    if (ent(2)) CHECK_EQ(ent(2)->chain_link, false);
+}
+
 int main() {
     Configs::profileManager->groups[1] = std::make_shared<Configs::Group>();
     testChainAndReality();
@@ -496,6 +535,7 @@ int main() {
     testSubscriptionDropsAChainThatIsGone();
     testTwoClientsInOneGroupStayApart();
     testHopsAndChainsAreNotKeyedByAddress();
+    testReusedProfilesTakeTheirNewRole();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }
