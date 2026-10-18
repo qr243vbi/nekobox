@@ -39,12 +39,14 @@ MUTATIONS = {
     'hops-keyed-by-address': (FILTER, ' &&\n                                ent->type != "chain" && !ent->chain_link;', ';'),
     'reused-profile-keeps-old-role': (UPDATER, 'old->chain_link = hop;', '(void)hop;'),
     'chain-matched-by-name': (
-        UPDATER, 'old->ChainBean()->import_key != key) {', 'old->name != chain.ent->name) {'),
+        UPDATER, 'old->ChainBean()->import_key != key) {', 'old->name != ent->name) {'),
     'kept-chain-not-relabelled': (UPDATER, 'old->name = chain.ent->name;', ''),
     'direct-tag-not-followed': (
         UPDATER, 'if (carriers.contains(o.toObject()["detour"].toString())) {',
         'if (carriers.contains(o.toObject()["detour"].toString()) && o.toObject()["detour"].toString() != "direct") {'),
     'duplicate-hops-deleted': (FILTER, 'if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
+    'repeated-entry-replaces': (UPDATER, '!key.isEmpty() && pending_keys[key] == 1 && it != ignore_map.end(); ++it) {',
+                                '!key.isEmpty() && it != ignore_map.end(); ++it) {'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),
 }

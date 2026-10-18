@@ -1306,11 +1306,10 @@ void RawUpdater::FinalizeChains() {
   QList<std::shared_ptr<Configs::ProxyEntity>> changed;
   // what the chains of this update go through
   QSet<int> hop_ids;
+  // chains with hops no old chain has, stored once every exact match is known
+  QList<std::shared_ptr<Configs::ProxyEntity>> pending;
 
   for (const auto &unit : chain_imports) {
-    // what this run stores, to leave the place of older profiles alone
-    QSet<std::shared_ptr<Configs::ProxyEntity>> fresh;
-
     for (const auto &chain : unit.chains) {
       QList<int> ids;
       for (const auto &hop : chain.hops) {
@@ -1339,46 +1338,57 @@ void RawUpdater::FinalizeChains() {
         }
         continue;
       }
-
-      // Hops changed under the chain of the same entry: keep its id, routing
-      // rules and the running profile point at it. Two candidates leave it
-      // open which one is meant, so neither is taken.
-      const auto key = chain.ent->ChainBean()->import_key;
-      QList<QMap<Configs::ProfileFilterKey, bool>::iterator> candidates;
-      for (auto it = ignore_map.begin(); !key.isEmpty() && it != ignore_map.end(); ++it) {
-        const auto &old = it.key().key;
-        if (it.value() || old == nullptr || old->type != "chain" ||
-            old->gid != gid || old->ChainBean() == nullptr ||
-            old->ChainBean()->import_key != key) {
-          continue;
-        }
-        candidates << it;
-      }
-      bool replaced = false;
-      if (candidates.size() == 1 &&
-          Configs::profileManager->ReplaceProfile(candidates.first().key().key->id,
-                                                  chain.ent)) {
-        candidates.first().value() = true;
-        replaced = true;
-        MW_show_log("[Chain] " + chain.ent->name + ": hops updated");
-      }
-      if (replaced) {
-        proxies.removeOne(chain.ent);
-      } else {
-        Configs::profileManager->AddProfile(chain.ent, gid);
-        fresh << chain.ent;
-      }
+      pending << chain.ent;
     }
-    for (const auto &ent : unit.order) {
-      if (ent->type != "chain" && proxies.contains(ent)) fresh << ent;
-    }
+  }
 
-    // chain first, then the other entries, the hops last
-    if (group == nullptr || fresh.isEmpty()) continue;
+  // Hops changed under the chain of the same entry: keep its id, routing
+  // rules and the running profile point at it. Exact matches are claimed by
+  // now, so an unchanged chain is never taken over. Two old or two new chains
+  // of one entry (inputs of one subscription may repeat remarks and tags)
+  // leave it open which one is meant, so none is taken.
+  QMap<QString, int> pending_keys;
+  for (const auto &ent : pending) pending_keys[ent->ChainBean()->import_key]++;
+  QSet<std::shared_ptr<Configs::ProxyEntity>> fresh;
+  for (const auto &ent : pending) {
+    const auto key = ent->ChainBean()->import_key;
+    QList<QMap<Configs::ProfileFilterKey, bool>::iterator> candidates;
+    for (auto it = ignore_map.begin();
+         !key.isEmpty() && pending_keys[key] == 1 && it != ignore_map.end(); ++it) {
+      const auto &old = it.key().key;
+      if (it.value() || old == nullptr || old->type != "chain" ||
+          old->gid != gid || old->ChainBean() == nullptr ||
+          old->ChainBean()->import_key != key) {
+        continue;
+      }
+      candidates << it;
+    }
+    bool replaced = false;
+    if (candidates.size() == 1 &&
+        Configs::profileManager->ReplaceProfile(candidates.first().key().key->id,
+                                                ent)) {
+      candidates.first().value() = true;
+      replaced = true;
+      MW_show_log("[Chain] " + ent->name + ": hops updated");
+    }
+    if (replaced) {
+      proxies.removeOne(ent);
+    } else {
+      Configs::profileManager->AddProfile(ent, gid);
+      fresh << ent;
+    }
+  }
+
+  // chain first, then the other entries, the hops last; what this run
+  // stores moves, older profiles keep their place
+  for (const auto &unit : chain_imports) {
     QList<int> want;
     for (const auto &ent : unit.order) {
-      if (fresh.contains(ent) && ent->id >= 0) want << ent->id;
+      const bool is_fresh =
+          ent->type == "chain" ? fresh.contains(ent) : proxies.contains(ent);
+      if (is_fresh && ent->id >= 0) want << ent->id;
     }
+    if (group == nullptr || want.isEmpty()) continue;
     Configs::profileManager->lock();
     auto &profiles = group->profiles;
     QList<qsizetype> positions;
