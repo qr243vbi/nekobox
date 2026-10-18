@@ -21,6 +21,10 @@ public:
 };
 
 namespace Configs {
+struct ChainBean {
+    QList<int> list; // in to out
+};
+
 struct SyntheticBean {
     std::string credential = "synthetic-A";
     std::string transport = "tcp";
@@ -47,8 +51,10 @@ struct ProxyEntity {
     std::string name = "Synthetic profile";
     bool chain_link = false;
     std::shared_ptr<SyntheticBean> contents = std::make_shared<SyntheticBean>();
+    std::shared_ptr<Configs::ChainBean> chain;
 
     std::shared_ptr<const SyntheticBean> bean() const { return contents; }
+    std::shared_ptr<const Configs::ChainBean> ChainBean() const { return chain; }
     int Id() const { return id; }
     // Models the source boundary: ProxyEntity::compare compares entity metadata,
     // not the separate AbstractBean fields. The bean is intentionally absent.

@@ -41,6 +41,7 @@ MUTATIONS = {
     'chain-matched-by-name': (
         UPDATER, 'old->ChainBean()->import_key != key) {', 'old->name != chain.ent->name) {'),
     'kept-chain-not-relabelled': (UPDATER, 'old->name = chain.ent->name;', ''),
+    'duplicate-hops-deleted': (FILTER, 'if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),
 }
@@ -102,6 +103,12 @@ def main():
                 'bool ProfileFilterKey::operator<(', 'ProfileFilterKey ProfileFilter_ent_key('):
         code += function(flt, sig) + '\n'
     code += function(flt, 'ProfileFilterKey::ProfileFilterKey(const std::shared_ptr<Configs::ProxyEntity>& key,') + '\n'
+    # duplicate removal, as the main window runs it
+    code += function(flt_h, 'class ProfileFilter {') + ';\n'
+    for sig in ('void ProfileFilter::Uniq(', 'void ProfileFilter::OnlyInSrc_ByPointer(',
+                'void ProfileFilter::KeepReferencedHops('):
+        if sig in flt:
+            code += function(flt, sig) + '\n'
     code += function(builder, 'ResolveChainInternal(const std::shared_ptr<BuildConfigStatus> &status,').replace(
         'ResolveChainInternal(', 'QList<std::shared_ptr<ProxyEntity>>\nResolveChainInternal(', 1) + '\n}\n'
 
@@ -120,7 +127,8 @@ def main():
     with tempfile.TemporaryDirectory(prefix='nekobox-detour-chain-') as td:
         cpp, exe = Path(td) / 'test.cpp', Path(td) / ('test.exe' if os.name == 'nt' else 'test')
         cpp.write_text(code)
-        subprocess.run(compile_command(cpp, exe), check=True, timeout=240, cwd=td)
+        defines = ['HAS_KEEP_HOPS'] if 'ProfileFilter::KeepReferencedHops(' in flt else []
+        subprocess.run(compile_command(cpp, exe, defines), check=True, timeout=240, cwd=td)
         return subprocess.run([str(exe)], timeout=30).returncode
 
 

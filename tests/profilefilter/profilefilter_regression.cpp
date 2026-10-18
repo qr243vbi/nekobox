@@ -111,6 +111,31 @@ static void chains_and_hops_compare_bean() {
     a->type = b->type = "chain";
     expect_profiles(unique({a,b},true), {a,b}, "chains were merged by address");
 }
+static void hops_in_use_are_kept() {
+    // the same chain imported twice: equal hops, chains over different ids
+    auto hop1 = make_profile(1), hop2 = make_profile(2), hop3 = make_profile(3), hop4 = make_profile(4);
+    hop1->chain_link = hop2->chain_link = hop3->chain_link = hop4->chain_link = true;
+    hop2->contents->credential = hop4->contents->credential = "synthetic-B";
+    auto chainA = make_profile(5), chainB = make_profile(6);
+    chainA->type = chainB->type = "chain";
+    chainA->chain = std::make_shared<Configs::ChainBean>();
+    chainA->chain->list = {1, 2};
+    chainB->chain = std::make_shared<Configs::ChainBean>();
+    chainB->chain->list = {3, 4};
+    chainB->contents->config = "synthetic-config-B";
+    const QList<Profile> all{hop1, hop2, chainA, hop3, hop4, chainB};
+    QList<Profile> drop{hop3, hop4};
+    ProfileFilter::KeepReferencedHops(all, drop);
+    expect_profiles(drop, {}, "hops of a kept chain were dropped");
+    // once their chain goes too, the duplicates may go
+    drop = {hop3, hop4, chainB};
+    ProfileFilter::KeepReferencedHops(all, drop);
+    expect_profiles(drop, {hop3, hop4, chainB}, "hops of a dropped chain were kept");
+    // a hop of a kept chain stays even when that chain is dropped elsewhere
+    drop = {hop1, chainB};
+    ProfileFilter::KeepReferencedHops(all, drop);
+    expect_profiles(drop, {chainB}, "hop of the remaining chain was dropped");
+}
 static void custom_compares_bean() {
     auto a = make_profile(), b = make_profile();
     a->type = b->type = "custom";
@@ -179,6 +204,7 @@ int main(int argc, char **argv) {
         {"credentials_retained",credentials_retained}, {"transport_retained",transport_retained},
         {"metadata_ignored",metadata_ignored}, {"by_address_ignores_bean",by_address_ignores_bean},
         {"chains_and_hops_compare_bean",chains_and_hops_compare_bean},
+        {"hops_in_use_are_kept",hops_in_use_are_kept},
         {"custom_compares_bean",custom_compares_bean}, {"endpoint_fields_retained",endpoint_fields_retained},
         {"keep_first_and_last",keep_first_and_last}, {"exclusions_preserved",exclusions_preserved},
         {"common_matches_by_bean",common_matches_by_bean}, {"permutation_invariance",permutation_invariance}
