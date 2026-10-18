@@ -347,14 +347,19 @@ struct SubscriptionRun {
     RawUpdater u;
     QList<int> dropped;
     void run(int gid, const char *text, bool chains = true) {
+        runMany(gid, {text}, chains);
+    }
+    void runMany(int gid, std::initializer_list<const char *> texts, bool chains = true) {
         u.gid_add_to = gid;
         u.allow_chains = chains;
         for (int id : Configs::profileManager->GetGroup(gid)->profiles) {
             auto profile = Configs::profileManager->GetProfile(id);
             u.ignore_map[Configs::ProfileFilterKey(profile, false)] = false;
         }
-        auto obj = parse(text);
-        u.updateSingBox(obj, obj["remarks"].toString());
+        for (const char *text : texts) {
+            auto obj = parse(text);
+            u.updateSingBox(obj, obj["remarks"].toString());
+        }
         Configs::profileManager->AddProfileBatch(u.proxies, u.gid_add_to);
         u.FinalizeChains();
         for (auto it = u.ignore_map.begin(); it != u.ignore_map.end(); ++it) {
@@ -589,6 +594,62 @@ static void testDuplicateCleanupKeepsReferencedHops() {
     }
 }
 
+// ---- second round of review ------------------------------------------
+
+static int chainStartingAt(const QString &server, int gid = 2) {
+    for (int id : groupOf(gid)) {
+        if (ent(id)->type != "chain") continue;
+        auto list = chainList(id);
+        if (!list.isEmpty() && ent(list.first()) && ent(list.first())->serverAddress == server) return id;
+    }
+    return -1;
+}
+
+static const char *kEntryA = R"j({"outbounds":[
+    {"type":"vless","tag":"proxy","server":"127.0.0.1","server_port":10085,"uuid":"a","detour":"ssh"},
+    {"type":"ssh","tag":"ssh","server":"a.invalid","server_port":22,"user":"a"}]})j";
+static const char *kEntryAChanged = R"j({"outbounds":[
+    {"type":"vless","tag":"proxy","server":"127.0.0.1","server_port":10085,"uuid":"a","detour":"ssh"},
+    {"type":"ssh","tag":"ssh","server":"a.invalid","server_port":22,"user":"a","host_key":["new"]}]})j";
+static const char *kEntryB = R"j({"outbounds":[
+    {"type":"vless","tag":"proxy","server":"127.0.0.1","server_port":10085,"uuid":"b","detour":"ssh"},
+    {"type":"ssh","tag":"ssh","server":"b.invalid","server_port":22,"user":"b"}]})j";
+
+static int chainCount(int gid) {
+    int n = 0;
+    for (int id : groupOf(gid)) n += ent(id)->type == "chain";
+    return n;
+}
+
+static void testEqualKeysInOneUpdateDoNotTakeAChain() {
+    // two inputs of one subscription with the same remarks and tags; the one
+    // that did not change keeps its chain
+    resetWorld();
+    { SubscriptionRun first; first.run(2, kEntryA); }
+    const int a = chainStartingAt("a.invalid");
+    CHECK(a > 0);
+    SubscriptionRun update;
+    update.runMany(2, {kEntryB, kEntryA});
+    CHECK_EQ(chainStartingAt("a.invalid"), a);
+    CHECK(chainStartingAt("b.invalid") > 0);
+    CHECK(chainStartingAt("b.invalid") != a);
+    CHECK_EQ(chainCount(2), 2);
+    CHECK(!update.dropped.contains(a));
+
+    // both changed: either may be meant, so neither takes the old id
+    resetWorld();
+    { SubscriptionRun first; first.run(2, kEntryA); }
+    const int old = chainStartingAt("a.invalid");
+    SubscriptionRun both;
+    both.runMany(2, {kEntryB, kEntryAChanged});
+    CHECK(chainStartingAt("b.invalid") != old);
+    CHECK_EQ(chainCount(2), 2);
+    for (int id : groupOf(2)) {
+        if (ent(id)->type != "chain") continue;
+        for (int hop : chainList(id)) CHECK(ent(hop) != nullptr);
+    }
+}
+
 static void testProxyTaggedDirectCanCarryAChain() {
     resetWorld();
     RawUpdater u;
@@ -629,6 +690,7 @@ int main() {
     testChainIdFollowsItsExitWhenReordered();
     testDuplicateCleanupKeepsReferencedHops();
     testProxyTaggedDirectCanCarryAChain();
+    testEqualKeysInOneUpdateDoNotTakeAChain();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }
