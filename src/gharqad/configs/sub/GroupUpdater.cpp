@@ -1283,6 +1283,10 @@ void RawUpdater::FinalizeChains() {
   const int gid =
       gid_add_to < 0 ? Configs::dataStore->current_group : gid_add_to;
   auto group = Configs::profileManager->GetGroup(gid);
+  // existing profiles whose role or label this update changes
+  QList<std::shared_ptr<Configs::ProxyEntity>> changed;
+  // what the chains of this update go through
+  QSet<int> hop_ids;
 
   for (const auto &unit : chain_imports) {
     // what this run stores, to leave the place of older profiles alone
@@ -1301,6 +1305,7 @@ void RawUpdater::FinalizeChains() {
         continue;
       }
       chain.ent->unlock(chain.ent->ChainBean())->list = ids;
+      for (int id : ids) hop_ids.insert(id);
 
       // Same hops again: the chain is already there.
       if (!AddProxy(chain.ent)) continue;
@@ -1355,6 +1360,21 @@ void RawUpdater::FinalizeChains() {
     Configs::profileManager->unlock();
   }
   chain_imports.clear();
+
+  // A profile this update reuses keeps its id, but takes the role the input
+  // gives it now: a hop exactly when a chain of this update goes through it.
+  for (auto it = ignore_map.constBegin(); it != ignore_map.constEnd(); ++it) {
+    const auto &old = it.key().key;
+    if (!it.value() || old == nullptr || old->type == "chain") continue;
+    const bool hop = hop_ids.contains(old->id);
+    if (old->chain_link == hop) continue;
+    old->chain_link = hop;
+    changed << old;
+  }
+  if (changed.isEmpty()) return;
+  Configs::profileManager->lock();
+  for (const auto &ent : changed) ent->Save();
+  Configs::profileManager->unlock();
 }
 
 bool RawUpdater::updateWireguardFileConfig(const QString &str) {

@@ -82,6 +82,7 @@ struct ProxyEntity {
     int id = -1;
     int gid = 0;
     bool chain_link = false;
+    int saves = 0;
     std::shared_ptr<AbstractBean> storage;
     explicit ProxyEntity(QString t) : type(std::move(t)) {
         if (type == "chain") storage = std::make_shared<Configs::ChainBean>(this);
@@ -104,6 +105,7 @@ struct ProxyEntity {
     std::shared_ptr<const Configs::ShadowSocksBean> ShadowSocksBean() const {
         return std::dynamic_pointer_cast<const Configs::ShadowSocksBean>(storage);
     }
+    bool Save() { ++saves; return true; }
     template <class A> std::shared_ptr<A> unlock(std::shared_ptr<const A> b) {
         return std::const_pointer_cast<A>(b);
     }

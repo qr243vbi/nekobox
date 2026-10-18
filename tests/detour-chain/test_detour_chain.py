@@ -38,6 +38,7 @@ MUTATIONS = {
         UPDATER, 'if (Configs::profileManager->ReplaceProfile(old->id, chain.ent)) {', 'if (false) {'),
     'shared-hop-stored-twice': (UPDATER, 'if (hop_done.contains(i)) continue;', ''),
     'hops-keyed-by-address': (FILTER, ' &&\n                                ent->type != "chain" && !ent->chain_link;', ';'),
+    'reused-profile-keeps-old-role': (UPDATER, 'old->chain_link = hop;', '(void)hop;'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),
 }
