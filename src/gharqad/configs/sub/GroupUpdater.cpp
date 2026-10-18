@@ -1102,10 +1102,23 @@ bool ResolveSingBoxDetours(QList<SingBoxItem> &items) {
 bool RawUpdater::updateSingBoxChains(const QJsonArray &items,
                                      const QJsonObject &json,
                                      const QString &name) {
+  // Worth parsing only when a detour names an outbound of this input that
+  // can carry traffic; a tag alone, such as "direct", says nothing.
+  QSet<QString> carriers;
+  for (auto o : items) {
+    const auto out = o.toObject();
+    auto type = out["type"].toString();
+    if (type.isEmpty()) type = out["protocol"].toString();
+    if (type == "direct" || type == "block" || type == "dns" ||
+        type == "freedom" || type == "blackhole") {
+      continue;
+    }
+    const auto tag = out["tag"].toString();
+    if (!tag.isEmpty()) carriers.insert(tag);
+  }
   bool has_detour = false;
   for (auto o : items) {
-    const auto detour = o.toObject()["detour"].toString();
-    if (!detour.isEmpty() && detour != "direct") {
+    if (carriers.contains(o.toObject()["detour"].toString())) {
       has_detour = true;
       break;
     }

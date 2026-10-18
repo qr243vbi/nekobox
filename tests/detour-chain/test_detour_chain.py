@@ -41,6 +41,9 @@ MUTATIONS = {
     'chain-matched-by-name': (
         UPDATER, 'old->ChainBean()->import_key != key) {', 'old->name != chain.ent->name) {'),
     'kept-chain-not-relabelled': (UPDATER, 'old->name = chain.ent->name;', ''),
+    'direct-tag-not-followed': (
+        UPDATER, 'if (carriers.contains(o.toObject()["detour"].toString())) {',
+        'if (carriers.contains(o.toObject()["detour"].toString()) && o.toObject()["detour"].toString() != "direct") {'),
     'duplicate-hops-deleted': (FILTER, 'if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),

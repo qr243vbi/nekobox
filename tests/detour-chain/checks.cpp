@@ -589,6 +589,24 @@ static void testDuplicateCleanupKeepsReferencedHops() {
     }
 }
 
+static void testProxyTaggedDirectCanCarryAChain() {
+    resetWorld();
+    RawUpdater u;
+    importString(u, R"j({"remarks":"r","outbounds":[
+        {"type":"vless","tag":"x","server":"127.0.0.1","server_port":10085,"uuid":"u","detour":"direct"},
+        {"type":"ssh","tag":"direct","server":"h.invalid","server_port":22,"user":"x"}]})j");
+    CHECK_EQ(groupOf().size(), 3);
+    if (groupOf().size() != 3) return;
+    CHECK_EQ(ent(groupOf().first())->type, QString("chain"));
+    if (ent(groupOf().first())->type != "chain") return;
+    auto list = chainList(groupOf().first());
+    CHECK_EQ(list.size(), 2);
+    if (list.size() == 2) {
+        CHECK_EQ(ent(list[0])->type, QString("ssh"));
+        CHECK_EQ(ent(list[1])->serverPort, 10085);
+    }
+}
+
 int main() {
     Configs::profileManager->groups[1] = std::make_shared<Configs::Group>();
     testChainAndReality();
@@ -610,6 +628,7 @@ int main() {
     testReusedProfilesTakeTheirNewRole();
     testChainIdFollowsItsExitWhenReordered();
     testDuplicateCleanupKeepsReferencedHops();
+    testProxyTaggedDirectCanCarryAChain();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }
