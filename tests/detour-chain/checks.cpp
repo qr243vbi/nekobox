@@ -568,6 +568,11 @@ static QList<int> duplicatesToDelete(bool by_address) {
     for (int id : groupOf()) all << ent(id);
     Configs::ProfileFilter::Uniq(all, out, by_address, false);
     Configs::ProfileFilter::OnlyInSrc_ByPointer(all, out, del);
+#ifdef HAS_OTHER_GROUPS
+    // the main window adds the chains of the other groups once there is
+    // something to delete
+    if (!del.isEmpty()) all += ChainsOfOtherGroups(1);
+#endif
 #ifdef HAS_KEEP_HOPS
     Configs::ProfileFilter::KeepReferencedHops(all, del);
 #endif
@@ -650,6 +655,28 @@ static void testEqualKeysInOneUpdateDoNotTakeAChain() {
     }
 }
 
+static void testHopsOfChainsInOtherGroupsAreKept() {
+    // the same chain imported twice, then the second chain moved elsewhere
+    resetWorld();
+    RawUpdater a, b;
+    importString(a, kChainOnly);
+    importString(b, kChainOnly);
+    int moved = -1;
+    for (int id : groupOf()) {
+        if (ent(id)->type == "chain") moved = id;
+    }
+    CHECK(moved > 0);
+    if (moved <= 0) return;
+    Configs::profileManager->GetGroup(1)->profiles.removeAll(moved);
+    Configs::profileManager->GetGroup(2)->profiles << moved;
+    ent(moved)->gid = 2;
+    for (int id : duplicatesToDelete(true)) {
+        Configs::profileManager->GetGroup(1)->profiles.removeAll(id);
+        Configs::profileManager->ents.erase(id);
+    }
+    for (int hop : chainList(moved)) CHECK(ent(hop) != nullptr);
+}
+
 static void testProxyTaggedDirectCanCarryAChain() {
     resetWorld();
     RawUpdater u;
@@ -691,6 +718,7 @@ int main() {
     testDuplicateCleanupKeepsReferencedHops();
     testProxyTaggedDirectCanCarryAChain();
     testEqualKeysInOneUpdateDoNotTakeAChain();
+    testHopsOfChainsInOtherGroupsAreKept();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }

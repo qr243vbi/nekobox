@@ -23,6 +23,7 @@ UPDATER_H = 'src/nekobox/configs/sub/GroupUpdater.hpp'
 FILTER = 'src/gharqad/dataStore/ProfileFilter.cpp'
 FILTER_H = 'src/nekobox/dataStore/ProfileFilter.hpp'
 BUILDER = 'src/gharqad/configs/ConfigBuilder.cpp'
+WINDOW = 'src/gharqad/ui/mainwindow.cpp'
 
 # (file, before, after): every one must make a runtime check fail
 MUTATIONS = {
@@ -47,6 +48,7 @@ MUTATIONS = {
     'duplicate-hops-deleted': (FILTER, 'if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
     'repeated-entry-replaces': (UPDATER, '!key.isEmpty() && pending_keys[key] == 1 && it != ignore_map.end(); ++it) {',
                                 '!key.isEmpty() && it != ignore_map.end(); ++it) {'),
+    'other-groups-ignored': (WINDOW, 'if (group == nullptr || id == gid) continue;', 'continue;'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),
 }
@@ -92,6 +94,8 @@ def main():
 
     updater, updater_h = read(UPDATER), read(UPDATER_H)
     flt, flt_h, builder = read(FILTER), read(FILTER_H), read(BUILDER)
+    window = read(WINDOW)
+    other_groups = 'static QList<std::shared_ptr<Configs::ProxyEntity>> ChainsOfOtherGroups('
 
     key_decl = section(flt_h, 'struct ProfileFilterKey\n{', '// --- Hash ---')
     key_decl = 'struct ProfileFilterKey\n{' + key_decl
@@ -122,6 +126,9 @@ def main():
     end = updater.index('bool RawUpdater::updateWireguardFileConfig(')
     code += '\nnamespace Subscription {\n' + updater[start:end]
     code += function(updater, 'bool RawUpdater::AddProxy(') + '\n}\n'
+    # how the main window finds chains outside the group it cleans up
+    if other_groups in window:
+        code += function(window, other_groups) + '\n'
     code += (HERE / 'checks.cpp').read_text()
 
     if args.keep_generated:
@@ -133,6 +140,8 @@ def main():
         cpp, exe = Path(td) / 'test.cpp', Path(td) / ('test.exe' if os.name == 'nt' else 'test')
         cpp.write_text(code)
         defines = ['HAS_KEEP_HOPS'] if 'ProfileFilter::KeepReferencedHops(' in flt else []
+        if other_groups in window:
+            defines.append('HAS_OTHER_GROUPS')
         subprocess.run(compile_command(cpp, exe, defines), check=True, timeout=240, cwd=td)
         return subprocess.run([str(exe)], timeout=30).returncode
 
