@@ -149,7 +149,7 @@ A sing-box JSON that has `outbounds` (or `endpoints`) but no `route`, `dns` or `
 - an outbound that has no `detour` and that no other outbound points at stays a normal profile, named `<remarks> / <tag>`
 - the main entry is the first outbound of the JSON that is not a hop: sing-box's default (the first outbound when `route.final` is unset), except that hops are skipped; it comes first in the list and is labelled `(main)` when it is a chain; the others follow in the order of the JSON, hops last
 
-Because the result consists of ordinary profiles, routing profiles and the Routes tab apply to them in system proxy mode and in TUN mode alike. A `detour` that points at `direct`, at a tag that is not an importable outbound, at itself, or into a loop is ignored. Subscription updates keep unchanged profiles, and a chain whose hops changed keeps its profile id.
+Because the result consists of ordinary profiles, routing profiles and the Routes tab apply to them in system proxy mode and in TUN mode alike. A `detour` that points at the direct outbound, at a tag that is not an importable outbound, at itself, or into a loop is ignored. Subscription updates keep unchanged profiles and give them the role the new input assigns; a chain whose hops changed keeps its profile id as long as the remarks and the tag of its last outbound stay the same. "Remove duplicates" keeps the hops that a remaining chain still uses.
 
 ```json
 {

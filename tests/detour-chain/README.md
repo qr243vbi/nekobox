@@ -29,8 +29,8 @@ On Windows, run from a developer prompt with `CXX=cl` and `QT_DIR` set to the
 Qt kit root (for example `D:/Qt/6.10.3/msvc2022_64`) instead of pkg-config.
 
 `--ref` reads immutable source through `git show`; `--keep-generated PATH` saves
-the compiled translation unit. Thirteen mutations (ten of the chain import,
-three of the dispatch) must compile, run, and fail a
+the compiled translation unit. Eighteen mutations (fifteen of the chain import
+and duplicate removal, three of the dispatch) must compile, run, and fail a
 runtime check; compilation failure never counts as a killed mutation.
 
 ## Imports that existed before
@@ -81,3 +81,11 @@ shared by two chains; chains switched off by the caller; subscription update
 with unchanged input, with a changed hop (chain keeps its id, old hop is
 dropped) and with the chain gone; two inputs with the same loopback port in
 one group; chains and hops being kept apart by "remove duplicates".
+
+Added after review: profiles reused by a subscription update take the role
+the new input gives them (in both directions, including an update from a
+version without chains); a chain keeps its id when entries are reordered
+and a shared hop changes at the same time, and a kept chain is relabelled;
+"remove duplicates" keeps the hops of every remaining chain (Uniq and
+OnlyInSrc_ByPointer as the main window calls them); a detour to a proxy
+tagged "direct" builds a chain.
