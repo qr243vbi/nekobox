@@ -665,6 +665,20 @@ void MainWindow::set_misc_checkboxes() {
       Configs::dataStore->inbound_address));
 }
 
+// Chains of other groups dial hops of this one by id as well, so removing
+// duplicates has to know them.
+static QList<std::shared_ptr<Configs::ProxyEntity>> ChainsOfOtherGroups(int gid) {
+  QList<std::shared_ptr<Configs::ProxyEntity>> chains;
+  for (const auto &[id, group] : Configs::profileManager->groups) {
+    if (group == nullptr || id == gid) continue;
+    for (int pid : group->profiles) {
+      auto ent = Configs::profileManager->GetProfile(pid);
+      if (ent != nullptr && ent->type == "chain") chains << ent;
+    }
+  }
+  return chains;
+}
+
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -686,7 +700,10 @@ MainWindow::MainWindow(QWidget *parent)
 
       Configs::ProfileFilter::Uniq(out_all, out, true, false);
       Configs::ProfileFilter::OnlyInSrc_ByPointer(out_all, out, out_del);
-      Configs::ProfileFilter::KeepReferencedHops(out_all, out_del);
+      if (!out_del.empty()) {
+        Configs::ProfileFilter::KeepReferencedHops(
+            out_all + ChainsOfOtherGroups(group->id), out_del);
+      }
 
       change_text +=
           QObject::tr("\nDeleted %1 Duplicates").arg(out_del.length());
@@ -3704,7 +3721,10 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
 
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
       prof_ents, out, out_del);
-  Configs::ProfileFilter::KeepReferencedHops(prof_ents, out_del);
+  if (!out_del.isEmpty()) {
+    Configs::ProfileFilter::KeepReferencedHops(
+        prof_ents + ChainsOfOtherGroups(grp->id), out_del);
+  }
 
 #ifdef DEBUG_MODE
   qDebug() << "DUPLICATES" << out_del.count();
