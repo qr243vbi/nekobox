@@ -2,6 +2,7 @@
 
 
 #include <nekobox/dataStore/ProfileFilter.hpp>
+#include <nekobox/configs/proxy/ChainBean.hpp>
 #include <set>
 
 
@@ -157,6 +158,25 @@ void ProfileFilter::OnlyInSrc_ByPointer(
   }
 }
 
+
+void ProfileFilter::KeepReferencedHops(
+    const QList<std::shared_ptr<ProxyEntity>> &all,
+    QList<std::shared_ptr<ProxyEntity>> &drop) {
+  std::set<int> dropped, needed;
+  for (const auto &ent : drop) dropped.insert(ent->Id());
+  for (const auto &ent : all) {
+    if (ent == nullptr || ent->type != "chain" || dropped.contains(ent->Id()))
+      continue;
+    auto chain = ent->ChainBean();
+    if (chain == nullptr) continue;
+    for (int id : chain->list) needed.insert(id);
+  }
+  QList<std::shared_ptr<ProxyEntity>> rest;
+  for (const auto &ent : drop) {
+    if (!needed.contains(ent->Id())) rest += ent;
+  }
+  drop = rest;
+}
 
 void ProfileFilter::OnlyInSrc_ByIds(
     const QList<std::shared_ptr<ProxyEntity>> &src,

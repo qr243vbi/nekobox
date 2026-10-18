@@ -11,7 +11,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SOURCE = Path(os.environ.get("PROFILE_FILTER_SOURCE", str(ROOT / "src/gharqad/dataStore/ProfileFilter.cpp")))
 CASES = ["ordering_cross_fields", "ordering_laws", "credentials_retained", "transport_retained",
-         "metadata_ignored", "by_address_ignores_bean", "chains_and_hops_compare_bean", "custom_compares_bean", "endpoint_fields_retained",
+         "metadata_ignored", "by_address_ignores_bean", "chains_and_hops_compare_bean", "hops_in_use_are_kept", "custom_compares_bean", "endpoint_fields_retained",
          "keep_first_and_last", "exclusions_preserved", "common_matches_by_bean", "permutation_invariance"]
 
 class ProfileFilterRegression(unittest.TestCase):

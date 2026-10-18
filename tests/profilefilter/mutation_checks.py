@@ -42,6 +42,7 @@ mutations = {
     "compare_entity_ordering_only": replace_once(bean + ' < 0', entity + ' < 0'),
     "remove_custom_exception": replace_once('by_address && ent->type != "custom"', 'by_address'),
     "remove_chain_and_hop_exception": replace_once('ent->type != "chain" && !ent->chain_link', 'true'),
+    "drop_hops_in_use": replace_once('if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
     "ignore_type": replace_once('''  if (key->type != other.key->type) {
     return key->type < other.key->type;
   }

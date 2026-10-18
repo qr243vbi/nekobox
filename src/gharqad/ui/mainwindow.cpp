@@ -686,6 +686,7 @@ MainWindow::MainWindow(QWidget *parent)
 
       Configs::ProfileFilter::Uniq(out_all, out, true, false);
       Configs::ProfileFilter::OnlyInSrc_ByPointer(out_all, out, out_del);
+      Configs::ProfileFilter::KeepReferencedHops(out_all, out_del);
 
       change_text +=
           QObject::tr("\nDeleted %1 Duplicates").arg(out_del.length());
@@ -3703,6 +3704,7 @@ void MainWindow::on_menu_remove_duplicates_triggered() {
 
   Configs::ProfileFilter::OnlyInSrc_ByPointer(
       prof_ents, out, out_del);
+  Configs::ProfileFilter::KeepReferencedHops(prof_ents, out_del);
 
 #ifdef DEBUG_MODE
   qDebug() << "DUPLICATES" << out_del.count();

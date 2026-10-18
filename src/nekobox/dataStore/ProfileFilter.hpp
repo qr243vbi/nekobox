@@ -67,6 +67,12 @@ ProfileFilterKey ProfileFilter_ent_key(
             QList<std::shared_ptr<ProxyEntity>> &out);
 
 
+        // Takes the hops that a chain left in `all` still goes through out of
+        // `drop`, so removing duplicates cannot break a chain.
+        static void KeepReferencedHops(
+            const QList<std::shared_ptr<ProxyEntity>> &all,
+            QList<std::shared_ptr<ProxyEntity>> &drop);
+
         static void OnlyInSrc_ByIds(
             const QList<std::shared_ptr<ProxyEntity>> &src,
             const QList<std::shared_ptr<ProxyEntity>> &dst,

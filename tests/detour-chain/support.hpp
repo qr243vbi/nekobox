@@ -107,6 +107,7 @@ struct ProxyEntity {
         return std::dynamic_pointer_cast<const Configs::ShadowSocksBean>(storage);
     }
     bool Save() { ++saves; return true; }
+    int Id() const { return id; }
     template <class A> std::shared_ptr<A> unlock(std::shared_ptr<const A> b) {
         return std::const_pointer_cast<A>(b);
     }

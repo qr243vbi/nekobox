@@ -557,6 +557,38 @@ static void testChainIdFollowsItsExitWhenReordered() {
     if (ent(b)) CHECK(!ent(b)->display_type.contains("(main)"));
 }
 
+// what "remove duplicates" and the subscription option of the same name do
+static QList<int> duplicatesToDelete(bool by_address) {
+    QList<Ent> all, out, del;
+    for (int id : groupOf()) all << ent(id);
+    Configs::ProfileFilter::Uniq(all, out, by_address, false);
+    Configs::ProfileFilter::OnlyInSrc_ByPointer(all, out, del);
+#ifdef HAS_KEEP_HOPS
+    Configs::ProfileFilter::KeepReferencedHops(all, del);
+#endif
+    QList<int> ids;
+    for (const auto &e : del) ids << e->id;
+    return ids;
+}
+
+static void testDuplicateCleanupKeepsReferencedHops() {
+    for (bool by_address : {true, false}) {
+        resetWorld();
+        RawUpdater a, b;
+        importString(a, kChainOnly);
+        importString(b, kChainOnly); // the same string pasted twice
+        CHECK_EQ(groupOf().size(), 6);
+        for (int id : duplicatesToDelete(by_address)) {
+            Configs::profileManager->GetGroup(1)->profiles.removeAll(id);
+            Configs::profileManager->ents.erase(id);
+        }
+        for (int id : groupOf()) {
+            if (ent(id)->type != "chain") continue;
+            for (int hop : chainList(id)) CHECK(ent(hop) != nullptr); // nothing dangles
+        }
+    }
+}
+
 int main() {
     Configs::profileManager->groups[1] = std::make_shared<Configs::Group>();
     testChainAndReality();
@@ -577,6 +609,7 @@ int main() {
     testHopsAndChainsAreNotKeyedByAddress();
     testReusedProfilesTakeTheirNewRole();
     testChainIdFollowsItsExitWhenReordered();
+    testDuplicateCleanupKeepsReferencedHops();
     std::cout << "RESULT " << (checks - failures) << "/" << checks << " checks passed" << std::endl;
     return failures == 0 ? 0 : 1;
 }
