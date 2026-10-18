@@ -17,6 +17,8 @@
 #include <iostream>
 #include <map>
 #include <memory>
+#include <initializer_list>
+#include <set>
 #include <utility>
 
 QStringList logLines;
