@@ -48,7 +48,7 @@ MUTATIONS = {
     'duplicate-hops-deleted': (FILTER, 'if (!needed.contains(ent->Id())) rest += ent;', 'rest += ent;'),
     'repeated-entry-replaces': (UPDATER, '!key.isEmpty() && pending_keys[key] == 1 && it != ignore_map.end(); ++it) {',
                                 '!key.isEmpty() && it != ignore_map.end(); ++it) {'),
-    'other-groups-ignored': (WINDOW, 'if (group == nullptr || id == gid) continue;', 'continue;'),
+    'other-groups-ignored': (WINDOW, 'if (group == nullptr || id == gid) continue;', '(void)gid; continue;'),
     'direct-detour-logged': (
         UPDATER, 'if (detour != "direct") {', 'if (false) {'),
 }
