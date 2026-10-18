@@ -77,6 +77,9 @@ def main():
     code += '\nnamespace QtBase64 {' + section(utils_h, 'namespace QtBase64 {', 'namespace Qt515Base64 = QtBase64;')
     code += '\nnamespace Qt515Base64 = QtBase64;\n'
     code += b64.replace('#include <nekobox/dataStore/Utils.hpp>', '') + '\n'
+    # base64.cpp is its own translation unit in the application; its
+    # fallback "#define qsizetype size_t" must not reach the importer here
+    code += '#undef qsizetype\n'
     code += function(utils, 'QByteArray DecodeB64IfValid(') + '\n'
 
     code += '\nnamespace Configs {\n'

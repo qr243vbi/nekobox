@@ -57,7 +57,7 @@ def compile_command(cpp, exe, defines=()):
         # MSVC, from a developer prompt; QT_DIR is the Qt kit root
         qt = Path(qt_dir)
         return [cxx or 'cl', '/nologo', '/std:c++20', '/EHsc', '/permissive-', '/Zc:__cplusplus', '/utf-8',
-                '/W3', '/wd4244', '/wd4267', '/DUSE_REAL_QT', *[f'/D{d}' for d in defines], f'/I{qt / "include"}', f'/I{qt / "include" / "QtCore"}',
+                '/W3', '/wd4244', '/wd4267', '/we4018', '/DUSE_REAL_QT', *[f'/D{d}' for d in defines], f'/I{qt / "include"}', f'/I{qt / "include" / "QtCore"}',
                 str(cpp), f'/Fe{exe}', f'/Fo{Path(cpp).parent}\\', '/link', f'/LIBPATH:{qt / "lib"}', 'Qt6Core.lib']
     probe = subprocess.run(['pkg-config', '--cflags', '--libs', 'Qt6Core'], text=True, capture_output=True)
     if probe.returncode:
