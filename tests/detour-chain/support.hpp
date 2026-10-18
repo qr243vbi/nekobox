@@ -56,11 +56,12 @@ struct AbstractBean {
 
 struct ChainBean : AbstractBean {
     QList<int> list; // in to out
+    QString import_key;
     using AbstractBean::AbstractBean;
     QString fingerprint() const override {
         QStringList parts;
         for (int id : list) parts << QString::number(id);
-        return "chain:" + parts.join(",");
+        return "chain:" + parts.join(",") + ":" + import_key;
     }
 };
 
