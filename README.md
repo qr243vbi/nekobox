@@ -278,6 +278,9 @@ Solution for version < 5.10.40:
 Solution for version >= 5.10.41:
 - This won't happen, but if it does, please submit [issue](https://github.com/qr243vbi/nekobox/issues).
 
+**How do I keep the log in a file?**<br/>
+Set the `NEKOBOX_LOG_FILE` environment variable to a file path before starting [NekoBox](https://github.com/qr243vbi/nekobox). Every line of the log tab, the output of nekobox_core and the Qt messages are then appended to that file with a timestamp. This includes messages from the start, before the main window is shown, and core lines that the log tab skips because of its rate limit. A relative path is taken from the directory the program is started in. The file is never truncated or rotated, so delete it when it is no longer needed. For example, on Windows: `set NEKOBOX_LOG_FILE=%TEMP%\nekobox.log` and then `nekobox.exe` in the same command prompt; on Linux: `NEKOBOX_LOG_FILE=/tmp/nekobox.log nekobox`.
+
 **Where are the downloadable route profiles/rulesets coming from?**<br/>
 They are located at the [ruleset](https://github.com/qr243vbi/ruleset/tree/routeprofiles) repository.
 

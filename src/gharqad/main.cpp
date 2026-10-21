@@ -42,6 +42,8 @@
 #include <nekobox/sys/Settings.h>
 
 #include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/global/LogFile.hpp>
+#include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/ui/mainwindow_interface.h>
 
 QVariantMap ruleSetMap;
@@ -264,6 +266,15 @@ int main(int argc, char **argv) {
     QApplication::addLibraryPath(qpath + "/usr/plugins");
   }
 #endif
+
+  // Optional file log (NEKOBOX_LOG_FILE). Until the main window takes over
+  // MW_show_log, early messages go only to the file instead of being dropped.
+  if (LogFile::enabled()) {
+    LogFile::installQtMessageHandler();
+    MW_show_log = [](const QString &log) { LogFile::append(log); };
+    // no version yet: dynamic builds read it when the main window starts
+    LogFile::append("---- NekoBox starting: " + software_path);
+  }
 
   QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
   QApplication::setQuitOnLastWindowClosed(false);

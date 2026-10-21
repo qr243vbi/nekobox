@@ -21,6 +21,7 @@
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/global/LogFile.hpp>
 #include <nekobox/global/LogRouteHelper.hpp>
 #include <nekobox/global/keyvaluerange.h>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
@@ -165,6 +166,7 @@ void flushPendingLogs() {
 }
 
 void enqueueLog(const QString &log) {
+  LogFile::append(log);
   QMutexLocker lock(&g_pendingLogMu);
   g_pendingLogs.append(log);
   while (g_pendingLogs.size() > 400) {
