@@ -20,6 +20,9 @@ mutations = [
     ('retain whole marker and duplicate event', 'readinessLog.right(readyMarker.size() - 1)', 'readinessLog.right(readyMarker.size())'),
     ('retain unbounded history', 'readinessLog.right(readyMarker.size() - 1)', 'readinessLog'),
     ('consume remembered profile twice', '                    start_profile_when_core_is_up = -1;', '                    // Incorrectly keep the remembered ID.'),
+    ('drop stdout over the display limit from the file log',
+     '            if (logCounter.fetchAndAddRelaxed(log.count("\\n")) > maxLogLines()) {\n                LogFile::append(log);\n                return;\n            }\n            MW_show_log(log);\n        });\n        connect(&process, &QProcess::readyReadStandardError',
+     '            if (logCounter.fetchAndAddRelaxed(log.count("\\n")) > maxLogLines()) {\n                return;\n            }\n            MW_show_log(log);\n        });\n        connect(&process, &QProcess::readyReadStandardError'),
     ('retain carry across fresh starts', '        core_readiness_tail.clear();', '        // Incorrectly keep the previous run\'s carry.'),
 ]
 failed = 0

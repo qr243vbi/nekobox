@@ -32,6 +32,11 @@ void MW_dialog_message(const QString &sender, const QString &message) {
     messages.push_back(message);
 }
 void MW_show_log(const QString &message) { logs.push_back(message); }
+// the optional file log; what reaches MW_show_log gets there through the GUI
+namespace LogFile {
+std::vector<QString> lines;
+void append(const QString &text) { lines.push_back(text); }
+}
 namespace Configs_sys {
 QAtomicInt logCounter;
 class CoreProcess {
@@ -55,7 +60,7 @@ void check(bool condition, const char *label) {
 struct Fixture {
     Configs_sys::CoreProcess core;
     Fixture(int profile = 42) {
-        messages.clear(); logs.clear();
+        messages.clear(); logs.clear(); LogFile::lines.clear();
         Configs_sys::logCounter.storeRelaxed(0);
         core.start_profile_when_core_is_up = profile;
     }
@@ -153,6 +158,17 @@ int main() {
         f.out("Core listen"); f.out("ing");
         check(messages == std::vector<QString>{"CoreStarted,42"}, "readiness still checked after display log limit");
         check(logs.empty(), "display log limit retained");
+        check(LogFile::lines == std::vector<QString>{"Core listen", "ing"},
+              "stdout over the display limit still reaches the file log");
+        f.err("late diagnostic\n");
+        check(logs.empty() && LogFile::lines.size() == 3 && LogFile::lines.back() == "late diagnostic\n",
+              "stderr over the display limit still reaches the file log");
+    }
+    {
+        Fixture f;
+        f.out("ordinary line\n"); f.err("ordinary error\n");
+        check(logs.size() == 2 && LogFile::lines.empty(),
+              "below the limit the file log is fed through the display log only");
     }
     {
         Fixture f;
