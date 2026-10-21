@@ -12,6 +12,7 @@
 #include <QCoreApplication>
 #include <nekobox/sys/Settings.h>
 #include <nekobox/ui/mainwindow.h>
+#include <nekobox/global/LogFile.hpp>
 
 
 #undef ELEVATE_METHOD
@@ -99,12 +100,19 @@ namespace Configs_sys {
                 goto show_log;
             }
             show_log:
-            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
+            // over the rate limit of the log tab, the file log still gets it
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) {
+                LogFile::append(log);
+                return;
+            }
             MW_show_log(log);
         });
         connect(&process, &QProcess::readyReadStandardError, this, [this, maxLogLines]() {
             auto log = process.readAllStandardError();
-            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) return;
+            if (logCounter.fetchAndAddRelaxed(log.count("\n")) > maxLogLines()) {
+                LogFile::append(log);
+                return;
+            }
             MW_show_log(log);
         });
         connect(&process, &QProcess::errorOccurred, this, [&](QProcess::ProcessError error) {
