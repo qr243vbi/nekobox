@@ -275,13 +275,19 @@ func CacheHttp(url string, use_default_outbound bool) string {
 	return CacheHttpBool(url, use_default_outbound, nil)
 }
 
-func cacheRuleSet(url string, format string, tag badoption.Listable[string]) option.RuleSet {
+// cacheRuleSet returns a local rule-set backed by the cached download, or
+// false when the file could not be cached.
+func cacheRuleSet(url string, format string, tag badoption.Listable[string]) (option.RuleSet, bool) {
 	var ruleset option.RuleSet
+	path := CacheHttp(url, false)
+	if path == "" {
+		return ruleset, false
+	}
 	ruleset.Tag = tag
 	ruleset.Type = C.RuleSetTypeLocal
 	ruleset.Format = format
-	ruleset.LocalOptions.Path = CacheHttp(url, false)
-	return ruleset
+	ruleset.LocalOptions.Path = path
+	return ruleset, true
 }
 
 func ClearRulesets() error {
@@ -311,7 +317,14 @@ func ModifyRulesets(opt *option.Options) {
 	for u, i := range opt.Route.RuleSet {
 		if i.Type == C.RuleSetTypeRemote && i.RemoteOptions.URL != "" {
 			url := i.RemoteOptions.URL
-			opt.Route.RuleSet[u] = cacheRuleSet(url, i.Format, i.Tag)
+			if cached, ok := cacheRuleSet(url, i.Format, i.Tag); ok {
+				opt.Route.RuleSet[u] = cached
+			} else {
+				// An empty local path makes sing-box read the working directory
+				// and fail the whole start. Keep the remote rule-set instead:
+				// sing-box downloads it itself through its outbounds.
+				log.Printf("Rule-set %s is not cached, leaving it remote", url)
+			}
 		}
 	}
 }
