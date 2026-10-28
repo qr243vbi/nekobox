@@ -4310,7 +4310,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
-        <translation>Маршрутизация</translation>
+        <translation>Маршруты</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="546" />
