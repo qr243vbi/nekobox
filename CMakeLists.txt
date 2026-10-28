@@ -392,6 +392,9 @@ add_custom_command(TARGET nekobox POST_BUILD
         "${CMAKE_SOURCE_DIR}/res/public/about.html"
         "$<TARGET_FILE_DIR:nekobox>/about.html"
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/res/public/about_ru.html"
+        "$<TARGET_FILE_DIR:nekobox>/about_ru.html"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${CMAKE_SOURCE_DIR}/res/public/check_new_release.js"
         "$<TARGET_FILE_DIR:nekobox>/check_new_release.js"
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
@@ -639,6 +642,7 @@ install(FILES
 
 #install_if_exists(${CMAKE_SOURCE_DIR}/res/public/emoji.ttf "${PROGRAMPREFIX}/public")
 install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about.html "${PROGRAMPREFIX}/public")
+install_if_exists(${CMAKE_SOURCE_DIR}/res/public/about_ru.html "${PROGRAMPREFIX}/public")
 
 endif()
 
