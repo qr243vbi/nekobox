@@ -165,6 +165,9 @@ DialogAppSettings::DialogAppSettings(QWidget *parent)
     : QDialog(parent), ui(new Ui::DialogAppSettings) {
   this->setAttribute(Qt::WA_DeleteOnClose);
   ui->setupUi(this);
+  // the standard "Discard" text reads as "don't save"; this button removes the
+  // selected applications
+  ui->buttonBox->button(QDialogButtonBox::Discard)->setText(tr("Remove selected"));
 
   connect(ui->buttonBox, &QDialogButtonBox::clicked, this,
           &DialogAppSettings::on_button_box_clicked);
