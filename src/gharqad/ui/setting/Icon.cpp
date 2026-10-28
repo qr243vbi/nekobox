@@ -9,6 +9,8 @@
 #endif
 #include <QCoreApplication>
 #include <QDir>
+#include <QFile>
+#include <QLocale>
 #include <QPainter>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
 #include <nekobox/dataStore/Database.hpp>
@@ -109,9 +111,23 @@ void InfoDialog::accept(){
 }
 
 
+// about_<locale>.html (e.g. about_ru_RU.html or about_ru.html) next to
+// about.html translates the dialog; the English about.html is the fallback.
+static QString aboutResource() {
+  const QString locale = QLocale().name();
+  for (const QString &name : {"about_" + locale + ".html",
+                              "about_" + locale.section('_', 0, 0) + ".html"}) {
+    const QString path = getResource(name);
+    if (QFile::exists(path)) {
+      return path;
+    }
+  }
+  return getResource("about.html");
+}
+
 AboutDialog::AboutDialog(QWidget *parent) : QDialog(parent), ui(new Ui::AboutMain)  {
   ui->setupUi(this);
-  ui->textBrowser->setText(ReadFileText(getResource("about.html")));
+  ui->textBrowser->setText(ReadFileText(aboutResource()));
   ui->textBrowser->document()->setDefaultFont(qApp->font());
   ui->textBrowser->setOpenExternalLinks(true);
   this->setWindowTitle(software_name);
