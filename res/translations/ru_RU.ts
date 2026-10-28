@@ -28,7 +28,7 @@
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="78" />
         <source>Remember</source>
-        <translation type="unfinished">Помнить</translation>
+        <translation>Запомнить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/confirm_password.ui" line="105" />
@@ -126,8 +126,7 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Socks
                                                                 + HTTP Proxy&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Носки
-+ HTTP-прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SOCKS + HTTP-прокси&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
@@ -156,7 +155,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>Manually column width</source>
-        <translation type="unfinished">Переменная ширина колонок</translation>
+        <translation>Ручная ширина колонок</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="743" />
@@ -192,12 +191,12 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
         <source>Download Retries</source>
-        <translation type="unfinished">Загрузить повторы</translation>
+        <translation>Повторы загрузки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Clear servers before update</source>
-        <translation type="unfinished">Очистите серверы перед обновлением</translation>
+        <translation>Очищать серверы перед обновлением</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
@@ -254,8 +253,7 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Might
                                                                             Improve Ping and Performance&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                                         </source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Может
-Улучшите пинг и производительность&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Может улучшить пинг и производительность&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
@@ -265,7 +263,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
         <source>Padding</source>
-        <translation type="unfinished">Заполнение</translation>
+        <translation>Отступ</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
@@ -275,28 +273,26 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
-        <translation type="unfinished">Используйте Unix Domain Socket для связи между nekobox и nekobox_core.</translation>
+        <translation>Использовать Unix Domain Socket для связи между nekobox и nekobox_core</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
         <source>Use UDS for IPC</source>
-        <translation type="unfinished">Используйте UDS для IPC</translation>
+        <translation>Использовать UDS для IPC</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1062" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Settings for the
                                             sing-box's built-in NTP client&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройки для
-встроенный NTP-клиент Sing-Box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Настройки встроенного NTP-клиента sing-box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1116" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;In
                                                                 minutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                                             </source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;В
-минут&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;В минутах&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use Json instead binary for configs</source>
@@ -316,7 +312,7 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Ask for deleting profile</source>
-        <translation type="unfinished">Попросить удалить профиль</translation>
+        <translation>Спрашивать перед удалением профиля</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
@@ -381,7 +377,7 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1550" />
         <source>Test Target URL</source>
-        <translation type="unfinished">Проверить целевой URL-адрес</translation>
+        <translation>Адрес для проверки</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1557" />
@@ -437,12 +433,12 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1859" />
         <source>X</source>
-        <translation type="unfinished">Х</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1804" />
         <source>Y</source>
-        <translation type="unfinished">Да</translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="841" />
@@ -457,7 +453,7 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Skip TLS certificate authentication</source>
-        <translation type="unfinished">Пропустить аутентификацию сертификата TLS</translation>
+        <translation>Не проверять TLS-сертификат</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
@@ -488,7 +484,7 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
         <source>Remote Control</source>
-        <translation type="unfinished">Пульт дистанционного управления</translation>
+        <translation>Удалённое управление</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
@@ -519,7 +515,7 @@ INI — начало 1980-х — простой текстовый формат 
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1422" />
         <source>Automatically test proxies in the background and maintain a pool of working proxies</source>
-        <translation type="unfinished">Автоматически тестируйте прокси в фоновом режиме и поддерживайте пул рабочих прокси.</translation>
+        <translation>Автоматически проверять прокси в фоне и поддерживать пул рабочих прокси</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
@@ -967,7 +963,7 @@ Are you sure you want to enable HWID sending?</source>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="274" />
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="301" />
         <source>None</source>
-        <translation type="unfinished">Никто</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
@@ -1309,13 +1305,13 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
-        <translation type="unfinished">Включить ЭХХ</translation>
+        <translation>Включить ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762" />
         <source>ECH Config</source>
-        <translation type="unfinished">Конфигурация ЭХХ</translation>
+        <translation>Конфигурация ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
@@ -1378,27 +1374,27 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
-        <translation type="unfinished">Макс. байт сообщения</translation>
+        <translation>Макс. байт в POST</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
-        <translation type="unfinished">Минимальный интервал публикации</translation>
+        <translation>Мин. интервал POST</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
-        <translation type="unfinished">Максимальное время повторного использования</translation>
+        <translation>Макс. число повторных использований</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
-        <translation type="unfinished">X байтов заполнения</translation>
+        <translation>Байты XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
-        <translation type="unfinished">Период поддержания жизни</translation>
+        <translation>Интервал keep-alive</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
@@ -1408,7 +1404,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
-        <translation type="unfinished">Макс. многоразовые секунды</translation>
+        <translation>Макс. время повторного использования (с)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
@@ -1423,27 +1419,27 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
-        <translation type="unfinished">Максимальное время запроса</translation>
+        <translation>Макс. число запросов</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
-        <translation type="unfinished">XPдобавление заголовка</translation>
+        <translation>Заголовок XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
-        <translation type="unfinished">Метод добавления XP</translation>
+        <translation>Метод XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
-        <translation type="unfinished">XPДобавление ключа</translation>
+        <translation>Ключ XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
-        <translation type="unfinished">Ранняя длина данных</translation>
+        <translation>Длина early data</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
@@ -1453,7 +1449,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
-        <translation type="unfinished">XPдобавление места</translation>
+        <translation>Размещение XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
@@ -1463,7 +1459,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
-        <translation type="unfinished">XPдобавление режима Obfs</translation>
+        <translation>Режим obfs XPadding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
@@ -1514,7 +1510,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation type="unfinished">Лендинг прокси для группы Group2</translation>
+        <translation>Выходной прокси для группы Group2</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
@@ -1539,22 +1535,22 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
         <source>Front proxy for group %1</source>
-        <translation type="unfinished">Передний прокси для группы %1</translation>
+        <translation>Фронт-прокси для группы %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="647" />
         <source>Front proxy: </source>
-        <translation type="unfinished">Фронтальный прокси:</translation>
+        <translation>Фронт-прокси: </translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
         <source>Landing proxy for group %1</source>
-        <translation type="unfinished">Целевой прокси для группы %1</translation>
+        <translation>Выходной прокси для группы %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
         <source>Landing proxy: </source>
-        <translation type="unfinished">Лендинг прокси:</translation>
+        <translation>Выходной прокси: </translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
@@ -1572,7 +1568,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="683" />
         <source>None</source>
-        <translation type="unfinished">Никто</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="159" />
@@ -1582,7 +1578,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
         <source>Outbound: </source>
-        <translation type="unfinished">Исходящие:</translation>
+        <translation>Исходящий: </translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="168" />
@@ -1638,7 +1634,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
         <source>Value</source>
-        <translation type="unfinished">Ценить</translation>
+        <translation>Значение</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
@@ -1696,7 +1692,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
         <source>Shortcut for '%s' action was cleared</source>
-        <translation type="unfinished">Ярлык для действия «%s» удален.</translation>
+        <translation>Сочетание клавиш для действия «%s» сброшено</translation>
     </message>
 </context>
 <context>
@@ -1862,7 +1858,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
-        <translation type="unfinished">Деформация</translation>
+        <translation>Warp</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1884,12 +1880,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Generate Warp Config</source>
-        <translation type="unfinished">Создать конфигурацию деформации</translation>
+        <translation>Создать конфигурацию Warp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished">Сохранять</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
@@ -2005,7 +2001,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished">Новый профиль деформации</translation>
+        <translation>Новый профиль Warp</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
@@ -2025,12 +2021,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283" />
         <source>Failed to generate warp config</source>
-        <translation type="unfinished">Не удалось создать конфигурацию деформации.</translation>
+        <translation>Не удалось создать конфигурацию Warp</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305" />
         <source>Success!</source>
-        <translation type="unfinished">Успех!</translation>
+        <translation>Готово!</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
@@ -2062,11 +2058,11 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished">Включение DNS-сервера локальной сети будет прослушивать 0.0.0.0:%1.
+        <translation>При включении DNS-сервер для локальной сети будет слушать 0.0.0.0:%1.
 
-Любое устройство в вашей локальной сети сможет запросить этот DNS-сервер, который может раскрыть ваши правила маршрутизации, заблокированные домены и топологию сети.
+Любое устройство в вашей локальной сети сможет обращаться к этому DNS-серверу, что может раскрыть ваши правила маршрутизации, заблокированные домены и топологию сети.
 
-Включайте это только в том случае, если вы собираетесь использовать DNS для доверенных устройств локальной сети.
+Включайте это, только если собираетесь делиться DNS с доверенными устройствами локальной сети.
 
 Вы уверены?</translation>
     </message>
@@ -2170,12 +2166,12 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
-        <translation type="unfinished">Тун-адрес</translation>
+        <translation>Адрес TUN</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
-        <translation type="unfinished">Куча</translation>
+        <translation>Стек</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
@@ -2185,7 +2181,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
-        <translation type="unfinished">Настройка IPv6-адреса</translation>
+        <translation>IPv6-адрес TUN</translation>
     </message>
     <message>
         <source>Troubleshooting</source>
@@ -2413,7 +2409,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
-        <translation type="unfinished">Структура трафика</translation>
+        <translation>Шаблон трафика</translation>
     </message>
 </context>
 <context>
@@ -2688,7 +2684,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
-        <translation type="unfinished">ПСК</translation>
+        <translation>PSK</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
@@ -2698,17 +2694,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
-        <translation type="unfinished">Режим ОБФ</translation>
+        <translation>Режим obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
         <source>Obfs Host</source>
-        <translation type="unfinished">Обфс-хост</translation>
+        <translation>Хост obfs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
         <source>Reuse</source>
-        <translation type="unfinished">повторное использование</translation>
+        <translation>Повторное использование</translation>
     </message>
 </context>
 <context>
@@ -2765,7 +2761,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
         <source>UoT</source>
-        <translation type="unfinished">УоТ</translation>
+        <translation>UoT</translation>
     </message>
 </context>
 <context>
@@ -2861,7 +2857,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation type="unfinished">Конфигурация Тора</translation>
+        <translation>Конфигурация Tor</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
@@ -2906,7 +2902,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_trusttunnel.ui" line="53" />
         <source>Health Check</source>
-        <translation type="unfinished">Проверка здоровья</translation>
+        <translation>Проверка доступности</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_trusttunnel.cpp" line="12" />
@@ -2962,12 +2958,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119" />
         <source>Generate Warp Config</source>
-        <translation type="unfinished">Создать конфигурацию деформации</translation>
+        <translation>Создать конфигурацию Warp</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156" />
         <source>Init Packet Junk Size (S1)</source>
-        <translation type="unfinished">Размер нежелательного пакета инициализации (S1)</translation>
+        <translation>Размер мусора в пакете инициализации (S1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166" />
@@ -2982,7 +2978,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192" />
         <source>Cookie Reply Packet Junk Size (S3)</source>
-        <translation type="unfinished">Размер нежелательного пакета ответа cookie (S3)</translation>
+        <translation>Размер мусора в пакете ответа cookie (S3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208" />
@@ -2992,12 +2988,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218" />
         <source>Junk Packet Count (Jc)</source>
-        <translation type="unfinished">Количество нежелательных пакетов (Jc)</translation>
+        <translation>Кол-во мусорных пакетов (Jc)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228" />
         <source>Response Packet Magic Header (H2)</source>
-        <translation type="unfinished">Волшебный заголовок пакета ответа (H2)</translation>
+        <translation>Магический заголовок пакета ответа (H2)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238" />
@@ -3007,22 +3003,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248" />
         <source>Junk Packet Max Size (Jmax)</source>
-        <translation type="unfinished">Максимальный размер нежелательного пакета (Jmax)</translation>
+        <translation>Макс. размер мусорного пакета (Jmax)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258" />
         <source>Junk Packet Min Size (Jmin)</source>
-        <translation type="unfinished">Минимальный размер нежелательного пакета (Jmin)</translation>
+        <translation>Мин. размер мусорного пакета (Jmin)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
-        <translation type="unfinished">Волшебный заголовок пакета ответа на файл cookie (H3)</translation>
+        <translation>Магический заголовок пакета ответа cookie (H3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287" />
         <source>Transport Packet Junk Size (S4)</source>
-        <translation type="unfinished">Размер нежелательного транспортного пакета (S4)</translation>
+        <translation>Размер мусора в транспортном пакете (S4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303" />
@@ -3032,7 +3028,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319" />
         <source>Response Packet Junk Size (S2)</source>
-        <translation type="unfinished">Размер нежелательного пакета ответа (S2)</translation>
+        <translation>Размер мусора в пакете ответа (S2)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335" />
@@ -3156,7 +3152,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="81" />
         <source>Update</source>
-        <translation type="unfinished">Обновление</translation>
+        <translation>Обновить</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/GroupItem.ui" line="100" />
@@ -3236,7 +3232,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
-        <translation type="unfinished">Общий объем прямого трафика:</translation>
+        <translation>Общий прямой трафик:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
@@ -3265,19 +3261,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
-        <translation type="unfinished">Стартовый отсчет:</translation>
+        <translation>Число запусков:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="507" />
         <source>Download:</source>
-        <translation type="unfinished">Скачать:</translation>
+        <translation>Скачано:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="484" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="520" />
         <source>Upload:</source>
-        <translation type="unfinished">Загрузить:</translation>
+        <translation>Отправлено:</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
@@ -3308,7 +3304,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/info/main.ui" line="288" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="347" />
         <source>Created</source>
-        <translation type="unfinished">Созданный</translation>
+        <translation>Создано</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
@@ -3586,12 +3582,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
         <source>NekoRay</source>
-        <translation type="unfinished">НекоРэй</translation>
+        <translation>NekoRay</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="66" />
         <source>Box</source>
-        <translation type="unfinished">Коробка</translation>
+        <translation>Box</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="182" />
@@ -3742,17 +3738,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
         <source>Download test</source>
-        <translation type="unfinished">Скачать тест</translation>
+        <translation>Тест скачивания</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1221" />
         <source>Upload test</source>
-        <translation type="unfinished">Загрузить тест</translation>
+        <translation>Тест отдачи</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished">Страновой тест</translation>
+        <translation>Тест страны</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
@@ -3768,7 +3764,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1302" />
         <source>About</source>
-        <translation type="unfinished">О</translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292" />
@@ -3778,7 +3774,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297" />
         <source>Check for updates</source>
-        <translation type="unfinished">Проверьте наличие обновлений</translation>
+        <translation>Проверить обновления</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307" />
@@ -3869,7 +3865,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189" />
         <source>Resolve Domain</source>
-        <translation type="unfinished">Разрешить домен</translation>
+        <translation>Преобразовать домен в IP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1256" />
@@ -3879,7 +3875,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="906" />
         <source>Auto-scroll log</source>
-        <translation type="unfinished">Журнал автопрокрутки</translation>
+        <translation>Автопрокрутка журнала</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1377" />
@@ -3909,19 +3905,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="119" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="128" />
         <source>Update Response</source>
-        <translation type="unfinished">Обновить ответ</translation>
+        <translation>Результат обновления</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
         <source>No routing profiles are updated</source>
-        <translation type="unfinished">Профили маршрутизации не обновляются.</translation>
+        <translation>Ни один профиль маршрутизации не обновлён</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
         <source>Updated %1 routing profiles</source>
-        <translation type="unfinished">Обновлены профили маршрутизации %1.</translation>
+        <translation>Обновлено профилей маршрутизации: %1</translation>
     </message>
     <message>
         <source>Update RuleSet Map</source>
@@ -4661,7 +4657,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="232" />
         <source>Custom</source>
-        <translation type="unfinished">Обычай</translation>
+        <translation>Пользовательский</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="233" />
@@ -4737,7 +4733,8 @@ How to update?</source>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989" />
         <source>--- Added %1 proxies
 </source>
-        <translation type="unfinished">--- Добавлен %1 прокси</translation>
+        <translation>--- Добавлено прокси: %1
+</translation>
     </message>
     <message>
         <source>Added %1 profiles:
@@ -4806,19 +4803,22 @@ Release note:
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
         <source>
 Deleted %1 Duplicates</source>
-        <translation type="unfinished">Удалены дубликаты: %1.</translation>
+        <translation>
+Удалено дубликатов: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
         <source>
 Deleted %1 Invalid</source>
-        <translation type="unfinished">Удалено %1 Недействительно</translation>
+        <translation>
+Удалено недействительных: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation type="unfinished">Удалено %1 Недоступно</translation>
+        <translation>
+Удалено недоступных: %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
@@ -4833,12 +4833,12 @@ Deleted %1 Unavailable</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2932" />
         <source>Inbound: %2 %1</source>
-        <translation type="unfinished">Входящие: %2 %1</translation>
+        <translation>Входящий: %2 %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2934" />
         <source>Inbound: Off</source>
-        <translation type="unfinished">Входящие: Выкл.</translation>
+        <translation>Входящий: выкл.</translation>
     </message>
     <message>
         <source>Off</source>
@@ -4972,7 +4972,8 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973" />
         <source>--- Dropt %1 proxies
 </source>
-        <translation type="unfinished">--- Отбросить %1 прокси</translation>
+        <translation>--- Отброшено прокси: %1
+</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975" />
@@ -5028,7 +5029,7 @@ Deleted %1 Unavailable</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
-        <translation type="unfinished">Правила применения</translation>
+        <translation>Правила для приложений</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
@@ -5054,8 +5055,8 @@ Deleted %1 Unavailable</source>
         <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
-        <translation type="unfinished">Прокси: ⚡%1 📦%3
-Директ: ⚡%2 📦%4</translation>
+        <translation>Прокси: ⚡%1 📦%3
+Напрямую: ⚡%2 📦%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
@@ -5066,7 +5067,7 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48" />
         <source>KCP Settings</source>
-        <translation type="unfinished">Настройки ККП</translation>
+        <translation>Настройки KCP</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74" />
@@ -5081,22 +5082,22 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
         <source>Uplink Capacity</source>
-        <translation type="unfinished">Емкость восходящей линии связи</translation>
+        <translation>Пропускная способность отдачи</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="77" />
         <source>Downlink Capacity</source>
-        <translation type="unfinished">Пропускная способность нисходящей линии связи</translation>
+        <translation>Пропускная способность приёма</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="78" />
         <source>Congestion</source>
-        <translation type="unfinished">Скопление</translation>
+        <translation>Контроль перегрузки</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="79" />
         <source>Read Buffer Size</source>
-        <translation type="unfinished">Чтение размера буфера</translation>
+        <translation>Размер буфера чтения</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="80" />
@@ -5111,7 +5112,7 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Seed</source>
-        <translation type="unfinished">Семя</translation>
+        <translation>Seed</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
@@ -5166,7 +5167,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="179" />
         <source>Discard</source>
-        <translation type="unfinished">Отказаться</translation>
+        <translation>Не сохранять</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="181" />
@@ -5356,7 +5357,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
         <source>IP</source>
-        <translation type="unfinished">ИП</translation>
+        <translation>IP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
@@ -5489,7 +5490,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
         <source>Bypass LAN / private IPs (Direct)</source>
-        <translation type="unfinished">Обход локальной сети/частных IP-адресов (прямой)</translation>
+        <translation>Обход локальной сети и частных IP (напрямую)</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
@@ -5591,7 +5592,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
         <source>Set Proxy Credentials</source>
-        <translation type="unfinished">Установите учетные данные прокси-сервера</translation>
+        <translation>Задать учётные данные прокси</translation>
     </message>
 </context>
 <context>
@@ -5604,7 +5605,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
-        <translation type="unfinished">Начиная %1</translation>
+        <translation>Запуск %1</translation>
     </message>
 </context>
 <context>
