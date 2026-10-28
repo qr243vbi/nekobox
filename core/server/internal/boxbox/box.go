@@ -15,6 +15,7 @@ import (
 	boxService "github.com/sagernet/sing-box/adapter/service"
 	"github.com/sagernet/sing-box/common/httpclient"
 	"github.com/sagernet/sing-box/common/taskmonitor"
+	"github.com/sagernet/sing-box/common/trafficcontrol"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/dns"
 	"github.com/sagernet/sing-box/dns/transport/local"
@@ -174,6 +175,17 @@ func New(options Options) (*Box, error) {
 		return nil, E.Cause(err, "initialize router")
 	}
 
+	internalServices := []adapter.LifecycleService{httpClientManager}
+	// The Connections tab and per-outbound traffic read this tracker. Upstream
+	// sing-box creates it only when the clash API is configured, and NekoBox adds
+	// clash_api exactly when connection statistics are enabled.
+	if experimental := options.Experimental; experimental != nil && experimental.ClashAPI != nil {
+		trafficManager := trafficcontrol.NewManager(outboundManager)
+		service.MustRegisterPtr(ctx, trafficManager)
+		router.AppendTracker(trafficManager)
+		internalServices = append(internalServices, trafficManager)
+	}
+
 	for i, transportOptions := range dnsOptions.Servers {
 		tag := transportOptions.Tag
 		if tag == "" {
@@ -306,7 +318,7 @@ func New(options Options) (*Box, error) {
 		logFactory:      logFactory,
 		logger:          logFactory.Logger(),
 		done:            make(chan struct{}),
-		internalService: []adapter.LifecycleService{httpClientManager},
+		internalService: internalServices,
 	}, nil
 }
 
