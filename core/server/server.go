@@ -88,10 +88,9 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		if err != nil {
 			out.Error = err.Error()
 			internal.BoxInstance = nil
-		} else if internal.BoxInstance != nil && internal.BoxInstance.StartCtx != nil {
-			context.AfterFunc(internal.BoxInstance.StartCtx, func() {
-				_ = internal.ResetSystemProxy()
-			})
+			// Nothing listens on the proxy port, so don't leave the system pointed at it.
+			// A successful start must keep the proxy the GUI enabled before Start.
+			_ = internal.ResetSystemProxy()
 		}
 	}()
 
