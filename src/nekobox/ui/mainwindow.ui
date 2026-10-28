@@ -140,7 +140,7 @@ QToolButton::menu-indicator {
          <item>
           <widget class="QToolButton" name="toolButton_routing">
            <property name="toolTip">
-            <string>Routing</string>
+            <string>Configure routing rules</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton::menu-indicator,
