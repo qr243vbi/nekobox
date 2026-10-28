@@ -119,7 +119,9 @@ func New(options Options) (*Box, error) {
 
 	ctx = pause.WithDefaultManager(ctx)
 
-	var defaultLogWriter io.Writer = io.Discard
+	// nil makes sing-box write its log to os.Stderr (read when the factory is
+	// created, so after -redirect-error), which the GUI shows in the log tab.
+	var defaultLogWriter io.Writer
 	logFactory, err := log.New(log.Options{
 		Context:        ctx,
 		Options:        common.PtrValueOrDefault(options.Log),
