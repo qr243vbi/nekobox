@@ -19,7 +19,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"sync"
 	"time"
 
 	"github.com/google/shlex"
@@ -405,90 +404,15 @@ func (s *server) QueryStats(ctx context.Context, in *gen.EmptyReq) (*gen.QuerySt
 	out.Ups = make(map[string]int64)
 	out.Downs = make(map[string]int64)
 
-	box := internal.BoxInstance
-	if box == nil {
+	if internal.BoxInstance == nil {
 		return out, nil
 	}
-	manager := service.PtrFromContext[trafficcontrol.Manager](box.Context())
-	if manager == nil {
+	counters := service.PtrFromContext[boxbox.TrafficCounters](internal.BoxInstance.Context())
+	if counters == nil {
 		return out, nil
 	}
-	statsCounters.collect(box, manager, out.Ups, out.Downs)
+	counters.TakeAll(out.Ups, out.Downs)
 	return out, nil
-}
-
-// trafficCounters turns the tracker's cumulative per-connection byte counts
-// into what the GUI expects from QueryStats: bytes per outbound tag since the
-// previous call.
-type trafficCounters struct {
-	mu   sync.Mutex
-	box  *boxbox.Box
-	seen map[string][2]int64 // connection ID -> upload, download already reported
-}
-
-var statsCounters trafficCounters
-
-func (c *trafficCounters) collect(box *boxbox.Box, manager *trafficcontrol.Manager, ups, downs map[string]int64) {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	// Open connections first: one closing meanwhile is then in the closed list.
-	open := manager.Connections()
-	c.collectFrom(box, open, manager.ClosedConnections(), ups, downs)
-}
-
-// collectFrom does the work of collect on listings already taken; the caller
-// holds c.mu.
-func (c *trafficCounters) collectFrom(box *boxbox.Box, open, closed []*trafficcontrol.TrackerMetadata, ups, downs map[string]int64) {
-	if c.box != box {
-		c.box = box
-		c.seen = make(map[string][2]int64)
-	}
-	next := make(map[string][2]int64, len(c.seen))
-	add := func(connections []*trafficcontrol.TrackerMetadata) {
-		for _, metadata := range connections {
-			id := metadata.ID.String()
-			current := [2]int64{metadata.Upload.Load(), metadata.Download.Load()}
-			// A connection that closes between the two listings shows up in both;
-			// measuring against what this call already counted avoids doubling it.
-			previous, ok := next[id]
-			if !ok {
-				previous = c.seen[id]
-			}
-			next[id] = current
-			up, down := current[0]-previous[0], current[1]-previous[1]
-			if up == 0 && down == 0 {
-				continue
-			}
-			for _, tag := range trackerTags(metadata) {
-				ups[tag] += up
-				downs[tag] += down
-			}
-		}
-	}
-	add(open)
-	add(closed)
-	c.seen = next
-}
-
-// trackerTags returns the outbound groups a connection went through and the
-// outbound that carried it, each once.
-func trackerTags(metadata *trafficcontrol.TrackerMetadata) []string {
-	tags := make([]string, 0, len(metadata.Chain)+1)
-	for _, tag := range append(metadata.Chain, metadata.Outbound) {
-		if tag != "" && !containsString(tags, tag) {
-			tags = append(tags, tag)
-		}
-	}
-	return tags
-}
-
-func containsString(values []string, value string) bool {
-	for _, item := range values {
-		if item == value {
-			return true
-		}
-	}
-	return false
 }
 
 func destHostPort(dest string) (string, string) {

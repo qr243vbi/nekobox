@@ -176,14 +176,19 @@ func New(options Options) (*Box, error) {
 	}
 
 	internalServices := []adapter.LifecycleService{httpClientManager}
-	// The Connections tab and per-outbound traffic read this tracker. Upstream
-	// sing-box creates it only when the clash API is configured, and NekoBox adds
-	// clash_api exactly when connection statistics are enabled.
+	// The Connections tab reads the traffic manager, and per-outbound traffic
+	// reads the counters. Upstream sing-box creates the manager only when the
+	// clash API is configured, and NekoBox adds clash_api exactly when connection
+	// statistics are enabled.
 	if experimental := options.Experimental; experimental != nil && experimental.ClashAPI != nil {
 		trafficManager := trafficcontrol.NewManager(outboundManager)
 		service.MustRegisterPtr(ctx, trafficManager)
 		router.AppendTracker(trafficManager)
 		internalServices = append(internalServices, trafficManager)
+
+		trafficCounters := NewTrafficCounters(outboundManager, endpointManager)
+		service.MustRegisterPtr(ctx, trafficCounters)
+		router.AppendTracker(trafficCounters)
 	}
 
 	for i, transportOptions := range dnsOptions.Servers {
