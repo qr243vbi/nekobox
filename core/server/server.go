@@ -23,7 +23,7 @@ import (
 
 	"github.com/google/shlex"
 	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing-box/experimental/clashapi"
+	"github.com/sagernet/sing-box/common/trafficcontrol"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/service"
 )
@@ -407,22 +407,11 @@ func (s *server) QueryStats(ctx context.Context, in *gen.EmptyReq) (*gen.QuerySt
 	if internal.BoxInstance == nil {
 		return out, nil
 	}
-
-	clash := service.FromContext[*clashapi.Server](internal.BoxInstance.Context())
-	if clash == nil {
+	counters := service.PtrFromContext[boxbox.TrafficCounters](internal.BoxInstance.Context())
+	if counters == nil {
 		return out, nil
 	}
-
-	outbounds := service.FromContext[adapter.OutboundManager](internal.BoxInstance.Context())
-	if outbounds == nil {
-		return out, E.New("nil outbound manager")
-	}
-
-	endpoints := service.FromContext[adapter.EndpointManager](internal.BoxInstance.Context())
-	if endpoints == nil {
-		return out, E.New("nil endpoint manager")
-	}
-
+	counters.TakeAll(out.Ups, out.Downs)
 	return out, nil
 }
 
@@ -484,10 +473,37 @@ func (s *server) ListConnections(ctx context.Context, in *gen.EmptyReq) (*gen.Li
 		return out, nil
 	}
 
-	clash := service.FromContext[*clashapi.Server](internal.BoxInstance.Context())
-	if clash == nil {
-		return out, errors.New("no clash server found")
+	manager := service.PtrFromContext[trafficcontrol.Manager](internal.BoxInstance.Context())
+	if manager == nil {
+		return out, errors.New("no traffic manager found")
 	}
+
+	res := make([]*gen.ConnectionMetaData, 0)
+	for _, c := range manager.Connections() {
+		process := ""
+		if c.Metadata.ProcessInfo != nil {
+			// filepath.Base handles both / and \ so a Qt-style path still
+			// yields just the executable name on Windows.
+			process = filepath.Base(c.Metadata.ProcessInfo.ProcessPath)
+		}
+		if isUninformativeConnection(process, c.Metadata.Destination.String(),
+			c.Metadata.Protocol, c.Outbound) {
+			continue
+		}
+		res = append(res, &gen.ConnectionMetaData{
+			ID:        c.ID.String(),
+			CreatedAt: c.CreatedAt.UnixMilli(),
+			Upload:    c.Upload.Load(),
+			Download:  c.Download.Load(),
+			Outbound:  c.Outbound,
+			Network:   c.Metadata.Network,
+			Dest:      c.Metadata.Destination.String(),
+			Protocol:  c.Metadata.Protocol,
+			Domain:    c.Metadata.Domain,
+			Process:   process,
+		})
+	}
+	out.Connections = res
 	return out, nil
 }
 
