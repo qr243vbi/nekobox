@@ -112,6 +112,11 @@
         <source>Block</source>
         <translation type="unfinished">Блокировать</translation>
     </message>
+    <message>
+        <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="170" />
+        <source>Remove selected</source>
+        <translation>Удалить выбранные</translation>
+    </message>
 </context>
 <context>
     <name>DialogBasicSettings</name>
@@ -263,7 +268,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
         <source>Padding</source>
-        <translation>Отступ</translation>
+        <translation>Дополнение (padding)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
@@ -1600,6 +1605,11 @@ Are you sure you want to enable HWID sending?</source>
         <source>Replace %1 proxy</source>
         <translation type="unfinished">Заменить %1 прокси</translation>
     </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="445" />
+        <source>Remove proxy</source>
+        <translation>Убрать прокси</translation>
+    </message>
 </context>
 <context>
     <name>DialogHWID</name>
@@ -1645,6 +1655,11 @@ Are you sure you want to enable HWID sending?</source>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
         <source>Header name</source>
         <translation type="unfinished">Название заголовка</translation>
+    </message>
+    <message>
+        <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="52" />
+        <source>Remove selected</source>
+        <translation>Удалить выбранные</translation>
     </message>
 </context>
 <context>

@@ -48,6 +48,8 @@ DialogHeaders::DialogHeaders(QWidget * parent ) : QDialog(parent), ui(new Ui::Di
     ui->buttonBox->setStandardButtons(QDialogButtonBox::Discard | QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
 
     QPushButton *discardButton = ui->buttonBox->button(QDialogButtonBox::Discard);
+    // the standard "Discard" text reads as "don't save"; this button removes rows
+    discardButton->setText(tr("Remove selected"));
 
     tableWidget->setSelectionBehavior(
         QAbstractItemView::SelectRows
@@ -439,6 +441,8 @@ DialogGroupChooseProxy::DialogGroupChooseProxy(QWidget * parent): QDialog(parent
     connect(groups_widget, &QTabWidget::currentChanged, 
         this, &DialogGroupChooseProxy::change_tab);
     auto buttons = ui->buttons;
+    // the standard "Discard" text reads as "don't save"; this button clears the proxy
+    buttons->button(QDialogButtonBox::Discard)->setText(tr("Remove proxy"));
     
     connect(buttons, &QDialogButtonBox::clicked, this, 
                 &DialogGroupChooseProxy::dialog_button);
