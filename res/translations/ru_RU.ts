@@ -4308,6 +4308,10 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
+        <source>Configure routing rules</source>
+        <translation>Настройка правил маршрутизации</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="153" />
         <source>Routing</source>
         <translation>Маршруты</translation>
