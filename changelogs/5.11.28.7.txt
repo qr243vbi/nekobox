@@ -1,6 +1,7 @@
 Windows interface and stability maintenance.
 - Use NekoBox branding and the actual version in Windows executable properties.
 - Make the log panel resizable despite hidden tabs and keep its divider visible.
+- Keep route controls reachable by scrolling when the bottom panel is compact.
 - Add Reset panel layout (Ctrl+Shift+L), fix divider double-click and saved sizes.
 - Preserve normal window size, zero/negative monitor positions and Qt geometry state.
 - Bound log history, retain busy-log batches, and clear queued lines with the log.
