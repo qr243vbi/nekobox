@@ -79,9 +79,14 @@ int main(int argc, char **argv) {
 
         QTemporaryDir directory;
         QSettings settings(directory.filePath("window.ini"), QSettings::IniFormat);
-        window.resize(850, 620); window.move(0, 0); events();
-        const auto normalSize = window.size();
-        settings.setValue("window_geometry", window.saveGeometry().toBase64());
+        // Use a plain window that fits the offscreen monitor. The production
+        // layout above can legitimately exceed its 800-pixel width; Qt then
+        // clamps it on restore, which is a different screen-recovery case.
+        QMainWindow geometrySource;
+        geometrySource.resize(600, 420); geometrySource.move(0, 0);
+        geometrySource.show(); events();
+        const auto normalSize = geometrySource.size();
+        settings.setValue("window_geometry", geometrySource.saveGeometry().toBase64());
         settings.setValue("splitter_state", ui.splitter->saveState().toBase64());
         settings.sync();
         QMainWindow restored;
@@ -91,11 +96,13 @@ int main(int argc, char **argv) {
         check(restored.size() == normalSize, "Window size INI round trip");
         QMainWindow ignored;
         ignored.resize(430, 330);
-        MainWindowState::restoreWindow(&ignored, window.saveGeometry(), 850, 620, 0, 0, false, false);
+        MainWindowState::restoreWindow(&ignored, geometrySource.saveGeometry(), 600, 420, 0, 0, false, false);
         check(ignored.size() == QSize(430, 330), "Disabled geometry settings ignored");
         QMainWindow legacy;
         MainWindowState::restoreWindow(&legacy, {}, 600, 420, 0, 0, true, true);
         check(legacy.pos() == QPoint(0, 0), "Zero window position not restored");
+        MainWindowState::restoreWindow(&legacy, "invalid geometry", 620, 440, 0, 0, true, true);
+        check(legacy.size() == QSize(620, 440), "Corrupt geometry has no legacy fallback");
         MainWindowState::restoreWindow(&legacy, {}, 600, 420, -50000, -50000, true, true);
         check(legacy.pos().x() >= 0 && legacy.pos().y() >= 0, "Disconnected monitor leaves window unreachable");
         const QList<QRect> monitors{{0, 0, 1920, 1080}, {-1920, 0, 1920, 1080}, {0, -1080, 1920, 1080}};
