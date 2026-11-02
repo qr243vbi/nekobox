@@ -44,21 +44,27 @@ def port():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--xray', type=Path, required=True)
+    parser.add_argument('--binary', type=Path, help='Use an already compiled tester (Windows smoke test)')
     args = parser.parse_args()
     xray = str(args.xray.resolve())
-    flags = shlex.split(subprocess.check_output(['pkg-config', '--cflags', '--libs', 'Qt6Core', 'Qt6Network'], text=True))
+    flags = [] if args.binary else shlex.split(subprocess.check_output(['pkg-config', '--cflags', '--libs', 'Qt6Core', 'Qt6Network'], text=True))
     with tempfile.TemporaryDirectory(prefix='nekobox-url-regression-') as directory:
         root = Path(directory)
-        binary = root / 'url-test'
-        subprocess.run([os.environ.get('CXX', 'g++'), '-std=c++17', '-fPIC', '-pthread',
+        binary = args.binary.resolve() if args.binary else root / 'url-test'
+        if not args.binary: subprocess.run([os.environ.get('CXX', 'g++'), '-std=c++17', '-fPIC', '-pthread',
                         '-I' + str(REPO / 'src'), str(REPO / 'tests/xray-url-test/main.cpp'),
                         str(REPO / 'src/gharqad/sys/XrayURLTest.cpp'), '-o', str(binary), *flags], check=True)
         subprocess.run(['openssl', 'req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-days', '1',
-                        '-subj', '/CN=localhost', '-keyout', str(root/'key.pem'), '-out', str(root/'cert.pem')],
+                        '-subj', '/CN=localhost', '-addext', 'subjectAltName=DNS:localhost,IP:127.0.0.1', '-keyout', str(root/'key.pem'), '-out', str(root/'cert.pem')],
                        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         pin = hashlib.sha256(ssl.PEM_cert_to_DER_cert((root/'cert.pem').read_text())).hexdigest()
         httpd = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Handler)
         threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        https = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        tls = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        tls.load_cert_chain(root/'cert.pem', root/'key.pem')
+        https.socket = tls.wrap_socket(https.socket, server_side=True)
+        threading.Thread(target=https.serve_forever, daemon=True).start()
         remote_port = port()
         uuid = 'bc094a59-1516-4c5c-885c-7ad17cb40f10'
         server = {'log': {'loglevel':'warning'}, 'inbounds': [{
@@ -69,7 +75,7 @@ def main():
                     'certificateFile':str(root/'cert.pem'), 'keyFile':str(root/'key.pem')}]},
                 'xhttpSettings':{'path':'/url-test'}}}],
             'outbounds':[{'protocol':'freedom', 'settings':{'finalRules':[{
-                'action':'allow', 'network':'tcp', 'ip':['127.0.0.1/32'], 'port':str(httpd.server_port)}]}}]}
+                'action':'allow', 'network':'tcp', 'ip':['127.0.0.1/32'], 'port':f'{httpd.server_port},{https.server_port}'}]}}]}
         client = {'log':{'loglevel':'warning'}, 'inbounds':[{
             'listen':'127.0.0.1', 'port':0, 'protocol':'socks', 'settings':{'auth':'noauth'}}],
             'outbounds':[{'protocol':'vless', 'settings':{'vnext':[{'address':'127.0.0.1',
@@ -85,6 +91,7 @@ echo "$5" > {shlex.quote(str(root/'child.config'))}
 exec {shlex.quote(xray)} "$@"
 ''')
         wrapper.chmod(0o700)
+        test_program = str(wrapper) if os.name == 'posix' else xray
         server_file = root/'server.json'
         server_file.write_text(json.dumps(server))
         with (root/'server.log').open('w') as log:
@@ -101,14 +108,17 @@ exec {shlex.quote(xray)} "$@"
                 with socket.socket() as active:
                     active.bind(('127.0.0.1', 0)); active.listen()
                     client['inbounds'][0]['port'] = active.getsockname()[1]
-                    def run(path='/ok', timeout=4000, cancel=-1, program=str(wrapper), config=client):
+                    def run(path='/ok', timeout=4000, cancel=-1, program=test_program, config=client, secure=False, trust=True):
                         for record in ('child.pid', 'child.config'):
                             (root/record).unlink(missing_ok=True)
                         file = root/'client.json'; file.write_text(json.dumps(config))
                         before = time.monotonic()
+                        env = os.environ.copy()
+                        env.pop('NEKOBOX_TEST_CA', None)
+                        if secure and trust: env['NEKOBOX_TEST_CA'] = str(root/'cert.pem')
+                        url = f'https://127.0.0.1:{https.server_port}{path}' if secure else f'http://127.0.0.1:{httpd.server_port}{path}'
                         output = subprocess.check_output([str(binary), program, str(file),
-                            f'http://127.0.0.1:{httpd.server_port}{path}', str(timeout), str(cancel)],
-                            text=True, timeout=12)
+                            url, str(timeout), str(cancel)], text=True, timeout=12, env=env)
                         result = json.loads(output)
                         if (root/'child.pid').exists():
                             pid = int((root/'child.pid').read_text())
@@ -124,6 +134,10 @@ exec {shlex.quote(xray)} "$@"
                     result, _ = run()
                     assert result['latency'] > 0 and not result['error'], result
                     assert '/ok' in Handler.hits, 'No tunneled HTTP request'
+                    result, _ = run(secure=True)
+                    assert result['latency'] > 0 and not result['error'], result
+                    result, _ = run(secure=True, trust=False)
+                    assert result['latency'] < 0 and result['error'], result
                     result, _ = run('/redirect')
                     assert result['latency'] > 0 and not result['error'], result
                     result, _ = run('/loop')
@@ -149,7 +163,8 @@ exec {shlex.quote(xray)} "$@"
                 process.terminate()
                 process.wait(timeout=5)
                 httpd.shutdown(); httpd.server_close()
-    print('PASS: real Xray URL test, redirect, timeout, cancellation, errors and active-port isolation')
+                https.shutdown(); https.server_close()
+    print('PASS: real Xray HTTP/HTTPS URL test, certificate verification, redirect, timeout, cancellation, errors and active-port isolation')
 
 if __name__ == '__main__':
     main()
