@@ -67,6 +67,8 @@ namespace Configs {
         if (network == "h2") {
             network = "http";
         }
+        if (network == "raw") network = "tcp";
+        if (network == "splithttp") network = "xhttp";
         *stream->network = network;
 
         if (proxy_type == proxy_Trojan) {
@@ -92,7 +94,15 @@ namespace Configs {
         stream->reality_pbk = GetQueryValue(query, "pbk", "");
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->reality_spx = GetQueryValue(query, "spx", "/");
+        stream->reality_pqv = GetQueryValue(query, "pqv");
+        stream->tls_cipher_suites = GetQueryValue(query, "cs");
+        stream->tls_pinned_peer_cert_sha256 = GetQueryValue(query, "pcs");
+        stream->tls_verify_peer_cert_by_name = GetQueryValue(query, "vcn");
+        stream->xray_ech_config = GetQueryValue(query, "ech");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
+        if (stream->utlsFingerprint.isEmpty() && !stream->tls_cipher_suites.isEmpty()) {
+            stream->utlsFingerprint = "unsafe";
+        }
         if (query.queryItemValue("fragment") == "1") stream->enable_tls_fragment = true;
         stream->tls_fragment_fallback_delay = GetQueryValue(query, "fragment_fallback_delay");
         if (query.queryItemValue("record_fragment") == "1") stream->enable_tls_record_fragment = true;

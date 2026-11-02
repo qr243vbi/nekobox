@@ -47,6 +47,10 @@ namespace To_Link {
 
         add_query_nonempty("sni", query, stream->sni);
         add_query_nonempty("alpn", query, stream->alpn);
+        add_query_nonempty("cs", query, stream->tls_cipher_suites);
+        add_query_nonempty("pcs", query, stream->tls_pinned_peer_cert_sha256);
+        add_query_nonempty("vcn", query, stream->tls_verify_peer_cert_by_name);
+        add_query_nonempty("ech", query, stream->xray_ech_config);
         if (stream->enable_ech){
             add_query_nonempty("ech_config", query, stream->ech_config);
             add_query_nonempty("query_server_name", query, stream->query_server_name);
@@ -65,6 +69,7 @@ namespace To_Link {
             add_query_nonempty("pbk", query, stream->reality_pbk);
             add_query_nonempty("sid", query, stream->reality_sid);
             add_query_nonempty("spx", query, stream->reality_spx);
+            add_query_nonempty("pqv", query, stream->reality_pqv);
         }
         QString network = (QString)*stream->network;
 

@@ -1,0 +1,202 @@
+# Experimental Windows x64 build. No release or package publishing.
+name: Windows 10 x64 compatibility build
+'on':
+  workflow_dispatch: null
+  push:
+    branches:
+    - codex/windows10-compat-*
+permissions:
+  contents: read
+jobs:
+  compatibility-tests:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install test dependencies
+      run: |-
+        sudo apt-get update
+        sudo apt-get install -y qt6-base-dev pkg-config g++ python3 jq
+    - name: Run compatibility and link regressions
+      run: |
+        set -euo pipefail
+        source script/xray_release.sh
+        runtime="$RUNNER_TEMP/nekobox-test-xray"
+        mkdir -p "$runtime"
+        curl -fLsS --retry 3 -o "$runtime/Xray-linux-64.zip" "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip"
+        xray_verify_archive "$runtime/Xray-linux-64.zip" Xray-linux-64.zip
+        unzip -q "$runtime/Xray-linux-64.zip" xray -d "$runtime"
+        chmod +x "$runtime/xray"
+        python3 tests/compat-3x-ui/test_compat.py --xray "$runtime/xray"
+        python3 tests/ech-share-links/test_ech_share_links.py
+        python3 tests/test_link_tls.py
+        python3 tests/streamsettings/test_ech_persistence.py --qt
+        python3 tests/query-decoding/test_query_decoding.py
+        python3 tests/json-import/test_json_import.py --qt
+        python3 -m unittest discover -s tests -p 'test_deploy_windows_cronet.py' -v
+        bash -n script/xray_release.sh script/deploy_windows.sh script/deploy_linux64.sh
+  get-tag-and-changelog:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.inputs.outputs.tag }}
+      text: ${{ steps.inputs.outputs.text }}
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'false'
+    - name: Run cmake tools
+      shell: bash
+      id: inputs
+      run: |
+        set_output_file() {
+          local name="$1"
+          local file="$2"
+          local eofer=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 36)
+          {
+            echo "$name<<$eofer"
+            cat "$file"
+            echo "$eofer"
+          } >> "$GITHUB_OUTPUT"
+        }
+
+        cmake -S . -B build -DGENERATE_VERSION_AND_CHANGELOG=ON
+        cmake --build build -j 16
+        set_output_file tag build/version.txt
+        set_output_file text build/changelog.txt
+  build-go:
+    permissions:
+      contents: read
+    needs:
+    - get-tag-and-changelog
+    - compatibility-tests
+    env:
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
+    strategy:
+      matrix:
+        include:
+        - cross_os: windows
+          cross_arch: amd64
+          go_version: 1.27.1
+          allow: true
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'true'
+    - name: Install Golang
+      uses: actions/setup-go@main
+      with:
+        go-version: ${{ matrix.go_version }}
+        cache-dependency-path: |
+          core/server/go.sum
+    - name: Linux - Install apt dependencies
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages: thrift-compiler
+        version: 1.0
+    - name: Build golang parts
+      shell: bash
+      run: GO_MOD_TIDY=OFF GO_MOD_VENDOR=OFF GOOS=windows GOARCH=amd64 ./script/build_go.sh
+    - name: Tar files
+      run: tar czvf artifacts.tgz ./deployment
+    - name: Uploading Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
+        path: artifacts.tgz
+  build-cpp:
+    name: Build windows binaries
+    permissions:
+      contents: read
+    needs:
+    - build-go
+    - get-tag-and-changelog
+    strategy:
+      matrix:
+        include:
+        - platform: windows-2022
+          target: x86_64
+          triplet: x64-windows
+          allow: true
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'true'
+    - name: Setup Ninja
+      uses: qr243vbi/setup-ninja@master
+    - name: Install NSIS
+      uses: negrutiu/nsis-install@v2
+      with:
+        arch: ${{ matrix.target }}
+    - name: Install MSVC compiler
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: ${{ matrix.target }}
+    - name: vcpkg build
+      uses: qr243vbi/vcpkg-action@master
+      id: vcpkg
+      with:
+        pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
+        triplet: ${{ matrix.triplet }}
+        vcpkg-subdir: ..\..\src
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: download-artifact
+    - name: Download Srslist
+      shell: bash
+      run: |
+        curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+        mkdir build
+    - name: Install Zip, Curl, Jq, UPX
+      uses: ConorMacBride/install-package@v1
+      with:
+        choco: zip curl jq 7zip
+    - name: Install Customized Qt
+      uses: qr243vbi/qt6windows7@main
+      with:
+        version: 6.10.0_${{ matrix.target }}
+    - name: Windows - Generate MakeFile and Build
+      shell: bash
+      run: |
+        export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
+        export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/bin')"):$PATH"
+        echo $PATH
+        if ! command -v windeployqt
+        then
+          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
+          windeployqt() { "$WINDEPLOYQT" "${@}" ; }
+          declare -f windeployqt
+          echo "$WINDEPLOYQT"
+        fi
+        TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
+        TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
+        if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+        cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
+        cmake --build build --config Release --verbose
+        source ./script/deploy_windows.sh "${{ matrix.target }}"
+    - name: Tar files
+      shell: bash
+      run: |-
+        test -s deployment/nekobox-5.11.28.4-windows64.zip
+        tar czvf artifacts.tgz ./deployment
+    - name: Uploading Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NekoBox-Windows10-x64-experimental
+        path: deployment/*windows64*
+        if-no-files-found: error

@@ -415,7 +415,8 @@ static QJsonObject convertV2RayNToSingBox(const QJsonObject &v2rayn) {
       QJsonObject reality;
       reality["enabled"] = true;
       auto rs = streamSettings["realitySettings"].toObject();
-      reality["public_key"] = rs["publicKey"].toString();
+      // Current Xray calls this password; keep the older publicKey alias.
+      reality["public_key"] = jsonFirstString(rs, {"password", "publicKey"});
       reality["short_id"] = rs["shortId"].toString();
       auto rSni = rs["serverName"].toString();
       if (!rSni.isEmpty()) tls["server_name"] = rSni;

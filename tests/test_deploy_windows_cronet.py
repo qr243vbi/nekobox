@@ -9,9 +9,11 @@ fixtures are inert bytes with a DOS magic prefix, never executable libraries.
 """
 
 import json
+import hashlib
 import os
 from pathlib import Path
 import shutil
+import re
 import subprocess
 import tempfile
 import unittest
@@ -66,6 +68,8 @@ elif url.startswith("https://github.com/SagerNet/cronet-go/releases/download/"):
         body = b"<html>upstream error</html>"
 elif url.startswith("https://github.com/XTLS/Xray-core/releases/download/"):
     body = b"inert archive fixture"
+    if scenario == "xray_corrupt":
+        body += b"corrupted"
 else:
     sys.exit("Unexpected curl URL: " + url)
 if output is None:
@@ -96,7 +100,8 @@ import sys
 dest = Path(next(arg[2:] for arg in sys.argv[1:] if arg.startswith("-o")))
 # Only this harmless shell stub is executed by the deployment version check.
 stub = dest / "xray.exe"
-stub.write_text("#!/bin/sh\nprintf 'Xray 26.9.9 test fixture\\n'\n")
+import os
+stub.write_text("#!/bin/sh\nprintf 'Xray " + os.environ["MOCK_XRAY_VERSION"] + " test fixture\\n'\n")
 stub.chmod(0o755)
 '''
 
@@ -116,6 +121,12 @@ class CronetPackagingTests(unittest.TestCase):
             (self.root / folder).mkdir(parents=True, exist_ok=True)
         shutil.copy2(SCRIPT, self.root / "script/deploy_windows.sh")
         shutil.copy2(ROOT / "script/env_deploy.sh", self.root / "script/env_deploy.sh")
+        release = (ROOT / "script/xray_release.sh").read_text()
+        self.xray_version = re.search(r'XRAY_VERSION="([0-9.]+)"', release)[1]
+        # Only test fixtures use a fixture checksum. Production pins stay unchanged.
+        fixture_hash = hashlib.sha256(b"inert archive fixture").hexdigest()
+        release = re.sub(r'digest=[0-9a-f]{64}', 'digest=' + fixture_hash, release)
+        (self.root / "script/xray_release.sh").write_text(release)
         for file in ("srslist.json", "build/nekobox.exe", "build/nekobox_core.exe", "build/test.qm", "build/icu-test.dll", "res/languages.txt"):
             (self.root / file).write_text("inert fixture\n")
         for name, body in (("curl", MOCK_CURL), ("7z", MOCK_7Z)):
@@ -142,6 +153,7 @@ class CronetPackagingTests(unittest.TestCase):
             "MOCK_SCENARIO": scenario,
             "MOCK_LOG": str(self.log),
             "MOCK_REAL_JQ": shutil.which("jq"),
+            "MOCK_XRAY_VERSION": self.xray_version,
         })
         # Match the workflow's sourced-script invocation, including its set -e.
         return subprocess.run(
@@ -152,6 +164,11 @@ class CronetPackagingTests(unittest.TestCase):
     def cronet_requests(self):
         calls = self.log.read_text().splitlines() if self.log.exists() else []
         return [json.loads(call) for call in calls if "SagerNet/cronet-go" in call]
+
+    def test_corrupt_xray_archive_is_rejected_before_extraction(self):
+        result = self.run_deploy("xray_corrupt")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertFalse((self.root / "deployment/windows64/xray.exe").exists())
 
     def assert_rejected(self, result):
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
