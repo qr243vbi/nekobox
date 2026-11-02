@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(nekobox VERSION 5.11.28.4)
+project(nekobox VERSION 5.11.28.5)
 
 option(GENERATE_VERSION_AND_CHANGELOG "Generate only changelog and version" OFF)
 
@@ -90,7 +90,7 @@ foreach(TS_FILE ${TS_FILES})
     list(APPEND QM_FILENAMES ${QM_FILE})
 endforeach()
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent)
+find_package(Qt6 REQUIRED COMPONENTS Widgets LinguistTools Concurrent Network)
 
 if (NKR_CROSS)
     set_property(TARGET Qt6::moc PROPERTY IMPORTED_LOCATION /usr/bin/moc)
@@ -262,6 +262,7 @@ set(PROJECT_SOURCES
         ${GHARQAD}/stats/traffic/TrafficLooper.cpp
 
         ${GHARQAD}/configs/ConfigBuilder.cpp
+        ${GHARQAD}/sys/XrayURLTest.cpp
 
 
         ${NYXARIA}/configs/sub/GroupUpdater.hpp
@@ -473,7 +474,7 @@ endif()
 # Target Link
 
 target_link_libraries(nekobox PRIVATE
-        Qt6::Widgets Qt6::Concurrent
+        Qt6::Widgets Qt6::Concurrent Qt6::Network
         Threads::Threads
         ${NKR_EXTERNAL_TARGETS}
         ${PLATFORM_LIBRARIES}

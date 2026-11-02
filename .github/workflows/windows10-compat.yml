@@ -27,6 +27,7 @@ jobs:
         unzip -q "$runtime/Xray-linux-64.zip" xray -d "$runtime"
         chmod +x "$runtime/xray"
         python3 tests/compat-3x-ui/test_compat.py --xray "$runtime/xray"
+        python3 tests/xray-url-test/test_url_test.py --xray "$runtime/xray"
         python3 tests/ech-share-links/test_ech_share_links.py
         python3 tests/test_link_tls.py
         python3 tests/streamsettings/test_ech_persistence.py --qt
@@ -192,7 +193,7 @@ jobs:
     - name: Tar files
       shell: bash
       run: |-
-        test -s deployment/nekobox-5.11.28.4-windows64.zip
+        test -s deployment/nekobox-5.11.28.5-windows64.zip
         tar czvf artifacts.tgz ./deployment
     - name: Uploading Artifact
       uses: actions/upload-artifact@v4

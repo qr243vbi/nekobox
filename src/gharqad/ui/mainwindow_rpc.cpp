@@ -6,6 +6,7 @@
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <nekobox/sys/Settings.h>
+#include <nekobox/sys/XrayURLTest.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
 #include <nekobox/api/RPC.h>
@@ -211,7 +212,7 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
         QList<std::shared_ptr<Configs::ProxyEntity>> profiles;
 
         auto lambda = [this, finish](QList<std::shared_ptr<Configs::ProxyEntity>> &profiles)->void{
-            auto buildObject = Configs::BuildTestConfig(profiles);
+            auto buildObject = Configs::BuildTestConfig(profiles, true);
             if (!buildObject->error.isEmpty()) {
                 MW_show_log(tr("Failed to build test config: ") + buildObject->error);
                 speedtestRunning.unlock();
@@ -221,7 +222,31 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
         std::atomic<int> counter(0);
         stopSpeedtest.store(false);
         auto testCount = (!buildObject->fullConfigs.isEmpty()) +
-            (!buildObject->outboundTags.isEmpty());
+            (!buildObject->outboundTags.isEmpty()) + (!buildObject->xrayConfigs.isEmpty());
+        if (!buildObject->xrayConfigs.isEmpty()) {
+            const auto configs = buildObject->xrayConfigs;
+            const auto program = Configs::GetBuiltinXrayPath();
+            const QUrl url(Configs::dataStore->test_latency_url);
+            const int timeout = Configs::dataStore->url_test_timeout_ms;
+            parallelCoreCallPool->start([this, configs, program, url, timeout, &counter, testCount] {
+                for (auto it = configs.constBegin(); it != configs.constEnd(); ++it) {
+                    if (stopSpeedtest.load()) break;
+                    const auto result = Configs::TestXrayURL(program, it.value(), url, timeout, stopSpeedtest);
+                    const int id = it.key();
+                    runOnUiThread([this, id, result] {
+                        auto ent = Configs::profileManager->GetProfile(id);
+                        if (!ent) return;
+                        ent->latencyInt = result.cancelled ? 0 : result.latencyMs;
+                        if (!result.error.isEmpty())
+                            MW_show_log(tr("[%1] test error: %2").arg(ent->DisplayTypeAndName(), result.error));
+                        ent->Save();
+                        refresh_proxy_list();
+                    });
+                }
+                counter++;
+                if (counter.load() == testCount) speedtestRunning.unlock();
+            });
+        }
         if (!buildObject->fullConfigs.isEmpty()) {
             auto fullConfigs = buildObject->fullConfigs;
             auto func = [this, &counter, testCount, fullConfigs]() {
