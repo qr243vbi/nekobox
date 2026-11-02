@@ -233,7 +233,9 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
                     if (stopSpeedtest.load()) break;
                     const auto result = Configs::TestXrayURL(program, it.value(), url, timeout, stopSpeedtest);
                     const int id = it.key();
-                    runOnUiThread([this, id, result] {
+                    // Finish publishing each result before subscription cleanup
+                    // can inspect it and remove an allegedly unavailable profile.
+                    QMetaObject::invokeMethod(this, [this, id, result] {
                         auto ent = Configs::profileManager->GetProfile(id);
                         if (!ent) return;
                         ent->latencyInt = result.cancelled ? 0 : result.latencyMs;
@@ -241,7 +243,7 @@ void MainWindow::urltest_current_group(const QList<int>& profiles,
                             MW_show_log(tr("[%1] test error: %2").arg(ent->DisplayTypeAndName(), result.error));
                         ent->Save();
                         refresh_proxy_list();
-                    });
+                    }, Qt::BlockingQueuedConnection);
                 }
                 counter++;
                 if (counter.load() == testCount) speedtestRunning.unlock();
