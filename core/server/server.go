@@ -82,12 +82,24 @@ func (s *server) CacheHTTP(ctx context.Context, in *gen.CacheURLRequest) (*gen.C
 
 func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorResp, error) {
 	out := new(gen.ErrorResp)
+	if internal.BoxInstance != nil {
+		out.Error = "instance already started"
+		return out, nil
+	}
 	var err error
+	var extra *process.Process
 
 	defer func() {
 		if err != nil {
 			out.Error = err.Error()
+			if extra != nil {
+				extra.Stop()
+				if internal.ExtraProcess == extra {
+					internal.ExtraProcess = nil
+				}
+			}
 			internal.BoxInstance = nil
+			internal.InstanceCancel = nil
 			// Nothing listens on the proxy port, so don't leave the system pointed at it.
 			// A successful start must keep the proxy the GUI enabled before Start.
 			_ = internal.ResetSystemProxy()
@@ -98,11 +110,6 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		log.Println("Start:", in.CoreConfig)
 	}
 
-	if internal.BoxInstance != nil {
-		err = errors.New("instance already started")
-		return out, nil
-	}
-
 	if in.NeedExtraProcess {
 		args, e := shlex.Split(in.GetExtraProcessArgs_())
 		if e != nil {
@@ -110,18 +117,19 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 			return out, nil
 		}
 		if in.ExtraProcessConf != "" {
-			extraConfPath := in.ExtraProcessConfDir + string(os.PathSeparator) + "extra.conf"
-			f, e := os.OpenFile(extraConfPath, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0700)
+			name := "extra.conf"
+			// Xray 26.10.31 rejects .conf even with an explicit -format json.
+			// Other external cores keep their existing filename/format contract.
+			binary := filepath.Base(in.ExtraProcessPath)
+			if strings.EqualFold(binary, "xray") || strings.EqualFold(binary, "xray.exe") {
+				name = "extra.json"
+			}
+			extraConfPath := filepath.Join(in.ExtraProcessConfDir, name)
+			e := os.WriteFile(extraConfPath, []byte(in.ExtraProcessConf), 0600)
 			if e != nil {
-				err = E.Cause(e, "Failed to open extra.conf")
+				err = E.Cause(e, "Failed to write external core config")
 				return out, nil
 			}
-			_, e = f.WriteString(in.ExtraProcessConf)
-			if e != nil {
-				err = E.Cause(e, "Failed to write extra.conf")
-				return out, nil
-			}
-			_ = f.Close()
 			for idx, arg := range args {
 				if strings.Contains(arg, "%s") {
 					args[idx] = fmt.Sprintf(arg, extraConfPath)
@@ -130,14 +138,16 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 			}
 		}
 
-		internal.ExtraProcess = process.NewProcess(in.ExtraProcessPath, args, in.ExtraNoOut)
-		err = internal.ExtraProcess.Start()
+		extra = process.NewProcess(in.ExtraProcessPath, args, in.ExtraNoOut)
+		err = extra.Start()
 		if err != nil {
 			return out, nil
 		}
+		internal.ExtraProcess = extra
 		if addrs := process.LocalInboundAddrs(in.ExtraProcessConf); len(addrs) > 0 {
-			if e := internal.ExtraProcess.WaitListening(addrs, 10*time.Second); e != nil {
-				log.Println(e)
+			if e := extra.WaitListening(addrs, 10*time.Second); e != nil {
+				err = E.Cause(e, "Failed to start external core")
+				return out, nil
 			}
 		}
 	}

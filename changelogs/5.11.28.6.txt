@@ -1,0 +1,6 @@
+Experimental Windows Xray startup fix.
+- Write Xray runtime configuration to extra.json: current Xray rejects .conf despite -format json.
+- Return external core startup/listener errors before starting the main proxy or TUN.
+- Stop and reap the external core on failed starts and wait for its port to close.
+- Preserve an active connection when a duplicate start is rejected.
+- Verify the real Start/Stop RPC and main-core-to-Xray forwarding on Windows.
