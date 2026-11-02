@@ -4561,6 +4561,26 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <source>Add profile from File</source>
         <translation>Добавить профиль из файла</translation>
     </message>
+    <message>
+        <source>Errors only</source>
+        <translation>Только ошибки</translation>
+    </message>
+    <message>
+        <source>Show errors only</source>
+        <translation>Показывать только ошибки</translation>
+    </message>
+    <message>
+        <source>Enable auto-scroll</source>
+        <translation>Включить автопрокрутку</translation>
+    </message>
+    <message>
+        <source>Reset panel layout</source>
+        <translation>Сбросить расположение панелей</translation>
+    </message>
+    <message>
+        <source>Drag to resize panels. Double-click to split equally.</source>
+        <translation>Перетащите для изменения высоты панелей. Двойной щелчок делит область поровну.</translation>
+    </message>
 </context>
 <context>
     <name>MyTableModel</name>

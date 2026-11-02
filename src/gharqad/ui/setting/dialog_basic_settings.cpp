@@ -1,4 +1,5 @@
 #include <nekobox/ui/setting/dialog_basic_settings.h>
+#include <nekobox/ui/MainWindowState.hpp>
 
 #include <3rdparty/qv2ray/v2/ui/widgets/editors/w_JsonEditor.hpp>
 #include <nekobox/configs/proxy/Preset.hpp>
@@ -268,8 +269,9 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         &ok
         );
         if (ok){
-            software_name = text;
-            Configs::windowSettings->program_name = text;
+            software_name = MainWindowState::displayName(text);
+            QApplication::setApplicationDisplayName(software_name);
+            Configs::windowSettings->program_name = text.trimmed();
             this->setWindowTitle(software_name);
             GetMainWindow()->setWindowTitle(software_name);
             Configs::windowSettings->Save();

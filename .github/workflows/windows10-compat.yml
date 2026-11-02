@@ -28,6 +28,7 @@ jobs:
         chmod +x "$runtime/xray"
         python3 tests/compat-3x-ui/test_compat.py --xray "$runtime/xray"
         python3 tests/xray-url-test/test_url_test.py --xray "$runtime/xray"
+        python3 tests/window-ui/run_test.py --uic /usr/lib/qt6/libexec/uic
         python3 tests/ech-share-links/test_ech_share_links.py
         python3 tests/test_link_tls.py
         python3 tests/streamsettings/test_ech_persistence.py --qt
@@ -138,6 +139,28 @@ jobs:
         xray_verify_archive "$runtime/Xray-windows-64.zip" Xray-windows-64.zip
         unzip -q "$runtime/Xray-windows-64.zip" xray.exe -d "$runtime"
         python tests/external-core-start/test_core_start.py --core "$(cygpath -m "$PWD/core-artifact/deployment/windows64/nekobox_core.exe")" --xray "$(cygpath -m "$runtime/xray.exe")"
+  verify-ui:
+    name: Verify window controls on Windows
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+    - name: Install the same Qt as the application
+      uses: qr243vbi/qt6windows7@main
+      with:
+        version: 6.10.0_x86_64
+    - name: Compile and run real Qt window regression tests
+      shell: pwsh
+      run: |
+        cmake -S tests/window-ui -B window-ui-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        cmake --build window-ui-build --config Release
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        python tests/window-ui/run_test.py --binary window-ui-build/Release/window-ui-test.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   build-cpp:
     name: Build windows binaries
     permissions:
@@ -145,6 +168,7 @@ jobs:
     needs:
     - build-go
     - verify-core
+    - verify-ui
     - get-tag-and-changelog
     strategy:
       matrix:
@@ -221,7 +245,7 @@ jobs:
     - name: Tar files
       shell: bash
       run: |-
-        test -s deployment/nekobox-5.11.28.6-windows64.zip
+        test -s deployment/nekobox-5.11.28.7-windows64.zip
         tar czvf artifacts.tgz ./deployment
     - name: Uploading Artifact
       uses: actions/upload-artifact@v4

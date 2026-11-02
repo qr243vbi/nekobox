@@ -29,6 +29,7 @@
 #include <nekobox/sys/Process.hpp>
 #include <nekobox/ui/group/GroupItem.h>
 #include <nekobox/ui/mainwindow.h>
+#include <nekobox/ui/MainWindowState.hpp>
 #include <nekobox/ui/utils/MapListModel.hpp>
 #include <nekobox/ui/setting/shutdownoverlay.hpp>
 
@@ -156,8 +157,7 @@ void flushPendingLogs() {
     if (g_pendingLogs.isEmpty()) {
       return;
     }
-    chunk = g_pendingLogs.join(QLatin1Char('\n'));
-    g_pendingLogs.clear();
+    chunk = MainWindowState::takeLogBatch(g_pendingLogs);
   }
   auto *m = GetMainWindow();
   if (m != nullptr) {
@@ -832,10 +832,10 @@ MainWindow::MainWindow(QWidget *parent)
       software_build_date = NKR_TIMESTAMP;
     }
 #endif
-    software_name = (Configs::windowSettings->program_name.trimmed());
-    if (software_name == "") {
-      software_name = globalSettings.value("program_name", "NyameBox").toString();
-    }
+    software_name = MainWindowState::displayName(
+        Configs::windowSettings->program_name,
+        globalSettings.value("program_name", "NekoBox").toString());
+    QApplication::setApplicationDisplayName(software_name);
     software_core_name =
         globalSettings.value("program_core_name", "sing-box").toString();
   }
@@ -855,6 +855,11 @@ MainWindow::MainWindow(QWidget *parent)
   // Setup misc UI
   ui->setupUi(this);
 
+  const auto updateLogColors = [this](bool darkMode) {
+    qDeleteAll(qvLogDocument->findChildren<QSyntaxHighlighter *>());
+    new SyntaxHighlighter(darkMode, qvLogDocument);
+  };
+
   connect(themeManager, &ThemeManager::themeChanged, this,
           [=, this](const QString &theme) {
             int mode = ThemeManager::getMode(theme);
@@ -869,7 +874,7 @@ MainWindow::MainWindow(QWidget *parent)
               darkMode = isDarkMode();
               // bi-mode themes, follow system preference
             }
-            new SyntaxHighlighter(darkMode, qvLogDocument);
+            updateLogColors(darkMode);
           });
 
 //  updateEmojiFont();
@@ -881,16 +886,10 @@ MainWindow::MainWindow(QWidget *parent)
     height = Configs::windowSettings->height;
     x = Configs::windowSettings->X;
     y = Configs::windowSettings->Y;
-    if (width > 0) {
-      if (height > 0) {
-        resize(width, height);
-      }
-    }
-    if (x > 0) {
-      if (y > 0) {
-        move(x, y);
-      }
-    }
+    MainWindowState::restoreWindow(this,
+        DecodeB64IfValid(Configs::windowSettings->window_geometry),
+        width, height, x, y, Configs::windowSettings->save_geometry,
+        Configs::windowSettings->save_position);
     Configs::tableSettings.Load(Configs::windowSettings);
   }
 
@@ -899,11 +898,17 @@ MainWindow::MainWindow(QWidget *parent)
   loadShortcuts();
 
   // setup log
-  ui->splitter->restoreState(
+  MainWindowState::restoreSplitter(ui->splitter,
       DecodeB64IfValid(Configs::windowSettings->splitter_state));
-  new SyntaxHighlighter(isDarkMode() || theme.toLower() == "qdarkstyle",
-                        qvLogDocument);
+  ui->splitter->handle(1)->setToolTip(
+      tr("Drag to resize panels. Double-click to split equally."));
+  connect(ui->menu_reset_panels, &QAction::triggered, this, [this] {
+    MainWindowState::restoreSplitter(ui->splitter, {});
+  });
+  addAction(ui->menu_reset_panels);
+  updateLogColors(isDarkMode() || theme.toLower() == "qdarkstyle");
   qvLogDocument->setUndoRedoEnabled(false);
+  qvLogDocument->setMaximumBlockCount(kMaxLogBufferLines);
   ui->masterLogBrowser->setUndoRedoEnabled(false);
   ui->masterLogBrowser->setDocument(qvLogDocument);
   ui->masterLogBrowser->setFont(
@@ -912,8 +917,7 @@ MainWindow::MainWindow(QWidget *parent)
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
   connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this,
           [=, this](const Qt::ColorScheme &scheme) {
-            new SyntaxHighlighter(scheme == Qt::ColorScheme::Dark,
-                                  qvLogDocument);
+            updateLogColors(scheme == Qt::ColorScheme::Dark);
             themeManager->ApplyTheme(theme, true);
           });
 #endif
@@ -1123,6 +1127,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->label_running->installEventFilter(this);
   ui->label_inbound->installEventFilter(this);
   ui->splitter->installEventFilter(this);
+  ui->splitter->handle(1)->installEventFilter(this);
   ui->tabWidget->installEventFilter(this);
   //
   RegisterHotkey(false);
@@ -1915,7 +1920,7 @@ skip_updater_hide:
 
   if ((!Configs::dataStore->flag_tray) &&
       (!Configs::windowSettings->auto_hide)) {
-    if (Configs::windowSettings->maximized) {
+    if (Configs::windowSettings->save_geometry && Configs::windowSettings->maximized) {
       showMaximized();
     } else {
       show();
@@ -2406,13 +2411,13 @@ void MainWindow::on_commitDataRequest() {
 
     if (settings->save_geometry) {
       settings->maximized = isMaximized();
-      geometry = size();
+      geometry = (isMaximized() || isFullScreen()) ? normalGeometry().size() : size();
       width = geometry.width();
       height = geometry.height();
       settings->width = width;
       settings->height = height;
     }
-    if (settings->save_position) {
+    if (settings->save_position && !isMaximized() && !isFullScreen()) {
       position = pos();
       x = position.x();
       y = position.y();
@@ -2420,6 +2425,8 @@ void MainWindow::on_commitDataRequest() {
       settings->Y = y;
     }
     settings->splitter_state = ui->splitter->saveState().toBase64();
+    settings->window_geometry = (settings->save_geometry && settings->save_position)
+        ? QString::fromLatin1(saveGeometry().toBase64()) : QString();
     Configs::tableSettings.Save(settings);
     settings->Save();
   }
@@ -4433,12 +4440,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 // Log
 
 inline void FastAppendTextDocument(const QString &message, QTextDocument *doc) {
-  QTextCursor cursor(doc);
-  cursor.movePosition(QTextCursor::End);
-  cursor.beginEditBlock();
-  cursor.insertBlock();
-  cursor.insertText(message);
-  cursor.endEditBlock();
+  MainWindowState::appendLog(doc, message);
 }
 
 void MainWindow::rebuildLogView() {
@@ -4498,26 +4500,6 @@ void MainWindow::show_log_impl(const QString &log) {
   if (trimmed.isEmpty()) {
     logLock.unlock();
     return;
-  }
-
-  int blockCount = qvLogDocument->blockCount();
-  if (logClear) {
-    if (blockCount > 300) {
-      QTextBlock currentBlock = qvLogDocument->begin();
-      for (blockCount = 5; blockCount > 0; blockCount--) {
-        QTextBlock next = currentBlock.next();
-        QTextCursor cursor(currentBlock);
-        cursor.select(QTextCursor::BlockUnderCursor);
-        cursor.removeSelectedText();
-        currentBlock = next;
-      }
-    } else {
-      logClear = false;
-    }
-  } else {
-    if (blockCount > 600) {
-      logClear = true;
-    }
   }
 
   QStringList linesToShow;
@@ -4581,7 +4563,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
   auto pos1 = ui->masterLogBrowser->viewport()->mapToGlobal(pos);
   LAST_CLICK
 
-  QMenu *menu = ui->masterLogBrowser->createStandardContextMenu();
+  std::unique_ptr<QMenu> menu(ui->masterLogBrowser->createStandardContextMenu());
 
   auto cursor = ui->masterLogBrowser->textCursor();
   QString contextText = cursor.selectedText();
@@ -4592,7 +4574,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 
   const QStringList domains = LogRoute::extractDomains(contextText);
   if (!domains.isEmpty()) {
-    auto sepRoute = new QAction(this);
+    auto sepRoute = new QAction(menu.get());
     sepRoute->setSeparator(true);
     menu->addAction(sepRoute);
 
@@ -4620,7 +4602,7 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
     }
   }
 
-  auto sep = new QAction(this);
+  auto sep = new QAction(menu.get());
   sep->setSeparator(true);
   menu->addAction(sep);
 
@@ -4642,8 +4624,8 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
     }
   });
 
-  auto action_clear = new QAction(this);
-  auto action_stop = new QAction(this);
+  auto action_clear = new QAction(menu.get());
+  auto action_stop = new QAction(menu.get());
   action_clear->setText(tr("Clear"));
 
   action_stop->setText((Configs::windowSettings->logs_enabled) ? tr("Stop")
@@ -4651,6 +4633,10 @@ void MainWindow::on_masterLogBrowser_customContextMenuRequested(
 
   connect(action_clear, &QAction::triggered, this, [=, this] {
     CHECK_ACTION_ACCESS_W
+    {
+      QMutexLocker lock(&g_pendingLogMu);
+      g_pendingLogs.clear();
+    }
     logLineBuffer.clear();
     qvLogDocument->clear();
     ui->masterLogBrowser->clear();
@@ -4815,9 +4801,11 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
       return true;
     }
   } else if (event->type() == QEvent::MouseButtonDblClick) {
-    if (obj == ui->splitter) {
+    if ((obj == ui->splitter || obj == ui->splitter->handle(1)) &&
+        static_cast<QMouseEvent *>(event)->button() == Qt::LeftButton) {
       auto size = ui->splitter->size();
       ui->splitter->setSizes({size.height() / 2, size.height() / 2});
+      return true;
     }
   }
   return QMainWindow::eventFilter(obj, event);
