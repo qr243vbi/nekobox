@@ -270,7 +270,6 @@ DialogBasicSettings::DialogBasicSettings(MainWindow *parent)
         );
         if (ok){
             software_name = MainWindowState::displayName(text);
-            QApplication::setApplicationDisplayName(software_name);
             Configs::windowSettings->program_name = text.trimmed();
             this->setWindowTitle(software_name);
             GetMainWindow()->setWindowTitle(software_name);
