@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/sagernet/sing/common/atomic"
 	"os/exec"
+	"time"
 )
 
 type Process struct {
@@ -50,5 +51,14 @@ func (p *Process) Done() <-chan struct{} {
 
 func (p *Process) Stop() {
 	p.stopped.Store(true)
+	if p.cmd == nil || p.cmd.Process == nil {
+		return
+	}
 	_ = p.cmd.Process.Kill()
+	if p.done != nil {
+		select {
+		case <-p.done:
+		case <-time.After(2 * time.Second):
+		}
+	}
 }

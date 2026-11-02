@@ -111,12 +111,40 @@ jobs:
       with:
         name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
         path: artifacts.tgz
+  verify-core:
+    name: Verify normal Xray startup on Windows
+    needs: build-go
+    runs-on: windows-2022
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        name: nekobox-${{ github.sha }}-Common-windows-amd64
+        path: core-artifact
+    - name: Extract the actual compiled core
+      shell: pwsh
+      run: |
+        tar -xzf core-artifact/artifacts.tgz -C core-artifact
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Exercise Start Stop RPC and real Xray forwarding
+      shell: bash
+      run: |
+        set -euo pipefail
+        source script/xray_release.sh
+        runtime="$RUNNER_TEMP/nekobox-core-start"
+        mkdir -p "$runtime"
+        curl -fLsS --retry 3 -o "$runtime/Xray-windows-64.zip" "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-windows-64.zip"
+        xray_verify_archive "$runtime/Xray-windows-64.zip" Xray-windows-64.zip
+        unzip -q "$runtime/Xray-windows-64.zip" xray.exe -d "$runtime"
+        python tests/external-core-start/test_core_start.py --core "$(cygpath -m "$PWD/core-artifact/deployment/windows64/nekobox_core.exe")" --xray "$(cygpath -m "$runtime/xray.exe")"
   build-cpp:
     name: Build windows binaries
     permissions:
       contents: read
     needs:
     - build-go
+    - verify-core
     - get-tag-and-changelog
     strategy:
       matrix:
@@ -193,7 +221,7 @@ jobs:
     - name: Tar files
       shell: bash
       run: |-
-        test -s deployment/nekobox-5.11.28.5-windows64.zip
+        test -s deployment/nekobox-5.11.28.6-windows64.zip
         tar czvf artifacts.tgz ./deployment
     - name: Uploading Artifact
       uses: actions/upload-artifact@v4
