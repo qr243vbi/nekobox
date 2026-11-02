@@ -12,10 +12,14 @@ generate_product_version(
         QV2RAY_RC
         ICON "${CMAKE_SOURCE_DIR}/res/nekobox.ico"
         NAME "nekobox"
-        BUNDLE "Iblis"
-        COMPANY_NAME "Iblis Corporation"
+        BUNDLE "NekoBox"
+        COMPANY_NAME "NekoBox contributors"
         COMPANY_COPYRIGHT "nekobox"
-        FILE_DESCRIPTION "nekobox"
+        FILE_DESCRIPTION "NekoBox proxy client"
+        VERSION_MAJOR ${PROJECT_VERSION_MAJOR}
+        VERSION_MINOR ${PROJECT_VERSION_MINOR}
+        VERSION_PATCH ${PROJECT_VERSION_PATCH}
+        VERSION_REVISION ${PROJECT_VERSION_TWEAK}
 )
 set(GUI_TYPE WIN32)
 if (MINGW)

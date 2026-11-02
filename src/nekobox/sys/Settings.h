@@ -129,6 +129,7 @@ public:
   int Y = 0;
   bool maximized = false;
   QString splitter_state = "";
+  QString window_geometry = "";
   bool auto_hide = false;
 #ifdef DEBUG_MODE
   bool show_profile_id = true;

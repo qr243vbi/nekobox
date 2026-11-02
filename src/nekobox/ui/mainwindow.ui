@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string notr="true">qr243vbi</string>
+   <string notr="true">NekoBox</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -53,7 +53,7 @@
          <item>
           <widget class="QToolButton" name="toolButton_program">
            <property name="toolTip">
-            <string>NekoRay</string>
+            <string notr="true">NekoBox</string>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton::menu-indicator,
@@ -63,7 +63,7 @@ QToolButton::menu-indicator {
 }</string>
            </property>
            <property name="text">
-            <string>Box</string>
+            <string notr="true">NekoBox</string>
            </property>
            <property name="icon">
             <iconset theme="b-system-run"/>
@@ -374,6 +374,13 @@ QToolButton::menu-indicator {
     </item>
     <item>
      <widget class="QSplitter" name="splitter">
+      <property name="handleWidth">
+       <number>8</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSplitter#splitter::handle:vertical { height: 8px; background: palette(midlight); }
+QSplitter#splitter::handle:vertical:hover { background: palette(highlight); }</string>
+      </property>
       <property name="orientation">
        <enum>Qt::Orientation::Vertical</enum>
       </property>
@@ -708,6 +715,7 @@ QToolButton::menu-indicator {
      <addaction name="menu_spmode_disabled"/>
     </widget>
     <addaction name="actionHide_window"/>
+    <addaction name="menu_reset_panels"/>
     <addaction name="separator"/>
     <addaction name="actionStart_with_system"/>
     <addaction name="actionRemember_last_proxy"/>
@@ -1361,6 +1369,14 @@ QToolButton::menu-indicator {
   <action name="menu_toggle_searchbox">
    <property name="text">
     <string>Toggle searchbox</string>
+   </property>
+  </action>
+  <action name="menu_reset_panels">
+   <property name="text">
+    <string>Reset panel layout</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+Shift+L</string>
    </property>
   </action>
   <action name="menu_reset_traffic_group">

@@ -363,7 +363,6 @@ private:
     std::atomic<bool> stopSpeedtest = false;
     QMutex speedtestRunning;
     QMutex logLock;
-    bool logClear = false;
     bool force_hide_text_under_buttons = false;
     bool force_hide_tray = false;
     bool exit_in_progress = false;

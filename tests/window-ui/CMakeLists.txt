@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.19)
+project(NekoBoxWindowUI LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/run_test.py"
+    --prepare-ui "${CMAKE_CURRENT_BINARY_DIR}" COMMAND_ERROR_IS_FATAL ANY)
+qt_wrap_ui(UI_HEADERS "${CMAKE_CURRENT_BINARY_DIR}/mainwindow.ui")
+add_executable(window-ui-test test_ui.cpp ${UI_HEADERS})
+target_include_directories(window-ui-test PRIVATE ../../src "${CMAKE_CURRENT_BINARY_DIR}")
+target_link_libraries(window-ui-test PRIVATE Qt6::Widgets)
