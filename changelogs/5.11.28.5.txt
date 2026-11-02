@@ -1,0 +1,5 @@
+Experimental Windows compatibility fix.
+- Start a separate Xray process for native Xray profile URL tests.
+- Test both automatic VLESS/Trojan Xray profiles and explicit Xray profiles.
+- Use an isolated temporary config and free SOCKS port without changing the active connection.
+- Handle test timeouts, cancellation and process cleanup.

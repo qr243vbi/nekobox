@@ -871,7 +871,7 @@ bool IsValid(std::shared_ptr<ProxyEntity> ent) {
 }
 
 std::shared_ptr<BuildTestConfigResult>
-BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
+BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles, bool forURLTest) {
   auto results = std::make_shared<BuildTestConfigResult>();
 
   QJsonArray outboundArray = {
@@ -888,13 +888,26 @@ BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>> &profiles) {
     if (bean == nullptr) {
       continue;
     }
-    if (item->type == "extracore" || item->type == "xray") {
+    if (item->type == "extracore" || (item->type == "xray" && !forURLTest)) {
       MW_show_log("Skipping external-core profile from batch test: " + item->DisplayName());
       continue;
     }
     if (item->chain_link) {
       // a hop is not reachable on its own, so a result for it would only mislead
       MW_show_log("Skipping chain link from batch test: " + item->DisplayName());
+      continue;
+    }
+    // Native Xray settings must not be validated or tested by sing-box.
+    // Its SOCKS bridge only exists while the associated Xray process is alive.
+    if (forURLTest && IsBuiltinXrayProfile(item)) {
+      auto error = ValidateBuiltinXrayVersion();
+      QJsonObject config;
+      if (error.isEmpty()) config = BuildBuiltinXrayConfig(item, 0, &error);
+      if (!error.isEmpty()) {
+        results->error = item->DisplayName() + ": " + error;
+        return results;
+      }
+      results->xrayConfigs.insert(item->id, config);
       continue;
     }
     if (!IsValid(item)) {

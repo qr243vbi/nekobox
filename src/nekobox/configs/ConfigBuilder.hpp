@@ -36,6 +36,7 @@ namespace Configs {
     public:
         QString error;
         QMap<int, QString> fullConfigs;
+        QMap<int, QJsonObject> xrayConfigs;
         QMap<QString, int> tag2entID;
         QJsonObject coreConfig;
         QStringList outboundTags;
@@ -65,7 +66,7 @@ namespace Configs {
 
     bool IsValid(std::shared_ptr<ProxyEntity> ent);
 
-    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles);
+    std::shared_ptr<BuildTestConfigResult> BuildTestConfig(const QList<std::shared_ptr<ProxyEntity>>& profiles, bool forURLTest = false);
 
     std::shared_ptr<BuildConfigResult> BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest, bool forExport, int chainID = 0);
 
