@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <QSettings>
+#include <QScrollBar>
 #include <QTemporaryDir>
 #include <iostream>
 #include <stdexcept>
@@ -49,6 +50,14 @@ int main(int argc, char **argv) {
         ui.splitter->setSizes({200, 350}); events();
         MainWindowState::restoreSplitter(ui.splitter, saved); events();
         check(ui.stats_widget->height() <= 100, "Panel height not restored");
+        ui.routes_tab->layout()->removeWidget(largeHiddenPage);
+        auto *routes = MainWindowState::scrollPanel(largeHiddenPage, ui.routes_tab);
+        ui.routes_tab->layout()->addWidget(routes);
+        ui.stats_widget->setCurrentWidget(ui.routes_tab); events();
+        check(routes->verticalScrollBar()->maximum() > 0, "Compact routes page clips its controls without scrolling");
+        routes->verticalScrollBar()->setValue(routes->verticalScrollBar()->maximum());
+        check(routes->widget()->y() < 0, "Compact routes page cannot scroll to its lower controls");
+        ui.stats_widget->setCurrentWidget(ui.Logs); events();
         // Drag the actual splitter handle, including press/move/release.
         auto *handle = ui.splitter->handle(1);
         const int beforeDrag = ui.stats_widget->height();

@@ -1261,7 +1261,8 @@ skip_updater_hide:
 
   // setup Routes tab
   quickRoutesWidget = new QuickRoutesWidget(this);
-  ui->routes_tab->layout()->addWidget(quickRoutesWidget);
+  ui->routes_tab->layout()->addWidget(
+      MainWindowState::scrollPanel(quickRoutesWidget, ui->routes_tab));
 /*
   // table UI
   ui->proxyListTable->rowsSwapped = [=, this](int row1, int row2) {

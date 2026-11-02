@@ -2,6 +2,7 @@
 
 #include <QGuiApplication>
 #include <QScreen>
+#include <QScrollArea>
 #include <QSplitter>
 #include <QStringList>
 #include <QTextCursor>
@@ -25,7 +26,7 @@ inline void restoreSplitter(QSplitter *splitter, const QByteArray &state) {
         auto policy = pane->sizePolicy();
         policy.setVerticalPolicy(QSizePolicy::Ignored);
         pane->setSizePolicy(policy);
-        pane->setMinimumHeight(64);
+        pane->setMinimumHeight(i == 1 ? 96 : 64);
     }
     const bool restored = !state.isEmpty() && splitter->restoreState(state);
     splitter->setHandleWidth(8);
@@ -38,6 +39,15 @@ inline void restoreSplitter(QSplitter *splitter, const QByteArray &state) {
     if (splitter->count() > 1) {
         splitter->handle(1)->setCursor(Qt::SplitVCursor);
     }
+}
+
+inline QScrollArea *scrollPanel(QWidget *content, QWidget *parent) {
+    auto *scroll = new QScrollArea(parent);
+    scroll->setWidgetResizable(true);
+    scroll->setFrameShape(QFrame::NoFrame);
+    scroll->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Ignored);
+    scroll->setWidget(content);
+    return scroll;
 }
 
 inline bool reachableTitle(const QRect &title, const QList<QRect> &screens) {
