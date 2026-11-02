@@ -101,9 +101,9 @@ fi
 cp -RT "$CURDIR/res/public" "$DEST/public"
 cp "$BUILD/"*.qm "$CURDIR/res/languages.txt" "$DEST/public/"
 
-XRAY_VERSION="26.9.9"
+source "$SRC_ROOT/script/xray_release.sh"
 case "$1" in
-  x86_64) XRAY_ASSET="Xray-windows-64.zip" ;;
+  x86_64|"") XRAY_ASSET="Xray-windows-64.zip" ;;
   arm64) XRAY_ASSET="Xray-windows-arm64-v8a.zip" ;;
   i686|x86) XRAY_ASSET="Xray-windows-32.zip" ;;
   *) echo "Unsupported Xray architecture: $1" >&2; exit 1 ;;
@@ -112,6 +112,7 @@ esac
 XRAY_URL="https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
 XRAY_TMP="$DEST/.${XRAY_ASSET}"
 curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" "$XRAY_URL"
+xray_verify_archive "$XRAY_TMP" "$XRAY_ASSET"
 7z e -y "$XRAY_TMP" "xray.exe" -o"$DEST"
 rm -f "$XRAY_TMP"
 
@@ -122,7 +123,7 @@ then
 fi
 
 XRAY_VERSION_OUTPUT="$("$DEST/xray.exe" version 2>&1)"
-if ! grep -Eq "Xray[ -]+${XRAY_VERSION}([[:space:]]|$)" <<< "$XRAY_VERSION_OUTPUT"
+if ! grep -Fq "Xray ${XRAY_VERSION} " <<< "$XRAY_VERSION_OUTPUT"
 then
   echo "Bundled Xray version check failed. Expected ${XRAY_VERSION}, got:" >&2
   echo "$XRAY_VERSION_OUTPUT" >&2

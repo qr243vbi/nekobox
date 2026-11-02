@@ -144,7 +144,9 @@ struct ProfileFilterKey {
 }
 QJsonObject QString2QJsonObject(const QString &text) { return QJsonDocument::fromJson(text.toUtf8()).object(); }
 QString DecodeB64IfValid(const QString &) { return {}; } // Base64 codec not under test.
+#ifndef USE_REAL_QT
 struct QObject { static QString tr(const char *text) { return text; } };
+#endif
 void MW_show_log(const QString &) {}
 namespace HappDecrypt { QString decryptLink(const QString &) { return {}; } }
 int sanitizeCalls = 0, fixCalls = 0;

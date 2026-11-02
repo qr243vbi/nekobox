@@ -1,0 +1,9 @@
+Experimental compatibility build; not an official upstream release.
+- Bundle Xray-core 26.10.31 with pinned archive SHA-256 verification.
+- Preserve cs, pcs, vcn, ech and pqv in VLESS/Trojan share links and profile storage.
+- Use Xray for TLS profiles that require its certificate/ECH/cipher options.
+- Pass REALITY ML-DSA verification and current password key naming to Xray.
+- Accept raw/splithttp transport aliases in VLESS/Trojan links.
+- Reject removed allowInsecure setting instead of silently discarding it.
+- Check bundled Xray version for automatically selected Xray profiles.
+- Add a manual Windows x64 build workflow without release publishing.

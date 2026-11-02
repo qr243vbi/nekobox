@@ -56,7 +56,7 @@ cp srslist.json "$DEST/srslist.json"
 cp "$BUILD/$nekobox" "$DEST"
 
 # Bundle the same Xray-core runtime used by the built-in Xray profile.
-XRAY_VERSION="26.9.9"
+source "$SRC_ROOT/script/xray_release.sh"
 case "$UNAME" in
   amd64|x86_64) XRAY_ASSET="Xray-linux-64.zip" ;;
   arm64|aarch64) XRAY_ASSET="Xray-linux-arm64-v8a.zip" ;;
@@ -67,12 +67,13 @@ esac
 XRAY_TMP="$DEST/.${XRAY_ASSET}"
 curl -fL --retry 5 --retry-delay 2 -o "$XRAY_TMP" \
   "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/${XRAY_ASSET}"
-unzip -q "$XRAY_TMP" xray -d "$DEST"
+xray_verify_archive "$XRAY_TMP" "$XRAY_ASSET"
+unzip -oq "$XRAY_TMP" xray -d "$DEST"
 rm -f "$XRAY_TMP"
 chmod +x "$DEST/xray"
 [[ -s "$DEST/xray" ]] || { echo "Bundled Xray-core binary is missing in $DEST" >&2; exit 1; }
 XRAY_VERSION_OUTPUT="$("$DEST/xray" version 2>&1)"
-if ! grep -Eq "Xray[ -]+${XRAY_VERSION}([[:space:]]|$)" <<< "$XRAY_VERSION_OUTPUT"
+if ! grep -Fq "Xray ${XRAY_VERSION} " <<< "$XRAY_VERSION_OUTPUT"
 then
   echo "Bundled Xray version check failed. Expected ${XRAY_VERSION}, got:" >&2
   echo "$XRAY_VERSION_OUTPUT" >&2

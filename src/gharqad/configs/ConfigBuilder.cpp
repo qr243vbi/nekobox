@@ -34,8 +34,8 @@ namespace Configs {
 
 namespace {
 constexpr int kBuiltinXrayMinMajor = 26;
-constexpr int kBuiltinXrayMinMinor = 3;
-constexpr int kBuiltinXrayMinPatch = 27;
+constexpr int kBuiltinXrayMinMinor = 10;
+constexpr int kBuiltinXrayMinPatch = 31;
 constexpr int kBuiltinXrayPortBase = 30000;
 constexpr int kBuiltinXrayPortSpan = 20000;
 
@@ -47,14 +47,17 @@ int BuiltinXraySocksPort(const std::shared_ptr<ProxyEntity> &ent) {
 bool IsBuiltinXrayProfile(const std::shared_ptr<ProxyEntity> &ent) {
   if (ent == nullptr) return false;
   if (ent->type == "xray") return true;
-  if (ent->type != "vless") return false;
+  if (ent->type != "vless" && ent->type != "trojan") return false;
 
   const auto bean = ent->TrojanVLESSBean();
   const auto stream = bean != nullptr ? GetStreamSettingsConst(bean.get()) : nullptr;
-  return bean != nullptr && bean->proxy_type == TrojanVLESSBean::proxy_VLESS &&
-         stream != nullptr &&
+  return bean != nullptr && stream != nullptr &&
          stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
-         !stream->reality_pbk.trimmed().isEmpty();
+         (!stream->reality_pbk.trimmed().isEmpty() ||
+          !stream->tls_cipher_suites.isEmpty() ||
+          !stream->tls_pinned_peer_cert_sha256.isEmpty() ||
+          !stream->tls_verify_peer_cert_by_name.isEmpty() ||
+          !stream->xray_ech_config.isEmpty());
 }
 
 QString BuiltinXrayBinaryName() {
@@ -81,14 +84,16 @@ QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
   }
 
   const QString network = stream->network != nullptr ? QString(*stream->network).toLower() : "tcp";
-  if (network != "tcp" && network != "xhttp") {
-    if (error) *error = "Xray Extra Core supports only TCP and XHTTP transports";
+  if (network != "tcp" && network != "xhttp" && network != "ws" &&
+      network != "grpc" && network != "httpupgrade") {
+    if (error) *error = "Xray Extra Core supports TCP, XHTTP, WebSocket, gRPC and HTTPUpgrade transports";
     return root;
   }
 
   if (ent->serverAddress.isEmpty() || ent->serverPort <= 0 ||
-      bean->password.trimmed().isEmpty()) {
-    if (error) *error = "Xray VLESS profile is incomplete";
+      ent->serverPort > 65535 ||
+      bean->password.isEmpty()) {
+    if (error) *error = "Xray profile is incomplete";
     return root;
   }
 
@@ -111,10 +116,31 @@ QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
       {"protocol", "vless"},
       {"settings", QJsonObject{{"vnext", QJsonArray{vnext}}}}
   };
+  if (bean->proxy_type == TrojanVLESSBean::proxy_Trojan) {
+    outbound["protocol"] = "trojan";
+    outbound["settings"] = QJsonObject{{"servers", QJsonArray{QJsonObject{
+        {"address", ent->serverAddress}, {"port", ent->serverPort},
+        {"password", bean->password}}}}};
+  }
 
   QJsonObject streamSettings{
       {"network", network}
   };
+  if (network == "ws" || network == "httpupgrade") {
+    QJsonObject transport{{"host", stream->host}, {"path", stream->path}};
+    bool headersOk = true;
+    QJsonObject headers;
+    for (const auto &pair : stream->GetHeaderPairs(&headersOk).toStdMap())
+      headers[pair.first] = pair.second;
+    if (!headersOk) {
+      if (error) *error = "Invalid transport headers";
+      return root;
+    }
+    if (!headers.isEmpty()) transport["headers"] = headers;
+    streamSettings[network == "ws" ? "wsSettings" : "httpupgradeSettings"] = transport;
+  } else if (network == "grpc") {
+    streamSettings["grpcSettings"] = QJsonObject{{"serviceName", stream->path}};
+  }
 
   if (stream->security.compare("tls", Qt::CaseInsensitive) == 0 &&
       !stream->reality_pbk.trimmed().isEmpty()) {
@@ -124,19 +150,58 @@ QJsonObject BuildBuiltinXrayConfig(const std::shared_ptr<ProxyEntity> &ent,
                              ? "chrome"
                              : stream->utlsFingerprint.trimmed()},
         {"serverName", stream->sni.trimmed()},
-        {"publicKey", stream->reality_pbk.trimmed()},
+        {"password", stream->reality_pbk.trimmed()},
         {"shortId", stream->reality_sid.trimmed()},
         {"spiderX", stream->reality_spx.trimmed().isEmpty()
                        ? "/"
                        : stream->reality_spx.trimmed()}
     };
+    if (!stream->reality_pqv.isEmpty()) {
+      reality["mldsa65Verify"] = stream->reality_pqv;
+    }
     streamSettings["security"] = "reality";
     streamSettings["realitySettings"] = reality;
   } else if (stream->security.compare("tls", Qt::CaseInsensitive) == 0) {
+    // Current Xray rejects allowInsecure; never silently drop the old setting.
+    if (stream->allow_insecure || dataStore->skip_cert) {
+      if (error) *error = QString::fromUtf8(
+          "Xray 26.10.31: отключение проверки сертификата больше не поддерживается. "
+          "Отключите allowInsecure и общую настройку пропуска проверки; используйте pcs или vcn.");
+      return root;
+    }
     QJsonObject tls{
         {"serverName", stream->sni.trimmed()}
     };
-    if (!stream->utlsFingerprint.trimmed().isEmpty()) {
+    if (!stream->tls_cipher_suites.isEmpty())
+      tls["cipherSuites"] = stream->tls_cipher_suites;
+    if (!stream->tls_pinned_peer_cert_sha256.isEmpty())
+      tls["pinnedPeerCertSha256"] = stream->tls_pinned_peer_cert_sha256;
+    if (!stream->tls_verify_peer_cert_by_name.isEmpty())
+      tls["verifyPeerCertByName"] = stream->tls_verify_peer_cert_by_name;
+    if (!stream->xray_ech_config.isEmpty()) {
+      tls["echConfigList"] = stream->xray_ech_config;
+    } else if (stream->enable_ech) {
+      if (!stream->query_server_name.isEmpty()) {
+        if (error) *error = "Xray ECH: use the ech share-link parameter for dynamic ECH lookup";
+        return root;
+      }
+      QString config = stream->ech_config;
+      config.remove("-----BEGIN ECH CONFIGS-----");
+      config.remove("-----END ECH CONFIGS-----");
+      config.remove('\r');
+      config.remove('\n');
+      tls["echConfigList"] = config.trimmed();
+    }
+    if (!stream->certificate.trimmed().isEmpty()) {
+      QJsonArray certificate;
+      for (const auto &line : stream->certificate.trimmed().split('\n'))
+        certificate.append(line.trimmed());
+      tls["certificates"] = QJsonArray{QJsonObject{
+          {"usage", "verify"}, {"certificate", certificate}}};
+    }
+    if (stream->utlsFingerprint.trimmed().isEmpty() && !stream->tls_cipher_suites.isEmpty()) {
+      tls["fingerprint"] = "unsafe";
+    } else if (!stream->utlsFingerprint.trimmed().isEmpty()) {
       tls["fingerprint"] = stream->utlsFingerprint.trimmed();
     }
     if (!stream->alpn.trimmed().isEmpty()) {
@@ -1799,6 +1864,11 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
     return;
   }
   if (IsBuiltinXrayProfile(status->ent)) {
+    const auto versionError = ValidateBuiltinXrayVersion();
+    if (!versionError.isEmpty()) {
+      status->result->error = versionError;
+      return;
+    }
     const int socksPort = BuiltinXraySocksPort(status->ent);
     QString xrayError;
     const auto xrayConfig = BuildBuiltinXrayConfig(status->ent, socksPort, &xrayError);

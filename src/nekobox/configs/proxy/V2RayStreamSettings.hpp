@@ -80,6 +80,11 @@ namespace Configs {
         QString alpn = "";
         QString certificate = "";
         QString utlsFingerprint = "";
+        // Xray share-link fields; retain them through editing and subscription updates.
+        QString tls_cipher_suites = "";
+        QString tls_pinned_peer_cert_sha256 = "";
+        QString tls_verify_peer_cert_by_name = "";
+        QString xray_ech_config = "";
         bool enable_tls_fragment = false;
         QString tls_fragment_fallback_delay;
         bool enable_tls_record_fragment = false;
@@ -95,6 +100,7 @@ namespace Configs {
         QString reality_pbk = "";
         QString reality_sid = "";
         QString reality_spx = "";
+        QString reality_pqv = "";
                 
         V2rayStreamSettings() : JsonStore() {
         }
@@ -119,17 +125,22 @@ namespace Configs {
             ADD_MAP("xhttp_mode", xhttp_mode, string);
             ADD_MAP("xhttp_extra", xhttp_extra, string);
             ADD_MAP("utls", utlsFingerprint, string);
+            ADD_MAP("tls_cipher_suites", tls_cipher_suites, string);
+            ADD_MAP("tls_pinned_peer_cert_sha256", tls_pinned_peer_cert_sha256, string);
+            ADD_MAP("tls_verify_peer_cert_by_name", tls_verify_peer_cert_by_name, string);
+            ADD_MAP("xray_ech_config", xray_ech_config, string);
             ADD_MAP("tls_frag", enable_tls_fragment, boolean);
             ADD_MAP("tls_frag_fall_delay", tls_fragment_fallback_delay, string);
             ADD_MAP("tls_record_frag", enable_tls_record_fragment, boolean);
             ADD_MAP("pbk", reality_pbk, string);
             ADD_MAP("sid", reality_sid, string);
             ADD_MAP("spx", reality_spx, string);
+            ADD_MAP("pqv", reality_pqv, string);
         STOP_MAP
 
         void BuildStreamSettingsSingBox(QJsonObject *outbound);
 
-        QMap<QString, QString> GetHeaderPairs(bool* ok) {
+        QMap<QString, QString> GetHeaderPairs(bool* ok) const {
             bool inQuote = false;
             QString curr;
             QStringList list;

@@ -25,6 +25,11 @@ int main() {
     edited.ech_config = syntheticConfig;
     edited.query_server_name = "public.example.invalid";
     edited.sni = "server.example.invalid";
+    edited.tls_cipher_suites = "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256";
+    edited.tls_pinned_peer_cert_sha256 = "fixture-pin";
+    edited.tls_verify_peer_cert_by_name = "verify.example.invalid";
+    edited.xray_ech_config = "public.example.invalid+https://dns.example.invalid/dns-query";
+    edited.reality_pqv = "fixture-pqv";
     const auto saved = snapshot(edited);
     check("serialized enable_ech is a true boolean", saved["enable_ech"].isBool() && saved["enable_ech"].toBool());
     check("serialized ech_config preserves exact multiline text", saved["ech_config"].isString() && saved["ech_config"].toString() == syntheticConfig);
@@ -36,6 +41,11 @@ int main() {
     check("save/reopen preserves ECH config", reopened.ech_config == syntheticConfig);
     check("save/reopen preserves query server name", reopened.query_server_name == edited.query_server_name);
     check("existing SNI roundtrip remains intact", reopened.sni == edited.sni);
+    check("cs persists across profile serialization", reopened.tls_cipher_suites == edited.tls_cipher_suites);
+    check("pcs persists across profile serialization", reopened.tls_pinned_peer_cert_sha256 == edited.tls_pinned_peer_cert_sha256);
+    check("vcn persists across profile serialization", reopened.tls_verify_peer_cert_by_name == edited.tls_verify_peer_cert_by_name);
+    check("Xray ECH persists across profile serialization", reopened.xray_ech_config == edited.xray_ech_config);
+    check("pqv persists across profile serialization", reopened.reality_pqv == edited.reality_pqv);
 
     reopened.enable_ech = false;
     const auto savedDisabled = snapshot(reopened);
