@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(XrayURLTest LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Qt6 REQUIRED COMPONENTS Core Network)
+add_executable(xray-url-test main.cpp ../../src/gharqad/sys/XrayURLTest.cpp)
+target_include_directories(xray-url-test PRIVATE ../../src)
+target_link_libraries(xray-url-test PRIVATE Qt6::Core Qt6::Network)
