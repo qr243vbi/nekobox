@@ -280,4 +280,4 @@ replace github.com/sagernet/sing-mux => github.com/shtorm-7/sing-mux v0.3.10-ext
 
 replace github.com/sagernet/gvisor => github.com/nintendobox/gvisor v0.0.3-fix
 
-replace github.com/sagernet/sing-tun => github.com/nintendobox/sing-tun v0.9.6-fix1
+replace github.com/sagernet/sing-tun => github.com/qr243vbi/sing-tun v0.0.0-20261103114612-447a8f75e6bb
