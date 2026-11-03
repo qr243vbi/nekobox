@@ -138,19 +138,19 @@ jobs:
         include:
           - cross_os: public
             cross_arch: public
-            go_version: "1.27.1"
+            go_version: "1.27.3"
           - cross_os: windows
             cross_arch: amd64
             allow: ${{ github.event_name == 'push' || github.event.inputs.build_windows_x64 == 'true' }}
-            go_version: "1.27.1"
+            go_version: "1.27.3"
           - cross_os: windows
             cross_arch: arm64
             allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_arm64 == 'true' }}
-            go_version: "1.27.1"
+            go_version: "1.27.3"
           - cross_os: windows
             cross_arch: 386
             allow: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_windows_x86 == 'true' }}
-            go_version: "1.27.1"
+            go_version: "1.27.3"
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
