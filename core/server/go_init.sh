@@ -11,6 +11,15 @@ shopt -s globstar
 go mod init nekobox_core
 go mod tidy
 
+go mod edit -replace=github.com/sagernet/sing-box=github.com/shtorm-7/sing-box-extended@HEAD
+go mod tidy
+
+curl -fsSL 'https://raw.githubusercontent.com/shtorm-7/sing-box-extended/refs/heads/extended/go.mod' \
+  | sed -n '/^replace /p' >> go.mod
+
+go mod tidy
+
+
 #go mod edit -replace=github.com/sagernet/sing-box=github.com/shtorm-7/sing-box-extended@HEAD
 #go mod tidy
 

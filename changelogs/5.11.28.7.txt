@@ -1,4 +1,3 @@
-Windows interface and stability maintenance.
 - Use NekoBox branding and the actual version in Windows executable properties.
 - Make the log panel resizable despite hidden tabs and keep its divider visible.
 - Keep route controls reachable by scrolling when the bottom panel is compact.
@@ -6,4 +5,20 @@ Windows interface and stability maintenance.
 - Preserve normal window size, zero/negative monitor positions and Qt geometry state.
 - Bound log history, retain busy-log batches, and clear queued lines with the log.
 - Release log context menus and old syntax highlighters.
-- Translate log controls into Russian.
+- Write Xray runtime configuration to extra.json: current Xray rejects .conf despite -format json.
+- Return external core startup/listener errors before starting the main proxy or TUN.
+- Stop and reap the external core on failed starts and wait for its port to close.
+- Preserve an active connection when a duplicate start is rejected.
+- Verify the real Start/Stop RPC and main-core-to-Xray forwarding on Windows.
+- Start a separate Xray process for native Xray profile URL tests.
+- Test both automatic VLESS/Trojan Xray profiles and explicit Xray profiles.
+- Use an isolated temporary config and free SOCKS port without changing the active connection.
+- Handle test timeouts, cancellation and process cleanup.
+- Bundle Xray-core 26.10.31 with pinned archive SHA-256 verification.
+- Preserve cs, pcs, vcn, ech and pqv in VLESS/Trojan share links and profile storage.
+- Use Xray for TLS profiles that require its certificate/ECH/cipher options.
+- Pass REALITY ML-DSA verification and current password key naming to Xray.
+- Accept raw/splithttp transport aliases in VLESS/Trojan links.
+- Reject removed allowInsecure setting instead of silently discarding it.
+- Check bundled Xray version for automatically selected Xray profiles.
+- Add a manual Windows x64 build workflow without release publishing.
