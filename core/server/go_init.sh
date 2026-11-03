@@ -29,8 +29,8 @@ go mod tidy
 #go mod edit -replace=github.com/sagernet/sing-vmess=github.com/qr243vbi/sing-vmess@HEAD
 #go mod tidy
 
-#go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@v0.0.3-fix
-#go mod tidy
+go mod edit -replace=github.com/sagernet/gvisor=github.com/nintendobox/gvisor@v0.0.3-fix
+go mod tidy
 
 qr243vbi_version="$(go list -m -json all | jq -r 'select(.Replace != null) | select (.Replace.Path == "github.com/shrorm-7/sing-box-extended") | .Replace.Version')"
 export SING_BOX="$(go env GOPATH)/pkg/mod/github.com/shrorm-7/sing-box-extended@${qr243vbi_version}" 
