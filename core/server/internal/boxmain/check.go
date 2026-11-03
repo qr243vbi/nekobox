@@ -2,15 +2,15 @@ package boxmain
 
 import (
 	"context"
+
 	"github.com/sagernet/sing-box/include"
 
 	"nekobox_core/internal/boxbox"
 )
 
-var ruleset_cachedir string
-
 func Check(content []byte) error {
-	ctx := include.Context(context.Background())
+	ctx := context.Background()
+	ctx = boxbox.Context(ctx, include.InboundRegistry(), include.OutboundRegistry(), include.EndpointRegistry(), include.DNSTransportRegistry(), include.ServiceRegistry(), include.CertificateProviderRegistry())
 	options, err := parseConfig(ctx, content)
 	if err != nil {
 		return err

@@ -11,8 +11,8 @@ shopt -s globstar
 go mod init nekobox_core
 go mod tidy
 
-go mod edit -replace=github.com/sagernet/sing-box=github.com/shtorm-7/sing-box-extended@HEAD
-go mod tidy
+#go mod edit -replace=github.com/sagernet/sing-box=github.com/shtorm-7/sing-box-extended@HEAD
+#go mod tidy
 
 #go mod edit -replace=github.com/sagernet/sing-tun=github.com/qr243vbi/sing-tun@HEAD
 #go mod tidy
