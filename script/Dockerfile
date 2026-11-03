@@ -31,31 +31,32 @@ RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 # Update system and install dependencies
 RUN zypper refresh && zypper update -y
 
-RUN zypper install -y \
- 'patchelf' \
- 'ccache' \
- 'libboost_filesystem-devel' \
- 'cmake' \
- 'go' \
- 'pkgconfig' \
- 'sed' \
- 'thrift' \
- 'boost-devel' \
- 'pkgconfig(thrift)' \
- 'ninja' \
- 'pkgconfig(libacl)' \
- 'cmake(leveldb)' \
- 'pkgconfig(snappy)' \
- 'pkgconfig(openssl)' \
- 'cmake(Qt6)' \
- 'cmake(Qt6Core)' \
- 'cmake(Qt6Gui)' \
- 'cmake(Qt6Linguist)' \
- 'cmake(Qt6Widgets)' \
- 'cmake(Qt6Concurrent)' \
- 'pkgconfig(xkbcommon)' \
- 'cmake(yaml-cpp)' \
- 'gcc-c++'
+
+RUN zypper install -y 'patchelf'
+RUN zypper install -y 'ccache'
+RUN zypper install -y 'libboost_filesystem-devel'
+RUN zypper install -y 'cmake'
+RUN zypper install -y 'go'
+RUN zypper install -y 'pkgconfig'
+RUN zypper install -y 'sed'
+RUN zypper install -y 'thrift'
+RUN zypper install -y 'boost-devel'
+RUN zypper install -y 'pkgconfig(thrift)'
+RUN zypper install -y 'ninja'
+RUN zypper install -y 'pkgconfig(libacl)'
+RUN zypper install -y 'cmake(leveldb)'
+RUN zypper install -y 'pkgconfig(snappy)'
+RUN zypper install -y 'pkgconfig(openssl)'
+RUN zypper install -y 'cmake(Qt6)'
+RUN zypper install -y 'cmake(Qt6Core)'
+RUN zypper install -y 'cmake(Qt6Gui)'
+RUN zypper install -y 'cmake(Qt6Linguist)'
+RUN zypper install -y 'cmake(Qt6Widgets)'
+RUN zypper install -y 'cmake(Qt6Concurrent)'
+RUN zypper install -y 'pkgconfig(xkbcommon)'
+RUN zypper install -y 'cmake(yaml-cpp)'
+RUN zypper install -y 'pkgconfig(libcurl)'
+RUN zypper install -y 'gcc-c++'
 
 WORKDIR /app
 
