@@ -119,6 +119,16 @@ struct quirc {
 	struct quirc_flood_fill_vars *flood_fill_vars;
 };
 
+static inline size_t quirc_image_size(int w, int h)
+{
+	return (size_t)w * (size_t)h;
+}
+
+static inline size_t quirc_pixel_count(const struct quirc *q)
+{
+	return quirc_image_size(q->w, q->h);
+}
+
 /************************************************************************
  * QR-code version information database
  */
