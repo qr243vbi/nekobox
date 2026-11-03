@@ -46,7 +46,7 @@ RUN zypper install -y 'ninja'
 RUN zypper install -y 'pkgconfig(libacl)'
 RUN zypper install -y 'cmake(leveldb)'
 RUN zypper install -y 'pkgconfig(snappy)'
-RUN zypper install -y 'pkgconfig(libssl)'
+RUN zypper install -y 'gcc-c++'
 RUN zypper install -y 'cmake(Qt6)'
 RUN zypper install -y 'cmake(Qt6Core)'
 RUN zypper install -y 'cmake(Qt6Gui)'
@@ -56,7 +56,8 @@ RUN zypper install -y 'cmake(Qt6Concurrent)'
 RUN zypper install -y 'pkgconfig(xkbcommon)'
 RUN zypper install -y 'cmake(yaml-cpp)'
 RUN zypper install -y 'pkgconfig(libcurl)'
-RUN zypper install -y 'gcc-c++'
+RUN zypper install -y --force-resolution 'libopenssl-devel'
+
 
 WORKDIR /app
 
