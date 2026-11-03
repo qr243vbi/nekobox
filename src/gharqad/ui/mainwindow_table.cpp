@@ -167,26 +167,29 @@ FilterHeader::FilterHeader(Qt::Orientation orientation, QWidget *parent)
 }
 
 void ColumnFilterProxy::setEnabled(bool enable){
+    beginFilterChange();
     this->enabled = enable;
     if (!enable){
         this->m_filters.clear();
     }
-    invalidateFilter();
+    endFilterChange();
 }
 
 void ColumnFilterProxy::setColumnFilter(int column, const QString& text)
 {
+    beginFilterChange();
     if (text.isEmpty())
         m_filters.remove(column);
     else
         m_filters[column] = text;
-    invalidateFilter();
+    endFilterChange();
 }
 
 void ColumnFilterProxy::setGlobalFilter(const QString& text)
 {
+    beginFilterChange();
     m_globalFilter = text;
-    invalidateFilter();
+    endFilterChange();
 }
 
 bool ColumnFilterProxy::filterAcceptsRow(int row, const QModelIndex &parent) const
