@@ -32,42 +32,28 @@ RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 RUN zypper refresh && zypper update -y
 
 RUN zypper install -y \
-    bash \
-    cmake \
-    git \
-    ninja \
-    jq \
-    curl \
-    ccache \
-    wget \
-    sed \
-    util-linux \
-    coreutils \
-    shadow \
-    squashfs \
-    qt6-base-devel \
-    thrift-devel \
-    libopenssl-devel \
-    boost-devel \
-    lmdb-devel \
-    libacl-devel \
-    libunistring-devel \
-    libcurl-devel \
-    libzstd-devel \
-    patchelf \
-    pkg-config \
-    qt6-tools-devel \
-    go \
-    thrift \
-    gcc \
-    gcc-c++ \
-    make \
-    tar \
-    xz \
-    which \
-    file \
-    yaml-cpp-devel \
-    leveldb-devel
+ 'patchelf' \
+ 'ccache' \
+ 'libboost_filesystem-devel' \
+ 'chrpath' \
+ 'cmake' \
+ 'go' \
+ 'pkgconfig' \
+ 'sed' \
+ 'libacl-devel' \
+ 'thrift' \
+ 'boost-devel' \
+ 'pkgconfig(thrift)' \
+ 'ninja' \
+ 'cmake(Qt6)' \
+ 'cmake(Qt6Core)' \
+ 'cmake(Qt6Gui)' \
+ 'cmake(Qt6Linguist)' \
+ 'cmake(Qt6Widgets)' \
+ 'cmake(Qt6Concurrent)' \
+ 'pkgconfig(xkbcommon)' \
+ 'cmake(yaml-cpp)' \
+ 'gcc-c++'
 
 WORKDIR /app
 
