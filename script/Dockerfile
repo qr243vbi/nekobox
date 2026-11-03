@@ -35,16 +35,18 @@ RUN zypper install -y \
  'patchelf' \
  'ccache' \
  'libboost_filesystem-devel' \
- 'chrpath' \
  'cmake' \
  'go' \
  'pkgconfig' \
  'sed' \
- 'libacl-devel' \
  'thrift' \
  'boost-devel' \
  'pkgconfig(thrift)' \
  'ninja' \
+ 'pkgconfig(libacl)' \
+ 'cmake(leveldb)' \
+ 'pkgconfig(snappy)' \
+ 'pkgconfig(openssl)' \
  'cmake(Qt6)' \
  'cmake(Qt6Core)' \
  'cmake(Qt6Gui)' \
