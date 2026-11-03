@@ -489,16 +489,16 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: ubuntu-24.04
-            target: 386
-            target1: i686
-            target2: i386
-            goarch: 386
-          - platform: ubuntu-24.04-arm
-            target: arm/v7
-            target1: armhf
-            target2: armhf
-            goarch: arm
+ #         - platform: ubuntu-24.04
+  #          target: 386
+   #         target1: i686
+    #        target2: i386
+     #       goarch: 386
+ #         - platform: ubuntu-24.04-arm
+  #          target: arm/v7
+   #         target1: armhf
+    #        target2: armhf
+     #       goarch: arm
           - platform: ubuntu-24.04
             target: amd64
             target1: x86_64
