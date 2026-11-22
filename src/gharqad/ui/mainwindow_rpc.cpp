@@ -816,6 +816,11 @@ void MainWindow::profile_stop(bool crash, bool block, bool manual) {
 
     auto profile_stop_stage2 = [=,this] {
         if (!crash) {
+            // The core belongs to the Windows service: closing the GUI must not
+            // disconnect the VPN. A manual stop / profile switch still goes through.
+            if (Configs::dataStore->core_attached && Configs::dataStore->prepare_exit) {
+                return true;
+            }
             bool rpcOK;
             QString error = defaultClient->Stop(&rpcOK);
             if (rpcOK && !error.isEmpty()) {

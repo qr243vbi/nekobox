@@ -111,6 +111,9 @@ func main() {
 						doRun(os.Args[2])
 						return
 					}
+				case "service":
+					RunServiceMode(os.Args[2:])
+					return
 				case "-installer-mode":
 					fmt.Println("nekobox_core installer mode")
 					InstallerMode()

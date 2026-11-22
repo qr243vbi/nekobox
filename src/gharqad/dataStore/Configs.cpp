@@ -572,6 +572,8 @@ QByteArray hash = QCryptographicHash::hash(
     signed char isAdminCache = -1;
 
     bool IsAdmin(bool forceRenew) {
+        // the service core runs as SYSTEM; the GUI never needs to elevate for it
+        if (dataStore->core_attached) return true;
         if (isAdminCache >= 0 && !forceRenew) return isAdminCache;
 
         bool admin = false;

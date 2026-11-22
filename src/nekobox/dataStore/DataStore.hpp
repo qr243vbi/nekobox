@@ -114,6 +114,8 @@ namespace Configs {
         std::string core_domain = "127.0.0.1";
         int started_id = -1919;
         bool core_running = false;
+        // runtime only: the core is owned by the NekoBox Windows service, not by this GUI
+        bool core_attached = false;
         bool prepare_exit = false;
         bool spmode_vpn = false;
         bool spmode_system_proxy = false;

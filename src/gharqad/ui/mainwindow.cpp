@@ -35,6 +35,9 @@
 #endif
 
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QDateTime>
+#include <QFile>
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
@@ -494,6 +497,66 @@ void MainWindow::set_misc_checkboxes() {
 
 void UI_InitMainWindow() { mainwindow = new MainWindow; }
 
+#ifdef Q_OS_WIN
+// ---- NekoBox core service (Windows) ---------------------------------------
+// The service (nekobox_core.exe service run) owns the core and TUN before login.
+// It publishes <ProgramData>\NekoBoxService-ipc\status.json (heartbeat every
+// ~5 s) and listens on <ProgramData>\NekoBoxService-ipc\core.sock.
+namespace {
+struct CoreServiceStatus {
+  bool alive = false;
+  bool core_running = false;
+  QString socket;
+};
+
+CoreServiceStatus read_core_service_status() {
+  CoreServiceStatus st;
+  if (qEnvironmentVariableIsSet("NEKOBOX_NO_SERVICE"))
+    return st;
+  const QString file =
+      qEnvironmentVariable("ProgramData", "C:\\ProgramData") +
+      "\\NekoBoxService-ipc\\status.json";
+  QFile f(file);
+  if (!f.open(QIODevice::ReadOnly))
+    return st;
+  const auto o = QJsonDocument::fromJson(f.readAll()).object();
+  const qint64 age =
+      QDateTime::currentSecsSinceEpoch() - o.value("updated").toInteger();
+  const QString state = o.value("state").toString();
+  if (age > 30 || (state != "running" && state != "starting"))
+    return st;
+  st.alive = true;
+  st.core_running = o.value("core_running").toBool();
+  st.socket = QDir::toNativeSeparators(o.value("socket").toString());
+  return st;
+}
+
+// Points the RPC client at the service socket and probes it.
+bool attach_to_core_service(const QString &socket) {
+  if (socket.isEmpty())
+    return false;
+  const auto old_domain = Configs::dataStore->core_domain;
+  const auto old_port = Configs::dataStore->core_port;
+  Configs::dataStore->core_port = -1;
+  Configs::dataStore->core_domain = socket.toStdString();
+  Configs::dataStore->core_running = true; // the RPC client refuses calls otherwise
+  for (int i = 0; i < 10; i++) {
+    bool ok = false;
+    API::defaultClient->IsPrivileged(&ok);
+    if (ok) {
+      Configs::dataStore->core_attached = true;
+      return true;
+    }
+    QThread::msleep(500);
+  }
+  Configs::dataStore->core_running = false;
+  Configs::dataStore->core_domain = old_domain;
+  Configs::dataStore->core_port = old_port;
+  return false;
+}
+} // namespace
+#endif
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 
@@ -840,6 +903,44 @@ MainWindow::MainWindow(QWidget *parent)
         }
         // Setup
         setup_rpc();
+#ifdef Q_OS_WIN
+        {
+          const auto svc = read_core_service_status();
+          if (svc.alive) {
+            if (attach_to_core_service(svc.socket)) {
+              // The service already owns the core and TUN: do not spawn another.
+              MW_show_log("[Service] Attached to the NekoBox core service");
+              int adopt = core_process->start_profile_when_core_is_up;
+              if (adopt < 0 && svc.core_running &&
+                  Configs::dataStore->remember_id >= 0) {
+                // adopt the running profile even if "remember last profile" is off,
+                // otherwise the GUI would show idle while the VPN is up
+                adopt = Configs::dataStore->remember_id;
+              }
+              runOnUiThread([this, adopt] {
+                QTimer::singleShot(800, this, [this, adopt] {
+                  MW_dialog_message("ExternalProcess",
+                                    "CoreStarted," + QString::number(adopt));
+                });
+              });
+              return;
+            }
+            if (svc.core_running) {
+              // Starting a second core would create a second TUN. Do not.
+              runOnUiThread([this] {
+                QMessageBox::critical(
+                    this, software_name,
+                    tr("The NekoBox core service is running but this account "
+                       "cannot reach it (check allowed_users in "
+                       "%ProgramData%\\NekoBoxService\\service.json). "
+                       "Set the environment variable NEKOBOX_NO_SERVICE=1 to run "
+                       "without the service."));
+              });
+              return;
+            }
+          }
+        }
+#endif
         core_process->Start();
       },
       DS_cores);
