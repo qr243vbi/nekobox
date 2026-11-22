@@ -8,7 +8,7 @@ on:
       publish:
         description: "Publish Release"
         type: boolean
-        default: true
+        default: false
         required: true
       pre_release:
         description: "Publish PreRelease"
@@ -120,7 +120,7 @@ jobs:
         if: matrix.cross_os == 'public' || ( github.event.inputs.source_only  != 'true' && matrix.allow == 'true' )
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.sha }}
           submodules: 'true'
       - name: Cache Common Download
         id: cache-common
@@ -396,7 +396,7 @@ jobs:
         if: matrix.allow == 'true'
         uses: actions/checkout@main
         with:
-          ref: 'main'
+          ref: ${{ github.sha }}
           submodules: "true"
 
       - name: Setup Ninja
