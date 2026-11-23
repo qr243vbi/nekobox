@@ -218,7 +218,7 @@ func New(options Options) (*Box, error) {
 		if err != nil {
 			return nil, E.Cause(err, "initialize DNS router")
 		}
-		service.MustRegister[adapter.DNSRouter](ctx, dnsRouter)
+		service.MustRegister[adapter.DNSRouter](ctx, &asyncDNSRouter{DNSRouter: dnsRouter})
 		service.MustRegister[adapter.DNSRuleSetUpdateValidator](ctx, dnsRouter)
 		connectionManager := route.NewConnectionManager(logFactory.NewLogger("connection"))
 		service.MustRegister[adapter.ConnectionManager](ctx, connectionManager)
