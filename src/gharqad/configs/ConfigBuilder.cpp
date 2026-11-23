@@ -1805,6 +1805,13 @@ QJsonObject BuildTunInbound(const QStringList &directIPSets,
   return inboundObj;
 }
 
+static void PrependExtraCoreBypassRule(
+    const std::shared_ptr<RoutingChain> &routeChain, const QString &processPath) {
+  // The external core's own transport must never return to its SOCKS inbound,
+  // even when the user has a catch-all PROXY/BLOCK or a quick-route rule.
+  routeChain->Rules.prepend(RouteRule::get_processPath_direct_rule(processPath));
+}
+
 void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
   bool blockAll = (status->ent == nullptr);
   // Prefetch
@@ -1895,8 +1902,7 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
         QJsonDocument(xrayConfig).toJson(QJsonDocument::Compact);
     status->result->extraCoreData->configDir = GetBasePath();
     status->result->extraCoreData->noLog = false;
-    routeChain->Rules << RouteRule::get_processPath_direct_rule(
-        status->result->extraCoreData->path);
+    PrependExtraCoreBypassRule(routeChain, status->result->extraCoreData->path);
   } else if (status->ent->type == "extracore") {
     auto bean = status->ent->ExtraCoreBean();
     if (bean == nullptr) {
@@ -1909,8 +1915,7 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
     status->result->extraCoreData->config = bean->extraCoreConf;
     status->result->extraCoreData->configDir = GetBasePath();
     status->result->extraCoreData->noLog = bean->noLogs;
-    routeChain->Rules << RouteRule::get_processPath_direct_rule(
-        status->result->extraCoreData->path);
+    PrependExtraCoreBypassRule(routeChain, status->result->extraCoreData->path);
   }
 
   // server addresses

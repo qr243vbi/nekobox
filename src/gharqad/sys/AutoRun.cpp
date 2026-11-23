@@ -17,6 +17,10 @@ static QStringList AutoRun_Arguments() {
         if (!Configs::dataStore->appdataDir.isEmpty()) {
             arguments << Configs::dataStore->appdataDir;
         }
+#ifdef Q_OS_WIN
+    } else {
+        arguments << "-portable";
+#endif
     }
     return arguments;
 }

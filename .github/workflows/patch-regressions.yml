@@ -1,0 +1,64 @@
+name: Patch regression checks
+'on':
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - name: provider-manager
+          ref: codex/upstream-provider-manager
+          suite: core
+        - name: tun-dns
+          ref: codex/upstream-tun-dns
+          suite: core
+        - name: xray-bypass
+          ref: codex/upstream-xray-bypass
+          suite: qt
+        - name: release-core
+          ref: main
+          suite: core
+        - name: release-qt
+          ref: main
+          suite: qt
+    name: ${{ matrix.name }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ matrix.ref }}
+    - uses: actions/setup-go@v5
+      if: matrix.suite == 'core'
+      with:
+        go-version: '1.27.3'
+        cache-dependency-path: core/server/go.sum
+    - name: Test and vet core regression cases
+      if: matrix.suite == 'core'
+      working-directory: core/server
+      shell: pwsh
+      run: |
+        go test -tags with_clash_api ./internal/boxbox -count=1 -v
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        go vet -tags with_clash_api ./internal/boxbox
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - uses: ilammy/msvc-dev-cmd@v1
+      if: matrix.suite == 'qt'
+      with:
+        arch: x64
+    - uses: qr243vbi/qt6windows7@main
+      if: matrix.suite == 'qt'
+      with:
+        version: 6.10.0_x86_64
+    - name: Test Windows external-core routing helpers
+      if: matrix.suite == 'qt'
+      shell: pwsh
+      run: |
+        cmake -S tests/external-core-routing -B routing-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        cmake --build routing-build --config Release
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./routing-build/Release/external-core-routing-test.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

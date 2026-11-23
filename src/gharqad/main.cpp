@@ -43,6 +43,7 @@
 
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/global/LogFile.hpp>
+#include <nekobox/global/LaunchOptions.hpp>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/ui/mainwindow_interface.h>
 
@@ -284,6 +285,9 @@ int main(int argc, char **argv) {
 
   // Flags
   Configs::dataStore->argv = QApplication::arguments();
+#ifdef Q_OS_WIN
+  Configs::dataStore->flag_use_appdata = LaunchOptions::useAppData(Configs::dataStore->argv, true);
+#endif
   if (Configs::dataStore->argv.contains("-many"))
     Configs::dataStore->flag_many = true;
   if (Configs::dataStore->argv.contains("-appdata")) {

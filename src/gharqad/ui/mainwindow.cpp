@@ -22,6 +22,7 @@
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <nekobox/global/LogFile.hpp>
+#include <nekobox/global/CoreConnectionFilter.hpp>
 #include <nekobox/global/LogRouteHelper.hpp>
 #include <nekobox/global/keyvaluerange.h>
 #include <nekobox/stats/traffic/TrafficLooper.hpp>
@@ -4503,7 +4504,12 @@ void MainWindow::show_log_impl(const QString &log) {
   }
 
   QStringList linesToShow;
-  const auto lines = trimmed.split('\n');
+  static CoreConnectionFilter::LogFilter coreLogFilter;
+  auto lines = trimmed.split('\n');
+  if (Configs::dataStore->hide_core_connections &&
+      !Configs::dataStore->flag_debug && Configs::dataStore->log_level != "debug") {
+    lines = coreLogFilter.filter(lines);
+  }
   for (const QString &line : lines) {
     const QString cleanLine = line.trimmed();
     if (cleanLine.isEmpty()) {
