@@ -9,6 +9,12 @@ this documentation have been adapted for the public fork.
 
 ## Upstream fixes
 
+The fixes have been submitted separately for upstream review:
+
+- [PR #359: provider manager and initialization](https://github.com/qr243vbi/nekobox/pull/359)
+- [PR #360: TUN DNS packet-reader deadlock](https://github.com/qr243vbi/nekobox/pull/360)
+- [PR #361: Windows external-core DIRECT rules](https://github.com/qr243vbi/nekobox/pull/361)
+
 The following independent branches are based on upstream commit
 `5f6ebb01d28b6ab24c1ddb0ee35b0f66e234b9ef`:
 
@@ -49,6 +55,8 @@ Windows 11. This does not constitute validation of every protocol or platform.
 The manual **Patch regression checks** workflow tests each upstream branch
 separately and the combined release sources on Windows. It starts unit tests
 and a Qt fixture only, without launching NekoBox or creating a TUN device.
+
+[Successful independent and combined Windows checks](https://github.com/syrHamster/nekobox/actions/runs/45159167852)
 
 The manual **Windows x64 patched build** workflow builds the complete portable
 application and uploads an Actions artifact. It does not publish a release.
