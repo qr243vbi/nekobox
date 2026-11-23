@@ -1,3 +1,13 @@
+# Unofficial patched Windows x64 build / Исправленная сборка Windows x64
+
+[Releases / Скачать](https://github.com/syrHamster/nekobox/releases) · [Patch details](PATCHES.md) · [Upstream](https://github.com/qr243vbi/nekobox)
+
+**English:** This fork provides a tested Windows x64 build with core-startup and TUN fixes. Independent bug-fix branches are prepared for upstream review. It is not an official release or a promise of support for all upstream platforms. See [PATCHES.md](PATCHES.md) for differences, settings locations and reproducible checks.
+
+**Русский:** Неофициальная проверенная сборка Windows x64 с исправлениями запуска ядра и TUN. Исправления подготовлены отдельными ветками для исходного проекта. Настройки по умолчанию находятся в AppData; для отдельной папки настроек используйте `NekoBox-Portable.cmd`. Работа на других платформах не проверялась.
+
+---
+
 # [NyameBox](https://github.com/qr243vbi/nekobox) / [NekoBox](https://github.com/qr243vbi/nekobox) for PC 
 
 Sing-Box command line mode is available now! Just type for additional information: </br>

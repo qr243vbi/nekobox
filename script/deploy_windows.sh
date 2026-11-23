@@ -50,8 +50,12 @@ then
 fi
 
 cp "$rel/$nekoray.exe" "$DEST"
-touch "$rel/nekobox.dll"
-cp "$rel/"*.dll "$DEST"
+cp "$SRC_ROOT/script/NekoBox-Portable.cmd" "$DEST/"
+for runtime_dll in "$rel/"*.dll; do
+  if [[ -f "$runtime_dll" ]]; then
+    cp "$runtime_dll" "$DEST"
+  fi
+done
 
 [[ -f "$BUILD/nekobox_core.exe" ]] && cp "$BUILD/nekobox_core.exe" "$DEST"
 [[ -f "$BUILD/updater.exe" ]] && cp "$BUILD/updater.exe" "$DEST"
@@ -135,9 +139,26 @@ echo "Bundled Xray-core verified: ${XRAY_VERSION_OUTPUT}"
 if [[ "$COMPILER" != "MinGW" ]]
 then
 pushd $DEST
-windeployqt "$nekoray.exe" --no-translations --no-system-d3d-compiler --no-compiler-runtime --no-opengl-sw --verbose 2
+windeployqt "$nekoray.exe" --no-translations --no-system-d3d-compiler --compiler-runtime --no-opengl-sw --verbose 2
 rm -rf dxcompiler.dll dxil.dll ||:
 popd
+fi
+
+# Ship the MSVC CRT app-locally: windeployqt may otherwise deploy only its installer.
+if [[ -n "${VCToolsRedistDir:-}" ]]; then
+  case "$ARCH" in
+    windows64) CRT_ARCH=x64 ;;
+    windows32) CRT_ARCH=x86 ;;
+    windows-arm64) CRT_ARCH=arm64 ;;
+  esac
+  CRT_ROOT="$(cygpath -u "$VCToolsRedistDir")"
+  for crt_dir in "$CRT_ROOT/$CRT_ARCH"/Microsoft.VC*.CRT; do
+    for crt_dll in "$crt_dir/"*.dll; do
+      if [[ -f "$crt_dll" ]]; then
+        cp "$crt_dll" "$DEST"
+      fi
+    done
+  done
 fi
 
 (

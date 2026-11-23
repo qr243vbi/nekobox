@@ -504,7 +504,7 @@
             <item>
              <widget class="QCheckBox" name="hide_core_connections">
               <property name="toolTip">
-               <string>Hides the connections the core opens for itself, such as latency tests, subscription and rule set downloads.</string>
+               <string>Hides internal core and Xray connections and routine connection log entries. Warnings and errors remain visible. Debug mode shows all connections.</string>
               </property>
               <property name="text">
                <string>Hide the core's own connections</string>

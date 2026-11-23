@@ -11,6 +11,7 @@
 #include <nekobox/dataStore/ResourceEntity.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
 #include <nekobox/global/GuiUtils.hpp>
+#include <nekobox/global/CoreConnectionFilter.hpp>
 
 namespace Stats
 {
@@ -38,7 +39,7 @@ namespace Stats
                    token == QLatin1String("nekoboxcore");
         };
         const auto processToken = normalizedCoreToken(process);
-        if (matches(processToken) ||
+        if (CoreConnectionFilter::isInternalProcess(process) || matches(processToken) ||
             (!coreBase.isEmpty() && processToken == coreBase)) {
             return true;
         }
@@ -150,7 +151,8 @@ namespace Stats
         QList<ConnectionMetadata> sorted;
         QList<ConnectionMetadata> kept;
         auto conns = resp->connections;
-        const bool hideCore = Configs::dataStore->hide_core_connections;
+        const bool hideCore = Configs::dataStore->hide_core_connections &&
+            !Configs::dataStore->flag_debug && Configs::dataStore->log_level != "debug";
         for (auto conn : conns)
         {
             const auto process = QString::fromUtf8(conn.process.c_str());

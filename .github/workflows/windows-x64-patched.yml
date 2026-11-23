@@ -1,0 +1,197 @@
+name: Windows x64 patched build
+'on':
+  workflow_dispatch: null
+permissions:
+  contents: read
+jobs:
+  get-tag-and-changelog:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.inputs.outputs.tag }}
+      text: ${{ steps.inputs.outputs.text }}
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'false'
+    - name: Run cmake tools
+      shell: bash
+      id: inputs
+      run: |
+        set_output_file() {
+          local name="$1"
+          local file="$2"
+          local eofer=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 36)
+          {
+            echo "$name<<$eofer"
+            cat "$file"
+            echo "$eofer"
+          } >> "$GITHUB_OUTPUT"
+        }
+
+        cmake -S . -B build -DGENERATE_VERSION_AND_CHANGELOG=ON
+        cmake --build build -j 16
+        set_output_file tag build/version.txt
+        set_output_file text build/changelog.txt
+  build-go:
+    permissions:
+      contents: read
+    needs:
+    - get-tag-and-changelog
+    env:
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
+    strategy:
+      matrix:
+        include:
+        - cross_os: windows
+          cross_arch: amd64
+          go_version: 1.27.3
+          allow: true
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'true'
+    - name: Install Golang
+      uses: actions/setup-go@main
+      with:
+        go-version: ${{ matrix.go_version }}
+        cache-dependency-path: |
+          core/server/go.sum
+    - name: Linux - Install apt dependencies
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages: thrift-compiler
+        version: 1.0
+    - name: Build golang parts
+      shell: bash
+      run: GO_MOD_TIDY=OFF GO_MOD_VENDOR=OFF GOOS=windows GOARCH=amd64 ./script/build_go.sh
+    - name: Format and test core construction
+      working-directory: core/server
+      shell: bash
+      run: |-
+        set -euo pipefail
+          test -z "$(gofmt -l internal/boxbox/box.go internal/boxbox/async_dns*.go internal/boxbox/provider_manager_test.go)"
+        GOOS=windows GOARCH=amd64 go test -tags with_clash_api -c -o ../../boxbox.test.exe ./internal/boxbox
+    - name: Tar files
+      run: tar czvf artifacts.tgz ./deployment
+    - name: Uploading Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: nekobox-${{ github.sha }}-Common-${{ matrix.cross_os }}-${{ matrix.cross_arch }}
+        path: artifacts.tgz
+    - name: Upload construction regression binary
+      uses: actions/upload-artifact@v4
+      with:
+        name: CoreConstructionRegression
+        path: boxbox.test.exe
+        if-no-files-found: error
+        retention-days: 3
+  build-cpp:
+    name: Build windows binaries
+    permissions:
+      contents: read
+    needs:
+    - build-go
+    - get-tag-and-changelog
+    strategy:
+      matrix:
+        include:
+        - platform: windows-2022
+          target: x86_64
+          triplet: x64-windows
+          allow: true
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
+      SKIP_NSIS: 'true'
+    steps:
+    - name: Checking out sources
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.sha }}
+        submodules: 'true'
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: download-artifact
+    - name: Run core construction regression
+      shell: pwsh
+      run: |
+        & ./download-artifact/CoreConstructionRegression/boxbox.test.exe '-test.v'
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Setup Ninja
+      uses: qr243vbi/setup-ninja@master
+    - name: Install MSVC compiler
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: ${{ matrix.target }}
+    - name: vcpkg build
+      uses: qr243vbi/vcpkg-action@master
+      id: vcpkg
+      with:
+        pkgs: thrift boost-filesystem boost-dll boost-headers boost-bimap cpr leveldb yaml-cpp quickjs-ng
+        triplet: ${{ matrix.triplet }}
+        vcpkg-subdir: ..\..\src
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Download Srslist
+      shell: bash
+      run: |
+        curl -fLso "srslist.json" "https://github.com/qr243vbi/ruleset/raw/refs/heads/rule-set/srslist.json"
+        mkdir build
+    - name: Install Zip, Curl, Jq, UPX
+      uses: ConorMacBride/install-package@v1
+      with:
+        choco: zip curl jq 7zip
+    - name: Install Customized Qt
+      uses: qr243vbi/qt6windows7@main
+      with:
+        version: 6.10.0_${{ matrix.target }}
+    - name: Verify Windows external-core bypass routing
+      shell: pwsh
+      run: |
+        cmake -S tests/external-core-routing -B external-core-routing-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        cmake --build external-core-routing-build --config Release
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./external-core-routing-build/Release/external-core-routing-test.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Windows - Generate MakeFile and Build
+      shell: bash
+      run: |
+        export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/tools/Qt6/bin')"):$PATH"
+        export PATH="$(realpath "$(cygpath -u '${{ github.workspace }}/../../src/installed/${{ matrix.triplet }}/bin')"):$PATH"
+        echo $PATH
+        if ! command -v windeployqt
+        then
+          export WINDEPLOYQT="$(find "$(cygpath -u '${{ github.workspace }}/../../src/installed/')" -iname "windeployqt.exe")"
+          windeployqt() { "$WINDEPLOYQT" "${@}" ; }
+          declare -f windeployqt
+          echo "$WINDEPLOYQT"
+        fi
+        TOOLCHAIN=`realpath '${{ github.workspace }}/../../src/scripts/buildsystems/vcpkg.cmake'`
+        TOOLCHAIN="$(cygpath -w "${TOOLCHAIN}")"
+        if [[ "${{ github.event_name == 'push' && 'false' || github.event.inputs.skip_updater }}" == 'true' ]]; then export SKIP_UPDATE_BUTTON=ON; else export SKIP_UPDATE_BUTTON=OFF; fi
+        cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
+        cmake --build build --config Release --verbose
+        source ./script/deploy_windows.sh "${{ matrix.target }}"
+    - name: Verify portable archive and write SHA-256
+      shell: pwsh
+      run: python script/verify_portable.py
+    - name: Uploading Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NekoBox-Windows-x64-Portable
+        path: |-
+          deployment/*windows64.zip
+          deployment/*windows64.zip.sha256
+        if-no-files-found: error
+        retention-days: 14

@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.19)
+project(ExternalCoreRoutingRegression LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/prepare.py"
+    "${CMAKE_CURRENT_BINARY_DIR}/test_routing.cpp" COMMAND_ERROR_IS_FATAL ANY)
+add_executable(external-core-routing-test "${CMAKE_CURRENT_BINARY_DIR}/test_routing.cpp")
+target_link_libraries(external-core-routing-test PRIVATE Qt6::Core)
+target_include_directories(external-core-routing-test PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../src")
+if(MSVC)
+    target_compile_options(external-core-routing-test PRIVATE /utf-8)
+endif()

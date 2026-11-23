@@ -1,0 +1,96 @@
+#include <QDir>
+#include <QList>
+#include <QString>
+#include <QStringList>
+#include <iostream>
+#include <memory>
+#include <nekobox/global/LaunchOptions.hpp>
+#include <nekobox/global/CoreConnectionFilter.hpp>
+
+namespace Configs {
+struct RouteRule {
+    QString name;
+    QString action;
+    int outboundID = -1;
+    QStringList process_path;
+    static std::shared_ptr<RouteRule> get_processPath_direct_rule(QString);
+};
+struct RoutingChain {
+    QList<std::shared_ptr<RouteRule>> Rules;
+};
+@FACTORY@
+@PREPEND@
+}
+
+int main() {
+    using namespace Configs;
+    int failures = 0;
+    auto check = [&](bool ok, const char *message) {
+        if (!ok) { std::cerr << message << '\n'; ++failures; }
+    };
+    const QStringList paths = {
+        QStringLiteral("F:/nekobox/xray.exe"),
+        QStringLiteral("F:/VPN tools/Ядро/xray.exe"),
+        QStringLiteral("F:\\nekobox\\xray.exe"),
+        QStringLiteral("//server/share/xray.exe")
+    };
+    for (const auto &path : paths) {
+        auto chain = std::make_shared<RoutingChain>();
+        auto catchAllProxy = std::make_shared<RouteRule>();
+        auto userBlock = std::make_shared<RouteRule>();
+        userBlock->outboundID = -3;
+        chain->Rules = {catchAllProxy, userBlock};
+        PrependExtraCoreBypassRule(chain, path);
+        check(chain->Rules.size() == 3, "user routing rules were lost");
+        check(chain->Rules[1] == catchAllProxy && chain->Rules[2] == userBlock,
+              "user routing order changed or bypass was appended after catch-all");
+        const auto bypass = chain->Rules.first();
+        check(bypass->action == "route" && bypass->outboundID == -2,
+              "external core bypass is not DIRECT");
+#ifdef Q_OS_WIN
+        auto expected = path;
+        expected.replace('/', '\\');
+        check(bypass->process_path == QStringList{expected},
+              "process_path does not match the Windows process lookup spelling");
+#else
+        check(bypass->process_path == QStringList{path}, "non-Windows path changed");
+#endif
+    }
+    check(LaunchOptions::useAppData({}, true), "Windows default must use AppData");
+    check(!LaunchOptions::useAppData({"-portable"}, true), "portable override ignored");
+    check(LaunchOptions::useAppData({"-portable", "-appdata", "D:/custom"}, true),
+          "explicit custom AppData must take precedence");
+    check(!LaunchOptions::useAppData({}, false), "non-Windows default changed");
+    check(LaunchOptions::useAppData({"-appdata"}, false), "non-Windows AppData override lost");
+    using namespace CoreConnectionFilter;
+    check(isInternalProcess("XRAY.EXE"), "Xray basename not recognized");
+    check(isInternalProcess("F:\\VPN tools\\xray.exe"), "Xray native path not recognized");
+    check(isInternalProcess("F:/VPN tools/nekobox_core.exe"), "core path not recognized");
+    check(!isInternalProcess("Telegram.exe"), "user application hidden");
+    check(!isInternalProcess("my-xray.exe"), "unrelated executable hidden");
+    LogFilter logs;
+    const QString inbound = "INFO[0001] [123 0ms] inbound/tun[tun-in]: inbound connection to 2.3.4.5:443";
+    const QString process = "INFO[0001] [123 1ms] found process path: F:\\VPN tools\\xray.exe";
+    const QString telegram = "INFO[0001] [456 0ms] found process path: C:\\Apps\\Telegram.exe";
+    check(logs.filter({inbound, process, telegram}) == QStringList{telegram},
+          "internal flow was not hidden or user process log was lost");
+    check(logs.filter({"INFO[0002] [123 2ms] outbound/direct[direct]: outbound connection"}).isEmpty(),
+          "internal flow ID not remembered across batches");
+    const QStringList problemLines = {
+        "ERROR[0002] [123 3ms] connection: dial failed",
+        "WARN[0002] [123 3ms] connection: warning",
+        "2026/11/23 Extra Core:[Info] failed to transfer response payload",
+        "2026/11/23 Extra Core:[Error] Xray failed to start",
+        "INFO[0002] [123 3ms] connection: unexpected error"
+    };
+    check(logs.filter(problemLines) == problemLines, "internal warnings or failures hidden");
+    check(logs.filter({"2026/11/23 Extra Core:[Info] TCP Connect request"}).isEmpty(),
+          "routine external-core log not hidden");
+    check(logs.filter({"F:/VPN tools/xray.exe : process started, waiting for it to end"}).isEmpty(),
+          "internal process launch detail not hidden");
+    check(logs.filter({"C:/Apps/other.exe : process started, waiting for it to end"}).size() == 1,
+          "unrelated process launch log hidden");
+    std::cout << "Routing, launch options and internal-connection presentation: "
+              << failures << " failures\n";
+    return failures ? 1 : 0;
+}
