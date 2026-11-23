@@ -1,0 +1,60 @@
+#include <QDir>
+#include <QList>
+#include <QString>
+#include <QStringList>
+#include <iostream>
+#include <memory>
+
+namespace Configs {
+struct RouteRule {
+    QString name;
+    QString action;
+    int outboundID = -1;
+    QStringList process_path;
+    static std::shared_ptr<RouteRule> get_processPath_direct_rule(QString);
+};
+struct RoutingChain {
+    QList<std::shared_ptr<RouteRule>> Rules;
+};
+@FACTORY@
+@PREPEND@
+}
+
+int main() {
+    using namespace Configs;
+    int failures = 0;
+    auto check = [&](bool ok, const char *message) {
+        if (!ok) { std::cerr << message << '\n'; ++failures; }
+    };
+    const QStringList paths = {
+        QStringLiteral("F:/nekobox/xray.exe"),
+        QStringLiteral("F:/VPN tools/Ядро/xray.exe"),
+        QStringLiteral("F:\\nekobox\\xray.exe"),
+        QStringLiteral("//server/share/xray.exe")
+    };
+    for (const auto &path : paths) {
+        auto chain = std::make_shared<RoutingChain>();
+        auto catchAllProxy = std::make_shared<RouteRule>();
+        auto userBlock = std::make_shared<RouteRule>();
+        userBlock->outboundID = -3;
+        chain->Rules = {catchAllProxy, userBlock};
+        PrependExtraCoreBypassRule(chain, path);
+        check(chain->Rules.size() == 3, "user routing rules were lost");
+        check(chain->Rules[1] == catchAllProxy && chain->Rules[2] == userBlock,
+              "user routing order changed or bypass was appended after catch-all");
+        const auto bypass = chain->Rules.first();
+        check(bypass->action == "route" && bypass->outboundID == -2,
+              "external core bypass is not DIRECT");
+#ifdef Q_OS_WIN
+        auto expected = path;
+        expected.replace('/', '\\');
+        check(bypass->process_path == QStringList{expected},
+              "process_path does not match the Windows process lookup spelling");
+#else
+        check(bypass->process_path == QStringList{path}, "non-Windows path changed");
+#endif
+    }
+    std::cout << "External-core routing: " << paths.size() << " cases, "
+              << failures << " failures\n";
+    return failures ? 1 : 0;
+}
