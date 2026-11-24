@@ -33,6 +33,17 @@ var ruleset_cachedir string
 
 var BoxInstance *boxbox.Box
 var ExtraProcess *process.Process
+var ExtraProcesses []*process.Process
+
+// Stop every child, including auxiliary Xray used by routing outbounds.
+func StopExtraProcesses() {
+	for i := len(ExtraProcesses) - 1; i >= 0; i-- {
+		ExtraProcesses[i].Stop()
+	}
+	ExtraProcesses = nil
+	ExtraProcess = nil
+}
+
 var NeedUnsetDNS bool
 
 var SystemProxyController settings.SystemProxy

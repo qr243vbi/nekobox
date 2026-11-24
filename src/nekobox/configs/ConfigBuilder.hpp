@@ -6,8 +6,10 @@
 
 #include <nekobox/dataStore/ProxyEntity.hpp>
 #include <nekobox/sys/Process.hpp>
+#include <nekobox/configs/XrayRuntime.hpp>
 
 #include <map>
+#include <memory>
 #include <string>
 extern  QVariantMap ruleSetMap;
 
@@ -20,14 +22,15 @@ namespace Configs {
         QString args;
         QString config;
         QString configDir;
-        bool noLog;
+        bool noLog = false;
     };
 
     class BuildConfigResult {
     public:
         QString error;
         QJsonObject coreConfig;
-        std::shared_ptr<ExtraCoreData> extraCoreData;
+        std::shared_ptr<ExtraCoreData> extraCoreData = std::make_shared<ExtraCoreData>();
+        QList<std::shared_ptr<ExtraCoreData>> additionalCoreData;
 
         QList<std::shared_ptr<Stats::TrafficData>> outboundStats; // all, but not including "bypass" "block"
     };
@@ -61,6 +64,7 @@ namespace Configs {
         QJsonArray inbounds;
         QJsonArray outbounds;
         QJsonArray endpoints;
+        XrayRuntime xrayRuntime;
     };
 
 

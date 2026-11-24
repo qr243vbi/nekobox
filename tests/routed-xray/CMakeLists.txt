@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.19)
+project(RoutedXrayRegression LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/../compat-3x-ui/test_compat.py"
+    --prepare-only "${CMAKE_CURRENT_BINARY_DIR}/profile_configs.cpp" COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/prepare.py"
+    "${CMAKE_CURRENT_BINARY_DIR}/finalize.cpp" COMMAND_ERROR_IS_FATAL ANY)
+add_executable(routed-xray-profiles "${CMAKE_CURRENT_BINARY_DIR}/profile_configs.cpp")
+add_executable(routed-xray-finalize "${CMAKE_CURRENT_BINARY_DIR}/finalize.cpp")
+foreach(target routed-xray-profiles routed-xray-finalize)
+    target_include_directories(${target} PRIVATE ../../src)
+    target_link_libraries(${target} PRIVATE Qt6::Core)
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /utf-8)
+    endif()
+endforeach()
