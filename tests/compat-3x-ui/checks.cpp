@@ -144,6 +144,63 @@ int main() {
         converted = Subscription::convertV2RayNToSingBox(native);
         check(converted["tls"].toObject()["reality"].toObject()["public_key"] == "new-key", "password takes precedence over legacy alias");
     }
+    // Every runtime SOCKS bridge, including a routing-only profile, must have
+    // a listener and a matching native outbound in the launched Xray config.
+    {
+        XrayRuntime runtime;
+        runtime.reservePort(30629);
+        const int mainPort = runtime.portFor("proxy", 30629);
+        const int routePort = runtime.portFor("r-0-c-0-proxy", 30636);
+        const int collidingIdPort = runtime.portFor("r-1-c-0-proxy", 30636);
+        check(mainPort != 30629 && routePort != collidingIdPort, "bridge ports avoid reserved and colliding profile IDs");
+        check(runtime.portFor("r-0-c-0-proxy", 31000) == routePort, "one outbound tag keeps its port");
+        auto profile = std::make_shared<ProxyEntity>();
+        profile->type = "xray";
+        profile->serverAddress = "exit.example.invalid";
+        profile->serverPort = 443;
+        auto bean = std::make_shared<TrojanVLESSBean>(profile.get(), TrojanVLESSBean::proxy_VLESS);
+        profile->storedBean = bean;
+        bean->password = "00000000-0000-4000-8000-000000000001";
+        *bean->stream->network = "tcp";
+        QString error;
+        auto mainConfig = BuildBuiltinXrayConfig(profile, mainPort, &error);
+        check(error.isEmpty() && runtime.addProfile("proxy", mainConfig), "primary Xray registered");
+        profile->serverAddress = "routing.example.invalid";
+        auto routeConfig = BuildBuiltinXrayConfig(profile, routePort, &error);
+        check(runtime.addProfile("r-0-c-0-proxy", routeConfig), "routing Xray registered");
+        check(runtime.addProfile("r-0-c-0-proxy", routeConfig), "repeated registration is idempotent");
+        check(runtime.config["inbounds"].toArray().size() == 2, "both runtime listeners exist without duplicate registrations");
+        check(runtime.config["outbounds"].toArray().size() == 3, "shared supporting outbound included once");
+        const auto route = runtime.config["routing"].toObject()["rules"].toArray()[1].toObject();
+        check(route["outboundTag"] == XrayRuntime::nativeTag("r-0-c-0-proxy"), "routing inlet selects its own server");
+        auto expected = routeConfig["outbounds"].toArray()[0].toObject();
+        expected["tag"] = XrayRuntime::nativeTag("r-0-c-0-proxy");
+        check(runtime.config["outbounds"].toArray()[2].toObject() == expected, "routing profile retains all native protocol and stream fields");
+        emitConfig("routed-independent", runtime.config);
+
+        profile->serverAddress = "collision.example.invalid";
+        check(runtime.addProfile("r-1-c-0-proxy", BuildBuiltinXrayConfig(profile, collidingIdPort, &error)),
+              "colliding profile ID gets an independent runtime listener");
+        check(runtime.config["inbounds"].toArray().size() == 3, "three native outbounds keep three listeners");
+
+        check(runtime.chainThrough("proxy", "r-0-c-0-proxy", true), "Xray to Xray chain supported");
+        const auto chained = runtime.config["outbounds"].toArray()[0].toObject()["streamSettings"].toObject();
+        check(chained["sockopt"].toObject()["dialerProxy"] == XrayRuntime::nativeTag("r-0-c-0-proxy"), "native transport carries the chain instead of the localhost SOCKS socket");
+        emitConfig("routed-native-chain", runtime.config);
+
+        check(runtime.chainThrough("r-0-c-0-proxy", "sing-box-carrier", false), "Xray to sing-box chain supported");
+        check(runtime.transportInbounds.size() == 1 && runtime.transportRules.size() == 1, "mixed chain has transport inlet and route");
+        check(runtime.transportRules[0].toObject()["outbound"] == "sing-box-carrier", "mixed transport uses intended carrier");
+        emitConfig("routed-mixed-chain", runtime.config);
+        XrayRuntime routingOnly;
+        const int onlyPort = routingOnly.portFor("r-0-c-0-proxy", 30636);
+        check(routingOnly.addProfile("r-0-c-0-proxy", BuildBuiltinXrayConfig(profile, onlyPort, &error)) &&
+              !routingOnly.empty(), "routing-only Xray is independent of the main profile type");
+        emitConfig("routed-only", routingOnly.config);
+        XrayRuntime full;
+        for (int port = 30000; port < 50000; ++port) full.reservePort(port);
+        check(full.portFor("no-capacity", 30636) == 0, "port exhaustion is explicit instead of silently sharing a listener");
+    }
     std::cout << "SUMMARY checks=" << total << " failures=" << failed << '\n';
     return failed ? 1 : 0;
 }

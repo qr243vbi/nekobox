@@ -5,7 +5,6 @@ package main
 import (
 	"context"
 	"errors"
-	"fmt"
 	"log"
 	"nekobox_core/gen"
 	"nekobox_core/internal"
@@ -21,7 +20,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/shlex"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/trafficcontrol"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -87,17 +85,16 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		return out, nil
 	}
 	var err error
-	var extra *process.Process
+	var extras []*process.Process
 
 	defer func() {
 		if err != nil {
 			out.Error = err.Error()
-			if extra != nil {
-				extra.Stop()
-				if internal.ExtraProcess == extra {
-					internal.ExtraProcess = nil
-				}
+			for i := len(extras) - 1; i >= 0; i-- {
+				extras[i].Stop()
 			}
+			internal.ExtraProcesses = nil
+			internal.ExtraProcess = nil
 			internal.BoxInstance = nil
 			internal.InstanceCancel = nil
 			// Nothing listens on the proxy port, so don't leave the system pointed at it.
@@ -110,46 +107,34 @@ func (s *server) Start(ctx context.Context, in *gen.LoadConfigReq) (*gen.ErrorRe
 		log.Println("Start:", in.CoreConfig)
 	}
 
+	specifications := make([]process.Config, 0, 1+len(in.ExtraProcesses))
 	if in.NeedExtraProcess {
-		args, e := shlex.Split(in.GetExtraProcessArgs_())
-		if e != nil {
-			err = E.Cause(e, "Failed to parse args")
+		specifications = append(specifications, process.Config{
+			Path: in.ExtraProcessPath, Args: in.GetExtraProcessArgs_(),
+			Content: in.ExtraProcessConf, Directory: in.ExtraProcessConfDir, NoOut: in.ExtraNoOut,
+		})
+	}
+	for _, config := range in.ExtraProcesses {
+		if config == nil {
+			err = E.New("nil auxiliary core specification")
 			return out, nil
 		}
-		if in.ExtraProcessConf != "" {
-			name := "extra.conf"
-			// Xray 26.10.31 rejects .conf even with an explicit -format json.
-			// Other external cores keep their existing filename/format contract.
-			binary := filepath.Base(in.ExtraProcessPath)
-			if strings.EqualFold(binary, "xray") || strings.EqualFold(binary, "xray.exe") {
-				name = "extra.json"
-			}
-			extraConfPath := filepath.Join(in.ExtraProcessConfDir, name)
-			e := os.WriteFile(extraConfPath, []byte(in.ExtraProcessConf), 0600)
-			if e != nil {
-				err = E.Cause(e, "Failed to write external core config")
-				return out, nil
-			}
-			for idx, arg := range args {
-				if strings.Contains(arg, "%s") {
-					args[idx] = fmt.Sprintf(arg, extraConfPath)
-					break
-				}
-			}
-		}
-
-		extra = process.NewProcess(in.ExtraProcessPath, args, in.ExtraNoOut)
-		err = extra.Start()
+		specifications = append(specifications, process.Config{
+			Path: config.Path, Args: config.GetArgs_(), Content: config.Config,
+			Directory: config.ConfigDir, NoOut: config.NoOut,
+		})
+	}
+	for index, config := range specifications {
+		var child *process.Process
+		child, err = process.StartConfigured(config, index)
 		if err != nil {
 			return out, nil
 		}
-		internal.ExtraProcess = extra
-		if addrs := process.LocalInboundAddrs(in.ExtraProcessConf); len(addrs) > 0 {
-			if e := extra.WaitListening(addrs, 10*time.Second); e != nil {
-				err = E.Cause(e, "Failed to start external core")
-				return out, nil
-			}
-		}
+		extras = append(extras, child)
+	}
+	internal.ExtraProcesses = extras
+	if len(extras) > 0 {
+		internal.ExtraProcess = extras[0]
 	}
 
 	internal.BoxInstance, internal.InstanceCancel, err = boxmain.Create([]byte(in.CoreConfig))
@@ -203,6 +188,7 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 	}()
 
 	if internal.BoxInstance == nil {
+		internal.StopExtraProcesses()
 		return out, err
 	}
 
@@ -215,10 +201,7 @@ func (s *server) Stop(ctx context.Context, in *gen.EmptyReq) (*gen.ErrorResp, er
 	internal.BoxInstance = nil
 	internal.InstanceCancel = nil
 
-	if internal.ExtraProcess != nil {
-		internal.ExtraProcess.Stop()
-		internal.ExtraProcess = nil
-	}
+	internal.StopExtraProcesses()
 
 	return out, nil
 }
