@@ -14,6 +14,14 @@ struct ErrorResp {
   1: string error
 }
 
+struct ExtraProcessConfig {
+  1: string path,
+  2: string args,
+  3: string config,
+  4: string config_dir,
+  5: bool no_out
+}
+
 struct LoadConfigReq {
   1: string core_config,
   2: bool disable_stats,
@@ -22,7 +30,8 @@ struct LoadConfigReq {
   5: string extra_process_args,
   6: string extra_process_conf,
   7: string extra_process_conf_dir,
-  8: bool extra_no_out
+  8: bool extra_no_out,
+  9: optional list<ExtraProcessConfig> extra_processes
 }
 
 struct URLTestResp {

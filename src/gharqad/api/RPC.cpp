@@ -452,6 +452,19 @@ try{                                                                            
             req.extra_process_conf_dir = (result->extraCoreData->configDir).toStdString();
             req.extra_no_out = (result->extraCoreData->noLog);
         }
+        if (!result->additionalCoreData.isEmpty()) {
+            std::vector<libcore::ExtraProcessConfig> processes;
+            for (const auto &core : result->additionalCoreData) {
+                libcore::ExtraProcessConfig process;
+                process.path = core->path.toStdString();
+                process.args = core->args.toStdString();
+                process.config = core->config.toStdString();
+                process.config_dir = core->configDir.toStdString();
+                process.no_out = core->noLog;
+                processes.push_back(process);
+            }
+            req.__set_extra_processes(processes);
+        }
         return std::make_tuple(Start(rpcOK, req), result);
     };
 

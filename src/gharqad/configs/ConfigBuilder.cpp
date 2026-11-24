@@ -32,6 +32,13 @@
 
 namespace Configs {
 
+static void PrependExtraCoreBypassRule(
+    const std::shared_ptr<RoutingChain> &routeChain, const QString &processPath) {
+  // The external core's own transport must never return to its SOCKS inbound,
+  // even when the user has a catch-all PROXY/BLOCK or a quick-route rule.
+  routeChain->Rules.prepend(RouteRule::get_processPath_direct_rule(processPath));
+}
+
 namespace {
 constexpr int kBuiltinXrayMinMajor = 26;
 constexpr int kBuiltinXrayMinMinor = 10;
@@ -529,11 +536,12 @@ static QString TunDnsAddress() { return getTunDnsAddress(); }
 
 static void AddTunRuntimeRules(QJsonObject &config,
                                const QStringList &serverExcludes,
-                               const QJsonArray &nekoboxRules = {}) {
+                               const QJsonArray &nekoboxRules = {},
+                               const QJsonArray &transportRules = {}) {
   auto route = config["route"].toObject();
   auto rules = route["rules"].toArray();
 
-  QJsonArray patchedRules;
+  QJsonArray patchedRules = transportRules;
   if (!serverExcludes.isEmpty()) {
     patchedRules += QJsonObject{
         {"action", "route"},
@@ -716,13 +724,33 @@ void MergeJson(const QJsonObject &custom, QJsonObject &outbound) {
   }
 }
 
+static void FinalizeBuiltinXray(const std::shared_ptr<BuildConfigStatus> &status) {
+  if (status->xrayRuntime.empty()) return;
+  const auto error = ValidateBuiltinXrayVersion();
+  if (!error.isEmpty()) {
+    status->result->error = error;
+    return;
+  }
+  auto core = std::make_shared<ExtraCoreData>();
+  core->path = GetBuiltinXrayPath();
+  core->args = "run -format json -c %s";
+  core->config = QJsonDocument(status->xrayRuntime.config).toJson(QJsonDocument::Compact);
+  core->configDir = GetBasePath();
+  core->noLog = false;
+  if (status->result->extraCoreData->path.isEmpty()) status->result->extraCoreData = core;
+  else status->result->additionalCoreData.append(core);
+
+  auto inbounds = status->result->coreConfig["inbounds"].toArray();
+  for (const auto &inbound : status->xrayRuntime.transportInbounds) inbounds.append(inbound);
+  status->result->coreConfig["inbounds"] = inbounds;
+}
+
 // Common
 
 std::shared_ptr<BuildConfigResult>
 BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest,
             bool forExport, int chainID) {
   auto result = std::make_shared<BuildConfigResult>();
-  result->extraCoreData = std::make_shared<ExtraCoreData>();
   auto status = std::make_shared<BuildConfigStatus>();
   status->ent = ent;
 
@@ -782,7 +810,7 @@ BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest,
               CollectTunRouteExcludesForFullConfig(result->coreConfig);
           clientInbounds.append(BuildTunInbound({}, tunServerExcludes));
           AddTunRuntimeRules(result->coreConfig, tunServerExcludes,
-                             nekoboxTunRules);
+                             nekoboxTunRules, status->xrayRuntime.transportRules);
         } else if (QuickRoutesConfigured() && MW_show_log) {
           // A full custom config brings its own routing section and its own
           // outbound tags, so the Routes tab can only be layered on top of it
@@ -808,6 +836,7 @@ BuildConfig(const std::shared_ptr<ProxyEntity> &ent, bool forTest,
     BuildConfigSingBox(status);
   }
 
+  if (result->error.isEmpty()) FinalizeBuiltinXray(status);
   return result;
 }
 
@@ -1138,6 +1167,7 @@ QString BuildChainInternal(int chainId,
   QString chainTag = "c-" + QString::number(chainId);
   QString chainTagOut = "";
   bool lastWasEndpoint = false;
+  QString previousXrayTag;
   if (is_route) {
     chainTag = "r-" + QString::number(route_suffix) + "-" + chainTag;
   }
@@ -1188,13 +1218,13 @@ QString BuildChainInternal(int chainId,
 
     if (index > 0) {
       // chain rules: past
-      auto replaced = (lastWasEndpoint ? status->endpoints : status->outbounds)
-                          .last()
-                          .toObject();
-      replaced["detour"] = tagOut;
+      if (previousXrayTag.isEmpty()) {
+        auto replaced = (lastWasEndpoint ? status->endpoints : status->outbounds).last().toObject();
+        replaced["detour"] = tagOut;
+        (lastWasEndpoint ? status->endpoints : status->outbounds).removeLast();
+        (lastWasEndpoint ? status->endpoints : status->outbounds) += replaced;
+      }
       ent->traffic_data->isChainTail = true;
-      (lastWasEndpoint ? status->endpoints : status->outbounds).removeLast();
-      (lastWasEndpoint ? status->endpoints : status->outbounds) += replaced;
     } else {
       // index == 0 means last profile in chain / not chain
       chainTagOut = tagOut;
@@ -1205,6 +1235,7 @@ QString BuildChainInternal(int chainId,
     QJsonObject outbound;
 
     BuildOutbound(ent, status, outbound, tagOut);
+    if (!status->result->error.isEmpty()) return {};
 
     if (auto wg = wgBean(ent); wg != nullptr) {
       if (nestedMtu.contains(ent->id)) outbound["mtu"] = nestedMtu.value(ent->id);
@@ -1228,6 +1259,21 @@ QString BuildChainInternal(int chainId,
 
     // apply custom outbound settings
     MergeJson(QString2QJsonObject(bean->custom_outbound), outbound);
+
+    if (index > 0 && !previousXrayTag.isEmpty()) {
+      // The carrier's actual local port is known only after it is built.
+      // Reserve it before allocating the reverse bridge for a mixed chain.
+      const auto server = outbound["server"].toString();
+      if (server == "127.0.0.1" || server == "::1" ||
+          server.compare("localhost", Qt::CaseInsensitive) == 0) {
+        status->xrayRuntime.reservePort(outbound["server_port"].toInt());
+      }
+      if (!status->xrayRuntime.chainThrough(previousXrayTag, tagOut, IsBuiltinXrayProfile(ent))) {
+        status->result->error = "Cannot chain Xray outbound " + previousXrayTag;
+        return {};
+      }
+    }
+    previousXrayTag = IsBuiltinXrayProfile(ent) ? tagOut : QString{};
 
     // Bypass Lookup for the first profile
     auto serverAddress = ent->serverAddress;
@@ -1515,6 +1561,10 @@ static QJsonArray BuildNekoboxTunRulesForFullConfig(
   if (dataStore->adblock_enable) {
     AppendMissingRuleSet(route, get_rule_set_json("nekobox-adblocksingbox"));
   }
+  if (!status->xrayRuntime.empty()) {
+    PrependExtraCoreBypassRule(routeChain, GetBuiltinXrayPath());
+    route["find_process"] = true;
+  }
   config["route"] = route;
 
   auto routeRules = routeChain->get_route_rules(false, false, outboundMap);
@@ -1559,7 +1609,32 @@ void BuildOutbound(const std::shared_ptr<ProxyEntity> &ent,
   }
 
   if (IsBuiltinXrayProfile(ent)) {
-    const int socksPort = BuiltinXraySocksPort(ent);
+    auto &runtime = status->xrayRuntime;
+    runtime.reservePort(dataStore->inbound_socks_port);
+    runtime.reservePort(dataStore->dns_server_listen_port);
+    runtime.reservePort(dataStore->redirect_listen_port);
+    for (const auto &value : status->outbounds) {
+      const auto previous = value.toObject();
+      const auto server = previous["server"].toString();
+      if (server == "127.0.0.1" || server == "::1" ||
+          server.compare("localhost", Qt::CaseInsensitive) == 0) {
+        runtime.reservePort(previous["server_port"].toInt());
+      }
+    }
+    // An explicitly configured external core may coexist with built-in Xray.
+    const auto external = QJsonDocument::fromJson(
+        status->result->extraCoreData->config.toUtf8()).object();
+    for (const auto &value : external["inbounds"].toArray()) {
+      const auto port = value.toObject()["port"];
+      runtime.reservePort(port.isString() ? port.toString().toInt() : port.toInt());
+    }
+    const int socksPort = runtime.portFor(tag, BuiltinXraySocksPort(ent));
+    QString error;
+    const auto config = BuildBuiltinXrayConfig(ent, socksPort, &error);
+    if (socksPort == 0 || !error.isEmpty() || !runtime.addProfile(tag, config)) {
+      status->result->error = error.isEmpty() ? "Cannot allocate Xray bridge for " + tag : error;
+      return;
+    }
     outbound = QJsonObject{
         {"type", "socks"},
         {"server", "127.0.0.1"},
@@ -1805,13 +1880,6 @@ QJsonObject BuildTunInbound(const QStringList &directIPSets,
   return inboundObj;
 }
 
-static void PrependExtraCoreBypassRule(
-    const std::shared_ptr<RoutingChain> &routeChain, const QString &processPath) {
-  // The external core's own transport must never return to its SOCKS inbound,
-  // even when the user has a catch-all PROXY/BLOCK or a quick-route rule.
-  routeChain->Rules.prepend(RouteRule::get_processPath_direct_rule(processPath));
-}
-
 void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
   bool blockAll = (status->ent == nullptr);
   // Prefetch
@@ -1883,27 +1951,7 @@ void BuildConfigSingBox(const std::shared_ptr<BuildConfigStatus> &status) {
     status->result->error = "NullPointer ProxyEntity";
     return;
   }
-  if (IsBuiltinXrayProfile(status->ent)) {
-    const auto versionError = ValidateBuiltinXrayVersion();
-    if (!versionError.isEmpty()) {
-      status->result->error = versionError;
-      return;
-    }
-    const int socksPort = BuiltinXraySocksPort(status->ent);
-    QString xrayError;
-    const auto xrayConfig = BuildBuiltinXrayConfig(status->ent, socksPort, &xrayError);
-    if (!xrayError.isEmpty()) {
-      status->result->error = xrayError;
-      return;
-    }
-    status->result->extraCoreData->path = GetBuiltinXrayPath();
-    status->result->extraCoreData->args = "run -format json -c %s";
-    status->result->extraCoreData->config =
-        QJsonDocument(xrayConfig).toJson(QJsonDocument::Compact);
-    status->result->extraCoreData->configDir = GetBasePath();
-    status->result->extraCoreData->noLog = false;
-    PrependExtraCoreBypassRule(routeChain, status->result->extraCoreData->path);
-  } else if (status->ent->type == "extracore") {
+  if (status->ent->type == "extracore") {
     auto bean = status->ent->ExtraCoreBean();
     if (bean == nullptr) {
       status->result->error = "Bean is null";
@@ -2114,7 +2162,19 @@ skip_multiple_jobs:
       }
     }
 
-    auto routeRules = routeChain->get_route_rules(false, false, outboundMap);
+    // Include servers discovered while expanding routing-only chains too.
+    for (const auto &domain : status->domainListDNSDirect) {
+      if (!directDomains.contains(domain)) directDomains.append(domain);
+      needDirectDnsRules = true;
+    }
+    if (!status->xrayRuntime.empty()) {
+      PrependExtraCoreBypassRule(routeChain, GetBuiltinXrayPath());
+      routeObj["find_process"] = true;
+    }
+    auto routeRules = status->xrayRuntime.transportRules;
+    for (const auto &rule : routeChain->get_route_rules(false, false, outboundMap)) {
+      routeRules.append(rule);
+    }
 
     // tun process routing
     if (dataStore->spmode_vpn && !status->forTest) {

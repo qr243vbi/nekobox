@@ -21,6 +21,7 @@ entity = (root / 'src/gharqad/dataStore/RouteEntity.cpp').read_text(encoding='ut
 builder = (root / 'src/gharqad/configs/ConfigBuilder.cpp').read_text(encoding='utf-8')
 factory = function(entity, 'std::shared_ptr<RouteRule> RouteRule::get_processPath_direct_rule(')
 prepend = function(builder, 'static void PrependExtraCoreBypassRule(')
-assert builder.count('PrependExtraCoreBypassRule(routeChain, status->result->extraCoreData->path);') == 2
+assert builder.count('PrependExtraCoreBypassRule(routeChain, status->result->extraCoreData->path);') == 1
+assert builder.count('PrependExtraCoreBypassRule(routeChain, GetBuiltinXrayPath());') == 2
 fixture = (Path(__file__).parent / 'fixture.cpp.in').read_text(encoding='utf-8')
 Path(sys.argv[1]).write_text(fixture.replace('@FACTORY@', factory).replace('@PREPEND@', prepend), encoding='utf-8')

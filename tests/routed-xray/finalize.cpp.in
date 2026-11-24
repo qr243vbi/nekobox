@@ -1,0 +1,100 @@
+#include <nekobox/configs/XrayRuntime.hpp>
+#include <QJsonDocument>
+#include <QList>
+#include <QStringList>
+#include <iostream>
+#include <memory>
+
+namespace Stats { struct TrafficData {}; }
+namespace Configs {
+@RESULT_TYPES@
+struct BuildConfigStatus {
+    XrayRuntime xrayRuntime;
+    std::shared_ptr<BuildConfigResult> result = std::make_shared<BuildConfigResult>();
+};
+QString versionError;
+QString GetBuiltinXrayPath() { return "fixture/xray.exe"; }
+QString GetBasePath() { return "fixture/settings"; }
+QString ValidateBuiltinXrayVersion() { return versionError; }
+struct Routing { QString domain_strategy; } routing;
+struct Store { Routing *routing; } store{&routing};
+auto dataStore = &store;
+QString TunDnsAddress() { return "172.19.0.2"; }
+QJsonArray QListStr2QJsonArray(const QStringList &values) {
+    QJsonArray result;
+    for (const auto &value : values) result.append(value);
+    return result;
+}
+@ADD_TUN@
+@FINALIZE@
+}
+
+int main() {
+    using namespace Configs;
+    int failures = 0;
+    auto check = [&](bool value, const char *message) {
+        if (!value) { std::cerr << message << '\n'; ++failures; }
+    };
+    auto status = std::make_shared<BuildConfigStatus>();
+    struct RouteChainFixture {
+        QJsonArray get_route_rules(bool, bool, const QJsonObject &) const {
+            return QJsonArray{QJsonObject{{"action", "route"}, {"outbound", "r-0-c-0-proxy"}},
+                              QJsonObject{{"action", "hijack-dns"}}};
+        }
+    } routeChainFixture;
+    auto routeChain = &routeChainFixture;
+    QJsonObject outboundMap;
+    for (bool withTransport : {false, true}) {
+        status->xrayRuntime.transportRules = withTransport
+            ? QJsonArray{QJsonObject{{"action", "route"}, {"outbound", "transport"}}}
+            : QJsonArray{};
+@MERGE_RULES@
+        check(routeRules.size() == (withTransport ? 3 : 2), "route merge changed the rule count");
+        for (const auto &rule : routeRules) {
+            check(rule.isObject(), "route.rules contains a nested array instead of a rule object");
+        }
+        check(routeRules.last().toObject()["action"] == "hijack-dns", "user rule order changed");
+        if (withTransport) check(routeRules.first().toObject()["outbound"] == "transport",
+                                 "transport rules lost priority");
+    }
+    status->xrayRuntime.transportRules = {};
+    check(status->result->extraCoreData != nullptr, "default result has no external-core metadata");
+    const int port = status->xrayRuntime.portFor("r-0-c-0-proxy", 30636);
+    QJsonObject profile{{"inbounds", QJsonArray{QJsonObject{{"port", port}}}},
+        {"outbounds", QJsonArray{QJsonObject{{"protocol", "freedom"}}}}};
+    check(status->xrayRuntime.addProfile("r-0-c-0-proxy", profile), "fixture profile not registered");
+    status->result->coreConfig["inbounds"] = QJsonArray{QJsonObject{{"tag", "mixed-in"}}};
+    FinalizeBuiltinXray(status);
+    check(status->result->extraCoreData->path == GetBuiltinXrayPath(), "routing-only Xray was not scheduled to start");
+    auto generated = QJsonDocument::fromJson(status->result->extraCoreData->config.toUtf8()).object();
+    check(generated["inbounds"].toArray()[0].toObject()["port"].toInt() == 30636, "requested routing SOCKS listener is absent");
+    check(status->result->additionalCoreData.isEmpty(), "single runtime unnecessarily split into processes");
+
+    auto custom = std::make_shared<BuildConfigStatus>();
+    custom->xrayRuntime = status->xrayRuntime;
+    custom->result->extraCoreData->path = "custom-core.exe";
+    custom->result->extraCoreData->config = "unchanged-custom-format";
+    custom->xrayRuntime.chainThrough("r-0-c-0-proxy", "custom-carrier", false);
+    FinalizeBuiltinXray(custom);
+    check(custom->result->extraCoreData->path == "custom-core.exe" &&
+          custom->result->extraCoreData->config == "unchanged-custom-format", "custom primary core overwritten");
+    check(custom->result->additionalCoreData.size() == 1 &&
+          custom->result->additionalCoreData.first()->path == GetBuiltinXrayPath(), "auxiliary native Xray not scheduled");
+    check(custom->result->coreConfig["inbounds"].toArray() == custom->xrayRuntime.transportInbounds,
+          "mixed-chain transport inlet not installed");
+    QJsonObject full{{"route", QJsonObject{{"rules", QJsonArray{
+        QJsonObject{{"action", "route"}, {"outbound", "user-catch-all"}}}}}}};
+    const auto transport = custom->xrayRuntime.transportRules;
+    AddTunRuntimeRules(full, {"203.0.113.1/32"}, {}, transport);
+    const auto fullRules = full["route"].toObject()["rules"].toArray();
+    check(fullRules.first() == transport.first(), "full-config server bypass swallowed the chain transport route");
+    check(fullRules.last().toObject()["outbound"] == "user-catch-all", "user full-config routes lost");
+    auto invalid = std::make_shared<BuildConfigStatus>();
+    invalid->xrayRuntime = status->xrayRuntime;
+    versionError = "fixture version failure";
+    FinalizeBuiltinXray(invalid);
+    check(invalid->result->error == versionError && invalid->result->extraCoreData->path.isEmpty(),
+          "invalid Xray runtime accepted");
+    std::cout << "Runtime finalization: " << failures << " failures\n";
+    return failures ? 1 : 0;
+}
