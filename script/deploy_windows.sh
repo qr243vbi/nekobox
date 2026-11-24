@@ -193,9 +193,7 @@ if [[ "$SKIP_ZIP" == 'true' ]]
 then
 mv "$ARCH" "$version_standalone-$ARCH"
 else
-mv "$ARCH" nekobox
-zip -9 -r "$version_standalone-$ARCH.zip" nekobox
-rm -rf nekobox
+python "$SRC_ROOT/script/package_portable.py" "$DEST" "$DEPLOYMENT/$version_standalone-$ARCH.zip"
 fi
 
 popd
