@@ -445,23 +445,332 @@ func (p *ErrorResp) Validate() error {
 }
 
 // Attributes:
-//   - CoreConfig
-//   - DisableStats
-//   - NeedExtraProcess
-//   - ExtraProcessPath
-//   - ExtraProcessArgs_
-//   - ExtraProcessConf
-//   - ExtraProcessConfDir
-//   - ExtraNoOut
+//  - Path
+//  - Args_
+//  - Config
+//  - ConfigDir
+//  - NoOut
+//
+type ExtraProcessConfig struct {
+	Path      string `thrift:"path,1" db:"path" json:"path"`
+	Args_     string `thrift:"args,2" db:"args" json:"args"`
+	Config    string `thrift:"config,3" db:"config" json:"config"`
+	ConfigDir string `thrift:"config_dir,4" db:"config_dir" json:"config_dir"`
+	NoOut     bool   `thrift:"no_out,5" db:"no_out" json:"no_out"`
+}
+
+func NewExtraProcessConfig() *ExtraProcessConfig {
+	return &ExtraProcessConfig{}
+}
+
+func (p *ExtraProcessConfig) GetPath() string {
+	return p.Path
+}
+
+func (p *ExtraProcessConfig) GetArgs_() string {
+	return p.Args_
+}
+
+func (p *ExtraProcessConfig) GetConfig() string {
+	return p.Config
+}
+
+func (p *ExtraProcessConfig) GetConfigDir() string {
+	return p.ConfigDir
+}
+
+func (p *ExtraProcessConfig) GetNoOut() bool {
+	return p.NoOut
+}
+
+func (p *ExtraProcessConfig) Read(ctx context.Context, iprot thrift.TProtocol) error {
+	if _, err := iprot.ReadStructBegin(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
+	}
+
+	for {
+		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
+		if err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T field %d read error: ", p, fieldId), err)
+		}
+		if fieldTypeId == thrift.STOP {
+			break
+		}
+		switch fieldId {
+		case 1:
+			if fieldTypeId == thrift.STRING {
+				if err := p.ReadField1(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		case 2:
+			if fieldTypeId == thrift.STRING {
+				if err := p.ReadField2(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		case 3:
+			if fieldTypeId == thrift.STRING {
+				if err := p.ReadField3(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		case 4:
+			if fieldTypeId == thrift.STRING {
+				if err := p.ReadField4(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		case 5:
+			if fieldTypeId == thrift.BOOL {
+				if err := p.ReadField5(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		default:
+			if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+				return err
+			}
+		}
+		if err := iprot.ReadFieldEnd(ctx); err != nil {
+			return err
+		}
+	}
+	if err := iprot.ReadStructEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) ReadField1(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(ctx); err != nil {
+		return thrift.PrependError("error reading field 1: ", err)
+	} else {
+		p.Path = v
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) ReadField2(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(ctx); err != nil {
+		return thrift.PrependError("error reading field 2: ", err)
+	} else {
+		p.Args_ = v
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) ReadField3(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(ctx); err != nil {
+		return thrift.PrependError("error reading field 3: ", err)
+	} else {
+		p.Config = v
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) ReadField4(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(ctx); err != nil {
+		return thrift.PrependError("error reading field 4: ", err)
+	} else {
+		p.ConfigDir = v
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) ReadField5(ctx context.Context, iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadBool(ctx); err != nil {
+		return thrift.PrependError("error reading field 5: ", err)
+	} else {
+		p.NoOut = v
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) Write(ctx context.Context, oprot thrift.TProtocol) error {
+	if err := oprot.WriteStructBegin(ctx, "ExtraProcessConfig"); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
+	}
+	if p != nil {
+		if err := p.writeField1(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField2(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField3(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField4(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField5(ctx, oprot); err != nil {
+			return err
+		}
+	}
+	if err := oprot.WriteFieldStop(ctx); err != nil {
+		return thrift.PrependError("write field stop error: ", err)
+	}
+	if err := oprot.WriteStructEnd(ctx); err != nil {
+		return thrift.PrependError("write struct stop error: ", err)
+	}
+	return nil
+}
+
+func (p *ExtraProcessConfig) writeField1(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "path", thrift.STRING, 1); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 1:path: ", p), err)
+	}
+	if err := oprot.WriteString(ctx, string(p.Path)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.path (1) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 1:path: ", p), err)
+	}
+	return err
+}
+
+func (p *ExtraProcessConfig) writeField2(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "args", thrift.STRING, 2); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 2:args: ", p), err)
+	}
+	if err := oprot.WriteString(ctx, string(p.Args_)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.args (2) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 2:args: ", p), err)
+	}
+	return err
+}
+
+func (p *ExtraProcessConfig) writeField3(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "config", thrift.STRING, 3); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 3:config: ", p), err)
+	}
+	if err := oprot.WriteString(ctx, string(p.Config)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.config (3) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 3:config: ", p), err)
+	}
+	return err
+}
+
+func (p *ExtraProcessConfig) writeField4(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "config_dir", thrift.STRING, 4); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 4:config_dir: ", p), err)
+	}
+	if err := oprot.WriteString(ctx, string(p.ConfigDir)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.config_dir (4) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 4:config_dir: ", p), err)
+	}
+	return err
+}
+
+func (p *ExtraProcessConfig) writeField5(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if err := oprot.WriteFieldBegin(ctx, "no_out", thrift.BOOL, 5); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field begin error 5:no_out: ", p), err)
+	}
+	if err := oprot.WriteBool(ctx, bool(p.NoOut)); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T.no_out (5) field write error: ", p), err)
+	}
+	if err := oprot.WriteFieldEnd(ctx); err != nil {
+		return thrift.PrependError(fmt.Sprintf("%T write field end error 5:no_out: ", p), err)
+	}
+	return err
+}
+
+func (p *ExtraProcessConfig) Equals(other *ExtraProcessConfig) bool {
+	if p == other {
+		return true
+	} else if p == nil || other == nil {
+		return false
+	}
+	if p.Path != other.Path {
+		return false
+	}
+	if p.Args_ != other.Args_ {
+		return false
+	}
+	if p.Config != other.Config {
+		return false
+	}
+	if p.ConfigDir != other.ConfigDir {
+		return false
+	}
+	if p.NoOut != other.NoOut {
+		return false
+	}
+	return true
+}
+
+func (p *ExtraProcessConfig) String() string {
+	if p == nil {
+		return "<nil>"
+	}
+	return fmt.Sprintf("ExtraProcessConfig(%+v)", *p)
+}
+
+func (p *ExtraProcessConfig) LogValue() slog.Value {
+	if p == nil {
+		return slog.AnyValue(nil)
+	}
+	v := thrift.SlogTStructWrapper{
+		Type:  "*gen.ExtraProcessConfig",
+		Value: p,
+	}
+	return slog.AnyValue(v)
+}
+
+var _ slog.LogValuer = (*ExtraProcessConfig)(nil)
+
+func (p *ExtraProcessConfig) Validate() error {
+	return nil
+}
+
+// Attributes:
+//  - CoreConfig
+//  - DisableStats
+//  - NeedExtraProcess
+//  - ExtraProcessPath
+//  - ExtraProcessArgs_
+//  - ExtraProcessConf
+//  - ExtraProcessConfDir
+//  - ExtraNoOut
+//  - ExtraProcesses
+//
 type LoadConfigReq struct {
-	CoreConfig          string `thrift:"core_config,1" db:"core_config" json:"core_config"`
-	DisableStats        bool   `thrift:"disable_stats,2" db:"disable_stats" json:"disable_stats"`
-	NeedExtraProcess    bool   `thrift:"need_extra_process,3" db:"need_extra_process" json:"need_extra_process"`
-	ExtraProcessPath    string `thrift:"extra_process_path,4" db:"extra_process_path" json:"extra_process_path"`
-	ExtraProcessArgs_   string `thrift:"extra_process_args,5" db:"extra_process_args" json:"extra_process_args"`
-	ExtraProcessConf    string `thrift:"extra_process_conf,6" db:"extra_process_conf" json:"extra_process_conf"`
-	ExtraProcessConfDir string `thrift:"extra_process_conf_dir,7" db:"extra_process_conf_dir" json:"extra_process_conf_dir"`
-	ExtraNoOut          bool   `thrift:"extra_no_out,8" db:"extra_no_out" json:"extra_no_out"`
+	CoreConfig          string                `thrift:"core_config,1" db:"core_config" json:"core_config"`
+	DisableStats        bool                  `thrift:"disable_stats,2" db:"disable_stats" json:"disable_stats"`
+	NeedExtraProcess    bool                  `thrift:"need_extra_process,3" db:"need_extra_process" json:"need_extra_process"`
+	ExtraProcessPath    string                `thrift:"extra_process_path,4" db:"extra_process_path" json:"extra_process_path"`
+	ExtraProcessArgs_   string                `thrift:"extra_process_args,5" db:"extra_process_args" json:"extra_process_args"`
+	ExtraProcessConf    string                `thrift:"extra_process_conf,6" db:"extra_process_conf" json:"extra_process_conf"`
+	ExtraProcessConfDir string                `thrift:"extra_process_conf_dir,7" db:"extra_process_conf_dir" json:"extra_process_conf_dir"`
+	ExtraNoOut          bool                  `thrift:"extra_no_out,8" db:"extra_no_out" json:"extra_no_out"`
+	ExtraProcesses      []*ExtraProcessConfig `thrift:"extra_processes,9" db:"extra_processes" json:"extra_processes,omitempty"`
 }
 
 func NewLoadConfigReq() *LoadConfigReq {
@@ -500,15 +809,21 @@ func (p *LoadConfigReq) GetExtraNoOut() bool {
 	return p.ExtraNoOut
 }
 
+var LoadConfigReq_ExtraProcesses_DEFAULT []*ExtraProcessConfig
+
+func (p *LoadConfigReq) GetExtraProcesses() []*ExtraProcessConfig {
+	return p.ExtraProcesses
+}
+
+func (p *LoadConfigReq) IsSetExtraProcesses() bool {
+	return p.ExtraProcesses != nil
+}
+
 func (p *LoadConfigReq) Read(ctx context.Context, iprot thrift.TProtocol) error {
-	ctx, err := thrift.CheckRecursionDepth(ctx)
-	if err != nil {
-		return err
-	}
-	defer thrift.DecrementRecursionDepth(ctx)
 	if _, err := iprot.ReadStructBegin(ctx); err != nil {
 		return thrift.PrependError(fmt.Sprintf("%T read error: ", p), err)
 	}
+
 	for {
 		_, fieldTypeId, fieldId, err := iprot.ReadFieldBegin(ctx)
 		if err != nil {
@@ -591,6 +906,16 @@ func (p *LoadConfigReq) Read(ctx context.Context, iprot thrift.TProtocol) error 
 		case 8:
 			if fieldTypeId == thrift.BOOL {
 				if err := p.ReadField8(ctx, iprot); err != nil {
+					return err
+				}
+			} else {
+				if err := iprot.Skip(ctx, fieldTypeId); err != nil {
+					return err
+				}
+			}
+		case 9:
+			if fieldTypeId == thrift.LIST {
+				if err := p.ReadField9(ctx, iprot); err != nil {
 					return err
 				}
 			} else {
@@ -685,12 +1010,27 @@ func (p *LoadConfigReq) ReadField8(ctx context.Context, iprot thrift.TProtocol) 
 	return nil
 }
 
-func (p *LoadConfigReq) Write(ctx context.Context, oprot thrift.TProtocol) error {
-	ctx, err := thrift.CheckRecursionDepth(ctx)
+func (p *LoadConfigReq) ReadField9(ctx context.Context, iprot thrift.TProtocol) error {
+	_, size, err := iprot.ReadListBegin(ctx)
 	if err != nil {
-		return err
+		return thrift.PrependError("error reading list begin: ", err)
 	}
-	defer thrift.DecrementRecursionDepth(ctx)
+	tSlice := make([]*ExtraProcessConfig, 0, size)
+	p.ExtraProcesses = tSlice
+	for i := 0; i < size; i++ {
+		_elem0 := &ExtraProcessConfig{}
+		if err := _elem0.Read(ctx, iprot); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T error reading struct: ", _elem0), err)
+		}
+		p.ExtraProcesses = append(p.ExtraProcesses, _elem0)
+	}
+	if err := iprot.ReadListEnd(ctx); err != nil {
+		return thrift.PrependError("error reading list end: ", err)
+	}
+	return nil
+}
+
+func (p *LoadConfigReq) Write(ctx context.Context, oprot thrift.TProtocol) error {
 	if err := oprot.WriteStructBegin(ctx, "LoadConfigReq"); err != nil {
 		return thrift.PrependError(fmt.Sprintf("%T write struct begin error: ", p), err)
 	}
@@ -717,6 +1057,9 @@ func (p *LoadConfigReq) Write(ctx context.Context, oprot thrift.TProtocol) error
 			return err
 		}
 		if err := p.writeField8(ctx, oprot); err != nil {
+			return err
+		}
+		if err := p.writeField9(ctx, oprot); err != nil {
 			return err
 		}
 	}
@@ -833,6 +1176,29 @@ func (p *LoadConfigReq) writeField8(ctx context.Context, oprot thrift.TProtocol)
 	return err
 }
 
+func (p *LoadConfigReq) writeField9(ctx context.Context, oprot thrift.TProtocol) (err error) {
+	if p.IsSetExtraProcesses() {
+		if err := oprot.WriteFieldBegin(ctx, "extra_processes", thrift.LIST, 9); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T write field begin error 9:extra_processes: ", p), err)
+		}
+		if err := oprot.WriteListBegin(ctx, thrift.STRUCT, len(p.ExtraProcesses)); err != nil {
+			return thrift.PrependError("error writing list begin: ", err)
+		}
+		for _, v := range p.ExtraProcesses {
+			if err := v.Write(ctx, oprot); err != nil {
+				return thrift.PrependError(fmt.Sprintf("%T error writing struct: ", v), err)
+			}
+		}
+		if err := oprot.WriteListEnd(ctx); err != nil {
+			return thrift.PrependError("error writing list end: ", err)
+		}
+		if err := oprot.WriteFieldEnd(ctx); err != nil {
+			return thrift.PrependError(fmt.Sprintf("%T write field end error 9:extra_processes: ", p), err)
+		}
+	}
+	return err
+}
+
 func (p *LoadConfigReq) Equals(other *LoadConfigReq) bool {
 	if p == other {
 		return true
@@ -863,6 +1229,15 @@ func (p *LoadConfigReq) Equals(other *LoadConfigReq) bool {
 	if p.ExtraNoOut != other.ExtraNoOut {
 		return false
 	}
+	if len(p.ExtraProcesses) != len(other.ExtraProcesses) {
+		return false
+	}
+	for i, _tgt := range p.ExtraProcesses {
+		_src1 := other.ExtraProcesses[i]
+		if !_tgt.Equals(_src1) {
+			return false
+		}
+	}
 	return true
 }
 
@@ -891,9 +1266,10 @@ func (p *LoadConfigReq) Validate() error {
 }
 
 // Attributes:
-//   - OutboundTag
-//   - LatencyMs
-//   - Error
+//  - OutboundTag
+//  - LatencyMs
+//  - Error
+//
 type URLTestResp struct {
 	OutboundTag string `thrift:"outbound_tag,1" db:"outbound_tag" json:"outbound_tag"`
 	LatencyMs   int32  `thrift:"latency_ms,2" db:"latency_ms" json:"latency_ms"`

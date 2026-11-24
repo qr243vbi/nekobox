@@ -21,16 +21,17 @@ from test_link_tls import function, section
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--xray', type=Path, help='Also validate generated synthetic configs with Xray run -test')
+    parser.add_argument('--prepare-only', type=Path, help='Emit the Qt C++ fixture for a native CMake toolchain')
     args = parser.parse_args()
     def read(path):
-        return (REPO / path).read_text()
+        return (REPO / path).read_text(encoding='utf-8')
     proxy = 'src/gharqad/configs/proxy/'
     stream = read('src/nekobox/configs/proxy/V2RayStreamSettings.hpp')
     fields = section(stream, 'class V2rayStreamSettings : public JsonStore {',
                      'V2rayStreamSettings() : JsonStore()')
     fields += function(stream, 'QMap<QString, QString> GetHeaderPairs(')
     code = read('tests/ech-share-links/support.hpp').replace('STREAM_FIELDS', fields)
-    code = '#include <QDir>\n#include <QFile>\n#include <QMap>\n#include <QJsonArray>\n#include <QJsonDocument>\n#include <QJsonObject>\n' + code
+    code = '#include <nekobox/configs/XrayRuntime.hpp>\n#include <QDir>\n#include <QFile>\n#include <QMap>\n#include <QJsonArray>\n#include <QJsonDocument>\n#include <QJsonObject>\n' + code
     code = code.replace('QString utlsFingerprint = "firefox";',
                         'QString utlsFingerprint = "firefox", log_level = "warning"; bool skip_cert = false;')
     entity = 'struct ProxyEntity { QString name, serverAddress; int serverPort = -1; };'
@@ -77,14 +78,17 @@ struct ProxyEntity {
                       'static QJsonObject convertV2RayNToSingBox('):
         code += function(updater, signature) + '\n'
     code += '}\n'
-    code += (HERE / 'checks.cpp').read_text()
+    code += (HERE / 'checks.cpp').read_text(encoding='utf-8')
+    if args.prepare_only:
+        args.prepare_only.write_text(code, encoding='utf-8')
+        return 0
     flags = shlex.split(subprocess.check_output(['pkg-config', '--cflags', '--libs', 'Qt6Core'], text=True))
     with tempfile.TemporaryDirectory(prefix='nekobox-compat-') as temp:
         cpp, exe = Path(temp) / 'checks.cpp', Path(temp) / 'checks'
         cpp.write_text(code)
         command = shlex.split(os.environ.get('CXX', 'c++'))
         command += ['-std=c++20', '-Wall', '-Wextra', '-Werror', '-O0', '-fPIC',
-                    str(cpp), '-o', str(exe)] + flags
+                    '-I' + str(REPO / 'src'), str(cpp), '-o', str(exe)] + flags
         subprocess.run(command, check=True, timeout=90)
         environment = os.environ.copy()
         if args.xray:
