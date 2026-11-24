@@ -40,9 +40,9 @@ jobs:
       working-directory: core/server
       shell: pwsh
       run: |
-        go test -tags with_clash_api ./internal/boxbox -count=1 -v
+        go test -tags with_clash_api ./internal/boxbox ./internal/process -count=1 -v
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-        go vet -tags with_clash_api ./internal/boxbox
+        go vet -tags with_clash_api ./internal/boxbox ./internal/process
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - uses: ilammy/msvc-dev-cmd@v1
       if: matrix.suite == 'qt'
@@ -61,4 +61,18 @@ jobs:
         cmake --build routing-build --config Release
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         & ./routing-build/Release/external-core-routing-test.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Test routed Xray runtime and flat sing-box rules
+      if: matrix.name == 'release-qt'
+      shell: pwsh
+      run: |
+        cmake -S tests/routed-xray -B routed-xray-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        cmake --build routed-xray-build --config Release
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./routed-xray-build/Release/routed-xray-profiles.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./routed-xray-build/Release/routed-xray-finalize.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        python -m unittest discover -s tests -p test_package_portable.py -v
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
