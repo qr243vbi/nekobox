@@ -19,6 +19,9 @@ jobs:
         - name: xray-bypass
           ref: codex/upstream-xray-bypass
           suite: qt
+        - name: routed-xray
+          ref: codex/upstream-routed-xray
+          suite: routed
         - name: release-core
           ref: main
           suite: core
@@ -31,7 +34,7 @@ jobs:
       with:
         ref: ${{ matrix.ref }}
     - uses: actions/setup-go@v5
-      if: matrix.suite == 'core'
+      if: matrix.suite == 'core' || matrix.suite == 'routed'
       with:
         go-version: '1.27.3'
         cache-dependency-path: core/server/go.sum
@@ -45,11 +48,11 @@ jobs:
         go vet -tags with_clash_api ./internal/boxbox ./internal/process
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - uses: ilammy/msvc-dev-cmd@v1
-      if: matrix.suite == 'qt'
+      if: matrix.suite == 'qt' || matrix.suite == 'routed'
       with:
         arch: x64
     - uses: qr243vbi/qt6windows7@main
-      if: matrix.suite == 'qt'
+      if: matrix.suite == 'qt' || matrix.suite == 'routed'
       with:
         version: 6.10.0_x86_64
     - name: Test Windows external-core routing helpers
@@ -63,7 +66,7 @@ jobs:
         & ./routing-build/Release/external-core-routing-test.exe
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - name: Test routed Xray runtime and flat sing-box rules
-      if: matrix.name == 'release-qt'
+      if: matrix.name == 'release-qt' || matrix.suite == 'routed'
       shell: pwsh
       run: |
         cmake -S tests/routed-xray -B routed-xray-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
@@ -74,5 +77,20 @@ jobs:
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         & ./routed-xray-build/Release/routed-xray-finalize.exe
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Test routed core RPC and compile core
+      if: matrix.suite == 'routed'
+      working-directory: core/server
+      shell: pwsh
+      run: |
+        go test ./internal/process -count=1 -v
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        go vet ./internal/process
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        go build -tags with_clash_api -o ../../routed-core-compile.exe .
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Test portable packaging
+      if: matrix.name == 'release-qt'
+      shell: pwsh
+      run: |
         python -m unittest discover -s tests -p test_package_portable.py -v
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
