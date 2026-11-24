@@ -79,6 +79,7 @@ jobs:
         set -euo pipefail
           test -z "$(gofmt -l internal/boxbox/box.go internal/boxbox/async_dns*.go internal/boxbox/provider_manager_test.go)"
         GOOS=windows GOARCH=amd64 go test -tags with_clash_api -c -o ../../boxbox.test.exe ./internal/boxbox
+        GOOS=windows GOARCH=amd64 go test -c -o ../../process.test.exe ./internal/process
     - name: Tar files
       run: tar czvf artifacts.tgz ./deployment
     - name: Uploading Artifact
@@ -90,7 +91,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: CoreConstructionRegression
-        path: boxbox.test.exe
+        path: |-
+          boxbox.test.exe
+          process.test.exe
         if-no-files-found: error
         retention-days: 3
   build-cpp:
@@ -128,8 +131,18 @@ jobs:
       run: |
         & ./download-artifact/CoreConstructionRegression/boxbox.test.exe '-test.v'
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./download-artifact/CoreConstructionRegression/process.test.exe '-test.v'
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - name: Setup Ninja
-      uses: qr243vbi/setup-ninja@master
+      shell: pwsh
+      run: |
+        $archive = Join-Path $env:RUNNER_TEMP 'ninja-win.zip'
+        $destination = Join-Path $env:RUNNER_TEMP 'ninja-bin'
+        curl.exe --fail --location --retry 3 --output $archive https://github.com/ninja-build/ninja/releases/download/v1.13.2/ninja-win.zip
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        Expand-Archive -LiteralPath $archive -DestinationPath $destination
+        $destination | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+        & (Join-Path $destination 'ninja.exe') --version
     - name: Install MSVC compiler
       uses: ilammy/msvc-dev-cmd@v1
       with:
@@ -164,6 +177,19 @@ jobs:
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         & ./external-core-routing-build/Release/external-core-routing-test.exe
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    - name: Verify routed Xray profiles and runtime finalization
+      shell: pwsh
+      run: |
+        cmake -S tests/routed-xray -B routed-xray-build "-DCMAKE_PREFIX_PATH=$env:QT6_DIR"
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        cmake --build routed-xray-build --config Release
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        New-Item -ItemType Directory -Force build/synthetic-xray-configs | Out-Null
+        $env:NEKOBOX_TEST_CONFIG_DIR = (Resolve-Path build/synthetic-xray-configs).Path
+        & ./routed-xray-build/Release/routed-xray-profiles.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        & ./routed-xray-build/Release/routed-xray-finalize.exe
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - name: Windows - Generate MakeFile and Build
       shell: bash
       run: |
@@ -183,6 +209,15 @@ jobs:
         cmake -DBUILD_GO_PARTS=ON -GNinja -DCMAKE_TOOLCHAIN_FILE="${TOOLCHAIN}" '-DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}' -DVCPKG_MANIFEST_MODE=OFF -DSKIP_UPDATER="${SKIP_UPDATE_BUTTON}" -DCMAKE_BUILD_TYPE=Release "-DNKR_DEFAULT_VERSION=${INPUT_VERSION}" "-DBUILD_GO_PARTS=OFF" -S . -B build
         cmake --build build --config Release --verbose
         source ./script/deploy_windows.sh "${{ matrix.target }}"
+    - name: Name patched archive
+      shell: pwsh
+      run: |
+        Get-ChildItem deployment -Filter '*windows64.zip' | ForEach-Object {
+          Rename-Item -LiteralPath $_.FullName -NewName ($_.BaseName.Replace('-windows64', '-patched.2-windows64') + '.zip')
+        }
+    - name: Validate routed configs with bundled Xray without starting it
+      shell: pwsh
+      run: python script/verify_routed_xray_configs.py
     - name: Verify portable archive and write SHA-256
       shell: pwsh
       run: python script/verify_portable.py
