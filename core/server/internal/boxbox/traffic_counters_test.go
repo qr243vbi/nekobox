@@ -9,6 +9,7 @@ import (
 
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/trafficcontrol"
+	"github.com/sagernet/sing-box/log"
 )
 
 type testOutbound struct {
@@ -92,10 +93,11 @@ func TestTrafficCountersKeepTrafficOfClosedConnections(t *testing.T) {
 	proxy := &testOutbound{tag: "proxy"}
 	counters, outbounds := newTestCounters(proxy)
 	manager := trafficcontrol.NewManager(outbounds)
-	if err := manager.Start(adapter.StartStateInitialize); err != nil {
+	scope := adapter.NewScope(context.Background(), log.NewNOPFactory().Logger())
+	defer scope.Close()
+	if err := manager.Start(adapter.StartStateInitialize, scope); err != nil {
 		t.Fatal(err)
 	}
-	defer manager.Close()
 
 	server, client := net.Pipe()
 	defer client.Close()
