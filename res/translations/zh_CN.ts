@@ -110,7 +110,11 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_app_settings.ui" line="104" />
         <source>Block</source>
-        <translation type="unfinished">阻止</translation>
+        <translation>屏蔽</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>删除所选</translation>
     </message>
 </context>
 <context>
@@ -118,7 +122,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="813" />
         <source>Custom System Parameters (optional)</source>
-        <translation>自定义系統参数（可选）</translation>
+        <translation>自定义系统参数（可选）</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="810" />
@@ -128,7 +132,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="880" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation>hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号</translation>
+        <translation>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="20" />
@@ -145,7 +149,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="887" />
         <source>User Agent</source>
-        <translation>用户代理</translation>
+        <translation>User Agent</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="777" />
@@ -155,7 +159,7 @@
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="784" />
         <source>Emoji Font</source>
-        <translation>表情符号字体</translation>
+        <translation>Emoji 字体</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1366" />
@@ -163,10 +167,10 @@
 JSON — 2001 — lightweight text format for exchanging structured data (objects, arrays, primitives) — Douglas Crockford
 INI — early 1980s — simple plain‑text config format with sections and key=value pairs — Microsoft
 binary — 2026 — arbitrary byte-values format for NekoBox settings used as leveldb values or standalone files — qr243vbi</source>
-        <translation type="unfinished">leveldb — 2011 — 嵌入式持久 LSM 树键值存储 — Google
-JSON — 2001 — 用于交换结构化数据（对象、数组、基元）的轻量级文本格式 — Douglas Crockford
-INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分和键=值对 — Microsoft
-二进制 — 2026 — NekoBox 设置的任意字节值格式用作 leveldb 值或独立文件 — qr243vbi</translation>
+        <translation>leveldb — 2011 — 嵌入式持久化 LSM-tree 键值存储 — Google
+JSON — 2001 — 用于交换结构化数据的轻量文本格式 — Douglas Crockford
+INI — 1980 年代初 — 由 section 和 key=value 组成的纯文本配置格式 — Microsoft
+binary — 2026 — NekoBox 设置使用的二进制格式，可作为 leveldb 的值或独立文件 — qr243vbi</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1416" />
@@ -186,7 +190,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="285" />
         <source>URL Test after profile start</source>
-        <translation>配置文件启动后进行 URL 测试</translation>
+        <translation>节点启动后进行 URL 测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="271" />
@@ -196,17 +200,17 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="921" />
         <source>Clear servers before update</source>
-        <translation>更新前清除服务器</translation>
+        <translation>更新前清空节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="823" />
         <source>URL Test after update</source>
-        <translation>更新后进行URL测试</translation>
+        <translation>更新后进行 URL 测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="860" />
         <source>Remove Duplicates</source>
-        <translation>移除 此分组 重复节点</translation>
+        <translation>移除重复节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="900" />
@@ -216,12 +220,12 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="907" />
         <source>Remove Invalid</source>
-        <translation>移除 此分组 无效节点</translation>
+        <translation>移除无效节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="914" />
         <source>Remove Unavailable</source>
-        <translation>移除 此分组 不可用节点</translation>
+        <translation>移除不可用节点</translation>
     </message>
     <message>
         <source>Use TCP</source>
@@ -234,7 +238,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1396" />
         <source>Ask for deleting profile</source>
-        <translation type="unfinished">要求删除个人资料</translation>
+        <translation>删除节点前询问</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1432" />
@@ -319,7 +323,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="212" />
         <source>Download Retries</source>
-        <translation type="unfinished">下载重试</translation>
+        <translation>下载重试次数</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="520" />
@@ -329,12 +333,12 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="534" />
         <source>Show profile IDs</source>
-        <translation type="unfinished">显示个人资料 ID</translation>
+        <translation>显示节点 ID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="565" />
         <source>Manually column width</source>
-        <translation type="unfinished">手动调节列宽</translation>
+        <translation>手动调整列宽</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="572" />
@@ -344,7 +348,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="579" />
         <source>Show start/stop button</source>
-        <translation type="unfinished">显示开始/停止按钮</translation>
+        <translation>显示启动/停止按钮</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="592" />
@@ -354,7 +358,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="632" />
         <source>Radius</source>
-        <translation type="unfinished">半径</translation>
+        <translation>圆角半径</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="791" />
@@ -374,22 +378,22 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="986" />
         <source>Use Unix Domain Socket for communication between nekobox and nekobox_core</source>
-        <translation type="unfinished">使用 Unix Domain Socket 进行 nekobox 和 nekobox_core 之间的通信</translation>
+        <translation>nekobox 与 nekobox_core 之间使用 Unix Domain Socket 通信</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="989" />
         <source>Use UDS for IPC</source>
-        <translation type="unfinished">使用UDS进行IPC</translation>
+        <translation>IPC 使用 UDS</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1220" />
         <source>Skip TLS certificate authentication</source>
-        <translation type="unfinished">跳过 TLS 证书身份验证</translation>
+        <translation>跳过 TLS 证书验证</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1359" />
         <source>Configs format</source>
-        <translation type="unfinished">配置格式</translation>
+        <translation>配置存储格式</translation>
     </message>
     <message>
         <source>LMDB — 2009 — embedded memory‑mapped key–value DB with ACID transactions — Howard Chu / Symas
@@ -409,17 +413,17 @@ INI — 20 世纪 80 年代初 — 带有部分和键=值对的简单纯文本�
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1642" />
         <source>Geometry</source>
-        <translation>几何学</translation>
+        <translation>窗口位置与大小</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1671" />
         <source>Autosave geometry</source>
-        <translation>保持几何形状</translation>
+        <translation>自动保存窗口大小</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1678" />
         <source>Autosave position</source>
-        <translation>保持位置</translation>
+        <translation>自动保存窗口位置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1698" />
@@ -466,7 +470,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2005" />
         <source>Remote Control</source>
-        <translation>遥控器</translation>
+        <translation>远程控制</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2031" />
@@ -477,7 +481,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1969" />
         <source>Core Executable Path</source>
-        <translation>通往核心之路</translation>
+        <translation>核心可执行文件路径</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="2158" />
@@ -497,7 +501,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1003" />
         <source>concurrency</source>
-        <translation>并发</translation>
+        <translation>并发数</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="46" />
@@ -537,7 +541,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="387" />
         <source>Concurrent</source>
-        <translation>并发</translation>
+        <translation>并发数</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1146" />
@@ -565,7 +569,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="687" />
         <source>Max log lines</source>
-        <translation>最多日志行数限制</translation>
+        <translation>日志最大行数</translation>
     </message>
     <message>
         <source>Skip TLS certificate authentication by default (allowInsecure)</source>
@@ -584,7 +588,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1013" />
         <source>Padding</source>
-        <translation>添加</translation>
+        <translation>Padding</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1039" />
@@ -599,7 +603,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1029" />
         <source>Multiplex (mux)</source>
-        <translation>多路复用(Mux)</translation>
+        <translation>多路复用 (Mux)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="367" />
@@ -706,7 +710,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="377" />
         <source>Speedtest mode</source>
-        <translation>速度测试模式</translation>
+        <translation>测速模式</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="336" />
@@ -726,7 +730,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1186" />
         <source>Disable Privilege request</source>
-        <translation>禁止权限请求</translation>
+        <translation>禁用提权请求</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="351" />
@@ -761,7 +765,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="1227" />
         <source>Use Mozilla Certificate Store</source>
-        <translation>使用 Mozilla 证书存储库</translation>
+        <translation>使用 Mozilla 证书库</translation>
     </message>
     <message>
         <source>Allow updating to beta versions</source>
@@ -775,7 +779,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="264" />
         <source>Use proxy when activated</source>
-        <translation>启用时使用代理</translation>
+        <translation>启用时通过代理</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="278" />
@@ -802,7 +806,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="410" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Timeout for URLtest in ms&lt;br/&gt;Note that muxed connections take a much longer time for their initial request, and setting this value too low will cause the test to falsely report that the config is not working&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以毫秒为单位的 URL 测试的超时&lt;br/&gt;注意，复用连接在其初始请求时耗时更长，而且这个值设置过低将会导致测试误报该配置无效&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URL 测试的超时，单位毫秒&lt;br/&gt;注意：开启 Mux 的连接首次请求耗时明显更长，此值过低会导致误报节点不可用&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="527" />
@@ -812,7 +816,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="558" />
         <source>Set text under menu icons</source>
-        <translation>在菜单图标下方设置文本</translation>
+        <translation>在菜单图标下方显示文字</translation>
     </message>
     <message>
         <source>Enable sending HWID, device model, and OS version when updating subscription</source>
@@ -826,7 +830,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_basic_settings.ui" line="356" />
         <source>Only Country</source>
-        <translation>仅国别</translation>
+        <translation>仅国家/地区</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="229" />
@@ -841,7 +845,7 @@ INI — 20 世纪 80 年代初 — 简单的纯文本配置格式，包含部分
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="264" />
         <source>Name of program</source>
-        <translation type="unfinished">节目名称</translation>
+        <translation>程序名称</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_basic_settings.cpp" line="563" />
@@ -895,6 +899,14 @@ Are you sure you want to enable HWID sending?</source>
 
 您确定要启用 HWID 发送吗？</translation>
     </message>
+    <message>
+        <source>Hides internal core and Xray connections and routine connection log entries. Warnings and errors remain visible. Debug mode shows all connections.</source>
+        <translation>隐藏核心内部连接、Xray 连接以及常规的连接日志。警告和错误仍会显示。调试模式下显示所有连接。</translation>
+    </message>
+    <message>
+        <source>Hide the core's own connections</source>
+        <translation>隐藏核心自身的连接</translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -906,12 +918,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="108" />
         <source>Url</source>
-        <translation type="unfinished">网址</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="123" />
         <source>Paste URL</source>
-        <translation type="unfinished">粘贴网址</translation>
+        <translation>粘贴 URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="155" />
@@ -926,7 +938,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="222" />
         <source>Extra</source>
-        <translation type="unfinished">额外的</translation>
+        <translation>额外</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="235" />
@@ -942,7 +954,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="333" />
         <source>Notes</source>
-        <translation>注释</translation>
+        <translation>备注</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="145" />
@@ -957,17 +969,17 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="168" />
         <source>Subscription</source>
-        <translation>订阅地址</translation>
+        <translation>订阅</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="202" />
         <source>Archive</source>
-        <translation>存档</translation>
+        <translation>归档</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="112" />
         <source>Will use profile-title from subscription if empty</source>
-        <translation type="unfinished">如果为空，将使用订阅中的个人资料标题</translation>
+        <translation>留空则使用订阅返回的 profile-title</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="588" />
@@ -982,7 +994,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="318" />
         <source>Copy profile share links</source>
-        <translation>复制配置档分享链接</translation>
+        <translation>复制节点分享链接</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="176" />
@@ -1020,7 +1032,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_group.ui" line="325" />
         <source>Copy profile share links (Custom Links)</source>
-        <translation>复制配置档分享链接(自定义链接)</translation>
+        <translation>复制节点分享链接（自定义链接）</translation>
     </message>
 </context>
 <context>
@@ -1060,12 +1072,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="104" />
         <source>Network</source>
-        <translation>传输(网络)</translation>
+        <translation>传输协议</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="193" />
         <source>Security</source>
-        <translation>安全性</translation>
+        <translation>传输层安全</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="390" />
@@ -1080,17 +1092,17 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="163" />
         <source>Transport</source>
-        <translation type="unfinished">传输层</translation>
+        <translation>传输</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="190" />
         <source>Transport Layer Security. It must be consistent with the server, otherwise, the connection cannot be established.</source>
-        <translation>传输层安全性。它必须与服务器一致，否则无法建立连接。</translation>
+        <translation>传输层安全 (TLS)。必须与服务器一致，否则无法建立连接。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="214" />
         <source>UDP FullCone Packet encoding for implementing features such as UDP FullCone. Server support is required, if the wrong selection is made, the connection cannot be made. Please leave it blank.</source>
-        <translation>用于实现 UDP FullCone 等特性的 UDF FullCone 数据包编码。需要服务器支持，若选错则无法连接。不懂请留空。</translation>
+        <translation>UDP 包编码，用于实现 UDP FullCone 等特性。需要服务器支持，选错将无法连接。不清楚请留空。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="773" />
@@ -1100,12 +1112,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="815" />
         <source>Server name indication, clear text.</source>
-        <translation>服务器名称指示，明文。</translation>
+        <translation>SNI（Server Name Indication），明文传输。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="828" />
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
-        <translation>应用层协议协商，明文。多项则请用英文逗号分隔。</translation>
+        <translation>ALPN（应用层协议协商），明文传输。多项请用英文逗号分隔。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="776" />
@@ -1131,7 +1143,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="118" />
         <source>both</source>
-        <translation type="unfinished">两个都</translation>
+        <translation>两者</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="710" />
@@ -1154,7 +1166,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="217" />
         <source>Packet Encoding</source>
-        <translation>数据包编码</translation>
+        <translation>包编码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="149" />
@@ -1174,7 +1186,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="691" />
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
-        <translation>Reality 公钥。如果不为空则将 TLS 变为 REALITY。</translation>
+        <translation>Reality Public Key。非空时 TLS 将变为 REALITY。</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="275" />
@@ -1235,7 +1247,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="248" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Overrides mux to On&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;覆盖多路服用为开启&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;强制开启 Mux&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="251" />
@@ -1245,12 +1257,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="265" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server to Client TCP Brutal Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;服务器到客户端的 TCP 极致速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;服务器到客户端方向的 TCP Brutal 速率&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="268" />
         <source>TCP Brutal Speed</source>
-        <translation>TCP Brutal 速度</translation>
+        <translation>TCP Brutal 速率</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="278" />
@@ -1265,7 +1277,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="495" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Method of http request, will be converted to uppercase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HTTP 请求的方法，将被转换为大写字母&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HTTP 请求方法，会被转换为大写&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="498" />
@@ -1275,13 +1287,13 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="783" />
         <source>Enable ECH</source>
-        <translation>启用ECH</translation>
+        <translation>启用 ECH</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="790" />
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="762" />
         <source>ECH Config</source>
-        <translation>ECH配置</translation>
+        <translation>ECH 配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="808" />
@@ -1296,7 +1308,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="532" />
         <source>header type</source>
-        <translation>头部类型</translation>
+        <translation>Header 类型</translation>
     </message>
     <message>
         <source>Extra Core</source>
@@ -1309,12 +1321,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="626" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;May degrade performance, try record fragment first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能降低性能，请先尝试记录片段&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可能降低性能，请先尝试 TLS Record Fragment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="629" />
         <source>Enable TLS fragment</source>
-        <translation>启用 TLS 片段</translation>
+        <translation>启用 TLS Fragment</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="636" />
@@ -1324,62 +1336,62 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="639" />
         <source>Fallback Delay</source>
-        <translation>回退延时</translation>
+        <translation>Fallback 延迟</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="652" />
         <source>Enable TLS Record Fragment</source>
-        <translation>启用 TLS 记录片段</translation>
+        <translation>启用 TLS Record Fragment</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_profile.ui" line="704" />
         <source>Reality short id. Accept only one value.</source>
-        <translation>Reality 短 ID。 仅接受一个值。</translation>
+        <translation>Reality Short ID，仅接受一个值。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="35" />
         <source>Network Settings</source>
-        <translation type="unfinished">网络设置</translation>
+        <translation>传输设置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="44" />
         <source>Max Post Bytes</source>
-        <translation type="unfinished">最大发布字节数</translation>
+        <translation>Max Post Bytes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="57" />
         <source>Min Post Interval</source>
-        <translation type="unfinished">最短发帖间隔</translation>
+        <translation>Min Post Interval</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="67" />
         <source>Max Reuse times</source>
-        <translation type="unfinished">最大重复使用次数</translation>
+        <translation>Max Reuse Times</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="80" />
         <source>X Padding Bytes</source>
-        <translation type="unfinished">X 填充字节</translation>
+        <translation>X Padding Bytes</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="93" />
         <source>Keep Alive Period</source>
-        <translation type="unfinished">保持生存期</translation>
+        <translation>Keep Alive Period</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="106" />
         <source>Max Concurrency</source>
-        <translation type="unfinished">最大并发数</translation>
+        <translation>Max Concurrency</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="119" />
         <source>Max Reusable Secs</source>
-        <translation type="unfinished">最大可重复使用秒数</translation>
+        <translation>Max Reusable Secs</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="129" />
         <source>Headers</source>
-        <translation type="unfinished">标头</translation>
+        <translation>Headers</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="152" />
@@ -1389,52 +1401,52 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="159" />
         <source>Max Request Times</source>
-        <translation type="unfinished">最大请求次数</translation>
+        <translation>Max Request Times</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="172" />
         <source>XPadding Header</source>
-        <translation type="unfinished">X添加标头</translation>
+        <translation>XPadding Header</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="182" />
         <source>XPadding Method</source>
-        <translation type="unfinished">X添加方法</translation>
+        <translation>XPadding Method</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="198" />
         <source>XPadding Key</source>
-        <translation type="unfinished">X添加键</translation>
+        <translation>XPadding Key</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="211" />
         <source>EarlyData Length</source>
-        <translation type="unfinished">早期数据长度</translation>
+        <translation>Early Data 长度</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="224" />
         <source>Max Connections</source>
-        <translation type="unfinished">最大连接数</translation>
+        <translation>Max Connections</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="243" />
         <source>XPadding Placement</source>
-        <translation type="unfinished">X增加放置位置</translation>
+        <translation>XPadding Placement</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="253" />
         <source>Multi Mode</source>
-        <translation type="unfinished">多模式</translation>
+        <translation>Multi Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="260" />
         <source>XPadding Obfs Mode</source>
-        <translation type="unfinished">X添加 Obfs 模式</translation>
+        <translation>XPadding Obfs Mode</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/dialog_edit_xhttp.ui" line="267" />
         <source>No GRPC Headers</source>
-        <translation type="unfinished">没有 GRPC 标头</translation>
+        <translation>No gRPC Headers</translation>
     </message>
 </context>
 <context>
@@ -1447,12 +1459,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="44" />
         <source>Custom Headers</source>
-        <translation type="unfinished">自定义标头</translation>
+        <translation>自定义 Headers</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="68" />
         <source>Custom HTTP Headers</source>
-        <translation type="unfinished">自定义 HTTP 标头</translation>
+        <translation>自定义 HTTP Headers</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="75" />
@@ -1462,7 +1474,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="88" />
         <source>Custom Payload</source>
-        <translation type="unfinished">自定义有效负载</translation>
+        <translation>自定义 Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription.ui" line="122" />
@@ -1480,12 +1492,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="14" />
         <source>Landing proxy for group Group2</source>
-        <translation>为分组2配置落地代理</translation>
+        <translation>分组 Group2 的落地代理</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="50" />
         <source>Proxy:</source>
-        <translation>代理</translation>
+        <translation>代理：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="57" />
@@ -1495,12 +1507,12 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="77" />
         <source>Group1</source>
-        <translation>分组1</translation>
+        <translation>Group1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_group_choose_proxy.ui" line="83" />
         <source>Group2</source>
-        <translation>分组2</translation>
+        <translation>Group2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="673" />
@@ -1528,7 +1540,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="170" />
         <source>Block</source>
-        <translation type="unfinished">阻止</translation>
+        <translation>屏蔽</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="161" />
@@ -1548,7 +1560,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="645" />
         <source>Front proxy for group %1</source>
-        <translation>前置代理 =&gt; %1</translation>
+        <translation>分组 %1 的前置代理</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="660" />
@@ -1558,7 +1570,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="658" />
         <source>Landing proxy for group %1</source>
-        <translation>落地代理 =&gt; %1</translation>
+        <translation>分组 %1 的落地代理</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -1582,6 +1594,10 @@ Are you sure you want to enable HWID sending?</source>
         <source>Replace %1 proxy</source>
         <translation>替换 %1 代理</translation>
     </message>
+    <message>
+        <source>Remove proxy</source>
+        <translation>移除代理</translation>
+    </message>
 </context>
 <context>
     <name>DialogHWID</name>
@@ -1598,7 +1614,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_hwid.ui" line="41" />
         <source>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</source>
-        <translation type="unfinished">hwid=自定义值,os=自定义操作系統,osVersion=自定义版本,model=自定义型号</translation>
+        <translation>hwid=custom_value,os=custom_os,osVersion=custom_version,model=custom_model</translation>
     </message>
 </context>
 <context>
@@ -1616,7 +1632,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/group/dialog_edit_subscription_headers.ui" line="41" />
         <source>Value</source>
-        <translation type="unfinished">价值</translation>
+        <translation>值</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="47" />
@@ -1626,7 +1642,11 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="83" />
         <source>Header name</source>
-        <translation type="unfinished">标头名称</translation>
+        <translation>Header 名称</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>删除所选</translation>
     </message>
 </context>
 <context>
@@ -1674,7 +1694,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_hotkey.cpp" line="56" />
         <source>Shortcut for '%s' action was cleared</source>
-        <translation type="unfinished">“%s”操作的快捷方式已清除</translation>
+        <translation>已清除“%s”的快捷键</translation>
     </message>
 </context>
 <context>
@@ -1728,7 +1748,7 @@ Are you sure you want to enable HWID sending?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="202" />
         <source>Sniffing Mode</source>
-        <translation>嗅探模式(流量探测)</translation>
+        <translation>嗅探模式</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="182" />
@@ -1798,12 +1818,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="196" />
         <source>Sniffs the connections intial packet(s?) to identify the protocol and the SNI. Sniff result for destination also rewrites the destionation of the connection to the sniffed SNI. For more data on the sniffed protocol refer to the sing-box's documentation.</source>
-        <translation>嗅探连接的初始数据包以识别协议和 SNI。目标的嗅探结果还会将重写连接的目标为嗅探到的 SNI。有关嗅探协议的更多数据，请参考 sing-box 的文档。</translation>
+        <translation>嗅探连接的初始数据包以识别协议和 SNI。选择“用于目标”时，还会把连接的目标地址改写为嗅探到的 SNI。详见 sing-box 文档。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="152" />
         <source>Routing Profile</source>
-        <translation>国家地理规则</translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="400" />
@@ -1818,7 +1838,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="622" />
         <source>Routing Profiles</source>
-        <translation>国家地理规则</translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="634" />
@@ -1838,7 +1858,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="676" />
         <source>Warp</source>
-        <translation type="unfinished">经</translation>
+        <translation>Warp</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables the following config to be used as egress, useful for bypassing services restrciting non-warp VPNs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1855,22 +1875,22 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="703" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gets a new config from cloudflare API&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从cloudflare API获取新配置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从 Cloudflare API 获取新配置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="706" />
         <source>Generate Warp Config</source>
-        <translation type="unfinished">生成扭曲配置</translation>
+        <translation>生成 Warp 配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="719" />
         <source>Save</source>
-        <translation type="unfinished">节省</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="738" />
         <source>Endpoint</source>
-        <translation type="unfinished">端点</translation>
+        <translation>Endpoint</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="751" />
@@ -1900,12 +1920,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="101" />
         <source>Remote Rule-set Mirror</source>
-        <translation>远程更新规则网站</translation>
+        <translation>远程规则集镜像</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="117" />
         <source>RuleSet download url</source>
-        <translation>规则集下载网址</translation>
+        <translation>规则集下载 URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="556" />
@@ -1971,7 +1991,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="641" />
         <source>Clone</source>
-        <translation>复制</translation>
+        <translation>克隆</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="648" />
@@ -1986,12 +2006,12 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="32" />
         <source>The list of routing profiles is empty, this should be an unreachable state, crashes may occur now</source>
-        <translation>路由配置档列表为空，这应该是一个不可达的状态，现在可能会发生崩溃</translation>
+        <translation>路由配置列表为空，这本不应出现，程序可能会崩溃</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="175" />
         <source>New warp profile</source>
-        <translation type="unfinished">新的扭曲轮廓</translation>
+        <translation>新 Warp 节点</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="268" />
@@ -2011,7 +2031,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="283" />
         <source>Failed to generate warp config</source>
-        <translation type="unfinished">无法生成扭曲配置</translation>
+        <translation>生成 Warp 配置失败</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="305" />
@@ -2027,7 +2047,7 @@ For more information, see the document "Configuration/DNS".</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="340" />
         <source>Routing profile cannot be empty</source>
-        <translation>路由配置档不能为空</translation>
+        <translation>路由配置不能为空</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="344" />
@@ -2048,13 +2068,13 @@ Any device on your local network will be able to query this DNS server, which ma
 Only enable this if you intend to share DNS with trusted LAN devices.
 
 Are you sure?</source>
-        <translation type="unfinished">启用 LAN DNS 服务器将侦听 0.0.0.0:%1。
+        <translation>启用局域网 DNS 服务器后将监听 0.0.0.0:%1。
 
-您本地网络上的任何设备都可以查询此 DNS 服务器，这可能会泄露您的路由规则、阻止的域和网络拓扑。
+局域网内的任何设备都可以查询该 DNS 服务器，这可能泄露你的路由规则、屏蔽的域名和网络拓扑。
 
-仅当您打算与受信任的 LAN 设备共享 DNS 时才启用此选项。
+仅当你打算与受信任的局域网设备共享 DNS 时才启用。
 
-你确定吗？</translation>
+确定要启用吗？</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
@@ -2064,7 +2084,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_manage_routes.cpp" line="479" />
         <source>Routing Profiles cannot be empty, try adding another profile or editing this one</source>
-        <translation>路由配置档不能为空，请尝试添加另一个配置档或编辑这个配置档</translation>
+        <translation>路由配置不能为空，请添加另一个路由配置或编辑当前这个</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_manage_routes.ui" line="311" />
@@ -2132,7 +2152,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="14" />
         <source>Tun Settings</source>
-        <translation>Tun 设置</translation>
+        <translation>TUN 设置</translation>
     </message>
     <message>
         <source>Tun Enable IPv6</source>
@@ -2141,7 +2161,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="112" />
         <source>AutoRedirect</source>
-        <translation>自动重定向</translation>
+        <translation>Auto Redirect</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="153" />
@@ -2151,17 +2171,17 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="160" />
         <source>Applications</source>
-        <translation type="unfinished">应用领域</translation>
+        <translation>应用程序</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="128" />
         <source>Tun address</source>
-        <translation>Tun 地址</translation>
+        <translation>TUN 地址</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="35" />
         <source>Stack</source>
-        <translation type="unfinished">堆</translation>
+        <translation>协议栈 (Stack)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="85" />
@@ -2171,7 +2191,7 @@ Are you sure?</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="138" />
         <source>Tun ipv6 address</source>
-        <translation>Tun IPv6地址</translation>
+        <translation>TUN IPv6 地址</translation>
     </message>
     <message>
         <source>Troubleshooting</source>
@@ -2198,17 +2218,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="95" />
         <source>Strict Route</source>
-        <translation>严格路由</translation>
+        <translation>严格路由 (Strict Route)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="102" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, Direct IP CIDRs and rule sets will also be added to the Tun setting to be excluded at OS routing level. IMPORTANT: Large rule sets have been reported to cause massive CPU usage in windows, please enable this option with caution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用时，Direct IP CIDR 和规则集也将添加到 Tun 设置中，以便在操作系统路由级别被排除。重要提示：已报告大型规则集会导致 Windows 中的 CPU 占用率大幅上升，请谨慎启用此选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用后，直连的 IP CIDR 和规则集也会加入 TUN 设置，在操作系统路由层面被排除。注意：已有反馈称大型规则集会导致 Windows 上 CPU 占用极高，请谨慎启用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/dialog_vpn_settings.ui" line="105" />
         <source>Enable Tun Routing</source>
-        <translation>启用 Tun 路由</translation>
+        <translation>启用 TUN 路由</translation>
     </message>
 </context>
 <context>
@@ -2221,7 +2241,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="30" />
         <source>Idle Session Check Interval</source>
-        <translation>空闲会话检查时间间隔</translation>
+        <translation>空闲会话检查间隔</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="40" />
@@ -2231,7 +2251,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_anytls.ui" line="50" />
         <source>Min Idle Session</source>
-        <translation>最小空闲会话</translation>
+        <translation>最小空闲会话数</translation>
     </message>
 </context>
 <context>
@@ -2239,12 +2259,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="49" />
         <source>Select Profile</source>
-        <translation>选择配置档</translation>
+        <translation>选择节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_chain.ui" line="20" />
         <source>Traffic order is from top to bottom</source>
-        <translation>流量顺序是由上到下 (最底一个为流量的出口)</translation>
+        <translation>流量顺序由上到下（最底一个为出口）</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/edit_chain.cpp" line="31" />
@@ -2335,7 +2355,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="131" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;contents of the config file that will be passed to the extra core process if %s is specified in the args&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;若在参数中指定了 %s，则配置文件的内容将传递给额外核心进程&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;配置文件内容。若参数中指定了 %s，会将其写入文件并传给额外核心进程&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_extra_core.ui" line="134" />
@@ -2399,7 +2419,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_mieru.ui" line="57" />
         <source>Traffic Pattern</source>
-        <translation type="unfinished">交通模式</translation>
+        <translation>流量模式 (Traffic Pattern)</translation>
     </message>
     <message>
         <source>MULTIPLEXING_OFF</source>
@@ -2462,12 +2482,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="101" />
         <source>extra_headers - Extra headers to send in HTTP requests.</source>
-        <translation type="unfinished">extra_headers - 在 HTTP 请求中发送的额外标头。</translation>
+        <translation>extra_headers - HTTP 请求中附带的额外 Headers。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_naive.ui" line="104" />
         <source>Headers</source>
-        <translation type="unfinished">标头</translation>
+        <translation>Headers</translation>
     </message>
 </context>
 <context>
@@ -2491,7 +2511,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="170" />
         <source>Disable MTU Discovery</source>
-        <translation>禁用 MTU 探测</translation>
+        <translation>禁用 MTU 发现</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="334" />
@@ -2506,7 +2526,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="154" />
         <source>Obfs Password</source>
-        <translation>混淆密码</translation>
+        <translation>Obfs 密码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="327" />
@@ -2516,7 +2536,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="230" />
         <source>Auth Payload</source>
-        <translation>认证负载</translation>
+        <translation>认证 Payload</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="257" />
@@ -2531,7 +2551,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="81" />
         <source>Zero Rtt Handshake</source>
-        <translation>零 Rtt 握手</translation>
+        <translation>0-RTT 握手</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="90" />
@@ -2546,12 +2566,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="24" />
         <source>Heartbeat</source>
-        <translation>心跳包</translation>
+        <translation>心跳间隔</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="310" />
         <source>Disable SNI</source>
-        <translation>禁用 SNI (不发送服务器名称指示)</translation>
+        <translation>禁用 SNI</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="180" />
@@ -2561,7 +2581,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="190" />
         <source>Hop Interval</source>
-        <translation>跃点间隔</translation>
+        <translation>端口跳跃间隔</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_quic.ui" line="197" />
@@ -2698,7 +2718,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="25" />
         <source>PSK</source>
-        <translation type="unfinished">相移键控</translation>
+        <translation>PSK</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="38" />
@@ -2708,17 +2728,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="48" />
         <source>Obfs Mode</source>
-        <translation type="unfinished">观测模式</translation>
+        <translation>Obfs 模式</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="58" />
         <source>Obfs Host</source>
-        <translation type="unfinished">OBFS主机</translation>
+        <translation>Obfs Host</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_snell.ui" line="79" />
         <source>Reuse</source>
-        <translation type="unfinished">重复利用</translation>
+        <translation>连接复用</translation>
     </message>
 </context>
 <context>
@@ -2745,12 +2765,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="99" />
         <source>Path</source>
-        <translation type="unfinished">小路</translation>
+        <translation>路径</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="115" />
         <source>Headers</source>
-        <translation type="unfinished">标头</translation>
+        <translation>Headers</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="75" />
@@ -2775,7 +2795,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_socks_http.ui" line="67" />
         <source>UoT</source>
-        <translation type="unfinished">多伦多大学</translation>
+        <translation>UoT</translation>
     </message>
 </context>
 <context>
@@ -2803,12 +2823,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="60" />
         <source>Accept routes</source>
-        <translation>放行路由</translation>
+        <translation>接受路由</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="74" />
         <source>Exit node allow lan access</source>
-        <translation>出口节点允许LAN访问</translation>
+        <translation>出口节点允许访问局域网</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="81" />
@@ -2828,7 +2848,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="98" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;comma seperated list of subnets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;子网的逗号间隔列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;逗号分隔的子网列表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="114" />
@@ -2838,7 +2858,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="111" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;use tailscale dns as the remote dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用 tailscale dns 作为远程 dns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用 Tailscale DNS 作为远程 DNS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="14" />
@@ -2848,7 +2868,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tailscale.ui" line="67" />
         <source>Ephemeral</source>
-        <translation>Ephemeral (短暂)</translation>
+        <translation>临时节点 (Ephemeral)</translation>
     </message>
 </context>
 <context>
@@ -2871,7 +2891,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="40" />
         <source>Tor Config</source>
-        <translation>Tor配置</translation>
+        <translation>Tor 配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_tor.ui" line="55" />
@@ -2933,17 +2953,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="52" />
         <source>Security</source>
-        <translation>加密</translation>
+        <translation>加密方式</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="59" />
         <source>Alter Id</source>
-        <translation>更改 ID</translation>
+        <translation>Alter ID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="66" />
         <source>UUID</source>
-        <translation>通用唯一标识符</translation>
+        <translation>UUID</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_vmess.ui" line="100" />
@@ -2961,7 +2981,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="59" />
         <source>Reserved</source>
-        <translation>保留</translation>
+        <translation>Reserved</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="85" />
@@ -2976,87 +2996,87 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="119" />
         <source>Generate Warp Config</source>
-        <translation type="unfinished">生成扭曲配置</translation>
+        <translation>生成 Warp 配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="156" />
         <source>Init Packet Junk Size (S1)</source>
-        <translation type="unfinished">初始化数据包垃圾大小 (S1)</translation>
+        <translation>Init 包垃圾数据大小 (S1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="166" />
         <source>Init Packet Magic Header (H1)</source>
-        <translation type="unfinished">初始化数据包魔术标头 (H1)</translation>
+        <translation>Init 包 Magic Header (H1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="182" />
         <source>Transport Packet Magic Header (H4)</source>
-        <translation type="unfinished">传输数据包魔术标头 (H4)</translation>
+        <translation>Transport 包 Magic Header (H4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="192" />
         <source>Cookie Reply Packet Junk Size (S3)</source>
-        <translation type="unfinished">Cookie 回复数据包垃圾大小 (S3)</translation>
+        <translation>Cookie Reply 包垃圾数据大小 (S3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="208" />
         <source>Signature Packet (I3)</source>
-        <translation type="unfinished">签名包（I3）</translation>
+        <translation>签名包 (I3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="218" />
         <source>Junk Packet Count (Jc)</source>
-        <translation type="unfinished">垃圾数据包计数 (Jc)</translation>
+        <translation>垃圾包数量 (Jc)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="228" />
         <source>Response Packet Magic Header (H2)</source>
-        <translation type="unfinished">响应数据包魔术标头 (H2)</translation>
+        <translation>Response 包 Magic Header (H2)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="238" />
         <source>Signature Packet (I1)</source>
-        <translation type="unfinished">签名包（I1）</translation>
+        <translation>签名包 (I1)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="248" />
         <source>Junk Packet Max Size (Jmax)</source>
-        <translation type="unfinished">垃圾数据包最大大小 (Jmax)</translation>
+        <translation>垃圾包最大大小 (Jmax)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="258" />
         <source>Junk Packet Min Size (Jmin)</source>
-        <translation type="unfinished">垃圾数据包最小大小 (Jmin)</translation>
+        <translation>垃圾包最小大小 (Jmin)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="274" />
         <source>Cookie Reply Packet Magic Header (H3)</source>
-        <translation type="unfinished">Cookie 回复数据包魔术标头 (H3)</translation>
+        <translation>Cookie Reply 包 Magic Header (H3)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="287" />
         <source>Transport Packet Junk Size (S4)</source>
-        <translation type="unfinished">传输数据包垃圾大小 (S4)</translation>
+        <translation>Transport 包垃圾数据大小 (S4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="303" />
         <source>Signature Packet (I2)</source>
-        <translation type="unfinished">签名包（I2）</translation>
+        <translation>签名包 (I2)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="319" />
         <source>Response Packet Junk Size (S2)</source>
-        <translation type="unfinished">响应数据包垃圾大小 (S2)</translation>
+        <translation>Response 包垃圾数据大小 (S2)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="335" />
         <source>Signature Packet (I4)</source>
-        <translation type="unfinished">签名包（I4）</translation>
+        <translation>签名包 (I4)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="348" />
         <source>Signature Packet (I5)</source>
-        <translation type="unfinished">签名包（I5）</translation>
+        <translation>签名包 (I5)</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="49" />
@@ -3095,7 +3115,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="69" />
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval in seconds&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval（以秒为单位的持久保活间隔）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;persistent_keepalive_interval，单位为秒&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="72" />
@@ -3105,7 +3125,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/profile/edit_wireguard.ui" line="75" />
         <source>Persistent Keepalive</source>
-        <translation>持久保持活动</translation>
+        <translation>Persistent Keepalive</translation>
     </message>
     <message>
         <source>Enable</source>
@@ -3190,7 +3210,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="176" />
         <source>Updated: %1</source>
-        <translation type="unfinished">更新：%1</translation>
+        <translation>更新于：%1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
@@ -3205,12 +3225,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="223" />
         <source>Remove %1?</source>
-        <translation>删除选中节点 %1 吗?</translation>
+        <translation>删除 %1 吗？</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="158" />
         <source>Archive</source>
-        <translation>存档</translation>
+        <translation>归档</translation>
     </message>
     <message>
         <source>Last update: %1</source>
@@ -3250,7 +3270,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="491" />
         <source>Total Direct Traffic:</source>
-        <translation type="unfinished">总直接流量：</translation>
+        <translation>直连总流量：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="132" />
@@ -3264,7 +3284,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="69" />
         <source>Usage time:</source>
-        <translation type="unfinished">使用时间：</translation>
+        <translation>使用时长：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="46" />
@@ -3274,12 +3294,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="109" />
         <source>First launch time:</source>
-        <translation type="unfinished">首次上线时间：</translation>
+        <translation>首次启动时间：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="99" />
         <source>Start count:</source>
-        <translation type="unfinished">开始计数：</translation>
+        <translation>启动次数：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="471" />
@@ -3296,7 +3316,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="202" />
         <source>Proxy Profiles</source>
-        <translation type="unfinished">代理配置文件</translation>
+        <translation>节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="193" />
@@ -3315,7 +3335,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/info/main.ui" line="315" />
         <location filename="../../src/nekobox/ui/info/main.ui" line="374" />
         <source>Exists</source>
-        <translation type="unfinished">存在</translation>
+        <translation>现有</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="228" />
@@ -3327,17 +3347,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="265" />
         <source>Groups and Subscriptions</source>
-        <translation type="unfinished">群组和订阅</translation>
+        <translation>分组与订阅</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="328" />
         <source>Route Profiles</source>
-        <translation type="unfinished">路线概况</translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="154" />
         <source>Failed authentications count:</source>
-        <translation type="unfinished">失败的身份验证计数：</translation>
+        <translation>认证失败次数：</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/info/main.ui" line="177" />
@@ -3428,17 +3448,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1537" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="129" />
         <source>No routing profiles are updated</source>
-        <translation>没有可用的更新</translation>
+        <translation>没有路由配置被更新</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="542" />
         <source>No Selection</source>
-        <translation type="unfinished">无选择</translation>
+        <translation>未选择</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="543" />
         <source>Select proxy profile to connect</source>
-        <translation type="unfinished">选择要连接的代理配置文件</translation>
+        <translation>选择要连接的节点</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="753" />
@@ -3453,7 +3473,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1487" />
         <source>Import Routing Profile</source>
-        <translation type="unfinished">导入路由配置文件</translation>
+        <translation>导入路由配置</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1491" />
@@ -3463,7 +3483,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1495" />
         <source>From file</source>
-        <translation type="unfinished">来自文件</translation>
+        <translation>从文件</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1502" />
@@ -3478,7 +3498,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1524" />
         <source>Routing Profiles</source>
-        <translation type="unfinished">国家地理规则</translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1551" />
@@ -3523,7 +3543,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1462" />
         <source>Edit Routing Profiles</source>
-        <translation>编辑路由文件</translation>
+        <translation>编辑路由配置</translation>
     </message>
     <message>
         <source>Update Routing Profiles</source>
@@ -3554,7 +3574,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1246" />
         <source>Add profile from File</source>
-        <translation>从文件导入</translation>
+        <translation>从文件导入节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
@@ -3620,12 +3640,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="720" />
         <source>Current Selected</source>
-        <translation type="unfinished">当前选择</translation>
+        <translation>当前选中</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="714" />
         <source>Current Group</source>
-        <translation type="unfinished">当前组</translation>
+        <translation>当前分组</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="56" />
@@ -3650,12 +3670,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="797" />
         <source>Context</source>
-        <translation type="unfinished">语境</translation>
+        <translation>Context</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="801" />
         <source>ContextProfiles</source>
-        <translation type="unfinished">上下文配置文件</translation>
+        <translation>ContextProfiles</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="825" />
@@ -3687,7 +3707,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="879" />
         <source>Add profile from clipboard</source>
-        <translation>从剪贴板导入</translation>
+        <translation>从剪贴板导入节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="895" />
@@ -3703,12 +3723,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="929" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1167" />
         <source>Clear Test Result</source>
-        <translation>清理 此分组 测试结果</translation>
+        <translation>清除测试结果</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="953" />
         <source>Scan QR Code</source>
-        <translation>从 扫描二维码 导入</translation>
+        <translation>扫描二维码导入</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="969" />
@@ -3723,7 +3743,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1211" />
         <source>Full test</source>
-        <translation type="unfinished">全面测试</translation>
+        <translation>完整测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1216" />
@@ -3738,7 +3758,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1226" />
         <source>Country test</source>
-        <translation type="unfinished">国家测试</translation>
+        <translation>国家/地区测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1231" />
@@ -3748,7 +3768,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1320" />
         <source>Toggle searchbox</source>
-        <translation type="unfinished">切换搜索框</translation>
+        <translation>显示/隐藏搜索框</translation>
     </message>
     <message>
         <source>Copy Custom Links</source>
@@ -3757,18 +3777,18 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1075" />
         <source>Copy links</source>
-        <translation type="unfinished">复制链接</translation>
+        <translation>复制分享链接</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1156" />
         <source>Url Test</source>
-        <translation type="unfinished">网址测试</translation>
+        <translation>URL 测试</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1110" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1189" />
         <source>Resolve Domain</source>
-        <translation type="unfinished">解析域</translation>
+        <translation>解析域名</translation>
     </message>
     <message>
         <source>Full test Selected</source>
@@ -3798,7 +3818,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1282" />
         <source>Register Windows elevated task</source>
-        <translation type="unfinished">注册 Windows 提升的任务</translation>
+        <translation>注册 Windows 提权任务</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1287" />
@@ -3809,7 +3829,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1292" />
         <source>Statistics</source>
-        <translation type="unfinished">统计数据</translation>
+        <translation>统计</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1297" />
@@ -3819,12 +3839,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1307" />
         <source>Toggle filter</source>
-        <translation type="unfinished">切换过滤器</translation>
+        <translation>显示/隐藏筛选</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1315" />
         <source>Unselect</source>
-        <translation type="unfinished">取消选择</translation>
+        <translation>取消选中</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="808" />
@@ -3857,7 +3877,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2216" />
         <source>Imported %1 profile(s)</source>
-        <translation>导入了 %1 个配置档</translation>
+        <translation>已导入 %1 个节点</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/ProxyEntity.cpp" line="224" />
@@ -3868,7 +3888,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3571" />
         <source>Remove %1 item(s) ?</source>
-        <translation>删除选中节点 %1 项吗？</translation>
+        <translation>删除选中的 %1 个节点吗？</translation>
     </message>
     <message>
         <source>Config copied</source>
@@ -3890,12 +3910,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1059" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1067" />
         <source>fake</source>
-        <translation>伪造的</translation>
+        <translation>fake</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="301" />
         <source>Testing</source>
-        <translation>正在测试中</translation>
+        <translation>测试中</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="172" />
@@ -3921,32 +3941,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="739" />
         <source>Starting profile %1</source>
-        <translation>正在启动配置档 %1</translation>
+        <translation>正在启动节点 %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="860" />
         <source>Stopping profile %1</source>
-        <translation>正在停止配置档 %1</translation>
+        <translation>正在停止节点 %1</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1001" />
         <source>Start with system</source>
-        <translation>跟随系统启动</translation>
+        <translation>开机自启</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1009" />
         <source>Remember last profile</source>
-        <translation>记住最后的设置</translation>
+        <translation>记住上次使用的节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1022" />
         <source>Remove Unavailable</source>
-        <translation>移除 此分组 不可用节点</translation>
+        <translation>移除不可用节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="840" />
         <source>New profile</source>
-        <translation>新建单个节点</translation>
+        <translation>新建节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1038" />
@@ -3956,12 +3976,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="900" />
         <source>QR Code and link</source>
-        <translation>查看此节点（ 二维码和链接 ）</translation>
+        <translation>二维码和链接</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3647" />
         <source>Copied %1 item(s)</source>
-        <translation>复制了 %1 项</translation>
+        <translation>已复制 %1 项</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1030" />
@@ -3972,12 +3992,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="945" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1325" />
         <source>Reset Traffic</source>
-        <translation>选中节点重置流量</translation>
+        <translation>重置流量</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="974" />
         <source>Remove Duplicates</source>
-        <translation>移除 此分组 重复节点</translation>
+        <translation>移除重复节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1043" />
@@ -3991,7 +4011,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="250" />
         <source>Tun Mode</source>
-        <translation>Tun 模式</translation>
+        <translation>TUN 模式</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="961" />
@@ -4001,17 +4021,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1086" />
         <source>Enable Tun</source>
-        <translation>启用 Tun</translation>
+        <translation>启用 TUN</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2131" />
         <source>Tun Settings changed</source>
-        <translation>Tun 设置已改变</translation>
+        <translation>TUN 设置已改变</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2132" />
         <source>Restart Tun to take effect.</source>
-        <translation>重启 Tun 以生效。</translation>
+        <translation>重启 TUN 以生效。</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="216" />
@@ -4035,7 +4055,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1091" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3494" />
         <source>Clone</source>
-        <translation>复制</translation>
+        <translation>克隆</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1099" />
@@ -4045,7 +4065,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3495" />
         <source>Clone %1 item(s)</source>
-        <translation>复制选中节点 %1 项</translation>
+        <translation>克隆 %1 个节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1017" />
@@ -4070,12 +4090,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1051" />
         <source>Copy Nekoray links</source>
-        <translation type="unfinished">复制 Nekoray 链接</translation>
+        <translation>复制 NekoRay 链接</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1115" />
         <source>Tun Settings</source>
-        <translation>Tun 设置</translation>
+        <translation>TUN 设置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1120" />
@@ -4099,7 +4119,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="830" />
         <source>Toggle Window</source>
-        <translation>显示窗口</translation>
+        <translation>显示/隐藏窗口</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2173" />
@@ -4119,7 +4139,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="742" />
         <source>Failed to start profile %1</source>
-        <translation>启动配置档 %1 失败</translation>
+        <translation>启动节点 %1 失败</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="863" />
@@ -4144,7 +4164,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="656" />
         <source>Tun device misbehaving</source>
-        <translation>Tun 设备运行异常</translation>
+        <translation>TUN 设备工作异常</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="661" />
@@ -4165,17 +4185,17 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4410" />
         <source>Delete selected Group</source>
-        <translation>删除此分组</translation>
+        <translation>删除选中的分组</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4411" />
         <source>Edit selected Group</source>
-        <translation>编辑此分组</translation>
+        <translation>编辑选中的分组</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4421" />
         <source>Remove %1?</source>
-        <translation>删除选中节点 %1 吗?</translation>
+        <translation>删除 %1 吗？</translation>
     </message>
     <message>
         <source>Url Test Selected</source>
@@ -4194,7 +4214,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1541" />
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="120" />
         <source>Updated %1 routing profiles</source>
-        <translation>更新了 %1 个设定值</translation>
+        <translation>已更新 %1 个路由配置</translation>
     </message>
     <message>
         <source>Current selected</source>
@@ -4211,7 +4231,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1178" />
         <source>Url Test Group</source>
-        <translation>此分组测试URL延迟</translation>
+        <translation>URL 测试当前分组</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -4229,7 +4249,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1200" />
         <source>Remove Invalid</source>
-        <translation>移除 此分组 无效节点</translation>
+        <translation>移除无效节点</translation>
     </message>
     <message>
         <source>Ctrl+Alt+I</source>
@@ -4238,7 +4258,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="657" />
         <source>If you have trouble starting VPN, you can force reset Core process here and then try starting the profile again. The error is %1</source>
-        <translation>如果启动 VPN 时有问题，您可以在这里强制重置 Core 进程，然后再次尝试启动配置档。错误是 %1</translation>
+        <translation>如果启动 VPN 时遇到问题，可以在这里强制重置核心进程，然后重新启动节点。错误：%1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3550" />
@@ -4263,7 +4283,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="4156" />
         <source>Replace domain server addresses with their resolved IPs?</source>
-        <translation>替换域名服务器地址为其解析后的 IP 地址吗？</translation>
+        <translation>将域名形式的服务器地址替换为解析后的 IP 吗？</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="276" />
@@ -4293,7 +4313,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2617" />
         <source>Please give the core root privileges</source>
-        <translation>请给核心赋予根(root)权限</translation>
+        <translation>请授予核心 root 权限</translation>
     </message>
     <message>
         <source>Requesting permission</source>
@@ -4318,7 +4338,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="95" />
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="710" />
         <source>Profiles</source>
-        <translation>配置档</translation>
+        <translation>节点</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="143" />
@@ -4339,7 +4359,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="557" />
         <source>Click To Sort By Process</source>
-        <translation>点击以“按进程排序”</translation>
+        <translation>点击按进程排序</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="785" />
@@ -4353,19 +4373,19 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="77" />
         <source>Profile test aborted</source>
-        <translation>配置档测试中止</translation>
+        <translation>节点测试已中止</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="157" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="559" />
         <source>Something is very wrong, the subject ent cannot be found!</source>
-        <translation>发生了非常严重的问题，找不到主题 ent！</translation>
+        <translation>出现严重问题：找不到对应的节点！</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="163" />
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="565" />
         <source>Profile manager data is corrupted, try again.</source>
-        <translation>配置档管理器数据损坏，请重试。</translation>
+        <translation>节点管理器数据已损坏，请重试。</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="346" />
@@ -4405,12 +4425,12 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="697" />
         <source>Another profile is starting...</source>
-        <translation>另一个配置档正在启动...</translation>
+        <translation>另一个节点正在启动...</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="704" />
         <source>Another profile is stopping...</source>
-        <translation>另一个配置档正在停止...</translation>
+        <translation>另一个节点正在停止...</translation>
     </message>
     <message>
         <source>Try to start the config, but the core has not listened to the RPC port, so restart it...</source>
@@ -4419,7 +4439,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="820" />
         <source>Stop return error</source>
-        <translation>停止返回错误</translation>
+        <translation>停止时返回错误</translation>
     </message>
     <message>
         <source>Copy core config</source>
@@ -4452,7 +4472,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1269" />
         <source>Speedtest Current</source>
-        <translation>此节点( 上传+下载 ) 速度</translation>
+        <translation>测速当前节点</translation>
     </message>
     <message>
         <source>Speedtest Selected</source>
@@ -4461,7 +4481,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="1236" />
         <source>Speedtest Group</source>
-        <translation>此分组测试速度</translation>
+        <translation>测速当前分组</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="195" />
@@ -4476,32 +4496,32 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="496" />
         <source>Profile speed test aborted</source>
-        <translation>配置档速度测试已中止</translation>
+        <translation>节点测速已中止</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow_rpc.cpp" line="584" />
         <source>[%1] speed test error: %2</source>
-        <translation>[%1] 速度测试错误：%2</translation>
+        <translation>[%1] 测速错误：%2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="2550" />
         <source>User opted for no privilege req, some features may not work</source>
-        <translation>用户选择无权限请求，某些功能可能不起作用</translation>
+        <translation>用户选择不请求提权，部分功能可能不可用</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3137" />
         <source>Group is too big to sort</source>
-        <translation type="unfinished">组太大无法排序</translation>
+        <translation>分组过大，无法排序</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3515" />
         <source>Group is too big to find duplicates</source>
-        <translation type="unfinished">组太大，无法找到重复项</translation>
+        <translation>分组过大，无法查找重复项</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3913" />
         <source>Unable to capture screen</source>
-        <translation>无法捕获屏幕</translation>
+        <translation>无法截取屏幕</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="570" />
@@ -4511,7 +4531,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="581" />
         <source>Click To Toggle sort by Traffic</source>
-        <translation>点击以切换“按流量排序”</translation>
+        <translation>点击切换按流量排序</translation>
     </message>
     <message>
         <source>Copy links of selected (Custom Links)</source>
@@ -4536,12 +4556,116 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="565" />
         <source>Click To Sort By Protocol</source>
-        <translation>点击“按协议排序”</translation>
+        <translation>点击按协议排序</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="573" />
         <source>Click To Sort By Outbound</source>
-        <translation>点击“按出站排序”</translation>
+        <translation>点击按出站排序</translation>
+    </message>
+    <message>
+        <source>Drag to resize panels. Double-click to split equally.</source>
+        <translation>拖动以调整面板大小，双击平分。</translation>
+    </message>
+    <message>
+        <source>Errors only</source>
+        <translation>仅错误</translation>
+    </message>
+    <message>
+        <source>Failed to update ruleset cache</source>
+        <translation>更新规则集缓存失败</translation>
+    </message>
+    <message>
+        <source>Failed to clear ruleset cache</source>
+        <translation>清除规则集缓存失败</translation>
+    </message>
+    <message>
+        <source>Route</source>
+        <translation>路由</translation>
+    </message>
+    <message>
+        <source>suffix</source>
+        <translation>后缀</translation>
+    </message>
+    <message>
+        <source>domain</source>
+        <translation>域名</translation>
+    </message>
+    <message>
+        <source>keyword</source>
+        <translation>关键字</translation>
+    </message>
+    <message>
+        <source>[Route] Added %1:%2 → %3</source>
+        <translation>[路由] 已添加 %1:%2 → %3</translation>
+    </message>
+    <message>
+        <source>Add to route</source>
+        <translation>添加到路由</translation>
+    </message>
+    <message>
+        <source>Direct (suffix)</source>
+        <translation>直连（后缀）</translation>
+    </message>
+    <message>
+        <source>Proxy (suffix)</source>
+        <translation>代理（后缀）</translation>
+    </message>
+    <message>
+        <source>Block (suffix)</source>
+        <translation>屏蔽（后缀）</translation>
+    </message>
+    <message>
+        <source>Direct (exact domain)</source>
+        <translation>直连（完整域名）</translation>
+    </message>
+    <message>
+        <source>Proxy (exact domain)</source>
+        <translation>代理（完整域名）</translation>
+    </message>
+    <message>
+        <source>Enable auto-scroll</source>
+        <translation>启用自动滚动</translation>
+    </message>
+    <message>
+        <source>Show errors only</source>
+        <translation>仅显示错误</translation>
+    </message>
+    <message>
+        <source>Routes</source>
+        <translation>路由</translation>
+    </message>
+    <message>
+        <source>Update profile</source>
+        <translation>更新节点</translation>
+    </message>
+    <message>
+        <source>Reset panel layout</source>
+        <translation>重置面板布局</translation>
+    </message>
+    <message>
+        <source>Failed to set system proxy: </source>
+        <translation>设置系统代理失败： </translation>
+    </message>
+    <message>
+        <source>Configure routing rules</source>
+        <translation>配置路由规则</translation>
+    </message>
+    <message>
+        <source>"%1" is only a hop of a chain and does not work on its own. Select the chain instead.
+
+Start it anyway?</source>
+        <translation>“%1”只是链式代理中的一跳，无法单独使用，请改为选择对应的链。
+
+仍要启动吗？</translation>
+    </message>
+    <message>
+        <source>No profile found to update from</source>
+        <translation>没有找到可用于更新的节点</translation>
+    </message>
+    <message>
+        <source>Updated %1 profile(s)</source>
+        <translation>已更新 %1 个节点</translation>
     </message>
 </context>
 <context>
@@ -4693,7 +4817,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/group/GroupItem.cpp" line="128" />
         <source>Used: %1 Remain: %2 Expire: %3</source>
-        <translation>已用 %1 剩余 %2 过期 %3</translation>
+        <translation>已用: %1 剩余: %2 到期: %3</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5055" />
@@ -4723,7 +4847,7 @@ Direct: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="409" />
         <source>Download Profiles</source>
-        <translation>选择国家地理规则</translation>
+        <translation>下载路由配置</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="656" />
@@ -4735,13 +4859,15 @@ Deleted %1 Duplicates</source>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="696" />
         <source>
 Deleted %1 Invalid</source>
-        <translation>已删除 %1 无效项</translation>
+        <translation>
+已删除 %1 个无效项</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="731" />
         <source>
 Deleted %1 Unavailable</source>
-        <translation>已删除 %1 不可用</translation>
+        <translation>
+已删除 %1 个不可用项</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1913" />
@@ -4779,7 +4905,7 @@ Deleted %1 Unavailable</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3458" />
         <source>Move profiles to group</source>
-        <translation type="unfinished">将配置文件移至组</translation>
+        <translation>移动节点到分组</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="3669" />
@@ -4818,7 +4944,7 @@ Release note:
     <message>
         <location filename="../../src/gharqad/main.cpp" line="232" />
         <source>Custom</source>
-        <translation type="unfinished">风俗</translation>
+        <translation>自定义</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="233" />
@@ -4861,7 +4987,7 @@ Release note:
     <message>
         <location filename="../../src/gharqad/sys/Process.cpp" line="129" />
         <source>Core exits too frequently, stop automatic restart this profile.</source>
-        <translation>Core 退出太频繁，停止自动重启这个配置档。</translation>
+        <translation>核心退出过于频繁，已停止自动重启该节点。</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Database.cpp" line="845" />
@@ -4932,7 +5058,7 @@ Release note:
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5056" />
         <source>Not official support platform</source>
-        <translation>非官方支持平台</translation>
+        <translation>非官方支持的平台</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="5066" />
@@ -4946,22 +5072,22 @@ Release note:
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1872" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Requesting subscription %1 error</source>
-        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 请求订阅 %1 错误</translation>
+        <translation>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 请求订阅 %1 出错</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1873" />
         <source>Request error is: %1</source>
-        <translation type="unfinished">请求错误为：%1</translation>
+        <translation>请求错误：%1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1877" />
         <source>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Subscription data fetched for %1</source>
-        <translation type="unfinished">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 已为 %1 提取订阅数据</translation>
+        <translation>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 已获取 %1 的订阅数据</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1899" />
         <source>Subscription profile title: %1</source>
-        <translation type="unfinished">订阅配置文件标题：%1</translation>
+        <translation>订阅标题 (profile-title)：%1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1959" />
@@ -4972,7 +5098,8 @@ Release note:
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1973" />
         <source>--- Dropt %1 proxies
 </source>
-        <translation type="unfinished">--- 删除 %1 代理</translation>
+        <translation>--- 移除了 %1 个节点
+</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1975" />
@@ -4983,12 +5110,13 @@ Release note:
         <location filename="../../src/gharqad/configs/sub/GroupUpdater.cpp" line="1989" />
         <source>--- Added %1 proxies
 </source>
-        <translation type="unfinished">--- 添加了 %1 代理</translation>
+        <translation>--- 新增了 %1 个节点
+</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="410" />
         <source>Requesting profile error: %1</source>
-        <translation>请求配置档时出错: %1</translation>
+        <translation>请求节点时出错: %1</translation>
     </message>
     <message>
         <source>Local DNS and Tun mode do not work together, please set an IP to be used as the Local DNS server in the Routing Settings -&gt; Local override</source>
@@ -5029,7 +5157,7 @@ Release note:
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="175" />
         <source>Application Rules</source>
-        <translation type="unfinished">报名规则</translation>
+        <translation>应用程序规则</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/dialog_vpn_settings.cpp" line="198" />
@@ -5060,14 +5188,14 @@ Release note:
         <location filename="../../src/gharqad/stats/traffic/TrafficLooper.cpp" line="157" />
         <source>Proxy: ⚡%1 📦%3
 Direct: ⚡%2 📦%4</source>
-        <translation type="unfinished">代理：⚡%1 📦%3
-直接：⚡%2 📦%4</translation>
+        <translation>代理: ⚡%1 📦%3
+直连: ⚡%2 📦%4</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/group/dialog_edit_group.cpp" line="359" />
         <location filename="../../src/gharqad/ui/mainwindow_table.cpp" line="505" />
         <source>Invalid</source>
-        <translation type="unfinished">无效的</translation>
+        <translation>无效</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="48" />
@@ -5077,12 +5205,12 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="74" />
         <source>MTU</source>
-        <translation type="unfinished" />
+        <translation>MTU</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="75" />
         <source>TTI</source>
-        <translation type="unfinished" />
+        <translation>TTI</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="76" />
@@ -5112,24 +5240,40 @@ Direct: ⚡%2 📦%4</source>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="81" />
         <source>Header Type</source>
-        <translation type="unfinished">标头类型</translation>
+        <translation>Header 类型</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/profile/dialog_edit_profile.cpp" line="82" />
         <source>Seed</source>
-        <translation type="unfinished">种子</translation>
+        <translation>Seed</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/configs/warp/warp.cpp" line="91" />
         <source>Received invalid response: %1
 Request payload was: %2</source>
-        <translation type="unfinished">收到无效响应：%1
-请求负载为：%2</translation>
+        <translation>收到无效响应：%1
+请求 Payload：%2</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/dataStore/Configs.cpp" line="572" />
         <source>Imported</source>
-        <translation type="unfinished">进口</translation>
+        <translation>已导入</translation>
+    </message>
+    <message>
+        <source>No route profile selected. Open Route Settings first.</source>
+        <translation>尚未选择路由配置，请先打开路由设置。</translation>
+    </message>
+    <message>
+        <source>Direct</source>
+        <translation>直连</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>代理</translation>
+    </message>
+    <message>
+        <source>Block</source>
+        <translation>屏蔽</translation>
     </message>
 </context>
 <context>
@@ -5162,7 +5306,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="179" />
         <source>Discard</source>
-        <translation>弃置</translation>
+        <translation>放弃</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="178" />
@@ -5172,7 +5316,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="177" />
         <source>Defaults</source>
-        <translation>恢复默认设置</translation>
+        <translation>默认值</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/main.cpp" line="181" />
@@ -5238,7 +5382,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="70" />
         <source>Update url</source>
-        <translation>更新网址</translation>
+        <translation>更新 URL</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="111" />
@@ -5253,7 +5397,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="14" />
         <source>Route Profile</source>
-        <translation>国家地理规则</translation>
+        <translation>路由配置</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="63" />
@@ -5264,17 +5408,17 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="125" />
         <source>Basic routes</source>
-        <translation type="unfinished">基本路线</translation>
+        <translation>基本路由</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="163" />
         <source>IP</source>
-        <translation type="unfinished">知识产权</translation>
+        <translation>IP</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="182" />
         <source>Domain</source>
-        <translation type="unfinished">领域</translation>
+        <translation>域名</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="201" />
@@ -5289,7 +5433,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="231" />
         <source>Custom routes</source>
-        <translation type="unfinished">定制路线</translation>
+        <translation>自定义路由</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="299" />
@@ -5329,7 +5473,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="374" />
         <source>Name_Placeholder</source>
-        <translation>名称_占位符</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="406" />
@@ -5365,7 +5509,7 @@ Request payload was: %2</source>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="153" />
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="269" />
         <source>Block</source>
-        <translation>阻止</translation>
+        <translation>屏蔽</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/setting/RouteItem.ui" line="280" />
@@ -5392,12 +5536,12 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="334" />
         <source>Bypass LAN / private IPs (Direct)</source>
-        <translation type="unfinished">绕过 LAN/私有 IP（直接）</translation>
+        <translation>绕过局域网/私有 IP（直连）</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="335" />
         <source>Clear all basic routes</source>
-        <translation type="unfinished">清除所有基本路线</translation>
+        <translation>清除所有基本路由</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="419" />
@@ -5419,17 +5563,17 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="534" />
         <source>Cannot create Route Profile with empty name</source>
-        <translation>无法使用空名称创建路由配置档</translation>
+        <translation>路由配置的名称不能为空</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>Empty Route Profile</source>
-        <translation>空路由配置档</translation>
+        <translation>空的路由配置</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="550" />
         <source>No valid rules are in the profile</source>
-        <translation>配置档中没有有效的规则</translation>
+        <translation>该路由配置中没有有效的规则</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/RouteItem.cpp" line="559" />
@@ -5484,7 +5628,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="172" />
         <source>Change UI Password</source>
-        <translation>更改用户界面密码</translation>
+        <translation>更改界面密码</translation>
     </message>
     <message>
         <location filename="../../src/nekobox/ui/security/security.ui" line="179" />
@@ -5497,12 +5641,12 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="29" />
         <source>Exiting %1</source>
-        <translation type="unfinished">正在退出%1</translation>
+        <translation>正在退出 %1</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/setting/shutdownoverlay.cpp" line="31" />
         <source>Starting %1</source>
-        <translation type="unfinished">开始%1</translation>
+        <translation>正在启动 %1</translation>
     </message>
 </context>
 <context>
@@ -5534,13 +5678,13 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="484" />
         <source>Fetching information</source>
-        <translation>获取信息</translation>
+        <translation>正在获取信息</translation>
     </message>
     <message>
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="500" />
         <location filename="../../src/gharqad/ui/mainwindow.cpp" line="1661" />
         <source>Download Profiles</source>
-        <translation>选择国家地理规则</translation>
+        <translation>下载路由配置</translation>
     </message>
 </context>
 <context>
@@ -5563,7 +5707,7 @@ Request payload was: %2</source>
     <message>
         <location filename="../../src/gharqad/ui/setting/Icon.cpp" line="223" />
         <source>Stopping…</source>
-        <translation type="unfinished">停止…</translation>
+        <translation>正在停止…</translation>
     </message>
 </context>
 <context>
