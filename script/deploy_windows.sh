@@ -186,7 +186,7 @@ pushd "$DEPLOYMENT"
 
 if [[ "$SKIP_NSIS" != "true" ]]
 then
-mv "$INST" "$version_standalone-$ARCH-installer.exe"
+mv "$INST.exe" "$version_standalone-$ARCH-installer.exe"
 fi
 
 if [[ "$SKIP_ZIP" == 'true' ]]

@@ -115,7 +115,6 @@ jobs:
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       INPUT_VERSION: ${{ needs.get-tag-and-changelog.outputs.tag }}
-      SKIP_NSIS: 'true'
     steps:
     - name: Checking out sources
       uses: actions/checkout@v4
@@ -143,6 +142,10 @@ jobs:
         Expand-Archive -LiteralPath $archive -DestinationPath $destination
         $destination | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
         & (Join-Path $destination 'ninja.exe') --version
+    - name: Install NSIS
+      uses: negrutiu/nsis-install@v2
+      with:
+        arch: ${{ matrix.target }}
     - name: Install MSVC compiler
       uses: ilammy/msvc-dev-cmd@v1
       with:
@@ -221,12 +224,30 @@ jobs:
     - name: Verify portable archive and write SHA-256
       shell: pwsh
       run: python script/verify_portable.py
+    - name: Verify Windows installer and write SHA-256
+      shell: pwsh
+      run: |
+        $installers = @(Get-ChildItem deployment -Filter '*windows64-installer.exe' -File)
+        if ($installers.Count -ne 1) { throw 'Expected exactly one Windows x64 installer' }
+        $installer = $installers[0]
+        $stream = $installer.OpenRead()
+        try {
+          if ($stream.ReadByte() -ne 77 -or $stream.ReadByte() -ne 90) {
+            throw 'Installer is not a Windows executable'
+          }
+        } finally {
+          $stream.Dispose()
+        }
+        $hash = (Get-FileHash -LiteralPath $installer.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+        "$hash  $($installer.Name)" | Set-Content -LiteralPath "$($installer.FullName).sha256" -Encoding ascii
     - name: Uploading Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: NekoBox-Windows-x64-Portable
+        name: NekoBox-Windows-x64
         path: |-
           deployment/*windows64.zip
           deployment/*windows64.zip.sha256
+          deployment/*windows64-installer.exe
+          deployment/*windows64-installer.exe.sha256
         if-no-files-found: error
         retention-days: 14
