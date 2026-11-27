@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #endif
+#include <array>
 #include <random>
 #include <nekobox/dataStore/Utils.hpp>
 #include <nekobox/dataStore/Configs.hpp>
@@ -543,6 +544,21 @@ bool IsIpAddressV6(const QString &str)
 bool IsIpAddress(const QString &str)
 {
     return IsIpAddressV4(str) || IsIpAddressV6(str);
+}
+
+bool SameNumericIpAddress(const QString &first, const QString &second)
+{
+    const auto firstText = first.toUtf8();
+    const auto secondText = second.toUtf8();
+    // Compare binary forms so equivalent IPv6 spellings compare equal.
+    for (int family : {AF_INET, AF_INET6}) {
+        std::array<unsigned char, 16> firstBytes{}, secondBytes{};
+        if (inet_pton(family, firstText.constData(), firstBytes.data()) == 1 &&
+            inet_pton(family, secondText.constData(), secondBytes.data()) == 1) {
+            return firstBytes == secondBytes;
+        }
+    }
+    return false;
 }
 
 QVariantMap QMapString2QVariantMap(const QMap<QString, QString> &mp)

@@ -16,7 +16,6 @@
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <QInputDialog>
-#include <QHostAddress>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QRegularExpression>
@@ -757,9 +756,9 @@ QString MainWindow::refresh_profile_key(
         return tr("Invalid key response.");
     }
     const auto result = data.object();
-    const QHostAddress ip(result.value("ip").toString().trimmed());
-    if (ip.isNull()) return tr("Invalid or missing IP address.");
-    if (ip.isEqual(QHostAddress(address))) return {};
+    const auto ip = result.value("ip").toString().trimmed();
+    if (!IsIpAddress(ip)) return tr("Invalid or missing IP address.");
+    if (SameNumericIpAddress(ip, address)) return {};
 
     const auto link = result.value("vless").toString().trimmed();
     if (!link.startsWith("vless://")) return tr("Invalid or missing VLESS key.");

@@ -457,6 +457,8 @@ bool WriteFile(QFile &file, const QByteArray &notes);
 
 bool IsIpAddress(const QString &str);
 
+bool SameNumericIpAddress(const QString &first, const QString &second);
+
 bool IsIpAddressV4(const QString &str);
 
 bool IsIpAddressV6(const QString &str);
