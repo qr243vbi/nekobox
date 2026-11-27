@@ -3412,6 +3412,22 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Refresh key</source>
+        <translation>Обновить ключ</translation>
+    </message>
+    <message>
+        <source>Select a VLESS Reality profile with a P or T user ID.</source>
+        <translation>Выберите профиль VLESS Reality с ID на P или T.</translation>
+    </message>
+    <message>
+        <source>Profile key updated.</source>
+        <translation>Ключ профиля обновлён.</translation>
+    </message>
+    <message>
+        <source>The server IP is already up to date.</source>
+        <translation>IP сервера уже актуален.</translation>
+    </message>
+    <message>
         <location filename="../../src/nekobox/ui/mainwindow.ui" line="675" />
         <source>Program</source>
         <translation>Программа</translation>

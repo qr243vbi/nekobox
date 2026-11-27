@@ -28,6 +28,7 @@
 #include <QCoreApplication>
 #include <QEventLoop>
 #include <QThread>
+#include <string_view>
 
 
 #ifndef NKR_SOFTWARE_KEYS
@@ -731,15 +732,27 @@ QString MainWindow::refresh_profile_key(
     request.SetProxies({{"http", ""}});
     request.SetHeader({{"Content-Type", "application/json; charset=utf-8"}});
     request.SetBody(cpr::Body{payload.toStdString()});
+    constexpr qsizetype maxResponseSize = 8192;
+    QByteArray responseBody;
+    bool responseTooLarge = false;
+    std::function<bool(std::string_view, intptr_t)> receive = [&](std::string_view chunk, intptr_t) {
+        if (chunk.size() > static_cast<size_t>(maxResponseSize - responseBody.size())) {
+            responseTooLarge = true;
+            return false;
+        }
+        responseBody.append(chunk.data(), static_cast<qsizetype>(chunk.size()));
+        return true;
+    };
+    request.SetWriteCallback(receive);
     const auto response = request.Post();
+    if (responseTooLarge) return tr("Key response is too large.");
     if (response.error) return tr("Network error while checking the key.");
     if (response.status_code < 200 || response.status_code >= 300) {
         return tr("HTTP %1").arg(static_cast<qlonglong>(response.status_code));
     }
-    if (response.text.size() > 8192) return tr("Key response is too large.");
 
     QJsonParseError parseError;
-    const auto data = QJsonDocument::fromJson(QByteArray::fromStdString(response.text), &parseError);
+    const auto data = QJsonDocument::fromJson(responseBody, &parseError);
     if (parseError.error != QJsonParseError::NoError || !data.isObject()) {
         return tr("Invalid key response.");
     }
