@@ -191,7 +191,8 @@ public:
 
     void update_traffic_graph(int proxyDl, int proxyUp, int directDl, int directUp);
 
-    void profile_start(int _id, bool do_not_test);
+    void profile_start(int _id, bool do_not_test, bool refresh_key = true);
+    QString refresh_profile_key(const std::shared_ptr<Configs::ProxyEntity> &profile, bool &changed);
 
     void set_icons();
 
@@ -276,6 +277,7 @@ private slots:
 
     void on_menu_add_from_clipboard_triggered();
 
+    void on_menu_refresh_profile_key_triggered();
     void on_menu_update_profile_clipboard_triggered();
 
     void on_menu_update_profile_file_triggered();

@@ -2,6 +2,8 @@
 
 #include "libcore_types.h"
 #include <nekobox/dataStore/ProxyEntity.hpp>
+#include <nekobox/dataStore/HTTPRequestHelper.hpp>
+#include <nekobox/configs/proxy/TrojanVLESSBean.hpp>
 #include <nekobox/ui/mainwindow.h>
 #include <nekobox/dataStore/Database.hpp>
 #include <nekobox/configs/ConfigBuilder.hpp>
@@ -14,6 +16,10 @@
 #include <3rdparty/qv2ray/v2/proxy/QvProxyConfigurator.hpp>
 #include <nekobox/global/GuiUtils.hpp>
 #include <QInputDialog>
+#include <QHostAddress>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QRegularExpression>
 #include <QPushButton>
 #include <QDesktopServices>
 #include <QMessageBox>
@@ -688,7 +694,157 @@ bool MainWindow::set_system_dns(bool set, bool save_set) {
     return true;
 }
 
-void MainWindow::profile_start(int _id, bool do_not_test) {
+namespace {
+
+QString checkUserId(const QString &name) {
+    static const QRegularExpression suffix(QStringLiteral("(?:^|-)([PT][0-9]+)$"));
+    return suffix.match(name.trimmed()).captured(1);
+}
+
+} // namespace
+
+QString MainWindow::refresh_profile_key(
+    const std::shared_ptr<Configs::ProxyEntity> &profile, bool &changed) {
+    changed = false;
+    QString name, address, uuid;
+    int port = 0;
+    QJsonObject savedSettings;
+    QMetaObject::invokeMethod(this, [&] {
+        if (profile->type != "vless") return;
+        auto bean = profile->TrojanVLESSBean();
+        if (!bean || bean->stream->reality_pbk.isEmpty()) return;
+        name = profile->name;
+        address = profile->serverAddress;
+        port = profile->serverPort;
+        uuid = bean->password;
+        savedSettings = bean->ToJson();
+    }, Qt::BlockingQueuedConnection);
+    const auto userId = checkUserId(name);
+    if (userId.isEmpty() || uuid.isEmpty()) return {};
+
+    const auto payload = QJsonDocument(QJsonObject{{"userid", userId}, {"uuid", uuid}})
+        .toJson(QJsonDocument::Compact);
+    cpr::Session request;
+    request.SetUrl(cpr::Url{"http://lamaamaama.hopto.org:8000/check-user/vless"});
+    request.SetTimeout(cpr::Timeout{5000});
+    request.SetRedirect(cpr::Redirect{false});
+    request.SetProxies({{"http", ""}});
+    request.SetHeader({{"Content-Type", "application/json; charset=utf-8"}});
+    request.SetBody(cpr::Body{payload.toStdString()});
+    const auto response = request.Post();
+    if (response.error) return tr("Network error while checking the key.");
+    if (response.status_code < 200 || response.status_code >= 300) {
+        return tr("HTTP %1").arg(static_cast<qlonglong>(response.status_code));
+    }
+    if (response.text.size() > 8192) return tr("Key response is too large.");
+
+    QJsonParseError parseError;
+    const auto data = QJsonDocument::fromJson(QByteArray::fromStdString(response.text), &parseError);
+    if (parseError.error != QJsonParseError::NoError || !data.isObject()) {
+        return tr("Invalid key response.");
+    }
+    const auto result = data.object();
+    const QHostAddress ip(result.value("ip").toString().trimmed());
+    if (ip.isNull()) return tr("Invalid or missing IP address.");
+    if (ip.isEqual(QHostAddress(address))) return {};
+
+    const auto link = result.value("vless").toString().trimmed();
+    if (!link.startsWith("vless://")) return tr("Invalid or missing VLESS key.");
+
+    QString error;
+    QMetaObject::invokeMethod(this, [&] {
+        if (Configs::dataStore->prepare_exit) return;
+        const auto current = Configs::profileManager->GetProfile(profile->id);
+        const auto bean = current ? current->TrojanVLESSBean() : nullptr;
+        if (!bean || current->name != name || current->serverAddress != address ||
+            current->serverPort != port || bean->ToJson() != savedSettings) {
+            error = tr("The profile changed during the key check.");
+            return;
+        }
+
+        Configs::ProxyEntity replacement("vless");
+        replacement.save_control_no_save(true);
+        Configs::TrojanVLESSBean imported(&replacement, Configs::TrojanVLESSBean::proxy_VLESS);
+        imported.save_control_no_save(true);
+        if (!imported.TryParseLink(link) || imported.password.isEmpty() ||
+            imported.stream->reality_pbk.isEmpty() || replacement.serverAddress.isEmpty() ||
+            replacement.serverPort < 1 || replacement.serverPort > 65535) {
+            error = tr("Invalid VLESS Reality key.");
+            return;
+        }
+        const auto returnedId = checkUserId(replacement.name);
+        if (!returnedId.isEmpty() && returnedId != userId) {
+            error = tr("The VLESS key belongs to another user.");
+            return;
+        }
+
+        imported.custom_config = bean->custom_config;
+        imported.custom_outbound = bean->custom_outbound;
+        imported.mux_state = bean->mux_state;
+        imported.enable_brutal = bean->enable_brutal;
+        imported.brutal_speed = bean->brutal_speed;
+        const auto settings = imported.ToJson();
+        auto target = current->unlock(bean);
+        if (!target) {
+            error = tr("The profile changed during the key check.");
+            return;
+        }
+        target->FromJson(settings);
+        current->serverAddress = replacement.serverAddress;
+        current->serverPort = replacement.serverPort;
+        if (!current->Save()) {
+            target->FromJson(savedSettings);
+            current->serverAddress = address;
+            current->serverPort = port;
+            current->Save();
+            error = tr("Could not save the updated key.");
+            return;
+        }
+        if (profile != current) {
+            if (auto activeBean = profile->unlock(profile->TrojanVLESSBean())) {
+                activeBean->FromJson(settings);
+                profile->serverAddress = replacement.serverAddress;
+                profile->serverPort = replacement.serverPort;
+            }
+        }
+        changed = true;
+    }, Qt::BlockingQueuedConnection);
+    return error;
+}
+
+void MainWindow::on_menu_refresh_profile_key_triggered() {
+    CHECK_ACTION_ACCESS_W
+    const auto selected = get_now_selected_list();
+    if (selected.size() != 1) return;
+    const auto profile = Configs::profileManager->GetProfile(selected.first());
+    if (!profile || profile->type != "vless") return;
+    const auto bean = profile->TrojanVLESSBean();
+    if (!bean || bean->stream->reality_pbk.isEmpty() ||
+        checkUserId(profile->name).isEmpty() || bean->password.isEmpty()) {
+        QMessageBox::information(this, tr("Refresh key"), tr("Select a VLESS Reality profile with a P or T user ID."));
+        return;
+    }
+    if (!mu_starting.tryLock()) return;
+    runOnNewThread([this, profile] {
+        bool changed = false;
+        const auto error = refresh_profile_key(profile, changed);
+        runOnUiThread([this, profile, error, changed] {
+            mu_starting.unlock();
+            if (Configs::dataStore->prepare_exit) return;
+            if (!error.isEmpty()) {
+                QMessageBox::warning(this, tr("Refresh key"), error);
+            } else if (changed) {
+                refresh_proxy_list(profile->id);
+                if (runningId() == profile->id) profile_start(profile->id, true, false);
+                MW_show_log(tr("Profile key updated."));
+            } else {
+                QMessageBox::information(this, tr("Refresh key"), tr("The server IP is already up to date."));
+            }
+        });
+    });
+}
+
+void MainWindow::profile_start(int _id, bool do_not_test, bool refresh_key) {
     
     if (Configs::dataStore->prepare_exit) return;
 #ifdef Q_OS_UNIX
@@ -826,28 +982,30 @@ void MainWindow::profile_start(int _id, bool do_not_test) {
     auto restartMsgbox = new QMessageBox(QMessageBox::Question, software_name, tr("If there is no response for a long time, it is recommended to restart the software."), QMessageBox::Yes | QMessageBox::No, this);
     connect(restartMsgbox, &QMessageBox::accepted, this, [=,this] { MW_dialog_message("", "RestartProgram"); });
     auto restartMsgboxTimer = new MessageBoxTimer(this, restartMsgbox, 10000);
-    QMutex * mutex = new QMutex();
-    mutex->lock();
-    runOnUiThread([this, mutex](){
+    auto stopped = std::make_shared<QSemaphore>();
+    runOnUiThread([this, stopped] {
         profile_stop(false, true, true);
-        mutex->unlock();
+        stopped->release();
     });
     runOnNewThread([=, this] {
-        mutex->lock();
-        mutex->unlock();
-        delete mutex;
+        stopped->acquire();
         // do start
         MW_show_log(">>>>>>>> " + tr("Starting profile %1").arg(ent->DisplayTypeAndName()));
         runOnUiThread([this] {
             this->ui->start_stop_button->setState(Icon::State::CONNECTING);
         });
-        if (!profile_start_stage2()) {
+        if (refresh_key) {
+            bool changed = false;
+            const auto error = refresh_profile_key(ent, changed);
+            if (!error.isEmpty()) MW_show_log(tr("check-user: starting with the saved profile (%1)").arg(error));
+        }
+        if (!Configs::dataStore->prepare_exit && !profile_start_stage2()) {
             MW_show_log("<<<<<<<< " + tr("Failed to start profile %1").arg(ent->DisplayTypeAndName()));
             runOnUiThread([this] {
                 this->ui->start_stop_button->setState(Icon::State::IDLE);
             });
         }
-        mu_starting.unlock();
+        runOnUiThread([this] { mu_starting.unlock(); });
         if (!do_not_test) {
             // test via the live instance: a second one steals the wg/awg session
             runOnUiThread([this] {

@@ -287,10 +287,8 @@ void MainWindow::menu_server_about_to_show(QMenu *menu_server) {
   //  } else {
   //     ui->actionSpeedtest_Current->setEnabled(false);
   //  }
-  bool selected_profile = true;
-  if (auto selected = get_now_selected_list(); selected.empty()) {
-    selected_profile = false;
-  }
+  const auto selected = get_now_selected_list();
+  const bool selected_profile = !selected.empty();
 
   ui->menu_test->setEnabled(selected_profile);
   ui->actionUrl_Test_Selected->setEnabled(selected_profile);
@@ -303,6 +301,7 @@ void MainWindow::menu_server_about_to_show(QMenu *menu_server) {
   ui->menu_move_profile->setEnabled(selected_profile);
   ui->menu_clone->setEnabled(selected_profile);
   ui->menu_update_profile->setEnabled(selected_profile);
+  ui->menu_refresh_profile_key->setEnabled(selected.size() == 1);
   ui->menu_reset_traffic->setEnabled(selected_profile);
 
   if (!speedtestRunning.tryLock()) {
@@ -5365,7 +5364,7 @@ skip1:
   }
   {
     auto resp = NetworkRequestHelper::HttpGet(
-        "https://api.github.com/repos/qr243vbi/nekobox/releases");
+        "https://api.github.com/repos/mikhailhimei/nekobox/releases");
     if (!resp.error.isEmpty()) {
       runOnUiThread([=, this] {
         MessageBoxWarning(QObject::tr("Update"),
@@ -5379,7 +5378,7 @@ skip1:
     QJsonArray array = QString2QJsonArray(resp.data);
     for (const QJsonValue value : array) {
       QJsonObject release = value.toObject();
-      if (release["prerelease"].toBool())
+      if (release["draft"].toBool())
         continue;
       for (const QJsonValue asset : release["assets"].toArray()) {
         if (asset["name"].toString().contains(search) &&

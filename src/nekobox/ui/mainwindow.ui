@@ -789,6 +789,7 @@ QSplitter#splitter::handle:vertical:hover { background: palette(highlight); }</s
      <addaction name="separator"/>
      <addaction name="menu_share_item"/>
      <addaction name="menu_update_profile"/>
+     <addaction name="menu_refresh_profile_key"/>
      <addaction name="menu_clone"/>
      <addaction name="menu_move_profile"/>
      <addaction name="menu_delete"/>
@@ -884,6 +885,11 @@ QSplitter#splitter::handle:vertical:hover { background: palette(highlight); }</s
   <action name="menu_manage_groups">
    <property name="text">
     <string>Groups</string>
+   </property>
+  </action>
+  <action name="menu_refresh_profile_key">
+   <property name="text">
+    <string>Refresh key</string>
    </property>
   </action>
   <action name="menu_start">

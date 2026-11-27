@@ -151,7 +151,7 @@ function isNewerAsset(assetName, curver) {
 }
 
 
-var resp = new HTTPResponse("https://api.github.com/repos/qr243vbi/nekobox/releases");
+var resp = new HTTPResponse("https://api.github.com/repos/mikhailhimei/nekobox/releases");
 var data;
 var resp_error;
 if (!resp.error) {
@@ -180,6 +180,7 @@ if (resp_error) {
     }
 
     for (let release of array) {
+        if (release["draft"]) continue;
         if (!allow_beta_update) {
             if (release["prerelease"]) {
                 continue;
@@ -267,7 +268,7 @@ if (resp_error) {
                 errors = download(release_download_url, archive_name, true);
                 if (chocolatey_package) {
                     let nupkg_errors = download(
-                        "https://github.com/qr243vbi/nekobox/releases/download/" +
+                        "https://github.com/mikhailhimei/nekobox/releases/download/" +
                         latest_tag_name + "/nekobox." + latest_tag_name + ".nupkg",
                         "downloads/nekobox." + latest_tag_name + ".nupkg", true);
                     if (nupkg_errors == '') {

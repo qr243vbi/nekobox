@@ -121,7 +121,7 @@ public:
   bool no_symlinks = true;
   bool logs_enabled = true;
   bool test_after_start = true;
-  char startup_update = false;
+  char startup_update = true;
   int max_log_line = 200;
   int width = 0;
   int height = 0;
